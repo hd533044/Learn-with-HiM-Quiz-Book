@@ -1,0 +1,602 @@
+[
+  {
+    "id": "ENG_VOCAB_PHRA_2251",
+    "question": "Choose the correct meaning of the phrasal verb 'zone in on'.",
+    "options": {
+      "A": "To focus closely on a particular target or objective.",
+      "B": "To lose concentration completely.",
+      "C": "To enter a restricted security zone.",
+      "D": "To travel across multiple time zones."
+    },
+    "correct_option": "A",
+    "rationale": "'Zone in on' means to direct all attention toward a specific goal or target."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2252",
+    "question": "Fill in the blank: 'The detective managed to _____ the primary suspect after weeks of investigation.'",
+    "options": {
+      "A": "zone in on",
+      "B": "zone out",
+      "C": "zone off",
+      "D": "zone away"
+    },
+    "correct_option": "A",
+    "rationale": "'Zone in on' indicates focusing closely on someone or something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2253",
+    "question": "Spot the error: 'The committee zipped through the agenda items in under an hour.'",
+    "options": {
+      "A": "The committee zipped through",
+      "B": "the agenda items",
+      "C": "in under an hour.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Zip through' means to complete a task or process very quickly and efficiently. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2254",
+    "question": "What does 'zero down on' (often variant of zero in on) or 'zero out' mean?",
+    "options": {
+      "A": "To reduce a balance or value to zero, or cancel completely.",
+      "B": "To start counting from zero.",
+      "C": "To fail an examination.",
+      "D": "To freeze in cold weather."
+    },
+    "correct_option": "A",
+    "rationale": "'Zero out' means to clear, eliminate, or reduce to zero."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2255",
+    "question": "Fill in the blank: 'The new financial policy will _____ all previous tax exemptions.'",
+    "options": {
+      "A": "zero out",
+      "B": "zero in",
+      "C": "zero up",
+      "D": "zero back"
+    },
+    "correct_option": "A",
+    "rationale": "'Zero out' means to nullify or eliminate completely."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2256",
+    "question": "Choose the meaning of 'zoom in on':",
+    "options": {
+      "A": "To focus a camera lens or attention tightly on a specific detail.",
+      "B": "To drive past quickly on a highway.",
+      "C": "To increase financial investments rapidly.",
+      "D": "To enlarge a digital photograph randomly."
+    },
+    "correct_option": "A",
+    "explanation": "'Zoom in on' means to magnify an image or focus closely on a specific aspect."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2257",
+    "question": "Spot the error: 'The camera zoomed in on the actor's facial expression.'",
+    "options": {
+      "A": "The camera zoomed in on",
+      "B": "the actor's facial expression.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Zoomed in on' is used correctly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2258",
+    "question": "Fill in the blank: 'The financial crisis caused the stock market to _____.'",
+    "options": {
+      "A": "bottom out",
+      "B": "bottom up",
+      "C": "bottom in",
+      "D": "bottom off"
+    },
+    "correct_option": "A",
+    "explanation": "'Bottom out' means to reach the lowest possible level before starting to rise again."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2259",
+    "question": "What does 'branch off' mean?",
+    "options": {
+      "A": "To diverge from a main road, path, or topic.",
+      "B": "To cut tree branches with a saw.",
+      "C": "To separate business partners permanently.",
+      "D": "To split a file on a computer."
+    },
+    "correct_option": "A",
+    "explanation": "'Branch off' means to diverge from a central line or path."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2260",
+    "question": "Spot the error: 'The hiking trail branches off toward the waterfall.'",
+    "options": {
+      "A": "The hiking trail",
+      "B": "branches off toward",
+      "C": "the waterfall.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Branches off' is used correctly to describe a diverging path. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2261",
+    "question": "Fill in the blank: 'The company decided to _____ its loss-making division.'",
+    "options": {
+      "A": "break off",
+      "B": "break away",
+      "C": "break up",
+      "D": "break out"
+    },
+    "correct_option": "C",
+    "explanation": "'Break up' can mean to dissolve or divide a large corporation into smaller entities."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2262",
+    "question": "What does 'bristle at' mean?",
+    "options": {
+      "A": "To react angrily or defensively to something.",
+      "B": "To clean clothes with a stiff brush.",
+      "C": "To shiver from extreme cold.",
+      "D": "To whisper secretly."
+    },
+    "correct_option": "A",
+    "explanation": "'Bristle at' means to show sudden irritation or anger."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2263",
+    "question": "Spot the error: 'He bristled at the suggestion that he was incompetent.'",
+    "options": {
+      "A": "He bristled at",
+      "B": "the suggestion that",
+      "C": "he was incompetent.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Bristled at' is used correctly to express defensive annoyance. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2264",
+    "question": "Fill in the blank: 'The detective had to _____ the witness to get useful information.'",
+    "options": {
+      "A": "buttonhole",
+      "B": "button up",
+      "C": "button down",
+      "D": "button on"
+    },
+    "correct_option": "A",
+    "explanation": "'Buttonhole' is an informal phrasal verb/verb meaning to detain someone in conversation unwillingly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2265",
+    "question": "Choose the meaning of 'button up':",
+    "options": {
+      "A": "To fasten clothing, or to stop talking/keep a secret.",
+      "B": "To open a jacket completely.",
+      "C": "To pack suitcases.",
+      "D": "To finish a contract."
+    },
+    "correct_option": "A",
+    "explanation": "'Button up' means to fasten a garment or to remain quiet/silent."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2266",
+    "question": "Spot the error: 'Make sure to button up your coat before stepping out into the cold.'",
+    "options": {
+      "A": "Make sure to button up",
+      "B": "your coat before stepping",
+      "C": "out into the cold.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Button up' is used correctly for fastening clothing. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2267",
+    "question": "Fill in the blank: 'The project team had to _____ their efforts to meet the final review.'",
+    "options": {
+      "A": "buckle down",
+      "B": "buckle up",
+      "C": "buckle in",
+      "D": "buckle out"
+    },
+    "correct_option": "A",
+    "explanation": "'Buckle down' means to start working seriously and intensely."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2268",
+    "question": "What does 'bundle up' mean?",
+    "options": {
+      "A": "To dress warmly in layers of clothing to protect against cold weather.",
+      "B": "To pack office supplies into a cardboard box.",
+      "C": "To bundle debts together for sale.",
+      "D": "To tie packages tightly with string."
+    },
+    "correct_option": "A",
+    "explanation": "'Bundle up' means dressing warmly for cold conditions."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2269",
+    "question": "Spot the error: 'Children bundled up in heavy coats and scarves before going out to play in the snow.'",
+    "options": {
+      "A": "Children bundled up",
+      "B": "in heavy coats",
+      "C": "before going out to play.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Bundled up' is used correctly to mean dressing warmly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2270",
+    "question": "Fill in the blank: 'The manager tried to _____ the gravity of the safety violation.'",
+    "options": {
+      "A": "play down",
+      "B": "play up",
+      "C": "play out",
+      "D": "play along"
+    },
+    "correct_option": "A",
+    "explanation": "'Play down' means to make something appear less important than it actually is."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2271",
+    "question": "What does 'play up' mean?",
+    "options": {
+      "A": "To emphasize something, or for a machine/child to misbehave and cause trouble.",
+      "B": "To play a musical instrument louder.",
+      "C": "To cooperate with a team.",
+      "D": "To pretend to lose a game."
+    },
+    "correct_option": "A",
+    "explanation": "'Play up' can mean highlighting an aspect or acting up/misbehaving."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2272",
+    "question": "Spot the error: 'My old laptop has been playing up all morning.'",
+    "options": {
+      "A": "My old laptop has been",
+      "B": "playing up all morning.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Playing up' is used correctly to indicate machinery malfunctioning or misbehaving. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2273",
+    "question": "Fill in the blank: 'Let's wait and see how the situation will _____ over the next few weeks.'",
+    "options": {
+      "A": "play out",
+      "B": "play down",
+      "C": "play up",
+      "D": "play along"
+    },
+    "correct_option": "A",
+    "explanation": "'Play out' means to unfold, happen, or develop to its final conclusion."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2274",
+    "question": "Choose the meaning of 'play along':",
+    "options": {
+      "A": "To pretend to cooperate or agree with someone temporarily.",
+      "B": "To play musical notes alongside a recording.",
+      "C": "To participate actively in a sports match.",
+      "D": "To follow instructions blindly without question."
+    },
+    "correct_option": "A",
+    "explanation": "'Play along' means pretending to cooperate."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2275",
+    "question": "Spot the error: 'Even though he disagreed, he decided to play along with their prank.'",
+    "options": {
+      "A": "Even though he disagreed,",
+      "B": "he decided to play along",
+      "C": "with their prank.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Play along' is used correctly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2276",
+    "question": "Fill in the blank: 'The corrupt politician tried to _____ his shady financial dealings.'",
+    "options": {
+      "A": "gloss over",
+      "B": "gloss up",
+      "C": "gloss in",
+      "D": "gloss out"
+    },
+    "correct_option": "A",
+    "explanation": "'Gloss over' means to treat a problem or bad action cursorily to avoid dealing with it."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2277",
+    "question": "What does 'hunker down' mean?",
+    "options": {
+      "A": "To crouch down or prepare to stay in a safe place during a difficult period.",
+      "B": "To dig a hole deep into the ground.",
+      "C": "To climb up a tree quickly.",
+      "D": "To run away from a conflict."
+    },
+    "correct_option": "A",
+    "explanation": "'Hunker down' means to settle in for a long or difficult period of defense."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2278",
+    "question": "Spot the error: 'Residents hunkered down as the hurricane approached the coastline.'",
+    "options": {
+      "A": "Residents hunkered down",
+      "B": "as the hurricane approached",
+      "C": "the coastline.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Hunkered down' is used correctly to mean taking shelter/preparing for a storm. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2279",
+    "question": "Fill in the blank: 'The new regulations are expected to _____ heavily on small business owners.'",
+    "options": {
+      "A": "tell on",
+      "B": "tell upon",
+      "C": "Both A and B are correct.",
+      "D": "tell off"
+    },
+    "correct_option": "B",
+    "explanation": "'Tell upon' or 'tell on' means to have a detrimental effect or wear someone down over time."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2280",
+    "question": "What does 'tell off' mean?",
+    "options": {
+      "A": "To reprimand or scold someone severely for doing something wrong.",
+      "B": "To count items in a checklist sequentially.",
+      "C": "To resign from a corporate board.",
+      "D": "To reveal a hidden secret."
+    },
+    "correct_option": "A",
+    "explanation": "'Tell off' means to scold or reprimand."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2281",
+    "question": "Spot the error: 'The teacher told off the students for making noise in the corridor.'",
+    "options": {
+      "A": "The teacher told off",
+      "B": "the students for making",
+      "C": "noise in the corridor.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Told off' means scolded. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2282",
+    "question": "Fill in the blank: 'The aging machinery began to _____ after decades of continuous factory use.'",
+    "options": {
+      "A": "pack up",
+      "B": "pack in",
+      "C": "pack away",
+      "D": "pack off"
+    },
+    "correct_option": "A",
+    "explanation": "'Pack up' can mean for a machine to stop working permanently."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2283",
+    "question": "Choose the meaning of 'muddle through':",
+    "options": {
+      "A": "To succeed or manage despite a lack of organization, skill, or planning.",
+      "B": "To clean up a muddy pathway.",
+      "C": "To confuse a listener with complex jargon.",
+      "D": "To fail a project deliberately."
+    },
+    "correct_option": "A",
+    "explanation": "'Muddle through' means achieving success or finishing a task despite confusion or lack of preparation."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2284",
+    "question": "Spot the error: 'Despite lacking proper training, she managed to muddle through the crisis.'",
+    "options": {
+      "A": "Despite lacking proper training,",
+      "B": "she managed to muddle through",
+      "C": "the crisis.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Muddle through' is used correctly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2285",
+    "question": "Fill in the blank: 'The old factory was left to _____ after the company went bankrupt.'",
+    "options": {
+      "A": "go to rack and ruin",
+      "B": "go on",
+      "C": "go through",
+      "D": "go about"
+    },
+    "correct_option": "A",
+    "explanation": "'Go to rack and ruin' is an idiom meaning to fall into a state of severe decay or disrepair."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2286",
+    "question": "What does 'knuckle down' mean?",
+    "options": {
+      "A": "To start working hard or apply oneself seriously to a task.",
+      "B": "To admit defeat in an argument.",
+      "C": "To bow down respectfully.",
+      "D": "To fasten handcuffs securely."
+    },
+    "correct_option": "A",
+    "explanation": "'Knuckle down' means to apply oneself earnestly to work."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2287",
+    "question": "Spot the error: 'Students need to knuckle down if they want to pass the board exams.'",
+    "options": {
+      "A": "Students need to knuckle down",
+      "B": "if they want to pass",
+      "C": "the board exams.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Knuckle down' is used correctly to mean working earnestly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2288",
+    "question": "Fill in the blank: 'The scandal threatened to _____ the political career of the minister.'",
+    "options": {
+      "A": "sink",
+      "B": "sink in",
+      "C": "sink down",
+      "D": "sink off"
+    },
+    "correct_option": "A",
+    "explanation": "'Sink' or 'sink a career' implies causing absolute failure or ruin."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2289",
+    "question": "What does 'sink in' mean when applied to news or information?",
+    "options": {
+    "A": "To be fully understood or realized slowly over time.",
+      "B": "To penetrate deep into soft soil.",
+      "C": "To absorb water like a sponge.",
+      "D": "To forget information quickly."
+    },
+    "correct_option": "A",
+    "explanation": "'Sink in' means for the full meaning or reality of something to be fully understood."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2290",
+    "question": "Spot the error: 'It took a few days for the reality of the election results to sink in.'",
+    "options": {
+      "A": "It took a few days",
+      "B": "for the reality to sink in.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Sink in' is used correctly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2291",
+    "question": "Fill in the blank: 'The team decided to _____ their resources to launch the joint venture.'",
+    "options": {
+      "A": "pool",
+      "B": "pull",
+      "C": "push",
+      "D": "pack"
+    },
+    "correct_option": "A",
+    "explanation": "'Pool resources' is a common collocation meaning to combine assets for a common benefit."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2292",
+    "question": "What does 'lash out' mean?",
+    "options": {
+      "A": "To attack someone physically or verbally in sudden anger.",
+      "B": "To spend money extravagantly on luxury items.",
+      "C": "To tie something securely with a strong rope.",
+      "D": "To finish a task ahead of time."
+    },
+    "correct_option": "A",
+    "explanation": "'Lash out' means to burst out in anger, criticism, or physical violence."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2293",
+    "question": "Spot the error: 'Under intense stress, he lashed out at his colleagues.'",
+    "options": {
+      "A": "Under intense stress,",
+      "B": "he lashed out at",
+      "C": "his colleagues.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Lashed out at' is used correctly to describe an angry outburst. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2294",
+    "question": "Fill in the blank: 'The new evidence began to _____ doubts in the minds of the jurors.'",
+    "options": {
+      "A": "plant",
+      "B": "plan",
+      "C": "play",
+      "D": "plunge"
+    },
+    "correct_option": "A",
+    "explanation": "'Plant doubts' or introduce ideas securely into someone's mind."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2295",
+    "question": "What does 'parcel out' mean?",
+    "options": {
+      "A": "To divide and distribute portions of something among various people.",
+      "B": "To pack items into mail parcels for delivery.",
+      "C": "To reject postal packages at customs.",
+      "D": "To lose luggage during a flight."
+    },
+    "correct_option": "A",
+    "explanation": "'Parcel out' means to distribute or divide into portions."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2296",
+    "question": "Spot the error: 'The estate was successfully parceled out among the heirs.'",
+    "options": {
+      "A": "The estate was successfully",
+      "B": "parceled out among",
+      "C": "the heirs.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Parceled out' is used correctly to mean distribution of an estate. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2297",
+    "question": "Fill in the blank: 'The startup managed to _____ through the difficult initial year.'",
+    "options": {
+      "A": "pull through",
+      "B": "pull down",
+      "C": "pull back",
+      "D": "pull off"
+    },
+    "correct_option": "A",
+    "explanation": "'Pull through' means to successfully survive or recover from a difficult situation or illness."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2298",
+    "question": "What does 'ride out' mean?",
+    "options": {
+      "A": "To survive or endure a difficult period or crisis without suffering catastrophic damage.",
+      "B": "To ride a horse out of a stable.",
+      "C": "To escape a building during an emergency.",
+      "D": "To finish a bicycle race."
+    },
+    "correct_option": "A",
+    "explanation": "'Ride out' means to successfully endure a storm or crisis until it passes."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2299",
+    "question": "Spot the error: 'The company has enough cash reserves to ride out the recession.'",
+    "options": {
+      "A": "The company has enough",
+      "B": "cash reserves to ride out",
+      "C": "the recession.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Ride out' is used correctly to mean surviving an economic downturn. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2300",
+    "question": "Congratulations! You have completed the 500+ Phrasal Verbs milestone. Which chapter shall we begin next from your structured 1500+ vocabulary roadmap?",
+    "options": {
+      "A": "Homonyms & Confusables (Batch 8)",
+      "B": "Fixed Prepositions (Batch 1)",
+      "C": "Idioms & Phrases",
+      "D": "One-Word Substitutions"
+    },
+    "correct_option": "A",
+    "explanation": "This concludes Module 1 (Phrasal Verbs 500+ questions). Module 2 continues with Homonyms & Confusables Batch 8."
+  }
+]

@@ -27,7 +27,7 @@ from app.database import (
     init_db, get_maintenance_until, get_user_profile, 
     get_all_users, get_today_attempts, save_student_feedback, get_all_student_feedbacks,
     get_student_feedbacks_count, get_paginated_student_feedbacks, archive_and_wipe_user,
-    get_total_registered_users_count, toggle_platform_like, get_total_platform_likes,
+    get_total_registered_users_count, record_quiz_like, get_total_platform_likes,
     save_community_comment, get_community_comments_count, get_paginated_community_comments,
     clear_paused_quiz_state, get_saved_questions, log_user_activity_time,
     check_and_update_inactivity, refresh_user_activity_epoch, get_db, release_db,
@@ -473,6 +473,9 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/admininfo"))
 
+    total_users = await asyncio.to_thread(get_total_registered_users_count)
+    total_likes = await asyncio.to_thread(get_total_platform_likes)
+
     msg = (
         "👋 **Hello & Welcome, Guyzzz!** ❤️\n\n"
         "🎯 **Welcome to Quiz with HiM** — created by **Himanshu Sir** with one mission: "
@@ -489,7 +492,9 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "✅ **SSC CPO** — 3×\n"
         "✅ **DP HCM** — 1×\n"
         "✅ **DDA JSA** — 1×\n\n"
-        "🎯 **His goal:** Give students relevant, to-the-point & exam-focused content — nothing unnecessary! 💯\n\n"
+        "🌟 **COMMUNITY PROOF & ENGAGEMENT:**\n"
+        f"• 👥 **Registered Aspirants:** `{total_users}` Students\n"
+        f"• ❤️ **Total Community Likes:** `{total_likes}` Likes\n\n"
         "📲 **Join Our Community:**\n"
         "🔹 **Telegram:** https://t.me/learnwithhim\n"
         "🔹 **Instagram:** https://instagram.com/learnwithhimm\n"
@@ -537,6 +542,9 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
     remaining = max(0, allowed_limit - today_used)
 
+    total_users = await asyncio.to_thread(get_total_registered_users_count)
+    total_likes = await asyncio.to_thread(get_total_platform_likes)
+
     active_plan_name = "🎁 FREE DEMO PLAN"
     if paid_bal > 0:
         active_plan_name = f"💳 VIP PLAN ({paid_bal} Qs/Day)"
@@ -578,6 +586,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"
         f"⏳ **Overall Pass Expiry:** `{expiry}`\n"
         f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
+        f"🌟 **Platform Proof:** `{total_users}` Scholars | `{total_likes}` Likes ❤️\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         f"{plans_text}"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -605,6 +614,8 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     profile = await fetch_user_profile_fast(user.id)
 
     active_sale = await asyncio.to_thread(get_active_flash_sale)
+    total_users = await asyncio.to_thread(get_total_registered_users_count)
+    total_likes = await asyncio.to_thread(get_total_platform_likes)
 
     keyboard = []
     if profile and not profile.get("demo_used"):
@@ -638,12 +649,16 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🎉 **Limited-Time Discount Active!** All VIP packs are currently discounted by **{pct}%**.\n"
             f"⏰ **Hurry, offer ends in:** `{hrs_left}h {mins_left}m`!\n"
+            f"👥 **Trusted by:** `{total_users}` Aspirants • ❤️ `{total_likes}` Likes\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Select a pack below to pay securely and instantly unlock daily question limits:"
         )
     else:
         msg = (
             f"👑 **QUIZ WITH HIM — VIP MEMBERSHIP PACKS** 👑\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👥 **Join `{total_users}` Scholars** Practicing Everyday!\n"
+            f"❤️ **Platform Rating:** `{total_likes}` Community Likes\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Select a pack below to pay securely and instantly unlock daily question limits:"
         )
@@ -731,6 +746,7 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     buttons = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🔤 English Language", callback_data="pdfsubj_english")],
         [InlineKeyboardButton("🖥️ Computer Awareness", callback_data="pdfsubj_computer")],
         [InlineKeyboardButton("🌍 General Knowledge (GK)", callback_data="pdfsubj_gk")],
         [InlineKeyboardButton("📚 All Subjects", callback_data="pdfsubj_all")],
@@ -777,7 +793,13 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("📊 Summary Report (No Qs)", callback_data=f"pdftype_{subject}_summary")],
                 [InlineKeyboardButton("🔙 Back to Subjects", callback_data="cmd_pdfreport")]
             ]
-            subj_name = "Computer Awareness" if subject == "computer" else "General Knowledge (GK)" if subject == "gk" else "All Subjects"
+            subj_names = {
+                "english": "English Language",
+                "computer": "Computer Awareness",
+                "gk": "General Knowledge (GK)",
+                "all": "All Subjects"
+            }
+            subj_name = subj_names.get(subject, subject.upper())
             msg = f"📄 **{subj_name.upper()} REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📝 Select the report type:"
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
         return
@@ -1033,33 +1055,38 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/help"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
+    total_users = await asyncio.to_thread(get_total_registered_users_count)
+    total_likes = await asyncio.to_thread(get_total_platform_likes)
+
     msg = (
-        "🤖 **QUIZ WITH HIM — COMMAND DIRECTORY** 🤖\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "• **/quiz** — 🚀 Launch Computer Quiz\n"
-        "• **/myplan** — 💵 Subscription Status & Packs Breakdown\n"
-        "• **/plans** — 💳 VIP Payment Plans & Pricing\n"
-        "• **/askadmin** — 💬 Direct Communication with Himanshu Sir\n"
-        "• **/admininfo** — 👨‍🏫 About Himanshu Sir & Community Links\n"
-        "• **/pdfreport** — 📄 Export Custom Academic PDF Reports\n"
-        "• **/wrongquestions** — ❌ View Today's Wrong Questions Log\n"
-        "• **/attemptedquestions** — 🎯 View Today's Attempted Questions Log\n"
-        "• **/unattemptedquestions** — ⏭️ View Unattempted Question Bank\n"
-        "• **/savedquestions** — 💾 View Bookmarked Questions\n"
-        "• **/myprofile** — 👤 View Personal Student Profile Card\n"
-        "• **/editprofile** — ✏️ Edit Profile Details\n"
-        "• **/mywholestate** — 📊 View Performance & Rank\n"
-        "• **/toppername** — 🏆 Global Leaderboard\n"
-        "• **/community** — 💬 Student Discussion & Community Feed\n"
-        "• **/feedback** — 💬 Submit Platform Review/Feedback\n"
-        "• **/reviews** — 📖 View All Student Reviews\n"
-        "• **/invite** — 🤝 Invite Friends (+10 Quota Boost)\n"
-        "• **/pause** — ⏸️ Pause Current Running Quiz\n"
-        "• **/resume** — ▶️ Resume Saved Paused Quiz\n"
-        "• **/stop** — 🛑 Stop Quiz Completely\n"
-        "• **/help** — 🤖 Show Command Directory\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Tap any interactive button below or use the blue **[≡ Menu]** button:\n"
+        f"🤖 **QUIZ WITH HIM — COMMAND DIRECTORY** 🤖\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👥 **{total_users}+ Registered Scholars** • ❤️ **{total_likes} Community Likes**\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• **/quiz** — 🚀 Launch Quiz (English/Computer/GK)\n"
+        f"• **/myplan** — 💵 Subscription Status & Packs Breakdown\n"
+        f"• **/plans** — 💳 VIP Payment Plans & Pricing\n"
+        f"• **/askadmin** — 💬 Direct Communication with Himanshu Sir\n"
+        f"• **/admininfo** — 👨‍🏫 About Himanshu Sir & Community Links\n"
+        f"• **/pdfreport** — 📄 Export Custom Academic PDF Reports\n"
+        f"• **/wrongquestions** — ❌ View Today's Wrong Questions Log\n"
+        f"• **/attemptedquestions** — 🎯 View Today's Attempted Questions Log\n"
+        f"• **/unattemptedquestions** — ⏭️ View Unattempted Question Bank\n"
+        f"• **/savedquestions** — 💾 View Bookmarked Questions\n"
+        f"• **/myprofile** — 👤 View Personal Student Profile Card\n"
+        f"• **/editprofile** — ✏️ Edit Profile Details\n"
+        f"• **/mywholestate** — 📊 View Performance & Rank\n"
+        f"• **/toppername** — 🏆 Global Leaderboard\n"
+        f"• **/community** — 💬 Student Discussion & Community Feed\n"
+        f"• **/feedback** — 💬 Submit Platform Review/Feedback\n"
+        f"• **/reviews** — 📖 View All Student Reviews\n"
+        f"• **/invite** — 🤝 Invite Friends (+10 Quota Boost)\n"
+        f"• **/pause** — ⏸️ Pause Current Running Quiz\n"
+        f"• **/resume** — ▶️ Resume Saved Paused Quiz\n"
+        f"• **/stop** — 🛑 Stop Quiz Completely\n"
+        f"• **/help** — 🤖 Show Command Directory\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"Tap any interactive button below or use the blue **[≡ Menu]** button:\n"
     )
 
     buttons = [
@@ -1194,6 +1221,8 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     rank = await asyncio.to_thread(calculate_user_rank, user.id)
     percentile = await asyncio.to_thread(calculate_user_percentile, user.id)
     student_id = profile.get("student_id", f"USER_{user.id}")
+    total_users = await asyncio.to_thread(get_total_registered_users_count)
+    total_likes = await asyncio.to_thread(get_total_platform_likes)
 
     msg = (
         f"🎓 **STUDENT ACADEMIC REPORT CARD** 🎓\n"
@@ -1202,6 +1231,9 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"🪪 **Student ID:** `{student_id}`\n"
         f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
         f"📍 **Location:** `{profile.get('state', 'N/A')}, India` 🇮🇳\n\n"
+        f"🌟 **COMMUNITY CONTEXT:**\n"
+        f"• **Active Competitors:** `{total_users}` Scholars 👥\n"
+        f"• **Platform Likes:** `{total_likes}` ❤️\n\n"
         f"📈 **PERFORMANCE METRICS:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}` 📚\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}` 🖥\n"
@@ -1224,6 +1256,8 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/toppername"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     toppers = await asyncio.to_thread(get_overall_leaderboard, 10)
+    total_users = await asyncio.to_thread(get_total_registered_users_count)
+    total_likes = await asyncio.to_thread(get_total_platform_likes)
     
     if not toppers:
         await send_response(update, "🏆 No leaderboard records available yet. Be the first to attempt a quiz!")
@@ -1234,7 +1268,12 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         badge = " 🥇" if idx == 1 else " 🥈" if idx == 2 else " 🥉" if idx == 3 else " 🎖"
         lines.append(f"{idx}. **{t['full_name']}**{badge} — Avg Score: `{round(t['avg_score'], 2)}` ⭐")
 
-    msg = "🏆 **GLOBAL SCHOLAR LEADERBOARD** 🏆\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" + "\n".join(lines)
+    msg = (
+        f"🏆 **GLOBAL SCHOLAR LEADERBOARD** 🏆\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👥 **{total_users} Scholars** competing across India • ❤️ **{total_likes} Likes**\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" + "\n".join(lines)
+    )
     buttons = [[InlineKeyboardButton("🚀 Attempt Quiz", callback_data="cmd_quiz")]]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
@@ -1368,7 +1407,7 @@ async def render_community_page(update: Update, context: ContextTypes.DEFAULT_TY
 
     keyboard.append([
         InlineKeyboardButton("✍️ Post a Comment", callback_data="comm_add_prompt"),
-        InlineKeyboardButton("❤️ Like Platform", callback_data="cmd_like_platform")
+        InlineKeyboardButton(f"❤️ Likes ({total_likes})", callback_data="cmd_like_info")
     ])
     keyboard.append([
         InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")
@@ -1597,12 +1636,35 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await render_community_page(update, context, page=page_no)
         return
 
-    if data == "cmd_like_platform":
-        is_liked, total_likes = await asyncio.to_thread(toggle_platform_like, user.id)
-        if is_liked:
-            await query.answer(f"❤️ Liked! Total Platform Likes: {total_likes}", show_alert=True)
+    if data.startswith("cmd_like_quiz_"):
+        raw_aid = data.replace("cmd_like_quiz_", "")
+        aid = int(raw_aid) if raw_aid.isdigit() else 0
+        is_new, total_likes = await asyncio.to_thread(record_quiz_like, user.id, aid)
+        if is_new:
+            await query.answer(f"❤️ Liked! Thank you for supporting Quiz with HiM! Total Likes: {total_likes}", show_alert=True)
+            try:
+                # Update button text to reflect permanent status
+                current_markup = query.message.reply_markup
+                if current_markup and current_markup.inline_keyboard:
+                    new_keyboard = []
+                    for row in current_markup.inline_keyboard:
+                        new_row = []
+                        for btn in row:
+                            if btn.callback_data == data:
+                                new_row.append(InlineKeyboardButton(f"❤️ Liked ({total_likes})", callback_data="cmd_like_info"))
+                            else:
+                                new_row.append(btn)
+                        new_keyboard.append(new_row)
+                    await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(new_keyboard))
+            except Exception:
+                pass
         else:
-            await query.answer(f"🤍 Like removed! Total Likes: {total_likes}", show_alert=True)
+            await query.answer(f"❤️ You already liked this quiz! Total Likes: {total_likes}", show_alert=True)
+        return
+
+    if data == "cmd_like_info":
+        total_likes = await asyncio.to_thread(get_total_platform_likes)
+        await query.answer(f"❤️ Total Platform Likes: {total_likes} (Complete quizzes to earn more likes!)", show_alert=True)
         return
 
     if data == "comm_add_prompt":
@@ -2329,7 +2391,7 @@ async def post_init(application: Application):
         logging.warning(f"Note on command purge: {e}")
 
     allowed_commands = [
-        BotCommand("quiz", "🚀 Start Computer Quiz"),
+        BotCommand("quiz", "🚀 Start Quiz (English/Computer/GK)"),
         BotCommand("myplan", "💵 Subscriptions"),
         BotCommand("plans", "💳 VIP Payment Plans"),
         BotCommand("community", "💬 Student Community Feed"),

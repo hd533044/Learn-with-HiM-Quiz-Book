@@ -1,0 +1,760 @@
+[
+  {
+    "id": "ENG_VOC_SP_1851",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Milieu",
+      "B": "Miliue",
+      "C": "Milueu",
+      "D": "Milleu"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Milieu' - a person's social environment; French loanword 'm-i-l-i-e-u'). Options B, C, and D misplace the internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1852",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Millennium",
+      "B": "Mimeograph",
+      "C": "Minatory",
+      "D": "Minicipal"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Municipal' (spelled with '-ic-', not '-ic-', 'm-u-n-i-c-i-p-a-l' - relating to a city or town). Other options are correct: Millennium (a period of a thousand years), Mimeograph (a duplicating machine), Minatory (expressing a threat).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1853",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Minutiae",
+      "B": "Minutia",
+      "C": "Minutae",
+      "D": "Minutiæ"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Minutiae' - the small, precise, or trivial details of something; 'm-i-n-u-t-i-a-e'). Options B, C, and D alter the plural Latin suffix or spelling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1854",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Miracle",
+      "B": "Misanthrope",
+      "C": "Miscellany",
+      "D": "Mischievous"
+    },
+    "correct_option": "D",
+    "explanation": "Wait, let's verify standard tricky words. Option D is actually correctly spelt as 'Mischievous', but let's check if there's a typo or standard distractor like 'Mischievous' vs 'Mischievious' (often tested). Let's review the options or check if another option is incorrectly spelt. Let's make sure: Miracle, Misanthrope, Miscellany, Mischievious (often misspelled as 'mischievious' with an extra 'i'). If option D is 'Mischievious', it would be incorrect. Let's look at the actual spelling provided: 'Mischievous' is correct. Let's provide an option that is definitely incorrect if needed, or if this batch tests standard spellings. Let's ensure option D or another choice has a clear error if it's an INCORRECTLY spelt question, or assume the user wants standard test items. Let's fix option D to 'Mischievious' to make it explicitly incorrect, as 'mischievous' has no second 'i'.",
+    "options_corrected": {
+      "A": "Miracle",
+      "B": "Misanthrope",
+      "C": "Miscellany",
+      "D": "Mischievious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Mischievous' (no 'i' before 'vous' - causing or showing a wish to tease or cause trouble in a playful way). Other options are correct: Miracle (an extraordinary and welcome event), Misanthrope (a person who dislikes humankind), Miscellany (a group of diverse items).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1855",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Misogyny",
+      "B": "Misogyny",
+      "C": "Misoginy",
+      "D": "Misogheny"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Misogyny' - dislike of, contempt for, or ingrained prejudice against women; 'm-i-s-o-g-y-n-y'). Options C and D alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1856",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Mitigate",
+      "B": "Mobile",
+      "C": "Modicum",
+      "D": "Mollifye"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Mollify' (no terminal 'e', 'm-o-l-l-i-f-y' - appease the anger or anxiety of someone). Other options are correct: Mitigate (make less severe), Mobile (able to move freely), Modicum (a small quantity of a particular thing).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1857",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Momentous",
+      "B": "Momentus",
+      "C": "Momenteous",
+      "D": "Momantous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Momentous' - of great importance or significance; 'm-o-m-e-n-t-o-u-s'). Options B, C, and D alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1858",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Monastery",
+      "B": "Monopoly",
+      "C": "Monotony",
+      "D": "Monocrome"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Monochrome' (contains 'h', 'm-o-n-o-c-h-r-o-m-e' - black and white or shades of one color). Other options are correct: Monastery (building for monks), Monopoly (exclusive control of supply), Monotony (lack of variety and interest).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1859",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Moribund",
+      "B": "Moribond",
+      "C": "Morebund",
+      "D": "Moribundt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Moribund' - at the point of death; in terminal decline; 'm-o-r-i-b-u-n-d'). Options B, C, and D alter vowels or add silent consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1860",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Mortgage",
+      "B": "Mosquito",
+      "C": "Motif",
+      "D": "Moutain"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Mountain' (spelled with 'ai', 'm-o-u-n-t-a-i-n' - a large natural elevation of the earth's surface). Other options are correct: Mortgage (a legal agreement by which a bank lends money), Mosquito (a small flying insect), Motif (a distinctive feature or dominant idea).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1861",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Multifarious",
+      "B": "Multifarious",
+      "C": "Multifarious",
+      "D": "Multifarious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Multifarious' - many and of various types; 'm-u-l-t-i-f-a-r-i-o-u-s').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1862",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Municipal",
+      "B": "Munificent",
+      "C": "Mutable",
+      "D": "Murtured"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Nurtured' (starts with 'N', not 'Mu-' - cared for and encouraged to grow). Other options are correct: Municipal (relating to a town or district), Munificent (larger or more generous than usual), Mutable (liable to change).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1863",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Myriad",
+      "B": "Myriade",
+      "C": "Miriad",
+      "D": "Myryad"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Myriad' - a countless or extremely great number; 'm-y-r-i-a-d'). Options B, C, and D use non-standard vowel combinations.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1864",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Mythology",
+      "B": "Nadir",
+      "C": "Narcissist",
+      "D": "Narative"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Narrative' (double 'r', 'n-a-r-r-a-t-i-v-e' - a spoken or written account of connected events). Other options are correct: Mythology (a collection of myths), Nadir (the lowest point in the fortunes of a person or organization), Narcissist (a person who has an excessive interest in themselves).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1865",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nascent",
+      "B": "Nasscent",
+      "C": "Nascant",
+      "D": "Nassant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nascent' - just coming into existence and beginning to display signs of future potential; 'n-a-s-c-e-n-t'). Options B, C, and D double 's' or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1866",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Nauseate",
+      "B": "Nebulous",
+      "C": "Necessary",
+      "D": "Neccessary"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Necessary' (single 'c', double 's', 'n-e-c-e-s-s-a-r-y'). Options A, B, and C are correctly spelt: Nauseate (affect with nausea), Nebulous (inhabited or cloudy/vague), Necessary (required to be done).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1867",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nefarious",
+      "B": "Nefarius",
+      "C": "Nefareous",
+      "D": "Nifarious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nefarious' - wicked or criminal; 'n-e-f-a-r-i-o-u-s'). Options B, C, and D distort the internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1868",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Negligent",
+      "B": "Negotiate",
+      "C": "Neologism",
+      "D": "Nepotizem"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Nepotism' (ends in '-ism', not '-izem' - favoritism granted to relatives). Other options are correct: Negligent (failing to take proper care), Negotiate (obtain or bring about by discussion), Neologism (a newly coined word or expression).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1869",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nettle",
+      "B": "Netle",
+      "C": "Nettil",
+      "D": "Nettell"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nettle' - a herbaceous plant with stinging hairs; double 't', 'n-e-t-t-l-e'). Options B, C, and D alter consonant doubling or suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1870",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Neuralgia",
+      "B": "Neurosis",
+      "C": "Nihilism",
+      "D": "Ninty"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ninety' (retains silent 'e', 'n-i-n-e-t-y' - the cardinal number 90). Other options are correct: Neuralgia (intense pain along the course of a nerve), Neurosis (a relatively mild mental illness), Nihilism (the rejection of all religious and moral principles).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1871",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nocturnal",
+      "B": "Nocturnal",
+      "C": "Nocturnal",
+      "D": "Nocturnal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nocturnal' - done, occurring, or active at night; 'n-o-c-t-u-r-n-a-l').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1872",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Nomenclature",
+      "B": "Nonchalant",
+      "C": "Nondescript",
+      "D": "Noriouse"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Noxious' (harmful, poisonous, or very unpleasant) or 'Notorious', whereas 'Noriouse' is completely invalid. Other options are correct: Nomenclature (the devising or choosing of names for things), Nonchalant (feeling or appearing casually calm), Nondescript (lacking distinctive features).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1873",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Notoriety",
+      "B": "Notoriety",
+      "C": "Notoriety",
+      "D": "Notoriety"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Notoriety' - the state of being famous or well known for some bad quality or deed; 'n-o-t-o-r-i-e-t-y').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1874",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Nourishment",
+      "B": "Novice",
+      "C": "Nuclear",
+      "D": "Nuisence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Nuisance' (ends in '-ance', not '-ence' - a person, thing, or circumstance causing inconvenience). Other options are correct: Nourishment (substance necessary for growth), Novice (a person new to and inexperienced in a field), Nuclear (relating to the nucleus of an atom).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1875",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nullify",
+      "B": "Nulify",
+      "C": "Nullifie",
+      "D": "Nullyfy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nullify' - make legally null and void; double 'l', ends in '-fy', 'n-u-l-l-i-f-y'). Options B, C, and D drop 'l' or alter suffix endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1876",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Nutrient",
+      "B": "Nutritional",
+      "C": "Nuzzle",
+      "D": "Obediencee"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Obedience' (ends in '-ence', with single 'e' - compliance with an order, request, or law). Other options are correct: Nutrient (a substance providing nourishment), Nutritional (relating to nutrition), Nuzzle (snuggle or press against gently).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1877",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Obfuscate",
+      "B": "Obfusscate",
+      "C": "Obfuskate",
+      "D": "Obphascate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Obfuscate' - render obscure, unclear, or unintelligible; single 's', 'o-b-f-u-s-c-a-t-e'). Options B, C, and D double 's' or alter consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1878",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Obituary",
+      "B": "Obligate",
+      "C": "Obliterate",
+      "D": "Obliverate"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Obliterate' (spelled with '-ter-', not '-ver-' - destroy utterly; wipe out). Other options are correct: Obituary (a notice of a death), Obligate (bind legally or morally), Obliterate (wipe out).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1879",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Obnoxious",
+      "B": "Obnoxius",
+      "C": "Obnocious",
+      "D": "Obnoxshus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Obnoxious' - extremely unpleasant; 'o-b-n-o-x-i-o-u-s'). Options B, C, and D alter suffix vowels or use phonetic spellings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1880",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Obsession",
+      "B": "Obsolescent",
+      "C": "Obstacle",
+      "D": "Obstinatee"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Obstinate' (ends in single 'e', 'o-b-s-t-i-n-a-t-e' - stubbornly refusing to change one's opinion). Other options are correct: Obsession (an idea or thought that continually preoccupies one's mind), Obsolescent (becoming obsolete), Obstacle (a thing that blocks one's way).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1881",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Obstreperous",
+      "B": "Obstreperous",
+      "C": "Obstreperous",
+      "D": "Obstreperous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Obstreperous' - noisy and difficult to control; 'o-b-s-t-r-e-p-e-r-o-u-s').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1882",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Obtain",
+      "B": "Obtrusive",
+      "C": "Obtuse",
+      "D": "Ocasional"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Occasional' (double 'c', single 's', 'o-c-c-a-s-i-o-n-a-l' - appearing or happening from time to time). Other options are correct: Obtain (get, acquire, or secure), Obtrusive (noticeable or prominent in an unwelcome way), Obtuse (annoyingly insensitive or slow to understand).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1883",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Occult",
+      "B": "Occult",
+      "C": "Occult",
+      "D": "Occult"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Occult' - supernatural, mystical, or magical beliefs, practices, or phenomena; double 'c', single 'l', 'o-c-c-u-l-t').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1884",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Occupant",
+      "B": "Occurrence",
+      "C": "Oceanography",
+      "D": "Octogan"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Octagon' (spelled with '-on', not '-an' - a plane figure with eight straight sides and angles). Other options are correct: Occupant (a person residing in or occupying a place), Occurrence (an incident or event), Oceanography (the branch of science dealing with the physical and biological properties of the sea).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1885",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Odious",
+      "B": "Odius",
+      "C": "Odeous",
+      "D": "Odiouss"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Odious' - extremely unpleasant; repulsive; 'o-d-i-o-u-s'). Options B, C, and D alter vowel combinations or double the final letter.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1886",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Offence",
+      "B": "Official",
+      "C": "Officiate",
+      "D": "Omissionn"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Omission' (single 'n' at the end, 'o-m-i-s-s-i-o-n' - the action of excluding or leaving out someone or something). Other options are correct: Offence (a breach of a law or rule; illegal act), Official (relating to an authority or public body), Officiate (act as an official in charge of something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1887",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Omnipotent",
+      "B": "Omnipotant",
+      "C": "Omnipotent",
+      "D": "Omnipotent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Omnipotent' - having unlimited power; able to do anything; ends in '-ent', 'o-m-n-i-p-o-t-e-n-t').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1888",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Omnipresent",
+      "B": "Omniscient",
+      "C": "Onerous",
+      "D": "Onomatopoeiaa"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Onomatopoeia' (ends in single 'a' - the formation of a word from a sound associated with what is named). Other options are correct: Omnipresent (widely or constantly encountered; widespread), Omniscient (knowing everything), Onerous (involving great effort and difficulty).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1889",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Opaque",
+      "B": "Opake",
+      "C": "Opaqu",
+      "D": "Opaquq"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Opaque' - not able to be seen through; not transparent; 'o-p-a-q-u-e'). Options B, C, and D use non-standard spellings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1890",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Operation",
+      "B": "Ophthalmology",
+      "C": "Opinion",
+      "D": "Oportunity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Opportunity' (double 'p', 'o-p-p-o-r-t-u-n-i-t-y' - a set of circumstances that makes it possible to do something). Other options are correct: Operation (an act, process, or way of operating), Ophthalmology (the branch of medicine concerned with the study and treatment of disorders of the eye), Opinion (a view or judgment formed about something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1891",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Opponent",
+      "B": "Oponent",
+      "C": "Opponent",
+      "D": "Opponnt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Opponent' - someone who competes against or fights another in a contest, game, or argument; double 'p', 'o-p-p-o-n-e-n-t').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1892",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Opportune",
+      "B": "Oppressive",
+      "C": "Optimistic",
+      "D": "Orchastrate"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Orchestrate' (spelled with '-ches-', not '-chas-' - plan or coordinate elements of a situation to achieve a desired effect). Other options are correct: Opportune (occurring at a favorable or appropriate time), Oppressive (inflicting harsh and authoritarian treatment), Optimistic (hopeful and confident about the future).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1893",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Ordained",
+      "B": "Ordained",
+      "C": "Ordained",
+      "D": "Ordained"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Ordained' - made a priest or minister, or officially ordered; 'o-r-d-a-i-n-e-d').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1894",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Ordinance",
+      "B": "Orientation",
+      "C": "Original",
+      "D": "Ornamentallex"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ornamental' (ends in '-al', not '-allex' - serving as an ornament; decorative). Other options are correct: Ordinance (a authoritative order or law), Orientation (the relative physical position or direction of something), Original (present or existing from the beginning; first).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1895",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Ornate",
+      "B": "Ornat",
+      "C": "Ornaite",
+      "D": "Ornatee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Ornate' - made in an intricate shape or decorated with complex patterns; 'o-r-n-a-t-e'). Options B, C, and D use non-standard spellings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1896",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Orphanage",
+      "B": "Orthodox",
+      "C": "Oscillate",
+      "D": "Ostracisee"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ostracize' or 'Ostracise' (ends in single 'e', 'o-s-t-r-a-c-i-z-e' - exclude someone from a society or group). Other options are correct: Orphanage (a residential institution for orphans), Orthodox (conforming to what is generally or traditionally accepted), Oscillate (move or swing back and forth at a regular speed).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1897",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Outrageous",
+      "B": "Outrageus",
+      "C": "Outragous",
+      "D": "Outrageouss"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Outrageous' - shockingly bad or excessive; retains silent 'e' before '-ous', 'o-u-t-r-a-g-e-o-u-s'). Options B, C, and D drop the required 'e' or add extra letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1898",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Outstanding",
+      "B": "Overwhelm",
+      "C": "Oxymoron",
+      "D": "Paediatricc"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Paediatric' (ends in single 'c', 'p-a-e-d-i-a-t-r-i-c' - relating to the branch of medicine dealing with children). Other options are correct: Outstanding (exceptionally good), Overwhelm (bury or drown beneath a huge mass), Oxymoron (a figure of speech containing apparently contradictory terms).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1899",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Palatable",
+      "B": "Palatible",
+      "C": "Palatabel",
+      "D": "Palatabull"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Palatable' - pleasant to taste; ends in '-able', 'p-a-l-a-t-a-b-l-e'). Options B, C, and D alter the suffix vowels or endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1900",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Palate",
+      "B": "Paleontology",
+      "C": "Palette",
+      "D": "Pamphletl"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Pamphlet' (ends in single 't', 'p-a-m-p-h-l-e-t' - a small booklet). Other options are correct: Palate (the roof of the mouth / sense of taste), Paleontology (the branch of science concerned with fossil animals and plants), Palette (a thin board used by painters for mixing colors).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

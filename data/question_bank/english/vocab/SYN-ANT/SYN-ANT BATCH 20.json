@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0951",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUERULOUS**",
+    "options": {
+      "A": "Complaining",
+      "B": "Cheerful",
+      "C": "Contented",
+      "D": "Forgiving"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Querulous' means complaining in a petulant or whining manner. 'Complaining', 'peevish', or 'fretful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0952",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUERULOUS**",
+    "options": {
+      "A": "Peevish",
+      "B": "Petulant",
+      "C": "Contented",
+      "D": "Fretful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Querulous' means habitually complaining. 'Contented', 'satisfied', or 'cheerful' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0953",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUIESCENT**",
+    "options": {
+      "A": "Dormant",
+      "B": "Active",
+      "C": "Dynamic",
+      "D": "Boisterous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quiescent' means in a state or period of inactivity or dormancy. 'Dormant', 'latent', or 'idle' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0954",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUIESCENT**",
+    "options": {
+      "A": "Latent",
+      "B": "Dormant",
+      "C": "Inactive",
+      "D": "Active"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Quiescent' means inactive or quiet. 'Active', 'restless', or 'dynamic' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0955",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUIXOTIC**",
+    "options": {
+      "A": "Idealistic",
+      "B": "Pragmatic",
+      "C": "Sensible",
+      "D": "Realistic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quixotic' means exceedingly idealistic; unrealistic and impractical. 'Idealistic', 'visionary', or 'utopian' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0956",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUIXOTIC**",
+    "options": {
+      "A": "Idealistic",
+      "B": "Visionary",
+      "C": "Pragmatic",
+      "D": "Impractical"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Quixotic' means wildly impractical. 'Pragmatic', 'realistic', or 'practical' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0957",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RANCOR**",
+    "options": {
+      "A": "Bitterness",
+      "B": "Amity",
+      "C": "Goodwill",
+      "D": "Benevolence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rancor' means bitterness or resentfulness, especially when long-standing. 'Bitterness', 'spite', or 'animosity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0958",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RANCOR**",
+    "options": {
+      "A": "Animosity",
+      "B": "Bitterness",
+      "C": "Amity",
+      "D": "Resentment"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rancor' means deep-seated ill will. 'Amity', 'goodwill', or 'friendliness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0959",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RAPACIOUS**",
+    "options": {
+      "A": "Avaricious",
+      "B": "Generous",
+      "C": "Altruistic",
+      "D": "Magnanimous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rapacious' means aggressively greedy or grasping. 'Avaricious', 'covetous', or 'predatory' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0960",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RAPACIOUS**",
+    "options": {
+      "A": "Greedy",
+      "B": "Avaricious",
+      "C": "Generous",
+      "D": "Predatory"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rapacious' means predatory and greedy. 'Generous', 'charitable', or 'unselfish' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0961",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RAREFIED**",
+    "options": {
+      "A": "Esoteric",
+      "B": "Commonplace",
+      "C": "Dense",
+      "D": "Vulgar"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rarefied' means distant from the lives and concerns of ordinary people; exalted or thin in air density. 'Esoteric', 'refined', or 'exclusive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0962",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RAREFIED**",
+    "options": {
+      "A": "Exalted",
+      "B": "Refined",
+      "C": "Commonplace",
+      "D": "Esoteric"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rarefied' means elevated, exclusive, or thin. 'Commonplace', 'ordinary', or 'dense' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0963",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RECALCITRANT**",
+    "options": {
+      "A": "Refractory",
+      "B": "Compliant",
+      "C": "Submissive",
+      "D": "Docile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Recalcitrant' means having an obstinately uncooperative attitude toward authority or discipline. 'Refractory', 'defiant', or 'unruly' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0964",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RECALCITRANT**",
+    "options": {
+      "A": "Defiant",
+      "B": "Obstinate",
+      "C": "Compliant",
+      "D": "Refractory"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Recalcitrant' means stubbornly rebellious. 'Compliant', 'obedient', or 'docile' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0965",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RECANT**",
+    "options": {
+      "A": "Retract",
+      "B": "Reaffirm",
+      "C": "Maintain",
+      "D": "Assert"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Recant' means to say that one no longer holds an opinion or belief; renounce. 'Retract', 'disavow', or 'abjure' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0966",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RECANT**",
+    "options": {
+      "A": "Retract",
+      "B": "Disavow",
+      "C": "Reaffirm",
+      "D": "Abjure"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Recant' means to take back or withdraw a statement. 'Reaffirm', 'uphold', or 'maintain' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0967",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RECONDITE**",
+    "options": {
+      "A": "Abstruse",
+      "B": "Familiar",
+      "C": "Obvious",
+      "D": "Clear"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Recondite' means (of a subject or knowledge) little known; abstruse. 'Abstruse', 'obscure', or 'arcane' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0968",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RECONDITE**",
+    "options": {
+      "A": "Abstruse",
+      "B": "Arcane",
+      "C": "Obvious",
+      "D": "Esoteric"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Recondite' means hidden and difficult to understand. 'Obvious', 'plain', or 'familiar' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0969",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REDRESS**",
+    "options": {
+      "A": "Remedy",
+      "B": "Worsen",
+      "C": "Damage",
+      "D": "Injure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Redress' means to remedy or set right (an undesirable or unfair situation). 'Remedy', 'rectify', or 'atone' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0970",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REDRESS**",
+    "options": {
+      "A": "Rectify",
+      "B": "Remedy",
+      "C": "Aggravate",
+      "D": "Restore"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Redress' means to right a wrong. 'Aggravate', 'worsen', or 'compound' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0971",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REFRACTORY**",
+    "options": {
+      "A": "Obstinate",
+      "B": "Docile",
+      "C": "Tractable",
+      "D": "Pliable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Refractory' means stubborn or unmanageable; resistant to a process or stimulus. 'Obstinate', 'intractable', or 'disobedient' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0972",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REFRACTORY**",
+    "options": {
+      "A": "Obstinate",
+      "B": "Intractable",
+      "C": "Docile",
+      "D": "Unruly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Refractory' means stubbornly resistant. 'Docile', 'manageable', or 'obedient' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0973",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REFULGENT**",
+    "options": {
+      "A": "Radiant",
+      "B": "Dim",
+      "C": "Tenebrous",
+      "D": "Murky"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Refulgent' means shining brightly; radiant or gleaming. 'Radiant', 'luminous', or 'brilliant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0974",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REFULGENT**",
+    "options": {
+      "A": "Radiant",
+      "B": "Luminous",
+      "C": "Tenebrous",
+      "D": "Gleaming"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Refulgent' means brightly gleaming. 'Tenebrous', 'dark', or 'dim' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0975",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REFUTE**",
+    "options": {
+      "A": "Disprove",
+      "B": "Corroborate",
+      "C": "Validate",
+      "D": "Endorse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Refute' means to prove (a statement or theory) to be wrong or false; disprove. 'Disprove', 'rebut', or 'debunk' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0976",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REFUTE**",
+    "options": {
+      "A": "Disprove",
+      "B": "Rebut",
+      "C": "Corroborate",
+      "D": "Gainsay"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Refute' means to disprove. 'Corroborate', 'confirm', or 'validate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0977",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RELEGATE**",
+    "options": {
+      "A": "Demote",
+      "B": "Promote",
+      "C": "Elevate",
+      "D": "Exalt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Relegate' means to dismiss to an inferior rank or position. 'Demote', 'downgrade', or 'banish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0978",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RELEGATE**",
+    "options": {
+      "A": "Demote",
+      "B": "Downgrade",
+      "C": "Promote",
+      "D": "Banish"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Relegate' means to assign to an inferior status. 'Promote', 'elevate', or 'upgrade' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0979",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPROACH**",
+    "options": {
+      "A": "Admonish",
+      "B": "Commend",
+      "C": "Applaud",
+      "D": "Praise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reproach' means to address (someone) in such a way as to express disapproval or disappointment. 'Admonish', 'rebuke', or 'scold' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0980",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPROACH**",
+    "options": {
+      "A": "Rebuke",
+      "B": "Censure",
+      "C": "Commend",
+      "D": "Chide"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reproach' means to express disapproval. 'Commend', 'praise', or 'applaud' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0981",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPROBATE**",
+    "options": {
+      "A": "Rogue",
+      "B": "Saint",
+      "C": "Paragon",
+      "D": "Virtuoso"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reprobate' refers to an unprincipled person. 'Rogue', 'scoundrel', or 'miscreant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0982",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPROBATE**",
+    "options": {
+      "A": "Scoundrel",
+      "B": "Rogue",
+      "C": "Saint",
+      "D": "Miscreant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reprobate' means a depraved or unprincipled person. 'Saint', 'virtuous person', or 'paragon' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0983",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPUDIATE**",
+    "options": {
+      "A": "Renounce",
+      "B": "Embrace",
+      "C": "Adopt",
+      "D": "Espouse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Repudiate' means to refuse to accept or be associated with; deny the truth or validity of. 'Renounce', 'reject', or 'disown' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0984",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPUDIATE**",
+    "options": {
+      "A": "Renounce",
+      "B": "Disown",
+      "C": "Espouse",
+      "D": "Reject"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Repudiate' means to reject formally. 'Espouse', 'embrace', or 'adopt' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0985",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RESCIND**",
+    "options": {
+      "A": "Revoke",
+      "B": "Enact",
+      "C": "Ratify",
+      "D": "Establish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rescind' means to revoke, cancel, or repeal (a law, order, or agreement). 'Revoke', 'abrogate', or 'annul' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0986",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RESCIND**",
+    "options": {
+      "A": "Revoke",
+      "B": "Annul",
+      "C": "Ratify",
+      "D": "Repeal"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rescind' means to cancel or annul. 'Ratify', 'enforce', or 'validate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0987",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RESOLUTE**",
+    "options": {
+      "A": "Determined",
+      "B": "Vacillating",
+      "C": "Irresolute",
+      "D": "Faltering"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Resolute' means admirably purposeful, determined, and unwavering. 'Determined', 'adamant', or 'steadfast' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0988",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RESOLUTE**",
+    "options": {
+      "A": "Steadfast",
+      "B": "Determined",
+      "C": "Irresolute",
+      "D": "Tenacious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Resolute' means firmly determined. 'Irresolute', 'hesitant', or 'vacillating' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0989",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RETICENT**",
+    "options": {
+      "A": "Taciturn",
+      "B": "Loquacious",
+      "C": "Garrulous",
+      "D": "Voluble"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reticent' means not revealing one's thoughts or feelings readily. 'Taciturn', 'reserved', or 'uncommunicative' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0990",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RETICENT**",
+    "options": {
+      "A": "Taciturn",
+      "B": "Reserved",
+      "C": "Loquacious",
+      "D": "Secretive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reticent' means reserved in speech. 'Loquacious', 'talkative', or 'garrulous' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0991",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REVERE**",
+    "options": {
+      "A": "Venerate",
+      "B": "Despise",
+      "C": "Scorn",
+      "D": "Deride"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Revere' means to feel deep respect or admiration for (something). 'Venerate', 'esteem', or 'worship' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0992",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REVERE**",
+    "options": {
+      "A": "Venerate",
+      "B": "Worship",
+      "C": "Despise",
+      "D": "Esteem"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Revere' means to hold in deep honor and respect. 'Despise', 'scorn', or 'deride' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0993",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RUBICUND**",
+    "options": {
+      "A": "Ruddy",
+      "B": "Pallid",
+      "C": "Wan",
+      "D": "Ashen"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rubicund' means having a high, healthy reddish color, typically referring to the face. 'Ruddy', 'rosy', or 'flushed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0994",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RUBICUND**",
+    "options": {
+      "A": "Ruddy",
+      "B": "Rosy",
+      "C": "Pallid",
+      "D": "Florid"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rubicund' means healthy and rosy-cheeked. 'Pallid', 'pale', or 'wan' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0995",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RUDIMENTARY**",
+    "options": {
+      "A": "Elementary",
+      "B": "Advanced",
+      "C": "Sophisticated",
+      "D": "Complex"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rudimentary' means involving or limited to basic principles; undeveloped. 'Elementary', 'fundamental', or 'nascent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0996",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RUDIMENTARY**",
+    "options": {
+      "A": "Basic",
+      "B": "Elementary",
+      "C": "Advanced",
+      "D": "Primitive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rudimentary' means basic or primitive. 'Advanced', 'sophisticated', or 'developed' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0997",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SAGACIOUS**",
+    "options": {
+      "A": "Astute",
+      "B": "Fatuous",
+      "C": "Inane",
+      "D": "Foolish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sagacious' means having or showing keen mental discernment and good judgment. 'Astute', 'wise', or 'perspicacious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0998",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SAGACIOUS**",
+    "options": {
+      "A": "Wise",
+      "B": "Astute",
+      "C": "Fatuous",
+      "D": "Perspicacious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sagacious' means acutely wise. 'Fatuous', 'foolish', or 'inane' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0999",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SALIENT**",
+    "options": {
+      "A": "Prominent",
+      "B": "Inconspicuous",
+      "C": "Obscure",
+      "D": "Hidden"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Salient' means most noticeable or important. 'Prominent', 'conspicuous', or 'notable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1000",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SALIENT**",
+    "options": {
+      "A": "Conspicuous",
+      "B": "Noticeable",
+      "C": "Inconspicuous",
+      "D": "Prominent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Salient' means strikingly noticeable. 'Inconspicuous', 'obscure', or 'hidden' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0551",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot supporting or favouring any side in an argument, dispute, or competition; unbiased",
+    "options": {
+      "A": "Impartial",
+      "B": "Prejudiced",
+      "C": "Bigoted",
+      "D": "Chauvinistic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Impartial) is correct[cite: 5]. 'Impartial' describes a person or judgement that is fair, neutral, and unbiased[cite: 5]. 'Prejudiced' and 'Bigoted' describe narrow-minded or biased attitudes[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "personality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0552",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA policy or ideology of extending a country's power and influence through colonization or military force",
+    "options": {
+      "A": "Imperialism",
+      "B": "Secularism",
+      "C": "Egalitarianism",
+      "D": "Socialism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Imperialism) is correct[cite: 5]. 'Imperialism' is the political practice of extending state dominion over foreign lands[cite: 5]. 'Egalitarianism' promotes social equality[cite: 5].",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0553",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot allowing fluid, light, or substances to pass through; impenetrable",
+    "options": {
+      "A": "Impervious",
+      "B": "Porous",
+      "C": "Ductile",
+      "D": "Malleable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Impervious) is correct[cite: 5]. 'Impervious' means incapable of being penetrated or affected by water, fluids, or external arguments[cite: 5]. 'Porous' means having tiny spaces through which liquid can pass.",
+    "tags": ["vocab", "ows", "science", "materials", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0554",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who pretends to be someone else in order to deceive or defraud others",
+    "options": {
+      "A": "Imposter",
+      "B": "Emissary",
+      "C": "Ambassador",
+      "D": "Virtuoso"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Imposter) is correct[cite: 5]. An 'Imposter' (or impostor) assumes a false identity to practice deception[cite: 5]. An 'Emissary' is an authorized agent sent on a diplomatic mission[cite: 5].",
+    "tags": ["vocab", "ows", "people", "deception", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0555",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nStrong and impossible to defeat, conquer, or capture by military force",
+    "options": {
+      "A": "Impregnable",
+      "B": "Vulnerable",
+      "C": "Fragile",
+      "D": "Insolvent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Impregnable) is correct[cite: 5]. 'Impregnable' describes a stronghold or fortress that cannot be breached or captured by assault[cite: 5]. 'Vulnerable' means exposed to danger or attack[cite: 5].",
+    "tags": ["vocab", "ows", "military", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0556",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nDone, spoken, or composed without any advance preparation or rehearsal",
+    "options": {
+      "A": "Impromptu",
+      "B": "Deliberate",
+      "C": "Pondered",
+      "D": "Premeditated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Impromptu) is correct[cite: 5]. 'Impromptu' refers to a speech, act, or musical performance made on the spur of the moment without preparation[cite: 5]. 'Premeditated' means planned in advance.",
+    "tags": ["vocab", "ows", "speeches", "communication", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0557",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot showing foresight; spendthrift and thoughtlessly careless about the future",
+    "options": {
+      "A": "Improvident",
+      "B": "Prudent",
+      "C": "Frugal",
+      "D": "Economical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Improvident) is correct[cite: 5]. 'Improvident' describes a person lacking foresight and wasting resources without saving for future needs[cite: 5]. 'Prudent' and 'Frugal' mean wise and careful with money.",
+    "tags": ["vocab", "ows", "money", "personality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0558",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot showing due respect for other people; insolent and shamelessly rude",
+    "options": {
+      "A": "Impudent",
+      "B": "Courteous",
+      "C": "Polite",
+      "D": "Reverent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Impudent) is correct[cite: 5]. 'Impudent' means brazenly bold, disrespectful, or saucy[cite: 5]. 'Courteous' and 'Reverent' mean polite and respectful.",
+    "tags": ["vocab", "ows", "behaviour", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0559",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExemption from punishment, penalty, loss, or unpleasant consequences",
+    "options": {
+      "A": "Impunity",
+      "B": "Retaliation",
+      "C": "Penalty",
+      "D": "Castigation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Impunity) is correct[cite: 5]. 'Impunity' is freedom or exemption from injurious consequences or criminal punishment[cite: 5]. 'Retaliation' is returning an attack or injury[cite: 5].",
+    "tags": ["vocab", "ows", "law", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0560",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nImpossible to reach, enter, approach, or obtain",
+    "options": {
+      "A": "Inaccessible",
+      "B": "Audible",
+      "C": "Visible",
+      "D": "Arable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inaccessible) is correct[cite: 5]. 'Inaccessible' means unapproachable or out of reach[cite: 5]. 'Arable' means suitable for farming[cite: 5].",
+    "tags": ["vocab", "ows", "places", "adjectives", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0561",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot endowed with animal life or spirit; lifeless",
+    "options": {
+      "A": "Inanimate",
+      "B": "Vivacious",
+      "C": "Aquatic",
+      "D": "Amphibious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inanimate) is correct[cite: 5]. 'Inanimate' refers to non-living matter or objects without physical animation[cite: 5]. 'Vivacious' means full of lively animation[cite: 5].",
+    "tags": ["vocab", "ows", "nature", "science", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0562",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nUnable to be heard; not loud enough to be perceived by the ear",
+    "options": {
+      "A": "Inaudible",
+      "B": "Audible",
+      "C": "Cacophonous",
+      "D": "Loud"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inaudible) is correct[cite: 5]. 'Inaudible' means silent or too faint to be heard[cite: 5]. 'Cacophonous' means harsh and noisy[cite: 5].",
+    "tags": ["vocab", "ows", "sound", "pyq_ssc", "repeated_8_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0563",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nEmbodied in human flesh or taking a tangible physical form",
+    "options": {
+      "A": "Incarnate",
+      "B": "Ephemeral",
+      "C": "Incorporeal",
+      "D": "Intangible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Incarnate) is correct[cite: 5]. 'Incarnate' means invested with bodily, especially human, form and nature[cite: 5]. 'Incorporeal' and 'Intangible' mean without physical body or touchable form[cite: 5].",
+    "tags": ["vocab", "ows", "religion", "philosophy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0564",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA thing that motivates, encourages, or incites someone to action",
+    "options": {
+      "A": "Incentive",
+      "B": "Deterrence",
+      "C": "Penalty",
+      "D": "Embargo"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Incentive) is correct[cite: 5]. An 'Incentive' is a stimulus, reward, or motive encouraging greater effort[cite: 5]. 'Deterrence' is prevention through fear[cite: 5].",
+    "tags": ["vocab", "ows", "psychology", "work", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0565",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA lack of civic-mindedness, civic duty, or public patriotism",
+    "options": {
+      "A": "Incivism",
+      "B": "Patriotism",
+      "C": "Altruism",
+      "D": "Anarchy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Incivism) is correct[cite: 5]. 'Incivism' is neglect or lack of good citizenship and loyalty to the community[cite: 5]. 'Patriotism' is devoted love of one's country[cite: 5].",
+    "tags": ["vocab", "ows", "society", "politics", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0566",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHaving one's true identity concealed; travelling under an assumed name",
+    "options": {
+      "A": "Incognito",
+      "B": "Anonymous",
+      "C": "Notorious",
+      "D": "Pseudonym"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Incognito) is correct[cite: 5]. 'Incognito' describes an individual travelling or acting with their real name and identity hidden[cite: 5]. 'Anonymous' means unnamed[cite: 5].",
+    "tags": ["vocab", "ows", "travel", "identity", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0567",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExpressed in an unclear, disjointed, or confusing manner; lacking logical cohesion",
+    "options": {
+      "A": "Incoherent",
+      "B": "Articulate",
+      "C": "Lucid",
+      "D": "Eloquent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Incoherent) is correct[cite: 5]. 'Incoherent' language is rambling, disconnected, and difficult to comprehend[cite: 5]. 'Articulate' and 'Eloquent' denote clear and expressive speech[cite: 5].",
+    "tags": ["vocab", "ows", "communication", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0568",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nImpossible to comprehend or understand; baffling",
+    "options": {
+      "A": "Incomprehensible",
+      "B": "Comprehensible",
+      "C": "Conceivable",
+      "D": "Plausible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Incomprehensible) is correct[cite: 5]. 'Incomprehensible' means beyond the power of human understanding[cite: 5]. 'Conceivable' means imaginable[cite: 5].",
+    "tags": ["vocab", "ows", "mind", "adjectives", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0569",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot able to be corrected, improved, or reformed; beyond reform",
+    "options": {
+      "A": "Incorrigible",
+      "B": "Fallible",
+      "C": "Infallible",
+      "D": "Credulous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Incorrigible) is correct[cite: 5]. 'Incorrigible' describes hardened bad habits or people who cannot be reformed[cite: 5]. 'Infallible' means incapable of error[cite: 5].",
+    "tags": ["vocab", "ows", "behaviour", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0570",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nImpossible to believe; astonishing beyond belief",
+    "options": {
+      "A": "Incredible",
+      "B": "Credible",
+      "C": "Plausible",
+      "D": "Authentic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Incredible) is correct[cite: 5]. 'Incredible' means unbelievable, extraordinary, or hard to accept as true[cite: 5]. 'Credible' means worthy of belief[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "mind", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0571",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nPersisting tirelessly; incapable of being fatigued",
+    "options": {
+      "A": "Indefatigable",
+      "B": "Lethargic",
+      "C": "Indolent",
+      "D": "Slothful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Indefatigable) is correct[cite: 5]. 'Indefatigable' means tireless, dogged, and persistently active without exhaustion[cite: 5]. 'Indolent' means lazy.",
+    "tags": ["vocab", "ows", "work", "personality", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0572",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMaking marks that cannot be removed, erased, or washed away",
+    "options": {
+      "A": "Indelible",
+      "B": "Evanescent",
+      "C": "Ephemeral",
+      "D": "Transitory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Indelible) is correct[cite: 5]. 'Indelible' describes ink, marks, or impressions that cannot be rubbed out[cite: 5]. 'Transitory' means passing quickly[cite: 5].",
+    "tags": ["vocab", "ows", "materials", "writing", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0573",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nToo extraordinary, intense, or profound to be described in words",
+    "options": {
+      "A": "Indescribable",
+      "B": "Articulate",
+      "C": "Verbatim",
+      "D": "Expressive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Indescribable) is correct[cite: 5]. 'Indescribable' (or Ineffable) means defying adequate verbal description[cite: 5]. 'Verbatim' means word-for-word identical[cite: 5].",
+    "tags": ["vocab", "ows", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0574",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOriginating or occurring naturally in a particular land, region, or environment; native",
+    "options": {
+      "A": "Indigenous",
+      "B": "Alien",
+      "C": "Expatriate",
+      "D": "Emigrant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Indigenous) is correct[cite: 5]. 'Indigenous' refers to flora, fauna, or people native to a specific geographic territory[cite: 5]. 'Alien' means foreign or unfamiliar[cite: 5].",
+    "tags": ["vocab", "ows", "geography", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0575",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAnger or righteous resentment aroused by something unjust, mean, or unworthy",
+    "options": {
+      "A": "Indignation",
+      "B": "Serenity",
+      "C": "Placidity",
+      "D": "Apathy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Indignation) is correct[cite: 5]. 'Indignation' is strong displeasure or anger provoked by unfair treatment[cite: 5]. 'Placidity' is calm peace.",
+    "tags": ["vocab", "ows", "emotions", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0576",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAbsolutely necessary, essential, and impossible to do without",
+    "options": {
+      "A": "Indispensable",
+      "B": "Redundant",
+      "C": "Superfluous",
+      "D": "Auxiliary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Indispensable) is correct[cite: 5]. 'Indispensable' describes someone or something completely essential[cite: 5]. 'Redundant' means no longer useful or needed[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0577",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCharacterized by hard, steady, and persistent effort; hardworking",
+    "options": {
+      "A": "Industrious",
+      "B": "Slothful",
+      "C": "Indolent",
+      "D": "Improvident"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Industrious) is correct[cite: 5]. 'Industrious' means diligent, hard-working, and productive[cite: 5]. 'Indolent' means avoiding activity or lazy.",
+    "tags": ["vocab", "ows", "work", "personality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0578",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot fit, palatable, or suitable to be consumed as food",
+    "options": {
+      "A": "Inedible",
+      "B": "Edible",
+      "C": "Potable",
+      "D": "Savory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inedible) is correct[cite: 5]. 'Inedible' describes matter that cannot be eaten safely or pleasantly[cite: 5]. 'Edible' means safe to eat[cite: 5].",
+    "tags": ["vocab", "ows", "food", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0579",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nToo great, sacred, or beautiful to be expressed or described in words",
+    "options": {
+      "A": "Ineffable",
+      "B": "Articulate",
+      "C": "Manifest",
+      "D": "Conceivable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ineffable) is correct[cite: 5]. 'Ineffable' means incapable of being voiced or expressed in language due to sacredness or majesty[cite: 5]. 'Articulate' means clearly expressed[cite: 5].",
+    "tags": ["vocab", "ows", "language", "religion", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0580",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot having the required qualifications or status to be chosen or elected",
+    "options": {
+      "A": "Ineligible",
+      "B": "Eligible",
+      "C": "Entitled",
+      "D": "Competent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ineligible) is correct[cite: 5]. 'Ineligible' describes someone disqualified by law or rule from an office or contest[cite: 5]. 'Eligible' means meeting all criteria.",
+    "tags": ["vocab", "ows", "law", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0581",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe state or quality of showing a total lack of skill, fitness, or competence",
+    "options": {
+      "A": "Ineptness",
+      "B": "Acumen",
+      "C": "Dexterity",
+      "D": "Proficiency"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ineptness) is correct[cite: 5]. 'Ineptness' is clumsiness or lack of skill and aptitude[cite: 5]. 'Dexterity' and 'Proficiency' refer to mastery and skill[cite: 5].",
+    "tags": ["vocab", "ows", "skill", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0582",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCertain to occur and impossible to avoid, evade, or prevent",
+    "options": {
+      "A": "Inevitable",
+      "B": "Avoidable",
+      "C": "Contingent",
+      "D": "Doubtful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inevitable) is correct[cite: 5]. 'Inevitable' means bound to happen by natural law or destiny[cite: 5]. 'Contingent' means dependent on uncertain conditions.",
+    "tags": ["vocab", "ows", "philosophy", "adjectives", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0583",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nImpossible to stop, prevent, or persuade by plea; unyielding",
+    "options": {
+      "A": "Inexorable",
+      "B": "Amenable",
+      "C": "Pliable",
+      "D": "Yielding"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inexorable) is correct[cite: 5]. 'Inexorable' means unbending, unrelenting, and impervious to entreaties[cite: 5]. 'Amenable' means willing to be guided or persuaded[cite: 5].",
+    "tags": ["vocab", "ows", "behaviour", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0584",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThat which cannot be put out, extinguished, or quenched (as of fire or passion)",
+    "options": {
+      "A": "Inextinguishable",
+      "B": "Combustible",
+      "C": "Inflammable",
+      "D": "Evanescent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inextinguishable) is correct[cite: 5]. 'Inextinguishable' describes a fire or desire impossible to quench[cite: 5]. 'Inflammable' means catching fire easily[cite: 5].",
+    "tags": ["vocab", "ows", "fire", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0585",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nIncapable of making a mistake, erring, or failing in judgment",
+    "options": {
+      "A": "Infallible",
+      "B": "Fallible",
+      "C": "Incorrigible",
+      "D": "Fastidious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Infallible) is correct[cite: 5]. 'Infallible' means wholly free from error or failure in results[cite: 5]. 'Incorrigible' means incapable of being corrected[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "mind", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0586",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe crime of killing a newborn baby or infant",
+    "options": {
+      "A": "Infanticide",
+      "B": "Filicide",
+      "C": "Patricide",
+      "D": "Regicide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Infanticide) is correct[cite: 5]. 'Infanticide' is the homicide of a newborn child[cite: 5]. 'Filicide' is killing one's own child[cite: 5], and 'Patricide' is killing one's father[cite: 5].",
+    "tags": ["vocab", "ows", "killing", "law", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0587",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLimitless, endless, or boundless in space, extent, or size",
+    "options": {
+      "A": "Infinite",
+      "B": "Finite",
+      "C": "Ephemeral",
+      "D": "Transitory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Infinite) is correct[cite: 5]. 'Infinite' means without bounds, measure, or end[cite: 5]. 'Finite' means having distinct limits.",
+    "tags": ["vocab", "ows", "science", "philosophy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0588",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medical ward or room in a large institution for the treatment and care of the sick",
+    "options": {
+      "A": "Infirmary",
+      "B": "Sanatorium",
+      "C": "Asylum",
+      "D": "Mortuary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Infirmary) is correct[cite: 5]. An 'Infirmary' is a healthcare facility within a school, prison, or base[cite: 5]. 'Mortuary' is a place where corpses are kept before burial[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0589",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nEasily set on fire; combustible and capable of burning rapidly",
+    "options": {
+      "A": "Inflammable",
+      "B": "Incombustible",
+      "C": "Impervious",
+      "D": "Extinguishable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inflammable) is correct (synonymous with flammable)[cite: 5]. It describes materials that catch fire readily[cite: 5]. 'Incombustible' means not capable of burning.",
+    "tags": ["vocab", "ows", "science", "fire", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0590",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe complete flower head or cluster of flowers arranged on a stem",
+    "options": {
+      "A": "Inflorescence",
+      "B": "Bouquet",
+      "C": "Garland",
+      "D": "Wreath"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inflorescence) is correct[cite: 5]. In botany, 'Inflorescence' is the natural arrangement of a cluster of flowers on a branch[cite: 5]. 'Bouquet' is an artificial bunch of cut flowers[cite: 5].",
+    "tags": ["vocab", "ows", "botany", "plants", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0591",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMoney, property, or titles received by legal right from a person upon their death",
+    "options": {
+      "A": "Inheritance",
+      "B": "Patrimony",
+      "C": "Alimony",
+      "D": "Honorarium"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inheritance) is correct[cite: 5]. 'Inheritance' is property, money, or estate passed down upon death[cite: 5]. 'Patrimony' is estate inherited specifically from a father[cite: 5].",
+    "tags": ["vocab", "ows", "law", "property", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0592",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot harmful, dangerous, or offensive; safe",
+    "options": {
+      "A": "Innocuous",
+      "B": "Virulent",
+      "C": "Noxious",
+      "D": "Pestiferous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Innocuous) is correct[cite: 5]. 'Innocuous' means harmless or producing no injury[cite: 5]. 'Virulent' and 'Noxious' describe highly poisonous or harmful agents[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0593",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn indirect, subtle, and usually derogatory or malicious remark or hint",
+    "options": {
+      "A": "Innuendo",
+      "B": "Diatribe",
+      "C": "Eulogy",
+      "D": "Platitude"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Innuendo) is correct[cite: 5]. An 'Innuendo' is an allusive or oblique remark, typically suggestive of something improper[cite: 5]. 'Diatribe' is a bitter direct verbal attack[cite: 5].",
+    "tags": ["vocab", "ows", "communication", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0594",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nImpossible to satisfy, appease, or quench (of appetite or desire)",
+    "options": {
+      "A": "Insatiable",
+      "B": "Contented",
+      "C": "Quenchable",
+      "D": "Satiable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Insatiable) is correct[cite: 5]. 'Insatiable' describes desires or hungers that can never be fully satisfied[cite: 5]. 'Contented' means satisfied and at peace[cite: 5].",
+    "tags": ["vocab", "ows", "desire", "adjectives", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0595",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo write, carve, or engrave words on a monument, stone, or coin",
+    "options": {
+      "A": "Inscribe",
+      "B": "Efface",
+      "C": "Expurgate",
+      "D": "Obliterate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inscribe) is correct[cite: 5]. 'Inscribe' means to cut, carve, or write words into a durable surface[cite: 5]. 'Efface' means to rub out or erase[cite: 5].",
+    "tags": ["vocab", "ows", "writing", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0596",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nUnable to pay one's debts; bankrupt",
+    "options": {
+      "A": "Insolvent",
+      "B": "Solvent",
+      "C": "Affluent",
+      "D": "Opulent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Insolvent) is correct[cite: 5]. 'Insolvent' describes a person or company with liabilities exceeding assets, unable to settle debts[cite: 5]. 'Solvent' means possessing assets to cover debts[cite: 5].",
+    "tags": ["vocab", "ows", "finance", "law", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0597",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe chronic medical condition of being persistently unable to sleep",
+    "options": {
+      "A": "Insomnia",
+      "B": "Somnambulism",
+      "C": "Amnesia",
+      "D": "Asphyxia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Insomnia) is correct[cite: 5]. 'Insomnia' is habitual sleeplessness or the inability to sleep[cite: 5]. 'Somnambulism' is sleepwalking[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "sleep", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0598",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nProtected with a non-conducting material to prevent the loss or passage of heat, electricity, or sound",
+    "options": {
+      "A": "Insulated",
+      "B": "Impervious",
+      "C": "Contiguous",
+      "D": "Conflagrant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Insulated) is correct[cite: 5]. 'Insulated' describes materials lined to block thermal, acoustic, or electrical conduction[cite: 5]. 'Contiguous' means touching along boundaries[cite: 5].",
+    "tags": ["vocab", "ows", "science", "physics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0599",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA rebel or revolutionary who rises in active armed opposition to lawful authority",
+    "options": {
+      "A": "Insurgent",
+      "B": "Emissary",
+      "C": "Patriot",
+      "D": "Mercenary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Insurgent) is correct[cite: 5]. An 'Insurgent' is an armed rebel fighting against an established government[cite: 5]. 'Patriot' is a loyal supporter of one's country[cite: 5].",
+    "tags": ["vocab", "ows", "military", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0600",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nIncapable of being touched, physically grasped, or perceived by physical senses",
+    "options": {
+      "A": "Intangible",
+      "B": "Palpable",
+      "C": "Tangible",
+      "D": "Tactile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Intangible) is correct[cite: 5]. 'Intangible' means abstract or lacking physical presence to be touched[cite: 5]. 'Palpable' and 'Tangible' mean plainly touchable or perceptible[cite: 5].",
+    "tags": ["vocab", "ows", "philosophy", "adjectives", "pyq_ssc"]
+  }
+]

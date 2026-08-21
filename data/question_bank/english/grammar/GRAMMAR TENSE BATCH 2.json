@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_TENS_051",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the correct form of the verb to fill in the blank: 'By the time you reach the station tomorrow, the train ___.'",
+    "options": {
+      "A": "will leave",
+      "B": "will have left",
+      "C": "leaves",
+      "D": "is leaving"
+    },
+    "correct_option": "B",
+    "explanation": "When an action is expected to be completed before a specific point or event in the future ('By the time you reach...'), the Future Perfect tense ('will have left') is required.",
+    "tags": ["grammar", "tenses", "future_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_052",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error in the sentence: 'He is working in this multinational company since 2018.'",
+    "options": {
+      "A": "He is working",
+      "B": "in this",
+      "C": "multinational company",
+      "D": "since 2018."
+    },
+    "correct_option": "A",
+    "explanation": "When an action started in the past and continues into the present, accompanied by a time marker with 'since' or 'for', the Present Perfect Continuous tense ('has been working') must be used instead of the Present Continuous tense ('is working').",
+    "tags": ["grammar", "tenses", "present_perfect_continuous", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_053",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb form: 'If she had worked hard, she ___ the examination with distinction.'",
+    "options": {
+      "A": "will pass",
+      "B": "would pass",
+      "C": "would have passed",
+      "D": "had passed"
+    },
+    "correct_option": "C",
+    "explanation": "In a Third Conditional (unfulfilled past condition) sentence, the 'if' clause uses the Past Perfect tense ('had worked'), while the main clause requires 'would have + past participle' ('would have passed').",
+    "tags": ["grammar", "tenses", "conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_054",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank with the appropriate tense form: 'He behaved as though he ___ everything about the project.'",
+    "options": {
+      "A": "knows",
+      "B": "knew",
+      "C": "had known",
+      "D": "has known"
+    },
+    "correct_option": "C",
+    "explanation": "When 'as if' or 'as though' refers to a hypothetical condition in the past (matching a past main verb like 'behaved'), the Past Perfect tense ('had known') is used to express unreality.",
+    "tags": ["grammar", "tenses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_055",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the correct sentence representing the Past Perfect tense sequence.",
+    "options": {
+      "A": "The doctor arrived after the patient died.",
+      "B": "The doctor had arrived after the patient died.",
+      "C": "The patient had died before the doctor arrived.",
+      "D": "The patient died before the doctor had arrived."
+    },
+    "correct_option": "C",
+    "explanation": "In chronological sequences involving 'before' or 'after', the action that happened first must take the Past Perfect tense ('had died'), while the subsequent action uses the Simple Past ('arrived'). Option C follows this rule precisely.",
+    "tags": ["grammar", "tenses", "past_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_056",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Scarcely had we stepped out when it started raining cats and dogs.'",
+    "options": {
+      "A": "Scarcely had we",
+      "B": "stepped out",
+      "C": "when it started",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Scarcely' is correctly paired with 'when', and subject-auxiliary inversion ('had we stepped') is properly applied after the negative adverb.",
+    "tags": ["grammar", "tenses", "inversion", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_057",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It is high time the government ___ strict laws against cybercrime.'",
+    "options": {
+      "A": "enacts",
+      "B": "enacted",
+      "C": "has enacted",
+      "D": "will enact"
+    },
+    "correct_option": "B",
+    "explanation": "Phrases like 'It is time' or 'It is high time' must be followed by a clause in the Simple Past tense ('enacted') when expressing an action that should already be happening.",
+    "tags": ["grammar", "tenses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_058",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'Look at those dark clouds in the sky! It ___ rain soon.'",
+    "options": {
+      "A": "will",
+      "B": "is going to",
+      "C": "shall",
+      "D": "would"
+    },
+    "correct_option": "B",
+    "explanation": "When there is visible, immediate evidence in the present (like dark clouds) indicating an impending future event, 'is/am/are going to' is the preferred future form.",
+    "tags": ["grammar", "tenses", "future_forms", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_059",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I remember meeting him in Delhi five years before.'",
+    "options": {
+      "A": "I remember",
+      "B": "meeting him",
+      "C": "in Delhi",
+      "D": "five years before."
+    },
+    "correct_option": "D",
+    "explanation": "When referring to a point in time counted backward from the present (simple past time reference), 'ago' must be used instead of 'before'. 'Before' is used when counting back from a past reference point.",
+    "tags": ["grammar", "tenses", "adverbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_060",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She ___ her homework before her mother came back from work.'",
+    "options": {
+      "A": "completed",
+      "B": "has completed",
+      "C": "had completed",
+      "D": "was completing"
+    },
+    "correct_option": "C",
+    "explanation": "The completion of her homework happened prior to another past action ('her mother came back'), requiring the Past Perfect tense ('had completed').",
+    "tags": ["grammar", "tenses", "past_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_061",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the tense used in the sentence: 'By next month, they will have been residing here for a decade.'",
+    "options": {
+      "A": "Future Perfect",
+      "B": "Future Continuous",
+      "C": "Future Perfect Continuous",
+      "D": "Present Perfect Continuous"
+    },
+    "correct_option": "C",
+    "explanation": "The structural combination of 'will have been + verb-ing' along with a duration marker ('for a decade') defines the Future Perfect Continuous tense.",
+    "tags": ["grammar", "tenses", "identification", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_062",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If I was the king of this country, I would eradicate poverty instantly.'",
+    "options": {
+      "A": "If I was",
+      "B": "the king of this country,",
+      "C": "I would eradicate",
+      "D": "poverty instantly."
+    },
+    "correct_option": "A",
+    "explanation": "In present counterfactual conditional clauses (Second Conditional), the verb 'to be' takes the subjunctive form 'were' for all subjects, including singular pronouns. It should be 'If I were'.",
+    "tags": ["grammar", "tenses", "subjunctive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_063",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The sun ___ when we stepped out for our morning walk.'",
+    "options": {
+      "A": "shone",
+      "B": "was shining",
+      "C": "has shone",
+      "D": "shines"
+    },
+    "correct_option": "B",
+    "explanation": "An ongoing background state or action in the past that was in progress when another action occurred uses the Past Continuous tense ('was shining').",
+    "tags": ["grammar", "tenses", "past_continuous", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_064",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He talks as though he ___ everything about quantum physics.'",
+    "options": {
+      "A": "knows",
+      "B": "knew",
+      "C": "had known",
+      "D": "has known"
+    },
+    "correct_option": "B",
+    "explanation": "When 'as though' or 'as if' follows a present tense verb ('talks') to express an unreal or imagined situation, the past subjunctive ('knew') is used.",
+    "tags": ["grammar", "tenses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_065",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'No sooner did the announcement reach the public than they rushed to book tickets.'",
+    "options": {
+      "A": "No sooner did",
+      "B": "the announcement reach",
+      "C": "than they rushed",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'No sooner' is followed by inversion ('did the announcement reach') and correctly paired with the conjunction 'than'.",
+    "tags": ["grammar", "tenses", "inversion", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_066",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct alternative: 'I ___ my report yet; please give me an hour more.'",
+    "options": {
+      "A": "did not finish",
+      "B": "have not finished",
+      "C": "had not finished",
+      "D": "will not finish"
+    },
+    "correct_option": "B",
+    "explanation": "The adverb 'yet' is typically used with negative sentences in the Present Perfect tense ('have not finished') to indicate an action uncompleted up to the present moment.",
+    "tags": ["grammar", "tenses", "present_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_067",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She ___ in Chennai for ten years before she shifted to Mumbai.'",
+    "options": {
+      "A": "has lived",
+      "B": "had lived",
+      "C": "was living",
+      "D": "lived"
+    },
+    "correct_option": "B",
+    "explanation": "A continuous action extending up to a point in the past requires the Past Perfect tense ('had lived').",
+    "tags": ["grammar", "tenses", "past_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_068",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'When I will see him tomorrow, I will deliver your urgent message.'",
+    "options": {
+      "A": "When I will see",
+      "B": "him tomorrow,",
+      "C": "I will deliver",
+      "D": "your urgent message."
+    },
+    "correct_option": "A",
+    "explanation": "In conditional and time clauses introduced by words like 'when', 'if', 'until', 'before', or 'as soon as', future tense markers ('will') are not used. The Simple Present tense must be used instead ('When I see him').",
+    "tags": ["grammar", "tenses", "time_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_069",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'She ___ a novel since early morning.'",
+    "options": {
+      "A": "reads",
+      "B": "is reading",
+      "C": "has been reading",
+      "D": "read"
+    },
+    "correct_option": "C",
+    "explanation": "The presence of 'since early morning' signifies an action that began in the past and continues into the present, requiring the Present Perfect Continuous tense.",
+    "tags": ["grammar", "tenses", "present_perfect_continuous", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_070",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He acts as though he ___ the owner of the entire building.'",
+    "options": {
+      "A": "is",
+      "B": "were",
+      "C": "has been",
+      "D": "had been"
+    },
+    "correct_option": "B",
+    "explanation": "After 'as though' indicating an unreal present state, the subjunctive 'were' is used regardless of the subject ('He were').",
+    "tags": ["grammar", "tenses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_071",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The manager said that honesty is the best policy.'",
+    "options": {
+      "A": "The manager said",
+      "B": "that",
+      "C": "honesty is",
+      "D": "the best policy."
+    },
+    "correct_option": "D",
+    "explanation": "The sentence contains no error. Although the reporting verb is in the past tense ('said'), universal truths, proverbs, and scientific facts ('honesty is the best policy') retain the Simple Present tense.",
+    "tags": ["grammar", "tenses", "indirect_speech", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_072",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'Hardly had the bell rung ___ the students rushed out of their classrooms.'",
+    "options": {
+      "A": "than",
+      "B": "then",
+      "C": "when",
+      "D": "that"
+    },
+    "correct_option": "C",
+    "explanation": "The adverb 'Hardly' requires the correlative conjunction 'when' (or 'before') to introduce the subsequent clause.",
+    "tags": ["grammar", "tenses", "conjunctions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_073",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'By 2030, scientists ___ a cure for this rare disease.'",
+    "options": {
+      "A": "will find",
+      "B": "will have found",
+      "C": "find",
+      "D": "have found"
+    },
+    "correct_option": "B",
+    "explanation": "An action projected to be accomplished before a specific future time deadline ('By 2030') takes the Future Perfect tense ('will have found').",
+    "tags": ["grammar", "tenses", "future_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_074",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Many a student have failed in this rigorous mathematics exam.'",
+    "options": {
+      "A": "Many a student",
+      "B": "have failed",
+      "C": "in this rigorous",
+      "D": "mathematics exam."
+    },
+    "correct_option": "B",
+    "explanation": "The phrase 'Many a + singular noun' takes a singular verb and singular pronoun. Therefore, 'have failed' must be corrected to 'has failed'.",
+    "tags": ["grammar", "subject_verb_agreement", "quantifiers", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_075",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb: 'Neither the captain nor the crew members ___ willing to surrender.'",
+    "options": {
+      "A": "was",
+      "B": "were",
+      "C": "is",
+      "D": "has been"
+    },
+    "correct_option": "B",
+    "explanation": "With 'neither... nor', the verb agrees with the closer subject ('crew members'). Since 'crew members' is plural, the plural verb 'were' is correct.",
+    "tags": ["grammar", "subject_verb_agreement", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_076",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Slow and steady ___ the race.'",
+    "options": {
+      "A": "win",
+      "B": "wins",
+      "C": "won",
+      "D": "is winning"
+    },
+    "correct_option": "B",
+    "explanation": "Proverbial compound expressions referring to a single unitary principle take a singular verb ('wins').",
+    "tags": ["grammar", "subject_verb_agreement", "proverbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_077",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The committee have submitted its report to the director.'",
+    "options": {
+      "A": "The committee",
+      "B": "have submitted",
+      "C": "its report",
+      "D": "to the director."
+    },
+    "correct_option": "B",
+    "explanation": "The pronoun 'its' indicates the committee is acting as a single unified body. Therefore, the verb must also be singular ('has submitted'). Alternatively, if 'have' were used, the pronoun would need to be plural ('their').",
+    "tags": ["grammar", "subject_verb_agreement", "pronouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_078",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The number of applicants ___ increasing significantly every year.'",
+    "options": {
+      "A": "are",
+      "B": "is",
+      "C": "have been",
+      "D": "were"
+    },
+    "correct_option": "B",
+    "explanation": "'The number of' takes a singular verb ('is'), whereas 'A number of' takes a plural verb.",
+    "tags": ["grammar", "subject_verb_agreement", "quantifiers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_079",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Fifty thousand rupees ___ a large sum of money for a poor worker.'",
+    "options": {
+      "A": "are",
+      "B": "were",
+      "C": "is",
+      "D": "have been"
+    },
+    "correct_option": "C",
+    "explanation": "A specific sum of money considered as a single collective amount takes a singular verb ('is').",
+    "tags": ["grammar", "subject_verb_agreement", "nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_080",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'One of the most challenging problems facing our cities are traffic congestion.'",
+    "options": {
+      "A": "One of the most challenging problems",
+      "B": "facing our cities",
+      "C": "are",
+      "D": "traffic congestion."
+    },
+    "correct_option": "C",
+    "explanation": "The head subject of the sentence is 'One', which is singular. Therefore, the verb must be singular ('is').",
+    "tags": ["grammar", "subject_verb_agreement", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_081",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb: 'Not only the teacher but also the students ___ praised for their hard work.'",
+    "options": {
+      "A": "was",
+      "B": "were",
+      "C": "is",
+      "D": "has been"
+    },
+    "correct_option": "B",
+    "explanation": "When subjects are joined by 'not only... but also', the verb agrees with the subject closest to it ('students'). Thus, the plural verb 'were' is required.",
+    "tags": ["grammar", "subject_verb_agreement", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_082",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Physics ___ an interesting branch of science.'",
+    "options": {
+      "A": "are",
+      "B": "were",
+      "C": "is",
+      "D": "have"
+    },
+    "correct_option": "C",
+    "explanation": "Academic subjects ending in '-ics' take a singular verb.",
+    "tags": ["grammar", "subject_verb_agreement", "nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_083",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Each of the suspects were interrogated by the senior police inspector.'",
+    "options": {
+      "A": "Each of",
+      "B": "the suspects",
+      "C": "were interrogated",
+      "D": "by the senior police inspector."
+    },
+    "correct_option": "C",
+    "explanation": "Pronouns like 'Each', 'Every', and 'Everyone' are grammatically singular and require singular verbs ('was interrogated').",
+    "tags": ["grammar", "subject_verb_agreement", "pronouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_084",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'More than one worker ___ injured in the factory blast.'",
+    "options": {
+      "A": "were",
+      "B": "was",
+      "C": "have been",
+      "D": "are"
+    },
+    "correct_option": "B",
+    "explanation": "'More than one + singular noun' takes a singular verb ('was').",
+    "tags": ["grammar", "subject_verb_agreement", "quantifiers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_085",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The quality of these imported mangoes ___ quite poor.'",
+    "options": {
+      "A": "were",
+      "B": "are",
+      "C": "is",
+      "D": "have been"
+    },
+    "correct_option": "C",
+    "explanation": "The subject is 'The quality' (singular), which is separated from the verb by a prepositional phrase ('of these imported mangoes'). The verb must agree with 'quality' ('is').",
+    "tags": ["grammar", "subject_verb_agreement", "prepositional_phrases", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_086",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The public is requested to maintain silence inside the library hall.'",
+    "options": {
+      "A": "The public",
+      "B": "is requested",
+      "C": "to maintain silence",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Public' can take a singular verb when treated as a collective entity.",
+    "tags": ["grammar", "subject_verb_agreement", "collective_nouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_087",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun form: 'It was ___ who helped you in your time of distress.'",
+    "options": {
+      "A": "him",
+      "B": "me",
+      "C": "he",
+      "D": "them"
+    },
+    "correct_option": "C",
+    "explanation": "In cleft sentences ('It was ___ who...'), the pronoun functions as a subject complement and requires the nominative/subjective case ('he').",
+    "tags": ["grammar", "pronouns", "case", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_088",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Between you and I, this venture is bound to fail.'",
+    "options": {
+      "A": "Between",
+      "B": "you and I,",
+      "C": "this venture is",
+      "D": "bound to fail."
+    },
+    "correct_option": "B",
+    "explanation": "Prepositions ('between') must be followed by pronouns in the objective case. It should be 'Between you and me'.",
+    "tags": ["grammar", "pronouns", "prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_089",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank with the correct relative pronoun: 'All ___ glitters is not gold.'",
+    "options": {
+      "A": "which",
+      "B": "that",
+      "C": "who",
+      "D": "what"
+    },
+    "correct_option": "B",
+    "explanation": "After universal quantifier words like 'all', 'same', 'only', or superlatives, the relative pronoun 'that' is mandated.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_090",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun order for a negative or confession context: 'I, you and he ___ responsible for the blunder.'",
+    "options": {
+      "A": "are",
+      "B": "am",
+      "C": "is",
+      "D": "were"
+    },
+    "correct_option": "A",
+    "explanation": "When confessing a fault, error, or negative action involving multiple persons, the First Person pronoun comes first, followed by Second and Third Person (1-2-3 rule). The plural verb 'are' agrees with the compound subject.",
+    "tags": ["grammar", "pronouns", "person_order", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_091",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He introduced his friend to the gathering, whom he had met in Paris.'",
+    "options": {
+      "A": "He introduced his friend",
+      "B": "to the gathering,",
+      "C": "whom he had met",
+      "D": "in Paris."
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Whom' functions correctly as the objective relative pronoun receiving the action of 'had met'.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_092",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Neither of the two candidates ___ qualified for the post.'",
+    "options": {
+      "A": "are",
+      "B": "were",
+      "C": "is",
+      "D": "have been"
+    },
+    "correct_option": "C",
+    "explanation": "'Neither of + plural noun' takes a singular verb ('is').",
+    "tags": ["grammar", "subject_verb_agreement", "pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_093",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'Let he and me handle this delicate negotiation.'",
+    "options": {
+      "A": "Let he and me",
+      "B": "Let him and I",
+      "C": "Let him and me",
+      "D": "Let he and I"
+    },
+    "correct_option": "C",
+    "explanation": "The verb 'let' governs objective pronouns. Both pronouns must be in the objective case: 'him and me'.",
+    "tags": ["grammar", "pronouns", "case", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_094",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The building whose roof was damaged in the storm has been repaired.'",
+    "options": {
+      "A": "The building",
+      "B": "whose roof",
+      "C": "was damaged in the storm",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The relative pronoun 'whose' can correctly be used for inanimate objects as well as persons to indicate possession ('whose roof'). The sentence is correct.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_095",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Each boy and each girl ___ given a prize.'",
+    "options": {
+      "A": "were",
+      "B": "was",
+      "C": "have been",
+      "D": "are"
+    },
+    "correct_option": "B",
+    "explanation": "When singular subjects are preceded by 'each', they require a singular verb ('was').",
+    "tags": ["grammar", "subject_verb_agreement", "pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_096",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence form using reciprocal pronouns:",
+    "options": {
+      "A": "The two brothers fought with one another.",
+      "B": "The two brothers fought with each other.",
+      "C": "The family members cooperated with one another.",
+      "D": "Both B and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "'Each other' is traditionally used for two parties, and 'one another' for more than two, though modern usage often treats them as interchangeable. Both options B and C reflect standard conversational and technical patterns.",
+    "tags": ["grammar", "pronouns", "reciprocal_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_097",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'My performance is far better than John.'",
+    "options": {
+      "A": "My performance",
+      "B": "is far better",
+      "C": "than John.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Comparisons must be made between similar entities. A performance cannot be compared to a person. It should be 'than John's' (possessive case representing John's performance).",
+    "tags": ["grammar", "pronouns", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_098",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is one of those men who ___ always ready to help others.'",
+    "options": {
+      "A": "is",
+      "B": "are",
+      "C": "was",
+      "D": "has been"
+    },
+    "correct_option": "B",
+    "explanation": "In sentences of the pattern 'One of those [plural noun] who [verb]', the relative pronoun 'who' refers back to the plural noun ('men'), so the verb following 'who' must be plural ('are').",
+    "tags": ["grammar", "subject_verb_agreement", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_099",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Whom do you think won the award?",
+      "B": "Who do you think won the award?",
+      "C": "Whom do you think to have won the award?",
+      "D": "Who do you think to have won the award?"
+    },
+    "correct_option": "B",
+    "explanation": "In interrogative clauses with parenthetical insertions like 'do you think', evaluate the grammatical role of the pronoun. Since it serves as the subject of 'won', the subjective form 'Who' is required.",
+    "tags": ["grammar", "pronouns", "interrogatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_0100",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The jury were unanimous in its decision regarding the case.'",
+    "options": {
+      "A": "The jury",
+      "B": "were unanimous",
+      "C": "in its decision",
+      "D": "regarding the case."
+    },
+    "correct_option": "C",
+    "explanation": "There is a pronoun-verb mismatch. 'Unanimous' implies acting as a single cohesive unit, which requires a singular verb ('was') and singular pronoun ('its'), OR if 'were' is retained, the pronoun must be plural ('their'). Since it says 'were unanimous... its', it contains an agreement conflict.",
+    "tags": ["grammar", "subject_verb_agreement", "pronouns", "spotting_errors"]
+  }
+]

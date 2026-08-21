@@ -1,0 +1,552 @@
+[
+  {
+    "passage_id": "ENG_CT_SET_181",
+    "passage_title": "The Evolutionary Biomechanics of Avian Flight and Feather Aerodynamics",
+    "passage_text": "In evolutionary biology and vertebrate biomechanics, the origin of avian flight represents one of the most transformative adaptive transitions in vertebrate history, bridging terrestrial theropod dinosaurs and modern birds (Aves). The aerodynamic capability of birds relies heavily on the specialized microstructure of **contour feathers**, which feature an interlocking network of barbs, barbules, and microscopic hooklets (hamuli) that create a stiff, flexible, airtight aerodynamic surface. During the downstroke of flapping flight, the wing acts as an inclined airfoil, generating both lift and thrust by accelerating air downward and backward according to Newton's third law of motion. Concurrently, the complex **alula**—a small, freely mobile digit bearing three to five small feathers on the anterior edge of the wing—acts as an aerodynamic slot. When birds execute low-speed maneuvers, steep takeoff angles, or high-angle-of-touch landing approaches, deploying the alula channels high-pressure air from beneath the wing over the upper surface, preventing boundary layer separation and delaying **aerodynamic stall**. This sophisticated passive flow control mechanism allows birds to maintain stable lift at angles of attack that would otherwise cause fixed-wing aircraft to lose control, exemplifying the pinnacle of biological engineering.",
+    "blanks": [
+      {
+        "id": "ENG_CT_181_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "contour feathers",
+          "B": "downy insulation plumes",
+          "C": "filoplume sensory bristles",
+          "D": "vestigial reptilian scales"
+        },
+        "correct_option": "A",
+        "rationale": "Feathers featuring interlocking barbs and hooklets that create an airtight aerodynamic surface are contour feathers."
+      },
+      {
+        "id": "ENG_CT_181_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "alula",
+          "B": "furcula",
+          "C": "pygostyle",
+          "D": "synsacrum"
+        },
+        "correct_option": "A",
+        "rationale": "The small mobile digit on the anterior wing edge acting as an aerodynamic slot is the alula."
+      },
+      {
+        "id": "ENG_CT_181_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "aerodynamic stall",
+          "B": "supersonic cavitation",
+          "C": "magnetic resonance",
+          "D": "buoyant flotation"
+        },
+        "correct_option": "A",
+        "rationale": "Preventing boundary layer separation allows birds to avoid a sudden loss of lift known as aerodynamic stall."
+      },
+      {
+        "id": "ENG_CT_181_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "passive flow control",
+          "B": "active neural feedback",
+          "C": "chemical propulsion",
+          "D": "hydraulic actuation"
+        },
+        "correct_option": "A",
+        "rationale": "Using the alula to manage airflow without active mechanical energy input is an example of passive flow control."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_182",
+    "passage_title": "The Quantum Mechanics of Topological Quantum Computing and Non-Abelian Anyons",
+    "passage_text": "In advanced quantum computing, topological quantum computation bypasses the fragile error-correction requirements of traditional transmon qubits by encoding quantum information globally into topological states of matter known as **non-Abelian anyons**. Unlike standard fermions (such as electrons) or bosons (such as photons)—whose quantum wave functions either remain symmetric or acquire a simple negative sign upon particle exchange—non-Abelian anyons possess multidimensional degenerate ground states. When two non-Abelian anyons are physically braided around one another in a two-dimensional plane, the quantum state of the system undergoes a unitary transformation that depends exclusively on the global topological braid topology rather than the precise geometric path or local environmental noise. This topological protection renders quantum gates inherently immune to local decoherence, thermal fluctuations, and magnetic flux perturbations. Prime physical candidates for realizing non-Abelian anyons include **Majorana zero modes**—emergent quasiparticles that are their own antiparticles, predicted to occur at the ends of semiconductor nanowires coupled with conventional superconductors and magnetic fields. Although experimentally challenging to detect and manipulate, topological quantum computing holds the transformative potential for fault-tolerant quantum processors operating without massive overhead error-correction codes.",
+    "blanks": [
+      {
+        "id": "ENG_CT_182_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "non-Abelian anyons",
+          "B": "standard fermions",
+          "C": "thermal bosons",
+          "D": "atomic isotopes"
+        },
+        "correct_option": "A",
+        "rationale": "Topological quantum computation encodes information globally into exotic states called non-Abelian anyons."
+      },
+      {
+        "id": "ENG_CT_182_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "braided",
+          "B": "accelerated",
+          "C": "ionized",
+          "D": "vaporized"
+        },
+        "correct_option": "A",
+        "rationale": "Exchanging particle trajectories around one another in a plane is referred to as being braided."
+      },
+      {
+        "id": "ENG_CT_182_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "topological protection",
+          "B": "thermal insulation",
+          "C": "magnetic shielding",
+          "D": "electrostatic grounding"
+        },
+        "correct_option": "A",
+        "rationale": "Immunity to local noise due to global geometry is known as topological protection."
+      },
+      {
+        "id": "ENG_CT_182_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "Majorana zero modes",
+          "B": "Cooper electron pairs",
+          "C": "atomic valence electrons",
+          "D": "free neutron beams"
+        },
+        "correct_option": "A",
+        "rationale": "Quasiparticles that are their own antiparticles and candidates for non-Abelian anyons are Majorana zero modes."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_183",
+    "passage_title": "The Macroeconomics of Secular Stagnation and Alvin Hansen’s Hypothesis",
+    "passage_text": "In macroeconomic theory, **secular stagnation** describes a prolonged period of negligible or zero economic growth characterized by chronic deficient aggregate demand, persistent underemployment, and depressed real interest rates. Originally coined by economist Alvin Hansen in his 1938 presidential address to the American Economic Association, secular stagnation was used to explain why the United States economy struggled to recover fully from the Great Depression even after aggressive monetary easing. Hansen attributed this stagnation to structural exhaustion: the closing of the western frontier, declining population growth rates, and a dearth of labor-saving capital-investment opportunities that required massive upfront infrastructure spending. Decades later, economist Lawrence Summers revived the secular stagnation hypothesis in the wake of the 2008 global financial crisis, arguing that advanced economies face a permanent structural shift where the **natural rate of interest (r-star)** has fallen into negative territory. When the real interest rate required to balance full-employment saving and investment drops below zero, monetary policy becomes trapped by the zero lower bound, as central banks cannot lower nominal rates sufficiently to stimulate private borrowing. Consequently, escaping secular stagnation requires aggressive fiscal stimulus, public infrastructure investment, and structural reforms to boost aggregate demand and raise the natural rate of interest.",
+    "blanks": [
+      {
+        "id": "ENG_CT_183_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "secular stagnation",
+          "B": "hyperinflationary collapse",
+          "C": "stagflationary spiral",
+          "D": "monetary monetization"
+        },
+        "correct_option": "A",
+        "rationale": "A prolonged period of zero growth and chronic deficient demand is secular stagnation."
+      },
+      {
+        "id": "ENG_CT_183_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "Alvin Hansen",
+          "B": "John Maynard Keynes",
+          "C": "Milton Friedman",
+          "D": "Friedrich Hayek"
+        },
+        "correct_option": "A",
+        "rationale": "The term was coined by economist Alvin Hansen in his 1938 address."
+      },
+      {
+        "id": "ENG_CT_183_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "natural rate of interest (r-star)",
+          "B": "statutory minimum wage",
+          "C": "foreign exchange parity rate",
+          "D": "central bank discount rate"
+        },
+        "correct_option": "A",
+        "rationale": "The real interest rate balancing full-employment saving and investment is the natural rate of interest (r-star)."
+      },
+      {
+        "id": "ENG_CT_183_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "fiscal stimulus",
+          "B": "monetary austerity",
+          "C": "tariff protectionism",
+          "D": "wage suppression"
+        },
+        "correct_option": "A",
+        "rationale": "Escaping secular stagnation when rates are trapped requires aggressive fiscal stimulus."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_184",
+    "passage_title": "The Structural Geology and Seismotectonics of Crustal Fault Zones",
+    "passage_text": "In structural geology, the internal architecture of mature crustal fault zones is rarely a simple single slip surface; rather, it is organized into a hierarchical damage zone surrounding a central **fault core**. The fault core accommodates the vast majority of cumulative displacement and typically consists of fine-grained **fault gouge** (clay-rich, incohesive pulverized rock lacking original lithic fabric), cataclasites, and localized slip surfaces. Surrounding the fault core is the **damage zone**, a voluminous region of subsidiary fractures, minor faults, secondary veins, and micro-cracks generated by stress concentrations during repeated seismic rupture propagation. The presence of this fractured damage zone exerts a profound control on regional hydrogeology, acting either as a conduit for accelerated groundwater fluid flow parallel to the fault strike or as a barrier to transverse fluid migration due to secondary mineral precipitation. Furthermore, seismic wave propagation is heavily scattered by damage zone fractures, causing pronounced ground motion amplification and seismic trapping effects that complicate urban seismic hazard assessments in seismically active fault belts.",
+    "blanks": [
+      {
+        "id": "ENG_CT_184_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "fault core",
+          "B": "cratonic root",
+          "C": "mantle plume",
+          "D": "volcanic conduit"
+        },
+        "correct_option": "A",
+        "rationale": "The central zone accommodating cumulative displacement in a fault is the fault core."
+      },
+      {
+        "id": "ENG_CT_184_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "fault gouge",
+          "B": "igneous basalt",
+          "C": "metamorphic gneiss",
+          "D": "sedimentary limestone"
+        },
+        "correct_option": "A",
+        "rationale": "Fine-grained, incohesive pulverized rock within the fault core is fault gouge."
+      },
+      {
+        "id": "ENG_CT_184_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "damage zone",
+          "B": "magmatic chamber",
+          "C": "metamorphic aureole",
+          "D": "sedimentary basin"
+        },
+        "correct_option": "A",
+        "rationale": "The region of subsidiary fractures surrounding the core is the damage zone."
+      },
+      {
+        "id": "ENG_CT_184_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "hydrogeology",
+          "B": "stratigraphy",
+          "C": "paleontology",
+          "D": "crystallography"
+        },
+        "correct_option": "A",
+        "rationale": "Fault damage zones exert a profound control on regional hydrogeology and fluid flow."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_185",
+    "passage_title": "The Evolutionary Biomechanics of Terrestrial Locomotion in Tetrapods",
+    "passage_text": "In evolutionary biomechanics, the transition of vertebrate locomotion from aquatic swimming to terrestrial walking required profound structural modifications of the skeletal, muscular, and nervous systems. Unlike buoyant aquatic environments where gravity is largely counteracted by water density, terrestrial tetrapods must constantly support their body weight against gravitational force while generating propulsive ground reaction forces through limb contact. Early tetrapods (such as *Ichthyostega*) inherited a sprawled limb posture from sarcopterygian fish ancestors, where limbs splayed laterally outward from the body trunk. While effective for maneuvering in muddy swamps, a sprawled posture requires massive muscular energy to prevent the body from sagging and creates substantial lateral bending stress along the vertebral column during locomotion. Evolutionary pressures for faster, more energy-efficient running drove a major biomechanical shift toward an **erect parasagittal posture** (seen in advanced dinosaurs, mammals, and birds), where limbs are positioned directly beneath the torso. This vertical alignment eliminates lateral vertebral bending, aligns ground reaction forces directly through skeletal weight-bearing columns, and allows for specialized spring-mass mechanics. Tendons and ligaments act as biological elastic springs, storing strain energy during the braking phase of a stride and releasing it passively during push-off, drastically reducing the metabolic cost of high-speed cursorial locomotion.",
+    "blanks": [
+      {
+        "id": "ENG_CT_185_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "ground reaction forces",
+          "B": "centripetal acceleration vectors",
+          "C": "atmospheric drag pressures",
+          "D": "magnetic Lorentz forces"
+        },
+        "correct_option": "A",
+        "rationale": "Forces generated by limbs pushing against the substrate during locomotion are ground reaction forces."
+      },
+      {
+        "id": "ENG_CT_185_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "sprawled limb posture",
+          "B": "bipedal upright stance",
+          "C": "hydrodynamic streamlining",
+          "D": "suspensory arboreal grasping"
+        },
+        "correct_option": "A",
+        "rationale": "Early tetrapods inherited limbs that splayed laterally outward, known as a sprawled limb posture."
+      },
+      {
+        "id": "ENG_CT_185_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "erect parasagittal posture",
+          "B": "horizontal reptilian crawling",
+          "C": "undulatory serpentine slithering",
+          "D": "quadrupedal lateral splaying"
+        },
+        "correct_option": "A",
+        "rationale": "Positioning limbs directly beneath the torso for efficient running is an erect parasagittal posture."
+      },
+      {
+        "id": "ENG_CT_185_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "spring-mass mechanics",
+          "B": "hydraulic fluid pressurization",
+          "C": "ciliary wave propulsion",
+          "D": "jet-propulsion contraction"
+        },
+        "correct_option": "A",
+        "rationale": "Tendons acting as elastic springs storing strain energy embody spring-mass mechanics."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_186",
+    "passage_title": "The Quantum Mechanics of Quantum Annealing and Adiabatic Optimization",
+    "passage_text": "In quantum optimization, **quantum annealing** represents a metaheuristic computational approach designed to solve complex combinatorial optimization and machine learning problems by finding the global minimum of a cost function. Unlike universal gate-based quantum computers which execute discrete sequences of logical quantum logic gates, quantum annealers operate on the principle of the **adiabatic theorem of quantum mechanics**. The algorithm begins by initializing a system of coupled superconducting flux qubits in a trivial, easily prepared quantum superposition state—the ground state of a simple initial Hamiltonian. Over a carefully calibrated annealing schedule, the Hamiltonian is slowly and continuously transformed into a final problem Hamiltonian whose ground state encodes the exact mathematical solution to the optimization problem. Provided the evolution time is sufficiently slow relative to the minimum energy gap separating the ground state from excited states, the adiabatic theorem guarantees that the quantum system remains in its instantaneous ground state throughout the transformation. Consequently, quantum annealing leverages macroscopic quantum tunneling to tunnel directly through potential energy barriers rather than being thermally trapped in local minima, offering potential speedups for NP-hard optimization problems in logistics, finance, and molecular drug discovery.",
+    "blanks": [
+      {
+        "id": "ENG_CT_186_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "quantum annealing",
+          "B": "classical Monte Carlo simulation",
+          "C": "optical parametric oscillation",
+          "D": "digital finite-element modeling"
+        },
+        "correct_option": "A",
+        "rationale": "The metaheuristic approach solving optimization problems via energy minimization is quantum annealing."
+      },
+      {
+        "id": "ENG_CT_186_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "adiabatic theorem of quantum mechanics",
+          "B": "second law of thermodynamics",
+          "C": "special relativity mass-energy equivalence",
+          "D": "Ohm's law of electrical conduction"
+        },
+        "correct_option": "A",
+        "rationale": "Quantum annealers operate on the principle of the adiabatic theorem of quantum mechanics."
+      },
+      {
+        "id": "ENG_CT_186_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "Hamiltonian",
+          "B": "Lagrangian manifold",
+          "C": "Riemannian tensor",
+          "D": "Euclidean vector"
+        },
+        "correct_option": "A",
+        "rationale": "The operator corresponding to the total energy of a quantum system is the Hamiltonian."
+      },
+      {
+        "id": "ENG_CT_186_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "macroscopic quantum tunneling",
+          "B": "classical thermal activation",
+          "C": "radioactive alpha decay",
+          "D": "turbulent eddy diffusion"
+        },
+        "correct_option": "A",
+        "rationale": "Passing directly through potential energy barriers without thermal activation is macroscopic quantum tunneling."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_187",
+    "passage_title": "The Agrarian Political Economy of Karl Polanyi’s 'The Great Transformation'",
+    "passage_text": "In his seminal 1944 economic history and political sociology treatise *The Great Transformation: The Political and Economic Origins of Our Time*, political economist Karl Polanyi investigated the rise and collapse of 19th-century market capitalism, challenging free-market orthodoxy by arguing that self-regulating markets are historically unprecedented and socially destructive constructs. Polanyi argued that prior to the Industrial Revolution, economic exchange was deeply embedded in social, religious, and kinship relations—a principle he termed **embeddedness**. With the advent of industrial capitalism, state policies and liberal economists engineered a radical ideological rupture, attempting to disembed the economy from society and force all elements of production into **fictitious commodities**—specifically land, labor, and money. Polanyi emphasized that land, labor, and money are not true commodities produced for sale on a market: land is simply nature, labor is human life itself, and money is merely purchasing power regulated by public authority. Treating these foundational pillars as mere commodities threatens society with total annihilation, triggering a spontaneous protective counter-movement. Polanyi's **double movement** thesis posits that whenever laissez-faire markets expand to commodify society, society inevitably mobilizes defensive legislative counter-measures—such as labor unions, factory safety laws, tariff protection, and central banking regulations—to protect human welfare and ecological integrity from market subjugation.",
+    "blanks": [
+      {
+        "id": "ENG_CT_187_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "embeddedness",
+          "B": "rationalization",
+          "C": "commodification",
+          "D": "bureaucratization"
+        },
+        "correct_option": "A",
+        "rationale": "Polanyi termed the pre-capitalist principle where economic exchange is rooted in social relations as embeddedness."
+      },
+      {
+        "id": "ENG_CT_187_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "fictitious commodities",
+          "B": "sovereign debt instruments",
+          "C": "derivative financial assets",
+          "D": "industrial capital goods"
+        },
+        "correct_option": "A",
+        "rationale": "Treating land, labor, and money as products for sale creates fictitious commodities."
+      },
+      {
+        "id": "ENG_CT_187_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "double movement",
+          "B": "dialectic materialism",
+          "C": "punctuated equilibrium",
+          "D": "creative destruction"
+        },
+        "correct_option": "A",
+        "rationale": "The societal counter-response to market expansion is Polanyi's double movement thesis."
+      },
+      {
+        "id": "ENG_CT_187_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "defensive legislative counter-measures",
+          "B": "speculative financial investments",
+          "C": "monopolistic corporate trusts",
+          "D": "imperialist colonial conquests"
+        },
+        "correct_option": "A",
+        "rationale": "Society mobilizes defensive legislative counter-measures like labor laws and tariffs to protect welfare."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_188",
+    "passage_title": "The Structural Geology and Mechanics of Salt Diapirism",
+    "passage_text": "In structural geology and sedimentary basin geodynamics, **salt diapirism** describes the buoyant upward migration of low-density, highly ductile evaporite minerals (primarily halite and gypsum) through overlying denser sedimentary strata. Because rock salt maintains a nearly constant, low bulk density (approximately 2.15 grams per cubic centimeter) regardless of burial depth, while common siliciclastic sediments compact and increase in density with burial compaction (surpassing 2.4 grams per cubic centimeter at depths exceeding one kilometer), an unstable density stratification develops. According to classical Rayleigh-Taylor instability mechanics, this density inversion forces buoyant salt to mobilize upward into localized domes, walls, and pillar-like structures known as **salt diapirs**. The initiation and growth of salt diapirs are heavily modulated by regional extension, differential sedimentary loading, and tectonic contraction. As salt diapirs pierce through overlying strata, they drag up adjacent sedimentary beds into dramatic upturned flanking structures called **fault-propagation drag folds** or turtle-back anticlines, creating exceptionally lucrative structural traps for petroleum and natural gas exploration in basins worldwide (such as the Gulf of Mexico and the Zagros fold-and-thrust belt).",
+    "blanks": [
+      {
+        "id": "ENG_CT_188_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "salt diapirism",
+          "B": "granitic plutonism",
+          "C": "volcanic calderas",
+          "D": "glacial moraining"
+        },
+        "correct_option": "A",
+        "rationale": "The buoyant upward migration of ductile evaporite minerals is salt diapirism."
+      },
+      {
+        "id": "ENG_CT_188_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "halite and gypsum",
+          "B": "quartz and feldspar",
+          "C": "calcite and dolomite",
+          "D": "olivine and pyroxene"
+        },
+        "correct_option": "A",
+        "rationale": "The primary ductile evaporite minerals driving diapirism are halite and gypsum."
+      },
+      {
+        "id": "ENG_CT_188_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "salt diapirs",
+          "B": "volcanic necks",
+          "C": "granite batholiths",
+          "D": "sedimentary sills"
+        },
+        "correct_option": "A",
+        "rationale": "Pillar-like structures of buoyant upward-migrating salt are salt diapirs."
+      },
+      {
+        "id": "ENG_CT_188_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "petroleum and natural gas exploration",
+          "B": "geothermal energy harvesting",
+          "C": "radioactive waste disposal",
+          "D": "alluvial gold panning"
+        },
+        "correct_option": "A",
+        "rationale": "Upturned flanking structures around salt diapirs create lucrative structural traps for petroleum and natural gas exploration."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_189",
+    "passage_title": "The Quantum Mechanics of the Fractional Quantum Hall Effect",
+    "passage_text": "In low-dimensional condensed matter physics, the **Fractional Quantum Hall Effect (FQHE)** represents a breathtaking many-body quantum phenomenon where a two-dimensional electron gas subjected to extremely strong perpendicular magnetic fields exhibits quantized Hall conductance plateaus at precise fractional values of the fundamental conductance quantum ($e^2/h$), such as $1/3$, $2/5$, or $5/2$. Discovered experimentally by Daniel Tsui, Horst Störmer, and Arthur Gossard in 1982, the FQHE cannot be explained by single-particle Landau level quantization alone; it arises entirely from strong Coulomb interactions among electrons within partially filled Landau levels. To minimize electrostatic repulsion, electrons condense into an incompressible, highly correlated many-body quantum liquid described famously by the **Laughlin wave function**. The elementary excitations of this fractional quantum fluid are extraordinary quasiparticles carrying **fractional electric charges** (such as $e/3$) and fractional statistical phase (neither standard bosons nor fermions, but **anyons**). The discovery of fractional charges and non-Abelian anyonic statistics in the FQHE opened an entirely new paradigm in quantum physics, demonstrating that macroscopic quantum coherence can give rise to emergent particles with fractionalized quantum numbers.",
+    "blanks": [
+      {
+        "id": "ENG_CT_189_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "Fractional Quantum Hall Effect (FQHE)",
+          "B": "Integer Quantum Hall Effect",
+          "C": "BCS Conventional Superconductivity",
+          "D": "Giant Magnetoresistance Effect"
+        },
+        "correct_option": "A",
+        "rationale": "Quantized Hall conductance plateaus at precise fractional values define the FQHE."
+      },
+      {
+        "id": "ENG_CT_189_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "Laughlin wave function",
+          "B": "Schrödinger time-dependent equation",
+          "C": "Dirac relativistic spinor",
+          "D": "Maxwell electromagnetic potential"
+        },
+        "correct_option": "A",
+        "rationale": "The correlated many-body quantum liquid is described famously by the Laughlin wave function."
+      },
+      {
+        "id": "ENG_CT_189_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "fractional electric charges",
+          "B": "integer electronic multiples",
+          "C": "neutral magnetic moments",
+          "D": "zero rest-mass energies"
+        },
+        "correct_option": "A",
+        "rationale": "Excitations of the fractional quantum fluid carry fractional electric charges like $e/3$."
+      },
+      {
+        "id": "ENG_CT_189_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "anyons",
+          "B": "photons",
+          "C": "gravitons",
+          "D": "neutrinos"
+        },
+        "correct_option": "A",
+        "rationale": "Particles exhibiting fractional statistical phase neither as bosons nor fermions are anyons."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_190",
+    "passage_title": "The Evolutionary Biomechanics of Cetacean Echolocation and Sound Transmission",
+    "passage_text": "In evolutionary biology and marine mammal biomechanics, odontocetes (toothed whales, dolphins, and porpoises) evolved a sophisticated biological sonar system known as **echolocation** to navigate, hunt, and communicate in turbid or lightless aquatic environments. Because sound travels roughly 4.5 times faster in water than in air and suffers minimal attenuation across long distances, toothed whales adapted specialized anatomical structures to generate, project, and receive high-frequency acoustic clicks. High-frequency clicks are produced within the nasal passages by muscular compression of air across specialized lipid structures called **phonic lips** (or monkey lips). Once generated, these acoustic signals are projected directly into the aquatic environment through the **melone**—a massive, convex acoustic lens composed of specialized low-density lipids (such as wax esters and triglycerides) located in the forehead. The melon acts as an acoustic impedance transformer, focusing outgoing sound beams into directional wavefronts. Upon striking prey or physical obstacles, returning echo waves are captured not by the external ear canals (which are structurally sealed), but rather through the **mandibular fat pads** embedded within the lower jawbone. These lipid-filled acoustic waveguides transmit echo vibrations directly to the tympanic bulla and periotic bones of the inner skull, allowing cetaceans to construct hyper-precise three-dimensional acoustic maps of their surrounding marine habitat.",
+    "blanks": [
+      {
+        "id": "ENG_CT_190_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "echolocation",
+          "B": "electroreception",
+          "C": "magnetoreception",
+          "D": "chemoreception"
+        },
+        "correct_option": "A",
+        "rationale": "The biological sonar system used by toothed whales to navigate and hunt is echolocation."
+      },
+      {
+        "id": "ENG_CT_190_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "phonic lips",
+          "B": "vocal cords",
+          "C": "syrinx membranes",
+          "D": "baleen plates"
+        },
+        "correct_option": "A",
+        "rationale": "Clicks are produced within nasal passages by muscular compression across specialized lipid structures called phonic lips."
+      },
+      {
+        "id": "ENG_CT_190_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "melon",
+          "B": "blowhole",
+          "C": "fluke",
+          "D": "pectoral fin"
+        },
+        "correct_option": "A",
+        "rationale": "The massive acoustic lens composed of specialized low-density lipids in the forehead is the melon."
+      },
+      {
+        "id": "ENG_CT_190_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "mandibular fat pads",
+          "B": "ossified ear ossicles",
+          "C": "cranial sinuses",
+          "D": "cervical vertebrae"
+        },
+        "correct_option": "A",
+        "rationale": "Echo waves are captured and transmitted to the inner ear through mandibular fat pads embedded in the lower jaw."
+      }
+    ]
+  }
+]

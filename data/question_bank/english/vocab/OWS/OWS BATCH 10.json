@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0451",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCausing extreme annoyance, irritation, or resentment; vexing",
+    "options": {
+      "A": "Galling",
+      "B": "Gratifying",
+      "C": "Felicitous",
+      "D": "Placid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Galling) is correct[cite: 5]. 'Galling' means deeply irritating, humiliating, or exasperating[cite: 5]. 'Gratifying' means giving pleasure, and 'Felicitous' means well-chosen and apt[cite: 5].",
+    "tags": ["vocab", "ows", "emotions", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0452",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExpressed, reproduced, or distorted in an unclear, confused, or misleading way",
+    "options": {
+      "A": "Garbled",
+      "B": "Articulate",
+      "C": "Lucid",
+      "D": "Explicit"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Garbled) is correct[cite: 5]. 'Garbled' refers to sound, text, or messages that are mixed up, distorted, or confused[cite: 5]. 'Articulate' and 'Lucid' mean clear and easily understandable[cite: 5].",
+    "tags": ["vocab", "ows", "language", "communication", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0453",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExcessively talkative, especially about trivial or unimportant matters",
+    "options": {
+      "A": "Garrulous",
+      "B": "Taciturn",
+      "C": "Reticent",
+      "D": "Laconic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Garrulous) is correct[cite: 5]. 'Garrulous' (or loquacious) means pointlessly or annoyingly talkative[cite: 5]. 'Taciturn', 'Reticent', and 'Laconic' describe persons who are habitually silent and reserved in speech[cite: 5].",
+    "tags": ["vocab", "ows", "personality", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0454",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe practice, art, and study of choosing, cooking, and eating good food",
+    "options": {
+      "A": "Gastronomy",
+      "B": "Agronomy",
+      "C": "Horticulture",
+      "D": "Cerography"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Gastronomy) is correct[cite: 5]. 'Gastronomy' is the art or science of good eating and gourmet cuisine[cite: 5]. 'Horticulture' is garden cultivation[cite: 5], and 'Cerography' is wax engraving[cite: 5].",
+    "tags": ["vocab", "ows", "food", "art", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0455",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe supreme military commander or chief officer of an army",
+    "options": {
+      "A": "General",
+      "B": "Admiral",
+      "C": "Foreman",
+      "D": "Stevedore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (General) is correct[cite: 5]. A 'General' is a high-ranking military officer who commands an army[cite: 5]. An 'Admiral' commands a navy, and a 'Foreman' oversees a team of workers[cite: 5].",
+    "tags": ["vocab", "ows", "military", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0456",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe branch of biology concerned with the study of heredity and the variation of inherited characteristics",
+    "options": {
+      "A": "Genetics",
+      "B": "Genealogy",
+      "C": "Geriatrics",
+      "D": "Eugenics"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Genetics) is correct[cite: 5]. 'Genetics' is the scientific study of genes, genetic variation, and heredity[cite: 5]. 'Genealogy' is the study of family pedigrees and ancestral lines.",
+    "tags": ["vocab", "ows", "science", "biology", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0457",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe deliberate and systematic extermination of an entire race, ethnic, or religious group",
+    "options": {
+      "A": "Genocide",
+      "B": "Homicide",
+      "C": "Fratricide",
+      "D": "Regicide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Genocide) is correct[cite: 5]. 'Genocide' is the mass killing of a specific national, racial, or ethnic group[cite: 5]. 'Homicide' is the killing of any human being[cite: 5], and 'Regicide' is killing a king[cite: 5].",
+    "tags": ["vocab", "ows", "killing", "law", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0458",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA scientist who studies the physical structure, rocks, minerals, and history of the earth",
+    "options": {
+      "A": "Geologist",
+      "B": "Archaeologist",
+      "C": "Anthropologist",
+      "D": "Meteorologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Geologist) is correct[cite: 5]. A 'Geologist' investigates the crust and rocks of the earth[cite: 5]. An 'Archaeologist' excavates historical relics[cite: 5], and a 'Meteorologist' studies the weather.",
+    "tags": ["vocab", "ows", "science", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0459",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe science that deals with the physical history of the earth, its rocks, and the processes acting upon them",
+    "options": {
+      "A": "Geology",
+      "B": "Geography",
+      "C": "Geometry",
+      "D": "Geomorphology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Geology) is correct[cite: 5]. 'Geology' is the scientific study of the earth's composition and crustal dynamics[cite: 5]. 'Geography' deals with the earth's surface features and human distribution.",
+    "tags": ["vocab", "ows", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0460",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe branch of medical science dealing with the health, care, and diseases of elderly people",
+    "options": {
+      "A": "Geriatrics",
+      "B": "Pediatrics",
+      "C": "Orthopaedics",
+      "D": "Pathology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Geriatrics) is correct[cite: 5]. 'Geriatrics' is the clinical field focusing on diseases in old age[cite: 5]. 'Pediatrics' focuses on children[cite: 5], and 'Orthopaedics' on the skeletal system[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0461",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA state, society, or government ruled exclusively by elderly people",
+    "options": {
+      "A": "Gerontocracy",
+      "B": "Plutocracy",
+      "C": "Oligarchy",
+      "D": "Stratocracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Gerontocracy) is correct[cite: 5]. 'Gerontocracy' is a political structure governed by old people[cite: 5]. 'Stratocracy' is rule by the military class[cite: 5], and 'Plutocracy' is rule by the wealthy[cite: 5].",
+    "tags": ["vocab", "ows", "politics", "cracy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0462",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA movement of a part of the body, especially a hand or head, to express an idea or emotion",
+    "options": {
+      "A": "Gesture",
+      "B": "Posture",
+      "C": "Grimace",
+      "D": "Spasm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Gesture) is correct[cite: 5]. A 'Gesture' is a bodily movement conveying an intended signal or meaning[cite: 5]. 'Spasm' is a sudden involuntary muscular contraction[cite: 5].",
+    "tags": ["vocab", "ows", "communication", "body", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0463",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nIn a manner that causes great horror, terror, or shock; frightfully",
+    "options": {
+      "A": "Ghastly",
+      "B": "Jauntily",
+      "C": "Felicitously",
+      "D": "Manifestly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ghastly) is correct[cite: 5]. 'Ghastly' means in a way that causes dread, horror, or resemblance to a ghost[cite: 5]. 'Jauntily' means cheerfully and self-confidently[cite: 5].",
+    "tags": ["vocab", "ows", "adverbs", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0464",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA densely populated, poor, and isolated urban section inhabited predominantly by a minority group",
+    "options": {
+      "A": "Ghetto",
+      "B": "Subdivision",
+      "C": "Boulevard",
+      "D": "Citadel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ghetto) is correct[cite: 5]. A 'Ghetto' is an overcrowded slum quarter populated by a segregated community[cite: 5]. 'Citadel' is an elevated fortress[cite: 5].",
+    "tags": ["vocab", "ows", "places", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0465",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nInflammation and soreness of the gums around the teeth",
+    "options": {
+      "A": "Gingivitis",
+      "B": "Arthritis",
+      "C": "Dermatitis",
+      "D": "Gastritis"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Gingivitis) is correct[cite: 5]. 'Gingivitis' is periodontal inflammation of the gums[cite: 5]. 'Dermatitis' is inflammation of the skin, and 'Gastritis' is inflammation of the stomach lining.",
+    "tags": ["vocab", "ows", "medical", "disease", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0466",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA slowly moving mass or river of ice formed by the accumulation of snow on mountains",
+    "options": {
+      "A": "Glacier",
+      "B": "Torrent",
+      "C": "Avalanche",
+      "D": "Iceberg"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Glacier) is correct[cite: 5]. A 'Glacier' is a dense, creeping river of compacted ice[cite: 5]. An 'Avalanche' is a rapid downward slide of snow, and 'Torrent' is a rushing stream of water[cite: 5].",
+    "tags": ["vocab", "ows", "nature", "geography", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0467",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA tradesperson whose job is to fit and install glass into windows and doors",
+    "options": {
+      "A": "Glazier",
+      "B": "Plumber",
+      "C": "Carpenter",
+      "D": "Compositor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Glazier) is correct[cite: 5]. A 'Glazier' installs panes of glass into frames[cite: 5]. A 'Plumber' repairs water pipes[cite: 5], and a 'Compositor' sets printing type[cite: 5].",
+    "tags": ["vocab", "ows", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0468",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn alphabetical list of specialized or technical terms in a particular text with their definitions",
+    "options": {
+      "A": "Glossary",
+      "B": "Dictionary",
+      "C": "Index",
+      "D": "Catalogue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Glossary) is correct[cite: 5]. A 'Glossary' is an explanatory vocabulary list appended to a specific book or subject[cite: 5]. A 'Dictionary' is a general language reference[cite: 5].",
+    "tags": ["vocab", "ows", "books", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0469",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo stare at someone with an angry, sullen, or threatening look",
+    "options": {
+      "A": "Glower",
+      "B": "Glance",
+      "C": "Glimpse",
+      "D": "Wink"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Glower) is correct[cite: 5]. 'Glower' means to scowl or stare with fierce resentment[cite: 5]. 'Glance' means to take a quick, brief look[cite: 4].",
+    "tags": ["vocab", "ows", "actions", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0470",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who habitually eats and drinks to an excessive degree; an overeater",
+    "options": {
+      "A": "Glutton",
+      "B": "Epicure",
+      "C": "Gourmet",
+      "D": "Ascetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Glutton) is correct[cite: 5]. A 'Glutton' eats voraciously and excessively[cite: 5]. 'Epicure' appreciates fine food[cite: 5], and 'Ascetic' practices self-denial[cite: 5].",
+    "tags": ["vocab", "ows", "people", "habits", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0471",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo bite, chew, or wear away persistently with the teeth like a rodent",
+    "options": {
+      "A": "Gnaw",
+      "B": "Swallow",
+      "C": "Gulp",
+      "D": "Parboil"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Gnaw) is correct[cite: 5]. 'Gnaw' means to bite or nibble repeatedly[cite: 5]. 'Parboil' means to boil food partially[cite: 5].",
+    "tags": ["vocab", "ows", "actions", "animals", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0472",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nWriting or drawings scribbled, scratched, or sprayed illicitly on a wall in a public place",
+    "options": {
+      "A": "Graffiti",
+      "B": "Mosaic",
+      "C": "Calligraphy",
+      "D": "Plaque"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Graffiti) is correct[cite: 5]. 'Graffiti' consists of unauthorized markings, words, or paintings in public places[cite: 5]. 'Mosaic' is decorative inlaid tilework[cite: 5].",
+    "tags": ["vocab", "ows", "art", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0473",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA building, storehouse, or repository specifically used for stored harvested grain",
+    "options": {
+      "A": "Granary",
+      "B": "Arsenal",
+      "C": "Brewery",
+      "D": "Tannery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Granary) is correct[cite: 5]. A 'Granary' is a specialized storehouse for threshed grain[cite: 5]. 'Arsenal' stores weapons[cite: 5], and 'Brewery' manufactures beer[cite: 5].",
+    "tags": ["vocab", "ows", "places", "agriculture", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0474",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nProvided or given without any payment or charge; free",
+    "options": {
+      "A": "Gratis",
+      "B": "Honorarium",
+      "C": "Exorbitant",
+      "D": "Perquisite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Gratis) is correct[cite: 5]. 'Gratis' means complimentary or costing nothing[cite: 5]. 'Exorbitant' means unreasonably high in price.",
+    "tags": ["vocab", "ows", "finance", "adverbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0475",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA glass building used for the cultivation and preservation of tender plants under controlled climate",
+    "options": {
+      "A": "Greenhouse",
+      "B": "Herbarium",
+      "C": "Nursery",
+      "D": "Orchard"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Greenhouse) is correct[cite: 5]. A 'Greenhouse' (or glasshouse) protects plants in controlled warmth[cite: 5]. 'Herbarium' stores dried botanical specimens[cite: 5].",
+    "tags": ["vocab", "ows", "places", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0476",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLiving in flocks, herds, or communities; fond of the company of others; sociable",
+    "options": {
+      "A": "Gregarious",
+      "B": "Recluse",
+      "C": "Solitary",
+      "D": "Hermit"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Gregarious) is correct[cite: 5]. 'Gregarious' describes individuals or animals that seek out and enjoy company[cite: 5]. 'Recluse' and 'Hermit' describe people living in solitude[cite: 5].",
+    "tags": ["vocab", "ows", "personality", "animals", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0477",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nEasily persuaded to believe anything; easily duped, tricked, or cheated",
+    "options": {
+      "A": "Gullible",
+      "B": "Sceptic",
+      "C": "Fastidious",
+      "D": "Cynic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Gullible) is correct[cite: 5]. 'Gullible' describes a naive person who is easily cheated[cite: 5]. 'Sceptic' questions accepted truths[cite: 5], and 'Fastidious' is very difficult to please[cite: 5].",
+    "tags": ["vocab", "ows", "personality", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0478",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sudden, strong, and violent rush or blast of wind",
+    "options": {
+      "A": "Gust",
+      "B": "Tempest",
+      "C": "Downpour",
+      "D": "Drought"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Gust) is correct[cite: 5]. A 'Gust' is a momentary, powerful burst of wind[cite: 5]. 'Tempest' is a violent storm[cite: 5], and 'Downpour' is heavy rain[cite: 5].",
+    "tags": ["vocab", "ows", "weather", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0479",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe medical and physiological study of blood and blood-forming tissues",
+    "options": {
+      "A": "Haematology",
+      "B": "Neurology",
+      "C": "Cytology",
+      "D": "Dermatology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Haematology) is correct[cite: 5]. 'Haematology' is the branch of medicine dealing with the blood and its diseases[cite: 5]. 'Neurology' is the study of the nervous system[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0480",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn apparent sensory perception of something not present in objective reality",
+    "options": {
+      "A": "Hallucination",
+      "B": "Deliberation",
+      "C": "Sanctity",
+      "D": "Reminiscence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hallucination) is correct[cite: 5]. 'Hallucination' is an illusion of seeing or hearing something that has no external physical reality[cite: 5]. 'Reminiscence' is recollection of the past[cite: 5].",
+    "tags": ["vocab", "ows", "psychology", "mind", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0481",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA drug or chemical agent that causes profound perceptual distortions and hallucinations",
+    "options": {
+      "A": "Hallucinogen",
+      "B": "Sedative",
+      "C": "Laxative",
+      "D": "Antidote"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hallucinogen) is correct[cite: 5]. A 'Hallucinogen' is a psychoactive drug causing sensory hallucinations[cite: 5]. 'Sedative' calms the nerves[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "drugs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0482",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA very small human settlement, village, or community",
+    "options": {
+      "A": "Hamlet",
+      "B": "Metropolis",
+      "C": "Ghetto",
+      "D": "Suburb"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hamlet) is correct[cite: 5]. A 'Hamlet' is a very small settlement, typically smaller than a village[cite: 5]. 'Metropolis' is a major bustling city.",
+    "tags": ["vocab", "ows", "places", "geography", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0483",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo hinder, obstruct, or impede the free progress of someone or something",
+    "options": {
+      "A": "Hamper",
+      "B": "Accelerate",
+      "C": "Facilitate",
+      "D": "Invigorate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hamper) is correct[cite: 5]. 'Hamper' means to hold back or impede smooth action[cite: 5]. 'Accelerate' and 'Facilitate' mean to speed up or make easier[cite: 5].",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0484",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSkilled work, such as weaving or carving, in which objects are made entirely by hand",
+    "options": {
+      "A": "Handicraft",
+      "B": "Cerography",
+      "C": "Typography",
+      "D": "Calligraphy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Handicraft) is correct[cite: 5]. 'Handicraft' denotes skilled manual decorative craftwork[cite: 5]. 'Typography' is the art of printing type.",
+    "tags": ["vocab", "ows", "art", "craft", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0485",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large covered shed or building used for housing, storing, and maintaining aircraft",
+    "options": {
+      "A": "Hangar",
+      "B": "Arsenal",
+      "C": "Barracks",
+      "D": "Dock"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hangar) is correct[cite: 5]. A 'Hangar' is a specialized shed for parking airplanes[cite: 5]. 'Arsenal' is for storing weapons and ammunition[cite: 5].",
+    "tags": ["vocab", "ows", "aviation", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0486",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA lengthy, aggressive, and vehement speech addressed to a large public assembly",
+    "options": {
+      "A": "Harangue",
+      "B": "Eulogy",
+      "C": "Soliloquy",
+      "D": "Oration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Harangue) is correct[cite: 5]. A 'Harangue' is a forceful, tirade-like speech delivered to a crowd[cite: 5]. 'Soliloquy' is speaking one's thoughts aloud when alone[cite: 5].",
+    "tags": ["vocab", "ows", "speeches", "communication", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0487",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo subject someone to persistent, aggressive, and tormenting pressure or intimidation",
+    "options": {
+      "A": "Harass",
+      "B": "Console",
+      "C": "Placate",
+      "D": "Edify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Harass) is correct[cite: 5]. 'Harass' means to pester, annoy, or persecute persistently[cite: 5]. 'Placate' means to appease or soothe anger[cite: 5].",
+    "tags": ["vocab", "ows", "verbs", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0488",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person or event that signals, announces, or foretells the approach of something; an omen",
+    "options": {
+      "A": "Harbinger",
+      "B": "Predecessor",
+      "C": "Antithesis",
+      "D": "Emissary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Harbinger) is correct[cite: 5]. A 'Harbinger' is a herald or forerunner signaling a future event[cite: 5]. 'Predecessor' is someone who held an office before[cite: 5].",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0489",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sheltered port or coastal body of water where ships may dock safely",
+    "options": {
+      "A": "Harbour",
+      "B": "Archipelago",
+      "C": "Isthmus",
+      "D": "Oasis"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Harbour) is correct[cite: 5]. A 'Harbour' is a protected expanse of water serving as a haven for marine craft[cite: 5]. 'Oasis' is a fertile spot in a desert[cite: 5].",
+    "tags": ["vocab", "ows", "places", "geography", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0490",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAcutely and severely distressing, agonizing, or painful to endure",
+    "options": {
+      "A": "Harrowing",
+      "B": "Idyllic",
+      "C": "Felicitous",
+      "D": "Soothing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Harrowing) is correct[cite: 5]. 'Harrowing' describes an experience that is deeply distressing or traumatic[cite: 5]. 'Idyllic' means picturesque, peaceful, and happy[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0491",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn irritating, troublesome inconvenience or complicated difficulty",
+    "options": {
+      "A": "Hassle",
+      "B": "Serenity",
+      "C": "Harmony",
+      "D": "Concord"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hassle) is correct[cite: 5]. 'Hassle' refers to a frustrating problem or annoying situation[cite: 5]. 'Harmony' is peaceful agreement.",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0492",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA specially designed vehicle used for conveying the coffin at a funeral",
+    "options": {
+      "A": "Hearse",
+      "B": "Ambulance",
+      "C": "Transistor",
+      "D": "Caravan"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hearse) is correct[cite: 5]. A 'Hearse' is a funeral motor car bearing a casket to a grave or crematorium[cite: 5]. 'Caravan' is a group of travelling merchants/vehicles[cite: 5].",
+    "tags": ["vocab", "ows", "vehicles", "death", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0493",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCausing extreme grief, profound sadness, or severe mental anguish",
+    "options": {
+      "A": "Heart-wrenching",
+      "B": "Scintillating",
+      "C": "Vivacious",
+      "D": "Ecstatic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Heart-wrenching) is correct[cite: 5]. 'Heart-wrenching' describes an event or sight causing overwhelming emotional sorrow[cite: 5]. 'Vivacious' means full of lively spirit[cite: 5].",
+    "tags": ["vocab", "ows", "emotions", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0494",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo interrupt a public speaker with derisive, aggressive, or taunting remarks",
+    "options": {
+      "A": "Heckle",
+      "B": "Eulogise",
+      "C": "Applaud",
+      "D": "Venerate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Heckle) is correct[cite: 5]. 'Heckle' means to badger or disrupt a performer or speaker with hostile interruptions[cite: 5]. 'Eulogise' means to praise publicly[cite: 5].",
+    "tags": ["vocab", "ows", "verbs", "communication", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0495",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who believes that the pursuit of sensual pleasure is the supreme purpose of life",
+    "options": {
+      "A": "Hedonist",
+      "B": "Ascetic",
+      "C": "Stoic",
+      "D": "Fatalist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hedonist) is correct[cite: 5]. A 'Hedonist' holds that pleasure is the highest good and ethical aim[cite: 5]. An 'Ascetic' practices severe self-denial[cite: 5], and a 'Stoic' is indifferent to pain or pleasure[cite: 5].",
+    "tags": ["vocab", "ows", "philosophy", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0496",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo pay careful attention to advice or a warning; take notice of",
+    "options": {
+      "A": "Heed",
+      "B": "Defy",
+      "C": "Flout",
+      "D": "Disregard"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Heed) is correct[cite: 5]. 'Heed' means to give mindful attention to counsel or caution[cite: 5]. 'Flout' and 'Defy' mean to openly disregard a rule[cite: 5].",
+    "tags": ["vocab", "ows", "verbs", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0497",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nPlants or organisms that thrive in, are adapted to, or are attracted to direct sunlight",
+    "options": {
+      "A": "Heliophilous",
+      "B": "Nyctophilous",
+      "C": "Hydrophilous",
+      "D": "Xerophilous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Heliophilous) is correct[cite: 5]. 'Heliophilous' describes organisms that prefer full, direct sunlight[cite: 5]. 'Hydrophilous' relates to an affinity for water.",
+    "tags": ["vocab", "ows", "nature", "science", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0498",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe medical and therapeutic use of sunlight in the treatment of diseases",
+    "options": {
+      "A": "Heliotherapy",
+      "B": "Physiotherapy",
+      "C": "Radiology",
+      "D": "Dermatology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Heliotherapy) is correct[cite: 5]. 'Heliotherapy' is the medical treatment of disorders using exposure to sunlight[cite: 5]. 'Physiotherapy' uses physical exercise and massage[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "treatment", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0499",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA systematically organized collection of preserved, classified, and dried plant specimens",
+    "options": {
+      "A": "Herbarium",
+      "B": "Aviary",
+      "C": "Apiary",
+      "D": "Nursery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Herbarium) is correct[cite: 5]. A 'Herbarium' is a repository of systematically dried and catalogued botanical specimens[cite: 5]. 'Nursery' is a place where young plants are grown for sale[cite: 5].",
+    "tags": ["vocab", "ows", "plants", "places", "science", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0500",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn animal that feeds entirely or predominantly on plants, vegetation, and grasses",
+    "options": {
+      "A": "Herbivorous",
+      "B": "Carnivorous",
+      "C": "Omnivorous",
+      "D": "Cannibal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Herbivorous) is correct[cite: 5]. 'Herbivorous' animals feed on plant matter[cite: 5]. 'Carnivorous' animals feed on flesh[cite: 5], and 'Cannibal' eats flesh of its own species[cite: 5].",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc", "repeated_2_times"]
+  }
+]

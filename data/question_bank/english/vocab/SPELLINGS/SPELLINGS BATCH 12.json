@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_0551",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Piscatorial",
+      "B": "Piscatoriel",
+      "C": "Pisceterial",
+      "D": "Piscatoreal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Piscatorial' - connected with fishermen or fishing; 'p-i-s-c-a-t-o-r-i-a-l'). Options B, C, and D alter the connecting vowel or the standard Latin-derived adjectival suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0552",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Placable",
+      "B": "Plagiarist",
+      "C": "Plaintiff",
+      "D": "Planaterium"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Planetarium' (spelled with '-ne-', not '-na-' - a building in which images of stars, planets, and constellations are projected). Other options are correct: Placable (easily calmed or pacified; forgiving), Plagiarist (a person who uses another person's words or ideas without attribution), Plaintiff (a person who brings a case against another in a court of law).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0553",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Platitudinous",
+      "B": "Platitudenous",
+      "C": "Platitudinus",
+      "D": "Platatudinous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Platitudinous' - used too often to be interesting or thoughtful; hackneyed; 'p-l-a-t-i-t-u-d-i-n-o-u-s'). Options B, C, and D corrupt the internal vowels or suffix spelling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0554",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Plausible",
+      "B": "Plebeian",
+      "C": "Plebescite",
+      "D": "Plenitude"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Plebiscite' (spelled with '-bi-', not '-be-' - the direct vote of all the members of an electorate on an important public question). Other options are correct: Plausible (seeming reasonable or probable), Plebeian (of or belonging to the common people), Plenitude (an abundance; the condition of being full).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0555",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Plethora",
+      "B": "Plethara",
+      "C": "Plithora",
+      "D": "Plethore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Plethora' - a large or excessive amount of something; 'p-l-e-t-h-o-r-a'). Options B, C, and D introduce erroneous vowel substitutions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0556",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Plummet",
+      "B": "Plutocracy",
+      "C": "Pneumonia",
+      "D": "Poignensy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Poignancy' (spelled with '-an-cy', not '-en-sy' - the quality of evoking a keen sense of sadness or regret). Other options are correct: Plummet (fall or drop straight down at high speed), Plutocracy (government by the wealthy), Pneumonia (lung inflammation caused by bacterial or viral infection).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0557",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Poltergeist",
+      "B": "Poltergiest",
+      "C": "Poltargeist",
+      "D": "Poltergyst"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Poltergeist' - a ghost or other supernatural being supposedly responsible for physical disturbances; German root contains '-geist', spelled 'e-i'). Options B, C, and D invert vowels or alter the root.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0558",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Polyandry",
+      "B": "Polygamous",
+      "C": "Polyphonic",
+      "D": "Pomegranite"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Pomegranate' (spelled with '-gran-ate', not '-gran-ite' - an orange-sized fruit with a tough reddish outer skin and sweet red gelatinous flesh). Other options are correct: Polyandry (polygamy in which a woman has more than one husband), Polygamous (practicing, involving, or relating to polygamy), Polyphonic (producing many sounds simultaneously; many-voiced).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0559",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Pompousness",
+      "B": "Pompousnes",
+      "C": "Pomposness",
+      "D": "Pompiousness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Pompousness' - the quality of being self-important or arrogant; 'p-o-m-p-o-u-s-n-e-s-s'). Options B, C, and D drop required vowels or consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0560",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Pontificate",
+      "B": "Portentous",
+      "C": "Possessor",
+      "D": "Posthumus"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Posthumous' (contains '-mous', not '-mus' - occurring, awarded, or appearing after the death of the originator). Other options are correct: Pontificate (express one's opinions in a way considered pompous and dogmatic), Portentous (done in a pompously solemn manner / ominous), Possessor (a person who owns, has, or controls something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0561",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Potentate",
+      "B": "Potenteit",
+      "C": "Potantate",
+      "D": "Potintate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Potentate' - a monarch or ruler, especially an autocratic one; 'p-o-t-e-n-t-a-t-e'). Options B, C, and D corrupt the vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0562",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Poundage",
+      "B": "Practicability",
+      "C": "Prebendary",
+      "D": "Precariouss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Precarious' (ends in single 's' - not securely held or in position; dangerously likely to fall or collapse). Other options are correct: Poundage (a charge or commission of a specified amount per pound), Practicability (the quality of being able to be done or put into practice successfully), Prebendary (an honorary canon of a cathedral).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0563",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Precipitate",
+      "B": "Precepetate",
+      "C": "Precepitate",
+      "D": "Precipetate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Precipitate' - cause an event or situation, typically one that is bad or undesirable, to happen suddenly or unexpectedly; 'p-r-e-c-i-p-i-t-a-t-e'). Options B, C, and D alter the vowel sequence.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0564",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Precipitous",
+      "B": "Precision",
+      "C": "Preclusion",
+      "D": "Predeceser"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Predecessor' (double 's', ends in '-or' - a person who held a job or office before the current holder). Other options are correct: Precipitous (dangerously high or steep), Precision (the quality, condition, or fact of being exact and accurate), Preclusion (the act of making something impossible; prevention).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0565",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Predilection",
+      "B": "Pradilection",
+      "C": "Predaliction",
+      "D": "Predilecsion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Predilection' - a preference or special liking for something; a bias in favor of something; 'p-r-e-d-i-l-e-c-t-i-o-n'). Options B, C, and D alter vowels or corrupt the '-tion' suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0566",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Predisposition",
+      "B": "Predominance",
+      "C": "Preeminance",
+      "D": "Prefabricated"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Preeminence' (ends in '-ence', not '-ance' - the fact or state of surpassing all others; superiority). Other options are correct: Predisposition (a liability or tendency to suffer from a condition or act in a particular way), Predominance (the state or condition of being greater in number or amount), Prefabricated (manufactured in sections to enable quick assembly on site).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0567",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Premonition",
+      "B": "Pramonition",
+      "C": "Premonision",
+      "D": "Premenetion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Premonition' - a strong feeling that something is about to happen, especially something unpleasant; 'p-r-e-m-o-n-i-t-i-o-n'). Options B, C, and D distort vowels or consonant endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0568",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Preponderant",
+      "B": "Prepossession",
+      "C": "Preposterous",
+      "D": "Presbytery"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correctly spelt here ('Prepossession' - an attitude or belief formed in advance; double 's' twice). Frequently tested against 'Preposession' (dropping a double 's'). Other options are correct: Preponderant (predominant in number or importance), Preposterous (contrary to reason or common sense; utterly absurd), Presbytery (the residence of a Roman Catholic priest / a church governing body).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0569",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Prescription",
+      "B": "Perscription",
+      "C": "Prescripcion",
+      "D": "Prascription"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Prescription' - an instruction written by a medical practitioner that authorizes a patient to receive medicine; begins with 'pre-', 'p-r-e-s-c-r-i-p-t-i-o-n'). Options B, C, and D invert prefix consonants or corrupt vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0570",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Presentiment",
+      "B": "Preservation",
+      "C": "Presumtious",
+      "D": "Preternatural"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Presumptuous' (contains 'p' and 'u' in '-ptuous' - failing to observe the limits of what is permitted or appropriate). Other options are correct: Presentiment (an intuitive feeling about the future, especially a foreboding), Preservation (the act of keeping something safe from harm or decay), Preternatural (beyond what is normal or natural).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0571",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Prevaricate",
+      "B": "Praevaricate",
+      "C": "Prevarecate",
+      "D": "Prevaricayt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Prevaricate' - speak or act in an evasive way; 'p-r-e-v-a-r-i-c-a-t-e'). Options B, C, and D alter the prefix or internal vowel syllables.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0572",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Primacy",
+      "B": "Primordial",
+      "C": "Pristine",
+      "D": "Priveleged"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Privileged' (spelled with '-vilege-', not '-velege-' - having special rights, advantages, or immunities). Other options are correct: Primacy (the fact of being primary, preeminent, or most important), Primordial (existing at or from the beginning of time; primeval), Pristine (in its original condition; unspoiled).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0573",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Probationary",
+      "B": "Probationery",
+      "C": "Probationry",
+      "D": "Probashenary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Probationary' - relating to a process of testing or probation; ends in '-ary'). Options B, C, and D alter the suffix vowel or drop required syllables.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0574",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Proclivity",
+      "B": "Procrastination",
+      "C": "Procurable",
+      "D": "Prodigality"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correctly spelt here ('Procrastination' - the action of delaying or postponing something). Commonly tested in error form as 'Procrastation' or 'Procrastenation'. Other options are correct: Proclivity (a tendency to choose or do something regularly; an inclination), Procurable (capable of being obtained), Prodigality (wasteful extravagance in spending).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0575",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Profligacy",
+      "B": "Profligasy",
+      "C": "Proflagacy",
+      "D": "Profligecy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Profligacy' - reckless extravagance or wastefulness in the use of resources; 'p-r-o-f-l-i-g-a-c-y'). Options B, C, and D substitute 's' for 'c' or alter connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0576",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Profundity",
+      "B": "Progenitor",
+      "C": "Prognosis",
+      "D": "Prolegomenon"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correctly spelt here ('Progenitor' - a person or thing from which a person, animal, or plant is descended or originates; an ancestor; ends in '-or'). Frequently miswritten in examinations as 'Progeniter'. Other options are correct: Profundity (deep insight; great depth of knowledge or thought), Prognosis (the likely course of a medical condition), Prolegomenon (a critical or discursive introduction to a book).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0577",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Promiscuity",
+      "B": "Promescuity",
+      "C": "Promiscuety",
+      "D": "Promescuety"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Promiscuity' - the state of being promiscuous; having transient sexual relations; 'p-r-o-m-i-s-c-u-i-t-y'). Options B, C, and D alter the vowel arrangement.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0578",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Promontory",
+      "B": "Propagator",
+      "C": "Propensity",
+      "D": "Prophisy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Prophesy' (verb - predict what will happen) or 'Prophecy' (noun - a prediction), but 'Prophisy' is invalid. Other options are correct: Promontory (a point of high land that juts out into a body of water), Propagator (a person or thing that breeds plants or spreads ideas), Propensity (an inclination or natural tendency to behave in a particular way).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0579",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Propinquity",
+      "B": "Propenquity",
+      "C": "Propinqwity",
+      "D": "Propenquety"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Propinquity' - the state of being close to someone or something; proximity; 'p-r-o-p-i-n-q-u-i-t-y'). Options B, C, and D distort the Latin stem vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0580",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Propitiatory",
+      "B": "Propitious",
+      "C": "Proponent",
+      "D": "Proportinate"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Proportionate' (contains '-tion-', not '-tin-' - corresponding in size or amount to something else). Other options are correct: Propitiatory (intended to reconcile or appease), Propitious (giving or indicating a good chance of success; favorable), Proponent (a person who advocates a theory, proposal, or project).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0581",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Proselytization",
+      "B": "Proselitization",
+      "C": "Proselytiseation",
+      "D": "Proselytizeation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Proselytization' - the action of attempting to convert someone from one religion, belief, or opinion to another; 'p-r-o-s-e-l-y-t-i-z-a-t-i-o-n'). Options B, C, and D substitute 'i' for 'y' or add redundant vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0582",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Prosody",
+      "B": "Prosopopoeia",
+      "C": "Prostration",
+      "D": "Protagonist"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correctly spelt here ('Prosopopoeia' - a figure of speech in which an abstract thing is personified; Greek origin). A frequent test trap spells it 'Prosopopeia' (dropping 'o'). Other options are correct: Prosody (the patterns of rhythm and sound used in poetry), Prostration (the action of lying stretched out on the ground), Protagonist (the leading character in a drama, movie, or novel).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0583",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Protean",
+      "B": "Protain",
+      "C": "Proteon",
+      "D": "Protien"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Protean' - tending or able to change frequently or easily; versatile; 'p-r-o-t-e-a-n'). Options B, C, and D confuse the mythological adjective with 'protein' or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0584",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Providential",
+      "B": "Provincial",
+      "C": "Provisional",
+      "D": "Prowesss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Prowess' (double 's', not triple 's' - skill or expertise in a particular activity or field). Other options are correct: Providential (occurring at a favorable time; opportune), Provincial (of or concerning a province / narrow-minded), Provisional (arranged or existing for the present, possibly to be changed later).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0585",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Prurient",
+      "B": "Prureant",
+      "C": "Pruriant",
+      "D": "Prurent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Prurient' - having or encouraging an excessive interest in sexual matters; 'p-r-u-r-i-e-n-t'). Options B, C, and D alter the suffix vowel or drop 'i'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0586",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Pseudepigraphy",
+      "B": "Pseudonymity",
+      "C": "Psychiatrist",
+      "D": "Psychoanalasis"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Psychoanalysis' (spelled with '-lysis', not '-lasis' - a system of psychological theory and therapy). Other options are correct: Pseudepigraphy (the practice of attributing a work to someone other than the real author), Pseudonymity (the state of using a fictitious name), Psychiatrist (a medical practitioner specializing in the diagnosis and treatment of mental illness).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0587",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Psychoneurosis",
+      "B": "Psichoneurosis",
+      "C": "Psychoneuroces",
+      "D": "Psychoneurocis"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Psychoneurosis' - a mental or emotional disorder affecting part of the personality; 'p-s-y-c-h-o-n-e-u-r-o-s-i-s'). Options B, C, and D corrupt the Greek root 'psycho-' or the '-osis' suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0588",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Psychopathology",
+      "B": "Psychosomatic",
+      "C": "Pterodactyl",
+      "D": "Puerillity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Puerility' (single 'l' before 'ity' - childishness; silliness). Other options are correct: Psychopathology (the scientific study of mental disorders), Psychosomatic (caused or aggravated by a mental factor such as internal conflict or stress), Pterodactyl (a fossil flying reptile with a long slender head).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0589",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Pugilist",
+      "B": "Pujilist",
+      "C": "Pugelist",
+      "D": "Pugilyst"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Pugilist' - a boxer, especially a professional one; 'p-u-g-i-l-i-s-t'). Options B, C, and D replace 'g' with 'j' or alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0590",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Pulchritude",
+      "B": "Pulmonary",
+      "C": "Punctiliousness",
+      "D": "Punctuallity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Punctuality' (single 'l' before 'ity' - the characteristic of being able to complete a required task or fulfill an obligation before or at a previously designated time). Other options are correct: Pulchritude (beauty), Pulmonary (relating to the lungs), Punctiliousness (strict attention to minute details of conduct or etiquette).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0591",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Punditry",
+      "B": "Panditry",
+      "C": "Pundetry",
+      "D": "Punditrey"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Punditry' - the expressing of expert opinions; 'p-u-n-d-i-t-r-y'). Options B, C, and D alter the vowel base or modify the ending.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0592",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Pungency",
+      "B": "Punitiveness",
+      "C": "Purgative",
+      "D": "Purveior"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Purveyor' (spelled with '-yor', not '-ior' - a person who sells or provides particular goods). Other options are correct: Pungency (the quality of having a sharp and caustic quality / strong taste or smell), Punitiveness (the quality of inflicting or aiming to inflict punishment), Purgative (strongly laxative in effect).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0593",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Pyrotechnist",
+      "B": "Pyrotecknist",
+      "C": "Pirotechnist",
+      "D": "Pyrotechnyst"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Pyrotechnist' - a person skilled in the manufacture or display of fireworks; 'p-y-r-o-t-e-c-h-n-i-s-t'). Options B, C, and D corrupt the Greek root 'pyro-' or 'techno-'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0594",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Quadrennial",
+      "B": "Quadruped",
+      "C": "Qualitative",
+      "D": "Quandaryy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Quandary' (ends in single 'y' - a state of perplexity or uncertainty over what to do in a difficult situation). Other options are correct: Quadrennial (recurring every four years), Quadruped (an animal which has four feet), Qualitative (relating to, measuring, or measured by the quality of something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0595",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Quarantine",
+      "B": "Quarentine",
+      "C": "Quarantene",
+      "D": "Cwarantine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Quarantine' - a state, period, or place of isolation in which people or animals that have arrived from elsewhere or been exposed to infectious disease are placed; 'q-u-a-r-a-n-t-i-n-e'). Options B, C, and D alter the vowel positions or use 'Cw'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0596",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Querulous",
+      "B": "Quintessence",
+      "C": "Quixotic",
+      "D": "Quotidiann"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Quotidian' (ends in single 'n' - of or occurring every day; daily; ordinary). Other options are correct: Querulous (complaining in a petulant or whining manner), Quintessence (the most perfect or typical example of a quality or class), Quixotic (exceedingly idealistic; unrealistic and impractical).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0597",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Rabbinical",
+      "B": "Rabinical",
+      "C": "Rabinecal",
+      "D": "Rabbinikel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Rabbinical' - relating to rabbis or to Jewish law or tradition; double 'b', 'r-a-b-b-i-n-i-c-a-l'). Options B, C, and D drop 'b' or modify suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0598",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Radiolarian",
+      "B": "Raffish",
+      "C": "Rapprochement",
+      "D": "Rarifaction"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Rarefaction' (spelled with '-re-', not '-ri-' - diminution in the density of something, especially air or a gas). Other options are correct: Radiolarian (a single-celled aquatic animal with a spherical amoeba-like body), Raffish (unconventional and slightly disreputable, especially in an attractive manner), Rapprochement (an establishment or resumption of harmonious relations).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0599",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Ratiocination",
+      "B": "Ratioceination",
+      "C": "Ratiocenation",
+      "D": "Ratiosination"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Ratiocination' - the process of exact thinking; reasoned train of thought; 'r-a-t-i-o-c-i-n-a-t-i-o-n'). Options B, C, and D distort the Latin stem vowels or consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0600",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Raucous",
+      "B": "Ravenous",
+      "C": "Recalcitrant",
+      "D": "Recapitulatee"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Recapitulate' (ends in single 'e' - summarize and state again the main points of). Other options are correct: Raucous (making or constituting a disturbingly harsh and loud noise), Ravenous (extremely hungry), Recalcitrant (having an obstinately uncooperative attitude toward authority or discipline).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

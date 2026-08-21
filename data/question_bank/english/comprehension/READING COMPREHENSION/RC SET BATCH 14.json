@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_221",
+    "passage_title": "The Structural Anthropology of Edmund Leach and Kachin Political Systems",
+    "passage_text": "In his revolutionary 1954 anthropological monograph *Political Systems of Highland Burma*, British anthropologist Edmund Leach launched a profound critique of the static functionalist orthodoxy established by A.R. Radcliffe-Brown and Bronislaw Malinowski. Conventional functionalism assumed that indigenous tribal societies maintained permanent, harmonious equilibrium structures that could be classified into neat, immutable typologies. Examining the Kachin and Shan ethnic groups of the Burma-China borderlands, Leach demonstrated that social structures are neither static nor permanent, but inherently fluid, unstable, and cyclical. The Kachin people continually oscillate between two opposing political ideals: **gumlao** (an egalitarian, acephalous tribal order lacking hierarchical chiefs) and **gumsa** (a stratified feudal hierarchy modeled after the Shan princedoms, featuring hereditary aristocratic chiefs and ritual tribute). Leach revealed that neither political system is a stable, permanent state; rather, the internal contradictions of a *gumsa* hierarchy (such as aristocratic exploitation and lineage debt) inevitably precipitate peasant revolt and economic collapse, forcing society to revert to egalitarian *gumlao* anarchy. Conversely, acephalous *gumlao* societies eventually experience status competition and wealth accumulation among ambitious big-men, driving them back toward stratified *gumsa* despotism. Leach's dynamic model proved that structural instability and political oscillation are enduring characteristics of human social organization.",
+    "questions": [
+      {
+        "id": "ENG_RC_221_Q1",
+        "question": "What core assumption of classical structural functionalism was challenged by Edmund Leach's *Political Systems of Highland Burma*?",
+        "options": {
+          "A": "The assumption that tribal societies maintain permanent, harmonious equilibrium structures that fit neat, immutable typologies.",
+          "B": "The belief that indigenous peoples possess spoken languages.",
+          "C": "The assumption that metal tools were used in ancient Asia.",
+          "D": "The claim that religious rituals have no psychological impact."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that functionalism assumed societies maintained static, harmonious equilibrium structures, which Leach's dynamic study disproven."
+      },
+      {
+        "id": "ENG_RC_221_Q2",
+        "question": "What are the two opposing political ideals between which the Kachin people continuously oscillate?",
+        "options": {
+          "A": "Democracy and absolute military dictatorship",
+          "B": "Gumlao (egalitarian, acephalous tribal order) and gumsa (stratified feudal hierarchy modeled after Shan princedoms)",
+          "C": "Nomadic pastoralism and industrial factory capitalism",
+          "D": "Matriarchal kinship and patriarchal feudalism"
+        },
+        "correct_option": "B",
+        "rationale": "The passage details the continuous oscillation between *gumlao* (egalitarian acephalous order) and *gumsa* (stratified feudal hierarchy)."
+      },
+      {
+        "id": "ENG_RC_221_Q3",
+        "question": "Why does a *gumsa* political hierarchy inevitably break down and revert to *gumlao* anarchy according to Leach?",
+        "options": {
+          "A": "Foreign military invasions destroy all royal palaces.",
+          "B": "Internal contradictions such as aristocratic exploitation and lineage debt precipitate peasant revolt and collapse.",
+          "C": "Climate change freezes all agricultural crops.",
+          "D": "Religious priests legally ban hereditary monarchies."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that internal contradictions like aristocratic exploitation and lineage debt provoke revolts that force a reversion to egalitarian *gumlao*."
+      },
+      {
+        "id": "ENG_RC_221_Q4",
+        "question": "What broader theoretical conclusion did Edmund Leach establish regarding human social organization?",
+        "options": {
+          "A": "Social structures are inherently fluid, unstable, and cyclical, characterized by structural instability and political oscillation.",
+          "B": "All human societies will eventually merge into a single global government.",
+          "C": "Political systems remain frozen in stone monuments for thousands of years.",
+          "D": "Economic markets operate without human interference."
+        },
+        "correct_option": "A",
+        "rationale": "The final sentence highlights Leach's proof that structural instability and political oscillation are enduring, core features of human social organization."
+      },
+      {
+        "id": "ENG_RC_221_Q5",
+        "question": "As used in the passage, the word 'acephalous' describes a societal organization that is:",
+        "options": {
+          "A": "Headless; lacking a centralized political governing authority, hierarchy, or ruling chief",
+          "B": "Ruled by an absolute monarch with divine hereditary right",
+          "C": "Composed exclusively of unmarried male soldiers",
+          "D": "Deaf and unable to communicate verbally"
+        },
+        "correct_option": "A",
+        "rationale": "In anthropology, 'acephalous' (literally 'without a head') describes a stateless society lacking a centralized political hierarchy or permanent ruling authority."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_222",
+    "passage_title": "The Quantum Mechanics of the Quantum Zeno Effect",
+    "passage_text": "In quantum mechanics, the **Quantum Zeno Effect (QZE)**—named after the ancient Greek philosopher Zeno of Elea and mathematically formulated by George Sudarshan and Baidyanath Misra in 1977—describes the remarkable physical phenomenon whereby an unstable quantum system can be frozen or prevented from undergoing time evolution simply by performing continuous, rapid quantum measurements on it. In standard quantum theory, when an unmeasured quantum system (such as an excited radioactive atom or an unstable quantum state $\\vert\\psi_0\\rangle$) evolves unitarily under the Schrödinger equation, the probability $P(t)$ of finding the system still in its initial state decays quadratically over very short time intervals ($t \\ll \\tau_c$): $P(t) \\approx 1 - (t / \\tau)^2$. Because the survival probability curve is parabolic (flat with zero slope) right at $t = 0$, interrupting the system with a rapid sequence of projective measurements at temporal intervals $\\Delta t$ effectively resets the time evolution clock back to zero before quadratic decay can accumulate. As the measurement frequency approaches infinity ($\\lim_{\\Delta t \\to 0}$), the total cumulative probability of quantum decay vanishes entirely, freezing the quantum system permanently in its initial unstable state. Conversely, if measurements are spaced far apart in time, the system undergoes exponential decay. The Quantum Zeno Effect provides profound insights into the measurement problem in quantum mechanics, demonstrating that the act of observation fundamentally alters the temporal dynamics of physical systems.",
+    "questions": [
+      {
+        "id": "ENG_RC_222_Q1",
+        "question": "What physical outcome is produced by the Quantum Zeno Effect on an unstable quantum system?",
+        "options": {
+          "A": "It accelerates radioactive decay to infinite speeds.",
+          "B": "It freezes or prevents the system from undergoing time evolution through continuous, rapid quantum measurements.",
+          "C": "It permanently converts the quantum particle into classical light waves.",
+          "D": "It cools the system down to absolute zero."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explains that an unstable quantum system can be frozen or prevented from evolving over time by continuous, rapid measurements."
+      },
+      {
+        "id": "ENG_RC_222_Q2",
+        "question": "Why does the survival probability curve of an unmeasured quantum system behave quadratically over very short time intervals?",
+        "options": {
+          "A": "Because the survival probability curve is parabolic ($P(t) \\approx 1 - [t/\\tau]^2$) with a zero slope right at $t = 0$.",
+          "B": "Because quantum particles accelerate exponentially like falling cannonballs.",
+          "C": "Because wave functions possess circular geometric symmetry.",
+          "D": "Because temperature rises linearly with time."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that over short time intervals ($t \\ll \\tau_c$), the probability decays quadratically with a parabolic, flat slope at $t = 0$."
+      },
+      {
+        "id": "ENG_RC_222_Q3",
+        "question": "What happens to the probability of quantum decay as the measurement frequency approaches infinity ($\\Delta t \\to 0$)?",
+        "options": {
+          "A": "Decay probability increases to 100 percent instantly.",
+          "B": "The cumulative probability of quantum decay vanishes entirely, freezing the system in its initial state.",
+          "C": "The particle transforms into a macroscopic solid object.",
+          "D": "The energy of the system drops below absolute zero."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that as measurement frequency approaches infinity, the cumulative decay probability vanishes, permanently freezing the system in its initial state."
+      },
+      {
+        "id": "ENG_RC_222_Q4",
+        "question": "Which physicists mathematically formulated the Quantum Zeno Effect in 1977?",
+        "options": {
+          "A": "George Sudarshan and Baidyanath Misra",
+          "B": "Albert Einstein and Niels Bohr",
+          "C": "Charles Bennett and Gilles Brassard",
+          "D": "Daniel Tsui and Horst Störmer"
+        },
+        "correct_option": "A",
+        "rationale": "The text explicitly credits George Sudarshan and Baidyanath Misra with mathematically formulating the QZE in 1977."
+      },
+      {
+        "id": "ENG_RC_222_Q5",
+        "question": "As used in the passage, the word 'unitary' in quantum evolution means a process that:",
+        "options": {
+          "A": "Proceeds naturally according to the Schrödinger equation without measurement interference, conserving total probability",
+          "B": "Involves single-celled biological organisms multiplying in water",
+          "C": "Requires exact financial accounting ledgers",
+          "D": "Emits high-intensity gamma-ray radiation"
+        },
+        "correct_option": "A",
+        "rationale": "In quantum mechanics, 'unitary evolution' refers to the smooth, deterministic time evolution of a quantum state governed by the Schrödinger equation, conserving total probability (norm)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_223",
+    "passage_title": "The Paleoclimatology of the Paleocene-Eocene Thermal Maximum (PETM)",
+    "passage_text": "Approximately 56 million years ago, at the boundary between the Paleocene and Eocene epochs, Earth experienced a violent, hyperthermal climatic event known as the **Paleocene-Eocene Thermal Maximum (PETM)**. During this geological pulse lasting roughly 200,000 years, global average surface temperatures spiked abruptly by 5°C to 8°C, accompanied by massive ocean acidification and a profound benthic foraminiferal extinction event. High-resolution carbon isotope ($^{13}C/^{12}C$) excursions recorded in deep-sea carbonate sediments reveal a massive, geologically rapid injection of over 2,000 to 5,000 gigatons of isotopically light carbon into the ocean-atmosphere system. The premier geochemical mechanism cited to explain this massive carbon release is the **dissociation of seafloor methane hydrates**—clathrate crystal lattices of water ice trapping immense reservoirs of biogenic methane along continental slopes. Triggered by initial deep-ocean warming driven by early volcanic activity (such as the North Atlantic Igneous Province), a destabilizing thermal feedback loop melted hydrate deposits, releasing methane into the deep ocean. Because methane ($CH_4$) is a potent greenhouse gas that rapidly oxidizes into carbon dioxide ($CO_2$) within decades, this massive outgassing overwhelmed marine buffering capacities, driving global warming and wiping out deep-sea ecosystems before slow silicate weathering restored climatic equilibrium over millennia.",
+    "questions": [
+      {
+        "id": "ENG_RC_223_Q1",
+        "question": "What major climatic event marked the boundary between the Paleocene and Eocene epochs 56 million years ago?",
+        "options": {
+          "A": "A sudden global ice age that covered the equator in thick glaciers.",
+          "B": "A violent hyperthermal warming event (PETM) where global temperatures spiked by 5°C to 8°C over 200,000 years.",
+          "C": "The complete evaporation of all global oceans.",
+          "D": "A massive meteorite impact that vaporized the atmosphere."
+        },
+        "correct_option": "B",
+        "rationale": "The opening text describes the PETM as a hyperthermal event 56 Ma where global temperatures spiked by 5°C to 8°C over ~200,000 years."
+      },
+      {
+        "id": "ENG_RC_223_Q2",
+        "question": "What geochemical evidence in deep-sea carbonate sediments indicates a massive injection of carbon during the PETM?",
+        "options": {
+          "A": "A massive negative carbon isotope ($^{13}C/^{12}C$) excursion.",
+          "B": "Thayers of pure metallic gold nuggets.",
+          "C": "High concentrations of radioactive plutonium.",
+          "D": "The complete absence of all calcium carbonate."
+        },
+        "correct_option": "A",
+        "rationale": "The passage notes that carbon isotope ($^{13}C/^{12}C$) records reveal a massive injection of isotopically light carbon into the ocean-atmosphere system."
+      },
+      {
+        "id": "ENG_RC_223_Q3",
+        "question": "What is the primary geochemical mechanism cited for the massive carbon release during the PETM?",
+        "options": {
+          "A": "The burning of modern industrial fossil fuel power plants.",
+          "B": "The thermal dissociation of seafloor methane hydrate clathrates triggered by initial deep-ocean warming.",
+          "C": "The widespread forest fires across prehistoric continents.",
+          "D": "The sudden radioactive decay of continental granite rocks."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that dissociation of seafloor methane hydrates—triggered by initial deep-ocean warming—released massive greenhouse gases into the system."
+      },
+      {
+        "id": "ENG_RC_223_Q4",
+        "question": "How did the massive carbon release impact deep-sea benthic organisms during the PETM?",
+        "options": {
+          "A": "It triggered a profound benthic foraminiferal extinction event driven by ocean acidification and warming.",
+          "B": "It caused deep-sea organisms to evolve gigantism and intelligence.",
+          "C": "It had zero biological impact on marine life.",
+          "D": "It caused benthic organisms to migrate onto terrestrial land."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that carbon injection caused massive ocean acidification and 'a profound benthic foraminiferal extinction event.'"
+      },
+      {
+        "id": "ENG_RC_223_Q5",
+        "question": "As used in the passage, the word 'clathrate' refers to a chemical substance where:",
+        "options": {
+          "A": "Guest molecules (such as methane) are trapped inside a caged crystal lattice framework of host molecules (such as water ice)",
+          "B": "Metal atoms are dissolved completely into liquid mercury",
+          "C": "Plastic polymers are melted into synthetic textiles",
+          "D": "Radioactive elements emit alpha particles"
+        },
+        "correct_option": "A",
+        "rationale": "In chemistry and geology, a 'clathrate' (or inclusion compound) is a substance in which guest molecules are trapped within the cage-like crystal lattice of another substance (like methane hydrate)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_224",
+    "passage_title": "The Structural Virology of Envelope Glycoproteins and Fusion Kinetics",
+    "passage_text": "In structural virology, the entry of enveloped viruses into host cells is mediated by specialized viral surface glycoproteins that undergo massive, irreversible conformational changes. Enveloped viruses—such as HIV, influenza, and coronaviruses—rely on these viral fusion proteins to bridge the gap between the viral envelope and the host cell membrane, overcoming the severe electrostatic repulsion between two negatively charged lipid bilayers. Fusion proteins are typically categorized into three structural classes. **Class I fusion proteins** (exemplified by HIV gp120/gp41 and influenza hemagglutinin) are characterized by a predominant $\\alpha$-helical coiled-coil structure in their post-fusion conformation. The viral entry cascade initiates when receptor-binding subunits bind to host cell-surface receptors (e.g., CD4 and CCR5 for HIV, or sialic acid for influenza), triggering proteolytic cleavage or conformational exposure of a hydrophobic **fusion peptide**. This fusion peptide inserts directly into the host target lipid bilayer, forming an extended intermediate state. Subsequent folding into a stable, highly exothermic six-helix bundle (trimer-of-hairpins) draws the viral and host membranes into intimate contact, driving hemifusion and culminating in the opening of a fusion pore through which the viral genetic material enters the host cytoplasm. Because these conformational transitions are essential for infectivity, they serve as primary targets for neutralizing antibodies and viral fusion inhibitor therapeutics.",
+    "questions": [
+      {
+        "id": "ENG_RC_224_Q1",
+        "question": "What primary physical barrier must viral fusion proteins overcome during the process of host cell entry?",
+        "options": {
+          "A": "Severe electrostatic repulsion between two negatively charged lipid bilayers.",
+          "B": "Extreme high-frequency magnetic fields generated by ribosomes.",
+          "C": "The complete absence of water molecules inside the extracellular matrix.",
+          "D": "Gravitational forces pulling the virion toward the cellular nucleus."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that viral fusion proteins must overcome 'the severe electrostatic repulsion between two negatively charged lipid bilayers.'"
+      },
+      {
+        "id": "ENG_RC_224_Q2",
+        "question": "What structural motif characterizes Class I fusion proteins in their post-fusion conformation?",
+        "options": {
+          "A": "A flat, rigid sheet of pure metallic carbon atoms.",
+          "B": "A predominant $\\alpha$-helical coiled-coil structure forming a six-helix bundle.",
+          "C": "A hollow spherical capsid made of lipid droplets.",
+          "D": "A random sequence of unstructured amino acids."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that Class I proteins feature 'a predominant $\\alpha$-helical coiled-coil structure in their post-fusion conformation' leading to a six-helix bundle."
+      },
+      {
+        "id": "ENG_RC_224_Q3",
+        "question": "What is the specific function of the hydrophobic 'fusion peptide' upon exposure during viral entry?",
+        "options": {
+          "A": "It digests the host cell's nuclear DNA chromosomes.",
+          "B": "It inserts directly into the target host lipid bilayer, anchoring an extended intermediate state.",
+          "C": "It acts as a fluorescent dye to illuminate viral particles under microscopes.",
+          "D": "It neutralizes all surrounding antibodies in the bloodstream."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that exposure of the fusion peptide allows it to insert directly into the target host lipid bilayer to anchor the intermediate state."
+      },
+      {
+        "id": "ENG_RC_224_Q4",
+        "question": "Which viruses are explicitly cited in the passage as exemplifying Class I fusion proteins?",
+        "options": {
+          "A": "Bacteriophage Mu and Lambda",
+          "B": "HIV (gp120/gp41) and influenza hemagglutinin",
+          "C": "Tobacco mosaic virus and rabies virus",
+          "D": "Smallpox and chickenpox viruses"
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly cites HIV (gp120/gp41) and influenza hemagglutinin as examples of Class I fusion proteins."
+      },
+      {
+        "id": "ENG_RC_224_Q5",
+        "question": "As used in the passage, the word 'hemifusion' refers to a membrane state where:",
+        "options": {
+          "A": "The outer leaflets of the viral and host lipid bilayers have merged, but their inner leaflets remain intact and the fusion pore has not yet opened.",
+          "B": "The entire virus has dissolved completely into liquid cytoplasm.",
+          "C": "The host cell membrane is permanently ruptured and killed.",
+          "D": "Viral RNA is converted directly into host genomic DNA."
+        },
+        "correct_option": "A",
+        "rationale": "In membrane biology, 'hemifusion' is an intermediate stage of membrane fusion where the outer leaflets of two contacting membranes mix, but the inner leaflets have not yet fused to open a pore."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_225",
+    "passage_title": "The Evolutionary Ecology of Plant Mycorrhizal Networks and the 'Wood Wide Web'",
+    "passage_text": "In forest ecology, the subterranean interactions linking terrestrial flora extend far beyond isolated root systems through symbiotic associations with soil fungi, collectively termed **mycorrhizal networks**. The two primary structural types are **arbuscular mycorrhizas (AM)**, formed by ancient Glomeromycota fungi that penetrate root cortical cell walls, and **ectomycorrhizas (EcM)**, formed predominantly by Basidiomycota and Ascomycota fungi that sheath root tips in a dense fungal mantle without penetrating cellular membranes. Pioneered by ecologist Suzanne Simard, research reveals that these fungal hyphae interlace individual trees into expansive, multispecies subterranean commons—popularly dubbed the **'Wood Wide Web'**. Through this fungal network, mature canopy trees (termed 'hub trees' or 'mother trees') transfer carbon, nitrogen, phosphorus, and water bidirectionally to shaded understory seedlings or struggling neighboring plants experiencing drought stress. Using carbon isotope tracers, scientists demonstrated that nutrient flux operates along source-sink gradients, nourishing younger saplings suppressed by dense forest canopies. Furthermore, mycorrhizal networks serve as an underground signaling highway: when an individual tree is attacked by defoliating insects or pathogenic fungi, it transmits electrical and chemical defense signals (volatile organic compounds and jasmonic acid) through the fungal hyphae, priming neighboring connected trees to upregulate their own defensive chemical defenses (such as toxic tannins and phenolic resins) before herbivore arrival.",
+    "questions": [
+      {
+        "id": "ENG_RC_225_Q1",
+        "question": "What is the structural difference between arbuscular mycorrhizas (AM) and ectomycorrhizas (EcM)?",
+        "options": {
+          "A": "AM fungi penetrate root cortical cell walls, whereas EcM fungi sheath root tips in a dense fungal mantle without cellular penetration.",
+          "B": "AM fungi grow exclusively in aquatic marine sediments, while EcM fungi grow on rocky mountain peaks.",
+          "C": "AM fungi destroy plant roots, while EcM fungi perform photosynthesis.",
+          "D": "AM fungi produce edible mushrooms, while EcM fungi are microscopic bacteria."
+        },
+        "correct_option": "A",
+        "rationale": "The text details that arbuscular mycorrhizas penetrate root cortical cell walls, while ectomycorrhizas sheath root tips in a mantle without penetrating cellular membranes."
+      },
+      {
+        "id": "ENG_RC_225_Q2",
+        "question": "According to Suzanne Simard's research, what function is performed by mature 'hub trees' or 'mother trees' within the network?",
+        "options": {
+          "A": "They absorb all soil nutrients, starving neighboring plants of water.",
+          "B": "They transfer carbon, water, and nutrients bidirectionally to shaded understory seedlings along source-sink gradients.",
+          "C": "They release toxic acids that kill all surrounding fungal hyphae.",
+          "D": "They act as mechanical anchors preventing forest windstorms."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that mother trees transfer carbon, nitrogen, phosphorus, and water to shaded seedlings or stressed neighbors along source-sink gradients."
+      },
+      {
+        "id": "ENG_RC_225_Q3",
+        "question": "How do connected trees utilize mycorrhizal networks when a neighboring tree is attacked by herbivorous insects?",
+        "options": {
+          "A": "They immediately uproot themselves and move to a safer location.",
+          "B": "They receive chemical defense signals (jasmonic acid) through the hyphae, priming them to synthesize defensive tannins before attack.",
+          "C": "They absorb toxic sap from the attacked tree to save its life.",
+          "D": "They release blinding smoke into the forest canopy."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that attacked trees transmit defense signals through fungal hyphae, priming connected trees to upregulate defensive compounds like tannins."
+      },
+      {
+        "id": "ENG_RC_225_Q4",
+        "question": "Which major fungal phylum is explicitly cited as forming arbuscular mycorrhizal (AM) associations?",
+        "options": {
+          "A": "Glomeromycota",
+          "B": "Cyanobacteria",
+          "C": "Retroviridae",
+          "D": "Bacteroidetes"
+        },
+        "correct_option": "A",
+        "rationale": "The passage specifies that arbuscular mycorrhizas are formed by ancient Glomeromycota fungi."
+      },
+      {
+        "id": "ENG_RC_225_Q5",
+        "question": "As used in the passage, the word 'hyphae' refers to:",
+        "options": {
+          "A": "The branching, thread-like tubular filaments that compose the mycelium of a fungus",
+          "B": "The hard woody outer bark of ancient oak trees",
+          "C": "The microscopic reproductive spores released by ferns",
+          "D": "The fluid-filled vascular tubes inside animal hearts"
+        },
+        "correct_option": "A",
+        "rationale": "'Hyphae' are the long, branching filamentous structures of fungi that absorb nutrients and form subterranean networks."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_226",
+    "passage_title": "The Macroeconomics of the Solow-Swan Growth Model and Technological Progress",
+    "passage_text": "In neoclassical growth economics, the **Solow-Swan model**—formulated independently by Robert Solow and Trevor Swan in 1956—serves as the foundational mathematical framework for analyzing long-term economic growth, capital accumulation, and output per capita. The standard model assumes a neoclassical production function with constant returns to scale and diminishing marginal returns to capital: $Y = F(K, L)$, where $Y$ is total output, $K$ is physical capital stock, and $L$ is aggregate labor. The core dynamic equation tracks capital accumulation: $\\dot{K} = sY - (\\delta + n + g)K$, where $s$ is the exogenous savings rate, $\\delta$ is the depreciation rate of capital, $n$ is population growth, and $g$ is the rate of exogenous labor-augmenting technological progress. In the absence of technological progress ($g=0$), the economy converges toward a **steady-state equilibrium** where net investment exactly equals capital dilution caused by depreciation and population expansion ($\\dot{K} = 0$), halting long-term growth in output per worker due to diminishing returns. Consequently, the Solow-Swan model yields its most profound policy insight: **capital accumulation alone cannot sustain long-term economic growth per capita**. To achieve perpetual increases in living standards, an economy must rely entirely on exogenous technological progress ($g$), which shifts the production function upward and drives sustained long-run growth in output per worker.",
+    "questions": [
+      {
+        "id": "ENG_RC_226_Q1",
+        "question": "What primary economic conclusion is established by the Solow-Swan growth model regarding capital accumulation?",
+        "options": {
+          "A": "Capital accumulation alone can sustain infinite, permanent economic growth per capita without limits.",
+          "B": "Capital accumulation alone cannot sustain long-term growth per capita due to diminishing marginal returns, making technological progress essential.",
+          "C": "Capital accumulation causes immediate national bankruptcy and hyperinflation.",
+          "D": "Capital accumulation has zero mathematical impact on worker productivity."
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly states that capital accumulation alone cannot sustain long-term growth per capita because of diminishing marginal returns."
+      },
+      {
+        "id": "ENG_RC_226_Q2",
+        "question": "What condition defines the 'steady-state equilibrium' in the Solow-Swan model when $g=0$?",
+        "options": {
+          "A": "Total output drops to absolute zero.",
+          "B": "Net investment exactly equals capital dilution from depreciation and population growth ($\\dot{K} = 0$), halting per-worker growth.",
+          "C": "The savings rate rises to 100 percent of national income.",
+          "D": "Population growth completely ceases worldwide."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that steady-state equilibrium occurs when net investment equals capital dilution from depreciation and population expansion ($\\dot{K} = 0$)."
+      },
+      {
+        "id": "ENG_RC_226_Q3",
+        "question": "According to the model, what drives perpetual, long-term increases in living standards and output per worker?",
+        "options": {
+          "A": "Exogenous technological progress ($g$), which shifts the production function upward.",
+          "B": "Increasing the physical number of manual laborers.",
+          "C": "Imposing high tariff barriers on foreign manufactured goods.",
+          "D": "Reducing central bank interest rates to negative percentages."
+        },
+        "correct_option": "A",
+        "rationale": "The final sentence notes that perpetual increases in living standards require exogenous technological progress ($g$) to shift the production function upward."
+      },
+      {
+        "id": "ENG_RC_226_Q4",
+        "question": "What characteristic property is assumed for the neoclassical production function in the Solow-Swan model?",
+        "options": {
+          "A": "Constant returns to scale and diminishing marginal returns to capital.",
+          "B": "Infinite returns to scale with exponential cost explosions.",
+          "C": "Zero relationship between labor and capital.",
+          "D": "Negative output whenever capital increases."
+        },
+        "correct_option": "A",
+        "rationale": "The text states the model assumes a production function with 'constant returns to scale and diminishing marginal returns to capital.'"
+      },
+      {
+        "id": "ENG_RC_226_Q5",
+        "question": "As used in the passage, the word 'exogenous' describes a variable that is:",
+        "options": {
+          "A": "Determined by factors outside the internal mechanics of the economic model",
+          "B": "Generated entirely from within corporate accounting profit margins",
+          "C": "Toxic and dangerous to human physiological health",
+          "D": "Mathematically impossible to calculate"
+        },
+        "correct_option": "A",
+        "rationale": "In economics, an 'exogenous' variable is one whose value is determined outside the model and is imposed on it from the outside."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_227",
+    "passage_title": "The Quantum Electrodynamics of the Casimir Effect",
+    "passage_text": "In quantum field theory and macroscopic quantum mechanics, the **Casimir Effect**—theoretically predicted in 1948 by Dutch physicist Hendrik Casimir—demonstrates that the quantum vacuum is not empty space devoid of energy, but a roiling ocean of zero-point quantum fluctuations. Casimir calculated that if two uncharged, perfectly conducting parallel metal plates are placed in an ultra-high vacuum in close proximity, the physical boundaries of the plates restrict the allowable wavelengths of virtual electromagnetic field modes that can exist in the intervening gap compared to the unrestricted modes outside the plates. Specifically, only virtual photon wavelengths that fit an integer fraction of the plate separation distance ($d$) can form standing waves inside the gap. Because there are fewer electromagnetic modes permitted inside the narrow gap than in the infinite space outside, the ambient vacuum pressure outside pushes the plates together. The resulting attractive quantum pressure generates a macroscopic force per unit area given by: $F/A = \\pi^2 \\hbar c / (240 d^4)$. While famously difficult to measure due to electrostatic interference, precise experiments by Steven Lamoreaux and others confirmed the Casimir force, proving that zero-point vacuum energy exerts tangible, measurable mechanical force on macroscopic matter at the nanometer scale.",
+    "questions": [
+      {
+        "id": "ENG_RC_227_Q1",
+        "question": "What physical phenomenon is demonstrated by the Casimir Effect?",
+        "options": {
+          "A": "The complete absence of all energy in empty space.",
+          "B": "That the quantum vacuum contains roiling zero-point fluctuations capable of exerting measurable physical force on macroscopic objects.",
+          "C": "That metal plates dissolve into liquid plasma in a vacuum.",
+          "D": "That light travels infinitely fast through narrow gaps."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that the Casimir effect proves the quantum vacuum is not empty, but contains zero-point fluctuations that exert tangible mechanical force on matter."
+      },
+      {
+        "id": "ENG_RC_227_Q2",
+        "question": "Why do uncharged parallel metal plates experience an attractive force in a vacuum according to Casimir's theory?",
+        "options": {
+          "A": "Because gravitational attraction between individual electrons pulls them together.",
+          "B": "Because the plates restrict virtual photon wavelengths inside the gap, creating a pressure differential where external vacuum pressure pushes them together.",
+          "C": "Because the plates acquire massive static electrical charges from cosmic rays.",
+          "D": "Because air molecules trapped between the plates condense into water."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that restricting virtual wavelengths inside the gap means fewer modes exist inside than outside, causing external vacuum pressure to push the plates together."
+      },
+      {
+        "id": "ENG_RC_227_Q3",
+        "question": "How does the attractive Casimir force scale mathematically with respect to the plate separation distance ($d$)?",
+        "options": {
+          "A": "It scales inversely with the fourth power of distance ($1/d^4$).",
+          "B": "It scales linearly with distance ($d$).",
+          "C": "It remains completely constant regardless of distance.",
+          "D": "It scales exponentially with squared distance ($e^{d^2}$).."
+        },
+        "correct_option": "A",
+        "rationale": "The formula provided in the text shows force per unit area is proportional to $1/d^4$ ($F/A = \pi^2 \hbar c / [240 d^4]$)."
+      },
+      {
+        "id": "ENG_RC_227_Q4",
+        "question": "Who experimentally confirmed the existence of the Casimir force with high precision?",
+        "options": {
+          "A": "Steven Lamoreaux",
+          "B": "Albert Einstein",
+          "C": "Isaac Newton",
+          "D": "Michael Faraday"
+        },
+        "correct_option": "A",
+        "rationale": "The final sentence explicitly credits Steven Lamoreaux and others with performing precise experiments confirming the Casimir force."
+      },
+      {
+        "id": "ENG_RC_227_Q5",
+        "question": "As used in the passage, the word 'uncharged' implies that the metal plates possess:",
+        "options": {
+          "A": "Zero net electrostatic charge, ruling out ordinary Coulomb attraction",
+          "B": "Infinite positive electrical voltage",
+          "C": "Radioactive atomic isotopes",
+          "D": "Magnetic north and south poles"
+        },
+        "correct_option": "A",
+        "rationale": "Stating that the metal plates are uncharged ensures the observed attraction is solely due to quantum vacuum zero-point pressure rather than standard electrostatics."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_228",
+    "passage_title": "The Structural Anthropology of Claude Lévi-Strauss and Structuralism",
+    "passage_text": "In mid-twentieth-century anthropology, French anthropologist Claude Lévi-Strauss revolutionized the human sciences by founding **structural anthropology**, synthesizing Ferdinand de Saussure's structural linguistics with ethnological fieldwork. Lévi-Strauss rejected both unilineal cultural evolutionism and historical particularism, arguing that human cultural practices—myths, kinship systems, culinary habits, and totemism—are not arbitrary or chaotic cultural inventions. Instead, he posited that surface cultural diversity conceals an underlying, universal architecture of the human mind: innate, unconscious binary cognitive structures. Drawing on Saussurean semiotics, Lévi-Strauss maintained that human thought operates universally through **binary oppositions** (e.g., Nature/Culture, Raw/Cooked, Life/Death, Self/Other). In his monumental four-volume myth-analysis *Mythologiques*, he demonstrated that mythic narratives across geographically isolated indigenous societies function as complex intellectual logical machines designed to mediate and resolve agonizing structural contradictions in human existence (such as the paradox of mortality or the tension between biological nature and social law). Because these mental operations are hardwired into human neurobiology, structuralism viewed individual conscious agency as secondary, positioning human subjects merely as the vehicles through which universal mythic structures think themselves.",
+    "questions": [
+      {
+        "id": "ENG_RC_228_Q1",
+        "question": "What core premise did Claude Lévi-Strauss advance regarding cultural practices like myths and kinship systems?",
+        "options": {
+          "A": "They are completely random inventions unique to each isolated tribe.",
+          "B": "They reflect surface diversity concealing an underlying, universal architecture of innate, unconscious binary cognitive structures.",
+          "C": "They are invented exclusively by colonial political administrators.",
+          "D": "They have no connection to human psychological thought."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that cultural practices conceal a universal architecture of innate, unconscious binary cognitive structures."
+      },
+      {
+        "id": "ENG_RC_228_Q2",
+        "question": "How did structural anthropology explain the universal function of mythic narratives across disparate indigenous societies?",
+        "options": {
+          "A": "As historical records of actual military battles.",
+          "B": "As intellectual logical machines designed to mediate and resolve structural contradictions in human existence.",
+          "C": "As entertainment scripts performed exclusively for seasonal religious festivals.",
+          "D": "As financial accounting ledgers for trade bartering."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that myths function as 'complex intellectual logical machines designed to mediate and resolve agonizing structural contradictions in human existence.'"
+      },
+      {
+        "id": "ENG_RC_228_Q3",
+        "question": "Which linguistic framework heavily influenced Claude Lévi-Strauss's structural anthropology?",
+        "options": {
+          "A": "Ferdinand de Saussure's structural linguistics",
+          "B": "Noam Chomsky's transformational generative grammar",
+          "C": "The historical philology of Sanskrit texts",
+          "D": "The phonetic alphabet of ancient Phoenicia"
+        },
+        "correct_option": "A",
+        "rationale": "The opening sentence notes that Lévi-Strauss synthesized Ferdinand de Saussure's structural linguistics with ethnological fieldwork."
+      },
+      {
+        "id": "ENG_RC_228_Q4",
+        "question": "In structuralist theory, what role is assigned to individual conscious human agency?",
+        "options": {
+          "A": "Human subjects are viewed as the creators of entirely independent social realities.",
+          "B": "Conscious agency is treated as secondary, positioning humans as vehicles through which universal structures operate.",
+          "C": "Individuals possess absolute sovereign freedom to rewrite biological evolution.",
+          "D": "Human agency is the sole driving force of geological plate tectonics."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that structuralism viewed individual agency as secondary, positioning humans as vehicles through which universal structures think themselves."
+      },
+      {
+        "id": "ENG_RC_228_Q5",
+        "question": "As used in the passage, the word 'unilineal' refers to evolutionary theories that assume cultures:",
+        "options": {
+          "A": "Progress along a single, predetermined linear developmental trajectory from savagery to civilization",
+          "B": "Branch out randomly into infinite distinct biological species",
+          "C": "Remain completely stationary without any historical change",
+          "D": "Communicate exclusively using written mathematical equations"
+        },
+        "correct_option": "A",
+        "rationale": "In anthropology, 'unilineal evolution' is the obsolete theory that all societies pass through the same fixed sequence of developmental stages from primitive to advanced."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_229",
+    "passage_title": "The Quantum Mechanics of Quantum Cryptography and the BB84 Protocol",
+    "passage_text": "In cryptographic security, classical encryption schemes (such as RSA) rely on the unproven computational intractability of mathematical problems, meaning a sufficiently powerful quantum computer could eventually crack them. In stark contrast, **Quantum Key Distribution (QKD)**—pioneered by Charles Bennett and Gilles Brassard in 1984 with the landmark **BB84 protocol**—provides unconditional, information-theoretic security guaranteed not by computational complexity, but by the immutable laws of quantum mechanics. The BB84 protocol enables two communicating parties (Alice and Bob) to establish a shared, secret random cryptographic key over an insecure quantum channel while detecting any active eavesdropping (Eve). Alice transmits single photons encoded in one of two conjugate, non-orthogonal polarization bases: the rectilinear basis ($+\\$: $0^\\circ, 90^\\circ$) or the diagonal basis ($\\times$: $45^\\circ, 135^\\circ$). According to the **Heisenberg Uncertainty Principle**, it is fundamentally impossible to measure an unknown quantum state without disturbing it; any attempt by an eavesdropper (Eve) to intercept, measure, and resend photons without knowing Alice's secret basis choice introduces a measurable **quantum bit error rate (QBER)** exceeding 25% during basis reconciliation ('sifting'). After public disclosure of basis choices over an authentic classical channel, Alice and Bob discard mismatched bases, analyze error rates to bound Eve's information gain, and apply privacy amplification algorithms to generate a secure shared cryptographic key.",
+    "questions": [
+      {
+        "id": "ENG_RC_229_Q1",
+        "question": "What fundamental difference distinguishes Quantum Key Distribution (QKD) from classical public-key cryptography like RSA?",
+        "options": {
+          "A": "QKD relies on unproven mathematical problems, while RSA is unbreakable by quantum computers.",
+          "B": "QKD provides unconditional security guaranteed by the laws of quantum mechanics rather than computational intractability.",
+          "C": "QKD requires physical mail couriers to deliver cryptographic keys.",
+          "D": "QKD can only be used to encrypt audio telephone calls."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that QKD provides unconditional security guaranteed by quantum mechanics rather than unproven computational complexity."
+      },
+      {
+        "id": "ENG_RC_229_Q2",
+        "question": "What quantum mechanical principle prevents an eavesdropper (Eve) from intercepting and copying BB84 photons undetected?",
+        "options": {
+          "A": "The Heisenberg Uncertainty Principle, which dictates that measuring an unknown quantum state inevitably disturbs it.",
+          "B": "The second law of thermodynamics, which melts optical fiber cables.",
+          "C": "Gravitational time dilation near black holes.",
+          "D": "The conservation of electrical charge in copper wires."
+        },
+        "correct_option": "A",
+        "rationale": "The passage notes that the Heisenberg Uncertainty Principle makes it impossible to measure an unknown quantum state without disturbing it, exposing Eve."
+      },
+      {
+        "id": "ENG_RC_229_Q3",
+        "question": "How do Alice and Bob detect the presence of an active eavesdropper during the BB84 protocol?",
+        "options": {
+          "A": "By measuring a quantum bit error rate (QBER) that spikes above baseline due to eavesdropping interference.",
+          "B": "By tracking the physical location of Eve using GPS satellites.",
+          "C": "By checking if their computer batteries have been drained.",
+          "D": "By translating all ciphertext into ancient Greek."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that Eve's interception and incorrect basis guesses introduce a measurable quantum bit error rate (QBER) during sifting."
+      },
+      {
+        "id": "ENG_RC_229_Q4",
+        "question": "Which two scientists pioneered the BB84 Quantum Key Distribution protocol in 1984?",
+        "options": {
+          "A": "Charles Bennett and Gilles Brassard",
+          "B": "Albert Einstein and Boris Podolsky",
+          "C": "Max Planck and Werner Heisenberg",
+          "D": "Alan Turing and John von Neumann"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly names Charles Bennett and Gilles Brassard as the pioneers of the 1984 BB84 protocol."
+      },
+      {
+        "id": "ENG_RC_SET_229_Q5",
+        "question": "As used in the passage, the word 'non-orthogonal' describes polarization bases that are:",
+        "options": {
+          "A": "At non-perpendicular angles (such as $0^\\circ$ and $45^\\circ$), making simultaneous measurement mutually exclusive",
+          "B": "Parallel and aligned along exact 90-degree axes",
+          "C": "Completely unrelated to quantum physics",
+          "D": "Constructed from radioactive chemical isotopes"
+        },
+        "correct_option": "A",
+        "rationale": "In quantum mechanics, non-orthogonal states (like rectilinear and diagonal bases) cannot be distinguished perfectly in a single measurement due to the laws of quantum projection."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_230",
+    "passage_title": "The Biogeochemistry of Marine Nitrogen Fixation and Diazotrophy",
+    "passage_text": "Nitrogen is an essential macronutrient required for amino acid and nucleic acid synthesis across all marine life. Although molecular dinitrogen ($N_2$) gas is abundant in ocean surface waters, it is biologically inaccessible to eukaryotic phytoplankton due to the extraordinary chemical stability of the covalent triple bond ($N \\equiv N$). Biological nitrogen fixation—**diazotrophy**—is executed exclusively by specialized prokaryotes (diazotrophs) possessing the multi-subunit enzyme complex **nitrogenase**. The nitrogenase enzyme requires massive energetic investments (consuming at least 16 molecules of ATP per $N_2$ reduced) and is irreversibly denatured and poisoned by molecular oxygen ($O_2$). In the open ocean, the canonical marine diazotroph is the filamentous cyanobacterium *Trichodesmium*, which forms vast surface blooms in oligotrophic tropical and subtropical gyres. Because *Trichodesmium* performs oxygenic photosynthesis (generating $O_2$) while simultaneously fixing nitrogen, it must segregate these conflicting processes temporally or spatially. *Trichodesmium* partitions nitrogenase activity during daylight hours by utilizing specialized cells called **diazocytes**, compartmentalizing respiration to consume excess oxygen, and performing rapid spatial separation of photosynthetic oxygen evolution. In addition to filamentous cyanobacteria, unicellular diazotrophs (such as UCYN-A) and diatom-diazotroph associations (DDAs) contribute significantly to global oceanic fixed-nitrogen inputs, fueling primary marine productivity and carbon sequestration.",
+    "questions": [
+      {
+        "id": "ENG_RC_230_Q1",
+        "question": "Why must marine phytoplankton rely on specialized diazotrophs to access dissolved atmospheric nitrogen ($N_2$)?",
+        "options": {
+          "A": "Phytoplankton lack the cellular machinery to absorb liquid water.",
+          "B": "The covalent triple bond ($N \\equiv N$) of molecular nitrogen makes it chemically inaccessible to eukaryotes.",
+          "C": "Nitrogen gas is toxic and instantly kills phytoplankton upon contact.",
+          "D": "Ocean currents prevent nitrogen gas from dissolving in surface waters."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that $N_2$ gas is inaccessible to eukaryotic phytoplankton due to the extreme chemical stability of its covalent triple bond."
+      },
+      {
+        "id": "ENG_RC_230_Q2",
+        "question": "What major physiological challenge confronts oxygenic photosynthetic cyanobacteria that also perform nitrogen fixation?",
+        "options": {
+          "A": "Nitrogenase enzyme is irreversibly denatured and poisoned by molecular oxygen ($O_2$) generated during photosynthesis.",
+          "B": "Photosynthesis consumes all available ATP, leaving zero energy for nitrogen reduction.",
+          "C": "Cyanobacteria cannot survive in saltwater marine environments.",
+          "D": "Sunlight destroys the cell walls of diazotrophic bacteria."
+        },
+        "correct_option": "A",
+        "rationale": "The passage notes that nitrogenase is poisoned by molecular oxygen, creating a severe physiological conflict for cyanobacteria that produce oxygen via photosynthesis."
+      },
+      {
+        "id": "ENG_RC_230_Q3",
+        "question": "How do *Trichodesmium* cyanobacteria segregate oxygenic photosynthesis from nitrogenase activity?",
+        "options": {
+          "A": "By performing photosynthesis only at night and fixing nitrogen at noon.",
+          "B": "By utilizing specialized cells called diazocytes, compartmentalizing respiration, and spatially separating processes during daylight.",
+          "C": "By sealing themselves inside hard limestone shells.",
+          "D": "By migrating to the deep ocean floor where there is zero sunlight."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that *Trichodesmium* uses diazocytes, heightened respiration to consume oxygen, and spatial segregation during daylight hours."
+      },
+      {
+        "id": "ENG_RC_SET_230_Q4",
+        "question": "How much ATP energy is consumed by the nitrogenase enzyme complex to reduce a single molecule of $N_2$?",
+        "options": {
+          "A": "At least 16 molecules of ATP",
+          "B": "Exactly 2 molecules of ATP",
+          "C": "Zero ATP molecules (it operates via passive diffusion)",
+          "D": "Over 1,000 molecules of ATP"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly notes that nitrogenase consumes 'at least 16 molecules of ATP per $N_2$ reduced.'"
+      },
+      {
+        "id": "ENG_RC_SET_230_Q5",
+        "question": "As used in the passage, the word 'oligotrophic' describes aquatic environments that are:",
+        "options": {
+          "A": "Deficient in plant nutrients and dissolved mineral productivity, typically crystal-clear",
+          "B": "Heavily polluted by industrial sewage and agricultural fertilizers",
+          "C": "Boiling hot and saturated with volcanic sulfur gases",
+          "D": "Completely frozen into solid polar ice sheets"
+        },
+        "correct_option": "A",
+        "rationale": "In limnology and oceanography, an 'oligotrophic' body of water is one low in nutrient concentrations, resulting in low primary productivity and clear waters."
+      }
+    ]
+  }
+]

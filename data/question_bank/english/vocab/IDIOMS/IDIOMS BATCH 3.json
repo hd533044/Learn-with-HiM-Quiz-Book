@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0101",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep one's fingers crossed**",
+    "options": {
+      "A": "To practice playing a musical instrument",
+      "B": "To wish for good luck or a favorable outcome",
+      "C": "To promise solemnly while telling a lie",
+      "D": "To recover from a hand injury"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Keeping your fingers crossed is a traditional gesture expressing hopeful wishes for success or good luck.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0102",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep one's head**",
+    "options": {
+      "A": "To wear a protective helmet",
+      "B": "To remain calm, sensible, and self-controlled during a crisis",
+      "C": "To suffer from a severe headache",
+      "D": "To forget important details"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'keep one's head' means staying calm and level-headed under pressure.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0103",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep up appearances**",
+    "options": {
+      "A": "To maintain a neat outward show of wealth or well-being despite financial trouble",
+      "B": "To attend beauty pageants regularly",
+      "C": "To clean windows and mirrors daily",
+      "D": "To change hairstyles frequently"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Keeping up appearances' means maintaining an outward front of prosperity or happiness to conceal private difficulties.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0104",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Kick the bucket**",
+    "options": {
+      "A": "To clean a bucket of water",
+      "B": "To ruin a plan accidentally",
+      "C": "To die or pass away",
+      "D": "To lose a sports match"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Kick the bucket' is a well-known informal idiom meaning to die.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0105",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Knit one's brows**",
+    "options": {
+      "A": "To frown or wrinkle the forehead in deep thought, worry, or concentration",
+      "B": "To embroider clothing with wool",
+      "C": "To relax and fall asleep",
+      "D": "To express extreme joy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'knit one's brows' means to frown thoughtfully or anxiously.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0106",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Know the ropes**",
+    "options": {
+      "A": "To be experienced, skilled, and familiar with the details of an operation",
+      "B": "To work as a sailor on a ship",
+      "C": "To tie secure knots in climbing gear",
+      "D": "To solve complex mathematical equations"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'know the ropes' means to understand how a job or system works thoroughly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0107",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lame duck**",
+    "options": {
+      "A": "A wounded bird in a forest",
+      "B": "An official or politician whose power is diminished because they are soon leaving office",
+      "C": "A slow-running computer program",
+      "D": "A cheap commodity item"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'lame duck' is an official in the final period of office after the election of a successor.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0108",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Laugh up one's sleeve**",
+    "options": {
+      "A": "To laugh loudly in public view",
+      "B": "To mock or ridicule someone secretly while pretending to be serious",
+      "C": "To hide a joke book in clothing",
+      "D": "To cough quietly during a meeting"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'laugh up one's sleeve' means to be secretly amused or triumphant at someone's expense.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0109",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Leap in the dark**",
+    "options": {
+      "A": "An adventurous night dive",
+      "B": "A risky venture or decision undertaken without knowing the outcome",
+      "C": "A sudden power outage during exercise",
+      "D": "An athletic training drill"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'leap in the dark' is a hazardous risk taken with complete uncertainty about results.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0110",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Leave no stone unturned**",
+    "options": {
+      "A": "To landscape a garden thoroughly",
+      "B": "To search a building for hidden treasure",
+      "C": "To try every possible course of action to achieve a goal",
+      "D": "To clear a path of rubble"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'leave no stone unturned' means to use every available resource to find or achieve something.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0111",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lend an ear**",
+    "options": {
+      "A": "To listen attentively and sympathetically to someone",
+      "B": "To undergo a surgical ear procedure",
+      "C": "To whisper secret gossip",
+      "D": "To ignore advice given by elders"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lend an ear' means to listen kindly and with attention.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0112",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Let the cat out of the bag**",
+    "options": {
+      "A": "To free a pet animal from captivity",
+      "B": "To reveal a secret carelessly or by mistake",
+      "C": "To open a grocery package",
+      "D": "To start a loud argument"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'let the cat out of the bag' means to disclose a secret unintentionally.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0113",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lions share**",
+    "options": {
+      "A": "The largest and best part of something",
+      "B": "A small portion of food",
+      "C": "Equal distribution of assets",
+      "D": "The danger zone in a safari"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'lion's share' refers to the biggest and most advantageous portion of a resource.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0114",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Live from hand to mouth**",
+    "options": {
+      "A": "To work as a food taster",
+      "B": "To have plenty of luxury savings",
+      "C": "To have barely enough money for basic survival with no savings",
+      "D": "To eat meals while walking"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Living 'from hand to mouth' means spending money as fast as it is earned just to survive.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0115",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lock, stock, and barrel**",
+    "options": {
+      "A": "Parts of a firearm mechanism",
+      "B": "Completely, entirely, and in every detail",
+      "C": "A warehouse inventory list",
+      "D": "A locked security door"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Lock, stock, and barrel' means the whole of everything, completely and thoroughly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0116",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Look down one's nose**",
+    "options": {
+      "A": "To suffer from a sinus infection",
+      "B": "To wear spectacles incorrectly",
+      "C": "To regard someone with contempt, disdain, or superiority",
+      "D": "To gaze downward in sadness"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Looking down your nose at someone means acting superior and showing contempt.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0117",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Loose cannon**",
+    "options": {
+      "A": "A heavy artillery piece on a warship",
+      "B": "An unpredictable person who behaves erratically and causes damage",
+      "C": "A malfunctioning industrial machine",
+      "D": "A brave soldier in battle"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'loose cannon' is an unpredictable individual whose actions risk causing trouble.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0118",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Make a clean breast of**",
+    "options": {
+      "A": "To undergo a medical checkup",
+      "B": "To confess fully and honestly about a wrongdoing",
+      "C": "To wash clothes thoroughly",
+      "D": "To wear protective medical gear"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'make a clean breast of' means to make a full confession of guilt or truth.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0119",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Make hay while the sun shines**",
+    "options": {
+      "A": "To farm crops during summer",
+      "B": "To take full advantage of a favorable opportunity while it lasts",
+      "C": "To sunbathe in a meadow",
+      "D": "To dry laundry outdoors"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Make hay while the sun shines' means seizing an opportunity promptly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0120",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Mare's nest**",
+    "options": {
+      "A": "A horse stable bedding",
+      "B": "A false discovery, illusion, or a state of confused mess",
+      "C": "A bird's nest in a tree",
+      "D": "A rare botanical species"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'mare's nest' is a false invention or a muddled state of confusion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0121",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Mealy-mouthed**",
+    "options": {
+      "A": "Speaking in a hesitant, evasive, or insincere manner to avoid offending",
+      "B": "Eating sweet foods continuously",
+      "C": "Having a speech impediment",
+      "D": "Speaking with extreme boldness and clarity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'mealy-mouthed' person avoids speaking plain, direct truth out of timidity or deceit.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0122",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Midas touch**",
+    "options": {
+      "A": "The ability to make financial profit easily in any venture",
+      "B": "A medical skin condition",
+      "C": "An expensive gold jewelry collection",
+      "D": "A talent for sculpture and art"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'Midas touch' refers to a knack for financial success in everything one undertakes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0123",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Mind one's P's and Q's**",
+    "options": {
+      "A": "To practice writing the alphabet",
+      "B": "To be extremely careful, polite, and precise in behavior and speech",
+      "C": "To check math calculations twice",
+      "D": "To mind your own private business"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'mind your P's and Q's' means to be extremely polite and careful of your manners.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0124",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Move heaven and earth**",
+    "options": {
+      "A": "To cause a geological earthquake",
+      "B": "To make an utmost, supreme effort to achieve something",
+      "C": "To travel across the globe",
+      "D": "To study astronomy deeply"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'move heaven and earth' means doing everything possible to realize an objective.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0125",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Null and void**",
+    "options": {
+      "A": "Empty and dark space",
+      "B": "Invalid, cancelled, or having no legal binding force",
+      "C": "A successful business contract",
+      "D": "A mathematical zero calculation"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Null and void' means legally invalid and unenforceable.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0126",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Off and on**",
+    "options": {
+      "A": "Intermittently; periodically rather than continuously",
+      "B": "Switches controlling electrical lights",
+      "C": "Constantly without a break",
+      "D": "Permanently finished"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing something 'off and on' means intermittently or irregularly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0127",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Off the cuff**",
+    "options": {
+      "A": "Wearing short-sleeved shirts",
+      "B": "Spoken or done impromptu without preparation or notes",
+      "C": "Written formally in a legal document",
+      "D": "Hidden inside clothing cuffs"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. An 'off the cuff' remark is improvised spontaneously without notes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0128",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Oil the wheels**",
+    "options": {
+      "A": "To lubricate machinery parts",
+      "B": "To facilitate a process or make transactions run smoothly, often with bribes",
+      "C": "To repair bicycle tires",
+      "D": "To design automobile engines"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'oil the wheels' means to make a process run smoothly or ease business transactions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0129",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On thin ice**",
+    "options": {
+      "A": "Ice skating in winter",
+      "B": "In a risky, precarious, or dangerous situation likely to lead to trouble",
+      "C": "Drinking iced beverages",
+      "D": "Living in a cold climate"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'on thin ice' means in a precarious and risky position.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0130",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Once in a blue moon**",
+    "options": {
+      "A": "Very rarely; on very infrequent occasions",
+      "B": "During a lunar eclipse",
+      "C": "Every single month",
+      "D": "During nighttime hours"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Once in a blue moon' describes something that happens very rarely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0131",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Out of the woods**",
+    "options": {
+      "A": "Emerging from a forest hike",
+      "B": "Free from danger, crisis, or critical difficulty",
+      "C": "Lost in the wilderness",
+      "D": "Logging timber professionally"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'out of the woods' means past the hardest part of a crisis or illness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0132",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Over my dead body**",
+    "options": {
+      "A": "Used to express fierce, absolute opposition to something",
+      "B": "A spooky ghost story phrase",
+      "C": "Lying down to rest in bed",
+      "D": "A medical organ donation request"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Over my dead body' is an emphatic declaration of complete refusal and resistance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0133",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Paint the town red**",
+    "options": {
+      "A": "To decorate house walls with bright paint",
+      "B": "To go out and enjoy a lively, boisterous night of drinking and partying",
+      "C": "To participate in a political protest",
+      "D": "To paint sunset landscapes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'paint the town red' means to go on a lively, celebratory night out.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0134",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Part and parcel**",
+    "options": {
+      "A": "A postal delivery package",
+      "B": "An essential, integral, and unavoidable part of something",
+      "C": "Dividing inheritance money",
+      "D": "A minor optional extra"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Something 'part and parcel' is an essential constituent of an experience or job.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0135",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pass the buck**",
+    "options": {
+      "A": "To hand over paper currency",
+      "B": "To shift responsibility or blame onto someone else",
+      "C": "To win a card game round",
+      "D": "To share food at a dinner table"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'pass the buck' means to evade responsibility by placing blame on another.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0136",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pay through the nose**",
+    "options": {
+      "A": "To pay an excessively high, exorbitant price for something",
+      "B": "To undergo cosmetic facial surgery",
+      "C": "To suffer from a nasal allergy",
+      "D": "To pay taxes on time"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'pay through the nose' means to be overcharged heavily.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0137",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Penny wise and pound foolish**",
+    "options": {
+      "A": "Extremely wise with all financial investments",
+      "B": "Careful and stingy with small amounts of money while wasting large sums",
+      "C": "Converting currency between countries",
+      "D": "Saving coins in a piggy bank"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'penny wise and pound foolish' means saving on trifles while losing heavily on big sums.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0138",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Play second fiddle**",
+    "options": {
+      "A": "To perform classical orchestra music",
+      "B": "To take a subordinate, secondary, or less important role",
+      "C": "To learn a musical instrument late in life",
+      "D": "To replace a missing team member"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'play second fiddle' means to hold a secondary or subordinate position to someone else.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0139",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Play with fire**",
+    "options": {
+      "A": "To work as a firefighter",
+      "B": "To act recklessly and take dangerous, risky chances",
+      "C": "To light a camp bonfire safely",
+      "D": "To study chemical science"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'play with fire' means to dabble in dangerous or hazardous actions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0140",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pour oil on troubled waters**",
+    "options": {
+      "A": "To cause a petroleum spill at sea",
+      "B": "To calm a dispute, pacify anger, and restore peace",
+      "C": "To lubricate boat engines",
+      "D": "To cook food in boiling oil"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'pour oil on troubled waters' means to soothe a quarrel and make peace.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0141",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pull a long face**",
+    "options": {
+      "A": "To stretch facial muscles in yoga",
+      "B": "To look sad, gloomy, or disappointed",
+      "C": "To take a wide-angle photograph",
+      "D": "To smile cheerfully"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'pull a long face' means to look unhappy or glum.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0142",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pull one's socks up**",
+    "options": {
+      "A": "To dress up for a formal ceremony",
+      "B": "To make a better effort to improve your work or behavior",
+      "C": "To run a fast foot race",
+      "D": "To wash athletic sportswear"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'pull one's socks up' means to try harder and improve performance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0143",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pull strings**",
+    "options": {
+      "A": "To play a guitar instrument",
+      "B": "To use hidden personal influence, connections, or favoritism to gain an advantage",
+      "C": "To operate a puppet show",
+      "D": "To tighten knots on ropes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'pull strings' means to exploit secret influence or personal contacts for unfair advantage.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0144",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Put a spoke in one's wheel**",
+    "options": {
+      "A": "To repair a broken bicycle tire",
+      "B": "To obstruct, thwart, or ruin someone's plans",
+      "C": "To steer a vehicle safely",
+      "D": "To drive a cart downhill"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'put a spoke in someone's wheel' means to frustrate their plans or progress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0145",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Put one's foot down**",
+    "options": {
+      "A": "To step on the brakes while driving",
+      "B": "To adopt a firm, resolute, and unyielding stance against something",
+      "C": "To dance rhythmically",
+      "D": "To rest after standing for long"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'put one's foot down' means to assert authority and refuse to yield.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0146",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pyrrhic victory**",
+    "options": {
+      "A": "A glorious, effortless win",
+      "B": "A victory won at too great a cost to be worthwhile",
+      "C": "A tie game in sports",
+      "D": "An unexpected championship title"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'Pyrrhic victory' is a success achieved with devastating losses that make the win pointless.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0147",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rain cats and dogs**",
+    "options": {
+      "A": "To experience heavy, torrential rainfall",
+      "B": "An animal shelter storm rescue",
+      "C": "A light morning drizzle",
+      "D": "A rare meteorological phenomenon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'rain cats and dogs' means to rain very heavily.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0148",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Read between the lines**",
+    "options": {
+      "A": "To check for grammar spelling mistakes",
+      "B": "To understand the hidden, implied, or deeper meaning beyond literal words",
+      "C": "To read a book very rapidly",
+      "D": "To follow printed instructions strictly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'read between the lines' means to discern an implied meaning that is not explicitly stated.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0149",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Red herring**",
+    "options": {
+      "A": "A delicious seafood dish",
+      "B": "A misleading clue or distraction intended to divert attention from the main issue",
+      "C": "A rare red fish species",
+      "D": "An official warning sign"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'red herring' is a distraction or false clue thrown to mislead investigators.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0150",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rest on one's laurels**",
+    "options": {
+      "A": "To sleep comfortably on a leafy bed",
+      "B": "To stop trying because of past achievements and success",
+      "C": "To plant green garden hedges",
+      "D": "To mourn a past failure"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'rest on one's laurels' means to become complacent due to past victories rather than striving further.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

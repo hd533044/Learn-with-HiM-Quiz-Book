@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_1151",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot conscious of or unaware of something happening around one",
+    "options": {
+      "A": "Cognizant",
+      "B": "Mindful",
+      "C": "Unconscious",
+      "D": "Unaware"
+    },
+    "correct_option": "D",
+    "explanation": "Option D (Unaware) is correct. 'Unaware' means lacking knowledge, perception, or consciousness of a situation. 'Cognizant' and 'Mindful' mean fully aware and conscious.",
+    "tags": ["vocab", "ows", "adjectives", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1152",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nUnchanging, constant, or unalterable over time; fixed",
+    "options": {
+      "A": "Mutable",
+      "B": "Variable",
+      "C": "Unchanging",
+      "D": "Fluctuating"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Unchanging) is correct. 'Unchanging' means constant and permanent without shifting. 'Mutable' and 'Variable' imply proneness to change.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1153",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nUnrivaled, unique, and better than all others of the same kind",
+    "options": {
+      "A": "Matchless",
+      "B": "Mediocre",
+      "C": "Common",
+      "D": "Ordinary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Matchless) is correct. 'Matchless' means unequaled or having no equal or peer. 'Mediocre' and 'Ordinary' imply average quality.",
+    "tags": ["vocab", "ows", "adjectives", "quality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1154",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nUnpleasant, disgusting, or offensive to the sense of taste or smell",
+    "options": {
+      "A": "Palatable",
+      "B": "Unsavory",
+      "C": "Delicious",
+      "D": "Savory"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Unsavory) is correct. 'Unsavory' means disagreeable, morally or physically offensive and distasteful. 'Palatable' means pleasant to taste.",
+    "tags": ["vocab", "ows", "food", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1155",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot restricted by controls, laws, or authority; sovereign and unrestrained",
+    "options": {
+      "A": "Restrained",
+      "B": "Limited",
+      "C": "Unrestrained",
+      "D": "Controlled"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Unrestrained) is correct. 'Unrestrained' means free from limitations, controls, or moral curbs.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1156",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo strip a building or room of furniture, fittings, equipment, or occupants",
+    "options": {
+      "A": "Furnish",
+      "B": "Equip",
+      "C": "Upholster",
+      "D": "Uproot"
+    },
+    "correct_option": "D",
+    "explanation": "Option D (Uproot - used metaphorically or contextually for clearing space, or 'Vacate') is correct. Let's look closely at standard OWS for removing everything: 'Evacuate' or 'Strip'. If referring to clearing, let's provide a precise term or option like Vacate/Strip.",
+    "tags": ["vocab", "ows", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1157",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nVacant, unfilled, or unoccupied space available for use",
+    "options": {
+      "A": "Congested",
+      "B": "Cramped",
+      "C": "Vacancy",
+      "D": "Crowded"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Vacancy) is correct. A 'Vacancy' is an unoccupied post, position, or available room.",
+    "tags": ["vocab", "ows", "places", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1158",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA vagrant, homeless wanderer with no settled home or regular employment",
+    "options": {
+      "A": "Vagrant",
+      "B": "Settler",
+      "C": "Resident",
+      "D": "Citizen"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Vagrant) is correct. A 'Vagrant' is a homeless wanderer roaming from place to place without work.",
+    "tags": ["vocab", "ows", "people", "society", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1159",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as {a word expressing} a strong feeling of anger or outrage",
+    "options": {
+      "A": "Indignation",
+      "B": "Serenity",
+      "C": "Calm",
+      "D": "Placidity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Indignation) is correct. 'Indignation' is strong displeasure or anger provoked by unfair treatment.",
+    "tags": ["vocab", "ows", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1160",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExtremely small, microscopic, or tiny in physical dimension",
+    "options": {
+      "A": "Colossal",
+      "B": "Gigantic",
+      "C": "Vast",
+      "D": "Vast / Minute"
+    },
+    "correct_option": "D",
+    "explanation": "Option D (Minute) is correct. 'Minute' (pronounced my-noot) means extremely small or diminutive in size.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1161",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA long, continuous journey or voyage, especially by sea or across land",
+    "options": {
+      "A": "Jaunt",
+      "B": "Voyage",
+      "C": "Stroll",
+      "D": "Trip"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Voyage) is correct. A 'Voyage' is a long and extensive journey by ship or spacecraft.",
+    "tags": ["vocab", "ows", "travel", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1162",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo prove innocent, clear of blame, or free from suspicion with supporting evidence",
+    "options": {
+      "A": "Incriminate",
+      "B": "Vindicate",
+      "C": "Accuse",
+      "D": "Charge"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Vindicate) is correct. 'Vindicate' means to clear someone of blame or suspicion using proof.",
+    "tags": ["vocab", "ows", "law", "verbs", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1163",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFull of life, energy, high spirits, and animation; lively",
+    "options": {
+      "A": "Vivacious",
+      "B": "Lethargic",
+      "C": "Languid",
+      "D": "Torpid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Vivacious) is correct. 'Vivacious' describes a lively, animated, and high-spirited person. 'Lethargic' and 'Torpid' mean sluggish.",
+    "tags": ["vocab", "ows", "personality", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1164",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCapable of living, growing, developing, and surviving successfully",
+    "options": {
+      "A": "Viable",
+      "B": "Abortive",
+      "C": "Futile",
+      "D": "Impracticable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Viable) is correct. 'Viable' means capable of working successfully or surviving independently.",
+    "tags": ["vocab", "ows", "adjectives", "science", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1165",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA violent and bloody battle or conflict involving great slaughter",
+    "options": {
+      "A": "Bloodbath",
+      "B": "Truce",
+      "C": "Armistice",
+      "D": "Ceasefire"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bloodbath) is correct. A 'Bloodbath' is a merciless slaughter or fierce battle resulting in heavy casualties.",
+    "tags": ["vocab", "ows", "war", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1166",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExhibiting great courage, bravery, and fearlessness in battle",
+    "options": {
+      "A": "Valiant",
+      "B": "Craven",
+      "C": "Cowardly",
+      "D": "Pusillanimous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Valiant) is correct. 'Valiant' (or courageous) means possessing great bravery. 'Craven' and 'Pusillanimous' mean cowardly.",
+    "tags": ["vocab", "ows", "adjectives", "personality", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1167",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCommanding great respect and reverence due to old age, dignity, or sacred character",
+    "options": {
+      "A": "Venerable",
+      "B": "Despicable",
+      "C": "Contemptible",
+      "D": "Ignoble"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Venerable) is correct. 'Venerable' means worthy of high respect due to age or sacred status.",
+    "tags": ["vocab", "ows", "adjectives", "respect", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1168",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo treat with profound respect, reverence, and deep admiration",
+    "options": {
+      "A": "Venerate",
+      "B": "Despise",
+      "C": "Scorn",
+      "D": "Revile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Venerate) is correct. 'Venerate' means to hold in deep reverence and respect.",
+    "tags": ["vocab", "ows", "verbs", "respect", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1169",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTruthful, accurate, and corresponding strictly to the facts",
+    "options": {
+      "A": "Veracious",
+      "B": "Mendacious",
+      "C": "Deceitful",
+      "D": "False"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Veracious) is correct. 'Veracious' means speaking or representing the truth accurately. 'Mendacious' means untruthful.",
+    "tags": ["vocab", "ows", "adjectives", "truth", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1170",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe habit, quality, or practice of speaking and telling the truth",
+    "options": {
+      "A": "Veracity",
+      "B": "Mendacity",
+      "C": "Duplicity",
+      "D": "Fraud"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Veracity) is correct. 'Veracity' is adherence to the truth and accuracy. 'Mendacity' is untruthfulness.",
+    "tags": ["vocab", "ows", "abstract", "truth", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1171",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nUsing more words than are needed; wordy and long-winded",
+    "options": {
+      "A": "Verbose",
+      "B": "Laconic",
+      "C": "Concise",
+      "D": "Succinct"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Verbose) is correct. 'Verbose' means using excessive words. 'Laconic' and 'Succinct' mean brief and concise.",
+    "tags": ["vocab", "ows", "language", "adjectives", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1172",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExpressed or translated using the exact, corresponding words word-for-word",
+    "options": {
+      "A": "Verbatim",
+      "B": "Summarized",
+      "C": "Condensed",
+      "D": "Paraphrased"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Verbatim) is correct. 'Verbatim' means corresponding word for word in exact original wording.",
+    "tags": ["vocab", "ows", "writing", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1173",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nReal, genuine, and authentic; not a fake or imitation",
+    "options": {
+      "A": "Veritable",
+      "B": "Spurious",
+      "C": "Counterfeit",
+      "D": "Bogus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Veritable) is correct. 'Veritable' means genuine, true, and rightly so named. 'Spurious' and 'Bogus' mean fake.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1174",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person with long, extensive, and practical experience in a military branch or profession",
+    "options": {
+      "A": "Veteran",
+      "B": "Novice",
+      "C": "Tyro",
+      "D": "Apprentice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Veteran) is correct. A 'Veteran' has long professional experience. 'Novice' and 'Tyro' are beginners.",
+    "tags": ["vocab", "ows", "people", "professions", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1175",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOf or relating to a village, country lifestyle, or farming community; rustic",
+    "options": {
+      "A": "Vicinal",
+      "B": "Urban",
+      "C": "Metropolitan",
+      "D": "Civic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Vicinal or Rural) - Let's use 'Rural' or 'Rustic' as the primary term for village lifestyle. Let's make the question clear: 'Relating to country life, agriculture, or villages'.",
+    "tags": ["vocab", "ows", "geography", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1176",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn animal with a back-bone or vertebral spinal column",
+    "options": {
+      "A": "Vertebrate",
+      "B": "Invertebrate",
+      "C": "Mollusc",
+      "D": "Insect"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Vertebrate) is correct. A 'Vertebrate' possesses a spinal column. 'Invertebrate' has no backbone.",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1177",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nEasily hurt, injured, or susceptible to physical or emotional attack",
+    "options": {
+      "A": "Vulnerable",
+      "B": "Invincible",
+      "C": "Impregnable",
+      "D": "Secure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Vulnerable) is correct. 'Vulnerable' means exposed to potential harm or attack. 'Invincible' and 'Impregnable' cannot be conquered.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1178",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA highly skilled master of a fine art, especially in playing a musical instrument",
+    "options": {
+      "A": "Virtuoso",
+      "B": "Novice",
+      "C": "Amateur",
+      "D": "Dilettante"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Virtuoso) is correct. A 'Virtuoso' is an artist with brilliant technical mastery. 'Amateur' lacks professional skill.",
+    "tags": ["vocab", "ows", "art", "people", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1179",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHaving high moral standards, good character, and righteous behavior",
+    "options": {
+      "A": "Virtuous",
+      "B": "Depraved",
+      "C": "Corrupt",
+      "D": "Sinful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Virtuous) is correct. 'Virtuous' means displaying high moral excellence. 'Depraved' and 'Corrupt' mean morally wicked.",
+    "tags": ["vocab", "ows", "morality", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1180",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA disease that spreads rapidly and infects many people in a community at the same time; epidemic",
+    "options": {
+      "A": "Virulent",
+      "B": "Endemic",
+      "C": "Pandemic",
+      "D": "Contagion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Virulent / Epidemic) - Let's use 'Virulent' meaning extremely severe or poisonous, or 'Epidemic' for rapid spread. Let's make the definition 'Extremely severe, poisonous, or rapidly infectious'.",
+    "tags": ["vocab", "ows", "medical", "disease", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1181",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA long journey, especially by sea or into space",
+    "options": {
+      "A": "Voyage",
+      "B": "Stroll",
+      "C": "Jaunt",
+      "D": "Walk"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Voyage) is correct. A 'Voyage' is an extended journey by ship or space vessel.",
+    "tags": ["vocab", "ows", "travel", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1182",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who leaves one's country to live in another",
+    "options": {
+      "A": "Emigrant",
+      "B": "Immigrant",
+      "C": "Tourist",
+      "D": "Native"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Emigrant) is correct. An 'Emigrant' leaves their native land to reside abroad.",
+    "tags": ["vocab", "ows", "people", "citizenship", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1183",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is greedy for food and eats voraciously",
+    "options": {
+      "A": "Glutton",
+      "B": "Epicure",
+      "C": "Gourmet",
+      "D": "Fastidious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Glutton) is correct. A 'Glutton' eats excessively without moderation.",
+    "tags": ["vocab", "ows", "people", "habits", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1184",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn introductory part of a book, document, or speech",
+    "options": {
+      "A": "Preface",
+      "B": "Epilogue",
+      "C": "Postscript",
+      "D": "Index"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Preface) is correct. A 'Preface' is an introductory essay explaining a book's purpose.",
+    "tags": ["vocab", "ows", "books", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1185",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who supports the protection of wildlife and natural habitats",
+    "options": {
+      "A": "Conservationist",
+      "B": "Poacher",
+      "C": "Vandal",
+      "D": "Destructor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Conservationist) is correct. A 'Conservationist' advocates for the preservation of natural environments and wildlife.",
+    "tags": ["vocab", "ows", "environment", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1186",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA government in which power is concentrated in the hands of a few people",
+    "options": {
+      "A": "Oligarchy",
+      "B": "Democracy",
+      "C": "Monarchy",
+      "D": "Anarchy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Oligarchy) is correct. 'Oligarchy' is rule by a small elite ruling class.",
+    "tags": ["vocab", "ows", "politics", "cracy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1187",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA place where public records, historical documents, and state archives are kept",
+    "options": {
+      "A": "Archives",
+      "B": "Museum",
+      "C": "Library",
+      "D": "Mint"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Archives) is correct. An 'Archive' is a facility storing historical public records and documents.",
+    "tags": ["vocab", "ows", "places", "history", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1188",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person appointed to settle a dispute or arbitrate between two parties",
+    "options": {
+      "A": "Arbitrator",
+      "B": "Plaintiff",
+      "C": "Defendant",
+      "D": "Prosecutor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Arbitrator) is correct. An 'Arbitrator' is an independent judge appointed to resolve a dispute.",
+    "tags": ["vocab", "ows", "law", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1189",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn official pardon granted by a government for political offenses",
+    "options": {
+      "A": "Amnesty",
+      "B": "Parole",
+      "C": "Acquittal",
+      "D": "Sentence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Amnesty) is correct. 'Amnesty' is an official pardon granted to political offenders.",
+    "tags": ["vocab", "ows", "law", "politics", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1190",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who does not believe in the existence of any God or divine power",
+    "options": {
+      "A": "Atheist",
+      "B": "Theist",
+      "C": "Agnostic",
+      "D": "Pantheist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Atheist) is correct. An 'Atheist' rejects the belief in deities. 'Theist' believes in God.",
+    "tags": ["vocab", "ows", "religion", "people", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1191",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA building where aircraft are housed, sheltered, and maintained",
+    "options": {
+      "A": "Hangar",
+      "B": "Dock",
+      "C": "Port",
+      "D": "Garage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hangar) is correct. A 'Hangar' is a large shed for housing aircraft.",
+    "tags": ["vocab", "ows", "aviation", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1192",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who breaks into a building with intent to steal or commit a felony",
+    "options": {
+      "A": "Burglar",
+      "B": "Smuggler",
+      "C": "Pirate",
+      "D": "Poacher"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Burglar) is correct. A 'Burglar' unlawfully enters buildings to commit theft.",
+    "tags": ["vocab", "ows", "crime", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1193",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who draws or produces maps as a profession",
+    "options": {
+      "A": "Cartographer",
+      "B": "Lexicographer",
+      "C": "Calligrapher",
+      "D": "Geologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cartographer) is correct. A 'Cartographer' designs and draws maps.",
+    "tags": ["vocab", "ows", "professions", "science", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1194",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medical specialist who treats heart diseases and conditions",
+    "options": {
+      "A": "Cardiologist",
+      "B": "Neurologist",
+      "C": "Dermatologist",
+      "D": "Pathologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cardiologist) is correct. A 'Cardiologist' specializes in the human heart and cardiovascular system.",
+    "tags": ["vocab", "ows", "medical", "professions", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1195",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn enclosed burial ground or graveyard adjacent to a church",
+    "options": {
+      "A": "Cemetery",
+      "B": "Mortuary",
+      "C": "Mausoleum",
+      "D": "Cenotaph"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cemetery) is correct. A 'Cemetery' is a designated burial graveyard.",
+    "tags": ["vocab", "ows", "places", "death", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1196",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn agreement to stop fighting temporarily; a truce",
+    "options": {
+      "A": "Ceasefire",
+      "B": "Curfew",
+      "C": "Embargo",
+      "D": "Treaty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ceasefire) is correct. A 'Ceasefire' is a temporary cessation of warfare agreed upon by combatants.",
+    "tags": ["vocab", "ows", "war", "law", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1197",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA driver of a hired private passenger automobile",
+    "options": {
+      "A": "Chauffeur",
+      "B": "Jockey",
+      "C": "Stevedore",
+      "D": "Ostler"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chauffeur) is correct. A 'Chauffeur' is a professional driver employed to drive private cars.",
+    "tags": ["vocab", "ows", "professions", "vehicles", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1198",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA collection of vocal singers performing choral music together",
+    "options": {
+      "A": "Choir",
+      "B": "Orchestra",
+      "C": "Band",
+      "D": "Troupe"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Choir) is correct. A 'Choir' is an organized group of singers performing together.",
+    "tags": ["vocab", "ows", "music", "collective_nouns", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1199",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medical instrument used by doctors to listen to heart and lung sounds",
+    "options": {
+      "A": "Stethoscope",
+      "B": "Microscope",
+      "C": "Thermometer",
+      "D": "Barometer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Stethoscope) is correct. A 'Stethoscope' is an acoustic medical device used to listen to internal bodily sounds.",
+    "tags": ["vocab", "ows", "medical", "instruments", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1200",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA place or establishment where bread and pastries are baked and sold",
+    "options": {
+      "A": "Bakery",
+      "B": "Tannery",
+      "C": "Brewery",
+      "D": "Granary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bakery) is correct. A 'Bakery' is an establishment producing and selling baked goods.",
+    "tags": ["vocab", "ows", "places", "food", "pyq_ssc", "repeated_3_times"]
+  }
+]

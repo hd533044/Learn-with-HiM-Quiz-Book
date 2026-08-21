@@ -1,0 +1,602 @@
+[
+  {
+    "id": "ENG_VOCAB_PHRA_1951",
+    "question": "What does the phrasal verb 'get through' mean in the context of a difficult task?",
+    "options": {
+      "A": "To complete or finish a difficult task.",
+      "B": "To escape from a locked room.",
+      "C": "To ignore a problem entirely.",
+      "D": "To argue about the details."
+    },
+    "correct_option": "A",
+    "rationale": "'Get through' means to successfully complete or survive a difficult or tedious experience."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1952",
+    "question": "Fill in the blank: 'The sudden noise made the cat _____ at the window.'",
+    "options": {
+      "A": "jump out",
+      "B": "jump at",
+      "C": "jump off",
+      "D": "jump up"
+    },
+    "correct_option": "D",
+    "rationale": "'Jump up' means to move quickly upwards or react suddenly to a stimulus."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1953",
+    "question": "Spot the error: 'He tried to make up for his mistake by working overtime.'",
+    "options": {
+      "A": "He tried to",
+      "B": "make up for",
+      "C": "his mistake by working overtime.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Make up for' means to compensate for a past error or failure. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1954",
+    "question": "Fill in the blank: 'The story was completely _____ by the author to mislead the readers.'",
+    "options": {
+      "A": "made up",
+      "B": "made out",
+      "C": "made off",
+      "D": "made over"
+    },
+    "correct_option": "A",
+    "rationale": "'Make up' (transitive) means to invent or fabricate a story or excuse."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1955",
+    "question": "Choose the meaning of 'make out':",
+    "options": {
+      "A": "To discern, see, or understand something with difficulty.",
+      "B": "To kiss passionately in public.",
+      "C": "To leave a place quickly.",
+      "D": "To create a legal document."
+    },
+    "correct_option": "A",
+    "explanation": "'Make out' means to see or identify something (like text or a distant object) with effort."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1956",
+    "question": "Fill in the blank: 'He decided to _____ of the deal because of the high risks involved.'",
+    "options": {
+      "A": "pull out",
+      "B": "pull up",
+      "C": "pull in",
+      "D": "pull over"
+    },
+    "correct_option": "A",
+    "rationale": "'Pull out of' means to withdraw from an agreement, deal, or activity."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1957",
+    "question": "Spot the error: 'The police pulled him over for speeding on the highway.'",
+    "options": {
+      "A": "The police pulled him over",
+      "B": "for speeding",
+      "C": "on the highway.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Pull over' means to force a vehicle to stop at the side of the road. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1958",
+    "question": "What does 'show off' mean?",
+    "options": {
+      "A": "To display one's abilities or possessions to impress others.",
+      "B": "To arrive late for a performance.",
+      "C": "To reveal a secret unintentionally.",
+      "D": "To hide one's true talent."
+    },
+    "correct_option": "A",
+    "rationale": "'Show off' means to behave in a way intended to attract attention."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1959",
+    "question": "Fill in the blank: 'The new employee was _____ as a potential candidate for the management role.'",
+    "options": {
+      "A": "singled out",
+      "B": "singled up",
+      "C": "singled in",
+      "D": "singled away"
+    },
+    "correct_option": "A",
+    "rationale": "'Single out' means to choose one person or thing from a group for special attention."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1960",
+    "question": "Spot the error: 'We have to show up at the venue by 8 AM sharp.'",
+    "options": {
+      "A": "We have to show up",
+      "B": "at the venue",
+      "C": "by 8 AM sharp.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Show up' means to appear or arrive at a place. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1961",
+    "question": "Choose the meaning of 'wear off':",
+    "options": {
+      "A": "To gradually fade, disappear, or lose effect.",
+      "B": "To put on many layers of clothing.",
+      "C": "To become extremely tired.",
+      "D": "To damage clothing by constant use."
+    },
+    "correct_option": "A",
+    "explanation": "'Wear off' implies the gradual decrease in the effect of something, such as medicine or a feeling."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1962",
+    "question": "Fill in the blank: 'The effects of the medication started to _____ after three hours.'",
+    "options": {
+      "A": "wear off",
+      "B": "wear out",
+      "C": "wear away",
+      "D": "wear down"
+    },
+    "correct_option": "A",
+    "explanation": "'Wear off' indicates the fading influence of the medicine."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1963",
+    "question": "Spot the error: 'Running marathons every month will wear out your shoes.'",
+    "options": {
+      "A": "Running marathons every month",
+      "B": "will wear out",
+      "C": "your shoes.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Wear out' means to use something until it becomes unusable or damaged. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1964",
+    "question": "Fill in the blank: 'The constant pressure of work eventually _____ him.'",
+    "options": {
+      "A": "wore down",
+      "B": "wore out",
+      "C": "wore off",
+      "D": "wore away"
+    },
+    "correct_option": "A",
+    "explanation": "'Wear down' means to cause someone to lose their strength or resolve."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1965",
+    "question": "Choose the meaning of 'work out':",
+    "options": {
+      "A": "To solve a problem or exercise physically.",
+      "B": "To quit a job.",
+      "C": "To create a piece of art.",
+      "D": "To argue about the details."
+    },
+    "correct_option": "A",
+    "explanation": "'Work out' is used for both finding a solution and engaging in physical exercise."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1966",
+    "question": "Spot the error: 'We haven't worked out the details of the contract yet.'",
+    "options": {
+      "A": "We haven't worked out",
+      "B": "the details of",
+      "C": "the contract yet.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Work out' here means to calculate or organize details. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1967",
+    "question": "Fill in the blank: 'He decided to _____ the argument and leave the room.'",
+    "options": {
+      "A": "walk away from",
+      "B": "walk on",
+      "C": "walk out",
+      "D": "walk over"
+    },
+    "correct_option": "A",
+    "explanation": "'Walk away from' means to abandon a situation or argument."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1968",
+    "question": "What does 'walk out on' mean?",
+    "options": {
+      "A": "To abandon a person or situation.",
+      "B": "To exit a building hurriedly.",
+      "C": "To protest by leaving.",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "'Walk out on' means to abandon someone, and 'walk out' can mean to go on strike."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1969",
+    "question": "Spot the error: 'The workers walked out in protest against low wages.'",
+    "options": {
+      "A": "The workers walked out",
+      "B": "in protest against",
+      "C": "low wages.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Walk out' means to go on strike. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1970",
+    "question": "Fill in the blank: 'I had to _____ my speech twice because of the interruptions.'",
+    "options": {
+      "A": "start over",
+      "B": "start up",
+      "C": "start in",
+      "D": "start off"
+    },
+    "correct_option": "A",
+    "explanation": "'Start over' means to begin again from the beginning."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1971",
+    "question": "What does 'see through' mean?",
+    "options": {
+      "A": "To realize the truth behind a deception.",
+      "B": "To look clearly through a glass.",
+      "C": "To finish a project.",
+      "D": "To meet someone unexpectedly."
+    },
+    "correct_option": "A",
+    "explanation": "'See through' means to recognize that someone is lying or pretending."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1972",
+    "question": "Fill in the blank: 'We must _____ this project until it is complete.'",
+    "options": {
+      "A": "see through",
+      "B": "see off",
+      "C": "see to",
+      "D": "see in"
+    },
+    "correct_option": "A",
+    "explanation": "'See [something] through' means to persist with an activity until it is finished."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1973",
+    "question": "Spot the error: 'I will see you off at the station tomorrow morning.'",
+    "options": {
+      "A": "I will see you off",
+      "B": "at the station",
+      "C": "tomorrow morning.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'See off' means to accompany someone to their point of departure. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1974",
+    "question": "Fill in the blank: 'I need to _____ the complaints filed by the customers.'",
+    "options": {
+      "A": "see to",
+      "B": "see about",
+      "C": "see off",
+      "D": "see in"
+    },
+    "correct_option": "A",
+    "explanation": "'See to' means to take care of or attend to a task."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1975",
+    "question": "Choose the meaning of 'stick up for':",
+    "options": {
+      "A": "To defend or support someone.",
+      "B": "To hold a weapon at someone.",
+      "C": "To glue something to a wall.",
+      "D": "To wait patiently."
+    },
+    "correct_option": "A",
+    "explanation": "'Stick up for' means to defend someone who is being criticized or bullied."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1976",
+    "question": "Spot the error: 'She stuck up for her colleague during the meeting.'",
+    "options": {
+      "A": "She stuck up for",
+      "B": "her colleague during",
+      "C": "the meeting.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Stuck up for' means defended. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1977",
+    "question": "Fill in the blank: 'I couldn't _____ the noise of the construction work.'",
+    "options": {
+      "A": "put up with",
+      "B": "put down",
+      "C": "put on",
+      "D": "put off"
+    },
+    "correct_option": "A",
+    "explanation": "'Put up with' means to tolerate or endure something unpleasant."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1978",
+    "question": "What does 'put out' mean?",
+    "options": {
+      "A": "To extinguish a fire or light.",
+      "B": "To publish something.",
+      "C": "Both A and B are correct.",
+      "D": "To postpone."
+    },
+    "correct_option": "C",
+    "explanation": "'Put out' means to extinguish (a fire) or to produce/publish (information)."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1979",
+    "question": "Spot the error: 'They put out a statement regarding the changes.'",
+    "options": {
+      "A": "They put out",
+      "B": "a statement regarding",
+      "C": "the changes.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Put out' used for releasing a statement is correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1980",
+    "question": "Fill in the blank: 'We had to _____ our plans due to bad weather.'",
+    "options": {
+      "A": "call off",
+      "B": "call out",
+      "C": "call up",
+      "D": "call back"
+    },
+    "correct_option": "A",
+    "explanation": "'Call off' means to cancel plans."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1981",
+    "question": "Choose the meaning of 'fall out':",
+    "options": {
+      "A": "To argue and stop being friendly.",
+      "B": "To leave a group.",
+      "C": "To drop something.",
+      "D": "To sleep."
+    },
+    "correct_option": "A",
+    "explanation": "'Fall out' means to have an argument that ends a friendship."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1982",
+    "question": "Fill in the blank: 'I hope we don't _____ over such a small matter.'",
+    "options": {
+      "A": "fall out",
+      "B": "fall off",
+      "C": "fall down",
+      "D": "fall in"
+    },
+    "correct_option": "A",
+    "explanation": "'Fall out' means to quarrel."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1983",
+    "question": "Spot the error: 'The bank accounts for 20% of our revenue.'",
+    "options": {
+      "A": "The bank",
+      "B": "accounts for",
+      "C": "20% of our revenue.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Account for' means to constitute or make up. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1984",
+    "question": "Fill in the blank: 'Please _____ the information carefully before you file it.'",
+    "options": {
+      "A": "look over",
+      "B": "look up",
+      "C": "look after",
+      "D": "look for"
+    },
+    "correct_option": "A",
+    "explanation": "'Look over' means to review/examine."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1985",
+    "question": "What is the meaning of 'carry off'?",
+    "options": {
+      "A": "To succeed in doing something difficult.",
+      "B": "To steal.",
+      "C": "To carry items away.",
+      "D": "To start."
+    },
+    "correct_option": "A",
+    "explanation": "'Carry off' means to succeed in a challenging situation."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1986",
+    "question": "Spot the error: 'He tried to carry off the presentation despite his nerves.'",
+    "options": {
+      "A": "He tried to carry off",
+      "B": "the presentation",
+      "C": "despite his nerves.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Carry off' meaning succeed is correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1987",
+    "question": "Fill in the blank: 'The truth will _____ eventually.'",
+    "options": {
+      "A": "come out",
+      "B": "come in",
+      "C": "come off",
+      "D": "come to"
+    },
+    "correct_option": "A",
+    "explanation": "'Come out' means to be revealed."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1988",
+    "question": "Choose the meaning of 'break in' on something:",
+    "options": {
+      "A": "To interrupt a conversation.",
+      "B": "To enter a house.",
+      "C": "To break a tool.",
+      "D": "To start."
+    },
+    "correct_option": "A",
+    "explanation": "'Break in' on means to interrupt."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1989",
+    "question": "Spot the error: 'The engine broke down on the motorway.'",
+    "options": {
+      "A": "The engine broke down",
+      "B": "on the motorway.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "D",
+    "explanation": "'Break down' (for machinery) is correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1990",
+    "question": "Fill in the blank: 'I'll _____ the office once I finish this task.'",
+    "options": {
+      "A": "call at",
+      "B": "call on",
+      "C": "call out",
+      "D": "call back"
+    },
+    "correct_option": "A",
+    "explanation": "'Call at' means to visit a place briefly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1991",
+    "question": "What does 'take back' mean?",
+    "options": {
+      "A": "To retract a statement or return something.",
+      "B": "To lead someone.",
+      "C": "To start a job.",
+      "D": "To give away."
+    },
+    "correct_option": "A",
+    "explanation": "'Take back' can mean to admit a mistake/retract or to return goods."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1992",
+    "question": "Spot the error: 'He took back his comments after realizing his mistake.'",
+    "options": {
+      "A": "He took back",
+      "B": "his comments after",
+      "C": "realizing his mistake.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Take back' used as retract is correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1993",
+    "question": "Fill in the blank: 'The concert has been _____ to next week.'",
+    "options": {
+      "A": "put off",
+      "B": "put over",
+      "C": "put on",
+      "D": "put away"
+    },
+    "correct_option": "A",
+    "explanation": "'Put off' means to postpone."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1994",
+    "question": "Choose the meaning of 'put on':",
+    "options": {
+      "A": "To wear clothes or apply makeup.",
+      "B": "To remove.",
+      "C": "To postpone.",
+      "D": "To ignore."
+    },
+    "correct_option": "A",
+    "explanation": "'Put on' means to dress or stage an event."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1995",
+    "question": "Spot the error: 'She puts on her favorite dress for the party.'",
+    "options": {
+      "A": "She puts on",
+      "B": "her favorite dress",
+      "C": "for the party.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Put on' for clothing is correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1996",
+    "question": "Fill in the blank: 'I need to _____ my winter clothes in the attic.'",
+    "options": {
+      "A": "put away",
+      "B": "put off",
+      "C": "put on",
+      "D": "put down"
+    },
+    "correct_option": "A",
+    "explanation": "'Put away' means to store something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1997",
+    "question": "What is the meaning of 'go for'?",
+    "options": {
+      "A": "To choose or attempt to get.",
+      "B": "To fail.",
+      "C": "To return.",
+      "D": "To quit."
+    },
+    "correct_option": "A",
+    "explanation": "'Go for' means to try to achieve or choose something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1998",
+    "question": "Spot the error: 'He decided to go for the job despite the low pay.'",
+    "options": {
+      "A": "He decided to",
+      "B": "go for",
+      "C": "the job despite the low pay.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Go for' means to apply/choose. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1999",
+    "question": "Fill in the blank: 'The fire _____ because there was no more wood.'",
+    "options": {
+      "A": "died out",
+      "B": "died down",
+      "C": "died away",
+      "D": "died off"
+    },
+    "correct_option": "A",
+    "explanation": "'Die out' means to become extinct or vanish."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2000",
+    "question": "What does 'take after' mean?",
+    "options": {
+      "A": "To resemble.",
+      "B": "To reject.",
+      "C": "To start.",
+      "D": "To finish."
+    },
+    "correct_option": "A",
+    "explanation": "'Take after' means to look like/resemble a parent."
+  }
+]

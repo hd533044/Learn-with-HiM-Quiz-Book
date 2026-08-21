@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_3101",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Chilblain",
+      "B": "Chillblain",
+      "C": "Chilblayn",
+      "D": "Chilblein"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Chilblain' - an itchy swelling on the skin caused by retarding of blood flow through cold air; single 'l', 'c-h-i-l-b-l-a-i-n'). Options B, C, and D double 'l' or alter the diphthong.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3102",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Chimerical",
+      "B": "Chiropody",
+      "C": "Chiropractic",
+      "D": "Chivalrousnesss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Chivalrousness' (double 's', not triple 's' - the quality of being chivalrous, courteous, and gallant). Other options are correct: Chimerical (existing only as the product of unchecked fancy; fantastically improbable), Chiropody (the treatment of the feet and their ailments), Chiropractic (a system of complementary medicine based on the diagnosis and manipulative treatment of misalignments of the joints).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3103",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Chlorination",
+      "B": "Clorination",
+      "C": "Chlorinasion",
+      "D": "Chlorenation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Chlorination' - the process of adding chlorine to water to purify it; 'c-h-l-o-r-i-n-a-t-i-o-n'). Options B, C, and D drop 'h', alter vowels, or corrupt the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3104",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Chlorophyll",
+      "B": "Cholera",
+      "C": "Cholesterol",
+      "D": "Choreografy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Choreography' (spelled with 'ph', not 'f' - the sequence of steps and movements in dance). Other options are correct: Chlorophyll (a green pigment, present in all green plants), Cholera (an infectious and often fatal bacterial disease of the small intestine), Cholesterol (a compound of the sterol type found in most body tissues).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3105",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Chromatography",
+      "B": "Chromatograffy",
+      "C": "Chromatagrophy",
+      "D": "Cromatography"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Chromatography' - a laboratory technique for the separation of a mixture; 'c-h-r-o-m-a-t-o-g-r-a-p-h-y'). Options B, C, and D drop 'h', substitute 'ff', or alter connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3106",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Chronicler",
+      "B": "Chronology",
+      "C": "Chronometer",
+      "D": "Chrysantemum"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Chrysanthemum' (contains 'th', 'C-h-r-y-s-a-n-t-h-e-m-u-m' - a popular garden flower with brightly colored blooms). Other options are correct: Chronicler (a person who publishes a record of historical events), Chronology (the arrangement of events or dates in the order of their occurrence), Chronometer (an instrument for measuring time accurately, especially one used in navigation).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3107",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Churlish",
+      "B": "Cherlish",
+      "C": "Churllish",
+      "D": "Churlesh"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Churlish' - rude in a mean-spirited and surly way; single 'l', 'c-h-u-r-l-i-s-h'). Options B, C, and D alter vowel values or double 'l'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3108",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Cider",
+      "B": "Cinchona",
+      "C": "Cinnabar",
+      "D": "Cinnamonr"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cinnamon' (ends in '-on', no extra 'r' - an aromatic spice made from the bark of certain trees). Other options are correct: Cider (an alcoholic drink made from fermented apple juice), Cinchona (a South American tree yielding bark used to produce quinine), Cinnabar (a bright red mercuric sulfide mineral).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3109",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Circuitous",
+      "B": "Circutous",
+      "C": "Circuitus",
+      "D": "Circuittous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Circuitous' - of a route or journey: longer than the most direct way; contains 'ui', 'c-i-r-c-u-i-t-o-u-s'). Options B, C, and D drop vowels or double 't'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3110",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Circularitry",
+      "B": "Circumcision",
+      "C": "Circumference",
+      "D": "Circumlocusion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is incorrectly spelt; the correct spelling is 'Circularity' (roundness or the state of being circular). Option D is also incorrect ('Circumlocution' has '-tion'), but A features an obvious suffix typo ('Circularitry'). Other options are correct: Circumcision (surgical removal of the foreskin), Circumference (the enclosing boundary of a curved geometric figure).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3111",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Circumscribe",
+      "B": "Circumskribe",
+      "C": "Circumscrybe",
+      "D": "Circumscrive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Circumscribe' - to restrict within certain limits; 'c-i-r-c-u-m-s-c-r-i-b-e'). Options B, C, and D replace 'c' with 'k' or alter the consonant stem.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3112",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Circumspection",
+      "B": "Circumstantial",
+      "C": "Circumvent",
+      "D": "Cirrhocis"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cirrhosis' (ends in '-sis', not '-cis' - chronic liver disease). Other options are correct: Circumspection (wary and unwilling to take risks), Circumstantial (pointing to indirect evidence of guilt), Circumvent (find a way around an obstacle).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3113",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Clairvoyant",
+      "B": "Clairvoyent",
+      "C": "Clarevoyant",
+      "D": "Clairvoyante"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Clairvoyant' - a person who claims to have a supernatural ability to perceive events in the future; ends in '-ant'). Options B, C, and D alter the vowel positions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3114",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Clamour",
+      "B": "Clandestine",
+      "C": "Clannish",
+      "D": "Clarifacation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Clarification' (spelled with '-fi-', not '-fa-' - the action of making a statement or situation less confused). Other options are correct: Clamour (a loud and confused noise, especially that of people shouting), Clandestine (kept secret or done secretively), Clannish (excluding others outside one's own group).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3115",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Clairaudience",
+      "B": "Claraudience",
+      "C": "Clairaudiance",
+      "D": "Clairawdience"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Clairaudience' - the supposed faculty of perceiving sounds or voices not audible to normal hearing; 'c-l-a-i-r-a-u-d-i-e-n-c-e'). Options B, C, and D alter the prefix or suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3116",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Clarinetist",
+      "B": "Claustrophobia",
+      "C": "Cleverness",
+      "D": "Clientelle"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Clientele' (single 'l' at the end - the body of customers or patrons of a store, hotel, or other organization). Other options are correct: Clarinetist (a person who plays the clarinet), Claustrophobia (extreme or irrational fear of confined places), Cleverness (the quality of being quick to understand, learn, and devise or apply ideas).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3117",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Climatology",
+      "B": "Climatolagy",
+      "C": "Climatalogy",
+      "D": "Climatolegy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Climatology' - the scientific study of climate; 'c-l-i-m-a-t-o-l-o-g-y'). Options B, C, and D alter the connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3118",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Clinician",
+      "B": "Cloistered",
+      "C": "Coalesce",
+      "D": "Coalision"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Coalition' (spelled with '-tion', not '-sion' - a temporary alliance for combined action). Other options are correct: Clinician (a doctor having direct contact with and care for patients), Cloistered (kept away from the outside world; sheltered), Coalesce (come together to form one mass or whole).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3119",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Coagulation",
+      "B": "Coagelation",
+      "C": "Coagilation",
+      "D": "Coagulesion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Coagulation' - the change of a liquid to a solid or semisolid state; 'c-o-a-g-u-l-a-t-i-o-n'). Options B, C, and D distort internal vowels or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3120",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Coaxial",
+      "B": "Cacophonic",
+      "C": "Cockatiel",
+      "D": "Coersive"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Coercive' (spelled with 'c', not 's' - relating to or using force or threats). Other options are correct: Coaxial (having a common axis), Cacophonic (involving or producing a harsh, discordant mixture of sounds), Cockatiel (a small crested parrot native to Australia).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3121",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Coeval",
+      "B": "Coevall",
+      "C": "Coevle",
+      "D": "Coaeval"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Coeval' - having the same age or date of origin; contemporary; 'c-o-e-v-a-l'). Options B, C, and D alter the vowel structure or double 'l'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3122",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Coexistence",
+      "B": "Cogitation",
+      "C": "Cognitive",
+      "D": "Cognizible"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cognizable' or 'Cognisable' (ends in '-able', not '-ible' - capable of being known, perceived, or legally tried). Other options are correct: Coexistence (state of living together harmoniously), Cogitation (the action of thinking deeply about something; contemplation), Cognitive (relating to mental processes of perception and reasoning).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3123",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Coheir",
+      "B": "Cohier",
+      "C": "Cohear",
+      "D": "Coheire"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Coheir' - a person who inherits jointly with one or more others; 'c-o-h-e-i-r'). Options B, C, and D invert vowels or add silent letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3124",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Coherence",
+      "B": "Cohesiveness",
+      "C": "Collaboration",
+      "D": "Collaegue"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Colleague' (spelled 'c-o-l-l-e-a-g-u-e' - a person with whom one works in a profession or business). Other options are correct: Coherence (the quality of being logical and consistent), Cohesiveness (the property of forming a united whole), Collaboration (the action of working with someone to produce something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3125",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Coliseum",
+      "B": "Colloseum",
+      "C": "Colliseum",
+      "D": "Coleseum"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Coliseum' - a large theater or stadium; single 'l', 'c-o-l-i-s-e-u-m'). Options B, C, and D confuse consonant doubling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3126",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Colloquium",
+      "B": "Collusion",
+      "C": "Collosal",
+      "D": "Combative"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Colossal' (single 'l', double 's' - extremely large or great). Other options are correct: Colloquium (an academic seminar or conference), Collusion (secret or illegal cooperation or conspiracy), Combative (ready or eager to fight or argue).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3127",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Combustibility",
+      "B": "Combustabilaty",
+      "C": "Combustablety",
+      "D": "Combustibilaty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Combustibility' - the capability of catching fire and burning easily; 'c-o-m-b-u-s-t-i-b-i-l-i-t-y'). Options B, C, and D alter the connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3128",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Commandant",
+      "B": "Commendable",
+      "C": "Commensuration",
+      "D": "Commerciallism"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Commercialism' (single 'l' before '-ism' - emphasis on the maximization of profit). Other options are correct: Commandant (an officer in charge of a military establishment), Commendable (deserving praise), Commensuration (corresponding in size or degree).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3129",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Commissariat",
+      "B": "Comissariat",
+      "C": "Commissariate",
+      "D": "Commisariat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Commissariat' - a department responsible for food supply in an army; double 'm', double 's', ends in '-at'). Options B, C, and D drop consonants or add 'e'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3130",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Commissionaire",
+      "B": "Commodious",
+      "C": "Commonality",
+      "D": "Commotian"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Commotion' (ends in '-tion', not '-tian' - a state of confused and noisy disturbance). Other options are correct: Commissionaire (a uniformed doorkeeper or attendant), Commodious (roomy and comfortable), Commonality (the state of sharing features or characteristics).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3131",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Communicative",
+      "B": "Communicitive",
+      "C": "Communeacative",
+      "D": "Communicetive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Communicative' - willing to talk or give information; 'c-o-m-m-u-n-i-c-a-t-i-v-e'). Options B, C, and D alter the connecting vowel sequence.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3132",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Compactness",
+      "B": "Companionable",
+      "C": "Comparative",
+      "D": "Compatability"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Compatibility' (spelled with '-i-', not '-a-' - the capability of existing together in harmony). Other options are correct: Compactness (closely and neatly packed together), Companionable (friendly and sociable), Comparative (measured or judged by comparison).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3133",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Compartmentalize",
+      "B": "Compartmentelize",
+      "C": "Compartmentalise",
+      "D": "Compartmentilize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Compartmentalize' - to divide into separate sections or categories; 'c-o-m-p-a-r-t-m-e-n-t-a-l-i-z-e'). Options B and D alter connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3134",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Compassionate",
+      "B": "Compatriot",
+      "C": "Compendious",
+      "D": "Compencation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Compensation' (spelled with 's', not 'c' - something, typically money, awarded to someone as a recompense for loss). Other options are correct: Compassionate (feeling or showing sympathy and concern for others), Compatriot (a fellow citizen or national of one's country), Compendious (containing or presenting a much information in a brief and concise form).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3135",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Competence",
+      "B": "Competance",
+      "C": "Competanse",
+      "D": "Competencee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Competence' - the ability to do something successfully or efficiently; ends in '-ence'). Options B, C, and D alter the suffix vowels or consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3136",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Complacency",
+      "B": "Complaisance",
+      "C": "Complementary",
+      "D": "Completly"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Completely' (retains silent 'e' before '-ly' - totally; utterly). Other options are correct: Complacency (smug or uncritical satisfaction with oneself), Complaisance (willingness to please others), Complementary (combining in such a way as to enhance or emphasize each other's qualities).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3137",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Comprehensibility",
+      "B": "Comprehensabilaty",
+      "C": "Comprehensablety",
+      "D": "Comprehensibilaty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Comprehensibility' - the quality of being able to be understood; 'c-o-m-p-r-e-h-e-n-s-i-b-i-l-i-t-y'). Options B, C, and D alter the connecting vowel sequence.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3138",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Compromise",
+      "B": "Comptroller",
+      "C": "Compulsion",
+      "D": "Compunctuous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Compunctious' (spelled without extra 't', 'c-o-m-p-u-n-c-t-i-o-u-s' - feeling or expressing guilt or remorse). Other options are correct: Compromise (an agreement or settlement of a dispute that is reached by each side making concessions), Comptroller (a supervisory public accountant or financial controller), Compulsion (the action or state of forcing or being forced to do something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3139",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Computation",
+      "B": "Computasion",
+      "C": "Computacion",
+      "D": "Compyutation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Computation' - the action of mathematical calculation; 'c-o-m-p-u-t-a-t-i-o-n'). Options B, C, and D alter suffix consonants or add unnecessary letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3140",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Concatenation",
+      "B": "Concealment",
+      "C": "Concentric",
+      "D": "Conseptual"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Conceptual' (spelled with 'c', not 's' - relating to or based on mental concepts). Other options are correct: Concatenation (a series of interconnected things or events), Concealment (the action of hiding something or preventing it from being known), Concentric (of circles or spheres: sharing a common center).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3141",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Concessionaire",
+      "B": "Concesionaire",
+      "C": "Concessionair",
+      "D": "Concessionare"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Concessionaire' - a holder of a concession or lease; single 'c', double 's', ends in '-aire'). Options B, C, and D drop 's' or alter the ending.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3142",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Conciliation",
+      "B": "Conciseness",
+      "C": "Concomitant",
+      "D": "Concurancy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Concurrency' (ends in '-ency', not '-ancy' - simultaneous occurrence of events). Other options are correct: Conciliation (the action of stopping someone from being angry; placation), Conciseness (briefness and clarity in expression), Concomitant (naturally accompanying or associated).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3143",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Condescendingly",
+      "B": "Condescendingley",
+      "C": "Condasendingly",
+      "D": "Condescindingly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Condescendingly' - in a manner showing a patronizing superiority; 'c-o-n-d-e-s-c-e-n-d-i-n-g-l-y'). Options B, C, and D drop 'sc' or alter root vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3144",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Condolence",
+      "B": "Condominium",
+      "C": "Condonation",
+      "D": "Confeccionery"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Confectionery' (spelled with '-tione-', not '-ccio-' - sweets and chocolates collectively). Other options are correct: Condolence (an expression of sympathy, especially on the occasion of a death), Condominium (a building or complex of apartment buildings containing individually owned apartments), Condonation (the forgiving of an offense by a person willingly).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3145",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Confidentiality",
+      "B": "Confidentilaty",
+      "C": "Confidentialety",
+      "D": "Confedentiatility"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Confidentiality' - the state of keeping secrets private; 'c-o-n-f-i-d-e-n-t-i-a-l-i-t-y'). Options B, C, and D alter connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3146",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Configuration",
+      "B": "Confiscation",
+      "C": "Conflagration",
+      "D": "Conformence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Conformance' (ends in '-ance', not '-ence' - compliance with rules, standards, or laws). Other options are correct: Configuration (an arrangement of elements in a particular form, figure, or combination), Confiscation (the action of taking or seizing property with authority), Conflagration (an extensive fire which destroys a great deal of land or property).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3147",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Congeniality",
+      "B": "Congeneality",
+      "C": "Congenialaty",
+      "D": "Conginiality"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Congeniality' - the quality of being pleasant, friendly, or suited to one's tastes; 'c-o-n-g-e-n-i-a-l-i-t-y'). Options B, C, and D alter the internal vowel pattern.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3148",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Conglomeration",
+      "B": "Congratulatory",
+      "C": "Congruence",
+      "D": "Conjecturaly"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Conjecturally' (double 'l' in adverbial ending '-ally' - based on or involving conjecture; speculatively). Other options are correct: Conglomeration (a coherent mass of heterogeneous materials), Congratulatory (expressing congratulations or praise), Congruence (agreement or compatibility, often in geometry or properties).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3149",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Connoisseurship",
+      "B": "Conoiseurship",
+      "C": "Connoisseurshipp",
+      "D": "Connoissurship"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Connoisseurship' - specialized expertise and knowledge of a connoisseur; double 'n', double 's', ends in '-ship'). Options B, C, and D drop consonants or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3150",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Consanguineous",
+      "B": "Conscientious",
+      "C": "Consecration",
+      "D": "Consensualy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Consensually' (double 'l' - by mutual consent). Other options are correct: Consanguineous (descended from the same common ancestor), Conscientious (wishing to do one's work or duty well and thoroughly), Consecration (the action of making or declaring something sacred).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

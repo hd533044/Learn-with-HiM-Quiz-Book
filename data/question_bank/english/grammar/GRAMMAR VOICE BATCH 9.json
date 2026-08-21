@@ -1,0 +1,753 @@
+[
+  {
+    "id": "ENG_GRAM_VOIC_401",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'He writes a letter.'",
+    "options": {
+      "A": "A letter was written by him.",
+      "B": "A letter is written by him.",
+      "C": "A letter has been written by him.",
+      "D": "A letter is being written by him."
+    },
+    "correct_option": "B",
+    "explanation": "Simple present active 'writes' becomes 'is written' in passive voice.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_402",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error in the passive transformation: 'They are painting the wall.' -> 'The wall is painted by them.'",
+    "options": {
+      "A": "The wall is painted",
+      "B": "by them",
+      "C": "The error is in the tense transformation.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "The active voice 'are painting' is Present Continuous. The passive voice must be 'is being painted'.",
+    "tags": ["grammar", "voice", "spotting_errors", "tense_consistency"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_403",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'She has completed the project.'",
+    "options": {
+      "A": "The project is completed by her.",
+      "B": "The project has completed by her.",
+      "C": "The project has been completed by her.",
+      "D": "The project was completed by her."
+    },
+    "correct_option": "C",
+    "explanation": "Present perfect active 'has completed' becomes 'has been completed' in passive voice.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_404",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Did he help you?'",
+    "options": {
+      "A": "Were you helped by him?",
+      "B": "Was you helped by him?",
+      "C": "Are you helped by him?",
+      "D": "Did you helped by him?"
+    },
+    "correct_option": "A",
+    "explanation": "Interrogative simple past 'Did...' becomes 'Were you...'.",
+    "tags": ["grammar", "voice", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_405",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Close the door.'",
+    "options": {
+      "A": "The door is closed.",
+      "B": "Let the door be closed.",
+      "C": "The door should close.",
+      "D": "Let be the door closed."
+    },
+    "correct_option": "B",
+    "explanation": "Imperative sentences typically take the passive structure 'Let + object + be + past participle'.",
+    "tags": ["grammar", "voice", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_406",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The report was been written by the committee.'",
+    "options": {
+      "A": "The report",
+      "B": "was been written",
+      "C": "by the committee.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The auxiliary 'was been' is grammatically incorrect. It should be 'was written' (simple past passive).",
+    "tags": ["grammar", "voice", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_407",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Who wrote this book?'",
+    "options": {
+      "A": "By whom was this book written?",
+      "B": "Who was this book written by?",
+      "C": "By whom this book was written?",
+      "D": "Both A and B are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both forms are acceptable in English grammar; 'By whom...' is more formal, while 'Who... by?' is standard.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_408",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Please help me.'",
+    "options": {
+      "A": "You are requested to help me.",
+      "B": "You are ordered to help me.",
+      "C": "I am helped by you.",
+      "D": "Let me be helped."
+    },
+    "correct_option": "A",
+    "explanation": "Imperative requests starting with 'Please' are converted using 'You are requested to...'.",
+    "tags": ["grammar", "voice", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_409",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They will announce the results tomorrow.'",
+    "options": {
+      "A": "The results will be announced tomorrow.",
+      "B": "The results will have been announced tomorrow.",
+      "C": "The results would be announced tomorrow.",
+      "D": "The results are announced tomorrow."
+    },
+    "correct_option": "A",
+    "explanation": "Simple future 'will announce' becomes 'will be announced'.",
+    "tags": ["grammar", "voice", "future_tense", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_410",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The house is being build by the contractors.'",
+    "options": {
+      "A": "The house",
+      "B": "is being build",
+      "C": "by the contractors.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "In passive continuous, use 'being + past participle'. 'Build' must be 'built'.",
+    "tags": ["grammar", "voice", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_411",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'I know him.'",
+    "options": {
+      "A": "He is known by me.",
+      "B": "He is known to me.",
+      "C": "He was known to me.",
+      "D": "He is known with me."
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'know' takes the preposition 'to' in the passive voice, not 'by'.",
+    "tags": ["grammar", "voice", "prepositional_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_412",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'People speak English all over the world.'",
+    "options": {
+      "A": "English is spoken all over the world.",
+      "B": "English was spoken all over the world.",
+      "C": "English has been spoken all over the world.",
+      "D": "English is being spoken all over the world."
+    },
+    "correct_option": "A",
+    "explanation": "Subject 'People' is indefinite and can be omitted in the passive voice. Simple present 'speak' becomes 'is spoken'.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_413",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Let the work be done by you.'",
+    "options": {
+      "A": "Let the work",
+      "B": "be done",
+      "C": "by you.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct as a passive form of 'Do the work'.",
+    "tags": ["grammar", "voice", "imperative", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_414",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Why did you punish him?'",
+    "options": {
+      "A": "Why was he punished by you?",
+      "B": "Why he was punished by you?",
+      "C": "Why were he punished by you?",
+      "D": "Why has he been punished by you?"
+    },
+    "correct_option": "A",
+    "explanation": "Retain the 'wh-' word; convert 'did... punish' to 'was... punished'.",
+    "tags": ["grammar", "voice", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_415",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They offered me a job.'",
+    "options": {
+      "A": "I was offered a job by them.",
+      "B": "A job was offered to me by them.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Sentences with two objects (direct and indirect) can have two passive forms.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_416",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The medicine should be took twice a day.'",
+    "options": {
+      "A": "The medicine",
+      "B": "should be took",
+      "C": "twice a day.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Passive modals take 'be + past participle'. It should be 'should be taken'.",
+    "tags": ["grammar", "voice", "spotting_errors", "modals"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_417",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'He suggested a new plan.'",
+    "options": {
+      "A": "A new plan was suggested by him.",
+      "B": "A new plan is suggested by him.",
+      "C": "A new plan had been suggested by him.",
+      "D": "A new plan were suggested by him."
+    },
+    "correct_option": "A",
+    "explanation": "Simple past 'suggested' becomes 'was suggested' in passive.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_418",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Don't touch the wire.'",
+    "options": {
+      "A": "The wire should not touch.",
+      "B": "Let the wire not be touched.",
+      "C": "The wire is not touched.",
+      "D": "Let the wire be not touch."
+    },
+    "correct_option": "B",
+    "explanation": "Negative imperatives in passive: 'Let + object + not + be + past participle'.",
+    "tags": ["grammar", "voice", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_419",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'He is to write a letter.'",
+    "options": {
+      "A": "A letter is to be written by him.",
+      "B": "A letter is to write by him.",
+      "C": "A letter was to be written by him.",
+      "D": "A letter has to be written by him."
+    },
+    "correct_option": "A",
+    "explanation": "Structure 'is/am/are to + infinitive' becomes 'is/am/are to + be + past participle' in passive.",
+    "tags": ["grammar", "voice", "infinitive_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_420",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The flowers were smelt sweet by the children.'",
+    "options": {
+      "A": "The flowers were",
+      "B": "smelt sweet",
+      "C": "by the children.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Quasi-passive verbs like 'smell', 'taste', 'look' don't always take standard passive transformation. It should be 'The flowers smelt sweet' (active) or 'The flowers were smelt (by the children) to be sweet'—but 'smelt sweet' is not a passive construction of the flowers themselves.",
+    "tags": ["grammar", "voice", "spotting_errors", "quasi_passive"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_421",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'One should keep one's promises.'",
+    "options": {
+      "A": "Promises should be kept.",
+      "B": "Promises should keep by one.",
+      "C": "Promises should have been kept.",
+      "D": "Promises are kept."
+    },
+    "correct_option": "A",
+    "explanation": "Indefinite pronoun 'one' is often omitted in passive construction.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_422",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'She brought some cakes.'",
+    "options": {
+      "A": "Some cakes were brought by her.",
+      "B": "Some cakes was brought by her.",
+      "C": "Some cakes are brought by her.",
+      "D": "Some cakes had been brought by her."
+    },
+    "correct_option": "A",
+    "explanation": "Simple past 'brought' becomes 'were brought' (cakes is plural).",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_423",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The match was won by us.'",
+    "options": {
+      "A": "The match",
+      "B": "was won",
+      "C": "by us.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct passive voice.",
+    "tags": ["grammar", "voice", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_424",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'The manager gave him a reward.'",
+    "options": {
+      "A": "He was given a reward by the manager.",
+      "B": "A reward was given to him by the manager.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Double object sentence allows two passive transformations.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_425",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Who can solve this?'",
+    "options": {
+      "A": "By whom can this be solved?",
+      "B": "By whom this can be solved?",
+      "C": "Who can this be solved by?",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both 'By whom can this be solved?' and 'Who can this be solved by?' are valid passive forms.",
+    "tags": ["grammar", "voice", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_426",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am satisfied by his work.'",
+    "options": {
+      "A": "I am",
+      "B": "satisfied by",
+      "C": "his work.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Satisfied' takes 'with', not 'by'.",
+    "tags": ["grammar", "voice", "prepositional_passive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_427",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They will be doing the work.'",
+    "options": {
+      "A": "The work will be done by them.",
+      "B": "The work will be being done by them.",
+      "C": "The work would be being done by them.",
+      "D": "Passive voice is not possible.",
+      "E": "D"
+    },
+    "correct_option": "E",
+    "explanation": "Future Continuous tense ('will be doing') does not have a standard passive form in formal English.",
+    "tags": ["grammar", "voice", "tense_limitations", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_428",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Nothing can be achieved without effort.'",
+    "options": {
+      "A": "Effort achieves nothing.",
+      "B": "Effort can achieve nothing.",
+      "C": "One can achieve nothing without effort.",
+      "D": "Effort achieves no achievement."
+    },
+    "correct_option": "C",
+    "explanation": "Conversion from passive to active requires restoring the subject (here, 'one' or 'we').",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_429",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The trees were fell by the woodcutter.'",
+    "options": {
+      "A": "The trees were",
+      "B": "fell",
+      "C": "by the woodcutter.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Passive voice needs 'past participle'. Past participle of 'fell' (to cut down) is 'felled'.",
+    "tags": ["grammar", "voice", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_430",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They are to start a new business.'",
+    "options": {
+      "A": "A new business is to be started by them.",
+      "B": "A new business was to be started by them.",
+      "C": "A new business is to start by them.",
+      "D": "A new business has to be started by them."
+    },
+    "correct_option": "A",
+    "explanation": "'Is/are to' + infinitive becomes 'is/are to be' + past participle.",
+    "tags": ["grammar", "voice", "infinitive_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_431",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Do not kill the bird.'",
+    "options": {
+      "A": "The bird should not be killed.",
+      "B": "Let the bird be not killed.",
+      "C": "The bird must not be killed.",
+      "D": "All are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Multiple forms (Should, Let-passive, Must) can be used to convert negative imperatives.",
+    "tags": ["grammar", "voice", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_432",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The book is interested to me.'",
+    "options": {
+      "A": "The book",
+      "B": "is interested",
+      "C": "to me.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "It should be 'The book is interesting to me.'",
+    "tags": ["grammar", "voice", "spotting_errors", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_433",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'We must respect the elders.'",
+    "options": {
+      "A": "The elders must be respected by us.",
+      "B": "The elders must respected by us.",
+      "C": "The elders must have been respected by us.",
+      "D": "The elders are to be respected by us."
+    },
+    "correct_option": "A",
+    "explanation": "Modal 'must' active becomes 'must be' + past participle in passive.",
+    "tags": ["grammar", "voice", "modals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_434",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They have finished the work.'",
+    "options": {
+      "A": "The work has finished by them.",
+      "B": "The work has been finished by them.",
+      "C": "The work was finished by them.",
+      "D": "The work had been finished by them."
+    },
+    "correct_option": "B",
+    "explanation": "Present perfect active 'have finished' becomes 'has been finished' (work is singular).",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_435",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The problem was solved by he.'",
+    "options": {
+      "A": "The problem",
+      "B": "was solved",
+      "C": "by he.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Agent in passive voice requires objective case: 'by him'.",
+    "tags": ["grammar", "voice", "spotting_errors", "case"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_436",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'It is time to take tea.'",
+    "options": {
+      "A": "It is time for tea to be taken.",
+      "B": "It is time tea is taken.",
+      "C": "It is time tea to be taken.",
+      "D": "It is tea time."
+    },
+    "correct_option": "A",
+    "explanation": "Standard structure for passive 'It is time to + verb': 'It is time + for + object + to be + past participle'.",
+    "tags": ["grammar", "voice", "infinitive_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_437",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'He laughs at me.'",
+    "options": {
+      "A": "I am laughed by him.",
+      "B": "I am laughed at by him.",
+      "C": "I was laughed at by him.",
+      "D": "I am being laughed at by him."
+    },
+    "correct_option": "B",
+    "explanation": "Prepositional verbs ('laugh at') must retain the preposition in passive voice.",
+    "tags": ["grammar", "voice", "prepositional_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_438",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The news shocked everyone.' -> 'Everyone was shocked at the news.'",
+    "options": {
+      "A": "The news shocked everyone.",
+      "B": "Everyone was shocked at the news.",
+      "C": "The error is in the preposition used.",
+      "D": "No error."
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct; 'shocked' takes 'at' or 'by'.",
+    "tags": ["grammar", "voice", "spotting_errors", "prepositional_passive"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_439",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'We shall elect a new leader.'",
+    "options": {
+      "A": "A new leader shall be elected by us.",
+      "B": "A new leader will be elected by us.",
+      "C": "A new leader shall have been elected by us.",
+      "D": "A new leader is elected by us."
+    },
+    "correct_option": "B",
+    "explanation": "In modern English passive, 'will' is generally preferred for the future even when active uses 'shall'.",
+    "tags": ["grammar", "voice", "future_tense", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_440",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Do they like oranges?'",
+    "options": {
+      "A": "Are oranges liked by them?",
+      "B": "Do oranges liked by them?",
+      "C": "Were oranges liked by them?",
+      "D": "Is oranges liked by them?"
+    },
+    "correct_option": "A",
+    "explanation": "Present simple interrogative 'Do they...' becomes 'Are [plural object]...'.",
+    "tags": ["grammar", "voice", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_441",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Someone has stolen my bag.'",
+    "options": {
+      "A": "My bag was stolen.",
+      "B": "My bag has been stolen.",
+      "C": "My bag has stolen.",
+      "D": "My bag is stolen."
+    },
+    "correct_option": "B",
+    "explanation": "Indefinite subjects ('Someone') are omitted. Present perfect 'has stolen' becomes 'has been stolen'.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_442",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The walls have been paint recently.'",
+    "options": {
+      "A": "The walls",
+      "B": "have been paint",
+      "C": "recently.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Passive voice requires past participle 'painted'.",
+    "tags": ["grammar", "voice", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_443",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Help the poor.'",
+    "options": {
+      "A": "The poor should be helped.",
+      "B": "Let the poor be helped.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both forms ('Let...' and 'Should be...') are standard for advice/imperatives.",
+    "tags": ["grammar", "voice", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_444",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They will have finished the task by noon.'",
+    "options": {
+      "A": "The task will be finished by noon.",
+      "B": "The task will have been finished by noon by them.",
+      "C": "The task will have finished by them.",
+      "D": "The task had been finished by them."
+    },
+    "correct_option": "B",
+    "explanation": "Future perfect active 'will have finished' becomes 'will have been finished' in passive.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_445",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is to be marry tomorrow.'",
+    "options": {
+      "A": "She is",
+      "B": "to be marry",
+      "C": "tomorrow.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Passive infinitive requires past participle 'married'.",
+    "tags": ["grammar", "voice", "spotting_errors", "infinitive_passive"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_446",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'We expect good news.'",
+    "options": {
+      "A": "Good news is expected by us.",
+      "B": "Good news was expected by us.",
+      "C": "Good news is being expected.",
+      "D": "Good news has been expected."
+    },
+    "correct_option": "A",
+    "explanation": "Simple present 'expect' becomes 'is expected'.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_447",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Did you lock the house?'",
+    "options": {
+      "A": "Was the house locked by you?",
+      "B": "Were the house locked by you?",
+      "C": "Did the house locked by you?",
+      "D": "Has the house been locked?"
+    },
+    "correct_option": "A",
+    "explanation": "Simple past interrogative 'Did... lock' becomes 'Was... locked'.",
+    "tags": ["grammar", "voice", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_448",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The letter has been posted by me yesterday.'",
+    "options": {
+      "A": "The letter",
+      "B": "has been posted",
+      "C": "by me",
+      "D": "yesterday."
+    },
+    "correct_option": "B",
+    "explanation": "Specific past time markers ('yesterday') require simple past passive ('was posted'), not present perfect.",
+    "tags": ["grammar", "voice", "tense_consistency", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_449",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'He keeps us waiting.'",
+    "options": {
+      "A": "We are kept waiting by him.",
+      "B": "We are being kept waiting by him.",
+      "C": "We were kept waiting by him.",
+      "D": "We have been kept waiting by him."
+    },
+    "correct_option": "A",
+    "explanation": "Simple present 'keeps' becomes 'are kept'.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_450",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'People say that he is a spy.'",
+    "options": {
+      "A": "It is said that he is a spy.",
+      "B": "He is said to be a spy.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Sentences starting with 'People say/believe/think...' have two passive constructions.",
+    "tags": ["grammar", "voice", "active_passive", "rule_based"]
+  }
+]

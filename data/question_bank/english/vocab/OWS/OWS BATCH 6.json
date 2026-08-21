@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0301",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn official order or signal under martial law requiring people to remain indoors during specified hours",
+    "options": {
+      "A": "Curfew",
+      "B": "Embargo",
+      "C": "Armistice",
+      "D": "Ceasefire"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Curfew) is correct. A 'Curfew' is a regulatory order requiring people to stay indoors between specified hours. 'Ceasefire' is an agreement to stop fighting.",
+    "tags": ["vocab", "ows", "law", "government", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0302",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA strong, eager desire to know, learn, or investigate something",
+    "options": {
+      "A": "Curiosity",
+      "B": "Apathy",
+      "C": "Ennui",
+      "D": "Insolence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Curiosity) is correct. 'Curiosity' is the state or quality of being inquisitive. 'Apathy' is a lack of feeling or interest, and 'Ennui' is listlessness from boredom.",
+    "tags": ["vocab", "ows", "emotions", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0303",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who believes that human conduct is motivated wholly by self-interest and sneers at common beliefs",
+    "options": {
+      "A": "Cynic",
+      "B": "Altruist",
+      "C": "Stoic",
+      "D": "Samaritan"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cynic) is correct. A 'Cynic' believes that people are motivated purely by selfishness. 'Altruist' works unselfishly for others, and 'Samaritan' assists people in distress.",
+    "tags": ["vocab", "ows", "people", "philosophy", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0304",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abnormal, irrational, or extreme fear of dogs",
+    "options": {
+      "A": "Cynophobia",
+      "B": "Canophilia",
+      "C": "Acrophobia",
+      "D": "Hydrophobia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cynophobia) is correct. 'Cynophobia' is the morbid fear of dogs. 'Canophilia' is a love of dogs, and 'Acrophobia' is fear of heights.",
+    "tags": ["vocab", "ows", "phobia", "animals", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0305",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person or thing that serves as the focal center of general attention or admiration",
+    "options": {
+      "A": "Cynosure",
+      "B": "Epicure",
+      "C": "Colossus",
+      "D": "Prototype"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cynosure) is correct. 'Cynosure' refers to an object or person serving as the central focal point of attraction. 'Colossus' is a gigantic statue.",
+    "tags": ["vocab", "ows", "general", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0306",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study of the formation, structure, and functions of biological cells",
+    "options": {
+      "A": "Cytology",
+      "B": "Anatomy",
+      "C": "Physiology",
+      "D": "Ecology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cytology) is correct. 'Cytology' is the branch of biology that studies cells. 'Anatomy' studies physical bodily structures.",
+    "tags": ["vocab", "ows", "science", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0307",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA period of ten consecutive years",
+    "options": {
+      "A": "Decade",
+      "B": "Fortnight",
+      "C": "Centennial",
+      "D": "Millennium"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Decade) is correct. A 'Decade' is a span of 10 years. 'Fortnight' is 14 days (two weeks), and 'Millennium' is 1,000 years.",
+    "tags": ["vocab", "ows", "time", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0308",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe act of damaging the good reputation of someone through false slanderous or libellous statements",
+    "options": {
+      "A": "Defamation",
+      "B": "Appraisal",
+      "C": "Eulogy",
+      "D": "Testimonial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Defamation) is correct. 'Defamation' is the communication of false statements that injure a person's reputation. 'Eulogy' is formal praise.",
+    "tags": ["vocab", "ows", "law", "crime", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0309",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo damage the good name, character, or reputation of someone",
+    "options": {
+      "A": "Defame",
+      "B": "Eulogise",
+      "C": "Commemorate",
+      "D": "Exonerate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Defame) is correct. 'Defame' means to speak ill of or malign someone's reputation maliciously. 'Exonerate' means to clear of all blame.",
+    "tags": ["vocab", "ows", "verbs", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0310",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOpen, bold, and unapologetic refusal to obey rules or orders",
+    "options": {
+      "A": "Defiance",
+      "B": "Subservience",
+      "C": "Amenability",
+      "D": "Acquiescence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Defiance) is correct. 'Defiance' is open, rebellious resistance to established authority. 'Amenability' is willingness to obey.",
+    "tags": ["vocab", "ows", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0311",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo entrust authority, power, or responsibility to another person or deputy",
+    "options": {
+      "A": "Delegate",
+      "B": "Usurp",
+      "C": "Confiscate",
+      "D": "Abdicate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Delegate) is correct. 'Delegate' means to commit powers or duties to an agent or representative. 'Usurp' means to seize without right.",
+    "tags": ["vocab", "ows", "work", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0312",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSlow, careful, and thorough thought, discussion, or consideration before making a decision",
+    "options": {
+      "A": "Deliberation",
+      "B": "Spontaneity",
+      "C": "Impromptu",
+      "D": "Extempore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Deliberation) is correct. 'Deliberation' is long and careful consideration of options. 'Impromptu' means without prior planning.",
+    "tags": ["vocab", "ows", "thinking", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0313",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA young person who habitually commits minor crimes or acts of misconduct",
+    "options": {
+      "A": "Delinquent",
+      "B": "Connoisseur",
+      "C": "Veteran",
+      "D": "Novice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Delinquent) is correct. A 'Delinquent' is a juvenile wrongdoer or lawbreaker. 'Veteran' is someone with prolonged experience.",
+    "tags": ["vocab", "ows", "crime", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0314",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo become liquid or dissolve, typically by absorbing moisture or during chemical decomposition",
+    "options": {
+      "A": "Deliquesce",
+      "B": "Solidify",
+      "C": "Coagulate",
+      "D": "Petrify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Deliquesce) is correct. 'Deliquesce' means to melt or dissolve by taking in atmospheric moisture. 'Solidify' is to become solid.",
+    "tags": ["vocab", "ows", "science", "chemistry", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0315",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA political leader who seeks popular support by appealing to popular desires, fears, and prejudices rather than rational argument",
+    "options": {
+      "A": "Demagogue",
+      "B": "Dictator",
+      "C": "Martyr",
+      "D": "Autocrat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Demagogue) is correct. A 'Demagogue' stirs public emotions and prejudices to gain political power. 'Autocrat' rules with absolute power.",
+    "tags": ["vocab", "ows", "politics", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0316",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA system of government in which supreme power is vested in the people and exercised by their elected representatives",
+    "options": {
+      "A": "Democracy",
+      "B": "Plutocracy",
+      "C": "Oligarchy",
+      "D": "Aristocracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Democracy) is correct. 'Democracy' is governance by the people through free elections. 'Plutocracy' is rule by the wealthy.",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0317",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe statistical study of human populations, including births, deaths, income, and distribution",
+    "options": {
+      "A": "Demography",
+      "B": "Anthropology",
+      "C": "Sociology",
+      "D": "Ecology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Demography) is correct. 'Demography' is the statistical analysis of vital human population data. 'Sociology' is the study of society.",
+    "tags": ["vocab", "ows", "science", "humanities", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0318",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo alter or strip away the natural qualities and inherent properties of something",
+    "options": {
+      "A": "Denature",
+      "B": "Preserve",
+      "C": "Purify",
+      "D": "Sterilize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Denature) is correct. 'Denature' means to change the natural structure or properties of a substance.",
+    "tags": ["vocab", "ows", "science", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0319",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo criticize unfairly, speak ill of, or disparage the reputation of someone",
+    "options": {
+      "A": "Denigrate",
+      "B": "Laud",
+      "C": "Applaud",
+      "D": "Venerate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Denigrate) is correct. 'Denigrate' means to defame, belittle, or attack reputation. 'Venerate' means to treat with profound respect.",
+    "tags": ["vocab", "ows", "verbs", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0320",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo represent, describe, or portray something clearly in words or art",
+    "options": {
+      "A": "Depict",
+      "B": "Conceal",
+      "C": "Obscure",
+      "D": "Camouflage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Depict) is correct. 'Depict' means to portray, illustrate, or delineate. 'Camouflage' means to hide or blend with surroundings.",
+    "tags": ["vocab", "ows", "art", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0321",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who gives formal sworn testimony or evidence under oath for use in a court of law",
+    "options": {
+      "A": "Deponent",
+      "B": "Plaintiff",
+      "C": "Defendant",
+      "D": "Arbitrator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Deponent) is correct. A 'Deponent' is an individual who provides written or oral evidence under oath. 'Plaintiff' files a lawsuit.",
+    "tags": ["vocab", "ows", "law", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0322",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMorally corrupt, perverted, and wicked in nature or behaviour",
+    "options": {
+      "A": "Depraved",
+      "B": "Virtuous",
+      "C": "Righteous",
+      "D": "Conscientious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Depraved) is correct. 'Depraved' means characterized by debased, corrupt, or sinful behavior. 'Virtuous' means possessing high moral standards.",
+    "tags": ["vocab", "ows", "morality", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0323",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo express strong, earnest disapproval or criticism of something",
+    "options": {
+      "A": "Deprecate",
+      "B": "Endorse",
+      "C": "Applaud",
+      "D": "Sanction"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Deprecate) is correct. 'Deprecate' means to protest against or express earnest disapproval. 'Endorse' means to give public approval.",
+    "tags": ["vocab", "ows", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0324",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo decline or diminish in purchasing power or monetary value over a duration of time",
+    "options": {
+      "A": "Depreciate",
+      "B": "Appreciate",
+      "C": "Escalate",
+      "D": "Augment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Depreciate) is correct. 'Depreciate' means to reduce in value over time. 'Appreciate' means to gain in value.",
+    "tags": ["vocab", "ows", "economics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0325",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nUnable to think or act clearly because of mental disorder or emotional trauma; insane",
+    "options": {
+      "A": "Deranged",
+      "B": "Sane",
+      "C": "Rational",
+      "D": "Pensive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Deranged) is correct. 'Deranged' means mentally disordered or unhinged. 'Pensive' means engaged in serious, deep reflection.",
+    "tags": ["vocab", "ows", "mind", "medical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0326",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA destitute, vagrant person without a home, regular employment, or property",
+    "options": {
+      "A": "Derelict",
+      "B": "Aristocrat",
+      "C": "Bourgeois",
+      "D": "Plutocrat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Derelict) is correct. A 'Derelict' is an abandoned, homeless person with no means of support. 'Bourgeois' denotes a middle-class individual.",
+    "tags": ["vocab", "ows", "society", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0327",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe shameful, deliberate failure to perform one's moral or professional duty",
+    "options": {
+      "A": "Dereliction",
+      "B": "Perseverance",
+      "C": "Integrity",
+      "D": "Conscientiousness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dereliction) is correct. 'Dereliction' is the neglect or abandonment of duty. 'Perseverance' is steadfast persistence.",
+    "tags": ["vocab", "ows", "duty", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0328",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo laugh at, ridicule, or mock someone in a scornful, insulting way",
+    "options": {
+      "A": "Deride",
+      "B": "Console",
+      "C": "Venerate",
+      "D": "Commemorate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Deride) is correct. 'Deride' means to treat with contemptuous mockery. 'Venerate' means to revere with great respect.",
+    "tags": ["vocab", "ows", "verbs", "communication", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0329",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medical physician who specializes in treating skin diseases and disorders",
+    "options": {
+      "A": "Dermatologist",
+      "B": "Cardiologist",
+      "C": "Neurologist",
+      "D": "Rhinologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dermatologist) is correct. A 'Dermatologist' specializes in diseases of the skin. 'Rhinologist' treats nose conditions.",
+    "tags": ["vocab", "ows", "medical", "professions", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0330",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe medical and scientific branch concerned with the study of skin structure and its diseases",
+    "options": {
+      "A": "Dermatology",
+      "B": "Acoustics",
+      "C": "Entomology",
+      "D": "Cytology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dermatology) is correct. 'Dermatology' is the scientific study of the skin. 'Entomology' is the study of insects.",
+    "tags": ["vocab", "ows", "science", "medical", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0331",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe illegal abandonment of an armed post, military duty, or cause without permission",
+    "options": {
+      "A": "Desertion",
+      "B": "Repatriation",
+      "C": "Immigration",
+      "D": "Emigration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Desertion) is correct. 'Desertion' is the unlawful act of leaving military service without intent to return. 'Repatriation' is returning home.",
+    "tags": ["vocab", "ows", "military", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0332",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person lacking food, clothing, shelter, and all necessary means of subsistence",
+    "options": {
+      "A": "Destitute",
+      "B": "Opulent",
+      "C": "Affluent",
+      "D": "Materialistic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Destitute) is correct. 'Destitute' means living in extreme poverty without basic life necessities. 'Affluent' means wealthy.",
+    "tags": ["vocab", "ows", "society", "poverty", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0333",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe prevention or discouraging of an action or crime through fear of consequences or penalty",
+    "options": {
+      "A": "Deterrence",
+      "B": "Incitement",
+      "C": "Incentive",
+      "D": "Provocation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Deterrence) is correct. 'Deterrence' is using fear of punishment to prevent criminal or hostile actions. 'Incentive' is encouragement.",
+    "tags": ["vocab", "ows", "law", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0334",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSkillful in using underhand, roundabout, or deceitful tactics to achieve goals",
+    "options": {
+      "A": "Devious",
+      "B": "Candid",
+      "C": "Artless",
+      "D": "Forthright"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Devious) is correct. 'Devious' means showing crafty, indirect, or dishonest behavior. 'Forthright' means direct and honest.",
+    "tags": ["vocab", "ows", "behaviour", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0335",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nDemonstrating neat manual skill, agility, and cleverness with the hands",
+    "options": {
+      "A": "Dexterous",
+      "B": "Clumsy",
+      "C": "Maladroit",
+      "D": "Gauche"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dexterous) is correct. 'Dexterous' means deft and skillful with manual tasks. 'Maladroit' and 'Gauche' mean clumsy.",
+    "tags": ["vocab", "ows", "skill", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0336",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo identify the medical nature, origin, and type of an illness by examining symptoms",
+    "options": {
+      "A": "Diagnose",
+      "B": "Prognosticate",
+      "C": "Interpolate",
+      "D": "Amputate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Diagnose) is correct. 'Diagnose' is to identify a medical condition from clinical examination. 'Interpolate' is to insert estimated values.",
+    "tags": ["vocab", "ows", "medical", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0337",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe systematic identification of the nature of an illness or problem by examination",
+    "options": {
+      "A": "Diagnosis",
+      "B": "Autopsy",
+      "C": "Biopsy",
+      "D": "Appraisal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Diagnosis) is correct. 'Diagnosis' is the medical conclusion naming a disease based on signs and symptoms.",
+    "tags": ["vocab", "ows", "medical", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0338",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA regional or social variety of a language distinguished by pronunciation, grammar, or vocabulary",
+    "options": {
+      "A": "Dialect",
+      "B": "Jargon",
+      "C": "Vernacular",
+      "D": "Slang"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dialect) is correct. A 'Dialect' is a form of language peculiar to a specific geographic region. 'Jargon' is special technical terminology.",
+    "tags": ["vocab", "ows", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0339",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA bitter, sharply abusive, and prolonged verbal attack or written criticism against someone",
+    "options": {
+      "A": "Diatribe",
+      "B": "Eulogy",
+      "C": "Panegyric",
+      "D": "Homage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Diatribe) is correct. A 'Diatribe' is a forceful, bitter verbal harangue or denunciation. 'Eulogy' and 'Panegyric' are speeches of high praise.",
+    "tags": ["vocab", "ows", "communication", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0340",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sovereign ruler who possesses absolute authority, typically obtained through force",
+    "options": {
+      "A": "Dictator",
+      "B": "Democrat",
+      "C": "Diplomat",
+      "D": "Patriot"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dictator) is correct. A 'Dictator' is an absolute ruler holding unconstrained state power. 'Diplomat' is an official representing a state abroad.",
+    "tags": ["vocab", "ows", "politics", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0341",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA reference book giving words in alphabetical order with their meanings, pronunciations, and etymology",
+    "options": {
+      "A": "Dictionary",
+      "B": "Directory",
+      "C": "Catalogue",
+      "D": "Anthology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dictionary) is correct. A 'Dictionary' lists words and explains their meanings and forms. A 'Directory' lists names and addresses.",
+    "tags": ["vocab", "ows", "books", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0342",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSpread out over a wide area or interspersed among a large number of people",
+    "options": {
+      "A": "Diffuse",
+      "B": "Concentrated",
+      "C": "Compact",
+      "D": "Dense"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Diffuse) is correct. 'Diffuse' means widely scattered or spread out loosely. 'Compact' and 'Dense' describe closely packed structures.",
+    "tags": ["vocab", "ows", "adjectives", "physics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0343",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA difficult situation requiring a choice between two equally undesirable alternatives",
+    "options": {
+      "A": "Dilemma",
+      "B": "Harmony",
+      "C": "Consensus",
+      "D": "Equilibrium"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dilemma) is correct. A 'Dilemma' is a circumstance demanding a choice between two difficult options. 'Consensus' is general agreement.",
+    "tags": ["vocab", "ows", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0344",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who cultivates an area of interest, such as the arts, in a superficial, amateurish way",
+    "options": {
+      "A": "Dilettante",
+      "B": "Connoisseur",
+      "C": "Virtuoso",
+      "D": "Professional"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dilettante) is correct. A 'Dilettante' dabbles in art or knowledge without serious commitment or expertise. 'Connoisseur' is an informed, critical judge.",
+    "tags": ["vocab", "ows", "people", "art", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0345",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nShowing steady, painstaking care, earnest perseverance, and effort in work",
+    "options": {
+      "A": "Diligent",
+      "B": "Slothful",
+      "C": "Lethargic",
+      "D": "Indolent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Diligent) is correct. 'Diligent' means industrious and carefully attentive to duties. 'Slothful' and 'Indolent' mean habitually lazy.",
+    "tags": ["vocab", "ows", "work", "personality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0346",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn uncontrollable, morbid, and recurring craving for alcoholic drinks",
+    "options": {
+      "A": "Dipsomania",
+      "B": "Bibliomania",
+      "C": "Pyromania",
+      "D": "Kleptomania"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dipsomania) is correct. 'Dipsomania' is a medical condition marked by periodic bouts of alcoholism. 'Pyromania' is compulsion to set fires.",
+    "tags": ["vocab", "ows", "mania", "medical", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0347",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA published book containing an alphabetical listing of names, telephone numbers, and addresses",
+    "options": {
+      "A": "Directory",
+      "B": "Dictionary",
+      "C": "Inventory",
+      "D": "Gazetteer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Directory) is correct. A 'Directory' is an organized reference guide of contacts or members. A 'Gazetteer' is a geographical index or dictionary.",
+    "tags": ["vocab", "ows", "books", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0348",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA mournful funeral song or hymn composed to commemorate the dead",
+    "options": {
+      "A": "Dirge",
+      "B": "Ballad",
+      "C": "Sonnet",
+      "D": "Hymn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dirge) is correct. A 'Dirge' is a slow, mournful chant or song performed at a funeral. 'Hymn' is a sacred song of praise.",
+    "tags": ["vocab", "ows", "poetry", "music", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0349",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sudden, catastrophic event that causes immense devastation, ruin, and distress",
+    "options": {
+      "A": "Disaster",
+      "B": "Serendipity",
+      "C": "Coincidence",
+      "D": "Fluke"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Disaster) is correct. A 'Disaster' is a calamitous occurrence causing widespread destruction. 'Fluke' is an accidental stroke of good luck.",
+    "tags": ["vocab", "ows", "disaster", "events", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0350",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe state or legal act of depriving someone of a right or privilege, especially the right to vote",
+    "options": {
+      "A": "Disenfranchisement",
+      "B": "Enfranchisement",
+      "C": "Emancipation",
+      "D": "Suffrage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Disenfranchisement) is correct. 'Disenfranchisement' is the deprivation of legal rights or the right to vote. 'Suffrage' is the franchise or right to vote.",
+    "tags": ["vocab", "ows", "politics", "law", "pyq_ssc"]
+  }
+]

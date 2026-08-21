@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0151",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe two-hundredth anniversary of an event or celebration",
+    "options": {
+      "A": "Bicentennial",
+      "B": "Centennial",
+      "C": "Biennial",
+      "D": "Perennial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bicentennial) is correct. 'Bicentennial' refers to a two-hundredth anniversary or its celebration[cite: 14]. 'Centennial' relates to a hundredth anniversary[cite: 14], 'Biennial' occurs every two years[cite: 14], and 'Perennial' lasts for an indefinitely long time.",
+    "tags": ["vocab", "ows", "time", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0152",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn event that happens or recurs once every second year",
+    "options": {
+      "A": "Biennial",
+      "B": "Biannual",
+      "C": "Triennial",
+      "D": "Annual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Biennial) is correct. 'Biennial' denotes an occurrence taking place once every two years[cite: 14]. 'Biannual' occurs twice in one year, 'Triennial' occurs every three years[cite: 14], and 'Annual' happens once a year.",
+    "tags": ["vocab", "ows", "time", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0153",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is obstinately or intolerantly devoted to their own opinions and prejudices",
+    "options": {
+      "A": "Bigot",
+      "B": "Secularist",
+      "C": "Altruist",
+      "D": "Polyglot"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bigot) is correct. A 'Bigot' is an intolerant person who holds rigidly to their opinions and rejects those of others[cite: 14]. 'Polyglot' is someone who speaks multiple languages[cite: 14].",
+    "tags": ["vocab", "ows", "people", "behaviour", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0154",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who can speak only two languages fluently",
+    "options": {
+      "A": "Bilingual",
+      "B": "Linguist",
+      "C": "Polyglot",
+      "D": "Monolingual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bilingual) is correct. 'Bilingual' refers to the ability to use or speak two languages[cite: 14]. 'Monolingual' refers to speaking one language, and 'Polyglot' means knowing several languages[cite: 14].",
+    "tags": ["vocab", "ows", "language", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0155",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCapable of being decomposed by natural biological processes and bacteria",
+    "options": {
+      "A": "Biodegradable",
+      "B": "Incombustible",
+      "C": "Impervious",
+      "D": "Ductile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Biodegradable) is correct. 'Biodegradable' substances can be broken down naturally by microorganisms[cite: 14]. 'Impervious' means unable to be penetrated or affected[cite: 14].",
+    "tags": ["vocab", "ows", "science", "environment", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0156",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe life history and account of a person written by somebody else",
+    "options": {
+      "A": "Biography",
+      "B": "Autobiography",
+      "C": "Bibliography",
+      "D": "Calligraphy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Biography) is correct. A 'Biography' is an account of a person's life written by another person[cite: 14]. An 'Autobiography' is written by the subject himself/herself[cite: 14].",
+    "tags": ["vocab", "ows", "literature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0157",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe examination of tissue removed from a living body to discover the presence or cause of a disease",
+    "options": {
+      "A": "Biopsy",
+      "B": "Autopsy",
+      "C": "Diagnosis",
+      "D": "Amputation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Biopsy) is correct. 'Biopsy' is the microscopic examination of living tissue extracted from a patient[cite: 14]. 'Autopsy' is the examination of a corpse[cite: 14].",
+    "tags": ["vocab", "ows", "medical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0158",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nVery strange, unusual, or eccentric in appearance or character",
+    "options": {
+      "A": "Bizarre",
+      "B": "Ordinary",
+      "C": "Authentic",
+      "D": "Plausible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bizarre) is correct. 'Bizarre' describes something remarkably strange, odd, or out of the ordinary[cite: 14]. 'Plausible' means reasonable or probable[cite: 14].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0159",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe act of speaking irreverently, profanely, or sacrilegiously about God or sacred things",
+    "options": {
+      "A": "Blasphemy",
+      "B": "Theology",
+      "C": "Pantheism",
+      "D": "Apostasy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Blasphemy) is correct. 'Blasphemy' is the act of expressing contempt or irreverence toward God or religion[cite: 14]. 'Pantheism' is the belief that God is in everything[cite: 14].",
+    "tags": ["vocab", "ows", "religion", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0160",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person of South African Dutch descent",
+    "options": {
+      "A": "Boer",
+      "B": "Aborigine",
+      "C": "Immigrant",
+      "D": "Emigrant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Boer) is correct. A 'Boer' is a South African person of Dutch, German, or Huguenot descent[cite: 14]. 'Aborigine' refers to an original inhabitant of a land[cite: 14].",
+    "tags": ["vocab", "ows", "people", "history", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0161",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA socially unconventional person, especially an artist or writer who does not follow regular social rules",
+    "options": {
+      "A": "Bohemian",
+      "B": "Pedant",
+      "C": "Orthodox",
+      "D": "Philistine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bohemian) is correct. 'Bohemian' refers to a person having informal and unconventional social habits[cite: 14]. 'Orthodox' refers to following traditional, established beliefs[cite: 14].",
+    "tags": ["vocab", "ows", "people", "lifestyle", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0162",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn extra sum of money given to an employee on top of their regular pay as a reward for good performance",
+    "options": {
+      "A": "Bonus",
+      "B": "Honorarium",
+      "C": "Alimony",
+      "D": "Ransom"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bonus) is correct. A 'Bonus' is an incentive payment added to regular wages[cite: 14]. 'Ransom' is money demanded for the release of a captive[cite: 14].",
+    "tags": ["vocab", "ows", "finance", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0163",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who spends a great deal of time reading books; an avid book reader",
+    "options": {
+      "A": "Bookworm",
+      "B": "Bibliophile",
+      "C": "Lexicographer",
+      "D": "Calligrapher"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bookworm) is correct. A 'Bookworm' is an enthusiastic and habitual reader of books[cite: 14]. A 'Bibliophile' collects and loves books as objects[cite: 14].",
+    "tags": ["vocab", "ows", "people", "books", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0164",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study of plants, including their physiology, structure, genetics, and ecology",
+    "options": {
+      "A": "Botany",
+      "B": "Zoology",
+      "C": "Geology",
+      "D": "Horticulture"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Botany) is correct. 'Botany' is plant biology[cite: 14]. 'Horticulture' is the art and practice of garden cultivation and management[cite: 14].",
+    "tags": ["vocab", "ows", "science", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0165",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA narrow or congested section of a road where traffic slows down or halts",
+    "options": {
+      "A": "Bottleneck",
+      "B": "Boulevard",
+      "C": "Walkway",
+      "D": "Causeway"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bottleneck) is correct. A 'Bottleneck' is a point of congestion that obstructs smooth flow[cite: 14]. 'Boulevard' is a broad, tree-lined avenue[cite: 14].",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0166",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA wide street or broad road lined with trees on both sides",
+    "options": {
+      "A": "Boulevard",
+      "B": "Alley",
+      "C": "Byway",
+      "D": "Bottleneck"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Boulevard) is correct. A 'Boulevard' is a broad, thoroughfare street flanked by trees[cite: 14]. 'Alley' is a narrow passage between buildings.",
+    "tags": ["vocab", "ows", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0167",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn attractively arranged bunch of cut flowers given as a gift or greeting",
+    "options": {
+      "A": "Bouquet",
+      "B": "Wreath",
+      "C": "Garland",
+      "D": "Bale"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bouquet) is correct. A 'Bouquet' is an artistic bunch of flowers presented as a gift[cite: 14]. A 'Wreath' is a circular ring of flowers/leaves placed on tombs or graves[cite: 14].",
+    "tags": ["vocab", "ows", "objects", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0168",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nBelonging to or characteristic of the middle social class, often with conventional attitudes",
+    "options": {
+      "A": "Bourgeois",
+      "B": "Proletariat",
+      "C": "Aristocrat",
+      "D": "Plebeian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bourgeois) is correct. 'Bourgeois' describes the middle class, typically characterized by materialistic concerns[cite: 14]. 'Proletariat' refers to the industrial working class[cite: 14].",
+    "tags": ["vocab", "ows", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0169",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small shop that sells fashionable clothes, jewellery, or accessories",
+    "options": {
+      "A": "Boutique",
+      "B": "Armoury",
+      "C": "Scullery",
+      "D": "Pantry"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Boutique) is correct. A 'Boutique' is a specialized shop selling fashionable clothing and accessories[cite: 14]. 'Pantry' is a food storage room[cite: 14], and 'Scullery' is for washing dishes[cite: 14].",
+    "tags": ["vocab", "ows", "places", "shopping", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0170",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAffecting, relating to, or resembling cattle or cows",
+    "options": {
+      "A": "Bovine",
+      "B": "Ovine",
+      "C": "Canine",
+      "D": "Feline"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bovine) is correct. 'Bovine' relates to cattle or oxen[cite: 14]. 'Ovine' relates to sheep[cite: 14], 'Canine' to dogs, and 'Feline' to cats.",
+    "tags": ["vocab", "ows", "animals", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0171",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA pleasant, shady place under the branches of trees or climbing plants",
+    "options": {
+      "A": "Bower",
+      "B": "Meadow",
+      "C": "Orchard",
+      "D": "Lair"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bower) is correct. A 'Bower' is an attractive leafy shelter or recess under trees[cite: 14]. 'Meadow' is open grassland[cite: 14], and 'Orchard' is a fruit tree garden[cite: 14].",
+    "tags": ["vocab", "ows", "nature", "places", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0172",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA factory or commercial establishment where beer is brewed",
+    "options": {
+      "A": "Brewery",
+      "B": "Distillery",
+      "C": "Bakery",
+      "D": "Tannery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Brewery) is correct. A 'Brewery' is an industrial facility producing beer[cite: 14]. 'Distillery' produces spirits/liquor, and 'Tannery' processes animal hides into leather.",
+    "tags": ["vocab", "ows", "places", "industry", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0173",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA member of a gang of robbers that operates in forests or mountainous areas",
+    "options": {
+      "A": "Brigand",
+      "B": "Pirate",
+      "C": "Burglar",
+      "D": "Prowler"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Brigand) is correct. A 'Brigand' is a bandit who ambushes people in wild, remote regions[cite: 14]. 'Pirate' robs ships at sea[cite: 14], and 'Burglar' breaks into buildings[cite: 14].",
+    "tags": ["vocab", "ows", "crime", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0174",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHard, rigid, but liable to crack or snap easily when subjected to pressure",
+    "options": {
+      "A": "Brittle",
+      "B": "Ductile",
+      "C": "Malleable",
+      "D": "Flexible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Brittle) is correct. 'Brittle' describes substances that shatter easily without prior bending[cite: 14]. 'Ductile' means capable of being drawn out into thin wire[cite: 14].",
+    "tags": ["vocab", "ows", "science", "adjectives", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0175",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA family of young animals or birds produced at one hatching or birth",
+    "options": {
+      "A": "Brood",
+      "B": "Flock",
+      "C": "Swarm",
+      "D": "Shoal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Brood) is correct. A 'Brood' is the young offspring of an animal (especially birds) cared for together[cite: 14]. 'Swarm' applies to bees/insects[cite: 14], and 'Shoal' applies to fish[cite: 14].",
+    "tags": ["vocab", "ows", "animals", "collective_nouns", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0176",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA woman or girl who has dark-brown or black hair",
+    "options": {
+      "A": "Brunette",
+      "B": "Blonde",
+      "C": "Spinster",
+      "D": "Maiden"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Brunette) is correct. 'Brunette' refers to a female with dark brown hair[cite: 14]. 'Blonde' refers to fair or yellow hair, and 'Spinster' is an older unmarried woman[cite: 14].",
+    "tags": ["vocab", "ows", "appearance", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0177",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn itemized estimate of expected income and operating expenditure for a given future period",
+    "options": {
+      "A": "Budgeting",
+      "B": "Audit",
+      "C": "Inventory",
+      "D": "Ledger"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Budgeting) is correct. 'Budgeting' is the preparation of a statement showing estimated revenue and expenditure[cite: 14]. 'Inventory' is a detailed list of goods[cite: 14].",
+    "tags": ["vocab", "ows", "finance", "business", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0178",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nGold or silver in bulk quantity in the form of bars or ingots before minting or manufacturing",
+    "options": {
+      "A": "Bullion",
+      "B": "Coinage",
+      "C": "Curio",
+      "D": "Numismatics"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bullion) is correct. 'Bullion' is uncoined precious metal in mass bars or ingots[cite: 14]. 'Numismatics' is the study or collection of coins and currency[cite: 14].",
+    "tags": ["vocab", "ows", "materials", "finance", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0179",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo carry out or manage a task clumsily, incompetently, or disastrously",
+    "options": {
+      "A": "Bungle",
+      "B": "Master",
+      "C": "Execute",
+      "D": "Manoeuvre"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bungle) is correct. 'Bungle' means to perform clumsily or botch a task[cite: 14]. 'Manoeuvre' is a skillful, calculated plan or movement[cite: 14].",
+    "tags": ["vocab", "ows", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0180",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA system of government or administration run by non-elected state officials",
+    "options": {
+      "A": "Bureaucracy",
+      "B": "Democracy",
+      "C": "Aristocracy",
+      "D": "Theocracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Bureaucracy) is correct. 'Bureaucracy' is administration characterized by appointed civil service departments[cite: 14]. 'Theocracy' is rule by religious leaders[cite: 14].",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0181",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who breaks into a building illegally, especially with the intent to commit theft",
+    "options": {
+      "A": "Burglar",
+      "B": "Pickpocket",
+      "C": "Arsonist",
+      "D": "Brigand"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Burglar) is correct. A 'Burglar' commits theft by breaking into residential or commercial premises[cite: 14]. 'Arsonist' sets criminal fires[cite: 14].",
+    "tags": ["vocab", "ows", "crime", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0182",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA hole or underground tunnel excavated by an animal (such as a rabbit) for dwelling",
+    "options": {
+      "A": "Burrow",
+      "B": "Lair",
+      "C": "Hutch",
+      "D": "Kennel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Burrow) is correct. A 'Burrow' is an underground passage dug by small animals[cite: 14]. 'Lair' is a wild beast's resting place[cite: 14], and 'Hutch' is an above-ground box cage[cite: 14].",
+    "tags": ["vocab", "ows", "animals", "places", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0183",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA cowshed or barn where cattle are sheltered",
+    "options": {
+      "A": "Byre",
+      "B": "Apiary",
+      "C": "Aviary",
+      "D": "Sty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Byre) is correct. A 'Byre' is a dedicated shelter or barn for cows and cattle[cite: 14]. 'Sty' is a pen where pigs are kept.",
+    "tags": ["vocab", "ows", "animals", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0184",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA harsh, jarring, and discordant mixture of loud and unpleasant sounds",
+    "options": {
+      "A": "Cacophony",
+      "B": "Symphony",
+      "C": "Harmony",
+      "D": "Euphony"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cacophony) is correct. 'Cacophony' is an unpleasant, grating mixture of sounds[cite: 14]. 'Euphony' and 'Symphony' represent sweet, harmonious arrangements of sound[cite: 14].",
+    "tags": ["vocab", "ows", "sound", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0185",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person skilled in the artistic penmanship and decorative handwriting",
+    "options": {
+      "A": "Calligrapher",
+      "B": "Cartographer",
+      "C": "Choreographer",
+      "D": "Lexicographer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Calligrapher) is correct. A 'Calligrapher' produces elegant handwritten lettering[cite: 14]. 'Cartographer' drafts maps[cite: 14], and 'Lexicographer' compiles dictionaries[cite: 14].",
+    "tags": ["vocab", "ows", "art", "professions", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0186",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe visual art of producing decorative, beautiful handwriting with a special pen or brush",
+    "options": {
+      "A": "Calligraphy",
+      "B": "Cartography",
+      "C": "Cryptography",
+      "D": "Demography"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Calligraphy) is correct. 'Calligraphy' is decorative handwriting or lettering[cite: 14]. 'Cryptography' is the practice of coding and decoding secure information[cite: 14].",
+    "tags": ["vocab", "ows", "art", "writing", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0187",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nShowing or having an unfeeling, insensitive, and cruel disregard for others",
+    "options": {
+      "A": "Callous",
+      "B": "Compassionate",
+      "C": "Benevolent",
+      "D": "Empathetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Callous) is correct. 'Callous' describes a hardened, heartless person lacking sympathy[cite: 14]. 'Compassionate' and 'Benevolent' describe kind and merciful traits.",
+    "tags": ["vocab", "ows", "character", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0188",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe disguise or concealment of people, military equipment, or animals by making them blend with their surroundings",
+    "options": {
+      "A": "Camouflage",
+      "B": "Fabrication",
+      "C": "Manifestation",
+      "D": "Illumination"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Camouflage) is correct. 'Camouflage' is visual deception used to disguise presence or identity[cite: 14]. 'Illumination' is lighting up with light[cite: 14].",
+    "tags": ["vocab", "ows", "military", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0189",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person or creature that feeds on the flesh of its own species, especially human flesh",
+    "options": {
+      "A": "Cannibal",
+      "B": "Herbivore",
+      "C": "Carnivore",
+      "D": "Omnivore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cannibal) is correct. A 'Cannibal' eats human flesh[cite: 14]. 'Herbivore' feeds on vegetation[cite: 14], and 'Carnivore' feeds on animal meat[cite: 14].",
+    "tags": ["vocab", "ows", "people", "habits", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0190",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA special affection, deep love, or fondness for dogs",
+    "options": {
+      "A": "Canophilia",
+      "B": "Bibliophilia",
+      "C": "Zoophilia",
+      "D": "Ailurophilia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Canophilia) is correct. 'Canophilia' is strong love of dogs[cite: 14]. 'Bibliophilia' is love of books[cite: 14], and 'Ailurophilia' is love of cats.",
+    "tags": ["vocab", "ows", "philia", "animals", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0191",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA company of travellers, pilgrims, or merchants journeying together with vehicles or pack animals through a desert",
+    "options": {
+      "A": "Caravan",
+      "B": "Fleet",
+      "C": "Armada",
+      "D": "Congregation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Caravan) is correct. A 'Caravan' is an overland procession of travelers or merchants journeying together[cite: 14]. 'Fleet' is a group of ships[cite: 14].",
+    "tags": ["vocab", "ows", "travel", "collective_nouns", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0192",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe dead body of an animal, especially one slaughtered for meat or killed by predators",
+    "options": {
+      "A": "Carcass",
+      "B": "Corpse",
+      "C": "Relic",
+      "D": "Skeleton"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Carcass) is correct. 'Carcass' refers to the dead body of an animal[cite: 14]. 'Corpse' refers specifically to a human dead body, and 'Skeleton' is the bone framework[cite: 14].",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0193",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOf the greatest importance; fundamental or chief",
+    "options": {
+      "A": "Cardinal",
+      "B": "Trivial",
+      "C": "Minor",
+      "D": "Peripheral"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cardinal) is correct. 'Cardinal' means prime, pivotal, or fundamental (e.g., cardinal rules)[cite: 14]. 'Trivial' means of very little importance[cite: 14].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0194",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medical doctor who specializes in the diagnosis and treatment of heart diseases",
+    "options": {
+      "A": "Cardiologist",
+      "B": "Dermatologist",
+      "C": "Neurologist",
+      "D": "Ophthalmologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cardiologist) is correct. A 'Cardiologist' treats cardiovascular diseases[cite: 14]. 'Neurologist' treats nerve disorders[cite: 14], and 'Ophthalmologist' treats eye diseases[cite: 14].",
+    "tags": ["vocab", "ows", "medical", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0195",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA drawing or depiction of a person in which certain striking features are ludicrously exaggerated",
+    "options": {
+      "A": "Caricature",
+      "B": "Portrait",
+      "C": "Facsimile",
+      "D": "Replica"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Caricature) is correct. A 'Caricature' is an exaggerated, comic likeness of a person[cite: 14]. 'Facsimile' is an exact mechanical copy[cite: 14], and 'Replica' is an exact reproduction[cite: 14].",
+    "tags": ["vocab", "ows", "art", "humour", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0196",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAnimals that feed exclusively or predominantly on the flesh of other animals",
+    "options": {
+      "A": "Carnivorous",
+      "B": "Herbivorous",
+      "C": "Omnivorous",
+      "D": "Insectivorous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Carnivorous) is correct. 'Carnivorous' animals feed on flesh[cite: 14]. 'Herbivorous' animals feed on plants[cite: 14], and 'Omnivorous' feed on both meat and vegetation[cite: 14].",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0197",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who draws, produces, or compiles geographical maps and charts",
+    "options": {
+      "A": "Cartographer",
+      "B": "Calligrapher",
+      "C": "Choreographer",
+      "D": "Topographer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cartographer) is correct. A 'Cartographer' creates maps and charts[cite: 14]. 'Calligrapher' specializes in beautiful handwriting[cite: 14], and 'Choreographer' arranges dance movements[cite: 14].",
+    "tags": ["vocab", "ows", "professions", "geography", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0198",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe science, technique, and art of map making and chart production",
+    "options": {
+      "A": "Cartography",
+      "B": "Calligraphy",
+      "C": "Oceanography",
+      "D": "Typography"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cartography) is correct. 'Cartography' is the science and art of drawing maps[cite: 14]. 'Typography' is the art and technique of arranging type and printing fonts.",
+    "tags": ["vocab", "ows", "science", "geography", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0199",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA simple, humorous, and satirical drawing dealing with current events or politics",
+    "options": {
+      "A": "Cartoon",
+      "B": "Mural",
+      "C": "Mosaic",
+      "D": "Plaque"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cartoon) is correct. A 'Cartoon' is an amusing or satirical drawing illustrating topical news or themes[cite: 14]. 'Mosaic' is art composed of stone/glass pieces[cite: 14].",
+    "tags": ["vocab", "ows", "art", "media", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0200",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA public building or establishment dedicated to gambling games, roulette, and cards",
+    "options": {
+      "A": "Casino",
+      "B": "Arena",
+      "C": "Auditorium",
+      "D": "Arsenal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Casino) is correct. A 'Casino' is a licensed venue offering card and dice gambling games[cite: 14]. 'Arsenal' is for military weapon storage[cite: 14].",
+    "tags": ["vocab", "ows", "places", "pyq_ssc", "repeated_2_times"]
+  }
+]

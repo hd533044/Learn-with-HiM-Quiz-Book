@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0201",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large, deep pot used both in the oven for cooking and as a serving vessel",
+    "options": {
+      "A": "Casserole",
+      "B": "Cauldron",
+      "C": "Barrel",
+      "D": "Kettle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Casserole) is correct. A 'Casserole' is a large, deep dish used both for baking food in an oven and serving it[cite: 14]. A 'Cauldron' is a large metal pot used for cooking over an open fire[cite: 14].",
+    "tags": ["vocab", "ows", "utensils", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0202",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA complete and systematic list of books, goods, or artworks arranged in a particular order",
+    "options": {
+      "A": "Catalogue",
+      "B": "Bibliography",
+      "C": "Anthology",
+      "D": "Directory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Catalogue) is correct. A 'Catalogue' is a complete list of items, such as books in a library or goods available for purchase, systematically arranged[cite: 14]. 'Bibliography' is a list of writings with reference to a particular subject or author[cite: 14].",
+    "tags": ["vocab", "ows", "books", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0203",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nInvolving or causing sudden, extensive, and great damage or suffering",
+    "options": {
+      "A": "Catastrophic",
+      "B": "Apotheosis",
+      "C": "Serendipitous",
+      "D": "Felicitous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Catastrophic) is correct. 'Catastrophic' means disastrous or causing immense damage and distress[cite: 14]. 'Serendipitous' means occurring by happy chance[cite: 14].",
+    "tags": ["vocab", "ows", "disaster", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0204",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA very large, deep metal pot used for boiling or cooking over an open fire",
+    "options": {
+      "A": "Cauldron",
+      "B": "Casserole",
+      "C": "Barrel",
+      "D": "Flask"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cauldron) is correct. A 'Cauldron' is a traditional large, deep metal vessel used over an open flame[cite: 14].",
+    "tags": ["vocab", "ows", "utensils", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0205",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSoldiers who fight on horseback; the cavalry arm of an army",
+    "options": {
+      "A": "Cavalry",
+      "B": "Infantry",
+      "C": "Artillery",
+      "D": "Armada"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cavalry) is correct. 'Cavalry' refers to the military branch comprising soldiers who fight mounted on horseback[cite: 14]. 'Infantry' refers to foot soldiers.",
+    "tags": ["vocab", "ows", "military", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0206",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe harsh, guttural cry or call characteristic of a crow or raven",
+    "options": {
+      "A": "Caw",
+      "B": "Neigh",
+      "C": "Grunt",
+      "D": "Croak"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Caw) is correct. 'Caw' is the harsh call made by a crow or raven[cite: 14]. 'Neigh' is the sound of a horse[cite: 14].",
+    "tags": ["vocab", "ows", "sounds", "animals", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0207",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA temporary agreed suspension of fighting between opposing armed forces",
+    "options": {
+      "A": "Ceasefire",
+      "B": "Armistice",
+      "C": "Truant",
+      "D": "Mutiny"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ceasefire) is correct. A 'Ceasefire' is an agreement, usually temporary, to stop fighting[cite: 14]. 'Mutiny' is an open rebellion against lawful military authority[cite: 14].",
+    "tags": ["vocab", "ows", "war", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0208",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe state or practice of abstaining from marriage and sexual relations",
+    "options": {
+      "A": "Celibacy",
+      "B": "Monogamy",
+      "C": "Polygamy",
+      "D": "Bigamy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Celibacy) is correct. 'Celibacy' is the state of voluntarily remaining unmarried and sexually abstinent, often for religious reasons[cite: 14]. 'Monogamy' is the practice of having one spouse at a time[cite: 14].",
+    "tags": ["vocab", "ows", "lifestyle", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0209",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn underground room or basement used especially for storing wine or other provisions",
+    "options": {
+      "A": "Cellar",
+      "B": "Attic",
+      "C": "Pantry",
+      "D": "Scullery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cellar) is correct. A 'Cellar' is a subterranean room under a building used for storage, especially wine[cite: 14]. An 'Attic' is a space just below the roof.",
+    "tags": ["vocab", "ows", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0210",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large public burial ground, especially one not attached to a church",
+    "options": {
+      "A": "Cemetery",
+      "B": "Mortuary",
+      "C": "Morgue",
+      "D": "Crematorium"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cemetery) is correct. A 'Cemetery' is a large burial ground for the dead[cite: 14]. A 'Mortuary' is a building where dead bodies are kept before burial[cite: 14].",
+    "tags": ["vocab", "ows", "places", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0211",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has reached the age of one hundred years or more",
+    "options": {
+      "A": "Centenarian",
+      "B": "Octogenarian",
+      "C": "Septuagenarian",
+      "D": "Sexagenarian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Centenarian) is correct. A 'Centenarian' is someone 100 years old or older[cite: 14]. 'Octogenarian' is in their 80s[cite: 14], 'Septuagenarian' is in their 70s[cite: 14], and 'Sexagenarian' is in their 60s[cite: 14].",
+    "tags": ["vocab", "ows", "age", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0212",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe hundredth anniversary of a significant event or celebration",
+    "options": {
+      "A": "Centennial",
+      "B": "Bicentennial",
+      "C": "Jubilee",
+      "D": "Sesquicentennial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Centennial) is correct. 'Centennial' relates to or marks a 100th anniversary[cite: 14]. 'Bicentennial' is a 200th anniversary[cite: 14].",
+    "tags": ["vocab", "ows", "time", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0213",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMoving or tending to move away from a center or central axis",
+    "options": {
+      "A": "Centrifugal",
+      "B": "Centripetal",
+      "C": "Eccentric",
+      "D": "Concentric"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Centrifugal) is correct. 'Centrifugal' describes movement radiating outward from a center[cite: 14]. 'Centripetal' describes movement directed inward toward a center.",
+    "tags": ["vocab", "ows", "science", "physics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0214",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe art or process of writing or designing upon wax",
+    "options": {
+      "A": "Cerography",
+      "B": "Calligraphy",
+      "C": "Cartography",
+      "D": "Choreography"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cerography) is correct. 'Cerography' is the art of wax engraving or writing on wax[cite: 14]. 'Calligraphy' is decorative penmanship[cite: 14], and 'Cartography' is mapmaking[cite: 14].",
+    "tags": ["vocab", "ows", "art", "graphy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0215",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo rub a part of the skin to restore warmth or sensation",
+    "options": {
+      "A": "Chafe",
+      "B": "Bask",
+      "C": "Slobber",
+      "D": "Slacken"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chafe) is correct. 'Chafe' means to make warm or sore by rubbing[cite: 14]. 'Bask' means to lie exposed to warmth[cite: 14].",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0216",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFeelings of annoyance, distress, or humiliation caused by failure or disappointment",
+    "options": {
+      "A": "Chagrin",
+      "B": "Ecstasy",
+      "C": "Serendipity",
+      "D": "Euphoria"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chagrin) is correct. 'Chagrin' denotes embarrassment or distress caused by humiliation or failure[cite: 14]. 'Serendipity' is unexpected good fortune[cite: 14].",
+    "tags": ["vocab", "ows", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0217",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA child believed to have been secretly left in exchange for another by fairies",
+    "options": {
+      "A": "Changeling",
+      "B": "Foundling",
+      "C": "Orphan",
+      "D": "Toddler"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Changeling) is correct. In folklore, a 'Changeling' is a fairy child left in place of a human infant[cite: 14]. A 'Foundling' is an abandoned infant of unknown parentage[cite: 14].",
+    "tags": ["vocab", "ows", "folklore", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0218",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small building or room used for Christian worship in a school, prison, or hospital",
+    "options": {
+      "A": "Chapel",
+      "B": "Cathedral",
+      "C": "Synagogue",
+      "D": "Pantheon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chapel) is correct. A 'Chapel' is a small place of Christian prayer attached to an institution[cite: 14]. 'Synagogue' is a Jewish place of worship[cite: 14], and 'Pantheon' is a temple dedicated to all gods[cite: 14].",
+    "tags": ["vocab", "ows", "religion", "places", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0219",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCompelling attractiveness or personal charm that can inspire devotion in others",
+    "options": {
+      "A": "Charisma",
+      "B": "Animosity",
+      "C": "Insolence",
+      "D": "Apathy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Charisma) is correct. 'Charisma' is magnetic personal power or charm that influences others[cite: 14]. 'Animosity' is strong hostility[cite: 14].",
+    "tags": ["vocab", "ows", "personality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0220",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExercising a compelling personal charm that inspires devotion and enthusiasm in others",
+    "options": {
+      "A": "Charismatic",
+      "B": "Callous",
+      "C": "Churlish",
+      "D": "Truculent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Charismatic) is correct. 'Charismatic' describes someone possessing an alluring and inspiring personal charm[cite: 14]. 'Churlish' means rude or boorish[cite: 14], and 'Truculent' means defiantly aggressive[cite: 14].",
+    "tags": ["vocab", "ows", "personality", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0221",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person falsely claiming to have special knowledge, skill, or medical expertise; an impostor",
+    "options": {
+      "A": "Charlatan",
+      "B": "Virtuoso",
+      "C": "Connoisseur",
+      "D": "Pedant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Charlatan) is correct. A 'Charlatan' (or quack) is an impostor pretending to possess skills or knowledge he lacks[cite: 14]. A 'Connoisseur' is an expert judge of art or taste[cite: 14].",
+    "tags": ["vocab", "ows", "people", "deception", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0222",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA deep fissure or profound opening in the earth's surface, rock, or other structure",
+    "options": {
+      "A": "Chasm",
+      "B": "Isthmus",
+      "C": "Archipelago",
+      "D": "Peninsula"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chasm) is correct. A 'Chasm' is a deep, gaping hole or fissure in the earth[cite: 14]. 'Isthmus' is a narrow neck of land[cite: 14].",
+    "tags": ["vocab", "ows", "geography", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0223",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe structural base frame of a motor vehicle or other wheeled conveyance",
+    "options": {
+      "A": "Chassis",
+      "B": "Fuselage",
+      "C": "Shaft",
+      "D": "Cockpit"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chassis) is correct. 'Chassis' is the base structural frame of an automobile[cite: 14]. 'Fuselage' is the central body of an airplane[cite: 14].",
+    "tags": ["vocab", "ows", "vehicles", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0224",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person employed specifically to drive a private or luxury hired car",
+    "options": {
+      "A": "Chauffeur",
+      "B": "Jockey",
+      "C": "Pilot",
+      "D": "Navigator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chauffeur) is correct. A 'Chauffeur' is employed to drive passenger motor cars[cite: 14]. A 'Jockey' rides horses in races[cite: 14].",
+    "tags": ["vocab", "ows", "professions", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0225",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe practice of fortune-telling through the interpretation of lines on the palm of the hand",
+    "options": {
+      "A": "Chiromancy",
+      "B": "Cartography",
+      "C": "Astrology",
+      "D": "Numismatics"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chiromancy) is correct. 'Chiromancy' (or palmistry) is divination using the lines of a person's hand[cite: 14]. 'Astrology' uses celestial positions[cite: 14].",
+    "tags": ["vocab", "ows", "occult", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0226",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn organized group of singers, especially one performing in church services",
+    "options": {
+      "A": "Choir",
+      "B": "Orchestra",
+      "C": "Troop",
+      "D": "Band"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Choir) is correct. A 'Choir' is an organized ensemble of vocal singers, especially in a cathedral or church[cite: 14]. 'Orchestra' is a large group of instrumental musicians[cite: 14].",
+    "tags": ["vocab", "ows", "music", "collective_nouns", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0227",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA routine or minor task, especially an everyday household job",
+    "options": {
+      "A": "Chore",
+      "B": "Vocation",
+      "C": "Profession",
+      "D": "Sinecure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chore) is correct. A 'Chore' is an ordinary, regular, or tedious household duty[cite: 14]. A 'Sinecure' is a paid job requiring no actual work[cite: 14].",
+    "tags": ["vocab", "ows", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0228",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who designs, arranges, and directs dance steps and stage movements",
+    "options": {
+      "A": "Choreographer",
+      "B": "Calligrapher",
+      "C": "Cartographer",
+      "D": "Lexicographer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Choreographer) is correct. A 'Choreographer' plans and sequences dance movements and theatrical routines[cite: 14].",
+    "tags": ["vocab", "ows", "art", "professions", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0229",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA factual written record of historical events registered strictly in chronological order",
+    "options": {
+      "A": "Chronicle",
+      "B": "Anthology",
+      "C": "Catalogue",
+      "D": "Diary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chronicle) is correct. A 'Chronicle' is a continuous historical narrative recording events in the order they occurred[cite: 14].",
+    "tags": ["vocab", "ows", "history", "writing", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0230",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe arrangement of dates, periods, or events in the exact order of their occurrence",
+    "options": {
+      "A": "Chronology",
+      "B": "Archaeology",
+      "C": "Geology",
+      "D": "Topology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chronology) is correct. 'Chronology' is the sequential order of time in which past occurrences took place[cite: 14].",
+    "tags": ["vocab", "ows", "time", "history", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0231",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn exceptionally accurate timepiece designed to measure time independently of temperature or motion",
+    "options": {
+      "A": "Chronometer",
+      "B": "Barometer",
+      "C": "Thermometer",
+      "D": "Manometer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chronometer) is correct. A 'Chronometer' is a high-precision marine timekeeper[cite: 14]. 'Barometer' measures atmospheric pressure[cite: 14].",
+    "tags": ["vocab", "ows", "instruments", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0232",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nRude, bad-mannered, sullen, and surly in behaviour",
+    "options": {
+      "A": "Churlish",
+      "B": "Affable",
+      "C": "Courteous",
+      "D": "Urbane"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Churlish) is correct. 'Churlish' means boorish, ill-bred, or rude[cite: 14]. 'Affable' and 'Courteous' mean pleasant, polite, and civil.",
+    "tags": ["vocab", "ows", "behaviour", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0233",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExtreme self-confidence, impudence, or brazen audacity",
+    "options": {
+      "A": "Chutzpah",
+      "B": "Diffidence",
+      "C": "Timidity",
+      "D": "Modesty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Chutzpah) is correct. 'Chutzpah' is shameless audacity or impudence[cite: 14]. 'Diffidence' and 'Timidity' imply shyness and lack of self-confidence.",
+    "tags": ["vocab", "ows", "personality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0234",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe use of an unnecessarily large number of words to express an idea; a roundabout way of speaking",
+    "options": {
+      "A": "Circumlocution",
+      "B": "Verbiage",
+      "C": "Brevity",
+      "D": "Concision"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Circumlocution) is correct. 'Circumlocution' is the use of indirect, roundabout language[cite: 14]. 'Brevity' and 'Concision' refer to concise expression.",
+    "tags": ["vocab", "ows", "language", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0235",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nPointing to someone's guilt based on surrounding evidence rather than direct observation",
+    "options": {
+      "A": "Circumstantial",
+      "B": "Conclusive",
+      "C": "Irrefutable",
+      "D": "Definitive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Circumstantial) is correct. 'Circumstantial' evidence relates to surrounding facts that infer rather than directly prove a point[cite: 14]. 'Conclusive' leaves no doubt.",
+    "tags": ["vocab", "ows", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0236",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA fortress overlooking a city, used for military defense and shelter during an attack",
+    "options": {
+      "A": "Citadel",
+      "B": "Sanctuary",
+      "C": "Arsenal",
+      "D": "Barracks"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Citadel) is correct. A 'Citadel' is a fortified stronghold built on high ground to dominate and protect a city[cite: 14].",
+    "tags": ["vocab", "ows", "military", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0237",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMaking a continuous, confused, and loud noise; vehemently shouting",
+    "options": {
+      "A": "Clamorous",
+      "B": "Tranquil",
+      "C": "Inaudible",
+      "D": "Reticent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Clamorous) is correct. 'Clamorous' means making a loud, vehement, and continuous outcry[cite: 14]. 'Reticent' means reserved in speech[cite: 14].",
+    "tags": ["vocab", "ows", "sound", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0238",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abnormal, irrational fear of being shut in small, enclosed, or confined spaces",
+    "options": {
+      "A": "Claustrophobia",
+      "B": "Acrophobia",
+      "C": "Hydrophobia",
+      "D": "Agoraphobia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Claustrophobia) is correct. 'Claustrophobia' is the morbid dread of confined spaces[cite: 14]. 'Agoraphobia' is the fear of open or crowded spaces.",
+    "tags": ["vocab", "ows", "phobia", "pyq_ssc", "repeated_8_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0239",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe customers, buyers, or clients of a business or professional establishment regarded collectively",
+    "options": {
+      "A": "Clientele",
+      "B": "Colleagues",
+      "C": "Compatriots",
+      "D": "Proletariat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Clientele) is correct. 'Clientele' refers to the body of regular customers or clients of a firm[cite: 14]. 'Colleagues' refers to fellow co-workers[cite: 14].",
+    "tags": ["vocab", "ows", "business", "collective_nouns", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0240",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small compartment or cabin in an aircraft where the pilot and crew sit to control the plane",
+    "options": {
+      "A": "Cockpit",
+      "B": "Fuselage",
+      "C": "Hangar",
+      "D": "Chassis"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cockpit) is correct. A 'Cockpit' is the compartment of an aircraft containing instruments and pilot controls[cite: 14]. 'Fuselage' is the entire central fuselage body[cite: 14].",
+    "tags": ["vocab", "ows", "aviation", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0241",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA mixed alcoholic beverage consisting of spirits combined with other ingredients or juices",
+    "options": {
+      "A": "Cocktail",
+      "B": "Beverage",
+      "C": "Potion",
+      "D": "Bullion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Cocktail) is correct. A 'Cocktail' is an alcoholic drink made by mixing spirits with fruit juice, cream, or bitters[cite: 14].",
+    "tags": ["vocab", "ows", "food_drink", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0242",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn addition, appendix, or supplement that explains, modifies, or annuls a part of a legal will",
+    "options": {
+      "A": "Codicil",
+      "B": "Postscript",
+      "C": "Manuscript",
+      "D": "Epilogue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Codicil) is correct. A 'Codicil' is a legal document altering or adding to a previously executed will[cite: 14]. 'Postscript' is a concluding note added to a finished letter[cite: 14].",
+    "tags": ["vocab", "ows", "law", "documents", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0243",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe practice or action of persuading someone to do something by using force or threats",
+    "options": {
+      "A": "Coercion",
+      "B": "Tutelage",
+      "C": "Volition",
+      "D": "Amnesty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Coercion) is correct. 'Coercion' is the use of intimidation, threats, or physical force to compel compliance[cite: 14]. 'Volition' is the power of free will[cite: 14].",
+    "tags": ["vocab", "ows", "law", "behaviour", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0244",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA train, line, or collection of slaves or animals fastened and driven along together",
+    "options": {
+      "A": "Coffle",
+      "B": "Caravan",
+      "C": "Fleet",
+      "D": "Swarm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Coffle) is correct. A 'Coffle' is a gang or train of enslaved people or animals chained and driven in a line[cite: 14].",
+    "tags": ["vocab", "ows", "history", "collective_nouns", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0245",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA remarkable and accidental concurrence of events happening at the same time without causal connection",
+    "options": {
+      "A": "Coincidence",
+      "B": "Nemesis",
+      "C": "Chronology",
+      "D": "Serendipity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Coincidence) is correct. A 'Coincidence' is the accidental, simultaneous occurrence of two or more linked events[cite: 14].",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0246",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person with whom one works closely in a profession, business, or department",
+    "options": {
+      "A": "Colleague",
+      "B": "Accomplice",
+      "C": "Compatriot",
+      "D": "Clientele"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Colleague) is correct. A 'Colleague' is an associate or fellow worker in a profession[cite: 14]. An 'Accomplice' is an associate in a crime[cite: 14].",
+    "tags": ["vocab", "ows", "work", "people", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0247",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA formal, mutual conversation or serious academic conference",
+    "options": {
+      "A": "Colloquy",
+      "B": "Soliloquy",
+      "C": "Monologue",
+      "D": "Harangue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Colloquy) is correct. A 'Colloquy' is a high-level formal conversation or discussion[cite: 14]. 'Soliloquy' is a speech made to oneself alone[cite: 14], and 'Harangue' is an aggressive tirade[cite: 14].",
+    "tags": ["vocab", "ows", "communication", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0248",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA statue that is much larger than life size, or a person/thing of gigantic importance",
+    "options": {
+      "A": "Colossus",
+      "B": "Monument",
+      "C": "Epitome",
+      "D": "Plaque"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Colossus) is correct. 'Colossus' refers to a gigantic statue or something of immense scale[cite: 14]. 'Monument' is a structure built to commemorate a person or event[cite: 14].",
+    "tags": ["vocab", "ows", "art", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0249",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo honor and preserve the memory of a notable person or event with a ceremony or memorial",
+    "options": {
+      "A": "Commemorate",
+      "B": "Obliterate",
+      "C": "Efface",
+      "D": "Disintegrate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Commemorate) is correct. 'Commemorate' means to recall and celebrate the memory of an event or person[cite: 14]. 'Efface' means to erase or rub out[cite: 14].",
+    "tags": ["vocab", "ows", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0250",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn amount of money or percentage paid to an agent or broker for facilitating a commercial sale",
+    "options": {
+      "A": "Commission",
+      "B": "Honorarium",
+      "C": "Alimony",
+      "D": "Perquisite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Commission) is correct. A 'Commission' is an agreed fee or percentage paid to an agent on sales transactions[cite: 14]. 'Perquisite' refers to employment perks/privileges[cite: 14].",
+    "tags": ["vocab", "ows", "finance", "business", "pyq_ssc"]
+  }
+]

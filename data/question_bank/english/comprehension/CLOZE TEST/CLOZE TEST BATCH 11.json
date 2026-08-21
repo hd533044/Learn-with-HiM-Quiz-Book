@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_CT_SET_201",
+    "passage_title": "The Epigenetics of Histone Modification and Chromatin Remodeling",
+    "passage_text": "In molecular biology and epigenetics, gene expression is tightly regulated not only by DNA sequence variations but also by dynamic structural modifications of **chromatin**—the complex of DNA and histone proteins packaged inside the eukaryotic nucleus. The repeating structural subunit of chromatin is the **nucleosome**, consisting of 146 base pairs of DNA wound around an octamer core of four canonical histone proteins ($H2A, H2B, H3$, and $H4$). The flexible amino-terminal tails of these histones undergo diverse post-translational chemical modifications, including acetylation, methylation, phosphorylation, and ubiquitination. For instance, **histone acetylation** (catalyzed by histone acetyltransferases or HATs) neutralizes the positive charge on lysine residues, weakening their electrostatic affinity for negatively charged DNA backbones and transforming condensed heterochromatin into relaxed, transcriptionally active **euchromatin**. Conversely, histone deacetylation and specific methylation marks recruit repressor proteins to silence gene transcription. These epigenetic modifications establish heritable patterns of gene expression without altering the underlying DNA nucleotide sequence, playing a vital role in cellular differentiation, embryonic development, and disease pathogenesis.",
+    "blanks": [
+      {
+        "id": "ENG_CT_201_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "chromatin",
+          "B": "cytoplasm",
+          "C": "ribosome",
+          "D": "mitochondrion"
+        },
+        "correct_option": "A",
+        "rationale": "The complex of DNA and histone proteins packaged inside the eukaryotic nucleus is chromatin."
+      },
+      {
+        "id": "ENG_CT_201_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "nucleosome",
+          "B": "centromere",
+          "C": "telomere",
+          "D": "plasmid"
+        },
+        "correct_option": "A",
+        "rationale": "The repeating structural subunit of chromatin containing DNA wound around a histone octamer is the nucleosome."
+      },
+      {
+        "id": "ENG_CT_201_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "histone acetylation",
+          "B": "DNA methylation",
+          "C": "telomeric shortening",
+          "D": "ribosomal cleavage"
+        },
+        "correct_option": "A",
+        "rationale": "Neutralizing positive charges on lysine residues via HATs is histone acetylation."
+      },
+      {
+        "id": "ENG_CT_201_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "euchromatin",
+          "B": "heterochromatin",
+          "C": "centromeric core",
+          "D": "satellite DNA"
+        },
+        "correct_option": "A",
+        "rationale": "Relaxed, transcriptionally active chromatin is termed euchromatin."
+      },
+      {
+        "id": "ENG_CT_201_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "epigenetic",
+          "B": "mutagenic",
+          "C": "teratogenic",
+          "D": "carcinogenic"
+        },
+        "correct_option": "A",
+        "rationale": "Heritable changes in gene expression without altering the DNA sequence are epigenetic modifications."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_202",
+    "passage_title": "The Geodynamics of Supercontinent Cycles and the Wilson Cycle",
+    "passage_text": "In plate tectonics and geodynamics, the **Wilson Cycle** describes the repeating conceptual sequence of opening and closing ocean basins and the episodic assembly and dispersal of **supercontinents** over hundreds of millions of years. Formulated by Canadian geophysicist J. Tuzo Wilson, the cycle begins with continental rifting, where upwelling mantle plumes stretch and fracture a stable continental craton, forming an incipient continental rift valley (such as the East African Rift). Continued lithospheric extension eventually creates a new ocean basin bounded by passive margins, floored by newly accreted oceanic crust generated at mid-ocean ridges. As oceanic lithosphere matures, cools, and densifies, it eventually initiates subduction along convergent plate margins, consuming the ocean basin and driving continental collision. This collisional convergence culminates in the amalgamation of continental fragments into a massive supercontinent (such as Pangaea, Rodinia, or Columbia). Once assembled, supercontinents act as thermal blankets, trapping mantle heat beneath their thick continental keels and eventually triggering massive plume upwellings that tear the supercontinent apart, restarting the **supercontinent cycle**. This rhythmic dance of rifting, drifting, subduction, and collision fundamentally governs global geochemical cycles, sea-level fluctuations, and evolutionary biodiversity over geologic time.",
+    "blanks": [
+      {
+        "id": "ENG_CT_202_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "Wilson Cycle",
+          "B": "Carnot Cycle",
+          "C": "Krebs Cycle",
+          "D": "Hydrologic Cycle"
+        },
+        "correct_option": "A",
+        "rationale": "The repeating sequence of opening and closing ocean basins is the Wilson Cycle."
+      },
+      {
+        "id": "ENG_CT_202_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "supercontinents",
+          "B": "abyssal plains",
+          "C": "cratonic shields",
+          "D": "volcanic arcs"
+        },
+        "correct_option": "A",
+        "rationale": "The episodic assembly and dispersal of massive continental masses is the supercontinent cycle."
+      },
+      {
+        "id": "ENG_CT_202_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "continental rifting",
+          "B": "collisional subduction",
+          "C": "isostatic rebound",
+          "D": "glacial melting"
+        },
+        "correct_option": "A",
+        "rationale": "The cycle begins with continental rifting, where mantle plumes fracture a stable craton."
+      },
+      {
+        "id": "ENG_CT_202_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "thermal blankets",
+          "B": "glacial ice sheets",
+          "C": "magnetic shields",
+          "D": "sedimentary basins"
+        },
+        "correct_option": "A",
+        "rationale": "Supercontinents act as thermal blankets, trapping mantle heat beneath their continental keels."
+      },
+      {
+        "id": "ENG_CT_202_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "supercontinent cycle",
+          "B": "milankovitch cycle",
+          "C": "carbon-nitrogen cycle",
+          "D": "rock weathering cycle"
+        },
+        "correct_option": "A",
+        "rationale": "The assembly and dispersal of massive continental masses defines the supercontinent cycle."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_203",
+    "passage_title": "The Macroeconomics of Optimal Currency Areas (Mundell’s Theory)",
+    "passage_text": "In international monetary economics, the **Theory of Optimal Currency Areas (OCA)**—pioneered by Nobel laureate Robert Mundell in 1961—examines the economic criteria under which two or more sovereign nations benefit from sharing a single unified currency. While sharing a currency eliminates exchange rate transaction costs and currency conversion volatility, participating countries surrender independent monetary policy and flexible exchange rate adjustments as shock absorbers against asymmetric macroeconomic shocks. To qualify as an optimal currency area without suffering chronic localized unemployment or severe output contractions, Mundell and subsequent economists (such as Ronald McKinnon and Peter Kenen) argued that an economic region must satisfy several structural criteria: (1) high **labor mobility** across member states, allowing unemployed workers to migrate freely to regions with labor shortages; (2) wage and price flexibility; (3) a centralized fiscal transfer mechanism or federal budget to redistribute tax revenues to depressed regions; and (4) a high degree of trade openness and business cycle synchronization. Without these adjustment mechanisms, joining a monetary union without fulfilling OCA criteria—as witnessed during the Eurozone sovereign debt crisis—can trap member nations in prolonged economic depressions when asymmetric shocks strike.",
+    "blanks": [
+      {
+        "id": "ENG_CT_203_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "Theory of Optimal Currency Areas (OCA)",
+          "B": "Quantity Theory of Money",
+          "C": "Comparative Advantage Hypothesis",
+          "D": "Permanent Income Hypothesis"
+        },
+        "correct_option": "A",
+        "rationale": "The economic criteria for nations sharing a single currency comprise the Theory of Optimal Currency Areas."
+      },
+      {
+        "id": "ENG_CT_203_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "Robert Mundell",
+          "B": "John Maynard Keynes",
+          "C": "Milton Friedman",
+          "D": "Adam Smith"
+        },
+        "correct_option": "A",
+        "rationale": "The OCA theory was pioneered by Nobel laureate Robert Mundell in 1961."
+      },
+      {
+        "id": "ENG_CT_203_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "asymmetric macroeconomic shocks",
+          "B": "balanced trade surpluses",
+          "C": "synchronized fiscal deficits",
+          "D": "uniform tax rates"
+        },
+        "correct_option": "A",
+        "rationale": "Flexible exchange rates serve as shock absorbers against asymmetric macroeconomic shocks."
+      },
+      {
+        "id": "ENG_CT_203_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "labor mobility",
+          "B": "tariff protection",
+          "C": "capital controls",
+          "D": "import quotas"
+        },
+        "correct_option": "A",
+        "rationale": "High labor mobility across member states is a primary structural criterion for an OCA."
+      },
+      {
+        "id": "ENG_CT_203_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "Eurozone sovereign debt crisis",
+          "B": "Great Depression bank runs",
+          "C": "Asian financial crisis",
+          "D": "stagflationary oil shock"
+        },
+        "correct_option": "A",
+        "rationale": "Unfulfilled OCA criteria leading to depression were witnessed during the Eurozone sovereign debt crisis."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_204",
+    "passage_title": "The Quantum Mechanics of Quantum Key Distribution (BB84 Protocol)",
+    "passage_text": "In quantum cryptography, **Quantum Key Distribution (QKD)** provides a provably secure method for two remote parties (conventionally named Alice and Bob) to establish a shared, secret cryptographic random key over an insecure public channel. Unlike classical encryption algorithms (such as RSA) whose security relies on unproven mathematical computational complexity (like prime factorization), QKD derives its absolute security directly from the fundamental laws of quantum mechanics. The foundational QKD protocol—the **BB84 protocol**, formulated by Charles Bennett and Gilles Brassard in 1984—encodes cryptographic bits into the polarization states of single photons. Alice transmits photons to Bob using four polarization states drawn from two mutually unbiased bases (rectilinear and diagonal). Because of the **no-cloning theorem**, an eavesdropper (Eve) cannot intercept and copy an unknown quantum state without disturbing it. When Eve attempts to measure intercepted photons, she must guess the correct measurement basis; if she guesses incorrectly, she introduces detectable statistical errors into Bob's received transmission. By comparing a subset of their shared key over a public channel (sifting and error estimation), Alice and Bob can detect eavesdropping and discard compromised bits, leaving behind a perfectly secure secret key for encrypted communications.",
+    "blanks": [
+      {
+        "id": "ENG_CT_204_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "Quantum Key Distribution (QKD)",
+          "B": "RSA public-key cryptography",
+          "C": "symmetric AES encryption",
+          "D": "blockchain hashing"
+        },
+        "correct_option": "A",
+        "rationale": "Establishing a secret cryptographic key securely using quantum mechanics is Quantum Key Distribution."
+      },
+      {
+        "id": "ENG_CT_204_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "BB84 protocol",
+          "B": "Diffie-Hellman exchange",
+          "C": "SHA-256 algorithm",
+          "D": "Elliptic curve cipher"
+        },
+        "correct_option": "A",
+        "rationale": "The foundational QKD protocol formulated by Bennett and Brassard in 1984 is the BB84 protocol."
+      },
+      {
+        "id": "ENG_CT_204_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "polarization states",
+          "B": "magnetic flux loops",
+          "C": "radio frequency waves",
+          "D": "thermal radiation packets"
+        },
+        "correct_option": "A",
+        "rationale": "BB84 encodes cryptographic bits into the polarization states of single photons."
+      },
+      {
+        "id": "ENG_CT_204_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "no-cloning theorem",
+          "B": "Heisenberg uncertainty relation",
+          "C": "Pauli exclusion principle",
+          "D": "adiabatic theorem"
+        },
+        "correct_option": "A",
+        "rationale": "The theorem preventing eavesdroppers from copying unknown quantum states is the no-cloning theorem."
+      },
+      {
+        "id": "ENG_CT_204_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "detectable statistical errors",
+          "B": "instantaneous decryption",
+          "C": "gravitational redshifting",
+          "D": "thermal noise amplification"
+        },
+        "correct_option": "A",
+        "rationale": "Incorrect eavesdropping measurements introduce detectable statistical errors into the transmission."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_205",
+    "passage_title": "The Agrarian Political Economy of James C. Scott’s Domination and the Arts of Resistance",
+    "passage_text": "In his influential 1990 political science treatise *Domination and the Arts of Resistance: Hidden Transcripts*, political anthropologist James C. Scott investigated the complex sociolinguistic and political dynamics operating between dominant ruling elites and subordinate oppressed groups. Scott argued that power relations structure communication into two distinct realms: the **public transcript** and the **hidden transcript**. The public transcript encompasses the open, observable interactions between powerholders and subordinates, where subordinate groups routinely display outward compliance, deference, and ritualistic submissiveness. However, this public display is largely a strategic performance dictated by coercion and survival. Away from the watchful eyes of powerholders—in taverns, secret meetings, folklore, and private gatherings—subordinate groups construct a **hidden transcript**, a discursive space where oppressed populations express anger, critique elites, mock their masters, and formulate revolutionary aspirations free from elite surveillance. Scott demonstrated that political elites similarly maintain a hidden transcript of backstage anxiety and contempt toward subordinates. Social revolutions and sudden insurrections occur when these hidden transcripts breach the barrier of public discourse, shattering the illusion of consensus and transforming quiet resentment into open political revolt.",
+    "blanks": [
+      {
+        "id": "ENG_CT_205_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "Domination and the Arts of Resistance",
+          "B": "Seeing Like a State",
+          "C": "The Moral Economy of the Peasant",
+          "D": "Weapons of the Weak"
+        },
+        "correct_option": "A",
+        "rationale": "Scott's 1990 treatise exploring power dynamics through public and hidden transcripts is Domination and the Arts of Resistance."
+      },
+      {
+        "id": "ENG_CT_205_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "public transcript",
+          "B": "official bureaucratic archive",
+          "C": "parliamentary legislative record",
+          "D": "judicial legal precedent"
+        },
+        "correct_option": "A",
+        "rationale": "The open, observable interactions where subordinates display outward compliance form the public transcript."
+      },
+      {
+        "id": "ENG_CT_205_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "hidden transcript",
+          "B": "clandestine financial ledger",
+          "C": "clandestine spy cipher",
+          "D": "coded military dispatch"
+        },
+        "correct_option": "A",
+        "rationale": "The private discursive space where subordinates express critique away from elites is the hidden transcript."
+      },
+      {
+        "id": "ENG_CT_205_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "strategic performance",
+          "B": "spontaneous ideological conversion",
+          "C": "genuine psychological submission",
+          "D": "voluntary civic participation"
+        },
+        "correct_option": "A",
+        "rationale": "Outward deference in public is largely a strategic performance dictated by survival."
+      },
+      {
+        "id": "ENG_CT_205_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "open political revolt",
+          "B": "bourgeois democratic election",
+          "C": "bureaucratic administrative reform",
+          "D": "judicial constitutional appeal"
+        },
+        "correct_option": "A",
+        "rationale": "Revolutions occur when hidden transcripts breach public discourse, turning resentment into open political revolt."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_206",
+    "passage_title": "The Structural Geology and Mechanics of Fault-Valve Behavior",
+    "passage_text": "In structural geology and seismotectonics, the **fault-valve model**—formulated by geophysicist Richard Sibson in 1990—explains how crustal fault zones act as dynamic hydraulic valves that regulate pore-fluid pressures and modulate earthquake rupture cycles in seismogenic zones. In the brittle crust, upward fluid migration is normally inhibited by low-permeability sealing rocks or impermeable cataclasite fault cores, allowing high **pore-fluid overpressures** to accumulate at depth from metamorphic dehydration reactions or magmatic degassing. According to the fault-valve mechanism, continuous tectonic compression increases shear stress and fluid pressure until fluid pressure locally exceeds the sum of the minimum principal compressive stress and the tensile strength of the rock. This triggers catastrophic hydraulic tensile fracturing, opening high-permeability fluid conduits up the fault zone. Fluids rush upward in a violent hydrothermal surge, precipitating massive quartz and carbonate mineral veins (such as auriferous lode gold deposits). As fluids escape, pore pressures drop precipitously, causing the effective normal stress across the fault plane to increase instantly. This sudden clamping action locks the fault, shutting the hydraulic valve and allowing pore pressures to rebuild over centuries until the next seismic rupture cycle.",
+    "blanks": [
+      {
+        "id": "ENG_CT_206_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "fault-valve model",
+          "B": "critical taper model",
+          "C": "elastic rebound theory",
+          "D": "plate tectonics paradigm"
+        },
+        "correct_option": "A",
+        "rationale": "The model explaining how faults regulate fluid pressures and earthquake cycles is the fault-valve model."
+      },
+      {
+        "id": "ENG_CT_206_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "Richard Sibson",
+          "B": "James Davis",
+          "C": "Arthur Holmes",
+          "D": "Alfred Wegener"
+        },
+        "correct_option": "A",
+        "rationale": "The fault-valve model was formulated by geophysicist Richard Sibson in 1990."
+      },
+      {
+        "id": "ENG_CT_206_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "pore-fluid overpressures",
+          "B": "magnetic field fluctuations",
+          "C": "radiogenic heat production",
+          "D": "crystallographic phase inversions"
+        },
+        "correct_option": "A",
+        "rationale": "Fault zones accumulate high pore-fluid overpressures from metamorphic dehydration."
+      },
+      {
+        "id": "ENG_CT_206_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "hydraulic tensile fracturing",
+          "B": "magmatic explosive eruption",
+          "C": "ductile crystal plasticity",
+          "D": "isostatic crustal flexing"
+        },
+        "correct_option": "A",
+        "rationale": "When fluid pressure exceeds rock strength, it triggers catastrophic hydraulic tensile fracturing."
+      },
+      {
+        "id": "ENG_CT_206_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "auriferous lode gold deposits",
+          "B": "evaporite salt diapir domes",
+          "C": "alluvial diamond placers",
+          "D": "sedimentary iron formations"
+        },
+        "correct_option": "A",
+        "rationale": "Hydrothermal fluid surges precipitate massive quartz and carbonate mineral veins, such as auriferous lode gold deposits."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_207",
+    "passage_title": "The Evolutionary Biomechanics of Cephalopod Hydrostatic Skeletons and Jet Propulsion",
+    "passage_text": "In evolutionary biology and invertebrate biomechanics, coleoid cephalopods (squids, octopuses, and cuttlefishes) abandoned the heavy external calcareous shells of their ancestral mollusk relatives, evolving a highly agile soft-bodied bauplan powered by a muscular **hydrostatic skeleton** and sophisticated jet propulsion. Unlike vertebrate skeletons composed of rigid mineralized bones, a cephalopod's muscular mantle acts as a pressurized hydrostatic skeleton, where fluid volume remains constant within a surrounding envelope of interlocking circular, radial, and longitudinal muscle fibers. To execute rapid escape locomotion, squids engage in **jet propulsion**: they draw seawater into the mantle cavity through lateral collar valves, seal the mantle opening tightly around the funnel, and contract their circular mantle muscles simultaneously. This massive muscular contraction pressurizes the internal cavity, expelling a high-velocity stream of water through the flexible funnel siphon and propelling the animal backward by Newton's third law of motion. By swivelling the siphon nozzle, cephalopods achieve remarkable directional maneuverability and acceleration. Furthermore, their muscular hydrostat design eliminates skeletal joints, allowing continuous deformation and flexibility required for complex behaviors like benthic crawling and predatory striking.",
+    "blanks": [
+      {
+        "id": "ENG_CT_207_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "hydrostatic skeleton",
+          "B": "endoskeletal bony column",
+          "C": "exoskeletal chitinous shell",
+          "D": "siliceous spicule matrix"
+        },
+        "correct_option": "A",
+        "rationale": "Cephalopods abandoned external shells for a soft-bodied bauplan powered by a muscular hydrostatic skeleton."
+      },
+      {
+        "id": "ENG_CT_207_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "circular, radial, and longitudinal",
+          "B": "striated, cardiac, and smooth",
+          "C": "spongy, compact, and trabecular",
+          "D": "elastic, collagenous, and reticular"
+        },
+        "correct_option": "A",
+        "rationale": "The mantle is composed of interlocking circular, radial, and longitudinal muscle fibers."
+      },
+      {
+        "id": "ENG_CT_207_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "jet propulsion",
+          "B": "ciliary gliding",
+          "C": "undulatory swimming",
+          "D": "appendicular walking"
+        },
+        "correct_option": "A",
+        "rationale": "Rapid escape locomotion driven by expelling water from the mantle cavity is jet propulsion."
+      },
+      {
+        "id": "ENG_CT_207_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "funnel siphon",
+          "B": "branchial gill arch",
+          "C": "radula feeding mouth",
+          "D": "siphonuncle tube"
+        },
+        "correct_option": "A",
+        "rationale": "Water is expelled through a flexible funnel siphon to propel the animal."
+      },
+      {
+        "id": "ENG_CT_207_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "muscular hydrostat",
+          "B": "rigid levers",
+          "C": "hinged valves",
+          "D": "pneumatic chambers"
+        },
+        "correct_option": "A",
+        "rationale": "The design of cephalopod soft tissue without skeletal joints is a muscular hydrostat."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_208",
+    "passage_title": "The Quantum Mechanics of Superconducting Flux Qubits and SQUIDs",
+    "passage_text": "In superconducting quantum computing and ultra-sensitive magnetometry, superconducting circuits offer diverse paradigms for qubit design. Alongside charge-based transmon qubits, **flux qubits** encode quantum information in the direction of persistent supercurrents flowing around a superconducting loop interrupted by multiple Josephson junctions. The operational physics of flux qubits is intimately rooted in the behavior of **SQUIDs (Superconducting Quantum Interference Devices)**. A DC SQUID consists of a superconducting loop containing two parallel Josephson junctions. Due to macroscopic quantum coherence and magnetic flux quantization, the critical supercurrent flowing through the SQUID ring modulates sinusoidally as a function of the external magnetic flux threading the loop, with a periodicity equal to the magnetic flux quantum ($\Phi_0 = h / 2e$). By controlling external magnetic flux biases, quantum engineers can tune the potential energy landscape of a flux qubit, adjusting its tunneling splitting and energy level separation. While flux qubits provide exceptionally fast gate speeds and strong anharmonicity, their primary engineering challenge remains high sensitivity to magnetic flux noise, requiring advanced shielding and gradiometric loop designs to prevent decoherence.",
+    "blanks": [
+      {
+        "id": "ENG_CT_208_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "flux qubits",
+          "B": "optical resonators",
+          "C": "semiconductor transistors",
+          "D": "trapped ion traps"
+        },
+        "correct_option": "A",
+        "rationale": "Circuits encoding quantum information in persistent supercurrent directions are flux qubits."
+      },
+      {
+        "id": "ENG_CT_208_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "SQUIDs (Superconducting Quantum Interference Devices)",
+          "B": "pn-junction diodes",
+          "C": "piezoelectric actuators",
+          "D": "thermocouple bridges"
+        },
+        "correct_option": "A",
+        "rationale": "The operational physics of flux qubits is rooted in SQUIDs (Superconducting Quantum Interference Devices)."
+      },
+      {
+        "id": "ENG_CT_208_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "macroscopic quantum coherence",
+          "B": "classical thermodynamic equilibrium",
+          "C": "thermal Brownian motion",
+          "D": "radioactive atomic decay"
+        },
+        "correct_option": "A",
+        "rationale": "Superconductivity and flux quantization rely on macroscopic quantum coherence."
+      },
+      {
+        "id": "ENG_CT_208_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "magnetic flux quantum ($\Phi_0$)",
+          "B": "elementary electric charge ($e$)",
+          "C": "gravitational constant ($G$)",
+          "D": "Boltzmann constant ($k_B$)"
+        },
+        "correct_option": "A",
+        "rationale": "Supercurrent modulation through a SQUID loop is periodic with the magnetic flux quantum ($\Phi_0 = h / 2e$)."
+      },
+      {
+        "id": "ENG_CT_208_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "magnetic flux noise",
+          "B": "gravitational tidal waves",
+          "C": "atmospheric acoustic vibrations",
+          "D": "cosmic ray photon strikes"
+        },
+        "correct_option": "A",
+        "rationale": "The primary engineering challenge for flux qubits is high sensitivity to magnetic flux noise."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_209",
+    "passage_title": "The Macroeconomics of Tobin Taxes and International Capital Controls",
+    "passage_text": "In international monetary economics and financial regulation, a **Tobin tax**—originally proposed by Nobel laureate economist James Tobin in 1972—is a specialized tax levied on all spot conversions of foreign exchange, designed specifically to penalize short-term speculative capital flows and curb excessive exchange rate volatility. In an era of hyper-integrated global financial markets, multitrillion-dollar speculative capital movements can destabilize emerging market economies, trigger sudden currency crashes, and detach exchange rates from macroeconomic fundamentals. Tobin argued that imposing a small, uniform transactional levy (e.g., 0.1% or 0.5%) would impose negligible friction on long-term foreign direct investment and international trade while rendering high-frequency speculative round-trip arbitrage economically unprofitable. Beyond dampening exchange rate volatility, Tobin suggested that the tax could generate massive public revenues for international development. However, critics of capital controls argue that modern electronic trading can easily evade regional levies through offshore financial centers, and that taxing financial transactions impairs overall market liquidity and deepens bid-ask spreads. Despite ongoing debates, the 2008 global financial crisis renewed intense academic and regulatory interest in transaction taxes as a vital macroprudential tool to curb systemic financial speculation.",
+    "blanks": [
+      {
+        "id": "ENG_CT_209_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "Tobin tax",
+          "B": "Value-Added Tax (VAT)",
+          "C": "progressive income tax",
+          "D": "corporate tariff duty"
+        },
+        "correct_option": "A",
+        "rationale": "A specialized tax levied on foreign exchange conversions to curb speculation is a Tobin tax."
+      },
+      {
+        "id": "ENG_CT_209_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "James Tobin",
+          "B": "John Maynard Keynes",
+          "C": "Milton Friedman",
+          "D": "Paul Samuelson"
+        },
+        "correct_option": "A",
+        "rationale": "The foreign exchange transaction tax was originally proposed by economist James Tobin in 1972."
+      },
+      {
+        "id": "ENG_CT_209_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "speculative capital flows",
+          "B": "long-term infrastructure bonds",
+          "C": "domestic retail savings",
+          "D": "sovereign pension funds"
+        },
+        "correct_option": "A",
+        "rationale": "The tax is designed specifically to penalize short-term speculative capital flows."
+      },
+      {
+        "id": "ENG_CT_209_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "foreign direct investment",
+          "B": "currency arbitrage",
+          "C": "hedging derivatives",
+          "D": "leveraged speculation"
+        },
+        "correct_option": "A",
+        "rationale": "A small levy imposes negligible friction on long-term productive foreign direct investment."
+      },
+      {
+        "id": "ENG_CT_209_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "macroprudential tool",
+          "B": "monetary deflation mechanism",
+          "C": "fiscal austerity measure",
+          "D": "mercantilist export subsidy"
+        },
+        "correct_option": "A",
+        "rationale": "The 2008 crisis renewed interest in transaction taxes as a vital macroprudential tool to curb speculation."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_210",
+    "passage_title": "The Agrarian Political Economy of Karl Polanyi’s Great Transformation",
+    "passage_text": "In his seminal 1944 economic history and political sociology treatise *The Great Transformation: The Political and Economic Origins of Our Time*, political economist Karl Polanyi investigated the rise and collapse of 19th-century market capitalism, challenging free-market orthodoxy by arguing that self-regulating markets are historically unprecedented and socially destructive constructs. Polanyi argued that prior to the Industrial Revolution, economic exchange was deeply embedded in social, religious, and kinship relations—a principle he termed **embeddedness**. With the advent of industrial capitalism, state policies and liberal economists engineered a radical ideological rupture, attempting to disembed the economy from society and force all elements of production into **fictitious commodities**—specifically land, labor, and money. Polanyi emphasized that land, labor, and money are not true commodities produced for sale on a market: land is simply nature, labor is human life itself, and money is merely purchasing power regulated by public authority. Treating these foundational pillars as mere commodities threatens society with total annihilation, triggering a spontaneous protective counter-movement. Polanyi's **double movement** thesis posits that whenever laissez-faire markets expand to commodify society, society inevitably mobilizes defensive legislative counter-measures—such as labor unions, factory safety laws, tariff protection, and central banking regulations—to protect human welfare and ecological integrity from market subjugation.",
+    "blanks": [
+      {
+        "id": "ENG_CT_210_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "embeddedness",
+          "B": "rationalization",
+          "C": "commodification",
+          "D": "bureaucratization"
+        },
+        "correct_option": "A",
+        "rationale": "Polanyi termed the pre-capitalist principle where economic exchange is rooted in social relations as embeddedness."
+      },
+      {
+        "id": "ENG_CT_210_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "fictitious commodities",
+          "B": "sovereign debt instruments",
+          "C": "derivative financial assets",
+          "D": "industrial capital goods"
+        },
+        "correct_option": "A",
+        "rationale": "Treating land, labor, and money as products for sale creates fictitious commodities."
+      },
+      {
+        "id": "ENG_CT_210_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "double movement",
+          "B": "dialectic materialism",
+          "C": "punctuated equilibrium",
+          "D": "creative destruction"
+        },
+        "correct_option": "A",
+        "rationale": "The societal counter-response to market expansion is Polanyi's double movement thesis."
+      },
+      {
+        "id": "ENG_CT_210_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "defensive legislative counter-measures",
+          "B": "speculative financial investments",
+          "C": "monopolistic corporate trusts",
+          "D": "imperialist colonial conquests"
+        },
+        "correct_option": "A",
+        "rationale": "Society mobilizes defensive legislative counter-measures like labor laws and tariffs to protect welfare."
+      },
+      {
+        "id": "ENG_CT_210_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "market subjugation",
+          "B": "bourgeois industrialization",
+          "C": "mercantilist expansion",
+          "D": "technological innovation"
+        },
+        "correct_option": "A",
+        "rationale": "Counter-measures protect human welfare and ecological integrity from market subjugation."
+      }
+    ]
+  }
+]

@@ -1,0 +1,722 @@
+[
+  {
+    "cloze_id": "ENG_CLOZE_SET_131",
+    "passage_title": "The Paleobiology of the Permian-Triassic Mass Extinction",
+    "passage_text": "Occurring approximately 252 million years ago, the Permian-Triassic mass extinction event represents the most severe biotic crisis in the Phanerozoic Eon, eliminating over ninety percent of all marine species and seventy percent of terrestrial vertebrate genera. Geochronological dating firmly links this catastrophic biocenosis collapse to the massive (1) _________ of basaltic flood lavas in the Siberian Traps. Vast volcanic outpourings intruded into regional carbon-rich coal and evaporite basins, releasing gigatons of carbon dioxide, sulfur dioxide, and thermogenic methane into the atmosphere. The ensuing hyperthermal pulse triggered severe ocean warming, widespread oceanic anoxia, and catastrophic sea surface (2) _________. Marine invertebrates with heavily calcified carbonate skeletons suffered catastrophic physiological (3) _________, while terrestrial floral ecosystems experienced protracted ecological collapse and mass deforestation. Paleoclimatologists note that the post-extinction biotic recovery was unusually (4) _________, spanning more than five million years before complex trophic structures could re-establish evolutionary (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_131_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "eruption",
+          "B": "freezing",
+          "C": "subsidence",
+          "D": "sedimentation"
+        },
+        "correct_option": "A",
+        "rationale": "'Eruption' of basaltic flood lavas is the correct geological term for massive volcanic discharge."
+      },
+      {
+        "id": "ENG_CLOZE_131_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "acidification",
+          "B": "desalination",
+          "C": "oxygenation",
+          "D": "glaciation"
+        },
+        "correct_option": "A",
+        "rationale": "'Ocean acidification' occurs when massive atmospheric $CO_2$ dissolves into seawater, lowering pH."
+      },
+      {
+        "id": "ENG_CLOZE_131_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "mortality",
+          "B": "vitality",
+          "C": "adaptation",
+          "D": "immunity"
+        },
+        "correct_option": "A",
+        "rationale": "'Physiological mortality' refers to death caused by systemic organ and skeletal calcification failure."
+      },
+      {
+        "id": "ENG_CLOZE_131_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "protracted",
+          "B": "instantaneous",
+          "C": "transient",
+          "D": "abrupt"
+        },
+        "correct_option": "A",
+        "rationale": "'Protracted' means extended in time or prolonged, matching the 5-million-year recovery timeline."
+      },
+      {
+        "id": "ENG_CLOZE_131_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "equilibrium",
+          "B": "anarchy",
+          "C": "extinction",
+          "D": "chaos"
+        },
+        "correct_option": "A",
+        "rationale": "'Evolutionary equilibrium' denotes a restored, stable balance within biological ecosystems."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_132",
+    "passage_title": "The Classical Realist Paradigm of International Relations",
+    "passage_text": "In the theoretical discipline of international relations, classical political realism posits that the international arena is defined by structural anarchy—the complete absence of an overarching, supranational sovereign authority capable of enforcing international legal (1) _________. Tracing theoretical ancestry through Thucydides, Niccolò Machiavelli, and Thomas Hobbes, realism argues that nation-states operate as unitary, rational actors driven primarily by the imperatives of national survival, security maximization, and the pursuit of relative (2) _________. Because intentions in an anarchic system are inherently uncertain, states find themselves trapped in a persistent 'security dilemma', where defensive actions taken by one sovereign entity are inevitably (3) _________ as aggressive provocations by rival neighbors. This dynamic induces competitive armaments expansion and structural balancing maneuvers. Proponents maintain that regional stability is not achieved through utopian legalistic treaties, but through a calculated (4) _________ of power that deters unilateral revisionist aggression. Consequently, realists emphasize prudent statecraft, military deterrence, and strategic national (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_132_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "mandates",
+          "B": "exemptions",
+          "C": "violations",
+          "D": "subsidies"
+        },
+        "correct_option": "A",
+        "rationale": "'Legal mandates' refers to binding authoritative rules and statutory laws in international governance."
+      },
+      {
+        "id": "ENG_CLOZE_132_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "power",
+          "B": "apathy",
+          "C": "subservience",
+          "D": "charity"
+        },
+        "correct_option": "A",
+        "rationale": "'Relative power' is the central metric realist states pursue to ensure their strategic security."
+      },
+      {
+        "id": "ENG_CLOZE_132_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "perceived",
+          "B": "dismissed",
+          "C": "tolerated",
+          "D": "praised"
+        },
+        "correct_option": "A",
+        "rationale": "'Perceived' accurately describes how states interpret defensive military expansion as potential threats."
+      },
+      {
+        "id": "ENG_CLOZE_132_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "balance",
+          "B": "collapse",
+          "C": "surrender",
+          "D": "vacuum"
+        },
+        "correct_option": "A",
+        "rationale": "'Balance of power' is the fundamental realist mechanism preventing any single hegemon from dominating."
+      },
+      {
+        "id": "ENG_CLOZE_132_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "interest",
+          "B": "altruism",
+          "C": "apathy",
+          "D": "neglect"
+        },
+        "correct_option": "A",
+        "rationale": "'National interest' (*raison d'état*) is the foundational driver of sovereign foreign policy in realism."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_133",
+    "passage_title": "The Structural Virology of Viral Envelope Fusion",
+    "passage_text": "Enveloped viruses, such as influenza, human immunodeficiency virus (HIV), and coronaviruses, rely on specialized viral surface glycoproteins to penetrate host cell membranes. The entry mechanism requires precise conformational rearrangements of class I viral fusion proteins from a metastable, prefusion state into a highly stable postfusion (1) _________. The infection cascade begins when the receptor-binding subunit attaches to specific host cell-surface receptors, triggering endocytic internalization or activating host cell membrane (2) _________ (such as furin or TMPRSS2). Enzymatic cleavage exposes the hydrophobic fusion peptide, which inserts directly into the host target lipid bilayer. The glycoprotein then undergoes structural refolding into a stable trimer-of-hairpins (six-helix bundle) conformation. This mechanical collapse draws the viral and host membranes into intimate contact, driving hemifusion and culminating in the opening of a fusion (3) _________. Through this opening, the viral ribonucleoprotein core is released into the host (4) _________, initiating viral genome replication and immune (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_133_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "conformation",
+          "B": "dissolution",
+          "C": "fluidity",
+          "D": "evaporation"
+        },
+        "correct_option": "A",
+        "rationale": "'Postfusion conformation' is the structural molecular shape adopted by viral fusion proteins."
+      },
+      {
+        "id": "ENG_CLOZE_133_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "proteases",
+          "B": "lipids",
+          "C": "ribosomes",
+          "D": "chromosomes"
+        },
+        "correct_option": "A",
+        "rationale": "'Proteases' are enzymes (like TMPRSS2 or furin) that cleave proteins to activate viral fusion."
+      },
+      {
+        "id": "ENG_CLOZE_133_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "pore",
+          "B": "barrier",
+          "C": "trench",
+          "D": "shield"
+        },
+        "correct_option": "A",
+        "rationale": "'Fusion pore' is the biological term for the channel opening that connects viral and cellular interiors."
+      },
+      {
+        "id": "ENG_CLOZE_133_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "cytoplasm",
+          "B": "extracellular matrix",
+          "C": "bloodstream",
+          "D": "intercellular space"
+        },
+        "correct_option": "A",
+        "rationale": "'Cytoplasm' is the internal intracellular fluid where viral genetic material is deposited."
+      },
+      {
+        "id": "ENG_CLOZE_133_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "evasion",
+          "B": "assistance",
+          "C": "collaboration",
+          "D": "reception"
+        },
+        "correct_option": "A",
+        "rationale": "'Immune evasion' denotes viral mechanisms designed to escape detection and destruction by the immune system."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_134",
+    "passage_title": "The Economic Sociology of Social Capital",
+    "passage_text": "In contemporary economic sociology, the concept of social capital bridges the analytical divide between purely individualistic neoclassical rational-choice models and rigid structural sociology. Pioneered by Pierre Bourdieu, James Coleman, and Robert Putnam, social capital refers to social networks, shared norms of generalized reciprocity, and interpersonal (1) _________ that facilitate coordinated social action. Sociologist Mark Granovetter famously demonstrated the 'strength of weak ties', showing that acquaintance networks provide vital bridges to novel economic opportunities, whereas dense, insular 'strong ties' tend to circulate redundant information. Putnam differentiated between 'bonding' social capital—inward-looking networks among homogeneous groups—and 'bridging' social capital, which establishes reciprocal ties across diverse socio-demographic (2) _________. Communities characterized by robust civic engagement experience lower transaction costs, superior public health outcomes, and greater institutional (3) _________. However, excessive bonding capital can generate exclusionary insularity, enabling corruption or criminal syndicate (4) _________. Modern social policymakers increasingly focus on investments that cultivate inclusive, cross-cutting civic (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_134_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "trust",
+          "B": "cynicism",
+          "C": "hostility",
+          "D": "apathy"
+        },
+        "correct_option": "A",
+        "rationale": "'Interpersonal trust' is a foundational component of social capital enabling cooperative action."
+      },
+      {
+        "id": "ENG_CLOZE_134_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "divides",
+          "B": "conformities",
+          "C": "similarities",
+          "D": "homogeneities"
+        },
+        "correct_option": "A",
+        "rationale": "'Sociodemographic divides' refers to social cleavages (class, race, religion) bridged by social networks."
+      },
+      {
+        "id": "ENG_CLOZE_134_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "efficacy",
+          "B": "decay",
+          "C": "collapse",
+          "D": "stagnation"
+        },
+        "correct_option": "A",
+        "rationale": "'Institutional efficacy' describes the capacity of public organizations to produce intended civic outcomes."
+      },
+      {
+        "id": "ENG_CLOZE_134_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "cohesion",
+          "B": "fragmentation",
+          "C": "dissolution",
+          "D": "extinction"
+        },
+        "correct_option": "A",
+        "rationale": "'Syndicate cohesion' reflects how tight, insular bonding capital can reinforce organized crime groups."
+      },
+      {
+        "id": "ENG_CLOZE_134_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "infrastructure",
+          "B": "barriers",
+          "C": "impediments",
+          "D": "prohibitions"
+        },
+        "correct_option": "A",
+        "rationale": "'Civic infrastructure' denotes the public spaces, clubs, and organizations fostering social connections."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_135",
+    "passage_title": "The Quantum Chemistry of Transition Metal Catalysis",
+    "passage_text": "Transition metal complexes occupy an indispensable position in industrial synthetic chemistry and enzymatic biology, functioning as versatile chemical catalysts. The catalytic efficacy of d-block elements—such as palladium, platinum, ruthenium, and nickel—derives from their unique valence electron configuration and partially filled $d$-orbitals. These electronic properties enable transition metals to facilitate reversible oxidation state changes and readily participate in coordination (1) _________. In homogeneous cross-coupling reactions, such as the Nobel Prize-winning Suzuki-Miyaura and Heck reactions, the catalytic cycle proceeds through a conserved sequence of elementary organometallic steps: oxidative addition, transmetalation, and reductive (2) _________. Oxidative addition cleaves a carbon-halogen bond by donating metal $d$-electron density into the ligand's antibonding orbital, increasing both the formal oxidation state and the coordination (3) _________ of the metal center. Following ligand rearrangement, reductive elimination forms the desired carbon-carbon bond while regenerating the catalyst in its active, zero-valent (4) _________. Optimizing ancillary ligand design allows chemists to tune steric and electronic properties to achieve high catalytic turnover (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_135_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "complexation",
+          "B": "combustion",
+          "C": "evaporation",
+          "D": "sedimentation"
+        },
+        "correct_option": "A",
+        "rationale": "'Coordination complexation' refers to ligand binding around a central metal ion to form complexes."
+      },
+      {
+        "id": "ENG_CLOZE_135_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "elimination",
+          "B": "stagnation",
+          "C": "precipitation",
+          "D": "distillation"
+        },
+        "correct_option": "A",
+        "rationale": "'Reductive elimination' is the definitive final step of catalytic cross-coupling cycles."
+      },
+      {
+        "id": "ENG_CLOZE_135_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "number",
+          "B": "deficit",
+          "C": "velocity",
+          "D": "friction"
+        },
+        "correct_option": "A",
+        "rationale": "'Coordination number' is the chemical term for the total number of ligand donor atoms bound to a metal."
+      },
+      {
+        "id": "ENG_CLOZE_135_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "state",
+          "B": "decay",
+          "C": "crystal",
+          "D": "solution"
+        },
+        "correct_option": "A",
+        "rationale": "'Zero-valent state' refers to the $M(0)$ oxidation state required to re-initiate the catalytic cycle."
+      },
+      {
+        "id": "ENG_CLOZE_135_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "frequencies",
+          "B": "obstacles",
+          "C": "impediments",
+          "D": "reversals"
+        },
+        "correct_option": "A",
+        "rationale": "'Turnover frequencies' is the kinetic measure of how rapidly a catalyst converts reactants into products."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_136",
+    "passage_title": "The Agrarian Political Economy of the Green Revolution",
+    "passage_text": "Initiated in the mid-twentieth century under the leadership of agronomist Norman Borlaug, the Green Revolution transformed global agriculture and prevented widespread famine in developing nations. The core technological innovation involved breeding high-yielding, semi-dwarf varieties (HYVs) of wheat and rice. Traditional tall cereal varieties often experienced 'lodging'—falling over under the weight of heavy seed heads when treated with high levels of synthetic fertilizer. By incorporating dwarfing genes that partitioned photosynthetic energy into grain biomass rather than tall stalks, semi-dwarf crops exhibited superior harvest (1) _________. However, realizing these extraordinary yield potentials required an intensive package of chemical inputs, including synthetic nitrogen fertilizers, chemical pesticides, and mechanized tube-well (2) _________. While aggregate cereal production surged, critics emphasize that the Green Revolution introduced long-term ecological and socioeconomic challenges. Intensive monoculture depleted groundwater aquifers, degraded soil microbiology, and fostered agricultural pest (3) _________. Furthermore, the high capital costs of required chemical inputs disproportionately burdened smallholder farmers, exacerbating rural wealth (4) _________ and accelerating agrarian debt (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_136_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "index",
+          "B": "scarcity",
+          "C": "decline",
+          "D": "deficit"
+        },
+        "correct_option": "A",
+        "rationale": "'Harvest index' is the agronomic ratio of usable grain yield to total plant biological biomass."
+      },
+      {
+        "id": "ENG_CLOZE_136_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "irrigation",
+          "B": "desalination",
+          "C": "aeration",
+          "D": "tillage"
+        },
+        "correct_option": "A",
+        "rationale": "'Tube-well irrigation' refers to groundwater extraction systems used to supply water to high-yield crops."
+      },
+      {
+        "id": "ENG_CLOZE_136_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "resistance",
+          "B": "eradication",
+          "C": "immunity",
+          "D": "extinction"
+        },
+        "correct_option": "A",
+        "rationale": "'Pest resistance' is the evolutionary adaptation where insects survive synthetic chemical pesticides."
+      },
+      {
+        "id": "ENG_CLOZE_136_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "inequality",
+          "B": "parity",
+          "C": "cohesion",
+          "D": "solidarity"
+        },
+        "correct_option": "A",
+        "rationale": "'Wealth inequality' denotes the widening gap between wealthy landholders and impoverished smallholders."
+      },
+      {
+        "id": "ENG_CLOZE_136_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "crises",
+          "B": "surpluses",
+          "C": "windfalls",
+          "D": "subsidies"
+        },
+        "correct_option": "A",
+        "rationale": "'Debt crises' refers to severe economic distress caused by inability to repay agricultural input loans."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_137",
+    "passage_title": "The Structural Linguistics of Phonological Distinctive Features",
+    "passage_text": "In structural and generative phonology, speech sounds are not treated as indivisible acoustic atoms, but as bundles of concurrent sub-segmental properties termed 'distinctive features'. Formulated by Roman Jakobson, Gunnar Fant, and Morris Halle, and subsequently refined in Noam Chomsky and Halle's *The Sound Pattern of English* (SPE), distinctive feature theory establishes that all natural human speech sounds decompose into a universal set of binary (1) _________ (e.g., $[\\pm\\text{voice}]$, $[\\pm\\text{nasal}]$, $[\\pm\\text{continuant}]$, $[\\pm\\text{sonorant}]$). A feature is termed 'distinctive' if it serves a contrastive function capable of distinguishing meaning between minimal pairs in a language (such as $/p/$ and $/b/$ differing strictly by the feature $[\\pm\\text{voice}]$). Phonological rules do not operate on arbitrary phonemes; rather, they apply systematically to 'natural classes'—groups of sounds that share common feature (2) _________. For example, nasal assimilation rules operate by spreading the place of articulation features from a following consonant to an adjacent nasal stop. Formulating phonology through binary features captures universal articulatory and acoustic constraints, demonstrating that language sound patterns reflect innate human motor and auditory (3) _________. Contemporary phonological frameworks, such as Feature Geometry and Optimality Theory, continue to utilize distinctive features to model phonological grammar and typological (4) _________ across global language (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_137_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "specifications",
+          "B": "anomalies",
+          "C": "distortions",
+          "D": "aberrations"
+        },
+        "correct_option": "A",
+        "rationale": "'Binary specifications' refers to the $[+]$ or $[-]$ values assigned to distinctive features in generative phonology."
+      },
+      {
+        "id": "ENG_CLOZE_137_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "matrices",
+          "B": "conflicts",
+          "C": "omissions",
+          "D": "deficits"
+        },
+        "correct_option": "A",
+        "rationale": "'Feature matrices' is the formal linguistic term for bundles of phonetic features defining a natural class."
+      },
+      {
+        "id": "ENG_CLOZE_137_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "capacities",
+          "B": "impediments",
+          "C": "distortions",
+          "D": "prohibitions"
+        },
+        "correct_option": "A",
+        "rationale": "'Auditory capacities' refers to human biological hearing mechanisms that shape phonological feature perception."
+      },
+      {
+        "id": "ENG_CLOZE_137_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "variation",
+          "B": "stagnation",
+          "C": "extinction",
+          "D": "erasure"
+        },
+        "correct_option": "A",
+        "rationale": "'Typological variation' denotes the systematic structural diversity observed across world languages."
+      },
+      {
+        "id": "ENG_CLOZE_137_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "families",
+          "B": "anomalies",
+          "C": "isolates",
+          "D": "deficits"
+        },
+        "correct_option": "A",
+        "rationale": "'Language families' is the standard genealogical classification of related human languages."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_138",
+    "passage_title": "The Geophysics of Earth's Geomagnetic Dynamo",
+    "passage_text": "Earth's geomagnetic field shields the biosphere from lethal solar wind plasma and high-energy galactic cosmic radiation, preserving our atmospheric envelope. Because ferromagnetic minerals lose their permanent magnetism above the Curie point (approximately 580°C), crustal magnetization is far too weak to account for planetary field strength. Instead, the geomagnetic field is actively sustained by a self-exciting magneto-hydrodynamic geodynamo operating within the liquid iron-nickel outer core. The kinetic energy driving the geodynamo is generated by thermal and compositional (1) _________. As the solid inner core slowly solidifies, light elements (such as sulfur, silicon, and oxygen) are expelled into the outer core, driving buoyant fluid plumes upward toward the core-mantle boundary. Earth's rapid axial rotation imparts a powerful Coriolis force on these convective currents, organizing molten iron into helical, column-like convection rolls aligned parallel to the rotational axis. The helical motion of conductive molten metal shears and twists toroidal magnetic field lines into poloidal fields, inducing self-sustaining electrical (2) _________. Periodic convective instabilities within the turbulent outer core trigger chaotic disruptions, culminating in spontaneous geomagnetic polarity (3) _________ over geological (4) _________. Paleomagnetic records frozen in volcanic basalt confirm that Earth's magnetic poles have swapped orientation hundreds of times over the planet's (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_138_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "convection",
+          "B": "stagnation",
+          "C": "solidification",
+          "D": "sedimentation"
+        },
+        "correct_option": "A",
+        "rationale": "'Thermal and compositional convection' is the physical buoyancy-driven circulation powering the outer core dynamo."
+      },
+      {
+        "id": "ENG_CLOZE_138_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "currents",
+          "B": "barriers",
+          "C": "resistors",
+          "D": "insulators"
+        },
+        "correct_option": "A",
+        "rationale": "'Electrical currents' generated by the motion of conductive molten iron sustain the magnetic field via dynamo theory."
+      },
+      {
+        "id": "ENG_CLOZE_138_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "reversals",
+          "B": "preservations",
+          "C": "stagnations",
+          "D": "solidifications"
+        },
+        "correct_option": "A",
+        "rationale": "'Geomagnetic polarity reversals' refers to the flipping of magnetic north and south poles."
+      },
+      {
+        "id": "ENG_CLOZE_138_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "epochs",
+          "B": "seconds",
+          "C": "moments",
+          "D": "hours"
+        },
+        "correct_option": "A",
+        "rationale": "'Geological epochs' denotes vast timescales spanning hundreds of thousands to millions of years."
+      },
+      {
+        "id": "ENG_CLOZE_138_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "history",
+          "B": "demise",
+          "C": "extinction",
+          "D": "obsolescence"
+        },
+        "correct_option": "A",
+        "rationale": "'Planet's history' refers to Earth's chronological 4.5-billion-year existence."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_139",
+    "passage_title": "The Political Economy of Import Substitution Industrialization",
+    "passage_text": "Throughout the mid-twentieth century, numerous post-colonial developing economies in Latin America, Africa, and South Asia adopted Import Substitution Industrialization (ISI) as their primary economic development model. Influenced by structuralist economic theories formulated by Raúl Prebisch and Hans Singer, policymakers argued that peripheral nations were trapped in a structural decline in their terms of trade, exporting cheap primary commodities while importing expensive manufactured capital goods from industrialized centers. To dismantle this structural (1) _________, ISI advocated replacing manufactured imports with domestic industrial production through aggressive state intervention. Governments erected prohibitive protective tariffs, nationalized heavy manufacturing industries, and established subsidized credit lines for domestic industrial (2) _________. Initially, ISI catalyzed rapid industrialization and urban factory employment. However, protracted insulation from international competition fostered chronic operational inefficiencies, technological stagnation, and low product (3) _________. Domestic markets were often too small to achieve necessary economies of scale. Furthermore, high capital equipment import costs and neglected agricultural exports induced severe balance-of-payments deficits and structural (4) _________ debt crises. By the late twentieth century, structural exhaustion forced most developing economies to abandon ISI in favor of export-oriented trade (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_139_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "dependency",
+          "B": "autonomy",
+          "C": "parity",
+          "D": "equality"
+        },
+        "correct_option": "A",
+        "rationale": "'Structural dependency' is the core concept of Prebisch-Singer dependency theory describing economic vulnerability."
+      },
+      {
+        "id": "ENG_CLOZE_139_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "enterprises",
+          "B": "liabilities",
+          "C": "boycotts",
+          "D": "sanctions"
+        },
+        "correct_option": "A",
+        "rationale": "'Industrial enterprises' refers to state-backed commercial manufacturing companies and factories."
+      },
+      {
+        "id": "ENG_CLOZE_139_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "quality",
+          "B": "scarcity",
+          "C": "deficit",
+          "D": "decay"
+        },
+        "correct_option": "A",
+        "rationale": "'Product quality' suffered because protected domestic firms faced no competitive pressure to improve goods."
+      },
+      {
+        "id": "ENG_CLOZE_139_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "sovereign",
+          "B": "charitable",
+          "C": "voluntary",
+          "D": "gratuitous"
+        },
+        "correct_option": "A",
+        "rationale": "'Sovereign debt crises' refers to state governments defaulting on foreign commercial loans."
+      },
+      {
+        "id": "ENG_CLOZE_139_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "liberalization",
+          "B": "isolation",
+          "C": "prohibition",
+          "D": "embargo"
+        },
+        "correct_option": "A",
+        "rationale": "'Trade liberalization' denotes opening domestic markets to foreign trade and free competition."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_140",
+    "passage_title": "The Quantum Optics of Laser Physics and Population Inversion",
+    "passage_text": "The operational physics of the laser (Light Amplification by Stimulated Emission of Radiation) represents a fundamental practical application of quantum mechanics. In a typical atomic medium in thermodynamic equilibrium, the distribution of electrons across quantized energy levels obeys Boltzmann statistics, wherein lower energy states are far more heavily populated than excited states. Lasing cannot occur under equilibrium conditions because spontaneous absorption would immediately attenuate any propagating photon beam. To achieve coherent optical amplification, an external energy source—such as optical flashlamps or electrical discharge—must be applied to create a non-equilibrium state termed 'population (1) _________', where a higher energy state contains more electrons than the lower energy state. When an incident photon whose energy precisely matches the atomic transition ($\Delta E = h\nu$) interacts with an excited electron, it induces 'stimulated emission'. The electron drops to the lower state, emitting a second photon that is identical in energy, frequency, phase, polarization, and propagation (2) _________. Enclosing the gain medium within an optical resonator cavity consisting of two parallel mirrors initiates a photonic feedback loop. Photons bounce back and forth, multiplying through a sustained cascade of stimulated emissions until a coherent, monochromatic, and collimated laser beam emerges through the partially reflective output (3) _________. Lasers serve as indispensable instruments across optical fiber telecommunications, precision laser surgery, and semiconductor (4) _________ lithography (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_140_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "inversion",
+          "B": "depletion",
+          "C": "stagnation",
+          "D": "decay"
+        },
+        "correct_option": "A",
+        "rationale": "'Population inversion' is the mandatory non-equilibrium condition where more atoms reside in excited states than ground states."
+      },
+      {
+        "id": "ENG_CLOZE_140_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "direction",
+          "B": "friction",
+          "C": "decay",
+          "D": "resistance"
+        },
+        "correct_option": "A",
+        "rationale": "'Propagation direction' is identical for photons generated through stimulated emission, creating a collimated beam."
+      },
+      {
+        "id": "ENG_CLOZE_140_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "coupler",
+          "B": "absorber",
+          "C": "insulator",
+          "D": "resistor"
+        },
+        "correct_option": "A",
+        "rationale": "'Output coupler' is the technical term for the partially transmitting mirror through which the laser beam exits."
+      },
+      {
+        "id": "ENG_CLOZE_140_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "microchip",
+          "B": "agriculture",
+          "C": "textile",
+          "D": "timber"
+        },
+        "correct_option": "A",
+        "rationale": "'Microchip lithography' refers to extreme ultraviolet and deep-UV laser manufacturing of silicon computer chips."
+      },
+      {
+        "id": "ENG_CLOZE_140_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "processes",
+          "B": "defects",
+          "C": "failures",
+          "D": "impediments"
+        },
+        "correct_option": "A",
+        "rationale": "'Lithography processes' refers to industrial optical fabrication workflows used to etch silicon wafers."
+      }
+    ]
+  }
+]

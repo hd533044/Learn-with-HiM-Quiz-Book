@@ -18,7 +18,7 @@ from app.database import (
     get_pending_announcements_list, get_sent_announcements_list, get_announcement_by_id,
     delete_scheduled_announcement, get_broadcast_deliveries, get_blocked_bot_users,
     create_flash_sale, get_active_flash_sale, stop_active_flash_sale, calculate_discounted_price,
-    recalculate_and_restore_user_plans
+    recalculate_and_restore_user_plans, get_total_platform_likes
 )
 from app.pdf_generator import generate_student_pdf_report
 from app.stats import get_user_performance_summary, calculate_user_rank, calculate_user_percentile
@@ -489,6 +489,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         return
 
     users = get_all_users()
+    total_likes = get_total_platform_likes()
     
     paid_count = 0
     demo_count = 0
@@ -522,6 +523,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         f"👑 **MASTER ADMIN PORTAL — Himanshu Sir (/him)** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📊 **Total Registered Students:** `{len(users)}`\n"
+        f"❤️ **Live Platform Likes:** `{total_likes}` Likes\n"
         f"🟢 **Paid VIP Users:** `{paid_count}`\n"
         f"🎁 **Free / Demo Users:** `{demo_count}`\n"
         f"⚡ **Online Users (15m):** `{len(online_15m)}`\n"
@@ -1390,6 +1392,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.execute("SELECT COUNT(*) as count FROM users")
         reg_count = cursor.fetchone()['count']
 
+        cursor.execute("SELECT COUNT(*) as count FROM platform_likes")
+        total_likes_count = cursor.fetchone()['count']
+
         cursor.execute("""
             SELECT pt.amount_paid, pt.plan_name, pt.created_at, u.full_name, u.student_id, u.user_id
             FROM payment_transactions pt
@@ -1485,6 +1490,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Total Questions Solved Today:** `{quiz_today_stats['total_qs_today']} Questions`\n\n"
             f"👥 **PLATFORM HEALTH METRICS:**\n"
             f"• **Total Registered Students:** `{reg_count}`\n"
+            f"• **Platform Community Likes:** `{total_likes_count}` ❤️\n"
             f"• **Active in Last 15 Mins:** `{len(online_15m)} Students`\n"
             f"• **Unread Support Queries:** `{pending_queries}`\n"
             f"• **Blocked Users:** `{blocked_count}`\n"
@@ -1849,8 +1855,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             await query.edit_message_text("⚠️ Announcement record not found.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to List", callback_data="admin_list_pending_annc_0")]]))
             return
 
-        scheduled_str = a['scheduled_time'].strftime("%d %b %Y, %I:%M %p IST")
-        txt_display = a['message_text'] or "*(No Text / Media Only)*"
+        scheduled_str = a['scheduled_time'].strftime("%d %b %Y, %I:%M %p IST") if a else "N/A"
+        txt_display = a['message_text'] or "*(No Text / Media Only)*" if a else "N/A"
 
         msg = (
             f"📌 **SCHEDULED POST INSPECTION (ID #{a['id']})**\n"
@@ -1944,9 +1950,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"⏰ **Sent At:** `{sent_time_str}`\n"
             f"👥 **Delivered Chats:** `{len(deliveries)} Students`\n"
-            f"📝 **Media:** `{a.get('media_type', 'TEXT').upper()}`\n\n"
+            f"📝 **Media:** `{a.get('media_type', 'TEXT').upper() if a else 'TEXT'}`\n\n"
             f"📄 **Message Content:**\n"
-            f"{a.get('message_text', 'N/A')}\n"
+            f"{a.get('message_text', 'N/A') if a else 'N/A'}\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"⚡ *Fast concurrent actions will instantly affect messages inside users' personal Telegram chats:*"
         )

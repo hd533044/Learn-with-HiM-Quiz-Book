@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0701",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Slap on the wrist**",
+    "options": {
+      "A": "A very mild reprimand, penalty, or punishment for a misdemeanor",
+      "B": "A physical assault in a street fight",
+      "C": "A medical wrist fracture treatment",
+      "D": "A congratulatory handshake gesture"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'slap on the wrist' represents a very lenient punishment for an offense.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0702",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sleep like a log**",
+    "options": {
+      "A": "To sleep very soundly, deeply, and peacefully without waking",
+      "B": "To suffer from chronic insomnia",
+      "C": "To lie stiffly on a wooden bed",
+      "D": "To snore loudly in an armchair"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'sleep like a log' means enjoying deep, undisturbed sleep.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0703",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Slip of the tongue**",
+    "options": {
+      "A": "An accidental verbal mistake or inadvertent slip in speech",
+      "B": "A medical throat injury or soreness",
+      "C": "A tasting error while cooking food",
+      "D": "Speaking with a foreign accent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'slip of the tongue' occurs when you accidentally say something unintended.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0704",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Slow coach**",
+    "options": {
+      "A": "A sluggish, slow-moving person who takes too long to do things",
+      "B": "A delayed public bus service",
+      "C": "A historical railway carriage",
+      "D": "An athletic marathon runner"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'slow coach' is an indolent or sluggish person.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0705",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Smell a rat**",
+    "options": {
+      "A": "To suspect deceit, trickery, or that something is wrong",
+      "B": "To detect a bad odor in a kitchen",
+      "C": "To hunt rodents in a basement",
+      "D": "To own a pet animal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'smell a rat' means suspecting that something is suspicious or dishonest.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0706",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Smooth sailing**",
+    "options": {
+      "A": "A smooth, trouble-free progression of events without difficulties",
+      "B": "Sailing a boat on calm ocean waters",
+      "C": "A relaxing vacation cruise trip",
+      "D": "Easy weather forecasting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Smooth sailing' describes a situation progressing effortlessly without obstacles.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0707",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Snake in the grass**",
+    "options": {
+      "A": "A treacherous, hidden enemy who pretends to be a friend",
+      "B": "A harmless reptile in a garden",
+      "C": "A poisonous viper in jungles",
+      "D": "A gardener cutting lawn grass"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'snake in the grass' refers to a treacherous, hidden traitor.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0708",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Snug as a bug in a rug**",
+    "options": {
+      "A": "Extremely comfortable, cozy, and warm in bed or shelter",
+      "B": "An insect infestation in carpeting",
+      "C": "Suffering from a bug illness",
+      "D": "Trapped in a tight space"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'snug as a bug in a rug' means feeling very cozy and warm.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0709",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Soft option**",
+    "options": {
+      "A": "An easy alternative or choice involving minimal hardship",
+      "B": "A cushioned living room chair",
+      "C": "A difficult academic challenge",
+      "D": "A flexible business agreement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'soft option' is an easy choice with no heavy demands.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0710",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Soiled dove**",
+    "options": {
+      "A": "A prostitute or fallen woman",
+      "B": "A dirty white bird in mud",
+      "C": "An injured pet pigeon",
+      "D": "A stained clothing item"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'soiled dove' is an archaic term for a prostitute.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0711",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Solid as a rock**",
+    "options": {
+      "A": "Extremely dependable, strong, stable, and unwavering",
+      "B": "Made of hard geological stone",
+      "C": "Heavy physical weight",
+      "D": "Brittle and fragile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'solid as a rock' describes unwavering stability and strength.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0712",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Spill the beans**",
+    "options": {
+      "A": "To reveal a secret or confidential information unintentionally",
+      "B": "To drop grocery packages on floors",
+      "C": "To cook dinner meals",
+      "D": "To sort grain seeds by size"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'spill the beans' means giving away a secret.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0713",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Spin your wheels**",
+    "options": {
+      "A": "To waste effort and time on an activity without making any progress",
+      "B": "To drive a car on icy roads",
+      "C": "To repair bicycle machinery",
+      "D": "To win a motor racing contest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'spin your wheels' means working hard without advancing.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0714",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Spit and polish**",
+    "options": {
+      "A": "Rigorous military inspection preparation, cleaning, and neatness",
+      "B": "Shoe cleaning supplies",
+      "C": "Bad manners in public",
+      "D": "Casual home maintenance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Spit and polish' refers to meticulous military cleaning and smartness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0715",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Split hairs**",
+    "options": {
+      "A": "To make petty, insignificant distinctions in arguments",
+      "B": "To cut hair at a salon",
+      "C": "To style hair with gel",
+      "D": "To groom pets carefully"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'split hairs' means arguing over trivial, unimportant details.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0716",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Spread your wings**",
+    "options": {
+      "A": "To try new activities, gain independence, and explore your potential",
+      "B": "To fly like a bird in the sky",
+      "C": "To stretch arms during exercise",
+      "D": "To design aircraft wings"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'spread your wings' means expanding horizons and gaining independence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0717",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Square deal**",
+    "options": {
+      "A": "A fair, honest, and equitable business transaction",
+      "B": "A card game played in circles",
+      "C": "A fraudulent financial scam",
+      "D": "A geometric shape drawing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'square deal' represents a fair and honest bargain.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0718",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Square peg in a round hole**",
+    "options": {
+      "A": "A misfit who does not fit into a particular job, group, or environment",
+      "B": "A puzzle toy with geometric pieces",
+      "C": "A carpentry construction error",
+      "D": "A well-suited team member"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'square peg in a round hole' is a misfit in a given role.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0719",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Stab in the back**",
+    "options": {
+      "A": "To betray someone who trusts you treacherously",
+      "B": "A physical knife injury in fights",
+      "C": "A medical back surgery procedure",
+      "D": "An accidental physical collision"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'stab someone in the back' means committing a cowardly betrayal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0720",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Stand your ground**",
+    "options": {
+      "A": "To maintain your position resolutely and refuse to yield under pressure",
+      "B": "To stand still on a lawn",
+      "C": "To buy land property",
+      "D": "To surrender to enemies"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'stand your ground' means refusing to back down.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0721",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Steal the show**",
+    "options": {
+      "A": "To attract all the attention and praise, outshining other performers",
+      "B": "To rob a theater box office",
+      "C": "To disrupt a stage performance",
+      "D": "To cancel a concert event"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'steal the show' means capturing everyone's applause and attention.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0722",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Steep learning curve**",
+    "options": {
+      "A": "A process where something is difficult to learn initially and requires hard effort",
+      "B": "A math geometry graph line",
+      "C": "An easy school curriculum",
+      "D": "A fast educational training"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'steep learning curve' represents a hard and demanding learning process.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0723",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Stick to your guns**",
+    "options": {
+      "A": "To refuse to change your opinion or plan despite opposition",
+      "B": "To clean firearms regularly",
+      "C": "To hunt wild animals",
+      "D": "To surrender weapons to police"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'stick to your guns' means maintaining resolute firmness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0724",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Stiff upper lip**",
+    "options": {
+      "A": "Displaying courage and emotional restraint during adversity",
+      "B": "Applying facial cosmetics stiffly",
+      "C": "Suffering from jaw stiffness",
+      "D": "Smiling insincerely"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Keeping a 'stiff upper lip' means showing resilience under pressure.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0725",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Stole a march**",
+    "options": {
+      "A": "To gain an advantage secretly or ahead of a competitor",
+      "B": "To participate in military parades",
+      "C": "To steal musical band instruments",
+      "D": "To march in protest rallies"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'steal a march' means gaining a covert advantage.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0726",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Stone's throw**",
+    "options": {
+      "A": "A very short distance away",
+      "B": "Throwing rocks at targets",
+      "C": "A quarry mining site",
+      "D": "A long journey across towns"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being a 'stone's throw' away means being very close by.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0727",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Storm in a teacup**",
+    "options": {
+      "A": "A major fuss or commotion over a trivial, unimportant matter",
+      "B": "A violent sea storm damaging ships",
+      "C": "A hot beverage spill in kitchens",
+      "D": "A weather forecasting error"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'storm in a teacup' is exaggerated outrage over minor details.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0728",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Straight from the horse's mouth**",
+    "options": {
+      "A": "From a reliable, authoritative, or direct primary source",
+      "B": "From an animal vet trainer",
+      "C": "From a deceptive street rumor",
+      "D": "From a veterinary textbook"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Information straight from the horse's mouth is direct from the source.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0729",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Strain every nerve**",
+    "options": {
+      "A": "To make the utmost effort and strive as hard as possible",
+      "B": "To experience a medical panic attack",
+      "C": "To relax in a spa resort",
+      "D": "To injure physical muscles"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'strain every nerve' means deploying maximum effort.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0730",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Straw poll**",
+    "options": {
+      "A": "An unofficial preliminary vote taken to test public opinion",
+      "B": "A farming harvest survey",
+      "C": "A ballot election in court",
+      "D": "A straw hat fashion trend"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'straw poll' is an informal vote used to gauge opinion trends.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0731",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Street smarts**",
+    "options": {
+      "A": "Practical, worldly experience and common sense needed to survive in urban environments",
+      "B": "Academic intelligence from books",
+      "C": "Knowledge of city traffic maps",
+      "D": "Fashion style trends"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Street smarts' refers to practical worldly wisdom.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0732",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Stretch a point**",
+    "options": {
+      "A": "To make a special allowance, bend the rules, or exaggerate slightly",
+      "B": "To lengthen a piece of string",
+      "C": "To exercise physical muscles",
+      "D": "To sharpen pencil tips"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'stretch a point' means making a concession or slight exaggeration.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0733",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Strike a chord**",
+    "options": {
+      "A": "To awaken a sympathetic, emotional, or familiar response in someone",
+      "B": "To play musical guitar notes",
+      "C": "To hit bells with mallets",
+      "D": "To tune piano strings"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'strike a chord' means resonating with someone's feelings or memories.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0734",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Strike while the iron is hot**",
+    "options": {
+      "A": "To act promptly and seize a favorable opportunity immediately",
+      "B": "To forge metal in a blacksmith shop",
+      "C": "To iron clothes quickly",
+      "D": "To cook food over hot fire"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Strike while the iron is hot' means taking advantage of good timing without delay.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0735",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Stumbling block**",
+    "options": {
+      "A": "An obstacle, hindrance, or difficulty obstructing progress",
+      "B": "A paving stone on sidewalks",
+      "C": "A heavy gym weight",
+      "D": "A foundation building stone"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'stumbling block' represents an obstacle to progress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0736",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Such is life**",
+    "options": {
+      "A": "An expression used to accept disappointing or inevitable misfortunes philosophically",
+      "B": "A biological textbook statement",
+      "C": "A joyful celebration of birthday",
+      "D": "An exciting adventure story"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Such is life' expresses philosophical resignation to troubles.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0737",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Swan song**",
+    "options": {
+      "A": "A final performance, speech, or work before retirement or death",
+      "B": "A bird melody in trees",
+      "C": "A cheerful morning greeting",
+      "D": "A traditional folk tune"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'swan song' is a final farewell masterpiece.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0738",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Swap horses in midstream**",
+    "options": {
+      "A": "To change leaders, plans, or strategy in the middle of a critical undertaking",
+      "B": "To cross rivers on horseback",
+      "C": "To trade livestock at markets",
+      "D": "To ride animals across water"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Swapping horses in midstream is changing plans dangerously during a crisis.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0739",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sweep under the rug**",
+    "options": {
+      "A": "To conceal, ignore, or hush up a scandal or problem rather than solve it",
+      "B": "To clean dusty carpets",
+      "C": "To hide money under furniture",
+      "D": "To redecorate rooms"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'sweep under the rug' means hiding an unpleasant problem.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0740",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sweet tooth**",
+    "options": {
+      "A": "A great fondness or craving for sugary foods and confectionery",
+      "B": "A dental cavity pain",
+      "C": "A toothbrush brand",
+      "D": "A sweet smile expression"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having a 'sweet tooth' means loving sugary foods.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0741",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Swim against the tide**",
+    "options": {
+      "A": "To oppose popular opinion, trends, or prevailing customs",
+      "B": "To swim in ocean currents",
+      "C": "A water sports competition",
+      "D": "Floating downstream easily"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'swim against the tide' means going against prevailing trends.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0742",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tail between your legs**",
+    "options": {
+      "A": "Showing cowardice, humiliation, or submission after a defeat",
+      "B": "A dog running in parks",
+      "C": "Wearing long trousers",
+      "D": "Sitting down to rest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Leaving with your 'tail between your legs' means slinking away in defeat.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0743",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take a leaf out of someone's book**",
+    "options": {
+      "A": "To imitate, copy, or follow someone's good example or behavior",
+      "B": "To steal library books",
+      "C": "To read novel chapters",
+      "D": "To tear notebook pages"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take a leaf out of someone's book' means emulating their actions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0744",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take a powder**",
+    "options": {
+      "A": "To leave a place hurriedly or disappear suddenly",
+      "B": "To take medical medicine pills",
+      "C": "To apply face makeup powder",
+      "D": "To dust furniture surfaces"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take a powder' means departing in a hurry.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0745",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take by storm**",
+    "options": {
+      "A": "To captivate, impress, or win over an audience rapidly and overwhelmingly",
+      "B": "To capture a fort in hurricanes",
+      "C": "To experience bad weather",
+      "D": "To launch military raids"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take by storm' means overwhelming with sudden success.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0746",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take exception to**",
+    "options": {
+      "A": "To take offense at, object to, or protest against something",
+      "B": "To make general rules exceptions",
+      "C": "To accept terms gladly",
+      "D": "To celebrate special days"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take exception to' means objecting or taking offense.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0747",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take heart**",
+    "options": {
+      "A": "To gain courage, hope, or confidence in difficult times",
+      "B": "To undergo cardiac surgery",
+      "C": "To fall deeply in love",
+      "D": "To feel depressed and hopeless"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take heart' means feeling encouraged and brave.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0748",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take it easy**",
+    "options": {
+      "A": "To relax, rest, and not work too hard or stress",
+      "B": "To complete tasks with difficulty",
+      "C": "To move at high speeds",
+      "D": "To worry constantly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take it easy' means relaxing and resting.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0749",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take the bull by the horns**",
+    "options": {
+      "A": "To face a difficult or dangerous problem boldly and directly",
+      "B": "To wrestle cattle on a farm",
+      "C": "To provoke wild animals",
+      "D": "To escape from threats"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take the bull by the horns' means confronting a crisis head-on.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0750",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take the cake**",
+    "options": {
+      "A": "To be the most remarkable, extreme, or outrageous example of something",
+      "B": "To win a baking competition prize",
+      "C": "To eat birthday cake slices",
+      "D": "To steal desserts from a bakery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take the cake' means being the ultimate or most extreme example.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

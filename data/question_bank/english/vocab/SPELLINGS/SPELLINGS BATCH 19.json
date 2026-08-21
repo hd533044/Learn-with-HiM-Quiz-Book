@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_0901",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Calumnious",
+      "B": "Calumnus",
+      "C": "Calumneous",
+      "D": "Calumnyous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Calumnious' - false and defamatory; slanderous; 'c-a-l-u-m-n-i-o-u-s'). Options B, C, and D alter the vowel positions or truncate the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0902",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Camaraderie",
+      "B": "Campanology",
+      "C": "Canaliculate",
+      "D": "Cancillation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cancellation' (double 'l', spelled with 'e', 'c-a-n-c-e-l-l-a-t-i-o-n' - the action of canceling something). Other options are correct: Camaraderie (mutual trust and friendship among people), Campanology (the art or practice of bell-ringing), Canaliculate (having a small channel or groove).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0903",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Candelabrum",
+      "B": "Candelabram",
+      "C": "Candelabrumm",
+      "D": "Candilubrum"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Candelabrum' - a large branched candlestick or holder for several candles; 'c-a-n-d-e-l-a-b-r-u-m'). Options B, C, and D alter connecting vowels or duplicate consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0904",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Cannibalism",
+      "B": "Canonization",
+      "C": "Cantabile",
+      "D": "Cantankerousnesss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cantankerousness' (double 's', not triple 's' - the quality of being bad-tempered, argumentative, and uncooperative). Other options are correct: Cannibalism (the practice of eating the flesh of one's own species), Canonization (the official admission of a dead person into sainthood), Cantabile (in a smooth singing style).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0905",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Capacious",
+      "B": "Capatious",
+      "C": "Capaceous",
+      "D": "Capashus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Capacious' - having a lot of space inside; roomy; 'c-a-p-a-c-i-o-u-s'). Options B, C, and D are faulty phonetic transcriptions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0906",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Capillary",
+      "B": "Capitalization",
+      "C": "Capitulation",
+      "D": "Caprisious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Capricious' (spelled with 'c', not 's' - given to sudden and unaccountable changes of mood or behavior). Other options are correct: Capillary (any of the fine branching blood vessels that form a network between the arterioles and venules), Capitalization (the provision of capital for a company), Capitulation (the action of surrendering or ceasing to resist).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0907",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Caprice",
+      "B": "Caprise",
+      "C": "Capreece",
+      "D": "Capriec"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Caprice' - a sudden and unaccountable change of mood or behavior; 'c-a-p-r-i-c-e'). Options B, C, and D alter the terminal consonants or vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0908",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Carbohydrate",
+      "B": "Carboniferous",
+      "C": "Carcinogen",
+      "D": "Cardiografic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cardiographic' (spelled with 'ph', not 'f' - relating to a cardiograph or recording of heart movements). Other options are correct: Carbohydrate (large group of organic compounds including sugars and starches), Carboniferous (relating to or denoting the carboniferous geological period), Carcinogen (a substance capable of causing cancer in living tissue).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0909",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Carillon",
+      "B": "Carilon",
+      "C": "Carillan",
+      "D": "Carrillon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Carillon' - a set of bells in a tower, played using a keyboard or by an automatic mechanism; single 'r', double 'l', 'c-a-r-i-l-l-o-n'). Options B, C, and D drop 'l', alter vowels, or double 'r'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0910",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Carnage",
+      "B": "Carnal",
+      "C": "Carnelian",
+      "D": "Carnivorusly"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Carnivorously' (contains '-or-ous-ly', not '-or-us-ly' - in a carnivorous or flesh-eating manner). Other options are correct: Carnage (the killing of a large number of people), Carnal (relating to physical, especially sexual, needs and activities), Carnelian (a semi-precious stone consisting of an orange or red variety of chalcedony).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0911",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Cartilage",
+      "B": "Cartilege",
+      "C": "Cartalage",
+      "D": "Cartiledge"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Cartilage' - firm, flexible connective tissue; 'c-a-r-t-i-l-a-g-e'). Options B, C, and D alter connecting vowels or insert 'd'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0912",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Cartographer",
+      "B": "Cartomancy",
+      "C": "Castellan",
+      "D": "Castagatory"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Castigatory' (spelled with '-ti-', not '-ta-' - punishing or reprimanding severely). Other options are correct: Cartographer (a person who draws or produces maps), Cartomancy (fortune-telling using playing cards), Castellan (the governor of a castle).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0913",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Catachresis",
+      "B": "Catacresis",
+      "C": "Catachresys",
+      "D": "Catachrecis"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Catachresis' - the use of a word in a way that is not correct; 'c-a-t-a-c-h-r-e-s-i-s'). Options B, C, and D drop 'h' or corrupt the terminal Greek suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0914",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Catalysis",
+      "B": "Catamaran",
+      "C": "Catapult",
+      "D": "Catarrhal"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correctly spelt here ('Catarrhal' - relating to catarrh; double 'r', 'c-a-t-a-r-r-h-a-l'). In test variants, it is often miswritten as 'Catarhal' (dropping an 'r'). Other options are correct: Catalysis (the acceleration of a chemical reaction by a catalyst), Catamaran (a yacht or other boat with twin hulls in parallel), Catapult (a device in which tension is released to propel missiles).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0915",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Catchphrase",
+      "B": "Catchfrase",
+      "C": "Catchphraze",
+      "D": "Cachphrase"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Catchphrase' - a well-known sentence or phrase, especially one associated with a particular person; 'c-a-t-c-h-p-h-r-a-s-e'). Options B, C, and D alter 'ph' or drop 't'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0916",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Categorization",
+      "B": "Caterwaul",
+      "C": "Catheter",
+      "D": "Catholisesm"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Catholicism' (spelled with 'c', not 's', 'C-a-t-h-o-l-i-c-i-s-m' - the faith, practice, and order of the Roman Catholic Church). Other options are correct: Categorization (the action or process of placing in classes or categories), Caterwaul (make a shrill howling or wailing noise like a cat), Catheter (a flexible tube inserted through a narrow opening into a body cavity).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0917",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Cauliflower",
+      "B": "Coliflower",
+      "C": "Cauliflouer",
+      "D": "Caulleflower"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Cauliflower' - a cabbage of a variety which bears a large immature flower head; 'c-a-u-l-i-f-l-o-w-e-r'). Options B, C, and D alter the diphthongs or double 'l'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0918",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Caustic",
+      "B": "Cauterization",
+      "C": "Cautionary",
+      "D": "Cavalcadee"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cavalcade' (ends in single 'e' - a formal procession of people walking, on horseback, or riding in vehicles). Other options are correct: Caustic (able to burn or corrode organic tissue by chemical action / sarcastic in a scathing way), Cauterization (the burning of the skin or flesh of a wound with a heated instrument), Cautionary (serving as a warning).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0919",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Caveat",
+      "B": "Caveit",
+      "C": "Caviat",
+      "D": "Cavaet"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Caveat' - a warning or proviso of specific stipulations, conditions, or limitations; 'c-a-v-e-a-t'). Options B, C, and D alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0920",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Cavernous",
+      "B": "Cavitation",
+      "C": "Ceasefire",
+      "D": "Ceaselessley"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ceaselessly' (spelled '-ly', not '-ley' - continuously and without stopping). Other options are correct: Cavernous (like a cavern in size, shape, or atmosphere; vast and dark), Cavitation (the formation of bubbles in a liquid), Ceasefire (a temporary suspension of fighting).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0921",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Celibacy",
+      "B": "Celebacy",
+      "C": "Celibasy",
+      "D": "Cellebacy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Celibacy' - the state of abstaining from marriage and sexual relations; single 'l', 'c-e-l-i-b-a-c-y'). Options B, C, and D alter vowels, double 'l', or replace 'c' with 's'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0922",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Cellular",
+      "B": "Cenotaph",
+      "C": "Censorious",
+      "D": "Centenarienn"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Centenarian' (ends in '-arian' with single 'n' - a person who is a hundred or more years old). Other options are correct: Cellular (relating to or consisting of living cells), Cenotaph (a monument to someone buried elsewhere, especially one commemorating soldiers killed in a war), Censorious (severely critical of others).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0923",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Centripetal",
+      "B": "Centrapetal",
+      "C": "Centripital",
+      "D": "Centripetle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Centripetal' - moving or tending to move toward a center; 'c-e-n-t-r-i-p-e-t-a-l'). Options B, C, and D alter connecting or suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0924",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Cephalopod",
+      "B": "Ceramicist",
+      "C": "Cerebellar",
+      "D": "Cerebrasion"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cerebration' (spelled with '-tion', not '-sion' - the working of the brain; thinking). Other options are correct: Cephalopod (an active predatory mollusk such as an octopus or squid), Ceramicist (a person who makes ceramics), Cerebellar (relating to the cerebellum).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0925",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Ceremoniously",
+      "B": "Cerimoniously",
+      "C": "Ceremoneously",
+      "D": "Ceremonusly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Ceremoniously' - with great formality; 'c-e-r-e-m-o-n-i-o-u-s-l-y'). Options B, C, and D alter connecting vowels or drop suffix letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0926",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Certifiable",
+      "B": "Certification",
+      "C": "Certitude",
+      "D": "Ceruleann"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cerulean' (ends in single 'n' - deep blue in color like a clear sky). Other options are correct: Certifiable (able to be officially certified), Certification (the action or process of providing someone or something with an official document attesting to a status or level of achievement), Certitude (absolute certainty or conviction that something is the case).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0927",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Cervical",
+      "B": "Cervecal",
+      "C": "Cervicle",
+      "D": "Cervycal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Cervical' - relating to the neck or to the cervix of the uterus; 'c-e-r-v-i-c-a-l'). Options B, C, and D alter suffix letters or connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0928",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Chaetopod",
+      "B": "Chamberlain",
+      "C": "Chameleon",
+      "D": "Chamelot"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Camelot' (the legendary site of King Arthur's palace and court) or 'Chameleon' (already listed correctly), whereas 'Chamelot' is invalid. Other options are correct: Chaetopod (an annelid worm of the group that includes earthworms), Chamberlain (an officer who manages the household of a monarch or noble), Chameleon (a small slow-moving lizard capable of changing color).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0929",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Champion",
+      "B": "Champian",
+      "C": "Champyen",
+      "D": "Champeon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Champion' - a person who has surpassed all rivals in a sporting contest; 'c-h-a-m-p-i-o-n'). Options B, C, and D alter the vowel suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0930",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Chancellor",
+      "B": "Chancery",
+      "C": "Chandelier",
+      "D": "Changable"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Changeable' (retains silent 'e' before '-able' to preserve soft 'g' sound - liable to change; erratic). Other options are correct: Chancellor (a senior state or legal official), Chancery (a division of the High Court of Justice in England), Chandelier (a large, decorative hanging light with branches for several light bulbs or candles).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0931",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Chaperone",
+      "B": "Chapperone",
+      "C": "Chaperon",
+      "D": "Chaperown"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Chaperone' - an older person who accompanies and looks after a younger person or group; single 'p', 'c-h-a-p-e-r-o-n-e'; 'chaperon' is an alternate form, but 'chaperone' is standard). Options B and D are erroneous variations.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0932",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Charismatic",
+      "B": "Charlatanism",
+      "C": "Chartered",
+      "D": "Charybdisy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Charybdis' (mythological sea monster / whirlpool, ends in '-is', no 'y'). Other options are correct: Charismatic (exercising a compelling charm which inspires devotion in others), Charlatanism (the practice of fraudulently claiming special skills), Chartered (qualified as a member of a professional body).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0933",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Chastisement",
+      "B": "Chastizement",
+      "C": "Chastismant",
+      "D": "Chastisementt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Chastisement' - the act of scolding or punishing someone; 'c-h-a-s-t-i-s-e-m-e-n-t'). Options B, C, and D alter the suffix consonants or vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0934",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Chattel",
+      "B": "Chauvinist",
+      "C": "Checkerboard",
+      "D": "Cheetahh"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cheetah' (ends in single 'h' - a large, slender spotted cat). Other options are correct: Chattel (a personal possession), Chauvinist (a person displaying excessive or aggressive patriotism/loyalty), Checkerboard (a board divided into squares of alternating colors).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0935",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Chemical",
+      "B": "Chemicel",
+      "C": "Chemeceal",
+      "D": "Chemikal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Chemical' - relating to chemistry or the interactions of substances; 'c-h-e-m-i-c-a-l'). Options B, C, and D alter suffix vowels or replace 'c' with 'k'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0936",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Chemotherapy",
+      "B": "Cherubic",
+      "C": "Chicanery",
+      "D": "Chieftancy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Chieftaincy' (spelled with '-tain-', not '-tan-' - the position or authority of a chieftain). Other options are correct: Chemotherapy (the treatment of disease by the use of chemical substances), Cherubic (having the childlike innocence or plump prettiness of a cherub), Chicanery (the use of trickery to achieve a political, financial, or legal purpose).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0937",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Chilblain",
+      "B": "Chillblain",
+      "C": "Chilblayn",
+      "D": "Chilblein"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Chilblain' - a painful, itching swelling on the skin, typically on a hand or foot, caused by exposure to cold; single 'l', 'c-h-i-l-b-l-a-i-n'). Options B, C, and D double 'l' or alter the diphthong.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0938",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Chimerical",
+      "B": "Chiropody",
+      "C": "Chiropractic",
+      "D": "Chivalrousnesss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Chivalrousness' (double 's', not triple 's' - the quality of being polite and kind towards women; gallantry). Other options are correct: Chimerical (existing only as the product of unchecked imagination; fanciful), Chiropody (the treatment of the feet and their ailments), Chiropractic (a system of complementary medicine based on the diagnosis and manipulative treatment of misalignments of the joints).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0939",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Chlorination",
+      "B": "Clorination",
+      "C": "Chlorinasion",
+      "D": "Chlorenation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Chlorination' - the process of adding chlorine to water as a method of water purification; 'c-h-l-o-r-i-n-a-t-i-o-n'). Options B, C, and D drop 'h', alter vowels, or corrupt the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0940",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Chlorophyll",
+      "B": "Cholera",
+      "C": "Cholesterol",
+      "D": "Choreografy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Choreography' (spelled with 'ph', not 'f' - the sequence of steps and movements in dance). Other options are correct: Chlorophyll (a green pigment present in all green plants), Cholera (an infectious and often fatal bacterial disease of the small intestine), Cholesterol (a compound of the sterol type found in most body tissues).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0941",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Chromatography",
+      "B": "Chromatograffy",
+      "C": "Chromatagrophy",
+      "D": "Cromatography"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Chromatography' - a laboratory technique for the separation of mixtures; 'c-h-r-o-m-a-t-o-g-r-a-p-h-y'). Options B, C, and D drop 'h', substitute 'ff', or alter connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0942",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Chronicler",
+      "B": "Chronology",
+      "C": "Chronometer",
+      "D": "Chrysantemum"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Chrysanthemum' (contains 'th', 'C-h-r-y-s-a-n-t-h-e-m-u-m' - a popular garden plant of the daisy family). Other options are correct: Chronicler (a person who writes accounts of important or historical events), Chronology (the arrangement of events or dates in the order of their occurrence), Chronometer (an instrument for measuring time accurately).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0943",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Churlish",
+      "B": "Cherlish",
+      "C": "Churllish",
+      "D": "Churlesh"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Churlish' - rude in a mean-spirited and surly way; single 'l', 'c-h-u-r-l-i-s-h'). Options B, C, and D alter vowel values or double 'l'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0944",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Cider",
+      "B": "Cinchona",
+      "C": "Cinnabar",
+      "D": "Cinnamonr"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cinnamon' (ends in '-on', no extra 'r' - an aromatic spice made from the peeled, dried, and rolled bark of a tree). Other options are correct: Cider (an alcoholic drink made from fermented apple juice), Cinchona (a South American tree whose bark yields quinine), Cinnabar (a bright red mineral consisting of mercuric sulfide).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0945",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Circuitous",
+      "B": "Circutous",
+      "C": "Circuitus",
+      "D": "Circuittous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Circuitous' - of a route or journey: longer than the most direct way; contains 'ui', 'c-i-r-c-u-i-t-o-u-s'). Options B, C, and D drop vowels or double 't'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0946",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Circularity",
+      "B": "Circumcision",
+      "C": "Circumference",
+      "D": "Circumlocusion"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Circumlocution' (spelled with '-tion', not '-sion' - the use of many words where fewer would do). Other options are correct: Circularity (the quality of being round or cyclical), Circumcision (the surgical removal of the foreskin), Circumference (the enclosing boundary of a curved geometric figure).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0947",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Circumscribe",
+      "B": "Circumskribe",
+      "C": "Circumscrybe",
+      "D": "Circumscrive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Circumscribe' - restrict something within limits; 'c-i-r-c-u-m-s-c-r-i-b-e'). Options B, C, and D replace 'c' with 'k' or alter the consonant stems.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0948",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Circumspection",
+      "B": "Circumstantial",
+      "C": "Circumvent",
+      "D": "Cirrhocis"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cirrhosis' (ends in '-sis', not '-cis' - a chronic disease of the liver marked by degeneration of cells). Other options are correct: Circumspection (the quality of being wary and unwilling to take risks), Circumstantial (pointing indirectly toward someone's guilt but not conclusively proving it), Circumvent (find a way around an obstacle).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0949",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Clairvoyant",
+      "B": "Clairvoyent",
+      "C": "Clarevoyant",
+      "D": "Clairvoyante"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Clairvoyant' - a person who claims to have a supernatural ability to perceive events in the future; ends in '-ant'). Options B, C, and D alter the vowel positions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0950",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Clamour",
+      "B": "Clandestine",
+      "C": "Clannish",
+      "D": "Clarifacation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Clarification' (spelled with '-fi-', not '-fa-' - the action of making certain that you understand something). Other options are correct: Clamour (a loud and confused noise, especially that of people shouting vehemently), Clandestine (kept secret or done secretively, especially because illicit), Clannish (tending to associate only with a select group of similar people).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0051",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Elbow room**",
+    "options": {
+      "A": "A physical injury sustained during work",
+      "B": "Sufficient space to move or work comfortably",
+      "C": "A private lounge in a restaurant",
+      "D": "Strict restrictions on movement"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Elbow room' means adequate space or freedom to move and operate effectively.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0052",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Every dog has its day**",
+    "options": {
+      "A": "Pets require daily exercise outdoors",
+      "B": "Everyone will eventually experience a period of success or good luck",
+      "C": "Animal rights must be protected strictly",
+      "D": "Wild animals are dangerous to humans"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Every dog has its day' means everyone gets their turn to be successful or fortunate.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0053",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Eye wash**",
+    "options": {
+      "A": "Medical eye drops for infections",
+      "B": "Clear and truthful evidence",
+      "C": "Insincere talk, nonsense, or deceptive pretense",
+      "D": "A cleansing routine before sleep"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Eye wash' refers to misleading propaganda, humbug, or deceptive talk meant to impress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0054",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Face the music**",
+    "options": {
+      "A": "To dance gracefully at a party",
+      "B": "To accept unpleasant consequences or criticism for one's actions",
+      "C": "To listen to classical concertos",
+      "D": "To change a career path suddenly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'face the music' means to confront the unpleasant results of one's misbehavior or mistakes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0055",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fair-weather friend**",
+    "options": {
+      "A": "A reliable companion during emergencies",
+      "B": "A meteorologist studying weather patterns",
+      "C": "A person who is only friendly when things are going well and abandons you in trouble",
+      "D": "Someone who enjoys outdoor sports"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. A 'fair-weather friend' is an unreliable friend who disappears during hardships.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0056",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fall back on**",
+    "options": {
+      "A": "To suffer a sudden injury while running",
+      "B": "To retreat from a battlefield",
+      "C": "To abandon an investment completely",
+      "D": "To use something as a reserve or backup plan in difficulty"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. To 'fall back on' means to turn to a resource or helper for emergency support.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0057",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Familiarity breeds contempt**",
+    "options": {
+      "A": "Knowing someone very well can lead to losing respect or finding flaws",
+      "B": "Close friendships bring lifelong happiness",
+      "C": "Family members always support each other",
+      "D": "Studying a subject creates expertise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. This idiom states that being too close or familiar with someone makes you notice flaws and lose respect.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0058",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Feather one's own nest**",
+    "options": {
+      "A": "To decorate a nursery room",
+      "B": "To make money dishonestly or selfishly using one's position",
+      "C": "To build a comfortable home in the country",
+      "D": "To knit warm winter blankets"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'feather one's own nest' means to enrich oneself unscrupulously using available power.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0059",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Few and far between**",
+    "options": {
+      "A": "Extremely frequent and abundant",
+      "B": "Located at precise distances",
+      "C": "Rare, scarce, or occurring infrequently",
+      "D": "Spotted easily in crowds"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Few and far between' describes things that are very rare or sparse.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0060",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fiddle while Rome burns**",
+    "options": {
+      "A": "To play musical instruments in a concert",
+      "B": "To focus on trivial matters while a major disaster or crisis is happening",
+      "C": "To start a fire accidentally in a historic city",
+      "D": "To extinguish flames bravely"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'fiddle while Rome burns' means to occupy oneself with trivialities during a catastrophe.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0061",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fish in troubled waters**",
+    "options": {
+      "A": "To catch rare species of fish in deep rivers",
+      "B": "To try to gain an advantage from a chaotic, difficult, or conflicted situation",
+      "C": "To swim safely during stormy weather",
+      "D": "To clean up a polluted lake"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'fish in troubled waters' means to take advantage of confusion or trouble for personal gain.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0062",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Flash in the pan**",
+    "options": {
+      "A": "A kitchen fire accident",
+      "B": "A brilliant cooking recipe",
+      "C": "A temporary success that is short-lived and not repeated",
+      "D": "A sudden camera flash"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. A 'flash in the pan' is something or someone that promises great success initially but fails quickly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0063",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Flesh and blood**",
+    "options": {
+      "A": "Human nature, mortal frailties, or close relatives",
+      "B": "A medical blood test result",
+      "C": "A dangerous surgical operation",
+      "D": "A fierce physical fight"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Flesh and blood' refers to human relatives or physical human nature with all its limitations.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0064",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fly in the ointment**",
+    "options": {
+      "A": "A medicinal ointment for insect bites",
+      "B": "A minor drawback, flaw, or nuisance that spoils an otherwise pleasant situation",
+      "C": "An insect infestation in a kitchen",
+      "D": "A fragrant perfume ingredient"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'fly in the ointment' is a small annoying detail that ruins a pleasant state of affairs.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0065",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fool's paradise**",
+    "options": {
+      "A": "A heavenly afterlife for fools",
+      "B": "A state of illusory happiness based on ignorance of real dangers",
+      "C": "A comedy theater performance",
+      "D": "An amusement park ride"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Living in a 'fool's paradise' means being happy due to ignorance of impending trouble.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0066",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Foot the bill**",
+    "options": {
+      "A": "To kick an invoice across a room",
+      "B": "To calculate numbers with your feet",
+      "C": "To pay for something; bear the expense",
+      "D": "To complain about high prices"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'foot the bill' means to settle or pay the financial cost of an expense.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0067",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Foul play**",
+    "options": {
+      "A": "Unfair or illegal behavior, especially murder or cheating",
+      "B": "A penalty in a football match",
+      "C": "Bad weather during an outdoor game",
+      "D": "A poorly acted theatrical play"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Foul play' denotes criminal activity, treachery, or murder.",
+    "tags": ["vocab", "ows", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0068",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**French leave**",
+    "options": {
+      "A": "An official vacation approved in France",
+      "B": "Leaving a place or gathering without permission, notice, or saying goodbye",
+      "C": "Learning a foreign language",
+      "D": "A military retreat strategy"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Taking 'French leave' means departing secretly or without authorization.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0069",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**From the horse's mouth**",
+    "options": {
+      "A": "From a reliable, authoritative, or direct source",
+      "B": "From an animal trainer",
+      "C": "From a deceptive rumor heard on the street",
+      "D": "From a veterinary medical textbook"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Information 'from the horse's mouth' comes directly from the primary source.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0070",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Gain ground**",
+    "options": {
+      "A": "To purchase real estate property",
+      "B": "To make progress, advance, or become more popular",
+      "C": "To lose footing on a slope",
+      "D": "To dig a trench in a garden"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'gain ground' means to advance, make headway, or grow in acceptance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0071",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get into hot water**",
+    "options": {
+      "A": "To take a relaxing hot bath",
+      "B": "To get into trouble, difficulty, or a quarrel",
+      "C": "To boil water for cooking tea",
+      "D": "To swim in a heated swimming pool"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'get into hot water' means to find oneself in trouble or facing disciplinary action.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0072",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get the sack**",
+    "options": {
+      "A": "To receive a promotion at work",
+      "B": "To be dismissed or fired from employment",
+      "C": "To pack luggage for a journey",
+      "D": "To purchase a leather bag"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'get the sack' means to lose one's job or be discharged.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0073",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Gird up the loins**",
+    "options": {
+      "A": "To loosen clothing for comfort",
+      "B": "To prepare oneself firmly and energetically for hard work or action",
+      "C": "To tie a belt around the waist loosely",
+      "D": "To rest after physical exhaustion"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'gird up one's loins' means to brace oneself for a challenging task.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0074",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give a wide berth**",
+    "options": {
+      "A": "To reserve a large cabin on a ship",
+      "B": "To stay away from someone or something; avoid",
+      "C": "To provide parking space for vehicles",
+      "D": "To welcome guests warmly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'give a wide berth' means to keep a safe distance from a person or hazard.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0075",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give up the ghost**",
+    "options": {
+      "A": "To stop trying, cease functioning, or die",
+      "B": "To believe in supernatural spirits",
+      "C": "To perform magic tricks on stage",
+      "D": "To scare children with costumes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'give up the ghost' means either dying or a machine stopping working permanently.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0076",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Palm of one's hand**",
+    "options": {
+      "A": "Under total control or influence",
+      "B": "Holding cash securely",
+      "C": "Suffering a hand injury",
+      "D": "Reading lines for fortune telling"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (In the palm of one's hand) means to have complete control over someone.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0077",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grease the palm**",
+    "options": {
+      "A": "To apply hand lotion for dryness",
+      "B": "To bribe someone secretly",
+      "C": "To massage tired muscles",
+      "D": "To perform manual labor"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'grease someone's palm' means to offer a bribe to secure a favor.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0078",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Green horn**",
+    "options": {
+      "A": "An inexperienced beginner or novice",
+      "B": "A rare plant species",
+      "C": "A musical instrument horn",
+      "D": "A jealous person"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'greenhorn' is an inexperienced, untrained newcomer.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0079",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grey matter**",
+    "options": {
+      "A": "Foggy weather conditions",
+      "B": "Intellect, brains, or common sense",
+      "C": "Old clothing fabric",
+      "D": "Concrete building material"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Grey matter' refers colloquially to intelligence and mental capacity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0080",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hair-breadth escape**",
+    "options": {
+      "A": "A narrow escape from danger or disaster",
+      "B": "A haircut gone wrong",
+      "C": "A fast-moving sporting event",
+      "D": "A tiny measurement tool"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'hairbreadth escape' is a very narrow escape from serious danger.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0081",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hand in glove**",
+    "options": {
+      "A": "Working in close partnership or collusion",
+      "B": "Dressed in formal winter wear",
+      "C": "Fighting bitterly with opponents",
+      "D": "Handling fragile objects carefully"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'hand in glove' means working very closely together, often secretly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0082",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hard nut to crack**",
+    "options": {
+      "A": "A tough nut snack",
+      "B": "A difficult problem or stubborn person to deal with",
+      "C": "A sturdy wooden box",
+      "D": "An easy academic question"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'hard nut to crack' is a difficult problem or an obstinate person.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0083",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Harp on**",
+    "options": {
+      "A": "To play a musical harp",
+      "B": "To talk or complain about something repeatedly and annoyingly",
+      "C": "To listen to gentle melodies",
+      "D": "To travel across country"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'harp on' means to dwell on a tiresome subject continuously.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0084",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hauled over the coals**",
+    "options": {
+      "A": "To be severely scolded, reprimanded, or criticized",
+      "B": "To warm up near a fireplace",
+      "C": "To work as a coal miner",
+      "D": "To transport fuel across town"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To be 'hauled over the coals' means to face sharp reprimand for a mistake.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0085",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Heart and soul**",
+    "options": {
+      "A": "With total commitment, enthusiasm, and devotion",
+      "B": "A medical anatomy lecture",
+      "C": "Only halfway interested",
+      "D": "Experiencing chest pain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Putting your 'heart and soul' into something means committing with utmost energy and passion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0086",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**High and dry**",
+    "options": {
+      "A": "Stranded, helpless, or abandoned in a difficult position",
+      "B": "Living in a desert climate",
+      "C": "Safe and secure at home",
+      "D": "Dressed in clean laundry"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Left 'high and dry' means abandoned in a helpless plight.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0087",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hobson's choice**",
+    "options": {
+      "A": "A free choice between many options",
+      "B": "No real choice at all; accepting what is offered or getting nothing",
+      "C": "An intelligent decision made after debate",
+      "D": "A legal voting ballot"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Hobson's choice' is a situation with no alternatives; take it or leave it.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0088",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hsh money**",
+    "options": {
+      "A": "Legal legal fees",
+      "B": "Payment made privately to someone to keep information secret or buy silence",
+      "C": "Charitable donations to the poor",
+      "D": "Pocket money for children"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Hush money' is a bribe given to suppress embarrassing or damaging information.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0089",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Ill wind**",
+    "options": {
+      "A": "A gentle summer breeze",
+      "B": "A storm that damages crops",
+      "C": "Something bad that happens and unexpectedly brings benefit to someone else",
+      "D": "Air pollution in cities"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. An 'ill wind' refers to misfortune that benefits someone else (as in 'an ill wind that blows nobody good').",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0090",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In a nutshell**",
+    "options": {
+      "A": "Hidden inside a nut shell",
+      "B": "Briefly, concisely, and in very few words",
+      "C": "Confused and complex",
+      "D": "Trapped in a tight space"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'In a nutshell' means summarizing something concisely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0091",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In black and white**",
+    "options": {
+      "A": "Printed clearly in writing or in print",
+      "B": "Filmed in old movie style",
+      "C": "Uncertain and vague",
+      "D": "Dressed in formal monochrome"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having something 'in black and white' means having it recorded officially in writing.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0092",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In cold blood**",
+    "options": {
+      "A": "Suffering from hypothermia",
+      "B": "Cruelly, deliberately, and without emotion or provocation",
+      "C": "During a medical operation",
+      "D": "Accidentally in self-defense"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Doing something 'in cold blood' means committing a brutal act ruthlessly and deliberately.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0093",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In full swing**",
+    "options": {
+      "A": "Playing on a playground swing",
+      "B": "At the peak of activity, progress, or operation",
+      "C": "Just starting slowly",
+      "D": "Ending abruptly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. When an event is 'in full swing', it is operating at its maximum lively pace.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0094",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In high spirits**",
+    "options": {
+      "A": "Feeling extremely cheerful, lively, and joyful",
+      "B": "Suffering from dizziness",
+      "C": "Under the influence of alcohol",
+      "D": "Feeling depressed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in high spirits' means being full of joy and enthusiasm.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0095",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the nick of time**",
+    "options": {
+      "A": "Just barely in time; right before it was too late",
+      "B": "Hours behind schedule",
+      "C": "At an unspecified future date",
+      "D": "Right at the beginning"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'In the nick of time' means happening at the very last possible moment.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0096",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Iron will**",
+    "options": {
+      "A": "A legal testament written on metal",
+      "B": "An unbreakable determination, willpower, and resolve",
+      "C": "Physical weakness",
+      "D": "A stubborn argument"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. An 'iron will' denotes extraordinary firmness of purpose and determination.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0097",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Ins and outs**",
+    "options": {
+      "A": "Entering and exiting a building",
+      "B": "The detailed complexities, facts, and intricacies of a situation",
+      "C": "Simple rules of a game",
+      "D": "Traffic flow directions"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Knowing the 'ins and outs' means understanding all the fine details and complexities of a matter.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0098",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Jump the gun**",
+    "options": {
+      "A": "To fire a weapon in panic",
+      "B": "To act prematurely or start doing something before the appropriate time",
+      "C": "To win a running race",
+      "D": "To escape from police capture"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'jump the gun' means acting too hastily before the proper time.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0099",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep at bay**",
+    "options": {
+      "A": "To dock a ship in a harbor",
+      "B": "To keep an enemy, problem, or danger at a distance",
+      "C": "To live near the ocean coast",
+      "D": "To welcome guests warmly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'keep at bay' means to prevent an enemy or hazard from coming close.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0100",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep body and soul together**",
+    "options": {
+      "A": "To practice yoga and meditation",
+      "B": "To earn just enough money to survive or stay alive",
+      "C": "To maintain a healthy marriage",
+      "D": "To stay calm during a crisis"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'keep body and soul together' means to manage bare survival with minimum resources.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

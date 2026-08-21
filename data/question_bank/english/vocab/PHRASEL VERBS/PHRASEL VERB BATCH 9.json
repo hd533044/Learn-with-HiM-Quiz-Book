@@ -1,0 +1,615 @@
+[
+  {
+    "id": "ENG_VOCAB_PHRA_2151",
+    "question": "What is the meaning of the phrasal verb 'clear up'?",
+    "options": {
+      "A": "To solve a mystery or make something understandable.",
+      "B": "To clean a room thoroughly.",
+      "C": "To leave a place quickly.",
+      "D": "To reject a suggestion."
+    },
+    "correct_option": "A",
+    "rationale": "'Clear up' means to resolve a problem, clarify a confusion, or (for weather) to become bright/sunny."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2152",
+    "question": "Fill in the blank: 'We need to _____ the confusion regarding the project deadline.'",
+    "options": {
+      "A": "clear up",
+      "B": "clear out",
+      "C": "clear away",
+      "D": "clear off"
+    },
+    "correct_option": "A",
+    "rationale": "'Clear up' means to clarify or resolve a misunderstanding."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2153",
+    "question": "Spot the error: 'The storm cleared up just in time for our picnic.'",
+    "options": {
+      "A": "The storm cleared up",
+      "B": "just in time",
+      "C": "for our picnic.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Clear up' is used correctly to describe weather improving. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2154",
+    "question": "What does 'clear out' mean?",
+    "options": {
+      "A": "To remove unwanted items or empty a place.",
+      "B": "To clarify a situation.",
+      "C": "To leave a meeting.",
+      "D": "To shout loudly."
+    },
+    "correct_option": "A",
+    "rationale": "'Clear out' means to empty a space of clutter or unwanted things."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2155",
+    "question": "Fill in the blank: 'I spent the entire weekend _____ the attic.'",
+    "options": {
+      "A": "clearing out",
+      "B": "clearing up",
+      "C": "clearing away",
+      "D": "clearing off"
+    },
+    "correct_option": "A",
+    "rationale": "'Clearing out' means emptying a space."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2156",
+    "question": "Choose the meaning of 'drop off':",
+    "options": {
+      "A": "To fall asleep or deliver/leave something/someone somewhere.",
+      "B": "To jump from a height.",
+      "C": "To decrease prices drastically.",
+      "D": "To reject an application."
+    },
+    "correct_option": "A",
+    "rationale": "'Drop off' has two main meanings: to fall asleep (drift off) or to transport/leave a passenger or item at a specific location."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2157",
+    "question": "Fill in the blank: 'Could you _____ me _____ at the train station on your way?'",
+    "options": {
+      "A": "drop/off",
+      "B": "drop/out",
+      "C": "drop/up",
+      "D": "drop/in"
+    },
+    "correct_option": "A",
+    "rationale": "'Drop off' is the correct phrasal verb for leaving someone at a destination."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2158",
+    "question": "Spot the error: 'I dropped off during the boring movie.'",
+    "options": {
+      "A": "I dropped off",
+      "B": "during the boring",
+      "C": "movie.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Dropped off' means fell asleep. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2159",
+    "question": "What does 'drop out' mean?",
+    "options": {
+      "A": "To quit a school, course, or group before completion.",
+      "B": "To fall from a high shelf.",
+      "C": "To lower one's voice.",
+      "D": "To decrease physical activity."
+    },
+    "correct_option": "A",
+    "rationale": "'Drop out' means withdrawing from an organized program or academic institution."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2160",
+    "question": "Fill in the blank: 'He _____ of college to pursue a career in music.'",
+    "options": {
+      "A": "dropped out",
+      "B": "dropped off",
+      "C": "dropped in",
+      "D": "dropped away"
+    },
+    "correct_option": "A",
+    "rationale": "'Dropped out' means he left college before graduating."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2161",
+    "question": "Choose the meaning of 'drop in':",
+    "options": {
+      "A": "To pay a short, informal visit.",
+      "B": "To fall through a hole.",
+      "C": "To resign from a position.",
+      "D": "To shout inside a building."
+    },
+    "correct_option": "A",
+    "explanation": "'Drop in' (often 'drop in on') means to visit someone informally without an appointment."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2162",
+    "question": "Spot the error: 'Feel free to drop in whenever you are in the neighborhood.'",
+    "options": {
+      "A": "Feel free to drop in",
+      "B": "whenever you are",
+      "C": "in the neighborhood.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Drop in' is used correctly for an informal visit. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2163",
+    "question": "Fill in the blank: 'The price of fuel has _____ significantly this quarter.'",
+    "options": {
+      "A": "dropped off",
+      "B": "dropped away",
+      "C": "dropped in",
+      "D": "dropped out"
+    },
+    "correct_option": "A",
+    "explanation": "'Drop off' can also mean to decrease or decline in number or quantity."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2164",
+    "question": "What does 'grow up' mean?",
+    "options": {
+      "A": "To develop from a child into an adult.",
+      "B": "To increase in physical size.",
+      "C": "To become arrogant.",
+      "D": "To get married."
+    },
+    "correct_option": "A",
+    "explanation": "'Grow up' means to mature and reach adulthood."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2165",
+    "question": "Fill in the blank: 'She _____ in a small town before moving to the city.'",
+    "options": {
+      "A": "grew up",
+      "B": "grew out",
+      "C": "grew on",
+      "D": "grew over"
+    },
+    "correct_option": "A",
+    "explanation": "'Grew up' refers to the period of one's childhood and maturation."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2166",
+    "question": "Spot the error: 'The child has grown out of her old clothes.'",
+    "options": {
+      "A": "The child has",
+      "B": "grown out of",
+      "C": "her old clothes.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Grow out of' means becoming too large or mature for something. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2167",
+    "question": "What does 'grow on' mean?",
+    "options": {
+      "A": "To gradually be liked by someone.",
+      "B": "To cover a surface (like moss).",
+      "C": "To force someone to leave.",
+      "D": "To change one's mind."
+    },
+    "correct_option": "A",
+    "explanation": "'Grow on' means that one's liking for a person or thing increases over time."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2168",
+    "question": "Fill in the blank: 'I didn't like the new office building at first, but it is _____ me.'",
+    "options": {
+      "A": "growing on",
+      "B": "growing up",
+      "C": "growing out",
+      "D": "growing off"
+    },
+    "correct_option": "A",
+    "explanation": "'Growing on' implies increasing preference."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2169",
+    "question": "Choose the meaning of 'keep at':",
+    "options": {
+      "A": "To continue doing something difficult or tedious.",
+      "B": "To stop doing something.",
+      "C": "To store items away.",
+      "D": "To maintain a high speed."
+    },
+    "correct_option": "A",
+    "explanation": "'Keep at' means to persist in an effort."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2170",
+    "question": "Spot the error: 'Even when the project got difficult, he kept at it.'",
+    "options": {
+      "A": "Even when the project",
+      "B": "got difficult,",
+      "C": "he kept at it.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Kept at it' means persisted. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2171",
+    "question": "Fill in the blank: 'Please _____ your shoes by the door.'",
+    "options": {
+      "A": "keep off",
+      "B": "keep out",
+      "C": "keep away",
+      "D": "keep down"
+    },
+    "correct_option": "A",
+    "explanation": "Wait, 'keep off' means to stay away from (like 'keep off the grass'). Let's rephrase: 'The signs instructed us to _____ the grass.'",
+    "correct_option_revised": "A"
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2171_REV",
+    "question": "Fill in the blank: 'The sign explicitly warned visitors to _____ the grass.'",
+    "options": {
+      "A": "keep off",
+      "B": "keep out",
+      "C": "keep away",
+      "D": "keep down"
+    },
+    "correct_option": "A",
+    "explanation": "'Keep off' means to avoid walking or staying on a surface."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2172",
+    "question": "What does 'keep out' mean?",
+    "options": {
+      "A": "To prevent someone from entering.",
+      "B": "To stand in the sun.",
+      "C": "To finish a task.",
+      "D": "To accept a challenge."
+    },
+    "correct_option": "A",
+    "explanation": "'Keep out' means to stay away or prevent entry."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2173",
+    "question": "Spot the error: 'The sign said keep out: private property.'",
+    "options": {
+      "A": "The sign said keep out:",
+      "B": "private property.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Keep out' for entry denial is standard. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2174",
+    "question": "Fill in the blank: 'We need to _____ the costs if we want to save money.'",
+    "options": {
+      "A": "keep down",
+      "B": "keep up",
+      "C": "keep out",
+      "D": "keep away"
+    },
+    "correct_option": "A",
+    "explanation": "'Keep down' means to prevent from increasing."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2175",
+    "question": "Choose the meaning of 'keep away':",
+    "options": {
+      "A": "To remain at a distance.",
+      "B": "To store items.",
+      "C": "To finish.",
+      "D": "To start."
+    },
+    "correct_option": "A",
+    "explanation": "'Keep away' means to maintain a distance."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2176",
+    "question": "Spot the error: 'Keep away from the edge of the cliff.'",
+    "options": {
+      "A": "Keep away from",
+      "B": "the edge of",
+      "C": "the cliff.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Keep away' means stay distant. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2177",
+    "question": "Fill in the blank: 'The storm began to _____ after an hour.'",
+    "options": {
+      "A": "let up",
+      "B": "let down",
+      "C": "let off",
+      "D": "let in"
+    },
+    "correct_option": "A",
+    "explanation": "'Let up' means to become less intense or stop (used for rain, snow, or effort)."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2178",
+    "question": "What does 'let down' mean?",
+    "options": {
+      "A": "To disappoint someone.",
+      "B": "To lower a curtain.",
+      "C": "To finish.",
+      "D": "To start."
+    },
+    "correct_option": "A",
+    "explanation": "'Let down' means to fail to support or disappoint."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2179",
+    "question": "Spot the error: 'He let her down by not showing up.'",
+    "options": {
+      "A": "He let her down",
+      "B": "by not",
+      "C": "showing up.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Let down' for disappointment is correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2180",
+    "question": "Fill in the blank: 'The police _____ him _____ with a warning.'",
+    "options": {
+      "A": "let/off",
+      "B": "let/out",
+      "C": "let/down",
+      "D": "let/in"
+    },
+    "correct_option": "A",
+    "explanation": "'Let off' means to excuse someone from punishment."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2181",
+    "question": "Choose the meaning of 'let in':",
+    "options": {
+      "A": "To allow entry.",
+      "B": "To reject.",
+      "C": "To finish.",
+      "D": "To postpone."
+    },
+    "correct_option": "A",
+    "explanation": "'Let in' means to allow to enter."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2182",
+    "question": "Fill in the blank: 'Please _____ the cat _____.'",
+    "options": {
+      "A": "let/in",
+      "B": "let/off",
+      "C": "let/down",
+      "D": "let/up"
+    },
+    "correct_option": "A",
+    "explanation": "'Let in' means to allow entry."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2183",
+    "question": "Spot the error: 'She let in the air to refresh the room.'",
+    "options": {
+      "A": "She let in",
+      "B": "the air to",
+      "C": "refresh the room.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Let in' is used correctly here. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2184",
+    "question": "Fill in the blank: 'We decided to _____ on our way to the city.'",
+    "options": {
+      "A": "stop off",
+      "B": "stop up",
+      "C": "stop down",
+      "D": "stop out"
+    },
+    "correct_option": "A",
+    "explanation": "'Stop off' means to make a brief visit during a journey."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2185",
+    "question": "What does 'stop over' mean?",
+    "options": {
+      "A": "To stay at a place briefly during a long journey.",
+      "B": "To jump over a hurdle.",
+      "C": "To finish.",
+      "D": "To start."
+    },
+    "correct_option": "A",
+    "explanation": "'Stop over' refers to a short stay."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2186",
+    "question": "Spot the error: 'We had a short stopover in Paris.'",
+    "options": {
+      "A": "We had a short",
+      "B": "stopover in Paris.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Stopover' (noun) is correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2187",
+    "question": "Fill in the blank: 'He _____ his work until the last minute.'",
+    "options": {
+      "A": "put off",
+      "B": "put on",
+      "C": "put away",
+      "D": "put down"
+    },
+    "correct_option": "A",
+    "explanation": "'Put off' means to delay or postpone."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2188",
+    "question": "What does 'put down' mean?",
+    "options": {
+      "A": "To insult/belittle or write down.",
+      "B": "To lift up.",
+      "C": "To finish.",
+      "D": "To start."
+    },
+    "correct_option": "A",
+    "explanation": "'Put down' can mean to write something on paper or to belittle someone."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2189",
+    "question": "Spot the error: 'Don't put him down in front of others.'",
+    "options": {
+      "A": "Don't put him down",
+      "B": "in front of others.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Put down' meaning belittle. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2190",
+    "question": "Fill in the blank: 'You should _____ your name on this list.'",
+    "options": {
+      "A": "put down",
+      "B": "put off",
+      "C": "put away",
+      "D": "put out"
+    },
+    "correct_option": "A",
+    "explanation": "'Put down' means to write down."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2191",
+    "question": "What is the meaning of 'see about'?",
+    "options": {
+      "A": "To make arrangements or deal with something.",
+      "B": "To watch from afar.",
+      "C": "To finish a job.",
+      "D": "To reject."
+    },
+    "correct_option": "A",
+    "explanation": "'See about' means to attend to or organize something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2192",
+    "question": "Fill in the blank: 'I need to _____ the car repairs tomorrow.'",
+    "options": {
+      "A": "see about",
+      "B": "see off",
+      "C": "see in",
+      "D": "see up"
+    },
+    "correct_option": "A",
+    "explanation": "'See about' means to arrange or handle."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2193",
+    "question": "Spot the error: 'I will see about the travel bookings.'",
+    "options": {
+      "A": "I will see about",
+      "B": "the travel bookings.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'See about' means handle/arrange. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2194",
+    "question": "Fill in the blank: 'The project was _____ due to lack of funds.'",
+    "options": {
+      "A": "called off",
+      "B": "put off",
+      "C": "Both A and B are correct.",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Depending on if the project was cancelled or postponed, both fit common usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2195",
+    "question": "What does 'take on' mean?",
+    "options": {
+      "A": "To accept responsibility or an opponent.",
+      "B": "To leave.",
+      "C": "To finish.",
+      "D": "To start."
+    },
+    "correct_option": "A",
+    "explanation": "'Take on' means to accept a task or battle someone."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2196",
+    "question": "Spot the error: 'The company took on more staff during the holidays.'",
+    "options": {
+      "A": "The company took on",
+      "B": "more staff during",
+      "C": "the holidays.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Take on' means hire/employ. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2197",
+    "question": "Fill in the blank: 'I was _____ by his sudden departure.'",
+    "options": {
+      "A": "taken aback",
+      "B": "taken up",
+      "C": "taken off",
+      "D": "taken in"
+    },
+    "correct_option": "A",
+    "explanation": "'Taken aback' means surprised or shocked."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2198",
+    "question": "What does 'taken in' mean?",
+    "options": {
+      "A": "To be deceived or fooled.",
+      "B": "To be happy.",
+      "C": "To travel.",
+      "D": "To finish."
+    },
+    "correct_option": "A",
+    "explanation": "'Taken in' means deceived."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2199",
+    "question": "Spot the error: 'He was taken in by the con artist.'",
+    "options": {
+      "A": "He was taken in",
+      "B": "by the con artist.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Taken in' means deceived. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2200",
+    "question": "Fill in the blank: 'Please _____ your luggage before leaving the train.'",
+    "options": {
+      "A": "pick up",
+      "B": "pick out",
+      "C": "pick at",
+      "D": "pick away"
+    },
+    "correct_option": "A",
+    "explanation": "'Pick up' means to collect."
+  }
+]

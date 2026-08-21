@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0651",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Round the clock**",
+    "options": {
+      "A": "All day and all night without stopping",
+      "B": "A circular wall clock decoration",
+      "C": "Timing race laps exactly",
+      "D": "A scheduled hourly meeting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Working 'round the clock' means working continuously for 24 hours.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0652",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rub shoulders with**",
+    "options": {
+      "A": "To associate, meet, or spend time with people socially",
+      "B": "To massage stiff shoulder muscles",
+      "C": "To bump into strangers in crowds",
+      "D": "To wear protective padded clothing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'rub shoulders' with someone means to mingle or associate with them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0653",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rule of thumb**",
+    "options": {
+      "A": "A practical, rough-and-ready guideline rather than strict scientific formula",
+      "B": "A finger measurement method",
+      "C": "A sewing craft needle rule",
+      "D": "An official government law"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'rule of thumb' is a broad, practical estimation or principle.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0654",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Run of the mill**",
+    "options": {
+      "A": "Ordinary, average, or unremarkable; not special",
+      "B": "A factory production line worker",
+      "C": "A high-quality boutique product",
+      "D": "A marathon race participant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Run of the mill' describes something average or commonplace.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0655",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Run the gauntlet**",
+    "options": {
+      "A": "To face a series of harsh tests, criticism, or challenges",
+      "B": "To run in an athletic race",
+      "C": "To wear protective combat gloves",
+      "D": "To escape from enemy soldiers"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'run the gauntlet' means undergoing a series of trials or attacks.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0656",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Run-in**",
+    "options": {
+      "A": "A verbal argument, dispute, or quarrel with someone",
+      "B": "Entering a house quickly",
+      "C": "Jogging on a park track",
+      "D": "Starting a new business"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having a 'run-in' means engaging in an unpleasant confrontation or argument.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0657",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sack cloth and ashes**",
+    "options": {
+      "A": "The outward manifestation of repentance, sorrow, or remorse",
+      "B": "A farm material storage bag",
+      "C": "A dirty fireplace cleaning chore",
+      "D": "Ancient fashion textile styles"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To be in 'sackcloth and ashes' means expressing deep remorse for sins.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0658",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Safe and sound**",
+    "options": {
+      "A": "Unharmed, secure, and in good health after danger",
+      "B": "A quiet house at night",
+      "C": "A healthy heart rhythm",
+      "D": "A peaceful garden retreat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'safe and sound' means arriving back unharmed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0659",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Salt of the earth**",
+    "options": {
+      "A": "An exceptionally honest, reliable, and worthy person",
+      "B": "Mining minerals from the ground",
+      "C": "Seasoning food for taste",
+      "D": "A poor agricultural farmer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'salt of the earth' refers to highly reputable, good people.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0660",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Save one's skin**",
+    "options": {
+      "A": "To protect oneself from danger, harm, or punishment",
+      "B": "To apply moisturizing cream",
+      "C": "To rescue a drowning victim",
+      "D": "To avoid sunburn in summer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'save one's skin' means protecting oneself from peril.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0661",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Say the word**",
+    "options": {
+      "A": "To give an order or signal that something should begin",
+      "B": "To speak in a loud voice",
+      "C": "To recite poetry memory",
+      "D": "To apologize for errors"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Saying 'the word' means providing the trigger signal to act.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0662",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Scapegoat**",
+    "options": {
+      "A": "A person unfairly blamed for the mistakes or problems of others",
+      "B": "A farm animal grazing in fields",
+      "C": "A leader of a political party",
+      "D": "A criminal convicted in court"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'scapegoat' is an innocent person blamed for someone else's errors.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0663",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Scare the daylights out of**",
+    "options": {
+      "A": "To frighten someone extremely and suddenly",
+      "B": "To wake people up early morning",
+      "C": "To chase away garden birds",
+      "D": "To play scary theater pranks"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'scare the daylights out of' someone means giving them a massive fright.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0664",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Scot-free**",
+    "options": {
+      "A": "Without suffering punishment, penalty, or harm",
+      "B": "Traveling to Scotland cheaply",
+      "C": "Getting free movie tickets",
+      "D": "Exempt from paying taxes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Getting away 'scot-free' means escaping penalty completely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0665",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Scrape through**",
+    "options": {
+      "A": "To succeed by a very narrow margin",
+      "B": "To clean glass windows",
+      "C": "To fail a difficult test",
+      "D": "To break fragile items"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'scrape through' means barely managing to pass or finish.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0666",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sea change**",
+    "options": {
+      "A": "A profound and radical transformation",
+      "B": "Tidal wave movements",
+      "C": "An ocean sailing voyage",
+      "D": "Coastal erosion processes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'sea change' signifies a massive, noticeable shift.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0667",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Second thought**",
+    "options": {
+      "A": "A reconsideration of a previous decision",
+      "B": "A mental mathematics calculation",
+      "C": "A philosophy school topic",
+      "D": "A memory of early childhood"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having 'second thoughts' means reconsidering or having doubts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0668",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**See eye to eye**",
+    "options": {
+      "A": "To have full agreement and mutual understanding",
+      "B": "To stare angrily at people",
+      "C": "To wear matching glasses",
+      "D": "To visit medical eye doctors"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'see eye to eye' means agreeing completely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0669",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**See red**",
+    "options": {
+      "A": "To become suddenly and intensely angry",
+      "B": "To view colorful paintings",
+      "C": "To suffer from eye irritation",
+      "D": "To watch sunset landscapes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'see red' means to get furious.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0670",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**See the light**",
+    "options": {
+      "A": "To finally understand or realize the truth about something",
+      "B": "To turn on room electric lamps",
+      "C": "To look at bright sunshine",
+      "D": "To wake up in morning"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'see the light' means reaching an epiphany or realizing truth.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0671",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**See the world**",
+    "options": {
+      "A": "To travel widely and gain extensive life experience",
+      "B": "To look at maps of countries",
+      "C": "To study global geography",
+      "D": "To look through telescopes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'see the world' means traveling to gain experience.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0672",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sell like hotcakes**",
+    "options": {
+      "A": "To sell very quickly in large quantities",
+      "B": "To bake cakes for hungry customers",
+      "C": "To work as a street vendor",
+      "D": "To lose items during sales"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Selling 'like hotcakes' means high-speed sales turnover.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0673",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sell someone down the river**",
+    "options": {
+      "A": "To betray someone, especially by breaking a trust",
+      "B": "To transport goods along rivers",
+      "C": "To take friends on boat trips",
+      "D": "To work as a river guide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'sell someone down the river' is a severe act of betrayal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0674",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Send to Coventry**",
+    "options": {
+      "A": "To ignore someone or refuse to speak to them",
+      "B": "To send mail to a city",
+      "C": "To travel to central England",
+      "D": "To attend town festivals"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Sending someone 'to Coventry' means ostracizing them through silence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0675",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Serve time**",
+    "options": {
+      "A": "To spend time in prison for a committed crime",
+      "B": "To serve food at restaurants",
+      "C": "To work for fixed hours",
+      "D": "To play athletic matches"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'serve time' means completing a prison sentence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0676",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Set back**",
+    "options": {
+      "A": "To delay or hinder progress; a temporary obstacle",
+      "B": "To place items behind others",
+      "C": "To watch films from behind",
+      "D": "To return bought items"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'setback' is an obstacle delaying progress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0677",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Set the ball rolling**",
+    "options": {
+      "A": "To initiate an action or start a process",
+      "B": "To play soccer games outdoors",
+      "C": "To push toy balls around",
+      "D": "To watch bowling matches"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'set the ball rolling' means starting a process or task.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0678",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Set the world on fire**",
+    "options": {
+      "A": "To do something spectacular, exceptional, or achieve great fame",
+      "B": "To commit acts of arson",
+      "C": "To witness volcanic eruptions",
+      "D": "To start huge campfires"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'set the world on fire' means achieving immense success.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0679",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Set up shop**",
+    "options": {
+      "A": "To begin operating a business, office, or professional activity",
+      "B": "To build retail store cabinets",
+      "C": "To buy shop equipment",
+      "D": "To work as a clerk"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'set up shop' means officially starting your own business.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0680",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Settle a score**",
+    "options": {
+      "A": "To get revenge or settle a grudge from the past",
+      "B": "To write sports match points",
+      "C": "To pay bank loan interest",
+      "D": "To play musical board games"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'settle a score' means retaliating for a past wrong.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0681",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Shake a leg**",
+    "options": {
+      "A": "To hurry up or act quickly",
+      "B": "To dance energetic disco",
+      "C": "To suffer leg cramps",
+      "D": "To walk on stairs slowly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'shake a leg' means being quick or hurrying.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0682",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Shape up**",
+    "options": {
+      "A": "To improve behavior, performance, or physical condition",
+      "B": "To sculpt art clay figures",
+      "C": "To design geometry shapes",
+      "D": "To exercise in gyms"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'shape up' means improving your conduct.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0683",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Shift gears**",
+    "options": {
+      "A": "To change one's approach, focus, or direction of activity",
+      "B": "To operate car transmission parts",
+      "C": "To ride bicycle gear shifts",
+      "D": "To repair automobile engines"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'shift gears' means changing your strategy approach.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0684",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Shoot from the hip**",
+    "options": {
+      "A": "To speak or act impulsively without careful deliberation or thought",
+      "B": "To fire pistols in westerns",
+      "C": "To hunt wild animal targets",
+      "D": "To practice police training"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'shoot from the hip' means acting impulsively.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0685",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Short and sweet**",
+    "options": {
+      "A": "Brief, concise, and pleasant in manner",
+      "B": "Small sugar confectionery candy",
+      "C": "A rapid running marathon",
+      "D": "A brief written note"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'short and sweet' means concise and pleasant.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0686",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Shot in the dark**",
+    "options": {
+      "A": "A wild guess or an attempt without any expectation of success",
+      "B": "Firing weapons at night",
+      "C": "A photography lighting test",
+      "D": "A hunting archery sport"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'shot in the dark' is a random, unguided attempt.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0687",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Show the white feather**",
+    "options": {
+      "A": "To demonstrate cowardice or a lack of courage",
+      "B": "To carry peace flag symbols",
+      "C": "To wear feathered fashion hats",
+      "D": "To sign legal peace treaties"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'show the white feather' means being a coward.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0688",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Shut up shop**",
+    "options": {
+      "A": "To stop or cease operations permanently",
+      "B": "To close store doors at night",
+      "C": "To lock warehouse stockrooms",
+      "D": "To prevent customers entry"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'shut up shop' means ending a business venture.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0689",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sick and tired**",
+    "options": {
+      "A": "Exasperated, fed up, and annoyed by repetition",
+      "B": "Suffering from medical influenza",
+      "C": "Physically exhausted from labor",
+      "D": "Recovering in a hospital"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Feeling 'sick and tired' means being fed up.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0690",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Side by side**",
+    "options": {
+      "A": "Together, side by side in cooperation or close proximity",
+      "B": "Racing in athletic tracks",
+      "C": "Sitting in separate rooms",
+      "D": "Watching cinema films"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Working 'side by side' means working together in close proximity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0691",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sight for sore eyes**",
+    "options": {
+      "A": "A person or thing that one is very pleased or relieved to see",
+      "B": "A painful medical eye infection",
+      "C": "A bright lamp light glare",
+      "D": "A rare sight in nature"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being a 'sight for sore eyes' is a welcome, delightful sight.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0692",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sign on the dotted line**",
+    "options": {
+      "A": "To sign a formal legal contract or agreement",
+      "B": "To draw lines on papers",
+      "C": "To write signatures carefully",
+      "D": "To mark lottery tickets"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'sign on the dotted line' means formalizing an agreement.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0693",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sing one's own praises**",
+    "options": {
+      "A": "To boast about one's own achievements or virtues",
+      "B": "To sing choir songs loudly",
+      "C": "To learn musical vocal lessons",
+      "D": "To perform on stage arts"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'sing one's own praises' means bragging about oneself.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0694",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Singularly gifted**",
+    "options": {
+      "A": "Having unique, exceptional talent or ability",
+      "B": "A grammar lesson regarding nouns",
+      "C": "A person with one hobby",
+      "D": "Possessing basic skills"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'singularly gifted' means having rare and unique talents.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0695",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sink or swim**",
+    "options": {
+      "A": "To succeed or fail entirely by one's own efforts",
+      "B": "Learning aquatic swimming skills",
+      "C": "Working in maritime shipping",
+      "D": "Floating on water surfaces"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sink or swim' means you must succeed on your own or you will fail.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0696",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sit on the fence**",
+    "options": {
+      "A": "To remain neutral and undecided between two choices",
+      "B": "To sit comfortably on a garden bench",
+      "C": "To fix broken fence boards",
+      "D": "To take a firm political side"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'sit on the fence' means refusing to commit to a position.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0697",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sit on the fence**",
+    "options": {
+      "A": "To be neutral and avoid taking sides in a dispute",
+      "B": "To rest on outdoor garden furniture",
+      "C": "To guard house property lines",
+      "D": "To act firmly in decisions"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'sit on the fence' means remaining neutral.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0698",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sitting duck**",
+    "options": {
+      "A": "An easy target that is vulnerable to attack",
+      "B": "A decoy bird in a lake",
+      "C": "A calm animal relaxing",
+      "D": "A guarded fortress location"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'sitting duck' is someone or something easily attacked.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0699",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Skeletal structure**",
+    "options": {
+      "A": "The essential, basic framework of an idea or organization",
+      "B": "The human bone anatomy system",
+      "C": "A biology study course",
+      "D": "X-ray machine imaging"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'skeletal structure' refers to the bare bones or basics of an idea.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0700",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Skin alive**",
+    "options": {
+      "A": "To punish someone very severely, usually with harsh anger",
+      "B": "To perform medical surgical tasks",
+      "C": "To remove hide from animals",
+      "D": "To tan leather materials"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'skin someone alive' means to scold or punish them fiercely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0551",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Never-never land**",
+    "options": {
+      "A": "A utopian fantasy world or an imaginary place that does not exist",
+      "B": "A remote foreign country in Asia",
+      "C": "A historical museum exhibition",
+      "D": "A retirement savings plan"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Never-never land' refers to an idealized, imaginary realm or a state of unrealistic delusion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0552",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Night owl**",
+    "options": {
+      "A": "A person who habitually stays up late at night and is more active then",
+      "B": "A nocturnal bird of prey",
+      "C": "A security guard working shifts",
+      "D": "An insomniac suffering from stress"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'night owl' is someone who prefers staying awake and working late into the night.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0553",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Nip in the bud**",
+    "options": {
+      "A": "To stop or suppress a bad situation, problem, or habit at its very early stage",
+      "B": "To prune garden flowers with scissors",
+      "C": "To pick budding fruits from trees",
+      "D": "To freeze plants during winter"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'nip something in the bud' means destroying a problem before it grows large.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0554",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**No love lost**",
+    "options": {
+      "A": "Mutual dislike, hostility, or animosity between two people",
+      "B": "A broken romantic relationship",
+      "C": "Deep affection among friends",
+      "D": "Unrequited romantic feelings"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. When there is 'no love lost', two people strongly dislike each other.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0555",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**No sweat**",
+    "options": {
+      "A": "Very easy; used to say that a task requires little or no effort",
+      "B": "A dry physical workout routine",
+      "C": "Suffering from a heat fever",
+      "D": "An intense athletic competition"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Saying 'no sweat' means a task is easy and causes no trouble.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0556",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Nose out**",
+    "options": {
+      "A": "To defeat or win against an opponent by a narrow margin",
+      "B": "To smell a foul odor in a room",
+      "C": "To look out a window glass",
+      "D": "To suffer from nasal congestion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'nose out' a rival means beating them narrowly in a contest.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0557",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Not a leg to stand on**",
+    "options": {
+      "A": "Having no valid proof, argument, or evidence to support your claim",
+      "B": "Suffering from leg paralysis",
+      "C": "Standing upright on one foot",
+      "D": "A broken chair furniture piece"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having 'not a leg to stand on' means lacking justification or proof.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0558",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Not born yesterday**",
+    "options": {
+      "A": "Experienced, shrewd, and not easily fooled or naive",
+      "B": "An elderly person in a family",
+      "C": "Born on a specific weekday",
+      "D": "Young and inexperienced"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'not born yesterday' means you are wise and not easily tricked.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0559",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Null and void**",
+    "options": {
+      "A": "Invalid, cancelled, or having no legal force",
+      "B": "Empty space in a container",
+      "C": "A valid signed contract",
+      "D": "Mathematical zero sums"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Null and void' means legally ineffective and cancelled.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0560",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Nut to crack**",
+    "options": {
+      "A": "A difficult problem or a stubborn person to deal with",
+      "B": "A hard snack food item",
+      "C": "A cracking noise in wood",
+      "D": "An easy puzzle game"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'hard nut to crack' is a tough problem.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0561",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Off color**",
+    "options": {
+      "A": "Feeling slightly unwell, sick, or looking pale and out of sorts",
+      "B": "Wearing mismatched clothing colors",
+      "C": "Faded paint on a wall",
+      "D": "A bright vibrant rainbow shade"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Feeling 'off color' means feeling mildly sick or indisposed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0562",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Off the beaten track**",
+    "options": {
+      "A": "In a remote, isolated place away from populated areas and main roads",
+      "B": "Running away from a sports racing track",
+      "C": "Getting lost in a city center",
+      "D": "Walking on paved walkways"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'off the beaten track' means in a remote, secluded location.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0563",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Off the hook**",
+    "options": {
+      "A": "Free from blame, obligation, responsibility, or trouble",
+      "B": "A telephone receiver placed down",
+      "C": "A fish caught on a fishing line",
+      "D": "Hanging coats on wall pegs"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'off the hook' means escaping from blame or a difficult predicament.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0564",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Off the mark**",
+    "options": {
+      "A": "Inaccurate, incorrect, or missing the target or truth",
+      "B": "Starting a running race promptly",
+      "C": "Hitting a target accurately",
+      "D": "An official scoring point"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'off the mark' means being mistaken or inaccurate.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0565",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Oil and water**",
+    "options": {
+      "A": "Two completely opposite elements or people who cannot mix or get along",
+      "B": "Ingredients used in cooking recipes",
+      "C": "Liquid fuel for machinery engines",
+      "D": "A chemical laboratory experiment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Like 'oil and water', incompatible people cannot mix or harmonize.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0566",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Old hand**",
+    "options": {
+      "A": "An experienced, highly skilled person in a particular field",
+      "B": "An elderly person with arthritis",
+      "C": "A retired manual laborer",
+      "D": "A beginner starting a job"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. An 'old hand' is a veteran practitioner with vast experience.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0567",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On a shoe string**",
+    "options": {
+      "A": "Operating with an extremely small, tight budget",
+      "B": "Tying footwear laces securely",
+      "C": "Manufacturing shoemaking gear",
+      "D": "Buying expensive luxury items"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Operating on a 'shoestring' means running on minimal financial resources.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0568",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On edge**",
+    "options": {
+      "A": "Tense, nervous, anxious, and easily irritable",
+      "B": "Standing on a rooftop ledge",
+      "C": "Relaxed and calm at home",
+      "D": "Sitting on furniture corners"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'on edge' means feeling jittery and highly nervous.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0569",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On pins and needles**",
+    "options": {
+      "A": "In a state of nervous suspense, anxiety, or eager anticipation",
+      "B": "Sitting on sewing needles by mistake",
+      "C": "Undergoing medical acupuncture",
+      "D": "Relaxed and comfortable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'on pins and needles' means feeling anxious and suspenseful about an outcome.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0570",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On the ball**",
+    "options": {
+      "A": "Alert, competent, highly efficient, and quick to understand",
+      "B": "Playing sports on a field",
+      "C": "Balancing toys on a head",
+      "D": "Slow and inattentive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'on the ball' means being alert and highly competent.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0571",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On the fence**",
+    "options": {
+      "A": "Undecided, neutral, or hesitant about choosing between two options",
+      "B": "Sitting atop a wooden boundary fence",
+      "C": "Fixing garden fences",
+      "D": "Taking a firm side in a debate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'on the fence' means remaining undecided and neutral.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0572",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On the horn of a dilemma**",
+    "options": {
+      "A": "Faced with a difficult choice between two equally undesirable options",
+      "B": "Attacked by an animal horn",
+      "C": "Playing musical brass instruments",
+      "D": "Stuck in heavy traffic horns"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being on the horns of a dilemma means facing a hard choice between two bad alternatives.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0573",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On the mend**",
+    "options": {
+      "A": "Recovering from an illness or injury and improving in health",
+      "B": "Repairing broken machinery items",
+      "C": "Sewing torn clothing garments",
+      "D": "Worsening in physical health"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'on the mend' means healing and getting better after sickness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0574",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On the prowl**",
+    "options": {
+      "A": "Moving about stealthily in search of prey, adventure, or trouble",
+      "B": "Patrolling city streets as police",
+      "C": "Hiking on mountain trails",
+      "D": "Sleeping quietly at home"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'on the prowl' means roaming stealthily looking for something.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0575",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On the sly**",
+    "options": {
+      "A": "Secretly, stealthily, and covertly to avoid being noticed",
+      "B": "Cunning and clever in business",
+      "C": "Openly and publicly in crowds",
+      "D": "Fast and efficient in work"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing something 'on the sly' means doing it secretly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0576",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On the spur of the moment**",
+    "options": {
+      "A": "Impulsively and spontaneously without prior planning or hesitation",
+      "B": "Acting with careful preparation",
+      "C": "Delayed for a long time",
+      "D": "Scheduled on a strict calendar"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Acting 'on the spur of the moment' means doing something impulsively without planning.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0577",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On the trot**",
+    "options": {
+      "A": "Busy, active, and moving about continuously without rest",
+      "B": "Running in a horse race",
+      "C": "Walking slowly in parks",
+      "D": "Resting at home in bed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'on the trot' means being constantly busy and rushed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0578",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**On the warpath**",
+    "options": {
+      "A": "Angry, combative, and looking for a fight or confrontation",
+      "B": "Marching in a military parade",
+      "C": "Traveling on a historic trail",
+      "D": "Seeking peaceful negotiations"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'on the warpath' means being extremely angry and spoiling for a fight.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0579",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Open secret**",
+    "options": {
+      "A": "A supposed secret that is actually widely known by everyone",
+      "B": "A classified government document",
+      "C": "A puzzle hidden in a safe",
+      "D": "A private personal diary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. An 'open secret' is supposed to be confidential but is actually common knowledge.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0580",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Out of bounds**",
+    "options": {
+      "A": "Prohibited, forbidden, or outside allowable limits",
+      "B": "Outside a sports field boundary line",
+      "C": "A restricted airport zone",
+      "D": "Freely accessible to everyone"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'out of bounds' means off-limits or forbidden.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0581",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Out of sorts**",
+    "options": {
+      "A": "Slightly unwell, irritable, or in a bad mood",
+      "B": "Jumbled up in wrong order",
+      "C": "Extremely cheerful and happy",
+      "D": "Working with high efficiency"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Feeling 'out of sorts' means feeling mildly unwell or irritable.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0582",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Out of the frying pan into the fire**",
+    "options": {
+      "A": "Moving from a bad situation into an even worse one",
+      "B": "Cooking meals on a kitchen stove",
+      "C": "Escaping from danger safely",
+      "D": "Starting a campfire outdoors"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Going from the frying pan into the fire means exchanging one trouble for a worse one.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0583",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Out of thin air**",
+    "options": {
+      "A": "Seemingly appearing from nowhere mysteriously and without explanation",
+      "B": "Breathing high altitude oxygen",
+      "C": "Flying an airplane through clouds",
+      "D": "Evaporating into gas"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Appearing 'out of thin air' means materializing completely unexpectedly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0584",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Out of your depth**",
+    "options": {
+      "A": "In a situation that is too difficult, complex, or beyond your competence",
+      "B": "Swimming in deep ocean water",
+      "C": "Measuring swimming pool depths",
+      "D": "Standing on shallow ground"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'out of your depth' means lacking the skill to handle a situation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0585",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Over my dead body**",
+    "options": {
+      "A": "Used to express absolute, fierce opposition to something",
+      "B": "A ghost story expression",
+      "C": "Lying down to rest in bed",
+      "D": "A organ donation request"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Over my dead body' means complete refusal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0586",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Over the hill**",
+    "options": {
+      "A": "Old, past your prime, and declining in capability or vigor",
+      "B": "Hiking across mountain peaks",
+      "C": "Driving up a steep road",
+      "D": "Young and athletic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'over the hill' means considered too old or past your best years.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0587",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Own flesh and blood**",
+    "options": {
+      "A": "A close biological relative within your family",
+      "B": "A medical blood test sample",
+      "C": "Human physical body tissues",
+      "D": "A loyal close friend"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Your 'own flesh and blood' refers to your immediate relatives.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0588",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Palm off**",
+    "options": {
+      "A": "To dispose of something fraudulent or inferior by trickery",
+      "B": "To massage hands with lotion",
+      "C": "To greet friends with handshakes",
+      "D": "To give generous gifts"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'palm off' means to deceive someone into accepting something fake.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0589",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pandora's box**",
+    "options": {
+      "A": "A source yielding many unexpected, complicated, and serious problems",
+      "B": "A locked jewelry treasure chest",
+      "C": "A decorative gift package",
+      "D": "A magical stage prop"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Opening a 'Pandora's box' unleashes a torrent of unforeseen troubles.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0590",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Paper tiger**",
+    "options": {
+      "A": "Someone or something that appears powerful and threatening but is actually weak",
+      "B": "An origami paper sculpture",
+      "C": "A circus animal performer",
+      "D": "A fierce jungle predator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'paper tiger' is outwardly formidable but ultimately powerless.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0591",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Part and parcel**",
+    "options": {
+      "A": "An essential, integral, and unavoidable part of an experience",
+      "B": "A postal delivery package",
+      "C": "Dividing inheritance money",
+      "D": "An optional extra feature"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'part and parcel' means an essential component.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0592",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pass the buck**",
+    "options": {
+      "A": "To shift responsibility or blame onto someone else to avoid accountability",
+      "B": "To hand over currency notes",
+      "C": "To win a card game round",
+      "D": "To share dinner food plates"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'pass the buck' means evading blame by shifting it to another.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0593",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Past master**",
+    "options": {
+      "A": "An expert, highly skilled master in a craft or profession",
+      "B": "A retired school teacher",
+      "C": "An elderly historical figure",
+      "D": "A beginner in training"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'past master' is someone with supreme expertise in a skill.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0594",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pay piper**",
+    "options": {
+      "A": "To bear the unpleasant consequences or financial cost of an action",
+      "B": "To hire street musicians",
+      "C": "To buy musical instruments",
+      "D": "To dance at festivals"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'pay the piper' means facing the consequences of your actions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0595",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pen-pusher**",
+    "options": {
+      "A": "An office worker engaged in dull, routine, or bureaucratic paperwork",
+      "B": "A professional stationery seller",
+      "C": "A novelist writing books",
+      "D": "A calligrapher artist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'pen-pusher' is a derogatory term for a bureaucrat doing tedious paperwork.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0596",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pester power**",
+    "options": {
+      "A": "The persistent badgering by children that forces parents to buy products",
+      "B": "Insect repellent sprays",
+      "C": "Political lobbying pressure",
+      "D": "Harassment in workplaces"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pester power' describes children nagging parents to purchase advertised goods.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0597",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pick and choose**",
+    "options": {
+      "A": "To be extremely selective, choosing only what is most favorable",
+      "B": "To harvest crops on a farm",
+      "C": "To collect scattered items",
+      "D": "To accept everything offered"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'pick and choose' means selecting selectively.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0598",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pick up the pieces**",
+    "options": {
+      "A": "To try to restore order and recover after a disaster, crisis, or failure",
+      "B": "To clean up broken glass fragments",
+      "C": "To assemble puzzle toys",
+      "D": "To collect scattered litter"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'pick up the pieces' means recovering and rebuilding after a catastrophe.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0599",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pie in the sky**",
+    "options": {
+      "A": "An illusory, unrealizable hope or promise of future happiness",
+      "B": "A delicious bakery pastry",
+      "C": "Cloud formations in the sky",
+      "D": "An airplane baking flight"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pie in the sky' refers to an impractical, unrealistic promise.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0600",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pillar to post**",
+    "options": {
+      "A": "From one place or predicament to another in a confused, hurried manner",
+      "B": "Building wooden fence posts",
+      "C": "Mailing letters at a post office",
+      "D": "Standing still in a room"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being driven from 'pillar to post' means being tossed around from one trouble to another.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

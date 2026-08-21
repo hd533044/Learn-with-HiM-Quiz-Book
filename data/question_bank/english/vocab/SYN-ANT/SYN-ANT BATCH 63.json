@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_3101",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REMONSTRATE**",
+    "options": {
+      "A": "Protest",
+      "B": "Agree",
+      "C": "Accept",
+      "D": "Assent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Remonstrate' means to make a forcefully reproachful protest. 'Protest', 'object', or 'expostulate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3102",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REMONSTRATE**",
+    "options": {
+      "A": "Protest",
+      "B": "Object",
+      "C": "Agree",
+      "D": "Expostulate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Remonstrate' means to protest. 'Agree', 'assent', or 'concur' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3103",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REMORSE**",
+    "options": {
+      "A": "Contrition",
+      "B": "Indifference",
+      "C": "Apathy",
+      "D": "Unconcern"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Remorse' refers to deep regret or guilt for a wrong committed. 'Contrition', 'penitence', or 'regret' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3104",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REMORSE**",
+    "options": {
+      "A": "Contrition",
+      "B": "Penitence",
+      "C": "Indifference",
+      "D": "Regret"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Remorse' is deep regret. 'Indifference', 'apathy', or 'unconcern' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3105",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RENEGADE**",
+    "options": {
+      "A": "Traitor",
+      "B": "Loyalist",
+      "C": "Patriot",
+      "D": "Supporter"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Renegade' refers to a person who deserts and betrays an organization, country, or set of principles. 'Traitor', 'deserter', or 'defector' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3106",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RENEGADE**",
+    "options": {
+      "A": "Traitor",
+      "B": "Deserter",
+      "C": "Loyalist",
+      "D": "Defector"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Renegade' is a traitor. 'Loyalist', 'patriot', or 'supporter' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3107",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RENEGOTIATE**",
+    "options": {
+      "A": "Revise",
+      "B": "Maintain",
+      "C": "Keep",
+      "D": "Retain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Renegotiate' means to negotiate (a contract or agreement) again. 'Revise', 're-discuss', or 'adjust' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3108",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RENEGOTIATE**",
+    "options": {
+      "A": "Revise",
+      "B": "Re-discuss",
+      "C": "Maintain",
+      "D": "Adjust"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Renegotiate' means to change terms. 'Maintain', 'keep', or 'retain' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3109",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RENNUNCIATION**",
+    "options": {
+      "A": "Abandonment",
+      "B": "Retention",
+      "C": "Maintenance",
+      "D": "Keeping"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Renunciation' refers to the formal rejection of something, typically a belief, claim, or course of action. 'Abandonment', 'relinquishment', or 'rejection' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3110",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RENUNCIATION**",
+    "options": {
+      "A": "Abandonment",
+      "B": "Relinquishment",
+      "C": "Retention",
+      "D": "Rejection"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Renunciation' is the act of rejecting. 'Retention', 'maintenance', or 'keeping' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3111",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPAST**",
+    "options": {
+      "A": "Meal",
+      "B": "Fast",
+      "C": "Starvation",
+      "D": "Famine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Repast' refers to a meal. 'Meal', 'feast', or 'banquet' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3112",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPAST**",
+    "options": {
+      "A": "Meal",
+      "B": "Feast",
+      "C": "Fast",
+      "D": "Banquet"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Repast' is a meal. 'Fast', 'starvation', or 'famine' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3113",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPERCUSSION**",
+    "options": {
+      "A": "Consequence",
+      "B": "Cause",
+      "C": "Source",
+      "D": "Origin"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Repercussion' refers to an unintended consequence occurring some time after an event or action. 'Consequence', 'effect', or 'aftermath' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3114",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPERCUSSION**",
+    "options": {
+      "A": "Consequence",
+      "B": "Effect",
+      "C": "Cause",
+      "D": "Aftermath"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Repercussion' is a consequence. 'Cause', 'source', or 'origin' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3115",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPLENISH**",
+    "options": {
+      "A": "Refill",
+      "B": "Empty",
+      "C": "Drain",
+      "D": "Exhaust"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Replenish' means to fill something up again. 'Refill', 'restore', or 'restock' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3116",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPLENISH**",
+    "options": {
+      "A": "Refill",
+      "B": "Restore",
+      "C": "Empty",
+      "D": "Restock"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Replenish' means to refill. 'Empty', 'drain', or 'exhaust' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3117",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPREHENSIBLE**",
+    "options": {
+      "A": "Blameworthy",
+      "B": "Admirable",
+      "C": "Praiseworthy",
+      "D": "Virtuous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reprehensible' means deserving censure or condemnation. 'Blameworthy', 'deplorable', or 'shameful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3118",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPREHENSIBLE**",
+    "options": {
+      "A": "Blameworthy",
+      "B": "Deplorable",
+      "C": "Admirable",
+      "D": "Shameful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reprehensible' means blameworthy. 'Admirable', 'praiseworthy', or 'virtuous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3119",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPRISAL**",
+    "options": {
+      "A": "Retaliation",
+      "B": "Forgiveness",
+      "C": "Pardon",
+      "D": "Absolution"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reprisal' refers to an act of retaliation. 'Retaliation', 'revenge', or 'counterattack' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3120",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPRISAL**",
+    "options": {
+      "A": "Retaliation",
+      "B": "Revenge",
+      "C": "Forgiveness",
+      "D": "Counterattack"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reprisal' is retaliation. 'Forgiveness', 'pardon', or 'absolution' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3121",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPROACH**",
+    "options": {
+      "A": "Censure",
+      "B": "Praise",
+      "C": "Acclaim",
+      "D": "Approval"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reproach' means the expression of disapproval or disappointment. 'Censure', 'rebuke', or 'blame' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3122",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPROACH**",
+    "options": {
+      "A": "Censure",
+      "B": "Rebuke",
+      "C": "Praise",
+      "D": "Blame"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reproach' means disapproval. 'Praise', 'acclaim', or 'approval' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3123",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPROBATE**",
+    "options": {
+      "A": "Degenerate",
+      "B": "Saint",
+      "C": "Virtuous person",
+      "D": "Angel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reprobate' refers to an unprincipled person. 'Degenerate', 'villain', or 'wrongdoer' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3124",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPROBATE**",
+    "options": {
+      "A": "Degenerate",
+      "B": "Villain",
+      "C": "Saint",
+      "D": "Wrongdoer"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reprobate' is an unprincipled person. 'Saint', 'virtuous person', or 'angel' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3125",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPUDIATE**",
+    "options": {
+      "A": "Reject",
+      "B": "Accept",
+      "C": "Adopt",
+      "D": "Embrace"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Repudiate' means to refuse to accept or be associated with. 'Reject', 'disown', or 'deny' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3126",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPUDIATE**",
+    "options": {
+      "A": "Reject",
+      "B": "Disown",
+      "C": "Accept",
+      "D": "Deny"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Repudiate' means to reject. 'Accept', 'adopt', or 'embrace' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3127",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REPUGNANT**",
+    "options": {
+      "A": "Repulsive",
+      "B": "Pleasant",
+      "C": "Agreeable",
+      "D": "Attractive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Repugnant' means extremely distasteful; unacceptable. 'Repulsive', 'detestable', or 'abhorrent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3128",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REPUGNANT**",
+    "options": {
+      "A": "Repulsive",
+      "B": "Detestable",
+      "C": "Pleasant",
+      "D": "Abhorrent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Repugnant' means distasteful. 'Pleasant', 'agreeable', or 'attractive' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3129",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REQUISITE**",
+    "options": {
+      "A": "Necessary",
+      "B": "Unnecessary",
+      "C": "Optional",
+      "D": "Nonessential"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Requisite' means made necessary by particular circumstances or regulations. 'Necessary', 'required', or 'essential' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3130",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REQUISITE**",
+    "options": {
+      "A": "Necessary",
+      "B": "Required",
+      "C": "Unnecessary",
+      "D": "Essential"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Requisite' means necessary. 'Unnecessary', 'optional', or 'nonessential' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3131",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RESCIND**",
+    "options": {
+      "A": "Revoke",
+      "B": "Enact",
+      "C": "Establish",
+      "D": "Confirm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rescind' means to revoke, cancel, or repeal (a law, order, or agreement). 'Revoke', 'repeal', or 'cancel' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3132",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RESCIND**",
+    "options": {
+      "A": "Revoke",
+      "B": "Repeal",
+      "C": "Enact",
+      "D": "Cancel"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rescind' means to revoke. 'Enact', 'establish', or 'confirm' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3133",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RESILIENT**",
+    "options": {
+      "A": "Tough",
+      "B": "Fragile",
+      "C": "Weak",
+      "D": "Brittle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Resilient' means (of a person or animal) able to withstand or recover quickly from difficult conditions. 'Tough', 'buoyant', or 'adaptable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3134",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RESILIENT**",
+    "options": {
+      "A": "Tough",
+      "B": "Buoyant",
+      "C": "Fragile",
+      "D": "Adaptable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Resilient' means tough. 'Fragile', 'weak', or 'brittle' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3135",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RESOLUTE**",
+    "options": {
+      "A": "Determined",
+      "B": "Irresolute",
+      "C": "Wavering",
+      "D": "Uncertain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Resolute' means admirably purposeful, determined, and unwavering. 'Determined', 'steadfast', or 'firm' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3136",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RESOLUTE**",
+    "options": {
+      "A": "Determined",
+      "B": "Steadfast",
+      "C": "Irresolute",
+      "D": "Firm"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Resolute' means determined. 'Irresolute', 'wavering', or 'uncertain' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3137",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RESPLENDENT**",
+    "options": {
+      "A": "Dazzling",
+      "B": "Dull",
+      "C": "Gloomy",
+      "D": "Drab"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Resplendent' means attractive and impressive through being richly colorful or sumptuous. 'Dazzling', 'splendid', or 'magnificent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3138",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RESPLENDENT**",
+    "options": {
+      "A": "Dazzling",
+      "B": "Splendid",
+      "C": "Dull",
+      "D": "Magnificent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Resplendent' means dazzling. 'Dull', 'gloomy', or 'drab' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3139",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RESTIVE**",
+    "options": {
+      "A": "Restless",
+      "B": "Calm",
+      "C": "Placid",
+      "D": "Serene"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Restive' means (of a person) unable to keep still or silent and becoming increasingly difficult to control, especially because of impatience, dissatisfaction, or boredom. 'Restless', 'uneasy', or 'edgy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3140",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RESTIVE**",
+    "options": {
+      "A": "Restless",
+      "B": "Uneasy",
+      "C": "Calm",
+      "D": "Edgy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Restive' means restless. 'Calm', 'placid', or 'serene' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3141",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RETICENT**",
+    "options": {
+      "A": "Reserved",
+      "B": "Talkative",
+      "C": "Loquacious",
+      "D": "Garrulous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reticent' means not revealing one's thoughts or feelings readily. 'Reserved', 'withdrawn', or 'introverted' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3142",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RETICENT**",
+    "options": {
+      "A": "Reserved",
+      "B": "Withdrawn",
+      "C": "Talkative",
+      "D": "Introverted"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reticent' means reserved. 'Talkative', 'loquacious', or 'garrulous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3143",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RETORT**",
+    "options": {
+      "A": "Reply",
+      "B": "Question",
+      "C": "Ask",
+      "D": "Query"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Retort' means to say something in answer to a remark or accusation, typically in a sharp, angry, or wittily incisive manner. 'Reply', 'answer', or 'rejoinder' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3144",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RETORT**",
+    "options": {
+      "A": "Reply",
+      "B": "Rejoinder",
+      "C": "Question",
+      "D": "Answer"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Retort' is a reply. 'Question', 'ask', or 'query' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3145",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REVERENCE**",
+    "options": {
+      "A": "Veneration",
+      "B": "Disrespect",
+      "C": "Contempt",
+      "D": "Scorn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reverence' refers to deep respect for someone or something. 'Veneration', 'respect', or 'esteem' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3146",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REVERENCE**",
+    "options": {
+      "A": "Veneration",
+      "B": "Respect",
+      "C": "Disrespect",
+      "D": "Esteem"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reverence' is deep respect. 'Disrespect', 'contempt', or 'scorn' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3147",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REVERIE**",
+    "options": {
+      "A": "Daydream",
+      "B": "Reality",
+      "C": "Fact",
+      "D": "Truth"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reverie' refers to a state of being pleasantly lost in one's thoughts; a daydream. 'Daydream', 'trance', or 'musings' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3148",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REVERIE**",
+    "options": {
+      "A": "Daydream",
+      "B": "Trance",
+      "C": "Reality",
+      "D": "Musings"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reverie' is a daydream. 'Reality', 'fact', or 'truth' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3149",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REVOCABLE**",
+    "options": {
+      "A": "Reversible",
+      "B": "Irreversible",
+      "C": "Permanent",
+      "D": "Fixed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Revocable' means capable of being revoked or cancelled. 'Reversible', 'cancellable', or 'alterable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3150",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REVOCABLE**",
+    "options": {
+      "A": "Reversible",
+      "B": "Cancellable",
+      "C": "Irreversible",
+      "D": "Alterable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Revocable' means capable of being revoked. 'Irreversible', 'permanent', or 'fixed' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

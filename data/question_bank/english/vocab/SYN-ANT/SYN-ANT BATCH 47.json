@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_2301",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FAWN**",
+    "options": {
+      "A": "Grovel",
+      "B": "Toady",
+      "C": "Defy",
+      "D": "Flatter"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fawn' means to act servilely or grovel. 'Defy', 'challenge', or 'stand up to' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2302",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FECUND**",
+    "options": {
+      "A": "Fertile",
+      "B": "Barren",
+      "C": "Sterile",
+      "D": "Unfruitful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fecund' means producing or capable of producing an abundance of offspring or new growth; fertile. 'Fertile', 'fruitful', or 'productive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2303",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FECUND**",
+    "options": {
+      "A": "Fertile",
+      "B": "Productive",
+      "C": "Barren",
+      "D": "Fruitful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fecund' means highly fertile. 'Barren', 'sterile', or 'unfruitful' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2304",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FEIGN**",
+    "options": {
+      "A": "Simulate",
+      "B": "Reveal",
+      "C": "Disclose",
+      "D": "Expose"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Feign' means to pretend to be affected by (a feeling, state, or injury). 'Simulate', 'fake', or 'affect' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2305",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FEIGN**",
+    "options": {
+      "A": "Simulate",
+      "B": "Pretend",
+      "C": "Reveal",
+      "D": "Fake"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Feign' means to simulate or pretend. 'Reveal', 'disclose', or 'show' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2306",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FELICITOUS**",
+    "options": {
+      "A": "Apt",
+      "B": "Inappropriate",
+      "C": "Unfortunate",
+      "D": "Uptight"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Felicitous' means well chosen or suited to the circumstances. 'Apt', 'suitable', or 'opportune' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2307",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FELICITOUS**",
+    "options": {
+      "A": "Apt",
+      "B": "Suitable",
+      "C": "Inappropriate",
+      "D": "Opportune"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Felicitous' means well-suited. 'Inappropriate', 'unfortunate', or 'unbefitting' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2308",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FERAL**",
+    "options": {
+      "A": "Wild",
+      "B": "Tame",
+      "C": "Domesticated",
+      "D": "Gentle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Feral' means in a wild state, especially after escape from captivity or domestication. 'Wild', 'untamed', or 'savage' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2309",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FERAL**",
+    "options": {
+      "A": "Wild",
+      "B": "Untamed",
+      "C": "Domesticated",
+      "D": "Savage"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Feral' means wild and untamed. 'Domesticated', 'tame', or 'gentle' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2310",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FERVOR**",
+    "options": {
+      "A": "Passion",
+      "B": "Apathy",
+      "C": "Indifference",
+      "D": "Coldness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fervor' refers to intense and passionate feeling. 'Passion', 'zeal', or 'ardor' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2311",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FERVOR**",
+    "options": {
+      "A": "Passion",
+      "B": "Zeal",
+      "C": "Apathy",
+      "D": "Ardor"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fervor' means intense passion. 'Apathy', 'indifference', or 'coldness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2312",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FETTER**",
+    "options": {
+      "A": "Shackle",
+      "B": "Liberate",
+      "C": "Free",
+      "D": "Release"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fetter' means to restrain with chains or manacles, typically around the ankles. 'Shackle', 'bind', or 'restrain' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2313",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FETTER**",
+    "options": {
+      "A": "Shackle",
+      "B": "Bind",
+      "C": "Liberate",
+      "D": "Restrain"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fetter' means to restrain or bind. 'Liberate', 'free', or 'release' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2314",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FIASCO**",
+    "options": {
+      "A": "Failure",
+      "B": "Success",
+      "C": "Triumph",
+      "D": "Victory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fiasco' refers to a complete failure, especially a ludicrous or humiliating one. 'Failure', 'debacle', or 'catastrophe' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2315",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FIASCO**",
+    "options": {
+      "A": "Failure",
+      "B": "Debacle",
+      "C": "Success",
+      "D": "Catastrophe"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fiasco' means a complete failure. 'Success', 'triumph', or 'victory' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2316",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FICKLE**",
+    "options": {
+      "A": "Capricious",
+      "B": "Constant",
+      "C": "Stable",
+      "D": "Steadfast"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fickle' means changing frequently, especially as regards one's loyalties or affections. 'Capricious', 'inconstant', or 'unstable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2317",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FICKLE**",
+    "options": {
+      "A": "Capricious",
+      "B": "Inconstant",
+      "C": "Constant",
+      "D": "Unstable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fickle' means changeable. 'Constant', 'steadfast', or 'stable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2318",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLAGRANT**",
+    "options": {
+      "A": "Blatant",
+      "B": "Concealed",
+      "C": "Hidden",
+      "D": "Subtle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Flagrant' means (of something considered wrong or immoral) conspicuously or outrageously bad. 'Blatant', 'glaring', or 'egregious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2319",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLAGRANT**",
+    "options": {
+      "A": "Blatant",
+      "B": "Glaring",
+      "C": "Concealed",
+      "D": "Egregious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Flagrant' means conspicuously bad. 'Concealed', 'hidden', or 'subtle' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2320",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLAXEN**",
+    "options": {
+      "A": "Blonde",
+      "B": "Dark",
+      "C": "Black",
+      "D": "Brunette"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Flaxen' refers to pale yellow hair color. 'Blonde', 'fair', or 'golden' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2321",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLAXEN**",
+    "options": {
+      "A": "Blonde",
+      "B": "Fair",
+      "C": "Dark",
+      "D": "Golden"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Flaxen' means pale yellow. 'Dark', 'black', or 'brunette' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2322",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLEETING**",
+    "options": {
+      "A": "Transient",
+      "B": "Permanent",
+      "C": "Lasting",
+      "D": "Enduring"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fleeting' means lasting for a very short time. 'Transient', 'ephemeral', or 'momentary' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2323",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLEETING**",
+    "options": {
+      "A": "Transient",
+      "B": "Ephemeral",
+      "C": "Permanent",
+      "D": "Momentary"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fleeting' means brief. 'Permanent', 'enduring', or 'lasting' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2324",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLIPPANT**",
+    "options": {
+      "A": "Frivolous",
+      "B": "Serious",
+      "C": "Earnest",
+      "D": "Grave"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Flippant' means not showing a serious or respectful attitude. 'Frivolous', 'facetious', or 'disrespectful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2325",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLIPPANT**",
+    "options": {
+      "A": "Frivolous",
+      "B": "Facetious",
+      "C": "Serious",
+      "D": "Disrespectful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Flippant' means disrespectful and lacking seriousness. 'Serious', 'earnest', or 'grave' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2326",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLOUNDER**",
+    "options": {
+      "A": "Stumble",
+      "B": "Succeed",
+      "C": "Prosper",
+      "D": "Thrive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Flounder' means to struggle or stagger helplessly. 'Stumble', 'thrash', or 'struggle' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2327",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLOUNDER**",
+    "options": {
+      "A": "Stumble",
+      "B": "Thrash",
+      "C": "Succeed",
+      "D": "Struggles"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Flounder' means to struggle clumsily. 'Succeed', 'thrive', or 'prosper' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2328",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLOURISH**",
+    "options": {
+      "A": "Thrive",
+      "B": "Wither",
+      "C": "Fade",
+      "D": "Decay"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Flourish' means to grow or develop in a healthy or vigorous way. 'Thrive', 'prosper', or 'blossom' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2329",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLOURISH**",
+    "options": {
+      "A": "Thrive",
+      "B": "Prosper",
+      "C": "Wither",
+      "D": "Blossom"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Flourish' means to grow well. 'Wither', 'fade', or 'decay' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2330",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLUCTUATE**",
+    "options": {
+      "A": "Vary",
+      "B": "Stabilize",
+      "C": "Remain",
+      "D": "Fix"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fluctuate' means to rise and fall irregularly in number or amount. 'Vary', 'oscillate', or 'waver' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2331",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLUCTUATE**",
+    "options": {
+      "A": "Vary",
+      "B": "Oscillate",
+      "C": "Stabilize",
+      "D": "Waver"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fluctuate' means to change irregularly. 'Stabilize', 'fix', or 'remain steady' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2332",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLUSTER**",
+    "options": {
+      "A": "Agitate",
+      "B": "Calm",
+      "C": "Soothe",
+      "D": "Compose"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fluster' means to make (someone) agitated or confused. 'Agitate', 'perturb', or 'confuse' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2333",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLUSTER**",
+    "options": {
+      "A": "Agitate",
+      "B": "Perturb",
+      "C": "Calm",
+      "D": "Confuse"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fluster' means to agitate or confuse. 'Calm', 'soothe', or 'compose' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2334",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FOIL**",
+    "options": {
+      "A": "Thwart",
+      "B": "Assist",
+      "C": "Aid",
+      "D": "Promote"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Foil' means to prevent something considered wrong or undesirable from succeeding. 'Thwart', 'frustrate', or 'baffle' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2335",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FOIL**",
+    "options": {
+      "A": "Thwart",
+      "B": "Frustrate",
+      "C": "Promote",
+      "D": "Baffle"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Foil' means to prevent or obstruct. 'Promote', 'assist', or 'aid' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2336",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FOMENT**",
+    "options": {
+      "A": "Instigate",
+      "B": "Suppress",
+      "C": "Quell",
+      "D": "Stifle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Foment' means to instigate or stir up (an undesirable or violent sentiment or course of action). 'Instigate', 'incite', or 'provoke' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2337",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FOMENT**",
+    "options": {
+      "A": "Instigate",
+      "B": "Incite",
+      "C": "Suppress",
+      "D": "Provoke"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Foment' means to stir up. 'Suppress', 'quell', or 'stifle' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2338",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FOOLHARDY**",
+    "options": {
+      "A": "Rash",
+      "B": "Prudent",
+      "C": "Cautious",
+      "D": "Circumspect"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Foolhardy' means recklessly bold or rash. 'Rash', 'reckless', or 'impulsive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2339",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FOOLHARDY**",
+    "options": {
+      "A": "Rash",
+      "B": "Reckless",
+      "C": "Prudent",
+      "D": "Impulsive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Foolhardy' means recklessly bold. 'Prudent', 'cautious', or 'circumspect' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2340",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FORAY**",
+    "options": {
+      "A": "Raid",
+      "B": "Retreat",
+      "C": "Withdrawal",
+      "D": "Flight"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Foray' refers to a sudden attack or incursion into enemy territory. 'Raid', 'invasion', or 'attack' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2341",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FORAY**",
+    "options": {
+      "A": "Raid",
+      "B": "Incursion",
+      "C": "Retreat",
+      "D": "Attack"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Foray' means a sudden raid or attack. 'Retreat', 'withdrawal', or 'flight' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2342",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FOREBODING**",
+    "options": {
+      "A": "Apprehension",
+      "B": "Confidence",
+      "C": "Serenity",
+      "D": "Assurance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Foreboding' refers to fearful apprehension; a feeling that something bad will happen. 'Apprehension', 'dread', or 'misgiving' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2343",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FOREBODING**",
+    "options": {
+      "A": "Apprehension",
+      "B": "Dread",
+      "C": "Confidence",
+      "D": "Misgiving"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Foreboding' is a sense of impending evil. 'Confidence', 'assurance', or 'optimism' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2344",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FORSHAKE**",
+    "options": {
+      "A": "Abandon",
+      "B": "Keep",
+      "C": "Maintain",
+      "D": "Retain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Forsake' means to renounce or abandon someone or something. 'Abandon', 'desert', or 'forswear' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2345",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FORSAKE**",
+    "options": {
+      "A": "Abandon",
+      "B": "Desert",
+      "C": "Maintain",
+      "D": "Forswear"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Forsake' means to abandon. 'Maintain', 'keep', or 'retain' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2346",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FORTITUDINOUS**",
+    "options": {
+      "A": "Courageous",
+      "B": "Cowardly",
+      "C": "Timorous",
+      "D": "Faint-hearted"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fortitudinous' (or having fortitude) means showing courage in pain or adversity. 'Courageous', 'brave', or 'resolute' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2347",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FORTITUDE**",
+    "options": {
+      "A": "Courage",
+      "B": "Bravery",
+      "C": "Cowardice",
+      "D": "Resilience"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fortitude' means mental and emotional strength in facing difficulty. 'Cowardice', 'fearfulness', or 'weakness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2348",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FORTUITOUS**",
+    "options": {
+      "A": "Accidental",
+      "B": "Intentional",
+      "C": "Deliberate",
+      "D": "Planned"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fortuitous' means happening by a lucky accident or chance rather than design. 'Accidental', 'chance', or 'unexpected' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2349",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FORTUITOUS**",
+    "options": {
+      "A": "Accidental",
+      "B": "Chance",
+      "C": "Intentional",
+      "D": "Unexpected"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fortuitous' means accidental. 'Intentional', 'deliberate', or 'planned' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2350",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FOSTER**",
+    "options": {
+      "A": "Nurture",
+      "B": "Neglect",
+      "C": "Stifle",
+      "D": "Suppress"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Foster' means to encourage or promote the development of something. 'Nurture', 'cultivate', or 'encourage' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

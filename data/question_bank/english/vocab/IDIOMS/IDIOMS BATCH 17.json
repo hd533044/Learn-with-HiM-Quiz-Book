@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0801",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn a hair**",
+    "options": {
+      "A": "To show surprise, alarm, or disturbance in a difficult situation",
+      "B": "To brush your hair in a mirror",
+      "C": "To dye your hair a new color",
+      "D": "To get a haircut at a barber"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Used in negative context (e.g., 'didn't turn a hair'), it means to remain unperturbed or calm.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0802",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn a deaf ear**",
+    "options": {
+      "A": "To ignore, refuse to listen, or pretend not to hear pleas or warnings",
+      "B": "To suffer from an ear infection",
+      "C": "To wear headphones in public",
+      "D": "To listen with close attention"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Turning a 'deaf ear' means ignoring requests or advice.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0803",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn the tables**",
+    "options": {
+      "A": "To reverse a situation completely, putting yourself in a superior position",
+      "B": "To rearrange dining room furniture",
+      "C": "To flip tables during a fight",
+      "D": "To change meeting room plans"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'turn the tables' means reversing one's fortune against an opponent.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0804",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn the tide**",
+    "options": {
+      "A": "To reverse the course of events or change the outcome decisively",
+      "B": "To swim with the ocean current",
+      "C": "To watch sea waves at sunset",
+      "D": "To forecast weather conditions"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'turn the tide' means to alter the momentum of a struggle.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0805",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn the trick**",
+    "options": {
+      "A": "To accomplish the required result; to succeed",
+      "B": "To perform magic card tricks",
+      "C": "To deceive customers in shops",
+      "D": "To play games for entertainment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'turn the trick' means achieving success or getting the desired result.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0806",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn to account**",
+    "options": {
+      "A": "To utilize or exploit something to one's advantage",
+      "B": "To open a bank savings account",
+      "C": "To calculate math accounts",
+      "D": "To pay business debts off"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'turn to account' means making something profitable or useful.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0807",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn turtle**",
+    "options": {
+      "A": "To overturn, capsize, or turn completely upside down",
+      "B": "To watch reptiles in zoo exhibits",
+      "C": "To move slowly on land",
+      "D": "To hide inside protective shells"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'turn turtle' means capsizing, like a turtle on its back.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0808",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn up one's nose**",
+    "options": {
+      "A": "To show contempt, disgust, or rejection toward something",
+      "B": "To sniff the air for odors",
+      "C": "To suffer from nasal pain",
+      "D": "To wear cosmetic makeup"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'turn up your nose' at something is to reject it scornfully.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0809",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn up trumps**",
+    "options": {
+      "A": "To prove unexpectedly successful or helpful",
+      "B": "To play card game matches",
+      "C": "To win gambling bets easily",
+      "D": "To show lucky playing cards"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. When something 'turns up trumps', it results in a favorable outcome.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0810",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Twice-told tale**",
+    "options": {
+      "A": "A story or event that has been heard many times before",
+      "B": "A book read two times over",
+      "C": "A historical myth legend",
+      "D": "An original fiction script"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'twice-told tale' is something repetitive and unoriginal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0811",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Two faces**",
+    "options": {
+      "A": "Deceitful, hypocritical, or insincere behavior",
+      "B": "A rare birth deformity",
+      "C": "Two friends meeting together",
+      "D": "A movie drama character"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'two-faced' means practicing duplicity and insincerity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0812",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Two-edged sword**",
+    "options": {
+      "A": "A situation with both positive and negative consequences",
+      "B": "A sharpened historical weapon",
+      "C": "A fencing competition sport",
+      "D": "A dangerous martial tool"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'double-edged sword' can have both helpful and harmful outcomes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0813",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Two-faced**",
+    "options": {
+      "A": "Hypocritical and deceitful",
+      "B": "Having two distinct careers",
+      "C": "A person with dual citizenship",
+      "D": "Watching two theater shows"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'two-faced' person is insincere and untrustworthy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0814",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Under a cloud**",
+    "options": {
+      "A": "Under suspicion or in disgrace",
+      "B": "Sheltered from rain weather",
+      "C": "Flying in an airplane",
+      "D": "Living in foggy regions"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'under a cloud' means being suspected of wrongdoing.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0815",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Under the hammer**",
+    "options": {
+      "A": "For sale by public auction",
+      "B": "Working in iron smithing",
+      "C": "Being punished by judges",
+      "D": "Fixing construction tools"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Going 'under the hammer' means being auctioned off.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0816",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Under the rose**",
+    "options": {
+      "A": "Secretly or confidentially",
+      "B": "Gardening red rose flowers",
+      "C": "Sitting under plant foliage",
+      "D": "In a fragrant perfume shop"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing something 'under the rose' means doing it in secret.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0817",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Under the thumb of**",
+    "options": {
+      "A": "Under the total control or influence of someone else",
+      "B": "Suffering from thumb injuries",
+      "C": "Working as manual laborers",
+      "D": "Holding small objects tight"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'under the thumb' means being dominated by others.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0818",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Under the weather**",
+    "options": {
+      "A": "Feeling unwell or sick",
+      "B": "Walking in rainy weather",
+      "C": "Feeling happy in sunshine",
+      "D": "Skiing on mountain slopes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Feeling 'under the weather' means being slightly ill.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0819",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Unearth**",
+    "options": {
+      "A": "To discover or find something hidden or forgotten",
+      "B": "To bury treasure in ground",
+      "C": "To farm vegetable crops",
+      "D": "To remove dirt from roads"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'unearth' means revealing something kept hidden.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0820",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Up against**",
+    "options": {
+      "A": "Faced with a difficulty, challenge, or opponent",
+      "B": "Leaning on building walls",
+      "C": "Standing in a long line",
+      "D": "Preparing for a race"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To be 'up against' means confronting a hurdle.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0821",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Up in the air**",
+    "options": {
+      "A": "Uncertain, undecided, or not yet settled",
+      "B": "Flying in a high aircraft",
+      "C": "Jumping during gymnastics",
+      "D": "Watching birds in flight"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A situation 'up in the air' is unresolved.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0822",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Upper hand**",
+    "options": {
+      "A": "A position of control or advantage",
+      "B": "A hand waving greeting",
+      "C": "A medical arm cast",
+      "D": "Reaching for high items"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having the 'upper hand' is having dominance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0823",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Upset the applecart**",
+    "options": {
+      "A": "To disrupt or ruin a plan or arrangement",
+      "B": "To crash fruit selling carts",
+      "C": "To eat food on the street",
+      "D": "To rearrange garden layout"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'upset the applecart' means causing disruption.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0824",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Use one's head**",
+    "options": {
+      "A": "To think logically and use intelligence to solve a problem",
+      "B": "To hit things with foreheads",
+      "C": "To wear protective hats",
+      "D": "To study biology anatomy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'use your head' means thinking rationally.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0825",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Vanish into thin air**",
+    "options": {
+      "A": "To disappear completely and suddenly without trace",
+      "B": "To dissolve in water basins",
+      "C": "To fly high into clouds",
+      "D": "To evaporate in sunlight"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'vanish into thin air' means becoming invisible unexpectedly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0826",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Venture into**",
+    "options": {
+      "A": "To embark on a risky or new activity",
+      "B": "To retreat from danger",
+      "C": "To save money in banks",
+      "D": "To close shops permanently"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'venture into' means starting something risky.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0827",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Vested interest**",
+    "options": {
+      "A": "A personal stake or financial motivation in an outcome",
+      "B": "A tailored jacket garment",
+      "C": "Bank interest on savings",
+      "D": "Public charitable donation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'vested interest' means having a stake in an outcome.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0828",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Vicious circle**",
+    "options": {
+      "A": "A situation where one problem causes another, leading to endless cycle",
+      "B": "A circular drawing shape",
+      "C": "A math homework problem",
+      "D": "A race track loop"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'vicious circle' is a sequence of problems reinforcing each other.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0829",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Vie with**",
+    "options": {
+      "A": "To compete fiercely for superiority with others",
+      "B": "To work together harmoniously",
+      "C": "To ignore rival opponents",
+      "D": "To watch games passively"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'vie with' someone means competing against them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0830",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Virgin territory**",
+    "options": {
+      "A": "An area or subject that is completely new and unexplored",
+      "B": "A popular tourist destination",
+      "C": "A protected wildlife park",
+      "D": "Cultivated farm land area"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Virgin territory' refers to untouched or new ground.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0831",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Voice in the wilderness**",
+    "options": {
+      "A": "An opinion expressed by someone that is ignored by others",
+      "B": "A broadcast radio program",
+      "C": "An echo in a canyon",
+      "D": "A talented concert singer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'voice in the wilderness' is a warning that nobody hears.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0832",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wag the dog**",
+    "options": {
+      "A": "To distract attention from major issues with trivial distractions",
+      "B": "To train a pet animal",
+      "C": "To play catch games",
+      "D": "To follow orders blindly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'wag the dog' means creating a diversion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0833",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Waiting in the wings**",
+    "options": {
+      "A": "Ready and waiting for an opportunity to act",
+      "B": "Performing on theater stages",
+      "C": "Waiting for air flights",
+      "D": "Watching birds fly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'waiting in the wings' means prepared for action.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0834",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Walk a tightrope**",
+    "options": {
+      "A": "To act with extreme caution in a precarious situation",
+      "B": "To perform circus gymnastics",
+      "C": "To exercise on gym ropes",
+      "D": "To climb mountain ridges"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'walk a tightrope' means being in a risky position requiring care.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0835",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wash one's hands of**",
+    "options": {
+      "A": "To disclaim responsibility for or abandon any connection with something",
+      "B": "To clean hands before meals",
+      "C": "To perform surgical procedures",
+      "D": "To show support for someone"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'wash your hands of' means refusing further responsibility.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0836",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Washing dirty linen in public**",
+    "options": {
+      "A": "To openly discuss private quarrels or embarrassing secrets",
+      "B": "To use a public laundromat",
+      "C": "To clean hotel bed sheets",
+      "D": "To dry clothing outdoors"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Washing dirty linen in public' means airing private squabbles.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0837",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Water down**",
+    "options": {
+      "A": "To dilute or weaken the strength of a policy",
+      "B": "To water garden plant leaves",
+      "C": "To wash dirty dishes",
+      "D": "To dive in swimming pools"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'water down' means making a policy less effective.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0838",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wave a magic wand**",
+    "options": {
+      "A": "To resolve a complex problem instantly and effortlessly",
+      "B": "To perform stage magic shows",
+      "C": "To direct music orchestras",
+      "D": "To gesture goodbye waves"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'wave a magic wand' means hoping for an instant miracle.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0839",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wear the trousers**",
+    "options": {
+      "A": "To be the dominant authority in a household",
+      "B": "To work as a clothes tailor",
+      "C": "To wear formal business suits",
+      "D": "To purchase new clothing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Wearing the trousers' means holding the authority.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0840",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Weather the storm**",
+    "options": {
+      "A": "To endure a severe crisis or period of difficulty safely",
+      "B": "To build a wind shelter",
+      "C": "To forecast weather patterns",
+      "D": "To sail ships in hurricanes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'weather the storm' means successfully enduring hardship.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0841",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wet behind the ears**",
+    "options": {
+      "A": "Immature, naive, and inexperienced",
+      "B": "Finishing swimming lessons",
+      "C": "Having ear infection pains",
+      "D": "Washing hair in baths"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'wet behind the ears' means lacking experience.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0842",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Whistle in the dark**",
+    "options": {
+      "A": "To display a brave front when feeling afraid",
+      "B": "To walk through dark alleys",
+      "C": "To signal during blackouts",
+      "D": "To play music at clubs"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'whistle in the dark' means acting brave while scared.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0843",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**White elephant**",
+    "options": {
+      "A": "A costly possession that is burdensome and useless",
+      "B": "An albino animal in zoos",
+      "C": "A valuable ivory antique",
+      "D": "A sacred religious symbol"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'white elephant' is a useless, expensive burden.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0844",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wild goose chase**",
+    "options": {
+      "A": "A futile, hopeless pursuit of something unattainable",
+      "B": "Hunting waterfowl on lakes",
+      "C": "An exciting wildlife safari",
+      "D": "Fast car driving games"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'wild goose chase' is a pointless search.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0845",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Windfall**",
+    "options": {
+      "A": "An unexpected, lucky financial gain",
+      "B": "Fruit blown by storms",
+      "C": "Falling stock market prices",
+      "D": "A destructive gale wind"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'windfall' is an unpredicted stroke of good luck.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0846",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wipe the slate clean**",
+    "options": {
+      "A": "To make a fresh start by ignoring past mistakes",
+      "B": "To clean classroom boards",
+      "C": "To delete computer files",
+      "D": "To redecorate kitchen walls"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'wipe the slate clean' means starting over without past baggage.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0847",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wolf in sheep's clothing**",
+    "options": {
+      "A": "A dangerous traitor disguised as a harmless friend",
+      "B": "A shepherd protecting sheep",
+      "C": "A winter wool coat",
+      "D": "A wild animal in farms"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'wolf in sheep's clothing' is a dangerous deceiver.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0848",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wooden spoon**",
+    "options": {
+      "A": "A booby prize awarded to the last-place finisher in a contest",
+      "B": "A kitchen cooking utensil",
+      "C": "A carved antique artifact",
+      "D": "A cheap dining accessory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'wooden spoon' symbolizes finishing last.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0849",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Word of mouth**",
+    "options": {
+      "A": "Informal oral communication or recommendations",
+      "B": "A dental health check",
+      "C": "Printed newspaper ads",
+      "D": "Official legal documents"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Word of mouth' refers to spoken recommendations.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0850",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Work like a Trojan**",
+    "options": {
+      "A": "To work with exceptional energy and diligence",
+      "B": "To build ancient architecture",
+      "C": "To serve as military soldiers",
+      "D": "To work slowly with breaks"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'work like a Trojan' means laboring with immense dedication.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

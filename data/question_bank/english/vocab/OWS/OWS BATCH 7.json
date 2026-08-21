@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0351",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn action or conduct that is shocking, morally bad, or bringing great shame",
+    "options": {
+      "A": "Disgraceful",
+      "B": "Laudable",
+      "C": "Virtuous",
+      "D": "Venerable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Disgraceful) is correct. 'Disgraceful' describes conduct that brings dishonour, reproach, or shame. 'Laudable' means praiseworthy, and 'Venerable' means commanding great respect.",
+    "tags": ["vocab", "ows", "morality", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0352",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo alter or conceal one's appearance in order to hide identity and deceive others",
+    "options": {
+      "A": "Disguise",
+      "B": "Illuminate",
+      "C": "Depict",
+      "D": "Manifest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Disguise) is correct. 'Disguise' means to modify appearance or manner to prevent recognition. 'Illuminate' means to brighten up with lights, and 'Depict' means to portray in words or pictures.",
+    "tags": ["vocab", "ows", "actions", "deception", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0353",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo break up, decompose, or separate into small constituent parts or fragments",
+    "options": {
+      "A": "Disintegrate",
+      "B": "Integrate",
+      "C": "Consolidate",
+      "D": "Coagulate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Disintegrate) is correct. 'Disintegrate' means to break into small parts or decay completely. 'Integrate' means to combine parts to form a whole.",
+    "tags": ["vocab", "ows", "science", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0354",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe country or place where an individual has their permanent, legal home",
+    "options": {
+      "A": "Domicile",
+      "B": "Sanatorium",
+      "C": "Asylum",
+      "D": "Infirmary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Domicile) is correct. 'Domicile' is the country or place that a person treats as their permanent home in legal terms. 'Asylum' is an institution offering protection or care.",
+    "tags": ["vocab", "ows", "law", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0355",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn area of territory over which a monarch, sovereign, or government has supreme control",
+    "options": {
+      "A": "Dominion",
+      "B": "Archipelago",
+      "C": "Isthmus",
+      "D": "Hinterland"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dominion) is correct. 'Dominion' denotes sovereignty, supreme control, or a territory ruled by a government. 'Hinterland' refers to the remote inland regions.",
+    "tags": ["vocab", "ows", "politics", "geography", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0356",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large communal bedroom containing several beds in a school, college, or institution",
+    "options": {
+      "A": "Dormitory",
+      "B": "Auditorium",
+      "C": "Barracks",
+      "D": "Apartment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dormitory) is correct. A 'Dormitory' is a communal sleeping room with many beds in an institution. 'Barracks' provides lodging for troops.",
+    "tags": ["vocab", "ows", "places", "housing", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0357",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSituated on, belonging to, or relating to the back or upper side of an animal or organ",
+    "options": {
+      "A": "Dorsal",
+      "B": "Ventral",
+      "C": "Lateral",
+      "D": "Medial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dorsal) is correct. 'Dorsal' relates to the upper surface or back of an animal. 'Ventral' refers to the front or lower abdominal side.",
+    "tags": ["vocab", "ows", "anatomy", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0358",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA very heavy, torrential, and sudden fall of rain",
+    "options": {
+      "A": "Downpour",
+      "B": "Drought",
+      "C": "Gust",
+      "D": "Tempest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Downpour) is correct. A 'Downpour' is a sudden, copious fall of rain. 'Drought' is an extended period of abnormally dry weather, and 'Gust' is a brief blast of wind.",
+    "tags": ["vocab", "ows", "weather", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0359",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sporting match, contest, or game in which neither competitor or team wins; a tie",
+    "options": {
+      "A": "Draw",
+      "B": "Duel",
+      "C": "Trophy",
+      "D": "Verdict"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Draw) is correct. A 'Draw' is an uncompleted or tied contest where no side claims victory. A 'Duel' is an armed combat between two persons.",
+    "tags": ["vocab", "ows", "sports", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0360",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abnormal, uncontrollable psychological impulse or mania to wander and travel",
+    "options": {
+      "A": "Dromomania",
+      "B": "Bibliomania",
+      "C": "Dipsomania",
+      "D": "Pyromania"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dromomania) is correct. 'Dromomania' is an uncontrollable desire to wander or travel. 'Bibliomania' is an obsession with collecting books, and 'Pyromania' is setting fires.",
+    "tags": ["vocab", "ows", "mania", "medical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0361",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA long, continuous period of abnormally dry weather with no rainfall, causing water shortages",
+    "options": {
+      "A": "Drought",
+      "B": "Draft",
+      "C": "Draught",
+      "D": "Torrent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Drought) is correct. 'Drought' is an extended period of acute rain shortage. 'Torrent' is a raging rushing stream of water.",
+    "tags": ["vocab", "ows", "weather", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0362",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA material or metal that can be easily drawn, pulled, or stretched into thin wires without breaking",
+    "options": {
+      "A": "Ductile",
+      "B": "Brittle",
+      "C": "Fragile",
+      "D": "Rigid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ductile) is correct. 'Ductile' describes metals that can be drawn into wires. 'Brittle' and 'Fragile' describe materials that fracture easily.",
+    "tags": ["vocab", "ows", "science", "materials", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0363",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA prearranged combat between two individuals with deadly weapons to settle a point of honour",
+    "options": {
+      "A": "Duel",
+      "B": "Mutiny",
+      "C": "Arena",
+      "D": "Junta"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Duel) is correct. A 'Duel' is an arranged armed contest between two people. 'Mutiny' is an insurrection against military officers.",
+    "tags": ["vocab", "ows", "military", "events", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0364",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is physically unable to speak; mute",
+    "options": {
+      "A": "Dumb",
+      "B": "Deaf",
+      "C": "Blind",
+      "D": "Lame"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dumb) is correct. 'Dumb' (or Mute) refers to an individual lacking the physiological power of speech. 'Deaf' means unable to hear.",
+    "tags": ["vocab", "ows", "medical", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0365",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person, plant, or animal that is much below the standard average height and size",
+    "options": {
+      "A": "Dwarf",
+      "B": "Giant",
+      "C": "Colossus",
+      "D": "Amputee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dwarf) is correct. 'Dwarf' refers to an individual or organism whose height is significantly below normal. 'Colossus' is a giant figure.",
+    "tags": ["vocab", "ows", "nature", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0366",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA long wall or embankment constructed to prevent the sea or a river from flooding low-lying land",
+    "options": {
+      "A": "Dyke",
+      "B": "Bridge",
+      "C": "Dock",
+      "D": "Shaft"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dyke) is correct. A 'Dyke' (or dike) is an embankment built to hold back floodwaters from the sea or rivers. 'Shaft' is a vertical passage into a mine.",
+    "tags": ["vocab", "ows", "geography", "engineering", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0367",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA continuous line of hereditary rulers belonging to one family",
+    "options": {
+      "A": "Dynasty",
+      "B": "Monarchy",
+      "C": "Hierarchy",
+      "D": "Oligarchy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Dynasty) is correct. A 'Dynasty' is a succession of monarchs belonging to the same lineage. 'Monarchy' is the system of rule by a king/queen.",
+    "tags": ["vocab", "ows", "history", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0368",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who listens secretly to the private conversations of others",
+    "options": {
+      "A": "Eavesdropper",
+      "B": "Emissary",
+      "C": "Prowler",
+      "D": "Burglar"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Eavesdropper) is correct. An 'Eavesdropper' secretly listens in on private talks without the speakers' consent. 'Prowler' moves stealthily to commit theft.",
+    "tags": ["vocab", "ows", "people", "behaviour", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0369",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person of unconventional, strange, and slightly abnormal habits and views",
+    "options": {
+      "A": "Eccentric",
+      "B": "Conventional",
+      "C": "Orthodox",
+      "D": "Conservative"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Eccentric) is correct. 'Eccentric' refers to a person having odd, peculiar, or unconventional conduct. 'Orthodox' refers to strictly conventional beliefs.",
+    "tags": ["vocab", "ows", "personality", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0370",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA scientist who studies the relationships and interactions between living organisms and their environment",
+    "options": {
+      "A": "Ecologist",
+      "B": "Economist",
+      "C": "Entomologist",
+      "D": "Ornithologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ecologist) is correct. An 'Ecologist' specializes in ecosystem interactions. 'Entomologist' studies insects, and 'Ornithologist' studies birds.",
+    "tags": ["vocab", "ows", "science", "environment", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0371",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study of the interactions between living organisms and their environment",
+    "options": {
+      "A": "Ecology",
+      "B": "Etymology",
+      "C": "Ethnology",
+      "D": "Entomology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ecology) is correct. 'Ecology' studies environment-organism interactions. 'Etymology' studies word origins, and 'Ethnology' studies human races.",
+    "tags": ["vocab", "ows", "science", "environment", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0372",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCareful and thrifty in the management and spending of money and resources; not wasteful",
+    "options": {
+      "A": "Economical",
+      "B": "Extravagant",
+      "C": "Profligate",
+      "D": "Spendthrift"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Economical) is correct. 'Economical' means practicing prudent economy and avoiding waste. 'Extravagant' and 'Profligate' mean recklessly wasteful.",
+    "tags": ["vocab", "ows", "money", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0373",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFit, suitable, and safe to be eaten as food",
+    "options": {
+      "A": "Edible",
+      "B": "Potable",
+      "C": "Audible",
+      "D": "Inedible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Edible) is correct. 'Edible' (or Eatable) refers to food that is safe for human consumption. 'Potable' refers specifically to safe drinking water.",
+    "tags": ["vocab", "ows", "food", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0374",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo instruct, uplift, and improve someone morally, spiritually, or intellectually",
+    "options": {
+      "A": "Edify",
+      "B": "Corrupt",
+      "C": "Denigrate",
+      "D": "Vilify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Edify) is correct. 'Edify' means to instruct someone in a way that enlightens them morally. 'Denigrate' means to defame or speak ill of.",
+    "tags": ["vocab", "ows", "morality", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0375",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo prepare written material for publication by correcting errors, selecting, and arranging content",
+    "options": {
+      "A": "Edit",
+      "B": "Compile",
+      "C": "Inscribe",
+      "D": "Publish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Edit) is correct. 'Edit' means to revise, correct, and prepare text for final publication. 'Inscribe' means to carve or write words on stone or paper.",
+    "tags": ["vocab", "ows", "publishing", "writing", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0376",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo rub out, wipe out, or completely erase a mark, inscription, or memory",
+    "options": {
+      "A": "Efface",
+      "B": "Engrave",
+      "C": "Inscribe",
+      "D": "Embed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Efface) is correct. 'Efface' means to erase, rub out, or obliterate. 'Embed' means to fix deeply in a surrounding mass.",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0377",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA man who behaves with manners, tastes, or traits traditionally regarded as feminine",
+    "options": {
+      "A": "Effeminate",
+      "B": "Feminist",
+      "C": "Philanderer",
+      "D": "Bachelor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Effeminate) is correct. 'Effeminate' describes a man possessing womanish traits and demeanor. 'Feminist' is an advocate of women's equal rights.",
+    "tags": ["vocab", "ows", "people", "behaviour", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0378",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nBelieving in or advocating the principle that all people are equal and deserve equal rights",
+    "options": {
+      "A": "Egalitarian",
+      "B": "Aristocratic",
+      "C": "Autocratic",
+      "D": "Plutocratic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Egalitarian) is correct. An 'Egalitarian' supports full political, social, and economic equality for all. 'Aristocratic' relates to privileged nobility.",
+    "tags": ["vocab", "ows", "philosophy", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0379",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is entirely self-centered and preoccupied only with their personal interests",
+    "options": {
+      "A": "Egoist",
+      "B": "Egotist",
+      "C": "Altruist",
+      "D": "Philanthropist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Egoist) is correct. An 'Egoist' is an entirely self-interested person. An 'Egotist' specifically talks boastfully about himself constantly.",
+    "tags": ["vocab", "ows", "personality", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0380",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who excessively talks about himself and boasts about his personal accomplishments",
+    "options": {
+      "A": "Egotist",
+      "B": "Egoist",
+      "C": "Raconteur",
+      "D": "Reticent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Egotist) is correct. An 'Egotist' constantly talks boastfully about himself. 'Reticent' refers to someone who is silent and reserved in speech.",
+    "tags": ["vocab", "ows", "personality", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0381",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe entire body of citizens entitled to cast a vote in an election",
+    "options": {
+      "A": "Electorate",
+      "B": "Clientele",
+      "C": "Congregation",
+      "D": "Jury"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Electorate) is correct. The 'Electorate' is the total body of qualified voters in a nation. 'Clientele' refers to customers collectively.",
+    "tags": ["vocab", "ows", "politics", "collective_nouns", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0382",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA poem or song of serious reflection and mournful lament for the dead",
+    "options": {
+      "A": "Elegy",
+      "B": "Ode",
+      "C": "Sonnet",
+      "D": "Ballad"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Elegy) is correct. An 'Elegy' is a formal sorrowful poem mourning the deceased. 'Sonnet' is a fourteen-line poem, and 'Ballad' is a narrative story poem.",
+    "tags": ["vocab", "ows", "poetry", "literature", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0383",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo run away secretly with a romantic partner, especially in order to get married",
+    "options": {
+      "A": "Elope",
+      "B": "Decamp",
+      "C": "Desert",
+      "D": "Abscond"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Elope) is correct. 'Elope' means to run away secretly with a lover to wed. 'Decamp' means to depart suddenly, usually with stolen goods.",
+    "tags": ["vocab", "ows", "actions", "marriage", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0384",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn ideal state or paradise of supreme bliss and perfect happiness",
+    "options": {
+      "A": "Elysium",
+      "B": "Utopia",
+      "C": "Sanctuary",
+      "D": "Asylum"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Elysium) is correct. In classical mythology, 'Elysium' (or Elysian Fields) is the home of the blessed and state of perfect bliss. 'Utopia' is an ideal political society.",
+    "tags": ["vocab", "ows", "mythology", "philosophy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0385",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe legal act of setting someone free from slavery, bondage, or political restraint",
+    "options": {
+      "A": "Emancipation",
+      "B": "Internment",
+      "C": "Coercion",
+      "D": "Disenfranchisement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Emancipation) is correct. 'Emancipation' is the liberation of individuals from servitude or legal subjection. 'Internment' is confinement in prison.",
+    "tags": ["vocab", "ows", "law", "freedom", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0386",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo fix or implant an object firmly and deeply in a surrounding solid mass",
+    "options": {
+      "A": "Embed",
+      "B": "Efface",
+      "C": "Disintegrate",
+      "D": "Impale"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Embed) is correct. 'Embed' means to fix firmly in a surrounding mass. 'Impale' means to pierce through with a sharp instrument.",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0387",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA glowing piece of burning coal or wood remaining in a dying fire",
+    "options": {
+      "A": "Ember",
+      "B": "Bullion",
+      "C": "Relic",
+      "D": "Fossil"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ember) is correct. An 'Ember' is a small piece of glowing coal or wood in a dying fire. 'Fossil' is prehistoric petrified remains.",
+    "tags": ["vocab", "ows", "nature", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0388",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo secretly and fraudulently misappropriate or steal money entrusted to one's care",
+    "options": {
+      "A": "Embezzle",
+      "B": "Confiscate",
+      "C": "Compensate",
+      "D": "Extradite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Embezzle) is correct. 'Embezzle' means to misappropriate funds placed in one's trust. 'Extradite' is handing over an accused criminal to another state.",
+    "tags": ["vocab", "ows", "crime", "finance", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0389",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe fraudulent conversion and misappropriation of money entrusted to an employee or trustee",
+    "options": {
+      "A": "Embezzlement",
+      "B": "Pilferage",
+      "C": "Smuggling",
+      "D": "Larceny"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Embezzlement) is correct. 'Embezzlement' is the crime of stealing funds placed in one's trust. 'Pilferage' is stealing things in small quantities.",
+    "tags": ["vocab", "ows", "crime", "finance", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0390",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo represent, give concrete form to, or express an abstract idea or quality in physical form",
+    "options": {
+      "A": "Embody",
+      "B": "Efface",
+      "C": "Diffuse",
+      "D": "Disguise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Embody) is correct. 'Embody' means to give a tangible, visible, or concrete form to an idea or principle. 'Diffuse' means to disperse widely.",
+    "tags": ["vocab", "ows", "philosophy", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0391",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA retired professional (such as a professor) who retains their honorary title",
+    "options": {
+      "A": "Emeritus",
+      "B": "Veteran",
+      "C": "Apprentice",
+      "D": "Novice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Emeritus) is correct. 'Emeritus' denotes a person retired from professional duty while keeping their rank as an honor. 'Novice' is an untrained beginner.",
+    "tags": ["vocab", "ows", "professions", "education", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0392",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medicine or chemical substance that causes vomiting",
+    "options": {
+      "A": "Emetic",
+      "B": "Sedative",
+      "C": "Laxative",
+      "D": "Antidote"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Emetic) is correct. An 'Emetic' is an agent inducing vomiting. 'Sedative' calms or induces sleep, and 'Laxative' loosens the bowels.",
+    "tags": ["vocab", "ows", "medical", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0393",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who leaves their native country to settle permanently in another land",
+    "options": {
+      "A": "Emigrant",
+      "B": "Immigrant",
+      "C": "Refugee",
+      "D": "Nomad"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Emigrant) is correct. An 'Emigrant' exits their native land to reside abroad. An 'Immigrant' enters a foreign nation to settle permanently.",
+    "tags": ["vocab", "ows", "people", "citizenship", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0394",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person sent on a special, diplomatic, or secret mission representing a government",
+    "options": {
+      "A": "Emissary",
+      "B": "Mercenary",
+      "C": "Eavesdropper",
+      "D": "Prowler"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Emissary) is correct. An 'Emissary' is an agent dispatched on a specific official or diplomatic errand. 'Mercenary' is a hired soldier.",
+    "tags": ["vocab", "ows", "politics", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0395",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe capacity to deeply understand, share, and experience the feelings of another person",
+    "options": {
+      "A": "Empathy",
+      "B": "Apathy",
+      "C": "Antipathy",
+      "D": "Animosity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Empathy) is correct. 'Empathy' is the psychological ability to share another's emotional state. 'Antipathy' is intense aversion or hostility.",
+    "tags": ["vocab", "ows", "mind", "emotions", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0396",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person, business, or organization that employs people for work",
+    "options": {
+      "A": "Employer",
+      "B": "Employee",
+      "C": "Apprentice",
+      "D": "Beneficiary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Employer) is correct. An 'Employer' hires and provides wages to workers. An 'Employee' is the worker receiving employment.",
+    "tags": ["vocab", "ows", "work", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0397",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA comprehensive multi-volume reference work containing articles on all branches of human knowledge",
+    "options": {
+      "A": "Encyclopedia",
+      "B": "Dictionary",
+      "C": "Directory",
+      "D": "Anthology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Encyclopedia) is correct. An 'Encyclopedia' is a massive reference book covering human knowledge across multiple subjects. 'Dictionary' defines words.",
+    "tags": ["vocab", "ows", "books", "education", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0398",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA disease that is regularly and natively found in a specific locality or population",
+    "options": {
+      "A": "Endemic",
+      "B": "Epidemic",
+      "C": "Contagious",
+      "D": "Congenital"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Endemic) is correct. 'Endemic' refers to a disease native or confined to a particular region. 'Epidemic' is a widespread, rapid outbreak of disease.",
+    "tags": ["vocab", "ows", "medical", "diseases", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0399",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo sweep over or cover something so as to surround or swallow it completely",
+    "options": {
+      "A": "Engulf",
+      "B": "Etiolate",
+      "C": "Decamp",
+      "D": "Evict"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Engulf) is correct. 'Engulf' means to swallow up, submerge, or surround entirely. 'Evict' means to legally expel a tenant.",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0400",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA feeling of listlessness, mental weariness, and dissatisfaction resulting from lack of occupation or boredom",
+    "options": {
+      "A": "Ennui",
+      "B": "Avidity",
+      "C": "Euphoria",
+      "D": "Zeal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ennui) is correct. 'Ennui' is profound boredom and dissatisfaction arising from inactivity. 'Avidity' and 'Zeal' denote enthusiasm and passion.",
+    "tags": ["vocab", "ows", "emotions", "mind", "pyq_ssc"]
+  }
+]

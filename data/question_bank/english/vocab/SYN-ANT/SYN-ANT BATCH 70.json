@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_3451",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TANGIBLE**",
+    "options": {
+      "A": "Palpable",
+      "B": "Abstract",
+      "C": "Intangible",
+      "D": "Ethereal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tangible' means perceptible by touch; clear and definite; real. 'Palpable', 'real', or 'concrete' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3452",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TANGIBLE**",
+    "options": {
+      "A": "Palpable",
+      "B": "Real",
+      "C": "Abstract",
+      "D": "Concrete"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tangible' means real and touchable. 'Abstract', 'intangible', or 'immaterial' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3453",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TANTAMOUNT**",
+    "options": {
+      "A": "Equivalent",
+      "B": "Different",
+      "C": "Opposite",
+      "D": "Unlike"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tantamount' means equivalent in seriousness to; virtually the same as. 'Equivalent', 'identical', or 'comparable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3454",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TANTAMOUNT**",
+    "options": {
+      "A": "Equivalent",
+      "B": "Identical",
+      "C": "Different",
+      "D": "Comparable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tantamount' means equivalent. 'Different', 'opposite', or 'unlike' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3455",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TARDY**",
+    "options": {
+      "A": "Late",
+      "B": "Prompt",
+      "C": "Punctual",
+      "D": "Early"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tardy' means delaying or delayed beyond the right or expected time; late. 'Late', 'slow', or 'delayed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3456",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TARDY**",
+    "options": {
+      "A": "Late",
+      "B": "Slow",
+      "C": "Prompt",
+      "D": "Delayed"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tardy' means late. 'Prompt', 'punctual', or 'early' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3457",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TAUT**",
+    "options": {
+      "A": "Tight",
+      "B": "Slack",
+      "C": "Loose",
+      "D": "Relaxed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Taut' means stretched or pulled tight; not slack. 'Tight', 'rigid', or 'firm' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3458",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TAUT**",
+    "options": {
+      "A": "Tight",
+      "B": "Rigid",
+      "C": "Slack",
+      "D": "Firm"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Taut' means tight. 'Slack', 'loose', or 'relaxed' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3459",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TAWDRY**",
+    "options": {
+      "A": "Gaudy",
+      "B": "Tasteful",
+      "C": "Elegant",
+      "D": "Refined"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tawdry' means showy but cheap and of poor quality. 'Gaudy', 'cheap', or 'flashy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3460",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TAWDRY**",
+    "options": {
+      "A": "Gaudy",
+      "B": "Cheap",
+      "C": "Tasteful",
+      "D": "Flashy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tawdry' means gaudy or cheap. 'Tasteful', 'elegant', or 'refined' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3461",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TEDIOUS**",
+    "options": {
+      "A": "Boring",
+      "B": "Exciting",
+      "C": "Interesting",
+      "D": "Amusing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tedious' means too long, slow, or dull; tiresome or monotonous. 'Boring', 'dull', or 'wearisome' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3462",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TEDIOUS**",
+    "options": {
+      "A": "Boring",
+      "B": "Dull",
+      "C": "Exciting",
+      "D": "Wearisome"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tedious' means boring. 'Exciting', 'interesting', or 'amusing' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3463",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TEMERITY**",
+    "options": {
+      "A": "Audacity",
+      "B": "Timidity",
+      "C": "Cowardice",
+      "D": "Fear"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Temerity' refers to excessive confidence or boldness; audacity. 'Audacity', 'brazenness', or 'nerve' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3464",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TEMERITY**",
+    "options": {
+      "A": "Audacity",
+      "B": "Brazenness",
+      "C": "Timidity",
+      "D": "Nerve"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Temerity' means boldness. 'Timidity', 'cowardice', or 'fear' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3465",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TEMPERATE**",
+    "options": {
+      "A": "Moderate",
+      "B": "Extreme",
+      "C": "Excessive",
+      "D": "Intense"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Temperate' means relating to or denoting a region or climate characterized by mild temperatures; showing moderation or self-restraint. 'Moderate', 'restrained', or 'mild' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3466",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TEMPERATE**",
+    "options": {
+      "A": "Moderate",
+      "B": "Restrained",
+      "C": "Extreme",
+      "D": "Mild"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Temperate' means moderate. 'Extreme', 'excessive', or 'intense' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3467",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TENACIOUS**",
+    "options": {
+      "A": "Persistent",
+      "B": "Yielding",
+      "C": "Weak",
+      "D": "Unstable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tenacious' means tending to keep a firm hold of something; clinging or adhering closely; persistent. 'Persistent', 'determined', or 'resolute' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3468",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TENACIOUS**",
+    "options": {
+      "A": "Persistent",
+      "B": "Determined",
+      "C": "Yielding",
+      "D": "Resolute"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tenacious' means persistent. 'Yielding', 'weak', or 'unstable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3469",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TENTATIVE**",
+    "options": {
+      "A": "Provisional",
+      "B": "Definite",
+      "C": "Permanent",
+      "D": "Certain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tentative' means not certain or fixed; provisional. 'Provisional', 'uncertain', or 'conditional' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3470",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TENTATIVE**",
+    "options": {
+      "A": "Provisional",
+      "B": "Uncertain",
+      "C": "Definite",
+      "D": "Conditional"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tentative' means not certain. 'Definite', 'permanent', or 'certain' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3471",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TENUOUS**",
+    "options": {
+      "A": "Flimsy",
+      "B": "Strong",
+      "C": "Substantial",
+      "D": "Solid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tenuous' means very weak or slight. 'Flimsy', 'weak', or 'slender' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3472",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TENUOUS**",
+    "options": {
+      "A": "Flimsy",
+      "B": "Weak",
+      "C": "Strong",
+      "D": "Slender"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tenuous' means weak or flimsy. 'Strong', 'substantial', or 'solid' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3473",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TEPID**",
+    "options": {
+      "A": "Lukewarm",
+      "B": "Hot",
+      "C": "Boiling",
+      "D": "Freezing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tepid' means (especially of a liquid) only slightly warm; lukewarm. 'Lukewarm', 'mild', or 'unenthusiastic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3474",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TEPID**",
+    "options": {
+      "A": "Lukewarm",
+      "B": "Mild",
+      "C": "Hot",
+      "D": "Unenthusiastic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tepid' means lukewarm. 'Hot', 'boiling', or 'enthusiastic' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3475",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TERSE**",
+    "options": {
+      "A": "Concise",
+      "B": "Wordy",
+      "C": "Verbose",
+      "D": "Long-winded"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Terse' means sparing in the use of words; abrupt. 'Concise', 'pithy', or 'succinct' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3476",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TERSE**",
+    "options": {
+      "A": "Concise",
+      "B": "Pithy",
+      "C": "Wordy",
+      "D": "Succinct"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Terse' means concise. 'Verbose', 'wordy', or 'long-winded' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3477",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**THWART**",
+    "options": {
+      "A": "Balk",
+      "B": "Assist",
+      "C": "Help",
+      "D": "Facilitate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Thwart' means to prevent (someone) from accomplishing something. 'Balk', 'foil', or 'frustrate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3478",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**THWART**",
+    "options": {
+      "A": "Balk",
+      "B": "Foil",
+      "C": "Assist",
+      "D": "Frustrate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Thwart' means to block. 'Assist', 'help', or 'facilitate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3479",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TIMID**",
+    "options": {
+      "A": "Diffident",
+      "B": "Brave",
+      "C": "Bold",
+      "D": "Courageous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Timid' means showing a lack of courage or confidence; easily frightened. 'Diffident', 'shy', or 'fearful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3480",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TIMID**",
+    "options": {
+      "A": "Diffident",
+      "B": "Shy",
+      "C": "Brave",
+      "D": "Fearful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Timid' means lacking courage. 'Brave', 'bold', or 'courageous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3481",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TIRADE**",
+    "options": {
+      "A": "Harangue",
+      "B": "Praise",
+      "C": "Compliment",
+      "D": "Tribute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tirade' refers to a long, angry speech of criticism or accusation. 'Harangue', 'diatribe', or 'rant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3482",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TIRADE**",
+    "options": {
+      "A": "Harangue",
+      "B": "Diatribe",
+      "C": "Praise",
+      "D": "Rant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tirade' is an angry speech. 'Praise', 'compliment', or 'tribute' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3483",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TITANIC**",
+    "options": {
+      "A": "Colossal",
+      "B": "Tiny",
+      "C": "Minute",
+      "D": "Small"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Titanic' means of exceptional strength, size, or power. 'Colossal', 'immense', or 'massive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3484",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TITANIC**",
+    "options": {
+      "A": "Colossal",
+      "B": "Immense",
+      "C": "Tiny",
+      "D": "Massive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Titanic' means exceptionally large. 'Tiny', 'minute', or 'small' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3485",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TORPID**",
+    "options": {
+      "A": "Lethargic",
+      "B": "Active",
+      "C": "Energetic",
+      "D": "Vigorous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Torpid' means mentally or physically inactive; lethargic. 'Lethargic', 'sluggish', or 'inactive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3486",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TORPID**",
+    "options": {
+      "A": "Lethargic",
+      "B": "Sluggish",
+      "C": "Active",
+      "D": "Inactive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Torpid' means inactive. 'Active', 'energetic', or 'vigorous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3487",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TRANQUIL**",
+    "options": {
+      "A": "Peaceful",
+      "B": "Turbulent",
+      "C": "Agitated",
+      "D": "Stormy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tranquil' means free from disturbance; calm. 'Peaceful', 'serene', or 'calm' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3488",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TRANQUIL**",
+    "options": {
+      "A": "Peaceful",
+      "B": "Serene",
+      "C": "Turbulent",
+      "D": "Calm"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tranquil' means peaceful. 'Turbulent', 'agitated', or 'stormy' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3489",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TRANSCEND**",
+    "options": {
+      "A": "Surpass",
+      "B": "Fail",
+      "C": "Fall behind",
+      "D": "Trail"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Transcend' means to go beyond the range or limits of something. 'Surpass', 'exceed', or 'excel' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3490",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TRANSCEND**",
+    "options": {
+      "A": "Surpass",
+      "B": "Exceed",
+      "C": "Fail",
+      "D": "Excel"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Transcend' means to surpass. 'Fail', 'fall behind', or 'trail' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3491",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TRANSITORY**",
+    "options": {
+      "A": "Temporary",
+      "B": "Permanent",
+      "C": "Enduring",
+      "D": "Lasting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Transitory' means not permanent. 'Temporary', 'fleeting', or 'ephemeral' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3492",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TRANSITORY**",
+    "options": {
+      "A": "Temporary",
+      "B": "Fleeting",
+      "C": "Permanent",
+      "D": "Ephemeral"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Transitory' means temporary. 'Permanent', 'enduring', or 'lasting' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3493",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TREPIDATION**",
+    "options": {
+      "A": "Apprehension",
+      "B": "Confidence",
+      "C": "Calmness",
+      "D": "Assurance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Trepidation' refers to a feeling of fear or agitation about something that may happen. 'Apprehension', 'dread', or 'fear' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3494",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TREPIDATION**",
+    "options": {
+      "A": "Apprehension",
+      "B": "Dread",
+      "C": "Confidence",
+      "D": "Fear"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Trepidation' is fear/apprehension. 'Confidence', 'calmness', or 'assurance' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3495",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TRITE**",
+    "options": {
+      "A": "Cliche",
+      "B": "Original",
+      "C": "Fresh",
+      "D": "Novel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Trite' means (of a remark, opinion, or idea) overused and consequently of little import; lacking originality or freshness. 'Cliche', 'banal', or 'hackneyed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3496",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TRITE**",
+    "options": {
+      "A": "Cliche",
+      "B": "Banal",
+      "C": "Original",
+      "D": "Hackneyed"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Trite' means unoriginal. 'Original', 'fresh', or 'novel' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3497",
+    "type": "standard_mcq",
+    "passage_id": "null",
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TRULCULENT**",
+    "options": {
+      "A": "Aggressive",
+      "B": "Peaceful",
+      "C": "Friendly",
+      "D": "Gentle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Truculent' means eager or quick to argue or fight; aggressively defiant. 'Aggressive', 'hostile', or 'belligerent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3498",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TRUCULENT**",
+    "options": {
+      "A": "Aggressive",
+      "B": "Hostile",
+      "C": "Peaceful",
+      "D": "Belligerent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Truculent' means aggressive. 'Peaceful', 'friendly', or 'gentle' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3499",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TUMULT**",
+    "options": {
+      "A": "Commotion",
+      "B": "Peace",
+      "C": "Calm",
+      "D": "Quiet"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tumult' refers to a loud, confused noise, especially one caused by a large mass of people. 'Commotion', 'uproar', or 'turmoil' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3500",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TUMULT**",
+    "options": {
+      "A": "Commotion",
+      "B": "Uproar",
+      "C": "Peace",
+      "D": "Turmoil"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tumult' is disorder and commotion. 'Peace', 'calm', or 'quiet' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_1751",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AGILE**",
+    "options": {
+      "A": "Nimble",
+      "B": "Sluggish",
+      "C": "Torpid",
+      "D": "Lethargic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Agile' means able to move quickly and easily. 'Nimble', 'lithe', or 'deft' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1752",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AGILE**",
+    "options": {
+      "A": "Nimble",
+      "B": "Deft",
+      "C": "Sluggish",
+      "D": "Lithe"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Agile' means quick and well-coordinated. 'Sluggish', 'clumsy', or 'inert' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1753",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AGNOSTIC**",
+    "options": {
+      "A": "Skeptic",
+      "B": "Believer",
+      "C": "Devout",
+      "D": "Faithful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Agnostic' refers to a person who believes that nothing is known or can be known of the existence or nature of God. 'Skeptic', 'doubter', or 'unbeliever' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1754",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AGNOSTIC**",
+    "options": {
+      "A": "Skeptic",
+      "B": "Doubter",
+      "C": "Believer",
+      "D": "Unbeliever"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Agnostic' implies uncertainty about religious truth. 'Believer', 'theist', or 'devout' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1755",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AGONY**",
+    "options": {
+      "A": "Torment",
+      "B": "Comfort",
+      "C": "Solace",
+      "D": "Ease"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Agony' refers to extreme physical or mental suffering. 'Torment', 'anguish', or 'misery' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1756",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AGONY**",
+    "options": {
+      "A": "Torment",
+      "B": "Anguish",
+      "C": "Comfort",
+      "D": "Misery"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Agony' means extreme pain or suffering. 'Comfort', 'solace', or 'relief' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1757",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALACRITY**",
+    "options": {
+      "A": "Readiness",
+      "B": "Sloth",
+      "C": "Indolence",
+      "D": "Lethargy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Alacrity' refers to brisk and cheerful readiness. 'Eagerness', 'promptness', or 'enthusiasm' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1758",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALACRITY**",
+    "options": {
+      "A": "Readiness",
+      "B": "Eagerness",
+      "C": "Lethargy",
+      "D": "Promptness"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Alacrity' means eager readiness. 'Lethargy', 'sloth', or 'indolence' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1759",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALCHEMY**",
+    "options": {
+      "A": "Magic",
+      "B": "Reality",
+      "C": "Science",
+      "D": "Truth"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Alchemy' refers to any seemingly magical process of transformation, creation, or combination. 'Magic', 'transmutation', or 'sorcery' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1760",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALIENATE**",
+    "options": {
+      "A": "Estrange",
+      "B": "Unite",
+      "C": "Reconcile",
+      "D": "Connect"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Alienate' means to cause (someone) to feel isolated or estranged. 'Estrange', 'distance', or 'isolate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1761",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALIENATE**",
+    "options": {
+      "A": "Estrange",
+      "B": "Isolate",
+      "C": "Reconcile",
+      "D": "Distance"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Alienate' means to cause to feel estranged. 'Reconcile', 'unite', or 'connect' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1762",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALLEVIATE**",
+    "options": {
+      "A": "Mitigate",
+      "B": "Aggravate",
+      "C": "Exacerbate",
+      "D": "Inflame"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Alleviate' means to make less severe. 'Mitigate', 'assuage', or 'relieve' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1763",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALLEVIATE**",
+    "options": {
+      "A": "Mitigate",
+      "B": "Assuage",
+      "C": "Aggravate",
+      "D": "Relieve"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Alleviate' means to ease. 'Aggravate', 'worsen', or 'exacerbate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1764",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALLOCATE**",
+    "options": {
+      "A": "Distribute",
+      "B": "Withhold",
+      "C": "Retain",
+      "D": "Keep"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Allocate' means to distribute for a particular purpose. 'Distribute', 'allot', or 'assign' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1765",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALLOCATE**",
+    "options": {
+      "A": "Allot",
+      "B": "Assign",
+      "C": "Withhold",
+      "D": "Distribute"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Allocate' means to distribute. 'Withhold', 'retain', or 'reserve' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1766",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALLOY**",
+    "options": {
+      "A": "Amalgam",
+      "B": "Pure",
+      "C": "Element",
+      "D": "Single"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Alloy' is a mixture of metals. 'Amalgam', 'mix', or 'blend' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1767",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALLOY**",
+    "options": {
+      "A": "Amalgam",
+      "B": "Mixture",
+      "C": "Element",
+      "D": "Blend"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Alloy' is a mixture. 'Element' (a pure substance) is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1768",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALLUDE**",
+    "options": {
+      "A": "Hint",
+      "B": "State",
+      "C": "Declare",
+      "D": "Proclaim"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Allude' means to suggest indirectly. 'Hint', 'imply', or 'suggest' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1769",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALLUDE**",
+    "options": {
+      "A": "Suggest",
+      "B": "Imply",
+      "C": "Declare",
+      "D": "Hint"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Allude' means to refer indirectly. 'Declare', 'state', or 'specify' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1770",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALTRUISTIC**",
+    "options": {
+      "A": "Selfless",
+      "B": "Selfish",
+      "C": "Egoistic",
+      "D": "Mercenary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Altruistic' means selfless concern for others. 'Selfless', 'benevolent', or 'charitable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1771",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALTRUISTIC**",
+    "options": {
+      "A": "Selfless",
+      "B": "Benevolent",
+      "C": "Egoistic",
+      "D": "Charitable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Altruistic' is unselfish. 'Egoistic', 'selfish', or 'egocentric' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1772",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMALGAMATE**",
+    "options": {
+      "A": "Unite",
+      "B": "Separate",
+      "C": "Divide",
+      "D": "Dissect"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Amalgamate' means to combine. 'Unite', 'merge', or 'coalesce' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1773",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMALGAMATE**",
+    "options": {
+      "A": "Unite",
+      "B": "Merge",
+      "C": "Separate",
+      "D": "Fuse"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Amalgamate' means to blend. 'Separate', 'divide', or 'disintegrate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1774",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMBIVALENT**",
+    "options": {
+      "A": "Uncertain",
+      "B": "Certain",
+      "C": "Decided",
+      "D": "Determined"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ambivalent' means having mixed feelings. 'Uncertain', 'undecided', or 'hesitant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1775",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMBIVALENT**",
+    "options": {
+      "A": "Uncertain",
+      "B": "Undecided",
+      "C": "Decided",
+      "D": "Hesitant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ambivalent' means conflicted. 'Decided', 'certain', or 'unwavering' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1776",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMELIORATE**",
+    "options": {
+      "A": "Improve",
+      "B": "Worsen",
+      "C": "Exacerbate",
+      "D": "Aggravate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ameliorate' means to make better. 'Improve', 'enhance', or 'better' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1777",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMELIORATE**",
+    "options": {
+      "A": "Improve",
+      "B": "Enhance",
+      "C": "Exacerbate",
+      "D": "Better"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ameliorate' means to improve. 'Exacerbate', 'worsen', or 'aggravate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1778",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMENABLE**",
+    "options": {
+      "A": "Compliant",
+      "B": "Obstinate",
+      "C": "Refractory",
+      "D": "Stubborn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Amenable' means open to suggestion. 'Compliant', 'tractable', or 'yielding' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1779",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMENABLE**",
+    "options": {
+      "A": "Compliant",
+      "B": "Tractable",
+      "C": "Obstinate",
+      "D": "Yielding"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Amenable' means willing. 'Obstinate', 'stubborn', or 'refractory' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1780",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMORTIZE**",
+    "options": {
+      "A": "Gradually reduce",
+      "B": "Increase",
+      "C": "Expand",
+      "D": "Augment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Amortize' means to reduce a debt by regular payments. 'Gradually reduce', 'pay off', or 'write off' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1781",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANACHRONISM**",
+    "options": {
+      "A": "Misplacement",
+      "B": "Timeliness",
+      "C": "Chronology",
+      "D": "Punctuality"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Anachronism' refers to a thing out of time. 'Misplacement' (in time) is synonymous.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1782",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANALOGOUS**",
+    "options": {
+      "A": "Comparable",
+      "B": "Dissimilar",
+      "C": "Disparate",
+      "D": "Distinct"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Analogous' means comparable. 'Comparable', 'akin', or 'similar' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1783",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANALOGOUS**",
+    "options": {
+      "A": "Comparable",
+      "B": "Akin",
+      "C": "Dissimilar",
+      "D": "Similar"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Analogous' means similar. 'Dissimilar', 'disparate', or 'distinct' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1784",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANARCHY**",
+    "options": {
+      "A": "Lawlessness",
+      "B": "Order",
+      "C": "Governance",
+      "D": "Stability"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Anarchy' refers to absence of authority. 'Lawlessness', 'chaos', or 'disorder' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1785",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANARCHY**",
+    "options": {
+      "A": "Chaos",
+      "B": "Lawlessness",
+      "C": "Order",
+      "D": "Disorder"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Anarchy' means disorder. 'Order', 'governance', or 'control' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1786",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANATHEMA**",
+    "options": {
+      "A": "Curse",
+      "B": "Blessing",
+      "C": "Benediction",
+      "D": "Acclaim"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Anathema' refers to a formal curse. 'Curse', 'abomination', or 'detestation' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1787",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANATHEMA**",
+    "options": {
+      "A": "Curse",
+      "B": "Benediction",
+      "C": "Abomination",
+      "D": "Detestation"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Anathema' means a curse. 'Benediction', 'blessing', or 'praise' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1788",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANCILLARY**",
+    "options": {
+      "A": "Auxiliary",
+      "B": "Principal",
+      "C": "Main",
+      "D": "Essential"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ancillary' means providing necessary support. 'Auxiliary', 'supplementary', or 'subordinate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1789",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANCILLARY**",
+    "options": {
+      "A": "Auxiliary",
+      "B": "Supplementary",
+      "C": "Principal",
+      "D": "Subordinate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ancillary' means secondary or supporting. 'Principal', 'main', or 'primary' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1790",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANIMOSITY**",
+    "options": {
+      "A": "Hostility",
+      "B": "Amity",
+      "C": "Goodwill",
+      "D": "Benevolence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Animosity' refers to strong hostility. 'Hostility', 'rancor', or 'enmity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1791",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANIMOSITY**",
+    "options": {
+      "A": "Hostility",
+      "B": "Enmity",
+      "C": "Rancor",
+      "D": "Amity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Animosity' means intense ill will. 'Amity', 'friendship', or 'goodwill' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1792",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANNUL**",
+    "options": {
+      "A": "Nullify",
+      "B": "Ratify",
+      "C": "Confirm",
+      "D": "Establish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Annul' means to declare invalid. 'Nullify', 'void', or 'invalidate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1793",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANNUL**",
+    "options": {
+      "A": "Nullify",
+      "B": "Void",
+      "C": "Ratify",
+      "D": "Invalidate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Annul' means to cancel. 'Ratify', 'confirm', or 'validate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1794",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANOMALY**",
+    "options": {
+      "A": "Aberration",
+      "B": "Normality",
+      "C": "Regularity",
+      "D": "Conformity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Anomaly' refers to something that deviates from the normal. 'Aberration', 'irregularity', or 'abnormality' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1795",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANOMALY**",
+    "options": {
+      "A": "Aberration",
+      "B": "Irregularity",
+      "C": "Normality",
+      "D": "Deviation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Anomaly' is an irregularity. 'Normality', 'standard', or 'regularity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1796",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANTECEDENT**",
+    "options": {
+      "A": "Predecessor",
+      "B": "Successor",
+      "C": "Follower",
+      "D": "Descendant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Antecedent' refers to a thing or event that existed before. 'Predecessor', 'forerunner', or 'precursor' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1797",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANTECEDENT**",
+    "options": {
+      "A": "Predecessor",
+      "B": "Forerunner",
+      "C": "Successor",
+      "D": "Precursor"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Antecedent' means coming before. 'Successor', 'descendant', or 'follower' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1798",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANTIPATHY**",
+    "options": {
+      "A": "Hostility",
+      "B": "Affinity",
+      "C": "Fondness",
+      "D": "Goodwill"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Antipathy' refers to a deep-seated feeling of dislike. 'Hostility', 'enmity', or 'animosity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1799",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANTIPATHY**",
+    "options": {
+      "A": "Hostility",
+      "B": "Enmity",
+      "C": "Affinity",
+      "D": "Animosity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Antipathy' means a strong feeling of dislike. 'Affinity', 'liking', or 'attraction' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1800",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**APATHY**",
+    "options": {
+      "A": "Indifference",
+      "B": "Enthusiasm",
+      "C": "Zeal",
+      "D": "Fervor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Apathy' refers to a lack of interest, enthusiasm, or concern. 'Indifference', 'lethargy', or 'passivity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

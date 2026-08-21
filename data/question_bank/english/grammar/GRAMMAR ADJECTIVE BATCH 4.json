@@ -1,0 +1,754 @@
+[
+  {
+    "id": "ENG_GRAM_ADJ_151",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'This is the more perfect solution to the problem we have encountered.'",
+    "options": {
+      "A": "This is",
+      "B": "the more perfect",
+      "C": "solution to",
+      "D": "the problem."
+    },
+    "correct_option": "B",
+    "explanation": "Adjectives like 'perfect', 'unique', 'ideal', 'complete', and 'absolute' are superlative in nature and do not take comparative ('more') or superlative ('most') modifiers.",
+    "tags": ["grammar", "adjectives", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_152",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'Of the two sisters, she is the ___ one.'",
+    "options": {
+      "A": "most intelligent",
+      "B": "more intelligent",
+      "C": "best intelligent",
+      "D": "intelligent"
+    },
+    "correct_option": "B",
+    "explanation": "When comparing two specific individuals, the comparative degree ('more intelligent') is used, usually accompanied by the definite article 'the' when a choice is implied.",
+    "tags": ["grammar", "adjectives", "degrees_of_comparison", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_153",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is stronger than any person in the class.'",
+    "options": {
+      "A": "He is",
+      "B": "stronger than",
+      "C": "any person",
+      "D": "in the class."
+    },
+    "correct_option": "C",
+    "explanation": "When comparing one member to others within the same group, 'any other' must be used to exclude the subject being compared from the set ('than any other person').",
+    "tags": ["grammar", "adjectives", "comparative_degree", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_154",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ than any other student in the school.'",
+    "options": {
+      "A": "more smarter",
+      "B": "smartest",
+      "C": "smarter",
+      "D": "most smart"
+    },
+    "correct_option": "C",
+    "explanation": "The comparative form 'smarter' is required. 'More smarter' is a double comparative error.",
+    "tags": ["grammar", "adjectives", "comparative_degree", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_155",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "She has little money, so she cannot buy food.",
+      "B": "She has a little money, so she can buy food.",
+      "C": "Both A and B are correct.",
+      "D": "She has the little money, so she can buy food."
+    },
+    "correct_option": "C",
+    "explanation": "'Little' means 'almost none' (negative), while 'a little' means 'some' (positive). Both sentences are grammatically logical.",
+    "tags": ["grammar", "adjectives", "determiners", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_156",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The climate of Delhi is better than Mumbai.'",
+    "options": {
+      "A": "The climate of Delhi",
+      "B": "is better",
+      "C": "than Mumbai.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Comparisons must be logical. We must compare the climate of Delhi to the climate of Mumbai, not the climate to the city itself. It should be '...better than that of Mumbai'.",
+    "tags": ["grammar", "adjectives", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_157",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Elder' is used with family members, while 'Older' is used for ___.",
+    "options": {
+      "A": "other people and things",
+      "B": "family members only",
+      "C": "people only",
+      "D": "things only"
+    },
+    "correct_option": "A",
+    "explanation": "'Elder' is restricted to blood relations, whereas 'older' is the general comparative term for persons and objects.",
+    "tags": ["grammar", "adjectives", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_158",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'No less than fifty guests were present at the wedding.'",
+    "options": {
+      "A": "No less than",
+      "B": "fifty guests",
+      "C": "were present",
+      "D": "at the wedding."
+    },
+    "correct_option": "A",
+    "explanation": "'Less' is used for uncountable quantities, whereas 'fewer' is used for countable nouns ('guests'). It should be 'No fewer than'.",
+    "tags": ["grammar", "adjectives", "determiners", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_159",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The ___ news about the earthquake is terrifying.'",
+    "options": {
+      "A": "latter",
+      "B": "latest",
+      "C": "last",
+      "D": "later"
+    },
+    "correct_option": "B",
+    "explanation": "'Latest' refers to the most recent information, while 'last' refers to the final one in a series.",
+    "tags": ["grammar", "adjectives", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_160",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is the most unique person I have ever met.'",
+    "options": {
+      "A": "She is",
+      "B": "the most unique",
+      "C": "person I have",
+      "D": "ever met."
+    },
+    "correct_option": "B",
+    "explanation": "'Unique' means one of a kind and is an absolute adjective; it cannot be modified by 'most'.",
+    "tags": ["grammar", "adjectives", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_161",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He is the ___ of the two players.'",
+    "options": {
+      "A": "best",
+      "B": "better",
+      "C": "good",
+      "D": "more best"
+    },
+    "correct_option": "B",
+    "explanation": "When comparing two specific entities, the comparative degree ('better') is standard.",
+    "tags": ["grammar", "adjectives", "degrees_of_comparison", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_162",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I haven't got many work to do today.'",
+    "options": {
+      "A": "I haven't got",
+      "B": "many work",
+      "C": "to do",
+      "D": "today."
+    },
+    "correct_option": "B",
+    "explanation": "'Work' is an uncountable noun. Therefore, 'much' should be used instead of 'many'.",
+    "tags": ["grammar", "adjectives", "quantifiers", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_163",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'There is ___ milk in the jug.'",
+    "options": {
+      "A": "few",
+      "B": "a few",
+      "C": "little",
+      "D": "the few"
+    },
+    "correct_option": "C",
+    "explanation": "'Milk' is uncountable. 'Little' denotes a small, negative quantity.",
+    "tags": ["grammar", "adjectives", "determiners", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_164",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The latter part of the movie was boring, but the last part was exciting.'",
+    "options": {
+      "A": "The latter part",
+      "B": "of the movie was",
+      "C": "boring, but the last part",
+      "D": "was exciting."
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Latter' refers to the second of two, while 'last' refers to the final part of the whole movie.",
+    "tags": ["grammar", "adjectives", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_165",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He is as strong as, if not stronger than, his brother.",
+      "B": "He is as strong as, if not strongest than, his brother.",
+      "C": "He is as strong, if not stronger, his brother.",
+      "D": "He is stronger than, if not as strong as, his brother."
+    },
+    "correct_option": "A",
+    "explanation": "When using 'as ... as' and comparative constructions with 'than', both must be grammatically complete. 'As strong as' requires 'as', and 'stronger than' requires 'than'.",
+    "tags": ["grammar", "adjectives", "comparisons", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_166",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Gold is more precious than any metal.'",
+    "options": {
+      "A": "Gold is",
+      "B": "more precious",
+      "C": "than any metal.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Gold is a metal; it cannot be more precious than itself. It must be 'than any other metal'.",
+    "tags": ["grammar", "adjectives", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_167",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is the ___ person to reach the office.'",
+    "options": {
+      "A": "later",
+      "B": "last",
+      "C": "latest",
+      "D": "latter"
+    },
+    "correct_option": "B",
+    "explanation": "'Last' is used here to denote the final person in the chronological sequence of arrival.",
+    "tags": ["grammar", "adjectives", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_168",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The police found a few evidences at the crime scene.'",
+    "options": {
+      "A": "The police found",
+      "B": "a few",
+      "C": "evidences",
+      "D": "at the crime scene."
+    },
+    "correct_option": "C",
+    "explanation": "'Evidence' is an uncountable noun. It should be 'a few pieces of evidence'.",
+    "tags": ["grammar", "adjectives", "uncountable_nouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_169",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'It is ___ to go home than to stay here.'",
+    "options": {
+      "A": "preferable",
+      "B": "more preferable",
+      "C": "most preferable",
+      "D": "very preferable"
+    },
+    "correct_option": "A",
+    "explanation": "'Preferable' already denotes a comparative quality; adding 'more' is redundant.",
+    "tags": ["grammar", "adjectives", "degrees_of_comparison", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_170",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The train arrived nearer the expected time than the bus.'",
+    "options": {
+      "A": "The train arrived",
+      "B": "nearer the",
+      "C": "expected time",
+      "D": "than the bus."
+    },
+    "correct_option": "B",
+    "explanation": "'Nearer' is comparative; here, the intended meaning likely relates to the 'nearest' or 'nearly' (time adverbial). 'More nearly' or 'closer to' would be appropriate for time proximity.",
+    "tags": ["grammar", "adjectives", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_171",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "I have no fewer than ten books.",
+      "B": "I have no less than ten books.",
+      "C": "I have no fewer ten books.",
+      "D": "I have no less ten books."
+    },
+    "correct_option": "A",
+    "explanation": "'Fewer' is used for countable items ('books'). 'Less' is for quantity/uncountable.",
+    "tags": ["grammar", "adjectives", "determiners", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_172",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'My house is bigger than any house in this street.'",
+    "options": {
+      "A": "My house is",
+      "B": "bigger than",
+      "C": "any house in",
+      "D": "this street."
+    },
+    "correct_option": "C",
+    "explanation": "Must use 'any other house' to avoid comparing the house to itself within the same set.",
+    "tags": ["grammar", "adjectives", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_173",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He is the ___ of the three sons.'",
+    "options": {
+      "A": "elder",
+      "B": "eldest",
+      "C": "older",
+      "D": "oldest"
+    },
+    "correct_option": "B",
+    "explanation": "'Eldest' is the superlative form for family members, used when comparing more than two.",
+    "tags": ["grammar", "adjectives", "degrees_of_comparison", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_174",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'This is the most inferior product I have ever seen.'",
+    "options": {
+      "A": "This is the",
+      "B": "most inferior",
+      "C": "product I have",
+      "D": "ever seen."
+    },
+    "correct_option": "B",
+    "explanation": "'Inferior' is an absolute/comparative adjective that does not take modifiers like 'most'.",
+    "tags": ["grammar", "adjectives", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_175",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'There is ___ hope of his recovery.'",
+    "options": {
+      "A": "few",
+      "B": "a few",
+      "C": "little",
+      "D": "the little"
+    },
+    "correct_option": "C",
+    "explanation": "'Hope' is uncountable. 'Little' suggests there is almost no hope.",
+    "tags": ["grammar", "adjectives", "determiners", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_176",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is more wiser than her friend.'",
+    "options": {
+      "A": "She is",
+      "B": "more wiser",
+      "C": "than her",
+      "D": "friend."
+    },
+    "correct_option": "B",
+    "explanation": "'Wiser' is already comparative. Using 'more' makes it a double comparative error.",
+    "tags": ["grammar", "adjectives", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_177",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He is the oldest man in the village.",
+      "B": "He is the eldest man in the village.",
+      "C": "He is the oldest of the village men.",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "'Oldest' is used for people/things in general. 'Eldest' is reserved for family members.",
+    "tags": ["grammar", "adjectives", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_178",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The two former chapters of the book are very interesting.'",
+    "options": {
+      "A": "The two",
+      "B": "former chapters",
+      "C": "of the book are",
+      "D": "very interesting."
+    },
+    "correct_option": "B",
+    "explanation": "'Former' implies the first of only two. If there are more than two, 'first' should be used.",
+    "tags": ["grammar", "adjectives", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_179",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The weather is ___ than yesterday.'",
+    "options": {
+      "A": "bad",
+      "B": "worse",
+      "C": "worst",
+      "D": "more bad"
+    },
+    "correct_option": "B",
+    "explanation": "The comparative form of 'bad' is 'worse'.",
+    "tags": ["grammar", "adjectives", "degrees_of_comparison", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_180",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Can you give me any further help?'",
+    "options": {
+      "A": "Can you",
+      "B": "give me",
+      "C": "any further",
+      "D": "help?"
+    },
+    "correct_option": "D",
+    "explanation": "No error. 'Further' means 'additional', while 'farther' relates to physical distance. The usage here is correct.",
+    "tags": ["grammar", "adjectives", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_181",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He is my elder brother.",
+      "B": "He is my older brother.",
+      "C": "Both are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both 'elder' and 'older' are accepted for family members, though 'elder' is more traditional/formal.",
+    "tags": ["grammar", "adjectives", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_182",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The whole India celebrated the victory.'",
+    "options": {
+      "A": "The whole",
+      "B": "India",
+      "C": "celebrated",
+      "D": "the victory."
+    },
+    "correct_option": "A",
+    "explanation": "When using 'whole' with proper nouns (like countries), the article 'the' is omitted or placed differently depending on idiom; however, for 'whole' with singular proper nouns, it is 'All of India' or 'The whole of India'.",
+    "tags": ["grammar", "adjectives", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_183",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'This is the ___ time I am telling you.'",
+    "options": {
+      "A": "last",
+      "B": "latest",
+      "C": "latter",
+      "D": "later"
+    },
+    "correct_option": "A",
+    "explanation": "'Last' indicates the final occasion.",
+    "tags": ["grammar", "adjectives", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_184",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has less friends than he had last year.'",
+    "options": {
+      "A": "He has",
+      "B": "less",
+      "C": "friends than",
+      "D": "he had last year."
+    },
+    "correct_option": "B",
+    "explanation": "'Friends' is a countable noun, so 'fewer' should be used.",
+    "tags": ["grammar", "adjectives", "determiners", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_185",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The ___ news is that the strike has been called off.'",
+    "options": {
+      "A": "last",
+      "B": "latest",
+      "C": "latter",
+      "D": "late"
+    },
+    "correct_option": "B",
+    "explanation": "'Latest' indicates the most recent information.",
+    "tags": ["grammar", "adjectives", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_186",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is the most beautifulest girl in the group.'",
+    "options": {
+      "A": "She is",
+      "B": "the most beautifulest",
+      "C": "girl in",
+      "D": "the group."
+    },
+    "correct_option": "B",
+    "explanation": "Double superlative error. 'Beautiful' takes 'most', not '-est'. It should be 'most beautiful'.",
+    "tags": ["grammar", "adjectives", "degrees_of_comparison", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_187",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He reached the farthest point of the desert.",
+      "B": "He reached the furthest point of the desert.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both 'farthest' and 'furthest' are correct superlatives for distance, though 'farthest' is more common for physical distance.",
+    "tags": ["grammar", "adjectives", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_188",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am too glad to meet you today.'",
+    "options": {
+      "A": "I am",
+      "B": "too glad",
+      "C": "to meet you",
+      "D": "today."
+    },
+    "correct_option": "B",
+    "explanation": "'Too' generally expresses an excessive negative quality. 'Very glad' is the correct idiomatic expression.",
+    "tags": ["grammar", "adjectives", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_189",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'This house is ___ than that one.'",
+    "options": {
+      "A": "much bigger",
+      "B": "very bigger",
+      "C": "too bigger",
+      "D": "so bigger"
+    },
+    "correct_option": "A",
+    "explanation": "Comparatives ('bigger') are modified by 'much' or 'far', not 'very' or 'too'.",
+    "tags": ["grammar", "adjectives", "degrees_of_comparison", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_190",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is senior than me in this office.'",
+    "options": {
+      "A": "She is",
+      "B": "senior than",
+      "C": "me in",
+      "D": "this office."
+    },
+    "correct_option": "B",
+    "explanation": "Adjectives ending in '-ior' ('senior', 'junior', 'superior', 'inferior') take 'to' instead of 'than'.",
+    "tags": ["grammar", "adjectives", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_191",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "The train is faster than any car.",
+      "B": "The train is faster than any other car.",
+      "C": "The train is fastest than any car.",
+      "D": "Both A and B are acceptable in colloquial speech, but B is technically correct.",
+      "E": "D"
+    },
+    "correct_option": "E",
+    "explanation": "Using 'any other' is the standard rule for comparative logic to exclude the subject from the set being compared to.",
+    "tags": ["grammar", "adjectives", "comparisons", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_192",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has less books to read than I have.'",
+    "options": {
+      "A": "He has",
+      "B": "less",
+      "C": "books to read",
+      "D": "than I have."
+    },
+    "correct_option": "B",
+    "explanation": "'Books' is a countable noun, so 'fewer' should be used instead of 'less'.",
+    "tags": ["grammar", "adjectives", "determiners", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_193",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The ___ of the two options is better.'",
+    "options": {
+      "A": "later",
+      "B": "latter",
+      "C": "latest",
+      "D": "last"
+    },
+    "correct_option": "B",
+    "explanation": "'Latter' refers to the second of two options.",
+    "tags": ["grammar", "adjectives", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_194",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The painting is more beautiful than it was last year.'",
+    "options": {
+      "A": "The painting",
+      "B": "is more beautiful",
+      "C": "than it was",
+      "D": "last year.",
+      "E": "No error"
+    },
+    "correct_option": "E",
+    "explanation": "The sentence is grammatically correct. It compares the current beauty of the painting with its beauty in the past.",
+    "tags": ["grammar", "adjectives", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_195",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'This task is ___ enough for him to handle.'",
+    "options": {
+      "A": "too easy",
+      "B": "very easy",
+      "C": "easy",
+      "D": "easier"
+    },
+    "correct_option": "C",
+    "explanation": "The adverb 'enough' typically follows the positive degree of an adjective ('easy enough').",
+    "tags": ["grammar", "adjectives", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_196",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She has many work to finish by evening.'",
+    "options": {
+      "A": "She has",
+      "B": "many work",
+      "C": "to finish",
+      "D": "by evening."
+    },
+    "correct_option": "B",
+    "explanation": "'Work' is an uncountable noun, so 'much' or 'a lot of' should be used.",
+    "tags": ["grammar", "adjectives", "quantifiers", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_197",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The ___ guest was treated with great respect.'",
+    "options": {
+      "A": "later",
+      "B": "last",
+      "C": "latter",
+      "D": "latest"
+    },
+    "correct_option": "B",
+    "explanation": "'Last' refers to the one at the end of the sequence of arrival.",
+    "tags": ["grammar", "adjectives", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_198",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is the most strongest athlete in the entire competition.'",
+    "options": {
+      "A": "He is",
+      "B": "the most strongest",
+      "C": "athlete in",
+      "D": "the entire competition."
+    },
+    "correct_option": "B",
+    "explanation": "Double superlative error. 'Strongest' is already a superlative; 'most' is redundant.",
+    "tags": ["grammar", "adjectives", "degrees_of_comparison", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_199",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Each of the participants have their own strategy.",
+      "B": "Each of the participants has his or her own strategy.",
+      "C": "All the participants has their own strategy.",
+      "D": "Every of the participants has their own strategy."
+    },
+    "correct_option": "B",
+    "explanation": "'Each' takes a singular verb ('has') and singular pronoun ('his or her'). 'Every of' is structurally incorrect.",
+    "tags": ["grammar", "adjectives", "agreement", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_200",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The weather is much more colder today than it was yesterday.'",
+    "options": {
+      "A": "The weather is",
+      "B": "much more colder",
+      "C": "today than it was",
+      "D": "yesterday."
+    },
+    "correct_option": "B",
+    "explanation": "'Colder' is the comparative form. 'More colder' is a double comparative error. Simply 'much colder' is correct.",
+    "tags": ["grammar", "adjectives", "degrees_of_comparison", "spotting_errors"]
+  }
+]

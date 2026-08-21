@@ -1,0 +1,602 @@
+[
+  {
+    "id": "ENG_VOCAB_HOM_2751",
+    "question": "Choose the correct homonym to fill in the blank: 'The sailor secured the rope around the ship's _____.'",
+    "options": {
+      "A": "cleat",
+      "B": "cleet",
+      "C": "clove",
+      "D": "cliff"
+    },
+    "correct_option": "A",
+    "explanation": "'Cleat' is a T-shaped piece of metal or wood to which ropes are fastened on a boat or dock."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2752",
+    "question": "Fill in the blank: 'The chef added a single crushed _____ of garlic to the tomato sauce.'",
+    "options": {
+      "A": "cleat",
+      "B": "clove",
+      "C": "clothe",
+      "D": "clause"
+    },
+    "correct_option": "B",
+    "explanation": "'Clove' refers to a small separate segment of a bulb of garlic, or the dried flower bud used as a spice."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2753",
+    "question": "Spot the error: 'The contract contained a restrictive Santa clause.'",
+    "options": {
+      "A": "The contract contained",
+      "B": "a restrictive",
+      "C": "Santa clause.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "A distinct provision or section in a legal document is a 'clause', whereas the Christmas figure is 'Santa Claus'. Correct: 'restrictive clause'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2754",
+    "question": "Fill in the blank: 'The lawyer inserted an indemnity _____ into the commercial lease agreement.'",
+    "options": {
+      "A": "clause",
+      "B": "claws",
+      "C": "clops",
+      "D": "cleats"
+    },
+    "correct_option": "A",
+    "explanation": "'Clause' is a distinct provision or section in a legal contract."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2755",
+    "question": "Fill in the blank: 'The eagle extended its sharp _____ to grasp the fish from the river.'",
+    "options": {
+      "A": "clause",
+      "B": "claws",
+      "C": "craws",
+      "D": "cloves"
+    },
+    "correct_option": "B",
+    "explanation": "'Claws' are curved, pointed horny nails on each digit of the foot in birds, lizards, and some mammals."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2756",
+    "question": "Spot the error: 'The tiger sharpened its clause against the trunk of the tree.'",
+    "options": {
+      "A": "The tiger sharpened",
+      "B": "its clause against",
+      "C": "the trunk of the tree.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "An animal's sharp talons are spelled 'claws', not 'clause' (a grammatical or legal unit). Correct: 'its claws against'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2757",
+    "question": "Fill in the blank: 'The company issued a formal _____ of all defective electrical components.'",
+    "options": {
+      "A": "recall",
+      "B": "recoil",
+      "C": "repeal",
+      "D": "repel"
+    },
+    "correct_option": "A",
+    "explanation": "'Recall' (noun) is an official request for the return of a batch of faulty or unsafe products."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2758",
+    "question": "Fill in the blank: 'The sudden blast caused the rifle to _____ violently against his shoulder.'",
+    "options": {
+      "A": "recall",
+      "B": "recoil",
+      "C": "repeal",
+      "D": "repent"
+    },
+    "correct_option": "B",
+    "explanation": "'Recoil' means to suddenly spring back in fear, disgust, or upon firing a gun."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2759",
+    "question": "Spot the error: 'Parliament voted to recoil the outdated tax legislation.'",
+    "options": {
+      "A": "Parliament voted",
+      "B": "to recoil the outdated",
+      "C": "tax legislation.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "To revoke, annul, or formally cancel a law is 'repeal', not 'recoil' (to flinch back). Correct: 'to repeal the outdated'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2760",
+    "question": "Fill in the blank: 'Special waterproof coatings help to _____ moisture from the fabric.'",
+    "options": {
+      "A": "repel",
+      "B": "repeal",
+      "C": "recoil",
+      "D": "recall"
+    },
+    "correct_option": "A",
+    "explanation": "'Repel' means to drive or force back, or to be resistant to absorbing liquids."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2761",
+    "question": "Fill in the blank: 'The monarch wore a royal crown set with rare and precious _____.'",
+    "options": {
+      "A": "gems",
+      "B": "jams",
+      "C": "germs",
+      "D": "gams"
+    },
+    "correct_option": "A",
+    "explanation": "'Gems' are precious or semiprecious stones, especially cut and polished for jewelry."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2762",
+    "question": "Fill in the blank: 'Washing your hands with soap helps eliminate infectious _____.'",
+    "options": {
+      "A": "gems",
+      "B": "germs",
+      "C": "jams",
+      "D": "gilds"
+    },
+    "correct_option": "B",
+    "explanation": "'Germs' refers to microorganisms, especially bacteria or viruses that cause disease."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2763",
+    "question": "Spot the error: 'The jeweler was praised for setting glowing germs in the platinum ring.'",
+    "options": {
+      "A": "The jeweler was praised",
+      "B": "for setting glowing germs",
+      "C": "in the platinum ring.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Precious stones are 'gems', not 'germs' (pathogenic microbes). Correct: 'glowing gems'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2764",
+    "question": "Fill in the blank: 'The artisan used thin gold leaf to _____ the carved picture frame.'",
+    "options": {
+      "A": "gild",
+      "B": "guild",
+      "C": "guilt",
+      "D": "gel"
+    },
+    "correct_option": "A",
+    "explanation": "'Gild' means to cover thinly with gold or gold leaf."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2765",
+    "question": "Fill in the blank: 'Medieval stonemasons established a powerful craft _____ in the city.'",
+    "options": {
+      "A": "gild",
+      "B": "guild",
+      "C": "guilt",
+      "D": "gird"
+    },
+    "correct_option": "B",
+    "explanation": "'Guild' is a medieval association of craftsmen or merchants, often holding considerable power."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2766",
+    "question": "Spot the error: 'He experienced intense guild after lying to his closest friends.'",
+    "options": {
+      "A": "He experienced",
+      "B": "intense guild after",
+      "C": "lying to his closest friends.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The feeling of having done wrong is spelled 'guilt', not 'guild' (an association). Correct: 'intense guilt after'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2767",
+    "question": "Fill in the blank: 'The soldiers prepared to _____ themselves for the upcoming siege.'",
+    "options": {
+      "A": "gird",
+      "B": "gild",
+      "C": "guild",
+      "D": "grid"
+    },
+    "correct_option": "A",
+    "explanation": "'Gird' means to encircle with a belt or band, or metaphorically to prepare oneself for action ('gird one's loins')."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2768",
+    "question": "Fill in the blank: 'The electrical power _____ suffered widespread blackouts during the blizzard.'",
+    "options": {
+      "A": "gird",
+      "B": "grid",
+      "C": "guild",
+      "D": "gild"
+    },
+    "correct_option": "B",
+    "explanation": "'Grid' is a network of lines that cross each other to form squares, or a system of electrical power distribution."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2769",
+    "question": "Spot the error: 'The map showed a neat coordinate gird for locating landmarks.'",
+    "options": {
+      "A": "The map showed",
+      "B": "a neat coordinate gird",
+      "C": "for locating landmarks.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A network of intersecting lines on a map is a 'grid', not 'gird'. Correct: 'coordinate grid'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2770",
+    "question": "Fill in the blank: 'The ship's crew dropped the heavy iron anchor to _____ the vessel in the bay.'",
+    "options": {
+      "A": "moor",
+      "B": "more",
+      "C": "moorland",
+      "D": "mourn"
+    },
+    "correct_option": "A",
+    "explanation": "'Moor' (verb) means to secure a ship or boat in a particular place with cables or anchors."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2771",
+    "question": "Fill in the blank: 'The entire nation gathered to _____ the passing of the beloved statesman.'",
+    "options": {
+      "A": "moor",
+      "B": "mourn",
+      "C": "morn",
+      "D": "moan"
+    },
+    "correct_option": "B",
+    "explanation": "'Mourn' means to feel or show deep sorrow or grief following someone's death."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2772",
+    "question": "Spot the error: 'The dew glistened on the grass in the early morn.'",
+    "options": {
+      "A": "The dew glistened",
+      "B": "on the grass",
+      "C": "in the early morn.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Morn' is a poetic and archaic word for morning. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2773",
+    "question": "Fill in the blank: 'The injured patient let out a soft _____ of pain as the doctor set the bone.'",
+    "options": {
+      "A": "moan",
+      "B": "morn",
+      "C": "mourn",
+      "D": "moor"
+    },
+    "correct_option": "A",
+    "explanation": "'Moan' is a long, low sound made by a person expressing physical or mental suffering."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2774",
+    "question": "Fill in the blank: 'The farmer used a tractor to _____ the overgrown grass in the pasture.'",
+    "options": {
+      "A": "mow",
+      "B": "moan",
+      "C": "mode",
+      "D": "mote"
+    },
+    "correct_option": "A",
+    "explanation": "'Mow' means to cut down an area of grass with a machine or scythe."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2775",
+    "question": "Spot the error: 'He selected silent mode on his mobile phone during the concert.'",
+    "options": {
+      "A": "He selected silent mode",
+      "B": "on his mobile phone",
+      "C": "during the concert.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Mode' is a way or manner in which something occurs or is experienced, or a state of operation. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2776",
+    "question": "Fill in the blank: 'The church tower was crowned with a slender gothic _____.'",
+    "options": {
+      "A": "spire",
+      "B": "spear",
+      "C": "spare",
+      "D": "spar"
+    },
+    "correct_option": "A",
+    "explanation": "'Spire' is a tapering conical or pyramidal structure on the top of a building, particularly a church tower."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2777",
+    "question": "Fill in the blank: 'The ancient warrior thrust his sharp _____ through the enemy's shield.'",
+    "options": {
+      "A": "spire",
+      "B": "spear",
+      "C": "spare",
+      "D": "spore"
+    },
+    "correct_option": "B",
+    "explanation": "'Spear' is a weapon with a pointed tip, typically of steel, and a long shaft, used for thrusting or throwing."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2778",
+    "question": "Spot the error: 'He always carries a spear tire in the trunk of his automobile.'",
+    "options": {
+      "A": "He always carries",
+      "B": "a spear tire in",
+      "C": "the trunk of his automobile.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "An extra tire kept for emergencies is a 'spare' tire, not a 'spear' (weapon). Correct: 'a spare tire in'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2779",
+    "question": "Fill in the blank: 'The mushroom released millions of microscopic _____ into the damp air.'",
+    "options": {
+      "A": "spores",
+      "B": "spires",
+      "C": "spears",
+      "D": "spars"
+    },
+    "correct_option": "A",
+    "explanation": "'Spores' are minute, typically one-celled reproductive units capable of giving rise to a new individual without sexual fusion, characteristic of lower plants and fungi."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2780",
+    "question": "Fill in the blank: 'The boxer agreed to _____ with his training partner for three rounds.'",
+    "options": {
+      "A": "spar",
+      "B": "spare",
+      "C": "spire",
+      "D": "spear"
+    },
+    "correct_option": "A",
+    "explanation": "'Spar' means to make the motions of boxing without landing heavy blows, as a form of training."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2781",
+    "question": "Spot the error: 'She could not spar any extra time to attend the supplementary workshop.'",
+    "options": {
+      "A": "She could not spar",
+      "B": "any extra time",
+      "C": "to attend the workshop.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "To afford to give or lend time/money is 'spare', not 'spar' (to practice boxing). Correct: 'She could not spare'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2782",
+    "question": "Fill in the blank: 'The sailor lowered the heavy wooden _____ to reef the sail.'",
+    "options": {
+      "A": "boom",
+      "B": "beam",
+      "C": "boon",
+      "D": "bone"
+    },
+    "correct_option": "A",
+    "explanation": "'Boom' in nautical terms is a long spar pivoted to the foot of a mast to extend the foot of a sail."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2783",
+    "question": "Fill in the blank: 'The discovery of vaccine technology proved to be an immense _____ to public health.'",
+    "options": {
+      "A": "boon",
+      "B": "boom",
+      "C": "beam",
+      "D": "bane"
+    },
+    "correct_option": "A",
+    "explanation": "'Boon' means a thing that is helpful or beneficial."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2784",
+    "question": "Spot the error: 'Excessive air pollution is the boon of modern metropolitan living.'",
+    "options": {
+      "A": "Excessive air pollution",
+      "B": "is the boon of",
+      "C": "modern metropolitan living.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A source of persistent annoyance or ruin is a 'bane', while 'boon' means a blessing. Correct: 'is the bane of'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2785",
+    "question": "Fill in the blank: 'Mosquitoes are the _____ of campers during the humid summer months.'",
+    "options": {
+      "A": "bane",
+      "B": "boon",
+      "C": "beam",
+      "D": "boom"
+    },
+    "correct_option": "A",
+    "explanation": "'Bane' refers to a cause of great distress, annoyance, or destruction."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2786",
+    "question": "Fill in the blank: 'A radiant _____ of sunlight broke through the heavy storm clouds.'",
+    "options": {
+      "A": "beam",
+      "B": "boom",
+      "C": "boon",
+      "D": "bane"
+    },
+    "correct_option": "A",
+    "explanation": "'Beam' is a ray or shaft of light."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2787",
+    "question": "Spot the error: 'The heavy wooden beam supported the roof rafters of the cathedral.'",
+    "options": {
+      "A": "The heavy wooden beam",
+      "B": "supported the roof rafters",
+      "C": "of the cathedral.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Beam' is correctly used for a long, sturdy piece of squared timber or metal supporting a roof or floor. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2788",
+    "question": "Fill in the blank: 'The hunter followed the fresh deer _____ through the soft snow.'",
+    "options": {
+      "A": "tracks",
+      "B": "tracts",
+      "C": "traits",
+      "D": "traps"
+    },
+    "correct_option": "A",
+    "explanation": "'Tracks' are marks or footprints left by a person, animal, or vehicle in passing."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2789",
+    "question": "Fill in the blank: 'The government purchased a vast _____ of fertile agricultural land.'",
+    "options": {
+      "A": "tract",
+      "B": "track",
+      "C": "trait",
+      "D": "trace"
+    },
+    "correct_option": "A",
+    "explanation": "'Tract' refers to an area of land, typically a large one, or a short pamphlet on a religious or political subject."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2790",
+    "question": "Spot the error: 'Patience and empathy are desirable leadership tracks.'",
+    "options": {
+      "A": "Patience and empathy",
+      "B": "are desirable",
+      "C": "leadership tracks.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Distinguishing characteristics or qualities are 'traits', not 'tracks'. Correct: 'leadership traits'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2791",
+    "question": "Fill in the blank: 'The detective found a microscopic _____ of chemical poison in the tea cup.'",
+    "options": {
+      "A": "trace",
+      "B": "tract",
+      "C": "track",
+      "D": "trait"
+    },
+    "correct_option": "A",
+    "explanation": "'Trace' is a very small quantity, especially one barely discernible."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2792",
+    "question": "Fill in the blank: 'The actor's sudden death cast a dark _____ over the premiere.'",
+    "options": {
+      "A": "pall",
+      "B": "Paul",
+      "C": "poll",
+      "D": "pole"
+    },
+    "correct_option": "A",
+    "explanation": "'Pall' is a cloth spread over a coffin, or metaphorically a dark cloud or gloom spreading over an event ('cast a pall')."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2793",
+    "question": "Fill in the blank: 'The newspaper conducted an opinion _____ before the general elections.'",
+    "options": {
+      "A": "poll",
+      "B": "pole",
+      "C": "pall",
+      "D": "peel"
+    },
+    "correct_option": "A",
+    "explanation": "'Poll' is the process of voting in an election, or a survey of public opinion."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2794",
+    "question": "Spot the error: 'The flag was raised to the top of the tall metal poll.'",
+    "options": {
+      "A": "The flag was raised",
+      "B": "to the top of",
+      "C": "the tall metal poll.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "A long, slender rounded piece of wood or metal is a 'pole', whereas 'poll' is a survey/voting process. Correct: 'metal pole'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2795",
+    "question": "Fill in the blank: 'The explorers reached the magnetic North _____ after a perilous expedition.'",
+    "options": {
+      "A": "Pole",
+      "B": "Poll",
+      "C": "Pall",
+      "D": "Pale"
+    },
+    "correct_option": "A",
+    "explanation": "'Pole' refers to either of the two points at opposite ends of the Earth's axis of rotation."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2796",
+    "question": "Fill in the blank: 'Her face grew remarkably _____ when she heard the distressing news.'",
+    "options": {
+      "A": "pale",
+      "B": "pail",
+      "C": "peel",
+      "D": "pall"
+    },
+    "correct_option": "A",
+    "explanation": "'Pale' means light in color or having little color, especially in the face due to illness or fear."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2797",
+    "question": "Spot the error: 'Jack and Jill went up the hill to fetch a pale of water.'",
+    "options": {
+      "A": "Jack and Jill went",
+      "B": "up the hill to fetch",
+      "C": "a pale of water.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "A bucket or cylindrical vessel for carrying liquids is spelled 'pail', whereas 'pale' means light-colored. Correct: 'a pail of water'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2798",
+    "question": "Fill in the blank: 'The chef used a sharp peeler to remove the citrus _____.'",
+    "options": {
+      "A": "peel",
+      "B": "peal",
+      "C": "pale",
+      "D": "pail"
+    },
+    "correct_option": "A",
+    "explanation": "'Peel' is the outer skin or rind of a fruit or vegetable."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2799",
+    "question": "Fill in the blank: 'A loud _____ of church bells resonated through the valley.'",
+    "options": {
+      "A": "peal",
+      "B": "peel",
+      "C": "pale",
+      "D": "pile"
+    },
+    "correct_option": "A",
+    "explanation": "'Peal' is a loud ringing sound, especially of a set of church bells or a clap of thunder."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2800",
+    "question": "Congratulations! You have completed **Homonyms & Confusables Batch 10 (Items 2751–2800)**. What constitutes the full definition of a 'capitonym' in lexical linguistics?",
+    "options": {
+      "A": "A word that changes its meaning and pronunciation depending on whether it is capitalized (e.g., 'polish' vs 'Polish', 'march' vs 'March').",
+      "B": "A word that has opposite meanings in different regional dialects.",
+      "C": "A compound word formed by blending two unrelated roots.",
+      "D": "A noun that cannot be modified by adjectives."
+    },
+    "correct_option": "A",
+    "explanation": "A capitonym is a word whose meaning (and often pronunciation) changes when it is capitalized, such as 'turkey' (bird) vs 'Turkey' (country), or 'polish' (shine) vs 'Polish' (nationality)."
+  }
+]

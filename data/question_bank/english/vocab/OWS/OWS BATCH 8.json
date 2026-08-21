@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0351",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nPreserve a right, tradition, or idea in a form that ensures it will be protected and respected",
+    "options": {
+      "A": "Enshrine",
+      "B": "Efface",
+      "C": "Embezzle",
+      "D": "Engulf"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Enshrine) is correct. 'Enshrine' means to place a revered right, tradition, or principle in a position where it is respected and protected. 'Efface' means to rub out or erase, and 'Engulf' means to submerge or swallow up completely.",
+    "tags": ["vocab", "ows", "actions", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0352",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA scientist who specializes in the study of insects",
+    "options": {
+      "A": "Entomologist",
+      "B": "Ornithologist",
+      "C": "Ichthyologist",
+      "D": "Ecologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Entomologist) is correct. An 'Entomologist' is a biological scientist who studies insects. 'Ornithologist' studies birds, and 'Ecologist' studies environmental relationships.",
+    "tags": ["vocab", "ows", "science", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0353",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study of insects and their life processes",
+    "options": {
+      "A": "Entomology",
+      "B": "Etymology",
+      "C": "Ethnology",
+      "D": "Ecology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Entomology) is correct. 'Entomology' is the zoological study of insects. 'Etymology' is the study of the origin and history of words, and 'Ethnology' is the study of human races.",
+    "tags": ["vocab", "ows", "science", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0354",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLikely to arouse envy; highly desirable",
+    "options": {
+      "A": "Enviable",
+      "B": "Invidious",
+      "C": "Heinous",
+      "D": "Appalling"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Enviable) is correct. 'Enviable' describes a quality, possession, or circumstance that is so good that other people wish they had it. 'Appalling' means causing shock or dismay.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0355",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLasting for a very short time; transitory",
+    "options": {
+      "A": "Ephemeral",
+      "B": "Perpetual",
+      "C": "Eternal",
+      "D": "Incessant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ephemeral) is correct. 'Ephemeral' denotes something lasting or living for a very brief period. 'Perpetual' and 'Eternal' describe things that last forever or uninterruptedly.",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0356",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA long narrative poem based on a grand, heroic, or noble theme",
+    "options": {
+      "A": "Epic",
+      "B": "Sonnet",
+      "C": "Ballad",
+      "D": "Elegy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Epic) is correct. An 'Epic' is a lengthy narrative poem recounting the adventures of heroic or legendary figures. 'Sonnet' has fourteen lines, and 'Elegy' laments the dead.",
+    "tags": ["vocab", "ows", "literature", "poetry", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0357",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person devoted to sensual pleasure, especially fine food and drink",
+    "options": {
+      "A": "Epicurean",
+      "B": "Ascetic",
+      "C": "Stoic",
+      "D": "Altruist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Epicurean) is correct. An 'Epicurean' is a person devoted to luxury, comfort, and refined culinary pleasure. 'Ascetic' practices severe self-denial, and 'Stoic' is indifferent to pain or pleasure.",
+    "tags": ["vocab", "ows", "lifestyle", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0358",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA widespread occurrence of an infectious disease in a community at a particular time",
+    "options": {
+      "A": "Epidemic",
+      "B": "Endemic",
+      "C": "Pandemic",
+      "D": "Sporadic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Epidemic) is correct. An 'Epidemic' is a rapid outbreak of a disease affecting many individuals simultaneously in an area. 'Endemic' refers to a disease natively confined to a specific place.",
+    "tags": ["vocab", "ows", "medical", "disease", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0359",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA short concluding speech or section added at the end of a literary work or play",
+    "options": {
+      "A": "Epilogue",
+      "B": "Prologue",
+      "C": "Preface",
+      "D": "Postscript"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Epilogue) is correct. An 'Epilogue' is a speech or short section addressing the audience at the conclusion of a play or book. 'Prologue' is an introductory speech or section.",
+    "tags": ["vocab", "ows", "literature", "theatre", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0360",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA letter in the form of a poem; a verse letter",
+    "options": {
+      "A": "Epistle",
+      "B": "Epitaph",
+      "C": "Epitome",
+      "D": "Monologue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Epistle) is correct. An 'Epistle' is a formal or elegant letter, particularly one written in verse. 'Epitaph' is an inscription on a tomb.",
+    "tags": ["vocab", "ows", "literature", "writing", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0361",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn inscription on a tombstone written in memory of a deceased person",
+    "options": {
+      "A": "Epitaph",
+      "B": "Epilogue",
+      "C": "Epistle",
+      "D": "Epitome"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Epitaph) is correct. An 'Epitaph' is a commemorative inscription carved on a grave or monument for the dead. 'Epitome' is a perfect summary or representative example.",
+    "tags": ["vocab", "ows", "death", "monuments", "pyq_ssc", "repeated_10_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0362",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person or thing that is a perfect, quintessential example of a particular quality or type",
+    "options": {
+      "A": "Epitome",
+      "B": "Antithesis",
+      "C": "Caricature",
+      "D": "Anomaly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Epitome) is correct. An 'Epitome' is a typical or supreme representation of a class or quality. 'Antithesis' refers to the exact polar opposite.",
+    "tags": ["vocab", "ows", "philosophy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0363",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA state in which opposing forces or influences are completely balanced",
+    "options": {
+      "A": "Equilibrium",
+      "B": "Equinox",
+      "C": "Chaos",
+      "D": "Consternation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Equilibrium) is correct. 'Equilibrium' is a state of physical, emotional, or competitive balance. 'Consternation' refers to a state of anxious dismay.",
+    "tags": ["vocab", "ows", "science", "mind", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0364",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe time or date (twice each year) at which the sun crosses the celestial equator and day and night are of equal length",
+    "options": {
+      "A": "Equinox",
+      "B": "Solstice",
+      "C": "Eclipse",
+      "D": "Apogee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Equinox) is correct. An 'Equinox' occurs when day and night are of equal duration worldwide (autumnal and vernal equinox). 'Solstice' marks the longest or shortest day.",
+    "tags": ["vocab", "ows", "astronomy", "time", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0365",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCapable of being completely destroyed, eradicated, or pulled out by the roots",
+    "options": {
+      "A": "Eradicable",
+      "B": "Indelible",
+      "C": "Incorrigible",
+      "D": "Ineffable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Eradicable) is correct. 'Eradicable' means capable of being eliminated completely or rooted out. 'Indelible' means cannot be blotted out or removed.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0366",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abnormal, obsessive, and excessive desire to work",
+    "options": {
+      "A": "Ergomania",
+      "B": "Dromomania",
+      "C": "Bibliomania",
+      "D": "Kleptomania"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ergomania) is correct. 'Ergomania' is an excessive devotion to or craving for work. 'Dromomania' is a mania for travelling, and 'Kleptomania' is an urge to steal.",
+    "tags": ["vocab", "ows", "mania", "psychology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0367",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who loves to work; someone devoted to labour",
+    "options": {
+      "A": "Ergophile",
+      "B": "Bibliophile",
+      "C": "Canophile",
+      "D": "Technophile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ergophile) is correct. An 'Ergophile' is an individual who loves work or physical labor. 'Bibliophile' loves books, and 'Canophile' loves dogs.",
+    "tags": ["vocab", "ows", "phile", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0368",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn error or mistake in printed text, specifically in a book",
+    "options": {
+      "A": "Erratum",
+      "B": "Addendum",
+      "C": "Postscript",
+      "D": "Corrigendum"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Erratum) is correct. An 'Erratum' (plural: errata) is an error in printing or writing identified in a published work.",
+    "tags": ["vocab", "ows", "books", "publishing", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0369",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nProfound, extensive, and scholarly learning or knowledge",
+    "options": {
+      "A": "Erudition",
+      "B": "Pedantry",
+      "C": "Ignorance",
+      "D": "Credulity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Erudition) is correct. 'Erudition' refers to deep scholarly knowledge gained through extensive research and study. 'Pedantry' is an excessive display of minor learning rules.",
+    "tags": ["vocab", "ows", "education", "knowledge", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0370",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person or group travelling with another vehicle or dignitary to provide protection or honour",
+    "options": {
+      "A": "Escort",
+      "B": "Hostess",
+      "C": "Emissary",
+      "D": "Janitor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Escort) is correct. An 'Escort' is an accompanying guard providing security, guidance, or courtesy. 'Emissary' is an agent sent on a secret official mission.",
+    "tags": ["vocab", "ows", "people", "security", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0371",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHigh respect, admiration, and favourable regard",
+    "options": {
+      "A": "Esteem",
+      "B": "Opprobrium",
+      "C": "Disgrace",
+      "D": "Contempt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Esteem) is correct. 'Esteem' is great respect, admiration, or value placed upon someone's character. 'Opprobrium' is public disgrace.",
+    "tags": ["vocab", "ows", "emotions", "respect", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0372",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLasting or existing forever; without end",
+    "options": {
+      "A": "Eternal",
+      "B": "Ephemeral",
+      "C": "Evanescent",
+      "D": "Momentary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Eternal) is correct. 'Eternal' means without beginning or end; timeless and everlasting. 'Ephemeral' and 'Evanescent' describe things that vanish quickly.",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0373",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nInfinite or unending time; a state to which time has no application",
+    "options": {
+      "A": "Eternity",
+      "B": "Millennium",
+      "C": "Fortnight",
+      "D": "Decade"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Eternity) is correct. 'Eternity' is infinite, boundless, or endless duration. 'Millennium' is 1,000 years.",
+    "tags": ["vocab", "ows", "time", "philosophy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0374",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMoral principles that govern a person's behaviour or the conducting of an activity",
+    "options": {
+      "A": "Ethics",
+      "B": "Etiquette",
+      "C": "Mores",
+      "D": "Eugenics"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ethics) is correct. 'Ethics' is the philosophical discipline dealing with moral duty, virtue, and right conduct. 'Etiquette' refers to social conventional rules of manners.",
+    "tags": ["vocab", "ows", "philosophy", "morality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0375",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe comparative and scientific study of the characteristics of different peoples and races",
+    "options": {
+      "A": "Ethnology",
+      "B": "Etymology",
+      "C": "Entomology",
+      "D": "Ecology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ethnology) is correct. 'Ethnology' is the branch of anthropology that analyzes cultures and races of mankind. 'Etymology' deals with the linguistic origin of words.",
+    "tags": ["vocab", "ows", "science", "humanities", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0376",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo make pale, bleach, or deprive of colour and vigour through lack of light",
+    "options": {
+      "A": "Etiolate",
+      "B": "Invigorate",
+      "C": "Illuminate",
+      "D": "Engulf"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Etiolate) is correct. 'Etiolate' means to cause a plant or organism to turn pale, yellow, or sickly through absence of sunlight. 'Invigorate' means to refresh or give vital energy to.",
+    "tags": ["vocab", "ows", "science", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0377",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe customary code of polite behaviour and formal rules observed in society or within a profession",
+    "options": {
+      "A": "Etiquette",
+      "B": "Protocol",
+      "C": "Ethics",
+      "D": "Statute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Etiquette) is correct. 'Etiquette' refers to conventional requirements of polite social behaviour. 'Protocol' relates strictly to diplomatic or official government codes.",
+    "tags": ["vocab", "ows", "society", "manners", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0378",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study of the origin and historical development of words and their linguistic forms",
+    "options": {
+      "A": "Etymology",
+      "B": "Entomology",
+      "C": "Phonetics",
+      "D": "Typography"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Etymology) is correct. 'Etymology' traces the derivation and historical evolution of words. 'Phonetics' is the study of vocal speech sounds.",
+    "tags": ["vocab", "ows", "language", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0379",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe science and study of improving the genetic qualities of the human race by controlled breeding",
+    "options": {
+      "A": "Eugenics",
+      "B": "Genetics",
+      "C": "Geriatrics",
+      "D": "Genealogy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Eugenics) is correct. 'Eugenics' is the study of methods to genetically improve human hereditary characteristics. 'Geriatrics' is the branch of medicine dealing with the elderly.",
+    "tags": ["vocab", "ows", "science", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0380",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo praise highly in public speech or writing",
+    "options": {
+      "A": "Eulogise",
+      "B": "Denigrate",
+      "C": "Revile",
+      "D": "Heckle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Eulogise) is correct. 'Eulogise' means to extol, praise enthusiastically, or deliver a tribute. 'Denigrate' and 'Revile' mean to disparage or criticize abusively.",
+    "tags": ["vocab", "ows", "verbs", "communication", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0381",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA formal speech or piece of writing that praises someone or something highly, typically someone who has just died",
+    "options": {
+      "A": "Eulogy",
+      "B": "Elegy",
+      "C": "Epitaph",
+      "D": "Dirge"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Eulogy) is correct. A 'Eulogy' (or panegyric) is a spoken or written tribute of praise for a person, especially post-mortem. 'Elegy' and 'Dirge' are mournful songs of sorrow.",
+    "tags": ["vocab", "ows", "literature", "speeches", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0382",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe substitution of a mild, indirect, or vague term for one that is harsh, blunt, or offensive",
+    "options": {
+      "A": "Euphemism",
+      "B": "Tautology",
+      "C": "Malapropism",
+      "D": "Solecism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Euphemism) is correct. A 'Euphemism' is a gentle or indirect expression used in place of a blunt word (e.g., 'passed away' for 'died'). 'Tautology' is pointless repetition of identical meaning in different words.",
+    "tags": ["vocab", "ows", "language", "figures_of_speech", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0383",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe painless killing of a patient suffering from an incurable, painful disease or irreversible coma; mercy killing",
+    "options": {
+      "A": "Euthanasia",
+      "B": "Homicide",
+      "C": "Genocide",
+      "D": "Suicide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Euthanasia) is correct. 'Euthanasia' is the deliberate administration of gentle death to end unbearable physical agony. 'Genocide' is the extermination of an entire race.",
+    "tags": ["vocab", "ows", "medical", "law", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0384",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nQuickly fading or disappearing from sight or memory; vanishing soon",
+    "options": {
+      "A": "Evanescent",
+      "B": "Perpetual",
+      "C": "Enduring",
+      "D": "Permanent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Evanescent) is correct. 'Evanescent' means ephemeral, vanishing like vapor, or lasting only a moment. 'Perpetual' means lasting indefinitely.",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0385",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo expel a tenant or occupant from a property, especially with the legal support of the law",
+    "options": {
+      "A": "Evict",
+      "B": "Incarcerate",
+      "C": "Remand",
+      "D": "Exonerate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Evict) is correct. 'Evict' means to legally dispossess and force someone to leave premises. 'Incarcerate' means to imprison.",
+    "tags": ["vocab", "ows", "law", "property", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0386",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo undergo gradual development from a simple form to a more complex state",
+    "options": {
+      "A": "Evolve",
+      "B": "Devolve",
+      "C": "Degenerate",
+      "D": "Disintegrate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Evolve) is correct. 'Evolve' means to develop gradually through natural modification over generations. 'Degenerate' means to deteriorate or decline.",
+    "tags": ["vocab", "ows", "science", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0387",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA candidate or person who sits for an academic or professional test",
+    "options": {
+      "A": "Examinee",
+      "B": "Examiner",
+      "C": "Invigilator",
+      "D": "Auditor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Examinee) is correct. An 'Examinee' is an individual who is undergoing a formal examination. An 'Examiner' or 'Invigilator' inspects and conducts the test.",
+    "tags": ["vocab", "ows", "education", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0388",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA short passage or extract taken from a larger book, document, music, or film",
+    "options": {
+      "A": "Excerpt",
+      "B": "Manuscript",
+      "C": "Opus",
+      "D": "Treatise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Excerpt) is correct. An 'Excerpt' is an extract, portion, or cited quotation from a larger piece of work. 'Opus' is a large-scale artistic composition.",
+    "tags": ["vocab", "ows", "literature", "texts", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0389",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA short journey or recreational trip made for pleasure, usually by a group",
+    "options": {
+      "A": "Excursion",
+      "B": "Voyage",
+      "C": "Exodus",
+      "D": "Itinerary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Excursion) is correct. An 'Excursion' (or jaunt) is a brief recreational tour. 'Voyage' is a long journey by sea, and 'Exodus' is a mass departure.",
+    "tags": ["vocab", "ows", "travel", "events", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0390",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCritical explanation, scholarly interpretation, and analysis of a text, especially scripture",
+    "options": {
+      "A": "Exegesis",
+      "B": "Axiom",
+      "C": "Epitaph",
+      "D": "Epilogue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Exegesis) is correct. 'Exegesis' is an objective, critical exposition or analytical interpretation of religious scripture or classical texts.",
+    "tags": ["vocab", "ows", "literature", "religion", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0391",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn urgent need, crisis, or emergency demand requiring immediate action",
+    "options": {
+      "A": "Exigency",
+      "B": "Contingency",
+      "C": "Sinecure",
+      "D": "Plebiscite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Exigency) is correct. 'Exigency' refers to an acute emergency demand or urgent crisis. 'Sinecure' is a job with high pay and no duties.",
+    "tags": ["vocab", "ows", "events", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0392",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA mass departure or emigration of a large number of people from a place at the same time",
+    "options": {
+      "A": "Exodus",
+      "B": "Immigration",
+      "C": "Repatriation",
+      "D": "Infiltration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Exodus) is correct. 'Exodus' denotes a simultaneous departure or migration of a large population. 'Repatriation' is the return of people to their native land.",
+    "tags": ["vocab", "ows", "travel", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0393",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo officially free, absolve, or clear somebody from an accusation, blame, or criminal charge",
+    "options": {
+      "A": "Exonerate",
+      "B": "Impeach",
+      "C": "Incriminate",
+      "D": "Incarcerate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Exonerate) is correct. 'Exonerate' means to declare officially free from guilt or responsibility. 'Incriminate' means to indicate or suggest someone is guilty.",
+    "tags": ["vocab", "ows", "law", "verbs", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0394",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who lives outside their native country, either voluntarily or by exile",
+    "options": {
+      "A": "Expatriate",
+      "B": "Patriot",
+      "C": "Native",
+      "D": "Aborigine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Expatriate) is correct. An 'Expatriate' is an individual residing in a foreign country. 'Patriot' is someone devoted to defending their homeland.",
+    "tags": ["vocab", "ows", "people", "citizenship", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0395",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo make amends, atone for, or perform penance for a guilt or sin",
+    "options": {
+      "A": "Expiate",
+      "B": "Expostulate",
+      "C": "Perpetrate",
+      "D": "Aggravate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Expiate) is correct. 'Expiate' means to atone for or make reparation for wrongful actions. 'Perpetrate' means to commit an unlawful act.",
+    "tags": ["vocab", "ows", "morality", "verbs", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0396",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo remove matter thought to be objectionable or offensive from a book or account; censor",
+    "options": {
+      "A": "Expurgate",
+      "B": "Inscribe",
+      "C": "Compile",
+      "D": "Enshrine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Expurgate) is correct. 'Expurgate' means to purge, censor, or cleanse a written piece by removing vulgar or offensive content. 'Inscribe' is to engrave words.",
+    "tags": ["vocab", "ows", "books", "censorship", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0397",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA speech or performance delivered without any previous preparation or rehearsals",
+    "options": {
+      "A": "Extempore",
+      "B": "Deliberation",
+      "C": "Harangue",
+      "D": "Rhetoric"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Extempore) is correct. 'Extempore' means spoken or performed on the spur of the moment without advance notes or preparation. 'Deliberation' implies slow and careful thought.",
+    "tags": ["vocab", "ows", "speeches", "communication", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0398",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo legally hand over a fugitive or accused criminal to the jurisdiction of the foreign state where the crime was committed",
+    "options": {
+      "A": "Extradite",
+      "B": "Expatriate",
+      "C": "Emancipate",
+      "D": "Repatriate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Extradite) is correct. 'Extradite' is the formal surrender of an accused fugitive to foreign authorities. 'Emancipate' is to set free from slavery.",
+    "tags": ["vocab", "ows", "law", "government", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0399",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who spends money or resources recklessly, excessively, and without restraint",
+    "options": {
+      "A": "Extravagant",
+      "B": "Economical",
+      "C": "Frugal",
+      "D": "Abstemious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Extravagant) is correct. An 'Extravagant' person squanders funds on lavish luxuries without thrift. 'Frugal' and 'Economical' describe careful, prudent spenders.",
+    "tags": ["vocab", "ows", "money", "personality", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0400",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn outgoing, confident, and socially active person who enjoys being surrounded by others",
+    "options": {
+      "A": "Extrovert",
+      "B": "Introvert",
+      "C": "Recluse",
+      "D": "Ascetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Extrovert) is correct. An 'Extrovert' derives energy from social interaction and expresses thoughts outwardly. An 'Introvert' is reserved and turns inward.",
+    "tags": ["vocab", "ows", "personality", "psychology", "pyq_ssc"]
+  }
+]

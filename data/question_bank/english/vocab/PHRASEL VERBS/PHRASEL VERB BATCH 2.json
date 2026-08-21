@@ -1,0 +1,602 @@
+[
+  {
+    "id": "ENG_VOCAB_PHRA_1851",
+    "question": "What is the meaning of the phrasal verb 'get away with'?",
+    "options": {
+      "A": "To escape punishment for an act.",
+      "B": "To go on a vacation.",
+      "C": "To finish a task.",
+      "D": "To avoid someone you dislike."
+    },
+    "correct_option": "A",
+    "rationale": "'Get away with' implies escaping the consequences of doing something wrong."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1852",
+    "question": "Fill in the blank: 'I need to _____ my presentation before the conference starts.'",
+    "options": {
+      "A": "go over",
+      "B": "go on",
+      "C": "go off",
+      "D": "go through with"
+    },
+    "correct_option": "A",
+    "rationale": "'Go over' means to review or examine something in detail."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1853",
+    "question": "Spot the error: 'The alarm went off at 6 AM sharp.'",
+    "options": {
+      "A": "The alarm",
+      "B": "went off",
+      "C": "at 6 AM sharp.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Go off' (for an alarm) means to start ringing/sounding. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1854",
+    "question": "Fill in the blank: 'After his retirement, he decided to _____ a new hobby.'",
+    "options": {
+      "A": "take up",
+      "B": "take off",
+      "C": "take on",
+      "D": "take out"
+    },
+    "correct_option": "A",
+    "rationale": "'Take up' means to begin a new hobby, interest, or activity."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1855",
+    "question": "Choose the meaning of 'turn down':",
+    "options": {
+      "A": "To refuse or reject.",
+      "B": "To decrease intensity/volume.",
+      "C": "Both A and B are correct.",
+      "D": "To arrive late."
+    },
+    "correct_option": "C",
+    "explanation": "'Turn down' can mean to reject an offer or to lower the volume/heat/intensity of something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1856",
+    "question": "Fill in the blank: 'We have to _____ the old furniture to make space.'",
+    "options": {
+      "A": "get rid of",
+      "B": "get away",
+      "C": "get on",
+      "D": "get back"
+    },
+    "correct_option": "A",
+    "rationale": "'Get rid of' means to dispose of or discard something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1857",
+    "question": "Spot the error: 'He turns up late for every appointment.'",
+    "options": {
+      "A": "He turns up",
+      "B": "late for",
+      "C": "every appointment.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Turn up' means to arrive or appear at a place. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1858",
+    "question": "What does 'run out of' mean?",
+    "options": {
+      "A": "To have nothing left of something.",
+      "B": "To escape from someone.",
+      "C": "To chase someone.",
+      "D": "To start a race."
+    },
+    "correct_option": "A",
+    "rationale": "'Run out of' means to exhaust one's supply of something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1859",
+    "question": "Fill in the blank: 'Please _____ your shoes before entering the temple.'",
+    "options": {
+      "A": "take off",
+      "B": "take up",
+      "C": "take on",
+      "D": "take away"
+    },
+    "correct_option": "A",
+    "rationale": "'Take off' means to remove (clothing, shoes, etc.)."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1860",
+    "question": "Spot the error: 'I get on with my colleagues very well.'",
+    "options": {
+      "A": "I get on",
+      "B": "with my colleagues",
+      "C": "very well.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Get on with' means to have a good relationship with someone. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1861",
+    "question": "What does 'look forward to' mean?",
+    "options": {
+      "A": "To anticipate something with pleasure.",
+      "B": "To search for something.",
+      "C": "To watch out for danger.",
+      "D": "To ignore someone."
+    },
+    "correct_option": "A",
+    "explanation": "'Look forward to' means to await something happily."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1862",
+    "question": "Fill in the blank: 'The plane _____ at 10 AM sharp.'",
+    "options": {
+      "A": "took off",
+      "B": "took up",
+      "C": "took on",
+      "D": "took away"
+    },
+    "correct_option": "A",
+    "explanation": "'Take off' means to depart (for an aircraft)."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1863",
+    "question": "Spot the error: 'He decided to give up sugar for health reasons.'",
+    "options": {
+      "A": "He decided to",
+      "B": "give up",
+      "C": "sugar for health reasons.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Give up' means to quit or abandon a habit. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1864",
+    "question": "Fill in the blank: 'I'll _____ you at the airport at 5 PM.'",
+    "options": {
+      "A": "pick up",
+      "B": "pick out",
+      "C": "pick on",
+      "D": "pick away"
+    },
+    "correct_option": "A",
+    "explanation": "'Pick up' means to collect someone or something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1865",
+    "question": "Choose the meaning of 'hold on':",
+    "options": {
+      "A": "To wait.",
+      "B": "To grip tightly.",
+      "C": "Both A and B are correct.",
+      "D": "To shout."
+    },
+    "correct_option": "C",
+    "explanation": "'Hold on' means to wait (on the phone) or to grasp something firmly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1866",
+    "question": "Spot the error: 'The negotiations fell through because of disagreements.'",
+    "options": {
+      "A": "The negotiations",
+      "B": "fell through",
+      "C": "because of disagreements.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Fall through' means to fail/not be completed. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1867",
+    "question": "Fill in the blank: 'She _____ her mother; they have the same eyes.'",
+    "options": {
+      "A": "takes after",
+      "B": "takes off",
+      "C": "takes in",
+      "D": "takes apart"
+    },
+    "correct_option": "A",
+    "explanation": "'Take after' means to resemble a family member."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1868",
+    "question": "What does 'run into' mean?",
+    "options": {
+      "A": "To meet someone by chance.",
+      "B": "To hit someone with a car.",
+      "C": "Both A and B are correct.",
+      "D": "To escape."
+    },
+    "correct_option": "C",
+    "explanation": "'Run into' means both meeting someone unexpectedly and colliding with something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1869",
+    "question": "Spot the error: 'Don't let me down this time.'",
+    "options": {
+      "A": "Don't",
+      "B": "let me down",
+      "C": "this time.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Let down' means to disappoint. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1870",
+    "question": "Fill in the blank: 'We need to _____ the facts before making a decision.'",
+    "options": {
+      "A": "check out",
+      "B": "check on",
+      "C": "check in",
+      "D": "check away"
+    },
+    "correct_option": "A",
+    "explanation": "'Check out' means to investigate or examine thoroughly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1871",
+    "question": "What does 'keep up with' mean?",
+    "options": {
+      "A": "To stay at the same level/speed.",
+      "B": "To be behind.",
+      "C": "To ignore.",
+      "D": "To run."
+    },
+    "correct_option": "A",
+    "explanation": "'Keep up with' means to maintain the same pace as others."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1872",
+    "question": "Fill in the blank: '_____ your seatbelt; we are taking off.'",
+    "options": {
+      "A": "Fasten up",
+      "B": "Fasten on",
+      "C": "Buckle up",
+      "D": "Buckle in"
+    },
+    "correct_option": "C",
+    "explanation": "'Buckle up' is the standard phrasal verb for securing a seatbelt."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1873",
+    "question": "What is the meaning of 'put off'?",
+    "options": {
+      "A": "To postpone.",
+      "B": "To start.",
+      "C": "To remove.",
+      "D": "To ignore."
+    },
+    "correct_option": "A",
+    "explanation": "'Put off' means to delay or postpone."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1874",
+    "question": "Spot the error: 'He needs to back up his claims with evidence.'",
+    "options": {
+      "A": "He needs to",
+      "B": "back up",
+      "C": "his claims with evidence.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Back up' means to support or verify. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1875",
+    "question": "Fill in the blank: 'I didn't _____ the movie; it was too boring.'",
+    "options": {
+      "A": "sit through",
+      "B": "sit up",
+      "C": "sit down",
+      "D": "sit in"
+    },
+    "correct_option": "A",
+    "explanation": "'Sit through' means to endure or stay until the end of a long/tedious event."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1876",
+    "question": "What does 'take on' mean?",
+    "options": {
+      "A": "To accept a responsibility/challenge.",
+      "B": "To remove clothing.",
+      "C": "To arrive.",
+      "D": "To leave."
+    },
+    "correct_option": "A",
+    "explanation": "'Take on' means to accept a task or challenge."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1877",
+    "question": "Spot the error: 'The fire burned out after three hours.'",
+    "options": {
+      "A": "The fire",
+      "B": "burned out",
+      "C": "after three hours.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Burn out' means to stop burning due to lack of fuel. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1878",
+    "question": "Fill in the blank: 'He _____ his success to his family’s support.'",
+    "options": {
+      "A": "attributes to (or 'ascribes to' - but if using a phrasal verb, maybe 'put down to')",
+      "B": "put down to",
+      "C": "took on",
+      "D": "gave up"
+    },
+    "correct_option": "B",
+    "explanation": "'Put down to' means to attribute something to a specific cause."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1879",
+    "question": "What does 'break in' mean?",
+    "options": {
+      "A": "To interrupt or enter illegally.",
+      "B": "To escape.",
+      "C": "To create.",
+      "D": "To finish."
+    },
+    "correct_option": "A",
+    "explanation": "'Break in' means to enter by force or to interrupt."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1880",
+    "question": "Spot the error: 'She broke down in tears when she heard the news.'",
+    "options": {
+      "A": "She broke down",
+      "B": "in tears when",
+      "C": "she heard the news.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Broke down' means lost control of emotions. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1881",
+    "question": "Fill in the blank: 'I need to _____ my brother to lend me some money.'",
+    "options": {
+      "A": "talk into",
+      "B": "talk out of",
+      "C": "talk over",
+      "D": "talk down to"
+    },
+    "correct_option": "A",
+    "explanation": "'Talk into' means to persuade someone to do something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1882",
+    "question": "What does 'turn out' mean?",
+    "options": {
+      "A": "To result in or prove to be.",
+      "B": "To arrive.",
+      "C": "To reject.",
+      "D": "To lower intensity."
+    },
+    "correct_option": "A",
+    "explanation": "'Turn out' means the end result of a situation."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1883",
+    "question": "Spot the error: 'The car broke down in the middle of the road.'",
+    "options": {
+      "A": "The car broke down",
+      "B": "in the middle of",
+      "C": "the road.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Broke down' for vehicles is correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1884",
+    "question": "Fill in the blank: 'Don't _____ your brother; it's rude.'",
+    "options": {
+      "A": "pick on",
+      "B": "pick up",
+      "C": "pick out",
+      "D": "pick away"
+    },
+    "correct_option": "A",
+    "explanation": "'Pick on' means to bully or treat unfairly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1885",
+    "question": "What is the meaning of 'pass out'?",
+    "options": {
+      "A": "To lose consciousness.",
+      "B": "To distribute.",
+      "C": "Both A and B are correct.",
+      "D": "To die."
+    },
+    "correct_option": "C",
+    "explanation": "'Pass out' can mean both fainting and distributing items."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1886",
+    "question": "Spot the error: 'They stood by their friend in difficult times.'",
+    "options": {
+      "A": "They stood by",
+      "B": "their friend",
+      "C": "in difficult times.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Stand by' means to support someone. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1887",
+    "question": "Fill in the blank: 'The truth will _____ eventually.'",
+    "options": {
+      "A": "come out",
+      "B": "come in",
+      "C": "come off",
+      "D": "come to"
+    },
+    "correct_option": "A",
+    "explanation": "'Come out' means to be revealed."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1888",
+    "question": "What does 'get ahead' mean?",
+    "options": {
+      "A": "To progress/succeed.",
+      "B": "To move forward.",
+      "C": "To hurry.",
+      "D": "To give up."
+    },
+    "correct_option": "A",
+    "explanation": "'Get ahead' means to make progress or succeed."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1889",
+    "question": "Spot the error: 'She looked after the orphan as if he were her own.'",
+    "options": {
+      "A": "She looked after",
+      "B": "the orphan as if",
+      "C": "he were her own.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Look after' means to take care of. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1890",
+    "question": "Fill in the blank: 'We should _____ the plan before executing it.'",
+    "options": {
+      "A": "think over",
+      "B": "think up",
+      "C": "think out",
+      "D": "think away"
+    },
+    "correct_option": "A",
+    "explanation": "'Think over' means to consider something carefully."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1891",
+    "question": "What is the meaning of 'set up'?",
+    "options": {
+      "A": "To arrange or establish.",
+      "B": "To destroy.",
+      "C": "To postpone.",
+      "D": "To ignore."
+    },
+    "correct_option": "A",
+    "explanation": "'Set up' means to establish or prepare."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1892",
+    "question": "Fill in the blank: 'He _____ his father in every argument.'",
+    "options": {
+      "A": "stands up to",
+      "B": "stands for",
+      "C": "stands by",
+      "D": "stands in"
+    },
+    "correct_option": "A",
+    "explanation": "'Stand up to' means to confront or resist."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1893",
+    "question": "What does 'break off' mean?",
+    "options": {
+      "A": "To end a relationship or negotiation.",
+      "B": "To enter forcibly.",
+      "C": "To escape.",
+      "D": "To cry."
+    },
+    "correct_option": "A",
+    "explanation": "'Break off' means to abruptly end something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1894",
+    "question": "Spot the error: 'The bomb went off in the city center.'",
+    "options": {
+      "A": "The bomb",
+      "B": "went off",
+      "C": "in the city center.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Go off' (for a bomb) means to explode. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1895",
+    "question": "Fill in the blank: 'I _____ an old photo while cleaning the attic.'",
+    "options": {
+      "A": "came across",
+      "B": "came up",
+      "C": "came off",
+      "D": "came over"
+    },
+    "correct_option": "A",
+    "explanation": "'Came across' means met/found by chance."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1896",
+    "question": "Choose the meaning of 'look into':",
+    "options": {
+      "A": "To investigate.",
+      "B": "To watch.",
+      "C": "To ignore.",
+      "D": "To postpone."
+    },
+    "correct_option": "A",
+    "explanation": "'Look into' means to investigate."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1897",
+    "question": "Spot the error: 'She turned down the job offer for personal reasons.'",
+    "options": {
+      "A": "She turned down",
+      "B": "the job offer",
+      "C": "for personal reasons.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Turn down' means to reject. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1898",
+    "question": "Fill in the blank: 'We have to _____ this problem eventually.'",
+    "options": {
+      "A": "face up to",
+      "B": "face off",
+      "C": "face in",
+      "D": "face away"
+    },
+    "correct_option": "A",
+    "explanation": "'Face up to' means to accept a difficult reality."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1899",
+    "question": "What is the meaning of 'take over'?",
+    "options": {
+      "A": "To assume control.",
+      "B": "To give away.",
+      "C": "To arrive.",
+      "D": "To reject."
+    },
+    "correct_option": "A",
+    "explanation": "'Take over' means to gain control of something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1900",
+    "question": "Spot the error: 'They set off early to avoid the traffic.'",
+    "options": {
+      "A": "They set off",
+      "B": "early to",
+      "C": "avoid the traffic.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Set off' means to begin a journey. Correct."
+  }
+]

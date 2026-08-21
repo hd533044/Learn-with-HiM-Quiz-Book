@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_3251",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SHAM**",
+    "options": {
+      "A": "Pretense",
+      "B": "Reality",
+      "C": "Truth",
+      "D": "Fact"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sham' refers to a thing that is not what it is purported to be; a pretense. 'Pretense', 'hoax', or 'fraud' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3252",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SHAM**",
+    "options": {
+      "A": "Pretense",
+      "B": "Hoax",
+      "C": "Reality",
+      "D": "Fraud"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sham' means a pretense. 'Reality', 'truth', or 'fact' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3253",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SHED**",
+    "options": {
+      "A": "Discard",
+      "B": "Keep",
+      "C": "Retain",
+      "D": "Hold"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Shed' means to cast off or let fall (something). 'Discard', 'cast off', or 'drop' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3254",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SHED**",
+    "options": {
+      "A": "Discard",
+      "B": "Cast off",
+      "C": "Keep",
+      "D": "Drop"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Shed' means to cast off. 'Keep', 'retain', or 'hold' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3255",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SHEER**",
+    "options": {
+      "A": "Absolute",
+      "B": "Partial",
+      "C": "Incomplete",
+      "D": "Limited"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sheer' means nothing other than; unmitigated; absolute. 'Absolute', 'utter', or 'total' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3256",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SHEER**",
+    "options": {
+      "A": "Absolute",
+      "B": "Utter",
+      "C": "Partial",
+      "D": "Total"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sheer' means absolute/total. 'Partial', 'incomplete', or 'limited' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3257",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SHREWD**",
+    "options": {
+      "A": "Astute",
+      "B": "Foolish",
+      "C": "Naive",
+      "D": "Simple"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Shrewd' means having or showing sharp powers of judgment; astute. 'Astute', 'clever', or 'sharp' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3258",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SHREWD**",
+    "options": {
+      "A": "Astute",
+      "B": "Clever",
+      "C": "Foolish",
+      "D": "Sharp"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Shrewd' means astute. 'Foolish', 'naive', or 'simple' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3259",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SHRILL**",
+    "options": {
+      "A": "High-pitched",
+      "B": "Low",
+      "C": "Deep",
+      "D": "Soft"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Shrill' means (of a voice or sound) high-pitched and piercing. 'High-pitched', 'piercing', or 'sharp' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3260",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SHRILL**",
+    "options": {
+      "A": "High-pitched",
+      "B": "Piercing",
+      "C": "Low",
+      "D": "Sharp"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Shrill' means high-pitched. 'Low', 'deep', or 'soft' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3261",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SHROUD**",
+    "options": {
+      "A": "Cover",
+      "B": "Reveal",
+      "C": "Expose",
+      "D": "Unveil"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Shroud' means to cover or envelop so as to conceal from view. 'Cover', 'cloak', or 'veil' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3262",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SHROUD**",
+    "options": {
+      "A": "Cover",
+      "B": "Cloak",
+      "C": "Reveal",
+      "D": "Veil"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Shroud' means to cover. 'Reveal', 'expose', or 'unveil' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3263",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SHUN**",
+    "options": {
+      "A": "Avoid",
+      "B": "Seek",
+      "C": "Pursue",
+      "D": "Welcome"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Shun' means to persistently avoid, ignore, or reject (someone or something) through antipathy or caution. 'Avoid', 'evade', or 'eschew' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3264",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SHUN**",
+    "options": {
+      "A": "Avoid",
+      "B": "Evade",
+      "C": "Seek",
+      "D": "Eschew"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Shun' means to avoid. 'Seek', 'pursue', or 'welcome' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3265",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SHUNT**",
+    "options": {
+      "A": "Divert",
+      "B": "Attract",
+      "C": "Direct",
+      "D": "Align"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Shunt' means to push or shove aside; to redirect. 'Divert', 'sidetrack', or 'shift' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3266",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SHUNT**",
+    "options": {
+      "A": "Divert",
+      "B": "Sidetrack",
+      "C": "Attract",
+      "D": "Shift"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Shunt' means to divert. 'Attract', 'direct', or 'align' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3267",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SIESTA**",
+    "options": {
+      "A": "Nap",
+      "B": "Work",
+      "C": "Activity",
+      "D": "Labor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Siesta' refers to an afternoon nap or rest. 'Nap', 'rest', or 'sleep' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3268",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SIESTA**",
+    "options": {
+      "A": "Nap",
+      "B": "Rest",
+      "C": "Work",
+      "D": "Sleep"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Siesta' is a nap. 'Work', 'activity', or 'labor' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3269",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SIMPER**",
+    "options": {
+      "A": "Smirk",
+      "B": "Glow",
+      "C": "Shine",
+      "D": "Beam"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Simper' means to smile in a coy or ingratiating way. 'Smirk', 'grin', or 'smile' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3270",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SIMPER**",
+    "options": {
+      "A": "Smirk",
+      "B": "Grin",
+      "C": "Frown",
+      "D": "Smile"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Simper' is a coy smile. 'Frown' or 'scowl' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3271",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SIMULATE**",
+    "options": {
+      "A": "Imitate",
+      "B": "Original",
+      "C": "Genuine",
+      "D": "Real"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Simulate' means to imitate the appearance or character of. 'Imitate', 'fake', or 'replicate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3272",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SIMULATE**",
+    "options": {
+      "A": "Imitate",
+      "B": "Fake",
+      "C": "Original",
+      "D": "Replicate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Simulate' means to imitate. 'Original', 'genuine', or 'real' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3273",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SINECURE**",
+    "options": {
+      "A": "Easy job",
+      "B": "Hard labor",
+      "C": "Difficult task",
+      "D": "Drudgery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sinecure' refers to a position requiring little or no work but giving the holder status or financial benefit. 'Easy job' or 'soft job' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3274",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SINECURE**",
+    "options": {
+      "A": "Easy job",
+      "B": "Soft job",
+      "C": "Hard labor",
+      "D": "Easy task"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sinecure' is an easy job. 'Hard labor', 'difficult task', or 'drudgery' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3275",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SINGE**",
+    "options": {
+      "A": "Burn",
+      "B": "Freeze",
+      "C": "Cool",
+      "D": "Chill"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Singe' means to burn superficially. 'Burn', 'char', or 'scorch' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3276",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SINGE**",
+    "options": {
+      "A": "Burn",
+      "B": "Char",
+      "C": "Freeze",
+      "D": "Scorch"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Singe' means to burn. 'Freeze', 'cool', or 'chill' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3277",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SINUOUS**",
+    "options": {
+      "A": "Winding",
+      "B": "Straight",
+      "C": "Direct",
+      "D": "Linear"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sinuous' means having many curves and turns. 'Winding', 'twisting', or 'serpentine' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3278",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SINUOUS**",
+    "options": {
+      "A": "Winding",
+      "B": "Twisting",
+      "C": "Straight",
+      "D": "Serpentine"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sinuous' means winding. 'Straight', 'direct', or 'linear' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3279",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SKEPTIC**",
+    "options": {
+      "A": "Doubter",
+      "B": "Believer",
+      "C": "Faithful",
+      "D": "Trusting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Skeptic' refers to a person inclined to question or doubt all accepted opinions. 'Doubter', 'cynic', or 'questioner' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3280",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SKEPTIC**",
+    "options": {
+      "A": "Doubter",
+      "B": "Cynic",
+      "C": "Believer",
+      "D": "Questioner"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Skeptic' means a doubter. 'Believer', 'faithful', or 'trusting' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3281",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SLACK**",
+    "options": {
+      "A": "Loose",
+      "B": "Tight",
+      "C": "Firm",
+      "D": "Taut"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Slack' means not taut or held tightly in position; loose. 'Loose', 'relaxed', or 'lax' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3282",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SLACK**",
+    "options": {
+      "A": "Loose",
+      "B": "Relaxed",
+      "C": "Tight",
+      "D": "Lax"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Slack' means loose. 'Tight', 'firm', or 'taut' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3283",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SLAKE**",
+    "options": {
+      "A": "Quench",
+      "B": "Increase",
+      "C": "Aggravate",
+      "D": "Intensify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Slake' means to quench or satisfy (one's thirst). 'Quench', 'satisfy', or 'assuage' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3284",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SLAKE**",
+    "options": {
+      "A": "Quench",
+      "B": "Satisfy",
+      "C": "Increase",
+      "D": "Assuage"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Slake' means to quench. 'Increase', 'aggravate', or 'intensify' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3285",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SLEAZY**",
+    "options": {
+      "A": "Sordid",
+      "B": "Reputable",
+      "C": "Respectable",
+      "D": "Honorable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sleazy' means (of a person or situation) sordid, corrupt, or immoral. 'Sordid', 'disreputable', or 'seedy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3286",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SLEAZY**",
+    "options": {
+      "A": "Sordid",
+      "B": "Disreputable",
+      "C": "Respectable",
+      "D": "Seedy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sleazy' means sordid. 'Respectable', 'reputable', or 'honorable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3287",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SLIGHT**",
+    "options": {
+      "A": "Small",
+      "B": "Huge",
+      "C": "Massive",
+      "D": "Enormous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Slight' means small in degree; inconsiderable. 'Small', 'minor', or 'trivial' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3288",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SLIGHT**",
+    "options": {
+      "A": "Small",
+      "B": "Minor",
+      "C": "Huge",
+      "D": "Trivial"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Slight' means small. 'Huge', 'massive', or 'enormous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3289",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SLOVENLY**",
+    "options": {
+      "A": "Untidy",
+      "B": "Neat",
+      "C": "Tidy",
+      "D": "Orderly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Slovenly' means (especially of a person or their appearance) messy and dirty. 'Untidy', 'messy', or 'slipshod' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3290",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SLOVENLY**",
+    "options": {
+      "A": "Untidy",
+      "B": "Messy",
+      "C": "Neat",
+      "D": "Slipshod"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Slovenly' means untidy. 'Neat', 'tidy', or 'orderly' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3291",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SMUG**",
+    "options": {
+      "A": "Self-satisfied",
+      "B": "Humble",
+      "C": "Modest",
+      "D": "Unassuming"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Smug' means having or showing an excessive pride in oneself or one's achievements. 'Self-satisfied', 'complacent', or 'conceited' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3292",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SMUG**",
+    "options": {
+      "A": "Self-satisfied",
+      "B": "Complacent",
+      "C": "Humble",
+      "D": "Conceited"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Smug' means self-satisfied. 'Humble', 'modest', or 'unassuming' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3293",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SOLACE**",
+    "options": {
+      "A": "Comfort",
+      "B": "Distress",
+      "C": "Anguish",
+      "D": "Suffering"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Solace' refers to comfort or consolation in a time of distress or sadness. 'Comfort', 'consolation', or 'relief' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3294",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SOLACE**",
+    "options": {
+      "A": "Comfort",
+      "B": "Consolation",
+      "C": "Distress",
+      "D": "Relief"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Solace' is comfort. 'Distress', 'anguish', or 'suffering' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3295",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SOLICITOUS**",
+    "options": {
+      "A": "Concerned",
+      "B": "Indifferent",
+      "C": "Careless",
+      "D": "Negligent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Solicitous' means characterized by or showing interest or concern. 'Concerned', 'attentive', or 'considerate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3296",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SOLICITOUS**",
+    "options": {
+      "A": "Concerned",
+      "B": "Attentive",
+      "C": "Indifferent",
+      "D": "Considerate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Solicitous' means concerned. 'Indifferent', 'careless', or 'negligent' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3297",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SOLIPSISM**",
+    "options": {
+      "A": "Self-absorption",
+      "B": "Altruism",
+      "C": "Selflessness",
+      "D": "Generosity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Solipsism' refers to the view or theory that the self is all that can be known to exist; extreme self-absorption. 'Self-absorption', 'egocentrism', or 'self-centeredness' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3298",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SOLIPSISM**",
+    "options": {
+      "A": "Self-absorption",
+      "B": "Egocentrism",
+      "C": "Altruism",
+      "D": "Self-centeredness"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Solipsism' is self-absorption. 'Altruism', 'selflessness', or 'generosity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3299",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SOLUBLE**",
+    "options": {
+      "A": "Dissolvable",
+      "B": "Insoluble",
+      "C": "Unsolvable",
+      "D": "Indissoluble"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Soluble' means able to be dissolved, especially in water. 'Dissolvable', 'liquefiable', or 'absorbable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3300",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SOLUBLE**",
+    "options": {
+      "A": "Dissolvable",
+      "B": "Liquefiable",
+      "C": "Insoluble",
+      "D": "Absorbable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Soluble' means able to be dissolved. 'Insoluble', 'unsolvable', or 'indissoluble' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

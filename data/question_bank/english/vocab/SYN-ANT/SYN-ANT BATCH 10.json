@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0451",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ERRATIC**",
+    "options": {
+      "A": "Consistent",
+      "B": "Unpredictable",
+      "C": "Reliable",
+      "D": "Steadfast"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Erratic' means not even or regular in pattern or movement; unpredictable. 'Unpredictable', 'capricious', or 'fitful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0452",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ERRATIC**",
+    "options": {
+      "A": "Fitful",
+      "B": "Consistent",
+      "C": "Mercurial",
+      "D": "Capricious"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Erratic' means irregular and volatile. 'Consistent', 'regular', or 'stable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0453",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ERUDITE**",
+    "options": {
+      "A": "Scholarly",
+      "B": "Ignorant",
+      "C": "Illiterate",
+      "D": "Uncultured"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Erudite' means having or showing great knowledge or learning. 'Scholarly', 'learned', or 'pedantic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0454",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ERUDITE**",
+    "options": {
+      "A": "Ignorant",
+      "B": "Learned",
+      "C": "Cultured",
+      "D": "Knowledgeable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Erudite' means scholarly and deeply educated. 'Ignorant', 'unlettered', or 'illiterate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0455",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ESCHEW**",
+    "options": {
+      "A": "Abstain",
+      "B": "Embrace",
+      "C": "Pursue",
+      "D": "Indulge"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Eschew' means deliberately avoid using; abstain from. 'Abstain', 'shun', or 'renounce' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0456",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ESCHEW**",
+    "options": {
+      "A": "Shun",
+      "B": "Embrace",
+      "C": "Renounce",
+      "D": "Avoid"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Eschew' means to avoid or forgo. 'Embrace', 'pursue', or 'adopt' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0457",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ESOTERIC**",
+    "options": {
+      "A": "Obscure",
+      "B": "Exoteric",
+      "C": "Familiar",
+      "D": "Commonplace"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Esoteric' means intended for or likely to be understood by only a small number of people with specialized knowledge. 'Obscure', 'arcane', or 'abstruse' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0458",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ESOTERIC**",
+    "options": {
+      "A": "Arcane",
+      "B": "Recondite",
+      "C": "Abstruse",
+      "D": "Exoteric"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Esoteric' means secret or specialized. 'Exoteric' (accessible to the general public) or 'commonplace' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0459",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EULOGY**",
+    "options": {
+      "A": "Panegyric",
+      "B": "Diatribe",
+      "C": "Stricture",
+      "D": "Condemnation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Eulogy' refers to a speech or piece of writing that praises someone or something highly. 'Panegyric', 'encomium', or 'tribute' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0460",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EULOGY**",
+    "options": {
+      "A": "Panegyric",
+      "B": "Diatribe",
+      "C": "Encomium",
+      "D": "Tribute"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Eulogy' means high praise. 'Diatribe', 'invective', or 'censure' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0461",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EUPHEMISM**",
+    "options": {
+      "A": "Understatement",
+      "B": "Dysphemism",
+      "C": "Harshness",
+      "D": "Directness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Euphemism' refers to a mild or indirect word substituted for one considered to be too harsh or blunt. 'Understatement' or 'polite term' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0462",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EUPHEMISM**",
+    "options": {
+      "A": "Dysphemism",
+      "B": "Circumlocution",
+      "C": "Substitute",
+      "D": "Softening"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Euphemism' is a mild or softened expression. 'Dysphemism' (a derogatory or unpleasant term used instead of a neutral one) is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0463",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EUPHONY**",
+    "options": {
+      "A": "Harmony",
+      "B": "Cacophony",
+      "C": "Discord",
+      "D": "Dissonance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Euphony' means the quality of being pleasing to the ear, especially through a harmonious combination of words. 'Harmony', 'mellifluousness', or 'sweetness' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0464",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EUPHONY**",
+    "options": {
+      "A": "Melody",
+      "B": "Symphony",
+      "C": "Harmony",
+      "D": "Cacophony"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Euphony' means a pleasing sound. 'Cacophony', 'dissonance', or 'harshness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0465",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EVANESCENT**",
+    "options": {
+      "A": "Fleeting",
+      "B": "Permanent",
+      "C": "Enduring",
+      "D": "Perpetual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Evanescent' means quickly fading or disappearing from sight, memory, or existence. 'Fleeting', 'transient', or 'ephemeral' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0466",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EVANESCENT**",
+    "options": {
+      "A": "Ephemeral",
+      "B": "Permanent",
+      "C": "Transient",
+      "D": "Fugitive"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Evanescent' means short-lived and vanishing. 'Permanent', 'enduring', or 'everlasting' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0467",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXACERBATE**",
+    "options": {
+      "A": "Aggravate",
+      "B": "Mitigate",
+      "C": "Alleviate",
+      "D": "Appease"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Exacerbate' means to make (a problem, bad situation, or negative feeling) worse. 'Aggravate', 'intensify', or 'worsen' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0468",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXACERBATE**",
+    "options": {
+      "A": "Inflame",
+      "B": "Worsen",
+      "C": "Mitigate",
+      "D": "Aggravate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Exacerbate' means to make worse. 'Mitigate', 'alleviate', or 'relieve' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0469",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXACTING**",
+    "options": {
+      "A": "Demanding",
+      "B": "Lenient",
+      "C": "Careless",
+      "D": "Forgiving"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Exacting' means making great demands on one's skill, attention, or other resources. 'Demanding', 'rigorous', or 'stringent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0470",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXACTING**",
+    "options": {
+      "A": "Onerous",
+      "B": "Lenient",
+      "C": "Meticulous",
+      "D": "Rigorous"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Exacting' means highly demanding and strict. 'Lenient', 'easygoing', or 'forgiving' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0471",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXCULPATE**",
+    "options": {
+      "A": "Vindicate",
+      "B": "Incriminate",
+      "C": "Inculpate",
+      "D": "Indict"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Exculpate' means to show or declare that someone is not guilty of wrongdoing. 'Vindicate', 'exonerate', or 'acquit' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0472",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXCULPATE**",
+    "options": {
+      "A": "Absolve",
+      "B": "Acquit",
+      "C": "Incriminate",
+      "D": "Vindicate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Exculpate' means to free from blame. 'Incriminate', 'convict', or 'inculpate' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0473",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXECRABLE**",
+    "options": {
+      "A": "Abominable",
+      "B": "Admirable",
+      "C": "Laudable",
+      "D": "Praiseworthy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Execrable' means extremely bad or unpleasant. 'Abominable', 'loathsome', or 'deplorable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0474",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXECRABLE**",
+    "options": {
+      "A": "Detestable",
+      "B": "Abhorrent",
+      "C": "Laudable",
+      "D": "Repugnant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Execrable' means detestable and appalling. 'Laudable', 'commendable', or 'admirable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0475",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXHORT**",
+    "options": {
+      "A": "Encourage",
+      "B": "Discourage",
+      "C": "Dissuade",
+      "D": "Deter"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Exhort' means to strongly encourage or urge someone to do something. 'Encourage', 'adjure', or 'prod' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0476",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXHORT**",
+    "options": {
+      "A": "Dissuade",
+      "B": "Urge",
+      "C": "Admonish",
+      "D": "Spur"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Exhort' means to urge or spur on. 'Dissuade', 'discourage', or 'deter' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0477",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXIGENT**",
+    "options": {
+      "A": "Urgent",
+      "B": "Optional",
+      "C": "Trivial",
+      "D": "Insignificant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Exigent' means pressing; demanding immediate attention or action. 'Urgent', 'imperative', or 'critical' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0478",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXIGENT**",
+    "options": {
+      "A": "Clamorous",
+      "B": "Imperative",
+      "C": "Crucial",
+      "D": "Nonurgent"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Exigent' means urgent and critical. 'Nonurgent', 'trivial', or 'unpressing' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0479",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXONERATE**",
+    "options": {
+      "A": "Acquit",
+      "B": "Convict",
+      "C": "Implicate",
+      "D": "Charge"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Exonerate' means to officially absolve from blame for a fault or wrongdoing. 'Acquit', 'absolve', or 'exculpate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0480",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXONERATE**",
+    "options": {
+      "A": "Vindicate",
+      "B": "Convict",
+      "C": "Absolve",
+      "D": "Exculpate"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Exonerate' means to acquit or clear of blame. 'Convict', 'sentence', or 'condemn' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0481",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXPEDIENT**",
+    "options": {
+      "A": "Convenient",
+      "B": "Ineffective",
+      "C": "Disadvantageous",
+      "D": "Detrimental"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Expedient' means convenient and practical, although possibly improper or immoral. 'Convenient', 'advantageous', or 'pragmatic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0482",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXPEDIENT**",
+    "options": {
+      "A": "Inadvisable",
+      "B": "Pragmatic",
+      "C": "Convenient",
+      "D": "Opportunistic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Expedient' means practical and advantageous. 'Inadvisable', 'unwise', or 'detrimental' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0483",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXPIATE**",
+    "options": {
+      "A": "Atone",
+      "B": "Worsen",
+      "C": "Blame",
+      "D": "Offend"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Expiate' means to atone for (guilt or sin). 'Atone', 'redress', or 'make amends' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0484",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXPIATE**",
+    "options": {
+      "A": "Redress",
+      "B": "Atone",
+      "C": "Compound",
+      "D": "Absolve"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Expiate' means to make amends for a fault. 'Compound' (to worsen or increase guilt) or 'perpetuate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0485",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXPLICIT**",
+    "options": {
+      "A": "Unambiguous",
+      "B": "Vague",
+      "C": "Equivocal",
+      "D": "Ambiguous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Explicit' means stated clearly and in detail, leaving no room for confusion or doubt. 'Unambiguous', 'clear-cut', or 'lucid' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0486",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXPLICIT**",
+    "options": {
+      "A": "Lucid",
+      "B": "Direct",
+      "C": "Ambiguous",
+      "D": "Unambiguous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Explicit' means clear and distinct. 'Ambiguous', 'implicit', or 'vague' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0487",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXPUNGE**",
+    "options": {
+      "A": "Obliterate",
+      "B": "Insert",
+      "C": "Record",
+      "D": "Preserve"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Expunge' means to erase or remove completely (something unwanted or unpleasant). 'Obliterate', 'erase', or 'efface' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0488",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXPUNGE**",
+    "options": {
+      "A": "Efface",
+      "B": "Preserve",
+      "C": "Eradicate",
+      "D": "Delete"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Expunge' means to wipe out or erase. 'Preserve', 'insert', or 'record' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0489",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXPURGATE**",
+    "options": {
+      "A": "Censor",
+      "B": "Corrupt",
+      "C": "Pollute",
+      "D": "Adulterate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Expurgate' means to remove matter thought to be objectionable or unsuitable from a book or account. 'Censor', 'bowdlerize', or 'purge' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0490",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXPURGATE**",
+    "options": {
+      "A": "Purge",
+      "B": "Adulterate",
+      "C": "Bowdlerize",
+      "D": "Cleanse"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Expurgate' means to cleanse of objectionable matter. 'Adulterate', 'corrupt', or 'pollute' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0491",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXTEMPORE**",
+    "options": {
+      "A": "Impromptu",
+      "B": "Rehearsed",
+      "C": "Premeditated",
+      "D": "Planned"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Extempore' means spoken or done without preparation. 'Impromptu', 'spontaneous', or 'unrehearsed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0492",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXTEMPORE**",
+    "options": {
+      "A": "Spontaneous",
+      "B": "Impromptu",
+      "C": "Unrehearsed",
+      "D": "Rehearsed"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Extempore' means unprepared. 'Rehearsed', 'premeditated', or 'planned' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0493",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXTOL**",
+    "options": {
+      "A": "Laud",
+      "B": "Decry",
+      "C": "Belittle",
+      "D": "Disparage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Extol' means to praise enthusiastically. 'Laud', 'acclaim', or 'exalt' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0494",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXTOL**",
+    "options": {
+      "A": "Praise",
+      "B": "Decry",
+      "C": "Acclaim",
+      "D": "Celebrate"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Extol' means to praise highly. 'Decry', 'denounce', or 'disparage' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0495",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXTRANEOUS**",
+    "options": {
+      "A": "Irrelevant",
+      "B": "Intrinsic",
+      "C": "Essential",
+      "D": "Inherent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Extraneous' means irrelevant or unrelated to the subject being dealt with. 'Irrelevant', 'immaterial', or 'superfluous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0496",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXTRANEOUS**",
+    "options": {
+      "A": "Immaterial",
+      "B": "Inherent",
+      "C": "Extrinsic",
+      "D": "Superfluous"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Extraneous' means external or nonessential. 'Inherent', 'intrinsic', or 'vital' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0497",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXTRICATE**",
+    "options": {
+      "A": "Disentangle",
+      "B": "Entangle",
+      "C": "Enmesh",
+      "D": "Involve"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Extricate' means to free someone or something from a constraint or difficulty. 'Disentangle', 'extract', or 'liberate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0498",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXTRICATE**",
+    "options": {
+      "A": "Liberate",
+      "B": "Disengage",
+      "C": "Entangle",
+      "D": "Rescue"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Extricate' means to release or free. 'Entangle', 'enmesh', or 'trap' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0499",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EXUBERANT**",
+    "options": {
+      "A": "Buoyant",
+      "B": "Morose",
+      "C": "Despondent",
+      "D": "Gloomy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Exuberant' means filled with or characterized by a lively energy and excitement. 'Buoyant', 'effervescent', or 'high-spirited' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0500",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EXUBERANT**",
+    "options": {
+      "A": "Vivacious",
+      "B": "Ebullient",
+      "C": "Buoyant",
+      "D": "Morose"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Exuberant' means vibrant and joyfully excited. 'Morose', 'gloomy', or 'crestfallen' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

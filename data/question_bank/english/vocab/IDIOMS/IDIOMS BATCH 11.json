@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0501",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Loose cannon**",
+    "options": {
+      "A": "A heavy artillery piece on a rolling ship",
+      "B": "An unpredictable person who behaves erratically and risks causing damage",
+      "C": "A malfunctioning industrial mechanism",
+      "D": "A brave soldier in battle"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'loose cannon' is an unpredictable individual whose actions risk causing trouble for others.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0502",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lord it over**",
+    "options": {
+      "A": "To act arrogantly, tyrannically, or superior toward others",
+      "B": "To rule a country as a monarch",
+      "C": "To serve as a religious priest",
+      "D": "To submit humbly to authority"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lord it over' someone means behaving in an arrogant and domineering manner.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0503",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lose face**",
+    "options": {
+      "A": "To suffer humiliation, loss of dignity, or respect in the eyes of others",
+      "B": "To undergo plastic surgery on features",
+      "C": "To wear a disguise mask in public",
+      "D": "To forget someone's name"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lose face' means suffering damage to your reputation and dignity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0504",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lose your grip**",
+    "options": {
+      "A": "To fail to hold physical objects",
+      "B": "To lose control over your emotions, mental stability, or a situation",
+      "C": "To slip on a wet floor",
+      "D": "To resign from a job position"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'lose your grip' means failing to maintain control over affairs or mental faculties.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0505",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lose your head**",
+    "options": {
+      "A": "To panic, lose self-control, or act irrationally in a crisis",
+      "B": "To suffer from a severe migraine",
+      "C": "To forget important facts",
+      "D": "To wear a tight hat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lose your head' means panicking and acting without reason.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0506",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lose your touch**",
+    "options": {
+      "A": "To lose the ability, skill, or talent you once had in an activity",
+      "B": "To lose sense of physical touch",
+      "C": "To break contact with friends",
+      "D": "To drop fragile items"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lose your touch' means failing to perform with your usual skill level.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0507",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Loud mouth**",
+    "options": {
+      "A": "A person who talks too much, boasts, or indiscreetly reveals secrets",
+      "B": "A singer with a powerful voice",
+      "C": "A megaphone sound device",
+      "D": "An angry person shouting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'loudmouth' is an obnoxious, talkative person who lacks discretion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0508",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lug of war**",
+    "options": {
+      "A": "A fierce struggle for power or supremacy between two groups",
+      "B": "A rope pulling sports game",
+      "C": "A military battle on land",
+      "D": "A political argument"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tug of war - variants) denotes a fierce struggle for control or power.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0509",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lull in the storm**",
+    "options": {
+      "A": "A temporary period of calm, quiet, or inactivity amidst turmoil",
+      "B": "The wind peak of a hurricane",
+      "C": "Heavy rainfall starting",
+      "D": "An end to bad weather"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'lull' is a brief interval of quiet during a busy or stressful period.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0510",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Main stay**",
+    "options": {
+      "A": "The primary prop, support, or most dependable element of something",
+      "B": "A central ship mast",
+      "C": "A primary highway road",
+      "D": "A structural building pillar"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'mainstay' is the most vital support system holding something together.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0511",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Make a beeline for**",
+    "options": {
+      "A": "To head straight toward something directly and without hesitation",
+      "B": "To follow insect swarms",
+      "C": "To fly an aircraft in circles",
+      "D": "To escape from danger"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'make a beeline for' means traveling straight to a target.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0512",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Make a clean breast of**",
+    "options": {
+      "A": "To confess fully and honestly about a wrongdoing or secret",
+      "B": "To wash clothing thoroughly",
+      "C": "To undergo a physical medical test",
+      "D": "To wear clean business attire"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'make a clean breast of' means confessing completely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0513",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Make a mountain out of a molehill**",
+    "options": {
+      "A": "To exaggerate a minor problem, making it seem much worse than it is",
+      "B": "To build geological mountains",
+      "C": "To dig holes in garden soil",
+      "D": "To climb steep hills"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Making a 'mountain out of a molehill' means overreacting to a trivial issue.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0514",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Make ends meet**",
+    "options": {
+      "A": "To earn just enough money to cover basic living expenses",
+      "B": "To sew two pieces of fabric together",
+      "C": "To tie knots in ropes",
+      "D": "To finish a running race course"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'make ends meet' means managing to survive financially on a tight budget.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0515",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Make hay while the sun shines**",
+    "options": {
+      "A": "To seize an opportunity promptly while conditions are favorable",
+      "B": "To farm crops during summer",
+      "C": "To sunbathe in open fields",
+      "D": "To dry laundry outdoors"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Make hay while the sun shines' means taking advantage of good timing.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0516",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Make light of**",
+    "options": {
+      "A": "To treat something as unimportant, trivial, or not serious",
+      "B": "To turn on electric lights",
+      "C": "To reduce body weight",
+      "D": "To illuminate a dark room"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'make light of' means treating a serious matter casually.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0517",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Make tracks**",
+    "options": {
+      "A": "To leave a place hurriedly; depart quickly",
+      "B": "To lay down railway tracks",
+      "C": "To walk on muddy ground",
+      "D": "To run in a track race"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'make tracks' means leaving or departing in a hurry.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0518",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Man of straw**",
+    "options": {
+      "A": "A weak, fragile, or easily defeated person; a sham adversary",
+      "B": "A farmer making scarecrows",
+      "C": "A costume made of hay",
+      "D": "A wealthy businessman"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'man of straw' is a weak opponent or a flimsy argument easily disproven.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0519",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Mare's nest**",
+    "options": {
+      "A": "A false discovery, illusion, or a state of confused mess",
+      "B": "A stable for horses",
+      "C": "A bird nest in a tree",
+      "D": "A rare botanical plant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'mare's nest' is a delusion or muddled illusion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0520",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Mark time**",
+    "options": {
+      "A": "To pass time aimlessly without making progress while waiting for an event",
+      "B": "To watch clock hands move",
+      "C": "To set alarm schedules",
+      "D": "To run in athletic races"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'mark time' means remaining inactive while waiting for progress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0521",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Mealy-mouthed**",
+    "options": {
+      "A": "Speaking in a hesitant, evasive, or insincere manner to avoid offending",
+      "B": "Eating sweet foods continuously",
+      "C": "Having a speech impediment",
+      "D": "Speaking with bold clarity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'mealy-mouthed' person avoids speaking direct truths timidly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0522",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Mend your fences**",
+    "options": {
+      "A": "To repair damaged relationships, reconcile differences, and restore goodwill",
+      "B": "To build wooden garden fences",
+      "C": "To fix property boundaries",
+      "D": "To paint house exterior walls"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'mend your fences' means repairing broken relationships and making peace.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0523",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Meritocracy**",
+    "options": {
+      "A": "A system where advancement is based on individual ability and talent",
+      "B": "Rule by wealthy elites",
+      "C": "Government by religious clerics",
+      "D": "Rule by military generals"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'meritocracy' rewards ability and talent rather than wealth or class.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0524",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Method in the madness**",
+    "options": {
+      "A": "A hidden, logical purpose or sensible plan behind seemingly chaotic behavior",
+      "B": "A mental health disorder",
+      "C": "A chaotic kitchen recipe",
+      "D": "An accidental mistake"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Method in the madness' refers to a sensible rationale behind strange actions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0525",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Midas touch**",
+    "options": {
+      "A": "The knack for making financial profit easily in any business venture",
+      "B": "A medical skin condition",
+      "C": "A gold jewelry collection",
+      "D": "A talent for sculpting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'Midas touch' is an uncanny ability to generate financial success.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0526",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Middle of the road**",
+    "options": {
+      "A": "Moderate, centrist, and avoiding extreme opinions or political views",
+      "B": "Walking down a highway centerline",
+      "C": "A traffic driving rule",
+      "D": "A middle management job"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'middle of the road' means holding moderate, centrist views.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0527",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Milking the bull**",
+    "options": {
+      "A": "Engaging in a futile, impossible, or fruitless task",
+      "B": "Dairy farming on a ranch",
+      "C": "Handling livestock safely",
+      "D": "Producing agricultural milk"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Milking a bull represents an impossible, useless undertaking.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0528",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Mind your own business**",
+    "options": {
+      "A": "To refrain from meddling in other people's private affairs",
+      "B": "To manage corporate commercial stores",
+      "C": "To focus on professional work",
+      "D": "To run a private company"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'mind your own business' means staying out of others' private matters.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0529",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Ministering angel**",
+    "options": {
+      "A": "A kind, helpful person who brings comfort and relief during suffering",
+      "B": "A religious church sculpture",
+      "C": "A government cabinet minister",
+      "D": "A heavenly spiritual being"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'ministering angel' is a compassionate caregiver who alleviates pain.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0530",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Minute details**",
+    "options": {
+      "A": "The smallest, most precise particulars and specifics of a matter",
+      "B": "Timing events with stopwatches",
+      "C": "Writing short meeting notes",
+      "D": "Brief summaries of books"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Minute details' refer to the smallest, most thorough particulars.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0531",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Miss the boat**",
+    "options": {
+      "A": "To miss an opportunity, chance, or deadline due to slowness",
+      "B": "To arrive late at a harbor pier",
+      "C": "To fall off a sailing vessel",
+      "D": "To cancel a cruise trip"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'miss the boat' means losing a golden opportunity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0532",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Modus operandi**",
+    "options": {
+      "A": "A particular method, procedure, or habitual way of working (often of criminals)",
+      "B": "A musical performance style",
+      "C": "A medical operation manual",
+      "D": "A legal contract agreement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Modus operandi' refers to an established method of operating.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0533",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Moment of truth**",
+    "options": {
+      "A": "A decisive, critical moment when your future success or failure is determined",
+      "B": "A confession of guilt in court",
+      "C": "The time of sunrise each day",
+      "D": "A peaceful moment of rest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'moment of truth' is a crucial trial testing a person or project.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0534",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Money for old rope**",
+    "options": {
+      "A": "Money earned easily with little effort or work required",
+      "B": "Selling recycled waste materials",
+      "C": "A cheap second-hand product",
+      "D": "A wasted financial investment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Money for old rope' describes profit gained without effort.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0535",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Moonshine**",
+    "options": {
+      "A": "Foolish talk, nonsense, or illicitly brewed homemade whiskey",
+      "B": "The bright glow of the moon at night",
+      "C": "An astronomical space telescope",
+      "D": "A night-shift work schedule"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Moonshine' denotes foolish ideas or illegal homemade liquor.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0536",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**More honored in the breach than the observance**",
+    "options": {
+      "A": "A rule or custom that is better ignored or broken than followed",
+      "B": "Breaking laws deliberately",
+      "C": "Honoring traditional festivals",
+      "D": "Following rules strictly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A custom more honored in the breach is better ignored than kept.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0537",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Moot point**",
+    "options": {
+      "A": "A debatable question or issue open to discussion with no definitive answer",
+      "B": "An irrelevant and unimportant detail",
+      "C": "A legally settled court ruling",
+      "D": "An obvious self-evident fact"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'moot point' is an issue open to debate and lacking consensus.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0538",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**More than meets the eye**",
+    "options": {
+      "A": "More complex, significant, or hidden than is apparent at first glance",
+      "B": "A visual optical illusion",
+      "C": "Having exceptional eyesight",
+      "D": "A simple straightforward task"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. When there is 'more than meets the eye', a situation has hidden complexities.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0539",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Mouth-watering**",
+    "options": {
+      "A": "Delicious-looking and smelling food that makes you hungry",
+      "B": "Suffering from excessive salivation",
+      "C": "Spicy food causing a burning tongue",
+      "D": "A bitter medicine taste"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mouth-watering' describes food that looks and smells extremely appetizing.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0540",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Move heaven and earth**",
+    "options": {
+      "A": "To make an absolute utmost effort to achieve a goal",
+      "B": "To cause geological earthquakes",
+      "C": "To travel across global countries",
+      "D": "To study astronomy science"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'move heaven and earth' means doing everything possible to succeed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0541",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Muddy the waters**",
+    "options": {
+      "A": "To complicate a clear situation, creating confusion and uncertainty",
+      "B": "To stir up dirt in a river pond",
+      "C": "To swim in muddy lakes",
+      "D": "To filter drinking water"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'muddy the waters' means making a simple issue confusing intentionally.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0542",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Muffled drum**",
+    "options": {
+      "A": "A drum played softly during a military funeral march",
+      "B": "A broken musical instrument",
+      "C": "A loud rock concert beat",
+      "D": "A practice rhythm exercise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'muffled drum' is sounded softly at military funerals.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0543",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Mum's the word**",
+    "options": {
+      "A": "Keep quiet; promise to keep a secret and say nothing",
+      "B": "Speak politely to your mother",
+      "C": "Remember family passwords",
+      "D": "Recite poetry aloud"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mum's the word' is an instruction to remain silent and keep a secret.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0544",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Murphy's law**",
+    "options": {
+      "A": "The adage that if anything can go wrong, it will go wrong",
+      "B": "A legal courtroom statute",
+      "C": "A scientific physics formula",
+      "D": "A corporate tax regulation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Murphy's law' states that anything that can possibly go wrong will go wrong.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0545",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Narrow escape**",
+    "options": {
+      "A": "A fortunate escape from a dangerous situation by a very small margin",
+      "B": "Passing through a narrow alleyway",
+      "C": "Failing an exam narrowly",
+      "D": "A planned vacation trip"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'narrow escape' is an avoidance of disaster by a hair's breadth.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0546",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Nature of the beast**",
+    "options": {
+      "A": "The inherent, unalterable qualities, traits, or difficulties of a situation",
+      "B": "Wild zoology characteristics",
+      "C": "A biology textbook chapter",
+      "D": "An animal hunting instinct"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'nature of the beast' refers to the inherent characteristics of a problem.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0547",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Neck and neck**",
+    "options": {
+      "A": "Running equal in a race or contest with neither leading",
+      "B": "A horse racing injury",
+      "C": "Standing very close in crowds",
+      "D": "A wrestling submission hold"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'neck and neck' means competitors are tied closely in a race.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0548",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Needle in a haystack**",
+    "options": {
+      "A": "Something that is almost impossible to find because the search area is too vast",
+      "B": "A sewing tool lost on a farm",
+      "C": "A sharp stalk of grass",
+      "D": "A farming harvest tool"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Finding a 'needle in a haystack' represents an extremely difficult search.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0549",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Neither fish nor fowl**",
+    "options": {
+      "A": "Something of an indefinite character that does not fit into any clear category",
+      "B": "A vegetarian diet rule",
+      "C": "A seafood restaurant menu",
+      "D": "A zoology classification error"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'neither fish nor fowl' describes something hard to classify or categorize.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0550",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Nest egg**",
+    "options": {
+      "A": "A sum of money saved up and reserved for future use or retirement",
+      "B": "A bird's egg kept in a nest",
+      "C": "A breakfast cooking ingredient",
+      "D": "A risky stock market investment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'nest egg' is a financial reserve saved up for the future.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_2551",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INTERCEDE**",
+    "options": {
+      "A": "Mediate",
+      "B": "Intervene",
+      "C": "Ignore",
+      "D": "Arbitrate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Intercede' means to intervene or mediate on behalf of someone. 'Ignore', 'neglect', or 'overlook' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2552",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INTERIM**",
+    "options": {
+      "A": "Temporary",
+      "B": "Permanent",
+      "C": "Enduring",
+      "D": "Lasting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Interim' means in or for the intervening time; provisional. 'Temporary', 'provisional', or 'protem' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2553",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INTERIM**",
+    "options": {
+      "A": "Temporary",
+      "B": "Provisional",
+      "C": "Permanent",
+      "D": "Protem"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Interim' means temporary. 'Permanent', 'enduring', or 'lasting' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2554",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INTERMINABLE**",
+    "options": {
+      "A": "Endless",
+      "B": "Brief",
+      "C": "Short",
+      "D": "Finite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Interminable' means endless, often in a tiresome way. 'Endless', 'ceaseless', or 'everlasting' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2555",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INTERMINABLE**",
+    "options": {
+      "A": "Endless",
+      "B": "Ceaseless",
+      "C": "Finite",
+      "D": "Everlasting"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Interminable' means endless. 'Finite', 'brief', or 'short' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2556",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INTREPID**",
+    "options": {
+      "A": "Fearless",
+      "B": "Cowardly",
+      "C": "Timid",
+      "D": "Craven"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Intrepid' means fearless; adventurous. 'Fearless', 'brave', or 'courageous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2557",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INTREPID**",
+    "options": {
+      "A": "Fearless",
+      "B": "Brave",
+      "C": "Cowardly",
+      "D": "Courageous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Intrepid' means fearless. 'Cowardly', 'timid', or 'craven' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2558",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INTRINSIC**",
+    "options": {
+      "A": "Inherent",
+      "B": "Extrinsic",
+      "C": "External",
+      "D": "Acquired"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Intrinsic' means belonging naturally; essential. 'Inherent', 'innate', or 'essential' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2559",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INTRINSIC**",
+    "options": {
+      "A": "Inherent",
+      "B": "Innate",
+      "C": "Extrinsic",
+      "D": "Essential"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Intrinsic' means internal/essential. 'Extrinsic', 'external', or 'acquired' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2560",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INTROSPECTIVE**",
+    "options": {
+      "A": "Reflective",
+      "B": "Extroverted",
+      "C": "Outgoing",
+      "D": "Sociable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Introspective' means characterized by examination of one's own thoughts. 'Reflective', 'contemplative', or 'pensive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2561",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INTROSPECTIVE**",
+    "options": {
+      "A": "Reflective",
+      "B": "Contemplative",
+      "C": "Extroverted",
+      "D": "Pensive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Introspective' means inward-looking. 'Extroverted', 'outgoing', or 'sociable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2562",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INVECTIVE**",
+    "options": {
+      "A": "Abuse",
+      "B": "Praise",
+      "C": "Acclaim",
+      "D": "Commendation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Invective' refers to insulting, abusive, or highly critical language. 'Abuse', 'diatribe', or 'tirade' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2563",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INVECTIVE**",
+    "options": {
+      "A": "Abuse",
+      "B": "Diatribe",
+      "C": "Praise",
+      "D": "Tirade"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Invective' is abusive language. 'Praise', 'acclaim', or 'commendation' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2564",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INVETERATE**",
+    "options": {
+      "A": "Habitual",
+      "B": "Occasional",
+      "C": "Infrequent",
+      "D": "New"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Inveterate' means having a particular habit that is long-established and unlikely to change. 'Habitual', 'ingrained', or 'entrenched' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2565",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INVETERATE**",
+    "options": {
+      "A": "Habitual",
+      "B": "Ingrained",
+      "C": "Occasional",
+      "D": "Entrenched"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Inveterate' means long-established. 'Occasional', 'infrequent', or 'new' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2566",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INVINCIBLE**",
+    "options": {
+      "A": "Unconquerable",
+      "B": "Vulnerable",
+      "C": "Weak",
+      "D": "Defeatable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Invincible' means too powerful to be defeated or overcome. 'Unconquerable', 'indomitable', or 'unbeatable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2567",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INVINCIBLE**",
+    "options": {
+      "A": "Unconquerable",
+      "B": "Indomitable",
+      "C": "Vulnerable",
+      "D": "Unbeatable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Invincible' means unconquerable. 'Vulnerable', 'weak', or 'defeatable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2568",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IRASCIBLE**",
+    "options": {
+      "A": "Irritable",
+      "B": "Calm",
+      "C": "Placid",
+      "D": "Even-tempered"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Irascible' means having a tendency to be easily angered. 'Irritable', 'choleric', or 'testy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2569",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IRASCIBLE**",
+    "options": {
+      "A": "Irritable",
+      "B": "Choleric",
+      "C": "Calm",
+      "D": "Testy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Irascible' means irritable. 'Calm', 'even-tempered', or 'placid' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2570",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IRREVERENCE**",
+    "options": {
+      "A": "Disrespect",
+      "B": "Respect",
+      "C": "Veneration",
+      "D": "Esteem"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Irreverence' refers to a lack of respect for people or things that are generally taken seriously. 'Disrespect', 'impudence', or 'scorn' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2571",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IRREVERENCE**",
+    "options": {
+      "A": "Disrespect",
+      "B": "Impudence",
+      "C": "Respect",
+      "D": "Scorn"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Irreverence' is lack of respect. 'Respect', 'veneration', or 'esteem' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2572",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ITINERANT**",
+    "options": {
+      "A": "Wandering",
+      "B": "Stationary",
+      "C": "Settled",
+      "D": "Fixed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Itinerant' means traveling from place to place. 'Wandering', 'nomadic', or 'roving' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2573",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ITINERANT**",
+    "options": {
+      "A": "Wandering",
+      "B": "Nomadic",
+      "C": "Stationary",
+      "D": "Roving"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Itinerant' means traveling. 'Stationary', 'settled', or 'fixed' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2574",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JADED**",
+    "options": {
+      "A": "Tired",
+      "B": "Fresh",
+      "C": "Energetic",
+      "D": "Vibrant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Jaded' means tired, bored, or lacking enthusiasm, typically after having had too much of something. 'Tired', 'weary', or 'exhausted' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2575",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**JADED**",
+    "options": {
+      "A": "Tired",
+      "B": "Weary",
+      "C": "Fresh",
+      "D": "Exhausted"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Jaded' means tired and bored. 'Fresh', 'energetic', or 'vibrant' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2576",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JARGON**",
+    "options": {
+      "A": "Terminology",
+      "B": "Clarity",
+      "C": "Plain language",
+      "D": "Simplicity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Jargon' refers to special words or expressions used by a profession. 'Terminology', 'slang', or 'lingo' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2577",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**JARGON**",
+    "options": {
+      "A": "Terminology",
+      "B": "Lingo",
+      "C": "Plain language",
+      "D": "Specialized language"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Jargon' is specialized language. 'Plain language', 'clarity', or 'simplicity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2578",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JOCULAR**",
+    "options": {
+      "A": "Humorous",
+      "B": "Serious",
+      "C": "Grave",
+      "D": "Earnest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Jocular' means fond of or characterized by joking; humorous. 'Humorous', 'funny', or 'playful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2579",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**JOCULAR**",
+    "options": {
+      "A": "Humorous",
+      "B": "Funny",
+      "C": "Serious",
+      "D": "Playful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Jocular' means playful. 'Serious', 'grave', or 'earnest' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2580",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JUDICIOUS**",
+    "options": {
+      "A": "Wise",
+      "B": "Rash",
+      "C": "Foolish",
+      "D": "Impulsive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Judicious' means having or showing good judgment. 'Wise', 'prudent', or 'sensible' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2581",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**JUDICIOUS**",
+    "options": {
+      "A": "Wise",
+      "B": "Prudent",
+      "C": "Rash",
+      "D": "Sensible"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Judicious' means showing good judgment. 'Rash', 'foolish', or 'impulsive' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2582",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JUNCTURE**",
+    "options": {
+      "A": "Point in time",
+      "B": "Distance",
+      "C": "Length",
+      "D": "Separation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Juncture' refers to a particular point in events or time. 'Point in time', 'crisis', or 'crossroads' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2583",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JUXTAPOSE**",
+    "options": {
+      "A": "Place side by side",
+      "B": "Separate",
+      "C": "Distant",
+      "D": "Detach"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Juxtapose' means to place close together for contrasting effect. 'Place side by side', 'compare', or 'near' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2584",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**JUXTAPOSE**",
+    "options": {
+      "A": "Place side by side",
+      "B": "Compare",
+      "C": "Separate",
+      "D": "Near"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Juxtapose' means to place together. 'Separate', 'detach', or 'distance' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2585",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**KINETIC**",
+    "options": {
+      "A": "Moving",
+      "B": "Stationary",
+      "C": "Static",
+      "D": "Motionless"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Kinetic' means relating to or resulting from motion. 'Moving', 'active', or 'dynamic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2586",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**KINETIC**",
+    "options": {
+      "A": "Moving",
+      "B": "Active",
+      "C": "Stationary",
+      "D": "Dynamic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Kinetic' means relating to motion. 'Stationary', 'static', or 'motionless' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2587",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**KNOTTY**",
+    "options": {
+      "A": "Complex",
+      "B": "Simple",
+      "C": "Easy",
+      "D": "Clear"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Knotty' means extremely difficult or complex. 'Complex', 'intricate', or 'perplexing' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2588",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**KNOTTY**",
+    "options": {
+      "A": "Complex",
+      "B": "Intricate",
+      "C": "Simple",
+      "D": "Perplexing"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Knotty' means difficult. 'Simple', 'easy', or 'clear' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2589",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LABYRINTHINE**",
+    "options": {
+      "A": "Maze-like",
+      "B": "Straight",
+      "C": "Simple",
+      "D": "Direct"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Labyrinthine' means like a maze; irregular and twisting. 'Maze-like', 'tortuous', or 'intricate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2590",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LABYRINTHINE**",
+    "options": {
+      "A": "Maze-like",
+      "B": "Tortuous",
+      "C": "Straight",
+      "D": "Intricate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Labyrinthine' means irregular and twisting. 'Straight', 'simple', or 'direct' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2591",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LACERATION**",
+    "options": {
+      "A": "Cut",
+      "B": "Healing",
+      "C": "Recovery",
+      "D": "Mending"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Laceration' refers to a deep cut or tear in skin or flesh. 'Cut', 'wound', or 'gash' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2592",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LACERATION**",
+    "options": {
+      "A": "Cut",
+      "B": "Gash",
+      "C": "Healing",
+      "D": "Wound"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Laceration' is a cut. 'Healing', 'recovery', or 'mending' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2593",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LACHRYMOSE**",
+    "options": {
+      "A": "Tearful",
+      "B": "Cheerful",
+      "C": "Joyful",
+      "D": "Happy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Lachrymose' means tearful or given to weeping. 'Tearful', 'weepy', or 'mournful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2594",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LACHRYMOSE**",
+    "options": {
+      "A": "Tearful",
+      "B": "Weepy",
+      "C": "Cheerful",
+      "D": "Mournful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Lachrymose' means tearful. 'Cheerful', 'joyful', or 'happy' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2595",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LACKADAISICAL**",
+    "options": {
+      "A": "Careless",
+      "B": "Careful",
+      "C": "Diligent",
+      "D": "Industrious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Lackadaisical' means lacking enthusiasm and determination; carelessly lazy. 'Careless', 'lazy', or 'indifferent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2596",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LACKADAISICAL**",
+    "options": {
+      "A": "Careless",
+      "B": "Lazy",
+      "C": "Diligent",
+      "D": "Indifferent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Lackadaisical' means lazy and careless. 'Diligent', 'industrious', or 'careful' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2597",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LACONE**",
+    "options": {
+      "A": "Concise",
+      "B": "Verbose",
+      "C": "Wordy",
+      "D": "Long-winded"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Laconic' means (of a person or style) using very few words. 'Concise', 'terse', or 'succinct' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2598",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LACONIC**",
+    "options": {
+      "A": "Concise",
+      "B": "Terse",
+      "C": "Verbose",
+      "D": "Succinct"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Laconic' means concise. 'Verbose', 'wordy', or 'long-winded' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2599",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LAGGARD**",
+    "options": {
+      "A": "Laggardly",
+      "B": "Prompt",
+      "C": "Expeditious",
+      "D": "Quick"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Laggard' refers to a person who makes slow progress and falls behind others. 'Slow', 'straggler', or 'idler' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2600",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LAGGARD**",
+    "options": {
+      "A": "Slow",
+      "B": "Straggler",
+      "C": "Prompt",
+      "D": "Idler"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Laggard' means slow. 'Prompt', 'expeditious', or 'quick' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

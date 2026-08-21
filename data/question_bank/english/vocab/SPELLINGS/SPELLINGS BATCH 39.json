@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_1901",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Panacea",
+      "B": "Panacia",
+      "C": "Panasea",
+      "D": "Pannacea"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Panacea' - a solution or remedy for all difficulties or diseases; 'p-a-n-a-c-e-a'). Options B, C, and D alter internal vowels or double the initial consonant.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1902",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Panegyric",
+      "B": "Pantomime",
+      "C": "Paradigm",
+      "D": "Parapharnalia"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Paraphernalia' (requires 'er' after 'ph', not 'ar', 'p-a-r-a-p-h-e-r-n-a-l-i-a' - miscellaneous articles or equipment). Other options are correct: Panegyric (a public speech or published text praising someone or something highly), Pantomime (a theatrical entertainment), Paradigm (a typical example or pattern of something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1903",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Parasite",
+      "B": "Parasite",
+      "C": "Parasite",
+      "D": "Parasite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Parasite' - an organism that lives in or on another organism; 'p-a-r-a-s-i-t-e').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1904",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Paraphrase",
+      "B": "Parasite",
+      "C": "Parochial",
+      "D": "Parsimonus"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Parsimonious' (spelled with '-io-', not just '-us' - unwilling to spend money or use resources; stingy). Other options are correct: Paraphrase (express the meaning of something using different words), Parasite (an organism living on a host), Parochial (having a limited or narrow outlook or scope).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1905",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Particular",
+      "B": "Particuler",
+      "C": "Partticular",
+      "D": "Particularr"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Particular' - used to single out an individual item or fact; 'p-a-r-t-i-c-u-l-a-r'). Options B, C, and D alter internal vowels or consonant counts.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1906",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Partition",
+      "B": "Partner",
+      "C": "Passage",
+      "D": "Passegier"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Passenger' (spelled with '-ger', not '-gier', 'p-a-s-s-e-n-g-e-r' - a traveler in a vehicle). Other options are correct: Partition (action of dividing something into parts), Partner (a person who takes part in an undertaking), Passage (the action or process of moving through somewhere).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1907",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Pastime",
+      "B": "Passtime",
+      "C": "Pasttime",
+      "D": "Passtime"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Pastime' - an activity that someone does regularly for enjoyment when not working; single 's', single 't', 'p-a-s-t-i-m-e'). Options B, C, and D double consonants incorrectly.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1908",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Pathetic",
+      "B": "Pathology",
+      "C": "Patriarch",
+      "D": "Patroniseing"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Patronizing' (drops silent 'e' before adding '-ing', 'p-a-t-r-o-n-i-z-i-n-g' - showing a condescending kindness). Other options are correct: Pathetic (evoking sad pity), Pathology (the science of the causes and effects of diseases), Patriarch (the male head of a family or tribe).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1909",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Paucity",
+      "B": "Pausity",
+      "C": "Paucety",
+      "D": "Pawcity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Paucity' - the presence of something in small or insufficient quantities; 'p-a-u-c-i-t-y'). Options B, C, and D alter internal letters or diphthongs.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1910",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Peculiar",
+      "B": "Pedagogue",
+      "C": "Pedestrian",
+      "D": "Pejorativee"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Pejorative' (ends in single 'e', 'p-e-j-o-r-a-t-i-v-e' - expressing contempt or disapproval). Other options are correct: Peculiar (strange or odd; unusual), Pedagogue (a teacher, especially a strict one), Pedestrian (a person walking rather than traveling in a vehicle).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1911",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Pellucid",
+      "B": "Pelucid",
+      "C": "Pellucid",
+      "D": "Pellucid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Pellucid' - translucently clear; easily understood; double 'l', 'p-e-l-l-u-c-i-d').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1912",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Penchant",
+      "B": "Pendulum",
+      "C": "Penetrate",
+      "D": "Penitentiairy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Penitentiary' (spelled with '-tary', not '-tairy' - a prison for people convicted of serious crimes). Other options are correct: Penchant (a habitual liking for something), Pendulum (a weight hung from a fixed point), Penetrate (go into or through something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1913",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Perception",
+      "B": "Perseption",
+      "C": "Percepsion",
+      "D": "Perceptionn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Perception' - the ability to see, hear, or become aware of something through the senses; 'p-e-r-c-e-p-t-i-o-n'). Options B, C, and D use incorrect phonetic variants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1914",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Peremptory",
+      "B": "Perennial",
+      "C": "Perfect",
+      "D": "Perfervidh"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Perfervid' (no terminal 'h', 'p-e-r-f-e-r-v-i-d' - intense and impassioned). Other options are correct: Peremptory (insisting on immediate attention or obedience), Perennial (lasting or existing for a long time), Perfect (having all required or desirable elements).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1915",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Perimeter",
+      "B": "Perrimeter",
+      "C": "Parameter",
+      "D": "Perimitter"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Perimeter' - the continuous line forming the boundary of a closed geometric figure; 'p-e-r-i-m-e-t-e-r'). Options B and D incorrectly double consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1916",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Periphery",
+      "B": "Periscope",
+      "C": "Perishable",
+      "D": "Perpendicularr"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Perpendicular' (ends in '-lar', not '-rur' - at an angle of 90° to a given line, plane, or surface). Other options are correct: Periphery (the outer limits or edge of an area or object), Periscope (an apparatus consisting of a tube of glass and mirrors used in submarines), Perishable (likely to decay or go bad quickly).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1917",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Perpetrate",
+      "B": "Perpetriet",
+      "C": "Perpetraet",
+      "D": "Perpatrate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Perpetrate' - carry out or commit a harmful, illegal, or immoral action; 'p-e-r-p-e-t-r-a-t-e'). Options B, C, and D alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1918",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Perplex",
+      "B": "Perquisite",
+      "C": "Persist",
+      "D": "Personel"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Personnel' (double 'n' at the end, 'p-e-r-s-o-n-n-e-l' - people employed in an organization or armed force). Other options are correct: Perplex (make someone feel completely baffled), Perquisite (a perk or advantage earned through one's job), Persist (continue firmly in an opinion or course of action).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1919",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Perspective",
+      "B": "Perspactive",
+      "C": "Perspetive",
+      "D": "Perspectiv"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Perspective' - a particular attitude towards or way of regarding something; a point of view; 'p-e-r-s-p-e-c-t-i-v-e'). Options B, C, and D drop required letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1920",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Persuasion",
+      "B": "Pertain",
+      "C": "Pertinent",
+      "D": "Pervasivee"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Pervasive' (ends in single 'e', 'p-e-r-v-a-s-i-v-e' - spreading widely throughout an area or a group of people). Other options are correct: Persuasion (the action or process of persuading someone), Pertain (be appropriate, related, or applicable), Pertinent (relevant or applicable to a particular matter).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1921",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Petrify",
+      "B": "Petrefy",
+      "C": "Petrifie",
+      "D": "Petrefie"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Petrify' - change (organic matter) into a stony substance; make (someone) so frightened that they are unable to move; 'p-e-t-r-i-f-y').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1922",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Phenomenon",
+      "B": "Philanthropy",
+      "C": "Philosophy",
+      "D": "Phlem"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Phlegm' (contains 'g' and silent 'h', 'p-h-l-e-g-m' - thick mucous secreted by the respiratory passages). Other options are correct: Phenomenon (a fact or situation that is observed to exist), Philanthropy (the desire to promote the welfare of others), Philosophy (the study of the fundamental nature of knowledge).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1923",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Phosphorus",
+      "B": "Phosphorous",
+      "C": "Fosforus",
+      "D": "Phosphorus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt as the noun ('Phosphorus' - the chemical element of atomic number 15). Note that 'Phosphorous' with an 'ous' is the adjective form. Both exist, but 'Phosphorus' is the primary noun spelling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1924",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Photogenic",
+      "B": "Photosynthesis",
+      "C": "Physique",
+      "D": "Piazzha"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Piazza' (double 'z', no 'h', 'p-i-a-z-z-a' - a public square or marketplace). Other options are correct: Photogenic (looking attractive in photographs), Photosynthesis (the process by which green plants use sunlight to synthesize foods), Physique (the form, size, and development of a person's body).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1925",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Pioneering",
+      "B": "Pionearing",
+      "C": "Pioneeringg",
+      "D": "Pioneerng"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Pioneering' - involving new ideas or methods; 'p-i-o-n-e-e-r-i-n-g'). Options B, C, and D alter vowel combinations or drop letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1926",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Piquant",
+      "B": "Pithy",
+      "C": "Placate",
+      "D": "Plagiarizm"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Plagiarism' (ends in '-ism', not '-izm' - the practice of taking someone else's work and passing them off as one's own). Other options are correct: Piquant (having a pleasantly sharp and appetizing flavor), Pithy (concise and forcefully expressive), Placate (make someone less angry or hostile).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1927",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Plaintiff",
+      "B": "Plaintif",
+      "C": "Plainetiff",
+      "D": "Plaintive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Plaintiff' - a person who brings a case against another in a court of law; 'p-l-a-i-n-t-i-f-f'). Options B and C drop or add letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1928",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Plateau",
+      "B": "Plausible",
+      "C": "Plebeian",
+      "D": "Pneumoniae"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Pneumonia' (ends in '-ia', not '-iae' - lung infection). Other options are correct: Plateau (an area of relatively level high ground), Plausible (seeming reasonable or probable), Plebeian (commoner).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1929",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Poignant",
+      "B": "Poignent",
+      "C": "Poinyant",
+      "D": "Poignannt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Poignant' - evoking a keen sense of sadness or regret; 'p-o-i-g-n-a-n-t'). Options B, C, and D alter the vowel suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1930",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Polarization",
+      "B": "Polemic",
+      "C": "Politician",
+      "D": "Politechnic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Polytechnic' (contains 'y', 'p-o-l-y-t-e-c-h-n-i-c' - an institution of higher education). Other options are correct: Polarization (division into two sharply contrasting groups), Polemic (a strong verbal or written attack), Politician (a person who is professionally involved in politics).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1931",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Pompous",
+      "B": "Pompus",
+      "C": "Pompous",
+      "D": "Pompous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Pompous' - affectedly and irritatingly grand, solemn, or self-important; 'p-o-m-p-o-u-s').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1932",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Pontificate",
+      "B": "Populace",
+      "C": "Porous",
+      "D": "Portait"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Portrait' (contains 'r' after 't', 'p-o-r-t-r-a-i-t' - a painting, drawing, photograph, or engraving of a person). Other options are correct: Pontificate (express one's opinions in a pompous and dogmatic way), Populace (the inhabitants or population of a particular place), Porous (not retentive or impermeable; full of tiny holes).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1933",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Portentous",
+      "B": "Portentus",
+      "C": "Portenteous",
+      "D": "Portantous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Portentous' - done in a pompously or overly solemn manner as to elicit awe; 'p-o-r-t-e-n-t-o-u-s'). Options B, C, and D alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1934",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Position",
+      "B": "Possess",
+      "C": "Possible",
+      "D": "Posthumeous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Posthumous' (spelled with '-mous', not '-meous' - occurring, awarded, or appearing after the death of the originator). Other options are correct: Position (a place where someone or something is located), Possess (have as belonging to one; own), Possible (able to be done or achieved).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1935",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Potentate",
+      "B": "Potentat",
+      "C": "Potentait",
+      "D": "Potentete"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Potentate' - a monarch or ruler, especially an autocratic one; 'p-o-t-e-n-t-a-t-e'). Options B, C, and D use non-standard endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1936",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Practicable",
+      "B": "Pragmatic",
+      "C": "Precede",
+      "D": "Precident"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Precedent' (ends in '-dent', not '-dent' with 'i', 'p-r-e-c-e-d-e-n-t' - an earlier event or action that is regarded as an example or guide). Other options are correct: Practicable (able to be done or successfully put into practice), Pragmatic (dealing with things sensibly and realistically), Precede (come before (something) in time).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1937",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Precipice",
+      "B": "Precipise",
+      "C": "Precippice",
+      "D": "Precepice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Precipice' - a very steep rock face or cliff; 'p-r-e-c-i-p-i-c-e'). Options B, C, and D alter consonants or vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1938",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Preclude",
+      "B": "Precocious",
+      "C": "Predicament",
+      "D": "Predilecsion"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Predilection' (spelled with '-tion', not '-sion', 'p-r-e-d-i-l-e-c-t-i-o-n' - a preference or special liking for something). Other options are correct: Preclude (prevent from happening; make impossible), Precocious (having developed certain abilities or proclivities at an earlier age than usual), Predicament (a difficult, unpleasant, or embarrassing situation).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1939",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Preeminent",
+      "B": "Preemininent",
+      "C": "Pre-eminent",
+      "D": "All of these"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct because 'Preeminent', 'Pre-eminent', and variants are widely accepted standard forms in modern English dictionaries denoting surpassing all others.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1940",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Prejudice",
+      "B": "Preliminary",
+      "C": "Premature",
+      "D": "Preminence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Preeminence' (spelled with 'e' after 'r', 'p-r-e-e-m-i-n-e-n-c-e' - the fact of surpassing all others; superiority). Other options are correct: Prejudice (preconceived opinion that is not based on reason or actual experience), Preliminary (denoting an action or event preceding or done in preparation for something fuller or more important), Premature (occurring or done before the usual or proper time; too early).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1941",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Prerogative",
+      "B": "Prerogetive",
+      "C": "Prorogative",
+      "D": "Prerogative"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Prerogative' - a right or privilege exclusive to a particular individual or class; 'p-r-e-r-o-g-a-t-i-v-e').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1942",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Presage",
+      "B": "Prescribe",
+      "C": "Presentiment",
+      "D": "Presumptous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Presumptuous' (contains 'u' before 'o', 'p-r-e-s-u-m-p-t-u-o-u-s' - failing to observe the limits of what is permitted or appropriate). Other options are correct: Presage (be a sign or warning of (an imminent event, typically an unwelcome one)), Prescribe (recommend (a substance or action) as beneficial), Presentiment (an intuitive feeling about the future, especially one of foreboding).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1943",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Pretentious",
+      "B": "Pretentious",
+      "C": "Pretentious",
+      "D": "Pretentious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Pretentious' - attempting to impress by affecting greater importance, talent, culture, etc., than is actually possessed; 'p-r-e-t-e-n-t-i-o-u-s').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1944",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Prevalent",
+      "B": "Prevaricate",
+      "C": "Prevention",
+      "D": "Prievious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Previous' (spelled 'p-r-e-v-i-o-u-s', without the extra 'e' after 'v' - existing or occurring before in time or order). Other options are correct: Prevalent (widespread in a particular area or at a particular time), Prevaricate (speak or act in an evasive way), Prevention (the action of stopping something from happening or arising).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1945",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Pristine",
+      "B": "Pristeen",
+      "C": "Pristin",
+      "D": "Prestine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Pristine' - in its original condition; unspoiled; 'p-r-i-s-t-i-n-e'). Options B, C, and D alter suffix vowels or use wrong stem vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1946",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Privilege",
+      "B": "Proactive",
+      "C": "Probity",
+      "D": "Proceduer"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Procedure' (spelled 'p-r-o-c-e-d-u-r-e' - an established or official way of doing something). Other options are correct: Privilege (a special right, advantage, or immunity granted or available only to a particular person or group), Proactive (creating or controlling a situation by causing something to happen rather than responding to it after it has happened), Probity (the quality of having strong moral principles; honesty and decency).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1947",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Procrastinate",
+      "B": "Procrastenate",
+      "C": "Procrastinat",
+      "D": "Procrastanate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Procrastinate' - delay or postpone action; 'p-r-o-c-r-a-s-t-i-n-a-t-e'). Options B, C, and D alter the suffix or internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1948",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Prodigal",
+      "B": "Prodigious",
+      "C": "Profligate",
+      "D": "Progiram"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Program' or 'Programme' (spelled 'p-r-o-g-r-a-m' - a set of related measures or activities to be followed). Other options are correct: Prodigal (spending money or resources freely and recklessly; wastefully extravagant), Prodigious (remarkably or impressively great in extent, size, or degree), Profligate (recklessly extravagant or wasteful in the use of resources).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1949",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Proletariat",
+      "B": "Proletarait",
+      "C": "Prolitariat",
+      "D": "Proletariet"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Proletariat' - workers or working-class people regarded collectively; 'p-r-o-l-e-t-a-r-i-a-t'). Options B, C, and D alter internal vowels or suffix spelling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1950",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Proliferous",
+      "B": "Prolific",
+      "C": "Luminous",
+      "D": "Promeat"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Promote' (spelled 'p-r-o-m-o-t-e' - support or actively encourage (a cause, venture, etc.)). Other options are correct: Proliferous (producing offspring or new growth rapidly or abundantly), Prolific (producing much fruit or foliage or many offspring), Luminous (emitting or reflecting light; shining brightly in the dark).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

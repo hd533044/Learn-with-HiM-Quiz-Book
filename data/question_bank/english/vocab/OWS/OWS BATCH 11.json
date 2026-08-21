@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0501",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large group of animals of the same kind, especially cattle or sheep, that live or feed together",
+    "options": {
+      "A": "Herd",
+      "B": "Flock",
+      "C": "Pack",
+      "D": "Shoal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Herd) is correct[cite: 5]. A 'Herd' refers to a collection of grazing cattle or deer moving together[cite: 5]. 'Flock' applies to birds or sheep[cite: 5], 'Pack' to wolves or playing cards[cite: 5], and 'Shoal' to fish[cite: 5].",
+    "tags": ["vocab", "ows", "collective_nouns", "animals", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0502",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA belief, opinion, or doctrine that is contrary to the accepted principles of a church or religion",
+    "options": {
+      "A": "Heresy",
+      "B": "Apostasy",
+      "C": "Blasphemy",
+      "D": "Pantheism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Heresy) is correct[cite: 5]. 'Heresy' is holding unorthodox opinions contrary to orthodox religious tenets[cite: 5]. 'Apostasy' is the formal abandonment of one's faith[cite: 5], and 'Blasphemy' is irreverent speech about God[cite: 5].",
+    "tags": ["vocab", "ows", "religion", "ideas", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0503",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nConsisting of diverse, mixed, or dissimilar elements and parts",
+    "options": {
+      "A": "Heterogeneous",
+      "B": "Homogeneous",
+      "C": "Multitudinous",
+      "D": "Monotonous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Heterogeneous) is correct[cite: 5]. 'Heterogeneous' describes a group composed of varied and dissimilar constituents[cite: 5]. 'Homogeneous' means all elements are of the exact same kind[cite: 5].",
+    "tags": ["vocab", "ows", "science", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0504",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo pass the winter season in a dormant or torpid state, as certain animals do",
+    "options": {
+      "A": "Hibernate",
+      "B": "Aestivate",
+      "C": "Deliquesce",
+      "D": "Slacken"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hibernate) is correct[cite: 5]. 'Hibernate' is winter dormancy in animals[cite: 5]. 'Aestivate' refers to summer dormancy, and 'Deliquesce' means to dissolve by absorbing moisture[cite: 5].",
+    "tags": ["vocab", "ows", "animals", "nature", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0505",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe state of minimal metabolic activity and winter sleep during cold months",
+    "options": {
+      "A": "Hibernation",
+      "B": "Insomnia",
+      "C": "Somnambulism",
+      "D": "Asphyxia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hibernation) is correct[cite: 5]. 'Hibernation' is prolonged winter inactivity in animals[cite: 5]. 'Insomnia' is sleeplessness[cite: 5], and 'Somnambulism' is sleepwalking[cite: 5].",
+    "tags": ["vocab", "ows", "biology", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0506",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who claims or pretends to possess superior intellectual and cultural tastes",
+    "options": {
+      "A": "Highbrow",
+      "B": "Pedant",
+      "C": "Philistine",
+      "D": "Snob"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Highbrow) is correct[cite: 5]. 'Highbrow' refers to an intellectual or one pretending to have elevated, superior culture[cite: 5]. 'Philistine' lacks appreciation for art or culture[cite: 5].",
+    "tags": ["vocab", "ows", "people", "intellect", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0507",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo seize control of an aircraft or vehicle by force while in transit",
+    "options": {
+      "A": "Hijack",
+      "B": "Sabotage",
+      "C": "Confiscate",
+      "D": "Evict"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hijack) is correct[cite: 5]. 'Hijack' means to take over an aircraft, vehicle, or ship forcibly[cite: 5]. 'Confiscate' is legal seizure by authority[cite: 5].",
+    "tags": ["vocab", "ows", "crime", "law", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0508",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe remote, uncharted, or inland areas of a country lying behind coastlines or river banks",
+    "options": {
+      "A": "Hinterland",
+      "B": "Archipelago",
+      "C": "Peninsula",
+      "D": "Isthmus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hinterland) is correct[cite: 5]. 'Hinterland' describes the back country or inland areas remote from coastal zones[cite: 5]. 'Peninsula' is land bordered by water on three sides[cite: 5].",
+    "tags": ["vocab", "ows", "geography", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0509",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOverly theatrical, melodramatic, or exaggerated in style or behaviour",
+    "options": {
+      "A": "Histrionic",
+      "B": "Stoic",
+      "C": "Aesthetic",
+      "D": "Pensive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Histrionic) is correct[cite: 5]. 'Histrionic' means excessively dramatic or emotional[cite: 5]. 'Stoic' means showing indifference to emotional swings[cite: 5].",
+    "tags": ["vocab", "ows", "behaviour", "theatre", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0510",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo secretly amass and store large quantities of valuables, money, or goods",
+    "options": {
+      "A": "Hoard",
+      "B": "Squander",
+      "C": "Decamp",
+      "D": "Embezzle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hoard) is correct[cite: 5]. 'Hoard' means to secretly collect and stockpile supplies[cite: 5]. 'Squander' means to waste money recklessly[cite: 5].",
+    "tags": ["vocab", "ows", "money", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0511",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMassive, catastrophic destruction and slaughter on a very large scale, especially by fire",
+    "options": {
+      "A": "Holocaust",
+      "B": "Anarchy",
+      "C": "Mutiny",
+      "D": "Homicide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Holocaust) is correct[cite: 5]. 'Holocaust' refers to wholesale slaughter or destruction on a devastating scale[cite: 5]. 'Mutiny' is rebellion against lawful authority[cite: 5].",
+    "tags": ["vocab", "ows", "disaster", "history", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0512",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe killing of one human being by another",
+    "options": {
+      "A": "Homicide",
+      "B": "Patricide",
+      "C": "Fratricide",
+      "D": "Regicide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Homicide) is correct[cite: 5]. 'Homicide' is the general term for the killing of any person by another[cite: 5]. 'Patricide' is the murder of one's father[cite: 5], and 'Regicide' is the killing of a king[cite: 5].",
+    "tags": ["vocab", "ows", "killing", "law", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0513",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOf the same or a similar kind, nature, or character throughout",
+    "options": {
+      "A": "Homogeneous",
+      "B": "Heterogeneous",
+      "C": "Multitudinous",
+      "D": "Contiguous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Homogeneous) is correct[cite: 5]. 'Homogeneous' means uniform in structure, composition, or nature throughout[cite: 5]. 'Heterogeneous' consists of diverse or mismatched elements[cite: 5].",
+    "tags": ["vocab", "ows", "science", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0514",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHaving the same structure, dimensions, or nature everywhere",
+    "options": {
+      "A": "Homogenous",
+      "B": "Divergent",
+      "C": "Heterogeneous",
+      "D": "Disparate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Homogenous) is correct[cite: 5]. 'Homogenous' refers to elements that are uniform and alike in essence and measurement[cite: 5]. 'Disparate' means fundamentally distinct or unequal.",
+    "tags": ["vocab", "ows", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0515",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA fee or payment made to a person for professional services rendered without a formal fee requirement",
+    "options": {
+      "A": "Honorarium",
+      "B": "Alimony",
+      "C": "Remuneration",
+      "D": "Commission"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Honorarium) is correct[cite: 5]. An 'Honorarium' is an ex gratia payment conferred for services for which custom precludes fixing a price[cite: 5]. 'Commission' is an agent's percentage cut[cite: 5].",
+    "tags": ["vocab", "ows", "finance", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0516",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHolding an official position or post without receiving any salary or remuneration",
+    "options": {
+      "A": "Honorary",
+      "B": "Sinecure",
+      "C": "Mercenary",
+      "D": "Volunteer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Honorary) is correct[cite: 5]. 'Honorary' positions carry title and honor without financial payment[cite: 5]. 'Sinecure' is a post with high pay but no real labor[cite: 5].",
+    "tags": ["vocab", "ows", "work", "professions", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0517",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe apparent line where the earth's surface and the sky seem to meet",
+    "options": {
+      "A": "Horizon",
+      "B": "Zenith",
+      "C": "Nadir",
+      "D": "Equator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Horizon) is correct[cite: 5]. 'Horizon' is the boundary line where sky and land/sea appear to merge[cite: 5]. 'Zenith' is the point directly overhead[cite: 5], and 'Nadir' is the lowest point.",
+    "tags": ["vocab", "ows", "geography", "astronomy", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0518",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExtremely unpleasant, dreadful, terrifying, or horrifying",
+    "options": {
+      "A": "Horrendous",
+      "B": "Idyllic",
+      "C": "Scintillating",
+      "D": "Laudable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Horrendous) is correct[cite: 5]. 'Horrendous' means shockingly dreadful and terrifying[cite: 5]. 'Idyllic' means peaceful and charming[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0519",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe art, science, and practical study of growing garden plants, fruits, vegetables, and flowers",
+    "options": {
+      "A": "Horticulture",
+      "B": "Agriculture",
+      "C": "Sericulture",
+      "D": "Viticulture"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Horticulture) is correct[cite: 5]. 'Horticulture' is the cultivation of gardens, flowers, and orchard crops[cite: 5]. 'Sericulture' is silkworm breeding[cite: 5], and 'Viticulture' is grape cultivation[cite: 5].",
+    "tags": ["vocab", "ows", "science", "plants", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0520",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn expert or specialist in the art and cultivation of gardens",
+    "options": {
+      "A": "Horticulturist",
+      "B": "Florist",
+      "C": "Botanist",
+      "D": "Agronomist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Horticulturist) is correct[cite: 5]. A 'Horticulturist' practices the science of garden culture and plant breeding[cite: 5]. A 'Florist' sells and arranges cut flowers[cite: 5].",
+    "tags": ["vocab", "ows", "professions", "plants", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0521",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFriendly, generous, welcoming, and warm towards guests and visitors",
+    "options": {
+      "A": "Hospitable",
+      "B": "Hostile",
+      "C": "Churlish",
+      "D": "Callous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hospitable) is correct[cite: 5]. 'Hospitable' describes a generous, welcoming host[cite: 5]. 'Hostile' and 'Churlish' mean antagonistic, rude, or boorish[cite: 5].",
+    "tags": ["vocab", "ows", "personality", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0522",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe generous and cordial reception and entertainment of guests, visitors, or strangers",
+    "options": {
+      "A": "Hospitality",
+      "B": "Hostility",
+      "C": "Apathy",
+      "D": "Animosity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hospitality) is correct[cite: 5]. 'Hospitality' is friendly welcoming reception given to visitors[cite: 5]. 'Hostility' and 'Animosity' mean active ill-will and enmity[cite: 5].",
+    "tags": ["vocab", "ows", "society", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0523",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA woman who receives or entertains guests socially or on an aircraft",
+    "options": {
+      "A": "Hostess",
+      "B": "Compere",
+      "C": "Chaperone",
+      "D": "Matron"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hostess) is correct[cite: 5]. A 'Hostess' is a female host entertaining guests or serving airplane passengers[cite: 5]. 'Compere' is an MC on stage[cite: 5].",
+    "tags": ["vocab", "ows", "people", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0524",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nImpulsive, quick-tempered, and easily aroused to anger",
+    "options": {
+      "A": "Hot-headed",
+      "B": "Placid",
+      "C": "Stoic",
+      "D": "Tranquil"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hot-headed) is correct[cite: 5]. 'Hot-headed' describes an impetuous, easily angered person[cite: 5]. 'Placid' and 'Tranquil' mean calm and peaceful[cite: 5].",
+    "tags": ["vocab", "ows", "personality", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0525",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAnnoyed, sulky, and quick to take offence at petty or trivial matters",
+    "options": {
+      "A": "Huffy",
+      "B": "Affable",
+      "C": "Complaisant",
+      "D": "Genial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Huffy) is correct[cite: 5]. 'Huffy' means touchy, petulant, and easily offended[cite: 5]. 'Affable' and 'Genial' mean warm and friendly.",
+    "tags": ["vocab", "ows", "behaviour", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0526",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe organic component of soil, formed by the natural decomposition of plant material and leaves",
+    "options": {
+      "A": "Humus",
+      "B": "Fossil",
+      "C": "Bullion",
+      "D": "Ember"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Humus) is correct[cite: 5]. 'Humus' is the dark, nutrient-rich organic constituent of topsoil[cite: 5]. 'Fossil' is ancient biological petrification in rock[cite: 5].",
+    "tags": ["vocab", "ows", "science", "geology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0527",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA legislative assembly or parliament in which no single political party holds an absolute majority",
+    "options": {
+      "A": "Hung",
+      "B": "Autocracy",
+      "C": "Oligarchy",
+      "D": "Monarchy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hung) is correct (e.g., hung parliament)[cite: 5]. It occurs when no political party secures a working majority[cite: 5]. 'Autocracy' is single-ruler dictatorship[cite: 5].",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0528",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small box, pen, or wire cage used for housing domesticated rabbits or small animals",
+    "options": {
+      "A": "Hutch",
+      "B": "Burrow",
+      "C": "Lair",
+      "D": "Byre"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hutch) is correct[cite: 5]. A 'Hutch' is an artificial box cage for rabbits[cite: 5]. 'Burrow' is an underground tunnel[cite: 5], and 'Byre' is a cattle shed[cite: 5].",
+    "tags": ["vocab", "ows", "animals", "places", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0529",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abnormal, pathological, or extreme fear of water; rabies in humans",
+    "options": {
+      "A": "Hydrophobia",
+      "B": "Acrophobia",
+      "C": "Claustrophobia",
+      "D": "Cynophobia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hydrophobia) is correct[cite: 5]. 'Hydrophobia' (or Aquaphobia) is pathological fear of water[cite: 5]. 'Acrophobia' is fear of heights[cite: 5], and 'Claustrophobia' is fear of confined spaces[cite: 5].",
+    "tags": ["vocab", "ows", "phobia", "medical", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0530",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA religious song or sacred ode sung in praise and honor of God",
+    "options": {
+      "A": "Hymn",
+      "B": "Dirge",
+      "C": "Elegy",
+      "D": "Ballad"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hymn) is correct[cite: 5]. A 'Hymn' is a devotional song of adoration to God[cite: 5]. 'Dirge' is a mournful funeral chant[cite: 5], and 'Elegy' is a poem of bereavement[cite: 5].",
+    "tags": ["vocab", "ows", "music", "religion", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0531",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn excessive, neurotic preoccupation with one's own health and imaginary illnesses",
+    "options": {
+      "A": "Hypochondria",
+      "B": "Insomnia",
+      "C": "Amnesia",
+      "D": "Anorexia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hypochondria) is correct[cite: 5]. 'Hypochondria' is chronic anxiety regarding imagined physical diseases[cite: 5]. 'Anorexia' is an eating disorder[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "psychology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0532",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is abnormally anxious and persistently suffers from imaginary sicknesses",
+    "options": {
+      "A": "Hypochondriac",
+      "B": "Convalescent",
+      "C": "Invalid",
+      "D": "Amputee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hypochondriac) is correct[cite: 5]. A 'Hypochondriac' constantly worries about having undiagnosed medical illnesses[cite: 5]. 'Convalescent' is recovering from illness[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "people", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0533",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who feigns or pretends to possess moral standards or beliefs that they do not actually hold",
+    "options": {
+      "A": "Hypocrite",
+      "B": "Zealot",
+      "C": "Egoist",
+      "D": "Stoic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hypocrite) is correct[cite: 5]. A 'Hypocrite' deceives by claiming virtues and principles they do not practice[cite: 5]. 'Zealot' is an uncompromising fanatic[cite: 5].",
+    "tags": ["vocab", "ows", "personality", "deception", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0534",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA tentative proposition or unverified theory put forward as an explanation for natural phenomena",
+    "options": {
+      "A": "Hypothesis",
+      "B": "Axiom",
+      "C": "Truism",
+      "D": "Criterion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Hypothesis) is correct[cite: 5]. A 'Hypothesis' is a proposed explanation tested through empirical research[cite: 5]. 'Axiom' is a self-evident accepted principle[cite: 5].",
+    "tags": ["vocab", "ows", "science", "logic", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0535",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who attacks cherished beliefs, traditional institutions, or destroys sacred religious images",
+    "options": {
+      "A": "Iconoclast",
+      "B": "Idolater",
+      "C": "Apostle",
+      "D": "Bigot"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Iconoclast) is correct[cite: 5]. An 'Iconoclast' destroys images or rejects established traditions[cite: 5]. 'Idolater' worships physical idols and images[cite: 5].",
+    "tags": ["vocab", "ows", "religion", "people", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0536",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA mode of behaviour, habit, or way of thought peculiar to a specific individual",
+    "options": {
+      "A": "Idiosyncrasy",
+      "B": "Nemesis",
+      "C": "Protocol",
+      "D": "Mores"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Idiosyncrasy) is correct[cite: 5]. An 'Idiosyncrasy' is an eccentric or distinct personal trait peculiar to someone[cite: 5]. 'Protocol' is official diplomatic etiquette[cite: 5].",
+    "tags": ["vocab", "ows", "personality", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0537",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nRelating to or showing individual peculiarities and eccentric characteristics",
+    "options": {
+      "A": "Idiosyncratic",
+      "B": "Conventional",
+      "C": "Universal",
+      "D": "Homogeneous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Idiosyncratic) is correct[cite: 5]. 'Idiosyncratic' means unique, quirky, or distinctive to a person[cite: 5]. 'Conventional' means conforming to accepted social norms.",
+    "tags": ["vocab", "ows", "adjectives", "personality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0538",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe religious worship of statues, images, or physical representations of deities",
+    "options": {
+      "A": "Idolatry",
+      "B": "Iconoclasm",
+      "C": "Atheism",
+      "D": "Pantheism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Idolatry) is correct[cite: 5]. 'Idolatry' is the religious veneration of carved statues or idols[cite: 5]. 'Iconoclasm' is the destruction of religious images[cite: 5].",
+    "tags": ["vocab", "ows", "religion", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0539",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExtremely pleasant, peaceful, charming, and picturesque in setting or atmosphere",
+    "options": {
+      "A": "Idyllic",
+      "B": "Appalling",
+      "C": "Horrendous",
+      "D": "Harrowing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Idyllic) is correct[cite: 5]. 'Idyllic' means pastoral, serene, and delightfully happy[cite: 5]. 'Appalling' and 'Harrowing' denote distressing and horrifying scenes[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0540",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA dome-shaped circular house or shelter built from blocks of hardened snow",
+    "options": {
+      "A": "Igloo",
+      "B": "Chalet",
+      "C": "Hutch",
+      "D": "Byre"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Igloo) is correct[cite: 5]. An 'Igloo' is a traditional Inuit dome hut constructed of compacted snow blocks[cite: 5]. 'Chalet' is a wooden alpine house.",
+    "tags": ["vocab", "ows", "places", "housing", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0541",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHandwriting or print that is unclear, defective, and impossible to decipher",
+    "options": {
+      "A": "Illegible",
+      "B": "Eligible",
+      "C": "Audible",
+      "D": "Incorrigible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Illegible) is correct[cite: 5]. 'Illegible' describes handwriting that cannot be read[cite: 5]. 'Eligible' means meeting requirements[cite: 5], and 'Incorrigible' cannot be reformed[cite: 5].",
+    "tags": ["vocab", "ows", "writing", "adjectives", "pyq_ssc", "repeated_8_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0542",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nForbidden by statutory law, decree, or official rules; unlawful",
+    "options": {
+      "A": "Illicit",
+      "B": "Licit",
+      "C": "Lawful",
+      "D": "Authentic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Illicit) is correct[cite: 5]. 'Illicit' means banned by law, custom, or decree[cite: 5]. 'Licit' means fully lawful and permitted.",
+    "tags": ["vocab", "ows", "law", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0543",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is unable to read or write",
+    "options": {
+      "A": "Illiterate",
+      "B": "Scholar",
+      "C": "Polyglot",
+      "D": "Linguist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Illiterate) is correct[cite: 5]. 'Illiterate' describes a person lacking basic literacy skills in reading and writing[cite: 5]. 'Linguist' is a polyglot scholar studying languages[cite: 5].",
+    "tags": ["vocab", "ows", "education", "people", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0544",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo decorate or brighten something up with lights; to shed light upon",
+    "options": {
+      "A": "Illuminate",
+      "B": "Etiolate",
+      "C": "Obscure",
+      "D": "Efface"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Illuminate) is correct[cite: 5]. 'Illuminate' means to supply with light or make bright[cite: 5]. 'Obscure' means to make dark, hidden, or unclear[cite: 5].",
+    "tags": ["vocab", "ows", "light", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0545",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExisting only in the mind and imagination; not real",
+    "options": {
+      "A": "Imaginary",
+      "B": "Tangible",
+      "C": "Concrete",
+      "D": "Verifiable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Imaginary) is correct[cite: 5]. 'Imaginary' means existing purely in thoughts or fiction[cite: 5]. 'Concrete' and 'Tangible' mean real and physically solid.",
+    "tags": ["vocab", "ows", "mind", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0546",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who enters a foreign country to settle and establish permanent residence",
+    "options": {
+      "A": "Immigrant",
+      "B": "Emigrant",
+      "C": "Expatriate",
+      "D": "Nomad"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Immigrant) is correct[cite: 5]. An 'Immigrant' is someone entering a country to live permanently[cite: 5]. An 'Emigrant' is someone leaving their home nation[cite: 5].",
+    "tags": ["vocab", "ows", "people", "citizenship", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0547",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nIncapable of moving or being moved; completely motionless",
+    "options": {
+      "A": "Immobile",
+      "B": "Ductile",
+      "C": "Malleable",
+      "D": "Itinerant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Immobile) is correct[cite: 5]. 'Immobile' means stationary or fixed[cite: 5]. 'Itinerant' means moving continuously from place to place[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "movement", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0548",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nProtected against or resistant to a particular infection, disease, or legal liability",
+    "options": {
+      "A": "Immune",
+      "B": "Susceptible",
+      "C": "Vulnerable",
+      "D": "Insolvent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Immune) is correct[cite: 5]. 'Immune' means resistant to a biological pathogen or exempt from a penalty[cite: 5]. 'Susceptible' means easily affected or harmed[cite: 4].",
+    "tags": ["vocab", "ows", "medical", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0549",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe physiological state of protection or resistance against infectious diseases or toxins",
+    "options": {
+      "A": "Immunity",
+      "B": "Delinquency",
+      "C": "Dereliction",
+      "D": "Apathy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Immunity) is correct[cite: 5]. 'Immunity' is the organism's power to resist infection or exemption from obligations[cite: 5]. 'Dereliction' is abandonment of duty[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0550",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo pierce through or transfix someone with a sharp stake or instrument",
+    "options": {
+      "A": "Impale",
+      "B": "Embed",
+      "C": "Inscribe",
+      "D": "Engulf"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Impale) is correct[cite: 5]. 'Impale' means to pierce through the body with a sharp object[cite: 5]. 'Embed' means to plant firmly in a mass[cite: 5].",
+    "tags": ["vocab", "ows", "actions", "verbs", "pyq_ssc"]
+  }
+]

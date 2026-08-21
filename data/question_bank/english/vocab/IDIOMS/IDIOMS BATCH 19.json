@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0901",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A slap in the face**",
+    "options": {
+      "A": "A sudden physical blow during a boxing match",
+      "B": "A cosmetic skin treatment performed at a salon",
+      "C": "An unexpected rejection, insult, or humiliating rebuff",
+      "D": "A friendly tap of encouragement from a teammate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'A slap in the face' refers to an unexpected rejection, insult, or action that causes deep humiliation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0902",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Above board**",
+    "options": {
+      "A": "Legitimate, honest, and conducted without any deception",
+      "B": "Placed on a raised wooden platform on a ship",
+      "C": "Operating beyond legal official jurisdiction",
+      "D": "Excessively proud and arrogant in behavior"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Above board' means completely open, honorable, and free from hidden tricks or dishonesty.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0903",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Albatross around one's neck**",
+    "options": {
+      "A": "An expensive marine bird feather accessory",
+      "B": "A heavy burden of guilt or an inescapable problem causing constant anxiety",
+      "C": "A sailor's protective lifebuoy equipment",
+      "D": "An award given for excellence in navigation"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. An 'albatross around one's neck' is an enduring psychological burden or handicap that impedes success.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0904",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**All in all**",
+    "options": {
+      "A": "Gathered closely in an enclosed room",
+      "B": "Taking everything into consideration; on the whole",
+      "C": "Divided into perfectly equal proportions",
+      "D": "Operating with absolute maximum intensity"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'All in all' means considering everything altogether or in general summary.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0905",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**An eye for an eye**",
+    "options": {
+      "A": "Wearing matching corrective eyeglasses",
+      "B": "Retaliation where the punishment exactly equals the offense committed",
+      "C": "A clinical examination by an ophthalmologist",
+      "D": "Engaging in an intense staring competition"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'An eye for an eye' describes retributive justice where harm inflicted is returned in equal measure.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0906",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Armed to the teeth**",
+    "options": {
+      "A": "Wearing dental braces for correction",
+      "B": "Suffering from severe jaw and mouth pain",
+      "C": "Equipped fully with an extensive amount of weapons or resources",
+      "D": "Displaying extreme hostility without equipment"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Armed to the teeth' means heavily armed with weapons or thoroughly prepared with all necessary equipment.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0907",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**As fit as a fiddle**",
+    "options": {
+      "A": "A well-tuned classical string instrument",
+      "B": "In exceptionally good physical health, robust, and vigorous",
+      "C": "Wearing perfectly tailored formal clothing",
+      "D": "Displaying artistic musical talent"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Fit as a fiddle' means being in peak physical condition and robust health.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0908",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Back the wrong horse**",
+    "options": {
+      "A": "To make a decision that supports a losing contestant or failing project",
+      "B": "To bet incorrectly on a livestock breeding auction",
+      "C": "To ride an untrained horse in an equestrian race",
+      "D": "To change a travel itinerary midway"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'back the wrong horse' means supporting a person, team, or idea that ultimately fails.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0909",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bark up the wrong tree**",
+    "options": {
+      "A": "Planting trees in infertile soil",
+      "B": "Pursuing a mistaken line of thought or accusing the incorrect person",
+      "C": "Training guard animals in public parks",
+      "D": "Shouting loudly in a forest during an emergency"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Bark up the wrong tree' means following a wrong course of action or misdirecting your efforts/blame.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0910",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Batten down the hatches**",
+    "options": {
+      "A": "To construct watertight wooden doors on cargo vessels",
+      "B": "To open windows for ventilation before high heat",
+      "C": "To prepare thoroughly for an impending crisis, difficulty, or storm",
+      "D": "To escape from a burning building rapidly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Batten down the hatches' means preparing carefully for imminent trouble or disaster.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0911",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Be in the doldrums**",
+    "options": {
+      "A": "To be sailing across high oceanic storm waves",
+      "B": "To be in a state of depression, low spirits, or stagnation",
+      "C": "To participate in an energetic outdoor sports match",
+      "D": "To celebrate a financial business victory"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'in the doldrums' means feeling depressed, dull, or experiencing a period of inactive stagnation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0912",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Beat the air**",
+    "options": {
+      "A": "To wave hands rhythmically during a performance",
+      "B": "To make futile, useless, and unproductive efforts that achieve nothing",
+      "C": "To travel by air in bad weather",
+      "D": "To extinguish a gas fire with water"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'beat the air' means to exert effort uselessly without gaining any practical result.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0913",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Behind closed doors**",
+    "options": {
+      "A": "Locked out of a residential building",
+      "B": "Taking place privately, secretly, and away from the public gaze",
+      "C": "Renovating indoor wooden carpentry",
+      "D": "Operating under legal quarantine rules"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Actions done 'behind closed doors' happen in strict privacy and confidentiality.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0914",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Below par**",
+    "options": {
+      "A": "Lower than the usual, expected, or standard level of quality or health",
+      "B": "An exceptional score in a professional golf tournament",
+      "C": "Purchasing commercial items at wholesale cost",
+      "D": "Operating machinery beneath sea level"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Below par' describes something that fails to reach the normal standard or someone feeling slightly unwell.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0915",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Beside the mark**",
+    "options": {
+      "A": "Standing close to a race starting line",
+      "B": "Irrelevant, inapplicable, or missing the point entirely",
+      "C": "Hitting an archery bullseye with precision",
+      "D": "Writing margin notes in a notebook"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Something 'beside the mark' is irrelevant and not pertinent to the subject under discussion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0916",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bite the bullet**",
+    "options": {
+      "A": "To face an inevitable, unpleasant, or painful situation with fortitude",
+      "B": "To chew metal fragments by mistake",
+      "C": "To handle military munitions carelessly",
+      "D": "To escape from an armed confrontation unharmed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'bite the bullet' means enduring an unavoidable hardship bravely without flinching.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0917",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Blood, sweat, and tears**",
+    "options": {
+      "A": "Immense physical toil, hardship, and supreme exertion",
+      "B": "Severe medical trauma injuries following a crash",
+      "C": "A dramatic theatrical tragic performance",
+      "D": "An intense emotional breakdown after grief"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Blood, sweat, and tears' symbolizes intense hard work and strenuous effort dedicated to a cause.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0918",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Blow the whistle on**",
+    "options": {
+      "A": "To sound a sports referee signal in a match",
+      "B": "To expose, report, or bring public attention to illegal or unethical activities",
+      "C": "To cheer loudly during a musical concert",
+      "D": "To summon police officers in an emergency"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'blow the whistle' means reporting wrongdoing or corruption to authorities or the public.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0919",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bolt out of the blue**",
+    "options": {
+      "A": "A sudden, totally unexpected event, piece of news, or disaster",
+      "B": "A flash of summer lightning seen in blue skies",
+      "C": "An electric shock sustained during wiring repair",
+      "D": "An official government postal bulletin"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'bolt out of the blue' is a complete surprise, usually of a disruptive or shocking nature.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0920",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bottom dollar**",
+    "options": {
+      "A": "The lowest denomination coin in circulation",
+      "B": "One's absolute last remaining piece of money or financial resource",
+      "C": "A counterfeit bank bill hidden in a wallet",
+      "D": "Money invested in unprofitable business shares"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Your 'bottom dollar' refers to the very last bit of money you possess.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0921",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Break the back of**",
+    "options": {
+      "A": "To suffer a severe spinal orthopedic injury",
+      "B": "To lift heavy warehouse cargo with poor posture",
+      "C": "To successfully accomplish the hardest or largest portion of a task",
+      "D": "To ruin a physical machine completely"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'break the back of' a task means finishing its most difficult or substantial part.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0922",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Breathe down someone's neck**",
+    "options": {
+      "A": "To monitor, supervise, or watch someone with oppressive closeness",
+      "B": "To whisper words into someone's ear affectionately",
+      "C": "To suffer from acute respiratory shortness of breath",
+      "D": "To follow a person on a crowded sidewalk"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Breathing down someone's neck' means constantly scrutinizing and pressuring them closely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0923",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bring home the bacon**",
+    "options": {
+      "A": "To purchase meat supplies from a grocery supermarket",
+      "B": "To cook breakfast for family members at home",
+      "C": "To raise pigs on an agricultural ranch",
+      "D": "To earn a livelihood or achieve significant financial success for one's family"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. To 'bring home the bacon' means earning money to provide for a household or winning success.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0924",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bull in a china shop**",
+    "options": {
+      "A": "A livestock animal wandering into a town marketplace",
+      "B": "An extremely clumsy, careless, or tactless person in a delicate situation",
+      "C": "An antique shop specializing in Asian porcelain ceramics",
+      "D": "A fierce and aggressive debater in politics"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'bull in a china shop' is someone reckless and clumsy who causes damage in delicate settings.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0925",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bury the hatchet**",
+    "options": {
+      "A": "To end a longstanding feud, quarrel, or hostility and make peace",
+      "B": "To conceal carpentry cutting tools underground",
+      "C": "To prepare hidden weapons for a guerrilla ambush",
+      "D": "To dig garden soil for planting new trees"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'bury the hatchet' means putting an end to bitter conflicts and reconciling.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0926",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**By leaps and bounds**",
+    "options": {
+      "A": "Advancing rapidly, energetically, and in large quantities",
+      "B": "Moving forward with cautious and hesitant steps",
+      "C": "Jumping across athletic hurdles on a race track",
+      "D": "Experiencing frequent unpredictable setbacks"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Progressing 'by leaps and bounds' means growing or advancing with remarkable speed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0927",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**By the board**",
+    "options": {
+      "A": "Discarded, ruined, forgotten, or completely overthrown",
+      "B": "Approved by a committee board of directors",
+      "C": "Written on a classroom chalk slate",
+      "D": "Sailing alongside a naval vessel deck"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. When a plan or policy goes 'by the board', it is abandoned, ruined, or no longer used.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0928",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Call it a day**",
+    "options": {
+      "A": "To name a date for an upcoming festival celebration",
+      "B": "To decide to stop working or doing an activity for the rest of the day",
+      "C": "To plan a morning schedule for tomorrow",
+      "D": "To record daily events in a diary journal"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'call it a day' means stopping current work and concluding for the day.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0929",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Carry the can**",
+    "options": {
+      "A": "To transport containers of water during an emergency",
+      "B": "To accept the blame, responsibility, or punishment for something wrong",
+      "C": "To lead an organization with supreme authority",
+      "D": "To collect waste recyclables in a neighborhood"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'carry the can' means bearing the responsibility or blame for a failure (often on behalf of others).",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0930",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cast aspersions on**",
+    "options": {
+      "A": "To criticize, slander, or make damaging remarks about someone's integrity",
+      "B": "To sprinkle sacred holy water during religious rituals",
+      "C": "To cast fishing lines into deep waters",
+      "D": "To praise an associate's work publicly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'cast aspersions' means to make defamatory or insulting remarks about someone's reputation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0931",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Catch a tartar**",
+    "options": {
+      "A": "To fish a rare species in freshwater streams",
+      "B": "To deal with an unexpectedly formidable, aggressive, and difficult opponent",
+      "C": "To solve a difficult dental hygiene condition",
+      "D": "To win a high-level sports tournament match"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'catch a tartar' means tackling someone who proves unexpectedly fierce and hard to control.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0932",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cheek by jowl**",
+    "options": {
+      "A": "Suffering from severe dental jaw pain",
+      "B": "Speaking rudely and insolently to superiors",
+      "C": "Close together; in intimate, crowded proximity",
+      "D": "Eating meals together at a banquet"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Cheek by jowl' means side by side in very close physical proximity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0933",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Chicken out**",
+    "options": {
+      "A": "To withdraw from an activity or challenge due to fear or cowardice",
+      "B": "To purchase poultry meat at a butcher store",
+      "C": "To wake up early at dawn with energy",
+      "D": "To complain about cold weather conditions"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'chicken out' means backing down from doing something because you are afraid.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0934",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Chip off the old block**",
+    "options": {
+      "A": "A broken piece of building masonry stone",
+      "B": "A child who strongly resembles their parent in character, habits, or appearance",
+      "C": "A carpenter carving sculptures from timber",
+      "D": "An obstacle obstructing a roadway"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'chip off the old block' is a person who exhibits traits very similar to their mother or father.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0935",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Clean pair of heels**",
+    "options": {
+      "A": "Wearing polished leather shoes at a party",
+      "B": "Running away so fast that pursuers cannot catch up; outrunning",
+      "C": "Practicing ballet dance footwork",
+      "D": "Standing at attention in military formations"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Showing a 'clean pair of heels' means running away fast and leaving pursuers far behind.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0936",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Clear the decks**",
+    "options": {
+      "A": "To scrub the wooden floorboards of a sailing boat",
+      "B": "To remove obstacles and prepare everything thoroughly for upcoming action",
+      "C": "To shuffle card packs before dealing a game",
+      "D": "To disembark passengers at a harbor port"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'clear the decks' means getting ready for action by eliminating hindrances and clutter.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0937",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Close-fisted**",
+    "options": {
+      "A": "A boxer adopting a defensive punching guard",
+      "B": "Extremely stingy, miserly, and reluctant to spend money",
+      "C": "Holding secrets with absolute security",
+      "D": "Suffering from severe joint arthritis"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'close-fisted' person is tight with money and unwilling to spend or share.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0938",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Come a cropper**",
+    "options": {
+      "A": "To harvest cereal crops in agriculture",
+      "B": "To trim bushes in a garden orchard",
+      "C": "To fail completely, suffer a disastrous collapse, or fall heavily",
+      "D": "To lose property during an auction"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'come a cropper' means to fail badly or experience a severe, sudden downfall.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0939",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Come to light**",
+    "options": {
+      "A": "To switch on lamps in an unlit room",
+      "B": "To be revealed, discovered, or disclosed to the public",
+      "C": "To wake up early at dawn",
+      "D": "To paint artwork in bright shades"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. When information 'comes to light', it becomes known after being hidden or unknown.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0940",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cool one's heels**",
+    "options": {
+      "A": "To soak tired feet in cold water basins",
+      "B": "To be kept waiting impatiently for an extended period",
+      "C": "To walk on ice without shoes",
+      "D": "To apply ice to a sports foot injury"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'cool one's heels' means being made to wait around for someone or something.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0941",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cross swords with**",
+    "options": {
+      "A": "To engage in a fight, dispute, or heated argument with someone",
+      "B": "To practice historical fencing techniques",
+      "C": "To forge steel weapons in a blacksmith workshop",
+      "D": "To salute military officers during a parade"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'cross swords' with someone means to quarrel, disagree sharply, or battle against them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0942",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cut and dried**",
+    "options": {
+      "A": "Pre-determined, completely settled, and clear with no doubt",
+      "B": "Timber processed for firewood use",
+      "C": "Herbs dried for cooking recipes",
+      "D": "An incomplete business negotiation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A matter that is 'cut and dried' is completely finalized, predictable, and settled.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0943",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Damp squib**",
+    "options": {
+      "A": "A small firecracker soaked in water",
+      "B": "An event or effort that turns out to be a disappointing failure after high expectations",
+      "C": "A marine mollusk washed onto a beach",
+      "D": "A light rain drizzle during summer"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'damp squib' is an event or situation that is expected to be exciting but proves totally disappointing.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0944",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dance attendance on**",
+    "options": {
+      "A": "To perform classical ballet dances for crowds",
+      "B": "To constantly serve, flatter, and wait upon someone attentively to please them",
+      "C": "To mark student attendance registers in schools",
+      "D": "To attend social parties and functions regularly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'dance attendance on' someone means to be overly attentive and eager to please them constantly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0945",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Darken someone's door**",
+    "options": {
+      "A": "To paint an entrance doorway in dark shades",
+      "B": "To block sunlight from entering a room",
+      "C": "To visit someone (often used in negative contexts like 'never darken my door again')",
+      "D": "To lock doors securely at night"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'darken someone's door' means to visit or turn up at their house (frequently used as an unwelcome visit).",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0946",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dead lock**",
+    "options": {
+      "A": "A state of complete standstill where no progress or agreement can be reached",
+      "B": "A heavy metal padlock with no keys",
+      "C": "A broken door locking mechanism",
+      "D": "A finalized legal property settlement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'deadlock' is an impasse or stalemate where neither opposing party can make progress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0947",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Deliver the goods**",
+    "options": {
+      "A": "To drive a courier freight transport van",
+      "B": "To meet expectations, fulfill a promise, or produce the required results",
+      "C": "To unload warehouse inventory onto shelves",
+      "D": "To sell manufactured products at retail stores"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'deliver the goods' means to do what is promised or expected successfully.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0948",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Devil and the deep sea**",
+    "options": {
+      "A": "Facing two equally undesirable, perilous, or difficult alternatives",
+      "B": "Sailing on dangerous stormy ocean waters",
+      "C": "Engaged in an exorcism religious ritual",
+      "D": "Swimming in deep marine coral reefs"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being between the 'devil and the deep sea' means caught in a dilemma between two equally bad choices.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0949",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dime a dozen**",
+    "options": {
+      "A": "Purchasing small items at wholesale discount markets",
+      "B": "Counting coins in a banking register",
+      "C": "Very common, ordinary, and of little special value",
+      "D": "A rare collectible vintage currency"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Something that is a 'dime a dozen' is ubiquitous, commonplace, and not particularly valuable.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0950",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Discretion is the better part of valor**",
+    "options": {
+      "A": "It is often wiser and braver to avoid danger cautiously than to take foolish risks",
+      "B": "A military commander must always lead attacks from the front",
+      "C": "Secretive planning guarantees total victory in battle",
+      "D": "Physical strength is superior to strategic intelligence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. This proverb/idiom means that exercising caution and avoiding unnecessary risks is the smartest form of courage.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

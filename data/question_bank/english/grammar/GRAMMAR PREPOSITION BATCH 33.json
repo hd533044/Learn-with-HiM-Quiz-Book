@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_PREP_1401",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He has an abhorrence ___ violence of any kind.'",
+    "options": {
+      "A": "to",
+      "B": "of",
+      "C": "for",
+      "D": "with"
+    },
+    "correct_option": "B",
+    "explanation": "'Abhorrence' is followed by the preposition 'of'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1402",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The candidate is eligible to the post of assistant manager.'",
+    "options": {
+      "A": "The candidate is",
+      "B": "eligible to",
+      "C": "the post of assistant manager.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Eligible' takes the preposition 'for'. Correct: 'eligible for the post'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1403",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was acquitted ___ the charges of corruption due to lack of evidence.'",
+    "options": {
+      "A": "from",
+      "B": "off",
+      "C": "of",
+      "D": "with"
+    },
+    "correct_option": "C",
+    "explanation": "'Acquit' takes the preposition 'of'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1404",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'This policy is antithetical ___ our core values.'",
+    "options": {
+      "A": "to",
+      "B": "with",
+      "C": "against",
+      "D": "for"
+    },
+    "correct_option": "A",
+    "explanation": "'Antithetical' takes the preposition 'to'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1405",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am accustomed with the harsh weather conditions here.'",
+    "options": {
+      "A": "I am accustomed",
+      "B": "with the harsh",
+      "C": "weather conditions here.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Accustomed' takes the preposition 'to'. Correct: 'accustomed to'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1406",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is addicted ___ smoking, which is bad for his health.'",
+    "options": {
+      "A": "to",
+      "B": "on",
+      "C": "for",
+      "D": "with"
+    },
+    "correct_option": "A",
+    "explanation": "'Addicted' takes the preposition 'to'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1407",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'The student was exempted ___ paying the late fee.'",
+    "options": {
+      "A": "off",
+      "B": "from",
+      "C": "of",
+      "D": "with"
+    },
+    "correct_option": "B",
+    "explanation": "'Exempt' takes the preposition 'from'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1408",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is envious for her sister's success.'",
+    "options": {
+      "A": "She is envious",
+      "B": "for her sister's",
+      "C": "success.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Envious' takes the preposition 'of'. Correct: 'envious of'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1409",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is liable ___ his actions.'",
+    "options": {
+      "A": "to",
+      "B": "for",
+      "C": "with",
+      "D": "by"
+    },
+    "correct_option": "B",
+    "explanation": "'Liable' for something (accountable for) takes 'for'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1410",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She was shocked ___ his rude behavior.'",
+    "options": {
+      "A": "at",
+      "B": "with",
+      "C": "in",
+      "D": "on"
+    },
+    "correct_option": "A",
+    "explanation": "'Shocked' takes the preposition 'at'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1411",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I differ with you regarding this matter.'",
+    "options": {
+      "A": "I differ with",
+      "B": "you regarding",
+      "C": "this matter.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. 'Differ with' is used when having a difference of opinion with a person.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1412",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The medicine acts ___ a painkiller.'",
+    "options": {
+      "A": "as",
+      "B": "like",
+      "C": "for",
+      "D": "in"
+    },
+    "correct_option": "A",
+    "explanation": "'Act as' (perform the function of) is the correct idiom.",
+    "tags": ["grammar", "prepositions", "idioms", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1413",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She is oblivious ___ the danger ahead.'",
+    "options": {
+      "A": "of",
+      "B": "to",
+      "C": "in",
+      "D": "with"
+    },
+    "correct_option": "B",
+    "explanation": "'Oblivious' takes the preposition 'to'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1414",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has no taste to music.'",
+    "options": {
+      "A": "He has no",
+      "B": "taste to",
+      "C": "music.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Taste' in the sense of appreciation takes 'for'. Correct: 'taste for music.'",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1415",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The results are commensurate ___ his efforts.'",
+    "options": {
+      "A": "for",
+      "B": "with",
+      "C": "to",
+      "D": "of"
+    },
+    "correct_option": "B",
+    "explanation": "'Commensurate with' (in proportion to) is the fixed preposition.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1416",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'They are entitled ___ a refund.'",
+    "options": {
+      "A": "for",
+      "B": "to",
+      "C": "of",
+      "D": "with"
+    },
+    "correct_option": "B",
+    "explanation": "'Entitled to' is the fixed prepositional phrase.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1417",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is prone for making silly mistakes.'",
+    "options": {
+      "A": "He is prone",
+      "B": "for making",
+      "C": "silly mistakes.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Prone' takes the preposition 'to'. Correct: 'prone to making...'",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1418",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I am indebted ___ you for your help.'",
+    "options": {
+      "A": "to",
+      "B": "for",
+      "C": "with",
+      "D": "by"
+    },
+    "correct_option": "A",
+    "explanation": "'Indebted to' (someone) for (something).",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1419",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She is vexed ___ his behavior.'",
+    "options": {
+      "A": "at",
+      "B": "with",
+      "C": "by",
+      "D": "on"
+    },
+    "correct_option": "A",
+    "explanation": "'Vexed at' or 'vexed with' (when applied to person). 'Vexed at' is standard for behavior.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1420",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is negligent with his duties.'",
+    "options": {
+      "A": "He is",
+      "B": "negligent with",
+      "C": "his duties.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Negligent' takes the preposition 'in'. Correct: 'negligent in his duties.'",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1421",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The teacher has a preference ___ bright students.'",
+    "options": {
+      "A": "for",
+      "B": "to",
+      "C": "of",
+      "D": "with"
+    },
+    "correct_option": "A",
+    "explanation": "'Preference for' is the fixed prepositional collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1422",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He is averse ___ change.'",
+    "options": {
+      "A": "for",
+      "B": "to",
+      "C": "of",
+      "D": "with"
+    },
+    "correct_option": "B",
+    "explanation": "'Averse to' is the standard fixed preposition.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1423",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He was warned for the consequences of his actions.'",
+    "options": {
+      "A": "He was warned",
+      "B": "for the consequences",
+      "C": "of his actions.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Warned' takes the preposition 'of' or 'against'. Correct: 'warned of the consequences'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1424",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I am skeptical ___ his success.'",
+    "options": {
+      "A": "in",
+      "B": "about",
+      "C": "of",
+      "D": "to"
+    },
+    "correct_option": "B",
+    "explanation": "'Skeptical about' or 'skeptical of' are both used, 'about' is common.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1425",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He is obsessed ___ his new car.'",
+    "options": {
+      "A": "with",
+      "B": "about",
+      "C": "by",
+      "D": "to"
+    },
+    "correct_option": "A",
+    "explanation": "'Obsessed with' is the fixed prepositional collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1426",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is anxious about meeting her in-laws.'",
+    "options": {
+      "A": "She is anxious",
+      "B": "about meeting",
+      "C": "her in-laws.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Sentence is correct. 'Anxious about' is the standard prepositional phrase.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1427",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was excluded ___ the competition.'",
+    "options": {
+      "A": "out of",
+      "B": "from",
+      "C": "by",
+      "D": "off"
+    },
+    "correct_option": "B",
+    "explanation": "'Exclude from' is the fixed prepositional collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1428",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He is not accustomed ___ such luxury.'",
+    "options": {
+      "A": "to",
+      "B": "for",
+      "C": "with",
+      "D": "by"
+    },
+    "correct_option": "A",
+    "explanation": "'Accustomed to' is the fixed prepositional phrase.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1429",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He apologized for me for his rude behavior.'",
+    "options": {
+      "A": "He apologized",
+      "B": "for me",
+      "C": "for his rude behavior.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Apologize' takes the preposition 'to' followed by the person. Correct: 'apologized to me for...'",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1430",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The project is fraught ___ difficulties.'",
+    "options": {
+      "A": "by",
+      "B": "with",
+      "C": "in",
+      "D": "of"
+    },
+    "correct_option": "B",
+    "explanation": "'Fraught with' is the fixed prepositional idiom.",
+    "tags": ["grammar", "prepositions", "idioms", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1431",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She is eager ___ succeed.'",
+    "options": {
+      "A": "for",
+      "B": "to",
+      "C": "of",
+      "D": "about"
+    },
+    "correct_option": "B",
+    "explanation": "'Eager' takes an infinitive 'to' when followed by a verb.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1432",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has confidence for his ability to win.'",
+    "options": {
+      "A": "He has confidence",
+      "B": "for his",
+      "C": "ability to win.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Confidence' takes the preposition 'in'. Correct: 'confidence in his ability.'",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1433",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is prone ___ making mistakes under stress.'",
+    "options": {
+      "A": "to",
+      "B": "for",
+      "C": "of",
+      "D": "in"
+    },
+    "correct_option": "A",
+    "explanation": "'Prone to' is the fixed prepositional collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1434",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She is capable ___ handling this project.'",
+    "options": {
+      "A": "to",
+      "B": "for",
+      "C": "of",
+      "D": "in"
+    },
+    "correct_option": "C",
+    "explanation": "'Capable of' + gerund is the standard collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1435",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He was acquitted from all charges.'",
+    "options": {
+      "A": "He was acquitted",
+      "B": "from all",
+      "C": "charges.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Acquit' takes the preposition 'of'. Correct: 'acquitted of all charges.'",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1436",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The book is replete ___ interesting facts.'",
+    "options": {
+      "A": "with",
+      "B": "of",
+      "C": "by",
+      "D": "in"
+    },
+    "correct_option": "A",
+    "explanation": "'Replete with' is the fixed prepositional collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1437",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He is suspicious ___ the intentions of the stranger.'",
+    "options": {
+      "A": "for",
+      "B": "of",
+      "C": "to",
+      "D": "about"
+    },
+    "correct_option": "B",
+    "explanation": "'Suspicious of' is the fixed prepositional collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1438",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is entitled to a discount for being a regular customer.'",
+    "options": {
+      "A": "He is entitled to",
+      "B": "a discount for",
+      "C": "being a regular customer.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1439",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is obsessed ___ collecting vintage coins.'",
+    "options": {
+      "A": "about",
+      "B": "with",
+      "C": "for",
+      "D": "on"
+    },
+    "correct_option": "B",
+    "explanation": "'Obsessed with' is the fixed prepositional collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1440",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She is anxious ___ her exam results.'",
+    "options": {
+      "A": "for",
+      "B": "about",
+      "C": "to",
+      "D": "at"
+    },
+    "correct_option": "B",
+    "explanation": "'Anxious about' is the standard prepositional phrase for a topic of anxiety.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1441",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am indebted with you for your kindness.'",
+    "options": {
+      "A": "I am indebted",
+      "B": "with you",
+      "C": "for your kindness.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Indebted' takes the preposition 'to' (when following a person). Correct: 'indebted to you'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1442",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was excluded ___ the club for his misconduct.'",
+    "options": {
+      "A": "of",
+      "B": "from",
+      "C": "out",
+      "D": "by"
+    },
+    "correct_option": "B",
+    "explanation": "'Exclude from' is the fixed prepositional collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1443",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'I am fond ___ classical music.'",
+    "options": {
+      "A": "for",
+      "B": "of",
+      "C": "in",
+      "D": "with"
+    },
+    "correct_option": "B",
+    "explanation": "'Fond of' is the fixed prepositional collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1444",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is jealous for his friend's prosperity.'",
+    "options": {
+      "A": "He is jealous",
+      "B": "for his friend's",
+      "C": "prosperity.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Jealous' takes the preposition 'of'. Correct: 'jealous of his friend's prosperity.'",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1445",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The committee consists ___ five members.'",
+    "options": {
+      "A": "in",
+      "B": "of",
+      "C": "with",
+      "D": "from"
+    },
+    "correct_option": "B",
+    "explanation": "'Consists of' is the fixed prepositional collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1446",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He is not accustomed ___ such harsh treatment.'",
+    "options": {
+      "A": "to",
+      "B": "for",
+      "C": "of",
+      "D": "in"
+    },
+    "correct_option": "A",
+    "explanation": "'Accustomed to' is the fixed prepositional phrase.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1447",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am worried with the results.'",
+    "options": {
+      "A": "I am worried",
+      "B": "with",
+      "C": "the results.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Worried' typically takes the preposition 'about'. Correct: 'worried about the results.'",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1448",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was warned ___ the dangers of smoking.'",
+    "options": {
+      "A": "for",
+      "B": "of",
+      "C": "with",
+      "D": "about"
+    },
+    "correct_option": "B",
+    "explanation": "'Warned of' or 'warned about' are acceptable; 'warned of' is classic fixed usage.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1449",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She is confident ___ her ability.'",
+    "options": {
+      "A": "in",
+      "B": "of",
+      "C": "for",
+      "D": "about"
+    },
+    "correct_option": "B",
+    "explanation": "'Confident of' is the standard prepositional collocation.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_1450",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The manager is agreeable with the new proposal.'",
+    "options": {
+      "A": "The manager is",
+      "B": "agreeable with",
+      "C": "the new proposal.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Agreeable to' is the fixed prepositional collocation when referring to proposals or ideas.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  }
+]

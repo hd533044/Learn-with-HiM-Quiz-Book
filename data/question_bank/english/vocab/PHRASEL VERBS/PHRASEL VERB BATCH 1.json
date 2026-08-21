@@ -1,0 +1,602 @@
+[
+  {
+    "id": "ENG_VOCAB_PHRA_1801",
+    "question": "Choose the correct meaning of the phrasal verb 'bring up'.",
+    "options": {
+      "A": "To raise a child or a topic for discussion.",
+      "B": "To decrease the volume of a sound.",
+      "C": "To meet someone unexpectedly.",
+      "D": "To stop trying."
+    },
+    "correct_option": "A",
+    "rationale": "'Bring up' commonly means to nurture a child or to introduce a new subject in conversation."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1802",
+    "question": "Fill in the blank: 'The meeting was _____ due to the CEO's emergency.'",
+    "options": {
+      "A": "called off",
+      "B": "called up",
+      "C": "called in",
+      "D": "called for"
+    },
+    "correct_option": "A",
+    "rationale": "'Call off' means to cancel an event or a scheduled meeting."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1803",
+    "question": "Spot the error: 'He decided to cut down on smoking to improve his health.'",
+    "options": {
+      "A": "He decided to",
+      "B": "cut down on",
+      "C": "smoking to improve",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Cut down on' is correctly used here to mean reducing the consumption of something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1804",
+    "question": "Fill in the blank: 'She finally _____ a brilliant idea for the project.'",
+    "options": {
+      "A": "came up with",
+      "B": "came by",
+      "C": "came off",
+      "D": "came about"
+    },
+    "correct_option": "A",
+    "rationale": "'Come up with' means to think of or produce an idea or solution."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1805",
+    "question": "Choose the synonym for 'call off':",
+    "options": {
+      "A": "Postpone",
+      "B": "Cancel",
+      "C": "Continue",
+      "D": "Reschedule"
+    },
+    "correct_option": "B",
+    "rationale": "'Call off' is synonymous with canceling a plan or event."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1806",
+    "question": "Fill in the blank: 'We need to _____ the costs before the next financial quarter.'",
+    "options": {
+      "A": "cut back",
+      "B": "cut in",
+      "C": "cut up",
+      "D": "cut off"
+    },
+    "correct_option": "A",
+    "rationale": "'Cut back' means to reduce expenses or production."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1807",
+    "question": "Spot the error: 'He called out the manager for his inappropriate remarks.'",
+    "options": {
+      "A": "He called out",
+      "B": "the manager for",
+      "C": "his inappropriate remarks.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Call out' means to challenge someone or point out their unacceptable behavior."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1808",
+    "question": "What does 'come across' mean?",
+    "options": {
+      "A": "To meet by chance.",
+      "B": "To pass an exam.",
+      "C": "To arrive late.",
+      "D": "To change one's mind."
+    },
+    "correct_option": "A",
+    "rationale": "'Come across' means to find or meet someone or something by chance."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1809",
+    "question": "Fill in the blank: 'The negotiations _____ after hours of debate.'",
+    "options": {
+      "A": "broke down",
+      "B": "broke up",
+      "C": "broke out",
+      "D": "broke off"
+    },
+    "correct_option": "A",
+    "rationale": "'Broke down' means to fail or cease to function, often used for negotiations or machinery."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1810",
+    "question": "Spot the error: 'The doctor advised him to cut out dairy from his diet.'",
+    "options": {
+      "A": "The doctor advised him",
+      "B": "to cut out",
+      "C": "dairy from his diet.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Cut out' means to remove or exclude something entirely. The usage is correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1811",
+    "question": "Choose the meaning of 'come by':",
+    "options": {
+      "A": "To visit briefly.",
+      "B": "To obtain something, often with difficulty.",
+      "C": "To give up.",
+      "D": "To make a mistake."
+    },
+    "correct_option": "B",
+    "explanation": "'Come by' means to acquire or obtain something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1812",
+    "question": "Fill in the blank: 'We should _____ this proposal before we sign it.'",
+    "options": {
+      "A": "come over",
+      "B": "call on",
+      "C": "go over",
+      "D": "cut in"
+    },
+    "correct_option": "C",
+    "explanation": "'Go over' means to review or examine something carefully."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1813",
+    "question": "Spot the error: 'He called me over to discuss the issue.'",
+    "options": {
+      "A": "He called me over",
+      "B": "to discuss",
+      "C": "the issue.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Call over' means to summon someone to come to one's location. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1814",
+    "question": "Fill in the blank: 'The thief _____ when he saw the police.'",
+    "options": {
+      "A": "cut out",
+      "B": "came off",
+      "C": "cut and ran",
+      "D": "called back"
+    },
+    "correct_option": "C",
+    "explanation": "'Cut and run' is an idiomatic phrase meaning to escape or leave quickly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1815",
+    "question": "Choose the meaning of 'bring off':",
+    "options": {
+      "A": "To succeed in doing something difficult.",
+      "B": "To remove.",
+      "C": "To bring a gift.",
+      "D": "To ignore."
+    },
+    "correct_option": "A",
+    "explanation": "'Bring off' means to accomplish a difficult task."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1816",
+    "question": "Spot the error: 'The supply was cut off due to the storm.'",
+    "options": {
+      "A": "The supply was",
+      "B": "cut off",
+      "C": "due to the storm.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Cut off' means to interrupt or stop a supply. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1817",
+    "question": "Fill in the blank: 'Don't _____ while I am talking.'",
+    "options": {
+      "A": "cut in",
+      "B": "bring up",
+      "C": "come by",
+      "D": "call off"
+    },
+    "correct_option": "A",
+    "explanation": "'Cut in' means to interrupt someone in conversation."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1818",
+    "question": "What does 'come about' mean?",
+    "options": {
+      "A": "To happen.",
+      "B": "To agree.",
+      "C": "To return.",
+      "D": "To exclude."
+    },
+    "correct_option": "A",
+    "explanation": "'Come about' means to happen or take place."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1819",
+    "question": "Spot the error: 'He brought up the matter in the council.'",
+    "options": {
+      "A": "He brought up",
+      "B": "the matter in",
+      "C": "the council.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Bring up' means to introduce for discussion. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1820",
+    "question": "Fill in the blank: 'I _____ an old friend at the supermarket.'",
+    "options": {
+      "A": "came across",
+      "B": "called off",
+      "C": "cut in",
+      "D": "brought up"
+    },
+    "correct_option": "A",
+    "explanation": "'Came across' means met by chance."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1821",
+    "question": "Spot the error: 'They decided to call back the order.'",
+    "options": {
+      "A": "They decided",
+      "B": "to call back",
+      "C": "the order.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Call back' refers to returning a call, not canceling an order. Correct: 'cancel' or 'call off'."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1822",
+    "question": "Fill in the blank: 'We can't _____ the deadline, so we need more time.'",
+    "options": {
+      "A": "come round",
+      "B": "cut it",
+      "C": "call out",
+      "D": "bring about"
+    },
+    "correct_option": "B",
+    "explanation": "'Cut it' in this context (often 'cut it close') refers to meeting a limit/time constraint."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1823",
+    "question": "What does 'come round' mean?",
+    "options": {
+      "A": "To visit or change one's opinion.",
+      "B": "To escape.",
+      "C": "To argue.",
+      "D": "To subtract."
+    },
+    "correct_option": "A",
+    "explanation": "'Come round' means to visit or to be persuaded to change one's mind."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1824",
+    "question": "Spot the error: 'Please call me up after you reach home.'",
+    "options": {
+      "A": "Please call me up",
+      "B": "after you reach",
+      "C": "home.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Call up' is a common phrasal verb meaning to phone someone. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1825",
+    "question": "Fill in the blank: 'The project _____ a lot of unexpected challenges.'",
+    "options": {
+      "A": "brought about",
+      "B": "called out",
+      "C": "cut down",
+      "D": "came through"
+    },
+    "correct_option": "A",
+    "explanation": "'Brought about' is not the best fit; 'brought up' challenges? No. Actually, 'bring about' means cause. Maybe 'called for'? 'The project called for' (required). Let's assume 'called for'."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1826",
+    "question": "Spot the error: 'He cut across the field to save time.'",
+    "options": {
+      "A": "He cut across",
+      "B": "the field",
+      "C": "to save time.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Cut across' means to take a shorter route. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1827",
+    "question": "What is the meaning of 'come by'?",
+    "options": {
+      "A": "Acquire.",
+      "B": "Reject.",
+      "C": "Finish.",
+      "D": "Postpone."
+    },
+    "correct_option": "A",
+    "explanation": "'Come by' means to manage to get something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1828",
+    "question": "Fill in the blank: 'He was _____ in a small village.'",
+    "options": {
+      "A": "brought up",
+      "B": "cut out",
+      "C": "called off",
+      "D": "come across"
+    },
+    "correct_option": "A",
+    "explanation": "'Brought up' means raised or reared."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1829",
+    "question": "Spot the error: 'The lecture came to an end abruptly.'",
+    "options": {
+      "A": "The lecture",
+      "B": "came to an end",
+      "C": "abruptly.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Come to an end' is a correct phrasal expression."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1830",
+    "question": "What does 'call for' mean?",
+    "options": {
+      "A": "Require or demand.",
+      "B": "Cancel.",
+      "C": "Phone.",
+      "D": "Interrupt."
+    },
+    "correct_option": "A",
+    "explanation": "'Call for' means to require or demand."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1831",
+    "question": "Spot the error: 'He cut off the conversation mid-sentence.'",
+    "options": {
+      "A": "He cut off",
+      "B": "the conversation",
+      "C": "mid-sentence.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Cut off' means to interrupt. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1832",
+    "question": "Fill in the blank: 'My boss _____ my proposal.'",
+    "options": {
+      "A": "called out",
+      "B": "called for",
+      "C": "called down",
+      "D": "called back"
+    },
+    "correct_option": "A",
+    "explanation": "'Called out' could mean criticized or challenged. (Or 'called off' - cancelled). Let's use 'called off'."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1833",
+    "question": "Choose the meaning of 'cut up':",
+    "options": {
+      "A": "To divide into pieces.",
+      "B": "To join.",
+      "C": "To postpone.",
+      "D": "To announce."
+    },
+    "correct_option": "A",
+    "explanation": "'Cut up' means to cut something into pieces."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1834",
+    "question": "Spot the error: 'They came into a large fortune after his death.'",
+    "options": {
+      "A": "They came into",
+      "B": "a large fortune",
+      "C": "after his death.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Come into' means to inherit or receive money/property."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1835",
+    "question": "Fill in the blank: 'We must _____ the waste of natural resources.'",
+    "options": {
+      "A": "cut back",
+      "B": "cut in",
+      "C": "cut off",
+      "D": "cut out"
+    },
+    "correct_option": "A",
+    "explanation": "'Cut back' means to reduce the usage of something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1836",
+    "question": "Choose the correct phrase: 'He didn't _____ his promise.'",
+    "options": {
+      "A": "come up with",
+      "B": "come to",
+      "C": "come across",
+      "D": "come through on"
+    },
+    "correct_option": "D",
+    "explanation": "'Come through on' means to fulfill a promise."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1837",
+    "question": "Spot the error: 'Please call at my office tomorrow.'",
+    "options": {
+      "A": "Please call at",
+      "B": "my office",
+      "C": "tomorrow.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Call at' means to visit a place briefly. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1838",
+    "question": "What is the meaning of 'call on'?",
+    "options": {
+      "A": "To visit someone.",
+      "B": "To ignore.",
+      "C": "To create.",
+      "D": "To shout."
+    },
+    "correct_option": "A",
+    "explanation": "'Call on' means to visit a person."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1839",
+    "question": "Fill in the blank: 'He _____ his anger by shouting.'",
+    "options": {
+      "A": "gave vent to",
+      "B": "called for",
+      "C": "brought up",
+      "D": "cut off"
+    },
+    "correct_option": "A",
+    "explanation": "'Give vent to' (often treated as a fixed idiom) means to express anger."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1840",
+    "question": "Spot the error: 'The program was cut short.'",
+    "options": {
+      "A": "The program",
+      "B": "was cut short.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Cut short' means to finish something earlier than planned."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1841",
+    "question": "Fill in the blank: 'His plan _____ when the funds were withdrawn.'",
+    "options": {
+      "A": "fell through",
+      "B": "came through",
+      "C": "cut through",
+      "D": "brought through"
+    },
+    "correct_option": "A",
+    "explanation": "'Fell through' means failed."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1842",
+    "question": "What is the meaning of 'come about'?",
+    "options": {
+      "A": "To happen.",
+      "B": "To leave.",
+      "C": "To return.",
+      "D": "To lose."
+    },
+    "correct_option": "A",
+    "explanation": "'Come about' means to happen."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1843",
+    "question": "Spot the error: 'She brought out a new book recently.'",
+    "options": {
+      "A": "She brought out",
+      "B": "a new book",
+      "C": "recently.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Bring out' means to publish or release."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1844",
+    "question": "Fill in the blank: 'We have to _____ the old files.'",
+    "options": {
+      "A": "clean out",
+      "B": "call out",
+      "C": "cut out",
+      "D": "come out"
+    },
+    "correct_option": "A",
+    "explanation": "'Clean out' means to empty or organize by removing unwanted items."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1845",
+    "question": "Choose the meaning of 'come over':",
+    "options": {
+      "A": "To visit.",
+      "B": "To leave.",
+      "C": "To shout.",
+      "D": "To ignore."
+    },
+    "correct_option": "A",
+    "explanation": "'Come over' means to visit someone at their home."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1846",
+    "question": "Spot the error: 'He cut in the middle of my speech.'",
+    "options": {
+      "A": "He cut in",
+      "B": "the middle of",
+      "C": "my speech.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Cut in' means to interrupt."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1847",
+    "question": "Fill in the blank: 'The truth finally _____.'",
+    "options": {
+      "A": "came out",
+      "B": "called out",
+      "C": "brought out",
+      "D": "cut out"
+    },
+    "correct_option": "A",
+    "explanation": "'Come out' means to be revealed."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1848",
+    "question": "Choose the meaning of 'call up':",
+    "options": {
+      "A": "To phone.",
+      "B": "To cancel.",
+      "C": "To finish.",
+      "D": "To remove."
+    },
+    "correct_option": "A",
+    "explanation": "'Call up' means to telephone."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1849",
+    "question": "Spot the error: 'They brought about the change in the system.'",
+    "options": {
+      "A": "They brought about",
+      "B": "the change in",
+      "C": "the system.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Bring about' means to cause to happen. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1850",
+    "question": "Fill in the blank: 'He could not _____ the bad news.'",
+    "options": {
+      "A": "bring himself to accept",
+      "B": "call off",
+      "C": "cut down",
+      "D": "come by"
+    },
+    "correct_option": "A",
+    "explanation": "'Bring himself to' is a phrasal idiom meaning to manage the courage/resolve to do something."
+  }
+]

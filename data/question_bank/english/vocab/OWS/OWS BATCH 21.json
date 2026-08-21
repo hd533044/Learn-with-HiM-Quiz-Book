@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_1001",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo taste food or drink deliberately and enjoy its flavor to the full",
+    "options": {
+      "A": "Savouring",
+      "B": "Gulping",
+      "C": "Swallowing",
+      "D": "Devouring"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Savouring) is correct[cite: 2]. 'Savouring' means tasting good food or drink slowly to appreciate every bit of its flavor[cite: 2]. 'Gulping' and 'Devouring' mean eating rapidly.",
+    "tags": ["vocab", "ows", "actions", "food", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1002",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA protective leather sheath or case for the blade of a sword or dagger",
+    "options": {
+      "A": "Scabbard",
+      "B": "Quiver",
+      "C": "Holster",
+      "D": "Shield"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Scabbard) is correct[cite: 2]. A 'Scabbard' is a tight-fitting protective cover or case for a sword blade[cite: 2]. 'Quiver' holds arrows, and 'Holster' holds a handgun.",
+    "tags": ["vocab", "ows", "objects", "weapons", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1003",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA public scandal, disgraceful gossip, or scandalous story that brings bad reputation",
+    "options": {
+      "A": "Scandal",
+      "B": "Eulogy",
+      "C": "Appraisal",
+      "D": "Testimonial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Scandal) is correct[cite: 2]. A 'Scandal' is a widely publicized event or rumor that brings public shame and disrepute[cite: 2].",
+    "tags": ["vocab", "ows", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1004",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nBarely sufficient, meager, or scarcely adequate in amount or quantity",
+    "options": {
+      "A": "Scant",
+      "B": "Plethora",
+      "C": "Surfeit",
+      "D": "Abundant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Scant) is correct[cite: 2]. 'Scant' means barely enough or deficient in quantity[cite: 2]. 'Plethora' and 'Surfeit' mean an excessive oversupply.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1005",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is unfairly blamed and punished for the mistakes, sins, or wrongdoings of others",
+    "options": {
+      "A": "Scapegoat",
+      "B": "Martyr",
+      "C": "Hero",
+      "D": "Champion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Scapegoat) is correct[cite: 2]. A 'Scapegoat' bears the blame for others' misdeeds[cite: 2]. A 'Martyr' dies willingly for a religious or noble cause[cite: 2].",
+    "tags": ["vocab", "ows", "people", "society", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1006",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe condition of extreme shortage, deficit, or short supply of essential goods",
+    "options": {
+      "A": "Scarcity",
+      "B": "Abundance",
+      "C": "Surplus",
+      "D": "Profusion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Scarcity) is correct[cite: 2]. 'Scarcity' refers to a severe shortage or insufficiency of supplies[cite: 2]. 'Abundance' and 'Surplus' mean plentiful supply.",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1007",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo search through discarded waste or refuse to collect anything usable or edible",
+    "options": {
+      "A": "Scavenge",
+      "B": "Conserve",
+      "C": "Accumulate",
+      "D": "Hoard"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Scavenge) is correct[cite: 2]. 'Scavenge' means to forage through discarded rubbish for salvageable items[cite: 2].",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1008",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who habitually doubts, questions, or suspends judgement regarding accepted beliefs or claims",
+    "options": {
+      "A": "Sceptic",
+      "B": "Credulous",
+      "C": "Dogmatist",
+      "D": "Believer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sceptic) is correct[cite: 2]. A 'Sceptic' (or skeptic) questions general claims and doctrines[cite: 2]. 'Credulous' means gullible and easily deceived[cite: 2].",
+    "tags": ["vocab", "ows", "people", "philosophy", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1009",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn ornate ceremonial staff or rod carried by a monarch as a symbol of sovereign power",
+    "options": {
+      "A": "Sceptre",
+      "B": "Pestle",
+      "C": "Truncheon",
+      "D": "Baton"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sceptre) is correct[cite: 2]. A 'Sceptre' is a royal baton symbolizing sovereignty[cite: 2].",
+    "tags": ["vocab", "ows", "objects", "royalty", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1010",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSparkling, brilliantly witty, and exceptionally lively or stimulating",
+    "options": {
+      "A": "Scintillating",
+      "B": "Monotonous",
+      "C": "Tedious",
+      "D": "Dull"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Scintillating) is correct[cite: 2]. 'Scintillating' means brilliantly clever, sparkling, or animated[cite: 2]. 'Tedious' and 'Monotonous' mean boring.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1011",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA definite group, set, or total count of twenty units",
+    "options": {
+      "A": "Score",
+      "B": "Dozen",
+      "C": "Gross",
+      "D": "Century"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Score) is correct[cite: 2]. A 'Score' is a traditional group containing twenty units[cite: 2]. 'Dozen' is twelve, and 'Century' is one hundred.",
+    "tags": ["vocab", "ows", "numbers", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1012",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA loud, harsh, piercing, and high-pitched cry or sound",
+    "options": {
+      "A": "Screech",
+      "B": "Whisper",
+      "C": "Murmur",
+      "D": "Caw"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Screech) is correct[cite: 2]. A 'Screech' is a sharp, shrill, and piercing noise[cite: 2]. 'Whisper' is a very soft, low tone[cite: 2].",
+    "tags": ["vocab", "ows", "sounds", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1013",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small back room or kitchen annex next to a main kitchen used for washing dishes and cutlery",
+    "options": {
+      "A": "Scullery",
+      "B": "Pantry",
+      "C": "Cellar",
+      "D": "Attic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Scullery) is correct[cite: 2]. A 'Scullery' is a rear kitchen utility room for washing kitchen utensils[cite: 2]. 'Pantry' is for food storage[cite: 2].",
+    "tags": ["vocab", "ows", "places", "architecture", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1014",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nUsing severely abusive, scurrilous, or scandalous language in writing to attack someone's reputation",
+    "options": {
+      "A": "Scurrilous",
+      "B": "Laudatory",
+      "C": "Complimentary",
+      "D": "Panegyric"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Scurrilous) is correct[cite: 2]. 'Scurrilous' means making vulgar, coarse, and slanderously abusive attacks in journals or speech[cite: 2].",
+    "tags": ["vocab", "ows", "language", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1015",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nRelating to worldly things rather than religious, sacred, or spiritual matters; non-religious",
+    "options": {
+      "A": "Secular",
+      "B": "Sacred",
+      "C": "Divine",
+      "D": "Ecclesiastical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Secular) is correct[cite: 2]. 'Secular' denotes worldly affairs separate from spiritual or ecclesiastical jurisdiction[cite: 2].",
+    "tags": ["vocab", "ows", "society", "politics", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1016",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA drug, medicine, or chemical substance that induces calmness, relaxation, or sleep",
+    "options": {
+      "A": "Sedative",
+      "B": "Stimulant",
+      "C": "Emetic",
+      "D": "Laxative"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sedative) is correct[cite: 2]. A 'Sedative' promotes calmness and curbs nervous tension or induces sleep[cite: 2]. 'Stimulant' increases energy levels.",
+    "tags": ["vocab", "ows", "medical", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1017",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMarked by continuous, painstaking care, diligence, and persistent effort",
+    "options": {
+      "A": "Sedulous",
+      "B": "Indolent",
+      "C": "Slothful",
+      "D": "Lax"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sedulous) is correct[cite: 2]. 'Sedulous' means showing dedication, diligence, and untiring application to a task[cite: 2]. 'Indolent' and 'Slothful' mean lazy[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1018",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study and measurement of earthquakes and seismic wave propagation",
+    "options": {
+      "A": "Seismology",
+      "B": "Geology",
+      "C": "Meteorology",
+      "D": "Hydrology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Seismology) is correct[cite: 2]. 'Seismology' is the geophysics branch studying earthquakes and tectonic movements[cite: 2].",
+    "tags": ["vocab", "ows", "science", "geography", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1019",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA conference or meeting for discussion, training, and academic exchange of ideas",
+    "options": {
+      "A": "Seminar",
+      "B": "Symposium",
+      "C": "Workshop",
+      "D": "Lecture"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Seminar) is correct[cite: 2]. A 'Seminar' is an educational meeting of specialists conferring on a subject[cite: 2].",
+    "tags": ["vocab", "ows", "education", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1020",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nQuickly reactive, delicate, and keenly aware of or responsive to other people's feelings",
+    "options": {
+      "A": "Sensitive",
+      "B": "Callous",
+      "C": "Unfeeling",
+      "D": "Insensitive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sensitive) is correct[cite: 2]. 'Sensitive' means acutely responsive to external stimuli or emotional nuances[cite: 2]. 'Callous' and 'Unfeeling' mean cruel and hardened[cite: 2].",
+    "tags": ["vocab", "ows", "personality", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1021",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is between seventy and seventy-nine years of age",
+    "options": {
+      "A": "Septuagenarian",
+      "B": "Octogenarian",
+      "C": "Sexagenarian",
+      "D": "Centenarian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Septuagenarian) is correct[cite: 2]. A 'Septuagenarian' is aged 70 to 79[cite: 2]. 'Octogenarian' is in their 80s[cite: 2], and 'Sexagenarian' is in their 60s[cite: 2].",
+    "tags": ["vocab", "ows", "age", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1022",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe unexpected occurrence and realization of fortunate events by chance in a happy way",
+    "options": {
+      "A": "Serendipity",
+      "B": "Calamity",
+      "C": "Misfortune",
+      "D": "Tragedy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Serendipity) is correct[cite: 2]. 'Serendipity' is the occurrence of valuable events by happy accident[cite: 2]. 'Calamity' is a disaster.",
+    "tags": ["vocab", "ows", "general", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1023",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nConsisting of a succession of similar things or items arranged in a row or order",
+    "options": {
+      "A": "Serial",
+      "B": "Random",
+      "C": "Haphazard",
+      "D": "Disjointed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Serial) is correct[cite: 2]. 'Serial' means arranged or happening in a sequential series[cite: 2]. 'Haphazard' means lacking any organized plan[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1024",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe breeding and rearing of silk worms for the commercial production of silk",
+    "options": {
+      "A": "Sericulture",
+      "B": "Apiculture",
+      "C": "Viticulture",
+      "D": "Horticulture"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sericulture) is correct[cite: 2]. 'Sericulture' is silk farming[cite: 2]. 'Apiculture' is beekeeping[cite: 2], and 'Viticulture' is grape cultivation[cite: 2].",
+    "tags": ["vocab", "ows", "science", "agriculture", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1025",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo cut, divide, or break something into separate pieces forcefully",
+    "options": {
+      "A": "Sever",
+      "B": "Weld",
+      "C": "Fuse",
+      "D": "Splice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sever) is correct[cite: 2]. 'Sever' means to divide or detach by cutting abruptly[cite: 2]. 'Weld' and 'Fuse' mean to join together.",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1026",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is between sixty and sixty-nine years of age",
+    "options": {
+      "A": "Sexagenarian",
+      "B": "Septuagenarian",
+      "C": "Octogenarian",
+      "D": "Centenarian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sexagenarian) is correct[cite: 2]. A 'Sexagenarian' is aged 60 to 69[cite: 2].",
+    "tags": ["vocab", "ows", "age", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1027",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA vertical or sloping passageway, tunnel, or well sinking into a mine",
+    "options": {
+      "A": "Shaft",
+      "B": "Trench",
+      "C": "Tunnel",
+      "D": "Chasm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Shaft) is correct[cite: 2]. A 'Shaft' is a vertical or oblique tunnel leading down into a mine[cite: 2]. 'Chasm' is a deep crack in the earth[cite: 2].",
+    "tags": ["vocab", "ows", "mining", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1028",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA close-fitting protective case or cover for a sword blade or knife",
+    "options": {
+      "A": "Sheath",
+      "B": "Holster",
+      "C": "Quiver",
+      "D": "Scabbard"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sheath) is correct[cite: 2]. A 'Sheath' is a protective covering for a blade or tool[cite: 2].",
+    "tags": ["vocab", "ows", "objects", "weapons", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1029",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large group of fish or sea creatures swimming together in a synchronized cluster",
+    "options": {
+      "A": "Shoal",
+      "B": "Herd",
+      "C": "Flock",
+      "D": "Swarm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Shoal) is correct[cite: 2]. A 'Shoal' (or school) is the collective term for a large group of fish[cite: 2]. 'Herd' is for cattle[cite: 2].",
+    "tags": ["vocab", "ows", "collective_nouns", "animals", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1030",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMetal fragments and shivers scattered by an exploding artillery shell, landmine, or bomb",
+    "options": {
+      "A": "Shrapnel",
+      "B": "Bullet",
+      "C": "Missile",
+      "D": "Torpedo"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Shrapnel) is correct[cite: 2]. 'Shrapnel' refers to flying metal fragments from an exploded shell or bomb[cite: 2].",
+    "tags": ["vocab", "ows", "military", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1031",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA figure of speech directly comparing two different things using the words 'like' or 'as'",
+    "options": {
+      "A": "Simile",
+      "B": "Metaphor",
+      "C": "Oxymoron",
+      "D": "Personification"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Simile) is correct[cite: 2]. A 'Simile' is a rhetorical comparison utilizing 'like' or 'as' (e.g., brave as a lion)[cite: 2]. 'Metaphor' implies a direct comparison without 'like' or 'as'.",
+    "tags": ["vocab", "ows", "literature", "grammar", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1032",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOccurring, operating, or happening at exactly the same moment in time",
+    "options": {
+      "A": "Simultaneous",
+      "B": "Successive",
+      "C": "Sequential",
+      "D": "Consecutive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Simultaneous) is correct[cite: 2]. 'Simultaneous' means occurring at the exact same instant[cite: 2]. 'Successive' and 'Consecutive' occur one after another.",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1033",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sinecure position or office providing a high salary and status while requiring little or no work duties",
+    "options": {
+      "A": "Sinecure",
+      "B": "Honorarium",
+      "C": "Remuneration",
+      "D": "Bounty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sinecure) is correct[cite: 2]. A 'Sinecure' is an office providing financial benefit without any corresponding workload[cite: 2].",
+    "tags": ["vocab", "ows", "work", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1034",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe internal or external supporting framework of rigid bones in vertebrates",
+    "options": {
+      "A": "Skeleton",
+      "B": "Ligament",
+      "C": "Tendon",
+      "D": "Carcass"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Skeleton) is correct[cite: 2]. A 'Skeleton' is the bony framework supporting an animal or human body[cite: 2].",
+    "tags": ["vocab", "ows", "anatomy", "science", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1035",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo reduce or decrease in speed, intensity, or activity; slow down",
+    "options": {
+      "A": "Slacken",
+      "B": "Accelerate",
+      "C": "Escalate",
+      "D": "Expedite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Slacken) is correct[cite: 2]. 'Slacken' means to make or become slack, looser, or slower in pace[cite: 2]. 'Accelerate' means to increase speed[cite: 2].",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1036",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo have saliva dripping profusely or running from the mouth",
+    "options": {
+      "A": "Slobber",
+      "B": "Swallow",
+      "C": "Devour",
+      "D": "Gulp"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Slobber) is correct[cite: 2]. 'Slobber' (or drool) means to let saliva run from the mouth uncontrollably[cite: 2].",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1037",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo kill someone by covering their nose and mouth so that they suffocate and die",
+    "options": {
+      "A": "Smother",
+      "B": "Impale",
+      "C": "Stab",
+      "D": "Execute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Smother) is correct[cite: 2]. 'Smother' means to suffocate a person by depriving them of oxygen[cite: 2].",
+    "tags": ["vocab", "ows", "crime", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1038",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person regarded as arrogant, snobbish, and looking down on others of lower social standing",
+    "options": {
+      "A": "Snob",
+      "B": "Altruist",
+      "C": "Samaritan",
+      "D": "Egalitarian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Snob) is correct[cite: 2]. A 'Snob' is an arrogant person who despises those they consider culturally or socially inferior[cite: 2].",
+    "tags": ["vocab", "ows", "personality", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1039",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study and classification of human societies and social institutions",
+    "options": {
+      "A": "Sociology",
+      "B": "Anthropology",
+      "C": "Ethnology",
+      "D": "Psychology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sociology) is correct[cite: 2]. 'Sociology' is the study of the development, structure, and problems of human society[cite: 2].",
+    "tags": ["vocab", "ows", "science", "humanities", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1040",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA brief, temporary stay or visit at a place while travelling",
+    "options": {
+      "A": "Sojourn",
+      "B": "Journey",
+      "C": "Voyage",
+      "D": "Odyssey"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sojourn) is correct[cite: 2]. A 'Sojourn' is a temporary, short-term stay at a place[cite: 2]. 'Journey' is travel from place to place[cite: 2].",
+    "tags": ["vocab", "ows", "travel", "time", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1041",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA minor grammatical error or breach of good etiquette in speech or writing",
+    "options": {
+      "A": "Solecism",
+      "B": "Malapropism",
+      "C": "Tautology",
+      "D": "Neologism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Solecism) is correct[cite: 2]. A 'Solecism' is a grammatical breach or breach of etiquette[cite: 2]. 'Malapropism' is a word misuse[cite: 2].",
+    "tags": ["vocab", "ows", "language", "errors", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1042",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA dramatic speech in which a character talks to themselves, voicing their inner thoughts aloud alone",
+    "options": {
+      "A": "Soliloquy",
+      "B": "Dialogue",
+      "C": "Harangue",
+      "D": "Diatribe"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Soliloquy) is correct[cite: 2]. A 'Soliloquy' is a theatrical monologue where a character expresses inner thoughts aloud alone[cite: 2].",
+    "tags": ["vocab", "ows", "literature", "theatre", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1043",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe state or quality of being alone or secluded, especially when experienced as a pleasant, peaceful state",
+    "options": {
+      "A": "Solitude",
+      "B": "Desolation",
+      "C": "Loneliness",
+      "D": "Isolation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Solitude) is correct[cite: 2]. 'Solitude' is the state of peaceful seclusion and being alone by choice[cite: 2].",
+    "tags": ["vocab", "ows", "emotions", "lifestyle", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1044",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFinancially sound and stable; able to pay all debts and financial obligations",
+    "options": {
+      "A": "Solvent",
+      "B": "Bankrupt",
+      "C": "Insolvent",
+      "D": "Destitute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Solvent) is correct[cite: 2]. 'Solvent' means having sufficient assets to meet all debts[cite: 2]. 'Bankrupt' and 'Insolvent' mean financially ruined[cite: 2].",
+    "tags": ["vocab", "ows", "finance", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1045",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe abnormal habit or condition of walking while asleep",
+    "options": {
+      "A": "Somnambulism",
+      "B": "Insomnia",
+      "C": "Amnesia",
+      "D": "Aphasia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Somnambulism) is correct[cite: 2]. 'Somnambulism' is sleepwalking[cite: 2]. 'Insomnia' is sleeplessness[cite: 2].",
+    "tags": ["vocab", "ows", "medical", "sleep", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1046",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who habitually walks around while asleep; a sleepwalker",
+    "options": {
+      "A": "Somnambulist",
+      "B": "Insomniac",
+      "C": "Funambulist",
+      "D": "Acrobat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Somnambulist) is correct[cite: 2]. A 'Somnambulist' is someone who performs walking activities while asleep[cite: 2].",
+    "tags": ["vocab", "ows", "people", "medical", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1047",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA strict fourteen-line lyrical poem written in iambic pentameter with a formal rhyme scheme",
+    "options": {
+      "A": "Sonnet",
+      "B": "Ballad",
+      "C": "Elegy",
+      "D": "Epic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sonnet) is correct[cite: 2]. A 'Sonnet' is a 14-line structured poem[cite: 2].",
+    "tags": ["vocab", "ows", "poetry", "literature", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1048",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medicinal drug or chemical substance that induces drowsiness or sleep",
+    "options": {
+      "A": "Soporific",
+      "B": "Stimulant",
+      "C": "Emetic",
+      "D": "Antidote"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Soporific) is correct[cite: 2]. A 'Soporific' induces sleep or dulls mental awareness[cite: 2].",
+    "tags": ["vocab", "ows", "medical", "science", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1049",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe practice of black magic, witchcraft, or invoking evil spirits to perform supernatural acts",
+    "options": {
+      "A": "Sorcery",
+      "B": "Astronomy",
+      "C": "Theology",
+      "D": "Philosophy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sorcery) is correct[cite: 2]. 'Sorcery' is witchcraft or black magic utilizing occult forces[cite: 2].",
+    "tags": ["vocab", "ows", "occult", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1050",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe unlawful crime of murdering one's own sister",
+    "options": {
+      "A": "Sororicide",
+      "B": "Fratricide",
+      "C": "Patricide",
+      "D": "Matricide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sororicide) is correct[cite: 2]. 'Sororicide' is the murder of a sister[cite: 2]. 'Fratricide' is killing a brother[cite: 2].",
+    "tags": ["vocab", "ows", "killing", "law", "pyq_ssc", "repeated_2_times"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_1001",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A bird in the hand is worth two in the bush**",
+    "options": {
+      "A": "Hunting wild birds in forests is a profitable sport",
+      "B": "Taking care of domestic pets is better than exploring nature",
+      "C": "It is better to keep what you have than to risk losing it by trying to get more",
+      "D": "Catching two opportunities at once is the secret to quick success"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. This proverb/idiom means you should hold on to what you already possess rather than risking it for potential, uncertain gains.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1002",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A bitter pill to swallow**",
+    "options": {
+      "A": "An unpleasant or painful truth or reality that must be accepted",
+      "B": "An ineffective medical tablet prescribed for a minor illness",
+      "C": "A dangerous chemical substance handled in laboratories",
+      "D": "An insincere compliment paid by an untrustworthy rival"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'A bitter pill to swallow' refers to a harsh, inevitable fact or situation that is difficult but necessary to accept.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1003",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A bull in a china shop**",
+    "options": {
+      "A": "A fierce livestock animal in an open farm market",
+      "B": "A dealer in fragile Asian porcelain and ceramic antiques",
+      "C": "An expert negotiator who handles delicate disputes easily",
+      "D": "A clumsy, reckless person who causes damage or disruption in delicate situations"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. A 'bull in a china shop' describes someone who acts tactlessly, recklessly, or clumsily in a sensitive environment.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1004",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A clean bill of health**",
+    "options": {
+      "A": "An invoice paid on time at a medical pharmacy",
+      "B": "A formal declaration that someone is healthy, reliable, or functioning properly",
+      "C": "A hospital discharge receipt issued after long treatment",
+      "D": "A strict fitness regimen followed by professional athletes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'clean bill of health' means official confirmation that someone is completely healthy or that an organization is free of problems.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1005",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A close shave**",
+    "options": {
+      "A": "A smooth facial shave completed at a salon",
+      "B": "A minor financial loss in an investment",
+      "C": "A narrow escape from serious danger, injury, or disaster",
+      "D": "A neat haircut required for military recruits"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'A close shave' refers to an incident where a person narrowly avoids an accident, failure, or harm.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1006",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A dime a dozen**",
+    "options": {
+      "A": "Very common, commonplace, and having little distinct value",
+      "B": "Purchasing small wholesale goods at bargain markets",
+      "C": "A rare set of collectible antique coins",
+      "D": "Counting money precisely in a business register"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Something that is 'a dime a dozen' is extremely common and easily acquired, making it ordinary.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1007",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A feather in one's cap**",
+    "options": {
+      "A": "A decorative bird plume worn during formal galas",
+      "B": "A distinguished achievement of which one can be proud",
+      "C": "A minor accessory worn to show political loyalty",
+      "D": "A subtle sign of cowardice shown during conflict"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'A feather in one's cap' is an accomplishment, milestone, or honor that brings personal pride and recognition.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1008",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A fish out of water**",
+    "options": {
+      "A": "A marine species preserved in an aquarium tank",
+      "B": "A seafood delicacy served at an upscale banquet",
+      "C": "A person feeling completely uncomfortable and out of place in unfamiliar surroundings",
+      "D": "A swimmer struggling against a strong ocean current"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'A fish out of water' describes someone who feels awkward, uneasy, or unaccustomed in a foreign or strange environment.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1009",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A flash in the pan**",
+    "options": {
+      "A": "A sudden grease flame in a domestic kitchen",
+      "B": "A short-lived, temporary success that is not repeated",
+      "C": "A bright strobe light used in studio photography",
+      "D": "A rapid cooking technique for gourmet dishes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'A flash in the pan' signifies a sudden, brief burst of success or brilliance that quickly fades and produces no lasting result.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1010",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A hot potato**",
+    "options": {
+      "A": "A steaming dish served fresh during winter meals",
+      "B": "A valuable prize contested in athletic competitions",
+      "C": "A controversial, difficult problem that no one wants to handle or discuss",
+      "D": "A quick commercial transaction completed for profit"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'A hot potato' is an awkward, sensitive, or contentious subject that people prefer to avoid dealing with.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1011",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A left-handed compliment**",
+    "options": {
+      "A": "An insult disguised as, or accompanied by, praise",
+      "B": "A sincere compliment written with one's left hand",
+      "C": "A warm greeting delivered by a foreign diplomat",
+      "D": "A formal commendation given to a junior employee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'A left-handed compliment' (or backhanded compliment) is an ambiguous remark that seems polite but actually conveys an insult.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1012",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A night owl**",
+    "options": {
+      "A": "A nocturnal predatory bird observed in wildlife parks",
+      "B": "A watchman assigned to a private warehouse",
+      "C": "A medical patient suffering from acute sleep loss",
+      "D": "A person who habitually stays up late and remains active at night"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. A 'night owl' is someone who prefers staying awake, studying, or working during the late night hours.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1013",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A penny for your thoughts**",
+    "options": {
+      "A": "A small financial payment for completing writing chores",
+      "B": "A humorous way of asking what someone is thinking about",
+      "C": "An appraisal of intellectual concepts in philosophy",
+      "D": "A donation made to support academic researchers"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'A penny for your thoughts' is a friendly phrase used to inquire what someone who looks quiet or pensive is thinking.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1014",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A piece of cake**",
+    "options": {
+      "A": "A slice of sweet confectionery eaten at a party",
+      "B": "A modest share of corporate investment profits",
+      "C": "Something that is very easy, simple, and effortless to do",
+      "D": "A reward given to the winner of a baking contest"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'A piece of cake' is an informal expression denoting a task or challenge that requires minimal effort.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1015",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A rolling stone gathers no moss**",
+    "options": {
+      "A": "A person who constantly changes locations or jobs avoids responsibilities but gathers no wealth or roots",
+      "B": "Heavy boulders rolling down a hillside clear forest tracks easily",
+      "C": "Physical exercise prevents long-term muscular joint stiffness",
+      "D": "Traveling across the world improves business opportunities"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. This idiom states that a wanderer or unstable person never settles down or builds lasting attachments and wealth.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1016",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A sacred cow**",
+    "options": {
+      "A": "A domestic bovine animal venerated in rural areas",
+      "B": "An institution, custom, or person considered immune from criticism or alteration",
+      "C": "A livestock specimen protected under wildlife laws",
+      "D": "An ancient religious statue displayed in historical museums"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'sacred cow' refers to an idea, practice, or system that is held in such high regard that no one dares to challenge or criticize it.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1017",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A sea of troubles**",
+    "options": {
+      "A": "A large number of severe problems or difficulties overwhelming someone",
+      "B": "Navigating rough ocean waves during a monsoon gale",
+      "C": "A legal dispute involving international maritime vessels",
+      "D": "Pollution threatening marine ecosystems along a coast"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'A sea of troubles' means an overwhelming, vast array of misfortunes or difficulties.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1018",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A sight for sore eyes**",
+    "options": {
+      "A": "A painful ophthalmic disease requiring immediate medicine",
+      "B": "A person or thing that is very pleasant, welcome, and relieving to see",
+      "C": "A blinding flash of bright neon light in a dark room",
+      "D": "An unpleasant, horrifying spectacle on a street"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'A sight for sore eyes' is someone or something that you are exceptionally glad or relieved to see.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1019",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A slap on the wrist**",
+    "options": {
+      "A": "A severe physical strike dealt during an altercation",
+      "B": "A medical cast applied to an injured wrist bone",
+      "C": "A gesture of warm congratulations given by a mentor",
+      "D": "A very mild, lenient punishment or reprimand for a fault"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'A slap on the wrist' is an insignificant, very mild penalty for an offense.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1020",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A snake in the grass**",
+    "options": {
+      "A": "A harmless reptile hiding under lawn foliage",
+      "B": "A deceitful, treacherous enemy pretending to be a friend",
+      "C": "A venomous viper found in tropical forests",
+      "D": "A gardener cutting overgrown grass carefully"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'A snake in the grass' refers to a hidden, treacherous person who appears friendly but secretly plots harm.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1021",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A stone's throw**",
+    "options": {
+      "A": "A contest of throwing rocks across a river",
+      "B": "A quarry mining area outside city limits",
+      "C": "A very short, easily reachable distance away",
+      "D": "An arduous overland journey between towns"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'A stone's throw' denotes a very short physical distance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1022",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A storm in a teacup**",
+    "options": {
+      "A": "A major fuss, commotion, or excitement over a trivial matter",
+      "B": "A dangerous cyclone sinking coastal cargo vessels",
+      "C": "A hot tea spill causing burns in a restaurant",
+      "D": "An erroneous meteorological weather forecast"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'A storm in a teacup' refers to excessive, exaggerated outrage over an insignificant issue.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1023",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A thorn in one's flesh**",
+    "options": {
+      "A": "A small medical injury sustained during farming",
+      "B": "A constant, persistent source of annoyance, trouble, or irritation",
+      "C": "A prickly garden bush planted along fences",
+      "D": "A sharp metal needle used in hand stitching"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'A thorn in one's flesh' (or side) is a continual nuisance or obstacle that causes recurring trouble.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1024",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A wild goose chase**",
+    "options": {
+      "A": "Hunting wild geese in wetlands",
+      "B": "A thrilling wildlife sanctuary safari",
+      "C": "A fast racing competition among birds",
+      "D": "A foolish, hopeless, and futile pursuit of something unattainable"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'A wild goose chase' is a pointless, futile search or enterprise with no possibility of success.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1025",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A wolf in sheep's clothing**",
+    "options": {
+      "A": "A dangerous predator or deceiver disguised as a harmless, friendly person",
+      "B": "A shepherd keeping his herd warm in winter",
+      "C": "A heavy wool jacket worn in cold climates",
+      "D": "A domestic sheep behaving aggressively"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'A wolf in sheep's clothing' describes an enemy or harmful person who masks their true intentions behind an innocent appearance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1026",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Above board**",
+    "options": {
+      "A": "Carried out openly, legitimately, honestly, and without deception",
+      "B": "Constructed on the upper deck of a ship",
+      "C": "Operating beyond standard legal regulations",
+      "D": "Conducted with extreme arrogance and pride"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Above board' describes transactions or behavior that are transparent, legitimate, and honorable.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1027",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Achilles' heel**",
+    "options": {
+      "A": "A strong physical muscle built by athletic exercise",
+      "B": "A fatal weakness or vulnerable spot in an otherwise strong entity",
+      "C": "A strategic breakthrough in corporate management",
+      "D": "A secret ambition harbored by political leaders"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. An 'Achilles' heel' is a crucial point of vulnerability or flaw in something that is generally strong.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1028",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Acid test**",
+    "options": {
+      "A": "A chemical reaction carried out in laboratories",
+      "B": "An easy multiple-choice examination",
+      "C": "A conclusive, definitive trial that proves the true value or authenticity of something",
+      "D": "A test for soil acidity in agricultural farming"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. An 'acid test' is a definitive, rigorous test that clearly proves the effectiveness, worth, or genuineness of something.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1029",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Add fuel to the fire**",
+    "options": {
+      "A": "To supply timber to a campsite fireplace",
+      "B": "To cook food quickly on an open flame",
+      "C": "To worsen an already bad, tense, or hostile situation",
+      "D": "To extinguish a burning structure effectively"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'add fuel to the fire' (or flames) means to say or do something that inflames an already angry or difficult situation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1030",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Add insult to injury**",
+    "options": {
+      "A": "To offer medical treatment to an injured person",
+      "B": "To apologize sincerely after committing a mistake",
+      "C": "To file a formal damages claim in court",
+      "D": "To make a bad or humiliating situation even worse by further offensive action"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. To 'add insult to injury' means to act in a way that worsens an already painful, humiliating, or difficult state of affairs.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1031",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**All and sundry**",
+    "options": {
+      "A": "Only the selected members of a private committee",
+      "B": "Everyone; each and every person without distinction",
+      "C": "A variety of dry items stored in a warehouse",
+      "D": "A scattered group of travelers lost on a road"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'All and sundry' means everyone collectively or individually, without exception.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1032",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**All at sea**",
+    "options": {
+      "A": "Sailing on a vacation cruise far from land",
+      "B": "Serving as a professional naval marine officer",
+      "C": "Completely confused, perplexed, and disoriented",
+      "D": "Swimming in deep coastal waters"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To be 'all at sea' means to be thoroughly puzzled, confused, or uncertain about what to do.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1033",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**All ears**",
+    "options": {
+      "A": "Suffering from severe acoustic hearing loss",
+      "B": "Listening eagerly, attentively, and with full concentration",
+      "C": "Wearing large ear coverings during winter",
+      "D": "Ignoring what a companion is explaining"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'all ears' means listening with keen, undivided attention.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1034",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**All in the same boat**",
+    "options": {
+      "A": "Traveling together on an organized river cruise",
+      "B": "Competing against one another in a rowing regatta",
+      "C": "Sharing the same difficult, unpleasant, or risky circumstances",
+      "D": "Working in identical corporate office cubicles"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Being 'in the same boat' means being in the same tough or challenging situation as others.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1035",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**All moonshine**",
+    "options": {
+      "A": "Bright lunar glow illuminating the night sky",
+      "B": "Total nonsense, complete fabrication, or untrue talk",
+      "C": "An astronomical study of lunar phases",
+      "D": "Working night shifts under streetlights"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'All moonshine' refers to utter nonsense, unrealistic ideas, or fabricated lies.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1036",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**An apple of discord**",
+    "options": {
+      "A": "A poisonous fruit cultivated in orchard farms",
+      "B": "A generous gift offered to restore friendship",
+      "C": "A subject, object, or issue that causes bitter dispute, quarrel, or rivalry",
+      "D": "A tasty dessert served at formal banquets"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'An apple of discord' is the root cause of contention or a dispute between people.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1037",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**An arm and a leg**",
+    "options": {
+      "A": "A serious orthopedic limb injury",
+      "B": "A tailored measurement for bespoke suits",
+      "C": "An extremely large, exorbitant amount of money",
+      "D": "An intense exercise regimen for bodybuilders"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Costing 'an arm and a leg' means being exorbitantly expensive.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1038",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**An axe to grind**",
+    "options": {
+      "A": "A private selfish reason, ulterior motive, or grievance to settle",
+      "B": "A heavy woodworking tool used for felling trees",
+      "C": "A sincere desire to assist a community project",
+      "D": "An official regulatory policy passed by a council"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having 'an axe to grind' means having a personal, selfish interest or a grievance behind one's actions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1039",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Apple of one's eye**",
+    "options": {
+      "A": "A patient suffering from visual impairment",
+      "B": "An untrustworthy acquaintance who causes distress",
+      "C": "Someone who is cherished, loved, and valued above all others",
+      "D": "A person who excels in academic optical studies"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. The 'apple of one's eye' is someone who is adored and treasured dearly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1040",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Apple-pie order**",
+    "options": {
+      "A": "A recipe list at a commercial bakery shop",
+      "B": "Perfect, immaculate order and systematic neatness",
+      "C": "A chaotic mess left on a dining table",
+      "D": "A delivery parcel packed with sweet dishes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Apple-pie order' means in perfect, meticulous arrangement and complete neatness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1041",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At a loss**",
+    "options": {
+      "A": "Perplexed, bewildered, or not knowing what to say or do",
+      "B": "Suffering a severe financial deficit in business",
+      "C": "Losing a valuable possession during a journey",
+      "D": "Defeated in a close athletic tournament match"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To be 'at a loss' means to be puzzled, uncertain, or unable to find the right words or decision.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1042",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At a snail's pace**",
+    "options": {
+      "A": "Moving with immense speed and agility",
+      "B": "Following a trail left by garden pests",
+      "C": "Operating in an erratic, unpredictable pattern",
+      "D": "Moving, progressing, or working extremely slowly"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. Doing something 'at a snail's pace' means advancing or working very slowly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1043",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At arm's length**",
+    "options": {
+      "A": "Measuring the sleeve length of clothing garments",
+      "B": "To avoid becoming too familiar or intimate; maintaining a safe distance",
+      "C": "Greeting an associate with a warm embrace",
+      "D": "Stretching one's arms during physical exercise"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Keeping someone 'at arm's length' means avoiding closeness, intimacy, or friendship.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1044",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At daggers drawn**",
+    "options": {
+      "A": "Participating in a historical fencing display",
+      "B": "In a state of fierce, bitter, and open hostility or enmity",
+      "C": "Signing a formal peace treaty between rivals",
+      "D": "Practicing martial arts in a training hall"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'at daggers drawn' means being intensely hostile and on the verge of fighting.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1045",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At loggerheads**",
+    "options": {
+      "A": "Engaged in strong, stubborn disagreement or violent conflict",
+      "B": "Working together cooperatively on a timber project",
+      "C": "Felling heavy trees in a logging forest",
+      "D": "Resting peacefully after a hard working day"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'at loggerheads' means being in direct, stubborn opposition or bitter dispute with someone.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1046",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At one's beck and call**",
+    "options": {
+      "A": "Always ready to obey someone's orders or commands immediately",
+      "B": "Receiving frequent telephone communications from work",
+      "C": "Calling out loudly for emergency medical assistance",
+      "D": "Ignoring requests made by senior colleagues"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'at someone's beck and call' means being entirely subservient and instantly ready to follow their orders.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1047",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At one's fingertips**",
+    "options": {
+      "A": "Experiencing numbness in finger joints",
+      "B": "Readily available, completely familiar, and accessible for immediate use",
+      "C": "Typing rapidly on a computer keyboard",
+      "D": "Handling fragile ceramic ornaments carefully"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having information 'at one's fingertips' means possessing complete knowledge that is instantly available.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1048",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At one's wits' end**",
+    "options": {
+      "A": "Displaying exceptional wit and humor at a banquet",
+      "B": "Extremely clever in solving scientific puzzles",
+      "C": "Completely overwhelmed, bewildered, and not knowing what to do next",
+      "D": "Concluding a humorous speech to loud applause"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Being 'at one's wits' end' means being so worried or confused that you have run out of ideas on how to proceed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1049",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At sea**",
+    "options": {
+      "A": "Sailing on ocean waters aboard a vessel",
+      "B": "Confused, lost, or unable to understand a situation",
+      "C": "Serving in naval defense forces",
+      "D": "Catching fish in deep waters"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To be 'at sea' means to be perplexed, bewildered, or confused.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1050",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At sixes and sevens**",
+    "options": {
+      "A": "Calculating numbers precisely in accounting",
+      "B": "Dividing assets into equal shares among partners",
+      "C": "Living in perfect harmony and mutual cooperation",
+      "D": "In a state of total confusion, disorder, or disagreement"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. Being 'at sixes and sevens' describes a chaotic state of disorganization, muddle, or disagreement.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

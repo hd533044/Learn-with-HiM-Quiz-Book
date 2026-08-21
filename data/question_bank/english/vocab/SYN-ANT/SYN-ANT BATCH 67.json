@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_3301",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SOMNOLENT**",
+    "options": {
+      "A": "Drowsy",
+      "B": "Alert",
+      "C": "Awake",
+      "D": "Vigilant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Somnolent' means sleepy; drowsy. 'Drowsy', 'sleepy', or 'lethargic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3302",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SOMNOLENT**",
+    "options": {
+      "A": "Drowsy",
+      "B": "Sleepy",
+      "C": "Alert",
+      "D": "Lethargic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Somnolent' means drowsy. 'Alert', 'awake', or 'vigilant' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3303",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SONOROUS**",
+    "options": {
+      "A": "Resonant",
+      "B": "Quiet",
+      "C": "Silent",
+      "D": "Muffled"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sonorous' means (of a person's voice or other sound) imposingly deep and full. 'Resonant', 'full-toned', or 'booming' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3304",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SONOROUS**",
+    "options": {
+      "A": "Resonant",
+      "B": "Full-toned",
+      "C": "Quiet",
+      "D": "Booming"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sonorous' means deep and full. 'Quiet', 'silent', or 'muffled' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3305",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SOPHISTICATED**",
+    "options": {
+      "A": "Cultured",
+      "B": "Naive",
+      "C": "Crude",
+      "D": "Simple"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sophisticated' means (of a person or their ideas) having, revealing, or proceeding from a great deal of worldly experience and knowledge of fashion and culture. 'Cultured', 'refined', or 'worldly' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3306",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SOPHISTICATED**",
+    "options": {
+      "A": "Cultured",
+      "B": "Refined",
+      "C": "Naive",
+      "D": "Worldly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sophisticated' means cultured/worldly. 'Naive', 'crude', or 'simple' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3307",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SOPORIFIC**",
+    "options": {
+      "A": "Sleep-inducing",
+      "B": "Stimulating",
+      "C": "Invigorating",
+      "D": "Exciting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Soporific' means tending to induce drowsiness or sleep. 'Sleep-inducing', 'sedative', or 'calming' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3308",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SOPORIFIC**",
+    "options": {
+      "A": "Sleep-inducing",
+      "B": "Sedative",
+      "C": "Stimulating",
+      "D": "Calming"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Soporific' means sleep-inducing. 'Stimulating', 'invigorating', or 'exciting' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3309",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SORDID**",
+    "options": {
+      "A": "Squalid",
+      "B": "Clean",
+      "C": "Pure",
+      "D": "Honorable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sordid' means involving ignoble actions and motives; arousing moral distaste and contempt; dirty or squalid. 'Squalid', 'dirty', or 'sleazy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3310",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SORDID**",
+    "options": {
+      "A": "Squalid",
+      "B": "Dirty",
+      "C": "Clean",
+      "D": "Sleazy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sordid' means squalid. 'Clean', 'pure', or 'honorable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3311",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPARSE**",
+    "options": {
+      "A": "Meager",
+      "B": "Abundant",
+      "C": "Copious",
+      "D": "Ample"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sparse' means thinly dispersed or scattered. 'Meager', 'scanty', or 'thin' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3312",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPARSE**",
+    "options": {
+      "A": "Meager",
+      "B": "Scanty",
+      "C": "Abundant",
+      "D": "Thin"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sparse' means meager. 'Abundant', 'copious', or 'ample' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3313",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPASMODIC**",
+    "options": {
+      "A": "Intermittent",
+      "B": "Constant",
+      "C": "Steady",
+      "D": "Continuous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Spasmodic' means occurring or done in brief, irregular bursts. 'Intermittent', 'irregular', or 'fitful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3314",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPASMODIC**",
+    "options": {
+      "A": "Intermittent",
+      "B": "Irregular",
+      "C": "Constant",
+      "D": "Fitful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Spasmodic' means irregular. 'Constant', 'steady', or 'continuous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3315",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPECIOUS**",
+    "options": {
+      "A": "Misleading",
+      "B": "Genuine",
+      "C": "Authentic",
+      "D": "Valid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Specious' means superficially plausible, but actually wrong. 'Misleading', 'deceptive', or 'fallacious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3316",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPECIOUS**",
+    "options": {
+      "A": "Misleading",
+      "B": "Deceptive",
+      "C": "Genuine",
+      "D": "Fallacious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Specious' means misleading. 'Genuine', 'authentic', or 'valid' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3317",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPECTER**",
+    "options": {
+      "A": "Ghost",
+      "B": "Reality",
+      "C": "Fact",
+      "D": "Truth"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Specter' refers to a ghost; something widely feared as a possible unpleasant occurrence. 'Ghost', 'apparition', or 'phantom' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3318",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPECTER**",
+    "options": {
+      "A": "Ghost",
+      "B": "Apparition",
+      "C": "Reality",
+      "D": "Phantom"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Specter' is a ghost. 'Reality', 'fact', or 'truth' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3319",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPENDTHRIFT**",
+    "options": {
+      "A": "Wasteful",
+      "B": "Thrifty",
+      "C": "Frugal",
+      "D": "Economical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Spendthrift' refers to a person who spends money in an extravagant, irresponsible way. 'Wasteful', 'extravagant', or 'prodigal' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3320",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPENDTHRIFT**",
+    "options": {
+      "A": "Wasteful",
+      "B": "Extravagant",
+      "C": "Thrifty",
+      "D": "Prodigal"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Spendthrift' means wasteful. 'Thrifty', 'frugal', or 'economical' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3321",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPLEEN**",
+    "options": {
+      "A": "Bad temper",
+      "B": "Kindness",
+      "C": "Goodwill",
+      "D": "Friendliness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Spleen' refers to bad temper; spite. 'Bad temper', 'spite', or 'malice' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3322",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPLEEN**",
+    "options": {
+      "A": "Bad temper",
+      "B": "Spite",
+      "C": "Kindness",
+      "D": "Malice"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Spleen' is bad temper. 'Kindness', 'goodwill', or 'friendliness' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3323",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPONTANEOUS**",
+    "options": {
+      "A": "Unplanned",
+      "B": "Planned",
+      "C": "Deliberate",
+      "D": "Calculated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Spontaneous' means performed or occurring as a result of a sudden inner impulse or inclination and without premeditation or external stimulus. 'Unplanned', 'impromptu', or 'impulsive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3324",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPONTANEOUS**",
+    "options": {
+      "A": "Unplanned",
+      "B": "Impromptu",
+      "C": "Planned",
+      "D": "Impulsive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Spontaneous' means unplanned. 'Planned', 'deliberate', or 'calculated' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3325",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPORADIC**",
+    "options": {
+      "A": "Occasional",
+      "B": "Frequent",
+      "C": "Constant",
+      "D": "Continuous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sporadic' means occurring at irregular intervals or only in a few places; scattered or isolated. 'Occasional', 'irregular', or 'intermittent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3326",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPORADIC**",
+    "options": {
+      "A": "Occasional",
+      "B": "Irregular",
+      "C": "Frequent",
+      "D": "Intermittent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sporadic' means occasional. 'Frequent', 'constant', or 'continuous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3327",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPURIOUS**",
+    "options": {
+      "A": "False",
+      "B": "Genuine",
+      "C": "Authentic",
+      "D": "Real"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Spurious' means not being what it purports to be; false or fake. 'False', 'fake', or 'counterfeit' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3328",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPURIOUS**",
+    "options": {
+      "A": "False",
+      "B": "Fake",
+      "C": "Genuine",
+      "D": "Counterfeit"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Spurious' means false. 'Genuine', 'authentic', or 'real' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3329",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPURN**",
+    "options": {
+      "A": "Reject",
+      "B": "Accept",
+      "C": "Welcome",
+      "D": "Embrace"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Spurn' means to reject with disdain or contempt. 'Reject', 'despise', or 'scorn' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3330",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPURN**",
+    "options": {
+      "A": "Reject",
+      "B": "Despise",
+      "C": "Accept",
+      "D": "Scorn"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Spurn' means to reject. 'Accept', 'welcome', or 'embrace' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3331",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SQUALID**",
+    "options": {
+      "A": "Dirty",
+      "B": "Clean",
+      "C": "Pure",
+      "D": "Neat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Squalid' means (of a place) extremely dirty and unpleasant, especially as a result of poverty or neglect. 'Dirty', 'filthy', or 'seedy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3332",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SQUALID**",
+    "options": {
+      "A": "Dirty",
+      "B": "Filthy",
+      "C": "Clean",
+      "D": "Seedy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Squalid' means dirty. 'Clean', 'pure', or 'neat' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3333",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SQUANDER**",
+    "options": {
+      "A": "Waste",
+      "B": "Save",
+      "C": "Conserve",
+      "D": "Hoard"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Squander' means to waste (something, especially money or time) in a reckless and foolish manner. 'Waste', 'misspend', or 'lavish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3334",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SQUANDER**",
+    "options": {
+      "A": "Waste",
+      "B": "Misspend",
+      "C": "Save",
+      "D": "Lavish"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Squander' means to waste. 'Save', 'conserve', or 'hoard' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3335",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STAGNANT**",
+    "options": {
+      "A": "Still",
+      "B": "Flowing",
+      "C": "Moving",
+      "D": "Active"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stagnant' means (of a body of water or the atmosphere of a confined space) having no current or flow and often having an unpleasant smell as a consequence. 'Still', 'motionless', or 'sluggish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3336",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STAGNANT**",
+    "options": {
+      "A": "Still",
+      "B": "Motionless",
+      "C": "Flowing",
+      "D": "Sluggish"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stagnant' means still. 'Flowing', 'moving', or 'active' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3337",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STAID**",
+    "options": {
+      "A": "Sedate",
+      "B": "Wild",
+      "C": "Excited",
+      "D": "Frantic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Staid' means sedate, respectable, and unadventurous. 'Sedate', 'serious', or 'solemn' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3338",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STAID**",
+    "options": {
+      "A": "Sedate",
+      "B": "Serious",
+      "C": "Wild",
+      "D": "Solemn"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Staid' means sedate. 'Wild', 'excited', or 'frantic' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3339",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STALWART**",
+    "options": {
+      "A": "Strong",
+      "B": "Weak",
+      "C": "Frail",
+      "D": "Cowardly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stalwart' means loyal, reliable, and hardworking. 'Strong', 'loyal', or 'sturdy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3340",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STALWART**",
+    "options": {
+      "A": "Strong",
+      "B": "Loyal",
+      "C": "Weak",
+      "D": "Sturdy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stalwart' means strong. 'Weak', 'frail', or 'cowardly' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3341",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STAMINA**",
+    "options": {
+      "A": "Endurance",
+      "B": "Weakness",
+      "C": "Fragility",
+      "D": "Infirmity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stamina' refers to the ability to sustain prolonged physical or mental effort. 'Endurance', 'sturdiness', or 'vigor' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3342",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STAMINA**",
+    "options": {
+      "A": "Endurance",
+      "B": "Sturdiness",
+      "C": "Weakness",
+      "D": "Vigor"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stamina' means endurance. 'Weakness', 'fragility', or 'infirmity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3343",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STASIS**",
+    "options": {
+      "A": "Inactivity",
+      "B": "Activity",
+      "C": "Movement",
+      "D": "Motion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stasis' refers to a period or state of inactivity or equilibrium. 'Inactivity', 'stagnation', or 'equilibrium' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3344",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STASIS**",
+    "options": {
+      "A": "Inactivity",
+      "B": "Stagnation",
+      "C": "Movement",
+      "D": "Equilibrium"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stasis' means inactivity. 'Movement', 'motion', or 'activity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3345",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STEALTHY**",
+    "options": {
+      "A": "Secretive",
+      "B": "Open",
+      "C": "Public",
+      "D": "Overt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stealthy' means behaving, done, or made in a cautious and surreptitious manner, so as not to be seen or heard. 'Secretive', 'furtive', or 'surreptitious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3346",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STEALTHY**",
+    "options": {
+      "A": "Secretive",
+      "B": "Furtive",
+      "C": "Open",
+      "D": "Surreptitious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stealthy' means secretive. 'Open', 'public', or 'overt' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3347",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STENTORIAN**",
+    "options": {
+      "A": "Loud",
+      "B": "Quiet",
+      "C": "Soft",
+      "D": "Muffled"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stentorian' means (of a person's voice) loud and powerful. 'Loud', 'booming', or 'thundering' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3348",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STENTORIAN**",
+    "options": {
+      "A": "Loud",
+      "B": "Booming",
+      "C": "Quiet",
+      "D": "Thundering"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stentorian' means loud and powerful. 'Quiet', 'soft', or 'muffled' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3349",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STIGMA**",
+    "options": {
+      "A": "Disgrace",
+      "B": "Honor",
+      "C": "Credit",
+      "D": "Glory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stigma' refers to a mark of disgrace associated with a particular circumstance, quality, or person. 'Disgrace', 'shame', or 'dishonor' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3350",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STIGMA**",
+    "options": {
+      "A": "Disgrace",
+      "B": "Shame",
+      "C": "Honor",
+      "D": "Dishonor"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stigma' is a mark of disgrace. 'Honor', 'credit', or 'glory' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

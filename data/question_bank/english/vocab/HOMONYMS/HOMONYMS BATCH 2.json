@@ -1,0 +1,602 @@
+[
+  {
+    "id": "ENG_VOCAB_HOM_2351",
+    "question": "Choose the correct homonym to fill in the blank: 'The manager issued a formal _____ to the tardy employee.'",
+    "options": {
+      "A": "summit",
+      "B": "summons",
+      "C": "summary",
+      "D": "symbol"
+    },
+    "correct_option": "B",
+    "explanation": "'Summons' refers to an official order or call to appear somewhere, whereas 'summit' is a peak and 'summary' is a brief statement."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2352",
+    "question": "Fill in the blank: 'Please provide a brief _____ of the meeting.'",
+    "options": {
+      "A": "summit",
+      "B": "summons",
+      "C": "summary",
+      "D": "sympathy"
+    },
+    "correct_option": "C",
+    "explanation": "'Summary' means a brief statement or account of the main points."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2353",
+    "question": "Spot the error: 'The report ended with a clear and concise summit.'",
+    "options": {
+      "A": "The report ended",
+      "B": "with a clear and",
+      "C": "concise summit.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "A 'summit' is a mountain top or leadership meeting. A brief account is a 'summary'. Correct: 'concise summary'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2354",
+    "question": "Fill in the blank: 'The criminal was sent to a maximum security _____.'",
+    "options": {
+      "A": "penitentiary",
+      "B": "precedent",
+      "C": "president",
+      "D": "providence"
+    },
+    "correct_option": "A",
+    "explanation": "'Penitentiary' is a prison for people convicted of serious crimes."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2355",
+    "question": "Fill in the blank: 'The court ruling set a new legal _____ for future cases.'",
+    "options": {
+      "A": "penitentiary",
+      "B": "precedent",
+      "C": "president",
+      "D": "proceed"
+    },
+    "correct_option": "B",
+    "explanation": "'Precedent' is an earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2356",
+    "question": "Spot the error: 'He will preside as the new precedent of the organization.'",
+    "options": {
+      "A": "He will preside",
+      "B": "as the new precedent",
+      "C": "of the organization.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The head of an organization is the 'president', not a 'precedent'. Correct: 'the new president'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2357",
+    "question": "Fill in the blank: 'Let us _____ with the discussion after a short break.'",
+    "options": {
+      "A": "proceed",
+      "B": "precede",
+      "C": "persuade",
+      "D": "provide"
+    },
+    "correct_option": "A",
+    "explanation": "'Proceed' means to begin a course of action or continue doing something."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2358",
+    "question": "Fill in the blank: 'Thunder usually _____ lightning in a heavy storm.' (Note: physically light travels faster, but structurally 'precede' means to come before). Let's use: 'The introduction will _____ the main chapter.'",
+    "options": {
+      "A": "proceed",
+      "B": "precede",
+      "C": "pretend",
+      "D": "presume"
+    },
+    "correct_option": "B",
+    "explanation": "'Precede' means to come before something in order or position."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2359",
+    "question": "Spot the error: 'Always think carefully before you precede to act.'",
+    "options": {
+      "A": "Always think carefully",
+      "B": "before you precede",
+      "C": "to act.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "To move forward or continue an action is 'proceed', not 'precede' (which means to go before). Correct: 'before you proceed to act'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2360",
+    "question": "Fill in the blank: 'The detective found a vital _____ at the crime scene.'",
+    "options": {
+      "A": "clue",
+      "B": "cue",
+      "C": "queue",
+      "D": "crew"
+    },
+    "correct_option": "A",
+    "explanation": "'Clue' is a piece of evidence or information used in the detection of a crime."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2361",
+    "question": "Fill in the blank: 'The director gave the actor his _____ to enter the stage.'",
+    "options": {
+      "A": "clue",
+      "B": "cue",
+      "C": "queue",
+      "D": "crew"
+    },
+    "correct_option": "B",
+    "explanation": "'Cue' is a signal for an actor to enter or begin speaking."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2362",
+    "question": "Spot the error: 'Customers stood in a long cue outside the ticket counter.'",
+    "options": {
+      "A": "Customers stood",
+      "B": "in a long cue",
+      "C": "outside the ticket counter.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A line of people waiting is a 'queue' (spelled q-u-e-u-e). 'Cue' is a signal or wooden stick. Correct: 'in a long queue'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2363",
+    "question": "Fill in the blank: 'The knight wore a heavy suit of _____.'",
+    "options": {
+      "A": "armor",
+      "B": "arbor",
+      "C": "alarm",
+      "D": "amount"
+    },
+    "correct_option": "A",
+    "explanation": "'Armor' is the protective covering worn in combat."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2364",
+    "question": "Fill in the blank: 'They sat in the shade of the garden _____.'",
+    "options": {
+      "A": "armor",
+      "B": "arbor",
+      "C": "altar",
+      "D": "actor"
+    },
+    "correct_option": "B",
+    "explanation": "'Arbor' is a shady garden alcove with trees or climbing plants."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2365",
+    "question": "Spot the error: 'The ship dropped its anchor in the calm harbor.'",
+    "options": {
+      "A": "The ship dropped",
+      "B": "its anchor",
+      "C": "in the calm harbor.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Anchor' is the heavy metal object used to moor a ship. Correct spelling and usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2366",
+    "question": "Fill in the blank: 'The television _____ hosted the evening news broadcast.'",
+    "options": {
+      "A": "anchor",
+      "B": "author",
+      "C": "actor",
+      "D": "auditor"
+    },
+    "correct_option": "A",
+    "explanation": "A newsreader or presenter is also called an 'anchor' or 'anchorman'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2367",
+    "question": "Fill in the blank: 'She wrote a bestselling _____ about her travels.'",
+    "options": {
+      "A": "memoir",
+      "B": "manor",
+      "C": "minor",
+      "D": "mirror"
+    },
+    "correct_option": "A",
+    "explanation": "'Memoir' is an historical account or biography written from personal knowledge."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2368",
+    "question": "Fill in the blank: 'The wealthy lord lived in a sprawling country _____.'",
+    "options": {
+      "A": "memoir",
+      "B": "manor",
+      "C": "minor",
+      "D": "mirror"
+    },
+    "correct_option": "B",
+    "explanation": "'Manor' refers to a large country house with lands."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2369",
+    "question": "Spot the error: 'He was only a mirror player in the grand scheme.'",
+    "options": {
+      "A": "He was only",
+      "B": "a mirror player",
+      "C": "in the grand scheme.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Someone of lesser importance is a 'minor' player, not a 'mirror' player. Correct: 'a minor player'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2370",
+    "question": "Fill in the blank: 'The artist used a large _____ to check her reflection.'",
+    "options": {
+      "A": "memoir",
+      "B": "manor",
+      "C": "minor",
+      "D": "mirror"
+    },
+    "correct_option": "D",
+    "explanation": "'Mirror' is a reflective surface."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2371",
+    "question": "Fill in the blank: 'The royal family lives in a magnificent _____.'",
+    "options": {
+      "A": "palace",
+      "B": "palate",
+      "C": "palette",
+      "D": "pellet"
+    },
+    "correct_option": "A",
+    "explanation": "'Palace' is the official residence of a sovereign."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2372",
+    "question": "Fill in the blank: 'Good wine can please a refined _____.'",
+    "options": {
+      "A": "palace",
+      "B": "palate",
+      "C": "palette",
+      "D": "pellet"
+    },
+    "correct_option": "B",
+    "explanation": "'Palate' refers to the roof of the mouth and the sense of taste."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2373",
+    "question": "Spot the error: 'The painter mixed colors on her wood palace.'",
+    "options": {
+      "A": "The painter mixed colors",
+      "B": "on her wood palace.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "A board used by painters to mix colors is a 'palette'. Correct: 'on her wood palette'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2374",
+    "question": "Fill in the blank: 'The hunter loaded small lead _____ into his air rifle.'",
+    "options": {
+      "A": "palace",
+      "B": "palate",
+      "C": "palette",
+      "D": "pellets"
+    },
+    "correct_option": "D",
+    "explanation": "'Pellets' are small, rounded balls of metal or other matter."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2375",
+    "question": "Fill in the blank: 'She felt a sharp _____ of conscience after lying to her friend.'",
+    "options": {
+      "A": "pang",
+      "B": "prong",
+      "C": "ping",
+      "D": "prong"
+    },
+    "correct_option": "A",
+    "explanation": "'Pang' is a sudden sharp pain or painful emotion."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2376",
+    "question": "Fill in the blank: 'Lift the food using the fork's sharp _____.'",
+    "options": {
+      "A": "pang",
+      "B": "prong",
+      "C": "ping",
+      "D": "plug"
+    },
+    "correct_option": "B",
+    "explanation": "'Prong' is each of two or more sharp pointed projections on a fork or similar tool."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2377",
+    "question": "Spot the error: 'The submarine detected an underwater ping on the radar.'",
+    "options": {
+      "A": "The submarine detected",
+      "B": "an underwater ping",
+      "C": "on the radar.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Ping' is a short, high-pitched sound typical of sonar detection. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2378",
+    "question": "Fill in the blank: 'The ancient manuscript was written on fragile _____.'",
+    "options": {
+      "A": "papyrus",
+      "B": "paralysis",
+      "C": "parody",
+      "D": "prospect"
+    },
+    "correct_option": "A",
+    "explanation": "'Papyrus' is a material prepared in ancient Egypt from the pithy stem of a water plant."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2379",
+    "question": "Fill in the blank: 'The comedian performed a brilliant _____ of the classic movie.'",
+    "options": {
+      "A": "papyrus",
+      "B": "paralysis",
+      "C": "parody",
+      "D": "prophecy"
+    },
+    "correct_option": "C",
+    "explanation": "'Parody' is an imitation of the style of a particular writer, artist, or genre with deliberate exaggeration for comic effect."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2380",
+    "question": "Spot the error: 'A sudden stroke caused total parody in his left arm.'",
+    "options": {
+      "A": "A sudden stroke caused",
+      "B": "total parody",
+      "C": "in his left arm.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Loss of the ability to move is 'paralysis', not 'parody' (which is a comedic imitation). Correct: 'total paralysis'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2381",
+    "question": "Fill in the blank: 'The athlete reached the absolute _____ of his career.'",
+    "options": {
+      "A": "pinnacle",
+      "B": "pimple",
+      "C": "pit",
+      "D": "pendulum"
+    },
+    "correct_option": "A",
+    "explanation": "'Pinnacle' refers to the most successful point; the culmination."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2382",
+    "question": "Fill in the blank: 'The heavy _____ of the grandfather clock swung steadily back and forth.'",
+    "options": {
+      "A": "pinnacle",
+      "B": "pedal",
+      "C": "pendulum",
+      "D": "petals"
+    },
+    "correct_option": "C",
+    "explanation": "'Pendulum' is a weight hung from a fixed point so that it can swing freely."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2383",
+    "question": "Spot the error: 'Press the right petal to accelerate the car.'",
+    "options": {
+      "A": "Press the right petal",
+      "B": "to accelerate",
+      "C": "the car.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "A flower part is a 'petal', while a foot-operated lever in a vehicle is a 'pedal'. Correct: 'Press the right pedal'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2384",
+    "question": "Fill in the blank: 'The scientist looked through the _____ to observe the stars.'",
+    "options": {
+      "A": "periscope",
+      "B": "telescope",
+      "C": "stethoscope",
+      "D": "microscope"
+    },
+    "correct_option": "B",
+    "explanation": "'Telescope' is used for viewing distant celestial objects."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2385",
+    "question": "Fill in the blank: 'The doctor used a _____ to listen to the patient's heartbeat.'",
+    "options": {
+      "A": "periscope",
+      "B": "telescope",
+      "C": "stethoscope",
+      "D": "microscope"
+    },
+    "correct_option": "C",
+    "explanation": "'Stethoscope' is a medical instrument for listening to internal body sounds."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2386",
+    "question": "Spot the error: 'Sailors in a submerged submarine use a microscope to see above water.'",
+    "options": {
+      "A": "Sailors in a submerged submarine",
+      "B": "use a microscope",
+      "C": "to see above water.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A device for viewing over a surface/water from a submerged position is a 'periscope', not a microscope. Correct: 'use a periscope'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2387",
+    "question": "Fill in the blank: 'The traveler needed a valid _____ to enter the foreign country.'",
+    "options": {
+      "A": "passport",
+      "B": "postscript",
+      "C": "prospect",
+      "D": "portait"
+    },
+    "correct_option": "A",
+    "explanation": "'Passport' is an official document issued by a government certifying identity and citizenship."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2388",
+    "question": "Fill in the blank: 'He added a _____ at the end of his letter.'",
+    "options": {
+      "A": "passport",
+      "B": "postscript",
+      "C": "prospect",
+      "D": "prologue"
+    },
+    "correct_option": "B",
+    "explanation": "'Postscript' (P.S.) is an additional remark written at the end of a letter after the signature."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2389",
+    "question": "Spot the error: 'There is little prospect of finding a job in this market.'",
+    "options": {
+      "A": "There is little prospect",
+      "B": "of finding a job",
+      "C": "in this market.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Prospect' means the possibility or likelihood of some future event occurring. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2390",
+    "question": "Fill in the blank: 'The chef added a pinch of salt to enhance the _____.'",
+    "options": {
+      "A": "savory",
+      "B": "flavor",
+      "C": "favour",
+      "D": "fervor"
+    },
+    "correct_option": "B",
+    "explanation": "'Flavor' refers to the distinctive taste of a food or substance."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2391",
+    "question": "Fill in the blank: 'She carried out her duties with immense patriotic _____.'",
+    "options": {
+      "A": "flavor",
+      "B": "favour",
+      "C": "fervor",
+      "D": "feather"
+    },
+    "correct_option": "C",
+    "explanation": "'Fervor' means intense and passionate feeling."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2392",
+    "question": "Spot the error: 'Can you do me a big flavor and lend me your pen?'",
+    "options": {
+      "A": "Can you do me",
+      "B": "a big flavor",
+      "C": "and lend me your pen?",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "An act of kindness is a 'favour' (or 'favor'), not a 'flavor' (taste). Correct: 'a big favour'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2393",
+    "question": "Fill in the blank: 'The criminal was able to _____ arrest by fleeing the country.'",
+    "options": {
+      "A": "elude",
+      "B": "allude",
+      "C": "illude",
+      "D": "include"
+    },
+    "correct_option": "A",
+    "explanation": "'Elude' means to evade or escape from a danger, enemy, or pursuer, typically in a skillful way."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2394",
+    "question": "Fill in the blank: 'The speaker decided to _____ to ancient Greek philosophy during his speech.'",
+    "options": {
+      "A": "elude",
+      "B": "allude",
+      "C": "illusion",
+      "D": "delude"
+    },
+    "correct_option": "B",
+    "explanation": "'Allude' means to suggest or call attention to indirectly; hint at."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2395",
+    "question": "Spot the error: 'The magician created a wonderful optical allusion.'",
+    "options": {
+      "A": "The magician created",
+      "B": "a wonderful optical allusion.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "A deceptive appearance is an 'illusion', whereas an 'allusion' is an indirect reference. Correct: 'optical illusion'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2396",
+    "question": "Fill in the blank: 'He was found guilty of perjury because he lied under _____.'",
+    "options": {
+      "A": "oath",
+      "B": "out",
+      "C": "odd",
+      "D": "ore"
+    },
+    "correct_option": "A",
+    "explanation": "'Oath' is a solemn promise, often invoking a divine witness, regarding one's future action or behavior."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2397",
+    "question": "Fill in the blank: 'The metal _____ was extracted from the deep mine.'",
+    "options": {
+      "A": "oath",
+      "B": "ouija",
+      "C": "ore",
+      "D": "oar"
+    },
+    "correct_option": "C",
+    "explanation": "'Ore' is a naturally occurring solid material from which a metal or valuable mineral can be profitably extracted."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2398",
+    "question": "Spot the error: 'Row the boat faster by pulling hard on the ore.'",
+    "options": {
+      "A": "Row the boat faster",
+      "B": "by pulling hard",
+      "C": "on the ore.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "The pole used for rowing a boat is an 'oar', while 'ore' is unrefined rock/mineral. Correct: 'on the oar'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2399",
+    "question": "Fill in the blank: 'The sudden economic crash caused widespread _____ among investors.'",
+    "options": {
+      "A": "panic",
+      "B": "picnic",
+      "C": "punic",
+      "D": "tonic"
+    },
+    "correct_option": "A",
+    "explanation": "'Panic' refers to sudden uncontrollable fear or anxiety."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2400",
+    "question": "What is the primary difference between a 'homophone' and a 'homograph'?",
+    "options": {
+      "A": "Homophones sound the same but may differ in spelling; homographs share spelling but may differ in sound/meaning.",
+      "B": "Homophones have opposite meanings; homographs have identical definitions.",
+      "C": "There is no linguistic difference between them.",
+      "D": "Homophones are exclusively verbs."
+    },
+    "correct_option": "A",
+    "explanation": "Homophones share pronunciation, while homographs share written spelling."
+  }
+]

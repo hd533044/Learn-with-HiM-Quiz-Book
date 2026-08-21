@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_2701",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MUNDANE**",
+    "options": {
+      "A": "Ordinary",
+      "B": "Commonplace",
+      "C": "Extraordinary",
+      "D": "Dull"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mundane' means everyday or dull. 'Extraordinary', 'unusual', or 'exceptional' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2702",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MUNIFICENT**",
+    "options": {
+      "A": "Generous",
+      "B": "Stingy",
+      "C": "Parsimonious",
+      "D": "Miserly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Munificent' means (of a gift or sum of money) larger or more generous than is usual or necessary. 'Generous', 'bountiful', or 'magnanimous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2703",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MUNIFICENT**",
+    "options": {
+      "A": "Generous",
+      "B": "Bountiful",
+      "C": "Stingy",
+      "D": "Magnanimous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Munificent' means very generous. 'Stingy', 'miserly', or 'parsimonious' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2704",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MUTABLE**",
+    "options": {
+      "A": "Changeable",
+      "B": "Immutable",
+      "C": "Constant",
+      "D": "Fixed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mutable' means liable to change. 'Changeable', 'variable', or 'inconstant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2705",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MUTABLE**",
+    "options": {
+      "A": "Changeable",
+      "B": "Variable",
+      "C": "Immutable",
+      "D": "Inconstant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mutable' means capable of changing. 'Immutable', 'constant', or 'fixed' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2706",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MYRIAD**",
+    "options": {
+      "A": "Countless",
+      "B": "Few",
+      "C": "Limited",
+      "D": "Scarce"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Myriad' refers to a countless or extremely great number. 'Countless', 'innumerable', or 'multitudinous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2707",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MYRIAD**",
+    "options": {
+      "A": "Countless",
+      "B": "Innumerable",
+      "C": "Limited",
+      "D": "Multitudinous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Myriad' means a great number. 'Limited', 'few', or 'scarce' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2708",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NADIR**",
+    "options": {
+      "A": "Lowest point",
+      "B": "Zenith",
+      "C": "Apex",
+      "D": "Peak"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nadir' refers to the lowest point in the fortunes of a person or organization. 'Lowest point', 'rock bottom', or 'depths' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2709",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NADIR**",
+    "options": {
+      "A": "Lowest point",
+      "B": "Rock bottom",
+      "C": "Zenith",
+      "D": "Depths"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nadir' is the lowest point. 'Zenith', 'apex', or 'peak' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2710",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NASCENT**",
+    "options": {
+      "A": "Developing",
+      "B": "Mature",
+      "C": "Established",
+      "D": "Full-grown"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nascent' means just coming into existence and beginning to display signs of future potential. 'Developing', 'emerging', or 'beginning' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2711",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NASCENT**",
+    "options": {
+      "A": "Developing",
+      "B": "Emerging",
+      "C": "Mature",
+      "D": "Beginning"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nascent' means early-stage. 'Mature', 'established', or 'full-grown' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2712",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NATAL**",
+    "options": {
+      "A": "Related to birth",
+      "B": "Related to death",
+      "C": "Related to aging",
+      "D": "Terminal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Natal' relates to the place or time of one's birth. 'Related to birth' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2713",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NEBULOUS**",
+    "options": {
+      "A": "Vague",
+      "B": "Clear",
+      "C": "Definite",
+      "D": "Precise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nebulous' means in the form of a cloud or haze; hazy or unclear. 'Vague', 'indistinct', or 'hazy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2714",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NEBULOUS**",
+    "options": {
+      "A": "Vague",
+      "B": "Indistinct",
+      "C": "Clear",
+      "D": "Hazy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nebulous' means unclear. 'Clear', 'definite', or 'precise' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2715",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NEFARIOUS**",
+    "options": {
+      "A": "Wicked",
+      "B": "Virtuous",
+      "C": "Moral",
+      "D": "Righteous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nefarious' means (typically of an action or activity) wicked or criminal. 'Wicked', 'evil', or 'sinful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2716",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NEFARIOUS**",
+    "options": {
+      "A": "Wicked",
+      "B": "Evil",
+      "C": "Virtuous",
+      "D": "Sinful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nefarious' means wicked. 'Virtuous', 'moral', or 'righteous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2717",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NEGLIGIBLE**",
+    "options": {
+      "A": "Trivial",
+      "B": "Significant",
+      "C": "Important",
+      "D": "Major"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Negligible' means so small or unimportant as to be not worth considering. 'Trivial', 'insignificant', or 'minor' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2718",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NEGLIGIBLE**",
+    "options": {
+      "A": "Trivial",
+      "B": "Insignificant",
+      "C": "Significant",
+      "D": "Minor"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Negligible' means unimportant. 'Significant', 'important', or 'major' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2719",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NEOLOGISM**",
+    "options": {
+      "A": "New word",
+      "B": "Archaism",
+      "C": "Old word",
+      "D": "Obsolete term"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Neologism' refers to a newly coined word or expression. 'New word' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2720",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NEOLOGISM**",
+    "options": {
+      "A": "New word",
+      "B": "Neologism",
+      "C": "Archaism",
+      "D": "New expression"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Neologism' is a new word. 'Archaism' (an old word) is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2721",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NEOPHYTE**",
+    "options": {
+      "A": "Novice",
+      "B": "Expert",
+      "C": "Master",
+      "D": "Pro"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Neophyte' means a person who is new to a subject, skill, or belief. 'Novice', 'beginner', or 'tyro' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2722",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NEOPHYTE**",
+    "options": {
+      "A": "Novice",
+      "B": "Beginner",
+      "C": "Expert",
+      "D": "Tyro"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Neophyte' is a beginner. 'Expert', 'master', or 'professional' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2723",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NEUTRAL**",
+    "options": {
+      "A": "Impartial",
+      "B": "Biased",
+      "C": "Partisan",
+      "D": "Prejudiced"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Neutral' means not supporting or helping either side in a conflict. 'Impartial', 'unbiased', or 'nonpartisan' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2724",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NEUTRAL**",
+    "options": {
+      "A": "Impartial",
+      "B": "Unbiased",
+      "C": "Biased",
+      "D": "Nonpartisan"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Neutral' means unbiased. 'Biased', 'partisan', or 'prejudiced' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2725",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NEXUS**",
+    "options": {
+      "A": "Connection",
+      "B": "Division",
+      "C": "Separation",
+      "D": "Gap"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nexus' refers to a connection or series of connections linking two or more things. 'Connection', 'link', or 'tie' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2726",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NEXUS**",
+    "options": {
+      "A": "Connection",
+      "B": "Link",
+      "C": "Separation",
+      "D": "Tie"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nexus' is a link. 'Separation', 'division', or 'gap' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2727",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NIHILISM**",
+    "options": {
+      "A": "Skepticism",
+      "B": "Belief",
+      "C": "Faith",
+      "D": "Optimism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nihilism' refers to the rejection of all religious and moral principles, often in the belief that life is meaningless. 'Skepticism', 'negativism', or 'disbelief' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2728",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NIHILISM**",
+    "options": {
+      "A": "Skepticism",
+      "B": "Negativism",
+      "C": "Belief",
+      "D": "Disbelief"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nihilism' is the rejection of beliefs. 'Belief', 'faith', or 'optimism' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2729",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NOISOME**",
+    "options": {
+      "A": "Harmful",
+      "B": "Pleasant",
+      "C": "Fragrant",
+      "D": "Delicious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Noisome' means having an extremely offensive smell; (literary) unpleasant; harmful. 'Harmful', 'foul', or 'noxious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2730",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NOISOME**",
+    "options": {
+      "A": "Harmful",
+      "B": "Foul",
+      "C": "Pleasant",
+      "D": "Noxious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Noisome' means foul-smelling. 'Pleasant', 'fragrant', or 'agreeable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2731",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NOMADIC**",
+    "options": {
+      "A": "Wandering",
+      "B": "Settled",
+      "C": "Stationary",
+      "D": "Fixed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nomadic' refers to people who have no permanent abode and travel from place to place. 'Wandering', 'itinerant', or 'roaming' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2732",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NOMADIC**",
+    "options": {
+      "A": "Wandering",
+      "B": "Itinerant",
+      "C": "Settled",
+      "D": "Roaming"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nomadic' means traveling. 'Settled', 'stationary', or 'fixed' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2733",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NOMINAL**",
+    "options": {
+      "A": "Insignificant",
+      "B": "Significant",
+      "C": "Substantial",
+      "D": "Major"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nominal' means (of a role or status) existing in name only; (of a price or amount of money) very small. 'Insignificant', 'trifling', or 'token' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2734",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NOMINAL**",
+    "options": {
+      "A": "Insignificant",
+      "B": "Trifling",
+      "C": "Significant",
+      "D": "Token"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nominal' means insignificant. 'Significant', 'substantial', or 'major' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2735",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NONCHALANT**",
+    "options": {
+      "A": "Indifferent",
+      "B": "Concerned",
+      "C": "Anxious",
+      "D": "Apprehensive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nonchalant' means feeling or appearing casually calm and relaxed. 'Indifferent', 'unconcerned', or 'cool' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2736",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NONCHALANT**",
+    "options": {
+      "A": "Indifferent",
+      "B": "Unconcerned",
+      "C": "Concerned",
+      "D": "Cool"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nonchalant' means unconcerned. 'Concerned', 'anxious', or 'apprehensive' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2737",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NONENTITY**",
+    "options": {
+      "A": "Nobody",
+      "B": "Somebody",
+      "C": "Personage",
+      "D": "Celebrity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nonentity' refers to a person or thing with no special or interesting qualities; an unimportant person. 'Nobody' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2738",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NONENTITY**",
+    "options": {
+      "A": "Nobody",
+      "B": "Unimportant person",
+      "C": "Somebody",
+      "D": "Nonentity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nonentity' is an unimportant person. 'Somebody', 'personage', or 'celebrity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2739",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NOSTALGIA**",
+    "options": {
+      "A": "Reminiscence",
+      "B": "Future-focus",
+      "C": "Anticipation",
+      "D": "Expectation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nostalgia' is a sentimental longing or wistful affection for the past. 'Reminiscence', 'wistfulness', or 'yearning' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2740",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NOSTALGIA**",
+    "options": {
+      "A": "Reminiscence",
+      "B": "Wistfulness",
+      "C": "Future-focus",
+      "D": "Yearning"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nostalgia' is longing for the past. 'Future-focus', 'anticipation', or 'expectation' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2741",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NOTORIETY**",
+    "options": {
+      "A": "Infamy",
+      "B": "Fame",
+      "C": "Honor",
+      "D": "Repute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Notoriety' refers to the state of being famous or well known for some bad quality or deed. 'Infamy', 'disgrace', or 'shame' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2742",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NOTORIETY**",
+    "options": {
+      "A": "Infamy",
+      "B": "Disgrace",
+      "C": "Fame",
+      "D": "Shame"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Notoriety' is fame for something bad. 'Fame', 'honor', or 'repute' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2743",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NOXIOUS**",
+    "options": {
+      "A": "Harmful",
+      "B": "Beneficial",
+      "C": "Healthy",
+      "D": "Wholesome"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Noxious' means harmful, poisonous, or very unpleasant. 'Harmful', 'poisonous', or 'toxic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2744",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NOXIOUS**",
+    "options": {
+      "A": "Harmful",
+      "B": "Poisonous",
+      "C": "Beneficial",
+      "D": "Toxic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Noxious' means harmful. 'Beneficial', 'wholesome', or 'healthy' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2745",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NUANCE**",
+    "options": {
+      "A": "Subtlety",
+      "B": "Obviousness",
+      "C": "Clarity",
+      "D": "Plainness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nuance' refers to a subtle difference in or shade of meaning, expression, or sound. 'Subtlety', 'refinement', or 'shade' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2746",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NUANCE**",
+    "options": {
+      "A": "Subtlety",
+      "B": "Refinement",
+      "C": "Obviousness",
+      "D": "Shade"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nuance' is a subtle difference. 'Obviousness', 'clarity', or 'plainness' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2747",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NURTURE**",
+    "options": {
+      "A": "Foster",
+      "B": "Neglect",
+      "C": "Starve",
+      "D": "Ignore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nurture' means to care for and encourage the growth or development of. 'Foster', 'cultivate', or 'rear' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2748",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NURTURE**",
+    "options": {
+      "A": "Foster",
+      "B": "Cultivate",
+      "C": "Neglect",
+      "D": "Rear"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nurture' means to care for. 'Neglect', 'ignore', or 'starve' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2749",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OBDURATE**",
+    "options": {
+      "A": "Stubborn",
+      "B": "Flexible",
+      "C": "Pliable",
+      "D": "Compliant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Obdurate' means stubbornly refusing to change one's opinion or course of action. 'Stubborn', 'obstinate', or 'inflexible' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2750",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OBDURATE**",
+    "options": {
+      "A": "Stubborn",
+      "B": "Obstinate",
+      "C": "Flexible",
+      "D": "Inflexible"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Obdurate' means stubborn. 'Flexible', 'pliable', or 'compliant' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

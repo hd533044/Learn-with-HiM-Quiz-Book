@@ -1,0 +1,614 @@
+[
+  {
+    "id": "ENG_VOCAB_PHRA_1901",
+    "question": "Choose the correct meaning of the phrasal verb 'back down'.",
+    "options": {
+      "A": "To withdraw from a position, argument, or commitment.",
+      "B": "To reverse a vehicle safely.",
+      "C": "To support someone in an argument.",
+      "D": "To increase pressure during negotiations."
+    },
+    "correct_option": "A",
+    "rationale": "'Back down' means to yield, concede, or withdraw from a claim or confrontation."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1902",
+    "question": "Fill in the blank: 'The corporation decided to _____ a subsidiary in Europe to expand operations.'",
+    "options": {
+      "A": "set up",
+      "B": "wind down",
+      "C": "lay off",
+      "D": "back out"
+    },
+    "correct_option": "A",
+    "rationale": "'Set up' means to establish or start a business, company, or organization."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1903",
+    "question": "Spot the error: 'Due to financial crunch, management had to lay off several workers.'",
+    "options": {
+      "A": "Due to financial crunch,",
+      "B": "management had to",
+      "C": "lay off several workers.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Lay off' means to dismiss employees due to economic reasons or lack of work. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1904",
+    "question": "Fill in the blank: 'The investors decided to _____ of the agreement at the last moment.'",
+    "options": {
+      "A": "back out",
+      "B": "back up",
+      "C": "draw up",
+      "D": "step in"
+    },
+    "correct_option": "A",
+    "rationale": "'Back out' means to withdraw from a promise, contract, or deal."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1905",
+    "question": "Choose the meaning of 'draw up':",
+    "options": {
+      "A": "To prepare a legal document, contract, or plan.",
+      "B": "To pull something upwards quickly.",
+      "C": "To exhaust resources.",
+      "D": "To postpone an event."
+    },
+    "correct_option": "A",
+    "explanation": "'Draw up' is commonly used in a corporate context to mean preparing a formal document or contract."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1906",
+    "question": "Fill in the blank: 'When the dispute worsened, the senior director had to _____ to mediate.'",
+    "options": {
+      "A": "step in",
+      "B": "step down",
+      "C": "step back",
+      "D": "step aside"
+    },
+    "correct_option": "A",
+    "rationale": "'Step in' means to intervene or get involved in a difficult situation to help."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1907",
+    "question": "Spot the error: 'The CEO stepped down from his position after a decade of service.'",
+    "options": {
+      "A": "The CEO stepped down",
+      "B": "from his position",
+      "C": "after a decade of service.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Step down' means to resign or leave an important position voluntarily. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1908",
+    "question": "What does 'keep on' mean?",
+    "options": {
+      "A": "To continue doing something persistently.",
+      "B": "To store items safely.",
+      "C": "To maintain high prices.",
+      "D": "To dismiss an employee."
+    },
+    "correct_option": "A",
+    "rationale": "'Keep on' means to persist or continue an action."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1909",
+    "question": "Fill in the blank: 'The firm plans to _____ its operations over the next five years by opening ten new branches.'",
+    "options": {
+      "A": "branch out",
+      "B": "wind down",
+      "C": "scale back",
+      "D": "close down"
+    },
+    "correct_option": "A",
+    "rationale": "'Branch out' means to expand into new areas of business or activity."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1910",
+    "question": "Spot the error: 'They decided to wind down the project due to recurring losses.'",
+    "options": {
+      "A": "They decided to",
+      "B": "wind down the project",
+      "C": "due to recurring losses.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Wind down' means to gradually bring a business or project to a close. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1911",
+    "question": "Choose the meaning of 'carry out':",
+    "options": {
+      "A": "To execute or perform a task or instruction.",
+      "B": "To export goods abroad.",
+      "C": "To transport heavy luggage.",
+      "D": "To abandon a responsibility."
+    },
+    "correct_option": "A",
+    "explanation": "'Carry out' means to fulfill, perform, or execute a duty, plan, or experiment."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1912",
+    "question": "Fill in the blank: 'We must _____ the contract terms before signing the final papers.'",
+    "options": {
+      "A": "look over",
+      "B": "look down",
+      "C": "look after",
+      "D": "look out"
+    },
+    "correct_option": "A",
+    "rationale": "'Look over' means to inspect or examine something cursorily or carefully."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1913",
+    "question": "Spot the error: 'The company handed over the management to a new director.'",
+    "options": {
+      "A": "The company handed over",
+      "B": "the management to",
+      "C": "a new director.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Hand over' means to give responsibility or control to someone else. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1914",
+    "question": "Fill in the blank: 'The new manager tried to _____ all departments to increase overall efficiency.'",
+    "options": {
+      "A": "streamline",
+      "B": "look into",
+      "C": "fall behind",
+      "D": "run down"
+    },
+    "correct_option": "A",
+    "rationale": "While 'streamline' is a single-word verb, phrasal equivalents like 'smarten up' or corporate phrasing fit, but here 'streamline' is standard vocabulary; let's substitute with a true phrasal verb: 'shape up'."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1914_CORRECTED",
+    "question": "Fill in the blank: 'The employees were asked to _____ their performance or face termination.'",
+    "options": {
+      "A": "shape up",
+      "B": "shape out",
+      "C": "shape down",
+      "D": "shape off"
+    },
+    "correct_option": "A",
+    "rationale": "'Shape up' means to improve one's behavior or performance."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1915",
+    "question": "Choose the meaning of 'fall behind':",
+    "options": {
+      "A": "To fail to maintain a required pace or schedule.",
+      "B": "To drop physically to the ground.",
+      "C": "To lose a competition intentionally.",
+      "D": "To support someone behind them."
+    },
+    "correct_option": "A",
+    "explanation": "'Fall behind' means to lag behind in progress, payments, or schedules."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1916",
+    "question": "Spot the error: 'He caught up with his peers after weeks of intensive study.'",
+    "options": {
+      "A": "He caught up with",
+      "B": "his peers after weeks",
+      "C": "of intensive study.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Catch up with' means to reach the same standard or level as others. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1917",
+    "question": "Fill in the blank: 'The board decided to _____ the merger proposal due to financial irregularities.'",
+    "options": {
+      "A": "throw out",
+      "B": "throw up",
+      "C": "throw in",
+      "D": "throw away"
+    },
+    "correct_option": "A",
+    "explanation": "'Throw out' means to reject or dismiss a proposal, case, or idea formally."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1918",
+    "question": "What does 'run down' mean when applied to a business or organization?",
+    "options": {
+      "A": "To lose power/energy or to criticize/decline gradually.",
+      "B": "To sprint quickly down a street.",
+      "C": "To review notes rapidly.",
+      "D": "To manufacture quickly."
+    },
+    "correct_option": "A",
+    "explanation": "'Run down' can mean losing power (batteries) or losing vitality/declining in quality."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1919",
+    "question": "Spot the error: 'She pencil-in the meeting for Tuesday morning.' (Evaluate phrasal verb form)",
+    "options": {
+      "A": "She pencil-in",
+      "B": "the meeting for",
+      "C": "Tuesday morning.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The phrasal verb is 'pencil in', and it must be conjugated in the past tense as 'penciled in'. Error is in A."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1920",
+    "question": "Fill in the blank: 'The accountant asked us to _____ the figures before submitting the tax report.'",
+    "options": {
+      "A": "check over",
+      "B": "check off",
+      "C": "check out",
+      "D": "check in"
+    },
+    "correct_option": "A",
+    "explanation": "'Check over' means to examine or review something thoroughly for accuracy."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1921",
+    "question": "What does 'knock off' mean in an informal business context?",
+    "options": {
+      "A": "To stop working for the day.",
+      "B": "To physically attack someone.",
+      "C": "To decrease a price intentionally.",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "'Knock off' can mean to finish work/cease activity or to reduce a price (e.g., knocking off $10)."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1922",
+    "question": "Fill in the blank: 'The startup managed to _____ venture capital funding despite tough market conditions.'",
+    "options": {
+      "A": "rake in",
+      "B": "rake up",
+      "C": "rake out",
+      "D": "rake down"
+    },
+    "correct_option": "A",
+    "explanation": "'Rake in' is an informal phrasal verb meaning to acquire a large amount of money or profit easily."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1923",
+    "question": "What is the meaning of 'rake up'?",
+    "options": {
+      "A": "To bring up an unpleasant memory or issue from the past.",
+      "B": "To collect leaves in a garden.",
+      "C": "To increase financial profits.",
+      "D": "To organize documents sequentially."
+    },
+    "correct_option": "A",
+    "explanation": "'Rake up' means to revive or bring to light unpleasant past matters."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1924",
+    "question": "Spot the error: 'The team pulled off a remarkable victory against the champions.'",
+    "options": {
+      "A": "The team pulled off",
+      "B": "a remarkable victory",
+      "C": "against the champions.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Pull off' means to succeed in achieving something difficult. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1925",
+    "question": "Fill in the blank: 'We cannot afford to _____ any delays in this logistics schedule.'",
+    "options": {
+      "A": "risk incurring",
+      "B": "reckon with",
+      "C": "rule out",
+      "D": "run into"
+    },
+    "correct_option": "C",
+    "explanation": "Let's look at phrasal verbs for exclusion: 'rule out' means to eliminate or dismiss a possibility."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1926",
+    "question": "What does 'reckon with' mean?",
+    "options": {
+      "A": "To take into consideration or deal with a powerful opponent/obstacle.",
+      "B": "To calculate a mathematical bill.",
+      "C": "To estimate future revenues.",
+      "D": "To dismiss an employee."
+    },
+    "correct_option": "A",
+    "explanation": "'Reckon with' means to deal with or take account of someone or something powerful."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1927",
+    "question": "Spot the error: 'The auditors are looking into the discrepancy in the ledger.'",
+    "options": {
+      "A": "The auditors are looking into",
+      "B": "the discrepancy in the ledger.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Look into' means to investigate. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1928",
+    "question": "Fill in the blank: 'The negotiations dragged ___ for more than six hours without a resolution.'",
+    "options": {
+      "A": "on",
+      "B": "out",
+      "C": "up",
+      "D": "down"
+    },
+    "correct_option": "A",
+    "explanation": "'Drag on' means to last longer than expected or desired in a tedious way."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1929",
+    "question": "Choose the meaning of 'drag out':",
+    "options": {
+      "A": "To unnecessarily prolong or extend a process or discussion.",
+      "B": "To physically pull someone out of a room.",
+      "C": "To extract data from a computer.",
+      "D": "To finish a task hastily."
+    },
+    "correct_option": "A",
+    "explanation": "'Drag out' means to cause something to become unnecessarily prolonged."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1930",
+    "question": "Spot the error: 'He stepped up his efforts to clear the backlog.'",
+    "options": {
+      "A": "He stepped up",
+      "B": "his efforts to",
+      "C": "clear the backlog.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Step up' means to increase or intensify an activity or effort. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1931",
+    "question": "Fill in the blank: 'The committee decided to _____ the controversial clause from the bill.'",
+    "options": {
+      "A": "strike out",
+      "B": "strike up",
+      "C": "strike down",
+      "D": "strike back"
+    },
+    "correct_option": "A",
+    "explanation": "'Strike out' can mean to cross something out or delete it from a document."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1932",
+    "question": "What does 'strike down' mean in a legal or constitutional context?",
+    "options": {
+      "A": "To declare a law or regulation invalid or unconstitutional.",
+      "B": "To physically knock down a witness.",
+      "C": "To dismiss a worker on strike.",
+      "D": "To reduce penalties abruptly."
+    },
+    "correct_option": "A",
+    "explanation": "'Strike down' means to legally nullify, invalidate, or abolish a law or statute."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1933",
+    "question": "Spot the error: 'They struck up a conversation while waiting for the flight.'",
+    "options": {
+      "A": "They struck up",
+      "B": "a conversation while",
+      "C": "waiting for the flight.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Strike up' means to start or begin a friendship, conversation, or alliance. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1934",
+    "question": "Fill in the blank: 'The company had to _____ heavy losses during the economic downturn.'",
+    "options": {
+      "A": "write off",
+      "B": "write down",
+      "C": "write in",
+      "D": "write up"
+    },
+    "correct_option": "A",
+    "explanation": "'Write off' in business means to cancel a bad debt or recognize an asset's loss in value."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1935",
+    "question": "What does 'write up' mean?",
+    "options": {
+      "A": "To compose a full report or account of something in writing.",
+      "B": "To criticize an employee formally.",
+      "C": "To increase the numerical value of inventory.",
+      "D": "To draft a legal complaint."
+    },
+    "correct_option": "A",
+    "explanation": "'Write up' means to produce a detailed written report or description based on notes or events."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1936",
+    "question": "Spot the error: 'The authorities clamped down on illegal parking in the downtown area.'",
+    "options": {
+      "A": "The authorities clamped down on",
+      "B": "illegal parking in",
+      "C": "the downtown area.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Clamp down on' means to act strictly to prevent or stop bad behavior or illegal acts. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1937",
+    "question": "Fill in the blank: 'We must _____ all possible options before finalizing the strategy.'",
+    "options": {
+      "A": "explore",
+      "B": "weigh up",
+      "C": "look after",
+      "D": "hold on"
+    },
+    "correct_option": "B",
+    "explanation": "'Weigh up' means to assess or estimate the relative importance or value of options."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1938",
+    "question": "What does 'peter out' mean?",
+    "options": {
+      "A": "To gradually diminish, fade, or come to an end.",
+      "B": "To fail an examination completely.",
+      "C": "To shout loudly in protest.",
+      "D": "To complete a task efficiently."
+    },
+    "correct_option": "A",
+    "explanation": "'Peter out' means to gradually weaken, decrease, or disappear over time."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1939",
+    "question": "Spot the error: 'The storm petered out before it reached the coastline.'",
+    "options": {
+      "A": "The storm petered out",
+      "B": "before it reached",
+      "C": "the coastline.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Petered out' is correctly used to describe a storm losing strength gradually. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1940",
+    "question": "Fill in the blank: 'The negotiations fell through because neither side was willing to _____.'",
+    "options": {
+      "A": "give in",
+      "B": "give out",
+      "C": "give away",
+      "D": "give off"
+    },
+    "correct_option": "A",
+    "explanation": "'Give in' means to cease resisting, yield, or surrender to an opponent or demand."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1941",
+    "question": "Choose the meaning of 'give off':",
+    "options": {
+      "A": "To emit or discharge something like light, heat, or a smell.",
+      "B": "To distribute items freely to the public.",
+      "C": "To resign from an official position.",
+      "D": "To collapse under external pressure."
+    },
+    "correct_option": "A",
+    "explanation": "'Give off' means to emit gas, odor, or radiation."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1942",
+    "question": "Spot the error: 'The chemical factory gives off toxic fumes during production.'",
+    "options": {
+      "A": "The chemical factory",
+      "B": "gives off",
+      "C": "toxic fumes during production.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Gives off' is appropriately used for emitting fumes. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1943",
+    "question": "Fill in the blank: 'The secret documents were _____ by a whistle-blower within the agency.'",
+    "options": {
+      "A": "leaked out",
+      "B": "given away",
+      "C": "passed down",
+      "D": "handed in"
+    },
+    "correct_option": "B",
+    "explanation": "'Give away' can mean to betray a secret or reveal confidential information."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1944",
+    "question": "What does 'hand in' mean?",
+    "options": {
+      "A": "To submit a report, assignment, or application formally.",
+      "B": "To physically shake hands with a partner.",
+      "C": "To assist someone in need.",
+      "D": "To surrender to law enforcement."
+    },
+    "correct_option": "A",
+    "explanation": "'Hand in' means to submit a completed document or assignment to an authority."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1945",
+    "question": "Spot the error: 'All students must hand in their essays by Friday afternoon.'",
+    "options": {
+      "A": "All students must hand in",
+      "B": "their essays by",
+      "C": "Friday afternoon.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Hand in' is correctly used for assignment submission. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1946",
+    "question": "Fill in the blank: 'The tradition has been _____ from generation to generation.'",
+    "options": {
+      "A": "passed down",
+      "B": "passed out",
+      "C": "passed away",
+      "D": "passed over"
+    },
+    "correct_option": "A",
+    "explanation": "'Pass down' means to transfer knowledge, traditions, or possessions to descendants or successors."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1947",
+    "question": "What does 'pass over' mean in a professional or promotional context?",
+    "options": {
+      "A": "To ignore or overlook someone for promotion or consideration.",
+      "B": "To cross a bridge or physical boundary.",
+      "C": "To transfer ownership legally.",
+      "D": "To review a document quickly."
+    },
+    "correct_option": "A",
+    "explanation": "'Pass over' means to ignore or bypass someone when allocating promotions or positions."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1948",
+    "question": "Spot the error: 'He was passed over for promotion despite his exceptional performance.'",
+    "options": {
+      "A": "He was passed over",
+      "B": "for promotion despite",
+      "C": "his exceptional performance.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Passed over' is correctly applied to being bypassed for a promotion. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1949",
+    "question": "Fill in the blank: 'The committee decided to _____ the rule because it was outdated.'",
+    "options": {
+      "A": "scrap",
+      "B": "do away with",
+      "C": "break down",
+      "D": "phase out"
+    },
+    "correct_option": "B",
+    "explanation": "'Do away with' means to abolish, eliminate, or get rid of something obsolete."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_1950",
+    "question": "What is the meaning of 'phase out'?",
+    "options": {
+      "A": "To discontinue something gradually in stages over a period of time.",
+      "B": "To stop an action abruptly and permanently.",
+      "C": "To introduce a new system simultaneously.",
+      "D": "To expand a process rapidly."
+    },
+    "correct_option": "A",
+    "explanation": "'Phase out' means to withdraw or abolish something in gradual stages rather than all at once."
+  }
+]

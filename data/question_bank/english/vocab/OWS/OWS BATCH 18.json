@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0851",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe act or process of destroying and killing harmful pests, insects, or vermin",
+    "options": {
+      "A": "Pesticide",
+      "B": "Herbicide",
+      "C": "Avicide",
+      "D": "Fungicide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pesticide) is correct. 'Pesticide' is a chemical substance used to kill destructive insects and pests. 'Herbicide' kills weeds, and 'Avicide' kills birds.",
+    "tags": ["vocab", "ows", "science", "agriculture", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0852",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nDangerous, harmful, or morally corrupting and destructive to society",
+    "options": {
+      "A": "Pestiferous",
+      "B": "Innocuous",
+      "C": "Benign",
+      "D": "Salubrious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pestiferous) is correct. 'Pestiferous' means carrying pestilence, annoying, or morally harmful and destructive. 'Innocuous' and 'Benign' mean harmless.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0853",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA heavy club-shaped tool or stick with a thick end used in a mortar for pounding and crushing substances",
+    "options": {
+      "A": "Pestle",
+      "B": "Mortar",
+      "C": "Sceptre",
+      "D": "Truncheon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pestle) is correct. A 'Pestle' is the heavy tool used to grind items inside a mortar bowl. 'Sceptre' is a royal staff.",
+    "tags": ["vocab", "ows", "tools", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0854",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo diminish, fade, or wear away gradually before coming to a total end",
+    "options": {
+      "A": "Peter",
+      "B": "Accelerate",
+      "C": "Escalate",
+      "D": "Augment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Peter) is correct. 'Peter' (often used as 'peter out') means to decrease, dwindle, or fade away gradually. 'Escalate' means to increase rapidly.",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0855",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA man who habitually flirts with or pursues women playfully or amorously; a womanizer",
+    "options": {
+      "A": "Philanderer",
+      "B": "Misogynist",
+      "C": "Ascetic",
+      "D": "Bachelor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Philanderer) is correct. A 'Philanderer' is a man who frequently flirts or has casual amorous affairs with women. 'Misogynist' hates women.",
+    "tags": ["vocab", "ows", "people", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0856",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSomeone who loves humanity and freely gives money and time to promote human well-being",
+    "options": {
+      "A": "Philanthropist",
+      "B": "Misanthrope",
+      "C": "Egoist",
+      "D": "Cynic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Philanthropist) is correct. A 'Philanthropist' is a humanitarian benefactor who supports human welfare. 'Misanthrope' is a hater of mankind.",
+    "tags": ["vocab", "ows", "people", "society", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0857",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA specialist, collector, or lover who studies postage stamps and postal history",
+    "options": {
+      "A": "Philatelist",
+      "B": "Numismatist",
+      "C": "Antiquarian",
+      "D": "Cartographer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Philatelist) is correct. A 'Philatelist' collects and studies postage stamps. 'Numismatist' collects currency and coins.",
+    "tags": ["vocab", "ows", "hobbies", "professions", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0858",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is hostile, indifferent, or lacks appreciation for literature, art, or culture",
+    "options": {
+      "A": "Philistine",
+      "B": "Connoisseur",
+      "C": "Virtuoso",
+      "D": "Aesthetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Philistine) is correct. A 'Philistine' is someone uncultured and indifferent to artistic refinement. 'Connoisseur' is an expert judge of arts.",
+    "tags": ["vocab", "ows", "people", "art", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0859",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn intense, irrational, and persistent fear or aversion toward something",
+    "options": {
+      "A": "Phobia",
+      "B": "Mania",
+      "C": "Euphoria",
+      "D": "Panacea"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Phobia) is correct. A 'Phobia' is a severe, irrational psychological dread of a specific object or situation. 'Mania' is an obsessive compulsion.",
+    "tags": ["vocab", "ows", "psychology", "phobia", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0860",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study and classification of speech sounds and vocal phonemes",
+    "options": {
+      "A": "Phonetics",
+      "B": "Etymology",
+      "C": "Semantics",
+      "D": "Syntax"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Phonetics) is correct. 'Phonetics' is the linguistic study of physical speech sounds. 'Semantics' is the study of word meanings.",
+    "tags": ["vocab", "ows", "science", "language", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0861",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medical doctor who specializes in general internal medicine rather than surgical procedures",
+    "options": {
+      "A": "Physician",
+      "B": "Surgeon",
+      "C": "Pathologist",
+      "D": "Radiologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Physician) is correct. A 'Physician' is a medical practitioner qualified to practice general medicine. A 'Surgeon' performs operations.",
+    "tags": ["vocab", "ows", "medical", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0862",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe therapeutic treatment of physical injuries or disorders through massage, exercise, and movement",
+    "options": {
+      "A": "Physiotherapy",
+      "B": "Radiology",
+      "C": "Pathology",
+      "D": "Cardiology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Physiotherapy) is correct. 'Physiotherapy' treats physical ailments using therapeutic exercises and physical manipulation rather than drugs.",
+    "tags": ["vocab", "ows", "medical", "treatment", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0863",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe petty theft or stealing of items of small quantity, value, or insignificant amounts",
+    "options": {
+      "A": "Pilferage",
+      "B": "Embezzlement",
+      "C": "Burglary",
+      "D": "Larceny"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pilferage) is correct. 'Pilferage' is the act of stealing small, petty quantities of goods. 'Embezzlement' is the fraudulent appropriation of funds.",
+    "tags": ["vocab", "ows", "crime", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0864",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is one of the very first to explore, settle, or initiate a new enterprise or region",
+    "options": {
+      "A": "Pioneer",
+      "B": "Novice",
+      "C": "Apprentice",
+      "D": "Successor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pioneer) is correct. A 'Pioneer' is an innovator or early settler who opens up new territory or methods. 'Successor' follows after someone.",
+    "tags": ["vocab", "ows", "people", "history", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0865",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nArmed robbers or criminals who attack and plunder merchant ships at sea",
+    "options": {
+      "A": "Pirates",
+      "B": "Brigands",
+      "C": "Smugglers",
+      "D": "Poachers"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pirates) is correct. 'Pirates' are marine rovers who attack and rob ships on the open seas. 'Brigands' operate as mountain bandits.",
+    "tags": ["vocab", "ows", "crime", "nautical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0866",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn animal or creature that feeds exclusively or primarily on fish",
+    "options": {
+      "A": "Piscivorous",
+      "B": "Carnivorous",
+      "C": "Herbivorous",
+      "D": "Insectivorous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Piscivorous) is correct. 'Piscivorous' describes fish-eating animals (like otters or pelicans). 'Carnivorous' animals eat general meat.",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0867",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo soothe, pacify, or calm someone's anger, hostility, or agitation",
+    "options": {
+      "A": "Placate",
+      "B": "Provoke",
+      "C": "Exasperate",
+      "D": "Incense"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Placate) is correct. 'Placate' means to appease, mollify, or pacify someone's anger. 'Provoke' and 'Incense' mean to make extremely angry.",
+    "tags": ["vocab", "ows", "verbs", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0868",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe unauthorized theft and use of another author's language, thoughts, or ideas as one's own",
+    "options": {
+      "A": "Plagiarism",
+      "B": "Forgery",
+      "C": "Embezzlement",
+      "D": "Piracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Plagiarism) is correct. 'Plagiarism' is literary theft involving passing off someone else's text as original work. 'Forgery' is falsifying documents.",
+    "tags": ["vocab", "ows", "literature", "crime", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0869",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who copies, steals, and publishes another writer's literary work as their own",
+    "options": {
+      "A": "Plagiarist",
+      "B": "Compositor",
+      "C": "Lexicographer",
+      "D": "Author"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Plagiarist) is correct. A 'Plagiarist' commits literary theft by stealing textual passages from others.",
+    "tags": ["vocab", "ows", "people", "literature", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0870",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who initiates a legal lawsuit or brings a civil action in a court of law",
+    "options": {
+      "A": "Plaintiff",
+      "B": "Defendant",
+      "C": "Deponent",
+      "D": "Arbitrator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Plaintiff) is correct. The 'Plaintiff' is the aggrieved party who initiates a lawsuit against a defendant in court.",
+    "tags": ["vocab", "ows", "law", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0871",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA flat ornamental tablet, metal plate, or porcelain memorial fixed to a wall",
+    "options": {
+      "A": "Plaque",
+      "B": "Monument",
+      "C": "Cenotaph",
+      "D": "Mausoleum"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Plaque) is correct. A 'Plaque' is an inscribed ornamental tablet mounted on a wall in memory of a person or event.",
+    "tags": ["vocab", "ows", "objects", "architecture", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0872",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSeeming reasonable, credible, and probable, though lacking absolute proof",
+    "options": {
+      "A": "Plausible",
+      "B": "Implausible",
+      "C": "Incredible",
+      "D": "Absurd"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Plausible) is correct. 'Plausible' means seemingly believable or reasonable. 'Implausible' and 'Incredible' mean hard to believe.",
+    "tags": ["vocab", "ows", "adjectives", "logic", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0873",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA direct general vote by the entire electorate on a single political question or policy issue",
+    "options": {
+      "A": "Plebiscite",
+      "B": "Referendum",
+      "C": "Electorate",
+      "D": "Autocracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Plebiscite) is correct. A 'Plebiscite' (or referendum) is a direct popular vote on a public policy issue.",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0874",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA solemn, binding promise, vow, or undertaking to do something",
+    "options": {
+      "A": "Pledge",
+      "B": "Treaty",
+      "C": "Contract",
+      "D": "Statute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pledge) is correct. A 'Pledge' is a solemn vow or commitment to fulfill an obligation.",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0875",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA specialist tradesperson who installs, repairs, and maintains leaking water pipes and sanitary fittings",
+    "options": {
+      "A": "Plumber",
+      "B": "Glazier",
+      "C": "Carpenters",
+      "D": "Mason"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Plumber) is correct. A 'Plumber' installs and maintains water supply and drainage pipes.",
+    "tags": ["vocab", "ows", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0876",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA political system of government governed exclusively by the wealthiest class of citizens",
+    "options": {
+      "A": "Plutocracy",
+      "B": "Oligarchy",
+      "C": "Aristocracy",
+      "D": "Democracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Plutocracy) is correct. 'Plutocracy' is government by the wealthy elite. 'Aristocracy' is rule by nobility.",
+    "tags": ["vocab", "ows", "politics", "cracy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0877",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA raised platform or stage standing in a hall for a public speaker or conductor",
+    "options": {
+      "A": "Podium",
+      "B": "Pulpit",
+      "C": "Altar",
+      "D": "Arena"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Podium) is correct. A 'Podium' is a small elevated platform for a speaker or orchestra conductor. 'Pulpit' is a raised raised stand in a church.",
+    "tags": ["vocab", "ows", "architecture", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0878",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe traditional custom or marriage practice of having more than one husband simultaneously",
+    "options": {
+      "A": "Polyandry",
+      "B": "Polygamy",
+      "C": "Monogamy",
+      "D": "Bigamy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Polyandry) is correct. 'Polyandry' is marriage where a woman has multiple husbands at once. 'Polygamy' is having multiple spouses generally.",
+    "tags": ["vocab", "ows", "marriage", "society", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0879",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has or is married to multiple wives at the same time",
+    "options": {
+      "A": "Polygamist",
+      "B": "Monogamist",
+      "C": "Polyandrist",
+      "D": "Bachelor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Polygamist) is correct. A 'Polygamist' practices plural marriage involving multiple wives.",
+    "tags": ["vocab", "ows", "marriage", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0880",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe custom or practice of having more than one wife at the same time",
+    "options": {
+      "A": "Polygamy",
+      "B": "Polyandry",
+      "C": "Monogamy",
+      "D": "Celibacy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Polygamy) is correct. 'Polygamy' is the practice of multiple simultaneous marriages (specifically multiple wives).",
+    "tags": ["vocab", "ows", "marriage", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0881",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who knows, speaks, and is able to use several different languages fluently",
+    "options": {
+      "A": "Polyglot",
+      "B": "Bilingual",
+      "C": "Monolingual",
+      "D": "Linguist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Polyglot) is correct. A 'Polyglot' is versed in or writes in multiple languages. 'Bilingual' knows two languages.",
+    "tags": ["vocab", "ows", "language", "people", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0882",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA plane geometric figure bounded by at least three or more straight sides and angles",
+    "options": {
+      "A": "Polygon",
+      "B": "Octagon",
+      "C": "Hexagon",
+      "D": "Triangle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Polygon) is correct. A 'Polygon' is a closed plane figure with multiple straight sides.",
+    "tags": ["vocab", "ows", "mathematics", "geometry", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0883",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who worships or believes in a plurality of multiple gods",
+    "options": {
+      "A": "Polytheist",
+      "B": "Monotheist",
+      "C": "Atheist",
+      "D": "Agnostic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Polytheist) is correct. A 'Polytheist' adheres to polytheism, worshiping multiple deities. 'Monotheist' worships one single God.",
+    "tags": ["vocab", "ows", "religion", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0884",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA harbor town or coastal facility where ships load and unload cargo and passengers",
+    "options": {
+      "A": "Port",
+      "B": "Dock",
+      "C": "Pier",
+      "D": "Marina"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Port) is correct. A 'Port' is a harbor town equipped for loading and unloading ships.",
+    "tags": ["vocab", "ows", "places", "nautical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0885",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large leather briefcase, flat case, or folder used for carrying documents, artwork, or financial records",
+    "options": {
+      "A": "Portfolio",
+      "B": "Wallet",
+      "C": "Handbag",
+      "D": "Satchel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Portfolio) is correct. A 'Portfolio' is a flat carrying case for documents or an artist's collection of creative works.",
+    "tags": ["vocab", "ows", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0886",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOccurring, awarded, or published after the death of the person concerned",
+    "options": {
+      "A": "Posthumous",
+      "B": "Pre-natal",
+      "C": "Concurrent",
+      "D": "Simultaneous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Posthumous) is correct. 'Posthumous' describes awards, books, or children born after an author's or father's death.",
+    "tags": ["vocab", "ows", "death", "time", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0887",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA child born after the death of its biological father",
+    "options": {
+      "A": "Posthumous child",
+      "B": "Orphan",
+      "C": "Foundling",
+      "D": "Changeling"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Posthumous child) is correct. A posthumous child is born following the demise of the father.",
+    "tags": ["vocab", "ows", "family", "death", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0888",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medical examination or dissection of a dead body performed to determine the cause of death; post-mortem",
+    "options": {
+      "A": "Postmortem",
+      "B": "Biopsy",
+      "C": "Autopsy",
+      "D": "Diagnosis"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Postmortem) is correct. A 'Postmortem' (autopsy) inspects a corpse to establish medical cause of death.",
+    "tags": ["vocab", "ows", "medical", "death", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0889",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn additional note or paragraph appended to a letter after the writer's signature",
+    "options": {
+      "A": "Postscript",
+      "B": "Prefix",
+      "C": "Preface",
+      "D": "Codicil"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Postscript) is correct. A 'Postscript' (P.S.) is an afterthought added below a signed letter. 'Codicil' amends a legal will.",
+    "tags": ["vocab", "ows", "writing", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0890",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSafe, fit, and pure for drinking (of water supplies)",
+    "options": {
+      "A": "Potable",
+      "B": "Edible",
+      "C": "Inedible",
+      "D": "Toxic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Potable) is correct. 'Potable' means safe and fit for drinking. 'Edible' means safe to eat as food.",
+    "tags": ["vocab", "ows", "water", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0891",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA liquid mixture possessing medicinal, magical, or poisonous properties",
+    "options": {
+      "A": "Potion",
+      "B": "Beverage",
+      "C": "Draft",
+      "D": "Elixir"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Potion) is correct. A 'Potion' is a liquid dose of medicine, poison, or magic potion.",
+    "tags": ["vocab", "ows", "medicine", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0892",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA fragrant mixture of dried flower petals and spices kept in a jar for scenting a room",
+    "options": {
+      "A": "Potpourri",
+      "B": "Bouquet",
+      "C": "Wreath",
+      "D": "Garland"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Potourri) is correct. 'Potpourri' is a scented mixture of dried flower leaves.",
+    "tags": ["vocab", "ows", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0893",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA practical person who prioritizes practical results, facts, and usefulness over abstract theories",
+    "options": {
+      "A": "Pragmatist",
+      "B": "Idealist",
+      "C": "Visionary",
+      "D": "Utopian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pragmatist) is correct. A 'Pragmatist' guides actions by practical utility and realistic results rather than theories. 'Idealist' pursues high abstract ideals.",
+    "tags": ["vocab", "ows", "philosophy", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0894",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA previous legal case, ruling, or instance that serves as an authoritative example for subsequent situations",
+    "options": {
+      "A": "Precedent",
+      "B": "Postscript",
+      "C": "Protocol",
+      "D": "Statute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Precedent) is correct. A 'Precedent' is an earlier legal case or judicial decision used as an authoritative guide for future rulings.",
+    "tags": ["vocab", "ows", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0895",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn animal that naturally hunts, kills, and feeds on other animals for survival",
+    "options": {
+      "A": "Predator",
+      "B": "Prey",
+      "C": "Parasite",
+      "D": "Herbivore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Predator) is correct. A 'Predator' preys on other animals. 'Prey' is the animal hunted down and killed.",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0896",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who held a job, office, or position before the current holder",
+    "options": {
+      "A": "Predecessor",
+      "B": "Successor",
+      "C": "Colleague",
+      "D": "Contemporary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Predecessor) is correct. A 'Predecessor' held an office prior to someone else. 'Successor' is the person who follows after.",
+    "tags": ["vocab", "ows", "people", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0897",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn introductory essay, opening statement, or author's note at the beginning of a book",
+    "options": {
+      "A": "Preface",
+      "B": "Epilogue",
+      "C": "Postscript",
+      "D": "Codicil"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Preface) is correct. A 'Preface' is an introductory text explaining a book's purpose and scope written by its author.",
+    "tags": ["vocab", "ows", "books", "writing", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0898",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nShowing an unreasonable bias, preconceived opinion, or partiality against someone",
+    "options": {
+      "A": "Prejudiced",
+      "B": "Impartial",
+      "C": "Neutral",
+      "D": "Objective"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Prejudiced) is correct. 'Prejudiced' means holding unreasonable biases or preconceived judgments. 'Impartial' and 'Objective' mean fair and neutral.",
+    "tags": ["vocab", "ows", "adjectives", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0899",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA preliminary event or introductory performance that precedes a more important main action",
+    "options": {
+      "A": "Prelude",
+      "B": "Epilogue",
+      "C": "Postscript",
+      "D": "Interlude"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Prelude) is correct. A 'Prelude' is an introductory action or musical movement serving as a preface. 'Epilogue' is a concluding speech.",
+    "tags": ["vocab", "ows", "literature", "music", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0900",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe first public performance, screening, or exhibition of a play, film, or artistic work",
+    "options": {
+      "A": "Premiere",
+      "B": "Matinee",
+      "C": "Vespers",
+      "D": "Epilogue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Premiere) is correct. A 'Premiere' is the initial public presentation or screening of a theatrical or cinematic work.",
+    "tags": ["vocab", "ows", "theatre", "entertainment", "pyq_ssc"]
+  }
+]

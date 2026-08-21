@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_PREP_201",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He has been living in this city ___ 2010.'",
+    "options": {
+      "A": "for",
+      "B": "since",
+      "C": "from",
+      "D": "during"
+    },
+    "correct_option": "B",
+    "explanation": "'Since' is used to denote a specific point in time in the past from which an action began and continues to the present.",
+    "tags": ["grammar", "prepositions", "time", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_202",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The teacher presided on the meeting held yesterday.'",
+    "options": {
+      "A": "The teacher",
+      "B": "presided on",
+      "C": "the meeting",
+      "D": "held yesterday."
+    },
+    "correct_option": "B",
+    "explanation": "The correct preposition following 'preside' is 'over' ('presided over'), not 'on'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_203",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is angry ___ me because I forgot her birthday.'",
+    "options": {
+      "A": "on",
+      "B": "with",
+      "C": "at",
+      "D": "to"
+    },
+    "correct_option": "B",
+    "explanation": "'Angry with' is used when referring to a person; 'angry at/about' is used when referring to a situation or object.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_204",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He died ___ malaria last month.'",
+    "options": {
+      "A": "by",
+      "B": "with",
+      "C": "of",
+      "D": "from"
+    },
+    "correct_option": "C",
+    "explanation": "We use 'die of' when referring to a disease or illness.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_205",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The prisoner was accused for murder.'",
+    "options": {
+      "A": "The prisoner",
+      "B": "was accused",
+      "C": "for murder.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "The correct preposition following 'accused' is 'of' ('accused of murder').",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_206",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The cat jumped ___ the table.'",
+    "options": {
+      "A": "in",
+      "B": "on",
+      "C": "onto",
+      "D": "upon"
+    },
+    "correct_option": "C",
+    "explanation": "'Onto' is used for movement to a surface from a lower position.",
+    "tags": ["grammar", "prepositions", "movement", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_207",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'Distribute these sweets ___ the two children.'",
+    "options": {
+      "A": "among",
+      "B": "between",
+      "C": "amidst",
+      "D": "amongst"
+    },
+    "correct_option": "B",
+    "explanation": "'Between' is used for two entities; 'among' is used for more than two.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_208",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She insisted to come with us to the party.'",
+    "options": {
+      "A": "She insisted",
+      "B": "to come",
+      "C": "with us",
+      "D": "to the party."
+    },
+    "correct_option": "B",
+    "explanation": "'Insist' takes the preposition 'on', followed by a gerund ('insisted on coming').",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_209",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I prefer coffee ___ tea.'",
+    "options": {
+      "A": "to",
+      "B": "than",
+      "C": "over",
+      "D": "rather than"
+    },
+    "correct_option": "A",
+    "explanation": "'Prefer' takes the preposition 'to' when comparing two nouns.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_210",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'The flight arrives ___ 6:00 PM.'",
+    "options": {
+      "A": "in",
+      "B": "on",
+      "C": "at",
+      "D": "by"
+    },
+    "correct_option": "C",
+    "explanation": "'At' is used for precise clock times.",
+    "tags": ["grammar", "prepositions", "time", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_211",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is married with a doctor.'",
+    "options": {
+      "A": "He is",
+      "B": "married with",
+      "C": "a doctor.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "One is 'married to' someone, not 'married with'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_212",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The book is ___ the table.'",
+    "options": {
+      "A": "in",
+      "B": "at",
+      "C": "on",
+      "D": "under"
+    },
+    "correct_option": "C",
+    "explanation": "'On' is used for an object placed on a surface.",
+    "tags": ["grammar", "prepositions", "place", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_213",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She excels ___ playing the piano.'",
+    "options": {
+      "A": "in",
+      "B": "at",
+      "C": "on",
+      "D": "to"
+    },
+    "correct_option": "B",
+    "explanation": "'Excel at' is the idiomatic expression for being very good at a skill.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_214",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'They arrived to the airport late.'",
+    "options": {
+      "A": "They arrived",
+      "B": "to the airport",
+      "C": "late.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Arrive' takes the preposition 'at' for buildings/locations, or 'in' for cities/countries, but never 'to'.",
+    "tags": ["grammar", "prepositions", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_215",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'We reached the hotel ___ night.'",
+    "options": {
+      "A": "in",
+      "B": "on",
+      "C": "at",
+      "D": "during"
+    },
+    "correct_option": "C",
+    "explanation": "'At' is the correct preposition for the specific time 'night'.",
+    "tags": ["grammar", "prepositions", "time", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_216",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'I am not interested ___ this project.'",
+    "options": {
+      "A": "at",
+      "B": "on",
+      "C": "in",
+      "D": "with"
+    },
+    "correct_option": "C",
+    "explanation": "'Interested' is followed by the preposition 'in'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_217",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Beware of the dog.'",
+    "options": {
+      "A": "Beware of",
+      "B": "the dog.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "The sentence is grammatically correct. 'Beware' is followed by 'of'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_218",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The man was blinded ___ one eye.'",
+    "options": {
+      "A": "by",
+      "B": "of",
+      "C": "in",
+      "D": "with"
+    },
+    "correct_option": "C",
+    "explanation": "'Blinded in' is the standard usage for eye injuries.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_219",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'I agree ___ your proposal.'",
+    "options": {
+      "A": "with",
+      "B": "to",
+      "C": "at",
+      "D": "on"
+    },
+    "correct_option": "B",
+    "explanation": "'Agree to' is used with proposals, suggestions, or plans. 'Agree with' is used with a person or their opinion.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_220",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Divide the cake between the four children.'",
+    "options": {
+      "A": "Divide the cake",
+      "B": "between",
+      "C": "the four children.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Between' is for two; for more than two, use 'among'.",
+    "tags": ["grammar", "prepositions", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_221",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is sitting ___ the shade of the tree.'",
+    "options": {
+      "A": "in",
+      "B": "under",
+      "C": "at",
+      "D": "by"
+    },
+    "correct_option": "A",
+    "explanation": "We sit 'in the shade' of a tree.",
+    "tags": ["grammar", "prepositions", "place", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_222",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She is fond ___ music.'",
+    "options": {
+      "A": "with",
+      "B": "of",
+      "C": "at",
+      "D": "about"
+    },
+    "correct_option": "B",
+    "explanation": "'Fond' is always followed by 'of'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_223",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The train is running in time.'",
+    "options": {
+      "A": "The train",
+      "B": "is running",
+      "C": "in time.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "For schedules, 'on time' (punctual) is correct. 'In time' means with enough time to spare.",
+    "tags": ["grammar", "prepositions", "idiomatic_usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_224",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is known ___ everyone in the neighborhood.'",
+    "options": {
+      "A": "to",
+      "B": "by",
+      "C": "with",
+      "D": "for"
+    },
+    "correct_option": "A",
+    "explanation": "After 'known', the passive voice takes 'to' ('known to someone').",
+    "tags": ["grammar", "prepositions", "passive_voice", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_225",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'The thieves broke ___ the house.'",
+    "options": {
+      "A": "in",
+      "B": "into",
+      "C": "up",
+      "D": "down"
+    },
+    "correct_option": "B",
+    "explanation": "'Break into' implies forced entry.",
+    "tags": ["grammar", "prepositions", "phrasal_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_226",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has a great taste of music.'",
+    "options": {
+      "A": "He has",
+      "B": "a great taste",
+      "C": "of music.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "The correct idiom is 'taste for' or 'taste in' music. 'Taste in' is preferred.",
+    "tags": ["grammar", "prepositions", "idiomatic_usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_227",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The boy was knocked ___ by a speeding car.'",
+    "options": {
+      "A": "down",
+      "B": "up",
+      "C": "off",
+      "D": "out"
+    },
+    "correct_option": "A",
+    "explanation": "'Knock down' is the phrasal verb meaning to hit someone with a vehicle.",
+    "tags": ["grammar", "prepositions", "phrasal_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_228",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He is guilty ___ murder.'",
+    "options": {
+      "A": "for",
+      "B": "with",
+      "C": "of",
+      "D": "in"
+    },
+    "correct_option": "C",
+    "explanation": "'Guilty' is followed by 'of'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_229",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She insisted on me to go there.'",
+    "options": {
+      "A": "She insisted",
+      "B": "on me",
+      "C": "to go there.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Insist on' must be followed by a gerund clause. It should be 'She insisted on my going there.'",
+    "tags": ["grammar", "prepositions", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_230",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The man was deprived ___ his rights.'",
+    "options": {
+      "A": "from",
+      "B": "by",
+      "C": "of",
+      "D": "off"
+    },
+    "correct_option": "C",
+    "explanation": "'Deprived' is followed by 'of'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_231",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'I am confident ___ his success.'",
+    "options": {
+      "A": "of",
+      "B": "about",
+      "C": "in",
+      "D": "for"
+    },
+    "correct_option": "A",
+    "explanation": "'Confident of' is standard.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_232",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The result is dependent at your performance.'",
+    "options": {
+      "A": "The result is",
+      "B": "dependent at",
+      "C": "your performance.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Dependent' is followed by 'on' ('dependent on').",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_233",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He apologized ___ the manager for the mistake.'",
+    "options": {
+      "A": "to",
+      "B": "with",
+      "C": "for",
+      "D": "at"
+    },
+    "correct_option": "A",
+    "explanation": "One apologizes 'to' a person and 'for' a mistake.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_234",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She is envious ___ her friend's new dress.'",
+    "options": {
+      "A": "about",
+      "B": "at",
+      "C": "of",
+      "D": "for"
+    },
+    "correct_option": "C",
+    "explanation": "'Envious of' is standard.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_235",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has a great passion in music.'",
+    "options": {
+      "A": "He has",
+      "B": "a great passion",
+      "C": "in music.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Passion' is followed by 'for' ('passion for music').",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_236",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The patient was cured ___ the ailment.'",
+    "options": {
+      "A": "from",
+      "B": "of",
+      "C": "by",
+      "D": "with"
+    },
+    "correct_option": "B",
+    "explanation": "'Cured of' is standard.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_237",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She lives ___ London.'",
+    "options": {
+      "A": "on",
+      "B": "at",
+      "C": "in",
+      "D": "to"
+    },
+    "correct_option": "C",
+    "explanation": "'In' is used for cities and countries.",
+    "tags": ["grammar", "prepositions", "place", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_238",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am tired with working all day.'",
+    "options": {
+      "A": "I am",
+      "B": "tired with",
+      "C": "working all day.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Tired' is followed by 'of' ('tired of working').",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_239",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is blind ___ his own faults.'",
+    "options": {
+      "A": "in",
+      "B": "to",
+      "C": "of",
+      "D": "at"
+    },
+    "correct_option": "B",
+    "explanation": "'Blind to' is used idiomatically for ignoring or failing to perceive faults or facts.",
+    "tags": ["grammar", "prepositions", "idiomatic_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_240",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'I am satisfied ___ your explanation.'",
+    "options": {
+      "A": "with",
+      "B": "by",
+      "C": "at",
+      "D": "to"
+    },
+    "correct_option": "A",
+    "explanation": "'Satisfied with' is standard.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_241",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'They reached the station on time.'",
+    "options": {
+      "A": "They reached",
+      "B": "the station",
+      "C": "on time.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct.",
+    "tags": ["grammar", "prepositions", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_242",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was absent ___ the class.'",
+    "options": {
+      "A": "from",
+      "B": "in",
+      "C": "at",
+      "D": "out of"
+    },
+    "correct_option": "A",
+    "explanation": "'Absent' is followed by 'from'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_243",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She is superior ___ me in skills.'",
+    "options": {
+      "A": "than",
+      "B": "from",
+      "C": "to",
+      "D": "with"
+    },
+    "correct_option": "C",
+    "explanation": "Adjectives like 'superior', 'inferior', 'junior', 'senior' take 'to'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_244",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He abstains himself from drinking.'",
+    "options": {
+      "A": "He abstains",
+      "B": "himself from",
+      "C": "drinking.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Abstain' is intransitive; it does not take a reflexive pronoun. It should be 'He abstains from drinking.'",
+    "tags": ["grammar", "prepositions", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_245",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The meeting will be held ___ Monday.'",
+    "options": {
+      "A": "at",
+      "B": "in",
+      "C": "on",
+      "D": "from"
+    },
+    "correct_option": "C",
+    "explanation": "'On' is used for days of the week.",
+    "tags": ["grammar", "prepositions", "time", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_246",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'I am surprised ___ his behavior.'",
+    "options": {
+      "A": "at",
+      "B": "with",
+      "C": "of",
+      "D": "in"
+    },
+    "correct_option": "A",
+    "explanation": "'Surprised at' or 'surprised by' are both common; 'at' is very standard for surprise at actions.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_247",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The thief broke the glass with a stone.'",
+    "options": {
+      "A": "The thief",
+      "B": "broke the glass",
+      "C": "with a stone.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'With' indicates the instrument used.",
+    "tags": ["grammar", "prepositions", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_248",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is afraid ___ dogs.'",
+    "options": {
+      "A": "with",
+      "B": "by",
+      "C": "of",
+      "D": "for"
+    },
+    "correct_option": "C",
+    "explanation": "'Afraid of' is standard.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_249",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She was shocked ___ the news.'",
+    "options": {
+      "A": "at",
+      "B": "with",
+      "C": "by",
+      "D": "in"
+    },
+    "correct_option": "A",
+    "explanation": "'Shocked at' or 'shocked by' are both acceptable; 'at' is preferred for the news itself.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_250",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He lives in 54, MG Road, Bangalore.'",
+    "options": {
+      "A": "He lives",
+      "B": "in 54, MG Road,",
+      "C": "Bangalore.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "For a specific house number and street, use 'at', not 'in'. It should be 'at 54, MG Road'.",
+    "tags": ["grammar", "prepositions", "place", "spotting_errors"]
+  }
+]

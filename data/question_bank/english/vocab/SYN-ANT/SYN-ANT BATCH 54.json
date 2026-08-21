@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_2651",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MACHIAVELLIAN**",
+    "options": {
+      "A": "Cunning",
+      "B": "Artless",
+      "C": "Guileless",
+      "D": "Naive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Machiavellian' refers to cunning, scheming, and unscrupulous behavior, especially in politics. 'Cunning', 'devious', or 'manipulative' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2652",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MACHIAVELLIAN**",
+    "options": {
+      "A": "Cunning",
+      "B": "Devious",
+      "C": "Artless",
+      "D": "Manipulative"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Machiavellian' means cunning and deceitful. 'Artless', 'naive', or 'guileless' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2653",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MAGNANIMOUS**",
+    "options": {
+      "A": "Generous",
+      "B": "Stingy",
+      "C": "Mean",
+      "D": "Petty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Magnanimous' means very generous or forgiving, especially toward a rival or someone less powerful. 'Generous', 'benevolent', or 'charitable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2654",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MAGNANIMOUS**",
+    "options": {
+      "A": "Generous",
+      "B": "Benevolent",
+      "C": "Stingy",
+      "D": "Charitable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Magnanimous' means generous and forgiving. 'Stingy', 'mean', or 'petty' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2655",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MALADROIT**",
+    "options": {
+      "A": "Clumsy",
+      "B": "Skillful",
+      "C": "Adept",
+      "D": "Dexterous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Maladroit' means ineffective or bungling; clumsy. 'Clumsy', 'awkward', or 'inept' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2656",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MALADROIT**",
+    "options": {
+      "A": "Clumsy",
+      "B": "Awkward",
+      "C": "Skillful",
+      "D": "Inept"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Maladroit' means clumsy. 'Skillful', 'adept', or 'dexterous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2657",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MALEDICTION**",
+    "options": {
+      "A": "Curse",
+      "B": "Blessing",
+      "C": "Benediction",
+      "D": "Prayer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Malediction' refers to a magical word or phrase uttered with the intention of bringing about evil or destruction; a curse. 'Curse', 'execration', or 'imprecation' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2658",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MALEDICTION**",
+    "options": {
+      "A": "Curse",
+      "B": "Execration",
+      "C": "Benediction",
+      "D": "Imprecation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Malediction' is a curse. 'Benediction', 'blessing', or 'prayer' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2659",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MALEVOLENT**",
+    "options": {
+      "A": "Spiteful",
+      "B": "Benevolent",
+      "C": "Kind",
+      "D": "Friendly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Malevolent' means having or showing a wish to do evil to others. 'Spiteful', 'malicious', or 'hostile' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2660",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MALEVOLENT**",
+    "options": {
+      "A": "Spiteful",
+      "B": "Malicious",
+      "C": "Benevolent",
+      "D": "Hostile"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Malevolent' means malicious. 'Benevolent', 'kind', or 'friendly' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2661",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MALLEABLE**",
+    "options": {
+      "A": "Pliable",
+      "B": "Rigid",
+      "C": "Inflexible",
+      "D": "Stiff"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Malleable' means (of a metal or other material) able to be hammered or pressed permanently out of shape without breaking or cracking; easily influenced. 'Pliable', 'flexible', or 'pliant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2662",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MALLEABLE**",
+    "options": {
+      "A": "Pliable",
+      "B": "Flexible",
+      "C": "Rigid",
+      "D": "Pliant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Malleable' means easily shaped. 'Rigid', 'inflexible', or 'stiff' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2663",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MAR**",
+    "options": {
+      "A": "Damage",
+      "B": "Restore",
+      "C": "Repair",
+      "D": "Mend"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mar' means to impair the appearance of; disfigure. 'Damage', 'spoil', or 'disfigure' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2664",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MAR**",
+    "options": {
+      "A": "Damage",
+      "B": "Spoil",
+      "C": "Restore",
+      "D": "Disfigure"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mar' means to impair. 'Restore', 'repair', or 'mend' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2665",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MARTINET**",
+    "options": {
+      "A": "Disciplinarian",
+      "B": "Lax person",
+      "C": "Permissive",
+      "D": "Lenient"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Martinet' refers to a strict disciplinarian, especially in the armed forces. 'Disciplinarian', 'stickler', or 'tyrant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2666",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MARTINET**",
+    "options": {
+      "A": "Disciplinarian",
+      "B": "Stickler",
+      "C": "Permissive",
+      "D": "Tyrant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Martinet' is a strict disciplinarian. 'Permissive', 'lenient', or 'lax' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2667",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MAUDLIN**",
+    "options": {
+      "A": "Sentimental",
+      "B": "Unsentimental",
+      "C": "Stoic",
+      "D": "Rational"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Maudlin' means self-pityingly or tearfully sentimental. 'Sentimental', 'mawkish', or 'emotional' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2668",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MAUDLIN**",
+    "options": {
+      "A": "Sentimental",
+      "B": "Mawkish",
+      "C": "Unsentimental",
+      "D": "Emotional"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Maudlin' means overly sentimental. 'Unsentimental', 'stoic', or 'rational' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2669",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MAWKISH**",
+    "options": {
+      "A": "Sentimental",
+      "B": "Unsentimental",
+      "C": "Rational",
+      "D": "Stoic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mawkish' means sentimental in a feeble or sickly way. 'Sentimental', 'maudlin', or 'sickly' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2670",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MAWKISH**",
+    "options": {
+      "A": "Sentimental",
+      "B": "Maudlin",
+      "C": "Unsentimental",
+      "D": "Sickly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mawkish' means overly sentimental. 'Unsentimental', 'rational', or 'stoic' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2671",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MENDACIOUS**",
+    "options": {
+      "A": "Dishonest",
+      "B": "Honest",
+      "C": "Truthful",
+      "D": "Sincere"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mendacious' means not telling the truth; lying. 'Dishonest', 'deceitful', or 'untruthful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2672",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MENDACIOUS**",
+    "options": {
+      "A": "Dishonest",
+      "B": "Deceitful",
+      "C": "Truthful",
+      "D": "Untruthful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mendacious' means lying. 'Truthful', 'honest', or 'sincere' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2673",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MENDICANT**",
+    "options": {
+      "A": "Beggar",
+      "B": "Giver",
+      "C": "Donor",
+      "D": "Benefactor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mendicant' refers to a beggar. 'Beggar', 'panhandler', or 'alms-seeker' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2674",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MENDICANT**",
+    "options": {
+      "A": "Beggar",
+      "B": "Panhandler",
+      "C": "Giver",
+      "D": "Alms-seeker"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mendicant' is a beggar. 'Giver', 'donor', or 'benefactor' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2675",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MERETRICIOUS**",
+    "options": {
+      "A": "Gaudy",
+      "B": "Genuine",
+      "C": "Authentic",
+      "D": "Real"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Meretricious' means apparently attractive but having in reality no value or integrity. 'Gaudy', 'tawdry', or 'showy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2676",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MERETRICIOUS**",
+    "options": {
+      "A": "Gaudy",
+      "B": "Tawdry",
+      "C": "Genuine",
+      "D": "Showy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Meretricious' means deceptively showy. 'Genuine', 'authentic', or 'real' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2677",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**METICULOUS**",
+    "options": {
+      "A": "Scrupulous",
+      "B": "Careless",
+      "C": "Slovenly",
+      "D": "Negligent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Meticulous' means showing great attention to detail; very careful and precise. 'Scrupulous', 'painstaking', or 'fastidious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2678",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**METICULOUS**",
+    "options": {
+      "A": "Scrupulous",
+      "B": "Painstaking",
+      "C": "Careless",
+      "D": "Fastidious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Meticulous' means very careful. 'Careless', 'slovenly', or 'negligent' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2679",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MILITATE**",
+    "options": {
+      "A": "Counteract",
+      "B": "Aid",
+      "C": "Support",
+      "D": "Promote"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Militate' means to be a powerful or conclusive factor in preventing. 'Counteract', 'work against', or 'oppose' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2680",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MILITATE**",
+    "options": {
+      "A": "Counteract",
+      "B": "Oppose",
+      "C": "Aid",
+      "D": "Work against"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Militate' means to work against. 'Aid', 'support', or 'promote' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2681",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MIRAGE**",
+    "options": {
+      "A": "Illusion",
+      "B": "Reality",
+      "C": "Fact",
+      "D": "Truth"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mirage' refers to an optical illusion caused by atmospheric conditions. 'Illusion', 'hallucination', or 'phantasm' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2682",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MIRAGE**",
+    "options": {
+      "A": "Illusion",
+      "B": "Hallucination",
+      "C": "Reality",
+      "D": "Phantasm"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mirage' is an illusion. 'Reality', 'fact', or 'truth' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2683",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MISANTHROPE**",
+    "options": {
+      "A": "Hater of mankind",
+      "B": "Philanthropist",
+      "C": "Humanitarian",
+      "D": "Lover of mankind"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Misanthrope' refers to a person who dislikes humankind and avoids human society. 'Hater of mankind' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2684",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MISANTHROPE**",
+    "options": {
+      "A": "Hater of mankind",
+      "B": "Philanthropist",
+      "C": "Cynic",
+      "D": "Recluse"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Misanthrope' dislikes people. 'Philanthropist', 'humanitarian', or 'lover of mankind' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2685",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MISCELLANEOUS**",
+    "options": {
+      "A": "Diverse",
+      "B": "Uniform",
+      "C": "Similar",
+      "D": "Consistent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Miscellaneous' means (of a collection or group) composed of members or elements of different kinds. 'Diverse', 'assorted', or 'varied' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2686",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MISCELLANEOUS**",
+    "options": {
+      "A": "Diverse",
+      "B": "Assorted",
+      "C": "Uniform",
+      "D": "Varied"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Miscellaneous' means varied. 'Uniform', 'consistent', or 'similar' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2687",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MISCONSTRUE**",
+    "options": {
+      "A": "Misinterpret",
+      "B": "Understand",
+      "C": "Interpret",
+      "D": "Comprehend"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Misconstrue' means to interpret (something, especially a person's words or actions) wrongly. 'Misinterpret', 'misunderstand', or 'misjudge' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2688",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MISCONSTRUE**",
+    "options": {
+      "A": "Misinterpret",
+      "B": "Misunderstand",
+      "C": "Understand",
+      "D": "Misjudge"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Misconstrue' means to interpret wrongly. 'Understand', 'interpret correctly', or 'comprehend' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2689",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MITIGATE**",
+    "options": {
+      "A": "Alleviate",
+      "B": "Aggravate",
+      "C": "Intensify",
+      "D": "Worsen"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mitigate' means to make less severe, serious, or painful. 'Alleviate', 'assuage', or 'relieve' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2690",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MITIGATE**",
+    "options": {
+      "A": "Alleviate",
+      "B": "Assuage",
+      "C": "Aggravate",
+      "D": "Relieve"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mitigate' means to make less severe. 'Aggravate', 'intensify', or 'worsen' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2691",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MNEMONIC**",
+    "options": {
+      "A": "Memory-aid",
+      "B": "Forgetting",
+      "C": "Amnesia",
+      "D": "Confusion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mnemonic' refers to a device such as a pattern of letters, ideas, or associations that assists in remembering something. 'Memory-aid' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2692",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MOLLIFY**",
+    "options": {
+      "A": "Appease",
+      "B": "Provoke",
+      "C": "Enrage",
+      "D": "Inflame"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mollify' means to appease the anger or anxiety of someone. 'Appease', 'pacify', or 'assuage' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2693",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MOLLIFY**",
+    "options": {
+      "A": "Appease",
+      "B": "Pacify",
+      "C": "Provoke",
+      "D": "Assuage"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mollify' means to calm. 'Provoke', 'enrage', or 'inflame' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2694",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MONOLITHIC**",
+    "options": {
+      "A": "Massive",
+      "B": "Diverse",
+      "C": "Varied",
+      "D": "Heterogeneous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Monolithic' means formed of a single large block of stone; (of an organization or system) large, powerful, and intractably indivisible and uniform. 'Massive', 'uniform', or 'solid' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2695",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MONOLITHIC**",
+    "options": {
+      "A": "Massive",
+      "B": "Uniform",
+      "C": "Diverse",
+      "D": "Solid"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Monolithic' means uniform and indivisible. 'Diverse', 'varied', or 'heterogeneous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2696",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MOROSE**",
+    "options": {
+      "A": "Sullen",
+      "B": "Cheerful",
+      "C": "Jovial",
+      "D": "Happy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Morose' means sullen and ill-tempered. 'Sullen', 'gloomy', or 'surly' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2697",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MOROSE**",
+    "options": {
+      "A": "Sullen",
+      "B": "Gloomy",
+      "C": "Cheerful",
+      "D": "Surly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Morose' means sullen. 'Cheerful', 'jovial', or 'happy' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2698",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MORTIFY**",
+    "options": {
+      "A": "Embarrass",
+      "B": "Comfort",
+      "C": "Reassure",
+      "D": "Encourage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mortify' means to cause someone to feel embarrassed, ashamed, or humiliated. 'Embarrass', 'humiliate', or 'shame' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2699",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MORTIFY**",
+    "options": {
+      "A": "Embarrass",
+      "B": "Humiliate",
+      "C": "Comfort",
+      "D": "Shame"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mortify' means to humiliate. 'Comfort', 'reassure', or 'encourage' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2700",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MUNDANE**",
+    "options": {
+      "A": "Ordinary",
+      "B": "Extraordinary",
+      "C": "Unusual",
+      "D": "Exceptional"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mundane' means lacking interest or excitement; dull; of this earthly world rather than a heavenly or spiritual one. 'Ordinary', 'commonplace', or 'dull' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

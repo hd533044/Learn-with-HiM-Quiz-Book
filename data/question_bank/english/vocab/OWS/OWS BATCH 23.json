@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_1101",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe transmission of thoughts, feelings, or mental images directly from one person's mind to another without using normal sensory communication channels",
+    "options": {
+      "A": "Telepathy",
+      "B": "Telegraphy",
+      "C": "Telephone",
+      "D": "Television"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Telepathy) is correct[cite: 2]. 'Telepathy' is the purported communication of thoughts or ideas by mental means rather than through the senses[cite: 2].",
+    "tags": ["vocab", "ows", "science", "mind", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1102",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA violent, severe, and destructive windstorm accompanied by rain, snow, or hail",
+    "options": {
+      "A": "Tempest",
+      "B": "Gust",
+      "C": "Downpour",
+      "D": "Breeze"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tempest) is correct[cite: 2]. A 'Tempest' is a violent, turbulent windstorm[cite: 2]. 'Gust' is a brief blast of wind[cite: 2], and 'Downpour' is heavy rain[cite: 2].",
+    "tags": ["vocab", "ows", "weather", "nature", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1103",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLasting only for a very brief, limited, or short while; temporary",
+    "options": {
+      "A": "Temporary",
+      "B": "Perpetual",
+      "C": "Eternal",
+      "D": "Enduring"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Temporary) is correct[cite: 2]. 'Temporary' means lasting for only a limited period of time[cite: 2]. 'Perpetual' and 'Eternal' mean lasting forever[cite: 2].",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1104",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA station, stop, or final stopping place situated at the end of a transport route",
+    "options": {
+      "A": "Terminus",
+      "B": "Depot",
+      "C": "Port",
+      "D": "Station"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Terminus) is correct[cite: 2]. A 'Terminus' is the final station or end stop of a railway, bus, or transport route[cite: 2].",
+    "tags": ["vocab", "ows", "travel", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1105",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA formal written statement concerning a person's character, qualifications, or experience, typically provided by an employer",
+    "options": {
+      "A": "Testimonial",
+      "B": "Manuscript",
+      "C": "Codicil",
+      "D": "Postscript"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Testimonial) is correct[cite: 2]. A 'Testimonial' is a written recommendation or character reference verifying someone's qualifications[cite: 2].",
+    "tags": ["vocab", "ows", "work", "documents", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1106",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA system of government of a country ruled by religious leaders or priests claiming divine authority",
+    "options": {
+      "A": "Theocracy",
+      "B": "Monarchy",
+      "C": "Democracy",
+      "D": "Plutocracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Theocracy) is correct[cite: 2]. 'Theocracy' is governance by religious leaders or clergy acting in the name of God[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "religion", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1107",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nRelating to the scientific or philosophical study of the nature of God and religious beliefs",
+    "options": {
+      "A": "Theological",
+      "B": "Biological",
+      "C": "Geological",
+      "D": "Zoological"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Theological) is correct[cite: 2]. 'Theological' relates to the study of divinity and religious doctrines[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1108",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe systematic study of the nature of God, divinity, and religious beliefs",
+    "options": {
+      "A": "Theology",
+      "B": "Sociology",
+      "C": "Psychology",
+      "D": "Anthropology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Theology) is correct[cite: 2]. 'Theology' is the critical study of religious faith, practice, and the divine[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "science", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1109",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nRelating to the medical treatment, cure, or healing of diseases",
+    "options": {
+      "A": "Therapeutic",
+      "B": "Pathological",
+      "C": "Toxic",
+      "D": "Pestiferous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Therapeutic) is correct[cite: 2]. 'Therapeutic' describes treatments or substances having healing medicinal value[cite: 2]. 'Toxic' means poisonous[cite: 2].",
+    "tags": ["vocab", "ows", "medical", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1110",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA scientific instrument used for measuring temperature degrees",
+    "options": {
+      "A": "Thermometer",
+      "B": "Barometer",
+      "C": "Manometer",
+      "D": "Chronometer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Thermometer) is correct[cite: 2]. A 'Thermometer' measures ambient or body temperature[cite: 2]. 'Barometer' measures atmospheric air pressure[cite: 2].",
+    "tags": ["vocab", "ows", "instruments", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1111",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nComplete, thorough, and exhaustive with regard to every detail",
+    "options": {
+      "A": "Thorough",
+      "B": "Cursory",
+      "C": "Superficial",
+      "D": "Slipshod"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Thorough) is correct[cite: 2]. 'Thorough' means complete and meticulous down to every detail[cite: 2]. 'Cursory' and 'Superficial' mean hasty and lacking detail[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1112",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nShowing a lack of courage, confidence, or boldness; timid and easily frightened",
+    "options": {
+      "A": "Timid",
+      "B": "Audacious",
+      "C": "Intrepid",
+      "D": " Valiant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Timid) is correct[cite: 2]. 'Timid' means lacking courage or self-assurance[cite: 2]. 'Audacious' and 'Intrepid' mean boldly fearless and daring[cite: 2].",
+    "tags": ["vocab", "ows", "personality", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1113",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA long, angry, and critical speech of accusation or denunciation",
+    "options": {
+      "A": "Tirade",
+      "B": "Eulogy",
+      "C": "Panegyric",
+      "D": "Oration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tirade) is correct[cite: 2]. A 'Tirade' is a prolonged, bitter, angry speech of scolding criticism[cite: 2]. 'Eulogy' is a speech of high praise[cite: 2].",
+    "tags": ["vocab", "ows", "speeches", "communication", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1114",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExisting, holding office, or recognized only in name rather than in actual fact or power",
+    "options": {
+      "A": "Titular",
+      "B": "Actual",
+      "C": "Real",
+      "D": "Genuine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Titular) is correct[cite: 2]. 'Titular' refers to someone holding a title nominally without exercising real power[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1115",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA young infant or child just beginning to learn how to walk",
+    "options": {
+      "A": "Toddler",
+      "B": "Adolescent",
+      "C": "Adult",
+      "D": "Veteran"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Toddler) is correct[cite: 2]. A 'Toddler' is a young child in the early developmental stage of walking[cite: 2].",
+    "tags": ["vocab", "ows", "age", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1116",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA strong, violent, and fast-moving stream of water or liquid",
+    "options": {
+      "A": "Torrent",
+      "B": "Rivulet",
+      "C": "Trickle",
+      "D": "Brook"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Torrent) is correct[cite: 2]. A 'Torrent' is a turbulent, fast-flowing stream of water[cite: 2]. 'Trickle' and 'Rivulet' mean a very small, gentle stream[cite: 2].",
+    "tags": ["vocab", "ows", "geography", "water", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1117",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFull of twists, turns, winding curves, and complex convolutions",
+    "options": {
+      "A": "Tortuous",
+      "B": "Straight",
+      "C": "Direct",
+      "D": "Linear"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tortuous) is correct[cite: 2]. 'Tortuous' means full of twists, turns, and winding paths[cite: 2]. (Note: not to be confused with 'torturous' meaning painful)[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1118",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA system of governance in which only one single political party is legally permitted to function",
+    "options": {
+      "A": "Totalitarianism",
+      "B": "Democracy",
+      "C": "Pluralism",
+      "D": "Federalism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Totalitarianism) is correct[cite: 2]. 'Totalitarianism' is a centralized authoritarian regime allowing only one ruling party[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1119",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nContaining poison; poisonous, harmful, or deadly to living organisms",
+    "options": {
+      "A": "Toxic",
+      "B": "Innocuous",
+      "C": "Salubrious",
+      "D": "Benign"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Toxic) is correct[cite: 2]. 'Toxic' means poisonous or capable of causing lethal harm[cite: 2]. 'Salubrious' means health-giving[cite: 2].",
+    "tags": ["vocab", "ows", "science", "medical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1120",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who betrays their country, allegiance, trust, or friends; a turncoat",
+    "options": {
+      "A": "Traitor",
+      "B": "Patriot",
+      "C": "Martyr",
+      "D": "Apostle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Traitor) is correct[cite: 2]. A 'Traitor' is someone guilty of treason and betraying their homeland[cite: 2]. 'Patriot' is loyal and devoted[cite: 2].",
+    "tags": ["vocab", "ows", "people", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1121",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFree from disturbance, agitation, or anxiety; calm and peaceful",
+    "options": {
+      "A": "Tranquil",
+      "B": "Turbulent",
+      "C": "Agitated",
+      "D": "Boisterous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tranquil) is correct[cite: 2]. 'Tranquil' means serene, calm, and free from disturbance[cite: 2]. 'Turbulent' and 'Agitated' mean stormy and unsettled[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1122",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nBeyond, surpassing, or rising far above the range of normal physical human experience",
+    "options": {
+      "A": "Transcendent",
+      "B": "Mundane",
+      "C": "Ordinary",
+      "D": "Terrestrial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Transcendent) is correct[cite: 2]. 'Transcendent' means going beyond ordinary limits or material existence[cite: 2]. 'Mundane' means ordinary and dull[cite: 2].",
+    "tags": ["vocab", "ows", "philosophy", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1123",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn electrical apparatus designed for stepping up or stepping down alternating current voltage",
+    "options": {
+      "A": "Transformer",
+      "B": "Transistor",
+      "C": "Generator",
+      "D": "Amplifier"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Transformer) is correct[cite: 2]. A 'Transformer' alters AC electrical voltage levels[cite: 2].",
+    "tags": ["vocab", "ows", "science", "technology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1124",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who violates a legal rule, law, command, or moral boundary",
+    "options": {
+      "A": "Transgressor",
+      "B": "Guard",
+      "C": "Sentinel",
+      "D": "Defender"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Transgressor) is correct[cite: 2]. A 'Transgressor' breaks laws or moral codes[cite: 2].",
+    "tags": ["vocab", "ows", "law", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1125",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small, lightweight, and portable battery-operated radio receiver",
+    "options": {
+      "A": "Transistor",
+      "B": "Transformer",
+      "C": "Telegraph",
+      "D": "Microphone"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Transistor) is correct[cite: 2]. A 'Transistor' refers historically to a portable pocket radio device[cite: 2].",
+    "tags": ["vocab", "ows", "technology", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1126",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLasting only for a short, temporary time; transient",
+    "options": {
+      "A": "Transitory",
+      "B": "Perpetual",
+      "C": "Eternal",
+      "D": "Everlasting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Transitory) is correct[cite: 2]. 'Transitory' means short-lived or passing quickly[cite: 2]. 'Perpetual' and 'Eternal' mean lasting forever[cite: 2].",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1127",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo change or convert something into another form, nature, or substance",
+    "options": {
+      "A": "Transmute",
+      "B": "Consolidate",
+      "C": "Preserve",
+      "D": "Stabilize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Transmute) is correct[cite: 2]. 'Transmute' means to transform or change completely in form or substance[cite: 2].",
+    "tags": ["vocab", "ows", "verbs", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1128",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nRelating to speeds close to, near, or crossing that of sound waves in air",
+    "options": {
+      "A": "Transonic",
+      "B": "Supersonic",
+      "C": "Subsonic",
+      "D": "Hypersonic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Transonic) is correct[cite: 2]. 'Transonic' describes speeds around the sound barrier (~Mach 1)[cite: 2]. 'Supersonic' is faster than sound[cite: 2].",
+    "tags": ["vocab", "ows", "science", "physics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1129",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAllowing light and clear images to pass through so that objects behind can be seen distinctly; clear glass",
+    "options": {
+      "A": "Transparent",
+      "B": "Opaque",
+      "C": "Turbid",
+      "D": "Murky"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Transparent) is correct[cite: 2]. 'Transparent' means permitting light to pass through clearly[cite: 2]. 'Opaque' blocks light completely[cite: 2].",
+    "tags": ["vocab", "ows", "science", "physics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1130",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo travel across, over, or through a region or area",
+    "options": {
+      "A": "Traverse",
+      "B": "Sojourn",
+      "C": "Moor",
+      "D": "Anchor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Traverse) is correct[cite: 2]. 'Traverse' means to move across, span, or cross an area[cite: 2]. 'Sojourn' means to stay temporarily[cite: 2].",
+    "tags": ["vocab", "ows", "verbs", "travel", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1131",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA distorted, grotesque, or grossly inferior imitation or representation of something",
+    "options": {
+      "A": "Travesty",
+      "B": "Facsimile",
+      "C": "Replica",
+      "D": "Prototype"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Travesty) is correct[cite: 2]. A 'Travesty' is an absurd, distorted, or parody-like misrepresentation of something serious[cite: 2].",
+    "tags": ["vocab", "ows", "literature", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1132",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe serious crime of betraying one's country, sovereign, or government",
+    "options": {
+      "A": "Treason",
+      "B": "Espionage",
+      "C": "Sedition",
+      "D": "Felony"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Treason) is correct[cite: 2]. 'Treason' is the crime of betraying national allegiance or plotting against the sovereign state[cite: 2].",
+    "tags": ["vocab", "ows", "crime", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1133",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small, slight shaking, trembling movement of the ground or body",
+    "options": {
+      "A": "Tremor",
+      "B": "Spasm",
+      "C": "Quake",
+      "D": "Surge"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tremor) is correct[cite: 2]. A 'Tremor' is a quick, involuntary quivering motion or minor earthquake shock[cite: 2].",
+    "tags": ["vocab", "ows", "science", "geology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1134",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nPersons who enter a property, gate, or land without legal permission or invitation",
+    "options": {
+      "A": "Trespassers",
+      "B": "Burglar",
+      "C": "Intruder",
+      "D": "Prowler"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Trespassers) is correct[cite: 2]. 'Trespassers' enter someone's land unlawfully without license[cite: 2].",
+    "tags": ["vocab", "ows", "law", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1135",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA river or stream flowing into and joining a larger river or main lake",
+    "options": {
+      "A": "Tributary",
+      "B": "Estuary",
+      "C": "Delta",
+      "D": "Reservoir"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tributary) is correct[cite: 2]. A 'Tributary' is a smaller stream feeding into a larger parent river[cite: 2].",
+    "tags": ["vocab", "ows", "geography", "water", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1136",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOccurring, happening, or celebrated once every three years",
+    "options": {
+      "A": "Triennial",
+      "B": "Biennial",
+      "C": "Quinquennial",
+      "D": "Annual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Triennial) is correct[cite: 2]. 'Triennial' means occurring once every three years[cite: 2]. 'Biennial' occurs every two years[cite: 2].",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1137",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA set or series of three related literary, dramatic, or artistic works created by the same author",
+    "options": {
+      "A": "Trilogy",
+      "B": "Couplet",
+      "C": "Sonnet",
+      "D": "Anthology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Trilogy) is correct[cite: 2]. A 'Trilogy' is a group of three connected literary or dramatic plays or novels[cite: 2].",
+    "tags": ["vocab", "ows", "literature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1138",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA three-legged supporting stand used for mounting cameras, telescopes, or surveying instruments",
+    "options": {
+      "A": "Tripod",
+      "B": "Stanchion",
+      "C": "Podium",
+      "D": "Pulpit"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tripod) is correct[cite: 2]. A 'Tripod' is a three-legged adjustable stand for optical equipment[cite: 2].",
+    "tags": ["vocab", "ows", "tools", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1139",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA ruling committee or coalition of three powerful individuals holding joint political power",
+    "options": {
+      "A": "Triumvirate",
+      "B": "Oligarchy",
+      "C": "Monarchy",
+      "D": "Diarchy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Triumvirate) is correct[cite: 2]. A 'Triumvirate' is a political regime ruled by a coalition of three powerful leaders[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1140",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOf little or very small importance, value, or significance; commonplace and ordinary",
+    "options": {
+      "A": "Trivial",
+      "B": "Momentous",
+      "C": "Paramount",
+      "D": "Cardinal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Trivial) is correct[cite: 2]. 'Trivial' means of little substance or negligible importance[cite: 2]. 'Momentous' means critically important[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1141",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA decorative cup, plaque, or statue awarded as a prize for victory in sports or war",
+    "options": {
+      "A": "Trophy",
+      "B": "Medal",
+      "C": "Badge",
+      "D": "Ribbon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Trophy) is correct[cite: 2]. A 'Trophy' is a prize awarded for winning a contest or hunting triumph[cite: 2].",
+    "tags": ["vocab", "ows", "sports", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1142",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA student who stays away from school or class idly without valid permission or excuse; a shirker",
+    "options": {
+      "A": "Truant",
+      "B": "Scholar",
+      "C": "Novice",
+      "D": "Apprentice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Truant) is correct[cite: 2]. A 'Truant' is a student who absents themselves from classes without permission[cite: 2].",
+    "tags": ["vocab", "ows", "education", "people", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1143",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFiercely aggressive, belligerent, hostile, and scowling in temperament",
+    "options": {
+      "A": "Truculent",
+      "B": "Docile",
+      "C": "Amenable",
+      "D": "Placid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Truculent) is correct[cite: 2]. 'Truculent' means aggressively defiant, sullen, and combative[cite: 2]. 'Docile' means quiet and easy to manage[cite: 2].",
+    "tags": ["vocab", "ows", "personality", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1144",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn obviously true, self-evident, or hackneyed statement expressing a commonplace fact",
+    "options": {
+      "A": "Truism",
+      "B": "Paradox",
+      "C": "Fallacy",
+      "D": "Enigma"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Truism) is correct[cite: 2]. A 'Truism' is an unoriginal statement whose truth is universally obvious[cite: 2].",
+    "tags": ["vocab", "ows", "logic", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1145",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn extremely large, destructive sea wave generated by an underwater earthquake or volcanic eruption",
+    "options": {
+      "A": "Tsunami",
+      "B": "Cyclone",
+      "C": "Typhoon",
+      "D": "Hurricane"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tsunami) is correct[cite: 2]. A 'Tsunami' is a massive seismic sea wave caused by tectonic displacement[cite: 2].",
+    "tags": ["vocab", "ows", "weather", "geography", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1146",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who deserts one political party, allegiance, or faction to join an opposing group; a traitor",
+    "options": {
+      "A": "Turncoat",
+      "B": "Patriot",
+      "C": "Martyr",
+      "D": "Apostle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Turncoat) is correct[cite: 2]. A 'Turncoat' (or renegade) changes sides opportunistically[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "people", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1147",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe state of being under the guardianship, protection, or legal care of a tutor or guardian",
+    "options": {
+      "A": "Tutelage",
+      "B": "Autonomy",
+      "C": "Independence",
+      "D": "Freedom"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tutelage) is correct[cite: 2]. 'Tutelage' is protection, guidance, or authority under a tutor or guardian[cite: 2]. 'Autonomy' is self-rule[cite: 2].",
+    "tags": ["vocab", "ows", "education", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1148",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTwo children or offspring born together from the same pregnancy",
+    "options": {
+      "A": "Twins",
+      "B": "Triplets",
+      "C": "Siblings",
+      "D": "Orphans"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Twins) is correct[cite: 2]. 'Twins' are two offspring born at a single birth[cite: 2].",
+    "tags": ["vocab", "ows", "family", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1149",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is new, inexperienced, or untrained in a trade, profession, or art; a novice",
+    "options": {
+      "A": "Tyro",
+      "B": "Veteran",
+      "C": "Virtuoso",
+      "D": "Connoisseur"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tyro) is correct[cite: 2]. A 'Tyro' is a beginner or novice in learning a profession[cite: 2].",
+    "tags": ["vocab", "ows", "people", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1150",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nDone or agreed to by everyone in a group or committee without any dissent; unanimously",
+    "options": {
+      "A": "Unanimously",
+      "B": "Disputably",
+      "C": "Divided",
+      "D": "Controversially"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Unanimously) is correct[cite: 2]. 'Unanimously' means fully agreed upon by all members present without opposition[cite: 2].",
+    "tags": ["vocab", "ows", "adverbs", "society", "pyq_ssc", "repeated_2_times"]
+  }
+]

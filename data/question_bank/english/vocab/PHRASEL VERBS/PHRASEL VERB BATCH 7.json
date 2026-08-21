@@ -1,0 +1,614 @@
+[
+  {
+    "id": "ENG_VOCAB_PHRA_2051",
+    "question": "What is the meaning of the phrasal verb 'opt out'?",
+    "options": {
+      "A": "To choose not to participate in something.",
+      "B": "To leave a room quickly.",
+      "C": "To agree to a request.",
+      "D": "To improve performance."
+    },
+    "correct_option": "A",
+    "rationale": "'Opt out' means to decide not to be part of a group, activity, or agreement."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2052",
+    "question": "Fill in the blank: 'We decided to _____ the original plan and try something new.'",
+    "options": {
+      "A": "ditch",
+      "B": "do away with",
+      "C": "do up",
+      "D": "do over"
+    },
+    "correct_option": "B",
+    "rationale": "'Do away with' means to abolish or discard something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2053",
+    "question": "Spot the error: 'He tried to do up the old jacket to look professional.'",
+    "options": {
+      "A": "He tried to",
+      "B": "do up",
+      "C": "the old jacket to look professional.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Do up' means to repair, renovate, or fasten (like buttons/zippers). Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2054",
+    "question": "What does 'do over' mean?",
+    "options": {
+      "A": "To do something again from the beginning.",
+      "B": "To finish a task.",
+      "C": "To ignore a problem.",
+      "D": "To sell something."
+    },
+    "correct_option": "A",
+    "rationale": "'Do over' means to repeat an action or redo a task."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2055",
+    "question": "Fill in the blank: 'The sudden loud bang _____ everyone in the room.'",
+    "options": {
+      "A": "freaked out",
+      "B": "freaked in",
+      "C": "freaked up",
+      "D": "freaked off"
+    },
+    "correct_option": "A",
+    "rationale": "'Freak out' means to react with extreme surprise, fear, or excitement."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2056",
+    "question": "Choose the meaning of 'flesh out':",
+    "options": {
+      "A": "To add more details or substance to a plan or idea.",
+      "B": "To remove the bones from meat.",
+      "C": "To lose weight rapidly.",
+      "D": "To discuss a minor point."
+    },
+    "correct_option": "A",
+    "rationale": "'Flesh out' means to give more detail or body to a rough draft."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2057",
+    "question": "Spot the error: 'You need to flesh out your argument with more evidence.'",
+    "options": {
+      "A": "You need to",
+      "B": "flesh out",
+      "C": "your argument with more evidence.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Flesh out' is correctly used to mean providing more information. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2058",
+    "question": "Fill in the blank: 'The negotiations _____ after both sides failed to reach a consensus.'",
+    "options": {
+      "A": "fell apart",
+      "B": "fell in",
+      "C": "fell up",
+      "D": "fell out"
+    },
+    "correct_option": "A",
+    "rationale": "'Fall apart' means to break, collapse, or fail completely."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2059",
+    "question": "What does 'fill in for' mean?",
+    "options": {
+      "A": "To substitute for someone temporarily.",
+      "B": "To complete a document.",
+      "C": "To ignore someone's absence.",
+      "D": "To argue with someone."
+    },
+    "correct_option": "A",
+    "rationale": "'Fill in for' means to do someone else's work while they are away."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2060",
+    "question": "Spot the error: 'Can you fill in for me during the board meeting?'",
+    "options": {
+      "A": "Can you fill in for me",
+      "B": "during the board meeting?",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "rationale": "'Fill in for' is the correct phrasal verb for temporary substitution. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2061",
+    "question": "Fill in the blank: 'Please _____ the application form with your personal details.'",
+    "options": {
+      "A": "fill out",
+      "B": "fill in",
+      "C": "fill up",
+      "D": "fill away"
+    },
+    "correct_option": "A",
+    "rationale": "'Fill out' (US) or 'fill in' (UK) mean to complete a form."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2062",
+    "question": "What does 'get across' mean?",
+    "options": {
+      "A": "To make someone understand an idea clearly.",
+      "B": "To cross a river.",
+      "C": "To annoy someone.",
+      "D": "To ignore a message."
+    },
+    "correct_option": "A",
+    "rationale": "'Get across' means to communicate or convey a meaning successfully."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2063",
+    "question": "Spot the error: 'He found it hard to get his point across to the audience.'",
+    "options": {
+      "A": "He found it hard",
+      "B": "to get his point across",
+      "C": "to the audience.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Get across' is used correctly to mean conveying a point. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2064",
+    "question": "Fill in the blank: 'The criminal managed to _____ of the country before the borders closed.'",
+    "options": {
+      "A": "get out",
+      "B": "get off",
+      "C": "get on",
+      "D": "get up"
+    },
+    "correct_option": "A",
+    "rationale": "'Get out' means to leave or escape."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2065",
+    "question": "Choose the meaning of 'get by':",
+    "options": {
+      "A": "To survive with difficulty.",
+      "B": "To win a race.",
+      "C": "To be very rich.",
+      "D": "To finish early."
+    },
+    "correct_option": "A",
+    "rationale": "'Get by' means to manage to live or cope with limited resources."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2066",
+    "question": "Spot the error: 'She gets by on a very small income.'",
+    "options": {
+      "A": "She gets by",
+      "B": "on a very small income.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "rationale": "'Get by' means to subsist. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2067",
+    "question": "Fill in the blank: 'Don't let them _____ with such rude behavior!'",
+    "options": {
+      "A": "get away",
+      "B": "get along",
+      "C": "get up",
+      "D": "get out"
+    },
+    "correct_option": "A",
+    "rationale": "'Get away with' means to avoid punishment."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2068",
+    "question": "What does 'grow on' mean?",
+    "options": {
+      "A": "To become gradually more liked by someone.",
+      "B": "To grow taller.",
+      "C": "To plant a garden.",
+      "D": "To get old."
+    },
+    "correct_option": "A",
+    "rationale": "'Grow on' means to gradually increase in appeal."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2069",
+    "question": "Spot the error: 'This song started to grow on me after I listened to it twice.'",
+    "options": {
+      "A": "This song started",
+      "B": "to grow on me",
+      "C": "after I listened to it twice.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Grow on me' is correct for something becoming liked over time."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2070",
+    "question": "Fill in the blank: 'We decided to _____ the matter to the board of directors.'",
+    "options": {
+      "A": "refer",
+      "B": "hand over",
+      "C": "pass on",
+      "D": "pass up"
+    },
+    "correct_option": "B",
+    "rationale": "'Hand over' (referencing responsibility) fits."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2071",
+    "question": "What does 'pass up' mean?",
+    "options": {
+      "A": "To decline or miss an opportunity.",
+      "B": "To give something to someone.",
+      "C": "To die.",
+      "D": "To finish."
+    },
+    "correct_option": "A",
+    "rationale": "'Pass up' means to fail to take an opportunity."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2072",
+    "question": "Fill in the blank: 'It is a chance of a lifetime; don't _____ it _____.'",
+    "options": {
+      "A": "pass/up",
+      "B": "pass/on",
+      "C": "pass/by",
+      "D": "pass/out"
+    },
+    "correct_option": "A",
+    "rationale": "'Pass up' is the correct phrasal verb here."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2073",
+    "question": "Spot the error: 'The manager turned down all our suggestions.'",
+    "options": {
+      "A": "The manager turned down",
+      "B": "all our suggestions.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "rationale": "'Turn down' means reject. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2074",
+    "question": "Fill in the blank: 'She decided to _____ her own company after gaining experience.'",
+    "options": {
+      "A": "set up",
+      "B": "set off",
+      "C": "set out",
+      "D": "set aside"
+    },
+    "correct_option": "A",
+    "rationale": "'Set up' means to establish or start (a business)."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2075",
+    "question": "What does 'set aside' mean?",
+    "options": {
+      "A": "To save for a future purpose.",
+      "B": "To reject.",
+      "C": "To start.",
+      "D": "To finish."
+    },
+    "correct_option": "A",
+    "rationale": "'Set aside' means to save or reserve."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2076",
+    "question": "Spot the error: 'He set aside a portion of his salary every month.'",
+    "options": {
+      "A": "He set aside",
+      "B": "a portion of",
+      "C": "his salary every month.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Set aside' for saving money is correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2077",
+    "question": "Fill in the blank: 'Things didn't _____ the way we expected.'",
+    "options": {
+      "A": "pan out",
+      "B": "pan in",
+      "C": "pan up",
+      "D": "pan off"
+    },
+    "correct_option": "A",
+    "rationale": "'Pan out' means to turn out or succeed."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2078",
+    "question": "What does 'pick up' mean?",
+    "options": {
+      "A": "To improve or collect something.",
+      "B": "To drop something.",
+      "C": "To ignore.",
+      "D": "To finish."
+    },
+    "correct_option": "A",
+    "rationale": "'Pick up' can mean to improve (economy/situation) or collect (person/item)."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2079",
+    "question": "Spot the error: 'The economy is starting to pick up again.'",
+    "options": {
+      "A": "The economy is starting",
+      "B": "to pick up again.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "rationale": "'Pick up' means improve. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2080",
+    "question": "Fill in the blank: 'We need to _____ the facts before making a decision.'",
+    "options": {
+      "A": "look into",
+      "B": "look up",
+      "C": "look after",
+      "D": "look for"
+    },
+    "correct_option": "A",
+    "explanation": "'Look into' means to investigate."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2081",
+    "question": "Choose the meaning of 'keep up':",
+    "options": {
+      "A": "To maintain a pace or continue.",
+      "B": "To stop.",
+      "C": "To lower.",
+      "D": "To reject."
+    },
+    "correct_option": "A",
+    "explanation": "'Keep up' means to maintain."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2082",
+    "question": "Fill in the blank: 'Please _____ your hands during the lecture.'",
+    "options": {
+      "A": "keep down",
+      "B": "keep up",
+      "C": "keep in",
+      "D": "keep off"
+    },
+    "correct_option": "A",
+    "explanation": "'Keep down' (to quiet) or 'keep up' (to raise). Wait, this is ambiguous. Let's use 'keep the noise down'."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2082_REV",
+    "question": "Fill in the blank: 'Please _____ the noise down while the baby is sleeping.'",
+    "options": {
+      "A": "keep",
+      "B": "look",
+      "C": "put",
+      "D": "get"
+    },
+    "correct_option": "A",
+    "explanation": "'Keep down' means to control/suppress."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2083",
+    "question": "Spot the error: 'He keeps on working despite the fatigue.'",
+    "options": {
+      "A": "He keeps on working",
+      "B": "despite the fatigue.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Keep on' means to continue. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2084",
+    "question": "Fill in the blank: 'Don't let these minor issues _____ you.'",
+    "options": {
+      "A": "wear down",
+      "B": "wear out",
+      "C": "wear away",
+      "D": "wear off"
+    },
+    "correct_option": "A",
+    "explanation": "'Wear down' means to reduce the stamina/resolve."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2085",
+    "question": "What is the meaning of 'take in'?",
+    "options": {
+      "A": "To understand or deceive.",
+      "B": "To reject.",
+      "C": "To arrive.",
+      "D": "To leave."
+    },
+    "correct_option": "A",
+    "explanation": "'Take in' can mean to understand, to deceive (as in 'taken in by'), or to shorten a garment."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2086",
+    "question": "Spot the error: 'I was taken in by his smooth talk.'",
+    "options": {
+      "A": "I was taken in",
+      "B": "by his smooth talk.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Taken in' means deceived. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2087",
+    "question": "Fill in the blank: 'The new rules will _____ tomorrow.'",
+    "options": {
+      "A": "come into force",
+      "B": "come into play",
+      "C": "come off",
+      "D": "come to"
+    },
+    "correct_option": "A",
+    "explanation": "'Come into force' (or effect) means to become active."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2088",
+    "question": "Choose the meaning of 'come into play':",
+    "options": {
+      "A": "To have an influence or effect.",
+      "B": "To begin a sport.",
+      "C": "To act in a theater.",
+      "D": "To lose."
+    },
+    "correct_option": "A",
+    "explanation": "'Come into play' means to start having an effect."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2089",
+    "question": "Spot the error: 'His experience came into play during the crisis.'",
+    "options": {
+      "A": "His experience came into play",
+      "B": "during the crisis.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Come into play' is correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2090",
+    "question": "Fill in the blank: 'He tried to _____ his fear by acting brave.'",
+    "options": {
+      "A": "cover up",
+      "B": "cover over",
+      "C": "cover away",
+      "D": "cover in"
+    },
+    "correct_option": "A",
+    "explanation": "'Cover up' means to hide or conceal."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2091",
+    "question": "What does 'break away' mean?",
+    "options": {
+      "A": "To escape from control.",
+      "B": "To join a group.",
+      "C": "To fix.",
+      "D": "To start."
+    },
+    "correct_option": "A",
+    "explanation": "'Break away' means to escape."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2092",
+    "question": "Fill in the blank: 'The prisoner managed to _____ from the guards.'",
+    "options": {
+      "A": "break away",
+      "B": "break in",
+      "C": "break up",
+      "D": "break out"
+    },
+    "correct_option": "A",
+    "explanation": "'Break away' means to escape control."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2093",
+    "question": "Spot the error: 'They broke up after five years of dating.'",
+    "options": {
+      "A": "They broke up",
+      "B": "after five years of dating.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Break up' means end a relationship. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2094",
+    "question": "Fill in the blank: 'I need to _____ my clothes before moving house.'",
+    "options": {
+      "A": "sort out",
+      "B": "sort up",
+      "C": "sort in",
+      "D": "sort away"
+    },
+    "correct_option": "A",
+    "explanation": "'Sort out' means to organize or resolve."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2095",
+    "question": "What is the meaning of 'sort out'?",
+    "options": {
+      "A": "To organize or fix a problem.",
+      "B": "To ruin.",
+      "C": "To throw away.",
+      "D": "To lose."
+    },
+    "correct_option": "A",
+    "explanation": "'Sort out' means to organize or resolve a situation."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2096",
+    "question": "Spot the error: 'He sorted out the issue with the bank.'",
+    "options": {
+      "A": "He sorted out",
+      "B": "the issue with the bank.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Sorted out' means resolved. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2097",
+    "question": "Fill in the blank: 'The manager decided to _____ the new policy to everyone.'",
+    "options": {
+      "A": "lay out",
+      "B": "lay in",
+      "C": "lay off",
+      "D": "lay down"
+    },
+    "correct_option": "A",
+    "explanation": "'Lay out' means to explain clearly or arrange."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2098",
+    "question": "Choose the meaning of 'lay down':",
+    "options": {
+      "A": "To establish a rule.",
+      "B": "To sleep.",
+      "C": "To reject.",
+      "D": "To finish."
+    },
+    "correct_option": "A",
+    "explanation": "'Lay down' means to establish rules/laws."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2099",
+    "question": "Spot the error: 'They laid down the rules of the house.'",
+    "options": {
+      "A": "They laid down",
+      "B": "the rules of the house.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Laid down' means established (past tense of lay). Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2100",
+    "question": "What does 'lay off' mean?",
+    "options": {
+      "A": "To dismiss staff.",
+      "B": "To stop.",
+      "C": "To join.",
+      "D": "To start."
+    },
+    "correct_option": "A",
+    "explanation": "'Lay off' means to dismiss workers."
+  }
+]

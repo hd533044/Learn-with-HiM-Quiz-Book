@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_1151",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VITUPERATE**",
+    "options": {
+      "A": "Berate",
+      "B": "Praise",
+      "C": "Eulogize",
+      "D": "Commend"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vituperate' means to blame or insult someone in strong or violent language. 'Berate', 'revile', or 'scold' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1152",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VITUPERATE**",
+    "options": {
+      "A": "Revile",
+      "B": "Berate",
+      "C": "Abuse",
+      "D": "Praise"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Vituperate' means to attack with harsh insults. 'Praise', 'laud', or 'acclaim' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1153",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VIVACIOUS**",
+    "options": {
+      "A": "Sprightly",
+      "B": "Languid",
+      "C": "Torpid",
+      "D": "Morose"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vivacious' means attractively lively and animated. 'Sprightly', 'buoyant', or 'ebullient' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1154",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VIVACIOUS**",
+    "options": {
+      "A": "Lively",
+      "B": "Animated",
+      "C": "Languid",
+      "D": "Spirited"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Vivacious' means full of lively energy. 'Languid', 'listless', or 'dull' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1155",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VOCIFEROUS**",
+    "options": {
+      "A": "Clamorous",
+      "B": "Reticent",
+      "C": "Taciturn",
+      "D": "Mute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vociferous' means expressing opinions or feelings loudly and forcefully. 'Clamorous', 'vehement', or 'strident' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1156",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VOCIFEROUS**",
+    "options": {
+      "A": "Clamorous",
+      "B": "Noisy",
+      "C": "Strident",
+      "D": "Quiet"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Vociferous' means loudly outspoken. 'Quiet', 'subdued', or 'reticent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1157",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VOLATILE**",
+    "options": {
+      "A": "Capricious",
+      "B": "Stable",
+      "C": "Constant",
+      "D": "Steadfast"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Volatile' means liable to change rapidly and unpredictably, especially for the worse. 'Capricious', 'mercurial', or 'erratic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1158",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VOLATILE**",
+    "options": {
+      "A": "Mercurial",
+      "B": "Unstable",
+      "C": "Stable",
+      "D": "Fickle"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Volatile' means unstable and rapidly changing. 'Stable', 'constant', or 'steady' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1159",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VOLUBLE**",
+    "options": {
+      "A": "Garrulous",
+      "B": "Laconic",
+      "C": "Taciturn",
+      "D": "Silent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Voluble' means speaking or spoken incessantly and fluently. 'Garrulous', 'loquacious', or 'talkative' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1160",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VOLUBLE**",
+    "options": {
+      "A": "Garrulous",
+      "B": "Talkative",
+      "C": "Laconic",
+      "D": "Loquacious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Voluble' means continuous and fluent in speech. 'Laconic', 'taciturn', or 'reticent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1161",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VORACIOUS**",
+    "options": {
+      "A": "Insatiable",
+      "B": "Abstemious",
+      "C": "Ascetic",
+      "D": "Moderate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Voracious' means wanting or devouring great quantities of food or having an eager approach to an activity. 'Insatiable', 'ravenous', or 'rapacious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1162",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VORACIOUS**",
+    "options": {
+      "A": "Ravenous",
+      "B": "Insatiable",
+      "C": "Abstemious",
+      "D": "Edacious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Voracious' means consuming greedily. 'Abstemious', 'temperate', or 'moderate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1163",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**WAN**",
+    "options": {
+      "A": "Pallid",
+      "B": "Ruddy",
+      "C": "Rubicund",
+      "D": "Flushed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Wan' means (of a person's complexion) pale and giving the impression of illness or exhaustion. 'Pallid', 'ashen', or 'sickly' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1164",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**WAN**",
+    "options": {
+      "A": "Pallid",
+      "B": "Ashen",
+      "C": "Ruddy",
+      "D": "Cadaverous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Wan' means pale and sickly. 'Ruddy', 'rubicund', or 'flushed' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1165",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**WARY**",
+    "options": {
+      "A": "Circumspect",
+      "B": "Reckless",
+      "C": "Rash",
+      "D": "Careless"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Wary' means feeling or showing caution about possible dangers or problems. 'Circumspect', 'cautious', or 'chary' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1166",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**WARY**",
+    "options": {
+      "A": "Cautious",
+      "B": "Circumspect",
+      "C": "Rash",
+      "D": "Chary"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Wary' means guarded and watchful. 'Rash', 'incautious', or 'heedless' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1167",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**WAVER**",
+    "options": {
+      "A": "Vacillate",
+      "B": "Persist",
+      "C": "Decide",
+      "D": "Endure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Waver' means to shake with a quivering motion, or be undecided between two opinions. 'Vacillate', 'hesitate', or 'falter' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1168",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**WAVER**",
+    "options": {
+      "A": "Vacillate",
+      "B": "Falter",
+      "C": "Persist",
+      "D": "Dither"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Waver' means to hesitate or be indecisive. 'Persist', 'remain firm', or 'stand fast' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1169",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**WHEEDLE**",
+    "options": {
+      "A": "Cajole",
+      "B": "Bully",
+      "C": "Coerce",
+      "D": "Demand"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Wheedle' means to use flattery or coaxing to persuade someone to do something. 'Cajole', 'inveigle', or 'coax' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1170",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**WHEEDLE**",
+    "options": {
+      "A": "Cajole",
+      "B": "Coax",
+      "C": "Coerce",
+      "D": "Beguile"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Wheedle' means to entice or flatter into compliance. 'Coerce', 'force', or 'intimidate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1171",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**WHIMSICAL**",
+    "options": {
+      "A": "Capricious",
+      "B": "Dull",
+      "C": "Predictable",
+      "D": "Sensible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Whimsical' means playfully quaint or fanciful, especially in an appealing and amusing way; acting on sudden whim. 'Capricious', 'fanciful', or 'eccentric' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1172",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**WHIMSICAL**",
+    "options": {
+      "A": "Fanciful",
+      "B": "Capricious",
+      "C": "Predictable",
+      "D": "Quaint"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Whimsical' implies capricious and unexpected behavior. 'Predictable', 'sensible', or 'conventional' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1173",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**WILY**",
+    "options": {
+      "A": "Crafty",
+      "B": "Guileless",
+      "C": "Ingenuous",
+      "D": "Naive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Wily' means skilled at gaining an advantage, especially deceitfully. 'Crafty', 'cunning', or 'artful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1174",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**WILY**",
+    "options": {
+      "A": "Crafty",
+      "B": "Shrewd",
+      "C": "Ingenuous",
+      "D": "Astute"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Wily' means full of deceitful cunning. 'Ingenuous', 'guileless', or 'artless' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1175",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**WISTFUL**",
+    "options": {
+      "A": "Yearning",
+      "B": "Cheerful",
+      "C": "Content",
+      "D": "Indifferent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Wistful' means having or showing a feeling of vague or regretful longing. 'Yearning', 'pensive', or 'melancholy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1176",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**WISTFUL**",
+    "options": {
+      "A": "Pensive",
+      "B": "Yearning",
+      "C": "Content",
+      "D": "Longing"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Wistful' denotes unsatisfied, melancholy longing. 'Content', 'satisfied', or 'cheerful' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1177",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ZEALOT**",
+    "options": {
+      "A": "Fanatic",
+      "B": "Moderate",
+      "C": "Apostate",
+      "D": "Nonpartisan"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Zealot' refers to a person who is fanatical and uncompromising in pursuit of their religious, political, or other ideals. 'Fanatic', 'extremist', or 'partisan' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1178",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ZEALOT**",
+    "options": {
+      "A": "Fanatic",
+      "B": "Militant",
+      "C": "Moderate",
+      "D": "Partisan"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Zealot' means an uncompromising fanatic. 'Moderate', 'neutral', or 'dispassionate person' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1179",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ZENITH**",
+    "options": {
+      "A": "Pinnacle",
+      "B": "Nadir",
+      "C": "Base",
+      "D": "Abyss"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Zenith' refers to the time at which something is most powerful or successful; the peak. 'Pinnacle', 'apex', or 'acme' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1180",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ZENITH**",
+    "options": {
+      "A": "Apex",
+      "B": "Acme",
+      "C": "Nadir",
+      "D": "Summit"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Zenith' is the highest peak. 'Nadir', 'bottom', or 'lowest point' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1181",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ZEST**",
+    "options": {
+      "A": "Enthusiasm",
+      "B": "Apathy",
+      "C": "Lethargy",
+      "D": "Indifference"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Zest' means great enthusiasm and energy. 'Enthusiasm', 'gusto', or 'eagerness' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1182",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ZEST**",
+    "options": {
+      "A": "Gusto",
+      "B": "Enthusiasm",
+      "C": "Apathy",
+      "D": "Relish"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Zest' denotes passionate enjoyment. 'Apathy', 'indifference', or 'dullness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1183",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABERRATION**",
+    "options": {
+      "A": "Anomaly",
+      "B": "Regularity",
+      "C": "Normality",
+      "D": "Standard"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Aberration' refers to a departure from what is normal, usual, or expected. 'Anomaly', 'deviation', or 'irregularity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1184",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABERRATION**",
+    "options": {
+      "A": "Deviation",
+      "B": "Anomaly",
+      "C": "Normality",
+      "D": "Divergence"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Aberration' means an unexpected departure from standard behavior. 'Normality', 'conformity', or 'regularity' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1185",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABSTAIN**",
+    "options": {
+      "A": "Refrain",
+      "B": "Indulge",
+      "C": "Partake",
+      "D": "Embrace"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abstain' means to restrain oneself from doing or enjoying something. 'Refrain', 'forbear', or 'desist' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1186",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABSTAIN**",
+    "options": {
+      "A": "Refrain",
+      "B": "Desist",
+      "C": "Indulge",
+      "D": "Withhold"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Abstain' means to hold back. 'Indulge', 'participate', or 'partake' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1187",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACCRUE**",
+    "options": {
+      "A": "Accumulate",
+      "B": "Diminish",
+      "C": "Disperse",
+      "D": "Lose"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Accrue' means to accumulate or receive payments/benefits over time. 'Accumulate', 'amass', or 'gather' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1188",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACCRUE**",
+    "options": {
+      "A": "Accumulate",
+      "B": "Amass",
+      "C": "Diminish",
+      "D": "Increase"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Accrue' means to grow or accumulate. 'Diminish', 'decrease', or 'dissipate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1189",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACUMEN**",
+    "options": {
+      "A": "Astuteness",
+      "B": "Obtuseness",
+      "C": "Ignorance",
+      "D": "Stupidity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Acumen' refers to the ability to make good judgments and quick decisions. 'Astuteness', 'shrewdness', or 'perspicacity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1190",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACUMEN**",
+    "options": {
+      "A": "Insight",
+      "B": "Shrewdness",
+      "C": "Obtuseness",
+      "D": "Astuteness"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Acumen' means keen mental sharpness. 'Obtuseness', 'density', or 'dullness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1191",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ADROIT**",
+    "options": {
+      "A": "Dexterous",
+      "B": "Clumsy",
+      "C": "Maladroit",
+      "D": "Awkward"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Adroit' means clever or skillful in using the hands or mind. 'Dexterous', 'nimble', or 'adept' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1192",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ADROIT**",
+    "options": {
+      "A": "Deft",
+      "B": "Dexterous",
+      "C": "Maladroit",
+      "D": "Adept"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Adroit' means skillful. 'Maladroit', 'awkward', or 'clumsy' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1193",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ADULTERATE**",
+    "options": {
+      "A": "Contaminate",
+      "B": "Purify",
+      "C": "Refine",
+      "D": "Cleanse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Adulterate' means to render something poorer in quality by adding another substance. 'Contaminate', 'debase', or 'taint' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1194",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ADULTERATE**",
+    "options": {
+      "A": "Debase",
+      "B": "Taint",
+      "C": "Purify",
+      "D": "Corrupt"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Adulterate' means to corrupt or debase purity. 'Purify', 'cleanse', or 'refine' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1195",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ADVERSITY**",
+    "options": {
+      "A": "Misfortune",
+      "B": "Prosperity",
+      "C": "Success",
+      "D": "Fortune"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Adversity' refers to difficulties or misfortune. 'Misfortune', 'hardship', or 'affliction' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1196",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ADVERSITY**",
+    "options": {
+      "A": "Hardship",
+      "B": "Misfortune",
+      "C": "Prosperity",
+      "D": "Affliction"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Adversity' means hard times or difficulty. 'Prosperity', 'fortune', or 'success' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1197",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFECTATION**",
+    "options": {
+      "A": "Pretension",
+      "B": "Artlessness",
+      "C": "Simplicity",
+      "D": "Sincerity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Affectation' refers to behavior, speech, or writing that is artificial and designed to impress. 'Pretension', 'posturing', or 'artifice' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1198",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFECTATION**",
+    "options": {
+      "A": "Artificiality",
+      "B": "Pretension",
+      "C": "Sincerity",
+      "D": "Posturing"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Affectation' means unnatural, artificial posturing. 'Sincerity', 'genuineness', or 'naturalness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1199",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFLUENCE**",
+    "options": {
+      "A": "Opulence",
+      "B": "Indigence",
+      "C": "Penury",
+      "D": "Destitution"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Affluence' refers to the state of having a great deal of money; wealth. 'Opulence', 'wealth', or 'prosperity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1200",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFLUENCE**",
+    "options": {
+      "A": "Opulence",
+      "B": "Prosperity",
+      "C": "Penury",
+      "D": "Wealth"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Affluence' means wealth. 'Penury', 'indigence', or 'poverty' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

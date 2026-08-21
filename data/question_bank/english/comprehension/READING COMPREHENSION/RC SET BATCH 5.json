@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_131",
+    "passage_title": "The Jurisprudence of Legal Positivism versus Natural Law",
+    "passage_text": "The fundamental schism in classical and modern jurisprudence resides in the dialectic between natural law theory and legal positivism. Natural law theorists, tracing their lineage from Aristotle and Thomas Aquinas to John Finnis, argue that the validity of human-made statutory law is contingent upon its conformity with an objective moral order derived from human reason, divine telos, or inherent fundamental human goods. In this teleological formulation, a grossly unjust enactment does not constitute a genuine legal obligation (*lex iniusta non est lex*). In stark contrast, nineteenth-century legal positivism—formulated by Jeremy Bentham and John Austin and later refined by H.L.A. Hart—insists on the 'Separation Thesis', which posits that the definition of what law *is* must remain conceptually distinct from what law *ought* to be. Austin conceptualized law as the sovereign command backed by the coercive threat of sanction. Hart elevated this model by replacing the sovereign command with a dual hierarchy of primary rules (governing conduct) and secondary rules (governing adjudication, change, and recognition). Hart's 'Rule of Recognition' serves as the ultimate empirical test for legal validity within a legal system, decoupled from subjective moral criteria.",
+    "questions": [
+      {
+        "id": "ENG_RC_131_Q1",
+        "question": "What is the core premise of the 'Separation Thesis' in legal positivism?",
+        "options": {
+          "A": "Judicial branches must be strictly separated from legislative assemblies.",
+          "B": "The conceptual definition of what law is must be held distinct from moral evaluations of what law ought to be.",
+          "C": "Religious scriptures must be physically separated from legal courtrooms.",
+          "D": "Criminal law must be decoupled entirely from civil arbitration codes."
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly states that the Separation Thesis posits that 'the definition of what law is must remain conceptually distinct from what law ought to be.'"
+      },
+      {
+        "id": "ENG_RC_131_Q2",
+        "question": "How did H.L.A. Hart refine John Austin's earlier command theory of law?",
+        "options": {
+          "A": "By substituting the coercive sovereign command with a framework of primary rules of conduct and secondary rules of adjudication and recognition.",
+          "B": "By declaring that judges should rule based entirely on religious conscience.",
+          "C": "By rejecting written statutory legislation in favor of customary tribal norms.",
+          "D": "By arguing that sovereign monarchs hold unconstrained divine authority."
+        },
+        "correct_option": "A",
+        "rationale": "The passage explains that Hart replaced Austin's coercive sovereign model with a hierarchy of primary rules (governing conduct) and secondary rules (governing adjudication, change, and recognition)."
+      },
+      {
+        "id": "ENG_RC_131_Q3",
+        "question": "What does the Latin maxim *lex iniusta non est lex* express in natural law theory?",
+        "options": {
+          "A": "Written law is always superior to spoken judicial verdicts.",
+          "B": "An unjust law lacks genuine moral and binding legal validity.",
+          "C": "Ignorance of statutory law excuses criminal offenses.",
+          "D": "Laws are only enforceable during wartime conditions."
+        },
+        "correct_option": "B",
+        "rationale": "The text notes that in the natural law formulation, 'a grossly unjust enactment does not constitute a genuine legal obligation (*lex iniusta non est lex*).'"
+      },
+      {
+        "id": "ENG_RC_131_Q4",
+        "question": "According to Hart's legal framework, what is the 'Rule of Recognition'?",
+        "options": {
+          "A": "A diplomatic treaty acknowledging foreign governments.",
+          "B": "An empirical systemic criterion that establishes the validity of laws independently of moral tests.",
+          "C": "A constitutional requirement that every citizen memorize legal codes.",
+          "D": "A ritual practiced by sovereign monarchs when issuing royal decrees."
+        },
+        "correct_option": "B",
+        "rationale": "The passage identifies the Rule of Recognition as 'the ultimate empirical test for legal validity within a legal system, decoupled from subjective moral criteria.'"
+      },
+      {
+        "id": "ENG_RC_131_Q5",
+        "question": "As used in the passage, the word 'telos' most nearly refers to:",
+        "options": {
+          "A": "An ultimate purpose, end, or natural objective",
+          "B": "A military command issued in times of peril",
+          "C": "A financial penalty levied by a magistrate",
+          "D": "An unwritten customary tax exemption"
+        },
+        "correct_option": "A",
+        "rationale": "'Telos' is an ancient Greek philosophical term denoting the ultimate purpose, objective, or end of a being or concept."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_132",
+    "passage_title": "The Lucas Critique and Rational Expectations in Macroeconomics",
+    "passage_text": "Prior to the 1970s, mainstream Keynesian macroeconomic policy relied extensively on large-scale econometric forecasting models. These models treated historical behavioral parameters—such as the aggregate marginal propensity to consume or the trade-off between inflation and unemployment formalized by the traditional Phillips Curve—as invariant, stable coefficients during policy interventions. In 1976, economist Robert Lucas dismantled this methodology through what is now termed the 'Lucas Critique'. Lucas argued that it is fundamentally naive to predict the macroeconomic effects of an economic policy change solely on the basis of relationships observed in historical data. Because economic agents formulate 'rational expectations' by incorporating all available forward-looking information about state policy rules, they dynamically modify their expectations, pricing behavior, and consumption patterns whenever macroeconomic policy regimes change. For example, if a central bank attempts to exploit a static Phillips Curve by repeatedly inflating the money supply to lower unemployment, rational wage-earners anticipate the resulting inflation and demand proportional nominal wage increases, negating output gains and generating stagflation. Consequently, modern macroeconomics shifted to micro-founded Dynamic Stochastic General Equilibrium (DSGE) models.",
+    "questions": [
+      {
+        "id": "ENG_RC_132_Q1",
+        "question": "What fundamental flaw in traditional econometric forecasting was highlighted by the Lucas Critique?",
+        "options": {
+          "A": "The refusal to use computers in statistical regression analyses.",
+          "B": "The naive assumption that historical behavioral parameters remain invariant when economic policy rules change.",
+          "C": "The over-reliance on agricultural crop yield data instead of industrial manufacturing indices.",
+          "D": "The complete elimination of interest rates from banking models."
+        },
+        "correct_option": "B",
+        "rationale": "The text states Lucas argued that predicting policy effects based on historical statistical relationships is naive because agents change behavior when policy regimes shift."
+      },
+      {
+        "id": "ENG_RC_132_Q2",
+        "question": "According to the rational expectations hypothesis, how do economic agents behave when a government initiates an inflationary policy?",
+        "options": {
+          "A": "They act purely on backward-looking habits without adjusting wages.",
+          "B": "They anticipate inflation and demand higher nominal wages, neutralizing potential long-term employment gains.",
+          "C": "They instantly hoard all paper currency in foreign banks.",
+          "D": "They cease working entirely and rely solely on bartered goods."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that forward-looking wage-earners anticipate the inflation and negotiate proportional wage increases, negating output gains."
+      },
+      {
+        "id": "ENG_RC_132_Q3",
+        "question": "What macroeconomic modeling paradigm emerged as a response to the Lucas Critique?",
+        "options": {
+          "A": "Mercantilist bullion-reserve accounting",
+          "B": "Micro-founded Dynamic Stochastic General Equilibrium (DSGE) models",
+          "C": "Static linear input-output planning matrices",
+          "D": "Unregulated barter exchange systems"
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that macroeconomics responded by shifting to micro-founded Dynamic Stochastic General Equilibrium (DSGE) models."
+      },
+      {
+        "id": "ENG_RC_132_Q4",
+        "question": "Why did the traditional Phillips Curve fail during the stagflation episodes of the 1970s?",
+        "options": {
+          "A": "Commercial banks stopped issuing loans to industrial manufacturers.",
+          "B": "The historical trade-off between inflation and unemployment collapsed as workers adapted their expectations to ongoing inflation.",
+          "C": "The gold standard made it impossible for governments to print banknotes.",
+          "D": "International trade agreements banned foreign currency transactions."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that as agents formed expectations of ongoing inflation, the static trade-off broke down, yielding inflation without reducing unemployment."
+      },
+      {
+        "id": "ENG_RC_132_Q5",
+        "question": "As used in the passage, the word 'invariant' most closely means:",
+        "options": {
+          "A": "Constant, unchanging, or unaffected by external variables",
+          "B": "Subject to violent stochastic fluctuations",
+          "C": "Legally prohibited by statutory decree",
+          "D": "Derived solely from mathematical estimation"
+        },
+        "correct_option": "A",
+        "rationale": "'Invariant' denotes something that does not change or alter under specified conditions or transformations."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_133",
+    "passage_title": "The Evolutionary Mechanisms of Antibiotic Resistance in Bacteria",
+    "passage_text": "The rapid global proliferation of multi-drug resistant bacterial pathogens constitutes one of the most critical challenges to modern medicine. Bacterial resistance to antimicrobial agents is not an unnatural anomaly; rather, it is an accelerated manifestation of Darwinian natural selection operating on micro-evolutionary timescales. Resistance phenotypes arise through two primary genetic pathways: de novo chromosomal point mutations and Horizontal Gene Transfer (HGT). Spontaneous point mutations within bacterial genes can subtly alter the biochemical conformation of antibiotic targets—such as mutations in the *rpoB* gene that prevent rifampicin from binding to RNA polymerase, or mutations in DNA gyrase conferring fluoroquinolone resistance. However, the most insidious vector is HGT, which facilitates the rapid horizontal dissemination of mobile genetic elements across distinct taxonomic species via conjugation (plasmid exchange through a pilus), transformation (uptake of naked environmental DNA), and transduction (bacteriophage-mediated gene transfer). These acquired mobile cassettes encode diverse biochemical defense mechanisms: enzymatic hydrolysis of antibiotic rings (e.g., extended-spectrum beta-lactamases), targeted chemical modification of aminoglycosides, target site protection, and the active overexpression of ATP-binding cassette (ABC) multidrug efflux pumps that expel xenobiotics across bacterial membranes.",
+    "questions": [
+      {
+        "id": "ENG_RC_133_Q1",
+        "question": "What are the two primary genetic pathways through which bacteria acquire antibiotic resistance?",
+        "options": {
+          "A": "Meiotic crossing over and eukaryotic fertilization",
+          "B": "Spontaneous chromosomal point mutations and Horizontal Gene Transfer (HGT)",
+          "C": "Chloroplast degradation and mitochondrial fission",
+          "D": "Cellular apoptosis and lysosomal autophagy"
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly states: 'Resistance phenotypes arise through two primary genetic pathways: de novo chromosomal point mutations and Horizontal Gene Transfer (HGT).'"
+      },
+      {
+        "id": "ENG_RC_133_Q2",
+        "question": "Which mechanism of Horizontal Gene Transfer involves the uptake of free, naked DNA from the external environment?",
+        "options": {
+          "A": "Conjugation via a sex pilus",
+          "B": "Transformation",
+          "C": "Transduction via bacteriophages",
+          "D": "Efflux pumping"
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines transformation as the 'uptake of naked environmental DNA'."
+      },
+      {
+        "id": "ENG_RC_133_Q3",
+        "question": "How do multidrug efflux pumps protect bacteria from antimicrobial compounds?",
+        "options": {
+          "A": "By synthesizing thick peptidoglycan capsules that block all molecular entry.",
+          "B": "By actively transporting and expelling antibiotics out of the bacterial cell.",
+          "C": "By mutating ribosomal RNA into inactive proteins.",
+          "D": "By causing the host bacterium to enter permanent cryobiotic dormancy."
+        },
+        "correct_option": "B",
+        "rationale": "The passage describes efflux pumps as mechanisms that 'expel xenobiotics across bacterial membranes.'"
+      },
+      {
+        "id": "ENG_RC_133_Q4",
+        "question": "What is the function of beta-lactamase enzymes in resistant bacteria?",
+        "options": {
+          "A": "They synthesize donor plasmid rings during viral infection.",
+          "B": "They enzymatically hydrolyze and deactivate the structural beta-lactam rings of antibiotics.",
+          "C": "They convert antibiotics into nutrient sugars for cellular respiration.",
+          "D": "They attach flagella to bacterial membranes for rapid mobility."
+        },
+        "correct_option": "B",
+        "rationale": "The text lists 'enzymatic hydrolysis of antibiotic rings (e.g., extended-spectrum beta-lactamases)' as a biochemical defense mechanism."
+      },
+      {
+        "id": "ENG_RC_133_Q5",
+        "question": "As used in the passage, the word 'xenobiotics' refers to:",
+        "options": {
+          "A": "Foreign chemical substances not naturally produced or expected within an organism",
+          "B": "Essential micronutrients required for cellular homeostasis",
+          "C": "Proteins synthesized exclusively by mammalian white blood cells",
+          "D": "Fossilized microbial residues embedded in sedimentary rocks"
+        },
+        "correct_option": "A",
+        "rationale": "'Xenobiotics' denotes chemical substances (such as drugs, synthetic antibiotics, or poisons) foreign to the biological system of an organism."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_134",
+    "passage_title": "The Structural Anatomy of Post-Modernist Historiography",
+    "passage_text": "Throughout the nineteenth and twentieth centuries, academic historical scholarship was dominated by Leopold von Ranke's empirical historicism, encapsulated in the dictum to reconstruct the past *wie es eigentlich gewesen* ('as it actually happened'). Rankean historiography assumed that by rigorously interrogating archival documentary sources with scientific detachment, objective historical truth could be neutrally recovered. In the late twentieth century, this epistemological confidence was shattered by post-modernist theorists, most notably Hayden White in his 1973 work *Metahistory*. White argued that raw historical data and archival facts do not possess intrinsic, self-evident narrative trajectories. Instead, before historical records can be synthesized into a coherent history, the historian must inevitably 'emplot' these fragmented chronicle events using pre-figurative linguistic tropes (metaphor, metonymy, synecdoche, irony) and narrative modes (romance, tragedy, comedy, satire). Consequently, historical narratives are not mirror-like reflections of past reality, but literary artifacts imbued with aesthetic, ideological, and rhetorical choices. Far from recovering an objective past, historiography functions as an interpretive discourse that constructs meaning through narrative form.",
+    "questions": [
+      {
+        "id": "ENG_RC_134_Q1",
+        "question": "What was the fundamental assumption of Leopold von Ranke's empirical historicism?",
+        "options": {
+          "A": "History can only be understood through poetic allegories.",
+          "B": "Rigorous, objective interrogation of archival sources allows the historian to reconstruct the past as it actually happened.",
+          "C": "Historical events are determined solely by astronomical alignments.",
+          "D": "All written documents from the past are deliberately fabricated lies."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that Rankean historiography believed objective truth could be neutrally recovered from archives to show the past *wie es eigentlich gewesen* ('as it actually happened')."
+      },
+      {
+        "id": "ENG_RC_134_Q2",
+        "question": "What core thesis did Hayden White advance in his landmark work *Metahistory*?",
+        "options": {
+          "A": "Historical facts arrange themselves into scientific laws without human intervention.",
+          "B": "Historical narratives are literary artifacts emplotted through linguistic tropes and narrative structures rather than neutral reflections of past reality.",
+          "C": "Documentary archives should be burned to eliminate ideological biases.",
+          "D": "Oral folklore is scientifically superior to all written archival documentation."
+        },
+        "correct_option": "B",
+        "rationale": "White argued that historians must emplot raw facts using linguistic tropes and literary forms, making histories verbal fictions and interpretive discourses."
+      },
+      {
+        "id": "ENG_RC_134_Q3",
+        "question": "According to White, which of the following is an essential stage in turning historical data into a coherent narrative?",
+        "options": {
+          "A": "Emplotting fragmented archival data using rhetorical tropes and narrative modes",
+          "B": "Translating every document into classical Latin",
+          "C": "Submitting draft manuscripts to royal censors",
+          "D": "Eliminating all subjective adjectives from the text"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explains that historians must 'emplot' fragmented chronicle events using pre-figurative linguistic tropes and narrative modes."
+      },
+      {
+        "id": "ENG_RC_134_Q4",
+        "question": "Which set of tropes does White identify as shaping the historian's pre-figurative linguistic choices?",
+        "options": {
+          "A": "Metaphor, metonymy, synecdoche, and irony",
+          "B": "Alliteration, assonance, rhyme, and meter",
+          "C": "Syllogism, paradox, tautology, and premise",
+          "D": "Epitaph, eulogy, elegy, and epigram"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly names the four linguistic tropes: metaphor, metonymy, synecdoche, and irony."
+      },
+      {
+        "id": "ENG_RC_134_Q5",
+        "question": "As used in the passage, the word 'historiography' refers to:",
+        "options": {
+          "A": "The physical excavation of ancient buried architectural ruins",
+          "B": "The study of the methodology, writing, and interpretive frameworks of history",
+          "C": "The chemical preservation of brittle paper in archives",
+          "D": "The chronological compilation of sovereign birth dates"
+        },
+        "correct_option": "B",
+        "rationale": "'Historiography' is the study of historical writing, its methodologies, and the changing interpretations of past events."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_135",
+    "passage_title": "The Quantum Electrodynamics of the Casimir Effect",
+    "passage_text": "In classical Newtonian and Maxwellian physics, a complete physical vacuum is conceptualized as pure nothingness—a spatial domain entirely void of matter, electrical charge, and thermal energy. In contrast, Quantum Electrodynamics (QED) and relativistic quantum field theory reveal that the quantum vacuum is a turbulent, dynamic state characterized by zero-point energy and vacuum fluctuations. According to Heisenberg's energy-time uncertainty principle ($\Delta E \Delta t \geq \hbar / 2$), virtual particle-antiparticle pairs and photon field modes spontaneously emerge from the vacuum, interact, and annihilate within sub-attosecond intervals. In 1948, Dutch physicist Hendrik Casimir proposed a macroscopic experimental validation of this vacuum energy. Casimir predicted that if two uncharged, perfectly conducting metallic plates are positioned parallel to each other in a vacuum at a sub-micron separation distance, an attractive physical force will arise between them. This Casimir effect occurs because the conducting boundary plates restrict the permissible electromagnetic vacuum modes between them to wavelengths that fit integer multiples of the gap distance, while an infinite spectrum of vacuum modes exists outside the plates. The higher radiation pressure exerted by the exterior vacuum modes pushes the plates together, providing macroscopic verification of zero-point quantum energy.",
+    "questions": [
+      {
+        "id": "ENG_RC_135_Q1",
+        "question": "How does Quantum Electrodynamics (QED) fundamentally conceptualize a vacuum compared to classical physics?",
+        "options": {
+          "A": "As an immutable, static container completely void of all energy and physical forces.",
+          "B": "As a dynamic quantum state filled with zero-point energy and spontaneous virtual particle fluctuations.",
+          "C": "As a dense fluid composed entirely of dark matter and heavy neutrons.",
+          "D": "As an optical lens that reflects all incoming solar radiation."
+        },
+        "correct_option": "B",
+        "rationale": "The text contrasts classical empty vacuum with QED's vacuum characterized by zero-point energy and virtual particle fluctuations."
+      },
+      {
+        "id": "ENG_RC_135_Q2",
+        "question": "What is the underlying physical cause of the attractive force observed in the Casimir effect?",
+        "options": {
+          "A": "High static electrical voltage applied to both metal plates.",
+          "B": "The radiation pressure differential caused by more permissible electromagnetic vacuum modes outside the plates than between them.",
+          "C": "Gravitational attraction between the atomic masses of the plates.",
+          "D": "Thermal convection of hot air molecules trapped between the plates."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that boundary conditions restrict modes between the plates, so the higher exterior radiation pressure pushes the plates together."
+      },
+      {
+        "id": "ENG_RC_135_Q3",
+        "question": "Which fundamental principle of quantum mechanics allows virtual particles to spontaneously emerge from the vacuum?",
+        "options": {
+          "A": "The Pauli Exclusion Principle",
+          "B": "Heisenberg's Energy-Time Uncertainty Principle",
+          "C": "Newton's Third Law of Motion",
+          "D": "Einstein's Special Theory of Relativity"
+        },
+        "correct_option": "B",
+        "rationale": "The passage references Heisenberg's energy-time uncertainty principle ($\Delta E \Delta t \geq \hbar / 2$) as allowing virtual particles to spontaneously fluctuate into existence."
+      },
+      {
+        "id": "ENG_RC_135_Q4",
+        "question": "What condition must be met by the plates in Hendrik Casimir's theoretical setup?",
+        "options": {
+          "A": "They must be placed miles apart in the upper atmosphere.",
+          "B": "They must be uncharged, parallel, perfectly conducting, and separated by a sub-micron gap in a vacuum.",
+          "C": "They must be heated to thousands of degrees Kelvin.",
+          "D": "They must be made of porous sedimentary limestone."
+        },
+        "correct_option": "B",
+        "rationale": "The text specifies that Casimir's setup uses uncharged, parallel, conducting plates placed at a sub-micron separation in a vacuum."
+      },
+      {
+        "id": "ENG_RC_135_Q5",
+        "question": "As used in the passage, the word 'annihilate' means:",
+        "options": {
+          "A": "To combine into solid permanent crystals",
+          "B": "To completely destroy each other, converting their mass into energy",
+          "C": "To duplicate rapidly through mitotic cellular division",
+          "D": "To slow down until reaching absolute zero temperature"
+        },
+        "correct_option": "B",
+        "rationale": "In particle physics, 'annihilation' refers to the process where a particle and its antiparticle collide and destroy each other, releasing energy."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_136",
+    "passage_title": "The Coase Theorem and the Economics of Social Cost",
+    "passage_text": "In standard neoclassical environmental economics derived from Arthur Pigou, negative externalities—such as a factory discharging sulfur dioxide over an adjacent residential community—were diagnosed as market failures requiring state intervention through Pigouvian corrective taxes or statutory emissions caps. In his landmark 1960 paper *The Problem of Social Cost*, economist Ronald Coase revolutionized this orthodoxy by demonstrating that externalities are reciprocal in nature. Coase argued that assigning liability to the polluter is not automatically the economically optimal remedy, as restricting the factory's emissions harms the factory just as the emissions harm residents. The Coase Theorem establishes that if property rights over the disputed resource are clearly assigned, and if transaction costs are zero (or negligible), private bargaining between the affected parties will inevitably negotiate an economically efficient allocation of resources, regardless of which party was initially assigned the legal property right. If residents hold the right to clean air, the factory can compensate them financially if the economic surplus of manufacturing exceeds the residents' disutility; conversely, if the factory holds the right to pollute, residents can pool funds to bribe the factory to install filtration scrubbers. However, in complex modern environmental contexts characterized by high transaction costs and fragmented populations, the real-world applicability of direct Coasean bargaining is constrained.",
+    "questions": [
+      {
+        "id": "ENG_RC_136_Q1",
+        "question": "How did Arthur Pigou propose to resolve the problem of negative environmental externalities?",
+        "options": {
+          "A": "By abolishing all judicial courts and property deeds.",
+          "B": "Through state-enforced corrective taxes or regulatory emission caps.",
+          "C": "By leaving all disputes to unregulated physical combat.",
+          "D": "By subsidizing the polluter with public treasury funds."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explains that Pigouvian economics solved negative externalities through corrective taxes or statutory emissions caps."
+      },
+      {
+        "id": "ENG_RC_136_Q2",
+        "question": "What is the central assertion of the Coase Theorem regarding private property and transaction costs?",
+        "options": {
+          "A": "Markets can never resolve externalities without military intervention.",
+          "B": "If property rights are clearly defined and transaction costs are zero, private parties will bargain to an efficient resource allocation regardless of initial right assignment.",
+          "C": "The party causing physical pollution must always be sentenced to criminal prison.",
+          "D": "Property rights should always be assigned exclusively to state-owned monopolies."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines the Coase Theorem: with clear property rights and zero transaction costs, private bargaining achieves efficiency regardless of who holds the initial right."
+      },
+      {
+        "id": "ENG_RC_136_Q3",
+        "question": "What did Coase mean by asserting that negative externalities are 'reciprocal' in nature?",
+        "options": {
+          "A": "Pollution is emitted only during the winter months.",
+          "B": "Preventing harm to one party inevitably imposes an economic cost or harm on the other party.",
+          "C": "Residents always enjoy inhaling chemical emissions.",
+          "D": "Factories and residents are always owned by the exact same corporate entity."
+        },
+        "correct_option": "B",
+        "rationale": "Coase noted that externalities are reciprocal because stopping the factory imposes harm on the manufacturer, just as running the factory harms the neighbors."
+      },
+      {
+        "id": "ENG_RC_136_Q4",
+        "question": "What real-world factor severely limits the practical implementation of Coasean bargaining in large-scale environmental problems?",
+        "options": {
+          "A": "High transaction costs and the difficulty of coordinating fragmented populations",
+          "B": "The total absence of money in modern commercial economies",
+          "C": "The inability of scientists to measure air pollution levels",
+          "D": "The universal illegality of signing contracts"
+        },
+        "correct_option": "A",
+        "rationale": "The final sentence notes that in complex modern contexts with 'high transaction costs and fragmented populations,' direct bargaining is difficult to execute."
+      },
+      {
+        "id": "ENG_RC_136_Q5",
+        "question": "As used in the passage, the word 'disutility' refers to:",
+        "options": {
+          "A": "An increase in mechanical manufacturing speed",
+          "B": "A state of unpleasantness, dissatisfaction, harm, or economic loss",
+          "C": "A legally binding contract executed before a notary public",
+          "D": "A tax rebate issued by a regional municipal government"
+        },
+        "correct_option": "B",
+        "rationale": "In economics, 'disutility' is the measure of unhappiness, discomfort, inconvenience, or damage caused by an action."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_137",
+    "passage_title": "The Glaciology of the Milankovitch Cycles and Paleoclimate",
+    "passage_text": "Throughout the Quaternary Period, Earth's climate has oscillated between protracted glacial maxima (ice ages) and brief, temperate interglacial intervals. In the 1920s, Serbian geophysicist Milutin Milankovitch formulated the astronomical theory of paleoclimate, demonstrating that these cyclical glaciations are paced by periodic perturbations in Earth's orbital geometry relative to the Sun. Milankovitch identified three orbital parameters: **eccentricity**, **obliquity**, and **precession**. Eccentricity describes the quasi-periodic variation in the shape of Earth's orbit from near-circular to mildly elliptical across a ~100,000-year cycle, modulating total solar insolation. Obliquity refers to the shift in Earth's axial tilt between 22.1° and 24.5° over a ~41,000-year cycle, which dictates the seasonal contrast between equator and poles. Precession refers to the gyroscopic wobbling of Earth's rotational axis over a ~23,000-year cycle, altering the timing of perihelion (closest solar approach). Crucially, Milankovitch realized that glacial inception is not triggered by bitter winter cold, but by cool, cloudy summers at high northern latitudes (~65°N). When summer insolation drops below a critical threshold, winter snowpacks fail to melt, triggering an ice-albedo positive feedback loop where expanding glaciers reflect incoming solar radiation, driving the planet into an ice age.",
+    "questions": [
+      {
+        "id": "ENG_RC_137_Q1",
+        "question": "What is the primary driver of Quaternary glacial-interglacial cycles according to Milankovitch's theory?",
+        "options": {
+          "A": "Sudden asteroid impacts in the Pacific Ocean",
+          "B": "Periodic perturbations in Earth's orbital geometry modulating high-latitude solar insolation",
+          "C": "Spontaneous thermal fluctuations within Earth's nickel-iron inner core",
+          "D": "Rapid volcanic ash eruptions across the Andes mountains"
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that glaciations are paced by periodic perturbations in Earth's orbital parameters relative to the Sun."
+      },
+      {
+        "id": "ENG_RC_137_Q2",
+        "question": "Which of the following describes the orbital cycle known as 'obliquity'?",
+        "options": {
+          "A": "The variation in Earth's axial tilt between 22.1° and 24.5° over approximately 41,000 years.",
+          "B": "The gyroscopic wobbling of Earth's rotational axis over 23,000 years.",
+          "C": "The elongation of Earth's orbital ellipse over a million years.",
+          "D": "The monthly gravitational pull exerted by the Moon on ocean tides."
+        },
+        "correct_option": "A",
+        "rationale": "The passage defines obliquity as 'the shift in Earth's axial tilt between 22.1° and 24.5° over a ~41,000-year cycle.'"
+      },
+      {
+        "id": "ENG_RC_137_Q3",
+        "question": "What critical seasonal condition triggers the inception of a glacial ice age?",
+        "options": {
+          "A": "Violent thunderstorms during equatorial monsoon months",
+          "B": "Cool summers in high northern latitudes that fail to melt accumulated winter snow",
+          "C": "Intense summer heat that dries out all boreal lakes",
+          "D": "The complete absence of winter precipitation in polar regions"
+        },
+        "correct_option": "B",
+        "rationale": "Milankovitch noted that ice ages begin when cool summers around 65°N fail to melt the winter snowpack."
+      },
+      {
+        "id": "ENG_RC_137_Q4",
+        "question": "How does the 'ice-albedo feedback loop' accelerate global glaciation?",
+        "options": {
+          "A": "Expanding white ice reflects incoming solar radiation back into space, causing further cooling and glacier growth.",
+          "B": "Melting glaciers release greenhouse gases that warm the polar stratosphere.",
+          "C": "Ice sheets sink into the mantle, heating subterranean volcanic magma chambers.",
+          "D": "Glaciers absorb all sunlight, preventing plants from performing photosynthesis."
+        },
+        "correct_option": "A",
+        "rationale": "The passage explains that white glaciers have high albedo, reflecting solar radiation back to space, which lowers temperatures and accelerates ice expansion."
+      },
+      {
+        "id": "ENG_RC_137_Q5",
+        "question": "As used in the passage, the word 'perihelion' refers to:",
+        "options": {
+          "A": "The point in an orbit where a planet is closest to the Sun",
+          "B": "The total solar eclipse viewed from the South Pole",
+          "C": "The chemical breakdown of ice under pressure",
+          "D": "The maximum tilt of Earth's rotational axis"
+        },
+        "correct_option": "A",
+        "rationale": "'Perihelion' is the point in the orbit of a planet, asteroid, or comet at which it is closest to the sun."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_138",
+    "passage_title": "The Structural Functionalism of Émile Durkheim and Anomie",
+    "passage_text": "In foundational sociological theory, French sociologist Émile Durkheim sought to establish sociology as an autonomous empirical science by defining its subject matter as 'social facts'—ways of acting, thinking, and feeling external to the individual, endowed with coercive power over them. In *The Division of Labour in Society*, Durkheim analyzed the historical transition from pre-industrial to industrial societies. Traditional agrarian societies are cohesive due to 'mechanical solidarity', where homogeneity of social roles, minimal division of labor, and a rigid, shared 'collective consciousness' enforce conformity. Modern industrial societies, characterized by specialized occupational differentiation, are integrated through 'organic solidarity'—mutual economic interdependence akin to specialized biological organs in a complex organism. However, rapid socioeconomic transitions can outpace the evolution of normative regulatory frameworks, producing a pathological state Durkheim termed 'anomie' (normlessness). In an anomic state, society's moral rules break down, individuals lack clear normative guidance, and unconstrained personal desires collide with reality, resulting in social disintegration, alienation, and elevated suicide rates.",
+    "questions": [
+      {
+        "id": "ENG_RC_138_Q1",
+        "question": "How did Émile Durkheim define 'social facts' in his sociological methodology?",
+        "options": {
+          "A": "Subjective personal opinions that exist only inside individual brains.",
+          "B": "Ways of acting, thinking, and feeling external to the individual that exert coercive power over them.",
+          "C": "Biological genetic traits inherited directly from parents.",
+          "D": "Statistical equations recorded exclusively in national censuses."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that Durkheim defined social facts as 'ways of acting, thinking, and feeling external to the individual, endowed with coercive power over them.'"
+      },
+      {
+        "id": "ENG_RC_138_Q2",
+        "question": "What type of social cohesion characterizes traditional agrarian societies in Durkheim's framework?",
+        "options": {
+          "A": "Organic solidarity based on advanced digital communications",
+          "B": "Mechanical solidarity based on social homogeneity and a shared collective consciousness",
+          "C": "Anomic division of labor without legal institutions",
+          "D": "Corporate bureaucratic hierarchy enforced by military police"
+        },
+        "correct_option": "B",
+        "rationale": "The passage describes traditional societies as bonded by 'mechanical solidarity' where social homogeneity and collective consciousness enforce cohesion."
+      },
+      {
+        "id": "ENG_RC_138_Q3",
+        "question": "What does Durkheim's concept of 'organic solidarity' emphasize in modern industrial societies?",
+        "options": {
+          "A": "The complete absence of specialized occupations.",
+          "B": "Mutual interdependence arising from a complex, specialized division of labor.",
+          "C": "The return to primitive nomadic hunting and foraging.",
+          "D": "The strict enforcement of religious uniformity by monarchies."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that organic solidarity integrates industrial societies through 'mutual economic interdependence akin to specialized biological organs.'"
+      },
+      {
+        "id": "ENG_RC_138_Q4",
+        "question": "According to Durkheim, what causes the pathological condition of 'anomie'?",
+        "options": {
+          "A": "Excessive agricultural crop yields during summer months",
+          "B": "Rapid socioeconomic shifts that outpace moral norms, leaving individuals without clear normative boundaries",
+          "C": "The complete elimination of money from international trade",
+          "D": "Overly strict criminal punishments enforced by traditional courts"
+        },
+        "correct_option": "B",
+        "rationale": "The author notes that anomie occurs when rapid transitions outpace normative regulation, leading to normlessness where moral rules break down."
+      },
+      {
+        "id": "ENG_RC_138_Q5",
+        "question": "As used in the passage, the word 'coercive' means:",
+        "options": {
+          "A": "Relating to the use of force, constraints, or authority to compel obedience",
+          "B": "Extremely pleasant and universally enjoyable",
+          "C": "Incapable of producing tangible consequences",
+          "D": "Purchased through commercial barter markets"
+        },
+        "correct_option": "A",
+        "rationale": "'Coercive' relates to using force, authority, or institutional power to restrain, compel, or control actions."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_139",
+    "passage_title": "The Biophysics of Synaptic Neurotransmission and Voltage-Gated Ion Channels",
+    "passage_text": "The propagation of electrical action potentials along neuronal axons and their subsequent chemical transmission across synaptic junctions constitute the core biophysical mechanism of neural computation. In the resting neuronal state, the sodium-potassium adenosine triphosphatase ($Na^+/K^+$ ATPase) pump actively expels three $Na^+$ ions for every two $K^+$ ions imported, creating a negative resting membrane potential of approximately $-70$ millivolts. When an incoming excitatory stimulus depolarizes the axon hillock past the threshold potential (approximately $-55$ mV), voltage-gated sodium channels open rapidly, allowing a massive influx of $Na^+$ ions down their electrochemical gradient, rapidly depolarizing the membrane to $+30$ mV. Repolarization is swiftly achieved as sodium channels inactivate and voltage-gated potassium channels open, permitting the efflux of $K^+$ ions. When this action potential reaches the presynaptic axon terminal, depolarization triggers the opening of voltage-gated calcium channels ($Ca^{2+}$). Influx of $Ca^{2+}$ activates synaptotagmin proteins, driving the SNARE complex to fuse neurotransmitter-laden synaptic vesicles with the presynaptic membrane. Neurotransmitters diffuse across the ~20-nanometer synaptic cleft, binding to ligand-gated ionotropic or metabotropic receptors on the postsynaptic dendrite.",
+    "questions": [
+      {
+        "id": "ENG_RC_139_Q1",
+        "question": "How does the $Na^+/K^+$ ATPase pump maintain the negative resting membrane potential of a neuron?",
+        "options": {
+          "A": "By importing three calcium ions and expelling four potassium ions.",
+          "B": "By actively pumping three $Na^+$ ions out of the cell for every two $K^+$ ions transported inside.",
+          "C": "By dissolving the lipid bilayer of the axonal membrane during sleep.",
+          "D": "By converting electrical current directly into glucose molecules."
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly states that the pump 'actively expels three $Na^+$ ions for every two $K^+$ ions imported,' establishing the negative resting potential."
+      },
+      {
+        "id": "ENG_RC_139_Q2",
+        "question": "What ionic event triggers the rapid depolarization phase of an action potential once the threshold is crossed?",
+        "options": {
+          "A": "A massive influx of $Na^+$ ions through opened voltage-gated sodium channels.",
+          "B": "The complete efflux of all cytoplasmic water across the synapse.",
+          "C": "The chemical destruction of synaptic vesicles by lysosomes.",
+          "D": "The permanent closing of all cell membrane ion channels."
+        },
+        "correct_option": "A",
+        "rationale": "The passage details that once threshold ($-55$ mV) is reached, voltage-gated sodium channels open, causing a massive influx of $Na^+$ ions."
+      },
+      {
+        "id": "ENG_RC_139_Q3",
+        "question": "What is the critical role of voltage-gated $Ca^{2+}$ influx at the presynaptic axon terminal?",
+        "options": {
+          "A": "It permanently deactivates all postsynaptic receptors.",
+          "B": "It activates proteins that drive the SNARE complex to fuse synaptic vesicles with the presynaptic membrane, releasing neurotransmitters.",
+          "C": "It freezes the synaptic cleft to prevent diffusion of chemicals.",
+          "D": "It synthesizes myelin sheaths along the dendritic arbor."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that $Ca^{2+}$ influx activates synaptotagmin, driving the SNARE complex to fuse vesicles and release neurotransmitters into the cleft."
+      },
+      {
+        "id": "ENG_RC_139_Q4",
+        "question": "What physical structure bridges the 20-nanometer gap between the presynaptic and postsynaptic membranes?",
+        "options": {
+          "A": "The myelin sheath bundle",
+          "B": "The synaptic cleft",
+          "C": "The axon hillock",
+          "D": "The node of Ranvier"
+        },
+        "correct_option": "B",
+        "rationale": "The passage identifies the ~20-nanometer gap between the pre- and post-synaptic membranes as the 'synaptic cleft'."
+      },
+      {
+        "id": "ENG_RC_139_Q5",
+        "question": "As used in the passage, the word 'efflux' refers to:",
+        "options": {
+          "A": "The outward flowing or exiting of ions or substances from a cellular compartment",
+          "B": "The rapid crystallization of lipids on the cell surface",
+          "C": "The complete cessation of all cellular metabolism",
+          "D": "The duplication of genetic chromosomes during mitosis"
+        },
+        "correct_option": "A",
+        "rationale": "'Efflux' denotes the process of flowing or moving outward (in this context, potassium ions exiting the neuronal cell)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_140",
+    "passage_title": "The Constitutional Philosophy of Judicial Review and Marbury v. Madison",
+    "passage_text": "In the architecture of constitutional governance, the doctrine of judicial review empowers the judiciary to invalidate legislative statutes and executive actions that conflict with the supreme constitution. In the United States, although the text of the Constitution did not explicitly enumerate the power of constitutional judicial review, the principle was famously articulated in Alexander Hamilton's *Federalist No. 78* and formally codified by Chief Justice John Marshall in the 1803 Supreme Court landmark decision *Marbury v. Madison*. Marshall framed the issue as an inescapable structural syllogism: the Constitution is either a superior, paramount law unalterable by ordinary legislative acts, or it is on a level with ordinary legislative statutes alterable whenever the legislature pleases. If the former holds true, an act of the legislature contrary to the Constitution is void (*ultra vires*). Emphasizing that 'it is emphatically the province and duty of the judicial department to say what the law is,' Marshall established the judiciary as the ultimate institutional arbiter of constitutional boundaries. While critics argue that judicial review fosters an anti-majoritarian 'counter-majoritarian difficulty' by permitting unelected judges to strike down laws passed by democratically elected legislatures, proponents maintain it serves as an indispensable bulwark safeguarding fundamental constitutional rights against majoritarian overreach.",
+    "questions": [
+      {
+        "id": "ENG_RC_140_Q1",
+        "question": "What is the primary power conferred upon the judiciary by the doctrine of judicial review?",
+        "options": {
+          "A": "The power to write and pass federal taxation budgets.",
+          "B": "The power to invalidate statutory laws and executive actions that violate the constitution.",
+          "C": "The authority to command military divisions during wartime.",
+          "D": "The right to appoint diplomatic ambassadors without senatorial confirmation."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines judicial review as empowering the judiciary to invalidate legislative statutes and executive actions that conflict with the constitution."
+      },
+      {
+        "id": "ENG_RC_140_Q2",
+        "question": "What logical formulation did Chief Justice John Marshall construct in *Marbury v. Madison*?",
+        "options": {
+          "A": "The military is superior to the civilian constitution during emergencies.",
+          "B": "The Constitution is paramount law, and legislative statutes that contradict it are inherently void.",
+          "C": "State laws always override federal constitutional provisions.",
+          "D": "Judges must seek approval from the executive branch before issuing decisions."
+        },
+        "correct_option": "B",
+        "rationale": "Marshall argued that the Constitution is paramount law, meaning any legislative act contrary to it is void."
+      },
+      {
+        "id": "ENG_RC_140_Q3",
+        "question": "What is the 'counter-majoritarian difficulty' often raised by critics of judicial review?",
+        "options": {
+          "A": "The financial cost of conducting national presidential elections.",
+          "B": "The democratic tension that arises when unelected judges overturn laws enacted by elected representatives.",
+          "C": "The refusal of citizens to serve on municipal jury panels.",
+          "D": "The requirement that all court opinions be written in foreign languages."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains the counter-majoritarian difficulty as critics arguing that it permits unelected judges to strike down laws passed by democratically elected legislatures."
+      },
+      {
+        "id": "ENG_RC_140_Q4",
+        "question": "Which influential Founding-era essay articulated the rationale for judicial review prior to *Marbury v. Madison*?",
+        "options": {
+          "A": "Thomas Paine's *Common Sense*",
+          "B": "Alexander Hamilton's *Federalist No. 78*",
+          "C": "Benjamin Franklin's *Poor Richard's Almanack*",
+          "D": "George Washington's *Farewell Address*"
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that the principle was articulated in Alexander Hamilton's *Federalist No. 78* before being codified in *Marbury v. Madison*."
+      },
+      {
+        "id": "ENG_RC_140_Q5",
+        "question": "As used in the passage, the Latin term *ultra vires* refers to an act that is:",
+        "options": {
+          "A": "Beyond one's legal power, authority, or constitutional jurisdiction",
+          "B": "Approved unanimously by a voting majority",
+          "C": "Executed secretly under military martial law",
+          "D": "Formally translated into foreign languages"
+        },
+        "correct_option": "A",
+        "rationale": "'Ultra vires' is a Latin legal term meaning 'beyond the powers'—actions taken exceeding the scope of legally granted authority."
+      }
+    ]
+  }
+]

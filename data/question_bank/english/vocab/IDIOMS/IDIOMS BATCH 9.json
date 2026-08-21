@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0401",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give the game away**",
+    "options": {
+      "A": "To lose a sports match intentionally",
+      "B": "To reveal a secret, plan, or hidden intention inadvertently",
+      "C": "To distribute board games to children",
+      "D": "To surrender a contest without trying"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'give the game away' means revealing a secret or confidential plan by accident.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0402",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Gloss over**",
+    "options": {
+      "A": "To conceal, minimize, or treat a mistake or crime as unimportant",
+      "B": "To polish a wooden surface until shiny",
+      "C": "To paint pictures with glossy oil colors",
+      "D": "To read a textbook thoroughly word-for-word"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'gloss over' something means to try to hide or minimize a flaw or error.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0403",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go about**",
+    "options": {
+      "A": "To set about doing a task or handle a routine business",
+      "B": "To walk around in a circle",
+      "C": "To travel across foreign nations",
+      "D": "To abandon a project completely"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go about' means to set to work or approach a task systematically.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0404",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go back on your word**",
+    "options": {
+      "A": "To break a promise, commitment, or agreement",
+      "B": "To reread a book from the beginning",
+      "C": "To return to your home country",
+      "D": "To apologize for an insult"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go back on your word' means failing to keep a promise.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0405",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go down in flames**",
+    "options": {
+      "A": "To fail spectacularly or suffer a catastrophic collapse",
+      "B": "To extinguish a building fire successfully",
+      "C": "To pilot an aircraft through clouds",
+      "D": "To win a championship game dramatically"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go down in flames' means experiencing a very public and complete failure.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0406",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go-getter**",
+    "options": {
+      "A": "An aggressive, ambitious, and energetic person who pursues success actively",
+      "B": "A lazy worker who avoids tasks",
+      "C": "A delivery courier service worker",
+      "D": "A retired elderly citizen"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'go-getter' is an enterprising, ambitious individual who achieves goals proactively.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0407",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go halves**",
+    "options": {
+      "A": "To share the cost or expense of something equally between two people",
+      "B": "To cut a piece of paper in half",
+      "C": "To separate a business partnership",
+      "D": "To arrive late for an appointment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go halves' means splitting a cost or amount fifty-fifty.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0408",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go into a huddle**",
+    "options": {
+      "A": "To gather together in private for a close consultation or discussion",
+      "B": "To shiver from cold weather outdoors",
+      "C": "To hide from danger in a shelter",
+      "D": "To play a rugby sports match"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go into a huddle' means meeting privately to confer on a plan.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0409",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go off the rails**",
+    "options": {
+      "A": "To start behaving erratically, poorly, or abandoning moral standards",
+      "B": "To derail a railway train in an accident",
+      "C": "To step off a passenger platform",
+      "D": "To finish a subway journey"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go off the rails' means lapsing into bad behavior or chaos.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0410",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go out of your way**",
+    "options": {
+      "A": "To make a special, extra effort to help someone or do something",
+      "B": "To take a longer driving route by mistake",
+      "C": "To avoid meeting people intentionally",
+      "D": "To get lost in an unfamiliar city"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go out of your way' means putting forth extra trouble to assist.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0411",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go the extra mile**",
+    "options": {
+      "A": "To make more than is expected or required to achieve success or help someone",
+      "B": "To walk long distances for exercise",
+      "C": "To drive past your destination",
+      "D": "To complete a running marathon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go the extra mile' means making an extra effort beyond what is obligatory.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0412",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go through the motions**",
+    "options": {
+      "A": "To perform an action mechanically and without real enthusiasm or care",
+      "B": "To exercise with proper physical posture",
+      "C": "To practice dance choreography steps",
+      "D": "To navigate a maze carefully"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go through the motions' means doing something half-heartedly without commitment.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0413",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go to great lengths**",
+    "options": {
+      "A": "To put forth extraordinary effort or take extreme measures to achieve a goal",
+      "B": "To measure tall objects with rulers",
+      "C": "To travel long distances abroad",
+      "D": "To write very long essays"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go to great lengths' means trying exceptionally hard to accomplish something.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0414",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go up in smoke**",
+    "options": {
+      "A": "To be destroyed, wasted, or fail completely after all effort",
+      "B": "To burn dry leaves in a backyard",
+      "C": "To cause a smoke detector alarm",
+      "D": "To smoke cigarettes indoors"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Plans that 'go up in smoke' vanish and fail completely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0415",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grease someone's palm**",
+    "options": {
+      "A": "To bribe someone secretly to secure an illicit favor",
+      "B": "To apply hand cream for dry skin",
+      "C": "To shake hands warmly with guests",
+      "D": "To perform manual labor tasks"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'grease someone's palm' means offering a bribe.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0416",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Green-eyed monster**",
+    "options": {
+      "A": "Jealousy or envy personified",
+      "B": "A mythical forest creature",
+      "C": "A medical eye infection",
+      "D": "A fierce dragon in fairy tales"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'green-eyed monster' is a literary metaphor for jealousy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0417",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grey area**",
+    "options": {
+      "A": "An ambiguous situation or subject not clearly defined by rules or categories",
+      "B": "A cloudy sky over a city",
+      "C": "An unpainted concrete wall",
+      "D": "A neutral political zone"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'grey area' represents an ambiguous topic lacking clear-cut guidelines.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0418",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hair of the dog**",
+    "options": {
+      "A": "An alcoholic drink consumed to cure a hangover",
+      "B": "Animal fur used for clothing",
+      "C": "A medical remedy for dog bites",
+      "D": "A pet grooming brush"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hair of the dog' refers to an alcoholic drink taken to relieve a hangover.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0419",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Half-baked**",
+    "options": {
+      "A": "Impractical, poorly thought out, or foolish (of ideas or plans)",
+      "B": "Underdone bread baked in an oven",
+      "C": "An incomplete university degree",
+      "D": "A casual amateur hobby"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'half-baked' scheme lacks careful planning and maturity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0420",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hand in hand**",
+    "options": {
+      "A": "Closely associated, cooperating, or occurring together",
+      "B": "Walking romantically in a park",
+      "C": "Holding sports equipment tightly",
+      "D": "Greeting strangers at a door"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Going 'hand in hand' means occurring jointly and cooperatively.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0421",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hang in the balance**",
+    "options": {
+      "A": "In an uncertain state where the outcome could go either way",
+      "B": "Weighing heavy objects on scales",
+      "C": "Hanging gymnastic equipment",
+      "D": "Balanced securely on a ledge"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Something that 'hangs in the balance' remains uncertain and precarious.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0422",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hard and fast**",
+    "options": {
+      "A": "Strict, fixed, and unalterable (of rules or regulations)",
+      "B": "Running a fast sprint race",
+      "C": "Solid concrete construction",
+      "D": "Quickly changing policies"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hard and fast' rules are strict and cannot be altered or broken.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0423",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hard of hearing**",
+    "options": {
+      "A": "Partially deaf or having impaired hearing ability",
+      "B": "Ignoring instructions intentionally",
+      "C": "Listening to loud music",
+      "D": "Speaking in whispers"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'hard of hearing' means suffering from partial deafness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0424",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hate your guts**",
+    "options": {
+      "A": "To detest or despise someone intensely with deep animosity",
+      "B": "To suffer from stomach digestion pain",
+      "C": "To feel physically nauseous",
+      "D": "To argue with family members"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'hate someone's guts' means holding intense loathing and dislike for them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0425",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a finger in every pie**",
+    "options": {
+      "A": "To be involved in many different activities, projects, or affairs simultaneously",
+      "B": "To bake pastries in a kitchen",
+      "C": "To taste food while cooking",
+      "D": "To steal snacks from a bakery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having 'a finger in every pie' means participating in numerous varied affairs.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0426",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have an axe to grind**",
+    "options": {
+      "A": "To have a private selfish motive, grievance, or hidden agenda",
+      "B": "To sharpen carpentry tools",
+      "C": "To work as a woodcutter",
+      "D": "To seek peaceful compromise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having 'an axe to grind' means promoting a private ulterior motive.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0427",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Head over heels**",
+    "options": {
+      "A": "Madly, deeply in love or deeply overwhelmed",
+      "B": "Doing somersault gymnastics",
+      "C": "Falling down a staircase",
+      "D": "Standing upside down"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'head over heels' in love means being completely and passionately smitten.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0428",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hear on the grapevine**",
+    "options": {
+      "A": "To learn about rumors or gossip through informal conversation channels",
+      "B": "To harvest grapes on a vineyard",
+      "C": "To listen to radio broadcasts",
+      "D": "To eavesdrop on telephone calls"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Hearing something 'on the grapevine' means learning rumors through informal gossip.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0429",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Heart of stone**",
+    "options": {
+      "A": "Cold, unfeeling, pitiless, and completely devoid of emotion or sympathy",
+      "B": "A medical heart valve condition",
+      "C": "A stone sculpture in a park",
+      "D": "A brave and courageous person"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having a 'heart of stone' means being completely cold and unsympathetic.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0430",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Heaven forbid**",
+    "options": {
+      "A": "Used to express an earnest wish that something bad will not happen",
+      "B": "A religious prayer for rain",
+      "C": "An official government ban",
+      "D": "A heavenly spiritual realm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Heaven forbid' expresses strong hope against a misfortune.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0431",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Herculean task**",
+    "options": {
+      "A": "A job requiring tremendous, extraordinary effort, strength, or courage",
+      "B": "A simple household chore",
+      "C": "An easy athletic exercise",
+      "D": "A short writing assignment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'Herculean task' demands immense physical or mental exertion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0432",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**High and low**",
+    "options": {
+      "A": "Everywhere; searching in every possible place or corner",
+      "B": "Tall and short people in a crowd",
+      "C": "Mountain peaks and ocean valleys",
+      "D": "Rich and poor social classes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Searching 'high and low' means looking everywhere exhaustively.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0433",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hit below the belt**",
+    "options": {
+      "A": "To launch an unfair, cruel, or unsporting attack against someone",
+      "B": "To wear a belt incorrectly",
+      "C": "To score a goal in sports",
+      "D": "To box according to rules"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'hit below the belt' means breaking the rules to attack unfairly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0434",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hit the nail on the head**",
+    "options": {
+      "A": "To find or state the exact truth or correct answer precisely",
+      "B": "To hammer nails into wood construction",
+      "C": "To injure your thumb by accident",
+      "D": "To build carpentry furniture"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'hit the nail on the head' means describing a situation or answer with absolute accuracy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0435",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hold your horses**",
+    "options": {
+      "A": "To wait patiently, slow down, or stop being impatient",
+      "B": "To restrain wild horses on a ranch",
+      "C": "To ride horses in a race",
+      "D": "To feed farm animals grain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'hold your horses' means to tell someone to be patient and wait.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0436",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hocus-pocus**",
+    "options": {
+      "A": "Meaningless gibberish, trickery, or magic jargon used to deceive",
+      "B": "A pleasant magic stage show",
+      "C": "A religious prayer chant",
+      "D": "A foreign language phrase"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hocus-pocus' refers to trickery or meaningless deception.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0437",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hue and cry**",
+    "options": {
+      "A": "A loud public clamor, protest, or outcry of alarm",
+      "B": "Colorful artistic painting",
+      "C": "A crying baby in a room",
+      "D": "A musical concert performance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'hue and cry' is a noisy public protest or expression of alarm.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0438",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hush-hush**",
+    "options": {
+      "A": "Secret, highly confidential, and kept quiet from the public",
+      "B": "Whispering quietly in a library",
+      "C": "A sleeping lullaby song",
+      "D": "A noisy public announcement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Something 'hush-hush' is kept strictly secret.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0439",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Idle talk**",
+    "options": {
+      "A": "Meaningless conversation, gossip, or chat without serious substance",
+      "B": "A broken machine engine",
+      "C": "Resting during lunch breaks",
+      "D": "Professional business talks"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Idle talk' refers to empty gossip and meaningless chit-chat.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0440",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In a fix**",
+    "options": {
+      "A": "In a difficult, awkward, or perplexing predicament",
+      "B": "Repairing broken furniture",
+      "C": "Stuck in heavy traffic jams",
+      "D": "Safely resolved and finished"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in a fix' means caught in a difficult predicament.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0441",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In a nutshell**",
+    "options": {
+      "A": "Expressed very briefly, concisely, and simply",
+      "B": "Hidden inside a nut shell",
+      "C": "Confused and complicated",
+      "D": "Trapped in a small box"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'In a nutshell' means summarizing a concept concisely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0442",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In deep water**",
+    "options": {
+      "A": "In serious trouble, danger, or difficulty",
+      "B": "Swimming in an ocean pool",
+      "C": "Deep-sea scuba diving",
+      "D": "Sailing on a calm lake"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in deep water' means facing severe peril or trouble.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0443",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In full cry**",
+    "options": {
+      "A": "Pursuing something eagerly with loud clamor and enthusiasm",
+      "B": "Crying tears of sadness",
+      "C": "Singing a choir melody",
+      "D": "Shouting in pain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in full cry' means in hot pursuit or arguing vociferously.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0444",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In hot water**",
+    "options": {
+      "A": "In trouble or facing severe disciplinary consequences",
+      "B": "Taking a warm bath",
+      "C": "Boiling tea water",
+      "D": "Swimming in heated pools"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in hot water' means being in trouble.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0445",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In petto**",
+    "options": {
+      "A": "In secret or privately; withheld from public knowledge",
+      "B": "Inside a pet shop",
+      "C": "With great affection",
+      "D": "In a small container"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'In petto' (Italian origin) means kept secret or in reserve.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0446",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In stitches**",
+    "options": {
+      "A": "Laughing uncontrollably and uproariously",
+      "B": "Undergoing medical surgery stitches",
+      "C": "Sewing clothes with a needle",
+      "D": "Suffering from sharp pain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in stitches' means laughing so hard it hurts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0447",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the bag**",
+    "options": {
+      "A": "Certain to be achieved, won, or secured successfully",
+      "B": "Packed inside luggage bags",
+      "C": "Stolen from a store",
+      "D": "Lost or misplaced"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. When something is 'in the bag', success is guaranteed and secured.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0448",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the doldrums**",
+    "options": {
+      "A": "In a state of stagnation, depression, or low spirits",
+      "B": "Sailing on choppy ocean waves",
+      "C": "Excited and energetic",
+      "D": "Working on a busy project"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in the doldrums' means suffering from sluggish inactivity and depression.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0449",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the limelight**",
+    "options": {
+      "A": "At the center of public attention, focus, and notoriety",
+      "B": "Working in a dark theater backstage",
+      "C": "Standing under street lamps",
+      "D": "Hiding from paparazzi cameras"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in the limelight' means receiving intense public attention.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0450",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the red**",
+    "options": {
+      "A": "In debt or running a financial financial loss",
+      "B": "Making a large profit",
+      "C": "Dressed in red garments",
+      "D": "Healthy and prosperous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in the red' means owing money and running a deficit.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_COND_901",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb form: 'If it ___ tomorrow, we will cancel the picnic.'",
+    "options": {
+      "A": "will rain",
+      "B": "rains",
+      "C": "rained",
+      "D": "had rained"
+    },
+    "correct_option": "B",
+    "explanation": "In First Conditional sentences, the 'if' clause uses the Simple Present tense, while the main clause uses the Future ('will').",
+    "tags": ["grammar", "conditionals", "first_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_902",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If I were you, I would have accepted the job offer.'",
+    "options": {
+      "A": "If I were you,",
+      "B": "I would have accepted",
+      "C": "the job offer.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. It follows the structure of a Second Conditional (hypothetical present/future) combined with a Third Conditional consequence, often used for present regret or logical consistency in speculative advice.",
+    "tags": ["grammar", "conditionals", "mixed_conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_903",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'If you ___ earlier, you would have met him.'",
+    "options": {
+      "A": "had arrived",
+      "B": "arrived",
+      "C": "would arrive",
+      "D": "were arriving"
+    },
+    "correct_option": "A",
+    "explanation": "Third Conditional (unfulfilled past condition) requires Past Perfect ('had arrived') in the 'if' clause and 'would have + past participle' in the main clause.",
+    "tags": ["grammar", "conditionals", "third_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_904",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'If she ___ hard, she would succeed.'",
+    "options": {
+      "A": "works",
+      "B": "worked",
+      "C": "had worked",
+      "D": "is working"
+    },
+    "correct_option": "B",
+    "explanation": "Second Conditional (hypothetical present/future) uses Simple Past in the 'if' clause and 'would + bare infinitive' in the main clause.",
+    "tags": ["grammar", "conditionals", "second_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_905",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Unless you do not exercise, you will remain unhealthy.'",
+    "options": {
+      "A": "Unless you do not exercise,",
+      "B": "you will remain",
+      "C": "unhealthy.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'Unless' is a negative conditional meaning 'if not'. Using 'do not' with 'unless' creates a double negative error. It should be 'Unless you exercise...'",
+    "tags": ["grammar", "conditionals", "spotting_errors", "unless_rule"]
+  },
+  {
+    "id": "ENG_GRAM_COND_906",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Were I the Prime Minister, I ___ change the education system.'",
+    "options": {
+      "A": "will",
+      "B": "would",
+      "C": "shall",
+      "D": "can"
+    },
+    "correct_option": "B",
+    "explanation": "Inverted conditional clause 'Were I...' functions like a Second Conditional 'if I were...', requiring 'would' in the main clause.",
+    "tags": ["grammar", "conditionals", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_907",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'If I was you, I wouldn't worry.'",
+    "options": {
+      "A": "If I was you, I wouldn't worry.",
+      "B": "If I were you, I wouldn't worry.",
+      "C": "If I am you, I wouldn't worry.",
+      "D": "If I had been you, I wouldn't worry."
+    },
+    "correct_option": "B",
+    "explanation": "In hypothetical Second Conditional clauses, the verb 'to be' is always 'were', regardless of the subject.",
+    "tags": ["grammar", "conditionals", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_908",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If he had called me, I would go to see him.'",
+    "options": {
+      "A": "If he had called me,",
+      "B": "I would go",
+      "C": "to see him.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Third Conditional requires 'would have gone' in the main clause. 'Would go' is for the Second Conditional.",
+    "tags": ["grammar", "conditionals", "third_conditional", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_COND_909",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Suppose you ___ your job, what would you do?'",
+    "options": {
+      "A": "lose",
+      "B": "lost",
+      "C": "had lost",
+      "D": "would lose"
+    },
+    "correct_option": "B",
+    "explanation": "'Suppose' / 'Supposing' followed by 'what would... do' indicates a hypothetical present/future, requiring Simple Past ('lost').",
+    "tags": ["grammar", "conditionals", "hypothetical", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_910",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'Provided that you ___ hard, you will succeed.'",
+    "options": {
+      "A": "work",
+      "B": "worked",
+      "C": "had worked",
+      "D": "are working"
+    },
+    "correct_option": "A",
+    "explanation": "'Provided that' (meaning 'on condition that') used with a future result takes Simple Present in the conditional clause.",
+    "tags": ["grammar", "conditionals", "first_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_911",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Had he known about the meeting, he would attend it.'",
+    "options": {
+      "A": "Had he known",
+      "B": "about the meeting,",
+      "C": "he would attend it.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Had he known' is a Third Conditional inversion. The main clause must be 'he would have attended'.",
+    "tags": ["grammar", "conditionals", "third_conditional", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_COND_912",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'If water ___ 0°C, it freezes.'",
+    "options": {
+      "A": "reached",
+      "B": "reaches",
+      "C": "will reach",
+      "D": "had reached"
+    },
+    "correct_option": "B",
+    "explanation": "Zero Conditional (scientific facts/general truths) uses Simple Present in both clauses.",
+    "tags": ["grammar", "conditionals", "zero_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_913",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'Unless he works hard, he will fail.'",
+    "options": {
+      "A": "Unless he works hard, he will fail.",
+      "B": "Until he works hard, he will fail.",
+      "C": "Unless he will work hard, he will fail.",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct; 'Unless' (if not) introduces the condition, and Simple Present is used in the 'if' clause.",
+    "tags": ["grammar", "conditionals", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_914",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If I am a bird, I would fly in the sky.'",
+    "options": {
+      "A": "If I am a bird,",
+      "B": "I would fly",
+      "C": "in the sky.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Hypothetical condition ('If I were a bird') requires the subjunctive 'were'.",
+    "tags": ["grammar", "conditionals", "subjunctive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_COND_915",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Had they invited me, I ___ gone.'",
+    "options": {
+      "A": "would have",
+      "B": "would",
+      "C": "will have",
+      "D": "shall have"
+    },
+    "correct_option": "A",
+    "explanation": "'Had they invited...' is a Third Conditional inversion. Main clause requires 'would have + past participle'.",
+    "tags": ["grammar", "conditionals", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_916",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'If you ___ ice, it melts.'",
+    "options": {
+      "A": "heat",
+      "B": "heated",
+      "C": "will heat",
+      "D": "had heated"
+    },
+    "correct_option": "A",
+    "explanation": "Zero Conditional (general truth) requires Simple Present.",
+    "tags": ["grammar", "conditionals", "zero_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_917",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Were he my friend, he would help me.'",
+    "options": {
+      "A": "Were he my friend,",
+      "B": "he would help me.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "The sentence is grammatically correct as a Second Conditional inversion.",
+    "tags": ["grammar", "conditionals", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_918",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ you tell me the truth, I will forgive you.'",
+    "options": {
+      "A": "Unless",
+      "B": "If",
+      "C": "Provided",
+      "D": "Both B and C"
+    },
+    "correct_option": "D",
+    "explanation": "Both 'If' and 'Provided' correctly introduce the condition for the future result.",
+    "tags": ["grammar", "conditionals", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_919",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'If I were you, I would take that opportunity.'",
+    "options": {
+      "A": "If I were you, I would take that opportunity.",
+      "B": "If I was you, I would take that opportunity.",
+      "C": "If I am you, I would take that opportunity.",
+      "D": "If I have been you, I would take that opportunity."
+    },
+    "correct_option": "A",
+    "explanation": "Second Conditional subjunctive 'If I were you' is the correct form.",
+    "tags": ["grammar", "conditionals", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_920",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If I would have known, I would have warned you.'",
+    "options": {
+      "A": "If I would have known,",
+      "B": "I would have warned you.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "A",
+    "explanation": "Do not use 'would have' in the 'if' clause of a Third Conditional. Use Past Perfect ('Had I known' or 'If I had known').",
+    "tags": ["grammar", "conditionals", "third_conditional", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_COND_921",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ it to rain, the match would be postponed.'",
+    "options": {
+      "A": "Were",
+      "B": "Had",
+      "C": "If",
+      "D": "Should"
+    },
+    "correct_option": "A",
+    "explanation": "Inverted structure for Second Conditional: 'Were it to [verb]' = 'If it were to [verb]'.",
+    "tags": ["grammar", "conditionals", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_922",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'If you had tried, you ___ succeeded.'",
+    "options": {
+      "A": "would have",
+      "B": "would",
+      "C": "will have",
+      "D": "will"
+    },
+    "correct_option": "A",
+    "explanation": "Third Conditional requires 'would have + past participle' in the main clause.",
+    "tags": ["grammar", "conditionals", "third_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_923",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Supposing if he fails, what will he do?'",
+    "options": {
+      "A": "Supposing if",
+      "B": "he fails,",
+      "C": "what will he do?",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Do not use 'Supposing' and 'if' together; they are redundant. Use 'Suppose he fails...' or 'If he fails...'.",
+    "tags": ["grammar", "conditionals", "spotting_errors", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_COND_924",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Should you ___ any questions, please ask.'",
+    "options": {
+      "A": "have",
+      "B": "had",
+      "C": "will have",
+      "D": "would have"
+    },
+    "correct_option": "A",
+    "explanation": "'Should you...' is a First Conditional inversion, followed by Simple Present 'have'.",
+    "tags": ["grammar", "conditionals", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_925",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'Unless she tries, she won't learn.'",
+    "options": {
+      "A": "Unless she tries, she won't learn.",
+      "B": "Unless she will try, she won't learn.",
+      "C": "Until she tries, she won't learn.",
+      "D": "Both A and B are correct."
+    },
+    "correct_option": "A",
+    "explanation": "First Conditional: 'Unless' clause uses Simple Present, main clause uses future ('won't').",
+    "tags": ["grammar", "conditionals", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_926",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If I were him, I would have resigned long ago.'",
+    "options": {
+      "A": "If I were him,",
+      "B": "I would have resigned",
+      "C": "long ago.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. It uses the subjunctive 'were' for hypothetical present ('If I were him') and mixed conditional consequence ('would have resigned' for the past).",
+    "tags": ["grammar", "conditionals", "mixed_conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_927",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'If the sun ___, the flowers bloom.'",
+    "options": {
+      "A": "shines",
+      "B": "will shine",
+      "C": "shone",
+      "D": "has shone"
+    },
+    "correct_option": "A",
+    "explanation": "Zero Conditional: Simple Present in both clauses.",
+    "tags": ["grammar", "conditionals", "zero_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_928",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'Had I known, I ___ warned you.'",
+    "options": {
+      "A": "would have",
+      "B": "will have",
+      "C": "would",
+      "D": "have"
+    },
+    "correct_option": "A",
+    "explanation": "Third Conditional inversion ('Had I known') requires 'would have' + past participle.",
+    "tags": ["grammar", "conditionals", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_929",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Unless you pay, you don't get the item.'",
+    "options": {
+      "A": "Unless you pay,",
+      "B": "you don't get",
+      "C": "the item.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Zero Conditional (general truth): Simple Present in both clauses is correct.",
+    "tags": ["grammar", "conditionals", "zero_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_930",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'If you ___ so loud, I might concentrate.'",
+    "options": {
+      "A": "weren't speaking",
+      "B": "aren't speaking",
+      "C": "won't speak",
+      "D": "didn't speak"
+    },
+    "correct_option": "A",
+    "explanation": "Second Conditional (hypothetical): Past continuous ('weren't speaking') is an acceptable variation for 'weren't' to express a hypothetical state.",
+    "tags": ["grammar", "conditionals", "second_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_931",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'I would have visited you if I had time.'",
+    "options": {
+      "A": "I would have visited you if I had time.",
+      "B": "I would have visited you if I had had time.",
+      "C": "I would visit you if I had time.",
+      "D": "Both B and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both B (Third Conditional: unfulfilled past) and C (Second Conditional: hypothetical present) are correct depending on whether the speaker is referencing a missed past opportunity or a current hypothetical one.",
+    "tags": ["grammar", "conditionals", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_932",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Suppose he will not agree, what then?'",
+    "options": {
+      "A": "Suppose he will not agree,",
+      "B": "what then?",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "A",
+    "explanation": "'Suppose' clauses use Simple Present or Simple Past, not 'will'. It should be 'Suppose he does not agree...'",
+    "tags": ["grammar", "conditionals", "spotting_errors", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_COND_933",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'If she ___ more careful, she would not have fallen.'",
+    "options": {
+      "A": "had been",
+      "B": "was",
+      "C": "is",
+      "D": "would be"
+    },
+    "correct_option": "A",
+    "explanation": "Third Conditional (unfulfilled past): 'If + Past Perfect' + 'would have + past participle'.",
+    "tags": ["grammar", "conditionals", "third_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_934",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'Had he ___ to me, I would have believed him.'",
+    "options": {
+      "A": "spoken",
+      "B": "spoke",
+      "C": "speak",
+      "D": "will speak"
+    },
+    "correct_option": "A",
+    "explanation": "Third Conditional inversion ('Had + subject + past participle') requires past participle ('spoken').",
+    "tags": ["grammar", "conditionals", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_935",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Unless you help him, he can't succeed.'",
+    "options": {
+      "A": "Unless you help him,",
+      "B": "he can't succeed.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "The sentence is correct.",
+    "tags": ["grammar", "conditionals", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_936",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'If they ___ sooner, they would have caught the bus.'",
+    "options": {
+      "A": "left",
+      "B": "had left",
+      "C": "have left",
+      "D": "would leave"
+    },
+    "correct_option": "B",
+    "explanation": "Third Conditional: 'had left' + 'would have caught'.",
+    "tags": ["grammar", "conditionals", "third_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_937",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'Were I in your shoes, I wouldn't do it.'",
+    "options": {
+      "A": "Were I in your shoes, I wouldn't do it.",
+      "B": "If I were in your shoes, I wouldn't do it.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both the inverted 'Were I' and 'If I were' are grammatically equivalent Second Conditional forms.",
+    "tags": ["grammar", "conditionals", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_938",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If I was in your position, I will accept it.'",
+    "options": {
+      "A": "If I was in your position,",
+      "B": "I will accept it.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "A",
+    "explanation": "Should be 'If I were...' (subjunctive) and 'I would accept' (Second Conditional consistency).",
+    "tags": ["grammar", "conditionals", "spotting_errors", "subjunctive"]
+  },
+  {
+    "id": "ENG_GRAM_COND_939",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Supposing she ___ at the party, what would happen?'",
+    "options": {
+      "A": "was",
+      "B": "were",
+      "C": "would be",
+      "D": "is"
+    },
+    "correct_option": "B",
+    "explanation": "Hypothetical condition 'supposing' uses the past subjunctive 'were'.",
+    "tags": ["grammar", "conditionals", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_940",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'If you had tried, you ___ have done it.'",
+    "options": {
+      "A": "could",
+      "B": "can",
+      "C": "will",
+      "D": "shall"
+    },
+    "correct_option": "A",
+    "explanation": "Third Conditional main clause uses 'would have' or 'could have' + past participle.",
+    "tags": ["grammar", "conditionals", "third_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_941",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If it will rain, the match will be delayed.'",
+    "options": {
+      "A": "If it will rain,",
+      "B": "the match will be delayed.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "A",
+    "explanation": "In conditional clauses ('if'), do not use 'will'. Use Simple Present ('If it rains').",
+    "tags": ["grammar", "conditionals", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_942",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ it to happen, we would be in trouble.'",
+    "options": {
+      "A": "Should",
+      "B": "Were",
+      "C": "Had",
+      "D": "If"
+    },
+    "correct_option": "B",
+    "explanation": "Inverted structure for Second Conditional: 'Were it to happen' = 'If it were to happen'.",
+    "tags": ["grammar", "conditionals", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_943",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'Provided that you are honest, you will win.'",
+    "options": {
+      "A": "Provided that you are honest, you will win.",
+      "B": "Provided that you will be honest, you will win.",
+      "C": "Provided that you were honest, you would win.",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both First (A) and Second (C) Conditional structures work with 'provided that'.",
+    "tags": ["grammar", "conditionals", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_944",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If he had called, I would have come.'",
+    "options": {
+      "A": "If he had called,",
+      "B": "I would have come.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Sentence is correct.",
+    "tags": ["grammar", "conditionals", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_945",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I would help you if I ___ enough money.'",
+    "options": {
+      "A": "had",
+      "B": "have",
+      "C": "will have",
+      "D": "had had"
+    },
+    "correct_option": "A",
+    "explanation": "Second Conditional: 'would + bare infinitive' + 'Simple Past'.",
+    "tags": ["grammar", "conditionals", "second_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_946",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'If you ___ see him, give him my regards.'",
+    "options": {
+      "A": "should",
+      "B": "shall",
+      "C": "would",
+      "D": "will"
+    },
+    "correct_option": "A",
+    "explanation": "'If you should see' is a slightly more formal First Conditional structure, often used to imply a low-probability condition.",
+    "tags": ["grammar", "conditionals", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_947",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Were he to come, I would leave.'",
+    "options": {
+      "A": "Were he to come,",
+      "B": "I would leave.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Sentence is correct.",
+    "tags": ["grammar", "conditionals", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_948",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'If you ___ the project, you would have passed.'",
+    "options": {
+      "A": "finished",
+      "B": "had finished",
+      "C": "would finish",
+      "D": "finish"
+    },
+    "correct_option": "B",
+    "explanation": "Third Conditional requires 'had finished' + 'would have passed'.",
+    "tags": ["grammar", "conditionals", "third_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_949",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'Should you need any help, call me.'",
+    "options": {
+      "A": "Should you need any help, call me.",
+      "B": "If you need any help, call me.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both are grammatically standard First Conditional forms.",
+    "tags": ["grammar", "conditionals", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_COND_950",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Provided he works hard, he will pass.'",
+    "options": {
+      "A": "Provided he works hard,",
+      "B": "he will pass.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Sentence is correct.",
+    "tags": ["grammar", "conditionals", "usage", "rule_based"]
+  }
+]

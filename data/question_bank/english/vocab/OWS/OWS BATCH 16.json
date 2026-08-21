@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0751",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nDone, occurring, or active during the night",
+    "options": {
+      "A": "Nocturnal",
+      "B": "Diurnal",
+      "C": "Ephemeral",
+      "D": "Perennial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nocturnal) is correct[cite: 2]. 'Nocturnal' describes animals, plants, or activities active or occurring at night[cite: 2]. 'Diurnal' describes activity during the daytime, and 'Ephemeral' means lasting for a very short time[cite: 2].",
+    "tags": ["vocab", "ows", "nature", "time", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0752",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMembers of a community of people who have no fixed permanent residence and move from place to place",
+    "options": {
+      "A": "Nomads",
+      "B": "Aborigines",
+      "C": "Cosmopolitans",
+      "D": "Citizens"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nomads) is correct[cite: 2]. 'Nomads' refers to people with no settled home who travel seasonally to find pasture[cite: 2]. 'Aborigines' are the original inhabitants of a country[cite: 2], and 'Cosmopolitans' are citizens of the world[cite: 2].",
+    "tags": ["vocab", "ows", "people", "society", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0753",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA system of names or terms used in a particular discipline, science, or art",
+    "options": {
+      "A": "Nomenclature",
+      "B": "Taxonomy",
+      "C": "Etymology",
+      "D": "Glossary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nomenclature) is correct[cite: 2]. 'Nomenclature' is the systematic naming of things, especially in biological or chemical classifications[cite: 2]. 'Etymology' is the study of word origins[cite: 2], and 'Taxonomy' is the science of classification principles[cite: 2].",
+    "tags": ["vocab", "ows", "science", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0754",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person or thing of no importance or practical significance",
+    "options": {
+      "A": "Nonentity",
+      "B": "Colossus",
+      "C": "Magnate",
+      "D": "Celebrity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nonentity) is correct[cite: 2]. A 'Nonentity' is an unimportant, insignificant, or negligible individual[cite: 2]. 'Colossus' is a person or object of enormous scale and importance[cite: 2].",
+    "tags": ["vocab", "ows", "people", "personality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0755",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA psychological delusion or false belief that one is suffering from an imaginary disease",
+    "options": {
+      "A": "Nosomania",
+      "B": "Dipsomania",
+      "C": "Pyromania",
+      "D": "Bibliomania"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nosomania) is correct[cite: 2]. 'Nosomania' is an obsessive delusion that one is ill[cite: 2]. 'Dipsomania' is an uncontrollable craving for alcohol[cite: 2], and 'Pyromania' is an impulse to set fires[cite: 2].",
+    "tags": ["vocab", "ows", "mania", "medical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0756",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sentimental longing or wistful affection for a period or event in the past",
+    "options": {
+      "A": "Nostalgia",
+      "B": "Amnesia",
+      "C": "Hypochondria",
+      "D": "Ennui"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nostalgia) is correct[cite: 2]. 'Nostalgia' is wistful yearning for past times and cherished memories[cite: 2]. 'Amnesia' is loss of memory[cite: 2], and 'Ennui' is mental listlessness from boredom[cite: 2].",
+    "tags": ["vocab", "ows", "emotions", "mind", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0757",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFamous or well-known for some bad quality, deed, or evil reputation",
+    "options": {
+      "A": "Notorious",
+      "B": "Venerable",
+      "C": "Eminent",
+      "D": "Illustrious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Notorious) is correct[cite: 2]. 'Notorious' (or infamous) describes a person widely known for negative or criminal reasons[cite: 2]. 'Venerable' and 'Illustrious' mean worthy of great respect and honor[cite: 2].",
+    "tags": ["vocab", "ows", "character", "adjectives", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0758",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is new to and inexperienced in a job, trade, or situation; a beginner",
+    "options": {
+      "A": "Novice",
+      "B": "Veteran",
+      "C": "Virtuoso",
+      "D": "Connoisseur"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Novice) is correct[cite: 2]. A 'Novice' (or tyro) is a beginner in a profession[cite: 2]. A 'Veteran' has long professional experience[cite: 2], and a 'Virtuoso' is a master musician or artist[cite: 2].",
+    "tags": ["vocab", "ows", "people", "work", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0759",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo make legally void, invalidate, or reduce to nothing",
+    "options": {
+      "A": "Null",
+      "B": "Enact",
+      "C": "Validate",
+      "D": "Ratify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Null) is correct[cite: 2]. 'Null' (often paired as 'null and void') means legally ineffective or having zero value[cite: 2]. 'Ratify' means to sign or give formal consent to a treaty.",
+    "tags": ["vocab", "ows", "law", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0760",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe systematic study, collection, or appreciation of coins, banknotes, and medals",
+    "options": {
+      "A": "Numismatics",
+      "B": "Philately",
+      "C": "Speleology",
+      "D": "Calligraphy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Numismatics) is correct[cite: 2]. 'Numismatics' is the study and collection of currency and coins[cite: 2]. 'Philately' is the collection of postage stamps[cite: 2], and 'Speleology' is the study of caves[cite: 2].",
+    "tags": ["vocab", "ows", "science", "hobbies", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0761",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who collects or studies coins, tokens, and paper money",
+    "options": {
+      "A": "Numismatist",
+      "B": "Philatelist",
+      "C": "Antiquarian",
+      "D": "Cartographer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Numismatist) is correct[cite: 2]. A 'Numismatist' collects and researches coinage[cite: 2]. A 'Philatelist' collects stamps[cite: 2], and an 'Antiquarian' studies antiques[cite: 2].",
+    "tags": ["vocab", "ows", "professions", "hobbies", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0762",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA place where young trees, shrubs, and flowering plants are propagated and grown for sale",
+    "options": {
+      "A": "Nursery",
+      "B": "Orchard",
+      "C": "Herbarium",
+      "D": "Meadow"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nursery) is correct[cite: 2]. A 'Nursery' is a commercial place where saplings and plants are cultivated for sale[cite: 2]. An 'Orchard' is an area dedicated to fruit trees[cite: 2].",
+    "tags": ["vocab", "ows", "plants", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0763",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn extreme, irrational, or pathological fear of the dark or night",
+    "options": {
+      "A": "Nyctophobia",
+      "B": "Acrophobia",
+      "C": "Claustrophobia",
+      "D": "Hydrophobia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nyctophobia) is correct[cite: 2]. 'Nyctophobia' is the morbid fear of night or darkness[cite: 2]. 'Acrophobia' is fear of heights[cite: 2], and 'Hydrophobia' is fear of water[cite: 2].",
+    "tags": ["vocab", "ows", "phobia", "psychology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0764",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA fertile, vegetated spot in an arid desert fed by an underground water source",
+    "options": {
+      "A": "Oasis",
+      "B": "Isthmus",
+      "C": "Peninsula",
+      "D": "Archipelago"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Oasis) is correct[cite: 2]. An 'Oasis' is a fertile tract with water in a desert[cite: 2]. An 'Isthmus' is a narrow strip of land connecting two larger areas[cite: 2].",
+    "tags": ["vocab", "ows", "geography", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0765",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA printed notice or published biography of a person's death",
+    "options": {
+      "A": "Obituary",
+      "B": "Epitaph",
+      "C": "Elegy",
+      "D": "Eulogy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Obituary) is correct[cite: 2]. An 'Obituary' is an article reporting a person's death and detailing their life accomplishments[cite: 2]. An 'Epitaph' is an inscription carved on a tombstone[cite: 2].",
+    "tags": ["vocab", "ows", "death", "media", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0766",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot clearly expressed, hard to see or understand; vague",
+    "options": {
+      "A": "Obscure",
+      "B": "Lucid",
+      "C": "Articulate",
+      "D": "Manifest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Obscure) is correct[cite: 2]. 'Obscure' means dark, dim, not easily understood, or ambiguous[cite: 2]. 'Lucid' and 'Manifest' mean plainly clear and obvious[cite: 2].",
+    "tags": ["vocab", "ows", "language", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0767",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA building equipped with telescopes and scientific instruments for observing celestial bodies and weather",
+    "options": {
+      "A": "Observatory",
+      "B": "Planetarium",
+      "C": "Sanatorium",
+      "D": "Auditorium"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Observatory) is correct[cite: 2]. An 'Observatory' houses telescopes for astronomical observations[cite: 2]. 'Auditorium' is a performance hall[cite: 2].",
+    "tags": ["vocab", "ows", "science", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0768",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nIn the process of becoming out of date, outdated, or passing out of general use",
+    "options": {
+      "A": "Obsolescent",
+      "B": "Obsolete",
+      "C": "Contemporary",
+      "D": "Perennial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Obsolescent) is correct[cite: 2]. 'Obsolescent' means gradually becoming obsolete and going out of use[cite: 2]. 'Obsolete' means already entirely disused[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "time", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0769",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNo longer produced or used; out of date and completely discarded",
+    "options": {
+      "A": "Obsolete",
+      "B": "Obsolescent",
+      "C": "Contemporary",
+      "D": "Modish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Obsolete) is correct[cite: 2]. 'Obsolete' refers to words, laws, or technologies that are no longer in active use[cite: 2]. 'Contemporary' means belonging to the modern era[cite: 2].",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc", "repeated_10_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0770",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nBelonging to, relating to, or situated in the countries of the West",
+    "options": {
+      "A": "Occidental",
+      "B": "Oriental",
+      "C": "Austral",
+      "D": "Boreal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Occidental) is correct[cite: 2]. 'Occidental' refers to the Western world (Europe/Americas)[cite: 2]. 'Oriental' refers to the Eastern world (Asia).",
+    "tags": ["vocab", "ows", "geography", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0771",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA geometrical plane figure with eight straight sides and eight angles",
+    "options": {
+      "A": "Octagon",
+      "B": "Hexagon",
+      "C": "Heptagon",
+      "D": "Decagon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Octagon) is correct[cite: 2]. An 'Octagon' is an 8-sided polygon[cite: 2]. 'Hexagon' has 6 sides, 'Heptagon' has 7 sides, and 'Decagon' has 10 sides.",
+    "tags": ["vocab", "ows", "mathematics", "geometry", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0772",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is between eighty and eighty-nine years of age",
+    "options": {
+      "A": "Octogenarian",
+      "B": "Septuagenarian",
+      "C": "Sexagenarian",
+      "D": "Centenarian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Octogenarian) is correct[cite: 2]. An 'Octogenarian' is someone 80 to 89 years old[cite: 2]. 'Septuagenarian' is 70 to 79[cite: 2], and 'Centenarian' is 100 or older[cite: 2].",
+    "tags": ["vocab", "ows", "age", "people", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0773",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA marine mollusc with a soft body and eight sucker-bearing arms",
+    "options": {
+      "A": "Octopus",
+      "B": "Squid",
+      "C": "Cuttlefish",
+      "D": "Starfish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Octopus) is correct[cite: 2]. An 'Octopus' is an eight-armed marine creature[cite: 2].",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0774",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA physician who specializes in examining and treating diseases and defects of the eye",
+    "options": {
+      "A": "Oculist",
+      "B": "Optician",
+      "C": "Cardiologist",
+      "D": "Dermatologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Oculist) is correct (also called an Ophthalmologist)[cite: 2]. An 'Oculist' treats medical eye disorders[cite: 2]. An 'Optician' fits and sells corrective eyeglasses.",
+    "tags": ["vocab", "ows", "medical", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0775",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn intense, abnormal, and uncontrollable obsession with or craving for wine",
+    "options": {
+      "A": "Oenomania",
+      "B": "Dipsomania",
+      "C": "Bibliomania",
+      "D": "Pyromania"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Oenomania) is correct[cite: 2]. 'Oenomania' is a specific craving for wine[cite: 2]. 'Dipsomania' is periodic alcoholism generally[cite: 2].",
+    "tags": ["vocab", "ows", "mania", "alcohol", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0776",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small group of people having absolute control and governance over a country or organization",
+    "options": {
+      "A": "Oligarchy",
+      "B": "Democracy",
+      "C": "Autocracy",
+      "D": "Monarchy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Oligarchy) is correct[cite: 2]. 'Oligarchy' is a form of government run by a small dominant clique[cite: 2]. 'Autocracy' is rule by a single person[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "cracy", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0777",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nGiving the impression that something unpleasant, harmful, or bad is about to happen; inauspicious",
+    "options": {
+      "A": "Ominous",
+      "B": "Auspicious",
+      "C": "Felicitous",
+      "D": "Propitious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ominous) is correct[cite: 2]. 'Ominous' means portending evil or disaster[cite: 2]. 'Auspicious' and 'Propitious' mean promising good fortune.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0778",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHaving unlimited, supreme, and infinite power; all-powerful",
+    "options": {
+      "A": "Omnipotent",
+      "B": "Omniscient",
+      "C": "Omnipresent",
+      "D": "Omnivorous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Omnipotent) is correct[cite: 2]. 'Omnipotent' means possessing almighty and unlimited power[cite: 2]. 'Omniscient' means all-knowing[cite: 2], and 'Omnipresent' means present everywhere[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0779",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nPresent, encountered, or existing everywhere simultaneously at all times",
+    "options": {
+      "A": "Omnipresent",
+      "B": "Omnipotent",
+      "C": "Omniscient",
+      "D": "Ubiquitous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Omnipresent) is correct (synonymous with Ubiquitous)[cite: 2]. 'Omnipresent' describes being present in all places at once[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0780",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nKnowing everything; possessing complete, infinite, and universal knowledge",
+    "options": {
+      "A": "Omniscient",
+      "B": "Omnipotent",
+      "C": "Omnipresent",
+      "D": "Omnivorous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Omniscient) is correct[cite: 2]. 'Omniscient' means infinitely wise and all-knowing[cite: 2]. 'Omnivorous' eats all food types[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "knowledge", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0781",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn animal or person that naturally eats food of both plant and animal origin",
+    "options": {
+      "A": "Omnivorous",
+      "B": "Carnivorous",
+      "C": "Herbivorous",
+      "D": "Insectivorous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Omnivorous) is correct[cite: 2]. 'Omnivorous' creatures eat both animal flesh and plants[cite: 2]. 'Carnivorous' animals eat only meat[cite: 2].",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0782",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot able to be seen through; not allowing light to pass through",
+    "options": {
+      "A": "Opaque",
+      "B": "Transparent",
+      "C": "Translucent",
+      "D": "Luminous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Opaque) is correct[cite: 2]. 'Opaque' describes matter that prevents light rays from transmitting through it[cite: 2]. 'Transparent' allows clear vision through it[cite: 2].",
+    "tags": ["vocab", "ows", "physics", "science", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0783",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study and natural history of snakes",
+    "options": {
+      "A": "Ophiology",
+      "B": "Ornithology",
+      "C": "Entomology",
+      "D": "Ichthyology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ophiology) is correct[cite: 2]. 'Ophiology' is the branch of herpetology studying snakes[cite: 2]. 'Ornithology' is the study of birds[cite: 2], and 'Ichthyology' is the study of fish.",
+    "tags": ["vocab", "ows", "science", "animals", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0784",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abnormal, extreme, and irrational fear of snakes",
+    "options": {
+      "A": "Ophiophobia",
+      "B": "Cynophobia",
+      "C": "Acrophobia",
+      "D": "Hydrophobia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ophiophobia) is correct[cite: 2]. 'Ophiophobia' is pathological terror of snakes[cite: 2]. 'Cynophobia' is fear of dogs[cite: 2].",
+    "tags": ["vocab", "ows", "phobia", "animals", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0785",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medical specialist and surgeon who deals with the diagnosis and treatment of eye diseases",
+    "options": {
+      "A": "Ophthalmologist",
+      "B": "Dermatologist",
+      "C": "Cardiologist",
+      "D": "Orthopaedist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ophthalmologist) is correct[cite: 2]. An 'Ophthalmologist' is an eye medical doctor and surgeon[cite: 2]. 'Orthopaedist' treats bones and joints[cite: 2].",
+    "tags": ["vocab", "ows", "medical", "professions", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0786",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nStubbornly adhering to one's own opinions and unwilling to consider other views",
+    "options": {
+      "A": "Opinionated",
+      "B": "Amenable",
+      "C": "Docile",
+      "D": "Complaisant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Opinionated) is correct[cite: 2]. 'Opinionated' means dogmatically holding fixed beliefs without listening to others[cite: 2]. 'Amenable' means open to guidance[cite: 2].",
+    "tags": ["vocab", "ows", "behaviour", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0787",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nPublic disgrace, harsh criticism, and reproach resulting from shameful and dishonourable conduct",
+    "options": {
+      "A": "Opprobrium",
+      "B": "Esteem",
+      "C": "Eulogy",
+      "D": "Laudation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Opprobrium) is correct[cite: 2]. 'Opprobrium' is severe condemnation and ignominy[cite: 2]. 'Esteem' is high respect and honor[cite: 2].",
+    "tags": ["vocab", "ows", "society", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0788",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who habitually expects the best possible outcome and sees the bright side of things",
+    "options": {
+      "A": "Optimist",
+      "B": "Pessimist",
+      "C": "Fatalist",
+      "D": "Cynic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Optimist) is correct[cite: 2]. An 'Optimist' anticipates positive results in all situations[cite: 2]. A 'Pessimist' habitually expects negative outcomes[cite: 2].",
+    "tags": ["vocab", "ows", "personality", "mind", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0789",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA separate musical composition or literary work, especially on a major scale",
+    "options": {
+      "A": "Opus",
+      "B": "Excerpt",
+      "C": "Postscript",
+      "D": "Codicil"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Opus) is correct (plural: opera)[cite: 2]. An 'Opus' is a numbered major artistic composition[cite: 2]. 'Excerpt' is an extract from a work[cite: 2].",
+    "tags": ["vocab", "ows", "art", "music", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0790",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA formal, eloquent speech delivered on a special ceremonial occasion",
+    "options": {
+      "A": "Oration",
+      "B": "Harangue",
+      "C": "Diatribe",
+      "D": "Soliloquy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Oration) is correct[cite: 2]. An 'Oration' is a dignified public address delivered with rhetorical style[cite: 2]. 'Diatribe' is an angry, abusive verbal attack[cite: 2].",
+    "tags": ["vocab", "ows", "speeches", "communication", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0791",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA public speaker who is eloquent, proficient, and skilled at addressing audiences",
+    "options": {
+      "A": "Orator",
+      "B": "Auditor",
+      "C": "Eavesdropper",
+      "D": "Pedant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Orator) is correct[cite: 2]. An 'Orator' is a gifted public speaker[cite: 2]. 'Auditor' examines financial accounts[cite: 2], and 'Pedant' is overly focused on minor rules[cite: 2].",
+    "tags": ["vocab", "ows", "professions", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0792",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA piece of land or enclosed garden planted with fruit trees",
+    "options": {
+      "A": "Orchard",
+      "B": "Meadow",
+      "C": "Nursery",
+      "D": "Greenhouse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Orchard) is correct[cite: 2]. An 'Orchard' is an intentional plantation of fruit trees[cite: 2]. 'Meadow' is grazing pasture[cite: 2], and 'Nursery' is where saplings are grown for sale[cite: 2].",
+    "tags": ["vocab", "ows", "plants", "places", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0793",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large body of musicians playing together on various stringed, wind, and percussion instruments",
+    "options": {
+      "A": "Orchestra",
+      "B": "Choir",
+      "C": "Flock",
+      "D": "Bevy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Orchestra) is correct[cite: 2]. An 'Orchestra' is a large instrumental musical ensemble[cite: 2]. A 'Choir' is a group of vocal singers[cite: 2].",
+    "tags": ["vocab", "ows", "music", "collective_nouns", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0794",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe systematic arrangement or disposition of people or items according to a designated sequence or method",
+    "options": {
+      "A": "Order",
+      "B": "Anarchy",
+      "C": "Chaos",
+      "D": "Turmoil"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Order) is correct[cite: 2]. 'Order' is the methodical and logical arrangement of things[cite: 2]. 'Chaos' and 'Turmoil' denote confused disorder.",
+    "tags": ["vocab", "ows", "general", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0795",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn opening, mouth, or vent, especially an aperture in the human body such as a nostril",
+    "options": {
+      "A": "Orifice",
+      "B": "Chasm",
+      "C": "Shaft",
+      "D": "Burrow"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Orifice) is correct[cite: 2]. An 'Orifice' is an anatomical aperture or opening in a body or tube[cite: 2]. 'Chasm' is a deep geological gap in the earth[cite: 2].",
+    "tags": ["vocab", "ows", "anatomy", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0796",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA scientist who specializes in the scientific study of birds",
+    "options": {
+      "A": "Ornithologist",
+      "B": "Entomologist",
+      "C": "Ichthyologist",
+      "D": "Anthropologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ornithologist) is correct[cite: 2]. An 'Ornithologist' is an expert in bird biology[cite: 2]. An 'Entomologist' studies insects[cite: 2].",
+    "tags": ["vocab", "ows", "science", "professions", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0797",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study of bird species, their habitats, and behaviour",
+    "options": {
+      "A": "Ornithology",
+      "B": "Ophiology",
+      "C": "Entomology",
+      "D": "Speleology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ornithology) is correct[cite: 2]. 'Ornithology' is the scientific study of birds[cite: 2]. 'Ophiology' is the study of snakes[cite: 2], and 'Speleology' is the study of caves[cite: 2].",
+    "tags": ["vocab", "ows", "science", "animals", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0798",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA residential public institution for the care, maintenance, and education of children whose parents are deceased",
+    "options": {
+      "A": "Orphanage",
+      "B": "Asylum",
+      "C": "Sanatorium",
+      "D": "Infirmary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Orphanage) is correct[cite: 2]. An 'Orphanage' is an institution providing shelter for parentless children[cite: 2]. 'Asylum' provides shelter for the mentally ill[cite: 2].",
+    "tags": ["vocab", "ows", "places", "society", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0799",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nConforming strictly to traditional, established, and customary doctrines and beliefs",
+    "options": {
+      "A": "Orthodox",
+      "B": "Heterodox",
+      "C": "Iconoclastic",
+      "D": "Heretical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Orthodox) is correct[cite: 2]. 'Orthodox' describes adhering to accepted, traditional religious or societal standards[cite: 2]. 'Heterodox' and 'Heretical' mean holding unorthodox views[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0800",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe medical and surgical specialty concerned with the correction of deformities and diseases of the skeletal and muscular systems",
+    "options": {
+      "A": "Orthopaedics",
+      "B": "Pediatrics",
+      "C": "Dermatology",
+      "D": "Neurology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Orthopaedics) is correct[cite: 2]. 'Orthopaedics' deals with bone, joint, and spine disorders[cite: 2]. 'Pediatrics' treats childhood diseases[cite: 2].",
+    "tags": ["vocab", "ows", "medical", "science", "pyq_ssc"]
+  }
+]

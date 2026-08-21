@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0401",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DIVEST**",
+    "options": {
+      "A": "Endow",
+      "B": "Strip",
+      "C": "Invest",
+      "D": "Furnish"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Divest' means to deprive or strip someone of power, rights, possessions, or clothing. 'Strip', 'deprive', or 'dispossess' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0402",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DIVEST**",
+    "options": {
+      "A": "Dispossess",
+      "B": "Denude",
+      "C": "Endow",
+      "D": "Dismantle"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Divest' means to strip or deprive. 'Endow', 'invest', or 'equip' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0403",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DIVULGE**",
+    "options": {
+      "A": "Conceal",
+      "B": "Disclose",
+      "C": "Suppress",
+      "D": "Cloak"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Divulge' means to make known private or sensitive information. 'Disclose', 'reveal', or 'impart' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0404",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DIVULGE**",
+    "options": {
+      "A": "Reveal",
+      "B": "Impart",
+      "C": "Disclose",
+      "D": "Conceal"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Divulge' means to reveal or make public. 'Conceal', 'hide', or 'suppress' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0405",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DOCILE**",
+    "options": {
+      "A": "Submissive",
+      "B": "Intractable",
+      "C": "Defiant",
+      "D": "Unruly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Docile' means ready to accept control or instruction; submissive. 'Submissive', 'tractable', or 'compliant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0406",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DOCILE**",
+    "options": {
+      "A": "Tractable",
+      "B": "Yielding",
+      "C": "Intractable",
+      "D": "Obedient"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Docile' means easily managed or taught. 'Intractable', 'willful', or 'recalcitrant' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0407",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DOGMATIC**",
+    "options": {
+      "A": "Doctrinaire",
+      "B": "Flexible",
+      "C": "Broad-minded",
+      "D": "Open"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Dogmatic' means inclined to lay down principles as incontrovertibly true. 'Doctrinaire', 'opinionated', or 'imperious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0408",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DOGMATIC**",
+    "options": {
+      "A": "Imperious",
+      "B": "Authoritarian",
+      "C": "Flexible",
+      "D": "Dictatorial"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Dogmatic' means rigidly opinionated. 'Flexible', 'open-minded', or 'accommodating' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0409",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DORMANT**",
+    "options": {
+      "A": "Latent",
+      "B": "Active",
+      "C": "Operative",
+      "D": "Dynamic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Dormant' means having normal physical functions suspended or slowed down; inactive. 'Latent', 'quiescent', or 'slumbering' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0410",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DORMANT**",
+    "options": {
+      "A": "Quiescent",
+      "B": "Inactive",
+      "C": "Latent",
+      "D": "Active"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Dormant' means inactive or asleep. 'Active', 'awake', or 'operative' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0411",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DUBIOUS**",
+    "options": {
+      "A": "Equivocal",
+      "B": "Trustworthy",
+      "C": "Certain",
+      "D": "Indisputable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Dubious' means hesitating or doubting; not to be relied upon. 'Equivocal', 'questionable', or 'uncertain' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0412",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DUBIOUS**",
+    "options": {
+      "A": "Suspect",
+      "B": "Certain",
+      "C": "Questionable",
+      "D": "Skeptical"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Dubious' means doubtful or suspicious. 'Certain', 'trustworthy', or 'definite' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0413",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DUPLICITY**",
+    "options": {
+      "A": "Deceitfulness",
+      "B": "Integrity",
+      "C": "Probity",
+      "D": "Sincerity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Duplicity' means deceitfulness in speech or conduct; double-dealing. 'Deceitfulness', 'treachery', or 'chicanery' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0414",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DUPLICITY**",
+    "options": {
+      "A": "Deception",
+      "B": "Guile",
+      "C": "Artifice",
+      "D": "Probity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Duplicity' means fraud or dishonesty. 'Probity', 'integrity', or 'candor' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0415",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EBULLIENT**",
+    "options": {
+      "A": "Exuberant",
+      "B": "Depressed",
+      "C": "Morose",
+      "D": "Apathetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ebullient' means cheerful and full of energy. 'Exuberant', 'buoyant', or 'vivacious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0416",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EBULLIENT**",
+    "options": {
+      "A": "Vivacious",
+      "B": "Exuberant",
+      "C": "Despondent",
+      "D": "High-spirited"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ebullient' means overflowing with enthusiasm. 'Despondent', 'morose', or 'subdued' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0417",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ECCENTRIC**",
+    "options": {
+      "A": "Unconventional",
+      "B": "Orthodox",
+      "C": "Conventional",
+      "D": "Customary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Eccentric' means unconventional and slightly strange. 'Unconventional', 'peculiar', or 'idiosyncratic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0418",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ECCENTRIC**",
+    "options": {
+      "A": "Bizarre",
+      "B": "Outlandish",
+      "C": "Conventional",
+      "D": "Idiosyncratic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Eccentric' means odd or abnormal. 'Conventional', 'ordinary', or 'standard' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0419",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ECLECTIC**",
+    "options": {
+      "A": "Diverse",
+      "B": "Narrow",
+      "C": "Dogmatic",
+      "D": "Monolithic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Eclectic' means deriving ideas, style, or taste from a broad and diverse range of sources. 'Diverse', 'broad-ranging', or 'catholic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0420",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ECLECTIC**",
+    "options": {
+      "A": "Heterogeneous",
+      "B": "Varied",
+      "C": "Uniform",
+      "D": "Diverse"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Eclectic' means composed of varied elements. 'Uniform', 'homogeneous', or 'narrow' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0421",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EFFICACIOUS**",
+    "options": {
+      "A": "Effective",
+      "B": "Useless",
+      "C": "Inept",
+      "D": "Impotent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Efficacious' means successful in producing a desired or intended result; effective. 'Effective', 'productive', or 'potent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0422",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EFFICACIOUS**",
+    "options": {
+      "A": "Potent",
+      "B": "Ineffectual",
+      "C": "Capable",
+      "D": "Productive"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Efficacious' means having the power to produce an effect. 'Ineffectual', 'useless', or 'impotent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0423",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EFFRONTERY**",
+    "options": {
+      "A": "Insolence",
+      "B": "Timidity",
+      "C": "Meekness",
+      "D": "Modesty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Effrontery' means insolent or impertinent behavior. 'Insolence', 'audacity', or 'presumption' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0424",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EFFRONTERY**",
+    "options": {
+      "A": "Audacity",
+      "B": "Temerity",
+      "C": "Timidity",
+      "D": "Gall"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Effrontery' means shameless boldness. 'Timidity', 'modesty', or 'diffidence' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0425",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EGREGIOUS**",
+    "options": {
+      "A": "Flagrant",
+      "B": "Inconspicuous",
+      "C": "Minor",
+      "D": "Slight"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Egregious' means outstandingly bad; shocking. 'Flagrant', 'glaring', or 'atrocious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0426",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EGREGIOUS**",
+    "options": {
+      "A": "Appalling",
+      "B": "Outrageous",
+      "C": "Flagrant",
+      "D": "Unremarkable"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Egregious' means conspicuously bad. 'Unremarkable', 'minor', or 'slight' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0427",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ELICIT**",
+    "options": {
+      "A": "Evoke",
+      "B": "Suppress",
+      "C": "Conceal",
+      "D": "Stifle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Elicit' means to evoke or draw out (a reaction, answer, or fact) from someone. 'Evoke', 'extract', or 'extort' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0428",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ELICIT**",
+    "options": {
+      "A": "Extract",
+      "B": "Suppress",
+      "C": "Draw forth",
+      "D": "Evoke"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Elicit' means to draw out. 'Suppress', 'hide', or 'stifle' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0429",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ELUCIDATE**",
+    "options": {
+      "A": "Clarify",
+      "B": "Obscure",
+      "C": "Confuse",
+      "D": "Complicate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Elucidate' means to make (something) clear; explain. 'Clarify', 'illuminate', or 'expound' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0430",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ELUCIDATE**",
+    "options": {
+      "A": "Explain",
+      "B": "Clarify",
+      "C": "Obscure",
+      "D": "Explicate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Elucidate' means to explain clearly. 'Obscure', 'muddle', or 'confuse' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0431",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EMACIATED**",
+    "options": {
+      "A": "Gaunt",
+      "B": "Corpulent",
+      "C": "Plump",
+      "D": "Stout"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Emaciated' means abnormally thin or weak, especially because of illness or a lack of food. 'Gaunt', 'skeletal', or 'scrawny' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0432",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EMACIATED**",
+    "options": {
+      "A": "Skeletal",
+      "B": "Corpulent",
+      "C": "Haggard",
+      "D": "Wasted"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Emaciated' means excessively lean/thin. 'Corpulent', 'obese', or 'plump' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0433",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EMBELLISH**",
+    "options": {
+      "A": "Adorn",
+      "B": "Mar",
+      "C": "Deface",
+      "D": "Disfigure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Embellish' means to make something more attractive by the addition of decorative details. 'Adorn', 'decorate', or 'garnish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0434",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EMBELLISH**",
+    "options": {
+      "A": "Ornament",
+      "B": "Decorate",
+      "C": "Garnish",
+      "D": "Disfigure"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Embellish' means to beautify. 'Disfigure', 'spoil', or 'mar' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0435",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EMULATE**",
+    "options": {
+      "A": "Imitate",
+      "B": "Neglect",
+      "C": "Oppose",
+      "D": "Spurn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Emulate' means to match or surpass (a person or achievement), typically by imitation. 'Imitate', 'mimic', or 'copy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0436",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENCOMIUM**",
+    "options": {
+      "A": "Eulogy",
+      "B": "Panegyric",
+      "C": "Praise",
+      "D": "Invective"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Encomium' is a speech or piece of writing that praises someone highly. 'Invective', 'diatribe', or 'censure' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0437",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ENERVATE**",
+    "options": {
+      "A": "Debilitate",
+      "B": "Strengthen",
+      "C": "Invigorate",
+      "D": "Animate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Enervate' means to cause someone to feel drained of energy or vitality; weaken. 'Debilitate', 'enfeeble', or 'exhaust' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0438",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENERVATE**",
+    "options": {
+      "A": "Exhaust",
+      "B": "Weaken",
+      "C": "Invigorate",
+      "D": "Sap"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Enervate' means to drain of energy. 'Invigorate', 'fortify', or 'energize' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0439",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ENGENDER**",
+    "options": {
+      "A": "Generate",
+      "B": "Extinguish",
+      "C": "Destroy",
+      "D": "Quell"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Engender' means to cause or give rise to a feeling, situation, or condition. 'Generate', 'produce', or 'beget' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0440",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENGENDER**",
+    "options": {
+      "A": "Instigate",
+      "B": "Produce",
+      "C": "Extinguish",
+      "D": "Beget"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Engender' means to produce or cause. 'Extinguish', 'quash', or 'destroy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0441",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ENIGMATIC**",
+    "options": {
+      "A": "Cryptic",
+      "B": "Clear",
+      "C": "Manifest",
+      "D": "Obvious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Enigmatic' means difficult to interpret or understand; mysterious. 'Cryptic', 'mysterious', or 'inscrutable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0442",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENIGMATIC**",
+    "options": {
+      "A": "Mysterious",
+      "B": "Inscrutable",
+      "C": "Lucid",
+      "D": "Perplexing"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Enigmatic' means puzzling or mysterious. 'Lucid', 'clear', or 'transparent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0443",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ENNUI**",
+    "options": {
+      "A": "Tedium",
+      "B": "Excitement",
+      "C": "Vigor",
+      "D": "Liveliness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ennui' refers to a feeling of listlessness and dissatisfaction arising from a lack of occupation or excitement. 'Tedium', 'boredom', or 'lethargy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0444",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENNUI**",
+    "options": {
+      "A": "Languor",
+      "B": "Boredom",
+      "C": "Tedium",
+      "D": "Animation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Ennui' means mental weariness and boredom. 'Animation', 'vitality', or 'excitement' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0445",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EPHEMERAL**",
+    "options": {
+      "A": "Transient",
+      "B": "Eternal",
+      "C": "Perpetual",
+      "D": "Enduring"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ephemeral' means lasting for a very short time. 'Transient', 'fleeting', or 'evanescent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0446",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EPHEMERAL**",
+    "options": {
+      "A": "Fleeting",
+      "B": "Perpetual",
+      "C": "Transient",
+      "D": "Fugacious"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Ephemeral' means short-lived. 'Perpetual', 'eternal', or 'everlasting' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0447",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EPITOME**",
+    "options": {
+      "A": "Embodiment",
+      "B": "Expansion",
+      "C": "Enlargement",
+      "D": "Extension"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Epitome' refers to a person or thing that is a perfect example of a particular quality or type. 'Embodiment', 'quintessence', or 'archetype' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0448",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EQUANIMITY**",
+    "options": {
+      "A": "Composure",
+      "B": "Placidity",
+      "C": "Agitation",
+      "D": "Serenity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Equanimity' means mental calmness, composure, and evenness of temper. 'Agitation', 'dismay', or 'discomposure' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0449",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EQUIVOCAL**",
+    "options": {
+      "A": "Ambiguous",
+      "B": "Explicit",
+      "C": "Unmistakable",
+      "D": "Definite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Equivocal' means open to more than one interpretation; ambiguous. 'Ambiguous', 'evasive', or 'cryptic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0450",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EQUIVOCAL**",
+    "options": {
+      "A": "Vague",
+      "B": "Unambiguous",
+      "C": "Indeterminate",
+      "D": "Obscure"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Equivocal' means misleading or ambiguous. 'Unambiguous', 'explicit', or 'definite' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

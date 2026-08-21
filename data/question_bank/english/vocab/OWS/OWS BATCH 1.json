@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0001",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA place where animals are slaughtered for consumption as food",
+    "options": {
+      "A": "Abattoir",
+      "B": "Apiary",
+      "C": "Aviary",
+      "D": "Armoury"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Abattoir) is correct. 'Abattoir' is a slaughterhouse for animals[cite: 14]. 'Apiary' is a place where bees are kept[cite: 14], 'Aviary' is for birds[cite: 14], and 'Armoury' stores weapons[cite: 14].",
+    "tags": ["vocab", "ows", "animals", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0002",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe superior of a monastery",
+    "options": {
+      "A": "Abbot",
+      "B": "Apostle",
+      "C": "Curator",
+      "D": "Chauvinist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Abbot) is correct. An 'Abbot' is the head or superior of a monastery of monks[cite: 14]. 'Apostle' refers to an early Christian leader or pioneer of a reform movement[cite: 14].",
+    "tags": ["vocab", "ows", "religion", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0003",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA shortened form of a word or phrase",
+    "options": {
+      "A": "Pseudonym",
+      "B": "Acronym",
+      "C": "Abbreviation",
+      "D": "Abridgement"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Abbreviation) is correct. 'Abbreviation' is a shortened form of a word or phrase (e.g., Dr. for Doctor)[cite: 14]. 'Acronym' is formed from initial letters[cite: 14], and 'Pseudonym' is a fictitious name[cite: 14].",
+    "tags": ["vocab", "ows", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0004",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo formally give up one's throne or authority",
+    "options": {
+      "A": "Abdicate",
+      "B": "Usurp",
+      "C": "Arrogate",
+      "D": "Bequeath"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Abdicate) is correct. 'Abdicate' means to renounce one's throne or high office[cite: 14]. 'Usurp' means to seize power wrongfully, and 'Bequeath' means to pass on via a will.",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0005",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe act of renouncing the throne or high office",
+    "options": {
+      "A": "Abdication",
+      "B": "Deprivation",
+      "C": "Induction",
+      "D": "Coronation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Abdication) is correct. 'Abdication' is the formal act of giving up royal power or sovereignty[cite: 14]. 'Coronation' is the ceremony of crowning a monarch[cite: 14].",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0006",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nDeviation or departure from what is normal or usual",
+    "options": {
+      "A": "Aberration",
+      "B": "Conformity",
+      "C": "Axiom",
+      "D": "Parable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Aberration) is correct. 'Aberration' is a state or condition marked by departure from the normal or typical path[cite: 14]. 'Conformity' denotes compliance with standards[cite: 13].",
+    "tags": ["vocab", "ows", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0007",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFormally put an end to a system, practice, or institution",
+    "options": {
+      "A": "Abolish",
+      "B": "Enact",
+      "C": "Consolidate",
+      "D": "Inaugurate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Abolish) is correct. 'Abolish' means to formally put an end to a law, custom, or system[cite: 14]. 'Enact' means to pass a law, and 'Inaugurate' means to initiate formally.",
+    "tags": ["vocab", "ows", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0008",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe original or earliest known inhabitants of a country or region",
+    "options": {
+      "A": "Aborigines",
+      "B": "Immigrants",
+      "C": "Emigrants",
+      "D": "Cosmopolitans"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Aborigines) is correct. 'Aborigines' are the native or indigenous inhabitants who lived in a land from earliest times[cite: 14]. 'Immigrants' settle in foreign lands[cite: 14].",
+    "tags": ["vocab", "ows", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0009",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo shorten a piece of text without losing its essential meaning",
+    "options": {
+      "A": "Abridge",
+      "B": "Enlarge",
+      "C": "Elongate",
+      "D": "Amplify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Abridge) is correct. 'Abridge' means to condense or shorten a written work while retaining the main ideas[cite: 14]. 'Amplify' and 'Enlarge' mean to expand[cite: 14].",
+    "tags": ["vocab", "ows", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0010",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nWildly unreasonable, illogical, or completely ridiculous",
+    "options": {
+      "A": "Absurd",
+      "B": "Rational",
+      "C": "Logical",
+      "D": "Sensible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Absurd) is correct. 'Absurd' refers to something wildly illogical, foolish, or contrary to reason[cite: 14]. 'Rational' and 'Sensible' are its direct antonyms.",
+    "tags": ["vocab", "ows", "logic", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0011",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo increase the speed or rate of something",
+    "options": {
+      "A": "Accelerate",
+      "B": "Slacken",
+      "C": "Retard",
+      "D": "Deter"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Accelerate) is correct. 'Accelerate' means to increase speed or quicken velocity[cite: 14]. 'Slacken' and 'Retard' mean to slow down[cite: 14].",
+    "tags": ["vocab", "ows", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0012",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA partner in crime; one who helps another commit a wrong act",
+    "options": {
+      "A": "Accomplice",
+      "B": "Opponent",
+      "C": "Adversary",
+      "D": "Altruist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Accomplice) is correct. An 'Accomplice' is an associate who helps another person carry out a crime[cite: 14]. 'Adversary' means an enemy or opponent.",
+    "tags": ["vocab", "ows", "crime", "pyq_ssc", "repeated_7_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0013",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA professional whose job is to keep or inspect financial records",
+    "options": {
+      "A": "Accountant",
+      "B": "Actuary",
+      "C": "Auditor",
+      "D": "Curator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Accountant) is correct. An 'Accountant' maintains and inspects financial accounts[cite: 14]. An 'Auditor' is an official who formally examines and audits accounts[cite: 14].",
+    "tags": ["vocab", "ows", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0014",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study of sound and sound waves",
+    "options": {
+      "A": "Acoustics",
+      "B": "Aeronautics",
+      "C": "Optics",
+      "D": "Anatomy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Acoustics) is correct. 'Acoustics' is the branch of physics concerned with the properties and transmission of sound[cite: 14]. 'Optics' is the study of light.",
+    "tags": ["vocab", "ows", "science", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0015",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo officially declare someone not guilty of a crime in a court of law",
+    "options": {
+      "A": "Acquit",
+      "B": "Convict",
+      "C": "Sentence",
+      "D": "Indict"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Acquit) is correct. 'Acquit' means to formally clear someone of a criminal charge[cite: 14]. 'Convict' is to find someone formally guilty.",
+    "tags": ["vocab", "ows", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0016",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn athlete or performer who performs daring gymnastic feats",
+    "options": {
+      "A": "Acrobat",
+      "B": "Jockey",
+      "C": "Chauffeur",
+      "D": "Somnambulist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Acrobat) is correct. An 'Acrobat' performs spectacular gymnastic feats of agility and balance[cite: 14]. 'Somnambulist' is a sleepwalker[cite: 14].",
+    "tags": ["vocab", "ows", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0017",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA word formed from the initial letters of a name or phrase and pronounced as a word",
+    "options": {
+      "A": "Acronym",
+      "B": "Homonym",
+      "C": "Pseudonym",
+      "D": "Antonym"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Acronym) is correct. An 'Acronym' is a word formed from the initial letters of words (e.g., NASA, UNESCO)[cite: 14]. 'Homonym' is a word that sounds/spells like another[cite: 11].",
+    "tags": ["vocab", "ows", "language", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0018",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn extreme or irrational fear of heights",
+    "options": {
+      "A": "Acrophobia",
+      "B": "Hydrophobia",
+      "C": "Claustrophobia",
+      "D": "Xenophobia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Acrophobia) is correct. 'Acrophobia' is the pathological fear of heights[cite: 14]. 'Xenophobia' is the fear or hatred of foreigners/strangers[cite: 14].",
+    "tags": ["vocab", "ows", "phobia", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0019",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe ability to make good judgements, understand quickly, and take shrewd decisions",
+    "options": {
+      "A": "Acumen",
+      "B": "Folly",
+      "C": "Stupor",
+      "D": "Fatigue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Acumen) is correct. 'Acumen' is mental sharpness and quickness in understanding and dealing with a situation[cite: 14]. 'Folly' denotes foolishness.",
+    "tags": ["vocab", "ows", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0020",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is unable to stop taking harmful drugs or substances",
+    "options": {
+      "A": "Addict",
+      "B": "Ascetic",
+      "C": "Teetotaller",
+      "D": "Hedonist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Addict) is correct. An 'Addict' is physically and mentally dependent on a particular substance[cite: 14]. 'Teetotaller' completely abstains from alcohol[cite: 14].",
+    "tags": ["vocab", "ows", "habits", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0021",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo follow practices, rules, or beliefs closely and faithfully",
+    "options": {
+      "A": "Adhere",
+      "B": "Infringe",
+      "C": "Transgress",
+      "D": "Defy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Adhere) is correct. 'Adhere' means to stick fast to a surface or strictly follow a rule or principle[cite: 13, 14]. 'Transgress' means to violate or cross a legal boundary[cite: 14].",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0022",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe transitional stage of physical and mental growth between childhood and adulthood",
+    "options": {
+      "A": "Adolescence",
+      "B": "Infancy",
+      "C": "Senility",
+      "D": "Geriatrics"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Adolescence) is correct. 'Adolescence' is the developmental period between puberty and adult life[cite: 14]. 'Senility' refers to deterioration due to old age.",
+    "tags": ["vocab", "ows", "age", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0023",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn exceptionally handsome and attractive young man",
+    "options": {
+      "A": "Adonis",
+      "B": "Chauvinist",
+      "C": "Virtuoso",
+      "D": "Patriot"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Adonis) is correct. 'Adonis' is an allusion to Greek mythology representing a remarkably handsome young man[cite: 14]. 'Virtuoso' is an individual exceptionally skilled in fine art or music[cite: 14].",
+    "tags": ["vocab", "ows", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0024",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who publicly supports or recommends a particular cause or policy",
+    "options": {
+      "A": "Advocate",
+      "B": "Adversary",
+      "C": "Antagonist",
+      "D": "Agnostic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Advocate) is correct. An 'Advocate' actively supports, defends, or argues for a cause or person[cite: 14]. 'Antagonist' is an adversary or opposing force.",
+    "tags": ["vocab", "ows", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0025",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExisting, living, or operating in the air",
+    "options": {
+      "A": "Aerial",
+      "B": "Aquatic",
+      "C": "Terrestrial",
+      "D": "Amphibian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Aerial) is correct. 'Aerial' means occurring, existing, or operating in the air[cite: 14]. 'Aquatic' relates to water[cite: 14], and 'Terrestrial' relates to the dry land.",
+    "tags": ["vocab", "ows", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0026",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nConcerned with beauty or the artistic appreciation of beauty",
+    "options": {
+      "A": "Aesthetic",
+      "B": "Ascetic",
+      "C": "Anaesthetic",
+      "D": "Authentic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Aesthetic) is correct. 'Aesthetic' pertains to the philosophy of taste and beauty in art[cite: 14]. 'Ascetic' means practicing severe self-discipline and abstention[cite: 14].",
+    "tags": ["vocab", "ows", "art", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0027",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA list of items or business matters to be discussed at a formal meeting",
+    "options": {
+      "A": "Agenda",
+      "B": "Schedule",
+      "C": "Timetable",
+      "D": "Minutes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Agenda) is correct. An 'Agenda' is a formal list of topics planned for discussion at a meeting[cite: 14]. 'Minutes' are the official written records of what was actually said during that meeting.",
+    "tags": ["vocab", "ows", "official", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0028",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAlways ready to attack or initiate a quarrel",
+    "options": {
+      "A": "Aggressive",
+      "B": "Peaceable",
+      "C": "Docile",
+      "D": "Placid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Aggressive) is correct. 'Aggressive' means behaving in an angry, combative, or forceful manner[cite: 14]. 'Docile' and 'Placid' refer to quiet, calm, or easily managed traits.",
+    "tags": ["vocab", "ows", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0029",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExtreme mental or physical suffering",
+    "options": {
+      "A": "Agony",
+      "B": "Ecstasy",
+      "C": "Bliss",
+      "D": "Euphoria"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Agony) is correct. 'Agony' represents intense physical pain or prolonged mental anguish[cite: 14]. 'Ecstasy' and 'Bliss' indicate overwhelming delight or happiness.",
+    "tags": ["vocab", "ows", "feelings", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0030",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abnormal fear of experiencing physical pain",
+    "options": {
+      "A": "Algophobia",
+      "B": "Acrophobia",
+      "C": "Agoraphobia",
+      "D": "Hydrophobia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Algophobia) is correct. 'Algophobia' is an irrational fear of physical pain[cite: 14]. 'Agoraphobia' is fear of crowded or open public spaces.",
+    "tags": ["vocab", "ows", "phobia", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0031",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person belonging to a foreign country; unfamiliar or different from what you are used to",
+    "options": {
+      "A": "Alien",
+      "B": "Native",
+      "C": "Indigenous",
+      "D": "Citizen"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Alien) is correct. 'Alien' describes a foreigner or an unfamiliar entity[cite: 14]. 'Native' and 'Indigenous' mean originating locally[cite: 14].",
+    "tags": ["vocab", "ows", "people", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0032",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn allowance made legally to a spouse after separation or divorce",
+    "options": {
+      "A": "Alimony",
+      "B": "Honorarium",
+      "C": "Remuneration",
+      "D": "Bonus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Alimony) is correct. 'Alimony' is financial support ordered by a court to be given to a spouse upon separation[cite: 14]. 'Honorarium' is a payment made without legal obligation for professional service[cite: 14].",
+    "tags": ["vocab", "ows", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0033",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA story, poem, or picture that can be interpreted to reveal a hidden symbolic meaning",
+    "options": {
+      "A": "Allegory",
+      "B": "Anecdote",
+      "C": "Biography",
+      "D": "Anthology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Allegory) is correct. An 'Allegory' uses symbolic figures and events to convey a deeper moral or political message[cite: 14]. 'Anecdote' is a short amusing story about a real person/incident[cite: 14].",
+    "tags": ["vocab", "ows", "literature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0034",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe repetition of an initial consonant sound in two or more neighbouring words in a line",
+    "options": {
+      "A": "Alliteration",
+      "B": "Oxymoron",
+      "C": "Simile",
+      "D": "Metaphor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Alliteration) is correct. 'Alliteration' is the literary device of repeating initial consonant sounds[cite: 14]. 'Simile' is an explicit comparison using 'like' or 'as'[cite: 14].",
+    "tags": ["vocab", "ows", "literature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0035",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe school, college, or university that one formerly attended",
+    "options": {
+      "A": "Alma Mater",
+      "B": "Sanatorium",
+      "C": "Infirmary",
+      "D": "Conservatory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Alma Mater) is correct. 'Alma Mater' refers to the educational institution one attended or graduated from[cite: 14]. 'Sanatorium' is an establishment for medical recuperation[cite: 14].",
+    "tags": ["vocab", "ows", "education", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0036",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe sport or activity of climbing mountains",
+    "options": {
+      "A": "Alpinism",
+      "B": "Speleology",
+      "C": "Aviation",
+      "D": "Numismatics"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Alpinism) is correct. 'Alpinism' is high mountain climbing[cite: 14]. 'Speleology' is the scientific study or exploration of caves[cite: 14].",
+    "tags": ["vocab", "ows", "sports", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0037",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA raised table or flat surface where offerings are made to a deity",
+    "options": {
+      "A": "Altar",
+      "B": "Alter",
+      "C": "Podium",
+      "D": "Pulpit"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Altar) is correct. 'Altar' is the holy table or flat slab used for religious offerings[cite: 14]. ('Alter' is a verb meaning to change). 'Podium' is a speaker's raised platform[cite: 14].",
+    "tags": ["vocab", "ows", "religion", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0038",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe height of an object or point in relation to sea level or ground level",
+    "options": {
+      "A": "Altitude",
+      "B": "Latitude",
+      "C": "Longitude",
+      "D": "Magnitude"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Altitude) is correct. 'Altitude' is the vertical elevation above sea level[cite: 14]. 'Latitude' and 'Longitude' define geographic coordinates on the globe.",
+    "tags": ["vocab", "ows", "geography", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0039",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA former male or female student of a specific school, college, or university",
+    "options": {
+      "A": "Alumnus",
+      "B": "Novice",
+      "C": "Apprentice",
+      "D": "Pedant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Alumnus) is correct. 'Alumnus' (plural: alumni) is a graduate or former student of a particular institution[cite: 13, 14]. 'Novice' means a beginner[cite: 14].",
+    "tags": ["vocab", "ows", "education", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0040",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOne who engages in an activity or sport for pleasure rather than as a profession",
+    "options": {
+      "A": "Amateur",
+      "B": "Professional",
+      "C": "Veteran",
+      "D": "Virtuoso"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Amateur) is correct. An 'Amateur' pursues a skill or sport non-professionally for personal interest[cite: 14]. 'Veteran' is someone with long experience[cite: 14].",
+    "tags": ["vocab", "ows", "professions", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0041",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abnormal fear of vehicles or riding in a car",
+    "options": {
+      "A": "Amaxophobia",
+      "B": "Acrophobia",
+      "C": "Cynophobia",
+      "D": "Ophiophobia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Amaxophobia) is correct. 'Amaxophobia' is the morbid fear of being in or riding in vehicles[cite: 14]. 'Cynophobia' is fear of dogs[cite: 14], and 'Ophiophobia' is fear of snakes[cite: 14].",
+    "tags": ["vocab", "ows", "phobia", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0042",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn accredited diplomatic representative sent by one state to another as its resident representative",
+    "options": {
+      "A": "Ambassador",
+      "B": "Emissary",
+      "C": "Prowler",
+      "D": "Chauvinist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ambassador) is correct. An 'Ambassador' is an official envoy representing a government abroad[cite: 14]. 'Emissary' is an agent sent on a special official mission[cite: 14].",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0043",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOpen to more than one interpretation; having a double or unclear meaning",
+    "options": {
+      "A": "Ambiguous",
+      "B": "Lucid",
+      "C": "Explicit",
+      "D": "Unambiguous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ambiguous) is correct. 'Ambiguous' means capable of being understood in multiple ways and therefore lacking clarity[cite: 14]. 'Lucid' means clear and easily understood.",
+    "tags": ["vocab", "ows", "language", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0044",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHaving mixed, contradictory, or opposing feelings about something at the same time",
+    "options": {
+      "A": "Ambivalent",
+      "B": "Decisive",
+      "C": "Resolute",
+      "D": "Steadfast"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ambivalent) is correct. 'Ambivalent' denotes experiencing conflicting emotional attitudes simultaneously (such as love and hate)[cite: 14]. 'Resolute' means firm and unwavering.",
+    "tags": ["vocab", "ows", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0045",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nWilling to comply with advice, suggestions, or discipline; easily guided",
+    "options": {
+      "A": "Amenable",
+      "B": "Obstinate",
+      "C": "Recalcitrant",
+      "D": "Intractable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Amenable) is correct. 'Amenable' describes a person responsive to advice or authority[cite: 13, 14]. 'Obstinate' and 'Recalcitrant' describe stubbornly rebellious behavior.",
+    "tags": ["vocab", "ows", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0046",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA partial or total loss of memory caused by brain injury or disease",
+    "options": {
+      "A": "Amnesia",
+      "B": "Insomnia",
+      "C": "Asphyxia",
+      "D": "Aphasia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Amnesia) is correct. 'Amnesia' is the pathological loss of memory[cite: 14]. 'Insomnia' is the inability to sleep[cite: 14], and 'Aphasia' is loss of speech[cite: 14].",
+    "tags": ["vocab", "ows", "medical", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0047",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn official general pardon granted to political offenders or lawbreakers",
+    "options": {
+      "A": "Amnesty",
+      "B": "Indictment",
+      "C": "Sanction",
+      "D": "Reprisal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Amnesty) is correct. 'Amnesty' is a formal executive pardon liberating a class of political or legal offenders[cite: 14]. 'Indictment' is a formal criminal accusation.",
+    "tags": ["vocab", "ows", "law", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0048",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot guided by or conforming to any moral rules; indifferent to right and wrong",
+    "options": {
+      "A": "Amoral",
+      "B": "Immoral",
+      "C": "Moral",
+      "D": "Virtuous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Amoral) is correct. 'Amoral' means lacking any moral sense or neutral to morality[cite: 14]. 'Immoral' describes actively violating established moral codes.",
+    "tags": ["vocab", "ows", "philosophy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0049",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCold-blooded vertebrate animals that can live both on land and in water",
+    "options": {
+      "A": "Amphibians",
+      "B": "Reptiles",
+      "C": "Mammals",
+      "D": "Aquatics"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Amphibians) is correct. 'Amphibians' (e.g., frogs) are adapted to live both on dry land and in water bodies[cite: 14]. 'Mammals' suckle their young[cite: 14].",
+    "tags": ["vocab", "ows", "animals", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0050",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has had one or more limbs surgically removed",
+    "options": {
+      "A": "Amputee",
+      "B": "Invalid",
+      "C": "Dwarf",
+      "D": "Centenarian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Amputee) is correct. An 'Amputee' is a person who has lost a limb through trauma or amputation[cite: 14]. 'Invalid' is a person disabled by illness[cite: 14].",
+    "tags": ["vocab", "ows", "medical", "pyq_ssc"]
+  }
+]

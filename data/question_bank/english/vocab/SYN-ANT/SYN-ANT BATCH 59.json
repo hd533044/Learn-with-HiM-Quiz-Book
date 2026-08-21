@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_2901",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PORTEND**",
+    "options": {
+      "A": "Foreshadow",
+      "B": "Ignore",
+      "C": "Overlook",
+      "D": "Dismiss"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Portend' means to be a sign or warning that something (typically something momentous or calamitous) is likely to happen. 'Foreshadow', 'presage', or 'augur' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2902",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PORTEND**",
+    "options": {
+      "A": "Foreshadow",
+      "B": "Presage",
+      "C": "Ignore",
+      "D": "Augur"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Portend' means to foreshadow. 'Ignore', 'dismiss', or 'neglect' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2903",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRAGMATIC**",
+    "options": {
+      "A": "Practical",
+      "B": "Idealistic",
+      "C": "Visionary",
+      "D": "Theoretical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pragmatic' means dealing with things sensibly and realistically in a way that is based on practical rather than theoretical considerations. 'Practical', 'realistic', or 'sensible' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2904",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRAGMATIC**",
+    "options": {
+      "A": "Practical",
+      "B": "Realistic",
+      "C": "Idealistic",
+      "D": "Sensible"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pragmatic' means realistic. 'Idealistic', 'visionary', or 'theoretical' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2905",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRATTLE**",
+    "options": {
+      "A": "Chatter",
+      "B": "Silence",
+      "C": "Quiet",
+      "D": "Speechlessness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prattle' means to talk at length in a foolish or inconsequential way. 'Chatter', 'babble', or 'gabble' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2906",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRATTLE**",
+    "options": {
+      "A": "Chatter",
+      "B": "Babble",
+      "C": "Silence",
+      "D": "Gabble"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Prattle' means foolish talk. 'Silence', 'quiet', or 'speechlessness' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2907",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRECARIOUS**",
+    "options": {
+      "A": "Uncertain",
+      "B": "Secure",
+      "C": "Stable",
+      "D": "Safe"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Precarious' means not securely held or in position; dangerously likely to fall or collapse. 'Uncertain', 'insecure', or 'risky' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2908",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRECARIOUS**",
+    "options": {
+      "A": "Uncertain",
+      "B": "Insecure",
+      "C": "Secure",
+      "D": "Risky"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Precarious' means insecure. 'Secure', 'stable', or 'safe' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2909",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRECEDENT**",
+    "options": {
+      "A": "Example",
+      "B": "Follower",
+      "C": "Outcome",
+      "D": "Aftermath"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Precedent' refers to an earlier event or action that is regarded as an example or guide to be considered in subsequent similar circumstances. 'Example', 'model', or 'prior instance' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2910",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRECEDENT**",
+    "options": {
+      "A": "Example",
+      "B": "Model",
+      "C": "Aftermath",
+      "D": "Prior instance"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Precedent' is a prior instance. 'Aftermath', 'consequence', or 'future event' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2911",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRECEPT**",
+    "options": {
+      "A": "Principle",
+      "B": "Suggestion",
+      "C": "Advice",
+      "D": "Tip"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Precept' refers to a general rule intended to regulate behavior or thought. 'Principle', 'rule', or 'maxim' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2912",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRECEPT**",
+    "options": {
+      "A": "Principle",
+      "B": "Rule",
+      "C": "Suggestion",
+      "D": "Maxim"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Precept' is a rule. 'Suggestion', 'advice', or 'hint' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2913",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRECIPITATE**",
+    "options": {
+      "A": "Hasty",
+      "B": "Deliberate",
+      "C": "Careful",
+      "D": "Calculated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Precipitate' means done, made, or acting suddenly or without careful consideration. 'Hasty', 'abrupt', or 'impulsive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2914",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRECIPITATE**",
+    "options": {
+      "A": "Hasty",
+      "B": "Abrupt",
+      "C": "Deliberate",
+      "D": "Impulsive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Precipitate' means hasty. 'Deliberate', 'calculated', or 'careful' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2915",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRECURSOR**",
+    "options": {
+      "A": "Forerunner",
+      "B": "Successor",
+      "C": "Follower",
+      "D": "Descendant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Precursor' refers to a person or thing that comes before another of the same kind. 'Forerunner', 'harbinger', or 'pioneer' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2916",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRECURSOR**",
+    "options": {
+      "A": "Forerunner",
+      "B": "Harbinger",
+      "C": "Successor",
+      "D": "Pioneer"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Precursor' means what comes before. 'Successor', 'follower', or 'descendant' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2917",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREDILECTION**",
+    "options": {
+      "A": "Preference",
+      "B": "Aversion",
+      "C": "Dislike",
+      "D": "Hatred"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Predilection' refers to a preference or special liking for something. 'Preference', 'penchant', or 'liking' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2918",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREDILECTION**",
+    "options": {
+      "A": "Preference",
+      "B": "Penchant",
+      "C": "Aversion",
+      "D": "Liking"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Predilection' is a liking. 'Aversion', 'dislike', or 'hatred' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2919",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREEMINENT**",
+    "options": {
+      "A": "Distinguished",
+      "B": "Obscure",
+      "C": "Unknown",
+      "D": "Insignificant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Preeminent' means surpassing all others; very distinguished in some way. 'Distinguished', 'eminent', or 'renowned' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2920",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREEMINENT**",
+    "options": {
+      "A": "Distinguished",
+      "B": "Eminent",
+      "C": "Obscure",
+      "D": "Renowned"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Preeminent' means distinguished. 'Obscure', 'unknown', or 'insignificant' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2921",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREEMPT**",
+    "options": {
+      "A": "Forestall",
+      "B": "Encourage",
+      "C": "Promote",
+      "D": "Support"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Preempt' means to take action in order to prevent an anticipated event from happening. 'Forestall', 'prevent', or 'anticipate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2922",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREEMPT**",
+    "options": {
+      "A": "Forestall",
+      "B": "Prevent",
+      "C": "Encourage",
+      "D": "Anticipate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Preempt' means to prevent. 'Encourage', 'promote', or 'support' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2923",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREFATORY**",
+    "options": {
+      "A": "Introductory",
+      "B": "Concluding",
+      "C": "Final",
+      "D": "Ending"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prefatory' means serving as an introduction; introductory. 'Introductory', 'preliminary', or 'prefacing' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2924",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREFATORY**",
+    "options": {
+      "A": "Introductory",
+      "B": "Preliminary",
+      "C": "Concluding",
+      "D": "Prefacing"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Prefatory' means introductory. 'Concluding', 'final', or 'ending' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2925",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREPONDERANCE**",
+    "options": {
+      "A": "Dominance",
+      "B": "Minority",
+      "C": "Scarcity",
+      "D": "Lack"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Preponderance' refers to the quality or fact of being greater in number, quantity, or importance. 'Dominance', 'predominance', or 'prevalence' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2926",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREPONDERANCE**",
+    "options": {
+      "A": "Dominance",
+      "B": "Predominance",
+      "C": "Minority",
+      "D": "Prevalence"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Preponderance' means dominance or majority. 'Minority', 'scarcity', or 'lack' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2927",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREPOSTEROUS**",
+    "options": {
+      "A": "Absurd",
+      "B": "Sensible",
+      "C": "Rational",
+      "D": "Reasonable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Preposterous' means contrary to reason or common sense; utterly absurd or ridiculous. 'Absurd', 'ridiculous', or 'foolish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2928",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREPOSTEROUS**",
+    "options": {
+      "A": "Absurd",
+      "B": "Ridiculous",
+      "C": "Sensible",
+      "D": "Foolish"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Preposterous' means absurd. 'Sensible', 'rational', or 'reasonable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2929",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREROGATIVE**",
+    "options": {
+      "A": "Privilege",
+      "B": "Obligation",
+      "C": "Duty",
+      "D": "Restriction"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prerogative' refers to a right or privilege exclusive to a particular individual or class. 'Privilege', 'right', or 'entitlement' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2930",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREROGATIVE**",
+    "options": {
+      "A": "Privilege",
+      "B": "Right",
+      "C": "Obligation",
+      "D": "Entitlement"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Prerogative' is a right. 'Obligation', 'duty', or 'restriction' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2931",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRESAGE**",
+    "options": {
+      "A": "Foreshadow",
+      "B": "Ignore",
+      "C": "Overlook",
+      "D": "Dismiss"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Presage' means to be a sign or warning that (something, typically something bad) will happen. 'Foreshadow', 'portend', or 'augur' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2932",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRESAGE**",
+    "options": {
+      "A": "Foreshadow",
+      "B": "Portend",
+      "C": "Ignore",
+      "D": "Augur"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Presage' means to foreshadow. 'Ignore', 'dismiss', or 'neglect' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2933",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRESCIENT**",
+    "options": {
+      "A": "Foresighted",
+      "B": "Shortsighted",
+      "C": "Blind",
+      "D": "Ignorant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prescient' means having or showing knowledge of events before they take place. 'Foresighted', 'prophetic', or 'clairvoyant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2934",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRESCIENT**",
+    "options": {
+      "A": "Foresighted",
+      "B": "Prophetic",
+      "C": "Shortsighted",
+      "D": "Clairvoyant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Prescient' means foresighted. 'Shortsighted', 'blind', or 'ignorant' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2935",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRESUMPTUOUS**",
+    "options": {
+      "A": "Audacious",
+      "B": "Modest",
+      "C": "Humble",
+      "D": "Meek"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Presumptuous' means (of a person or their behavior) failing to observe the limits of what is appropriate or polite. 'Audacious', 'bold', or 'brash' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2936",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRESUMPTUOUS**",
+    "options": {
+      "A": "Audacious",
+      "B": "Bold",
+      "C": "Modest",
+      "D": "Brash"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Presumptuous' means overstepping bounds. 'Modest', 'humble', or 'meek' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2937",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRETERNATURAL**",
+    "options": {
+      "A": "Extraordinary",
+      "B": "Natural",
+      "C": "Ordinary",
+      "D": "Normal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Preternatural' means beyond what is normal or natural. 'Extraordinary', 'supernatural', or 'exceptional' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2938",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRETERNATURAL**",
+    "options": {
+      "A": "Extraordinary",
+      "B": "Supernatural",
+      "C": "Natural",
+      "D": "Exceptional"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Preternatural' means beyond natural. 'Natural', 'ordinary', or 'normal' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2939",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREVARICATE**",
+    "options": {
+      "A": "Equivocate",
+      "B": "State",
+      "C": "Clarify",
+      "D": "Tell the truth"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prevaricate' means to speak or act in an evasive way. 'Equivocate', 'hedge', or 'beat around the bush' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2940",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREVARICATE**",
+    "options": {
+      "A": "Equivocate",
+      "B": "Hedge",
+      "C": "State",
+      "D": "Beat around the bush"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Prevaricate' means to act evasively. 'State', 'clarify', or 'tell the truth' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2941",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRISTINE**",
+    "options": {
+      "A": "Unspoiled",
+      "B": "Dirty",
+      "C": "Corrupted",
+      "D": "Contaminated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pristine' means in its original condition; unspoiled. 'Unspoiled', 'immaculate', or 'pure' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2942",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRISTINE**",
+    "options": {
+      "A": "Unspoiled",
+      "B": "Immaculate",
+      "C": "Dirty",
+      "D": "Pure"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pristine' means unspoiled. 'Dirty', 'corrupted', or 'contaminated' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2943",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRIVATION**",
+    "options": {
+      "A": "Hardship",
+      "B": "Abundance",
+      "C": "Wealth",
+      "D": "Plenty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Privation' refers to a state in which things that are essential for human well-being such as food and warmth are scarce or lacking. 'Hardship', 'deprivation', or 'need' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2944",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRIVATION**",
+    "options": {
+      "A": "Hardship",
+      "B": "Deprivation",
+      "C": "Abundance",
+      "D": "Need"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Privation' means lack of necessities. 'Abundance', 'wealth', or 'plenty' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2945",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROBITY**",
+    "options": {
+      "A": "Integrity",
+      "B": "Dishonesty",
+      "C": "Corruption",
+      "D": "Deceit"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Probity' refers to the quality of having strong moral principles; honesty and decency. 'Integrity', 'honesty', or 'uprightness' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2946",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROBITY**",
+    "options": {
+      "A": "Integrity",
+      "B": "Honesty",
+      "C": "Dishonesty",
+      "D": "Uprightness"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Probity' means moral integrity. 'Dishonesty', 'corruption', or 'deceit' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2947",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROCLIVITY**",
+    "options": {
+      "A": "Tendency",
+      "B": "Aversion",
+      "C": "Dislike",
+      "D": "Hatred"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Proclivity' refers to a tendency to choose or do something regularly; an inclination or predisposition toward a particular thing. 'Tendency', 'inclination', or 'predisposition' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2948",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROCLIVITY**",
+    "options": {
+      "A": "Tendency",
+      "B": "Inclination",
+      "C": "Aversion",
+      "D": "Predisposition"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Proclivity' means a tendency. 'Aversion', 'dislike', or 'hatred' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2949",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRODIGAL**",
+    "options": {
+      "A": "Wasteful",
+      "B": "Thrifty",
+      "C": "Economical",
+      "D": "Frugal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prodigal' means spending money or resources freely and recklessly; wastefully extravagant. 'Wasteful', 'extravagant', or 'spendthrift' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2950",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRODIGAL**",
+    "options": {
+      "A": "Wasteful",
+      "B": "Extravagant",
+      "C": "Thrifty",
+      "D": "Spendthrift"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Prodigal' means wasteful. 'Thrifty', 'economical', or 'frugal' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

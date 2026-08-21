@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_1251",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nonchalance",
+      "B": "Nonchalence",
+      "C": "Nonchelance",
+      "D": "Nonchalancee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nonchalance' - the state of feeling or appearing casually calm and relaxed; ends in '-ance'). Options B, C, and D alter connecting vowels or add letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1252",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Nondescript",
+      "B": "Novitiate",
+      "C": "Numismatics",
+      "D": "Nuisence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Nuisance' (ends in '-ance', not '-ence' - a person, thing, or circumstance causing inconvenience or annoyance). Other options are correct: Nondescript (lacking distinctive features), Novitiate (the period or state of being a novice), Numismatics (the study or collection of coins).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1253",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Obfuscate",
+      "B": "Obfusscate",
+      "C": "Obfuscayt",
+      "D": "Obphascate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Obfuscate' - to make obscure, unclear, or unintelligible; single 's', 'o-b-f-u-s-c-a-t-e'). Options B, C, and D alter consonants or double 's'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1254",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Obituarist",
+      "B": "Obsequious",
+      "C": "Obstreperous",
+      "D": "Obselescence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Obsolescence' (spelled with '-sol-', not '-sel-' - the process of becoming obsolete or outdated). Other options are correct: Obituarist (a writer of obituaries), Obsequious (obedient or attentive to an excessive degree), Obstreperous (noisy and difficult to control).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1255",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Octogenarian",
+      "B": "Octogenarean",
+      "C": "Octogenarion",
+      "D": "Octoginerian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Octogenarian' - a person who is from 80 to 89 years old; ends in '-arian'). Options B, C, and D alter the connecting vowels or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1256",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Odyssey",
+      "B": "Oleaginous",
+      "C": "Omnipotent",
+      "D": "Ocurrence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Occurrence' (double 'c', double 'r' - an incident or event). Other options are correct: Odyssey (a long and eventful journey), Oleaginous (rich in oil; unctuous), Omnipotent (having unlimited power).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1257",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Onomatopoeia",
+      "B": "Onomatapoeia",
+      "C": "Onomatopoea",
+      "D": "Onomatopeia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Onomatopoeia' - the formation of a word from a sound associated with what is named; 'o-n-o-m-a-t-o-p-o-e-i-a'). Options B, C, and D drop diphthongs or distort internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1258",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Ontology",
+      "B": "Opulence",
+      "C": "Oscillation",
+      "D": "Ophalmologist"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ophthalmologist' (contains 'phth' - a specialist in the branch of medicine concerned with the eye). Other options are correct: Ontology (the branch of metaphysics dealing with the nature of being), Opulence (great wealth or luxuriousness), Oscillation (movement back and forth in a regular rhythm).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1259",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Orthography",
+      "B": "Orthografy",
+      "C": "Orthographyy",
+      "D": "Orthogrophy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Orthography' - the conventional spelling system of a language; 'o-r-t-h-o-g-r-a-p-h-y'). Options B, C, and D replace 'ph' with 'f' or alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1260",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Ossification",
+      "B": "Ostracize",
+      "C": "Outrageously",
+      "D": "Ostentatiouss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ostentatious' (ends in single 's' - characterized by vulgar or pretentious display). Other options are correct: Ossification (the process of bone formation / becoming rigid and conventional), Ostracize (exclude someone from a society or group), Outrageously (in a shockingly bad or excessive manner).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1261",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Pachydermous",
+      "B": "Pakydermous",
+      "C": "Pachidermous",
+      "D": "Pachydermaus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Pachydermous' - relating to thick-skinned animals; insensitive; 'p-a-c-h-y-d-e-r-m-o-u-s'). Options B, C, and D alter Greek roots or suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1262",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Paediatric",
+      "B": "Palindrome",
+      "C": "Panegyrist",
+      "D": "Palliateve"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Palliative' (spelled with '-tive', not '-teve' - relieving pain without dealing with the underlying cause). Other options are correct: Paediatric (relating to medical care of children), Palindrome (a word that reads the same backward as forward), Panegyrist (a person who writes or delivers high praise).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1263",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Paparazzo",
+      "B": "Papparazzo",
+      "C": "Paparazo",
+      "D": "Paparazzio"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Paparazzo' - singular of paparazzi; single 'p' in middle, double 'z', 'p-a-p-a-r-a-z-z-o'). Options B, C, and D misplace consonant doubling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1264",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Paradigmatic",
+      "B": "Paroxysm",
+      "C": "Parturition",
+      "D": "Paralellogram"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Parallelogram' (double 'l' in middle, single 'l' before 'o' - a four-sided plane rectilinear figure with opposite sides parallel). Other options are correct: Paradigmatic (serving as a typical example), Paroxysm (a sudden attack or outburst of emotion), Parturition (the action of giving birth to young).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1265",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Paucity",
+      "B": "Pausity",
+      "C": "Paucety",
+      "D": "Pawcity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Paucity' - the presence of something only in small or insufficient quantities; 'p-a-u-c-i-t-y'). Options B, C, and D replace 'c' with 's' or alter diphthongs.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1266",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Pecuniary",
+      "B": "Pedestrian",
+      "C": "Pellucid",
+      "D": "Pejoretive"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Pejorative' (spelled with '-ra-', not '-re-' - expressing contempt or disapproval). Other options are correct: Pecuniary (relating to or consisting of money), Pedestrian (dull and uninspired / a walker), Pellucid (translucently clear; easily understood).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1267",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Penultimate",
+      "B": "Penultamate",
+      "C": "Peneultimate",
+      "D": "Penultamite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Penultimate' - second to last in a series; 'p-e-n-u-l-t-i-m-a-t-e'). Options B, C, and D corrupt the internal vowels or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1268",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Perennial",
+      "B": "Perfunctory",
+      "C": "Perjury",
+      "D": "Peremptorey"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Peremptory' (ends in '-ory', not '-orey' - insisting on immediate attention or obedience). Other options are correct: Perennial (lasting or existing for a long time), Perfunctory (carried out with a minimum of effort), Perjury (the offense of willfully telling an untruth in a court after taking an oath).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1269",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Perseverance",
+      "B": "Perseverence",
+      "C": "Persiverance",
+      "D": "Perseveranse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Perseverance' - persistence in doing something despite difficulty; ends in '-ance'). Options B, C, and D alter suffix vowels or consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1270",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Pertinacious",
+      "B": "Petrification",
+      "C": "Phlegmatic",
+      "D": "Perspicatious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Perspicacious' (spelled with '-ci-', not '-ti-' - having a ready insight into and understanding of things). Other options are correct: Pertinacious (holding firmly to an opinion or course of action), Petrification (the process of turning organic matter into stone), Phlegmatic (having an unemotional and stolidly calm disposition).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1271",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Phosphorescence",
+      "B": "Phosphorescense",
+      "C": "Fosforescence",
+      "D": "Phosphoresence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Phosphorescence' - light emitted by a substance without combustion; contains 'ph', '-scence'). Options B, C, and D replace 'ph' with 'f' or drop 'c'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1272",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Picturesque",
+      "B": "Piscatorial",
+      "C": "Plenitude",
+      "D": "Planaterium"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Planetarium' (spelled with '-ne-', not '-na-' - a dome theatre projecting images of stars and planets). Other options are correct: Picturesque (visually attractive in a quaint way), Piscatorial (connected with fishermen or fishing), Plenitude (an abundance; completeness).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1273",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Plebiscite",
+      "B": "Plebescite",
+      "C": "Plebiscyte",
+      "D": "Plebicite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Plebiscite' - the direct vote of all the members of an electorate on an important public question; 'p-l-e-b-i-s-c-i-t-e'). Options B, C, and D alter internal vowels or drop 's'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1274",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Plummeted",
+      "B": "Plutocracy",
+      "C": "Pneumonia",
+      "D": "Poignensy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Poignancy' (spelled with '-an-cy', not '-en-sy' - the quality of evoking a keen sense of sadness). Other options are correct: Plummeted (fell or dropped straight down at high speed), Plutocracy (government by the wealthy), Pneumonia (inflammatory lung infection).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1275",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Poltergeist",
+      "B": "Poltergiest",
+      "C": "Poltargeist",
+      "D": "Poltergyst"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Poltergeist' - a noisy supernatural entity; German root contains '-geist', spelled 'e-i'). Options B, C, and D invert vowels or alter the root.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1276",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Polyandry",
+      "B": "Pontificate",
+      "C": "Portentous",
+      "D": "Posthumus"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Posthumous' (contains '-mous', not '-mus' - occurring or awarded after the death of the originator). Other options are correct: Polyandry (polygamy in which a woman has more than one husband), Pontificate (express one's opinions pompously), Portentous (pompously solemn / ominous).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1277",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Predilection",
+      "B": "Pradilection",
+      "C": "Predaliction",
+      "D": "Predilecsion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Predilection' - a preference or special liking for something; 'p-r-e-d-i-l-e-c-t-i-o-n'). Options B, C, and D alter vowels or corrupt the '-tion' suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1278",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Precipitous",
+      "B": "Predisposition",
+      "C": "Premonition",
+      "D": "Predeceser"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Predecessor' (double 's', ends in '-or' - a person who held a job or office before the current holder). Other options are correct: Precipitous (dangerously high or steep), Predisposition (a liability or tendency to act in a particular way), Premonition (a strong foreboding).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1279",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Preponderance",
+      "B": "Preponderence",
+      "C": "Preponderanse",
+      "D": "Prepanderance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Preponderance' - the quality or fact of being greater in number, quantity, or importance; ends in '-ance'). Options B, C, and D alter suffix vowels or consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1280",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Prescription",
+      "B": "Presentiment",
+      "C": "Primordial",
+      "D": "Priveleged"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Privileged' (spelled with '-vilege-', not '-velege-' - having special rights or advantages). Other options are correct: Prescription (an instruction written by a medical practitioner), Presentiment (an intuitive feeling about the future), Primordial (existing at or from the beginning of time).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1281",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Procrastinator",
+      "B": "Procrastinater",
+      "C": "Procrastanator",
+      "D": "Procrastinetor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Procrastinator' - a person who delays or postpones action; ends in '-ator'). Options B, C, and D alter the suffix or internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1282",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Prodigality",
+      "B": "Profundity",
+      "C": "Proponent",
+      "D": "Prophisy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Prophesy' (verb) or 'Prophecy' (noun), but 'Prophisy' is invalid. Other options are correct: Prodigality (wasteful extravagance), Profundity (great depth of insight or knowledge), Proponent (a person who advocates a theory or proposal).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1283",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Proselytize",
+      "B": "Proselitize",
+      "C": "Proselytyze",
+      "D": "Prosalytize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Proselytize' - convert or attempt to convert someone from one religion or belief to another; 'p-r-o-s-e-l-y-t-i-z-e'). Options B, C, and D substitute 'i' for 'y' or alter connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1284",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Protean",
+      "B": "Pseudepigraphy",
+      "C": "Pugilist",
+      "D": "Psychoanalasis"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Psychoanalysis' (spelled with '-lysis', not '-lasis' - a system of psychological theory and therapy). Other options are correct: Protean (able to change frequently; versatile), Pseudepigraphy (attributing a work to someone other than the real author), Pugilist (a professional boxer).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1285",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Puerility",
+      "B": "Puerillity",
+      "C": "Puerilety",
+      "D": "Puerilaty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Puerility' - childishness; silly behavior; single 'l', 'p-u-e-r-i-l-i-t-y'). Options B, C, and D double 'l' or alter the suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1286",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Pulmonary",
+      "B": "Pungency",
+      "C": "Purgative",
+      "D": "Punctuallity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Punctuality' (single 'l' before 'ity' - the fact of being on time). Other options are correct: Pulmonary (relating to the lungs), Pungency (sharp and caustic quality / biting taste), Purgative (strongly laxative in effect).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1287",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Purveyor",
+      "B": "Purveior",
+      "C": "Purvayor",
+      "D": "Purveyer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Purveyor' - a person who sells or provides particular goods; 'p-u-r-v-e-y-o-r'). Options B, C, and D alter the diphthong or suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1288",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Quadrennial",
+      "B": "Qualitative",
+      "C": "Quarrelled",
+      "D": "Quandaryy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Quandary' (ends in single 'y' - a state of perplexity or uncertainty). Other options are correct: Quadrennial (recurring every four years), Qualitative (relating to the measurement of quality), Quarrelled (past tense of quarrel; standard UK spelling).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1289",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Ratiocination",
+      "B": "Ratioceination",
+      "C": "Ratiocenation",
+      "D": "Ratiosination"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Ratiocination' - the process of exact, logical thinking; 'r-a-t-i-o-c-i-n-a-t-i-o-n'). Options B, C, and D alter Latin stem vowels or replace 'c' with 's'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1290",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Raucous",
+      "B": "Ravenous",
+      "C": "Recalcitrance",
+      "D": "Rarifaction"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Rarefaction' (spelled with '-re-', not '-ri-' - reduction in the density of a gas or air). Other options are correct: Raucous (making a harsh, loud noise), Ravenous (extremely hungry), Recalcitrance (obstinate defiance of authority).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1291",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Recidivism",
+      "B": "Recedivism",
+      "C": "Recidivissm",
+      "D": "Recidevisim"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Recidivism' - the tendency of a convicted criminal to reoffend; 'r-e-c-i-d-i-v-i-s-m'). Options B, C, and D alter internal vowels or suffix consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1292",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Reciprocal",
+      "B": "Recondite",
+      "C": "Recrimination",
+      "D": "Reconoitre"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Reconnoitre' (double 'n' - make a military observation of an area). Other options are correct: Reciprocal (given or done in return), Recondite (little known; abstruse), Recrimination (an accusation made in response to one from someone else).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1293",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Refulgence",
+      "B": "Refuljence",
+      "C": "Refulgance",
+      "D": "Refullgence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Refulgence' - a radiant or splendid brilliance; single 'l', ends in '-ence'). Options B, C, and D replace 'g' with 'j', change suffix vowels, or double 'l'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1294",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Regicide",
+      "B": "Relinquish",
+      "C": "Remonstrance",
+      "D": "Remeniscence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Reminiscence' (spelled with '-ini-', not '-eni-' - a recollection of a past event). Other options are correct: Regicide (the action of killing a king), Relinquish (voluntarily cease to claim), Remonstrance (a forceful protest).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1295",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Renaissance",
+      "B": "Renaisance",
+      "C": "Rennaissance",
+      "D": "Renaicance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Renaissance' - a revival or rebirth of culture and learning; single 'n', double 's', ends in '-ance'). Options B, C, and D misallocate consonant doubling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1296",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Rendezvous",
+      "B": "Renegade",
+      "C": "Reparation",
+      "D": "Rescision"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Rescission' (double 's' before '-ion' - the revocation, repeal, or cancellation of a law or contract). Other options are correct: Rendezvous (a meeting at an agreed time and place), Renegade (a person who deserts a party or set of principles), Reparation (making amends for a wrong done).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1297",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Repertoire",
+      "B": "Repertorie",
+      "C": "Repartoire",
+      "D": "Repertoir"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Repertoire' - a stock of plays or pieces that a performer knows; 'r-e-p-e-r-t-o-i-r-e'). Options B, C, and D drop silent 'e' or alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1298",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Resuscitate",
+      "B": "Reticence",
+      "C": "Retribution",
+      "D": "Retrograte"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Retrograde' (ends in '-grade', with 'd' - directed or moving backward). Other options are correct: Resuscitate (revive someone from unconsciousness), Reticence (reserve; restraint in speech), Retribution (punishment inflicted as vengeance).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1299",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Rhetorician",
+      "B": "Retorician",
+      "C": "Rhethorician",
+      "D": "Rhetoricion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Rhetorician' - an expert in formal rhetoric; 'r-h-e-t-o-r-i-c-i-a-n'). Options B, C, and D drop 'h', duplicate 'h', or alter the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1300",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Rhinoplasty",
+      "B": "Rhododendron",
+      "C": "Ricochet",
+      "D": "Rhythmicaly"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Rhythmically' (ends in '-ally' with double 'l' - in a rhythmic manner). Other options are correct: Rhinoplasty (plastic surgery of the nose), Rhododendron (a shrub with bell-shaped flowers), Ricochet (rebound off a surface).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

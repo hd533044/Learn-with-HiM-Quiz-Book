@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0951",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA hollow container or vessel designed to hold or contain something",
+    "options": {
+      "A": "Receptacle",
+      "B": "Dispenser",
+      "C": "Funnel",
+      "D": "Valve"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Receptacle) is correct. A 'Receptacle' is a hollow object, vessel, or container used to hold anything[cite: 2].",
+    "tags": ["vocab", "ows", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0952",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who receives something, such as an award, prize, or gift",
+    "options": {
+      "A": "Donor",
+      "B": "Benefactor",
+      "C": "Recipient",
+      "D": "Patron"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Recipient) is correct. A 'Recipient' is a person who receives something given or awarded[cite: 2]. 'Donor' and 'Benefactor' give things[cite: 2].",
+    "tags": ["vocab", "ows", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0953",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo give and receive something mutually, reciprocally, or in exchange",
+    "options": {
+      "A": "Reciprocate",
+      "B": "Forfeit",
+      "C": "Relinquish",
+      "D": "Renounce"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Reciprocate) is correct. 'Reciprocate' means to respond to an action with a corresponding one or to give and receive mutually[cite: 2].",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0954",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who withdraws from the world to live in seclusion, solitude, and isolation",
+    "options": {
+      "A": "Recluse",
+      "B": "Extrovert",
+      "C": "Cosmopolitan",
+      "D": "Gregarious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Recluse) is correct. A 'Recluse' is a solitary person who retreats from society[cite: 2]. 'Extrovert' and 'Gregarious' describe sociable individuals[cite: 2].",
+    "tags": ["vocab", "ows", "people", "lifestyle", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0955",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMoving in a straight line or characterized by straight lines",
+    "options": {
+      "A": "Curvilinear",
+      "B": "Rectilineal",
+      "C": "Circular",
+      "D": "Spiral"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Rectilineal) is correct. 'Rectilineal' (or rectilinear) means contained by or moving in straight lines[cite: 2].",
+    "tags": ["vocab", "ows", "geometry", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0956",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA bureaucratic administrative system involving excessive official paperwork, rules, and formalities",
+    "options": {
+      "A": "Red-tapism",
+      "B": "Democracy",
+      "C": "Autocracy",
+      "D": "Plutocracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Red-tapism) is correct. 'Red-tapism' is excessive official routine or bureaucratic delay[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "society", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0957",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot or no longer needed or useful; superfluous and excessive",
+    "options": {
+      "A": "Redundant",
+      "B": "Indispensable",
+      "C": "Essential",
+      "D": "Vital"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Redundant) is correct. 'Redundant' means unnecessary or exceeding what is required[cite: 2]. 'Indispensable' and 'Vital' mean completely necessary[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0958",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA general vote by the electorate on a single political question that has been referred to them for a direct decision",
+    "options": {
+      "A": "Plebiscite",
+      "B": "Referendum",
+      "C": "Election",
+      "D": "Boycott"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Referendum) is correct. A 'Referendum' is a direct vote in which an entire electorate is invited to vote on a particular proposal[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0959",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn involuntary and nearly instantaneous movement or reaction in response to a stimulus",
+    "options": {
+      "A": "Reflex",
+      "B": "Volition",
+      "C": "Choice",
+      "D": "Deliberation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Reflex) is correct. A 'Reflex' is an involuntary bodily action performed without conscious thought[cite: 2]. 'Volition' is conscious choice[cite: 2].",
+    "tags": ["vocab", "ows", "biology", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0960",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA political or social movement dedicated to promoting gradual reform rather than revolution",
+    "options": {
+      "A": "Reformism",
+      "B": "Radicalism",
+      "C": "Anarchism",
+      "D": "Totalitarianism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Reformism) is correct. 'Reformism' advocates the gradual improvement of social or political systems through reform[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0961",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has been forced to flee their home country due to war, persecution, or natural disaster",
+    "options": {
+      "A": "Refugee",
+      "B": "Emigrant",
+      "C": "Immigrant",
+      "D": "Expatriate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Refugee) is correct. A 'Refugee' is a displaced person forced to seek asylum abroad due to conflict or persecution[cite: 2].",
+    "tags": ["vocab", "ows", "people", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0962",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe official insignia, decorations, medals, or ceremonial dress worn on official occasions",
+    "options": {
+      "A": "Regalia",
+      "B": "Uniform",
+      "C": "Costume",
+      "D": "Attire"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Regalia) is correct. 'Regalia' refers to the decorations, special emblems, and ceremonial dress of an office or order[cite: 2].",
+    "tags": ["vocab", "ows", "objects", "ceremony", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0963",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe illegal crime of murdering a king or reigning sovereign",
+    "options": {
+      "A": "Regicide",
+      "B": "Homicide",
+      "C": "Genocide",
+      "D": "Patricide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Regicide) is correct. 'Regicide' is the assassination or murder of a monarch[cite: 2]. 'Patricide' is killing a father[cite: 2].",
+    "tags": ["vocab", "ows", "killing", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0964",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA surviving object, article of clothing, or physical remains of a deceased holy person kept for reverence",
+    "options": {
+      "A": "Relic",
+      "B": "Fossil",
+      "C": "Memento",
+      "D": "Souvenir"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Relic) is correct. A 'Relic' is a surviving holy artifact or remains venerated for its association with a saint[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "history", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0965",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo send an accused criminal back into custody or prison for further legal investigation",
+    "options": {
+      "A": "Remand",
+      "B": "Acquit",
+      "C": "Exonerate",
+      "D": "Extradite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Remand) is correct. 'Remand' means to send a prisoner back into custody pending further trial proceedings[cite: 2].",
+    "tags": ["vocab", "ows", "law", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0966",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA collection of cherished memories, impressions, or recollections of past experiences",
+    "options": {
+      "A": "Reminiscence",
+      "B": "Amnesia",
+      "C": "Nostalgia",
+      "D": "Introspection"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Reminiscence) is correct. 'Reminiscence' is the recounting or remembering of past historical or personal events[cite: 2].",
+    "tags": ["vocab", "ows", "memory", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0967",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFinancial payment or monetary compensation given to someone for labour, services, or professional work",
+    "options": {
+      "A": "Remuneration",
+      "B": "Honorarium",
+      "C": "Alimony",
+      "D": "Bounty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Remuneration) is correct. 'Remuneration' is the payment or compensation received for services rendered[cite: 2].",
+    "tags": ["vocab", "ows", "finance", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0968",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA performance, translation, or artistic interpretation of a musical work or dramatic piece",
+    "options": {
+      "A": "Rendition",
+      "B": "Excerpt",
+      "C": "Opus",
+      "D": "Manuscript"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Rendition) is correct. A 'Rendition' is an artistic interpretation or performance of a song, play, or translation[cite: 2].",
+    "tags": ["vocab", "ows", "art", "music", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0969",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who deserts, betrays, or abandons their political party, principles, or religious faith",
+    "options": {
+      "A": "Renegade",
+      "B": "Patriot",
+      "C": "Martyr",
+      "D": "Apostle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Renegade) is correct. A 'Renegade' (or turncoat) is a deserter who turns against their former allegiance or party[cite: 2].",
+    "tags": ["vocab", "ows", "people", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0970",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo restore a building, ancient artifact, or damaged structure back to a good state of repair",
+    "options": {
+      "A": "Renovate",
+      "B": "Demolish",
+      "C": "Annihilate",
+      "D": "Decimate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Renovate) is correct. 'Renovate' means to refresh, repair, and restore a building to pristine condition[cite: 2]. 'Demolish' means to tear down.",
+    "tags": ["vocab", "ows", "verbs", "architecture", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0971",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe formal return of someone (such as a refugee or prisoner) to their native country",
+    "options": {
+      "A": "Repatriation",
+      "B": "Deportation",
+      "C": "Emigration",
+      "D": "Immigration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Repatriation) is correct. 'Repatriation' is the process of returning a person to their homeland[cite: 2].",
+    "tags": ["vocab", "ows", "law", "travel", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0972",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe sincere feeling of deep regret, sorrow, or contrition for past sins or wrongdoings",
+    "options": {
+      "A": "Repentance",
+      "B": "Arrogance",
+      "C": "Hardheartedness",
+      "D": "Impudence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Repentance) is correct. 'Repentance' is sincere remorse and sorrow for one's misdeeds[cite: 2].",
+    "tags": ["vocab", "ows", "emotions", "morality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0973",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn exact, faithful copy, model, or reproduction of a work of art or structure",
+    "options": {
+      "A": "Replica",
+      "B": "Caricature",
+      "C": "Prototype",
+      "D": "Original"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Replica) is correct. A 'Replica' is an exact replica or close copy of a work of art or building[cite: 2].",
+    "tags": ["vocab", "ows", "art", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0974",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA temporary postponement, cancellation, or remitting of a criminal punishment or death sentence",
+    "options": {
+      "A": "Reprieve",
+      "B": "Sentence",
+      "C": "Condemnation",
+      "D": "Prosecution"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Reprieve) is correct. A 'Reprieve' is a temporary cancellation or postponement of a harsh punishment[cite: 2].",
+    "tags": ["vocab", "ows", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0975",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large natural or artificial lake created to store water supply for a community",
+    "options": {
+      "A": "Reservoir",
+      "B": "Aquarium",
+      "C": "Estuary",
+      "D": "Lagoon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Reservoir) is correct. A 'Reservoir' is a large engineered basin used for water collection and supply[cite: 2].",
+    "tags": ["vocab", "ows", "geography", "water", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0976",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe biological process by which living organisms breathe and exchange oxygen and carbon dioxide",
+    "options": {
+      "A": "Respiration",
+      "B": "Digestion",
+      "C": "Circulation",
+      "D": "Metabolism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Respiration) is correct. 'Respiration' is the physiological act of breathing[cite: 2].",
+    "tags": ["vocab", "ows", "science", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0977",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA short interval of rest or temporary relief permitted from toil, pain, or suffering",
+    "options": {
+      "A": "Respite",
+      "B": "Strenuousness",
+      "C": "Toil",
+      "D": "Exertion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Respite) is correct. A 'Respite' is a short period of rest or relief from difficulty[cite: 2].",
+    "tags": ["vocab", "ows", "time", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0978",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo return a blow, attack fiercely, or take reciprocal revenge; give tit for tat",
+    "options": {
+      "A": "Retaliate",
+      "B": "Forgive",
+      "C": "Pardon",
+      "D": "Condone"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Retaliate) is correct. 'Retaliate' means to make a counter-attack in response to an injury[cite: 2].",
+    "tags": ["vocab", "ows", "verbs", "conflict", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0979",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is very reserved, uncommunicative, and reluctant to reveal their thoughts in speech",
+    "options": {
+      "A": "Reticent",
+      "B": "Loquacious",
+      "C": "Garrulous",
+      "D": "Extrovert"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Reticent) is correct. 'Reticent' describes someone who is silent, restrained, and uncommunicative[cite: 2]. 'Loquacious' and 'Garrulous' mean very talkative[cite: 2].",
+    "tags": ["vocab", "ows", "personality", "adjectives", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0980",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe act or mental process of reviewing, reflecting upon, and examining past events in one's life",
+    "options": {
+      "A": "Retrospection",
+      "B": "Introspection",
+      "C": "Forethought",
+      "D": "Anticipation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Retrospection) is correct. 'Retrospection' is the contemplative review of past historical or personal events[cite: 2].",
+    "tags": ["vocab", "ows", "mind", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0981",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA military bugle call or drum beat sounded at dawn to wake soldiers",
+    "options": {
+      "A": "Reveille",
+      "B": "Taps",
+      "C": "Knell",
+      "D": "Salvo"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Reveille) is correct. 'Reveille' is a morning bugle call summoning military troops to duty[cite: 2].",
+    "tags": ["vocab", "ows", "military", "sounds", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0982",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo take great delight, merrymake, or indulge in noisy festivity",
+    "options": {
+      "A": "Revel",
+      "B": "Grieve",
+      "C": "Lament",
+      "D": "Mourn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Revel) is correct. 'Revel' means to take wild pleasure or celebrate noisily[cite: 2]. 'Grieve' and 'Lament' express deep sorrow.",
+    "tags": ["vocab", "ows", "verbs", "celebration", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0983",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo criticize, scold, or censure someone in an abusive, harsh, or angrily insulting manner",
+    "options": {
+      "A": "Revile",
+      "B": "Eulogise",
+      "C": "Extol",
+      "D": "Applaud"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Revile) is correct. 'Revile' means to subject someone to abusive, insulting verbal attacks[cite: 2]. 'Eulogise' and 'Extol' mean to praise highly.",
+    "tags": ["vocab", "ows", "verbs", "communication", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0984",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExtravagant, bombastic, or pretentious language with an exaggerated style intended to impress",
+    "options": {
+      "A": "Rhetoric",
+      "B": "Brevity",
+      "C": "Concision",
+      "D": "Laconism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Rhetoric) is correct. 'Rhetoric' refers to persuasive, grandiose, or empty bombastic language[cite: 2].",
+    "tags": ["vocab", "ows", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0985",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medical specialist who diagnoses and treats diseases of the nose and nasal passages",
+    "options": {
+      "A": "Rhinologist",
+      "B": "Cardiologist",
+      "C": "Dermatologist",
+      "D": "Neurologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Rhinologist) is correct. A 'Rhinologist' specializes in nasal disorders[cite: 2].",
+    "tags": ["vocab", "ows", "medical", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0986",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA numerical scale used universally for expressing the magnitude and strength of an earthquake",
+    "options": {
+      "A": "Richter",
+      "B": "Barometer",
+      "C": "Manometer",
+      "D": "Altimeter"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Richter) is correct. The 'Richter' scale measures seismic earthquake energy magnitudes[cite: 2].",
+    "tags": ["vocab", "ows", "science", "instruments", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0987",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFormal religious or sacred ceremonies, acts, and customary procedures",
+    "options": {
+      "A": "Rites",
+      "B": "Secularism",
+      "C": "Profanity",
+      "D": "Blasphemy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Rites) is correct. 'Rites' are established religious or ceremonial solemn acts[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0988",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA circular building, room, or grand hall covered by a large hemispherical dome roof",
+    "options": {
+      "A": "Rotunda",
+      "B": "Quadrangle",
+      "C": "Atrium",
+      "D": "Cloister"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Rotunda) is correct. A 'Rotunda' is a round hall or building crowned with a dome[cite: 2].",
+    "tags": ["vocab", "ows", "architecture", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0989",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe deliberate, malicious destruction of state machinery, public property, or bridges for military advantage",
+    "options": {
+      "A": "Sabotage",
+      "B": "Arson",
+      "C": "Larceny",
+      "D": "Forgery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sabotage) is correct. 'Sabotage' is premeditated subversion and destruction of equipment[cite: 2]. 'Arson' is malicious burning of property[cite: 2].",
+    "tags": ["vocab", "ows", "crime", "war", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0990",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe desecration, profanation, or violation of something holy, sacred, or consecrated",
+    "options": {
+      "A": "Sacrilege",
+      "B": "Blasphemy",
+      "C": "Heresy",
+      "D": "Apostasy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sacrilege) is correct. 'Sacrilege' is the violation or profanation of sacred objects or places[cite: 2]. 'Blasphemy' is irreverent speech against God[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0991",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nDeriving cruel pleasure, satisfaction, or amusement from inflicting physical or mental pain on others",
+    "options": {
+      "A": "Sadistic",
+      "B": "Masochist",
+      "C": "Altruist",
+      "D": "Benevolent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sadistic) is correct. 'Sadistic' describes deriving pleasure from hurting others[cite: 2]. 'Masochist' enjoys suffering pain personally[cite: 2].",
+    "tags": ["vocab", "ows", "psychology", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0992",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe quality of standing out prominently as particularly noticeable, striking, or important",
+    "options": {
+      "A": "Salience",
+      "B": "Obscurity",
+      "C": "Insignificance",
+      "D": "Triviality"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Salience) is correct. 'Salience' is the quality of being prominent, striking, or most noticeable[cite: 2].",
+    "tags": ["vocab", "ows", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0993",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe simultaneous discharge or firing of many artillery guns or rifles to mark a ceremonial occasion",
+    "options": {
+      "A": "Salvo",
+      "B": "Siege",
+      "C": "Armada",
+      "D": "Flotilla"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Salvo) is correct. A 'Salvo' is a simultaneous discharge of firearms as a salute or attack[cite: 2].",
+    "tags": ["vocab", "ows", "military", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0994",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA compassionate person who renders selfless help, charity, and rescue to those in desperate need",
+    "options": {
+      "A": "Samaritan",
+      "B": "Misanthrope",
+      "C": "Cynic",
+      "D": "Mercenary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Samaritan) is correct. A 'Samaritan' is a helpful, compassionate person who aids strangers in distress[cite: 2].",
+    "tags": ["vocab", "ows", "people", "society", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0995",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe secret underground printing, copying, and distribution of literature banned by a totalitarian state",
+    "options": {
+      "A": "Samizdat",
+      "B": "Curriculum",
+      "C": "Syllabus",
+      "D": "Manifesto"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Samizdat) is correct. 'Samizdat' refers to clandestine self-published literature circulated in the former Soviet bloc[cite: 2].",
+    "tags": ["vocab", "ows", "history", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0996",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA health resort, hospital, or therapeutic convalescent home boasting a good climate for invalids",
+    "options": {
+      "A": "Sanatorium",
+      "B": "Mortuary",
+      "C": "Infirmary",
+      "D": "Asylum"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sanatorium) is correct. A 'Sanatorium' is a medical establishment for convalescing patients in a healthy climate[cite: 2].",
+    "tags": ["vocab", "ows", "medical", "places", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0997",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe state, quality, or condition of being holy, sacred, or spiritually inviolable",
+    "options": {
+      "A": "Sanctity",
+      "B": "Profanity",
+      "C": "Sacrilege",
+      "D": "Blasphemy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sanctity) is correct. 'Sanctity' is holiness, sacredness, or religious purity[cite: 2]. 'Profanity' is irreverence.",
+    "tags": ["vocab", "ows", "religion", "abstract", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0998",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA protected, safe natural reserve providing refuge for endangered birds and wild animals",
+    "options": {
+      "A": "Sanctuary",
+      "B": "Aviary",
+      "C": "Apiary",
+      "D": "Zoo"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sanctuary) is correct. A 'Sanctuary' is a protected wildlife reserve where animals are safe from hunting[cite: 2].",
+    "tags": ["vocab", "ows", "nature", "places", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0999",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nConfident, hopeful, and optimistic, especially in an apparently difficult, gloomy, or challenging situation",
+    "options": {
+      "A": "Sanguine",
+      "B": "Pessimistic",
+      "C": "Melancholic",
+      "D": "Despondent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sanguine) is correct. 'Sanguine' means cheerfully optimistic and confident, even in tough times[cite: 2]. 'Despondent' means deeply depressed.",
+    "tags": ["vocab", "ows", "emotions", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1000",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nBitter, sharp, caustic, and cutting irony used to mock or convey contempt",
+    "options": {
+      "A": "Sarcasm",
+      "B": "Compliment",
+      "C": "Eulogy",
+      "D": "Praise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sarcasm) is correct. 'Sarcasm' is the use of biting irony to ridicule or mock[cite: 2]. 'Compliment' and 'Praise' express admiration.",
+    "tags": ["vocab", "ows", "communication", "pyq_ssc"]
+  }
+]

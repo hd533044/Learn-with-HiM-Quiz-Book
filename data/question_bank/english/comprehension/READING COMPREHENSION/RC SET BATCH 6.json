@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_141",
+    "passage_title": "Prospect Theory and the Architecture of Behavioral Economics",
+    "passage_text": "In neoclassical expected utility theory, economic agents were conceptualized as rational decision-makers who evaluate choices by weighing final asset states against probabilistic outcomes. In 1979, psychologists Daniel Kahneman and Amos Tversky overturned this paradigm by formulating Prospect Theory, introducing a descriptive model grounded in empirical cognitive heuristics. Prospect Theory posits that individuals evaluate outcomes not in terms of absolute wealth, but as gains or losses relative to an internal reference point. The psychological value function displays three signature properties: reference dependence, diminishing sensitivity, and loss aversion. The value function is asymmetrical—concave for gains (reflecting risk aversion) and convex for losses (reflecting risk-seeking behavior), with a significantly steeper slope in the negative domain. Empirically, the psychological pain of a monetary loss is quantified as roughly twice as intense as the pleasure of an equivalent gain ($\lambda \approx 2.0–2.5$). Furthermore, through non-linear probability weighting, individuals systematically overweight low-probability tail events—explaining the simultaneous purchase of lottery tickets and catastrophic insurance policies—while underweighting moderate and high probabilities.",
+    "questions": [
+      {
+        "id": "ENG_RC_141_Q1",
+        "question": "What is the primary distinction between expected utility theory and Prospect Theory?",
+        "options": {
+          "A": "Expected utility evaluates choices based on absolute final wealth states, whereas Prospect Theory evaluates outcomes as gains or losses relative to a reference point.",
+          "B": "Expected utility theory assumes human beings are entirely irrational and unpredictable.",
+          "C": "Prospect Theory applies exclusively to financial corporate investments rather than individual consumers.",
+          "D": "Expected utility theory was formulated using cognitive psychology heuristics."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that expected utility theory evaluates choices based on final asset states, whereas Prospect Theory models decisions as gains or losses relative to a subjective reference point."
+      },
+      {
+        "id": "ENG_RC_141_Q2",
+        "question": "What mathematical asymmetry characterizes the value function in Prospect Theory?",
+        "options": {
+          "A": "It is convex for gains and concave for losses.",
+          "B": "It is concave for gains (risk aversion) and convex for losses (risk-seeking), with a steeper slope in the negative domain.",
+          "C": "It is completely linear with zero curvature across all wealth levels.",
+          "D": "It exhibits identical slope and elasticity for both positive and negative outcomes."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that the value function is 'concave for gains (reflecting risk aversion) and convex for losses (reflecting risk-seeking behavior), with a significantly steeper slope in the negative domain.'"
+      },
+      {
+        "id": "ENG_RC_141_Q3",
+        "question": "How does non-linear probability weighting explain the simultaneous purchase of lottery tickets and insurance?",
+        "options": {
+          "A": "Individuals systematically overweight low-probability tail events while underweighting moderate and high probabilities.",
+          "B": "Individuals calculate calculus derivatives before buying any financial asset.",
+          "C": "Insurance companies force consumers to buy lottery tickets through statutory mandates.",
+          "D": "Individuals possess infinite risk tolerance regardless of wealth levels."
+        },
+        "correct_option": "A",
+        "rationale": "The text notes that individuals 'systematically overweight low-probability tail events—explaining the simultaneous purchase of lottery tickets and catastrophic insurance policies.'"
+      },
+      {
+        "id": "ENG_RC_141_Q4",
+        "question": "What does the loss aversion parameter ($\lambda \approx 2.0–2.5$) signify?",
+        "options": {
+          "A": "Gains are celebrated twice as enthusiastically as losses.",
+          "B": "The psychological disutility of a loss is approximately twice as intense as the utility of an equivalent gain.",
+          "C": "Wealthier individuals lose money twice as quickly as poorer individuals.",
+          "D": "Financial investments always lose value across a two-year investment horizon."
+        },
+        "correct_option": "B",
+        "rationale": "The author specifies that the psychological pain of a loss is empirically estimated as roughly twice as intense as the pleasure of an equivalent gain."
+      },
+      {
+        "id": "ENG_RC_141_Q5",
+        "question": "As used in the passage, the word 'heuristics' refers to:",
+        "options": {
+          "A": "Cognitive mental shortcuts or rules of thumb used in decision-making",
+          "B": "Formal mathematical proofs verified by supercomputers",
+          "C": "Legal contracts executed within banking institutions",
+          "D": "Involuntary neurological reflexes of the spinal cord"
+        },
+        "correct_option": "A",
+        "rationale": "'Heuristics' are efficient cognitive processes, mental rules of thumb, or simplified decision-making strategies."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_142",
+    "passage_title": "Astrophysical Evidence for Dark Matter and Gravitational Lensing",
+    "passage_text": "In the 1930s, Swiss astronomer Fritz Zwicky applied the virial theorem to the Coma galaxy cluster, discovering that the observed luminous baryonic matter was insufficient to gravitationally bind the rapidly orbiting galaxies. Decades later, Vera Rubin confirmed this gravitational anomaly by measuring the rotational velocities of spiral galaxies. Standard Newtonian orbital mechanics predicts that stellar velocities should decline with distance ($v \propto 1/\sqrt{r}$) beyond the dense galactic core, mirroring the Keplerian decline observed in our solar system. Instead, galactic rotation curves remain stubbornly flat out to extreme radial distances, indicating the presence of an invisible, non-luminous mass envelope termed a dark matter halo. Contemporary cosmology formalizes this through the $\Lambda$CDM (Lambda Cold Dark Matter) concordance model, which posits that non-baryonic, collisionless weakly interacting massive particles (WIMPs) account for approximately 85% of total cosmic matter. The strongest empirical verification derives from gravitational lensing—the bending of light around massive clusters predicted by General Relativity. Observations of the colliding 'Bullet Cluster' (1E 0657-56) demonstrate a spatial separation between the X-ray luminous hot gas plasma (baryonic matter decelerated by electromagnetic drag) and the primary gravitational mass centroid mapped via weak gravitational lensing, confirming dark matter as a physical reality rather than a breakdown of gravitational laws.",
+    "questions": [
+      {
+        "id": "ENG_RC_142_Q1",
+        "question": "What discrepancy did Vera Rubin discover when observing the rotation curves of spiral galaxies?",
+        "options": {
+          "A": "Galactic cores rotated in the opposite direction of their outer spiral arms.",
+          "B": "Rotational velocities remained flat at large radial distances instead of decreasing as predicted by Newtonian mechanics.",
+          "C": "Stellar speeds declined to zero immediately outside the central bulge.",
+          "D": "All spiral galaxies collapsed into supermassive black holes within centuries."
+        },
+        "correct_option": "B",
+        "rationale": "Rubin discovered that instead of Keplerian decline ($v \propto 1/\sqrt{r}$), galactic rotation curves remained flat at extreme radial distances, revealing unseen mass."
+      },
+      {
+        "id": "ENG_RC_142_Q2",
+        "question": "What does the $\Lambda$CDM concordance model propose regarding the composition of cosmic matter?",
+        "options": {
+          "A": "All cosmic mass consists solely of glowing hydrogen and helium gas.",
+          "B": "Non-baryonic, weakly interacting cold dark matter constitutes approximately 85% of total cosmic matter.",
+          "C": "Space is entirely empty and devoid of any gravitational mass.",
+          "D": "Dark matter is produced exclusively by dying white dwarf stars."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that the $\Lambda$CDM model posits non-baryonic, collisionless WIMPs account for approximately 85% of total matter in the universe."
+      },
+      {
+        "id": "ENG_RC_142_Q3",
+        "question": "How did observations of the 'Bullet Cluster' (1E 0657-56) confirm the existence of dark matter?",
+        "options": {
+          "A": "By showing that colliding galaxies instantly turn into pure antimatter.",
+          "B": "By revealing a spatial separation between the decelerated baryonic gas and the primary mass centroid mapped via gravitational lensing.",
+          "C": "By proving that light travels in straight lines regardless of nearby mass.",
+          "D": "By demonstrating that X-ray emissions contain no detectable thermal energy."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that the Bullet Cluster displayed a distinct spatial offset between electromagnetic gas plasma and the gravitational mass mapped by lensing, validating dark matter."
+      },
+      {
+        "id": "ENG_RC_142_Q4",
+        "question": "What astronomical method maps unseen gravitational mass using Einstein's General Relativity?",
+        "options": {
+          "A": "Gravitational lensing (deflection of background light around mass)",
+          "B": "Optical spectroscopy of solar flares",
+          "C": "Direct radar reflection from planetary surfaces",
+          "D": "Carbon-14 isotope radiometric dating"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly names gravitational lensing—the bending of light around massive clusters—as the empirical verification method."
+      },
+      {
+        "id": "ENG_RC_142_Q5",
+        "question": "As used in the passage, the word 'baryonic' refers to:",
+        "options": {
+          "A": "Standard physical matter composed of protons, neutrons, and atoms",
+          "B": "Theoretical particles moving faster than the speed of light",
+          "C": "Electromagnetic radio signals from deep space",
+          "D": "Fictional energy fields created in science fiction"
+        },
+        "correct_option": "A",
+        "rationale": "In astrophysics, 'baryonic matter' denotes ordinary matter made of protons, neutrons, and electrons (such as stars, planets, and gas)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_143",
+    "passage_title": "The Evolutionary Dynamics of the Cambrian Explosion",
+    "passage_text": "Occurring approximately 541 million years ago at the onset of the Paleozoic Era, the Cambrian Explosion represents the most rapid macro-evolutionary radiation of multicellular life in Earth's history. Over a geologically brief interval of roughly 20 to 25 million years, virtually all modern metazoan phyla (including Arthropoda, Chordata, Brachiopoda, and Mollusca) appeared in the fossil record. Prior to this bio-radiation, the Ediacaran biota comprised soft-bodied, radially symmetrical organisms characterized by passive diffusion. The sudden emergence of complex triploblastic body plans, cephalization, hard mineralized exoskeletons, and active predatory lifestyles is documented in exceptional *Konservat-Lagerstätten* such as the Burgess Shale in Canada and the Chengjiang biota in China. Paleontologists attribute this diversification to an interplay of extrinsic geochemical triggers and intrinsic biological innovations. Geochemically, widespread ocean oxygenation elevated metabolic thresholds, while an upwelling of dissolved calcium and phosphorus enabled biomineralization of hard shells. Biologically, the duplication and diversification of *Hox* gene regulatory clusters facilitated modular developmental body patterning, initiating an ecological evolutionary arms race between active predators (like *Anomalocaris*) and armored prey.",
+    "questions": [
+      {
+        "id": "ENG_RC_143_Q1",
+        "question": "What evolutionary milestone defines the Cambrian Explosion?",
+        "options": {
+          "A": "The mass extinction of all marine microorganisms due to asteroid impact.",
+          "B": "The rapid diversification and appearance of virtually all major modern animal phyla in the fossil record.",
+          "C": "The emergence of terrestrial vascular forests and flowering plants.",
+          "D": "The evolution of warm-blooded avian flight mechanisms."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines the Cambrian Explosion as the rapid macro-evolutionary radiation where virtually all modern metazoan phyla appeared within a ~20–25 million year window."
+      },
+      {
+        "id": "ENG_RC_143_Q2",
+        "question": "How did the prior Ediacaran biota differ structurally from Cambrian metazoans?",
+        "options": {
+          "A": "Ediacaran organisms were soft-bodied and radial, lacking hard mineralized shells and triploblastic organization.",
+          "B": "Ediacaran organisms were large apex terrestrial mammals.",
+          "C": "Ediacaran fauna possessed complex titanium-reinforced exoskeletons.",
+          "D": "Ediacaran organisms lived exclusively inside subterranean lava tubes."
+        },
+        "correct_option": "A",
+        "rationale": "The text notes that pre-Cambrian Ediacaran biota were 'soft-bodied, radially symmetrical organisms characterized by passive diffusion.'"
+      },
+      {
+        "id": "ENG_RC_143_Q3",
+        "question": "Which genetic innovation facilitated modular developmental body patterning during this diversification?",
+        "options": {
+          "A": "The complete deletion of all cellular DNA polymerase",
+          "B": "The duplication and diversification of *Hox* homeobox gene regulatory clusters",
+          "C": "The elimination of mitochondrial respiration in favor of anaerobic glycolysis",
+          "D": "The transition from sexual to asexual clonal budding"
+        },
+        "correct_option": "B",
+        "rationale": "The passage highlights the 'duplication and diversification of *Hox* gene regulatory clusters' as the intrinsic biological driver of modular body plans."
+      },
+      {
+        "id": "ENG_RC_143_Q4",
+        "question": "What geochemical conditions enabled the biomineralization of hard exoskeletons in Cambrian organisms?",
+        "options": {
+          "A": "Severe ocean deoxygenation and extreme acid rain",
+          "B": "Increased oceanic oxygenation alongside upwelling of dissolved calcium and phosphorus",
+          "C": "Complete freezing of global oceans into a Snowball Earth",
+          "D": "Massive lead and mercury deposits across the continental shelf"
+        },
+        "correct_option": "B",
+        "rationale": "The author explains that elevated oxygen levels and upwelling of dissolved calcium and phosphorus enabled biomineralization."
+      },
+      {
+        "id": "ENG_RC_143_Q5",
+        "question": "As used in the passage, the term *Konservat-Lagerstätten* refers to:",
+        "options": {
+          "A": "Sedimentary fossil sites with exceptional preservation of soft tissues and anatomical details",
+          "B": "Deep underground salt mines devoid of organic life",
+          "C": "Volcanic magma chambers containing cooled obsidian glass",
+          "D": "Ancient human agricultural storage silos"
+        },
+        "correct_option": "A",
+        "rationale": "In paleontology, a *Konservat-Lagerstätte* is a fossil deposit known for extraordinary preservation, often preserving soft tissues."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_144",
+    "passage_title": "Structural Anthropology and Claude Lévi-Strauss’s Mythological Analysis",
+    "passage_text": "In mid-twentieth-century anthropology, Claude Lévi-Strauss revolutionized the analysis of human culture by founding Structural Anthropology. Applying the structural linguistics of Ferdinand de Saussure and Roman Jakobson to ethnography, Lévi-Strauss argued that cultural phenomena—including kinship systems, dietary customs, and mythologies—are not arbitrary historical accruals, but reflections of innate, universal mental structures embedded within the human unconscious. In his four-volume magnum opus *Mythologiques*, Lévi-Strauss asserted that the meaning of a myth does not reside in its overt narrative plot, but in the underlying structural relations between its constituent elements, which he termed 'mythemes'. Analogous to phonemes in linguistics, mythemes acquire semantic value only when organized into contrasting binary oppositions (e.g., Nature versus Culture, Raw versus Cooked, Life versus Death). Lévi-Strauss demonstrated that myth acts as an unconscious logical apparatus designed to mediate and resolve irreducible conceptual contradictions inherent to the human condition. By analyzing thousands of indigenous American narratives, he showed that diverse surface variations across global folklore stem from identical deep combinatorial grammars of the human mind.",
+    "questions": [
+      {
+        "id": "ENG_RC_144_Q1",
+        "question": "What is the foundational premise of Claude Lévi-Strauss's Structural Anthropology?",
+        "options": {
+          "A": "Cultures evolve linearly from savagery to technological industrialism.",
+          "B": "Cultural phenomena and myths reflect innate, universal structural categories of the human unconscious mind.",
+          "C": "All human behaviors are governed strictly by economic profit margins.",
+          "D": "Myths have no meaning and are recited purely for musical rhythm."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that Lévi-Strauss viewed cultural systems not as arbitrary history, but as manifestations of universal cognitive structures in the human unconscious."
+      },
+      {
+        "id": "ENG_RC_144_Q2",
+        "question": "What did Lévi-Strauss identify as 'mythemes' in mythological analysis?",
+        "options": {
+          "A": "Constituent structural units of myth that acquire meaning through relational binary oppositions.",
+          "B": "Ancient musical instruments used during religious rituals.",
+          "C": "Literal historical facts proven by archaeological digs.",
+          "D": "The biographical names of ancient tribal chieftains."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that mythemes are constituent elements (analogous to phonemes) that acquire meaning through structured binary oppositions."
+      },
+      {
+        "id": "ENG_RC_144_Q3",
+        "question": "According to the passage, what is the unconscious cognitive purpose of myth?",
+        "options": {
+          "A": "To record tax transactions in agricultural communities.",
+          "B": "To logically mediate and resolve fundamental conceptual contradictions (such as Nature vs. Culture).",
+          "C": "To teach children how to manufacture stone arrowheads.",
+          "D": "To replace spoken language with written pictograms."
+        },
+        "correct_option": "B",
+        "rationale": "The author asserts that myth functions as an unconscious logical tool to mediate and resolve irreducible conceptual contradictions."
+      },
+      {
+        "id": "ENG_RC_144_Q4",
+        "question": "Which linguistic framework directly influenced Lévi-Strauss's structural methodology?",
+        "options": {
+          "A": "The structural linguistics of Ferdinand de Saussure and Roman Jakobson",
+          "B": "The prescriptive Latin grammar taught in medieval monasteries",
+          "C": "Behaviorist stimulus-response language models",
+          "D": "Statistical lexical frequency algorithms"
+        },
+        "correct_option": "A",
+        "rationale": "The passage specifies that Lévi-Strauss applied the structural linguistics of Saussure and Jakobson to ethnographic systems."
+      },
+      {
+        "id": "ENG_RC_144_Q5",
+        "question": "As used in the passage, the word 'constituent' most nearly means:",
+        "options": {
+          "A": "A component part or element forming part of a larger whole",
+          "B": "A legal voter in a democratic parliamentary district",
+          "C": "An ancient decorative pattern carved into bone",
+          "D": "A completely useless ornamental addition"
+        },
+        "correct_option": "A",
+        "rationale": "'Constituent' denotes a component part, building block, or element of an aggregate system or structure."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_145",
+    "passage_title": "Hannah Arendt and the Philosophy of the 'Banality of Evil'",
+    "passage_text": "In 1961, political theorist Hannah Arendt attended the Jerusalem trial of Adolf Eichmann, the bureaucratic coordinator of the Nazi logistics network for mass deportation. Reporting for *The New Yorker*, Arendt distilled her philosophical reflections in *Eichmann in Jerusalem: A Report on the Banality of Evil*. The orthodox conception of monumental evil posited demonic pathology, ideological fanaticism, or sadism. Arendt challenged this assumption by arguing that Eichmann was neither a deranged sociopath nor an ideological zealot; rather, he was a terrifyingly normal, unreflective bureaucrat motivated primarily by careerist ambition. Arendt coined the phrase 'the banality of evil' to articulate how catastrophic crimes against humanity can be committed by ordinary functionaries who surrender their capacity for autonomous critical thought. In an authoritarian apparatus, bureaucratic euphemisms (*Sprachregelung*), compartmentalized procedures, and ideological conformity insulate individuals from the moral consequences of their actions. Evil becomes institutionalized and routine, driven not by malice, but by 'thoughtlessness'—the total abdication of the internal moral dialogue Socrates termed the 'two-in-one' of conscience.",
+    "questions": [
+      {
+        "id": "ENG_RC_145_Q1",
+        "question": "What central thesis did Hannah Arendt propose in *Eichmann in Jerusalem* regarding the nature of evil?",
+        "options": {
+          "A": "Extreme evil is always driven by demonic sadism and psychological psychosis.",
+          "B": "Catastrophic crimes can be enacted by ordinary, unthinking bureaucrats who abdicate moral critical thinking.",
+          "C": "Authoritarian systems are created exclusively through military foreign invasions.",
+          "D": "Bureaucratic administrators have no influence on government policies."
+        },
+        "correct_option": "B",
+        "rationale": "Arendt argued that monstrous crimes can be committed by ordinary people characterized by thoughtlessness and institutional conformity rather than sadistic pathology."
+      },
+      {
+        "id": "ENG_RC_145_Q2",
+        "question": "How did Arendt characterize Adolf Eichmann's personal motivations during his trial?",
+        "options": {
+          "A": "A careerist functionary driven by routine conformity and professional ambition rather than ideological fanaticism.",
+          "B": "A philosophical mastermind writing treaties on international jurisprudence.",
+          "C": "A rebellious soldier sabotaging transportation infrastructure.",
+          "D": "A dedicated scholar studying ancient classical philosophy."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that Eichmann was not a zealot but an unreflective bureaucrat motivated by professional advancement and administrative compliance."
+      },
+      {
+        "id": "ENG_RC_145_Q3",
+        "question": "What institutional mechanisms in authoritarian states insulate functionaries from the moral consequences of their actions?",
+        "options": {
+          "A": "Direct public television broadcasts of all cabinet debates",
+          "B": "Bureaucratic euphemisms, procedural compartmentalization, and enforced conformity",
+          "C": "Mandatory training in Socratic moral philosophy",
+          "D": "The complete dissolution of all government administrative departments"
+        },
+        "correct_option": "B",
+        "rationale": "The author notes that bureaucratic language rules (*Sprachregelung*), administrative compartmentalization, and conformity insulate individuals from moral reflection."
+      },
+      {
+        "id": "ENG_RC_145_Q4",
+        "question": "What did Arendt mean by 'thoughtlessness' in the context of totalitarian evil?",
+        "options": {
+          "A": "A clinical loss of long-term memory caused by neurological trauma.",
+          "B": "The total surrender of individual conscience and critical autonomous judgment.",
+          "C": "An intentional strategy to avoid learning how to read.",
+          "D": "A mathematical error in computing logistics data."
+        },
+        "correct_option": "B",
+        "rationale": "In Arendt's philosophy, 'thoughtlessness' is the failure to engage in internal moral dialogue and critical self-evaluation."
+      },
+      {
+        "id": "ENG_RC_145_Q5",
+        "question": "As used in the passage, the word 'banality' most closely means:",
+        "options": {
+          "A": "Extraordinary heroism and courage",
+          "B": "Everyday ordinariness, mundanity, or lack of originality",
+          "C": "Extreme physical violence and bloodshed",
+          "D": "Sophisticated scientific brilliance"
+        },
+        "correct_option": "B",
+        "rationale": "'Banality' refers to being mundane, common, unoriginal, or ordinary."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_146",
+    "passage_title": "Quantum Properties of Graphene and 2D Carbon Nanomaterials",
+    "passage_text": "First isolated in 2004 by Andre Geim and Konstantin Novoselov via micromechanical cleavage of graphite, graphene is a two-dimensional allotrope of carbon consisting of a single monolayer of $sp^2$-hybridized carbon atoms arranged in a planar hexagonal honeycomb lattice. Graphene's electronic structure defies conventional non-relativistic solid-state band theory. In typical metals and semiconductors, charge carriers possess effective mass and conform to the Schrödinger equation with parabolic energy-momentum dispersion ($E \propto p^2/2m^*$). In graphene, the valence ($\pi$) and conduction ($\pi^*$) bands touch tangentially at six points at the corners of the Brillouin zone, termed the Dirac points. Near these points, charge carriers exhibit linear relativistic dispersion ($E = \hbar v_F k$), behaving as massless Dirac fermions that propagate at an effective Fermi velocity of $v_F \approx 10^6\\text{ m/s}$ (roughly $1/300$ the speed of light). This relativistic behavior gives rise to quantum phenomena at room temperature: ballistics transport with electron mobilities exceeding $200,000\\text{ cm}^2/\\text{V}\\cdot\\text{s}$, Klein tunneling (unimpeded penetration of electrons through electrostatic potential barriers), and the anomalous half-integer Quantum Hall Effect.",
+    "questions": [
+      {
+        "id": "ENG_RC_146_Q1",
+        "question": "What structural arrangement characterizes a single monolayer of graphene?",
+        "options": {
+          "A": "A three-dimensional diamond cubic crystalline lattice with $sp^3$ bonding.",
+          "B": "A two-dimensional planar hexagonal honeycomb lattice of $sp^2$-hybridized carbon atoms.",
+          "C": "A linear polymeric chain wrapped around iron nanotubes.",
+          "D": "An amorphous liquid droplet suspended in cryogenic nitrogen."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence defines graphene as a 2D allotrope consisting of a monolayer of $sp^2$-hybridized carbon in a planar hexagonal honeycomb lattice."
+      },
+      {
+        "id": "ENG_RC_146_Q2",
+        "question": "How do charge carriers behave near the Dirac points in graphene compared to conventional semiconductors?",
+        "options": {
+          "A": "They become completely stationary and lose all electrical charge.",
+          "B": "They exhibit linear dispersion and behave as massless relativistic Dirac fermions.",
+          "C": "They conform strictly to Newtonian parabolic mass equations.",
+          "D": "They transform instantly into photons and leave the material."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that near Dirac points, carriers display linear dispersion ($E = \hbar v_F k$) and act as massless Dirac fermions."
+      },
+      {
+        "id": "ENG_RC_146_Q3",
+        "question": "What is 'Klein tunneling' in the context of graphene's quantum electronic transport?",
+        "options": {
+          "A": "The unimpeded transmission of relativistic electrons through electrostatic potential barriers.",
+          "B": "The melting of carbon bonds under extreme cryogenic temperatures.",
+          "C": "The reflection of all incoming laser light off the graphite surface.",
+          "D": "The chemical breakdown of graphene when exposed to oxygen."
+        },
+        "correct_option": "A",
+        "rationale": "The passage defines Klein tunneling as the unimpeded penetration of electrons through potential barriers without backscattering."
+      },
+      {
+        "id": "ENG_RC_146_Q4",
+        "question": "Which method did Geim and Novoselov famously utilize to isolate single-layer graphene in 2004?",
+        "options": {
+          "A": "High-temperature subterranean diamond drilling",
+          "B": "Micromechanical cleavage (exfoliation) of graphite using adhesive tape",
+          "C": "Nuclear fusion of pure hydrogen gas",
+          "D": "Electrolysis of molten carbonate salts"
+        },
+        "correct_option": "B",
+        "rationale": "The passage mentions 'micromechanical cleavage of graphite' (the scotch-tape method) as the pioneering isolation technique."
+      },
+      {
+        "id": "ENG_RC_146_Q5",
+        "question": "As used in the passage, the term 'allotrope' refers to:",
+        "options": {
+          "A": "Different structural forms of the same chemical element in the same physical state",
+          "B": "An unstable radioactive isotope of heavy metals",
+          "C": "A synthetic plastic polymer used in electronics packaging",
+          "D": "A biological organelle involved in protein synthesis"
+        },
+        "correct_option": "A",
+        "rationale": "An 'allotrope' is one of two or more different physical forms in which an element can exist (such as diamond, graphite, and graphene for carbon)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_147",
+    "passage_title": "The Jevons Paradox and Energy Efficiency Rebound Effects",
+    "passage_text": "In his 1865 treatise *The Coal Question*, English economist William Stanley Jevons examined the national concern that Britain's coal reserves were depleting. Conventional political wisdom assumed that improving the thermal efficiency of steam engines (such as James Watt's innovations over Thomas Newcomen's design) would reduce aggregate coal consumption. Jevons refuted this intuition by articulating what is now known as the 'Jevons Paradox'. Jevons observed that increases in energy efficiency do not lower total resource usage; rather, they lower the implicit cost of utilizing that resource. As the cost per unit of work drops, demand for energy-intensive processes increases exponentially. Cheaper steam power catalyzed new industrial applications—steam railways, mechanized iron smelting, and steamships—multiplying overall coal extraction. In contemporary ecological economics, this phenomenon is formalized as the 'rebound effect'. When fuel-efficient engines lower the cost of driving per mile, consumers drive more frequently (direct rebound) and reallocate saved disposable income to other carbon-intensive goods (indirect rebound). When cumulative economic expansion exceeds 100% of initial efficiency savings, 'backfire' occurs, increasing total resource depletion.",
+    "questions": [
+      {
+        "id": "ENG_RC_147_Q1",
+        "question": "What counterintuitive economic proposition defines the Jevons Paradox?",
+        "options": {
+          "A": "Technological improvements in resource efficiency increase total resource consumption rather than reducing it.",
+          "B": "Increasing taxes on coal immediately halts all industrial manufacturing.",
+          "C": "Steam engines consume more coal when operated in colder climates.",
+          "D": "Resource prices rise automatically when resource supply increases."
+        },
+        "correct_option": "A",
+        "rationale": "The Jevons Paradox states that improving the efficiency with which a resource is used leads to an increase, rather than a decrease, in overall consumption of that resource."
+      },
+      {
+        "id": "ENG_RC_147_Q2",
+        "question": "Why did James Watt's more efficient steam engine increase aggregate British coal consumption in the nineteenth century?",
+        "options": {
+          "A": "It leaked half its coal supply into the sea.",
+          "B": "By reducing the cost of mechanical work, it enabled widespread industrial expansion across railways, shipping, and metallurgy.",
+          "C": "The British government made it illegal to burn wood.",
+          "D": "Watt's engine required pure powdered gold to operate."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that lower unit costs catalyzed new industrial applications like railways and metallurgy, multiplying total coal demand."
+      },
+      {
+        "id": "ENG_RC_147_Q3",
+        "question": "In modern energy policy, what is meant by an 'indirect rebound effect'?",
+        "options": {
+          "A": "Consumers spend financial savings from energy efficiency on other carbon-intensive goods and services.",
+          "B": "Vehicles break down and require replacement parts imported from abroad.",
+          "C": "Solar panels reflect light into residential housing windows.",
+          "D": "Power stations shut down during summer maintenance."
+        },
+        "correct_option": "A",
+        "rationale": "The passage defines indirect rebound as reallocating saved disposable income from efficiency gains to other carbon-intensive goods and services."
+      },
+      {
+        "id": "ENG_RC_147_Q4",
+        "question": "When does the economic phenomenon termed 'backfire' occur?",
+        "options": {
+          "A": "When an engine explodes due to excess pressure in the boiler.",
+          "B": "When cumulative economic rebound exceeds 100% of initial efficiency savings, resulting in higher net resource use.",
+          "C": "When resource extraction costs exceed the market sale price.",
+          "D": "When consumers refuse to adopt modern fuel-efficient technologies."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that backfire occurs when total rebound exceeds 100% of initial savings, increasing total resource depletion."
+      },
+      {
+        "id": "ENG_RC_147_Q5",
+        "question": "As used in the passage, the word 'depleting' means:",
+        "options": {
+          "A": "Diminishing in quantity; being exhausted or used up",
+          "B": "Expanding rapidly into surrounding territories",
+          "C": "Undergoing radioactive chemical fission",
+          "D": "Increasing in monetary market value"
+        },
+        "correct_option": "A",
+        "rationale": "'Deplete' means to reduce the fullness or quantity of, or to exhaust a resource supply."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_148",
+    "passage_title": "Cancer Immunotherapy and Immune Checkpoint Blockade",
+    "passage_text": "For decades, clinical oncology relied on surgery, radiotherapy, and cytotoxic chemotherapy—modalities that target neoplastic cells directly but suffer from narrow therapeutic indices and systemic toxicities. The advent of cancer immunotherapy transformed oncology by harnessing the host adaptive immune system to eradicate tumors. Under normal physiological conditions, immune checkpoints maintain self-tolerance and prevent autoimmune destruction. Two major regulatory pathways are cytotoxic T-lymphocyte-associated protein 4 (CTLA-4) and programmed cell death protein 1 (PD-1). CTLA-4 acts as a competitive inhibitor of the co-stimulatory receptor CD28, dampening early T-cell activation in lymph nodes. In peripheral tissues and the tumor microenvironment, PD-1 on activated T cells binds to PD-L1 and PD-L2 expressed by tumor cells, inducing T-cell exhaustion and immune evasion. Pioneered by James P. Allison and Tasuku Honjo, immune checkpoint blockade employs monoclonal antibodies (e.g., ipilimumab, pembrolizumab) to block these inhibitory interactions. By releasing the molecular 'brakes' on the immune system, checkpoint inhibitors reinvigorate tumor-infiltrating lymphocytes, enabling durable antitumor cytotoxic responses across malignancies like metastatic melanoma and non-small cell lung cancer.",
+    "questions": [
+      {
+        "id": "ENG_RC_148_Q1",
+        "question": "How does cancer immunotherapy fundamentally differ from traditional cytotoxic chemotherapy?",
+        "options": {
+          "A": "It directly poisons all rapidly dividing cells in the human body.",
+          "B": "It empowers the host adaptive immune system to recognize and eradicate tumor cells.",
+          "C": "It utilizes surgical lasers to vaporize metastatic lesions.",
+          "D": "It permanently deactivates all white blood cells in bone marrow."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that unlike traditional therapies targeting tumor cells directly, immunotherapy harnesses the host's adaptive immune system to eliminate tumors."
+      },
+      {
+        "id": "ENG_RC_148_Q2",
+        "question": "How do tumor cells exploit the PD-1/PD-L1 pathway to evade immune surveillance?",
+        "options": {
+          "A": "By synthesizing antibiotic proteins that kill red blood cells.",
+          "B": "By expressing PD-L1, which binds to PD-1 on activated T cells, inducing T-cell exhaustion and shutting down immune attacks.",
+          "C": "By converting themselves into healthy liver hepatocytes.",
+          "D": "By absorbing all glucose from the bloodstream."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that tumor cells express PD-L1, which binds PD-1 on T cells to induce T-cell exhaustion and evade destruction."
+      },
+      {
+        "id": "ENG_RC_148_Q3",
+        "question": "What is the primary mechanism of action of checkpoint inhibitor monoclonal antibodies like pembrolizumab?",
+        "options": {
+          "A": "They physically block inhibitory checkpoint receptors, releasing the 'brakes' on cytotoxic T cells.",
+          "B": "They inject radioactive isotopes directly into tumor nuclei.",
+          "C": "They freeze the tumor microenvironment with liquid nitrogen.",
+          "D": "They suppress all antibody production across the spleen."
+        },
+        "correct_option": "A",
+        "rationale": "The author explains that monoclonal antibodies block inhibitory interactions, releasing the brakes and reinvigorating T-cell responses."
+      },
+      {
+        "id": "ENG_RC_148_Q4",
+        "question": "Where does CTLA-4 primarily exert its dampening effect on T-cell activation?",
+        "options": {
+          "A": "In central lymph nodes during early co-stimulatory priming",
+          "B": "Inside the coronary arteries of the heart",
+          "C": "In the alveoli of healthy lung tissue",
+          "D": "Within the digestive bile duct"
+        },
+        "correct_option": "A",
+        "rationale": "The text states that CTLA-4 'acts as a competitive inhibitor of the co-stimulatory receptor CD28, dampening early T-cell activation in lymph nodes.'"
+      },
+      {
+        "id": "ENG_RC_148_Q5",
+        "question": "As used in the passage, the word 'neoplastic' refers to:",
+        "options": {
+          "A": "Abnormal, uncontrolled, and malignant cellular growth (tumors)",
+          "B": "Synthetic plastic fibers used in surgical stitches",
+          "C": "Healthy bone marrow cells producing red blood cells",
+          "D": "Bacterial colonies living harmlessly in the gut"
+        },
+        "correct_option": "A",
+        "rationale": "'Neoplastic' relates to neoplasia or a neoplasm—the abnormal, uncoordinated, and uncontrolled proliferation of tumor cells."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_149",
+    "passage_title": "The Mundell-Fleming Trilemma in International Macroeconomics",
+    "passage_text": "In open-economy macroeconomics, the 'Impossible Trinity' (or Mundell-Fleming Trilemma) is a foundational theorem formulated by Robert Mundell and Marcus Fleming. The trilemma establishes that a sovereign nation cannot simultaneously achieve three desirable economic policy objectives: a **fixed exchange rate**, **free capital mobility** (absence of capital controls), and an **independent monetary policy** (the capacity to set domestic interest rates). The structural impossibility arises from international interest rate parity. Suppose a nation with an open capital account attempts to peg its currency to the US dollar while unilaterally lowering domestic interest rates to stimulate employment. Global investors seeking higher yields will instantly sell domestic assets, converting local currency into dollars. This massive capital flight puts downward depreciation pressure on the peg. To maintain the fixed exchange rate, the central bank must expend foreign exchange reserves to buy back its currency, which contracts the domestic money supply and forces interest rates back up, nullifying independent monetary policy. Consequently, nations must choose a structural dyad: the Eurozone chose capital mobility and a fixed rate (sacrificing autonomous national monetary policy); the United States chose capital mobility and monetary autonomy (floating the dollar); while China historically maintained a pegged rate and monetary autonomy by imposing capital controls.",
+    "questions": [
+      {
+        "id": "ENG_RC_149_Q1",
+        "question": "What three policy objectives constitute the Mundell-Fleming 'Impossible Trinity'?",
+        "options": {
+          "A": "A balanced annual budget, low income tax, and universal healthcare",
+          "B": "A fixed exchange rate, free capital mobility, and an independent monetary policy",
+          "C": "Gold standard backing, high tariffs, and subsidized agricultural exports",
+          "D": "Zero national debt, full employment, and 0% inflation"
+        },
+        "correct_option": "B",
+        "rationale": "The passage explicitly defines the trilemma as the impossibility of simultaneously maintaining a fixed exchange rate, free capital mobility, and independent monetary policy."
+      },
+      {
+        "id": "ENG_RC_149_Q2",
+        "question": "What happens when a country with free capital mobility and a fixed exchange rate attempts to lower domestic interest rates unilaterally?",
+        "options": {
+          "A": "Investors pull capital out of the country to seek higher foreign yields, forcing the central bank to defend the peg and abandon interest rate autonomy.",
+          "B": "The currency instantly doubles in value against all global foreign currencies.",
+          "C": "All commercial banks in the country are liquidated by international treaty.",
+          "D": "Domestic inflation permanently drops to zero percent."
+        },
+        "correct_option": "A",
+        "rationale": "The text details how capital flight creates depreciation pressure, forcing the central bank to expend reserves and contract money supply, negating monetary autonomy."
+      },
+      {
+        "id": "ENG_RC_149_Q3",
+        "question": "Which combination of the trilemma was adopted by the member states of the European Eurozone?",
+        "options": {
+          "A": "Free capital mobility and fixed exchange rates (shared currency), while sacrificing independent national monetary policy.",
+          "B": "Strict capital controls, independent monetary policy, and floating exchange rates.",
+          "C": "A complete ban on international trade and gold reserves.",
+          "D": "Floating currencies between member cities without any central bank."
+        },
+        "correct_option": "A",
+        "rationale": "The passage notes that the Eurozone chose free capital mobility and a fixed exchange rate (the single euro), relinquishing independent national monetary policy."
+      },
+      {
+        "id": "ENG_RC_149_Q4",
+        "question": "How did China historically maintain domestic monetary autonomy while managing a pegged currency exchange rate?",
+        "options": {
+          "A": "By closing all domestic manufacturing factories",
+          "B": "By enforcing strict capital controls on cross-border financial flows",
+          "C": "By adopting the US dollar as its sole domestic paper currency",
+          "D": "By prohibiting all foreign tourism"
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that China historically maintained monetary autonomy and a currency peg by enforcing capital controls."
+      },
+      {
+        "id": "ENG_RC_149_Q5",
+        "question": "As used in the passage, the phrase 'capital flight' refers to:",
+        "options": {
+          "A": "Air transport of physical gold bullion across oceans",
+          "B": "The rapid, large-scale exit of financial assets and money out of a country",
+          "C": "The legal bankruptcy of commercial airline corporations",
+          "D": "Government expenditure on national aerospace infrastructure"
+        },
+        "correct_option": "B",
+        "rationale": "'Capital flight' in economics describes a rapid outflow of financial assets and money from a nation due to economic instability, interest differentials, or currency risk."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_150",
+    "passage_title": "Conceptual Metaphor Theory and Cognitive Linguistics",
+    "passage_text": "In classical rhetoric and traditional semantics, metaphor was treated as a decorative, peripheral figure of poetic speech—an artistic rhetorical flourish distinct from literal language. In their 1980 work *Metaphors We Live By*, cognitive linguists George Lakoff and Mark Johnson challenged this view by establishing Conceptual Metaphor Theory (CMT). Lakoff and Johnson demonstrated that metaphor is not merely a linguistic device, but a fundamental cognitive mechanism that structures human conceptualization, perception, and reasoning. CMT posits that humans understand abstract, intangible target domains by mapping them onto concrete, sensorimotor source domains grounded in bodily experience. For example, the conceptual metaphor **ARGUMENT IS WAR** systematically shapes how humans speak, think, and act during intellectual debates: we *attack* weak points, *defend* positions, shoot down claims, and *win* or *lose* arguments. Similarly, **TIME IS MONEY** (*spending* time, *saving* hours, *investing* effort) reflects economic conceptual structuring. These systematic cross-domain mappings are unidirectional, deriving from embodied cognition—the neurological truth that abstract thought relies on neural circuits originally evolved for spatial orientation, physical manipulation, and sensorimotor interaction.",
+    "questions": [
+      {
+        "id": "ENG_RC_150_Q1",
+        "question": "What is the central claim of Lakoff and Johnson's Conceptual Metaphor Theory (CMT)?",
+        "options": {
+          "A": "Metaphors are deceptive rhetorical lies that must be eliminated from scientific writing.",
+          "B": "Metaphor is a fundamental cognitive mechanism that maps concrete embodied experiences onto abstract conceptual domains.",
+          "C": "Human language originated entirely as rhythmic animal cries.",
+          "D": "Abstract thought operates independently of the human physical body and brain."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that CMT establishes metaphor not as decorative speech, but as a foundational cognitive mechanism mapping concrete sensorimotor domains to abstract target concepts."
+      },
+      {
+        "id": "ENG_RC_150_Q2",
+        "question": "How does the conceptual metaphor **ARGUMENT IS WAR** influence everyday discourse?",
+        "options": {
+          "A": "It requires all debaters to carry physical swords into academic conferences.",
+          "B": "It systematically structures how we conceptualize and articulate debates (attacking positions, defending claims, winning/losing).",
+          "C": "It forces nations to declare military war over grammatical disagreements.",
+          "D": "It prevents humans from ever agreeing on philosophical definitions."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that ARGUMENT IS WAR structures the language and actions of debate (attacking weak points, defending claims, winning/losing)."
+      },
+      {
+        "id": "ENG_RC_150_Q3",
+        "question": "According to the passage, why are conceptual cross-domain mappings unidirectional (from source to target)?",
+        "options": {
+          "A": "They derive from embodied cognition, using concrete physical and spatial neural circuits to comprehend intangible abstract ideas.",
+          "B": "Grammar books strictly forbid writing sentences backwards.",
+          "C": "Human sensory organs can only process visual information from left to right.",
+          "D": "Dictionaries arrange definitions alphabetically."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that mappings are grounded in embodied cognition—abstract thought utilizes neural circuits that evolved for sensorimotor and spatial interaction."
+      },
+      {
+        "id": "ENG_RC_150_Q4",
+        "question": "In Conceptual Metaphor Theory, what is the 'target domain'?",
+        "options": {
+          "A": "The concrete physical object used as an anchor.",
+          "B": "The abstract, intangible concept that is being structured and understood through the metaphor.",
+          "C": "A military target photographed from an aerial drone.",
+          "D": "A dictionary definition that has become obsolete."
+        },
+        "correct_option": "B",
+        "rationale": "In CMT, the target domain is the abstract concept (e.g., Argument, Time, Love) understood through the concrete source domain (War, Money, Journey)."
+      },
+      {
+        "id": "ENG_RC_150_Q5",
+        "question": "As used in the passage, the word 'embodied' refers to cognition that is:",
+        "options": {
+          "A": "Rooted in and shaped by the physical body's sensorimotor interactions with the physical environment",
+          "B": "Completely detached from biological sensory organs",
+          "C": "Constructed solely through artificial computer microchips",
+          "D": "Preserved in ancient religious sarcophagi"
+        },
+        "correct_option": "A",
+        "rationale": "'Embodied cognition' is the theory that cognitive processes are deeply rooted in the body's physical and sensorimotor interactions with the world."
+      }
+    ]
+  }
+]

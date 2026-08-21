@@ -1,0 +1,952 @@
+[
+  {
+    "id": "ENG_PJ_251",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Explosive volcanic eruptions occur when gas-rich silicic magma ascends rapidly toward the surface.",
+      "C": "As confining lithostatic pressure drops, dissolved water vapor rapidly exsolves into expanding bubbles.",
+      "D": "The sudden expansion violently shatters the viscous molten rock into airborne tephra fragments."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces explosive volcanic eruptions of silicic magma. Sentence C describes gas exsolution as confining pressure drops. Sentence D explains the shattering of viscous magma into tephra. Sentence A describes the resulting vesicular pumice ('This rapid crystallization...')."
+  },
+  {
+    "id": "ENG_PJ_252",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1856, Louis Pasteur began investigating why local beetroot alcohol fermentations were turning sour.",
+    "jumbled_sentences": {
+      "P": "Microscopic examination revealed spherical yeast cells in healthy vats, but rod-shaped bacteria in sour batches.",
+      "Q": "He deduced that specific microorganisms were responsible for converting sugars into alcohol or lactic acid.",
+      "R": "This observation directly contradicted the prevailing dogma of spontaneous chemical generation.",
+      "S": "Pasteur demonstrated that heating liquids gently killed contaminating microbes without spoiling flavor."
+    },
+    "fixed_end": "6: This thermal preservation method, termed pasteurization, transformed food safety and clinical microbiology.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Pasteur investigating sour fermentation. Sentence P describes discovering bacteria vs. yeast under the microscope. Sentence Q explains his deduction about microbial fermentation. Sentence R notes how this overturned spontaneous generation. Sentence S introduces heat treatment, leading directly to pasteurization in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_253",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, central banks deploy macroprudential liquidity rules to insulate retail payment rails.",
+      "B": "Shadow banking institutions operate outside the regulatory perimeter of traditional depository banks.",
+      "C": "They rely on short-term wholesale repurchase agreements to finance long-term, illiquid assets.",
+      "D": "When counterparty confidence wavers, sudden margin calls force fire sales across bond markets."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines shadow banking outside traditional regulation. Sentence C explains their maturity mismatch via repo markets. Sentence D details margin calls and fire sales during panic. Sentence A states the regulatory response ('Consequently, central banks deploy...')."
+  },
+  {
+    "id": "ENG_PJ_254",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1911, Ernest Rutherford conducted the gold foil experiment at the University of Manchester.",
+    "jumbled_sentences": {
+      "P": "He directed a beam of positively charged alpha particles at an ultrathin sheet of gold foil.",
+      "Q": "While most particles passed straight through, a tiny fraction deflected at sharp, unexpected angles.",
+      "R": "Rutherford realized this deflection required a dense, concentrated positive charge at the atom's center.",
+      "S": "This overturned J.J. Thomson's 'plum pudding' model of diffuse positive charge distribution."
+    },
+    "fixed_end": "6: Rutherford's nuclear model established that atoms consist of a tiny positive nucleus surrounded by vast empty space.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Rutherford's 1911 gold foil experiment. Sentence P describes firing alpha particles at gold foil. Sentence Q notes the surprising sharp deflections. Sentence R deduces the concentrated central positive charge. Sentence S explains overturning the plum pudding model, leading to the nuclear model in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_255",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid cellular influx generates depolarizing action potentials that travel down the auditory nerve.",
+      "B": "Sound pressure waves entering the human ear canal induce mechanical vibrations in the tympanic membrane.",
+      "C": "These acoustic vibrations are amplified by middle-ear ossicles and transmitted to the fluid-filled cochlea.",
+      "D": "Fluid displacement deflects basilar hair cells, mechanically opening potassium ion channels."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces sound waves vibrating the tympanic membrane. Sentence C describes ossicle amplification and cochlear fluid transmission. Sentence D explains hair cell deflection opening potassium channels. Sentence A concludes with 'This rapid cellular influx' generating action potentials."
+  },
+  {
+    "id": "ENG_PJ_256",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1846, astronomer Urbain Le Verrier used mathematical calculations to discover a new planet.",
+    "jumbled_sentences": {
+      "P": "He analyzed unexplained gravitational perturbations in the observed orbital trajectory of Uranus.",
+      "Q": "Applying Newtonian celestial mechanics, he deduced the mass and position of an unseen perturbing body.",
+      "R": "He mailed his coordinates to Johann Galle at the Berlin Observatory, requesting visual confirmation.",
+      "S": "Within an hour of searching the designated sky coordinates, Galle observed the eighth planet, Neptune."
+    },
+    "fixed_end": "6: This spectacular triumph of celestial mathematics served as empirical validation of Newtonian gravitation.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Le Verrier discovering a planet via calculations. Sentence P describes analyzing orbital perturbations of Uranus. Sentence Q explains calculating the mass and position of the unseen body. Sentence R describes sending coordinates to Galle. Sentence S records Galle discovering Neptune, leading to the validation of Newtonian mechanics in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_257",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, modern civil engineers incorporate tuned mass dampers into skyscraper crowns.",
+      "B": "Tall architectural structures experience severe aerodynamic oscillations when exposed to high-velocity winds.",
+      "C": "Vortex shedding around building corners creates lateral harmonic resonance matching natural structural frequencies.",
+      "D": "Unmitigated resonant swaying causes acute structural fatigue and occupant motion sickness."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces wind-induced oscillations in tall buildings. Sentence C explains vortex shedding causing harmonic resonance. Sentence D describes structural fatigue and motion sickness. Sentence A presents the engineering countermeasure ('Consequently, modern civil engineers...')."
+  },
+  {
+    "id": "ENG_PJ_258",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1798, Thomas Robert Malthus published An Essay on the Principle of Population.",
+    "jumbled_sentences": {
+      "P": "He argued that human population grows exponentially (geometrically) while food production expands arithmetically.",
+      "Q": "Unchecked demographic growth would inevitably outpace the carrying capacity of agricultural land.",
+      "R": "This structural imbalance would trigger a 'Malthusian catastrophe' marked by famine, war, and disease.",
+      "S": "Only preventive moral restraints or positive mortality checks could restore balance to society."
+    },
+    "fixed_end": "6: Although technological and agrarian revolutions averted his dire predictions, his work profoundly influenced evolutionary biology.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Malthus's 1798 essay. Sentence P states his geometric vs. arithmetic growth premise. Sentence Q notes population outstripping agricultural land. Sentence R names the resulting Malthusian catastrophe. Sentence S explains preventive and positive checks, connecting to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_259",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Submarine hydrothermal vents discharge mineral-rich superheated fluids along oceanic spreading ridges.",
+      "C": "Dissolved metal sulfides precipitate upon contact with cold, oxygenated bottom ocean water.",
+      "D": "These mineral precipitates aggregate vertically, constructing towering polymetallic chimney spires."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces hydrothermal vents discharging superheated fluids. Sentence C explains metal sulfides precipitating in cold bottom water. Sentence D describes precipitates forming mineral chimneys. Sentence A characterizes the porous mineral texture ('This rapid crystallization...')."
+  },
+  {
+    "id": "ENG_PJ_260",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1952, Stanley Miller and Harold Urey conducted their classic prebiotic chemistry experiment at the University of Chicago.",
+    "jumbled_sentences": {
+      "P": "They simulated early Earth's atmosphere using a mixture of methane, ammonia, hydrogen, and water vapor.",
+      "Q": "Electrical sparks were continuously discharged through the sterile flask to mimic primordial lightning strikes.",
+      "R": "After a week of continuous circulation, the circulating water turned deep red and turbid.",
+      "S": "Chemical analysis revealed the synthesis of over twenty distinct amino acids and organic compounds."
+    },
+    "fixed_end": "6: The experiment demonstrated that fundamental building blocks of life could synthesize spontaneously from prebiotic precursors.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the 1952 Miller-Urey experiment. Sentence P details the primordial gas mixture. Sentence Q describes electrical spark discharges mimicking lightning. Sentence R notes the water turning turbid after a week. Sentence S reveals synthesized amino acids, confirming spontaneous abiogenesis precursors in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_261",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health bodies enforce stringent vector-control protocols in tropical transit hubs.",
+      "B": "Dengue fever virus is transmitted primarily by the bite of female *Aedes aegypti* mosquitoes.",
+      "C": "Urbanization and climate warming expand the geographical breeding habitats of mosquito populations.",
+      "D": "Rising temperatures shorten viral extrinsic incubation periods, drastically accelerating outbreak transmission rates."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces Dengue transmission via *Aedes aegypti*. Sentence C explains urbanization and warming expanding breeding grounds. Sentence D shows shortened incubation accelerating outbreaks. Sentence A concludes with vector-control enforcement ('Consequently, public health bodies...')."
+  },
+  {
+    "id": "ENG_PJ_262",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1831, Michael Faraday discovered the principle of electromagnetic induction at the Royal Institution.",
+    "jumbled_sentences": {
+      "P": "He wrapped two insulated coils of wire around an iron ring, connecting one to a battery and the other to a galvanometer.",
+      "Q": "He observed a transient electrical current in the second coil only when the primary circuit was switched on or off.",
+      "R": "Faraday realized that a changing magnetic flux is necessary to induce an electromotive force in a conductor.",
+      "S": "He formalized this relationship, establishing that induced voltage is proportional to the rate of change of magnetic flux."
+    },
+    "fixed_end": "6: Faraday's law of induction provided the fundamental engineering principle for all modern electric dynamos and transformers.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Faraday discovering electromagnetic induction (1831). Sentence P describes his dual-coil iron ring apparatus. Sentence Q notes current appearing only during circuit switching. Sentence R deduces that changing magnetic flux induces EMF. Sentence S states Faraday's law, leading to dynamos and transformers in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_263",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Magma chambers beneath caldera volcanoes experience severe internal overpressure from degassing volatiles.",
+      "C": "When roof rock stability fails, catastrophic decompression triggers sudden explosive bubble expansion.",
+      "D": "Massive pyroclastic density currents sweep across surrounding topography at supersonic speeds."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces overpressured magma chambers beneath calderas. Sentence C describes roof collapse and decompression bubble expansion. Sentence D details pyroclastic density currents. Sentence A describes the resulting vesicular pumice ('This rapid crystallization...')."
+  },
+  {
+    "id": "ENG_PJ_264",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1887, Albert Michelson and Edward Morley conducted their famous ether drift interferometer experiment.",
+    "jumbled_sentences": {
+      "P": "Nineteenth-century physics assumed light waves traveled through a hypothetical stationary medium termed luminiferous ether.",
+      "Q": "They split a light beam down perpendicular arms, rotating the apparatus to detect phase shifts caused by Earth's orbital motion.",
+      "R": "To their profound surprise, the interferometer detected no fringe shift whatsoever regardless of orientation.",
+      "S": "This famous null result proved that the speed of light is invariant and independent of the observer's motion."
+    },
+    "fixed_end": "6: The experiment dismantled ether theory and paved the way for Einstein's Special Theory of Relativity.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the 1887 Michelson-Morley experiment. Sentence P explains the luminiferous ether hypothesis. Sentence Q details the orthogonal interferometer setup. Sentence R describes the unexpected null result. Sentence S deduces the invariance of the speed of light, leading directly to Special Relativity in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_265",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, conservation biologists utilize genomic monitoring to rescue small inbred populations.",
+      "B": "Severe population bottlenecks drastically reduce genetic heterozygosity in endangered species.",
+      "C": "Loss of allelic diversity impairs innate immune responsiveness against novel infectious pathogens.",
+      "D": "Deleterious recessive mutations accumulate, depressing reproductive viability and infant survival."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces bottlenecks reducing genetic heterozygosity. Sentence C explains loss of allelic diversity harming immune response. Sentence D details deleterious mutations depressing survival. Sentence A states the conservation genomic response ('Consequently, conservation biologists...')."
+  },
+  {
+    "id": "ENG_PJ_266",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1801, Thomas Young performed the double-slit experiment at the Royal Institution in London.",
+    "jumbled_sentences": {
+      "P": "He allowed a single beam of sunlight to pass through two narrow, closely spaced parallel slits.",
+      "Q": "On the viewing screen behind the slits, he observed an alternating pattern of bright and dark fringes.",
+      "R": "He demonstrated that light waves passing through both slits overlapped and interfered with one another.",
+      "S": "Bright bands corresponded to constructive interference, while dark bands marked destructive wave cancellation."
+    },
+    "fixed_end": "6: Young's double-slit experiment provided decisive empirical proof for the wave theory of light over Newton's corpuscular model.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Young's 1801 double-slit experiment. Sentence P describes light passing through two parallel slits. Sentence Q describes observing bright and dark fringes. Sentence R explains overlapping wave interference. Sentence S details constructive vs. destructive interference, proving the wave theory in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_267",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Composite volcanoes along convergent boundaries erupt viscous andesitic and dacitic lavas.",
+      "C": "High silica content traps ascending gas bubbles until internal pressures rupture the volcanic dome.",
+      "D": "The explosive fragmentation propels massive ash columns into the stratosphere."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces composite volcanoes erupting viscous andesitic/dacitic lavas. Sentence C explains silica trapping gas bubbles until the dome ruptures. Sentence D describes explosive ash columns. Sentence A concludes with 'This rapid crystallization' creating porous pumice."
+  },
+  {
+    "id": "ENG_PJ_268",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1905, Albert Einstein published his landmark paper explaining the photoelectric effect.",
+    "jumbled_sentences": {
+      "P": "Classical electromagnetic wave theory predicted that electron emission energy depended on light wave intensity.",
+      "Q": "However, experiments showed that electron emission occurred only above a specific threshold frequency.",
+      "R": "Einstein proposed that light consists of localized, quantized energy packets called photons.",
+      "S": "Each photon transfers its entire discrete quantum of energy ($E = h\\nu$) to a single bound electron upon collision."
+    },
+    "fixed_end": "6: This photoelectric explanation proved the particle nature of light, earning Einstein the 1921 Nobel Prize in Physics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Einstein's 1905 paper on the photoelectric effect. Sentence P explains classical intensity predictions. Sentence Q notes the experimental threshold frequency anomaly. Sentence R introduces light as quantized photons. Sentence S explains discrete energy transfer ($E=h\\nu$), leading to the Nobel Prize in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_269",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, maritime port authorities mandate shore-power hookups to reduce harbor emissions.",
+      "B": "Commercial container ships burn heavy fuel oil while idling in port to power auxiliary generators.",
+      "C": "Combustion of unrefined bunker fuel releases toxic sulfur oxides, nitrogen oxides, and fine particulates.",
+      "D": "These toxic plumes elevate childhood asthma and cardiovascular mortality across adjacent coastal communities."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces container ships idling on heavy fuel oil. Sentence C describes emissions of sulfur and nitrogen oxides. Sentence D details respiratory and cardiovascular health damage in coastal towns. Sentence A gives the port policy solution ('Consequently, maritime port authorities...')."
+  },
+  {
+    "id": "ENG_PJ_270",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1897, British physicist J.J. Thomson discovered the electron using cathode ray tubes.",
+    "jumbled_sentences": {
+      "P": "He applied electric and magnetic fields across a high-vacuum glass tube, deflecting the luminous cathode beam.",
+      "Q": "By measuring the curvature of deflection, he calculated the mass-to-charge ratio ($m/e$) of the particles.",
+      "R": "He discovered that the particles were nearly two thousand times lighter than a hydrogen ion.",
+      "S": "Thomson proved that these negatively charged 'corpuscles' were universal subatomic constituents of all matter."
+    },
+    "fixed_end": "6: His discovery shattered the ancient Greek belief that the atom was indivisible, founding modern atomic physics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Thomson discovering the electron in 1897. Sentence P describes deflecting the cathode beam using electromagnetic fields. Sentence Q explains measuring the mass-to-charge ratio. Sentence R notes particles being 2000 times lighter than hydrogen. Sentence S proves they are universal subatomic constituents, overturning indivisible atoms in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_271",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Continental rift volcanism produces alkali-rich, gas-charged basaltic magma chambers.",
+      "C": "Tectonic crustal extension allows volatile-rich melts to decompress rapidly during ascent.",
+      "D": "Explosive spattering constructs steep-sided cinder cones surrounding the eruptive vent."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces continental rift volcanism and alkali-rich basalt. Sentence C describes rapid decompression during ascent. Sentence D details spattering building cinder cones. Sentence A concludes with 'This rapid crystallization' creating porous pumice."
+  },
+  {
+    "id": "ENG_PJ_272",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1858, Rudolf Virchow published *Cellular Pathology*, establishing modern anatomical pathology.",
+    "jumbled_sentences": {
+      "P": "He formulated the famous Latin aphorism *omnis cellula e cellula* ('all cells arise from pre-existing cells').",
+      "Q": "Virchow argued that human diseases originate at the microscopic cellular level rather than in bodily humors.",
+      "R": "He demonstrated that abnormal cellular proliferation and tissue inflammation cause macroscopic organ pathology.",
+      "S": "He applied this cellular paradigm to explain the development of leukemia, thrombosis, and embolism."
+    },
+    "fixed_end": "6: His work dismantled ancient humoral theory, establishing cell biology as the foundation of modern scientific medicine.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Virchow's *Cellular Pathology* (1858). Sentence P states the aphorism *omnis cellula e cellula*. Sentence Q explains diseases originating in cells rather than humors. Sentence R explains abnormal cellular proliferation causing organ pathology. Sentence S lists clinical applications (leukemia, thrombosis), leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_273",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, urban planners design bioswales to absorb stormwater and mitigate flash urban flooding.",
+      "B": "Urbanization replaces permeable vegetative soils with impermeable asphalt roads and concrete rooftops.",
+      "C": "During extreme precipitation events, stormwater cannot infiltrate the paved ground surface.",
+      "D": "Rapid surface runoff overwhelms municipal storm sewer capacities, inundating low-lying districts."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces impermeable asphalt replacing permeable soils. Sentence C explains stormwater failing to infiltrate paved surfaces. Sentence D details runoff overwhelming sewers and causing flooding. Sentence A presents the urban design solution ('Consequently, urban planners design...')."
+  },
+  {
+    "id": "ENG_PJ_274",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1789, French chemist Antoine Lavoisier published the *Traité Élémentaire de Chimie*, founding modern chemistry.",
+    "jumbled_sentences": {
+      "P": "He established the Law of Conservation of Mass, proving that matter is neither created nor destroyed in chemical reactions.",
+      "Q": "Lavoisier disproved the classical phlogiston theory by demonstrating that combustion requires atmospheric oxygen.",
+      "R": "He developed a rigorous, systematic nomenclature for naming chemical compounds based on their elemental constituents.",
+      "S": "He compiled the first modern list of chemical elements, distinguishing elements from chemical compounds."
+    },
+    "fixed_end": "6: His rigorous quantitative methodology transformed chemistry from an empirical art into an exact physical science.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Lavoisier's 1789 treatise. Sentence P states the Law of Conservation of Mass. Sentence Q describes disproving phlogiston via oxygen combustion. Sentence R explains systematic chemical nomenclature. Sentence S notes the first modern list of elements, leading to exact quantitative chemistry in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_275",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Island arc stratovolcanoes generate volatile-rich, highly viscous andesitic magmas.",
+      "C": "Subducting oceanic plates dehydrate, introducing hydrous fluids into the overlying mantle wedge.",
+      "D": "Ascending hydrous magma violently explodes when dissolved water flashes into supercritical steam."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces island arc stratovolcanoes with viscous andesitic magmas. Sentence C explains subducting plates introducing hydrous fluids into the mantle wedge. Sentence D describes hydrous magma exploding into supercritical steam. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_276",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1928, British physicist Paul Dirac formulated the relativistic quantum wave equation for electrons.",
+    "jumbled_sentences": {
+      "P": "His equation unified Albert Einstein's Special Relativity with Erwin Schrödinger's quantum mechanics.",
+      "Q": "Unexpectedly, the Dirac equation required the existence of negative-energy electron quantum states.",
+      "R": "Dirac postulated that these states corresponded to positively charged anti-electrons, predicting 'antimatter'.",
+      "S": "In 1932, Carl Anderson confirmed Dirac's prediction by discovering the positron in cosmic ray tracks."
+    },
+    "fixed_end": "6: The discovery of antimatter confirmed the mathematical predictive power of relativistic quantum field theory.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Dirac's 1928 relativistic wave equation. Sentence P explains unifying Special Relativity with quantum mechanics. Sentence Q notes the emergence of negative-energy states. Sentence R describes Dirac predicting positrons (antimatter). Sentence S records Anderson discovering positrons in 1932, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_277",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, national financial regulators mandate dynamic loan-to-value caps to curb real estate bubbles.",
+      "B": "Speculative housing booms develop when commercial banks aggressively expand mortgage lending.",
+      "C": "Easy mortgage credit inflates property valuations far beyond household median income levels.",
+      "D": "When housing prices inevitably contract, underwater borrowers default, triggering banking sector insolvency."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces speculative housing booms driven by bank credit. Sentence C shows easy credit inflating property prices beyond incomes. Sentence D describes underwater defaults and bank insolvency when prices drop. Sentence A gives the regulatory macroprudential solution ('Consequently, national financial regulators...')."
+  },
+  {
+    "id": "ENG_PJ_278",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1865, Scottish physicist James Clerk Maxwell published his dynamical theory of the electromagnetic field.",
+    "jumbled_sentences": {
+      "P": "He unified previously disparate electrical and magnetic phenomena into four fundamental differential equations.",
+      "Q": "Maxwell introduced the crucial concept of 'displacement current' to preserve electrical charge conservation.",
+      "R": "His equations predicted that oscillating electromagnetic fields propagate through space as transverse waves.",
+      "S": "He calculated the theoretical speed of these electromagnetic waves, discovering it matched the measured speed of light."
+    },
+    "fixed_end": "6: Maxwell famously concluded that visible light is itself an electromagnetic wave, unifying optics with electromagnetism.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Maxwell's 1865 electromagnetic theory. Sentence P explains unifying electricity and magnetism into four equations. Sentence Q introduces the displacement current concept. Sentence R notes predicting transverse electromagnetic waves. Sentence S details calculating wave speed matching light speed, leading to optics unification in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_279",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Subglacial volcanic eruptions occur when magma vents beneath massive polar ice sheets.",
+      "C": "Geothermal heat melts overlying glacial ice, creating pressurized subglacial meltwater lakes.",
+      "D": "Sudden subglacial drainage triggers catastrophic glacial outburst floods known as jökulhlaups."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces subglacial eruptions beneath polar ice sheets. Sentence C explains heat melting ice to form pressurized subglacial lakes. Sentence D describes sudden drainage triggering jökulhlaup outburst floods. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_280",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1910, Thomas Hunt Morgan began breeding *Drosophila melanogaster* fruit flies at Columbia University.",
+    "jumbled_sentences": {
+      "P": "He discovered a rare white-eyed male mutant among his thousands of normal red-eyed fruit flies.",
+      "Q": "Breeding experiments demonstrated that the white-eye trait was inherited exclusively in association with the X chromosome.",
+      "R": "This provided the first direct empirical evidence that specific genes reside on physical biological chromosomes.",
+      "S": "Morgan and his students mapped linear gene sequences along chromosomes using meiotic recombination frequencies."
+    },
+    "fixed_end": "6: His chromosomal theory of heredity reconciled Mendelian inheritance with cellular cytogenetics, winning the Nobel Prize.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Morgan breeding *Drosophila* in 1910. Sentence P describes discovering the white-eyed mutant. Sentence Q explains sex-linked inheritance on the X chromosome. Sentence R notes proof that genes reside on physical chromosomes. Sentence S details chromosome mapping via recombination, leading to the chromosomal theory of heredity in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_281",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health programs promote exclusive breastfeeding to confer passive mucosal immunity.",
+      "B": "Maternal colostrum contains high concentrations of secretory immunoglobulin A (sIgA) antibodies.",
+      "C": "Infants absorb these maternal antibodies across permeable neonatal gut mucosal membranes.",
+      "D": "Secretory IgA binds enteric pathogens, preventing bacterial adhesion and colonization in early infancy."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces colostrum rich in sIgA antibodies. Sentence C explains infants absorbing antibodies across neonatal gut membranes. Sentence D details sIgA blocking enteric bacterial adhesion. Sentence A gives the public health policy conclusion ('Consequently, public health programs...')."
+  },
+  {
+    "id": "ENG_PJ_282",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1839, French physicist Edmond Becquerel discovered the photovoltaic effect at the age of nineteen.",
+    "jumbled_sentences": {
+      "P": "He immersed platinum electrodes coated with silver halide in an acidic electrolyte solution.",
+      "Q": "He observed that illuminating the electrochemical cell with sunlight generated a measurable electrical current.",
+      "R": "In 1883, American inventor Charles Fritts constructed the first solid-state photovoltaic solar cell using selenium.",
+      "S": "In 1954, Bell Laboratories engineered the first practical silicon solar cell with six percent power efficiency."
+    },
+    "fixed_end": "6: Today, silicon photovoltaic arrays generate gigawatts of clean, renewable electricity across global utility grids.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Becquerel discovering the photovoltaic effect (1839). Sentence P describes his platinum and silver halide electrode setup. Sentence Q notes current generation when illuminated by sunlight. Sentence R introduces Fritts's 1883 solid-state selenium cell. Sentence S notes Bell Labs' 1954 silicon cell, leading to modern gigawatt solar grids in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_283",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Oceanic intraplate hotspot volcanism generates high-volume, low-viscosity tholeiitic basalt shield volcanoes.",
+      "C": "Low magma viscosity permits dissolved volcanic gases to escape passively without explosive bubble overpressure.",
+      "D": "Fluid lava flows effusively across vast gentle slopes, constructing broad volcanic shields."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces intraplate hotspot shield volcanoes with low-viscosity basalt. Sentence C explains low viscosity allowing passive gas escape. Sentence D describes fluid effusive flows building broad shields. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_284",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1935, Japanese physicist Hideki Yukawa predicted the existence of the meson in nuclear physics.",
+    "jumbled_sentences": {
+      "P": "He sought to explain the strong nuclear force that binds positively charged protons together inside nuclei.",
+      "Q": "Yukawa proposed that nucleons exchange massive virtual carrier particles across short subatomic distances.",
+      "R": "Using the uncertainty principle, he calculated that the exchange particle should possess a mass intermediate between an electron and proton.",
+      "S": "In 1947, Cecil Powell discovered the pi-meson (pion) in high-altitude cosmic ray emulsion tracks."
+    },
+    "fixed_end": "6: Powell's discovery confirmed Yukawa's theoretical meson model, earning both physicists Nobel Prizes.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Yukawa predicting the meson (1935). Sentence P explains the goal of understanding the strong nuclear binding force. Sentence Q proposes virtual carrier particle exchange. Sentence R calculates intermediate mass using the uncertainty principle. Sentence S records Powell's 1947 discovery of the pion, leading to their Nobel Prizes in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_285",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, conservation agencies establish marine protected zones to halt destructive dredge trawling.",
+      "B": "Commercial benthic dredge trawling scrapes heavy metal gear across continental shelf seabeds.",
+      "C": "This mechanical scraping pulverizes delicate cold-water coral gardens and sponge bioherms.",
+      "D": "Benthic habitat destruction obliterates critical nursery shelters for commercially harvested juvenile fish."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces benthic dredge trawling across seabeds. Sentence C explains mechanical scraping destroying coral and sponge bioherms. Sentence D shows nursery destruction wiping out juvenile fish. Sentence A states the conservation policy solution ('Consequently, conservation agencies...')."
+  },
+  {
+    "id": "ENG_PJ_286",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1802, English chemist John Dalton formulated the modern scientific atomic theory.",
+    "jumbled_sentences": {
+      "P": "He proposed that all matter is composed of indivisible, indestructible microscopic atoms.",
+      "Q": "Dalton asserted that all atoms of a given chemical element are identical in mass and properties.",
+      "R": "He demonstrated that chemical compounds are formed when atoms of different elements combine in fixed numerical ratios.",
+      "S": "Chemical reactions, he explained, consist of the rearrangement and combination of unchanged atomic units."
+    },
+    "fixed_end": "6: Dalton's atomic theory provided the quantitative physical foundation for stoichiometry and modern chemistry.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Dalton's 1802 atomic theory. Sentence P states the indivisible atom premise. Sentence Q asserts identical mass and properties for atoms of an element. Sentence R explains fixed integer ratio combinations in compounds. Sentence S explains chemical reactions as atomic rearrangements, leading to stoichiometry in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_287",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Kimberlite pipe eruptions originate from deep mantle sources exceeding one hundred fifty kilometers.",
+      "C": "Rapid volatile expansion propels diamond-bearing magma through the lithosphere at supersonic speeds.",
+      "D": "The explosive ascent forms narrow, carrot-shaped diatreme volcanic conduits filled with breccia."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces deep kimberlite pipe eruptions originating in the mantle. Sentence C describes supersonic magma ascent powered by volatiles. Sentence D details carrot-shaped diatreme breccia conduits. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_288",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1923, French physicist Louis de Broglie proposed the revolutionary hypothesis of wave-particle duality.",
+    "jumbled_sentences": {
+      "P": "He suggested that if light waves exhibit particle properties, material particles like electrons must possess wave properties.",
+      "Q": "He calculated that a moving particle has an associated wavelength inversely proportional to its momentum ($\\lambda = h/p$).",
+      "R": "In 1927, Clinton Davisson and Lester Germer confirmed this hypothesis by observing electron diffraction in nickel crystals.",
+      "S": "Electrons scattered off the crystal lattice created interference patterns identical to X-ray diffraction fringes."
+    },
+    "fixed_end": "6: De Broglie's matter wave hypothesis laid the theoretical foundation for Erwin Schrödinger's wave mechanics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces de Broglie's 1923 matter wave hypothesis. Sentence P suggests material particles possess wave attributes. Sentence Q introduces the de Broglie wavelength formula ($\\lambda = h/p$). Sentence R records Davisson-Germer electron diffraction in 1927. Sentence S describes crystal interference patterns, leading to Schrödinger's wave mechanics in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_289",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, national monetary authorities enforce strict anti-money-laundering identity verification across crypto exchanges.",
+      "B": "Decentralized privacy cryptocurrencies utilize zero-knowledge cryptographic proofs to obfuscate transaction histories.",
+      "C": "These cryptographic shields conceal sender addresses, recipient destinations, and transaction amounts completely.",
+      "D": "Illicit actors exploit this anonymity to conduct ransomware extortion payments and illicit contraband financing."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces privacy cryptocurrencies using zero-knowledge proofs. Sentence C explains how 'These cryptographic shields' hide addresses and amounts. Sentence D details illicit exploitation for ransomware. Sentence A provides the regulatory AML response ('Consequently, national monetary authorities...')."
+  },
+  {
+    "id": "ENG_PJ_290",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1820, Danish physicist Hans Christian Ørsted discovered the fundamental link between electricity and magnetism.",
+    "jumbled_sentences": {
+      "P": "During a lecture demonstration, he placed a magnetic compass needle beneath an electric wire connected to a voltaic battery.",
+      "Q": "When electrical current flowed through the wire, the compass needle deflected perpendicularly to the conductor.",
+      "R": "When he reversed the electrical current direction, the needle deflected in the opposite direction.",
+      "S": "Ørsted proved that moving electrical charges generate a surrounding circular magnetic field."
+    },
+    "fixed_end": "6: His discovery unified the disparate fields of electricity and magnetism into the science of electromagnetism.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Ørsted discovering electromagnetism (1820). Sentence P describes placing a compass under a live wire. Sentence Q notes the needle deflecting perpendicularly. Sentence R shows reversing current reverses deflection. Sentence S deduces circular magnetic fields around moving charges, unifying electromagnetism in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_291",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Continental flood basalt provinces erupt massive volumes of low-viscosity magma across millions of square kilometers.",
+      "C": "Massive mantle plumes breach continental cratons, degassing gigatons of sulfur dioxide into the troposphere.",
+      "D": "Volcanic gas aerosols trigger volcanic winter cooling and severe environmental acid precipitation."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces continental flood basalt eruptions across vast areas. Sentence C describes mantle plumes degassing sulfur dioxide. Sentence D explains volcanic aerosols causing volcanic winters and acid rain. Sentence A concludes with 'This rapid crystallization' creating porous pumice."
+  },
+  {
+    "id": "ENG_PJ_292",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1913, Henry Moseley used X-ray spectroscopy to reorganize the periodic table by atomic number.",
+    "jumbled_sentences": {
+      "P": "He bombarded various chemical element targets with high-energy electrons in an evacuated tube.",
+      "Q": "Moseley measured the frequencies of emitted characteristic X-ray spectral lines across elements.",
+      "R": "He discovered a linear mathematical relationship between the square root of X-ray frequency and positive nuclear charge ($Z$).",
+      "S": "This proved that an element's fundamental identity is determined by its atomic number rather than atomic weight."
+    },
+    "fixed_end": "6: Moseley's Law resolved long-standing periodic anomalies, providing a rigorous physical foundation for atomic structure.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Moseley's 1913 X-ray reorganization of the periodic table. Sentence P describes bombarding elemental targets with electrons. Sentence Q details measuring characteristic X-ray frequencies. Sentence R shows the linear square-root relationship with nuclear charge ($Z$). Sentence S proves atomic number determines identity, leading to Moseley's Law in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_293",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, municipal water utilities install activated carbon filters to remove industrial PFAS chemicals.",
+      "B": "Per- and polyfluoroalkyl substances (PFAS) possess exceptionally strong carbon-fluorine chemical bonds.",
+      "C": "These synthetic 'forever chemicals' resist natural environmental biodegradation, accumulating in municipal aquifers.",
+      "D": "Chronic ingestion of contaminated drinking water elevates risks of renal cancer and thyroid endocrine disorders."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces PFAS with strong carbon-fluorine bonds. Sentence C describes these 'forever chemicals' resisting biodegradation and building up in aquifers. Sentence D notes renal cancer and thyroid risks. Sentence A gives the water utility treatment remedy ('Consequently, municipal water utilities...')."
+  },
+  {
+    "id": "ENG_PJ_294",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1877, Thomas Edison invented the phonograph, the first machine capable of recording and reproducing sound.",
+    "jumbled_sentences": {
+      "P": "He spoke into a diaphragm equipped with a metallic stylus that indented acoustic vibrations into tinfoil wrapped around a rotating cylinder.",
+      "Q": "When the stylus retraced the grooved indentations, the vibrating diaphragm reproduced his recorded voice.",
+      "R": "Edison famously recorded and played back the nursery rhyme 'Mary Had a Little Lamb'.",
+      "S": "Subsequent improvements replaced fragile tinfoil cylinders with durable wax cylinders and flat disc records."
+    },
+    "fixed_end": "6: The phonograph founded the commercial music and audio recording industry.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Edison inventing the phonograph (1877). Sentence P describes the stylus indenting acoustic vibrations into rotating tinfoil. Sentence Q explains sound playback as the stylus retraces grooves. Sentence R notes the historic 'Mary Had a Little Lamb' recording. Sentence S notes transition to wax cylinders and discs, leading to the commercial music industry in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_295",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Back-arc basin volcanic arcs experience hydrous mantle melting behind subduction trenches.",
+      "C": "Ascending volatile-rich magmas fractionate into silica-rich rhyolitic melts in crustal magma chambers.",
+      "D": "Sudden roof collapse initiates explosive ignimbrite eruptions across the back-arc basin."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces back-arc basin hydrous mantle melting. Sentence C describes magma fractionating into silica-rich rhyolite. Sentence D details roof collapse triggering explosive ignimbrite eruptions. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_296",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1932, John Cockcroft and Ernest Walton achieved the first artificial nuclear transmutation using a particle accelerator.",
+    "jumbled_sentences": {
+      "P": "They constructed a high-voltage voltage multiplier generator to accelerate protons down an evacuated tube.",
+      "Q": "They bombarded a lithium-7 target with accelerated high-energy protons.",
+      "R": "The collision split the lithium nucleus into two energetic alpha particles (helium nuclei).",
+      "S": "They measured the released kinetic energy, providing the first experimental confirmation of Einstein's mass-energy equivalence ($E = mc^2$)."
+    },
+    "fixed_end": "6: Cockcroft and Walton were awarded the 1951 Nobel Prize in Physics for pioneering nuclear particle acceleration.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Cockcroft and Walton's 1932 artificial transmutation. Sentence P describes their high-voltage particle accelerator. Sentence Q details bombarding lithium-7 with protons. Sentence R explains splitting lithium into two alpha particles. Sentence S notes experimental proof of $E=mc^2$, leading to their Nobel Prize in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_297",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health programs mandate synthetic folacin fortification across commercial grain flours.",
+      "B": "Folate (vitamin B9) is an indispensable micronutrient required for embryonic neural tube closure.",
+      "C": "Maternal nutritional deficiencies in early pregnancy induce catastrophic neural tube defects like spina bifida.",
+      "D": "Enzymatic folate pathways supply essential methyl donors for rapid fetal DNA synthesis and cellular mitosis."
+    },
+    "options": {
+      "A": "B-D-C-A",
+      "B": "B-C-D-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines folate's role in neural tube closure. Sentence D explains the biochemical mechanism (supplying methyl donors for DNA synthesis). Sentence C describes birth defects (spina bifida) from maternal deficiency. Sentence A gives the public health flour-fortification mandate ('Consequently, public health programs...')."
+  },
+  {
+    "id": "ENG_PJ_298",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1824, French engineer Nicolas Léonard Sadi Carnot published *Reflections on the Motive Power of Fire*.",
+    "jumbled_sentences": {
+      "P": "He sought to determine the maximum theoretical thermodynamic efficiency attainable by steam engines.",
+      "Q": "Carnot modeled an idealized, reversible thermodynamic cycle operating between hot and cold thermal reservoirs.",
+      "R": "He proved that engine efficiency depends strictly on the temperature difference between heat source and sink.",
+      "S": "He established that no real heat engine can ever achieve one hundred percent efficiency due to irreversible friction and heat loss."
+    },
+    "fixed_end": "6: Carnot's theoretical cycle laid the foundational principles for the Second Law of Thermodynamics and the concept of entropy.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Carnot's 1824 treatise on motive power. Sentence P notes his goal of finding maximum theoretical steam engine efficiency. Sentence Q describes the idealized reversible Carnot cycle. Sentence R proves efficiency depends on reservoir temperature differences. Sentence S establishes efficiency limits, founding the Second Law of Thermodynamics in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_299",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Monogenetic volcanic fields produce small, single-eruption scoria cones and maars.",
+      "C": "Ascending alkali basalt encounters shallow groundwater, inducing explosive phreatic fragmentations.",
+      "D": "Ejected basaltic tephra cools rapidly in air, constructing steep-sided cinder cones."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces monogenetic volcanic fields. Sentence C explains ascending basalt encountering shallow water and fragmenting. Sentence D describes tephra cooling to build cinder cones. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_300",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1938, Chester Carlson invented electrophotography, the dry electrostatic copying process known as xerography.",
+    "jumbled_sentences": {
+      "P": "He coated a zinc plate with photoconductive sulfur and charged it with static electricity in the dark.",
+      "Q": "Exposing the plate to light through a document discharged the illuminated areas, leaving a latent electrostatic image.",
+      "R": "Dusting the plate with charged black powder adhered toner exclusively to the unexposed electrostatic image.",
+      "S": "Transferring and heat-fusing the toner onto plain paper produced an exact permanent document copy."
+    },
+    "fixed_end": "6: Commercialized by the Xerox Corporation, xerography revolutionized office administration and modern document reproduction.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Carlson inventing xerography in 1938. Sentence P describes charging the photoconductive sulfur plate with static electricity. Sentence Q describes light exposure creating a latent electrostatic image. Sentence R explains dusting with toner. Sentence S details heat-fusing toner onto paper, leading to Xerox office revolution in Statement 6."
+  }
+]

@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_CT_SET_221",
+    "passage_title": "The Evolutionary Biomechanics of Bacterial Antiphage Defense Systems",
+    "passage_text": "Prokaryotes engage in an ancient, relentless evolutionary arms race against bacteriophages (viruses that infect bacteria), giving rise to an astonishing diversity of innate and adaptive immune mechanisms. Beyond the well-known **CRISPR-Cas adaptive immune system**—which stores fragments of viral DNA in host genomes to target and cleave subsequent infections—bacteria possess dozens of abortive infection (Abi) systems, restriction-modification systems, and toxin-antitoxin networks. When a bacteriophage invades a host bacterium, innate defense systems recognize foreign nucleic acids through specific structural motifs. If viral replication outpaces the initial defense, **abortive infection systems** trigger programmed cell death or metabolic arrest in the infected host cell, sacrificing the individual bacterium to prevent viral progeny from escaping and decimating the surrounding clonal colony. Furthermore, recent metagenomic discoveries have revealed novel defense islands containing viperin homologs, retrons, and CBASS (cyclic oligonucleotide-based anti-phage signaling systems) that synthesize cyclic nucleotides to activate downstream effector proteins. This modular architectural complexity demonstrates that microbial immunity rivals vertebrate adaptive defense systems in sophistication and evolutionary ingenuity.",
+    "blanks": [
+      {
+        "id": "ENG_CT_221_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "CRISPR-Cas adaptive immune system",
+          "B": "MHC class compatibility complex",
+          "C": "antibody-mediated opsonization",
+          "D": "complement activation cascade"
+        },
+        "correct_option": "A",
+        "rationale": "The adaptive bacterial immune system storing viral DNA fragments is the CRISPR-Cas system."
+      },
+      {
+        "id": "ENG_CT_221_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "bacteriophages",
+          "B": "eukaryotic protozoa",
+          "C": "archaeal methanogens",
+          "D": "fungal saprotrophs"
+        },
+        "correct_option": "A",
+        "rationale": "Viruses that infect bacteria in this evolutionary arms race are bacteriophages."
+      },
+      {
+        "id": "ENG_CT_221_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "abortive infection systems",
+          "B": "mitotic checkpoint pathways",
+          "C": "oxidative phosphorylation loops",
+          "D": "ribosomal recycling factors"
+        },
+        "correct_option": "A",
+        "rationale": "Systems triggering cell death to protect the colony are abortive infection systems."
+      },
+      {
+        "id": "ENG_CT_221_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "cyclic nucleotides",
+          "B": "amino acid polymers",
+          "C": "lipid bilayer vesicles",
+          "D": "polysaccharide capsules"
+        },
+        "correct_option": "A",
+        "rationale": "CBASS systems synthesize cyclic nucleotides to activate downstream effector proteins."
+      },
+      {
+        "id": "ENG_CT_221_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "microbial immunity",
+          "B": "innate phagocytosis",
+          "C": "humoral immunity",
+          "D": "cellular senescence"
+        },
+        "correct_option": "A",
+        "rationale": "This modular complexity demonstrates that microbial immunity rivals vertebrate adaptive defense systems."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_222",
+    "passage_title": "The Macroeconomics of Liquidity Traps and Unconventional Monetary Policy",
+    "passage_text": "In monetary economics, a **liquidity trap** represents an anomalous macroeconomic state where nominal interest rates approach zero yet fail to stimulate aggregate demand or economic recovery. Originally conceptualized by John Maynard Keynes, a liquidity trap occurs when the public anticipates deflation or economic stagnation, causing money demand to become perfectly elastic with respect to the interest rate. Once short-term policy rates hit the **zero lower bound (ZLB)**, traditional open market operations—such as buying short-term government bonds—become completely ineffective because cash and short-term bonds are perceived as perfect substitutes by financial markets. To bypass the ZLB constraint and rescue depressed economies from deflationary spirals, central banks deploy **unconventional monetary policy** measures. These instruments include forward guidance (committing to keep interest rates low for an extended horizon), negative interest rate policies (charging commercial banks reserves to hold funds at the central bank), and large-scale asset purchases, commonly known as **quantitative easing (QE)**. By purchasing long-term government bonds and mortgage-backed securities directly from commercial banks, central banks inject massive liquidity reserves, compress long-term yields, boost asset prices, and stimulate private sector borrowing.",
+    "blanks": [
+      {
+        "id": "ENG_CT_222_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "liquidity trap",
+          "B": "stagflationary spiral",
+          "C": "hyperinflationary shock",
+          "D": "monopsonistic depression"
+        },
+        "correct_option": "A",
+        "rationale": "When zero interest rates fail to stimulate demand, the economy is in a liquidity trap."
+      },
+      {
+        "id": "ENG_CT_222_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "zero lower bound (ZLB)",
+          "B": "fiscal deficit ceiling",
+          "C": "foreign exchange parity band",
+          "D": "reserve requirement floor"
+        },
+        "correct_option": "A",
+        "rationale": "The constraint where short-term policy rates cannot fall below zero is the zero lower bound (ZLB)."
+      },
+      {
+        "id": "ENG_CT_222_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "unconventional monetary policy",
+          "B": "contractionary fiscal austerity",
+          "C": "mercantilist tariff protection",
+          "D": "gold standard revaluation"
+        },
+        "correct_option": "A",
+        "rationale": "Policies deployed beyond standard rate cuts at the ZLB are unconventional monetary policy."
+      },
+      {
+        "id": "ENG_CT_222_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "quantitative easing (QE)",
+          "B": "progressive income taxation",
+          "C": "sovereign debt default",
+          "D": "currency board pegging"
+        },
+        "correct_option": "A",
+        "rationale": "Large-scale asset purchases by central banks are known as quantitative easing (QE)."
+      },
+      {
+        "id": "ENG_CT_222_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "private sector borrowing",
+          "B": "sovereign debt accumulation",
+          "C": "public sector taxation",
+          "D": "foreign exchange hoarding"
+        },
+        "correct_option": "A",
+        "rationale": "Injecting liquidity reserves compresses yields, boosts asset prices, and stimulates private sector borrowing."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_223",
+    "passage_title": "The Quantum Mechanics of Quantum Hall Ferromagnetism",
+    "passage_text": "In low-dimensional condensed matter physics, **quantum Hall ferromagnetism** occurs when a two-dimensional electron gas subjected to a strong perpendicular magnetic field exhibits spontaneous spin or valley polarization due to electron-electron interactions, even in the absence of intrinsic magnetic moments. When the cyclotron energy levels (Landau levels) are fractionally or integer-filled, the kinetic energy of electrons is heavily quenched, causing Coulomb interactions to dominate over single-particle kinetic energy. At filling factor $\nu = 1$ (where the lowest Landau level is half-filled with respect to spin), the macroscopic ground state spontaneously breaks spin rotation symmetry, aligning all electron spins parallel to one another despite the complete absence of local magnetic ions. This spontaneous ferromagnetic ordering gives rise to collective excitations known as **skyrmions**—topological spin textures where electron spins wind smoothly across a two-dimensional sphere, carrying a topological charge that is a fractional multiple of the elementary charge. Quantum Hall ferromagnetism demonstrates how many-body Coulomb interactions can generate emergent magnetic phenomena in ultra-clean semiconductor heterostructures and graphene layers.",
+    "blanks": [
+      {
+        "id": "ENG_CT_223_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "quantum Hall ferromagnetism",
+          "B": "BCS conventional superconductivity",
+          "C": "piezoelectric polarization",
+          "D": "thermoelectric Seebeck effect"
+        },
+        "correct_option": "A",
+        "rationale": "Spontaneous polarization due to electron-electron interactions in a magnetic field is quantum Hall ferromagnetism."
+      },
+      {
+        "id": "ENG_CT_223_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "Landau levels",
+          "B": "Bohr atomic orbits",
+          "C": "Brillouin zone boundaries",
+          "D": "Fermi surface loops"
+        },
+        "correct_option": "A",
+        "rationale": "Quantized energy levels of charged particles in magnetic fields are Landau levels."
+      },
+      {
+        "id": "ENG_CT_223_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "spin rotation symmetry",
+          "B": "translational lattice periodicity",
+          "C": "gauge field invariance",
+          "D": "time-reversal equilibrium"
+        },
+        "correct_option": "A",
+        "rationale": "Spontaneous alignment of electron spins breaks spin rotation symmetry."
+      },
+      {
+        "id": "ENG_CT_223_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "skyrmions",
+          "B": "phonons",
+          "C": "excitons",
+          "D": "plasmons"
+        },
+        "correct_option": "A",
+        "rationale": "Topological spin textures winding across a sphere are collective excitations known as skyrmions."
+      },
+      {
+        "id": "ENG_CT_223_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "semiconductor heterostructures",
+          "B": "thermal insulation barriers",
+          "C": "radioactive metallic alloys",
+          "D": "polymeric dielectric sheets"
+        },
+        "correct_option": "A",
+        "rationale": "Emergent magnetic phenomena are observed in ultra-clean semiconductor heterostructures and graphene layers."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_224",
+    "passage_title": "The Agrarian Political Economy of James C. Scott’s Moral Economy of the Peasant",
+    "passage_text": "In his landmark 1976 anthropological study *The Moral Economy of the Peasant: Rebellion and Subsistence in Southeast Asia*, political scientist James C. Scott investigated the underlying motivations governing peasant uprisings in pre-capitalist agrarian societies (focusing on Vietnam and Burma). Challenging standard rational-choice economic models that viewed peasants as atomized profit-maximizers, Scott formulated the **moral economy framework**, arguing that peasant behavior is dominated fundamentally by the imperative of subsistence security rather than market-driven profit maximization. Operating in fragile ecological environments subject to erratic monsoons, crop failures, and landlord exploitation, peasant households adopt a **safety-first principle** encapsulated by the proverbial peasant saying: 'their crop yields are like a man standing permanently up to his neck in water, so that even a small ripple is enough to drown him.' To survive stochastic climatic and economic shocks, traditional village communities develop reciprocal social institutions—such as shared labor, food-sharing networks, patron-client ties, and redistributive feasts—that function as mutual insurance mechanisms. According to Scott, peasant rebellions and anti-colonial revolutions are rarely ignited by abstract ideology or calculated profit motives; rather, they erupt when colonial taxation, commercialization, and landlord enclosures violate traditional subsistence guarantees, threatening peasant survival and triggering a desperate moral outrage.",
+    "blanks": [
+      {
+        "id": "ENG_CT_224_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "moral economy framework",
+          "B": "neoclassical market fundamentalism",
+          "C": "mercantilist trade protectionism",
+          "D": "state-capitalist industrial planning"
+        },
+        "correct_option": "A",
+        "rationale": "Scott's framework explaining peasant rebellions based on subsistence security is the moral economy framework."
+      },
+      {
+        "id": "ENG_CT_224_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "subsistence security",
+          "B": "speculative capital accumulation",
+          "C": "industrial wage optimization",
+          "D": "commercial land privatization"
+        },
+        "correct_option": "A",
+        "rationale": "Peasant behavior is dominated by the overriding imperative of subsistence security."
+      },
+      {
+        "id": "ENG_CT_224_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "safety-first principle",
+          "B": "efficient market hypothesis",
+          "C": "rational expectation theorem",
+          "D": "comparative advantage rule"
+        },
+        "correct_option": "A",
+        "rationale": "Avoiding risk of starvation through conservative farming is known as the safety-first principle."
+      },
+      {
+        "id": "ENG_CT_224_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "mutual insurance mechanisms",
+          "B": "speculative financial derivatives",
+          "C": "commercial banking syndicates",
+          "D": "corporate venture funds"
+        },
+        "correct_option": "A",
+        "rationale": "Traditional village institutions function as mutual insurance mechanisms against crop failure."
+      },
+      {
+        "id": "ENG_CT_224_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "subsistence guarantees",
+          "B": "commercial contracts",
+          "C": "corporate dividends",
+          "D": "tax exemptions"
+        },
+        "correct_option": "A",
+        "rationale": "Rebellions erupt when enclosures and taxes violate traditional subsistence guarantees."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_225",
+    "passage_title": "The Structural Geology and Seismotectonics of Slow Slip Events",
+    "passage_text": "For decades, seismologists assumed that tectonic faults moved exclusively through two contrasting modes: brittle earthquake rupture (fast slip generating seismic waves) and aseismic creep (steady, silent sliding). However, the discovery of **slow slip events (SSEs)** revealed a rich spectrum of tectonic deformation spanning intermediate timescales. Occurring predominantly along the downdip transition zones of subduction megathrusts (such as beneath Cascadia, Hikurangi, and Nankai), slow slip events release accumulated tectonic strain over days, weeks, or months without generating high-frequency seismic shaking. Instead, these aseismic slip episodes are frequently accompanied by **tremor and low-frequency earthquakes (LFEs)**, generating ambient tectonic tremor signals. Geodynamic models indicate that slow slip mechanics are heavily governed by **pore-fluid overpressures** within subducting oceanic sediments. High fluid pressures reduce effective normal stress across the fault interface, allowing stable frictional sliding or episodic tremor and slip (ETS) to occur near the brittle-ductile transition zone without triggering catastrophic megathrust earthquakes.",
+    "blanks": [
+      {
+        "id": "ENG_CT_225_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "slow slip events (SSEs)",
+          "B": "volcanic calderas",
+          "C": "transform fault step-overs",
+          "D": "isostatic rebound pulses"
+        },
+        "correct_option": "A",
+        "rationale": "Tectonic deformation spanning intermediate timescales silently without earthquakes is known as slow slip events."
+      },
+      {
+        "id": "ENG_CT_225_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "tremor and low-frequency earthquakes (LFEs)",
+          "B": "volcanic basaltic dikes",
+          "C": "subterranean salt diapirism",
+          "D": "glacial moraine depositions"
+        },
+        "correct_option": "A",
+        "rationale": "Slow slip episodes are accompanied by ambient tectonic tremor and low-frequency earthquakes (LFEs)."
+      },
+      {
+        "id": "ENG_CT_225_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "pore-fluid overpressures",
+          "B": "magnetic field reversals",
+          "C": "radiogenic heat production",
+          "D": "crystallographic phase changes"
+        },
+        "correct_option": "A",
+        "rationale": "Slow slip mechanics are heavily modulated by high pore-fluid overpressures in subducting sediments."
+      },
+      {
+        "id": "ENG_CT_225_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "brittle-ductile transition zone",
+          "B": "stratospheric ozone layer",
+          "C": "continental cratonic keel",
+          "D": "oceanic abyssal plain"
+        },
+        "correct_option": "A",
+        "rationale": "Episodic tremor and slip occur predominantly near the brittle-ductile transition zone of subduction megathrusts."
+      },
+      {
+        "id": "ENG_CT_225_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "megathrust earthquakes",
+          "B": "continental rifting events",
+          "C": "hydrothermal mineral eruptions",
+          "D": "cratonic weathering cycles"
+        },
+        "correct_option": "A",
+        "rationale": "Slow slip occurs without triggering catastrophic megathrust earthquakes."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_226",
+    "passage_title": "The Quantum Mechanics of Superconducting Qubits and Josephson Junctions",
+    "passage_text": "In superconducting quantum computing, the fundamental information unit—the **transmon qubit**—relies on circuits cooled to millikelvin temperatures to eliminate thermal noise. At the heart of a transmon lies the **Josephson junction**, formed by two superconducting electrodes separated by an insulating tunnel barrier (typically aluminum oxide). According to the laws of macroscopic quantum mechanics, Cooper pairs of electrons can tunnel quantum-mechanically across this insulating barrier without resistance, a phenomenon described by the Josephson effect. The nonlinear inductance provided by the Josephson junction creates an anharmonic energy level spectrum, allowing researchers to isolate two quantum states (ground state and excited state) without accidentally exciting higher energy transitions. While superconducting circuits offer remarkable scalability and fast gate speeds, they remain exquisitely sensitive to **electromagnetic charge noise and magnetic flux noise** originating from microscopic defects in substrate materials, necessitating advanced quantum error-correction codes to preserve logical qubit fidelity.",
+    "blanks": [
+      {
+        "id": "ENG_CT_226_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "transmon qubit",
+          "B": "optical parametric oscillator",
+          "C": "silicon microchip transistor",
+          "D": "trapped ion vacuum trap"
+        },
+        "correct_option": "A",
+        "rationale": "The fundamental superconducting quantum information unit described is the transmon qubit."
+      },
+      {
+        "id": "ENG_CT_226_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "Josephson junction",
+          "B": "pn-junction diode",
+          "C": "thermocouple bridge",
+          "D": "piezoelectric crystal"
+        },
+        "correct_option": "A",
+        "rationale": "Superconducting electrodes separated by an insulating barrier form a Josephson junction."
+      },
+      {
+        "id": "ENG_CT_226_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "Cooper pairs",
+          "B": "positronium atoms",
+          "C": "free neutrons",
+          "D": "alpha particles"
+        },
+        "correct_option": "A",
+        "rationale": "Superconductivity relies on bound pairs of electrons known as Cooper pairs."
+      },
+      {
+        "id": "ENG_CT_226_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "electromagnetic charge noise and magnetic flux noise",
+          "B": "gravitational tidal forces",
+          "C": "atmospheric acoustic vibrations",
+          "D": "radioactive cosmic ray photons"
+        },
+        "correct_option": "A",
+        "rationale": "Superconducting circuits are sensitive to charge noise and magnetic flux noise from substrate defects."
+      },
+      {
+        "id": "ENG_CT_226_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "logical qubit fidelity",
+          "B": "thermal thermal conductivity",
+          "C": "optical transmission bandwidth",
+          "D": "gravitational resonance frequency"
+        },
+        "correct_option": "A",
+        "rationale": "Error-correction codes are required to preserve logical qubit fidelity."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_227",
+    "passage_title": "The Agrarian Political Economy of Ester Boserup’s Agricultural Intensification",
+    "passage_text": "Challenging the rigid Malthusian doctrine that human population growth is strictly constrained by agricultural food ceilings, Danish economist Ester Boserup formulated the **theory of agricultural intensification** in her 1965 masterpiece *The Conditions of Agricultural Growth*. Boserup inverted Malthus's causal arrow, arguing instead that population growth is the independent variable driving agricultural technological evolution. When regional population density is low, agrarian societies practice extensive **slash-and-burn (swidden) agriculture**, cultivating forest plots briefly and letting them lie fallow for decades to restore soil fertility naturally. As demographic pressures mount and population density increases, fallow periods are progressively shortened. Shortened fallows reduce natural soil fertility and invite weed invasion, forcing peasant societies to abandon swidden methods and invent labor-intensive, capital-improving technologies—such as manual hoeing, animal-drawn plowing, organic manuring, terracing, and complex irrigation systems. Boserup's empirical framework proved that population pressure forces humanity to increase agricultural output per unit of land through technological innovation, disproving Malthusian starvation limits.",
+    "blanks": [
+      {
+        "id": "ENG_CT_227_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "theory of agricultural intensification",
+          "B": "hydraulic civilization model",
+          "C": "tragedy of the commons paradigm",
+          "D": "demographic transition model"
+        },
+        "correct_option": "A",
+        "rationale": "Boserup formulated the theory of agricultural intensification to challenge Malthusian limits."
+      },
+      {
+        "id": "ENG_CT_227_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "slash-and-burn (swidden) agriculture",
+          "B": "intensive hydroponic greenhouse farming",
+          "C": "industrial monoculture agribusiness",
+          "D": "nomadic pastoral transhumance"
+        },
+        "correct_option": "A",
+        "rationale": "Low-labor extensive farming relying on forest clearing and long fallows is slash-and-burn or swidden agriculture."
+      },
+      {
+        "id": "ENG_CT_227_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "fallow periods",
+          "B": "winter hibernation cycles",
+          "C": "monetary fiscal quarters",
+          "D": "seismic recurrence intervals"
+        },
+        "correct_option": "A",
+        "rationale": "As population density increases, fallow periods between crop cultivation are progressively shortened."
+      },
+      {
+        "id": "ENG_CT_227_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "technological innovation",
+          "B": "military conquest",
+          "C": "religious asceticism",
+          "D": "maritime migration"
+        },
+        "correct_option": "A",
+        "rationale": "Population pressure forces societies to increase output per unit of land through technological innovation."
+      },
+      {
+        "id": "ENG_CT_227_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "Malthusian starvation limits",
+          "B": "Ricardian rent differentials",
+          "C": "Keynesian liquidity thresholds",
+          "D": "Marxian surplus values"
+        },
+        "correct_option": "A",
+        "rationale": "Empirical frameworks proved output increases through innovation, disproving Malthusian starvation limits."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_228",
+    "passage_title": "The Quantum Mechanics of Quantum Metrology and Squeezed Coherent States",
+    "passage_text": "In precision optical metrology—exemplified by gravitational wave observatories like LIGO—measurement sensitivity is fundamentally constrained by the **Heisenberg Uncertainty Principle**, establishing a rigorous lower bound on the product of uncertainties between conjugate observables: $\\Delta X \\cdot \\Delta P \\geq \\hbar / 2$. In standard laser interferometers, measurement precision is limited by **quantum shot noise**—statistical Poisson fluctuations in photon arrival times that generate phase uncertainty in optical photodetectors. To surpass this standard quantum limit (SQL), quantum metrologists engineer **squeezed coherent states** of light. In a standard coherent laser state, phase noise and amplitude noise are distributed symmetrically as a circular error ellipse in phase space. By utilizing **non-linear optical crystals** (such as optical parametric oscillators), physicists can 'squeeze' the quantum noise ellipse, trading off precision in one conjugate variable for heightened precision in its conjugate partner. For instance, amplitude-squeezed light drastically reduces phase uncertainty below the standard quantum limit at the direct expense of increased amplitude uncertainty. Injecting squeezed vacuum states into the dark port of LIGO's interferometer successfully suppresses quantum shot noise, enabling sub-attometer displacement sensitivity to detect colliding black holes across the cosmos.",
+    "blanks": [
+      {
+        "id": "ENG_CT_228_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "Heisenberg Uncertainty Principle",
+          "B": "second law of thermodynamics",
+          "C": "special relativity postulate",
+          "D": "Ohm's law of electrical resistance"
+        },
+        "correct_option": "A",
+        "rationale": "Measurement sensitivity in quantum mechanics is constrained by the Heisenberg Uncertainty Principle."
+      },
+      {
+        "id": "ENG_CT_228_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "quantum shot noise",
+          "B": "thermal blackbody radiation",
+          "C": "acoustic background rattling",
+          "D": "radioactive gamma decay"
+        },
+        "correct_option": "A",
+        "rationale": "Statistical Poisson fluctuations in photon arrival times are known as quantum shot noise."
+      },
+      {
+        "id": "ENG_CT_228_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "squeezed coherent states",
+          "B": "thermal plasma discharges",
+          "C": "radioactive isotope decay chains",
+          "D": "turbulent fluid vortices"
+        },
+        "correct_option": "A",
+        "rationale": "States engineered to surpass the standard quantum limit by deforming the noise ellipse are squeezed coherent states."
+      },
+      {
+        "id": "ENG_CT_228_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "non-linear optical crystals",
+          "B": "lead radiation shielding plates",
+          "C": "silicon semiconductor wafers",
+          "D": "copper electrical wiring coils"
+        },
+        "correct_option": "A",
+        "rationale": "Physicists use non-linear optical crystals to manipulate and squeeze the quantum noise ellipse."
+      },
+      {
+        "id": "ENG_CT_228_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "colliding black holes",
+          "B": "subatomic quark plasmas",
+          "C": "stellar magnetic flares",
+          "D": "atmospheric meteoric impacts"
+        },
+        "correct_option": "A",
+        "rationale": "Suppressing shot noise enables sub-attometer sensitivity to detect colliding black holes across the cosmos."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_229",
+    "passage_title": "The Structural Geology and Mechanics of Orogenic Wedges",
+    "passage_text": "In structural geology and mountain belt mechanics, **Critical Taper Theory**—formulated by geophysicists James Davis, John Suppe, and Frank Dahlen in 1983—provides the foundational mechanical model explaining the geometry and internal deformation of accretionary prisms and compressional mountain belts (orogens) such as the Himalayas. Treating an orogenic wedge as a Coulomb wedge sliding over a basal detachment fault (décollement), Critical Taper Theory posits that a wedge deforms internally via distributed brittle faulting and folding until it achieves a stable, mechanically balanced **critical taper angle ($\\alpha + \\beta$)**, where $\\alpha$ is topographic surface slope and $\\beta$ is basal dip. The wedge's internal state of stress is everywhere incipiently failing (critically stressed). If continuous tectonic convergence occurs without adding surface mass, the wedge becomes over-tapered (too steep), triggering internal extensional faulting and gravitational collapse to flatten the wedge back to critical geometry. Conversely, if high erosional denudation removes surface mass faster than tectonic accretion adds material, the wedge becomes under-tapered (too shallow), causing internal shortening, thrust faulting, and crustal thickening until the stable critical taper angle is restored. This self-regulating mechanical feedback loop demonstrates that mountain building is governed by mechanical equilibrium between basal frictional resistance and internal gravitational potential energy.",
+    "blanks": [
+      {
+        "id": "ENG_CT_229_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "Critical Taper Theory",
+          "B": "Plate Tectonics Paradigm",
+          "C": "Isostatic Equilibrium Model",
+          "D": "Riedel Shear Deformation Model"
+        },
+        "correct_option": "A",
+        "rationale": "The mechanical model formulated by Davis, Suppe, and Dahlen in 1983 is Critical Taper Theory."
+      },
+      {
+        "id": "ENG_CT_229_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "critical taper angle ($\\alpha + \\beta$)",
+          "B": "subduction slab dip angle",
+          "C": "transform fault strike azimuth",
+          "D": "magma chamber crystallization angle"
+        },
+        "correct_option": "A",
+        "rationale": "A wedge deforms until it achieves a stable critical taper angle defined as $\\alpha + \\beta$."
+      },
+      {
+        "id": "ENG_CT_229_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "over-tapered",
+          "B": "under-saturated",
+          "C": "super-heated",
+          "D": "hyper-extended"
+        },
+        "correct_option": "A",
+        "rationale": "When continuous convergence makes the wedge too steep, it becomes over-tapered and undergoes extensional collapse."
+      },
+      {
+        "id": "ENG_CT_229_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "erosional denudation",
+          "B": "volcanic magma extrusion",
+          "C": "subterranean salt diapirism",
+          "D": "alluvial sedimentation"
+        },
+        "correct_option": "A",
+        "rationale": "Removal of surface mass by erosion is termed erosional denudation."
+      },
+      {
+        "id": "ENG_CT_229_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "gravitational potential energy",
+          "B": "radiogenic radioactive decay",
+          "C": "magnetic dipole induction",
+          "D": "fluid thermal convection"
+        },
+        "correct_option": "A",
+        "rationale": "Mountain building is governed by equilibrium between basal friction and internal gravitational potential energy."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_CT_SET_230",
+    "passage_title": "The Geodynamics of Mantle Convection and Plate Tectonics",
+    "passage_text": "Plate tectonics is driven fundamentally by thermal convection within the Earth's mantle, where solid silicate rock flows sluggishly over millions of years under high temperatures and pressures. The primary driving force for plate motion is **slab pull**, generated when cold, dense oceanic lithosphere subducts back into the mantle at convergent boundaries, dragging the attached plate behind it. Secondary forces include **ridge push** (gravitational sliding away from elevated mid-ocean ridges) and **mantle drag** acting along the base of the lithosphere. Convective flow occurs via two primary competing models: **whole-mantle convection** (where subducting slabs plunge uninterrupted from the surface down to the core-mantle boundary at 2,900 kilometers depth) and **layered convection** (where convection cells are segregated into upper and lower mantle domains separated by the endothermic phase transition at the 660-kilometer seismic discontinuity). Seismic tomography has largely vindicated whole-mantle convection by imaging subducting slabs penetrating deep into the lower mantle, though geochemical trace element variations indicate that certain mantle domains remain isolated over billions of years.",
+    "blanks": [
+      {
+        "id": "ENG_CT_230_B1",
+        "blank_number": 1,
+        "options": {
+          "A": "slab pull",
+          "B": "isostatic rebound",
+          "C": "tidal friction",
+          "D": "core dynamo drag"
+        },
+        "correct_option": "A",
+        "rationale": "The primary driving force of plate motion where dense lithosphere subducts is slab pull."
+      },
+      {
+        "id": "ENG_CT_230_B2",
+        "blank_number": 2,
+        "options": {
+          "A": "ridge push",
+          "B": "crustal buckling",
+          "C": "cratonic root suction",
+          "D": "volcanic venting"
+        },
+        "correct_option": "A",
+        "rationale": "Gravitational sliding away from elevated mid-ocean ridges is termed ridge push."
+      },
+      {
+        "id": "ENG_CT_230_B3",
+        "blank_number": 3,
+        "options": {
+          "A": "whole-mantle convection",
+          "B": "shallow crustal creep",
+          "C": "continental drift stagnation",
+          "D": "hydrothermal circulation"
+        },
+        "correct_option": "A",
+        "rationale": "Convection spanning uninterrupted from the surface to the core-mantle boundary is whole-mantle convection."
+      },
+      {
+        "id": "ENG_CT_230_B4",
+        "blank_number": 4,
+        "options": {
+          "A": "layered convection",
+          "B": "surface thermal radiation",
+          "C": "bipolar magnetic flow",
+          "D": "intermittent plume pulsing"
+        },
+        "correct_option": "A",
+        "rationale": "Convection segregated into upper and lower mantle domains is layered convection."
+      },
+      {
+        "id": "ENG_CT_230_B5",
+        "blank_number": 5,
+        "options": {
+          "A": "seismic tomography",
+          "B": "surface magnetic sounding",
+          "C": "radiometric dating analysis",
+          "D": "gravimetric satellite mapping"
+        },
+        "correct_option": "A",
+        "rationale": "Imaging subducting slabs deep into the lower mantle is accomplished via seismic tomography."
+      }
+    ]
+  }
+]

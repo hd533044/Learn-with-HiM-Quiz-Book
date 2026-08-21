@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_VERB_301",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb form: 'I would rather ___ than apologize.'",
+    "options": {
+      "A": "to resign",
+      "B": "resign",
+      "C": "resigning",
+      "D": "resigned"
+    },
+    "correct_option": "B",
+    "explanation": "'Would rather' is followed by the base form of the verb (bare infinitive) without 'to'.",
+    "tags": ["grammar", "verbs", "bare_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_302",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He made me to sign the document against my will.'",
+    "options": {
+      "A": "He made me",
+      "B": "to sign",
+      "C": "the document",
+      "D": "against my will."
+    },
+    "correct_option": "B",
+    "explanation": "Causative verbs like 'make', 'let', 'bid', and 'watch' are followed by the bare infinitive (without 'to'). It should be 'made me sign'.",
+    "tags": ["grammar", "verbs", "causative_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_303",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'You had better ___ the medicine immediately.'",
+    "options": {
+      "A": "to take",
+      "B": "taking",
+      "C": "take",
+      "D": "took"
+    },
+    "correct_option": "C",
+    "explanation": "'Had better' is followed by the bare infinitive.",
+    "tags": ["grammar", "verbs", "bare_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_304",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "I saw him to cross the road.",
+      "B": "I saw him crossing the road.",
+      "C": "I saw him cross the road.",
+      "D": "Both B and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Verbs of perception like 'see', 'hear', 'feel' take either the bare infinitive (completed action) or the gerund/present participle (action in progress).",
+    "tags": ["grammar", "verbs", "participles", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_305",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The teacher forbade him not to smoke in the classroom.'",
+    "options": {
+      "A": "The teacher",
+      "B": "forbade him",
+      "C": "not to smoke",
+      "D": "in the classroom."
+    },
+    "correct_option": "C",
+    "explanation": "'Forbid' is inherently negative; using 'not' with it is a double negative error. It should be 'forbade him to smoke'.",
+    "tags": ["grammar", "verbs", "negation", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_306",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is used to ___ early in the morning.'",
+    "options": {
+      "A": "get up",
+      "B": "getting up",
+      "C": "got up",
+      "D": "to get up"
+    },
+    "correct_option": "B",
+    "explanation": "When 'used to' follows 'be' or 'get' (e.g., 'is/get used to'), it functions as a preposition requiring a gerund ('getting up').",
+    "tags": ["grammar", "verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_307",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'He appears ___ a successful businessman.'",
+    "options": {
+      "A": "to be",
+      "B": "be",
+      "C": "being",
+      "D": "to been"
+    },
+    "correct_option": "A",
+    "explanation": "The verb 'appear' is followed by the full infinitive ('to be').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_308",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I enjoy to play tennis on weekends.'",
+    "options": {
+      "A": "I enjoy",
+      "B": "to play",
+      "C": "tennis on",
+      "D": "weekends."
+    },
+    "correct_option": "B",
+    "explanation": "'Enjoy' is followed by a gerund, not an infinitive. It should be 'enjoy playing'.",
+    "tags": ["grammar", "verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_309",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'They were seen ___ into the building.'",
+    "options": {
+      "A": "enter",
+      "B": "entered",
+      "C": "entering",
+      "D": "to enter"
+    },
+    "correct_option": "C",
+    "explanation": "In the passive voice, verbs of perception ('seen') followed by an active movement are typically followed by the present participle/gerund.",
+    "tags": ["grammar", "verbs", "participles", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_310",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He managed to finish the work.",
+      "B": "He managed finishing the work.",
+      "C": "He managed finish the work.",
+      "D": "He managed for finish the work."
+    },
+    "correct_option": "A",
+    "explanation": "'Manage' is followed by the full infinitive ('to finish').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_311",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am looking forward to meet you at the seminar.'",
+    "options": {
+      "A": "I am",
+      "B": "looking forward to",
+      "C": "meet you",
+      "D": "at the seminar."
+    },
+    "correct_option": "C",
+    "explanation": "'Look forward to' is a phrasal verb where 'to' is a preposition, requiring a gerund ('meeting').",
+    "tags": ["grammar", "verbs", "phrasal_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_312",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She suggested ___ a new project.'",
+    "options": {
+      "A": "to start",
+      "B": "starting",
+      "C": "to starting",
+      "D": "for starting"
+    },
+    "correct_option": "B",
+    "explanation": "'Suggest' is followed by a gerund ('starting') or a 'that' clause, but not an infinitive.",
+    "tags": ["grammar", "verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_313",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The wall needs ___.'",
+    "options": {
+      "A": "painting",
+      "B": "to be painted",
+      "C": "to paint",
+      "D": "Both A and B"
+    },
+    "correct_option": "D",
+    "explanation": "When 'need' expresses requirement of an action to an object, both the gerund ('painting') and passive infinitive ('to be painted') are correct.",
+    "tags": ["grammar", "verbs", "gerunds", "passive_voice", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_314",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He avoid to meet people in his office.'",
+    "options": {
+      "A": "He avoid",
+      "B": "to meet",
+      "C": "people in",
+      "D": "his office."
+    },
+    "correct_option": "B",
+    "explanation": "'Avoid' is followed by a gerund ('avoid meeting').",
+    "tags": ["grammar", "verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_315",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It is no use ___ over spilt milk.'",
+    "options": {
+      "A": "to cry",
+      "B": "crying",
+      "C": "cried",
+      "D": "for crying"
+    },
+    "correct_option": "B",
+    "explanation": "Idiomatic phrase 'It is no use'/'It is no good' is followed by a gerund ('crying').",
+    "tags": ["grammar", "verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_316",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He helped me to solve the problem.",
+      "B": "He helped me solve the problem.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "'Help' can be followed by both the full infinitive and the bare infinitive.",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_317",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'They denied to have stolen the car.'",
+    "options": {
+      "A": "They denied",
+      "B": "to have stolen",
+      "C": "the car.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Deny' is followed by a gerund ('having stolen').",
+    "tags": ["grammar", "verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_318",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She succeeded ___ in the examination.'",
+    "options": {
+      "A": "to pass",
+      "B": "in passing",
+      "C": "passing",
+      "D": "for passing"
+    },
+    "correct_option": "B",
+    "explanation": "'Succeed' takes the preposition 'in' followed by the gerund.",
+    "tags": ["grammar", "verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_319",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'He advised me ___ smoking.'",
+    "options": {
+      "A": "to give up",
+      "B": "giving up",
+      "C": "for giving up",
+      "D": "to giving up"
+    },
+    "correct_option": "A",
+    "explanation": "'Advise' + object + full infinitive ('to give up').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_320",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I don't know how to speak English well.'",
+    "options": {
+      "A": "I don't know",
+      "B": "how to speak",
+      "C": "English well.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Know' + interrogative + infinitive is a standard structure.",
+    "tags": ["grammar", "verbs", "infinitives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_321",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was made ___ by the judge.'",
+    "options": {
+      "A": "to apologize",
+      "B": "apologize",
+      "C": "apologizing",
+      "D": "for apologizing"
+    },
+    "correct_option": "A",
+    "explanation": "In the active voice, 'make' takes the bare infinitive. However, in the passive voice, it requires the full infinitive ('to apologize').",
+    "tags": ["grammar", "verbs", "passive_voice", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_322",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I would rather stay at home than to go out in the rain.'",
+    "options": {
+      "A": "I would rather stay",
+      "B": "at home",
+      "C": "than to go out",
+      "D": "in the rain."
+    },
+    "correct_option": "C",
+    "explanation": "'Would rather' uses the bare infinitive in both parts of the comparison. It should be 'than go out'.",
+    "tags": ["grammar", "verbs", "infinitives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_323",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'He is planning ___ abroad next year.'",
+    "options": {
+      "A": "to go",
+      "B": "going",
+      "C": "go",
+      "D": "for going"
+    },
+    "correct_option": "A",
+    "explanation": "'Plan' is followed by the full infinitive ('to go').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_324",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She stopped to talk to her neighbor.' (Referring to an action that was discontinued)",
+    "options": {
+      "A": "She stopped",
+      "B": "to talk",
+      "C": "to her neighbor.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "To stop an action that was occurring, use the gerund: 'She stopped talking'. ('Stopped to talk' means she stopped walking/doing something else in order to talk).",
+    "tags": ["grammar", "verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_325",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was advised ___ at night.'",
+    "options": {
+      "A": "not to drive",
+      "B": "to not drive",
+      "C": "not driving",
+      "D": "do not drive"
+    },
+    "correct_option": "A",
+    "explanation": "The negative infinitive is formed as 'not' + 'to' + verb ('not to drive').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_326",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "I am looking forward to hearing from you.",
+      "B": "I am looking forward to hear from you.",
+      "C": "I am looking forward for hearing from you.",
+      "D": "I am looking forward hear from you."
+    },
+    "correct_option": "A",
+    "explanation": "'Look forward to' is a phrasal verb where 'to' is a preposition, requiring the gerund 'hearing'.",
+    "tags": ["grammar", "verbs", "phrasal_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_327",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He failed to completing the task.'",
+    "options": {
+      "A": "He failed",
+      "B": "to completing",
+      "C": "the task.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Fail' is followed by the full infinitive ('to complete').",
+    "tags": ["grammar", "verbs", "infinitives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_328",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Please avoid ___ late at night.'",
+    "options": {
+      "A": "to work",
+      "B": "working",
+      "C": "work",
+      "D": "for working"
+    },
+    "correct_option": "B",
+    "explanation": "'Avoid' takes the gerund ('working').",
+    "tags": ["grammar", "verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_329",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'She promised ___ me with the project.'",
+    "options": {
+      "A": "to help",
+      "B": "helping",
+      "C": "help",
+      "D": "for helping"
+    },
+    "correct_option": "A",
+    "explanation": "'Promise' is followed by the full infinitive ('to help').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_330",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The movie was enough interesting to watch twice.'",
+    "options": {
+      "A": "The movie was",
+      "B": "enough interesting",
+      "C": "to watch",
+      "D": "twice."
+    },
+    "correct_option": "B",
+    "explanation": "'Enough' follows the adjective it modifies ('interesting enough').",
+    "tags": ["grammar", "verbs", "adjectives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_331",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He decided ___ a new car.'",
+    "options": {
+      "A": "buying",
+      "B": "to buy",
+      "C": "buy",
+      "D": "for buying"
+    },
+    "correct_option": "B",
+    "explanation": "'Decide' is followed by the full infinitive ('to buy').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_332",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'I appreciate ___ you today.'",
+    "options": {
+      "A": "to see",
+      "B": "seeing",
+      "C": "see",
+      "D": "for seeing"
+    },
+    "correct_option": "B",
+    "explanation": "'Appreciate' is followed by the gerund ('seeing').",
+    "tags": ["grammar", "verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_333",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I want him leave immediately.'",
+    "options": {
+      "A": "I want",
+      "B": "him leave",
+      "C": "immediately.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Want' requires an object followed by a full infinitive ('want him to leave').",
+    "tags": ["grammar", "verbs", "infinitives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_334",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He risked ___ his job to tell the truth.'",
+    "options": {
+      "A": "to lose",
+      "B": "losing",
+      "C": "lose",
+      "D": "for losing"
+    },
+    "correct_option": "B",
+    "explanation": "'Risk' takes the gerund ('losing').",
+    "tags": ["grammar", "verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_335",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "They encouraged him to participate.",
+      "B": "They encouraged him participate.",
+      "C": "They encouraged him participating.",
+      "D": "They encouraged him for participating."
+    },
+    "correct_option": "A",
+    "explanation": "'Encourage' + object + full infinitive ('to participate').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_336",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She enjoys to read historical novels.'",
+    "options": {
+      "A": "She enjoys",
+      "B": "to read",
+      "C": "historical novels.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Enjoy' is followed by a gerund ('reading').",
+    "tags": ["grammar", "verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_337",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He suggested ___ the plan.'",
+    "options": {
+      "A": "to discuss",
+      "B": "discussing",
+      "C": "discuss",
+      "D": "for discussing"
+    },
+    "correct_option": "B",
+    "explanation": "'Suggest' is followed by a gerund ('discussing').",
+    "tags": ["grammar", "verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_338",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'He started ___ when he was five.'",
+    "options": {
+      "A": "swimming",
+      "B": "to swim",
+      "C": "both A and B",
+      "D": "to swimming"
+    },
+    "correct_option": "C",
+    "explanation": "Both gerunds ('swimming') and infinitives ('to swim') can follow 'start' with virtually no difference in meaning.",
+    "tags": ["grammar", "verbs", "gerunds", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_339",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He let me to enter the room.'",
+    "options": {
+      "A": "He let",
+      "B": "me to enter",
+      "C": "the room.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Let' is a causative verb followed by the bare infinitive ('let me enter').",
+    "tags": ["grammar", "verbs", "causative_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_340",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Do you mind ___ the window?'",
+    "options": {
+      "A": "to open",
+      "B": "opening",
+      "C": "open",
+      "D": "for opening"
+    },
+    "correct_option": "B",
+    "explanation": "'Mind' is followed by the gerund ('opening').",
+    "tags": ["grammar", "verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_341",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "They expected him to win.",
+      "B": "They expected him win.",
+      "C": "They expected him winning.",
+      "D": "They expected him for winning."
+    },
+    "correct_option": "A",
+    "explanation": "'Expect' + object + full infinitive ('to win').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_342",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She stopped to cry after some time.' (She was crying, and then she discontinued it)",
+    "options": {
+      "A": "She stopped",
+      "B": "to cry",
+      "C": "after some time.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "To stop an ongoing action, use the gerund: 'She stopped crying'.",
+    "tags": ["grammar", "verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_343",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He managed ___ the task on time.'",
+    "options": {
+      "A": "completing",
+      "B": "to complete",
+      "C": "complete",
+      "D": "for completing"
+    },
+    "correct_option": "B",
+    "explanation": "'Manage' is followed by the full infinitive ('to complete').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_344",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'She has decided ___ her job.'",
+    "options": {
+      "A": "quitting",
+      "B": "to quit",
+      "C": "quit",
+      "D": "for quitting"
+    },
+    "correct_option": "B",
+    "explanation": "'Decide' is followed by the full infinitive ('to quit').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_345",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I consider to move to a new city.'",
+    "options": {
+      "A": "I consider",
+      "B": "to move",
+      "C": "to a new city.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Consider' is followed by the gerund ('considering moving').",
+    "tags": ["grammar", "verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_346",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He failed ___ the examination.'",
+    "options": {
+      "A": "passing",
+      "B": "to pass",
+      "C": "pass",
+      "D": "for passing"
+    },
+    "correct_option": "B",
+    "explanation": "'Fail' is followed by the full infinitive ('to pass').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_347",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'She is fond ___.'",
+    "options": {
+      "A": "to sing",
+      "B": "of singing",
+      "C": "sing",
+      "D": "for singing"
+    },
+    "correct_option": "B",
+    "explanation": "'Fond of' is a prepositional phrase followed by the gerund ('singing').",
+    "tags": ["grammar", "verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_348",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'They want me to working harder.'",
+    "options": {
+      "A": "They want",
+      "B": "me to working",
+      "C": "harder.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Want' + object + full infinitive ('to work').",
+    "tags": ["grammar", "verbs", "infinitives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_349",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He promised ___ me tomorrow.'",
+    "options": {
+      "A": "calling",
+      "B": "to call",
+      "C": "call",
+      "D": "for calling"
+    },
+    "correct_option": "B",
+    "explanation": "'Promise' is followed by the full infinitive ('to call').",
+    "tags": ["grammar", "verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_350",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'She keeps ___ every day.'",
+    "options": {
+      "A": "to exercise",
+      "B": "exercising",
+      "C": "exercise",
+      "D": "for exercising"
+    },
+    "correct_option": "B",
+    "explanation": "'Keep' is followed by the gerund ('exercising').",
+    "tags": ["grammar", "verbs", "gerunds", "rule_based"]
+  }
+]

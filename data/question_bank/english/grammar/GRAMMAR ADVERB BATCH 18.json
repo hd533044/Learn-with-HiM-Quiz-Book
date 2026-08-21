@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_ADVB_851",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He acted very cowardly in the face of danger.'",
+    "options": {
+      "A": "He acted",
+      "B": "very cowardly",
+      "C": "in the face of danger.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Cowardly' is an adjective, not an adverb. To make it an adverbial phrase, use 'in a cowardly manner'.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_852",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'She worked ___.'",
+    "options": {
+      "A": "hardly",
+      "B": "hard",
+      "C": "harderly",
+      "D": "more hardly"
+    },
+    "correct_option": "B",
+    "explanation": "'Hard' is both an adjective and an adverb meaning 'with effort'. 'Hardly' means 'scarcely' (negative sense).",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_853",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He ___ comes to visit us these days.'",
+    "options": {
+      "A": "hard",
+      "B": "hardly",
+      "C": "harder",
+      "D": "hardest"
+    },
+    "correct_option": "B",
+    "explanation": "'Hardly' means 'scarcely' or 'almost never', which fits the context of infrequent visits.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_854",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is too beautiful to not be admired by everyone.'",
+    "options": {
+      "A": "She is",
+      "B": "too beautiful",
+      "C": "to not be admired",
+      "D": "by everyone."
+    },
+    "correct_option": "C",
+    "explanation": "Avoid split infinitives and negative infinitive confusion. It should be 'too beautiful not to be admired'.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_855",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He runs ___ than his brother.'",
+    "options": {
+      "A": "fast",
+      "B": "faster",
+      "C": "more fast",
+      "D": "fastest"
+    },
+    "correct_option": "B",
+    "explanation": "Comparative degree for the adverb 'fast' is 'faster'.",
+    "tags": ["grammar", "adverbs", "degrees_of_comparison", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_856",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct adverbial placement: 'He ___ speaks the truth.'",
+    "options": {
+      "A": "seldom",
+      "B": "is seldom",
+      "C": "does seldom",
+      "D": "speaks seldom"
+    },
+    "correct_option": "A",
+    "explanation": "Adverbs of frequency ('seldom', 'always', 'never') are placed before the main verb.",
+    "tags": ["grammar", "adverbs", "positioning", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_857",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The train was late, so I barely reached the station on time.'",
+    "options": {
+      "A": "The train was late,",
+      "B": "so I barely",
+      "C": "reached the station on time.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. 'Barely' means 'only just'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_858",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ tired to go out tonight.'",
+    "options": {
+      "A": "very",
+      "B": "too",
+      "C": "so",
+      "D": "much"
+    },
+    "correct_option": "B",
+    "explanation": "'Too' + adjective + infinitive is the correct structure for excessive degree.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_859",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'He speaks ___.'",
+    "options": {
+      "A": "fluent",
+      "B": "fluently",
+      "C": "more fluent",
+      "D": "very fluent"
+    },
+    "correct_option": "B",
+    "explanation": "Verbs are modified by adverbs. 'Speak' is modified by the adverb 'fluently'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_860",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He did his work as good as he could.'",
+    "options": {
+      "A": "He did his work",
+      "B": "as good as",
+      "C": "he could.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Good' is an adjective. The adverbial form 'well' is needed to modify the verb 'did'.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_861",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I am ___ sorry for the inconvenience.'",
+    "options": {
+      "A": "too",
+      "B": "very",
+      "C": "so",
+      "D": "much"
+    },
+    "correct_option": "B",
+    "explanation": "'Very' is used to emphasize positive or neutral adjectives like 'sorry'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_862",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The weather is very hot and too humid.'",
+    "options": {
+      "A": "The weather is",
+      "B": "very hot",
+      "C": "and too humid.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. Both intensifiers are used correctly.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_863",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He speaks English ___.'",
+    "options": {
+      "A": "good enough",
+      "B": "well enough",
+      "C": "too well",
+      "D": "so good"
+    },
+    "correct_option": "B",
+    "explanation": "'Well' is the adverb. 'Enough' follows the adverb it modifies.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_864",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She sings sweet.'",
+    "options": {
+      "A": "She sings",
+      "B": "sweet.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "'Sweet' is an adjective. Use the adverb 'sweetly' to modify 'sings'.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_865",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He arrived ___ at the meeting.'",
+    "options": {
+      "A": "late",
+      "B": "lately",
+      "C": "more lately",
+      "D": "most late"
+    },
+    "correct_option": "A",
+    "explanation": "'Late' means not on time; 'lately' means 'recently'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_866",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I haven't seen him lately.'",
+    "options": {
+      "A": "I haven't seen",
+      "B": "him lately.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "The sentence is correct. 'Lately' means 'recently'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_867",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'She behaved ___.'",
+    "options": {
+      "A": "bad",
+      "B": "badly",
+      "C": "more bad",
+      "D": "very bad"
+    },
+    "correct_option": "B",
+    "explanation": "Adverb 'badly' modifies the verb 'behaved'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_868",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The task is almost done.'",
+    "options": {
+      "A": "The task is",
+      "B": "almost done.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "The sentence is correct. 'Almost' correctly modifies 'done'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_869",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He drives ___ than me.'",
+    "options": {
+      "A": "careful",
+      "B": "more carefully",
+      "C": "carefully",
+      "D": "too careful"
+    },
+    "correct_option": "B",
+    "explanation": "Comparative adverb is 'more carefully'.",
+    "tags": ["grammar", "adverbs", "degrees_of_comparison", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_870",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He works very hardly to support his family.'",
+    "options": {
+      "A": "He works",
+      "B": "very hardly",
+      "C": "to support his family.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Hardly' means 'almost not'. It should be 'very hard'.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_871",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is ___ beautiful.'",
+    "options": {
+      "A": "extreme",
+      "B": "extremely",
+      "C": "more extreme",
+      "D": "most extreme"
+    },
+    "correct_option": "B",
+    "explanation": "Adverb 'extremely' modifies the adjective 'beautiful'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_872",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The students are playing outside in the playground.'",
+    "options": {
+      "A": "The students are playing",
+      "B": "outside",
+      "C": "in the playground.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Sentence is correct. 'Outside' and 'in the playground' are appropriate adverbial placements.",
+    "tags": ["grammar", "adverbs", "positioning", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_873",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'She sings ___ than she used to.'",
+    "options": {
+      "A": "better",
+      "B": "best",
+      "C": "good",
+      "D": "well"
+    },
+    "correct_option": "A",
+    "explanation": "Comparative of 'well' is 'better'.",
+    "tags": ["grammar", "adverbs", "degrees_of_comparison", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_874",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He speaks too fastly.'",
+    "options": {
+      "A": "He speaks",
+      "B": "too fastly.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "'Fast' is both the adjective and adverb form; 'fastly' does not exist.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_875",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He ___ forgets his keys.'",
+    "options": {
+      "A": "always",
+      "B": "never",
+      "C": "often",
+      "D": "All are correct"
+    },
+    "correct_option": "D",
+    "explanation": "All these are adverbs of frequency.",
+    "tags": ["grammar", "adverbs", "frequency", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_876",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The child slept soundly in the crib.'",
+    "options": {
+      "A": "The child slept",
+      "B": "soundly",
+      "C": "in the crib.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Sentence is correct. 'Soundly' is the adverb modifying 'slept'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_877",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'He ___ runs.'",
+    "options": {
+      "A": "quick",
+      "B": "quickly",
+      "C": "more quick",
+      "D": "very quick"
+    },
+    "correct_option": "B",
+    "explanation": "Adverb 'quickly' modifies the verb 'runs'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_878",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'They arrived safely at the destination.'",
+    "options": {
+      "A": "They arrived",
+      "B": "safely",
+      "C": "at the destination.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Sentence is correct.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_879",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ enough to do this.'",
+    "options": {
+      "A": "strong",
+      "B": "strongly",
+      "C": "too strong",
+      "D": "more strong"
+    },
+    "correct_option": "A",
+    "explanation": "'Enough' follows an adjective ('strong enough').",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_880",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She walked careful on the ice.'",
+    "options": {
+      "A": "She walked",
+      "B": "careful",
+      "C": "on the ice.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Use adverb 'carefully' to modify 'walked'.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_881",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'He sings ___.'",
+    "options": {
+      "A": "loud",
+      "B": "loudly",
+      "C": "too loud",
+      "D": "more loudly"
+    },
+    "correct_option": "B",
+    "explanation": "Adverb 'loudly' modifies 'sings'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_882",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The plane landed safely.'",
+    "options": {
+      "A": "The plane",
+      "B": "landed safely.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Sentence is correct.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_883",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He behaves ___.'",
+    "options": {
+      "A": "good",
+      "B": "well",
+      "C": "too good",
+      "D": "best"
+    },
+    "correct_option": "B",
+    "explanation": "'Well' is the adverbial form of 'good' in this context.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_884",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He worked more hardly than others.'",
+    "options": {
+      "A": "He worked",
+      "B": "more hardly",
+      "C": "than others.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Hardly' is negative. Should be 'worked harder'.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_885",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'I ___ visit my grandmother.'",
+    "options": {
+      "A": "often",
+      "B": "fastly",
+      "C": "slowly",
+      "D": "well"
+    },
+    "correct_option": "A",
+    "explanation": "Adverb of frequency 'often' is appropriate here.",
+    "tags": ["grammar", "adverbs", "frequency", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_886",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She speaks very fast.'",
+    "options": {
+      "A": "She speaks",
+      "B": "very fast.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Sentence is correct. 'Fast' is the correct adverbial form.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_887",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He ___ reads newspaper.'",
+    "options": {
+      "A": "daily",
+      "B": "fastly",
+      "C": "slowly",
+      "D": "more"
+    },
+    "correct_option": "A",
+    "explanation": "'Daily' is an adverb of frequency.",
+    "tags": ["grammar", "adverbs", "frequency", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_888",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man was walking slow.'",
+    "options": {
+      "A": "The man was",
+      "B": "walking slow.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Use adverb 'slowly' to modify walking.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_889",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'He answers ___.'",
+    "options": {
+      "A": "correct",
+      "B": "correctly",
+      "C": "more correct",
+      "D": "very correct"
+    },
+    "correct_option": "B",
+    "explanation": "Adverb 'correctly' modifies 'answers'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_890",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She runs fastest than him.'",
+    "options": {
+      "A": "She runs",
+      "B": "fastest",
+      "C": "than him.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Use comparative 'faster' when comparing two.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "degrees_of_comparison"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_891",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He ___ helps the poor.'",
+    "options": {
+      "A": "never",
+      "B": "always",
+      "C": "often",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "All are valid adverbs of frequency.",
+    "tags": ["grammar", "adverbs", "frequency", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_892",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The birds flew highly in the sky.'",
+    "options": {
+      "A": "The birds flew",
+      "B": "highly",
+      "C": "in the sky.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Highly' is figurative (e.g., highly intelligent). Physical height uses 'high'.",
+    "tags": ["grammar", "adverbs", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_893",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence: 'He did his work ___.'",
+    "options": {
+      "A": "well",
+      "B": "good",
+      "C": "very good",
+      "D": "so good"
+    },
+    "correct_option": "A",
+    "explanation": "'Well' modifies the verb 'did'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_894",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is quite clever.'",
+    "options": {
+      "A": "He is",
+      "B": "quite clever.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Sentence is correct.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_895",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She ___ finishes her tasks on time.'",
+    "options": {
+      "A": "always",
+      "B": "slow",
+      "C": "more",
+      "D": "very"
+    },
+    "correct_option": "A",
+    "explanation": "Adverb of frequency 'always' is appropriate.",
+    "tags": ["grammar", "adverbs", "frequency", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_896",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'They talked loudly in the library.'",
+    "options": {
+      "A": "They talked",
+      "B": "loudly",
+      "C": "in the library.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Sentence is correct.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_897",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He runs ___.'",
+    "options": {
+      "A": "fast",
+      "B": "fastly",
+      "C": "too fastly",
+      "D": "more fastly"
+    },
+    "correct_option": "A",
+    "explanation": "'Fast' is the correct adverbial form.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_898",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She speaks clear.'",
+    "options": {
+      "A": "She speaks",
+      "B": "clear.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Use adverb 'clearly'.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_899",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He plays ___.'",
+    "options": {
+      "A": "beautifully",
+      "B": "beautiful",
+      "C": "more beautiful",
+      "D": "too beautiful"
+    },
+    "correct_option": "A",
+    "explanation": "Adverb 'beautifully' modifies 'plays'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_900",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am enough strong to lift this.'",
+    "options": {
+      "A": "I am",
+      "B": "enough strong",
+      "C": "to lift this.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Enough' follows the adjective: 'strong enough'.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "rule_based"]
+  }
+]

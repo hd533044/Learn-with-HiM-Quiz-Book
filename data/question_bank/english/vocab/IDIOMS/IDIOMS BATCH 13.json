@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0601",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pin down**",
+    "options": {
+      "A": "To force someone to make a clear decision or provide definite details",
+      "B": "To attach papers securely with metal pins",
+      "C": "To hold a wrestling opponent to the mat",
+      "D": "To sew fabric patches on clothing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'pin down' someone means forcing them to make a definite commitment or give clear answers.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0602",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pink slip**",
+    "options": {
+      "A": "A formal notice of dismissal or termination from employment",
+      "B": "A pastel-colored fashion dress",
+      "C": "A medical prescription note",
+      "D": "A vehicle registration document"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'pink slip' is a notice given to an employee notifying them that they have been fired.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0603",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pipe dream**",
+    "options": {
+      "A": "An impractical, fanciful, and unrealistic plan or hope",
+      "B": "A plumbing installation blueprint",
+      "C": "A relaxing habit of smoking tobacco",
+      "D": "A musical pipe instrument tune"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'pipe dream' is an illusion or a fantasy that is impossible to realize.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0604",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**PITCH in**",
+    "options": {
+      "A": "To join in and cooperate or contribute effort and assistance to a project",
+      "B": "To throw baseball pitches in a game",
+      "C": "To set up a camping tent outdoors",
+      "D": "To fall heavily into a ditch"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'pitch in' means cooperating and offering help to achieve a common goal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0605",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Play a double game**",
+    "options": {
+      "A": "To act deceitfully, practicing treachery by double-crossing parties involved",
+      "B": "To play tennis matches with doubles partners",
+      "C": "To participate in two sports simultaneously",
+      "D": "To repeat a board game level"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Playing a 'double game' means acting deceptively toward multiple sides.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0606",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Play havoc with**",
+    "options": {
+      "A": "To cause widespread destruction, damage, or confusion",
+      "B": "To play chaotic video games",
+      "C": "To organize festive celebrations",
+      "D": "To solve complex puzzles"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'play havoc with' means ruining or causing severe disruption to something.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0607",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Play safe**",
+    "options": {
+      "A": "To act cautiously and avoid taking risks or chances",
+      "B": "To wear protective safety gear in sports",
+      "C": "To secure doors with heavy locks",
+      "D": "To play board games carefully"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'play safe' means taking a cautious approach to avoid danger.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0608",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Play your cards right**",
+    "options": {
+      "A": "To behave cleverly and use opportunities skillfully to achieve success",
+      "B": "To win a gambling card match",
+      "C": "To deal playing cards evenly",
+      "D": "To design greeting card layouts"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'play your cards right' means acting with clever strategy to gain advantage.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0609",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pocket your pride**",
+    "options": {
+      "A": "To swallow your ego and act humbly despite humiliation",
+      "B": "To hide money in a coat pocket",
+      "C": "To feel extremely arrogant and proud",
+      "D": "To lose personal belongings"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'pocket your pride' means suppressing your ego to accept a necessary humiliation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0610",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Point blank**",
+    "options": {
+      "A": "Directly, bluntly, and without any hesitation or softening of words",
+      "B": "Shooting targets with a rifle",
+      "C": "Drawing lines on paper targets",
+      "D": "An unsharpened pencil tip"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Speaking 'point-blank' means being direct and blunt without beating around the bush.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0611",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Poison pill**",
+    "options": {
+      "A": "A measure adopted by a company to make itself unappealing to a takeover bidder",
+      "B": "A medical suicide capsule in espionage",
+      "C": "A toxic pharmaceutical drug warning",
+      "D": "Contaminated food provisions"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'poison pill' is a corporate defense strategy against hostile takeovers.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0612",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pomp and circumstance**",
+    "options": {
+      "A": "Ceremonial splendor, formal display, and celebratory pageantry",
+      "B": "Strict military discipline",
+      "C": "A chaotic street protest",
+      "D": "A quiet religious prayer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pomp and circumstance' denotes grand formal pageantry and ceremony.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0613",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Poor relation**",
+    "options": {
+      "A": "A person or thing regarded as inferior or neglected compared to others",
+      "B": "An impoverished family member",
+      "C": "A charity donation recipient",
+      "D": "A cheap commercial product"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being treated as a 'poor relation' means being looked down upon as inferior to counterparts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0614",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pour cold water on**",
+    "options": {
+      "A": "To discourage, dampen enthusiasm, or criticize a plan",
+      "B": "To extinguish a campfire blaze",
+      "C": "To refresh yourself in summer",
+      "D": "To swim in cold lakes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'pour cold water on' an idea means discouraging it.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0615",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Prat fall**",
+    "options": {
+      "A": "A fall landing squarely on your buttocks, often used for comedic effect",
+      "B": "Tripping down a flight of stairs",
+      "C": "A gymnastic tumbling stunt",
+      "D": "Failing an academic test"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'pratfall' is a clumsy fall onto your backside.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0616",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Press charges**",
+    "options": {
+      "A": "To make a formal legal accusation and initiate criminal proceedings against someone",
+      "B": "To iron clothing laundry",
+      "C": "To pay credit card bills",
+      "D": "To push elevator buttons"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'press charges' means officially accusing someone of a crime in court.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0617",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pretty penny**",
+    "options": {
+      "A": "A large, considerable, and expensive sum of money",
+      "B": "A shiny new copper coin",
+      "C": "A cheap discounted price",
+      "D": "Pocket change savings"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Costing a 'pretty penny' means something is very expensive.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0618",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Prim and proper**",
+    "options": {
+      "A": "Extremely formal, conventional, and excessively particular about etiquette",
+      "B": "Messy and disorganized in dress",
+      "C": "Casual and friendly in manner",
+      "D": "Wild and rebellious in behavior"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'prim and proper' means displaying stiff, excessively correct manners.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0619",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Promise the moon**",
+    "options": {
+      "A": "To make extravagant, impossible promises that cannot be fulfilled",
+      "B": "To study space astronomy science",
+      "C": "To gift expensive jewelry items",
+      "D": "To plan a rocket launch"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'promise the moon' means making unrealistic guarantees.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0620",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Proved to the hilt**",
+    "options": {
+      "A": "Proven completely, thoroughly, and without any doubt whatsoever",
+      "B": "Holding a sword handle tightly",
+      "C": "Failing an investigation test",
+      "D": "A partial courtroom proof"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Proven 'to the hilt' means established with absolute and complete certainty.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0621",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pull a fast one**",
+    "options": {
+      "A": "To trick, cheat, or swindle someone successfully through deception",
+      "B": "To drive a car at high speed",
+      "C": "To run a quick foot race",
+      "D": "To perform a magic card trick"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'pull a fast one' means tricking someone unscrupulously.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0622",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Pull your weight**",
+    "options": {
+      "A": "To do your fair share of work in a shared group effort",
+      "B": "To check body weight on scales",
+      "C": "To lift heavy gym weights",
+      "D": "To avoid participating in tasks"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'pull your weight' means contributing your fair share of effort.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0623",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Punch above your weight**",
+    "options": {
+      "A": "To perform beyond your expected level of capability or power",
+      "B": "To box in a heavier weight class",
+      "C": "To gain weight on a diet",
+      "D": "To lose boxing matches easily"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'punch above your weight' means achieving results superior to your grade.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0624",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Push come to shove**",
+    "options": {
+      "A": "When a situation becomes critical or forces a decisive action",
+      "B": "A physical street fight brawl",
+      "C": "Pushing heavy furniture around",
+      "D": "A peaceful negotiation talk"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. When 'push comes to shove', a critical moment arrives requiring action.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0625",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Put a damper on**",
+    "options": {
+      "A": "To dampen enthusiasm, ruin a mood, or discourage an event",
+      "B": "To put water on a house fire",
+      "C": "To install air conditioning vents",
+      "D": "To play musical instruments softly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'put a damper on' means spoiling someone's enthusiasm or mood.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0626",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Put heads together**",
+    "options": {
+      "A": "To consult together collaboratively to solve a problem",
+      "B": "To bump heads in an accident",
+      "C": "To whisper gossip in crowds",
+      "D": "To argue fiercely in public"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'put your heads together' means conferring together to find a solution.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0627",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Put on an act**",
+    "options": {
+      "A": "To behave insincerely or pretend to feel emotions you don't actually feel",
+      "B": "To perform in a theater play",
+      "C": "To dress up in formal costumes",
+      "D": "To follow safety regulations"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'put on an act' means faking behavior or putting on a false front.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0628",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Put out feelers**",
+    "options": {
+      "A": "To test opinion cautiously or sound out people's reactions indirectly",
+      "B": "To touch objects with fingers",
+      "C": "To install electrical sensors",
+      "D": "To search rooms in the dark"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'put out feelers' means sounding out opinions cautiously.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0629",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Put the cart before the horse**",
+    "options": {
+      "A": "To reverse the proper order of doing things; do things backward",
+      "B": "To load farm transport vehicles",
+      "C": "To drive carriages on roads",
+      "D": "To park cars incorrectly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Putting the 'cart before the horse' means reversing the logical sequence of actions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0630",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Put your best foot forward**",
+    "options": {
+      "A": "To try as hard as possible and make a very good first impression",
+      "B": "To walk with a limp",
+      "C": "To wear matching shoes",
+      "D": "To start running a race"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'put your best foot forward' means acting with utmost effort to impress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0631",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Quaking in your boots**",
+    "options": {
+      "A": "Trembling with fear, nervousness, or apprehension",
+      "B": "Dancing energetically at a party",
+      "C": "Walking through muddy terrain",
+      "D": "Suffering from foot arthritis"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quaking in your boots' means shaking with fear.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0632",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Queer the pitch**",
+    "options": {
+      "A": "To spoil, ruin, or upset someone's plans or chances of success",
+      "B": "To throw sports balls incorrectly",
+      "C": "To change game rules suddenly",
+      "D": "To paint sports fields"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'queer the pitch' means spoiling someone's plans.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0633",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Quick on the uptake**",
+    "options": {
+      "A": "Quick to understand, comprehend, or learn new information",
+      "B": "Running very fast in a race",
+      "C": "Quick to react defensively",
+      "D": "Speaking rapidly in conversation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'quick on the uptake' means having a sharp, fast understanding.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0634",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Quiet as a mouse**",
+    "options": {
+      "A": "Extremely silent, making no noise or fuss at all",
+      "B": "Hiding in small holes",
+      "C": "Scared of household cats",
+      "D": "Moving very quickly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being as 'quiet as a mouse' means making no sound.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0635",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Quid pro quo**",
+    "options": {
+      "A": "An exchange of goods or services, where one thing is given for another",
+      "B": "A legal courtroom dispute",
+      "C": "A polite greeting phrase",
+      "D": "A financial bank loan"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quid pro quo' represents a reciprocal exchange or favor.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0636",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rain check**",
+    "options": {
+      "A": "An offer or invitation postponed to a future date",
+      "B": "A weather forecast ticket",
+      "C": "A refund for a rained-out event",
+      "D": "An umbrella rental receipt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Taking a 'rain check' means declining an offer now with the option to accept later.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0637",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Raining cats and dogs**",
+    "options": {
+      "A": "Raining very heavily and torrentially",
+      "B": "An animal rescue during storms",
+      "C": "A light morning drizzle",
+      "D": "Unusual weather patterns"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Raining 'cats and dogs' means heavy downpours.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0638",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rattle someone's cage**",
+    "options": {
+      "A": "To annoy, provoke, or upset someone deliberately",
+      "B": "To clean an animal cage enclosure",
+      "C": "To shake metal keys loudly",
+      "D": "To frighten zoo visitors"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'rattle someone's cage' means irritating or provoking them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0639",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Read between the lines**",
+    "options": {
+      "A": "To understand the hidden or implied meaning not explicitly stated",
+      "B": "To proofread spelling mistakes",
+      "C": "To read texts very rapidly",
+      "D": "To follow printed rules strictly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Reading 'between the lines' means discovering unspoken intentions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0640",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Ready money**",
+    "options": {
+      "A": "Cash money immediately available for payment",
+      "B": "Money saved in bank accounts",
+      "C": "Counterfeit currency notes",
+      "D": "Expensive gold investments"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ready money' refers to cash on hand.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0641",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Red tape**",
+    "options": {
+      "A": "Excessive bureaucratic rules, official paperwork, and administrative delays",
+      "B": "Ribbon used for gift wrapping",
+      "C": "A dangerous electrical cable",
+      "D": "Official government seals"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Red tape' denotes tiresome bureaucratic regulations.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0642",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Red-carpet treatment**",
+    "options": {
+      "A": "Special, lavish hospitality and honors shown to important guests",
+      "B": "A red rug placed in hallways",
+      "C": "A fire hazard warning carpet",
+      "D": "Standard tourist service"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Red-carpet treatment' means lavish, VIP hospitality.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0643",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rest on your laurels**",
+    "options": {
+      "A": "To become complacent and stop trying because of past successes",
+      "B": "To sleep comfortably on leaves",
+      "C": "To plant green garden hedges",
+      "D": "To mourn past failures"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Resting on your laurels means stopping effort after winning once.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0644",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Right-hand man**",
+    "options": {
+      "A": "An indispensable, trusted chief assistant",
+      "B": "A medical limb specialist",
+      "C": "A left-handed person",
+      "D": "A political debate rival"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'right-hand man' is a primary assistant.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0645",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Ring a bell**",
+    "options": {
+      "A": "To sound familiar or evoke a vague memory",
+      "B": "To ring a front door chime",
+      "C": "To win a boxing match bell",
+      "D": "To call school students inside"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Something that 'rings a bell' sounds familiar.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0646",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rise and shine**",
+    "options": {
+      "A": "An enthusiastic command telling someone to wake up and get out of bed",
+      "B": "Polishing metal shoes until shiny",
+      "C": "Sunrise weather forecasting",
+      "D": "Starting a morning work shift"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rise and shine' is a cheerful wake-up call.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0647",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rob Peter to pay Paul**",
+    "options": {
+      "A": "To take from one person or debt to pay another, solving nothing permanently",
+      "B": "A charitable church donation",
+      "C": "Stealing money from banks",
+      "D": "Paying workers fair wages"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Robbing Peter to pay Paul means settling one debt by incurring another.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0648",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rock the boat**",
+    "options": {
+      "A": "To cause trouble, upset a stable situation, or disturb the peace",
+      "B": "To rock a baby in a cradle",
+      "C": "To sail a boat through waves",
+      "D": "To fish on open waters"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'rock the boat' means upsetting a calm, stable routine.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0649",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Roll up your sleeves**",
+    "options": {
+      "A": "To prepare to work hard and get down to serious business",
+      "B": "To roll up long shirt sleeves for heat",
+      "C": "To dress in casual sportswear",
+      "D": "To wash hands before cooking"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'roll up your sleeves' means preparing for hard work.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0650",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rough and ready**",
+    "options": {
+      "A": "Crude, unpolished, and improvised, but effective for use",
+      "B": "A difficult exercise workout",
+      "C": "Polished and elegant manners",
+      "D": "Harsh winter weather"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rough and ready' means basic and unrefined yet effective.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

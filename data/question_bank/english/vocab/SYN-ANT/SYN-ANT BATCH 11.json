@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0501",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FABRICATE**",
+    "options": {
+      "A": "Dismantle",
+      "B": "Concoct",
+      "C": "Demolish",
+      "D": "Raze"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Fabricate' means to invent or concoct (something), typically with deceitful intent, or to construct. 'Concoct', 'forge', or 'manufacture' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0502",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FABRICATE**",
+    "options": {
+      "A": "Devise",
+      "B": "Contrive",
+      "C": "Destroy",
+      "D": "Invent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fabricate' means to build or construct. 'Destroy', 'demolish', or 'dismantle' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0503",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FACETIOUS**",
+    "options": {
+      "A": "Solemn",
+      "B": "Grave",
+      "C": "Flippant",
+      "D": "Sedate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Facetious' means treating serious issues with deliberately inappropriate humor; flippant. 'Flippant', 'jocular', or 'waggish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0504",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FACETIOUS**",
+    "options": {
+      "A": "Serious",
+      "B": "Jocular",
+      "C": "Fippant",
+      "D": "Whimsical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Facetious' means inappropriately humorous or flippant. 'Serious', 'solemn', or 'grave' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0505",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FACILE**",
+    "options": {
+      "A": "Superficial",
+      "B": "Profound",
+      "C": "Arduous",
+      "D": "Intricate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Facile' means appearing neat and comprehensive only by ignoring the true complexities of an issue; superficial or easily achieved. 'Superficial', 'simplistic', or 'effortless' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0506",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FACILE**",
+    "options": {
+      "A": "Glib",
+      "B": "Arduous",
+      "C": "Effortless",
+      "D": "Simplistic"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Facile' means easily accomplished or superficial. 'Arduous', 'laborious', or 'profound' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0507",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FACTIOUS**",
+    "options": {
+      "A": "Harmonious",
+      "B": "United",
+      "C": "Schismatic",
+      "D": "Cooperative"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Factious' means relating to or inclined to a state of faction; dissentious. 'Schismatic', 'divisive', or 'contentious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0508",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FALLACIOUS**",
+    "options": {
+      "A": "Erroneous",
+      "B": "Sound",
+      "C": "Valid",
+      "D": "Authentic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fallacious' means based on a mistaken belief. 'Erroneous', 'specious', or 'flawed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0509",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FALLACIOUS**",
+    "options": {
+      "A": "Deceptive",
+      "B": "Spurious",
+      "C": "Delusive",
+      "D": "Valid"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Fallacious' means illogical or deceptive. 'Valid', 'sound', or 'correct' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0510",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FASTIDIOUS**",
+    "options": {
+      "A": "Slovenly",
+      "B": "Punctilious",
+      "C": "Careless",
+      "D": "Indifferent"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Fastidious' means very attentive to and concerned about accuracy and detail. 'Punctilious', 'meticulous', or 'fussy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0511",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FASTIDIOUS**",
+    "options": {
+      "A": "Meticulous",
+      "B": "Scrupulous",
+      "C": "Punctilious",
+      "D": "Slovenly"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Fastidious' means painstaking and particular. 'Slovenly', 'lax', or 'careless' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0512",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FATUOUS**",
+    "options": {
+      "A": "Inane",
+      "B": "Sagacious",
+      "C": "Sensible",
+      "D": "Judicious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fatuous' means silly and pointless. 'Inane', 'vacuous', or 'foolish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0513",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FATUOUS**",
+    "options": {
+      "A": "Silly",
+      "B": "Vacuous",
+      "C": "Sagacious",
+      "D": "Asinine"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fatuous' means foolish or brainless. 'Sagacious', 'wise', or 'prudent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0514",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FAWN**",
+    "options": {
+      "A": "Grovel",
+      "B": "Dominate",
+      "C": "Despise",
+      "D": "Rebuff"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fawn' means to display exaggerated flattery or affection, typically in order to gain favor. 'Grovel', 'truckle', or 'kowtow' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0515",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FAWN**",
+    "options": {
+      "A": "Toady",
+      "B": "Flatter",
+      "C": "Kowtow",
+      "D": "Disdain"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Fawn' means to flatter subserviently. 'Disdain', 'scorn', or 'rebuff' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0516",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FECKLESS**",
+    "options": {
+      "A": "Competent",
+      "B": "Irresponsible",
+      "C": "Resourceful",
+      "D": "Diligent"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Feckless' means lacking initiative or strength of character; irresponsible. 'Irresponsible', 'incompetent', or 'shiftless' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0517",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FECKLESS**",
+    "options": {
+      "A": "Shiftless",
+      "B": "Careless",
+      "C": "Efficacious",
+      "D": "Futile"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Feckless' means ineffective and irresponsible. 'Efficacious', 'resourceful', or 'competent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0518",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FECUND**",
+    "options": {
+      "A": "Barren",
+      "B": "Prolific",
+      "C": "Sterile",
+      "D": "Infertile"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Fecund' means producing or capable of producing an abundance of offspring or new growth; fertile. 'Prolific', 'fertile', or 'fruitful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0519",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FECUND**",
+    "options": {
+      "A": "Fertile",
+      "B": "Prolific",
+      "C": "Sterile",
+      "D": "Productive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fecund' means fertile and fruitful. 'Sterile', 'barren', or 'infertile' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0520",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FELICITOUS**",
+    "options": {
+      "A": "Apt",
+      "B": "Inappropriate",
+      "C": "Infelicitous",
+      "D": "Unhappy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Felicitous' means well chosen or suited to the circumstances; pleasing and fortunate. 'Apt', 'apposite', or 'fitting' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0521",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FELICITOUS**",
+    "options": {
+      "A": "Apposite",
+      "B": "Inappropriate",
+      "C": "Apt",
+      "D": "Fortunate"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Felicitous' means well-suited or appropriate. 'Inappropriate', 'unfortunate', or 'ill-suited' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0522",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FERVENT**",
+    "options": {
+      "A": "Impassioned",
+      "B": "Apathetic",
+      "C": "Indifferent",
+      "D": "Cold"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fervent' means having or displaying a passionate intensity. 'Impassioned', 'ardent', or 'vehement' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0523",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FERVENT**",
+    "options": {
+      "A": "Ardent",
+      "B": "Zealous",
+      "C": "Apathetic",
+      "D": "Vehement"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fervent' means burning with passion. 'Apathetic', 'indifferent', or 'phlegmatic' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0524",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FERVOR**",
+    "options": {
+      "A": "Ardor",
+      "B": "Torpor",
+      "C": "Lethargy",
+      "D": "Coolness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fervor' means intense and passionate feeling. 'Ardor', 'passion', or 'zeal' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0525",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FERVOR**",
+    "options": {
+      "A": "Zeal",
+      "B": "Ardor",
+      "C": "Passion",
+      "D": "Apathy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Fervor' is great warmth and passion. 'Apathy', 'indifference', or 'unconcern' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0526",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FETID**",
+    "options": {
+      "A": "Malodorous",
+      "B": "Fragrant",
+      "C": "Aromatic",
+      "D": "Redolent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fetid' means smelling extremely unpleasant. 'Malodorous', 'stinking', or 'putrid' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0527",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FETID**",
+    "options": {
+      "A": "Noxious",
+      "B": "Putrid",
+      "C": "Fragrant",
+      "D": "Rancid"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fetid' means foul-smelling. 'Fragrant', 'aromatic', or 'perfumed' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0528",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FIASCO**",
+    "options": {
+      "A": "Debacle",
+      "B": "Triumph",
+      "C": "Masterpiece",
+      "D": "Achievement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fiasco' refers to a thing that is a complete failure, especially in a ludicrous or humiliating way. 'Debacle', 'catastrophe', or 'disaster' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0529",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FIASCO**",
+    "options": {
+      "A": "Disaster",
+      "B": "Debacle",
+      "C": "Success",
+      "D": "Collapse"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fiasco' means an utter failure. 'Success', 'triumph', or 'victory' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0530",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FICKLE**",
+    "options": {
+      "A": "Constant",
+      "B": "Capricious",
+      "C": "Steadfast",
+      "D": "Resolute"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Fickle' means changing frequently, especially as regards one's loyalties, interests, or affection. 'Capricious', 'mercurial', or 'vacillating' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0531",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FICKLE**",
+    "options": {
+      "A": "Volatile",
+      "B": "Erratic",
+      "C": "Variable",
+      "D": "Constant"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Fickle' means changing unpredictably. 'Constant', 'steadfast', or 'loyal' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0532",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FILCH**",
+    "options": {
+      "A": "Pilfer",
+      "B": "Donate",
+      "C": "Bestow",
+      "D": "Contribute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Filch' means to pilfer or steal (something, especially an item of small value) in a casual way. 'Pilfer', 'purloin', or 'pinch' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0533",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLAGRANT**",
+    "options": {
+      "A": "Blatant",
+      "B": "Inconspicuous",
+      "C": "Concealed",
+      "D": "Subtle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Flagrant' means (of something considered wrong or immoral) conspicuously or obviously offensive. 'Blatant', 'glaring', or 'egregious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0534",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLAGRANT**",
+    "options": {
+      "A": "Egregious",
+      "B": "Inconspicuous",
+      "C": "Glaring",
+      "D": "Brazen"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Flagrant' means shockingly obvious. 'Inconspicuous', 'covert', or 'unobtrusive' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0535",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLEDGLING**",
+    "options": {
+      "A": "Veteran",
+      "B": "Novice",
+      "C": "Master",
+      "D": "Expert"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Fledgling' means a person or organization that is immature, inexperienced, or underdeveloped. 'Novice', 'neophyte', or 'tyro' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0536",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLEDGLING**",
+    "options": {
+      "A": "Neophyte",
+      "B": "Tyro",
+      "C": "Veteran",
+      "D": "Novice"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fledgling' refers to an inexperienced newcomer. 'Veteran', 'master', or 'expert' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0537",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLIPPANT**",
+    "options": {
+      "A": "Disrespectful",
+      "B": "Reverent",
+      "C": "Solemn",
+      "D": "Courteous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Flippant' means not showing a serious or respectful attitude. 'Disrespectful', 'facetious', or 'frivolous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0538",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLIPPANT**",
+    "options": {
+      "A": "Facetious",
+      "B": "Solemn",
+      "C": "Impertinent",
+      "D": "Glib"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Flippant' means disrespectful or light-minded. 'Solemn', 'grave', or 'reverent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0539",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLORID**",
+    "options": {
+      "A": "Ornate",
+      "B": "Plain",
+      "C": "Austere",
+      "D": "Severe"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Florid' means elaborately or excessively intricate or complicated; having a red or flushed complexion. 'Ornate', 'embellished', or 'flamboyant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0540",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLORID**",
+    "options": {
+      "A": "Flamboyant",
+      "B": "Ornate",
+      "C": "Flowery",
+      "D": "Plain"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Florid' means excessively decorated or elaborate. 'Plain', 'austere', or 'simple' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0541",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FLOUT**",
+    "options": {
+      "A": "Defy",
+      "B": "Observe",
+      "C": "Comply",
+      "D": "Revere"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Flout' means to openly disregard (a rule, law, or convention). 'Defy', 'scorn', or 'disobey' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0542",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FLOUT**",
+    "options": {
+      "A": "Disregard",
+      "B": "Comply",
+      "C": "Defy",
+      "D": "Spurn"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Flout' means to mock or openly break rules. 'Comply', 'observe', or 'obey' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0543",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FOMENT**",
+    "options": {
+      "A": "Instigate",
+      "B": "Quell",
+      "C": "Suppress",
+      "D": "Allay"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Foment' means to instigate or stir up (an undesirable or violent sentiment or course of action). 'Instigate', 'incite', or 'provoke' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0544",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FOMENT**",
+    "options": {
+      "A": "Incite",
+      "B": "Stir up",
+      "C": "Suppress",
+      "D": "Agitate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Foment' means to provoke or incite unrest. 'Suppress', 'quell', or 'extinguish' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0545",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FORBEARANCE**",
+    "options": {
+      "A": "Patience",
+      "B": "Impatience",
+      "C": "Intolerance",
+      "D": "Agitation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Forbearance' means patient self-control; restraint and tolerance. 'Patience', 'tolerance', or 'clemency' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0546",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FORBEARANCE**",
+    "options": {
+      "A": "Restraint",
+      "B": "Impatience",
+      "C": "Tolerance",
+      "D": "Endurance"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Forbearance' means patient endurance. 'Impatience', 'intolerance', or 'precipitance' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0547",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FORMIDABLE**",
+    "options": {
+      "A": "Intimidating",
+      "B": "Feeble",
+      "C": "Comforting",
+      "D": "Trivial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Formidable' means inspiring fear or respect through being impressively large, powerful, intense, or capable. 'Intimidating', 'daunting', or 'fearsome' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0548",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FORMIDABLE**",
+    "options": {
+      "A": "Daunting",
+      "B": "Imposing",
+      "C": "Feeble",
+      "D": "Fearsome"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Formidable' means fearsome and powerful. 'Feeble', 'unimposing', or 'weak' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0549",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FORTUITOUS**",
+    "options": {
+      "A": "Accidental",
+      "B": "Premeditated",
+      "C": "Calculated",
+      "D": "Deliberate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fortuitous' means happening by accident or chance rather than design; fortunate. 'Accidental', 'chance', or 'serendipitous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0550",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FORTUITOUS**",
+    "options": {
+      "A": "Incidental",
+      "B": "Serendipitous",
+      "C": "Chance",
+      "D": "Deliberate"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Fortuitous' means occurring purely by chance. 'Deliberate', 'intentional', or 'planned' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

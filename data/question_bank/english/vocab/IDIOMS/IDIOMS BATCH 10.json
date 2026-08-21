@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0451",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the same boat**",
+    "options": {
+      "A": "Sharing the same difficult or unpleasant predicament as others",
+      "B": "Traveling together on a cruise ship",
+      "C": "Competing in a boat race",
+      "D": "Working in separate offices"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in the same boat' means sharing identical hardships or challenges.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0452",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the teeth of**",
+    "options": {
+      "A": "In direct opposition, defiance, or face of severe difficulty",
+      "B": "Suffering from dental pain",
+      "C": "Smiling broadly at friends",
+      "D": "Eating hard food items"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing something 'in the teeth of' means persisting despite direct opposition or severe gale force.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0453",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Iron out**",
+    "options": {
+      "A": "To resolve, settle, or smooth over differences, difficulties, or problems",
+      "B": "To press wrinkles out of clothing with an iron",
+      "C": "To manufacture metal sheets",
+      "D": "To flatten cardboard boxes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'iron out' differences means solving details and settling disputes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0454",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Island style**",
+    "options": {
+      "A": "Living a relaxed, tropical, and isolated lifestyle",
+      "B": "Building coastal bridges",
+      "C": "Swimming across oceans",
+      "D": "Fishing from boats"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (or living isolated) captures a relaxed detached manner. Let's provide standard alternative idioms.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0455",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Jack of all trades**",
+    "options": {
+      "A": "A versatile person who is competent at many different tasks but masters none",
+      "B": "A professional carpenter",
+      "C": "An unskilled manual laborer",
+      "D": "A master craftsman in art"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'jack of all trades' is handy at various tasks without being an expert.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0456",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Jaundice eye**",
+    "options": {
+      "A": "To view with prejudice, envy, jealousy, or bitterness",
+      "B": "Suffering from a liver medical disease",
+      "C": "Wearing yellow tinted glasses",
+      "D": "Having sharp eyesight"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Looking at something with a 'jaundiced eye' means viewing it with prejudice or cynicism.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0457",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Jump on the bandwagon**",
+    "options": {
+      "A": "To join a popular trend, activity, or movement because it has become successful",
+      "B": "To board a circus truck",
+      "C": "To climb atop a vehicle",
+      "D": "To escape from a parade"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'jump on the bandwagon' means joining a trendy movement for popularity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0458",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Jump to conclusions**",
+    "options": {
+      "A": "To form hasty judgments or opinions prematurely without adequate evidence",
+      "B": "To win an athletic high jump contest",
+      "C": "To reach the end of a book quickly",
+      "D": "To make calculated logical deductions"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'jump to conclusions' means forming rushed assumptions without facts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0459",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Jungle law**",
+    "options": {
+      "A": "The rule of the strongest where the weak are oppressed; survival of the fittest",
+      "B": "Conservation laws for wildlife",
+      "C": "Tribal customary traditions",
+      "D": "Environmental forestry acts"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Jungle law' represents ruthless competition where might makes right.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0460",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep a stiff upper lip**",
+    "options": {
+      "A": "To display fortitude, courage, and resilience in the face of adversity",
+      "B": "To apply facial cosmetics stiffly",
+      "C": "To suffer from jaw stiffness",
+      "D": "To smile insincerely"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Keeping a 'stiff upper lip' means maintaining resolve and hiding fear during trials.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0461",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep a-weather eye open**",
+    "options": {
+      "A": "To remain watchful, vigilant, and alert to potential changes or danger",
+      "B": "To forecast rainy weather conditions",
+      "C": "To close eyes during storms",
+      "D": "To gaze at sunny skies"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Keeping a weather eye open means watching closely for risks.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0462",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep an eye on**",
+    "options": {
+      "A": "To watch, guard, or monitor someone or something closely with care",
+      "B": "To wink at someone across a room",
+      "C": "To visit an optician doctor",
+      "D": "To wear protective eyewear"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'keep an eye on' means watching vigilantly over someone.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0463",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep at arm's length**",
+    "options": {
+      "A": "To avoid becoming too close or friendly with someone; maintain distance",
+      "B": "To measure physical arm span size",
+      "C": "To stretch arms during exercise",
+      "D": "To greet people with a handshake"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Keeping someone at 'arm's length' means avoiding intimacy or friendship.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0464",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep house**",
+    "options": {
+      "A": "To manage domestic chores and maintain a home",
+      "B": "To construct residential buildings",
+      "C": "To buy real estate property",
+      "D": "To clean hotel rooms"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'keep house' means running domestic household duties.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0465",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep mum**",
+    "options": {
+      "A": "To remain silent and keep a secret without speaking",
+      "B": "To talk affectionately to mothers",
+      "C": "To whisper quietly in crowds",
+      "D": "To shout loudly in protest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'keep mum' means keeping quiet and refusing to speak.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0466",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep one's own counsel**",
+    "options": {
+      "A": "To keep your thoughts, plans, and opinions secret from others",
+      "B": "To work as a legal defense lawyer",
+      "C": "To consult personal advisers",
+      "D": "To speak openly about ambitions"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'keep your own counsel' means keeping your intentions secret.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0467",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep pace with**",
+    "options": {
+      "A": "To move or progress at equal speed alongside someone or something",
+      "B": "To measure running timing paces",
+      "C": "To walk slowly behind crowds",
+      "D": "To count steps with pedometers"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'keep pace with' means maintaining matching speed or progress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0468",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep the wolf from the door**",
+    "options": {
+      "A": "To have barely enough money to ward off starvation and poverty",
+      "B": "To protect farm animals from wild beasts",
+      "C": "To lock entrance doors securely at night",
+      "D": "To keep stray dogs away from houses"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Keeping the 'wolf from the door' means averting starvation and extreme poverty.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0469",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Kettle of fish**",
+    "options": {
+      "A": "A completely different, complicated situation or problem",
+      "B": "A seafood cooking pot recipe",
+      "C": "A fresh catch of river fish",
+      "D": "A peaceful marine aquarium"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'fine kettle of fish' describes a messy, awkward predicament.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0470",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Kick up a row**",
+    "options": {
+      "A": "To cause a noisy disturbance, commotion, or quarrel",
+      "B": "To play soccer sports outdoors",
+      "C": "To arrange furniture in rows",
+      "D": "To row a boat across water"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'kick up a row' means making an angry, noisy fuss.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0471",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Kill time**",
+    "options": {
+      "A": "To pass time doing pointless activities while waiting for something",
+      "B": "To wear expensive wristwatches",
+      "C": "To rush through a project quickly",
+      "D": "To record athletic race timings"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'kill time' means occupying yourself with trivialities while waiting.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0472",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Kind regards**",
+    "options": {
+      "A": "A polite formula used for ending friendly letters or messages",
+      "B": "Harsh criticism of behavior",
+      "C": "Formal legal notices",
+      "D": "Angry verbal complaints"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Kind regards' is a standard polite closing for correspondence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0473",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**King's ransom**",
+    "options": {
+      "A": "An exorbitant, massive sum of money",
+      "B": "A royal historical treasure",
+      "C": "A small pocket money coin",
+      "D": "A tax payment fee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'king's ransom' is a vast fortune of money.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0474",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Knock for six**",
+    "options": {
+      "A": "To astonish, shock, or overwhelm someone completely",
+      "B": "To score points in cricket games",
+      "C": "To strike someone physically",
+      "D": "To collapse a building structure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'knock someone for six' means leaving them deeply shocked or overwhelmed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0475",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Know by heart**",
+    "options": {
+      "A": "To memorize something completely so it can be recalled instantly",
+      "B": "To understand someone's emotional feelings",
+      "C": "To suffer from a medical heart condition",
+      "D": "To read poetry with passion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To know something 'by heart' means having memorized it entirely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0476",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Knuckle down**",
+    "options": {
+      "A": "To apply yourself seriously and work hard with determination",
+      "B": "To kneel down in prayer",
+      "C": "To surrender in defeat",
+      "D": "To play marble games"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'knuckle down' means applying yourself diligently to work.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0477",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Labour of love**",
+    "options": {
+      "A": "An undertaking performed purely for pleasure and dedication without financial gain",
+      "B": "A difficult manual factory job",
+      "C": "A paid employment contract",
+      "D": "A forced prison labor chore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'labour of love' is work done out of affection rather than for money.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0478",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Laughing stock**",
+    "options": {
+      "A": "An object of ridicule, mockery, or public amusement due to foolish behavior",
+      "B": "A successful comedy theater",
+      "C": "A cheerful group of friends",
+      "D": "A profitable business inventory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'laughing stock' is someone made ridiculous and mocked by others.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0479",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lead someone up the garden path**",
+    "options": {
+      "A": "To deceive, mislead, or trick someone with false promises",
+      "B": "To guide visitors through a botanical park",
+      "C": "To accompany friends on a walk",
+      "D": "To show the way to a house"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lead someone up the garden path' means deceiving them deliberately.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0480",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Leak out**",
+    "options": {
+      "A": "To become known to the public through secret disclosure or accident",
+      "B": "Water dripping from a roof pipe",
+      "C": "Air escaping from a balloon",
+      "D": "Leaving a building hurriedly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. When a secret 'leaks out', it becomes public knowledge.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0481",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lean and mean**",
+    "options": {
+      "A": "Operating with minimal staff or resources efficiently and aggressively",
+      "B": "Suffering from malnutrition and anger",
+      "C": "A physical fitness weight-loss diet",
+      "D": "Weak and ineffective business management"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'lean and mean' describes a streamlined, highly efficient organization.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0482",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Leave in the lurch**",
+    "options": {
+      "A": "To abandon someone in a difficult situation without help",
+      "B": "To drive a car off-road into ditches",
+      "C": "To leave a party early unnoticed",
+      "D": "To forget luggage at a hotel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'leave someone in the lurch' means abandoning them during hardship.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0483",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Leg up**",
+    "options": {
+      "A": "A helping hand or advantage given to someone to help them succeed",
+      "B": "A physical leg muscle injury",
+      "C": "Climbing over a tall wall",
+      "D": "A fashion modeling pose"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Giving someone a 'leg up' means providing a helpful advantage or boost.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0484",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Length and breadth**",
+    "options": {
+      "A": "Every part of an area; completely across a region",
+      "B": "Measuring architectural building dimensions",
+      "C": "Wide roads and long highways",
+      "D": "Cloth tailoring measurements"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Traveling the 'length and breadth' means covering every section of a place.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0485",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Let bygones be bygones**",
+    "options": {
+      "A": "To forgive past offenses and forget old quarrels",
+      "B": "To dwell on historical regrets",
+      "C": "To buy vintage antique items",
+      "D": "To repeat past mistakes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Let bygones be bygones' encourages forgiving past grievances.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0486",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Let sleeping dogs lie**",
+    "options": {
+      "A": "To leave a situation alone to avoid stirring up trouble or old problems",
+      "B": "To let pet dogs sleep on beds",
+      "C": "To avoid waking aggressive animals",
+      "D": "To ignore animal shelter rules"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Let sleeping dogs lie' means leaving a peaceful situation undisturbed to avoid conflict.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0487",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Letter of the law**",
+    "options": {
+      "A": "The strict, literal interpretation of a rule rather than its intent",
+      "B": "A postal mail delivery service",
+      "C": "Handwritten love correspondence",
+      "D": "Legal legal textbook publishing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Following the 'letter of the law' means adhering strictly to exact literal wording.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0488",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Level best**",
+    "options": {
+      "A": "Your absolute maximum effort and endeavor",
+      "B": "A flat carpentry surface",
+      "C": "Average performance quality",
+      "D": "A balanced score result"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing your 'level best' means trying with all your might.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0489",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lick into shape**",
+    "options": {
+      "A": "To organize, train, or mold something into a proper, efficient condition",
+      "B": "To eat sweet sticky candy",
+      "C": "To sculpt pottery clay",
+      "D": "To remodel house interiors"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lick something into shape' means putting disorganized things in proper order.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0490",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Life and soul**",
+    "options": {
+      "A": "The most lively, entertaining, and energetic person at a social gathering",
+      "B": "A spiritual religious doctrine",
+      "C": "Biological human survival",
+      "D": "A quiet introverted person"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being the 'life and soul' of a party means being the most vibrant, animating presence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0491",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Light at the end of the tunnel**",
+    "options": {
+      "A": "Signs of approaching relief or success after a long period of hardship",
+      "B": "A train approaching in a subway",
+      "C": "An electrical lighting installation",
+      "D": "Sunrise after a dark night"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Seeing 'light at the end of the tunnel' indicates that a hard ordeal is nearly over.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0492",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lily-livered**",
+    "options": {
+      "A": "Cowardly, timid, and lacking courage",
+      "B": "Suffering from a liver ailment",
+      "C": "Having pale white skin complexion",
+      "D": "Brave and daring in action"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'lily-livered' person is cowardly and fearful.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0493",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Line of fire**",
+    "options": {
+      "A": "The path of bullets or artillery danger; exposed to direct attack or criticism",
+      "B": "A firefighter hose layout",
+      "C": "A camping campfire circle",
+      "D": "An electrical wiring fault"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being in the 'line of fire' means facing direct exposure to criticism or danger.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0494",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lions share**",
+    "options": {
+      "A": "The largest and best portion of a resource",
+      "B": "Equal sharing among partners",
+      "C": "A small remaining fraction",
+      "D": "Wild animal food portions"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'lion's share' is the biggest portion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0495",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Live wire**",
+    "options": {
+      "A": "An energetic, lively, and unpredictable person full of dynamic action",
+      "B": "An electrical power cable hazard",
+      "C": "A telephone communication line",
+      "D": "A calm, sleepy individual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'live wire' is a high-energy, dynamic, and unpredictable person.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0496",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Living death**",
+    "options": {
+      "A": "A miserable existence devoid of joy, hope, or freedom",
+      "B": "A fatal medical accident",
+      "C": "A peaceful retirement life",
+      "D": "A horror movie story"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'living death' refers to a wretched, agonizing existence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0497",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lock horns**",
+    "options": {
+      "A": "To engage in a dispute, conflict, or argument with someone",
+      "B": "To lock doors with keys",
+      "C": "To hunt deer stags in forests",
+      "D": "To embrace friends warmly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lock horns' means to engage in a stubborn argument or clash.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0498",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Long face**",
+    "options": {
+      "A": "A sad, gloomy, or disappointed facial expression",
+      "B": "An elongated facial structure",
+      "C": "A smiling cheerful look",
+      "D": "A wide-angle camera shot"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Pulling a 'long face' means looking glum and unhappy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0499",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Look a gift horse in the mouth**",
+    "options": {
+      "A": "To find fault with something received as a gift or favor",
+      "B": "To inspect animal teeth at a stable",
+      "C": "To buy horses from merchants",
+      "D": "To reject expensive presents"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Looking a gift horse in the mouth means ungratefully criticizing a gift.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0500",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Look sharp**",
+    "options": {
+      "A": "To hurry up, pay attention, or be quick about what you are doing",
+      "B": "To wear sharp clothing fashion",
+      "C": "To sharpen metal knives",
+      "D": "To look with a magnifying glass"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Telling someone to 'look sharp' means telling them to hurry or be alert.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

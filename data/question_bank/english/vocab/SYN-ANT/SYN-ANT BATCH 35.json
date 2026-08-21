@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_1701",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TREPIDATION**",
+    "options": {
+      "A": "Apprehension",
+      "B": "Confidence",
+      "C": "Serenity",
+      "D": "Composure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Trepidation' means a feeling of fear or agitation about something that may happen. Synonyms include apprehension, dread, and anxiety.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1702",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TREPIDATION**",
+    "options": {
+      "A": "Dread",
+      "B": "Anxiety",
+      "C": "Confidence",
+      "D": "Fear"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Trepidation' implies fearful uncertainty. 'Confidence' or 'assurance' serves as the direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1703",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**UBIQUITOUS**",
+    "options": {
+      "A": "Omnipresent",
+      "B": "Rare",
+      "C": "Limited",
+      "D": "Scarce"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ubiquitous' means found everywhere. Synonyms include omnipresent, pervasive, and universal.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1704",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**UBIQUITOUS**",
+    "options": {
+      "A": "Pervasive",
+      "B": "Universal",
+      "C": "Rare",
+      "D": "Widespread"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ubiquitous' describes being everywhere; its antonym is rare, scarce, or limited.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1705",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VENERATE**",
+    "options": {
+      "A": "Revere",
+      "B": "Despise",
+      "C": "Scorn",
+      "D": "Disregard"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Venerate' means to regard with great respect. Synonyms include revere, esteem, and honor.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1706",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VENERATE**",
+    "options": {
+      "A": "Revere",
+      "B": "Respect",
+      "C": "Despise",
+      "D": "Esteem"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Venerate' implies deep respect. 'Despise', 'scorn', or 'deride' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1707",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VERACITY**",
+    "options": {
+      "A": "Truthfulness",
+      "B": "Deceit",
+      "C": "Falsehood",
+      "D": "Duplicity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Veracity' means conformity to facts; accuracy or habitual truthfulness.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1708",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VERACITY**",
+    "options": {
+      "A": "Truthfulness",
+      "B": "Accuracy",
+      "C": "Falsehood",
+      "D": "Honesty"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Veracity' means truthfulness. 'Falsehood', 'deceit', or 'mendacity' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1709",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ZEALOT**",
+    "options": {
+      "A": "Fanatic",
+      "B": "Moderate",
+      "C": "Apostate",
+      "D": "Skeptic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Zealot' refers to a person who is fanatical and uncompromising in pursuit of their ideals.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1710",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ZEALOT**",
+    "options": {
+      "A": "Fanatic",
+      "B": "Extremist",
+      "C": "Moderate",
+      "D": "Partisan"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Zealot' implies fanatical extremity. 'Moderate' or 'pragmatist' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1711",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABHOR**",
+    "options": {
+      "A": "Detest",
+      "B": "Admire",
+      "C": "Love",
+      "D": "Cherish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abhor' means to regard with disgust and hatred.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1712",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABHOR**",
+    "options": {
+      "A": "Detest",
+      "B": "Loathe",
+      "C": "Admire",
+      "D": "Despise"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Abhor' means to hate intensely. 'Admire', 'love', or 'cherish' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1713",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABJURE**",
+    "options": {
+      "A": "Renounce",
+      "B": "Adopt",
+      "C": "Embrace",
+      "D": "Espouse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abjure' means to solemnly renounce (a belief, cause, or claim).",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1714",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABJURE**",
+    "options": {
+      "A": "Renounce",
+      "B": "Retract",
+      "C": "Embrace",
+      "D": "Disavow"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Abjure' means to reject or renounce. 'Embrace', 'adopt', or 'uphold' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1715",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABROGATE**",
+    "options": {
+      "A": "Repeal",
+      "B": "Enact",
+      "C": "Ratify",
+      "D": "Validate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abrogate' means to repeal or do away with (a law, right, or formal agreement).",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1716",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABROGATE**",
+    "options": {
+      "A": "Repeal",
+      "B": "Revoke",
+      "C": "Ratify",
+      "D": "Annul"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Abrogate' means to cancel. 'Ratify', 'enact', or 'validate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1717",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABSCOND**",
+    "options": {
+      "A": "Flee",
+      "B": "Remain",
+      "C": "Stay",
+      "D": "Reside"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abscond' means to leave hurriedly and secretly, typically to avoid detection or arrest.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1718",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABSCOND**",
+    "options": {
+      "A": "Flee",
+      "B": "Escape",
+      "C": "Stay",
+      "D": "Depart"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Abscond' means to flee. 'Stay', 'remain', or 'abide' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1719",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABSTINENT**",
+    "options": {
+      "A": "Temperate",
+      "B": "Indulgent",
+      "C": "Excessive",
+      "D": "Gluttonous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abstinent' means refraining from an activity or consumption, especially alcohol. 'Temperate', 'abstemious', or 'self-restrained' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1720",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABSTINENT**",
+    "options": {
+      "A": "Temperate",
+      "B": "Self-restrained",
+      "C": "Indulgent",
+      "D": "Abstemious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Abstinent' means practicing restraint. 'Indulgent', 'excessive', or 'gluttonous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1721",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACCRIMONIOUS**",
+    "options": {
+      "A": "Bitter",
+      "B": "Kind",
+      "C": "Friendly",
+      "D": "Agreeable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Acrimonious' (typically of a speech or debate) angry and bitter.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1722",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACRIMONIOUS**",
+    "options": {
+      "A": "Bitter",
+      "B": "Sharp",
+      "C": "Kind",
+      "D": "Caustic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Acrimonious' means bitter and sharp. 'Kind', 'amicable', or 'pleasant' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1723",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ADAMANT**",
+    "options": {
+      "A": "Unwavering",
+      "B": "Yielding",
+      "C": "Flexible",
+      "D": "Pliable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Adamant' means refusing to be persuaded or to change one's mind. 'Unwavering', 'stubborn', or 'resolute' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1724",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ADAMANT**",
+    "options": {
+      "A": "Unwavering",
+      "B": "Resolute",
+      "C": "Yielding",
+      "D": "Stubborn"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Adamant' means firm. 'Yielding', 'pliable', or 'flexible' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1725",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ADROIT**",
+    "options": {
+      "A": "Deft",
+      "B": "Awkward",
+      "C": "Inept",
+      "D": "Clumsy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Adroit' means clever or skillful. 'Deft', 'adept', or 'nimble' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1726",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ADROIT**",
+    "options": {
+      "A": "Deft",
+      "B": "Skillful",
+      "C": "Inept",
+      "D": "Adept"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Adroit' means skillful. 'Inept', 'clumsy', or 'awkward' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1727",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ADULATION**",
+    "options": {
+      "A": "Flattery",
+      "B": "Criticism",
+      "C": "Condemnation",
+      "D": "Denigration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Adulation' means excessive admiration or praise. 'Flattery', 'worship', or 'acclaim' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1728",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ADULTERATE**",
+    "options": {
+      "A": "Purify",
+      "B": "Contaminate",
+      "C": "Taint",
+      "D": "Debase"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Adulterate' means to make impure. 'Purify' or 'refine' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1729",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AESTHETIC**",
+    "options": {
+      "A": "Artistic",
+      "B": "Ugly",
+      "C": "Unattractive",
+      "D": "Hideous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Aesthetic' means concerned with beauty or the appreciation of beauty. 'Artistic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1730",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AESTHETIC**",
+    "options": {
+      "A": "Artistic",
+      "B": "Beautiful",
+      "C": "Hideous",
+      "D": "Pleasing"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Aesthetic' concerns beauty. 'Hideous', 'ugly', or 'unattractive' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1731",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFABLE**",
+    "options": {
+      "A": "Friendly",
+      "B": "Surly",
+      "C": "Churlish",
+      "D": "Rude"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Affable' means friendly, good-natured, or easy to talk to. 'Sociable', 'amiable', or 'genial' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1732",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFABLE**",
+    "options": {
+      "A": "Friendly",
+      "B": "Genial",
+      "C": "Surly",
+      "D": "Amiable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Affable' means friendly. 'Surly', 'rude', or 'churlish' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1733",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFECTATION**",
+    "options": {
+      "A": "Pretension",
+      "B": "Naturalness",
+      "C": "Sincerity",
+      "D": "Honesty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Affectation' refers to artificial behavior to impress. 'Pretension', 'posturing', or 'artifice' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1734",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFECTATION**",
+    "options": {
+      "A": "Pretension",
+      "B": "Artificiality",
+      "C": "Naturalness",
+      "D": "Posturing"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Affectation' is artificial. 'Naturalness', 'sincerity', or 'honesty' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1735",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFILIATE**",
+    "options": {
+      "A": "Associate",
+      "B": "Separate",
+      "C": "Disconnect",
+      "D": "Sever"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Affiliate' means to officially attach or connect (a subsidiary group or a person) to an organization. 'Associate', 'join', or 'attach' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1736",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFILIATE**",
+    "options": {
+      "A": "Associate",
+      "B": "Attach",
+      "C": "Sever",
+      "D": "Join"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Affiliate' means to connect. 'Sever', 'disconnect', or 'separate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1737",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFIRMATION**",
+    "options": {
+      "A": "Assertion",
+      "B": "Denial",
+      "C": "Rejection",
+      "D": "Contradiction"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Affirmation' refers to the action or process of affirming something or being affirmed. 'Assertion', 'declaration', or 'assertion' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1738",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFIRMATION**",
+    "options": {
+      "A": "Assertion",
+      "B": "Declaration",
+      "C": "Denial",
+      "D": "Averment"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Affirmation' is a positive statement. 'Denial', 'contradiction', or 'refutation' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1739",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFIX**",
+    "options": {
+      "A": "Attach",
+      "B": "Detach",
+      "C": "Remove",
+      "D": "Separate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Affix' means to stick, attach, or fasten (something) to something else. 'Attach', 'fasten', or 'fix' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1740",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFIX**",
+    "options": {
+      "A": "Attach",
+      "B": "Fasten",
+      "C": "Detach",
+      "D": "Fix"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Affix' means to attach. 'Detach', 'remove', or 'separate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1741",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFLICTION**",
+    "options": {
+      "A": "Hardship",
+      "B": "Blessing",
+      "C": "Prosperity",
+      "D": "Joy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Affliction' refers to something that causes pain or suffering. 'Hardship', 'suffering', or 'misfortune' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1742",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFLICTION**",
+    "options": {
+      "A": "Hardship",
+      "B": "Suffering",
+      "C": "Blessing",
+      "D": "Misfortune"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Affliction' is a cause of suffering. 'Blessing', 'relief', or 'prosperity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1743",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFLUENT**",
+    "options": {
+      "A": "Wealthy",
+      "B": "Impoverished",
+      "C": "Destitute",
+      "D": "Indigent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Affluent' means having a great deal of money; wealthy. 'Wealthy', 'prosperous', or 'opulent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1744",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFLUENT**",
+    "options": {
+      "A": "Wealthy",
+      "B": "Prosperous",
+      "C": "Impoverished",
+      "D": "Opulent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Affluent' means wealthy. 'Impoverished', 'destitute', or 'poor' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1745",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AGGRANDIZE**",
+    "options": {
+      "A": "Exalt",
+      "B": "Belittle",
+      "C": "Degrade",
+      "D": "Depreciate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Aggrandize' means to increase the power, status, or wealth of. 'Exalt', 'enhance', or 'augment' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1746",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AGGRANDIZE**",
+    "options": {
+      "A": "Exalt",
+      "B": "Enhance",
+      "C": "Belittle",
+      "D": "Augment"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Aggrandize' means to elevate. 'Belittle', 'degrade', or 'depreciate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1747",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AGGRAVATE**",
+    "options": {
+      "A": "Exacerbate",
+      "B": "Alleviate",
+      "C": "Mitigate",
+      "D": "Assuage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Aggravate' means to make (a problem, injury, or offense) worse. 'Exacerbate', 'worsen', or 'intensify' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1748",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AGGRAVATE**",
+    "options": {
+      "A": "Exacerbate",
+      "B": "Intensify",
+      "C": "Alleviate",
+      "D": "Worsen"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Aggravate' means to make worse. 'Alleviate', 'mitigate', or 'relieve' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1749",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AGGREGATE**",
+    "options": {
+      "A": "Total",
+      "B": "Individual",
+      "C": "Single",
+      "D": "Separate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Aggregate' refers to a whole formed by combining several (typically disparate) elements. 'Total', 'sum', or 'collection' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1750",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AGGREGATE**",
+    "options": {
+      "A": "Total",
+      "B": "Sum",
+      "C": "Individual",
+      "D": "Collection"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Aggregate' means a whole formed by parts. 'Individual', 'single', or 'separate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

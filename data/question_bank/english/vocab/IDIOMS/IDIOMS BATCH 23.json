@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_1101",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**By leaps and bounds**",
+    "options": {
+      "A": "Moving with hesitant and uneven steps",
+      "B": "At a very rapid and remarkable rate of progress",
+      "C": "Suffering frequent setbacks during execution",
+      "D": "Jumping across athletic hurdles in a competition"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'By leaps and bounds' means advancing, expanding, or progressing very rapidly and successfully.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1102",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**By the skin of one's teeth**",
+    "options": {
+      "A": "Only just; by a very narrow and precarious margin",
+      "B": "Having exceptionally strong dental hygiene",
+      "C": "Chewing tough food items with immense difficulty",
+      "D": "Failing narrowly in an athletic endurance race"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing or escaping something 'by the skin of one's teeth' means barely managing to succeed by a hair's breadth.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1103",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Call a spade a spade**",
+    "options": {
+      "A": "To play card games in professional tournaments",
+      "B": "To use specialized excavation tools in agriculture",
+      "C": "To speak frankly, bluntly, and directly about the truth",
+      "D": "To disguise harsh criticism behind flattering praise"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'call a spade a spade' means describing things accurately and plainly without resorting to euphemisms.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1104",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Call it a day**",
+    "options": {
+      "A": "To assign an official name to an upcoming festival",
+      "B": "To stop working or doing an activity for the remainder of the day",
+      "C": "To record daily events in a chronological journal",
+      "D": "To plan an early morning business schedule for tomorrow"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'call it a day' means deciding to finish work and rest for the rest of the day.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1105",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Carry coals to Newcastle**",
+    "options": {
+      "A": "To supply fuel to a regional manufacturing foundry",
+      "B": "To transport mineral cargo across railway lines",
+      "C": "To do something completely superfluous, redundant, or unnecessary",
+      "D": "To discover a rich underground vein of valuable minerals"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Carrying coals to Newcastle' means taking goods or actions to a place where they are already in abundant supply, hence redundant.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1106",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Carry the day**",
+    "options": {
+      "A": "To carry heavy cargo containers through daylight hours",
+      "B": "To win approval, achieve victory, or gain success in a contest",
+      "C": "To postpone an important gathering to a future date",
+      "D": "To celebrate a personal birthday anniversary with friends"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'carry the day' means to win a contest, secure victory, or achieve widespread success.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1107",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cast pearls before swine**",
+    "options": {
+      "A": "To offer valuable wisdom or precious items to those who cannot appreciate them",
+      "B": "To purchase expensive jewelry from gemstone merchants",
+      "C": "To feed livestock animals high-grade grain supplies",
+      "D": "To lose valuable heirlooms through careless mismanagement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'To cast pearls before swine' means offering something of high value or refined beauty to people incapable of recognizing its worth.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1108",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Catch-22**",
+    "options": {
+      "A": "A popular computer programming algorithm code",
+      "B": "A straightforward dilemma with multiple easy solutions",
+      "C": "A sports penalty awarded during championship matches",
+      "D": "A paradoxical, frustrating dilemma from which escape is impossible due to contradictory rules"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. A 'Catch-22' is a no-win predicament where mutually conflicting conditions make an escape or solution impossible.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1109",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Chew the cud**",
+    "options": {
+      "A": "To eat food in large, hurried quantities",
+      "B": "To ruminate, ponder, or meditate deeply on a subject",
+      "C": "To complain loudly about minor administrative delays",
+      "D": "To mimic the feeding behavior of grazing animals"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'chew the cud' means to think slowly and reflectively over a matter for a considerable time.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1110",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Chicken-hearted**",
+    "options": {
+      "A": "Extremely timid, cowardly, and easily frightened",
+      "B": "Suffering from a congenital cardiovascular ailment",
+      "C": "Displaying gentle compassion toward abandoned animals",
+      "D": "Possessing exceptional courage in physical combat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'chicken-hearted' describes a person who lacks courage and is easily intimidated.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1111",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Chip off the old block**",
+    "options": {
+      "A": "A fragment of stone broken from a monument",
+      "B": "A son or daughter who closely resembles their parent in behavior or appearance",
+      "C": "A carpenter skilled in carving timber statues",
+      "D": "An obstacle blocking a narrow roadway"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'chip off the old block' is someone who closely resembles a parent in character, habits, or looks.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1112",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Clean hands**",
+    "options": {
+      "A": "Hands thoroughly washed with soap and antiseptic",
+      "B": "Freedom from guilt, corruption, or complicity in wrongdoing",
+      "C": "Manual laborers who avoid touching grease",
+      "D": "A surgeon preparing for a major clinical procedure"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having 'clean hands' means being innocent, blameless, and free from corruption or guilt.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1113",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Clear the air**",
+    "options": {
+      "A": "To remove tension, doubts, or bad feelings by having an open discussion",
+      "B": "To ventilate an enclosed room with fresh outdoor breezes",
+      "C": "To forecast changes in atmospheric weather fronts",
+      "D": "To spray air deodorizers across an office building"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'clear the air' means discussing misunderstandings frankly to eliminate suspicion or tension.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1114",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cloak and dagger**",
+    "options": {
+      "A": "Historical stage costumes worn by theater actors",
+      "B": "Involving secret, undercover operations, espionage, or mystery",
+      "C": "A duel fought with sharpened steel weapons",
+      "D": "A religious ceremonial robe worn by monks"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Cloak and dagger' refers to activities involving mystery, intrigue, espionage, or clandestine plots.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1115",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cock and bull story**",
+    "options": {
+      "A": "A traditional fable about farmyard animals",
+      "B": "An absurd, fabricated, and unbelievable excuse or tale",
+      "C": "A factual biological study of livestock behavior",
+      "D": "A heated dispute between two business rivals"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'cock and bull story' is an improbable, concocted story used as an excuse.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1116",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cold comfort**",
+    "options": {
+      "A": "A warm blanket provided during winter weather",
+      "B": "Poor or slight consolation that does not really make one feel better",
+      "C": "A refreshing ice dessert eaten in hot climates",
+      "D": "Sympathy offered by close family relatives"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Cold comfort' is a negligible or inadequate consolation that brings virtually no real relief.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1117",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Come to blows**",
+    "options": {
+      "A": "To blow out celebratory candles at a banquet",
+      "B": "To start fighting physically with one another after an argument",
+      "C": "To experience sudden strong gusts of coastal wind",
+      "D": "To reach a peaceful diplomatic compromise"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'come to blows' means progressing from a verbal disagreement into actual physical violence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1118",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Come to grief**",
+    "options": {
+      "A": "To suffer a disaster, accident, ruin, or severe misfortune",
+      "B": "To console a friend during a period of bereavement",
+      "C": "To express heartfelt sympathy at a memorial gathering",
+      "D": "To overcome an emotional crisis with fortitude"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'come to grief' means to experience catastrophic failure, an accident, or great misfortune.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1119",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Come to light**",
+    "options": {
+      "A": "To be revealed, discovered, or disclosed after being secret",
+      "B": "To illuminate an unlit gallery room with electric lamps",
+      "C": "To wake up early at the break of dawn",
+      "D": "To paint artistic canvases with pastel shades"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. When something 'comes to light', hidden facts or unknown secrets become known to the public.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1120",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cook the books**",
+    "options": {
+      "A": "To publish a best-selling recipe book",
+      "B": "To burn outdated novels in a library archive",
+      "C": "To fraudulently alter or falsify financial accounting records",
+      "D": "To bind old historical manuscripts professionally"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'cook the books' means manipulating or forging financial statements dishonestly to deceive auditors.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1121",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Couch potato**",
+    "options": {
+      "A": "A farmer who specializes in root vegetable crops",
+      "B": "A lazy person who spends excessive time sitting on a sofa watching television",
+      "C": "A decorative soft cushion placed in living rooms",
+      "D": "A healthy potato snack served at cinema halls"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'couch potato' is an inactive person who spends extensive leisure time sedentary on a couch watching screens.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1122",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Crocodile tears**",
+    "options": {
+      "A": "Genuine sorrow expressed over the loss of a close friend",
+      "B": "A natural optical reflex observed in wild aquatic reptiles",
+      "C": "Insincere, hypocritical, or false displays of grief and sympathy",
+      "D": "Tears shed while chopping onions during cooking"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Crocodile tears' refers to a fake, hypocritical show of sorrow or weeping intended to deceive others.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1123",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cross one's t's and dot one's i's**",
+    "options": {
+      "A": "To be extremely meticulous, thorough, and attentive to every small detail",
+      "B": "To write cursive calligraphy on parchment paper",
+      "C": "To proofread a book for basic grammatical punctuation only",
+      "D": "To sign a legal agreement hurriedly without reading"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Crossing t's and dotting i's' means executing a task with extreme attention to every minor detail.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1124",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cross swords with**",
+    "options": {
+      "A": "To practice fencing techniques in a sports hall",
+      "B": "To engage in a fight, dispute, or fierce argument with someone",
+      "C": "To manufacture steel military weapons in a foundry",
+      "D": "To salute a military commander during a review"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'cross swords' with someone means to engage in a confrontation, dispute, or battle with them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1125",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cry over spilt milk**",
+    "options": {
+      "A": "To clean up an accidental dairy mess on a floor",
+      "B": "To mourn, complain, or worry uselessly about a past loss that cannot be altered",
+      "C": "To throw away expired food items in a kitchen",
+      "D": "To express extreme joy over a modest accomplishment"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Crying over spilt milk' means wasting time grieving over an unchangeable past mistake or loss.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1126",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cry wolf**",
+    "options": {
+      "A": "To track wild predatory wolves in a forest",
+      "B": "To give false alarms repeatedly so that genuine cries for help are ignored",
+      "C": "To howl loudly during an outdoor emergency",
+      "D": "To summon emergency medical teams to an accident site"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'cry wolf' means raising false alarms so often that people no longer believe you when real trouble strikes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1127",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Curry favor**",
+    "options": {
+      "A": "To cook a spicy gourmet recipe for guests",
+      "B": "To try to gain favor or approval through flattery and subservient behavior",
+      "C": "To demand financial compensation from an associate",
+      "D": "To organize an official banquet for community leaders"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'curry favor' means seeking to gain someone's goodwill or advantage through ingratiation and flattery.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1128",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cut a sorry figure**",
+    "options": {
+      "A": "To create a poor, embarrassing, or shameful impression",
+      "B": "To sculpt a wooden statue of poor quality",
+      "C": "To lose significant body weight through dieting",
+      "D": "To apologize politely for an inadvertent mistake"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'cut a sorry figure' means making a poor, pathetic, or embarrassing impression through one's performance or conduct.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1129",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cut both ends**",
+    "options": {
+      "A": "To trim both edges of a piece of fabric neatly",
+      "B": "To argue in favor of both opposing sides of a question",
+      "C": "To shorten a speech at both the beginning and conclusion",
+      "D": "To spend money recklessly from two separate bank accounts"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'cut both ends' (or cut both ways) means advancing arguments that support or affect both opposing sides.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1130",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cut corners**",
+    "options": {
+      "A": "To do something in the easiest, cheapest, or fastest way, often compromising quality",
+      "B": "To round off the sharp corners of wooden furniture",
+      "C": "To take a pedestrian shortcut across public park lawns",
+      "D": "To design intricate geometric angles in drafting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'cut corners' means saving time, money, or effort by doing things below the standard quality required.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1131",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cut no ice**",
+    "options": {
+      "A": "To fail to make an impression, have no influence, or carry no weight",
+      "B": "To be unable to skate across a frozen lake surface",
+      "C": "To preserve food without using refrigeration",
+      "D": "To melt solid blocks of ice using boiling water"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. If an excuse, argument, or person 'cuts no ice', it fails to influence or impress anyone.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1132",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cut one's coat according to one's cloth**",
+    "options": {
+      "A": "To live within one's financial means and tailor expenditure to resources",
+      "B": "To sew customized bespoke garments at a tailoring workshop",
+      "C": "To buy premium textile materials regardless of cost",
+      "D": "To trim clothing garments to fit current fashion trends"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cut your coat according to your cloth' means living within your financial limits and adapting to available resources.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1133",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cut the Gordian knot**",
+    "options": {
+      "A": "To untie complex marine mooring ropes on a ship",
+      "B": "To solve an intricate, difficult problem by taking bold, decisive, and direct action",
+      "C": "To sever relationships with longstanding acquaintances",
+      "D": "To weave a decorative rope pattern in handicrafts"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'cut the Gordian knot' means resolving a complicated dilemma swiftly using forceful, unconventional measures.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1134",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cut to the quick**",
+    "options": {
+      "A": "To trim fingernails too short accidentally",
+      "B": "To severely hurt or deeply wound someone's feelings and emotions",
+      "C": "To finish a surgical incision with great speed",
+      "D": "To sprint rapidly through a short race course"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To be 'cut to the quick' means having one's emotional feelings deeply hurt or being profoundly offended.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1135",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dance to someone's tune**",
+    "options": {
+      "A": "To perform classical choreography in a stage ballet",
+      "B": "To obey someone blindly and act completely under their control",
+      "C": "To appreciate orchestral musical compositions",
+      "D": "To sing popular folk melodies at community events"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'dance to someone's tune' means constantly complying with someone's wishes and following their orders subserviently.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1136",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dark horse**",
+    "options": {
+      "A": "A black thoroughbred horse trained for equestrian racing",
+      "B": "A candidate or competitor whose true abilities are unknown but who unexpectedly wins",
+      "C": "A person secretly engaged in unlawful criminal activities",
+      "D": "A fierce and wild animal living in remote mountain regions"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'dark horse' is a little-known contender who emerges unexpectedly to win a contest or prominence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1137",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dead as a doornail**",
+    "options": {
+      "A": "A rusty metal nail fixed into a wooden entryway",
+      "B": "Completely, undeniably, and unequivocally dead or lifeless",
+      "C": "An antique architectural piece preserved in museums",
+      "D": "A locked gate with no key available"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Dead as a doornail' is an emphatic phrase meaning totally dead, defunct, or completely without life.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1138",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dead heat**",
+    "options": {
+      "A": "Extreme summer temperatures causing heat exhaustion",
+      "B": "A race or competition in which two or more contestants finish exactly equal; a tie",
+      "C": "A faulty heating furnace in an industrial building",
+      "D": "A thermal power failure occurring during winter"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'dead heat' is a competition result in which two or more competitors finish with an identical score or time.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1139",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dead letter**",
+    "options": {
+      "A": "A law, rule, or custom that is no longer enforced or observed",
+      "B": "An undeliverable postal envelope returned to the sender",
+      "C": "A historical document written by an ancient monarch",
+      "D": "A forged legal contract rejected by a court"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'dead letter' refers to an existing law or treaty that has lost its practical force and is no longer obeyed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1140",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Devil's advocate**",
+    "options": {
+      "A": "A corrupt defense lawyer representing notorious criminals",
+      "B": "Someone who takes an opposing viewpoint solely to test the strength of an argument",
+      "C": "An evil spiritual adviser in ancient folklore",
+      "D": "A prosecutor arguing for maximum punitive penalties"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'devil's advocate' is someone who argues against a popular or proposed view to stimulate debate and test its validity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1141",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Die in harness**",
+    "options": {
+      "A": "To pass away while still actively engaged in one's profession or office",
+      "B": "To suffer a fatal riding accident while managing horses",
+      "C": "To die heroically fighting on a military battlefield",
+      "D": "To succumb to extreme physical exhaustion during heavy labor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'die in harness' means to die while still actively working, before reaching retirement.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1142",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dig in one's heels**",
+    "options": {
+      "A": "To refuse obstinately and stubbornly to change one's mind or yield",
+      "B": "To wear high-heeled footwear during athletic sports",
+      "C": "To plant garden seeds into fertile soil using tools",
+      "D": "To stop running quickly to avoid an obstacle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'dig in one's heels' means showing stubborn determination and refusing to alter one's stance or compromise.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1143",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dog in the manger**",
+    "options": {
+      "A": "A faithful guard dog protecting livestock inside a barn",
+      "B": "A person who selfishly prevents others from enjoying what they cannot use themselves",
+      "C": "A hungry stray animal searching for scrap food in fields",
+      "D": "A trained shepherd canine herding cattle into enclosures"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'dog in the manger' is someone who spitefully stops others from utilizing something that is of no use to himself.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1144",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Donkey's years**",
+    "options": {
+      "A": "An exceptionally long, extended period of time",
+      "B": "A fleeting, brief moment that passes rapidly",
+      "C": "The biological lifespan of draft pack animals",
+      "D": "A historical era recorded in agricultural calendars"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Donkey's years' is an informal expression meaning a very long time.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1145",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Down and out**",
+    "options": {
+      "A": "Destitute, impoverished, and having no money, job, or home",
+      "B": "A sports team eliminated in an early round of playoffs",
+      "C": "An electrical equipment shutdown during storm gales",
+      "D": "Feeling slightly tired after a long office workday"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'down and out' means being utterly destitute, penniless, and lacking prospects.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1146",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Down in the mouth**",
+    "options": {
+      "A": "Feeling dejected, depressed, unhappy, or discouraged",
+      "B": "Suffering from acute dental toothache and swelling",
+      "C": "Speaking with a muffled, quiet, and indistinct voice",
+      "D": "Eating food in a hasty and careless manner"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'down in the mouth' means looking glum, discouraged, or depressed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1147",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Draw the line**",
+    "options": {
+      "A": "To sketch geometric boundary lines with a drafting ruler",
+      "B": "To set a definite limit beyond which one refuses to go or accept",
+      "C": "To mark a race finish line across a sports track",
+      "D": "To conclude reading a chapter in a textbook"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'draw the line' means establishing a strict limit or standard of what one will or will not permit.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1148",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Drive a hard bargain**",
+    "options": {
+      "A": "To navigate a motor vehicle across rugged mountain terrain",
+      "B": "To negotiate aggressively and tenaciously to secure the most favorable terms",
+      "C": "To sell commercial retail products at an extreme financial loss",
+      "D": "To shop exclusively at local second-hand flea markets"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'drive a hard bargain' means negotiating stubbornly without making concessions to get the best possible deal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1149",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Drop like flies**",
+    "options": {
+      "A": "To use insect repellent sprays in a crowded residential room",
+      "B": "To collapse, fall ill, or give up in large numbers rapidly",
+      "C": "To parachute out of an aircraft formation in quick succession",
+      "D": "To lose interest in an entertainment event gradually"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'drop like flies' means dying, collapsing, or falling ill in large numbers within a short time.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1150",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dutch courage**",
+    "options": {
+      "A": "Heroic valor demonstrated in international military warfare",
+      "B": "False or temporary bravery induced by drinking alcohol",
+      "C": "Extreme calmness maintained during natural catastrophes",
+      "D": "A deep fear of overseas ocean voyages"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Dutch courage' refers to artificial confidence or boldness brought on by drinking alcohol before facing a trial.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

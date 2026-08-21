@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0751",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take the floor**",
+    "options": {
+      "A": "To stand up and make a formal speech to an audience",
+      "B": "To clean up a dirty floor",
+      "C": "To dance in a ballroom",
+      "D": "To trip and fall down"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take the floor' means rising to address an assembly or meeting.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0752",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take the law into one's own hands**",
+    "options": {
+      "A": "To punish someone yourself instead of relying on legal authorities",
+      "B": "To become a professional lawyer",
+      "C": "To write new legislation books",
+      "D": "To follow court orders strictly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take the law into one's own hands' means bypassing legal systems to inflict punishment.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0753",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take the plunge**",
+    "options": {
+      "A": "To decide to do something difficult or momentous after hesitating",
+      "B": "To jump into a swimming pool",
+      "C": "To fall into deep water",
+      "D": "To risk money in gambling"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take the plunge' means committing to a major, often daunting, decision.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0754",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take to one's heels**",
+    "options": {
+      "A": "To run away swiftly, flee, or escape in a hurry",
+      "B": "To suffer from foot soreness",
+      "C": "To wear running shoes",
+      "D": "To stand firmly in place"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take to one's heels' means running away fast.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0755",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take to task**",
+    "options": {
+      "A": "To reprimand, scold, or criticize someone severely for a fault",
+      "B": "To assign work assignments",
+      "C": "To begin a new business task",
+      "D": "To reward excellent performance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'take someone to task' means rebuking them for wrongdoing.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0756",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Talk through one's hat**",
+    "options": {
+      "A": "To speak foolishly, ignorantly, or without knowing facts",
+      "B": "To wear stylish headwear fashion",
+      "C": "To speak with muffled audio",
+      "D": "To whisper secret information"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'talk through one's hat' means speaking nonsense or uninformed drivel.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0757",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tall order**",
+    "options": {
+      "A": "A task or request that is very difficult or unlikely to be fulfilled",
+      "B": "Ordering a tall cup of coffee",
+      "C": "A tall skyscraper building",
+      "D": "A simple daily chore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'tall order' is a hard, demanding requirement.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0758",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tall story**",
+    "options": {
+      "A": "An exaggerated, unbelievable, and far-fetched tale",
+      "B": "A novel about skyscrapers",
+      "C": "A factual historical biography",
+      "D": "A simple bedtime fable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'tall story' is a highly implausible account.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0759",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tear to pieces**",
+    "options": {
+      "A": "To criticize someone severely and ruthlessly",
+      "B": "To rip paper with hands",
+      "C": "To destroy cloth fabrics",
+      "D": "To break glass ornaments"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'tear someone to pieces' means harshly criticizing them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0760",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tell tales**",
+    "options": {
+      "A": "To report someone else's misbehavior or secrets to an authority",
+      "B": "To narrate fairy fables to kids",
+      "C": "To write fictional novels",
+      "D": "To speak in public forums"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'tell tales' means gossiping or informing on someone's actions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0761",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tether's end**",
+    "options": {
+      "A": "Having exhausted all patience, endurance, or resources",
+      "B": "Tying animals with ropes",
+      "C": "Finishing a long journey",
+      "D": "Tying knots in yarn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being at the 'end of your tether' means you can take no more stress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0762",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**The coast is clear**",
+    "options": {
+      "A": "There is no danger or risk of being detected, so it is safe to proceed",
+      "B": "The ocean beach is empty",
+      "C": "Fog has lifted from ships",
+      "D": "Navigating rocky sea shores"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Saying 'the coast is clear' means the way is free of danger.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0763",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**The last straw**",
+    "options": {
+      "A": "The final minor trouble that makes an unbearable situation impossible",
+      "B": "A straw used in drinking juice",
+      "C": "Harvesting farm crop dry stalks",
+      "D": "A fragile building material"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'The last straw' is the ultimate annoyance that causes a breakdown.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0764",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**The writing on the wall**",
+    "options": {
+      "A": "An ominous sign of impending disaster or failure",
+      "B": "Graffiti art on city streets",
+      "C": "Legal notices on buildings",
+      "D": "Decorated wallpaper patterns"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'The writing on the wall' predicts inevitable doom or failure.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0765",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Thick-skinned**",
+    "options": {
+      "A": "Insensitive to criticism, insults, or mockery; uncaring",
+      "B": "Suffering from a skin rash",
+      "C": "Wearing heavy leather jackets",
+      "D": "Extremely sensitive feelings"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'thick-skinned' person is not easily offended or hurt.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0766",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Think big**",
+    "options": {
+      "A": "To have ambitious, grand, and far-reaching plans",
+      "B": "To measure size with rulers",
+      "C": "To imagine giant animals",
+      "D": "To build massive structures"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'think big' means having ambitious goals.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0767",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Think on your feet**",
+    "options": {
+      "A": "To react, adapt, and make decisions quickly and effectively",
+      "B": "To stand while solving puzzles",
+      "C": "To exercise leg muscles daily",
+      "D": "To wait patiently for ideas"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'think on your feet' means making fast, clever decisions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0768",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Think twice**",
+    "options": {
+      "A": "To reconsider or ponder carefully before taking action",
+      "B": "To count numbers up to two",
+      "C": "To repeat ideas again later",
+      "D": "To study textbooks twice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'think twice' means deliberating before acting.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0769",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Third degree**",
+    "options": {
+      "A": "An intense, prolonged interrogation or questioning",
+      "B": "A severe fire burn injury",
+      "C": "A university degree level",
+      "D": "A measured room temperature"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Giving someone the 'third degree' means questioning them relentlessly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0770",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Through thick and thin**",
+    "options": {
+      "A": "Loyally, regardless of hardships, trials, or circumstances",
+      "B": "Walking through forest trees",
+      "C": "Wearing clothes of varying density",
+      "D": "Only during prosperous times"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Sticking together 'through thick and thin' means enduring all conditions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0771",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Throw a spanner in the works**",
+    "options": {
+      "A": "To ruin, obstruct, or disrupt someone's plans maliciously",
+      "B": "To repair broken machine engines",
+      "C": "To work as a tool mechanic",
+      "D": "To fix plumbing water pipes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Throwing a 'spanner in the works' causes an obstruction to progress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0772",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Throw caution to the winds**",
+    "options": {
+      "A": "To act recklessly or riskily without worrying about consequences",
+      "B": "To fly kites in open breezes",
+      "C": "To throw paper scraps away",
+      "D": "To act with extreme care"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'throw caution to the winds' means disregarding risks.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0773",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Throw in the towel**",
+    "options": {
+      "A": "To surrender, admit defeat, or stop fighting",
+      "B": "To dry your wet hands",
+      "C": "To put laundry in machines",
+      "D": "To start boxing match rounds"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'throw in the towel' is to accept you are defeated.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0774",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Throw light on**",
+    "options": {
+      "A": "To clarify or reveal information about a previously mysterious situation",
+      "B": "To turn on bright room lamps",
+      "C": "To paint bright sunny scenery",
+      "D": "To watch sunset landscapes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'throw light on' something means explaining it clearly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0775",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Throw someone off the scent**",
+    "options": {
+      "A": "To mislead someone by providing false clues or diversions",
+      "B": "To wash smells off skin",
+      "C": "To hunt animals with hounds",
+      "D": "To spray perfume in rooms"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'throw off the scent' means leading someone in the wrong direction.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0776",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Throw your weight around**",
+    "options": {
+      "A": "To use your position or authority to order people around arrogantly",
+      "B": "To exercise heavy physical weights",
+      "C": "To dance with loose movement",
+      "D": "To measure your body mass"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'throw your weight around' means being bossy using influence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0777",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Through and through**",
+    "options": {
+      "A": "Completely, entirely, and in every aspect",
+      "B": "Piercing holes through fabric",
+      "C": "Running along long corridors",
+      "D": "Watching films from start"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Knowing someone 'through and through' means knowing them fully.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0778",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Thumb a lift**",
+    "options": {
+      "A": "To signal to a passing driver for a ride (hitchhiking)",
+      "B": "To push elevator floor buttons",
+      "C": "To carry heavy luggage items",
+      "D": "To show appreciation gestures"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'thumb a lift' is the action of hitchhiking.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0779",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Thumb your nose at**",
+    "options": {
+      "A": "To express open defiance, contempt, or disrespect",
+      "B": "To wipe your nose with fingers",
+      "C": "To touch your facial features",
+      "D": "To sneeze during colds"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'thumb your nose' at someone is a gesture of contempt.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0780",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tie the knot**",
+    "options": {
+      "A": "To get married",
+      "B": "To practice sailor knots",
+      "C": "To bind packages together",
+      "D": "To secure fishing lines"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'tie the knot' is a common idiom for getting married.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0781",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tie up loose ends**",
+    "options": {
+      "A": "To deal with the final remaining minor details of a project or task",
+      "B": "To sew loose thread endings",
+      "C": "To knot fishing net ropes",
+      "D": "To organize office supplies"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'tie up loose ends' means finishing remaining details.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0782",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tighten your belt**",
+    "options": {
+      "A": "To economize or spend less money during hard financial times",
+      "B": "To wear stylish waist accessories",
+      "C": "To lose body weight rapidly",
+      "D": "To hold up loose trousers"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tightening your belt' means living more frugally.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0783",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Time and again**",
+    "options": {
+      "A": "Repeatedly, frequently, and on many separate occasions",
+      "B": "Watching clock hands rotate",
+      "C": "Scheduling meetings regularly",
+      "D": "Counting rhythmic beats"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing something 'time and again' means doing it many times.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0784",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tip of the iceberg**",
+    "options": {
+      "A": "A small visible part of a much larger, hidden problem",
+      "B": "A floating ocean ice sheet",
+      "C": "A polar cold environment",
+      "D": "A winter landscape feature"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'tip of the iceberg' is the minor surface part of a vast hidden issue.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0785",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tip the scales**",
+    "options": {
+      "A": "To influence a situation so that a decision or result tips in one direction",
+      "B": "To weigh vegetables in stores",
+      "C": "To balance weight scales",
+      "D": "To measure heavy cargo"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'tip the scales' means creating a decisive outcome in a situation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0786",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Toe the line**",
+    "options": {
+      "A": "To conform, follow rules, or act according to instructions precisely",
+      "B": "To touch a race starting mark",
+      "C": "To walk on straight lines",
+      "D": "To wear ballet shoe tips"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'toe the line' means following orders or established standards.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0787",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tongue in cheek**",
+    "options": {
+      "A": "In an insincere, ironic, or joking manner that is not to be taken seriously",
+      "B": "Biting lips in nervousness",
+      "C": "Eating spicy food quickly",
+      "D": "Speaking clearly with ease"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'tongue-in-cheek' remark is meant as a humorous or ironic joke.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0788",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tooth and nail**",
+    "options": {
+      "A": "With all one's strength, fierceness, and intense effort",
+      "B": "Biting fingernails when anxious",
+      "C": "A medical dental visit",
+      "D": "A grooming health routine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Fighting 'tooth and nail' means battling with everything you have.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0789",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Top dog**",
+    "options": {
+      "A": "The person with the most authority, power, or dominance in a group",
+      "B": "A leader of pet animals",
+      "C": "An animal show winner",
+      "D": "A stray dog in streets"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'top dog' is the person in charge.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0790",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Top-notch**",
+    "options": {
+      "A": "Of the highest possible quality, excellent, or superior",
+      "B": "A jagged mountain peak",
+      "C": "A carved wooden design",
+      "D": "An average grade result"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'top-notch' means being of the best quality.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0791",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tough break**",
+    "options": {
+      "A": "An unfortunate, unlucky, or difficult event or situation",
+      "B": "A broken hard object",
+      "C": "A difficult athletic workout",
+      "D": "A tough exam question"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having a 'tough break' means experiencing bad luck.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0792",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tough nut to crack**",
+    "options": {
+      "A": "A difficult problem or a stubborn person who is hard to manage",
+      "B": "A snack food item",
+      "C": "A construction tool",
+      "D": "An easy daily chore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'tough nut to crack' is a hard-to-solve problem.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0793",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tow the line**",
+    "options": {
+      "A": "To conform to rules, policies, or instructions even if you disagree",
+      "B": "To pull heavy rope tow",
+      "C": "To drive a tow truck",
+      "D": "To follow walk paths"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'toe the line' means conforming to accepted rules.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0794",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Trial and error**",
+    "options": {
+      "A": "The process of experimentation by testing various methods until success is reached",
+      "B": "A courtroom criminal lawsuit",
+      "C": "A failed scientific experiment",
+      "D": "An easy school test"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Trial and error' involves learning through repeated attempts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0795",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Trick of the trade**",
+    "options": {
+      "A": "A clever, specialized shortcut or secret technique known by professionals",
+      "B": "A stage magic performance",
+      "C": "A deceitful criminal fraud",
+      "D": "A simple manual chore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'trick of the trade' is a skilled technique known by experts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0796",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Trim the sails**",
+    "options": {
+      "A": "To adjust plans to suit changing conditions or restricted circumstances",
+      "B": "To repair ship canvas sails",
+      "C": "To sail across ocean currents",
+      "D": "To prepare boats for racing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Trimming your sails' means adapting to new limitations.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0797",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Trouble is brewing**",
+    "options": {
+      "A": "Indications are that a problem, disaster, or conflict is about to occur",
+      "B": "Boiling tea in a kitchen",
+      "C": "Preparing coffee drinks",
+      "D": "Watching storm clouds gather"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. If 'trouble is brewing', problems are developing behind the scenes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0798",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**True to life**",
+    "options": {
+      "A": "Accurately representing real people, events, or experiences",
+      "B": "A vivid movie film scene",
+      "C": "A biography book account",
+      "D": "An imagined fantasy story"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'true to life' means reflecting reality accurately.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0799",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn a blind eye**",
+    "options": {
+      "A": "To deliberately ignore, overlook, or pretend not to see wrongdoing",
+      "B": "Suffering from temporary blindness",
+      "C": "Wearing a pirate eye patch",
+      "D": "Watching events with interest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Turning a 'blind eye' means ignoring something you should notice.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0800",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn a new leaf**",
+    "options": {
+      "A": "To make a fresh start by changing behavior for the better",
+      "B": "To plant new garden trees",
+      "C": "To flip pages of books",
+      "D": "To change career paths"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'turn a new leaf' means beginning again with better conduct.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

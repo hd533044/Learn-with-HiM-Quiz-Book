@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_2351",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FOSTER**",
+    "options": {
+      "A": "Nurture",
+      "B": "Cultivate",
+      "C": "Neglect",
+      "D": "Encourage"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Foster' means to encourage or promote development. 'Neglect', 'stifle', or 'suppress' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2352",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FRACAS**",
+    "options": {
+      "A": "Brawl",
+      "B": "Peace",
+      "C": "Harmony",
+      "D": "Agreement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fracas' refers to a noisy disturbance or quarrel. 'Brawl', 'uproar', or 'altercation' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2353",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FRACAS**",
+    "options": {
+      "A": "Brawl",
+      "B": "Altercation",
+      "C": "Peace",
+      "D": "Uproar"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fracas' means a noisy quarrel. 'Peace', 'harmony', or 'tranquility' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2354",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FRAGILE**",
+    "options": {
+      "A": "Delicate",
+      "B": "Durable",
+      "C": "Sturdy",
+      "D": "Robust"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fragile' means easily broken or damaged. 'Delicate', 'frail', or 'brittle' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2355",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FRAGILE**",
+    "options": {
+      "A": "Delicate",
+      "B": "Frail",
+      "C": "Durable",
+      "D": "Brittle"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fragile' means easily broken. 'Durable', 'sturdy', or 'robust' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2356",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FRANTIC**",
+    "options": {
+      "A": "Frenzied",
+      "B": "Calm",
+      "C": "Serene",
+      "D": "Placid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Frantic' means wild or distraught with fear, anxiety, or other emotion. 'Frenzied', 'hysterical', or 'panicked' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2357",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FRANTIC**",
+    "options": {
+      "A": "Frenzied",
+      "B": "Hysterical",
+      "C": "Calm",
+      "D": "Panicked"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Frantic' means wild and anxious. 'Calm', 'serene', or 'placid' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2358",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FRAUDULENT**",
+    "options": {
+      "A": "Deceitful",
+      "B": "Honest",
+      "C": "Sincere",
+      "D": "Genuine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fraudulent' means obtained, done by, or involving deception. 'Deceitful', 'dishonest', or 'bogus' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2359",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FRAUDULENT**",
+    "options": {
+      "A": "Deceitful",
+      "B": "Dishonest",
+      "C": "Honest",
+      "D": "Bogus"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fraudulent' means dishonest. 'Honest', 'genuine', or 'sincere' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2360",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FRIVOLOUS**",
+    "options": {
+      "A": "Trivial",
+      "B": "Serious",
+      "C": "Grave",
+      "D": "Solemn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Frivolous' means not having any serious purpose or value. 'Trivial', 'silly', or 'superficial' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2361",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FRIVOLOUS**",
+    "options": {
+      "A": "Trivial",
+      "B": "Silly",
+      "C": "Serious",
+      "D": "Superficial"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Frivolous' means not serious. 'Serious', 'grave', or 'earnest' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2362",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FRUGAL**",
+    "options": {
+      "A": "Thrifty",
+      "B": "Wasteful",
+      "C": "Extravagant",
+      "D": "Profligate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Frugal' means sparing or economical with regard to money or food. 'Thrifty', 'economical', or 'parsimonious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2363",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FRUGAL**",
+    "options": {
+      "A": "Thrifty",
+      "B": "Economical",
+      "C": "Wasteful",
+      "D": "Parsimonious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Frugal' means thrifty. 'Wasteful', 'extravagant', or 'profligate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2364",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FURTIVE**",
+    "options": {
+      "A": "Stealthy",
+      "B": "Open",
+      "C": "Overt",
+      "D": "Public"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Furtive' means attempting to avoid notice or attention, typically because of guilt. 'Stealthy', 'secretive', or 'surreptitious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2365",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FURTIVE**",
+    "options": {
+      "A": "Stealthy",
+      "B": "Secretive",
+      "C": "Open",
+      "D": "Surreptitious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Furtive' means secretive. 'Open', 'overt', or 'public' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2366",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GAINSAY**",
+    "options": {
+      "A": "Contradict",
+      "B": "Affirm",
+      "C": "Confirm",
+      "D": "Aver"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Gainsay' means to deny or contradict (a fact or statement). 'Contradict', 'deny', or 'dispute' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2367",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GAINSAY**",
+    "options": {
+      "A": "Contradict",
+      "B": "Deny",
+      "C": "Affirm",
+      "D": "Dispute"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Gainsay' means to contradict. 'Affirm', 'confirm', or 'assert' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2368",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GARRULOUS**",
+    "options": {
+      "A": "Talkative",
+      "B": "Taciturn",
+      "C": "Silent",
+      "D": "Quiet"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Garrulous' means excessively talkative, especially on trivial matters. 'Talkative', 'loquacious', or 'verbose' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2369",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GARRULOUS**",
+    "options": {
+      "A": "Talkative",
+      "B": "Loquacious",
+      "C": "Taciturn",
+      "D": "Verbose"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Garrulous' means talkative. 'Taciturn', 'silent', or 'quiet' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2370",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GAUCHE**",
+    "options": {
+      "A": "Awkward",
+      "B": "Elegant",
+      "C": "Sophisticated",
+      "D": "Polished"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Gauche' means unsophisticated and socially awkward. 'Awkward', 'clumsy', or 'gawky' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2371",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GAUCHE**",
+    "options": {
+      "A": "Awkward",
+      "B": "Clumsy",
+      "C": "Sophisticated",
+      "D": "Gawky"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Gauche' means socially awkward. 'Sophisticated', 'elegant', or 'polished' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2372",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GENIAL**",
+    "options": {
+      "A": "Friendly",
+      "B": "Surly",
+      "C": "Hostile",
+      "D": "Unfriendly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Genial' means friendly and cheerful. 'Friendly', 'amiable', or 'affable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2373",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GENIAL**",
+    "options": {
+      "A": "Friendly",
+      "B": "Amiable",
+      "C": "Surly",
+      "D": "Affable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Genial' means friendly. 'Surly', 'hostile', or 'unfriendly' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2374",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GERMANE**",
+    "options": {
+      "A": "Relevant",
+      "B": "Irrelevant",
+      "C": "Extraneous",
+      "D": "Unrelated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Germane' means relevant to a subject under consideration. 'Relevant', 'pertinent', or 'appropriate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2375",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GERMANE**",
+    "options": {
+      "A": "Relevant",
+      "B": "Pertinent",
+      "C": "Irrelevant",
+      "D": "Appropriate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Germane' means relevant. 'Irrelevant', 'extraneous', or 'unrelated' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2376",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GLIB**",
+    "options": {
+      "A": "Fluent",
+      "B": "Sincere",
+      "C": "Earnest",
+      "D": "Thoughtful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Glib' means (of words or a person) fluent and voluble but insincere and shallow. 'Fluent', 'slick', or 'artful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2377",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GLIB**",
+    "options": {
+      "A": "Fluent",
+      "B": "Slick",
+      "C": "Insincere",
+      "D": "Earnest"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Glib' means insincere. 'Earnest', 'thoughtful', or 'sincere' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2378",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GLUTTONOUS**",
+    "options": {
+      "A": "Greedy",
+      "B": "Abstemious",
+      "C": "Temperate",
+      "D": "Restrained"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Gluttonous' means excessively greedy. 'Greedy', 'voracious', or 'insatiable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2379",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GLUTTONOUS**",
+    "options": {
+      "A": "Greedy",
+      "B": "Voracious",
+      "C": "Abstemious",
+      "D": "Insatiable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Gluttonous' means greedy. 'Abstemious', 'temperate', or 'restrained' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2380",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GRADATION**",
+    "options": {
+      "A": "Progression",
+      "B": "Abruptness",
+      "C": "Suddenness",
+      "D": "Discontinuity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Gradation' refers to a series of successive changes. 'Progression', 'sequence', or 'series' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2381",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GRADATION**",
+    "options": {
+      "A": "Progression",
+      "B": "Sequence",
+      "C": "Abruptness",
+      "D": "Series"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Gradation' means gradual change. 'Abruptness', 'suddenness', or 'discontinuity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2382",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GRANDILOQUENT**",
+    "options": {
+      "A": "Bombastic",
+      "B": "Simple",
+      "C": "Plain",
+      "D": "Humble"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Grandiloquent' means pompous or extravagant in language. 'Bombastic', 'pompous', or 'verbose' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2383",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GRANDILOQUENT**",
+    "options": {
+      "A": "Bombastic",
+      "B": "Pompous",
+      "C": "Simple",
+      "D": "Verbose"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Grandiloquent' means pompous. 'Simple', 'plain', or 'humble' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2384",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GRATUITOUS**",
+    "options": {
+      "A": "Uncalled-for",
+      "B": "Justified",
+      "C": "Warranted",
+      "D": "Necessary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Gratuitous' means uncalled-for; lacking good reason. 'Uncalled-for', 'unwarranted', or 'unprovoked' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2385",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GRATUITOUS**",
+    "options": {
+      "A": "Uncalled-for",
+      "B": "Unwarranted",
+      "C": "Justified",
+      "D": "Unprovoked"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Gratuitous' means uncalled-for. 'Justified', 'warranted', or 'necessary' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2386",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GREGARIOUS**",
+    "options": {
+      "A": "Sociable",
+      "B": "Solitary",
+      "C": "Reclusive",
+      "D": "Unsociable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Gregarious' means fond of company; sociable. 'Sociable', 'convivial', or 'outgoing' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2387",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GREGARIOUS**",
+    "options": {
+      "A": "Sociable",
+      "B": "Convivial",
+      "C": "Solitary",
+      "D": "Outgoing"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Gregarious' means sociable. 'Solitary', 'reclusive', or 'unsociable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2388",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GUILE**",
+    "options": {
+      "A": "Cunning",
+      "B": "Honesty",
+      "C": "Sincerity",
+      "D": "Candor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Guile' refers to sly or cunning intelligence. 'Cunning', 'trickery', or 'deceit' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2389",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GUILE**",
+    "options": {
+      "A": "Cunning",
+      "B": "Trickery",
+      "C": "Honesty",
+      "D": "Deceit"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Guile' is deceitful cunning. 'Honesty', 'candor', or 'sincerity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2390",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GULLIBLE**",
+    "options": {
+      "A": "Credulous",
+      "B": "Skeptical",
+      "C": "Cynical",
+      "D": "Suspicious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Gullible' means easily persuaded to believe something. 'Credulous', 'naive', or 'trusting' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2391",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GULLIBLE**",
+    "options": {
+      "A": "Credulous",
+      "B": "Naive",
+      "C": "Skeptical",
+      "D": "Trusting"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Gullible' means easily fooled. 'Skeptical', 'suspicious', or 'cynical' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2392",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HACKNEYED**",
+    "options": {
+      "A": "Trite",
+      "B": "Original",
+      "C": "Fresh",
+      "D": "Novel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hackneyed' means lacking significance through having been overused. 'Trite', 'banal', or 'clichéd' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2393",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HACKNEYED**",
+    "options": {
+      "A": "Trite",
+      "B": "Banal",
+      "C": "Original",
+      "D": "Clichéd"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hackneyed' means overused. 'Original', 'fresh', or 'novel' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2394",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HAGGARD**",
+    "options": {
+      "A": "Gaunt",
+      "B": "Robust",
+      "C": "Healthy",
+      "D": "Plump"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Haggard' means looking exhausted and unwell, especially from fatigue, worry, or suffering. 'Gaunt', 'emaciated', or 'drawn' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2395",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HAGGARD**",
+    "options": {
+      "A": "Gaunt",
+      "B": "Emaciated",
+      "C": "Robust",
+      "D": "Drawn"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Haggard' means exhausted and gaunt. 'Robust', 'healthy', or 'plump' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2396",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HALCYON**",
+    "options": {
+      "A": "Tranquil",
+      "B": "Stormy",
+      "C": "Turbulent",
+      "D": "Agitated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Halcyon' means denoting a period of time in the past that was idyllically happy and peaceful. 'Tranquil', 'calm', or 'serene' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2397",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HALCYON**",
+    "options": {
+      "A": "Tranquil",
+      "B": "Calm",
+      "C": "Stormy",
+      "D": "Serene"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Halcyon' means peaceful. 'Stormy', 'turbulent', or 'agitated' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2398",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HAPHAZARD**",
+    "options": {
+      "A": "Random",
+      "B": "Systematic",
+      "C": "Methodical",
+      "D": "Orderly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Haphazard' means lacking any obvious principle of organization. 'Random', 'aimless', or 'unplanned' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2399",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HAPHAZARD**",
+    "options": {
+      "A": "Random",
+      "B": "Aimless",
+      "C": "Methodical",
+      "D": "Unplanned"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Haphazard' means random. 'Methodical', 'systematic', or 'orderly' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2400",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HARANGUE**",
+    "options": {
+      "A": "Tirade",
+      "B": "Praise",
+      "C": "Laud",
+      "D": "Commend"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Harangue' refers to a lengthy and aggressive speech. 'Tirade', 'diatribe', or 'lecture' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0851",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PEDANTIC**",
+    "options": {
+      "A": "Punctilious",
+      "B": "Careless",
+      "C": "Informal",
+      "D": "Imprecise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pedantic' means excessively concerned with minor details, rules, or displaying academic learning. 'Punctilious', 'perfectionist', or 'doctrinaire' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0852",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PEDANTIC**",
+    "options": {
+      "A": "Academic",
+      "B": "Informal",
+      "C": "Dogmatic",
+      "D": "Fussy"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Pedantic' means overly formal and rigid about small rules. 'Informal', 'unfussy', or 'imprecise' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0853",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PELLUCID**",
+    "options": {
+      "A": "Limpid",
+      "B": "Turbid",
+      "C": "Murky",
+      "D": "Opaque"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pellucid' means translucently clear, easily understood, or limpid. 'Limpid', 'transparent', or 'crystal-clear' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0854",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PELLUCID**",
+    "options": {
+      "A": "Lucid",
+      "B": "Limpid",
+      "C": "Turbid",
+      "D": "Transparent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pellucid' means crystal clear. 'Turbid', 'murky', or 'obscure' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0855",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PENCHANT**",
+    "options": {
+      "A": "Predilection",
+      "B": "Aversion",
+      "C": "Disinclination",
+      "D": "Antipathy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Penchant' means a strong or habitual liking for something or a tendency to do something. 'Predilection', 'propensity', or 'proclivity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0856",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PENCHANT**",
+    "options": {
+      "A": "Affinity",
+      "B": "Fondness",
+      "C": "Aversion",
+      "D": "Predilection"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Penchant' means a strong liking or inclination. 'Aversion', 'dislike', or 'antipathy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0857",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PENURIOUS**",
+    "options": {
+      "A": "Parsimonious",
+      "B": "Opulent",
+      "C": "Affluent",
+      "D": "Lavish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Penurious' means extremely poor, or ungenerous/miserly. 'Parsimonious', 'stingy', or 'destitute' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0858",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PENURIOUS**",
+    "options": {
+      "A": "Miserly",
+      "B": "Parsimonious",
+      "C": "Niggardly",
+      "D": "Opulent"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Penurious' means poverty-stricken or stingy. 'Opulent', 'wealthy', or 'generous' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0859",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PERFIDIOUS**",
+    "options": {
+      "A": "Treacherous",
+      "B": "Trustworthy",
+      "C": "Steadfast",
+      "D": "Loyal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Perfidious' means deceitful and untrustworthy. 'Treacherous', 'faithless', or 'duplicitous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0860",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PERFIDIOUS**",
+    "options": {
+      "A": "Treacherous",
+      "B": "Deceitful",
+      "C": "Faithless",
+      "D": "Loyal"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Perfidious' means treacherous or disloyal. 'Loyal', 'faithful', or 'trustworthy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0861",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PERFUNCTORY**",
+    "options": {
+      "A": "Cursory",
+      "B": "Thorough",
+      "C": "Meticulous",
+      "D": "Complete"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Perfunctory' means carried out with a minimum of effort or reflection. 'Cursory', 'superficial', or 'careless' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0862",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PERFUNCTORY**",
+    "options": {
+      "A": "Cursory",
+      "B": "Meticulous",
+      "C": "Superficial",
+      "D": "Mechanical"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Perfunctory' means done routinely without real interest. 'Meticulous', 'thorough', or 'painstaking' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0863",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PERMEABLE**",
+    "options": {
+      "A": "Porous",
+      "B": "Impervious",
+      "C": "Impenetrable",
+      "D": "Waterproof"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Permeable' means allowing liquids or gases to pass through it. 'Porous', 'absorbent', or 'penetrable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0864",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PERMEABLE**",
+    "options": {
+      "A": "Porous",
+      "B": "Penetrable",
+      "C": "Impermeable",
+      "D": "Leaky"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Permeable' means allowing fluids to pass. 'Impermeable', 'impervious', or 'solid' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0865",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PERNICIOUS**",
+    "options": {
+      "A": "Deleterious",
+      "B": "Beneficial",
+      "C": "Salubrious",
+      "D": "Innocuous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pernicious' means having a harmful effect, especially in a gradual or subtle way. 'Deleterious', 'destructive', or 'malignant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0866",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PERNICIOUS**",
+    "options": {
+      "A": "Harmful",
+      "B": "Deleterious",
+      "C": "Salubrious",
+      "D": "Noxious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pernicious' means highly harmful. 'Salubrious', 'beneficial', or 'wholesome' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0867",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PERSPICACIOUS**",
+    "options": {
+      "A": "Shrewd",
+      "B": "Obtuse",
+      "C": "Dense",
+      "D": "Ignorant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Perspicacious' means having a ready insight into and understanding of things. 'Shrewd', 'astute', or 'discerning' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0868",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PERSPICACIOUS**",
+    "options": {
+      "A": "Discerning",
+      "B": "Sagacious",
+      "C": "Obtuse",
+      "D": "Astute"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Perspicacious' means acutely perceptive. 'Obtuse', 'dense', or 'dull' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0869",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PERTINACIOUS**",
+    "options": {
+      "A": "Tenacious",
+      "B": "Irresolute",
+      "C": "Vacillating",
+      "D": "Pliant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pertinacious' means holding firmly to an opinion or a course of action. 'Tenacious', 'resolute', or 'obstinate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0870",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PERTINACIOUS**",
+    "options": {
+      "A": "Tenacious",
+      "B": "Stubborn",
+      "C": "Irresolute",
+      "D": "Dogged"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pertinacious' means stubborn and persistent. 'Irresolute', 'yielding', or 'indecisive' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0871",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PETULANT**",
+    "options": {
+      "A": "Peevish",
+      "B": "Affable",
+      "C": "Genial",
+      "D": "Placid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Petulant' means (of a person or their manner) childishly sulky or bad-tempered. 'Peevish', 'querulous', or 'testy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0872",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PETULANT**",
+    "options": {
+      "A": "Peevish",
+      "B": "Querulous",
+      "C": "Affable",
+      "D": "Fretful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Petulant' means ill-humored and irritable. 'Affable', 'good-natured', or 'placid' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0873",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PHILANTHROPIC**",
+    "options": {
+      "A": "Altruistic",
+      "B": "Misanthropic",
+      "C": "Selfish",
+      "D": "Mercenary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Philanthropic' means seeking to promote the welfare of others, especially by donating money. 'Altruistic', 'benevolent', or 'humanitarian' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0874",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PHILANTHROPIC**",
+    "options": {
+      "A": "Benevolent",
+      "B": "Misanthropic",
+      "C": "Altruistic",
+      "D": "Charitable"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Philanthropic' means charitable and loving toward mankind. 'Misanthropic', 'selfish', or 'cynical' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0875",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PHLEGMATIC**",
+    "options": {
+      "A": "Stolid",
+      "B": "Excitable",
+      "C": "Emotional",
+      "D": "Mercurial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Phlegmatic' describes a person having an unemotional and stolidly calm disposition. 'Stolid', 'impassive', or 'unflappable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0876",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PHLEGMATIC**",
+    "options": {
+      "A": "Impassive",
+      "B": "Stolid",
+      "C": "Excitable",
+      "D": "Serene"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Phlegmatic' means calm and unemotional. 'Excitable', 'passionate', or 'volatile' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0877",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PIQUE**",
+    "options": {
+      "A": "Resentment",
+      "B": "Joy",
+      "C": "Contentment",
+      "D": "Satisfaction"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pique' means a feeling of irritation or resentment resulting from a slight, especially to one's pride. 'Resentment', 'irritation', or 'umbrage' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0878",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PIQUE**",
+    "options": {
+      "A": "Umbrage",
+      "B": "Irritation",
+      "C": "Satisfaction",
+      "D": "Vexation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pique' refers to wounded pride or resentment. 'Satisfaction', 'pleasure', or 'contentment' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0879",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PITHY**",
+    "options": {
+      "A": "Succinct",
+      "B": "Verbose",
+      "C": "Prolix",
+      "D": "Rambling"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pithy' means (of language or style) concise and forcefully expressive. 'Succinct', 'terse', or 'compendious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0880",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PITHY**",
+    "options": {
+      "A": "Succinct",
+      "B": "Terse",
+      "C": "Verbose",
+      "D": "Laconic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pithy' means brief and meaningful. 'Verbose', 'wordy', or 'prolix' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0881",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PLACATE**",
+    "options": {
+      "A": "Propitiate",
+      "B": "Enrage",
+      "C": "Provoke",
+      "D": "Incite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Placate' means to make (someone) less angry or hostile. 'Propitiate', 'appease', or 'pacify' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0882",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PLACATE**",
+    "options": {
+      "A": "Mollify",
+      "B": "Pacify",
+      "C": "Provoke",
+      "D": "Conciliate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Placate' means to soothe or pacify. 'Provoke', 'enrage', or 'antagonize' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0883",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PLATITUDE**",
+    "options": {
+      "A": "Cliché",
+      "B": "Originality",
+      "C": "Insight",
+      "D": "Epigram"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Platitude' refers to a remark or statement, especially one with a moral content, that has been used too often to be interesting. 'Cliché', 'truism', or 'banality' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0884",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PLATITUDE**",
+    "options": {
+      "A": "Truism",
+      "B": "Cliché",
+      "C": "Banality",
+      "D": "Epigram"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Platitude' is a stale, boring cliché. An 'epigram' or 'original remark' is concise, witty, and clever, serving as its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0885",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PLETHORA**",
+    "options": {
+      "A": "Surfeit",
+      "B": "Dearth",
+      "C": "Scarcity",
+      "D": "Paucity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Plethora' means a large or excessive amount of something. 'Surfeit', 'excess', or 'abundance' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0886",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PLETHORA**",
+    "options": {
+      "A": "Surplus",
+      "B": "Surfeit",
+      "C": "Dearth",
+      "D": "Profusion"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Plethora' means an overabundance. 'Dearth', 'scarcity', or 'shortage' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0887",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**POLEMIC**",
+    "options": {
+      "A": "Diatribe",
+      "B": "Praise",
+      "C": "Eulogy",
+      "D": "Agreement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Polemic' refers to a strong verbal or written attack on someone or something. 'Diatribe', 'invective', or 'harangue' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0888",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**POLEMIC**",
+    "options": {
+      "A": "Invective",
+      "B": "Diatribe",
+      "C": "Panegyric",
+      "D": "Disputation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Polemic' is an aggressive attack/dispute. 'Panegyric', 'tribute', or 'praise' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0889",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**POMPOUS**",
+    "options": {
+      "A": "Pretentious",
+      "B": "Modest",
+      "C": "Humble",
+      "D": "Diffident"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pompous' means affectedly and irritatingly grand, solemn, or self-important. 'Pretentious', 'bombastic', or 'imperious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0890",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**POMPOUS**",
+    "options": {
+      "A": "Grandiose",
+      "B": "Pretentious",
+      "C": "Unpretentious",
+      "D": "Imperious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pompous' means self-important and grandiose. 'Unpretentious', 'modest', or 'humble' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0891",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PONDEROUS**",
+    "options": {
+      "A": "Cumbrous",
+      "B": "Nimble",
+      "C": "Lithe",
+      "D": "Graceful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ponderous' means slow and clumsy because of great weight; dull or laborious. 'Cumbrous', 'unwieldy', or 'heavy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0892",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PONDEROUS**",
+    "options": {
+      "A": "Heavy",
+      "B": "Lithe",
+      "C": "Cumbersome",
+      "D": "Lumbering"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Ponderous' means heavy and clumsy. 'Lithe', 'graceful', or 'light' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0893",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRAGMATIC**",
+    "options": {
+      "A": "Practical",
+      "B": "Idealistic",
+      "C": "Quixotic",
+      "D": "Theoretical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pragmatic' means dealing with things sensibly and realistically in a way that is based on practical rather than theoretical considerations. 'Practical', 'sensible', or 'hardheaded' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0894",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRAGMATIC**",
+    "options": {
+      "A": "Practical",
+      "B": "Sensible",
+      "C": "Quixotic",
+      "D": "Utilitarian"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pragmatic' means realistic and practical. 'Quixotic', 'idealistic', or 'impractical' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0895",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRECARIOUS**",
+    "options": {
+      "A": "Perilous",
+      "B": "Secure",
+      "C": "Stable",
+      "D": "Safe"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Precarious' means not securely held or in position; dangerously likely to fall or collapse; uncertain. 'Perilous', 'hazardous', or 'risky' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0896",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRECARIOUS**",
+    "options": {
+      "A": "Perilous",
+      "B": "Hazardous",
+      "C": "Secure",
+      "D": "Uncertain"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Precarious' means dangerous and unstable. 'Secure', 'safe', or 'stable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0897",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRECLUDE**",
+    "options": {
+      "A": "Prevent",
+      "B": "Facilitate",
+      "C": "Permit",
+      "D": "Encourage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Preclude' means to prevent from happening; make impossible. 'Prevent', 'forestall', or 'hinder' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0898",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRECLUDE**",
+    "options": {
+      "A": "Prevent",
+      "B": "Forestall",
+      "C": "Facilitate",
+      "D": "Prohibit"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Preclude' means to rule out or prevent. 'Facilitate', 'permit', or 'enable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0899",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREDILECTION**",
+    "options": {
+      "A": "Preference",
+      "B": "Antipathy",
+      "C": "Aversion",
+      "D": "Distaste"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Predilection' means a preference or special liking for something; a bias in favor of something. 'Preference', 'penchant', or 'partiality' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0900",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREDILECTION**",
+    "options": {
+      "A": "Penchant",
+      "B": "Predisposition",
+      "C": "Antipathy",
+      "D": "Preference"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Predilection' means a natural preference. 'Antipathy', 'aversion', or 'dislike' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

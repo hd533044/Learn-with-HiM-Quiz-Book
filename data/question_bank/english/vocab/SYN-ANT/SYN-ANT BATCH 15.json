@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0701",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**KNAVERY**",
+    "options": {
+      "A": "Roguery",
+      "B": "Probity",
+      "C": "Integrity",
+      "D": "Uprightness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Knavery' refers to roguish, deceitful, or dishonest behavior. 'Roguery', 'villainy', or 'trickery' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0702",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**KNAVERY**",
+    "options": {
+      "A": "Chicanery",
+      "B": "Roguery",
+      "C": "Probity",
+      "D": "Duplicity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Knavery' means deceitful or unscrupulous behavior. 'Probity', 'integrity', or 'honesty' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0703",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**KNELL**",
+    "options": {
+      "A": "Toll",
+      "B": "Silence",
+      "C": "Peal",
+      "D": "Celebration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Knell' refers to the sound of a bell rung solemnly for a death or funeral; an omen of death or destruction. 'Toll' or 'death-bell' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0704",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**KUDOS**",
+    "options": {
+      "A": "Praise",
+      "B": "Censure",
+      "C": "Disparagement",
+      "D": "Opprobrium"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Kudos' refers to praise and honor received for an achievement. 'Praise', 'acclaim', or 'glory' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0705",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**KUDOS**",
+    "options": {
+      "A": "Acclaim",
+      "B": "Opprobrium",
+      "C": "Praise",
+      "D": "Plaudits"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Kudos' means public praise or distinction. 'Opprobrium', 'censure', or 'disgrace' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0706",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LABORIOUS**",
+    "options": {
+      "A": "Arduous",
+      "B": "Facile",
+      "C": "Effortless",
+      "D": "Simple"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Laborious' means requiring considerable time and effort. 'Arduous', 'strenuous', or 'onerous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0707",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LABORIOUS**",
+    "options": {
+      "A": "Arduous",
+      "B": "Strenuous",
+      "C": "Effortless",
+      "D": "Demanding"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Laborious' means demanding heavy labor. 'Effortless', 'easy', or 'facile' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0708",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LABYRINTHINE**",
+    "options": {
+      "A": "Intricate",
+      "B": "Straightforward",
+      "C": "Direct",
+      "D": "Simple"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Labyrinthine' means complicated and tortuous; like a labyrinth. 'Intricate', 'convoluted', or 'complex' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0709",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LABYRINTHINE**",
+    "options": {
+      "A": "Convoluted",
+      "B": "Intricate",
+      "C": "Straightforward",
+      "D": "Tortuous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Labyrinthine' means complex and winding. 'Straightforward', 'simple', or 'direct' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0710",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LACONIC**",
+    "options": {
+      "A": "Terse",
+      "B": "Loquacious",
+      "C": "Garrulous",
+      "D": "Voluble"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Laconic' means using very few words. 'Terse', 'concise', or 'succinct' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0711",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LACONIC**",
+    "options": {
+      "A": "Succinct",
+      "B": "Pithy",
+      "C": "Terse",
+      "D": "Loquacious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Laconic' means using concise, brief speech. 'Loquacious', 'garrulous', or 'verbose' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0712",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LAMENT**",
+    "options": {
+      "A": "Mourn",
+      "B": "Celebrate",
+      "C": "Exult",
+      "D": "Rejoice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Lament' means to express grief, sorrow, or regret. 'Mourn', 'bemoan', or 'deplore' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0713",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LAMENT**",
+    "options": {
+      "A": "Grieve",
+      "B": "Bemoan",
+      "C": "Mourn",
+      "D": "Rejoice"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Lament' means to grieve deeply. 'Rejoice', 'celebrate', or 'exult' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0714",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LANGUID**",
+    "options": {
+      "A": "Listless",
+      "B": "Vigorous",
+      "C": "Energetic",
+      "D": "Sprightly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Languid' means displaying or having a disinclination for physical exertion or effort; slow and relaxed. 'Listless', 'lethargic', or 'sluggish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0715",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LANGUID**",
+    "options": {
+      "A": "Lethargic",
+      "B": "Sluggish",
+      "C": "Energetic",
+      "D": "Torpid"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Languid' means lacking energy or vitality. 'Energetic', 'vigorous', or 'active' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0716",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LASSITUDE**",
+    "options": {
+      "A": "Lethargy",
+      "B": "Vitality",
+      "C": "Vigor",
+      "D": "Vivacity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Lassitude' refers to a state of physical or mental weariness; lack of energy. 'Lethargy', 'weariness', or 'torpor' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0717",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LASSITUDE**",
+    "options": {
+      "A": "Torpor",
+      "B": "Lethargy",
+      "C": "Weariness",
+      "D": "Vitality"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Lassitude' means physical exhaustion or sluggishness. 'Vitality', 'vigor', or 'animation' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0718",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LATENT**",
+    "options": {
+      "A": "Dormant",
+      "B": "Manifest",
+      "C": "Overt",
+      "D": "Active"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Latent' describes something existing but not yet developed or manifest; hidden or concealed. 'Dormant', 'quiescent', or 'potential' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0719",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LATENT**",
+    "options": {
+      "A": "Quiescent",
+      "B": "Dormant",
+      "C": "Manifest",
+      "D": "Concealed"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Latent' means hidden and inactive. 'Manifest', 'obvious', or 'active' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0720",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LAUDABLE**",
+    "options": {
+      "A": "Commendable",
+      "B": "Reprehensible",
+      "C": "Execrable",
+      "D": "Deplorable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Laudable' means deserving praise and commendation. 'Commendable', 'praiseworthy', or 'meritorious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0721",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LAUDABLE**",
+    "options": {
+      "A": "Meritorious",
+      "B": "Commendable",
+      "C": "Reprehensible",
+      "D": "Admirable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Laudable' means praiseworthy. 'Reprehensible', 'blameworthy', or 'deplorable' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0722",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LAVISH**",
+    "options": {
+      "A": "Extravagant",
+      "B": "Parsimonious",
+      "C": "Frugal",
+      "D": "Stingy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Lavish' means sumptuously rich, elaborate, or luxurious; given in profusion. 'Extravagant', 'profuse', or 'prodigal' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0723",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LAVISH**",
+    "options": {
+      "A": "Profuse",
+      "B": "Parsimonious",
+      "C": "Bountiful",
+      "D": "Luxurious"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Lavish' means excessively generous or wasteful. 'Parsimonious', 'frugal', or 'stingy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0724",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LETHARGIC**",
+    "options": {
+      "A": "Sluggish",
+      "B": "Vivacious",
+      "C": "Dynamic",
+      "D": "Animated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Lethargic' means affected by sluggishness and apathy. 'Sluggish', 'torpid', or 'somnolent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0725",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LETHARGIC**",
+    "options": {
+      "A": "Sluggish",
+      "B": "Torpid",
+      "C": "Inert",
+      "D": "Dynamic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Lethargic' means dull and sluggish. 'Dynamic', 'energetic', or 'active' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0726",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LEVITY**",
+    "options": {
+      "A": "Frivolity",
+      "B": "Gravity",
+      "C": "Solemnity",
+      "D": "Seriousness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Levity' means humor or frivolity, especially the treatment of a serious matter with lack of due respect. 'Frivolity', 'flippancy', or 'giddiness' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0727",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LEVITY**",
+    "options": {
+      "A": "Frivolity",
+      "B": "Gravity",
+      "C": "Giddiness",
+      "D": "Flippancy"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Levity' refers to lightness or lack of seriousness. 'Gravity', 'solemnity', or 'seriousness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0728",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LILLIPUTIAN**",
+    "options": {
+      "A": "Diminutive",
+      "B": "Gigantic",
+      "C": "Colossal",
+      "D": "Mammoth"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Lilliputian' means trivial or very small; diminutive. 'Diminutive', 'minute', or 'tiny' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0729",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LILLIPUTIAN**",
+    "options": {
+      "A": "Minute",
+      "B": "Diminutive",
+      "C": "Puny",
+      "D": "Gigantic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Lilliputian' means extremely small. 'Gigantic', 'colossal', or 'mammoth' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0730",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LIMPID**",
+    "options": {
+      "A": "Pellucid",
+      "B": "Turbid",
+      "C": "Murky",
+      "D": "Opaque"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Limpid' means completely clear and transparent (of a liquid or text). 'Pellucid', 'lucid', or 'crystal-clear' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0731",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LIMPID**",
+    "options": {
+      "A": "Pellucid",
+      "B": "Lucid",
+      "C": "Turbid",
+      "D": "Transparent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Limpid' means clear and transparent. 'Turbid', 'murky', or 'muddy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0732",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LITHE**",
+    "options": {
+      "A": "Supple",
+      "B": "Rigid",
+      "C": "Stiff",
+      "D": "Infirm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Lithe' means thin, supple, and graceful. 'Supple', 'flexible', or 'nimble' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0733",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LITHE**",
+    "options": {
+      "A": "Supple",
+      "B": "Nimble",
+      "C": "Flexible",
+      "D": "Rigid"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Lithe' means flexible and nimble. 'Rigid', 'stiff', or 'clumsy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0734",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LOQUACIOUS**",
+    "options": {
+      "A": "Garrulous",
+      "B": "Reticent",
+      "C": "Taciturn",
+      "D": "Reserved"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Loquacious' means tending to talk a great deal; talkative. 'Garrulous', 'voluble', or 'chatty' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0735",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LOQUACIOUS**",
+    "options": {
+      "A": "Garrulous",
+      "B": "Voluble",
+      "C": "Taciturn",
+      "D": "Chatty"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Loquacious' means very talkative. 'Taciturn', 'silent', or 'reticent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0736",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LUCID**",
+    "options": {
+      "A": "Pellucid",
+      "B": "Obscure",
+      "C": "Confused",
+      "D": "Murky"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Lucid' means expressed clearly; easy to understand. 'Pellucid', 'coherent', or 'luminous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0737",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LUCID**",
+    "options": {
+      "A": "Coherent",
+      "B": "Pellucid",
+      "C": "Clear",
+      "D": "Obscure"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Lucid' means clear and easily comprehended. 'Obscure', 'vague', or 'confusing' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0738",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LUDICROUS**",
+    "options": {
+      "A": "Absurd",
+      "B": "Solemn",
+      "C": "Sensible",
+      "D": "Reasonable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ludicrous' means so foolish, unreasonable, or out of place as to be amusing; ridiculous. 'Absurd', 'preposterous', or 'risible' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0739",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LUDICROUS**",
+    "options": {
+      "A": "Preposterous",
+      "B": "Absurd",
+      "C": "Sensible",
+      "D": "Risible"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ludicrous' means laughably ridiculous. 'Sensible', 'grave', or 'reasonable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0740",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LUGUBRIOUS**",
+    "options": {
+      "A": "Dismal",
+      "B": "Cheerful",
+      "C": "Jovial",
+      "D": "Buoyant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Lugubrious' means looking or sounding sad and dismal. 'Dismal', 'somber', or 'mournful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0741",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LUGUBRIOUS**",
+    "options": {
+      "A": "Mournful",
+      "B": "Somber",
+      "C": "Cheerful",
+      "D": "Doleful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Lugubrious' means gloomy and melancholy. 'Cheerful', 'buoyant', or 'jovial' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0742",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**LUMINOUS**",
+    "options": {
+      "A": "Radiant",
+      "B": "Tenebrous",
+      "C": "Murky",
+      "D": "Dim"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Luminous' means full of or shedding light; bright or shining. 'Radiant', 'refulgent', or 'brilliant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0743",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**LUMINOUS**",
+    "options": {
+      "A": "Radiant",
+      "B": "Refulgent",
+      "C": "Tenebrous",
+      "D": "Lustrous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Luminous' means emitting bright light. 'Tenebrous', 'gloomy', or 'dark' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0744",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MACHINATION**",
+    "options": {
+      "A": "Stratagem",
+      "B": "Candor",
+      "C": "Frankness",
+      "D": "Innocence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Machination' refers to a plot or scheme, especially an evil or cunning one. 'Stratagem', 'conspiracy', or 'intrigue' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0745",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MAGNANIMOUS**",
+    "options": {
+      "A": "Generous",
+      "B": "Petty",
+      "C": "Vindictive",
+      "D": "Parsimonious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Magnanimous' means very generous or forgiving, especially toward a rival or someone less powerful. 'Generous', 'munificent', or 'altruistic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0746",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MAGNANIMOUS**",
+    "options": {
+      "A": "Munificent",
+      "B": "Petty",
+      "C": "Altruistic",
+      "D": "Bountiful"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Magnanimous' means noble-spirited and generous. 'Petty', 'vindictive', or 'mean' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0747",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MALADROIT**",
+    "options": {
+      "A": "Inept",
+      "B": "Adroit",
+      "C": "Dexterous",
+      "D": "Deft"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Maladroit' means ineffective or clumsy. 'Inept', 'clumsy', or 'awkward' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0748",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MALADROIT**",
+    "options": {
+      "A": "Clumsy",
+      "B": "Dexterous",
+      "C": "Inept",
+      "D": "Gawky"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Maladroit' means clumsy and awkward. 'Dexterous', 'adroit', or 'skillful' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0749",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MALEDICTION**",
+    "options": {
+      "A": "Curse",
+      "B": "Benediction",
+      "C": "Blessing",
+      "D": "Boon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Malediction' refers to a magical word or phrase uttered with the intention of bringing about evil or destruction; a curse. 'Curse', 'anathema', or 'imprecation' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0750",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MALEDICTION**",
+    "options": {
+      "A": "Anathema",
+      "B": "Imprecation",
+      "C": "Benediction",
+      "D": "Curse"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Malediction' means a curse. 'Benediction' or 'blessing' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

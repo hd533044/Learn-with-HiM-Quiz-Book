@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0401",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA short traditional story, typically with animal characters, conveying a moral lesson",
+    "options": {
+      "A": "Fable",
+      "B": "Parable",
+      "C": "Epic",
+      "D": "Ballad"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fable) is correct. A 'Fable' is a short fictional story featuring animals that imparts a moral lesson[cite: 5]. A 'Parable' is a simple story illustrating a spiritual or moral truth[cite: 5], and an 'Epic' is a long heroic poem[cite: 5].",
+    "tags": ["vocab", "ows", "literature", "stories", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0402",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nEasily achieved or performed with effortless skill; adroit",
+    "options": {
+      "A": "Facile",
+      "B": "Arduous",
+      "C": "Onerous",
+      "D": "Cumbersome"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Facile) is correct. 'Facile' means easily accomplished, smooth, or performed without noticeable effort[cite: 5]. 'Arduous' and 'Onerous' describe difficult and burdensome tasks.",
+    "tags": ["vocab", "ows", "adjectives", "skill", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0403",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn exact copy or reproduction of a written document, picture, or signature",
+    "options": {
+      "A": "Facsimile",
+      "B": "Caricature",
+      "C": "Manuscript",
+      "D": "Prototype"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Facsimile) is correct. A 'Facsimile' is an exact copy or reproduction of an original document or visual work[cite: 5]. 'Caricature' is an exaggerated drawing[cite: 5], and 'Prototype' is an original first model[cite: 5].",
+    "tags": ["vocab", "ows", "documents", "art", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0404",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot genuine; an imitation or counterfeit designed to deceive",
+    "options": {
+      "A": "Fake",
+      "B": "Authentic",
+      "C": "Pristine",
+      "D": "Veritable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fake) is correct. 'Fake' means not authentic, counterfeit, or forged[cite: 5]. 'Authentic' and 'Veritable' mean genuine and true[cite: 5].",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0405",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCapable of making mistakes, being deceived, or committing errors",
+    "options": {
+      "A": "Fallible",
+      "B": "Infallible",
+      "C": "Incorrigible",
+      "D": "Ineluctable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fallible) is correct. 'Fallible' refers to being liable to error, failure, or deception[cite: 5]. 'Infallible' means completely incapable of making a mistake[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0406",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nArable farmland that is ploughed and harrowed but left unseeded for a period to restore fertility",
+    "options": {
+      "A": "Fallow",
+      "B": "Arable",
+      "C": "Meadow",
+      "D": "Orchard"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fallow) is correct. 'Fallow' is cultivated land allowed to lie idle during a growing season to regenerate soil fertility[cite: 5]. 'Meadow' is a grassland used for grazing[cite: 5].",
+    "tags": ["vocab", "ows", "agriculture", "geography", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0407",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn extreme and widespread scarcity of food across an entire region or country",
+    "options": {
+      "A": "Famine",
+      "B": "Drought",
+      "C": "Epidemic",
+      "D": "Downpour"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Famine) is correct. 'Famine' is a devastating shortage of food causing starvation[cite: 5]. 'Drought' is a prolonged absence of rainfall[cite: 5].",
+    "tags": ["vocab", "ows", "disaster", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0408",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person filled with excessive, irrational, and uncritical zeal for an extreme cause or religion",
+    "options": {
+      "A": "Fanatic",
+      "B": "Stoic",
+      "C": "Pacifist",
+      "D": "Atheist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fanatic) is correct. A 'Fanatic' is a person motivated by unreasoning, radical enthusiasm[cite: 5]. 'Pacifist' opposes violence and war entirely[cite: 5].",
+    "tags": ["vocab", "ows", "people", "behaviour", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0409",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nMarked by, actuated by, or exhibiting excessive and uncompromising enthusiasm",
+    "options": {
+      "A": "Fanatical",
+      "B": "Pragmatic",
+      "C": "Temperate",
+      "D": "Apathetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fanatical) is correct. 'Fanatical' means motivated by extreme, uncritical, or intolerant devotion to an idea[cite: 5]. 'Temperate' means moderate and self-restrained[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0410",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA pleasant or extravagant situation imagined in the mind that is unlikely to occur in reality",
+    "options": {
+      "A": "Fantasy",
+      "B": "Hypothesis",
+      "C": "Conjecture",
+      "D": "Truism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fantasy) is correct. A 'Fantasy' is a pleasant daydream or imaginative scenario without basis in reality[cite: 5]. 'Truism' is an obvious, self-evident truth[cite: 5].",
+    "tags": ["vocab", "ows", "mind", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0411",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExcessively particular, critical, and difficult to please in matters of cleanliness or detail",
+    "options": {
+      "A": "Fastidious",
+      "B": "Gullible",
+      "C": "Complacent",
+      "D": "Callous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fastidious) is correct. 'Fastidious' refers to a person who is hard to please due to meticulous and exacting standards[cite: 5]. 'Gullible' means easily duped[cite: 5].",
+    "tags": ["vocab", "ows", "personality", "pyq_ssc", "repeated_7_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0412",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLeading to disaster, ruin, or causing death; deadly",
+    "options": {
+      "A": "Fatal",
+      "B": "Innocuous",
+      "C": "Salutary",
+      "D": "Benign"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fatal) is correct. 'Fatal' means having disastrous consequences or resulting directly in death[cite: 5]. 'Innocuous' and 'Benign' mean harmless[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "adjectives", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0413",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe philosophical belief that all events are predetermined by destiny and inevitable",
+    "options": {
+      "A": "Fatalism",
+      "B": "Pantheism",
+      "C": "Nihilism",
+      "D": "Hedonism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fatalism) is correct. 'Fatalism' is the doctrine that all events are subject to fate and cannot be altered by human action[cite: 5]. 'Hedonism' is the pursuit of pleasure[cite: 5].",
+    "tags": ["vocab", "ows", "philosophy", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0414",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who believes that all events are predetermined by fate and cannot be changed",
+    "options": {
+      "A": "Fatalist",
+      "B": "Optimist",
+      "C": "Pessimist",
+      "D": "Pragmatist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fatalist) is correct. A 'Fatalist' believes that human agency cannot alter the predetermined course of events[cite: 5]. 'Optimist' expects good outcomes[cite: 5].",
+    "tags": ["vocab", "ows", "philosophy", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0415",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe animal life naturally occurring in a particular geographical region or geological period",
+    "options": {
+      "A": "Fauna",
+      "B": "Flora",
+      "C": "Ecology",
+      "D": "Biota"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fauna) is correct. 'Fauna' refers collectively to the animals of an area or epoch[cite: 5]. 'Flora' refers to the plant life of a region[cite: 5].",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0416",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCapable of being easily done, implemented, or achieved; practicable",
+    "options": {
+      "A": "Feasible",
+      "B": "Impracticable",
+      "C": "Utopian",
+      "D": "Chimerical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Feasible) is correct. 'Feasible' means practical, workable, and achievable under given circumstances[cite: 5]. 'Utopian' means ideal but impractical in practice[cite: 5].",
+    "tags": ["vocab", "ows", "adjectives", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0417",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nWell-chosen, highly suited to the circumstances, and giving off an apt impression",
+    "options": {
+      "A": "Felicitous",
+      "B": "Inappropriate",
+      "C": "Appalling",
+      "D": "Churlish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Felicitous) is correct. 'Felicitous' describes words or expressions that are delightfully apt and well-suited to the context[cite: 5]. 'Churlish' means rude and surly[cite: 5].",
+    "tags": ["vocab", "ows", "language", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0418",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nRelating to, involving, or having the serious nature of a grave crime or felony",
+    "options": {
+      "A": "Felonious",
+      "B": "Venial",
+      "C": "Lawful",
+      "D": "Culpable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Felonious) is correct. 'Felonious' relates to or constitutes a major criminal offense or felony[cite: 5]. 'Venial' refers to minor, pardonable offenses[cite: 5].",
+    "tags": ["vocab", "ows", "law", "crime", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0419",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who advocates, supports, and fights for equal rights and opportunities for women",
+    "options": {
+      "A": "Feminist",
+      "B": "Effeminate",
+      "C": "Philanderer",
+      "D": "Misogynist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Feminist) is correct. A 'Feminist' believes in and advocates social, economic, and political equality of the sexes[cite: 5]. 'Misogynist' is one who hates or mistreats women[cite: 5].",
+    "tags": ["vocab", "ows", "people", "society", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0420",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA bitter, prolonged, and deep-seated hostility or dispute between families or clans",
+    "options": {
+      "A": "Feud",
+      "B": "Alliance",
+      "C": "Amity",
+      "D": "Armistice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Feud) is correct. A 'Feud' (or vendetta) is a long-standing, bitter quarrel between clans or families[cite: 5]. 'Alliance' is a formal union between parties[cite: 5].",
+    "tags": ["vocab", "ows", "conflict", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0421",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot real or true; created from imagination and purely invented",
+    "options": {
+      "A": "Fictitious",
+      "B": "Authentic",
+      "C": "Verifiable",
+      "D": "Tangible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fictitious) is correct. 'Fictitious' means fabricated, imaginary, or not genuine[cite: 5]. 'Tangible' means perceptible by physical touch[cite: 5].",
+    "tags": ["vocab", "ows", "literature", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0422",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSomething fabricated or invented in the mind that does not exist in reality",
+    "options": {
+      "A": "Figment",
+      "B": "Fact",
+      "C": "Reality",
+      "D": "Specimen"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Figment) is correct. A 'Figment' is something purely made up in one's imagination (e.g., a figment of imagination)[cite: 5]. 'Specimen' is a sample of a whole[cite: 5].",
+    "tags": ["vocab", "ows", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0423",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe act of killing one's own child",
+    "options": {
+      "A": "Filicide",
+      "B": "Infanticide",
+      "C": "Fratricide",
+      "D": "Patricide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Filicide) is correct. 'Filicide' is the murder of a son or daughter by their parent[cite: 5]. 'Infanticide' is the killing of an infant[cite: 5], and 'Fratricide' is killing one's brother[cite: 5].",
+    "tags": ["vocab", "ows", "killing", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0424",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who attracts attention with an exuberant, showy, and stylishly confident demeanor",
+    "options": {
+      "A": "Flamboyant",
+      "B": "Reticent",
+      "C": "Diffident",
+      "D": "Taciturn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Flamboyant) is correct. 'Flamboyant' describes a person or style characterized by striking, ostentatious, and colorful confidence[cite: 5]. 'Taciturn' means habitually quiet.",
+    "tags": ["vocab", "ows", "personality", "appearance", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0425",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA group of naval vessels or commercial ships sailing together under one command",
+    "options": {
+      "A": "Fleet",
+      "B": "Caravan",
+      "C": "Flock",
+      "D": "Swarm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fleet) is correct. A 'Fleet' is a tactical collection of naval or commercial vessels[cite: 5]. 'Caravan' is a group of desert travelers[cite: 5], and 'Flock' is a group of birds[cite: 5].",
+    "tags": ["vocab", "ows", "collective_nouns", "ships", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0426",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAble to bend easily without breaking; adaptable to change",
+    "options": {
+      "A": "Flexible",
+      "B": "Brittle",
+      "C": "Rigid",
+      "D": "Inflexible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Flexible) is correct. 'Flexible' means pliable, yielding to force without cracking, or adaptable[cite: 5]. 'Brittle' means easily snapped or shattered[cite: 5].",
+    "tags": ["vocab", "ows", "materials", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0427",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo shine with an unsteady, wavering, or brief intermittent light",
+    "options": {
+      "A": "Flicker",
+      "B": "Illuminate",
+      "C": "Blaze",
+      "D": "Glower"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Flicker) is correct. 'Flicker' means to shine or burn with an unsteady, fluttering glow[cite: 5]. 'Glower' means to stare with angry, sullen intent[cite: 5].",
+    "tags": ["vocab", "ows", "light", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0428",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe less pleasant, negative, or unwelcome aspect of a situation",
+    "options": {
+      "A": "Flip side",
+      "B": "Panacea",
+      "C": "Cynosure",
+      "D": "Zenith"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Flip side) is correct. 'Flip side' is the reverse, often unwelcome or negative aspect of something[cite: 5]. 'Zenith' is the highest peak or summit[cite: 5].",
+    "tags": ["vocab", "ows", "idiomatic_phrases", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0429",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA collective group of birds or sheep",
+    "options": {
+      "A": "Flock",
+      "B": "Herd",
+      "C": "Pride",
+      "D": "Shoal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Flock) is correct. 'Flock' is the collective term for birds or sheep[cite: 5]. 'Pride' applies to lions[cite: 5], 'Herd' to cattle[cite: 5], and 'Shoal' to fish[cite: 5].",
+    "tags": ["vocab", "ows", "collective_nouns", "animals", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0430",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe entire plant life and natural vegetation of a specific geographical region or period",
+    "options": {
+      "A": "Flora",
+      "B": "Fauna",
+      "C": "Herbarium",
+      "D": "Botany"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Flora) is correct. 'Flora' encompasses the plant kingdom of a locality[cite: 5]. 'Fauna' refers to the animals of a region[cite: 5], and 'Herbarium' is a plant specimen collection[cite: 5].",
+    "tags": ["vocab", "ows", "plants", "nature", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0431",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who operates a shop selling and arranging cut flowers",
+    "options": {
+      "A": "Florist",
+      "B": "Botanist",
+      "C": "Horticulturist",
+      "D": "Confectioner"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Florist) is correct. A 'Florist' sells and arranges bouquets of cut flowers[cite: 5]. A 'Horticulturist' studies and cultivates gardens[cite: 5].",
+    "tags": ["vocab", "ows", "professions", "plants", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0432",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo struggle or blunder along clumsily and helplessly in water, mud, or confusion",
+    "options": {
+      "A": "Flounder",
+      "B": "Traverse",
+      "C": "Navigate",
+      "D": "Glide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Flounder) is correct. 'Flounder' means to struggle clumsily or show great confusion in action[cite: 5]. 'Traverse' means to travel across or sideways[cite: 5].",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0433",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn unlikely stroke of good luck, success, or accidental fortune",
+    "options": {
+      "A": "Fluke",
+      "B": "Nemesis",
+      "C": "Calamity",
+      "D": "Catastrophe"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fluke) is correct. A 'Fluke' is a fortuitous, accidental occurrence of success[cite: 5]. 'Nemesis' represents inevitable downfall or punishment[cite: 5].",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0434",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA state of continuous, unending change, transition, or movement",
+    "options": {
+      "A": "Flux",
+      "B": "Stagnation",
+      "C": "Equilibrium",
+      "D": "Stability"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Flux) is correct. 'Flux' is a state of constant, fluid change or shifting flow[cite: 5]. 'Stagnation' and 'Equilibrium' describe unmoving or balanced states[cite: 5].",
+    "tags": ["vocab", "ows", "science", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0435",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA principal worker who supervises and leads a gang of workmen in a factory or site",
+    "options": {
+      "A": "Foreman",
+      "B": "Apprentice",
+      "C": "Janitor",
+      "D": "Stevedore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Foreman) is correct. A 'Foreman' is the leader or supervisor of a work crew[cite: 5]. 'Apprentice' is a trainee[cite: 5], and 'Janitor' is a building caretaker[cite: 5].",
+    "tags": ["vocab", "ows", "professions", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0436",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLost or surrendered as a penalty for a fault, crime, or breach of contract",
+    "options": {
+      "A": "Forfeited",
+      "B": "Bequeathed",
+      "C": "Vindicated",
+      "D": "Inherited"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Forfeited) is correct. 'Forfeited' describes rights, properties, or funds seized or lost through a penalty[cite: 5]. 'Vindicated' means cleared of blame[cite: 5].",
+    "tags": ["vocab", "ows", "law", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0437",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe crime of forging, copying, or fraudulently falsifying documents, signatures, or notes",
+    "options": {
+      "A": "Forgery",
+      "B": "Embezzlement",
+      "C": "Pilferage",
+      "D": "Plagiarism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Forgery) is correct. 'Forgery' is the illegal production of a false signature or counterfeit document[cite: 5]. 'Plagiarism' is stealing someone else's written thoughts or text[cite: 5].",
+    "tags": ["vocab", "ows", "crime", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0438",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA continuous duration or span of two weeks (14 days)",
+    "options": {
+      "A": "Fortnight",
+      "B": "Decade",
+      "C": "Centennial",
+      "D": "Triennial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fortnight) is correct. A 'Fortnight' is an unbroken period of fourteen days[cite: 5]. A 'Decade' is a period of ten years[cite: 5].",
+    "tags": ["vocab", "ows", "time", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0439",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe petrified preserved remains or impressions of a prehistoric plant or animal embedded in rock",
+    "options": {
+      "A": "Fossil",
+      "B": "Relic",
+      "C": "Ember",
+      "D": "Carcass"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fossil) is correct. A 'Fossil' is the preserved geological trace of prehistoric life embedded in rock strata[cite: 5]. 'Relic' is an object surviving from an earlier holy era[cite: 5].",
+    "tags": ["vocab", "ows", "science", "geology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0440",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abandoned infant of unknown parentage that is found deserted and cared for by others",
+    "options": {
+      "A": "Foundling",
+      "B": "Changeling",
+      "C": "Toddler",
+      "D": "Apprentice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Foundling) is correct. A 'Foundling' is an abandoned baby of unknown parents taken in by strangers[cite: 5]. 'Changeling' is a mythical swapped child[cite: 5].",
+    "tags": ["vocab", "ows", "people", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0441",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nEasily broken, shattered, or damaged; delicate in physical structure",
+    "options": {
+      "A": "Fragile",
+      "B": "Ductile",
+      "C": "Resilient",
+      "D": "Malleable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fragile) is correct. 'Fragile' denotes something delicate and easily broken[cite: 5]. 'Resilient' means able to withstand or recover quickly from difficult conditions.",
+    "tags": ["vocab", "ows", "materials", "adjectives", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0442",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe constitutional, legal right or privilege to cast a vote in public elections",
+    "options": {
+      "A": "Franchise",
+      "B": "Disenfranchisement",
+      "C": "Electorate",
+      "D": "Plebiscite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Franchise) is correct. 'Franchise' (or Suffrage) is the constitutional right granted to citizens to vote[cite: 5]. 'Electorate' is the body of all registered voters[cite: 5].",
+    "tags": ["vocab", "ows", "politics", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0443",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe criminal act of killing one's own brother",
+    "options": {
+      "A": "Fratricide",
+      "B": "Patricide",
+      "C": "Matricide",
+      "D": "Sororicide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fratricide) is correct. 'Fratricide' is the murder of one's brother[cite: 5]. 'Patricide' is killing one's father[cite: 5], 'Matricide' is killing one's mother[cite: 5], and 'Sororicide' is killing one's sister[cite: 5].",
+    "tags": ["vocab", "ows", "killing", "law", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0444",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nWrongful, criminal deception intended to result in financial or personal gain",
+    "options": {
+      "A": "Fraud",
+      "B": "Veracity",
+      "C": "Alimony",
+      "D": "Integrity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fraud) is correct. 'Fraud' is intentional deceit or misrepresentation aimed at securing an unfair or unlawful gain[cite: 5]. 'Veracity' is conformity to truth[cite: 5].",
+    "tags": ["vocab", "ows", "crime", "law", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0445",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe state or feeling of being upset, annoyed, and discouraged due to inability to achieve something",
+    "options": {
+      "A": "Frustration",
+      "B": "Serenity",
+      "C": "Ecstasy",
+      "D": "Euphoria"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Frustration) is correct. 'Frustration' is the acute annoyance and despair caused by thwarted goals or unfulfilled hopes[cite: 5]. 'Serenity' is calm peace.",
+    "tags": ["vocab", "ows", "emotions", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0446",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who flees from justice, danger, or arrest and is on the run from the law",
+    "options": {
+      "A": "Fugitive",
+      "B": "Emigrant",
+      "C": "Recluse",
+      "D": "Vagrant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fugitive) is correct. A 'Fugitive' (or absconder) is a person fleeing legal custody or police arrest[cite: 5]. 'Vagrant' is a homeless wanderer[cite: 5].",
+    "tags": ["vocab", "ows", "law", "crime", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0447",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn acrobat or performer who walks skillfully upon a tightrope",
+    "options": {
+      "A": "Funambulist",
+      "B": "Somnambulist",
+      "C": "Acrobat",
+      "D": "Stevedore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Funambulist) is correct. A 'Funambulist' is a specialized tightrope walker[cite: 5]. 'Somnambulist' is an individual who walks in their sleep[cite: 5].",
+    "tags": ["vocab", "ows", "professions", "art", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0448",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA spore-producing organism lacking chlorophyll that lives by decomposing organic matter (such as mushrooms or mold)",
+    "options": {
+      "A": "Fungus",
+      "B": "Flora",
+      "C": "Fauna",
+      "D": "Algae"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fungus) is correct. 'Fungus' (plural: fungi) encompasses organisms like molds and mushrooms that lack chlorophyll and absorb nutrients from surroundings[cite: 5].",
+    "tags": ["vocab", "ows", "biology", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0449",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe main central structural body of an aircraft to which the wings and tail are attached",
+    "options": {
+      "A": "Fuselage",
+      "B": "Cockpit",
+      "C": "Chassis",
+      "D": "Hangar"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Fuselage) is correct. The 'Fuselage' is the central body structure of an airplane carrying crew and passengers[cite: 5]. 'Cockpit' is the pilot's control station[cite: 5].",
+    "tags": ["vocab", "ows", "aviation", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0450",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nBrave, heroic, noble-minded, and chivalrous in character",
+    "options": {
+      "A": "Gallant",
+      "B": "Craven",
+      "C": "Churlish",
+      "D": "Pusillanimous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Gallant) is correct. 'Gallant' means exceptionally brave, spirited, and chivalrous toward others[cite: 5]. 'Craven' and 'Pusillanimous' mean cowardly.",
+    "tags": ["vocab", "ows", "personality", "adjectives", "pyq_ssc"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_1951",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Prominence",
+      "B": "Prominance",
+      "C": "Prominense",
+      "D": "Prominencee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Prominence' - the state of being important, famous, or noticeable; ends in '-ence', 'p-r-o-m-i-n-e-n-c-e'). Options B, C, and D alter the suffix or add extra letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1952",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Promote",
+      "B": "Prompt",
+      "C": "Promulgate",
+      "D": "Pronounciation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Pronunciation' (spelled without the 'o' after the root 'nounce', 'p-r-o-n-u-n-c-i-a-t-i-o-n' - the way in which a word is pronounced). Other options are correct: Promote (support or actively encourage), Prompt (done without delay; immediate), Promulgate (promote or make widely known an idea or cause).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1953",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Propagate",
+      "B": "Propagete",
+      "C": "Propagait",
+      "D": "Propegate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Propagate' - breed specimens of a plant or animal by natural processes from the parent stock; 'p-r-o-p-a-g-a-t-e'). Options B, C, and D alter the internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1954",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Propensity",
+      "B": "Prophecy",
+      "C": "Prophet",
+      "D": "Propletariat"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Proletariat' (or Proletarian - working-class people). Other options are correct: Propensity (an inclination or natural tendency to behave in a particular way), Prophecy (a prediction), Prophet (a person regarded as an inspired teacher of the will of God).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1955",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Proportionate",
+      "B": "Proprotionate",
+      "C": "Proportionet",
+      "D": "Proportionait"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Proportionate' - corresponding in size or amount to something else; 'p-r-o-p-o-r-t-i-o-n-a-t-e'). Options B, C, and D misspell internal syllables or suffixes.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1956",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Proprietary",
+      "B": "Propulsion",
+      "C": "Prosaic",
+      "D": "Proselytizee"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Proselytize' (ends in single 'e', 'p-r-o-s-e-l-y-t-i-z-e' - convert or attempt to convert someone from one religion, belief, or opinion to another). Other options are correct: Proprietary (relating to an owner or ownership), Propulsion (the action of driving or pushing forward), Prosaic (having the style or diction of prose; poetic, unromantic).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1957",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Protagonist",
+      "B": "Protogonist",
+      "C": "Protaganist",
+      "D": "Protagynist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Protagonist' - the leading character or one of the major characters in a play, film, novel, etc.; 'p-r-o-t-a-g-o-n-i-s-t'). Options B, C, and D alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1958",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Protean",
+      "B": "Protocol",
+      "C": "Prototype",
+      "D": "Protrution"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Protrusion' (spelled with '-sion', not '-tion', 'p-r-o-t-r-u-s-i-o-n' - something that protrudes; a projection). Other options are correct: Protean (tending or able to change frequently or easily), Protocol (the official procedure or system of rules governing affairs of state or diplomatic occasions), Prototype (a first, preliminary, or initial model of something from which other forms are developed or copied).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1959",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Provincial",
+      "B": "Provinscial",
+      "C": "Provincial",
+      "D": "Provential"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Provincial' - concerning a province of a country or empire; of or concerning the regions outside the capital city; 'p-r-o-v-i-n-c-i-a-l').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1960",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Provocation",
+      "B": "Prowess",
+      "C": "Proximate",
+      "D": "Psychlogy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Psychology' (contains 'o' after 'ch', 'p-s-y-c-h-o-l-o-g-y' - the scientific study of the human mind and its functions). Other options are correct: Provocation (action or speech that makes someone annoyed or angry, especially deliberately), Prowess (skill or expertise in a particular activity or field), Proximate (close to; nearest).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1961",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Puerile",
+      "B": "Pueril",
+      "C": "Puereel",
+      "D": "Puerill"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Puerile' - childish and trivial; 'p-u-e-r-i-l-e'). Options B, C, and D alter the ending or omit silent letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1962",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Pugnacious",
+      "B": "Pulmonary",
+      "C": "Punctual",
+      "D": "Pungant"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Pungent' (ends in '-ent', not '-ant', 'p-u-n-g-e-n-t' - having a sharply strong taste or smell). Other options are correct: Pugnacious (eager or quick to argue, quarrel, or fight), Pulmonary (relating to the lungs), Punctual (happening or doing something at the agreed or proper time).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1963",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Purgatory",
+      "B": "Purgatary",
+      "C": "Purgatery",
+      "D": "Purgitary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Purgatory' - a state or place of suffering inhabited by the souls of sinners who are expiating their sins before going to heaven; 'p-u-r-g-a-t-o-r-y'). Options B, C, and D alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1964",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Purify",
+      "B": "Pursuit",
+      "C": "Putative",
+      "D": "Pyramide"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Pyramid' (ends in '-id', not '-ide', 'p-y-r-a-m-i-d' - a monumental structure with a square or triangular base and sloping sides). Other options are correct: Purify (make pure or clean), Pursuit (the action of pursuing someone or something), Putative (generally considered or reputed to be).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1965",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Quadrilateral",
+      "B": "Quadrilateral",
+      "C": "Quadrilateral",
+      "D": "Quadrilateral"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Quadrilateral' - a four-sided figure; 'q-u-a-d-r-i-l-a-t-e-r-a-l').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1966",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Qualitative",
+      "B": "Quantitative",
+      "C": "Quarantine",
+      "D": "Quarel"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Quarrel' (double 'l', 'q-u-a-r-r-e-l' - an angry argument or disagreement). Other options are correct: Qualitative (relating to, measuring, or measured by the quality of something rather than its quantity), Quantitative (relating to, measuring, or measured by the quantity of something rather than its quality), Quarantine (a state, period, or place of isolation in which people or animals that have arrived from elsewhere or been exposed to infectious or contagious disease are placed).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1967",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Queasy",
+      "B": "Quezy",
+      "C": "Quesy",
+      "D": "Quieasy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Queasy' - nauseated; feeling sick; 'q-u-e-a-s-y'). Options B, C, and D alter vowel combinations or use 'z'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1968",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Quench",
+      "B": "Query",
+      "C": "Queue",
+      "D": "Quieet"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Quiet' (spelled 'q-u-i-e-t' - making little or no noise). Other options are correct: Quench (satisfy (thirst) by drinking), Query (a question, especially one expressing doubt or requesting information), Queue (a line or sequence of people or vehicles awaiting their turn).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1969",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Quiescent",
+      "B": "Quiescent",
+      "C": "Quiescent",
+      "D": "Quiescent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Quiescent' - in a state or period of inactivity or dormancy; 'q-u-i-e-s-c-e-n-t').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1970",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Quietude",
+      "B": "Quintessence",
+      "C": "Quiver",
+      "D": "Quorom"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Quorum' (spelled with 'u', not 'o', 'q-u-o-r-u-m' - the minimum number of members of an assembly or society that must be present at any of its meetings to make the proceedings of that meeting valid). Other options are correct: Quietude (a state of stillness, calmness, and quiet in a person, place, or period), Quintessence (the most perfect or typical example of a quality or class), Quiver (tremble or shake with a slight rapid motion).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1971",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Quotient",
+      "B": "Quocient",
+      "C": "Quothent",
+      "D": "Quosient"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Quotient' - a result obtained by dividing one quantity by another; 'q-u-o-t-i-e-n-t'). Options B, C, and D alter suffix consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1972",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Rabid",
+      "B": "Radiant",
+      "C": "Radical",
+      "D": "Rancorouss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Rancorous' (ends in single 's', 'r-a-n-c-o-r-o-u-s' - characterized by bitterness or resentment). Other options are correct: Rabid (having or proceeding from an extreme or fanatical support of or belief in something), Radiant (sending out bright rays of light; shining brightly), Radical (affecting the fundamental nature of something; far-reaching or thorough).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1973",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Rapacious",
+      "B": "Rapacious",
+      "C": "Rapacious",
+      "D": "Rapacious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Rapacious' - aggressively greedy or grasping; 'r-a-p-a-c-i-o-u-s').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1974",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select. the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Rapport",
+      "B": "Rapture",
+      "C": "Rarefaction",
+      "D": "Realy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Really' (double 'l', 'r-e-a-l-l-y' - in actual fact; truly). Other options are correct: Rapport (a close and harmonious relationship in which the people or groups concerned understand each other's feelings or ideas and communicate well), Rapture (a feeling of intense pleasure or joy), Rarefaction (the action of making a substance less dense, especially a gas).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1975",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Rebellion",
+      "B": "Rebelion",
+      "C": "Rebellian",
+      "D": "Rebelian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Rebellion' - an act of violent or open resistance to an established government or ruler; double 'b', single 'l', 'r-e-b-e-l-l-i-o-n'). Options B, C, and D alter consonant combinations.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1976",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Receptacle",
+      "B": "Recession",
+      "C": "Reciprocal",
+      "D": "Recokn"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Reckon' (contains 'k', 'r-e-c-k-o-n' - establish by counting or calculation; calculate). Other options are correct: Receptacle (an object or space used to contain something), Recession (a period of temporary economic decline during which trade and industrial activity are reduced), Reciprocal (given, felt, or done in return).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1977",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Recluse",
+      "B": "Recloos",
+      "C": "Recloose",
+      "D": "Reclus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Recluse' - a person who lives a solitary life and tends to avoid other people; 'r-e-c-l-u-s-e'). Options B, C, and D alter the ending.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1978",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Recognize",
+      "B": "Reconcile",
+      "C": "Recondite",
+      "D": "Recurent"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Recurrent' (double 'r', 'r-e-c-u-r-r-e-n-t' - occurring often or repeatedly). Other options are correct: Recognize (identify (someone or something) from having encountered them before), Reconcile (restore friendly relations between), Recondite (little known; abstruse).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1979",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Recuperate",
+      "B": "Recupirate",
+      "C": "Recuperait",
+      "D": "Recuperat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Recuperate' - recover from illness or exertion; 'r-e-c-u-p-e-r-a-t-e'). Options B, C, and D alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1980",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Redeemable",
+      "B": "Redolent",
+      "C": "Redoubtable",
+      "D": "Referance"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Reference' (ends in '-ence', not '-ance', 'r-e-f-e-r-e-n-c-e' - the action of mentioning or referring to something). Other options are correct: Redeemable (able to be saved or exchanged), Redolent (strongly reminiscent or suggestive of something), Redoubtable (formidable, especially as an opponent).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1981",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Refractory",
+      "B": "Refractery",
+      "C": "Refractary",
+      "D": "Refracteri"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Refractory' - stubborn or unmanageable; resisting control or treatment; 'r-e-f-r-a-c-t-o-r-y').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1982",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Refugee",
+      "B": "Refulgent",
+      "C": "Regicide",
+      "D": "Regiseter"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Register' (spelled with '-is-', not '-es-', 'r-e-g-i-s-t-e-r' - an official list or record). Other options are correct: Refugee (a person who has been forced to leave their country in order to escape war, persecution, or natural disaster), Refulgent (shining brightly; radiant), Regicide (the action of killing a king).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1983",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Rehearsal",
+      "B": "Rehersal",
+      "C": "Rehearsel",
+      "D": "Rehersel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Rehearsal' - a practice or trial performance of a play or other work for later public performance; 'r-e-h-e-a-r-s-a-l').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1984",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Reiterate",
+      "B": "Rejuvenate",
+      "C": "Relapse",
+      "D": "Relevent"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Relevant' (spelled with '-ev-', not '-ev-' reversed or misplaced; 'r-e-l-e-v-a-n-t' - closely connected or appropriate to what is being done or considered). Other options are correct: Reiterate (say something again or a number of times for emphasis or clarity), Rejuvenate (make (someone or something) look or feel younger, fresher, or more lively), Relapse (suffer a deterioration after a period of improvement).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1985",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Relinquish",
+      "B": "Relinquish",
+      "C": "Relinquish",
+      "D": "Relinquish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Relinquish' - voluntarily cease to keep or claim; give up; 'r-e-l-i-n-q-u-i-s-h').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1986",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Reluctant",
+      "B": "Remedial",
+      "C": "Reminiscent",
+      "D": "Remittence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Remittance' (ends in '-ance', not '-ence', 'r-e-m-i-t-t-a-n-c-e' - a sum of money sent in payment or as a gift). Other options are correct: Reluctant (unwilling and hesitant; disinclined), Remedial (healing or corrective), Reminiscent (tending to remind one of something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1987",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Renaissance",
+      "B": "Rennaissance",
+      "C": "Renaisance",
+      "D": "Rennaissance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Renaissance' - the revival of European art and literature under the influence of classical models in the 14th–16th centuries; single 'n', double 's', 'r-e-n-a-i-s-s-a-n-c-e').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1988",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Rendezvous",
+      "B": "Renegade",
+      "C": "Renounce",
+      "D": "Reparationn"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Reparation' (single 'n' at the end, 'r-e-p-a-r-a-t-i-o-n' - the making of amends for a wrong one has done, by paying money to or otherwise helping those who have been wronged). Other options are correct: Rendezvous (a meeting at an agreed time and place), Renegade (a person who deserts and betrays an organization, country, or set of principles), Renounce (formally declare one's abandonment of (a claim, right, or possession)).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1989",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Repellent",
+      "B": "Repellant",
+      "C": "Repelent",
+      "D": "Repellnet"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Repellent' - able to repel a particular thing; causing disgust or distaste; 'r-e-p-e-l-l-e-n-t').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1990",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Repertoire",
+      "B": "Repetition",
+      "C": "Reprehensible",
+      "D": "Reprive"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Reprieve' (spelled with '-ie-', not '-i-' before 've', 'r-e-p-r-i-e-v-e' - cancel or postpone the punishment of (someone, especially someone condemned to death)). Other options are correct: Repertoire (a stock of plays, dances, or items that a company or a performer knows or is prepared to perform), Repetition (the action of repeating something that has already been said or written), Reprehensible (deserving censure or condemnation).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1991",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Reprisal",
+      "B": "Reprisel",
+      "C": "Reprizer",
+      "D": "Reprisale"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Reprisal' - an act of retaliation; 'r-e-p-r-i-s-a-l').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1992",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Reproach",
+      "B": "Reprobate",
+      "C": "Reproduction",
+      "D": "Reseption"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Reception' (spelled with '-cep-', not '-sep-', 'r-e-c-e-p-t-i-o-n' - the action or process of receiving something sent, given, or inflicted). Other options are correct: Reproach (address (someone) in such a way as to express disapproval or disappointment), Reprobate (an unprincipled person), Reproduction (the action or process of making a copy of something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1993",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Rescission",
+      "B": "Rescizion",
+      "C": "Rescession",
+      "D": "Resicision"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Rescission' - the revocation, cancellation, or repeal of a law, order, or agreement; 'r-e-s-c-i-s-s-i-o-n').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1994",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Resemblance",
+      "B": "Reservoir",
+      "C": "Residence",
+      "D": "Resillience"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Resilience' (single 'l', double 's', 'r-e-s-i-l-i-e-n-c-e' - the capacity to recover quickly from difficulties; toughness). Other options are correct: Resemblance (the state of resembling someone or something), Reservoir (a large natural or artificial lake used as a source of water supply), Residence (a person's home, especially a large and impressive one).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1995",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Resolution",
+      "B": "Resolusion",
+      "C": "Resolucian",
+      "D": "Resolutionn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Resolution' - a firm decision to do or not to do something; 'r-e-s-o-l-u-t-i-o-n').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1996",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Resonant",
+      "B": "Resort",
+      "C": "Respective",
+      "D": "Respnsible"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Responsible' (spelled with '-ons-', 'r-e-s-p-o-n-s-i-b-l-e' - having an obligation to do something, or having control over or care for someone). Other options are correct: Resonant (deep, clear, and continuing to sound or ring), Resort (a place frequented for holidays or recreation or for a particular purpose), Respective (belonging or relating separately to each of two or more people or things).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1997",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Resplendent",
+      "B": "Resplendant",
+      "C": "Resplendent",
+      "D": "Resplendent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Resplendent' - attractive and impressive through being richly colorful or sumptuous; 'r-e-s-p-l-e-n-d-e-n-t').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1998",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Response",
+      "B": "Restaurateur",
+      "C": "Restitution",
+      "D": "Restraintt"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Restraint' (single 't' at the end, 'r-e-s-t-r-a-i-n-t' - unsparing control or moderation). Other options are correct: Response (a verbal or written answer), Restaurateur (a person who owns and manages a restaurant), Restitution (the restoration of something lost or stolen to its proper owner).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1999",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Resuscitate",
+      "B": "Resucitate",
+      "C": "Resussitate",
+      "D": "Resucitate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Resuscitate' - revive (someone) from unconsciousness or apparent death; 'r-e-s-u-s-c-i-t-a-t-e').",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_2000",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Reticent",
+      "B": "Retaliation",
+      "C": "Retinue",
+      "D": "Retrospecktive"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Retrospective' (spelled with '-t-i-v-e', not '-cktive', 'r-e-t-r-o-s-p-e-c-t-i-v-e' - looking back on or dealing with past events or situations). Other options are correct: Reticent (not revealing one's thoughts or feelings readily), Retaliation (the action of returning a military attack; counter-attack), Retinue (a group of advisers, assistants, or others accompanying an important person).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

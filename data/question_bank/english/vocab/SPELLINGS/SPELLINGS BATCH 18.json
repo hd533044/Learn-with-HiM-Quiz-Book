@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_0851",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Atmospheric",
+      "B": "Atmospharic",
+      "C": "Atmospherec",
+      "D": "Atmospherick"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Atmospheric' - relating to the atmosphere of the earth or creating a distinctive mood; 'a-t-m-o-s-p-h-e-r-i-c'). Options B, C, and D alter the connecting vowel or add obsolete archaic suffixes.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0852",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Atomization",
+      "B": "Atrocious",
+      "C": "Attainable",
+      "D": "Attandance"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Attendance' (spelled with '-en-', not '-an-' in the second syllable - the action or state of attending). Other options are correct: Atomization (the process of separating into fine particles), Atrocious (horrifyingly wicked or of very bad quality), Attainable (able to be achieved).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0853",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Attenuate",
+      "B": "Attenuayt",
+      "C": "Atenuate",
+      "D": "Atteneuate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Attenuate' - reduce the force, effect, or value of; double 't', single 'n', 'a-t-t-e-n-u-a-t-e'). Options B, C, and D drop 't' or introduce redundant vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0854",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Attestation",
+      "B": "Attributable",
+      "C": "Attrition",
+      "D": "Audasity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Audacity' (spelled with 'c', not 's' - a willingness to take bold risks / insolence). Other options are correct: Attestation (evidence or proof of something), Attributable (caused by or resulting from a specified thing), Attrition (the process of gradually reducing the strength or effectiveness of someone or something through sustained attack or pressure).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0855",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Audiovisual",
+      "B": "Audiovisuel",
+      "C": "Audiovisuall",
+      "D": "Audieovisual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Audiovisual' - using both sight and sound; 'a-u-d-i-o-v-i-s-u-a-l'). Options B, C, and D alter the vowel suffix or add extra letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0856",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Auditory",
+      "B": "Augmentation",
+      "C": "Augury",
+      "D": "Auricullar"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Auricular' (single 'l' - relating to the ear or hearing). Other options are correct: Auditory (relating to the sense of hearing), Augmentation (the action or process of making or becoming greater in size or amount), Augury (a sign of what will happen in the future; an omen).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0857",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Auscultation",
+      "B": "Oscultation",
+      "C": "Ascultation",
+      "D": "Auscultasion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Auscultation' - the action of listening to sounds from the heart, lungs, or other organs; 'a-u-s-c-u-l-t-a-t-i-o-n'). Options B, C, and D alter the prefix or suffix spelling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0858",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Auspiciously",
+      "B": "Austerity",
+      "C": "Authenticity",
+      "D": "Authoraterian"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Authoritarian' (spelled with '-ita-', not '-ate-' - favoring or enforcing strict obedience to authority at the expense of personal freedom). Other options are correct: Auspiciously (in a way that suggests a positive and successful future), Austerity (sternness or severity of manner / extreme economic restraint), Authenticity (the quality of being real or genuine).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0859",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Autobiographical",
+      "B": "Autobiografical",
+      "C": "Autobiographicle",
+      "D": "Autobiagraphecal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Autobiographical' - dealing with the writer's own life; 'a-u-t-o-b-i-o-g-r-a-p-h-i-c-a-l'). Options B, C, and D replace 'ph' with 'f' or alter connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0860",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Autochthonous",
+      "B": "Autocracy",
+      "C": "Autodidact",
+      "D": "Automatonn"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Automaton' (ends in single 'n' - a moving mechanical device made in imitation of a human being). Other options are correct: Autochthonous (indigenous rather than descended from migrants or colonists), Autocracy (a system of government by one person with absolute power), Autodidact (a self-taught person).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0861",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Autonomously",
+      "B": "Autonomusly",
+      "C": "Autonimously",
+      "D": "Autonamousley"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Autonomously' - with the freedom to act independently; 'a-u-t-o-n-o-m-o-u-s-l-y'). Options B, C, and D alter internal vowels or truncate the adjective suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0862",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Autopsy",
+      "B": "Autumnal",
+      "C": "Auxiliary",
+      "D": "Avariciouss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Avaricious' (ends in single 's' - having or showing an extreme greed for wealth). Other options are correct: Autopsy (a postmortem examination to discover the cause of death), Autumnal (of, characteristic of, or occurring in autumn), Auxiliary (providing supplementary or additional help and support).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0863",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Avuncular",
+      "B": "Avuncler",
+      "C": "Avuncularr",
+      "D": "Avunculer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Avuncular' - kind and friendly towards a younger or less experienced person, like an uncle; 'a-v-u-n-c-u-l-a-r'). Options B, C, and D alter the Latin adjective ending.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0864",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Axiomatic",
+      "B": "Babylonian",
+      "C": "Bacciferous",
+      "D": "Bachelorete"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Bachelorette' (double 't' before 'e' - a single, unmarried woman). Other options are correct: Axiomatic (self-evident or unquestionable), Babylonian (relating to ancient Babylon), Bacciferous (bearing or producing berries).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0865",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Bacteriology",
+      "B": "Bacteriolagy",
+      "C": "Bactiriology",
+      "D": "Bacteriolegy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Bacteriology' - the study of bacteria in relation to medicine and agriculture; 'b-a-c-t-e-r-i-o-l-o-g-y'). Options B, C, and D alter the connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0866",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Bafflement",
+      "B": "Bailiwick",
+      "C": "Balderdash",
+      "D": "Balisticks"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ballistics' (double 'l', ends in '-ics' - the science of projectiles and firearms). Other options are correct: Bafflement (the state of being completely puzzled or confused), Bailiwick (one's sphere of operations or area of interest), Balderdash (senseless talk or writing; nonsense).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0867",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Balladeer",
+      "B": "Ballader",
+      "C": "Baladeer",
+      "D": "Balader"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Balladeer' - a singer or composer of ballads; double 'l', double 'e', 'b-a-l-l-a-d-e-e-r'). Options B, C, and D drop required double consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0868",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Balustrade",
+      "B": "Banalize",
+      "C": "Bandolier",
+      "D": "Bankrupcy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Bankruptcy' (contains 't' before 'cy' - the legal state of being bankrupt). Other options are correct: Balustrade (a railing supported by balusters), Banalize (make banal or commonplace), Bandolier (a shoulder belt with loops or pockets for cartridges).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0869",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Banqueting",
+      "B": "Banquetting",
+      "C": "Bancqueting",
+      "D": "Banqweting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Banqueting' - attending or providing feasts; single 't' when adding suffix '-ing'; 'b-a-n-q-u-e-t-i-n-g'). Options B, C, and D improperly double 't' or corrupt 'qu'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0870",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Barbarism",
+      "B": "Barcarole",
+      "C": "Bardic",
+      "D": "Barometrick"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Barometric' (ends in '-ic', not '-ick' - relating to atmospheric pressure as measured by a barometer). Other options are correct: Barbarism (absence of culture and civilization; extreme cruelty), Barcarole (a song traditionally sung by Venetian gondoliers), Bardic (relating to a poet, traditionally one reciting epics).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0871",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Barricading",
+      "B": "Baricading",
+      "C": "Barricadeing",
+      "D": "Barracading"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Barricading' - blocking off with an improvised barrier; double 'r', single 'c', drops 'e' before '-ing'). Options B, C, and D drop 'r', retain silent 'e', or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0872",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Barrister",
+      "B": "Basaltic",
+      "C": "Bashfulness",
+      "D": "Bation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Bastion' (contains 's' - an institution, place, or person strongly defending particular principles / a fortified projection). Other options are correct: Barrister (a person called to the bar and entitled to practice as an advocate with higher rights of audience), Basaltic (relating to or containing basalt), Bashfulness (reluctance to draw attention to oneself; shyness).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0873",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Bathymetry",
+      "B": "Bathemetry",
+      "C": "Bathymatry",
+      "D": "Bathymitry"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Bathymetry' - the measurement of depth of water in oceans, seas, or lakes; 'b-a-t-h-y-m-e-t-r-y'). Options B, C, and D alter the Greek root 'bathy-' (deep) or suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0874",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Beatification",
+      "B": "Beatific",
+      "C": "Beatitude",
+      "D": "Beautifullly"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Beautifully' (double 'l', not triple 'l' - in a beautiful manner). Other options are correct: Beatification (the declaration by the Pope that a dead person is in a state of bliss), Beatific (feeling or expressing blissful happiness), Beatitude (supreme blessedness).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0875",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Bedaub",
+      "B": "Bedaube",
+      "C": "Bedaubt",
+      "D": "Bedawb"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Bedaub' - smear or daub with a sticky substance; 'b-e-d-a-u-b'). Options B, C, and D add erroneous letters or alter the diphthong.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0876",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Bedevilment",
+      "B": "Bedizen",
+      "C": "Bedlam",
+      "D": "Beleaguere"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Beleaguer' (no terminal 'e' - lay siege to / cause problems or difficulties for). Other options are correct: Bedevilment (the state of causing great and continual trouble), Bedizen (dress up or decorate gaudily), Bedlam (a scene of uproar and confusion).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0877",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Bellicose",
+      "B": "Belicose",
+      "C": "Bellicosee",
+      "D": "Bellicos"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Bellicose' - demonstrating aggression and willingness to fight; double 'l', 'b-e-l-l-i-c-o-s-e'). Options B, C, and D drop 'l' or drop/duplicate vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0878",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Benefaction",
+      "B": "Beneficent",
+      "C": "Beneficiary",
+      "D": "Benevolance"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Benevolence' (ends in '-ence', not '-ance' - the quality of being well meaning; kindness). Other options are correct: Benefaction (a donation or gift), Beneficent (generous or doing good), Beneficiary (a person who derives advantage from something, especially a trust or will).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0879",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Benignity",
+      "B": "Beningnity",
+      "C": "Benignety",
+      "D": "Benignaty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Benignity' - kindness or tolerance toward others; 'b-e-n-i-g-n-i-t-y'). Options B, C, and D introduce redundant consonants or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0880",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Benumbed",
+      "B": "Benzene",
+      "C": "Bequest",
+      "D": "Bereivment"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Bereavement' (spelled with '-eave-', not '-eiv-' - the condition of being deprived of a loved one through death). Other options are correct: Benumbed (deprived of physical or emotional feeling), Benzene (a colorless volatile liquid hydrocarbon), Bequest (a legacy or property given by will).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0881",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Berserk",
+      "B": "Berzerk",
+      "C": "Berserck",
+      "D": "Burserk"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Berserk' - out of control with anger or excitement; wild or frenzied; 'b-e-r-s-e-r-k'). Options B, C, and D replace 's' with 'z' or corrupt vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0882",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Besmirch",
+      "B": "Bespangle",
+      "C": "Bespoke",
+      "D": "Bestialaty"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Bestiality' (spelled with '-i-', not '-a-' - savagely cruel or depraved behavior). Other options are correct: Besmirch (damage the reputation of someone or something), Bespangle (cover with spangles or glittering objects), Bespoke (custom-made or tailored).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0883",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Bicameralism",
+      "B": "Bicamralism",
+      "C": "Bicameralizm",
+      "D": "Bicamerilism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Bicameralism' - having two legislative chambers; 'b-i-c-a-m-e-r-a-l-i-s-m'). Options B, C, and D drop internal vowels or alter suffixes.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0884",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Bicentennial",
+      "B": "Bifurcation",
+      "C": "Bigamist",
+      "D": "Bilaterel"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Bilateral' (ends in '-al', not '-el' - having or relating to two sides; affecting both sides). Other options are correct: Bicentennial (the two-hundredth anniversary of an event), Bifurcation (the division of something into two branches or parts), Bigamist (a person who commits the crime of marrying while still legally married to another).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0885",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Bilingualism",
+      "B": "Bilingwalism",
+      "C": "Bilingualizm",
+      "D": "Bilinguelism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Bilingualism' - fluency in or the use of two languages; 'b-i-l-i-n-g-u-a-l-i-s-m'). Options B, C, and D replace 'u' with 'w' or alter the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0886",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Bipartisan",
+      "B": "Blasphemer",
+      "C": "Blatant",
+      "D": "Blitheley"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Blithely' (spelled '-ly', not '-ley' - in a way that shows a casual indifference; joyously). Other options are correct: Bipartisan (involving the agreement or cooperation of two political parties), Blasphemer (a person who speaks disrespectfully about God or sacred things), Blatant (of bad behavior: done openly and unashamedly).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0887",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Boisterously",
+      "B": "Boisterosly",
+      "C": "Boisterusly",
+      "D": "Boistrously"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Boisterously' - in a noisy, energetic, and cheerful manner; 'b-o-i-s-t-e-r-o-u-s-l-y'). Options B, C, and D drop 'e' or truncate the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0888",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Bombardment",
+      "B": "Bombastic",
+      "C": "Bountiful",
+      "D": "Bovineness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt here ('Bombardment' - a continuous attack with bombs, shells, or other missiles). In PYQ options, it is often miswritten as 'Bombardmant'. Other options are correct: Bombastic (high-sounding but with little meaning; inflated), Bountiful (large in quantity; abundant), Bovineness (the quality of being bovine; slow, calm, or cattle-like).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0889",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Bowdlerize",
+      "B": "Boudlerize",
+      "C": "Bowdlereiz",
+      "D": "Bawdlerize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Bowdlerize' - remove material that is considered improper or offensive from a text; named after Thomas Bowdler; 'b-o-w-d-l-e-r-i-z-e'). Options B, C, and D alter the vowel root or ending.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0890",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Braggadocio",
+      "B": "Brandish",
+      "C": "Bravura",
+      "D": "Breachably"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt here ('Braggadocio' - boastful or arrogant behavior; double 'g', single 'c'). Frequently misprinted in examinations as 'Bragadocio'. Other options are correct: Brandish (wave or flourish something, especially a weapon, as a threat), Bravura (great technical skill and brilliance shown in an activity), Breachably (in a manner capable of being breached).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0891",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Brethren",
+      "B": "Brethran",
+      "C": "Bretheren",
+      "D": "Brethern"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Brethren' - fellow members of a religious group or society; 'b-r-e-t-h-r-e-n'). Options B, C, and D introduce erroneous vowels or invert letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0892",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Brigandage",
+      "B": "Brilliancy",
+      "C": "Brimstone",
+      "D": "Brocadedly"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; standard adjectival/adverbial form is 'Brocaded' without '-ly'. Other options are correct: Brigandage (the life or actions of bandits; robbery), Brilliancy (the quality of being brilliant), Brimstone (sulfur).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0893",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Brouhaha",
+      "B": "Bruhaha",
+      "C": "Brouhahah",
+      "D": "Brouhaaha"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Brouhaha' - a noisy and overexcited reaction or response; 'b-r-o-u-h-a-h-a'). Options B, C, and D drop 'ou' or duplicate final vowels/consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0894",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Bucolic",
+      "B": "Buffoonery",
+      "C": "Bullion",
+      "D": "Bureacracy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Bureaucracy' (contains 'eau', 'b-u-r-e-a-u-c-r-a-c-y' - a system of government or management with complex administrative rules). Other options are correct: Bucolic (relating to the pleasant aspects of the countryside and country life), Buffoonery (behavior that is ridiculous but amusing), Bullion (gold or silver in bulk before coining).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0895",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Burgeoning",
+      "B": "Burgeening",
+      "C": "Burgoning",
+      "D": "Burjeoning"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Burgeoning' - beginning to grow or increase rapidly; flourishing; 'b-u-r-g-e-o-n-i-n-g'). Options B, C, and D alter the vowel digraph or replace 'g' with 'j'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0896",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Burlesque",
+      "B": "Businesslike",
+      "C": "Buttress",
+      "D": "Buxomnesss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Buxomness' (double 's', not triple 's' - the state of being full-bosomed and plump in an attractive way). Other options are correct: Burlesque (an absurd or comically exaggerated imitation of something), Businesslike (having or indicating an efficient, practical, and systematic approach), Buttress (a projecting support built against a wall).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0897",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Cacophony",
+      "B": "Cacaphony",
+      "C": "Cacophany",
+      "D": "Caccophony"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Cacophony' - a harsh, discordant mixture of sounds; 'c-a-c-o-p-h-o-n-y'). Options B, C, and D alter the Greek connecting vowels or duplicate 'c'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0898",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Cadaverous",
+      "B": "Cadence",
+      "C": "Caesarean",
+      "D": "Calamitouslyy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Calamitously' (ends in single 'y' - in a catastrophic or disastrous manner). Other options are correct: Cadaverous (resembling a corpse in being very pale, thin, or bony), Cadence (a modulation or inflection of the voice / a rhythmic sequence), Caesarean (relating to or produced by Caesarean section).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0899",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Calcification",
+      "B": "Calcefication",
+      "C": "Calcificasion",
+      "D": "Calsefication"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Calcification' - the process in which calcium salts build up in soft tissue, causing it to harden; 'c-a-l-c-i-f-i-c-a-t-i-o-n'). Options B, C, and D replace 'c' with 's' or alter connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0900",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Calculable",
+      "B": "Caliber",
+      "C": "Calligraphy",
+      "D": "Callouseness"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Callousness' (drops 'e' before '-ness' - insensitive and cruel disregard for others). Other options are correct: Calculable (able to be calculated or estimated), Caliber (the quality of someone's character or the level of their ability / the diameter of a bore), Calligraphy (decorative handwriting).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

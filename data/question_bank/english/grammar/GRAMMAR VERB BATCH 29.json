@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_VERB_1201",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I was wish to meet her on her birthday.'",
+    "options": {
+      "A": "I was wish",
+      "B": "to meet her",
+      "C": "on her birthday.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The past tense of 'wish' should be used as a main verb, not with the auxiliary 'was'. Correct: 'I wished to meet her...'",
+    "tags": ["grammar", "verbs", "auxiliary_misuse", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1202",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The musician, along with her band members, ___ for hours.'",
+    "options": {
+      "A": "was rehearsing",
+      "B": "were rehearsing",
+      "C": "has been rehearse",
+      "D": "had been rehearse"
+    },
+    "correct_option": "A",
+    "explanation": "When the subject is modified by 'along with', 'as well as', or 'accompanied by', the verb must agree with the first subject ('The musician' - singular).",
+    "tags": ["grammar", "verbs", "subject_verb_agreement", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1203",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She suggested him to apply for a scholarship.'",
+    "options": {
+      "A": "She suggested him",
+      "B": "to apply",
+      "C": "for a scholarship.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The verb 'suggest' is not followed by an indirect object + infinitive. Correct: 'She suggested that he apply...' or 'She suggested his applying...'",
+    "tags": ["grammar", "verbs", "transitive_intransitive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1204",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'They ___ to discuss sensitive topics during the meeting.'",
+    "options": {
+      "A": "avoided discussing",
+      "B": "avoided to discuss",
+      "C": "avoid to discuss",
+      "D": "avoided discuss"
+    },
+    "correct_option": "A",
+    "explanation": "The verb 'avoid' is followed by a gerund, not an infinitive.",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1205",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He made me to realize my own potential.'",
+    "options": {
+      "A": "He made me",
+      "B": "to realize",
+      "C": "my own potential.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The causative verb 'make' is followed by a bare infinitive (without 'to'). Correct: 'He made me realize...'",
+    "tags": ["grammar", "verbs", "causative_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1206",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'We can't afford ___ any risks at this stage.'",
+    "options": {
+      "A": "taking",
+      "B": "to take",
+      "C": "take",
+      "D": "of taking"
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'afford' is followed by an infinitive.",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1207",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She agreed helping me with the translation.'",
+    "options": {
+      "A": "She agreed",
+      "B": "helping me",
+      "C": "with the translation.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'agree' is followed by an infinitive. Correct: 'She agreed to help...'",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1208",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I'm thinking ___ my career path.'",
+    "options": {
+      "A": "to change",
+      "B": "of changing",
+      "C": "about change",
+      "D": "change"
+    },
+    "correct_option": "B",
+    "explanation": "The structure 'thinking of' + gerund is the standard way to express contemplation.",
+    "tags": ["grammar", "verbs", "prepositional_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1209",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Neetu have been waiting for me since 10 o'clock.'",
+    "options": {
+      "A": "Neetu have been",
+      "B": "waiting for me",
+      "C": "since 10 o'clock.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The subject 'Neetu' is singular; the auxiliary must be 'has', not 'have'.",
+    "tags": ["grammar", "verbs", "subject_verb_agreement", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1210",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'I remember ___ the door before leaving.'",
+    "options": {
+      "A": "locking",
+      "B": "to lock",
+      "C": "to have locked",
+      "D": "lock"
+    },
+    "correct_option": "A",
+    "explanation": "'Remember' + gerund ('locking') implies recalling a past event, whereas 'remember to lock' implies an obligation not to forget a future or present action.",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1211",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The train had been departed when we reached.'",
+    "options": {
+      "A": "The train had been departed",
+      "B": "when we",
+      "C": "reached.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'Depart' is an intransitive verb and cannot be used in the passive voice ('had been departed'). It should be 'had departed'.",
+    "tags": ["grammar", "verbs", "transitive_intransitive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1212",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'They are believed ___ on their competitors.'",
+    "options": {
+      "A": "to spy",
+      "B": "to have spied",
+      "C": "to be spying",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "Beliefs about past, ongoing, or general actions can be expressed with different infinitive structures depending on timing.",
+    "tags": ["grammar", "verbs", "infinitive_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1213",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb: 'I dislike ___ unfairly.'",
+    "options": {
+      "A": "treat",
+      "B": "to treat",
+      "C": "being treated",
+      "D": "to be treat"
+    },
+    "correct_option": "C",
+    "explanation": "The verb 'dislike' takes a gerund object. In passive, it requires 'being + past participle'.",
+    "tags": ["grammar", "verbs", "gerund_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1214",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She regretted to ignore your warnings.'",
+    "options": {
+      "A": "She regretted",
+      "B": "to ignore",
+      "C": "your warnings.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Regret' + gerund refers to past actions. Correct: 'She regretted ignoring...'",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1215",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'We were fortunate ___ another opportunity.'",
+    "options": {
+      "A": "to offer",
+      "B": "to be offered",
+      "C": "to have offer",
+      "D": "offering"
+    },
+    "correct_option": "B",
+    "explanation": "We are the recipients of the offer, so the passive infinitive 'to be offered' is required.",
+    "tags": ["grammar", "verbs", "infinitive_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1216",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He admitted to cheat during the test.'",
+    "options": {
+      "A": "He admitted",
+      "B": "to cheat",
+      "C": "during the test.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Admit' + gerund. Correct: 'admitted cheating' or 'admitted to cheating'.",
+    "tags": ["grammar", "verbs", "gerund_usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1217",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "They pretended not to hear the alarm.",
+      "B": "They pretended not hearing the alarm.",
+      "C": "They pretended to not hear the alarm.",
+      "D": "Both A and C are acceptable.",
+    },
+    "correct_option": "A",
+    "explanation": "'Pretend' takes an infinitive. Standard placement for the negative is 'not to hear' (A).",
+    "tags": ["grammar", "verbs", "infinitive_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1218",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It's no good ___ to convince her.'",
+    "options": {
+      "A": "trying",
+      "B": "to try",
+      "C": "try",
+      "D": "to be try"
+    },
+    "correct_option": "A",
+    "explanation": "The idiom 'It is no good' is followed by a gerund.",
+    "tags": ["grammar", "verbs", "idiomatic_gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1219",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I look forward to meet you next week.'",
+    "options": {
+      "A": "I look forward",
+      "B": "to meet you",
+      "C": "next week.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The 'to' in 'look forward to' is a preposition, not an infinitive marker. It requires a gerund. Correct: 'to meeting you'.",
+    "tags": ["grammar", "verbs", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1220",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Does it need ___ straightaway?'",
+    "options": {
+      "A": "doing",
+      "B": "to be done",
+      "C": "to do",
+      "D": "both A and B"
+    },
+    "correct_option": "D",
+    "explanation": "When 'need' expresses requirement of an action, it can take either a gerund ('doing') or a passive infinitive ('to be done').",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1221",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Would you mind to close the window?'",
+    "options": {
+      "A": "Would you mind",
+      "B": "to close",
+      "C": "the window?",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Would you mind' requires a gerund. Correct: 'Would you mind closing...'",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1222",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I don't like ___ early.'",
+    "options": {
+      "A": "getting up",
+      "B": "to get up",
+      "C": "Both A and B",
+      "D": "none"
+    },
+    "correct_option": "C",
+    "explanation": "For 'like', both gerunds and infinitives are generally acceptable.",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1223",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has worked here since ten years.'",
+    "options": {
+      "A": "He has worked",
+      "B": "here",
+      "C": "since ten years.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Use 'for' for duration ('ten years') and 'since' for a point in time ('since 2014').",
+    "tags": ["grammar", "verbs", "tense_markers", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1224",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I'd rather ___ it now.'",
+    "options": {
+      "A": "do",
+      "B": "doing",
+      "C": "to do",
+      "D": "done"
+    },
+    "correct_option": "A",
+    "explanation": "'Would rather' is followed by a bare infinitive.",
+    "tags": ["grammar", "verbs", "idiomatic_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1225",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He was accused of stealing the money.",
+      "B": "He was accused to steal the money.",
+      "C": "He was accused for stealing the money.",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "A",
+    "explanation": "'Accuse' takes the preposition 'of', followed by a gerund.",
+    "tags": ["grammar", "verbs", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1226",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He insists to leave immediately.'",
+    "options": {
+      "A": "He insists",
+      "B": "to leave",
+      "C": "immediately.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Insist' takes the preposition 'on' + gerund. Correct: 'insists on leaving'.",
+    "tags": ["grammar", "verbs", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1227",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'On ___ please report to reception.'",
+    "options": {
+      "A": "arrive",
+      "B": "arriving",
+      "C": "to arrive",
+      "D": "arrived"
+    },
+    "correct_option": "B",
+    "explanation": "Prepositions (like 'on') are followed by gerunds.",
+    "tags": ["grammar", "verbs", "gerund_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1228",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "The magazine isn't worth reading.",
+      "B": "The magazine isn't worth to read.",
+      "C": "The magazine isn't worth to be read.",
+      "D": "Both B and C."
+    },
+    "correct_option": "A",
+    "explanation": "The adjective 'worth' is followed by a gerund that has passive meaning.",
+    "tags": ["grammar", "verbs", "idiomatic_gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1229",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If the program still doesn't work, try reloading the software.'",
+    "options": {
+      "A": "If the program",
+      "B": "doesn't work,",
+      "C": "try reloading.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Sentence is correct. 'Try' + gerund ('reloading') means experimenting to see if it works.",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1230",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I left the meeting early ___ my train.'",
+    "options": {
+      "A": "to catch",
+      "B": "catching",
+      "C": "for catching",
+      "D": "to catching"
+    },
+    "correct_option": "A",
+    "explanation": "Infinitive of purpose ('to catch') is required here.",
+    "tags": ["grammar", "verbs", "infinitive_purpose", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1231",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb: 'He managed ___ the homework without ___ a dictionary.'",
+    "options": {
+      "A": "to do / using",
+      "B": "doing / to use",
+      "C": "to do / to use",
+      "D": "doing / using"
+    },
+    "correct_option": "A",
+    "explanation": "'Manage' takes an infinitive ('to do'), and prepositions take gerunds ('using').",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1232",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Do you feel like to go out tonight?'",
+    "options": {
+      "A": "Do you feel like",
+      "B": "to go out",
+      "C": "tonight?",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The idiom 'feel like' is followed by a gerund. Correct: 'feel like going'.",
+    "tags": ["grammar", "verbs", "idiomatic_gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1233",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She hates ___ interrupted.'",
+    "options": {
+      "A": "being",
+      "B": "to be",
+      "C": "Both A and B are correct.",
+      "D": "neither"
+    },
+    "correct_option": "C",
+    "explanation": "Verbs like 'hate' take either a gerund ('being') or an infinitive ('to be') with passive meaning.",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1234",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'There is no point ___ to call at this time.'",
+    "options": {
+      "A": "in trying",
+      "B": "to try",
+      "C": "of trying",
+      "D": "try"
+    },
+    "correct_option": "A",
+    "explanation": "The structure 'no point in' + gerund is the standard idiomatic expression.",
+    "tags": ["grammar", "verbs", "idiomatic_gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1235",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I prefer to work here than at my old job.'",
+    "options": {
+      "A": "I prefer to work",
+      "B": "here than at",
+      "C": "my old job.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Prefer' takes 'to', not 'than', in comparisons of preference. Correct: 'prefer working here to my old job'.",
+    "tags": ["grammar", "verbs", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1236",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ is one of the best ways to keep fit.'",
+    "options": {
+      "A": "Swimming",
+      "B": "Swim",
+      "C": "To swim",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both gerunds ('Swimming') and infinitives ('To swim') function correctly as the subject of a sentence.",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1237",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'I'd rather ___ it now.'",
+    "options": {
+      "A": "do",
+      "B": "doing",
+      "C": "to do",
+      "D": "done"
+    },
+    "correct_option": "A",
+    "explanation": "'Would rather' takes a bare infinitive.",
+    "tags": ["grammar", "verbs", "idiomatic_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1238",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I can't stand to see them look so unhappy.'",
+    "options": {
+      "A": "I can't stand",
+      "B": "to see",
+      "C": "them look so unhappy.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Can't stand' is followed by a gerund. Correct: 'can't stand seeing...'",
+    "tags": ["grammar", "verbs", "gerund_usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1239",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Check there's nothing on the tape before ___ the film.'",
+    "options": {
+      "A": "recording",
+      "B": "to record",
+      "C": "record",
+      "D": "the recording of"
+    },
+    "correct_option": "A",
+    "explanation": "Prepositions like 'before' are followed by gerunds.",
+    "tags": ["grammar", "verbs", "gerund_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1240",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'I am looking forward ___ her next week.'",
+    "options": {
+      "A": "to meet",
+      "B": "to meeting",
+      "C": "for meeting",
+      "D": "meeting"
+    },
+    "correct_option": "B",
+    "explanation": "'To' in 'look forward to' is a preposition, hence the gerund 'meeting'.",
+    "tags": ["grammar", "verbs", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1241",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'What would you like do this evening?'",
+    "options": {
+      "A": "What would you",
+      "B": "like do",
+      "C": "this evening?",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Like' requires an infinitive complement. Correct: 'like to do'.",
+    "tags": ["grammar", "verbs", "infinitive_usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1242",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I didn't have enough time ___ the exam.'",
+    "options": {
+      "A": "to finish",
+      "B": "finishing",
+      "C": "finish",
+      "D": "for finish"
+    },
+    "correct_option": "A",
+    "explanation": "Infinitive ('to finish') expresses the reason or purpose regarding the time constraint.",
+    "tags": ["grammar", "verbs", "infinitive_purpose", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1243",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb: 'She tried ___ the mountain, but the weather forced her to give up.'",
+    "options": {
+      "A": "climbing",
+      "B": "to climb",
+      "C": "Both A and B",
+      "D": "neither"
+    },
+    "correct_option": "B",
+    "explanation": "'Tried to climb' means an attempt was made; 'tried climbing' means she experimented with climbing. Given the context of being 'forced to give up', 'to climb' is the intended attempt.",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1244",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He managed to do the homework without use a dictionary.'",
+    "options": {
+      "A": "He managed to do",
+      "B": "without use",
+      "C": "a dictionary.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Prepositions take gerunds. Correct: 'without using'.",
+    "tags": ["grammar", "verbs", "gerund_usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1245",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I regret ___ her about it now.'",
+    "options": {
+      "A": "to tell",
+      "B": "telling",
+      "C": "to have told",
+      "D": "say"
+    },
+    "correct_option": "A",
+    "explanation": "'Regret' + infinitive is often used when announcing unpleasant news formally.",
+    "tags": ["grammar", "verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1246",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'It was Paul; I saw him to do it.'",
+    "options": {
+      "A": "It was Paul;",
+      "B": "I saw him to do it.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Verbs of perception (saw) take bare infinitives. Correct: 'saw him do it'.",
+    "tags": ["grammar", "verbs", "perception_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1247",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Sorry to disturb you, but I need help.",
+      "B": "Sorry disturbing you, but I need help.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "A",
+    "explanation": "'Sorry' + infinitive is standard for an intended/current action of interruption.",
+    "tags": ["grammar", "verbs", "idiomatic_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1248",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I used to live in Manchester before I moved to London.'",
+    "options": {
+      "A": "I used to live",
+      "B": "in Manchester before",
+      "C": "moved to London.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Sentence is correct.",
+    "tags": ["grammar", "verbs", "past_habits", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1249",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It gladdened me ___ her looking so well.'",
+    "options": {
+      "A": "to see",
+      "B": "seeing",
+      "C": "see",
+      "D": "to be see"
+    },
+    "correct_option": "A",
+    "explanation": "Infinitive follows 'gladdened me'.",
+    "tags": ["grammar", "verbs", "infinitive_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_VERB_1250",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "I'd enjoy bungee jumping.",
+      "B": "I'd enjoy to bungee jump.",
+      "C": "Both A and B.",
+      "D": "Neither."
+    },
+    "correct_option": "A",
+    "explanation": "'Enjoy' takes a gerund.",
+    "tags": ["grammar", "verbs", "gerund_usage", "rule_based"]
+  }
+]

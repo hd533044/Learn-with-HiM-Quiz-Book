@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_1151",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Circumlocutory",
+      "B": "Circumlocutary",
+      "C": "Circumlocutery",
+      "D": "Circumlacutory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Circumlocutory' - using many words where fewer would do; evasive; 'c-i-r-c-u-m-l-o-c-u-t-o-r-y'). Options B, C, and D alter the vowel connecting root or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1152",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Circumvallation",
+      "B": "Clairvoyance",
+      "C": "Clandistine",
+      "D": "Coalescence"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Clandestine' (spelled with '-des-', not '-dis-' - kept secret or done secretively). Other options are correct: Circumvallation (an entrenchment or surrounding wall), Clairvoyance (the faculty of perceiving things in the future), Coalescence (the joining or merging of elements to form a whole).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1153",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Coercible",
+      "B": "Coercable",
+      "C": "Coerceble",
+      "D": "Coersible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Coercible' - capable of being compelled or restrained; ends in '-ible'). Options B, C, and D alter the suffix to '-able' or replace 'c' with 's'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1154",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Cognizance",
+      "B": "Collateral",
+      "C": "Coloquial",
+      "D": "Commensurate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Colloquial' (double 'l' - used in ordinary or familiar conversation). Other options are correct: Cognizance (knowledge, awareness, or notice), Collateral (something pledged as security for repayment of a loan), Commensurate (corresponding in size or degree).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1155",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Commiseration",
+      "B": "Comiseration",
+      "C": "Commiserasion",
+      "D": "Commisiration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Commiseration' - expressions of sympathy and sorrow for another; double 'm', single 's', ends in '-tion'). Options B, C, and D drop 'm' or alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1156",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Compendious",
+      "B": "Complaisant",
+      "C": "Concommittant",
+      "D": "Condescension"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Concomitant' (single 'm', single 't' - naturally accompanying or associated). Other options are correct: Compendious (containing essential facts concisely), Complaisant (willing to please others; obliging), Condescension (an attitude of patronizing superiority).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1157",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Conflagration",
+      "B": "Conflagaration",
+      "C": "Conflagrasion",
+      "D": "Conflagretion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Conflagration' - an extensive fire that destroys a great deal of land or property; 'c-o-n-f-l-a-g-r-a-t-i-o-n'). Options B, C, and D insert extra vowels or modify the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1158",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Connivance",
+      "B": "Consanguinity",
+      "C": "Consternation",
+      "D": "Contemporaneus"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Contemporaneous' (spelled with '-eous' - living or occurring at the same time). Other options are correct: Connivance (willingness to allow or be secretly involved in wrongdoing), Consanguinity (descent from the same ancestor), Consternation (feelings of anxiety or dismay).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1159",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Contiguity",
+      "B": "Contigeuity",
+      "C": "Contigwity",
+      "D": "Contigouity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Contiguity' - the state of bordering or being in contact with something; 'c-o-n-t-i-g-u-i-t-y'). Options B, C, and D alter the vowel positions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1160",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Contumacious",
+      "B": "Conundrum",
+      "C": "Convalescent",
+      "D": "Corespondence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Correspondence' (double 'r' - communication by exchanging letters). Other options are correct: Contumacious (stubbornly disobedient to authority), Conundrum (a confusing and difficult problem), Convalescent (recovering from an illness).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1161",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Coruscation",
+      "B": "Corruscation",
+      "C": "Coruscashen",
+      "D": "Coriscation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Coruscation' - a sudden flash or spark of light; single 'r', 'c-o-r-u-s-c-a-t-i-o-n'). Options B, C, and D improperly double 'r' or corrupt vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1162",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Countenance",
+      "B": "Counterfeit",
+      "C": "Courageous",
+      "D": "Cresendo"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Crescendo' (contains 'sc' - a gradual increase in loudness). Other options are correct: Countenance (a person's face or facial expression), Counterfeit (made in exact imitation to deceive), Courageous (brave; not deterred by danger).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1163",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Cryptocurrency",
+      "B": "Criptocurrency",
+      "C": "Cryptocurency",
+      "D": "Cryptocurrancy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Cryptocurrency' - a digital currency using encryption techniques; starts with 'Crypto-', double 'r' in 'currency'). Options B, C, and D drop consonants or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1164",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Crystallize",
+      "B": "Culmination",
+      "C": "Cumbersome",
+      "D": "Curriculam"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Curriculum' (ends in '-lum', not '-lam' - the subjects comprising a course of study). Other options are correct: Crystallize (form crystals / become definite), Culmination (the highest climactic point), Cumbersome (large, heavy, and difficult to manage).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1165",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Curmudgeonly",
+      "B": "Curmudgionly",
+      "C": "Cormudgeonly",
+      "D": "Curmugeonly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Curmudgeonly' - bad-tempered, difficult, or stubborn; 'c-u-r-m-u-d-g-e-o-n-l-y'). Options B, C, and D drop 'd' or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1166",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Cynicism",
+      "B": "Dalliance",
+      "C": "Debauchery",
+      "D": "Decaffinated"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Decaffeinated' (double 'f', double 'e' - having the caffeine removed). Other options are correct: Cynicism (an inclination to believe people are motivated purely by self-interest), Dalliance (a casual romantic or sexual relationship), Debauchery (excessive indulgence in sensual pleasures).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1167",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Decommissioning",
+      "B": "Decomissioning",
+      "C": "Decommissioneing",
+      "D": "Decommissening"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Decommissioning' - withdrawing an item from active service; double 'm', double 's', ends in '-ing'). Options B, C, and D drop consonants or alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1168",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Decorum",
+      "B": "Defalcation",
+      "C": "Defibrillator",
+      "D": "Defendent"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Defendant' (ends in '-ant', not '-ent' - an individual or institution sued or accused in a court of law). Other options are correct: Decorum (behavior in keeping with good taste and propriety), Defalcation (misappropriation of funds by a fiduciary), Defibrillator (an apparatus used to control heart fibrillation).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1169",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Degenerative",
+      "B": "Degeneretive",
+      "C": "Degenirative",
+      "D": "Digenarative"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Degenerative' - characterized by progressive deterioration; 'd-e-g-e-n-e-r-a-t-i-v-e'). Options B, C, and D alter the vowel positions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1170",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Deleterious",
+      "B": "Delinquency",
+      "C": "Demagogue",
+      "D": "Demostration"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Demonstration' (requires 'n' after 'mo' - an act of showing or explaining). Other options are correct: Deleterious (causing harm or damage), Delinquency (minor crime committed by young people), Demagogue (a political leader appealing to popular desires rather than reason).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1171",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Demarcation",
+      "B": "Demarkation",
+      "C": "Demarcasion",
+      "D": "Demarcationn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Demarcation' - the action of fixing the boundary or limits of something; spelled with 'c', ends in '-tion'). Options B, C, and D replace 'c' with 'k' or alter the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1172",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Demeanor",
+      "B": "Denouement",
+      "C": "Depreciation",
+      "D": "Dermotology"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Dermatology' (spelled with '-ma-', not '-mo-' - the branch of medicine concerned with skin disorders). Other options are correct: Demeanor (outward behavior or bearing), Denouement (the final outcome of a drama or narrative), Depreciation (a reduction in the value of an asset over time).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1173",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Dereliction",
+      "B": "Deraliction",
+      "C": "Derelicsion",
+      "D": "Deriliction"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Dereliction' - the state of having been abandoned and become dilapidated / shameful failure to fulfill duty; 'd-e-r-e-l-i-c-t-i-o-n'). Options B, C, and D corrupt the internal vowels or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1174",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Despondency",
+      "B": "Destitution",
+      "C": "Desultory",
+      "D": "Dextrious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the standard spelling is 'Dexterous' or 'Dextrous' (not 'Dextrious' - showing skill, especially with the hands). Other options are correct: Despondency (low spirits caused by loss of hope), Destitution (poverty so extreme that one lacks the means to provide for oneself), Desultory (lacking a plan, purpose, or enthusiasm).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1175",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Diatribe",
+      "B": "Diatrybe",
+      "C": "Dyattribute",
+      "D": "Diotribe"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Diatribe' - a forceful and bitter verbal attack; 'd-i-a-t-r-i-b-e'). Options B, C, and D alter vowel values.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1176",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Dichotomy",
+      "B": "Diffident",
+      "C": "Dilapidated",
+      "D": "Discourdant"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Discordant' (spelled with '-cor-', not '-cour-' - disagreeing or incongruous / harsh sounding). Other options are correct: Dichotomy (a division between two contradictory things), Diffident (modest or shy because of a lack of self-confidence), Dilapidated (in a state of disrepair or ruin).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1177",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Discretionary",
+      "B": "Discretionery",
+      "C": "Discreationary",
+      "D": "Discretianary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Discretionary' - available for use at the discretion of the user; ends in '-ary'). Options B, C, and D alter the suffix or connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1178",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Disenfranchisement",
+      "B": "Dishevelled",
+      "C": "Disingenuous",
+      "D": "Disinterrested"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Disinterested' (single 'r' - not influenced by considerations of personal advantage; unbiased). Other options are correct: Disenfranchisement (the state of being deprived of a right or privilege), Dishevelled (untidy; disordered), Disingenuous (not candid or sincere).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1179",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Disparagement",
+      "B": "Disparidgement",
+      "C": "Disparagemant",
+      "D": "Dispargement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Disparagement' - the act of speaking about someone or something in a derogatory manner; 'd-i-s-p-a-r-a-g-e-m-e-n-t'). Options B, C, and D insert 'd', drop vowels, or alter '-ment'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1180",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Dispassionate",
+      "B": "Disproportionate",
+      "C": "Dissertation",
+      "D": "Docrinaire"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Doctrinaire' (contains 't' after 'doc' - seeking to impose a doctrine without regard to practical considerations). Other options are correct: Dispassionate (rational and impartial; unaffected by strong emotion), Disproportionate (too large or too small in comparison with something else), Dissertation (a long academic essay on a particular subject).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1181",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Dramatization",
+      "B": "Dramatizasion",
+      "C": "Dramatezation",
+      "D": "Dramatisationn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Dramatization' - the adaptation of a literary work into a drama; 'd-r-a-m-a-t-i-z-a-t-i-o-n'). Options B, C, and D alter the suffix or vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1182",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Drudgery",
+      "B": "Ebullient",
+      "C": "Eccentricity",
+      "D": "Echalon"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Echelon' (contains 'e' before 'l' - a level or rank in an organization). Other options are correct: Drudgery (hard, menial, or dull work), Ebullient (cheerful and full of energy), Eccentricity (the quality of being unconventional).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1183",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Ecclesiastical",
+      "B": "Eclesiastical",
+      "C": "Ecclesiasticle",
+      "D": "Ecclesiestical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Ecclesiastical' - relating to the Christian Church or clergy; double 'c', double 's', ends in '-ical'). Options B, C, and D drop consonants or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1184",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Eclecticism",
+      "B": "Econometric",
+      "C": "Effrontery",
+      "D": "Efficasious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Efficacious' (spelled with '-aci-', not '-asi-' - successful in producing a desired result). Other options are correct: Eclecticism (deriving ideas from a broad and diverse range of sources), Econometric (applying statistical methods to economic data), Effrontery (insolent or impertinent behavior).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1185",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Effulgence",
+      "B": "Effuljence",
+      "C": "Efulgence",
+      "D": "Effulgance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Effulgence' - a brilliant radiance; double 'f', ends in '-ence'). Options B, C, and D substitute 'j', drop 'f', or change the suffix vowel.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1186",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Elegiac",
+      "B": "Embezzler",
+      "C": "Emolument",
+      "D": "Eligability"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Eligibility' (spelled with '-i-', not '-a-' - the state of having the right for something). Other options are correct: Elegiac (having a mournful quality), Embezzler (a person who misappropriates funds), Emolument (a salary, fee, or profit from employment).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1187",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Encumbrance",
+      "B": "Encumberance",
+      "C": "Encumbransee",
+      "D": "Incombrance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Encumbrance' - an impediment or burden; 'e-n-c-u-m-b-r-a-n-c-e', no 'e' between 'b' and 'r'). Options B, C, and D insert 'e' or modify the prefix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1188",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Enigmatic",
+      "B": "Ennui",
+      "C": "Epiphany",
+      "D": "Entreprenuer"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Entrepreneur' (ends in '-eur', not '-uer' - a person setting up a business). Other options are correct: Enigmatic (difficult to interpret; mysterious), Ennui (listlessness arising from lack of excitement), Epiphany (a moment of sudden intuitive revelation).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1189",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Epistolary",
+      "B": "Epistolery",
+      "C": "Epistolaryy",
+      "D": "Epistulary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Epistolary' - relating to or denoting the writing of letters; ends in '-ary'). Options B, C, and D alter the suffix vowel or internal syllables.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1190",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Episcopalian",
+      "B": "Epitome",
+      "C": "Equinox",
+      "D": "Equiped"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Equipped' (double 'p' - supplied with necessary items). Other options are correct: Episcopalian (relating to an episcopal church government), Epitome (a perfect example of a quality or type), Equinox (the time when the sun crosses the celestial equator).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1191",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Equivocation",
+      "B": "Equivocasion",
+      "C": "Equavocation",
+      "D": "Equivocacion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Equivocation' - the use of ambiguous language to conceal the truth; 'e-q-u-i-v-o-c-a-t-i-o-n'). Options B, C, and D alter internal vowels or the '-tion' suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1192",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Esoteric",
+      "B": "Espresso",
+      "C": "Eucharist",
+      "D": "Etymolagy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Etymology' (spelled with '-lo-', not '-la-' - the study of the origin of words). Other options are correct: Esoteric (intended for or understood by only a small specialized group), Espresso (strong concentrated black coffee), Eucharist (the Christian ceremony commemorating the Last Supper).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1193",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Euphonious",
+      "B": "Euphonus",
+      "C": "Euphoniuos",
+      "D": "Euphoneous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Euphonious' - pleasing to the ear; contains '-ious', 'e-u-p-h-o-n-i-o-u-s'). Options B, C, and D alter the suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1194",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Evangelical",
+      "B": "Exaggeration",
+      "C": "Exchequer",
+      "D": "Exonorate"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Exonerate' (spelled with '-er-', not '-or-' - absolve someone from blame). Other options are correct: Evangelical (according to the teaching of the gospel), Exaggeration (a statement representing something beyond reality), Exchequer (a national treasury).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1195",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Exculpatory",
+      "B": "Exculpatary",
+      "C": "Excalpatory",
+      "D": "Exculpetory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Exculpatory' - tending to clear from a charge of fault or guilt; 'e-x-c-u-l-p-a-t-o-r-y'). Options B, C, and D distort the internal or suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1196",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Execrable",
+      "B": "Exhortation",
+      "C": "Exhumation",
+      "D": "Fashist"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Fascist' (contains 'sc' - a follower of fascism). Other options are correct: Execrable (extremely bad or unpleasant), Exhortation (communication emphatically urging someone to do something), Exhumation (the action of digging up a buried corpse).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1197",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Extemporaneous",
+      "B": "Extemporanious",
+      "C": "Extemporeaneous",
+      "D": "Extamporaneous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Extemporaneous' - spoken or done without preparation; 'e-x-t-e-m-p-o-r-a-n-e-o-u-s'). Options B, C, and D alter vowel combinations or stems.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1198",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Fallacious",
+      "B": "Fermentation",
+      "C": "Flamboyance",
+      "D": "Ficticious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Fictitious' (spelled with '-tious', not '-cious' - not real or true; fabricated). Other options are correct: Fallacious (based on a mistaken belief), Fermentation (chemical breakdown by microorganisms), Flamboyance (the quality of attracting attention through exuberance).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1199",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Forbearance",
+      "B": "Forberance",
+      "C": "Forebearance",
+      "D": "Forbearanse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Forbearance' - patient self-control; restraint and tolerance; 'f-o-r-b-e-a-r-a-n-c-e'). Options B, C, and D drop 'a', insert extra 'e', or alter the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1200",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Foreclosure",
+      "B": "Fusillade",
+      "C": "Gastronomy",
+      "D": "Forefeiture"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Forfeiture' (spelled without 'e' after 'for-', 'f-o-r-f-e-i-t-u-r-e' - the loss of property or rights as a penalty). Other options are correct: Foreclosure (the process of taking possession of a mortgaged property), Fusillade (a series of shots fired in rapid succession), Gastronomy (the practice or art of choosing and eating good food).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

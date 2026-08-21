@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_NARR_451",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I am reading a book now.\"'",
+    "options": {
+      "A": "He said that he is reading a book now.",
+      "B": "He said that he was reading a book then.",
+      "C": "He said that he was reading a book now.",
+      "D": "He said that he has been reading a book then."
+    },
+    "correct_option": "B",
+    "explanation": "In indirect speech, the present continuous tense ('am reading') shifts to the past continuous ('was reading'), and the time adverb 'now' changes to 'then'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_452",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error in the indirect conversion: She said to me, \"Where are you going?\" -> She asked me where was I going.",
+    "options": {
+      "A": "She asked me",
+      "B": "where was I",
+      "C": "going.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "In indirect questions, the sentence structure must be declarative (subject + verb), not interrogative. It should be 'where I was going', not 'where was I'.",
+    "tags": ["grammar", "narration", "spotting_errors", "word_order"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_453",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'The teacher said, \"The earth revolves around the sun.\"'",
+    "options": {
+      "A": "The teacher said that the earth revolved around the sun.",
+      "B": "The teacher said that the earth revolves around the sun.",
+      "C": "The teacher told that the earth revolves around the sun.",
+      "D": "The teacher asked if the earth revolves around the sun."
+    },
+    "correct_option": "B",
+    "explanation": "Universal truths and scientific facts do not undergo a tense shift in indirect speech, even when the reporting verb is in the past tense.",
+    "tags": ["grammar", "narration", "universal_truths", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_454",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said to me, \"Please help me with this task.\"'",
+    "options": {
+      "A": "He requested me to help him with that task.",
+      "B": "He told me to please help him with this task.",
+      "C": "He asked me that help him with that task.",
+      "D": "He requested me that I should help him with this task."
+    },
+    "correct_option": "A",
+    "explanation": "Imperative requests use reporting verbs like 'requested', and the imperative mood becomes an infinitive phrase ('to help'), with 'this' changing to 'that'.",
+    "tags": ["grammar", "narration", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_455",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"Alas! I have lost my purse.\"'",
+    "options": {
+      "A": "She exclaimed with sorrow that she had lost her purse.",
+      "B": "She said that alas she had lost her purse.",
+      "C": "She cried with happiness that she lost her purse.",
+      "D": "She exclaimed with joy that she has lost her purse."
+    },
+    "correct_option": "A",
+    "explanation": "Exclamatory sentences expressing grief ('Alas!') use 'exclaimed with sorrow' or 'grief', followed by a declarative clause with tense backshift ('have lost' -> 'had lost').",
+    "tags": ["grammar", "narration", "exclamatory", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_456",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He told to me that he would complete the project by evening.'",
+    "options": {
+      "A": "He told to me",
+      "B": "that he would",
+      "C": "complete the project",
+      "D": "by evening."
+    },
+    "correct_option": "A",
+    "explanation": "'Tell' is a transitive verb that takes an object directly without the preposition 'to'. It should be 'He told me that...' (or 'He said to me that...').",
+    "tags": ["grammar", "narration", "spotting_errors", "transitive_verbs"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_457",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Will you attend the meeting tomorrow?\"'",
+    "options": {
+      "A": "He asked me whether I will attend the meeting tomorrow.",
+      "B": "He asked me if I would attend the meeting the next day.",
+      "C": "He asked me that would I attend the meeting the next day.",
+      "D": "He inquired me if I will attend the meeting tomorrow."
+    },
+    "correct_option": "B",
+    "explanation": "Yes/no questions use 'if' or 'whether', auxiliary verb changes to past ('will' -> 'would'), and 'tomorrow' changes to 'the next day' or 'the following day'.",
+    "tags": ["grammar", "narration", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_458",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'Rahul said, \"Bravo! You have performed brilliantly.\"'",
+    "options": {
+      "A": "Rahul applauded him saying that he had performed brilliantly.",
+      "B": "Rahul exclaimed with sorrow that he has performed brilliantly.",
+      "C": "Rahul told that bravo he performed brilliantly.",
+      "D": "Rahul said that you performed brilliantly."
+    },
+    "correct_option": "A",
+    "explanation": "Exclamations of praise ('Bravo!') are converted using verbs like 'applauded him, saying that...'.",
+    "tags": ["grammar", "narration", "exclamatory", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_459",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Let us go for a walk in the park.\"'",
+    "options": {
+      "A": "He proposed that they should go for a walk in the park.",
+      "B": "He requested to go for a walk in the park.",
+      "C": "He said that let us go for a walk in the park.",
+      "D": "He suggested let them go for a walk in the park."
+    },
+    "correct_option": "A",
+    "explanation": "Suggestions introduced by 'Let us' are converted using 'proposed/suggested that' followed by 'they/we should + base verb'.",
+    "tags": ["grammar", "narration", "suggestions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_460",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He requested me that please lend him some money.'",
+    "options": {
+      "A": "He requested me",
+      "B": "that please",
+      "C": "lend him",
+      "D": "some money."
+    },
+    "correct_option": "B",
+    "explanation": "In indirect speech of imperatives, the word 'please' is omitted, and 'that' is not used with 'requested' (an infinitive 'to lend' is used instead).",
+    "tags": ["grammar", "narration", "spotting_errors", "imperative"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_461",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'The captain said to the soldiers, \"March forward!\"'",
+    "options": {
+      "A": "The captain commanded the soldiers to march forward.",
+      "B": "The captain told the soldiers that they march forward.",
+      "C": "The captain ordered to the soldiers marching forward.",
+      "D": "The captain requested the soldiers to march forward."
+    },
+    "correct_option": "A",
+    "explanation": "Commanding imperatives take 'commanded/ordered' + object + full infinitive ('to march').",
+    "tags": ["grammar", "narration", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_462",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She says, \"I am working hard for the examination.\"'",
+    "options": {
+      "A": "She says that she was working hard for the examination.",
+      "B": "She says that she is working hard for the examination.",
+      "C": "She said that she is working hard for the examination.",
+      "D": "She tells that she has been working hard."
+    },
+    "correct_option": "B",
+    "explanation": "When the reporting verb is in the present tense ('says'), the tense inside the reported speech does not change.",
+    "tags": ["grammar", "narration", "reporting_verb_tense", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_463",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked me if I know the way to the railway station.'",
+    "options": {
+      "A": "He asked me",
+      "B": "if I know",
+      "C": "the way to the",
+      "D": "railway station."
+    },
+    "correct_option": "B",
+    "explanation": "Sequence of tenses requires the past tense when the reporting verb is past ('asked'). 'Know' must change to 'knew'.",
+    "tags": ["grammar", "narration", "spotting_errors", "sequence_of_tenses"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_464",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"What a beautiful painting this is!\"'",
+    "options": {
+      "A": "He exclaimed with wonder that that was a very beautiful painting.",
+      "B": "He said that what a beautiful painting this is.",
+      "C": "He asked how a beautiful painting that was.",
+      "D": "He exclaimed that it is a beautiful painting."
+    },
+    "correct_option": "A",
+    "explanation": "Exclamatory sentences convert using 'exclaimed with wonder/surprise', changing 'this' to 'that' and adjusting verb tense.",
+    "tags": ["grammar", "narration", "exclamatory", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_465",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Must you leave so early?\"'",
+    "options": {
+      "A": "He asked me if I had to leave so early.",
+      "B": "He asked me if I must leave so early.",
+      "C": "He asked me that must I leave so early.",
+      "D": "He inquired whether I must have left so early."
+    },
+    "correct_option": "A",
+    "explanation": "The modal 'must' often changes to 'had to' in indirect speech when expressing necessity or obligation in the past.",
+    "tags": ["grammar", "narration", "modals_in_narration", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_466",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He wished me good morning and said that he is glad to see me.'",
+    "options": {
+      "A": "He wished me good morning",
+      "B": "and said that",
+      "C": "he is glad",
+      "D": "to see me."
+    },
+    "correct_option": "C",
+    "explanation": "Tense consistency rule: 'said' requires the past tense 'was' instead of 'is'.",
+    "tags": ["grammar", "narration", "spotting_errors", "sequence_of_tenses"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_467",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said to her brother, \"Thank you so much.\"'",
+    "options": {
+      "A": "She thanked her brother very much.",
+      "B": "She told her brother thank you.",
+      "C": "She said thanks to her brother.",
+      "D": "She thanked to her brother."
+    },
+    "correct_option": "A",
+    "explanation": "Direct expressions of gratitude ('Thank you') convert directly using the verb 'thanked' + object.",
+    "tags": ["grammar", "narration", "special_cases", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_468",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"If I were rich, I would help the needy.\"'",
+    "options": {
+      "A": "He said that if he were rich, he would help the needy.",
+      "B": "He said that if he had been rich, he would help the needy.",
+      "C": "He said that if he was rich, he would have helped the needy.",
+      "D": "He said that if he is rich, he would help the needy."
+    },
+    "correct_option": "A",
+    "explanation": "Counterfactual conditional clauses in the past subjunctive ('were') generally remain unchanged in indirect speech.",
+    "tags": ["grammar", "narration", "conditionals_in_narration", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_469",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The old man prayed that God may bless me with health and wealth.'",
+    "options": {
+      "A": "The old man prayed",
+      "B": "that God may",
+      "C": "bless me with",
+      "D": "health and wealth."
+    },
+    "correct_option": "B",
+    "explanation": "In indirect speech, the modal 'may' used in a prayer or wish changes to its past form 'might'.",
+    "tags": ["grammar", "narration", "spotting_errors", "optative"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_470",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Good bye, my friends!\"'",
+    "options": {
+      "A": "He bade his friends good bye.",
+      "B": "He told his friends good bye.",
+      "C": "He said goodbye to his friends.",
+      "D": "He wished his friends goodbye."
+    },
+    "correct_option": "A",
+    "explanation": "Parting greetings ('Good bye') convert using the reporting verb 'bade' ('He bade his friends goodbye').",
+    "tags": ["grammar", "narration", "salutations", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_471",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"I have been living here for two years.\"'",
+    "options": {
+      "A": "She said that she had been living there for two years.",
+      "B": "She said that she has been living here for two years.",
+      "C": "She said that she was living there for two years.",
+      "D": "She said that she had lived here for two years."
+    },
+    "correct_option": "A",
+    "explanation": "Present perfect continuous ('have been living') shifts to past perfect continuous ('had been living'), and 'here' changes to 'there'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_472",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked me that what my name was.'",
+    "options": {
+      "A": "He asked me",
+      "B": "that what",
+      "C": "my name was.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "In WH- questions, conjunctions like 'that' are not used before the question word. It should be 'He asked me what my name was.'",
+    "tags": ["grammar", "narration", "spotting_errors", "interrogative"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_473",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'The boy said, \"Hurrah! We have won the match.\"'",
+    "options": {
+      "A": "The boy exclaimed with joy that they had won the match.",
+      "B": "The boy said with happiness that we have won the match.",
+      "C": "The boy shouted that they won the match.",
+      "D": "The boy exclaimed with sorrow that they had won the match."
+    },
+    "correct_option": "A",
+    "explanation": "Exclamations of joy ('Hurrah!') convert using 'exclaimed with joy', pronoun shifts to third person plural ('they'), and tense shifts to past perfect ('had won').",
+    "tags": ["grammar", "narration", "exclamatory", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_474",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Shall we go for a movie?\"'",
+    "options": {
+      "A": "He proposed that they should go for a movie.",
+      "B": "He asked whether they shall go for a movie.",
+      "C": "He suggested that we will go for a movie.",
+      "D": "He asked if they would go for a movie."
+    },
+    "correct_option": "A",
+    "explanation": "Interrogative suggestions using 'Shall we' translate into indirect proposals using 'proposed/suggested that they should...'.",
+    "tags": ["grammar", "narration", "suggestions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_475",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She told to her mother that she was feeling unwell.'",
+    "options": {
+      "A": "She told to",
+      "B": "her mother that",
+      "C": "she was feeling unwell.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'Tell' does not take the preposition 'to'. It should be 'She told her mother that...'.",
+    "tags": ["grammar", "narration", "spotting_errors", "transitive_verbs"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_476",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I must finish this assignment today.\"'",
+    "options": {
+      "A": "He said that he had to finish that assignment that day.",
+      "B": "He said that he must finish this assignment today.",
+      "C": "He said that he would have to finish that assignment today.",
+      "D": "He said that he has to finish that assignment that day."
+    },
+    "correct_option": "A",
+    "explanation": "'Must' changes to 'had to', 'this' changes to 'that', and 'today' changes to 'that day'.",
+    "tags": ["grammar", "narration", "modals_in_narration", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_477",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"When will the train arrive?\"'",
+    "options": {
+      "A": "She asked when the train would arrive.",
+      "B": "She asked when would the train arrive.",
+      "C": "She inquired when the train will arrive.",
+      "D": "She wanted to know when the train arrives."
+    },
+    "correct_option": "A",
+    "explanation": "WH- question indirect form: subject-verb order ('the train would arrive'), with 'will' shifting to 'would'.",
+    "tags": ["grammar", "narration", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_478",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He inquired me where I had kept the keys.'",
+    "options": {
+      "A": "He inquired me",
+      "B": "where I had kept",
+      "C": "the keys.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'Inquire' takes the preposition 'of' when followed by an object ('He inquired of me'). Alternatively, 'asked me' is used.",
+    "tags": ["grammar", "narration", "spotting_errors", "prepositional_verbs"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_479",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"What a terrible mistake I have made!\"'",
+    "options": {
+      "A": "He exclaimed with regret that he had made a very terrible mistake.",
+      "B": "He said that what a terrible mistake he has made.",
+      "C": "He exclaimed that it is a terrible mistake.",
+      "D": "He wondered what a terrible mistake he made."
+    },
+    "correct_option": "A",
+    "explanation": "Exclamations of regret convert using 'exclaimed with regret', with tense shifting to past perfect ('had made').",
+    "tags": ["grammar", "narration", "exclamatory", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_480",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'The teacher said, \"Sit down, boys.\"'",
+    "options": {
+      "A": "The teacher ordered the boys to sit down.",
+      "B": "The teacher told to the boys to sit down.",
+      "C": "The teacher said that boys sat down.",
+      "D": "The teacher requested the boys that sit down."
+    },
+    "correct_option": "A",
+    "explanation": "Vocative nouns in direct address ('boys') become the direct object of the reporting verb ('ordered the boys to sit down').",
+    "tags": ["grammar", "narration", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_481",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"I met my old friend yesterday.\"'",
+    "options": {
+      "A": "She said that she had met her old friend the previous day.",
+      "B": "She said that she met her old friend yesterday.",
+      "C": "She said that she has met her old friend the previous day.",
+      "D": "She said that she would meet her old friend yesterday."
+    },
+    "correct_option": "A",
+    "explanation": "Simple past ('met') changes to past perfect ('had met'), and 'yesterday' changes to 'the previous day' (or 'the day before').",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_482",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He exclaimed with joy that our team has won the trophy.'",
+    "options": {
+      "A": "He exclaimed with joy",
+      "B": "that our team",
+      "C": "has won",
+      "D": "the trophy."
+    },
+    "correct_option": "C",
+    "explanation": "Tense consistency requires backshifting. 'Has won' must change to 'had won' when reporting a past speech.",
+    "tags": ["grammar", "narration", "spotting_errors", "sequence_of_tenses"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_483",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said to me, \"May you succeed in life!\"'",
+    "options": {
+      "A": "He prayed that I might succeed in life.",
+      "B": "He wished that I may succeed in life.",
+      "C": "He told me that I succeed in life.",
+      "D": "He prayed me to succeed in life."
+    },
+    "correct_option": "A",
+    "explanation": "Optative sentences (prayers/wishes) convert using 'prayed/wished that' + subject + 'might' + base verb.",
+    "tags": ["grammar", "narration", "optative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_484",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"Are you coming to the party?\"'",
+    "options": {
+      "A": "She asked whether I was coming to the party.",
+      "B": "She asked that I am coming to the party.",
+      "C": "She asked me am I coming to the party.",
+      "D": "She inquired if I will come to the party."
+    },
+    "correct_option": "A",
+    "explanation": "Yes/no question uses 'whether' or 'if', followed by declarative word order and past continuous tense ('was coming').",
+    "tags": ["grammar", "narration", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_485",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He told me that he can solve the problem easily.'",
+    "options": {
+      "A": "He told me",
+      "B": "that he can",
+      "C": "solve the problem easily.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Past reporting verb ('told') requires modal backshift ('can' -> 'could').",
+    "tags": ["grammar", "narration", "spotting_errors", "modals_in_narration"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_486",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I was watching TV while she was cooking.\"'",
+    "options": {
+      "A": "He said that he had been watching TV while she was cooking.",
+      "B": "He said that he was watching TV while she was cooking.",
+      "C": "He said that he had watched TV while she had cooked.",
+      "D": "He said that he watched TV while she cooked."
+    },
+    "correct_option": "A",
+    "explanation": "Past continuous actions running parallel ('was... while was...') typically change to past perfect continuous ('had been... while was...' or remain past continuous depending on contextual duration, but standard rule shifts past continuous to past perfect continuous).",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_487",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'The mother said to her child, \"Do not play in the mud.\"'",
+    "options": {
+      "A": "The mother forbade her child to play in the mud.",
+      "B": "The mother told her child not to play in the mud.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both 'forbade... to play' (since 'forbade' is negative) and 'told... not to play' are grammatically correct.",
+    "tags": ["grammar", "narration", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_488",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She asked me that why I was looking so sad.'",
+    "options": {
+      "A": "She asked me",
+      "B": "that why",
+      "C": "I was looking so sad.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Do not use 'that' before WH- question words in indirect speech.",
+    "tags": ["grammar", "narration", "spotting_errors", "interrogative"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_489",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Hush! Don't make a noise.\"'",
+    "options": {
+      "A": "He told them hush not to make a noise.",
+      "B": "He exclaimed to keep quiet and told them not to make a noise.",
+      "C": "He warned them to be silent and not to make a noise.",
+      "D": "He said hush and not to make a noise."
+    },
+    "correct_option": "C",
+    "explanation": "Interjections requiring caution convert using verbs like 'warned' or descriptive phrases ('warned them to be silent...').",
+    "tags": ["grammar", "narration", "exclamatory", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_490",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He will say, \"I am ready for the challenge.\"'",
+    "options": {
+      "A": "He will say that he is ready for the challenge.",
+      "B": "He will say that he was ready for the challenge.",
+      "C": "He would say that he is ready for the challenge.",
+      "D": "He will tell that he is ready for the challenge."
+    },
+    "correct_option": "A",
+    "explanation": "When the reporting verb is in the future tense ('will say'), the tense of the reported speech does not change.",
+    "tags": ["grammar", "narration", "reporting_verb_tense", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_491",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Honesty is the best policy.\"'",
+    "options": {
+      "A": "He said that honesty was the best policy.",
+      "B": "He said that honesty is the best policy.",
+      "C": "He told that honesty is the best policy.",
+      "D": "He asked if honesty is the best policy."
+    },
+    "correct_option": "B",
+    "explanation": "Proverbs and universal truths retain their present tense in indirect speech.",
+    "tags": ["grammar", "narration", "universal_truths", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_492",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She said that she will submit her assignment the next day.'",
+    "options": {
+      "A": "She said that",
+      "B": "she will submit",
+      "C": "her assignment",
+      "D": "the next day."
+    },
+    "correct_option": "B",
+    "explanation": "Past reporting verb ('said') requires 'will' to change to 'would'.",
+    "tags": ["grammar", "narration", "spotting_errors", "sequence_of_tenses"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_493",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Alas! My car has been stolen.\"'",
+    "options": {
+      "A": "He exclaimed with sorrow that his car had been stolen.",
+      "B": "He exclaimed with joy that his car was stolen.",
+      "C": "He said that alas his car has been stolen.",
+      "D": "He reported that his car has been stolen."
+    },
+    "correct_option": "A",
+    "explanation": "Grief exclamation 'Alas!' converts to 'exclaimed with sorrow', and present perfect passive ('has been stolen') shifts to past perfect passive ('had been stolen').",
+    "tags": ["grammar", "narration", "exclamatory", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_494",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said to me, \"Where do you live?\"'",
+    "options": {
+      "A": "He asked me where I lived.",
+      "B": "He asked me where did I live.",
+      "C": "He inquired where do I live.",
+      "D": "He asked me that where I lived."
+    },
+    "correct_option": "A",
+    "explanation": "WH- question indirect form: declarative order ('I lived') with simple past tense.",
+    "tags": ["grammar", "narration", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_495",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The teacher told to the class to open their books.'",
+    "options": {
+      "A": "The teacher told to",
+      "B": "the class to open",
+      "C": "their books.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'Tell' does not take 'to' before its object. It should be 'The teacher told the class...'.",
+    "tags": ["grammar", "narration", "spotting_errors", "transitive_verbs"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_496",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I had finished my work before you came.\"'",
+    "options": {
+      "A": "He said that he had finished his work before I came.",
+      "B": "He said that he had finished his work before I had come.",
+      "C": "He said that he finished his work before you came.",
+      "D": "He said that he has finished his work before I came."
+    },
+    "correct_option": "A",
+    "explanation": "Past perfect ('had finished') generally remains past perfect in indirect speech, while simple past ('came') remains simple past or can shift depending on reference, but 'had finished... before I came' is standard.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_497",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"Let's leave this place.\"'",
+    "options": {
+      "A": "She suggested that they should leave that place.",
+      "B": "She requested to leave this place.",
+      "C": "She said that let's leave this place.",
+      "D": "She told to leave that place."
+    },
+    "correct_option": "A",
+    "explanation": "'Let's' suggests a proposal; 'suggested that they should' + base verb, with 'this' changing to 'that'.",
+    "tags": ["grammar", "narration", "suggestions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_498",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked me that if I could lend him my pen.'",
+    "options": {
+      "A": "He asked me",
+      "B": "that if",
+      "C": "I could lend him",
+      "D": "my pen."
+    },
+    "correct_option": "B",
+    "explanation": "Do not combine 'that' and 'if' in indirect questions. Use only 'if' (or 'whether').",
+    "tags": ["grammar", "narration", "spotting_errors", "interrogative"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_499",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Good morning, sir!\"'",
+    "options": {
+      "A": "He respectfully wished his sir good morning.",
+      "B": "He respectfully wished his teacher good morning.",
+      "C": "He respectfully wished him good morning.",
+      "D": "He told good morning to sir."
+    },
+    "correct_option": "C",
+    "explanation": "Salutations with 'sir' incorporate 'respectfully' into the reporting verb expression ('He respectfully wished him good morning').",
+    "tags": ["grammar", "narration", "salutations", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_500",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"May God forgive him!\"'",
+    "options": {
+      "A": "She prayed that God might forgive him.",
+      "B": "She wished that God may forgive him.",
+      "C": "She said that God forgives him.",
+      "D": "She prayed that God will forgive him."
+    },
+    "correct_option": "A",
+    "explanation": "Optative sentences expressing a prayer change 'May' to 'Might' inside the indirect clause.",
+    "tags": ["grammar", "narration", "optative", "rule_based"]
+  }
+]

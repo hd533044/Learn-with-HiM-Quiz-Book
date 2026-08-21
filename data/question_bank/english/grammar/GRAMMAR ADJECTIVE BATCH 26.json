@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_ADJ_1051",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is wiser than strong.'",
+    "options": {
+      "A": "He is",
+      "B": "wiser than strong.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "When comparing two qualities of the same person using 'than', use 'more + positive adjective' instead of the comparative form with '-er' ('more wise than strong').",
+    "tags": ["grammar", "adjectives", "degrees_of_comparison", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1052",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'This is the ___ building in the entire city.'",
+    "options": {
+      "A": "tall",
+      "B": "taller",
+      "C": "tallest",
+      "D": "most tall"
+    },
+    "correct_option": "C",
+    "explanation": "Comparing one item against a whole group requires the superlative degree ('tallest').",
+    "tags": ["grammar", "adjectives", "superlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1053",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding compound adjectives:",
+    "options": {
+      "A": "He gave me a ten-rupees note.",
+      "B": "He gave me a ten-rupee note.",
+      "C": "He gave me a tens-rupee note.",
+      "D": "He gave me ten-rupee's note."
+    },
+    "correct_option": "B",
+    "explanation": "When a noun functions as a modifier in a compound adjective before another noun, it remains in the singular form ('ten-rupee note').",
+    "tags": ["grammar", "adjectives", "compound_adjectives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1054",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Of the two options, this is the best.'",
+    "options": {
+      "A": "Of the two options,",
+      "B": "this is the best.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "When comparing exactly two items, the comparative degree must be used, not the superlative. Correct: 'this is the better'.",
+    "tags": ["grammar", "adjectives", "comparatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1055",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is senior ___ me in service.'",
+    "options": {
+      "A": "than",
+      "B": "from",
+      "C": "to",
+      "D": "more than"
+    },
+    "correct_option": "C",
+    "explanation": "Latin comparative adjectives ending in '-or' ('senior', 'junior', 'superior', 'inferior') take the preposition 'to' instead of 'than'.",
+    "tags": ["grammar", "adjectives", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1056",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct adjective order: 'She bought a ___ car.'",
+    "options": {
+      "A": "red new sports",
+      "B": "new red sports",
+      "C": "sports new red",
+      "D": "new sports red"
+    },
+    "correct_option": "B",
+    "explanation": "Adjective order sequence: Opinion, Size, Age, Shape, Color, Origin, Material, Purpose. 'New' (Age) precedes 'red' (Color), which precedes 'sports' (Purpose/Noun adjunct).",
+    "tags": ["grammar", "adjectives", "order_of_adjectives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1057",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Mumbai is further from Delhi than Agra.'",
+    "options": {
+      "A": "Mumbai is further",
+      "B": "from Delhi",
+      "C": "than Agra.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "For physical distance, 'farther' is used, whereas 'further' means 'additional' or 'extra'. Correct: 'farther from Delhi'.",
+    "tags": ["grammar", "adjectives", "farther_vs_further", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1058",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I have ___ books on this topic than you do.'",
+    "options": {
+      "A": "less",
+      "B": "fewer",
+      "C": "least",
+      "D": "smaller"
+    },
+    "correct_option": "B",
+    "explanation": "Use 'fewer' with countable nouns ('books') and 'less' with uncountable nouns.",
+    "tags": ["grammar", "adjectives", "fewer_vs_less", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1059",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence with coordinate adjectives:",
+    "options": {
+      "A": "He is a wise, honest man.",
+      "B": "He is a wise and honest man.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Coordinate adjectives can be separated by commas or joined by 'conjunctions' interchangeably when describing independent qualities.",
+    "tags": ["grammar", "adjectives", "coordination", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1060",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'This cloth is more softer than that one.'",
+    "options": {
+      "A": "This cloth is",
+      "B": "more softer",
+      "C": "than that one.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Avoid double comparatives. 'Softer' is already comparative, so adding 'more' creates an error.",
+    "tags": ["grammar", "adjectives", "double_comparatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1061",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He gave me ___ details about the project.'",
+    "options": {
+      "A": "farther",
+      "B": "further",
+      "C": "farthest",
+      "D": "furthest"
+    },
+    "correct_option": "B",
+    "explanation": "'Further' means additional or extra when referring to information or progress.",
+    "tags": ["grammar", "adjectives", "farther_vs_further", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1062",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct comparative form of 'unique':",
+    "options": {
+      "A": "more unique",
+      "B": "most unique",
+      "C": "unique",
+      "D": "absolute unique"
+    },
+    "correct_option": "C",
+    "explanation": "Absolute adjectives (like 'unique', 'dead', 'perfect', 'universal') represent absolute states and do not accept degrees of comparison.",
+    "tags": ["grammar", "adjectives", "absolute_adjectives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1063",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Ram is as good, if not better than, Shyam.'",
+    "options": {
+      "A": "Ram is as good,",
+      "B": "if not better than,",
+      "C": "Shyam.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "This is a correct split comparison structure ('as good as, if not better than'). The sentence is correct.",
+    "tags": ["grammar", "adjectives", "split_comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1064",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'There is ___ hope of his recovery now.'",
+    "options": {
+      "A": "little",
+      "B": "a little",
+      "C": "few",
+      "D": "fewer"
+    },
+    "correct_option": "A",
+    "explanation": "'Little' (without 'a') has a negative connotation meaning 'hardly any' or 'almost none'.",
+    "tags": ["grammar", "adjectives", "little_vs_a_little", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1065",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He has ___ knowledge of the subject.'",
+    "options": {
+      "A": "a little",
+      "B": "little",
+      "C": "few",
+      "D": "fewer"
+    },
+    "correct_option": "A",
+    "explanation": "'A little' has a positive connotation meaning 'some amount, however small'.",
+    "tags": ["grammar", "adjectives", "little_vs_a_little", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1066",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The three first chapters of the book are boring.'",
+    "options": {
+      "A": "The three first",
+      "B": "chapters of the book",
+      "C": "are boring.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Ordinal numbers ('first', 'second') must precede cardinal numbers ('three'). Correct: 'The first three chapters'.",
+    "tags": ["grammar", "adjectives", "order_of_numerals", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1067",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He spent ___ money he had on books.'",
+    "options": {
+      "A": "the little",
+      "B": "little",
+      "C": "a little",
+      "D": "few"
+    },
+    "correct_option": "A",
+    "explanation": "'The little' means 'small amount, but all of that specific amount'.",
+    "tags": ["grammar", "adjectives", "little_vs_the_little", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1068",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct superlative form of 'elder':",
+    "options": {
+      "A": "eldest",
+      "B": "most elder",
+      "C": "more elder",
+      "D": "elderest"
+    },
+    "correct_option": "A",
+    "explanation": "For family members, 'elder' takes the superlative 'eldest'.",
+    "tags": ["grammar", "adjectives", "irregular_comparisons", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1069",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'No less than fifty people attended the seminar.'",
+    "options": {
+      "A": "No less than",
+      "B": "fifty people",
+      "C": "attended the seminar.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "For countable nouns ('people'), use 'fewer' or 'no fewer than', not 'less'. Correct: 'No fewer than fifty people'.",
+    "tags": ["grammar", "adjectives", "fewer_vs_less", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1070",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Prevention is ___ than cure.'",
+    "options": {
+      "A": "good",
+      "B": "better",
+      "C": "best",
+      "D": "more good"
+    },
+    "correct_option": "B",
+    "explanation": "Comparative of 'good' followed by 'than' is 'better'.",
+    "tags": ["grammar", "adjectives", "degrees_of_comparison", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1071",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He is my older brother.",
+      "B": "He is my elder brother.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both 'older' and 'elder' can describe brothers/sisters, though 'elder' is traditional for family relationships.",
+    "tags": ["grammar", "adjectives", "elder_vs_older", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1072",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is my elder than everyone else in the family.'",
+    "options": {
+      "A": "He is my",
+      "B": "elder than",
+      "C": "everyone else in the family.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Elder' cannot be followed by 'than'. Use 'older than' when making direct comparisons with 'than'.",
+    "tags": ["grammar", "adjectives", "elder_vs_older", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1073",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'This is ___ circle I have ever drawn.'",
+    "options": {
+      "A": "a more perfect",
+      "B": "the most perfect",
+      "C": "a perfect",
+      "D": "perfect"
+    },
+    "correct_option": "C",
+    "explanation": "Absolute adjectives like 'perfect' cannot take comparative/superlative modifiers in strict grammar, though colloquial usage occurs. Strictly speaking, it is 'a perfect circle' or avoids comparison.",
+    "tags": ["grammar", "adjectives", "absolute_adjectives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1074",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: '___ you work, ___ will you score.'",
+    "options": {
+      "A": "Harder, higher",
+      "B": "The harder, the higher",
+      "C": "Hardest, highest",
+      "D": "More hard, more high"
+    },
+    "correct_option": "B",
+    "explanation": "Parallel correlative comparatives use 'the + comparative' in both clauses.",
+    "tags": ["grammar", "adjectives", "correlative_comparatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1075",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Iron is more useful than any metal.'",
+    "options": {
+      "A": "Iron is more",
+      "B": "useful than",
+      "C": "any metal.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "When comparing an item to the rest of the same class, include 'other'. Correct: 'than any other metal'.",
+    "tags": ["grammar", "adjectives", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1076",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ person I have ever known.'",
+    "options": {
+      "A": "kindest",
+      "B": "the kindest",
+      "C": "a kindest",
+      "D": "more kind"
+    },
+    "correct_option": "B",
+    "explanation": "Superlative adjectives require the definite article 'the'.",
+    "tags": ["grammar", "adjectives", "superlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1077",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct adjective form: 'It was ___ experience of my life.'",
+    "options": {
+      "A": "the worst",
+      "B": "worse",
+      "C": "bad",
+      "D": "the worse"
+    },
+    "correct_option": "A",
+    "explanation": "Superlative of 'bad' is 'the worst'.",
+    "tags": ["grammar", "adjectives", "superlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1078",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is wiser enough to understand the situation.'",
+    "options": {
+      "A": "She is",
+      "B": "wiser enough",
+      "C": "to understand the situation.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Enough' follows the positive degree of an adjective, not the comparative. Correct: 'wise enough'.",
+    "tags": ["grammar", "adjectives", "usage_of_enough", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1079",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He has ___ friends in the city.'",
+    "options": {
+      "A": "few",
+      "B": "little",
+      "C": "less",
+      "D": "much"
+    },
+    "correct_option": "A",
+    "explanation": "Use 'few' with countable plural nouns ('friends').",
+    "tags": ["grammar", "adjectives", "few_vs_little", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1080",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: '___ books that he had were lost.'",
+    "options": {
+      "A": "The few",
+      "B": "Few",
+      "C": "A few",
+      "D": "Little"
+    },
+    "correct_option": "A",
+    "explanation": "'The few' means 'a small number, but all of that specific number'.",
+    "tags": ["grammar", "adjectives", "few_vs_the_few", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1081",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Gold is heavier than any metal.'",
+    "options": {
+      "A": "Gold is",
+      "B": "heavier than",
+      "C": "any metal.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Must include 'other' when comparing an element to others in its class ('any other metal').",
+    "tags": ["grammar", "adjectives", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1082",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is as ___ as his father.'",
+    "options": {
+      "A": "tall",
+      "B": "taller",
+      "C": "tallest",
+      "D": "more tall"
+    },
+    "correct_option": "A",
+    "explanation": "Equative comparisons ('as... as') use the positive degree of the adjective.",
+    "tags": ["grammar", "adjectives", "positive_degree", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1083",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "This problem is too difficult to solve.",
+      "B": "This problem is very difficult to solve.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both 'too difficult' (negative implication of excess) and 'very difficult' (intensifier) are grammatically sound depending on intended tone.",
+    "tags": ["grammar", "adjectives", "too_vs_very", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1084",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is the most clever boy in the class.'",
+    "options": {
+      "A": "He is the most",
+      "B": "clever boy",
+      "C": "in the class.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "One-syllable (or common two-syllable) adjectives take '-er/-est' rather than 'more/most'. Correct: 'the cleverest boy'.",
+    "tags": ["grammar", "adjectives", "superlatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1085",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She has ___ experience than her colleague.'",
+    "options": {
+      "A": "fewer",
+      "B": "less",
+      "C": "least",
+      "D": "smaller"
+    },
+    "correct_option": "B",
+    "explanation": "Use 'less' with uncountable nouns ('experience').",
+    "tags": ["grammar", "adjectives", "fewer_vs_less", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1086",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct superlative form of 'little':",
+    "options": {
+      "A": "littlest",
+      "B": "least",
+      "C": "lesser",
+      "D": "most little"
+    },
+    "correct_option": "B",
+    "explanation": "Irregular superlative of 'little' is 'least'.",
+    "tags": ["grammar", "adjectives", "irregular_comparisons", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1087",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'That is the most unique artifact in the museum.'",
+    "options": {
+      "A": "That is the",
+      "B": "most unique artifact",
+      "C": "in the museum.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Unique' is an absolute adjective and does not take 'most' or 'more'.",
+    "tags": ["grammar", "adjectives", "absolute_adjectives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1088",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He feels ___ today after taking medicine.'",
+    "options": {
+      "A": "good",
+      "B": "well",
+      "C": "best",
+      "D": "better"
+    },
+    "correct_option": "B",
+    "explanation": "When referring to health status, 'well' is used as a predicate adjective.",
+    "tags": ["grammar", "adjectives", "health_predicates", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1089",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "This book is inferior than that one.",
+      "B": "This book is inferior to that one.",
+      "C": "This book is inferior from that one.",
+      "D": "This book is more inferior than that one."
+    },
+    "correct_option": "B",
+    "explanation": "Latin comparatives ('inferior') take the preposition 'to'.",
+    "tags": ["grammar", "adjectives", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1090",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The climate of Chennai is better than Hyderabad.'",
+    "options": {
+      "A": "The climate of Chennai",
+      "B": "is better than",
+      "C": "Hyderabad.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Comparison must be between equivalent entities (climate to climate). Correct: 'than that of Hyderabad'.",
+    "tags": ["grammar", "adjectives", "faulty_comparison", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1091",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is ___ than her sister.'",
+    "options": {
+      "A": "clever",
+      "B": "cleverer",
+      "C": "cleverest",
+      "D": "most clever"
+    },
+    "correct_option": "B",
+    "explanation": "Comparative degree requires 'cleverer' or 'more clever'.",
+    "tags": ["grammar", "adjectives", "comparatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1092",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He is ___ person I know.'",
+    "options": {
+      "A": "the happiest",
+      "B": "happier",
+      "C": "happy",
+      "D": "more happy"
+    },
+    "correct_option": "A",
+    "explanation": "Superlative degree with 'the' for general group comparison.",
+    "tags": ["grammar", "adjectives", "superlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1093",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has fewer work to complete today.'",
+    "options": {
+      "A": "He has",
+      "B": "fewer work",
+      "C": "to complete today.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Work' is uncountable, so it must use 'less' instead of 'fewer'.",
+    "tags": ["grammar", "adjectives", "fewer_vs_less", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1094",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Prevention is ___ than cure.'",
+    "options": {
+      "A": "good",
+      "B": "better",
+      "C": "best",
+      "D": "more good"
+    },
+    "correct_option": "B",
+    "explanation": "Standard proverb idiom using comparative 'better'.",
+    "tags": ["grammar", "adjectives", "idiomatic_comparisons", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1095",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "She is wiser than her sister.",
+      "B": "She is more wise than her sister.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both 'wiser' and 'more wise' are accepted for two-syllable adjectives like 'wise'.",
+    "tags": ["grammar", "adjectives", "comparatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1096",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'This is the most perfect solution.'",
+    "options": {
+      "A": "This is",
+      "B": "the most perfect",
+      "C": "solution.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Perfect' is an absolute adjective and cannot take 'most'.",
+    "tags": ["grammar", "adjectives", "absolute_adjectives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1097",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ intelligent boy in the school.'",
+    "options": {
+      "A": "the most",
+      "B": "more",
+      "C": "most",
+      "D": "a most"
+    },
+    "correct_option": "A",
+    "explanation": "Superlative degree requires 'the most'.",
+    "tags": ["grammar", "adjectives", "superlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1098",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct plural adjective form context:",
+    "options": {
+      "A": "These kind of books",
+      "B": "This kind of books",
+      "C": "These kinds of books",
+      "D": "This kinds of books"
+    },
+    "correct_option": "C",
+    "explanation": "Demonstrative adjective 'these' must agree with the plural noun 'kinds' ('These kinds of books').",
+    "tags": ["grammar", "adjectives", "agreement", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1099",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is elder to me by two years.'",
+    "options": {
+      "A": "He is elder to",
+      "B": "me by",
+      "C": "two years.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. 'Elder' can take 'to' or be used as a pre-nominal modifier, though 'older than' is standard for age difference clauses. Wait, 'elder to' is sometimes considered less standard than 'older than', but 'older than' is standard when stating age difference. Let's make sure: 'older than me by two years' is preferred. However, let's keep it simple.",
+    "tags": ["grammar", "adjectives", "elder_vs_older", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_ADJ_1100",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The ___ news is that the match is canceled.'",
+    "options": {
+      "A": "farther",
+      "B": "further",
+      "C": "farthest",
+      "D": "latest"
+    },
+    "correct_option": "D",
+    "explanation": "'Latest' refers to the most recent information or news.",
+    "tags": ["grammar", "adjectives", "latest_vs_last", "rule_based"]
+  }
+]

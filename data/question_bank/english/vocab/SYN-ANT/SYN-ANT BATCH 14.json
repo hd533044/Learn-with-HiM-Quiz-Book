@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0651",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INHERENT**",
+    "options": {
+      "A": "Extrinsic",
+      "B": "Intrinsic",
+      "C": "Adventitious",
+      "D": "Superficial"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Inherent' means existing in something as a permanent, essential, or characteristic attribute. 'Intrinsic', 'innate', or 'inborn' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0652",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INHERENT**",
+    "options": {
+      "A": "Innate",
+      "B": "Congenital",
+      "C": "Extrinsic",
+      "D": "Essential"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Inherent' means essential and internal. 'Extrinsic', 'alien', or 'accidental' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0653",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INIMICAL**",
+    "options": {
+      "A": "Hostile",
+      "B": "Amiable",
+      "C": "Friendly",
+      "D": "Salubrious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Inimical' means tending to obstruct or harm; hostile. 'Hostile', 'antagonistic', or 'harmful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0654",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INIMICAL**",
+    "options": {
+      "A": "Adverse",
+      "B": "Detrimental",
+      "C": "Harmful",
+      "D": "Friendly"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Inimical' means hostile or damaging. 'Friendly', 'hospitable', or 'beneficial' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0655",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INIQUITY**",
+    "options": {
+      "A": "Wickedness",
+      "B": "Virtue",
+      "C": "Rectitude",
+      "D": "Probity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Iniquity' refers to immoral or grossly unfair behavior. 'Wickedness', 'sinfulness', or 'evil' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0656",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INIQUITY**",
+    "options": {
+      "A": "Sinfulness",
+      "B": "Rectitude",
+      "C": "Infamy",
+      "D": "Heinousness"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Iniquity' means grave injustice or immorality. 'Rectitude', 'virtue', or 'righteousness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0657",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INNOCUOUS**",
+    "options": {
+      "A": "Harmless",
+      "B": "Noxious",
+      "C": "Pernicious",
+      "D": "Virulent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Innocuous' means not harmful or offensive. 'Harmless', 'safe', or 'inoffensive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0658",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INNOCUOUS**",
+    "options": {
+      "A": "Inoffensive",
+      "B": "Benign",
+      "C": "Harmful",
+      "D": "Safe"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Innocuous' means producing no injury. 'Harmful', 'toxic', or 'pernicious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0659",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INSCRUTABLE**",
+    "options": {
+      "A": "Enigmatic",
+      "B": "Transparent",
+      "C": "Lucid",
+      "D": "Comprehensible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Inscrutable' means impossible to understand or interpret. 'Enigmatic', 'unfathomable', or 'cryptic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0660",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INSCRUTABLE**",
+    "options": {
+      "A": "Cryptic",
+      "B": "Mysterious",
+      "C": "Fathomable",
+      "D": "Obscure"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Inscrutable' means mysterious and hard to decode. 'Fathomable', 'transparent', or 'lucid' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0661",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INSIDIOUS**",
+    "options": {
+      "A": "Treacherous",
+      "B": "Straightforward",
+      "C": "Harmless",
+      "D": "Innocent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Insidious' means proceeding in a gradual, subtle way, but with harmful effects; treacherous. 'Treacherous', 'cunning', or 'stealthy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0662",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INSIDIOUS**",
+    "options": {
+      "A": "Deceitful",
+      "B": "Duplicitous",
+      "C": "Straightforward",
+      "D": "Subtle"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Insidious' means stealthily harmful or deceptive. 'Straightforward', 'honest', or 'candid' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0663",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INSIPID**",
+    "options": {
+      "A": "Bland",
+      "B": "Piquant",
+      "C": "Savory",
+      "D": "Zesty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Insipid' means lacking flavor; lacking vigor or interest. 'Bland', 'tasteless', or 'vapid' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0664",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INSIPID**",
+    "options": {
+      "A": "Vapid",
+      "B": "Flavorless",
+      "C": "Piquant",
+      "D": "Dull"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Insipid' means dull or tasteless. 'Piquant', 'tasty', or 'engaging' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0665",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INSOLENT**",
+    "options": {
+      "A": "Impudent",
+      "B": "Deferential",
+      "C": "Polite",
+      "D": "Submissive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Insolent' means showing a rude and arrogant lack of respect. 'Impudent', 'brazen', or 'disrespectful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0666",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INSOLENT**",
+    "options": {
+      "A": "Impertinent",
+      "B": "Brazen",
+      "C": "Deferential",
+      "D": "Contemptuous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Insolent' means boldly disrespectful. 'Deferential', 'courteous', or 'respectful' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0667",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INSULAR**",
+    "options": {
+      "A": "Parochial",
+      "B": "Cosmopolitan",
+      "C": "Liberal",
+      "D": "Broad-minded"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Insular' means ignorant of or uninterested in cultures, ideas, or peoples outside one's own experience. 'Parochial', 'narrow-minded', or 'provincial' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0668",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INSULAR**",
+    "options": {
+      "A": "Provincial",
+      "B": "Parochial",
+      "C": "Cosmopolitan",
+      "D": "Sectarian"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Insular' means narrow-minded and isolated. 'Cosmopolitan', 'broad-minded', or 'universal' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0669",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INTRACTABLE**",
+    "options": {
+      "A": "Obstinate",
+      "B": "Manageable",
+      "C": "Docile",
+      "D": "Tractable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Intractable' means hard to control, manage, or deal with; stubborn. 'Obstinate', 'unmanageable', or 'refractory' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0670",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INTRACTABLE**",
+    "options": {
+      "A": "Stubborn",
+      "B": "Recalcitrant",
+      "C": "Pliable",
+      "D": "Unruly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Intractable' means stubbornly unyielding. 'Pliable', 'tractable', or 'docile' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0671",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INTRANSIGENT**",
+    "options": {
+      "A": "Uncompromising",
+      "B": "Accommodating",
+      "C": "Flexible",
+      "D": "Compliant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Intransigent' means unwilling or refusing to change one's views or to agree about something. 'Uncompromising', 'inflexible', or 'resolute' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0672",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INTRANSIGENT**",
+    "options": {
+      "A": "Inflexible",
+      "B": "Obstinate",
+      "C": "Yielding",
+      "D": "Adamant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Intransigent' means firmly refusing to compromise. 'Yielding', 'flexible', or 'amenable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0673",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INTREPID**",
+    "options": {
+      "A": "Fearless",
+      "B": "Craven",
+      "C": "Timorous",
+      "D": "Apprehensive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Intrepid' means fearless; adventurous. 'Fearless', 'dauntless', or 'courageous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0674",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INTREPID**",
+    "options": {
+      "A": "Dauntless",
+      "B": "Audacious",
+      "C": "Valiant",
+      "D": "Timorous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Intrepid' means extremely brave. 'Timorous', 'cowardly', or 'craven' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0675",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INUNDATE**",
+    "options": {
+      "A": "Overwhelm",
+      "B": "Drain",
+      "C": "Desiccate",
+      "D": "Deplete"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Inundate' means to overwhelm (someone) with things or people to be dealt with; flood. 'Overwhelm', 'submerge', or 'deluge' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0676",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INUNDATE**",
+    "options": {
+      "A": "Deluge",
+      "B": "Swamp",
+      "C": "Drain",
+      "D": "Flood"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Inundate' means to flood or overwhelm. 'Drain', 'unburden', or 'parch' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0677",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INVEIGH**",
+    "options": {
+      "A": "Rail",
+      "B": "Extol",
+      "C": "Applaud",
+      "D": "Acclaim"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Inveigh' means to speak or write about (something) with great hostility. 'Rail', 'fulminate', or 'protest' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0678",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INVEIGH**",
+    "options": {
+      "A": "Fulminate",
+      "B": "Protest",
+      "C": "Praise",
+      "D": "Denounce"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Inveigh' means to denounce bitterly. 'Praise', 'laud', or 'commend' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0679",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INVEIGLE**",
+    "options": {
+      "A": "Entice",
+      "B": "Deter",
+      "C": "Repel",
+      "D": "Dissuade"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Inveigle' means to persuade (someone) to do something by means of deception or flattery. 'Entice', 'cajole', or 'wheedle' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0680",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INVEIGLE**",
+    "options": {
+      "A": "Coax",
+      "B": "Cajole",
+      "C": "Dissuade",
+      "D": "Wheedle"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Inveigle' means to lure or entice with charm. 'Dissuade', 'repel', or 'discourage' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0681",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INVETERATE**",
+    "options": {
+      "A": "Habitual",
+      "B": "Transient",
+      "C": "Occasional",
+      "D": "Incipient"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Inveterate' means having a particular habit, activity, or interest that is long-established and unlikely to change. 'Habitual', 'ingrained', or 'chronic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0682",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INVETERATE**",
+    "options": {
+      "A": "Chronic",
+      "B": "Ingrained",
+      "C": "Deep-rooted",
+      "D": "Transient"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Inveterate' means deeply rooted or ingrained. 'Transient', 'occasional', or 'temporary' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0683",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IRASCIBLE**",
+    "options": {
+      "A": "Choleric",
+      "B": "Placid",
+      "C": "Serene",
+      "D": "Equable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Irascible' means having or showing a tendency to be easily angered. 'Choleric', 'testy', or 'cantankerous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0684",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IRASCIBLE**",
+    "options": {
+      "A": "Petulant",
+      "B": "Testy",
+      "C": "Placid",
+      "D": "Peevish"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Irascible' means hot-tempered. 'Placid', 'calm', or 'even-tempered' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0685",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ITINERANT**",
+    "options": {
+      "A": "Peripatetic",
+      "B": "Sedentary",
+      "C": "Settled",
+      "D": "Stationary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Itinerant' means traveling from place to place. 'Peripatetic', 'nomadic', or 'wandering' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0686",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ITINERANT**",
+    "options": {
+      "A": "Nomadic",
+      "B": "Wandering",
+      "C": "Sedentary",
+      "D": "Peripatetic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Itinerant' means constantly moving or roaming. 'Sedentary', 'stationary', or 'settled' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0687",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JADED**",
+    "options": {
+      "A": "Satiated",
+      "B": "Fresh",
+      "C": "Invigorated",
+      "D": "Enthusiastic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Jaded' means tired, bored, or lacking enthusiasm, typically after having had too much of something. 'Satiated', 'surfeited', or 'exhausted' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0688",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**JADED**",
+    "options": {
+      "A": "Weary",
+      "B": "Fatigued",
+      "C": "Fresh",
+      "D": "Surfeited"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Jaded' means world-weary and dull from overindulgence. 'Fresh', 'eager', or 'invigorated' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0689",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JEJUNE**",
+    "options": {
+      "A": "Insipid",
+      "B": "Mature",
+      "C": "Fascinating",
+      "D": "Profound"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Jejune' means naive, simplistic, and superficial; dry and uninteresting. 'Insipid', 'vapid', or 'childish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0690",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**JEJUNE**",
+    "options": {
+      "A": "Vapid",
+      "B": "Puerile",
+      "C": "Profound",
+      "D": "Insipid"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Jejune' means juvenile or uninteresting. 'Profound', 'mature', or 'sophisticated' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0691",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JETTISON**",
+    "options": {
+      "A": "Discard",
+      "B": "Retain",
+      "C": "Conserve",
+      "D": "Preserve"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Jettison' means to throw or drop (something) from an aircraft or ship; abandon or discard. 'Discard', 'cast off', or 'scrap' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0692",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**JETTISON**",
+    "options": {
+      "A": "Scrap",
+      "B": "Retain",
+      "C": "Eject",
+      "D": "Discard"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Jettison' means to throw away or abandon. 'Retain', 'keep', or 'salvage' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0693",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JOCULAR**",
+    "options": {
+      "A": "Waggish",
+      "B": "Morose",
+      "C": "Solemn",
+      "D": "Sedate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Jocular' means fond of or characterized by joking; humorous or playful. 'Waggish', 'humorous', or 'droll' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0694",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**JOCULAR**",
+    "options": {
+      "A": "Facetious",
+      "B": "Solemn",
+      "C": "Waggish",
+      "D": "Playful"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Jocular' means joking and merry. 'Solemn', 'grave', or 'gloomy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0695",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JUDICIOUS**",
+    "options": {
+      "A": "Prudent",
+      "B": "Injudicious",
+      "C": "Foolhardy",
+      "D": "Reckless"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Judicious' means having, showing, or done with good judgment or sense. 'Prudent', 'sagacious', or 'discreet' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0696",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**JUDICIOUS**",
+    "options": {
+      "A": "Prudent",
+      "B": "Discreet",
+      "C": "Sagacious",
+      "D": "Foolhardy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Judicious' means wise and well-considered. 'Foolhardy', 'rash', or 'indiscreet' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0697",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**JUXTAPOSE**",
+    "options": {
+      "A": "Collocate",
+      "B": "Separate",
+      "C": "Disunite",
+      "D": "Isolate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Juxtapose' means to place or deal with close together for contrasting effect. 'Collocate', 'appose', or 'place side by side' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0698",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**JUXTAPOSE**",
+    "options": {
+      "A": "Appose",
+      "B": "Collocate",
+      "C": "Separate",
+      "D": "Pair"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Juxtapose' means to place close together. 'Separate', 'distance', or 'isolate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0699",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**KINDLE**",
+    "options": {
+      "A": "Ignite",
+      "B": "Extinguish",
+      "C": "Smother",
+      "D": "Douse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Kindle' means to light or set on fire; arouse or inspire. 'Ignite', 'arouse', or 'spark' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0700",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**KINDLE**",
+    "options": {
+      "A": "Ignite",
+      "B": "Extinguish",
+      "C": "Arouse",
+      "D": "Inflame"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Kindle' means to ignite or stimulate. 'Extinguish', 'douse', or 'quench' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

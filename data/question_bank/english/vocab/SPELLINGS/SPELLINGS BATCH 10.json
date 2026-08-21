@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_0451",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Maladroit",
+      "B": "Maladroyte",
+      "C": "Maladroite",
+      "D": "Maledroit"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Maladroit' - inefficient or inept; clumsy; 'm-a-l-a-d-r-o-i-t'). Options B, C, and D add erroneous silent letters or modify prefix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0452",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Malaise",
+      "B": "Malapropism",
+      "C": "Malfeasance",
+      "D": "Malleabillity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Malleability' (single 'l' before 'ity' - the quality of something that can be shaped into something else without breaking). Other options are correct: Malaise (a general feeling of discomfort, illness, or uneasiness), Malapropism (the mistaken use of a word in place of a similar-sounding one), Malfeasance (wrongdoing, especially by a public official).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0453",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Malpractice",
+      "B": "Malpractise",
+      "C": "Malpractise",
+      "D": "Malprectice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Malpractice' - improper, illegal, or negligent professional activity or treatment; ends in '-ice' as standard noun). Option D modifies the internal vowel.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0454",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Mandatory",
+      "B": "Manifestation",
+      "C": "Mannequin",
+      "D": "Manoeuvreable"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Manoeuvrable' (drops 'e' before '-able' - able to be moved or steered easily). Other options are correct: Mandatory (required by law or rules; compulsory), Manifestation (an event, action, or object that clearly shows or embodies something), Mannequin (a dummy used to display clothes in a shop window).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0455",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Manslaughter",
+      "B": "Manslouter",
+      "C": "Manslaugher",
+      "D": "Manslaughtar"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Manslaughter' - the crime of killing a human being without malice aforethought; 'm-a-n-s-l-a-u-g-h-t-e-r'). Options B, C, and D omit silent consonants or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0456",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Marasmus",
+      "B": "Marginalia",
+      "C": "Maritial",
+      "D": "Marmalade"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Martial' (relating to war or fighting) or 'Marital' (relating to marriage), but 'Maritial' is an invalid spelling. Other options are correct: Marasmus (severe undernourishment causing an infant's or child's weight to be significantly low), Marginalia (marginal notes or embellishments in a book), Marmalade (a preserve made from citrus fruit).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0457",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Martinet",
+      "B": "Martinate",
+      "C": "Martinit",
+      "D": "Martenet"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Martinet' - a strict disciplinarian, especially in the armed forces; 'm-a-r-t-i-n-e-t'). Options B, C, and D alter the vowel positions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0458",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Masochism",
+      "B": "Massacre",
+      "C": "Mastication",
+      "D": "Matriarchal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt here ('Masochism' - the tendency to derive pleasure from one's own pain or humiliation). Frequently tested in SSC questions as 'Masocism'. Other options are correct: Massacre (an indiscriminate and brutal slaughter of many people), Mastication (the process of chewing food), Matriarchal (relating to a social system in which mothers or women hold primary power).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0459",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Matriculation",
+      "B": "Matraculation",
+      "C": "Matricelation",
+      "D": "Matriculasion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Matriculation' - formal admission to a college or university; 'm-a-t-r-i-c-u-l-a-t-i-o-n'). Options B, C, and D alter internal vowels or corrupt the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0460",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Matrimonial",
+      "B": "Maxillary",
+      "C": "Meccano",
+      "D": "Meddlesum"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Meddlesome' (ends in '-some', not '-sum' - fond of meddling; interfering). Other options are correct: Matrimonial (relating to marriage or married people), Maxillary (relating to the upper jaw or jawbone), Meccano (a model construction kit).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0461",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Mediocrity",
+      "B": "Mediocricy",
+      "C": "Mediocraty",
+      "D": "Mediocrety"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Mediocrity' - the quality or state of being mediocre; 'm-e-d-i-o-c-r-i-t-y'). Options B, C, and D modify the consonant or suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0462",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Megalomania",
+      "B": "Meliorism",
+      "C": "Mellifluous",
+      "D": "Memmorandum"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Memorandum' (single 'm' in the middle - a written message in business or diplomacy). Other options are correct: Megalomania (obsession with the exercise of power), Meliorism (the belief that the world can be made better by human effort), Mellifluous (pleasingly smooth and musical to hear).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0463",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Mendacious",
+      "B": "Mendatious",
+      "C": "Mendaceous",
+      "D": "Mendashus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Mendacious' - not telling the truth; lying; 'm-e-n-d-a-c-i-o-u-s'). Options B, C, and D use incorrect consonants or vowel endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0464",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Mendacity",
+      "B": "Mendicancy",
+      "C": "Menagerie",
+      "D": "Meningites"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Meningitis' (ends in '-itis', not '-ites' - inflammation of the meninges surrounding the brain and spinal cord). Other options are correct: Mendacity (untruthfulness), Mendicancy (the condition of being a beggar), Menagerie (a collection of wild animals kept in captivity for exhibition).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0465",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Mercantile",
+      "B": "Mercantyle",
+      "C": "Marcantile",
+      "D": "Mercanteil"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Mercantile' - relating to trade or commerce; commercial; 'm-e-r-c-a-n-t-i-l-e'). Options B, C, and D alter the vowel composition.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0466",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Meritorious",
+      "B": "Mesmerism",
+      "C": "Metallurgy",
+      "D": "Metaphorsical"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Metaphorical' (spelled '-ical', no 's' - characteristic of or relating to a metaphor; figurative). Other options are correct: Meritorious (deserving reward or praise), Mesmerism (hypnotism), Metallurgy (the branch of science concerned with the properties of metals and their production).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0467",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Metempsychosis",
+      "B": "Metempsichosis",
+      "C": "Metempsychosys",
+      "D": "Metempsychocis"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Metempsychosis' - the supposed transmigration at death of the soul of a human into a new body; 'm-e-t-e-m-p-s-y-c-h-o-s-i-s'). Options B, C, and D alter the Greek vowel/consonant stems.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0468",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Methodology",
+      "B": "Meticulousness",
+      "C": "Metonymy",
+      "D": "Miasmetic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Miasmatic' (spelled with '-ma-', not '-me-' - producing an unpleasant or unwholesome atmosphere). Other options are correct: Methodology (a system of methods used in a particular area of study), Meticulousness (the quality of being very careful and precise), Metonymy (the substitution of the name of an attribute for that of the thing meant).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0469",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Microcephaly",
+      "B": "Microcefaly",
+      "C": "Microcephalyy",
+      "D": "Microcephaly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Microcephaly' - abnormal smallness of the head, a congenital condition associated with incomplete brain development; 'm-i-c-r-o-c-e-p-h-a-l-y'). Options B and C are invalid variants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0470",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Microscopic",
+      "B": "Milieu",
+      "C": "Millenarian",
+      "D": "Minachious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Minacious' (spelled with '-ci-', not '-ch-' - menacing or threatening). Other options are correct: Microscopic (so small as to be visible only with a microscope), Milieu (a person's social environment), Millenarian (relating to a belief in a future golden age of peace and justice).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0471",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Misanthropic",
+      "B": "Misenthropic",
+      "C": "Misanthropick",
+      "D": "Misenthropic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Misanthropic' - disliking humankind and avoiding human society; contains '-anthropic'). Options B, C, and D alter the vowel or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0472",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Miscegenation",
+      "B": "Mischievous",
+      "C": "Miscreent",
+      "D": "Misdemeanour"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Miscreant' (ends in '-ant', not '-ent' - a person who behaves badly or in a way that breaks the law). Other options are correct: Miscegenation (the interbreeding of people considered to be of different racial types), Mischievous (causing or showing a fondness for causing trouble playfully), Misdemeanour (a minor wrongdoing; standard UK spelling).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0473",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Miserliness",
+      "B": "Miserlyness",
+      "C": "Miserleness",
+      "D": "Misarliness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Miserliness' - excessive desire to save money; extreme meanness; changes 'y' to 'i' before '-ness'). Options B, C, and D fail standard suffix mutation rules.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0474",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Misnomer",
+      "B": "Misrepresentation",
+      "C": "Mitigation",
+      "D": "Modallity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Modality' (single 'l' - a particular mode in which something exists or is experienced). Other options are correct: Misnomer (a wrong or inaccurate name or designation), Misrepresentation (the action or offense of giving a false or misleading account), Mitigation (the action of reducing the severity, seriousness, or painfulness of something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0475",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Mollification",
+      "B": "Molification",
+      "C": "Mollifacation",
+      "D": "Mollefication"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Mollification' - the act of appeasing the anger or anxiety of someone; double 'l', 'm-o-l-l-i-f-i-c-a-t-i-o-n'). Options B, C, and D drop 'l' or corrupt internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0476",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Monarchical",
+      "B": "Monasticism",
+      "C": "Monetary",
+      "D": "Monilithic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Monolithic' (spelled with '-no-', not '-ni-' - large, powerful, and indivisible / made of a single block of stone). Other options are correct: Monarchical (relating to a monarch or monarchy), Monasticism (a religious way of life in which one renounces worldly pursuits), Monetary (relating to money or currency).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0477",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Monochromatic",
+      "B": "Monochromatick",
+      "C": "Monocromatic",
+      "D": "Monocromatic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Monochromatic' - containing or using only one color; 'm-o-n-o-c-h-r-o-m-a-t-i-c'). Options B, C, and D drop 'h' or alter the terminal suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0478",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Monopolization",
+      "B": "Monosyllabic",
+      "C": "Monstrosity",
+      "D": "Monumentous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Momentous' (of great importance) or 'Monumental' (great in importance, extent, or size), but 'Monumentous' is an erroneous hybrid form. Other options are correct: Monopolization (the process of obtaining exclusive possession or control of something), Monosyllabic (consisting of one syllable), Monstrosity (something, especially a building, that is very large and is considered unsightly).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0479",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Morphology",
+      "B": "Morfology",
+      "C": "Morpholagy",
+      "D": "Morpholegy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Morphology' - the study of the forms of things; 'm-o-r-p-h-o-l-o-g-y'). Options B, C, and D use 'f' instead of 'ph' or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0480",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Mortician",
+      "B": "Mortification",
+      "C": "Mosquitoes",
+      "D": "Motiffer"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Motif' (a dominant or recurring idea in an artistic work; noun) or 'Motific' (adjective), while 'Motiffer' is invalid. Other options are correct: Mortician (an undertaker), Mortification (great embarrassment and shame), Mosquitoes (slender long-legged flies).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0481",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Mountebank",
+      "B": "Mountabank",
+      "C": "Mountibank",
+      "D": "Mountebanck"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Mountebank' - a person who deceives others, especially in order to trick them out of their money; a charlatan; 'm-o-u-n-t-e-b-a-n-k'). Options B, C, and D alter the connecting vowel or ending.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0482",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Mucilage",
+      "B": "Multidisciplinary",
+      "C": "Multiplicity",
+      "D": "Municipility"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Municipality' (spelled with '-al-', not '-il-' - a city or town that has corporate status and local government). Other options are correct: Mucilage (a viscous substance secreted by some plants), Multidisciplinary (combining or involving several academic disciplines), Multiplicity (a large number or variety).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0483",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Munificence",
+      "B": "Munificanse",
+      "C": "Munifisence",
+      "D": "Munifacence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Munificence' - the quality or action of being extremely generous; 'm-u-n-i-f-i-c-e-n-c-e'). Options B, C, and D alter the suffix vowels or consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0484",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Musculoskeletal",
+      "B": "Myrmidon",
+      "C": "Mystification",
+      "D": "Mytholagical"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Mythological' (spelled with '-logi-', not '-lagi-' - relating to, based on, or appearing in myths or mythology). Other options are correct: Musculoskeletal (relating to the musculature and skeleton together), Myrmidon (a follower or subordinate of a powerful person, typically one who executes orders without question), Mystification (the state of feeling very confused or puzzled).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0485",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Narcissistic",
+      "B": "Narcisistic",
+      "C": "Narcissictic",
+      "D": "Narcissystic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Narcissistic' - having an excessive or erotic interest in oneself and one's physical appearance; double 's', 'n-a-r-c-i-s-s-i-s-t-i-c'). Options B, C, and D misplace consonant doubling or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0486",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Nascent",
+      "B": "Natality",
+      "C": "Nauseating",
+      "D": "Navigible"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Navigable' (ends in '-able', not '-ible' - of a track or body of water: able to be sailed on by ships or boats). Other options are correct: Nascent (just coming into existence and beginning to display signs of future potential), Natality (the ratio of the number of births to the size of the population; birth rate), Nauseating (causing or liable to cause a feeling of nausea or disgust).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0487",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nebulous",
+      "B": "Nebilous",
+      "C": "Nebuleus",
+      "D": "Nebulus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nebulous' - in the form of a cloud or haze; hazy; vague; 'n-e-b-u-l-o-u-s'). Options B, C, and D alter the vowel stems or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0488",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Necessitate",
+      "B": "Necrology",
+      "C": "Necrophilia",
+      "D": "Necropolice"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Necropolis' (ends in '-lis', not '-lice' - a cemetery, especially a large one belonging to an ancient city). Other options are correct: Necessitate (make something necessary as a result or consequence), Necrology (a list of people who have died, especially in the recent past), Necrophilia (sexual attraction to corpses).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0489",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nefariously",
+      "B": "Nefariuosly",
+      "C": "Nefareously",
+      "D": "Nefariousley"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nefariously' - in a wicked or criminal manner; 'n-e-f-a-r-i-o-u-s-l-y'). Options B, C, and D invert or distort vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0490",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Negligent",
+      "B": "Negotiable",
+      "C": "Nemisis",
+      "D": "Neoclassicism"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Nemesis' (spelled with '-me-', not '-mi-' - the inescapable agent of someone's or something's downfall). Other options are correct: Negligent (failing to take proper care over something), Negotiable (open to discussion or modification), Neoclassicism (the revival of a classical style or treatment in art, literature, or music).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0491",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Neologism",
+      "B": "Neolagism",
+      "C": "Nialogism",
+      "D": "Neolegism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Neologism' - a newly coined word or expression; 'n-e-o-l-o-g-i-s-m'). Options B, C, and D distort the prefix or connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0492",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Neophyte",
+      "B": "Nepotism",
+      "C": "Neurotic",
+      "D": "Neutrelization"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Neutralization' (spelled with '-tra-', not '-tre-' - the act of making something ineffective or harmless). Other options are correct: Neophyte (a person who is new to a subject or activity; a novice), Nepotism (the practice among those with power of favoring relatives or friends), Neurotic (having, caused by, or relating to neurosis).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0493",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nihilism",
+      "B": "Nihelism",
+      "C": "Nihillism",
+      "D": "Nihylism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nihilism' - the rejection of all religious and moral principles, in the belief that life is meaningless; 'n-i-h-i-l-i-s-m'). Options B, C, and D alter the vowels or duplicate 'l'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0494",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Noctambulist",
+      "B": "Nocturnal",
+      "C": "Nomencliture",
+      "D": "Nonagenarian"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Nomenclature' (spelled with '-cla-', not '-cli-' - the devising or choosing of names for things). Other options are correct: Noctambulist (a sleepwalker), Nocturnal (done, occurring, or active at night), Nonagenarian (a person who is from 90 to 99 years old).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0495",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nonchalance",
+      "B": "Nonchalence",
+      "C": "Nonchelance",
+      "D": "Nonchalancee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nonchalance' - the state of feeling or appearing casually calm and relaxed; ends in '-ance'). Options B, C, and D alter the vowel positions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0496",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Nondescript",
+      "B": "Nonpareil",
+      "C": "Nonplus",
+      "D": "Nosology"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correctly spelt here ('Nonplus' - to surprise and confuse someone so much that they are unsure how to react; single or double 's' accepted in US, but 'Nonplus' is base noun/verb). Frequently tested as 'Nonpluss' (misspelled noun) or past participle 'Nonplussed'. Other options are correct: Nondescript (lacking distinctive or interesting features), Nonpareil (having no match or equal; unrivaled), Nosology (the branch of medical science dealing with the classification of diseases).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0497",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nostalgic",
+      "B": "Nostelgic",
+      "C": "Nastalgiac",
+      "D": "Nostalgick"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nostalgic' - characterized by or exhibiting feelings of nostalgia; 'n-o-s-t-a-l-g-i-c'). Options B, C, and D alter vowel values or add obsolete letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0498",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Notable",
+      "B": "Novitiate",
+      "C": "Nuance",
+      "D": "Nuisence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Nuisance' (ends in '-ance', not '-ence' - a person or thing causing inconvenience or annoyance). Other options are correct: Notable (worthy of attention or notice; remarkable), Novitiate (the period or state of being a novice, especially in a religious order), Nuance (a subtle difference in or shade of meaning, expression, or sound).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0499",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Nullification",
+      "B": "Nulification",
+      "C": "Nullifacation",
+      "D": "Nullefication"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Nullification' - the act of cancelling something; making void; double 'l', 'n-u-l-l-i-f-i-c-a-t-i-o-n'). Options B, C, and D drop 'l' or corrupt internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0500",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Numismatist",
+      "B": "Nuptial",
+      "C": "Nutrient",
+      "D": "Obduracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt here ('Numismatist' - a person who collects or studies coins, tokens, or medals). Often misspelled in SSC questions as 'Numismatyst'. Other options are correct: Nuptial (relating to marriage or weddings), Nutrient (a substance that provides nourishment essential for the maintenance of life and for growth), Obduracy (the state or quality of being stubborn or unyielding).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

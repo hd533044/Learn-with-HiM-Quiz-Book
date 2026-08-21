@@ -1,0 +1,952 @@
+[
+  {
+    "id": "ENG_PJ_201",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This electrostatic repulsion prevents colloidal particles from aggregating and settling out of suspension.",
+      "B": "In a stable colloidal suspension, dispersed nanoparticles carry identical surface electrical charges.",
+      "C": "When an electrolyte is introduced, counter-ions neutralize these surface charges.",
+      "D": "Consequently, particles aggregate into larger flocs and precipitate rapidly from the liquid phase."
+    },
+    "options": {
+      "A": "B-A-C-D",
+      "B": "B-C-A-D",
+      "C": "C-B-A-D",
+      "D": "A-B-C-D"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces stable colloidal particles carrying identical surface charges. Sentence A explains how 'This electrostatic repulsion' keeps them suspended. Sentence C introduces electrolytes neutralizing these charges. Sentence D details the resulting flocculation and precipitation."
+  },
+  {
+    "id": "ENG_PJ_202",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1827, Scottish botanist Robert Brown observed pollen grains suspended in water under a microscope.",
+    "jumbled_sentences": {
+      "P": "He noticed that microscopic particles ejected from the pollen exhibited continuous, erratic jittering.",
+      "Q": "Initially, Brown suspected that this persistent motion was a manifestation of vital biological life.",
+      "R": "However, he observed identical erratic movements when examining pulverized inorganic mineral dust.",
+      "S": "The phenomenon remained an unsolved physical paradox for nearly eight decades."
+    },
+    "fixed_end": "6: In 1905, Albert Einstein published a mathematical explanation proving Brownian motion was caused by atomic collisions.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Brown observing pollen in water. Sentence P describes the erratic jittering he saw. Sentence Q explains his initial hypothesis of biological life. Sentence R refutes this via inorganic dust. Sentence S notes the long-standing mystery, connecting directly to Einstein's 1905 explanation in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_203",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid radiative feedback accelerates polar ice melting far beyond initial climate model forecasts.",
+      "B": "Wildfires in boreal forests release massive plumes of carbonaceous black soot into the atmosphere.",
+      "C": "High-altitude winds transport these dark aerosol particulates across Greenland and the Arctic ice cap.",
+      "D": "When deposited on reflective snowpack, dark soot lowers surface albedo, absorbing solar heat."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces boreal wildfires releasing black soot. Sentence C describes winds transporting particulates to Arctic ice. Sentence D explains soot lowering albedo and absorbing heat. Sentence A synthesizes 'This rapid radiative feedback' accelerating melting."
+  },
+  {
+    "id": "ENG_PJ_204",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The Code of Hammurabi is one of the oldest deciphered legal texts of significant length in world history.",
+    "jumbled_sentences": {
+      "P": "Promulgated around 1750 BCE by the Babylonian king Hammurabi, the code was inscribed on a massive basalt stele.",
+      "Q": "It established nearly three hundred statutory edicts governing commerce, property rights, and family law.",
+      "R": "Central to its penal jurisprudence was the doctrine of strict retaliatory justice (*lex talionis*).",
+      "S": "Penalties were calibrated according to social hierarchy, distinguishing nobles from commoners and slaves."
+    },
+    "fixed_end": "6: The stele stands today as a monumental milestone in the historical codification of statutory law.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the Code of Hammurabi. Sentence P details its inscription on a basalt stele around 1750 BCE. Sentence Q describes its 300 edicts across law. Sentence R highlights *lex talionis*. Sentence S explains class-based penalties, leading to the stele's legacy in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_205",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, clinical oncologists combine checkpoint inhibitors to achieve synergistic antitumor responses.",
+      "B": "Tumor cells evade host immune surveillance by upregulating inhibitory surface ligands like PD-L1.",
+      "C": "These ligands bind to PD-1 receptors on cytotoxic T cells, inducing functional T-cell exhaustion.",
+      "D": "Monoclonal antibody therapies block this checkpoint interaction, reinvigorating tumor-infiltrating lymphocytes."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces tumor cells expressing PD-L1 to evade immunity. Sentence C shows 'These ligands' binding PD-1 and exhausting T cells. Sentence D explains antibodies blocking this interaction. Sentence A concludes with oncologists combining checkpoint inhibitors."
+  },
+  {
+    "id": "ENG_PJ_206",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1687, Isaac Newton published his monumental work, the *Philosophiae Naturalis Principia Mathematica*.",
+    "jumbled_sentences": {
+      "P": "In it, he formulated the three universal laws of motion governing classical kinematics.",
+      "Q": "He demonstrated that an inverse-square gravitational force governs both terrestrial and celestial bodies.",
+      "R": "This mathematical synthesis unified earthly mechanics with Johannes Kepler's planetary laws.",
+      "S": "Newton also invented the mathematical machinery of differential and integral calculus to prove his theorems."
+    },
+    "fixed_end": "6: The *Principia* established the mathematical foundation of physics that reigned supreme for over two centuries.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Newton's *Principia*. Sentence P states the three laws of motion. Sentence Q introduces the universal inverse-square law of gravity. Sentence R explains unifying earthly mechanics with Kepler's laws. Sentence S notes calculus development, concluding into Statement 6."
+  },
+  {
+    "id": "ENG_PJ_207",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid phase change creates violent steam explosions known as phreatomagmatic eruptions.",
+      "B": "Magma ascending through coastal fissures encounters shallow groundwater aquifers.",
+      "C": "The intense geothermal heat instantly flashes trapped liquid water into high-pressure steam.",
+      "D": "Expanding steam shatters host rocks and magma into fine, ash-rich pyroclastic surges."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces ascending magma encountering groundwater. Sentence C explains the heat flashing water into high-pressure steam. Sentence A identifies 'This rapid phase change' creating phreatomagmatic explosions. Sentence D details the resulting ash-rich pyroclastic surges."
+  },
+  {
+    "id": "ENG_PJ_208",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In the 1970s, cognitive psychologists Daniel Kahneman and Amos Tversky revolutionized decision theory.",
+    "jumbled_sentences": {
+      "P": "They challenged classical economic models assuming perfectly rational agents (*Homo economicus*).",
+      "Q": "Through empirical experiments, they identified systematic cognitive biases and decision heuristics.",
+      "R": "They demonstrated that individuals systematically misjudge probabilities when evaluating risks.",
+      "S": "Their findings culminated in the development of Prospect Theory in 1979."
+    },
+    "fixed_end": "6: This groundbreaking work founded the modern interdisciplinary field of behavioral economics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Kahneman and Tversky. Sentence P describes their challenge to the rational-agent paradigm. Sentence Q explains cognitive biases and heuristics. Sentence R details probability misjudgments. Sentence S names Prospect Theory (1979), leading to behavioral economics in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_209",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This biological barrier prevents opportunistic pathogens from penetrating mucosal epithelial layers.",
+      "B": "The human gastrointestinal tract is lined with a specialized protective mucus bilayer.",
+      "C": "Commensal bacteria ferment dietary fiber into butyrate, stimulating goblet cells to produce mucin.",
+      "D": "Consequently, gut barrier breakdown is averted, suppressing chronic intestinal inflammation."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces the gastrointestinal mucus bilayer. Sentence C explains commensal bacteria stimulating mucin production via butyrate. Sentence A describes 'This biological barrier' blocking pathogens. Sentence D shows the outcome ('Consequently, gut barrier breakdown is averted...')."
+  },
+  {
+    "id": "ENG_PJ_210",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The Bretton Woods system was negotiated in 1944 to prevent competitive interwar currency devaluations.",
+    "jumbled_sentences": {
+      "P": "Member nations agreed to peg their domestic currencies to the United States dollar.",
+      "Q": "In turn, the US Treasury guaranteed to convert dollars into physical gold at $35 per ounce.",
+      "R": "By the late 1960s, rising US fiscal deficits created an unsustainable overhang of foreign-held dollars.",
+      "S": "Foreign central banks began demanding massive gold redemptions from dwindling American reserves."
+    },
+    "fixed_end": "6: In August 1971, President Nixon suspended dollar-gold convertibility, terminating the fixed-rate order.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the Bretton Woods currency framework. Sentence P explains pegging currencies to the dollar. Sentence Q explains the dollar pegged to gold at $35/oz. Sentence R introduces the 1960s deficit crisis. Sentence S describes foreign gold redemption demands, leading directly to the Nixon shock in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_211",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, high-frequency traders execute microsecond arbitrage across separated exchange venues.",
+      "B": "Modern equity trading operates on high-speed electronic communication networks.",
+      "C": "Fiber-optic speed-of-light delays across geographic distances generate fleeting price discrepancies.",
+      "D": "Algorithms co-located near data centers exploit these nanosecond latency gaps for profit."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces electronic trading networks. Sentence C explains distance latency creating price discrepancies. Sentence D shows co-located algorithms exploiting these gaps. Sentence A concludes with high-frequency arbitrage execution ('Consequently, high-frequency traders...')."
+  },
+  {
+    "id": "ENG_PJ_212",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1800, Italian physicist Alessandro Volta invented the voltaic pile, the first electrical battery.",
+    "jumbled_sentences": {
+      "P": "He stacked alternating discs of zinc and copper separated by cardboard soaked in brine.",
+      "Q": "Chemical oxidation and reduction reactions at the metal electrodes generated a steady direct current.",
+      "R": "Prior to this invention, scientists could only produce transient static electricity using Leyden jars.",
+      "S": "Volta's continuous current enabled researchers to perform unprecedented electrochemical experiments."
+    },
+    "fixed_end": "6: Within months, William Nicholson and Anthony Carlisle utilized the pile to discover the electrolysis of water.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Volta's battery. Sentence P describes the stacked zinc, copper, and brine discs. Sentence Q explains the redox reaction generating direct current. Sentence R contrasts this with earlier static Leyden jars. Sentence S highlights the continuous current enabling experiments, leading to water electrolysis in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_213",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This thermal insulation enables emperor penguins to withstand Antarctic winter blizzards.",
+      "B": "Emperor penguin plumage consists of an exceptionally dense matrix of interlocking feathers.",
+      "C": "Beneath these outer contour feathers lies a thick layer of insulating down and sub-dermal blubber.",
+      "D": "This multi-layered anatomical barrier traps air, minimizing conductive and convective heat loss."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces penguin feather density. Sentence C describes the down and blubber layers beneath. Sentence D explains how 'This multi-layered anatomical barrier' traps air. Sentence A synthesizes 'This thermal insulation' enabling winter survival."
+  },
+  {
+    "id": "ENG_PJ_214",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1965, Arno Penzias and Robert Wilson detected an omnipresent microwave noise in their radio antenna.",
+    "jumbled_sentences": {
+      "P": "The isotropic signal persisted regardless of the antenna's pointing direction or time of day.",
+      "Q": "After eliminating terrestrial interference and pigeon roosts, they realized the radiation was cosmic.",
+      "R": "Astrophysicists at Princeton identified the signal as the relic glow of the primordial Big Bang.",
+      "S": "This Cosmic Microwave Background radiation had cooled to approximately 2.7 Kelvin over cosmic expansion."
+    },
+    "fixed_end": "6: The discovery provided decisive empirical confirmation of the Big Bang over the Steady State theory.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the microwave noise discovery in 1965. Sentence P notes the signal's isotropic nature. Sentence Q describes eliminating local interference. Sentence R details Princeton physicists identifying it as the Big Bang relic. Sentence S gives its 2.7 K temperature, confirming the Big Bang in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_215",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, sovereign central banks maintain strict gold and foreign currency reserves.",
+      "B": "A balance-of-payments crisis occurs when a country cannot service its foreign debt or finance essential imports.",
+      "C": "Investors lose confidence in the peg, triggering massive capital flight from domestic currency assets.",
+      "D": "To defend the currency, the central bank rapidly exhausts its usable international reserves."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines a balance-of-payments crisis. Sentence C explains lost confidence and capital flight. Sentence D details the exhaustion of international reserves defending the currency. Sentence A states the policy preventative ('Consequently, sovereign central banks maintain...')."
+  },
+  {
+    "id": "ENG_PJ_216",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The Great Barrier Reef is the largest biogenic structure on Earth, stretching over 2,300 kilometers.",
+    "jumbled_sentences": {
+      "P": "It is composed of billions of tiny calcifying coral polyps living in symbiosis with zooxanthellae.",
+      "Q": "Over millions of years, accumulating calcium carbonate skeletons constructed massive labyrinthine reefs.",
+      "R": "These intricate marine structures provide habitats for over fifteen hundred species of fish.",
+      "S": "However, unprecedented marine heatwaves have triggered recurrent mass coral bleaching events."
+    },
+    "fixed_end": "6: Marine ecologists warn that unchecked ocean warming could lead to catastrophic reef ecosystem collapse.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the Great Barrier Reef. Sentence P details coral polyps and zooxanthellae. Sentence Q explains the accumulation of calcium carbonate skeletons over time. Sentence R highlights biodiversity support. Sentence S introduces recent bleaching heatwaves, leading to the warning in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_217",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This optical phenomenon creates high-efficiency total internal reflection inside silica cores.",
+      "B": "Fiber-optic cables transmit high-bandwidth digital data via light pulses.",
+      "C": "Light entering the glass core at an angle shallower than the critical angle reflects off the cladding.",
+      "D": "Consequently, optical signals travel hundreds of kilometers with minimal attenuation or dispersion."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces fiber-optic data transmission. Sentence C explains light reflecting off cladding below the critical angle. Sentence A identifies 'This optical phenomenon' as total internal reflection. Sentence D concludes with long-distance signal propagation."
+  },
+  {
+    "id": "ENG_PJ_218",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1932, James Chadwick discovered the neutron at the Cavendish Laboratory.",
+    "jumbled_sentences": {
+      "P": "He bombarded beryllium atoms with alpha particles, observing penetrating neutral radiation.",
+      "Q": "Unlike protons or electrons, these emitted subatomic particles carried no net electrical charge.",
+      "R": "Chadwick calculated that the particle possessed a mass slightly greater than that of a proton.",
+      "S": "Because neutrons are uncharged, they easily penetrate positive atomic nuclei without Coulomb repulsion."
+    },
+    "fixed_end": "6: This discovery paved the way for nuclear fission experiments that unlocked nuclear energy and weapons.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Chadwick discovering the neutron. Sentence P describes bombarding beryllium with alpha particles. Sentence Q notes the absence of electrical charge. Sentence R gives the mass calculation. Sentence S explains bypassing Coulomb repulsion, leading to nuclear fission in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_219",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid enzymatic cascades hydrolyzes glycogen into glucose, flooding skeletal muscles.",
+      "B": "Perceived acute stressors activate the sympathetic-adrenomedullary pathway.",
+      "C": "The adrenal medulla secretes high concentrations of epinephrine into the circulatory system.",
+      "D": "Consequently, physiological fight-or-flight reflexes are instantly mobilized for survival."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces stressors activating the sympathetic pathway. Sentence C shows the adrenal medulla secreting epinephrine. Sentence A describes 'This rapid enzymatic cascade' mobilizing glucose. Sentence D concludes with fight-or-flight reflexes."
+  },
+  {
+    "id": "ENG_PJ_220",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The Congress of Vienna convened in 1814 to restore European geopolitical equilibrium following the Napoleonic Wars.",
+    "jumbled_sentences": {
+      "P": "Statesmen led by Klemens von Metternich sought to contain French expansion and restore traditional monarchies.",
+      "Q": "They constructed a balance-of-power architecture designed to prevent any single hegemon from dominating Europe.",
+      "R": "Buffer states were established along French frontiers, while territorial compensations were distributed among the victors.",
+      "S": "This diplomatic settlement instituted the 'Concert of Europe', a system of periodic multilateral congresses."
+    },
+    "fixed_end": "6: The framework successfully averted major pan-European warfare for nearly a century until 1914.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the 1814 Congress of Vienna. Sentence P notes Metternich's goal of containment and monarchy restoration. Sentence Q explains the balance-of-power architecture. Sentence R details buffer states and compensations. Sentence S names the 'Concert of Europe', leading to a century of relative peace in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_221",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, deep ocean benthic zones sequester organic carbon for centuries.",
+      "B": "Phytoplankton in sunlit epipelagic surface waters fix dissolved carbon dioxide via photosynthesis.",
+      "C": "When these microalgae die, particulate organic matter coalesces into sinking marine snow.",
+      "D": "A fraction of this organic flux evades bacterial remineralization and reaches the abyssal seafloor."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces phytoplankton fixing carbon in surface waters. Sentence C describes dead algae forming sinking marine snow. Sentence D shows surviving matter reaching the abyssal floor. Sentence A concludes with long-term carbon sequestration ('Consequently, deep ocean benthic zones...')."
+  },
+  {
+    "id": "ENG_PJ_222",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1911, Heike Kamerlingh Onnes discovered superconductivity while studying low-temperature mercury.",
+    "jumbled_sentences": {
+      "P": "Using liquid helium, he cooled mercury down to an extreme cryogenic temperature of 4.2 Kelvin.",
+      "Q": "To his astonishment, the metal's electrical resistance dropped abruptly to absolute zero.",
+      "R": "An electrical current induced in a closed superconducting ring flowed continuously without decaying.",
+      "S": "In 1933, Walther Meissner discovered that superconductors also expel all internal magnetic flux."
+    },
+    "fixed_end": "6: Modern magnetic resonance imaging (MRI) machines rely entirely on superconducting electromagnetic coils.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Onnes discovering superconductivity. Sentence P describes cooling mercury to 4.2 K. Sentence Q details resistance dropping to zero. Sentence R describes undamped persistent current. Sentence S introduces the Meissner effect (1933), connecting to MRI applications in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_223",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid cellular depolarization opens voltage-gated calcium channels across cardiac myocytes.",
+      "B": "The sinoatrial node functions as the primary electrical pacemaker of the mammalian heart.",
+      "C": "Spontaneous pacemaker action potentials propagate rapidly through the atrial myocardium.",
+      "D": "Calcium influx activates actin-myosin cross-bridge cycling, triggering synchronized ventricular contraction."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces the sinoatrial node pacemaker. Sentence C describes action potentials spreading through the myocardium. Sentence A explains 'This rapid cellular depolarization' opening calcium channels. Sentence D shows calcium triggering ventricular contraction."
+  },
+  {
+    "id": "ENG_PJ_224",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The Industrial Revolution radically transformed global metallurgical manufacturing.",
+    "jumbled_sentences": {
+      "P": "In 1856, Henry Bessemer patented a process to mass-produce cheap, high-tensile steel from molten pig iron.",
+      "Q": "His pneumatic converter blasted compressed air through molten iron to oxidize impurities and excess carbon.",
+      "R": "This technological leap reduced the time required to refine a batch of steel from weeks to twenty minutes.",
+      "S": "Inexpensive Bessemer steel enabled the rapid expansion of transcontinental railways, skyscrapers, and steamships."
+    },
+    "fixed_end": "6: The steel boom provided the structural backbone of modern nineteenth-century industrial civilization.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces metallurgical transformation. Sentence P introduces the 1856 Bessemer process patent. Sentence Q explains the air-blast pneumatic converter. Sentence R highlights refining time dropping to 20 minutes. Sentence S lists railways and skyscrapers, connecting to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_225",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This genetic drift reduces nucleotide diversity across small, fragmented populations.",
+      "B": "Population bottlenecks occur when catastrophic events drastically reduce population size.",
+      "C": "Surviving individuals carry only a random, unrepresentative subset of ancestral genetic alleles.",
+      "D": "Consequently, inbreeding depression accelerates, elevating vulnerability to novel environmental pathogens."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines population bottlenecks. Sentence C explains survivors carrying only an allele subset. Sentence A identifies 'This genetic drift' reducing diversity. Sentence D concludes with inbreeding depression and disease vulnerability."
+  },
+  {
+    "id": "ENG_PJ_226",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1900, German physicist Max Planck formulated quantum theory to resolve the blackbody radiation catastrophe.",
+    "jumbled_sentences": {
+      "P": "Classical Rayleigh-Jeans electrodynamics predicted that thermal blackbodies would emit infinite ultraviolet energy.",
+      "Q": "Planck resolved this ultraviolet catastrophe by postulating that electromagnetic energy is emitted in discrete packets.",
+      "R": "He termed these discrete packets of energy 'quanta', with energy proportional to frequency ($E = h\\nu$).",
+      "S": "His revolutionary quantum constant ($h$) precisely matched empirical blackbody radiation curves."
+    },
+    "fixed_end": "6: Planck's quantum hypothesis dismantled classical physics, inaugurating modern quantum mechanics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Planck and blackbody radiation (1900). Sentence P describes the classical ultraviolet catastrophe. Sentence Q shows Planck proposing discrete energy emission. Sentence R defines 'quanta' and $E=h\\nu$. Sentence S shows Planck's constant matching empirical curves, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_227",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, excessive financial leverage amplifies vulnerability during sudden macroeconomic downturns.",
+      "B": "Corporate debt issuance surges during prolonged regimes of low benchmark interest rates.",
+      "C": "Firms borrow cheap capital to fund share buybacks and aggressive acquisition mergers.",
+      "D": "When interest rates subsequently rise, servicing variable debt burdens strains corporate cash flows."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces corporate borrowing surging during low-rate regimes. Sentence C explains firms borrowing for buybacks and mergers. Sentence D shows rising rates straining cash flow. Sentence A concludes on leverage risks ('Consequently, excessive financial leverage...')."
+  },
+  {
+    "id": "ENG_PJ_228",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The Panama Canal was completed in 1914, connecting the Atlantic and Pacific oceans.",
+    "jumbled_sentences": {
+      "P": "An initial nineteenth-century French excavation attempt collapsed due to engineering errors and tropical diseases.",
+      "Q": "The United States acquired the canal zone in 1903, implementing aggressive yellow fever eradication campaigns.",
+      "R": "Engineers abandoned sea-level designs in favor of an ingenious gravity-fed lock system powered by Gatun Lake.",
+      "S": "The canal slashed inter-oceanic maritime transit distances by over eight thousand nautical miles."
+    },
+    "fixed_end": "6: The waterway revolutionized global shipping logistics and solidified American geopolitical influence.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the 1914 completion of the Panama Canal. Sentence P notes the failed French attempt. Sentence Q describes the 1903 US takeover and disease eradication. Sentence R describes the Gatun Lake lock engineering. Sentence S highlights cutting 8,000 nautical miles, leading to geopolitical influence in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_229",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly porous vesicular basalt.",
+      "B": "Pahoehoe lava flows advance as smooth, ropy molten sheets across volcanic slopes.",
+      "C": "As the outer basaltic crust cools in ambient air, underlying molten magma continues to surge forward.",
+      "D": "The moving fluid twists the plastic surface skin into characteristic convoluted ropy folds."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces pahoehoe lava flows. Sentence C explains the outer crust cooling while inner magma flows. Sentence D describes the molten fluid twisting the surface into ropy folds. Sentence A concludes with 'This rapid crystallization' creating porous basalt."
+  },
+  {
+    "id": "ENG_PJ_230",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1898, Marie and Pierre Curie announced the discovery of two previously unknown radioactive elements.",
+    "jumbled_sentences": {
+      "P": "They processed tons of uranium-rich pitchblende ore through laborious fractional crystallization.",
+      "Q": "They isolated polonium, naming it in honor of Marie's native homeland of Poland.",
+      "R": "Subsequently, they identified radium, which exhibited extraordinary luminescent radioactive properties.",
+      "S": "Their research proved that radioactivity was an intrinsic atomic property rather than a molecular reaction."
+    },
+    "fixed_end": "6: Marie Curie was awarded Nobel Prizes in both Physics and Chemistry for these pioneering breakthroughs.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Marie and Pierre Curie discovering radioactive elements in 1898. Sentence P describes processing pitchblende ore. Sentence Q describes isolating polonium. Sentence R details identifying radium. Sentence S explains proving radioactivity as an atomic property, leading to her two Nobel Prizes in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_231",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This persistent deficit drains domestic liquidity, forcing painful structural economic adjustments.",
+      "B": "A persistent current account deficit occurs when a nation imports more goods and services than it exports.",
+      "C": "To balance international accounts, the debtor nation must borrow foreign capital or sell domestic assets.",
+      "D": "If foreign capital inflows suddenly reverse, the nation faces rapid currency depreciation and debt distress."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines a persistent current account deficit. Sentence C explains borrowing or selling assets to balance accounts. Sentence D shows risks if foreign capital reverses. Sentence A summarizes 'This persistent deficit' forcing structural adjustments."
+  },
+  {
+    "id": "ENG_PJ_232",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1929, Edwin Hubble published observational proof that the universe is undergoing cosmological expansion.",
+    "jumbled_sentences": {
+      "P": "Using the 100-inch Hooker Telescope at Mount Wilson, he measured the distances to Cepheid variable stars.",
+      "Q": "He calculated the radial velocities of distant galaxies using Doppler spectral redshift lines.",
+      "R": "Hubble discovered that distant galaxies are receding from Earth at speeds proportional to their distance.",
+      "S": "This linear relationship between recessional velocity and distance became known as Hubble's Law."
+    },
+    "fixed_end": "6: His discovery dismantled the static universe model and provided empirical support for the Big Bang.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Hubble proving cosmic expansion (1929). Sentence P notes measuring Cepheid variables at Mount Wilson. Sentence Q explains Doppler redshift radial velocities. Sentence R details distance-proportional recession speeds. Sentence S names Hubble's Law, leading directly to the Big Bang in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_233",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid kinetic heating causes space debris to ablate and glow as incandescent meteors.",
+      "B": "Meteoroids enter Earth's upper atmosphere at extreme hypersonic velocities exceeding forty kilometers per second.",
+      "C": "Atmospheric air molecules in front of the descending projectile undergo intense aerodynamic compression.",
+      "D": "Extreme compression temperatures generate a luminous plasma envelope surrounding the disintegrating rock."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces meteoroids entering the atmosphere at hypersonic speeds. Sentence C explains air molecules undergoing aerodynamic compression. Sentence D describes high temperatures creating a plasma envelope. Sentence A concludes with 'This rapid kinetic heating' ablating meteors."
+  },
+  {
+    "id": "ENG_PJ_234",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1884, representatives from twenty-five nations convened in Washington, D.C., for the International Meridian Conference.",
+    "jumbled_sentences": {
+      "P": "Expanding transcontinental railway networks necessitated a standardized global timekeeping system.",
+      "Q": "Delegates selected the Royal Observatory at Greenwich, London, as the initial Prime Meridian (0° longitude).",
+      "R": "This choice established Greenwich Mean Time (GMT) as the universal reference for worldwide solar time.",
+      "S": "The globe was divided into twenty-four standardized hourly time zones spaced fifteen degrees apart."
+    },
+    "fixed_end": "6: Standardized time zones eliminated thousands of confusing local solar times across international transit corridors.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the 1884 International Meridian Conference. Sentence P explains railway expansion driving standardized time. Sentence Q details choosing Greenwich as the Prime Meridian. Sentence R explains GMT. Sentence S describes 24 time zones, concluding into Statement 6."
+  },
+  {
+    "id": "ENG_PJ_235",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, conservationists establish wildlife corridors to reconnect fragmented forest habitats.",
+      "B": "Habitat fragmentation divides continuous natural ecosystems into isolated, miniature forest patches.",
+      "C": "Restricted gene flow between isolated animal populations accelerates inbreeding depression.",
+      "D": "Over time, local demographic collapses push endangered species toward regional extinction."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines habitat fragmentation. Sentence C explains restricted gene flow and inbreeding. Sentence D shows demographic collapse leading to regional extinction. Sentence A presents the conservation remedy ('Consequently, conservationists establish...')."
+  },
+  {
+    "id": "ENG_PJ_236",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1908, a massive aerial explosion occurred above the remote Siberian taiga near the Podkamennaya Tunguska River.",
+    "jumbled_sentences": {
+      "P": "The blast flattened over eighty million trees across two thousand square kilometers of forest.",
+      "Q": "Eyewitnesses reported a blinding fireball traveling across the sky followed by seismic shockwaves.",
+      "R": "Curiously, early Soviet scientific expeditions found no impact crater or large meteorite fragments.",
+      "S": "Modern astrophysicists deduce that a stone meteoroid detonated in mid-air at an altitude of five to ten kilometers."
+    },
+    "fixed_end": "6: The Tunguska event remains the largest recorded cosmic impact event in modern human history.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the 1908 Tunguska explosion. Sentence P details 80 million trees flattened. Sentence Q notes eyewitness accounts of the fireball and shockwave. Sentence R highlights the absence of a crater. Sentence S explains the mid-air atmospheric airburst, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_237",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This enzymatic cleavage triggers programmed cellular apoptosis in virus-infected cells.",
+      "B": "Cytotoxic T lymphocytes recognize foreign viral peptides presented on MHC Class I molecules.",
+      "C": "Upon target recognition, the lymphocyte secretes perforin to permeabilize the infected cell membrane.",
+      "D": "Granzymes enter through these membrane pores, activating intracellular apoptotic cascades."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces cytotoxic T cells recognizing viral peptides on MHC Class I. Sentence C shows perforin creating pores. Sentence D explains granzymes entering via pores. Sentence A concludes with 'This enzymatic cleavage' triggering apoptosis."
+  },
+  {
+    "id": "ENG_PJ_238",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1869, Russian chemist Dmitri Mendeleev published the first comprehensive Periodic Table of Elements.",
+    "jumbled_sentences": {
+      "P": "He arranged known chemical elements in order of increasing atomic weight, grouping those with shared valencies.",
+      "Q": "He observed that chemical and physical properties recurred periodically across rows and columns.",
+      "R": "Boldly, Mendeleev left deliberate blank spaces in his table for undiscovered elements.",
+      "S": "He accurately predicted the atomic masses and chemical properties of gallium, scandium, and germanium."
+    },
+    "fixed_end": "6: The subsequent discovery of these predicted elements validated the predictive power of the periodic law.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Mendeleev's 1869 Periodic Table. Sentence P explains arranging elements by atomic weight and valency. Sentence Q notes periodic recurrence of properties. Sentence R highlights leaving blank spaces. Sentence S details predicting gallium, scandium, and germanium, confirmed in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_239",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Explosive volcanic eruptions occur when gas-rich silicic magma ascends rapidly toward the surface.",
+      "C": "As confining lithostatic pressure drops, dissolved water vapor rapidly exsolves into expanding bubbles.",
+      "D": "The sudden expansion violently shatters the viscous molten rock into airborne tephra fragments."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces ascending silicic magma in explosive eruptions. Sentence C describes dissolved gas exsolving into bubbles as pressure drops. Sentence D explains bubbles shattering the magma into tephra. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_240",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The Apollo 13 lunar mission was launched on April 11, 1970, aiming for a moon landing in Fra Mauro.",
+    "jumbled_sentences": {
+      "P": "Two days into the flight, an electrical short-circuit triggered an explosion in oxygen tank number two.",
+      "Q": "The explosion crippled the Service Module, depriving the Command Module of electrical power and oxygen.",
+      "R": "The three astronauts were forced to utilize the Lunar Module *Aquarius* as a makeshift life raft.",
+      "S": "Mission Control in Houston engineered improvisational carbon dioxide scrubbers and trajectory burns."
+    },
+    "fixed_end": "6: Against extraordinary odds, the crew splashed down safely in the South Pacific, turning a near-disaster into a triumph.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the Apollo 13 launch in 1970. Sentence P describes the oxygen tank explosion. Sentence Q explains the crippled Service Module. Sentence R describes using the Lunar Module as a life raft. Sentence S notes Houston engineering improvised scrubbers and burns, leading to safe splashdown in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_241",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health agencies enforce rigorous herd vaccination thresholds to prevent resurgence.",
+      "B": "Herd immunity develops when a critical proportion of a population becomes immune to an infectious pathogen.",
+      "C": "Immune individuals act as transmission barriers, breaking infectious disease propagation chains.",
+      "D": "This indirect barrier protects vulnerable newborns and immunocompromised individuals who cannot be vaccinated."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines herd immunity. Sentence C explains immune individuals breaking transmission chains. Sentence D shows 'This indirect barrier' protecting vulnerable individuals. Sentence A gives the policy conclusion ('Consequently, public health agencies...')."
+  },
+  {
+    "id": "ENG_PJ_242",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1856, workers in the Neander Valley near Düsseldorf, Germany, uncovered fossilized skeletal remains in a limestone cave.",
+    "jumbled_sentences": {
+      "P": "The cranium featured a low, sloping forehead, prominent brow ridges, and thick cranial vault bones.",
+      "Q": "Initially, anatomists misidentified the fossils as the deformed skeleton of a modern Cossack soldier.",
+      "R": "Anatomist William King recognized the distinctive morphology, naming the species *Homo neanderthalensis*.",
+      "S": "This marked the first recognized fossil discovery of an extinct archaic human species."
+    },
+    "fixed_end": "6: Modern ancient genomics has since proven that Neanderthals interbred with early anatomically modern humans.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the 1856 Neander Valley fossil discovery. Sentence P describes cranium anatomy (brow ridges, sloping forehead). Sentence Q notes initial misidentification as a Cossack soldier. Sentence R shows King naming *Homo neanderthalensis*. Sentence S highlights the first archaic human discovery, leading to genomic interbreeding in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_243",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This spatial division of labor enhances biological fitness across the entire superorganism.",
+      "B": "Leafcutter ant colonies display complex polyethic caste differentiation.",
+      "C": "Minim workers tend fungal gardens, while media workers forage and cut fresh foliage.",
+      "D": "Massive major soldiers defend perimeter trails and nest entrances from predatory army ants."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces caste differentiation in leafcutter ants. Sentence C describes minim and media workers. Sentence D describes major soldier defense. Sentence A concludes with 'This spatial division of labor' enhancing superorganism fitness."
+  },
+  {
+    "id": "ENG_PJ_244",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The discovery of penicillin by Alexander Fleming in 1928 occurred by serendipitous laboratory accident.",
+    "jumbled_sentences": {
+      "P": "Returning from holiday, he found a contaminated Petri dish where mold had lysed surrounding *Staphylococcus* colonies.",
+      "Q": "He identified the secretion as penicillin, noting its remarkable bactericidal properties against Gram-positive pathogens.",
+      "R": "However, Fleming struggled to chemically stabilize and mass-purify the unstable antibiotic compound.",
+      "S": "In the early 1940s, Howard Florey and Ernst Chain engineered biochemical methods to produce clinical-grade penicillin."
+    },
+    "fixed_end": "6: Mass production of penicillin saved millions of Allied soldiers' lives during World War II.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Fleming's 1928 discovery of penicillin. Sentence P describes the contaminated mold dish. Sentence Q details identifying penicillin and its bactericidal action. Sentence R notes chemical stabilization difficulties. Sentence S explains Florey and Chain's mass purification, leading to WWII impact in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_245",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, high transaction costs prevent direct private bargaining over transnational environmental externalities.",
+      "B": "The Coase Theorem establishes that parties will bargain to an efficient outcome if property rights are well-defined.",
+      "C": "However, this frictionless economic result strictly assumes zero transaction and coordination costs.",
+      "D": "In real-world air pollution disputes, thousands of dispersed citizens face immense collective action friction."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces the Coase Theorem efficiency premise. Sentence C highlights the critical zero-transaction-cost assumption. Sentence D shows real-world friction among dispersed citizens. Sentence A concludes with the bargaining failure ('Consequently, high transaction costs prevent...')."
+  },
+  {
+    "id": "ENG_PJ_246",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1938, Otto Hahn and Fritz Strassmann discovered nuclear fission in uranium at the Kaiser Wilhelm Institute.",
+    "jumbled_sentences": {
+      "P": "They bombarded uranium nuclei with thermal neutrons, detecting lighter barium isotopes among the reaction products.",
+      "Q": "Lise Meitner and Otto Frisch provided the theoretical physical explanation of how the uranium nucleus split.",
+      "R": "They calculated that the fission process converted nuclear mass into immense kinetic energy ($E = mc^2$).",
+      "S": "Physicists quickly recognized that secondary neutrons released during fission could sustain a self-propagating chain reaction."
+    },
+    "fixed_end": "6: This realization prompted Leo Szilard and Albert Einstein to warn President Roosevelt, initiating the Manhattan Project.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Hahn and Strassmann discovering fission in 1938. Sentence P describes detecting barium from neutron bombardment. Sentence Q introduces Meitner and Frisch's theoretical model. Sentence R calculates energy conversion ($E=mc^2$). Sentence S explains secondary neutrons enabling chain reactions, leading to the Manhattan Project in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_247",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Subduction zone volcanism generates highly viscous, gas-rich dacitic and rhyolitic magmas.",
+      "C": "As magma rises into volcanic vents, decompression causes dissolved water to boil into expanding bubbles.",
+      "D": "The violent rupture of these expanding bubbles fragments magma into airborne ash and pumice."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces subduction zone dacitic/rhyolitic magmas. Sentence C describes decompression causing dissolved water to bubble. Sentence D explains bubble rupture fragmenting magma. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_248",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In the late 1960s, the United States Department of Defense funded the development of ARPANET.",
+    "jumbled_sentences": {
+      "P": "Engineers sought to create a robust, decentralized communications network resilient to military nuclear strikes.",
+      "Q": "They implemented packet-switching technology, allowing data to navigate multiple dynamic redundant routes.",
+      "R": "In 1969, the first network message ('LO') was transmitted between computers at UCLA and Stanford.",
+      "S": "In 1983, the adoption of standardized TCP/IP protocols interconnected disparate networks into the global Internet."
+    },
+    "fixed_end": "6: Today, the global Internet supports billions of interconnected devices and forms the backbone of digital civilization.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces ARPANET funding in the late 1960s. Sentence P explains the goal of a decentralized, strike-resilient network. Sentence Q details packet switching over dynamic routes. Sentence R notes the first 1969 message between UCLA and Stanford. Sentence S describes the 1983 TCP/IP transition, connecting to the modern Internet in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_249",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, central banks deploy macroprudential capital buffers to mitigate systemic contagion.",
+      "B": "Interconnected interbank lending markets facilitate rapid liquidity transmission across global financial systems.",
+      "C": "However, excessive bilateral counterparty exposures create structural contagion vulnerabilities.",
+      "D": "When a major systemically important financial institution fails, cascading defaults propagate through payment networks."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces interbank lending markets. Sentence C contrasts this with counterparty exposure vulnerabilities. Sentence D explains cascading defaults when a major institution fails. Sentence A states the regulatory remedy ('Consequently, central banks deploy...')."
+  },
+  {
+    "id": "ENG_PJ_250",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1915, Alfred Wegener published *The Origin of Continents and Oceans*, proposing continental drift.",
+    "jumbled_sentences": {
+      "P": "He assembled geological evidence of matching fossil distributions across South America and Africa.",
+      "Q": "He hypothesized that all modern landmasses were once assembled into a single supercontinent named Pangaea.",
+      "R": "However, geophysicists rejected his theory because he could not provide a viable physical propulsion mechanism.",
+      "S": "It was not until the 1960s that paleomagnetic seafloor spreading confirmed plate tectonics."
+    },
+    "fixed_end": "6: Plate tectonics is now recognized as the grand unifying theory of modern geosciences.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Wegener's 1915 book on continental drift. Sentence P details matching fossil evidence. Sentence Q introduces Pangaea. Sentence R notes rejection due to lack of a propulsion mechanism. Sentence S describes 1960s seafloor spreading confirmation, leading to modern plate tectonics in Statement 6."
+  }
+]

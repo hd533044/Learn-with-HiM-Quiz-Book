@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0801",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NIGGARDLY**",
+    "options": {
+      "A": "Parsimonious",
+      "B": "Generous",
+      "C": "Munificent",
+      "D": "Lavish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Niggardly' means ungenerous with money, time, or resources; stingy. 'Parsimonious', 'miserly', or 'penurious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0802",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NIGGARDLY**",
+    "options": {
+      "A": "Miserly",
+      "B": "Stingy",
+      "C": "Parsimonious",
+      "D": "Munificent"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Niggardly' means stingy or tightfisted. 'Munificent', 'generous', or 'bountiful' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0803",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NOXIOUS**",
+    "options": {
+      "A": "Pernicious",
+      "B": "Innocuous",
+      "C": "Salubrious",
+      "D": "Wholesome"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Noxious' means harmful, poisonous, or very unpleasant. 'Pernicious', 'toxic', or 'detrimental' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0804",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NOXIOUS**",
+    "options": {
+      "A": "Toxic",
+      "B": "Harmful",
+      "C": "Pernicious",
+      "D": "Salubrious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Noxious' means harmful or poisonous. 'Salubrious', 'wholesome', or 'healthy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0805",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NUMINOUS**",
+    "options": {
+      "A": "Spiritual",
+      "B": "Mundane",
+      "C": "Prosaic",
+      "D": "Secular"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Numinous' means having a strong religious or spiritual quality; indicating or suggesting the presence of a divinity. 'Spiritual', 'mystical', or 'sacred' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0806",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NUMINOUS**",
+    "options": {
+      "A": "Sacred",
+      "B": "Prosaic",
+      "C": "Mystical",
+      "D": "Divine"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Numinous' means deeply spiritual or divine. 'Prosaic', 'secular', or 'mundane' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0807",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OBDURATE**",
+    "options": {
+      "A": "Intransigent",
+      "B": "Pliable",
+      "C": "Amenable",
+      "D": "Tractable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Obdurate' means stubbornly refusing to change one's opinion or course of action. 'Intransigent', 'obstinate', or 'unyielding' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0808",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OBDURATE**",
+    "options": {
+      "A": "Obstinate",
+      "B": "Stubborn",
+      "C": "Pliable",
+      "D": "Inflexible"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Obdurate' means stubbornly hardened. 'Pliable', 'tractable', or 'yielding' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0809",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OBFUSCATE**",
+    "options": {
+      "A": "Buddle",
+      "B": "Clarify",
+      "C": "Elucidate",
+      "D": "Illuminate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Obfuscate' means to make obscure, unclear, or unintelligible. 'Muddle', 'cloud', or 'confuse' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0810",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OBFUSCATE**",
+    "options": {
+      "A": "Confuse",
+      "B": "Muddle",
+      "C": "Elucidate",
+      "D": "Obscure"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Obfuscate' means to confuse or muddy. 'Elucidate', 'clarify', or 'simplify' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0811",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OBLIQUE**",
+    "options": {
+      "A": "Indirect",
+      "B": "Direct",
+      "C": "Straightforward",
+      "D": "Frank"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Oblique' means not explicit or direct in addressing a point. 'Indirect', 'circuitous', or 'slanting' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0812",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OBLIQUE**",
+    "options": {
+      "A": "Circuitous",
+      "B": "Indirect",
+      "C": "Evasive",
+      "D": "Straightforward"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Oblique' means indirect or evasive. 'Straightforward', 'direct', or 'explicit' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0813",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OBSEQUIOUS**",
+    "options": {
+      "A": "Sycophantic",
+      "B": "Domineering",
+      "C": "Imperious",
+      "D": "Assertive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Obsequious' means obedient or attentive to an excessive or servile degree. 'Sycophantic', 'fawning', or 'servile' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0814",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OBSEQUIOUS**",
+    "options": {
+      "A": "Fawning",
+      "B": "Servile",
+      "C": "Imperious",
+      "D": "Toadying"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Obsequious' means slavishly submissive. 'Imperious', 'domineering', or 'assertive' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0815",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OBSOLETE**",
+    "options": {
+      "A": "Antiquated",
+      "B": "Contemporary",
+      "C": "Modern",
+      "D": "Current"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Obsolete' means no longer produced or used; out of date. 'Antiquated', 'archaic', or 'outmoded' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0816",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OBSOLETE**",
+    "options": {
+      "A": "Archaic",
+      "B": "Contemporary",
+      "C": "Antiquated",
+      "D": "Defunct"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Obsolete' means outmoded or disused. 'Contemporary', 'modern', or 'current' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0817",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OBSTINATE**",
+    "options": {
+      "A": "Stubborn",
+      "B": "Docile",
+      "C": "Compliant",
+      "D": "Pliant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Obstinate' means stubbornly refusing to change one's opinion or chosen course of action. 'Stubborn', 'mulish', or 'intractable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0818",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OBSTINATE**",
+    "options": {
+      "A": "Mulish",
+      "B": "Tenacious",
+      "C": "Pliable",
+      "D": "Inflexible"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Obstinate' means stubborn. 'Pliable', 'docile', or 'submissive' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0819",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OBSTREPEROUS**",
+    "options": {
+      "A": "Unruly",
+      "B": "Placid",
+      "C": "Quiet",
+      "D": "Disciplined"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Obstreperous' means noisy and difficult to control. 'Unruly', 'boisterous', or 'clamorous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0820",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OBSTREPEROUS**",
+    "options": {
+      "A": "Clamorous",
+      "B": "Boisterous",
+      "C": "Unruly",
+      "D": "Disciplined"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Obstreperous' means wildly noisy and rebellious. 'Disciplined', 'orderly', or 'quiet' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0821",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OBTUSE**",
+    "options": {
+      "A": "Dense",
+      "B": "Astute",
+      "C": "Sharp",
+      "D": "Perspicacious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Obtuse' means annoyingly insensitive or slow to understand. 'Dense', 'dull-witted', or 'imperceptive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0822",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OBTUSE**",
+    "options": {
+      "A": "Dull",
+      "B": "Dense",
+      "C": "Stolid",
+      "D": "Astute"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Obtuse' means dull or blunt-minded. 'Astute', 'shrewd', or 'sharp' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0823",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OBVIATE**",
+    "options": {
+      "A": "Preclude",
+      "B": "Necessitate",
+      "C": "Require",
+      "D": "Involve"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Obviate' means to remove (a need or difficulty); prevent. 'Preclude', 'prevent', or 'forestall' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0824",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OBVIATE**",
+    "options": {
+      "A": "Preclude",
+      "B": "Forestall",
+      "C": "Necessitate",
+      "D": "Anticipate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Obviate' means to make unnecessary. 'Necessitate', 'require', or 'cause' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0825",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OCCLUSION**",
+    "options": {
+      "A": "Blockage",
+      "B": "Opening",
+      "C": "Passage",
+      "D": "Aperture"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Occlusion' refers to the blockage or closing of a blood vessel or hollow organ. 'Blockage', 'obstruction', or 'closure' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0826",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OCCLUSION**",
+    "options": {
+      "A": "Obstruction",
+      "B": "Opening",
+      "C": "Blockage",
+      "D": "Impediment"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Occlusion' means an obstruction or closure. 'Opening', 'aperture', or 'unclogging' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0827",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ODIOUS**",
+    "options": {
+      "A": "Abominable",
+      "B": "Delightful",
+      "C": "Pleasant",
+      "D": "Charming"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Odious' means extremely unpleasant; repulsive. 'Abominable', 'loathsome', or 'detestable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0828",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ODIOUS**",
+    "options": {
+      "A": "Repulsive",
+      "B": "Loathsome",
+      "C": "Abominable",
+      "D": "Delightful"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Odious' means detestable or hateful. 'Delightful', 'charming', or 'pleasant' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0829",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OFFICIOUS**",
+    "options": {
+      "A": "Meddlesome",
+      "B": "Unobtrusive",
+      "C": "Modest",
+      "D": "Reticent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Officious' means assertively domineering in an intrusive or unsolicited way. 'Meddlesome', 'intrusive', or 'bumptious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0830",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OFFICIOUS**",
+    "options": {
+      "A": "Intrusive",
+      "B": "Meddlesome",
+      "C": "Overbearing",
+      "D": "Unobtrusive"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Officious' means meddlesome and interfering. 'Unobtrusive', 'reserved', or 'modest' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0831",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ONEROUS**",
+    "options": {
+      "A": "Burdensome",
+      "B": "Effortless",
+      "C": "Facile",
+      "D": "Simple"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Onerous' means (of a task, duty, or responsibility) involving an amount of effort and difficulty that is oppressively burdensome. 'Burdensome', 'taxing', or 'exacting' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0832",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ONEROUS**",
+    "options": {
+      "A": "Burdensome",
+      "B": "Exacting",
+      "C": "Effortless",
+      "D": "Oppressive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Onerous' means oppressively burdensome. 'Effortless', 'easy', or 'light' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0833",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OPAQUE**",
+    "options": {
+      "A": "Nontransparent",
+      "B": "Pellucid",
+      "C": "Translucent",
+      "D": "Clear"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Opaque' means not able to be seen through; not transparent. 'Nontransparent', 'cloudy', or 'obscure' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0834",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OPAQUE**",
+    "options": {
+      "A": "Obscure",
+      "B": "Pellucid",
+      "C": "Dense",
+      "D": "Murky"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Opaque' means impenetrable to light or unclear. 'Pellucid', 'transparent', or 'lucid' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0835",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OPPROBRIUM**",
+    "options": {
+      "A": "Ignominy",
+      "B": "Kudos",
+      "C": "Acclaim",
+      "D": "Commendation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Opprobrium' refers to harsh criticism or censure; public disgrace. 'Ignominy', 'disgrace', or 'infamy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0836",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OPPROBRIUM**",
+    "options": {
+      "A": "Infamy",
+      "B": "Ignominy",
+      "C": "Acclaim",
+      "D": "Censure"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Opprobrium' means public disgrace and reproach. 'Acclaim', 'glory', or 'praise' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0837",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OPULENT**",
+    "options": {
+      "A": "Affluent",
+      "B": "Destitute",
+      "C": "Impecunious",
+      "D": "Indigent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Opulent' means ostentatiously rich and luxurious or lavish. 'Affluent', 'sumptuous', or 'wealthy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0838",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OPULENT**",
+    "options": {
+      "A": "Sumptuous",
+      "B": "Destitute",
+      "C": "Luxurious",
+      "D": "Affluent"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Opulent' means richly luxurious. 'Destitute', 'poor', or 'impecunious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0839",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OSTENTATIOUS**",
+    "options": {
+      "A": "Pretentious",
+      "B": "Modest",
+      "C": "Unassuming",
+      "D": "Restrained"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ostentatious' means characterized by vulgar or pretentious display; designed to impress or attract notice. 'Pretentious', 'flamboyant', or 'showy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0840",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OSTENTATIOUS**",
+    "options": {
+      "A": "Showy",
+      "B": "Pretentious",
+      "C": "Flamboyant",
+      "D": "Unassuming"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Ostentatious' means boastfully showy. 'Unassuming', 'modest', or 'plain' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0841",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OSTRACIZE**",
+    "options": {
+      "A": "Exile",
+      "B": "Welcome",
+      "C": "Admit",
+      "D": "Embrace"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ostracize' means to exclude (someone) from a society or group. 'Exile', 'banish', or 'boycott' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0842",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OSTRACIZE**",
+    "options": {
+      "A": "Banish",
+      "B": "Boycott",
+      "C": "Welcome",
+      "D": "Shun"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ostracize' means to banish or exclude socially. 'Welcome', 'accept', or 'integrate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0843",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PALLIATE**",
+    "options": {
+      "A": "Mitigate",
+      "B": "Aggravate",
+      "C": "Exacerbate",
+      "D": "Inflame"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Palliate' means to make (a disease or its symptoms) less severe or unpleasant without removing the cause. 'Mitigate', 'alleviate', or 'relieve' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0844",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PALLIATE**",
+    "options": {
+      "A": "Alleviate",
+      "B": "Mitigate",
+      "C": "Aggravate",
+      "D": "Assuage"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Palliate' means to relieve temporarily. 'Aggravate', 'intensify', or 'exacerbate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0845",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PANEGYRIC**",
+    "options": {
+      "A": "Encomium",
+      "B": "Diatribe",
+      "C": "Invective",
+      "D": "Harangue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Panegyric' refers to a public speech or published text in praise of someone or something. 'Encomium', 'eulogy', or 'paean' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0846",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PANEGYRIC**",
+    "options": {
+      "A": "Eulogy",
+      "B": "Diatribe",
+      "C": "Tribute",
+      "D": "Encomium"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Panegyric' is formal public praise. 'Diatribe', 'stricture', or 'denunciation' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0847",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PARAGON**",
+    "options": {
+      "A": "Nonpareil",
+      "B": "Imperfect",
+      "C": "Flaw",
+      "D": "Average"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Paragon' refers to a person or thing regarded as a perfect example of a particular quality. 'Nonpareil', 'archetype', or 'exemplar' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0848",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PARSIMONIOUS**",
+    "options": {
+      "A": "Miserly",
+      "B": "Frugal",
+      "C": "Extravagant",
+      "D": "Niggardly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Parsimonious' means excessively stingy. 'Extravagant', 'lavish', or 'munificent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0849",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PAUCITY**",
+    "options": {
+      "A": "Scarcity",
+      "B": "Plethora",
+      "C": "Surplus",
+      "D": "Abundance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Paucity' means the presence of something only in small or insufficient quantities or amounts; scarcity. 'Scarcity', 'dearth', or 'shortage' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0850",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PAUCITY**",
+    "options": {
+      "A": "Dearth",
+      "B": "Deficiency",
+      "C": "Plethora",
+      "D": "Scarcity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Paucity' means scarcity or shortage. 'Plethora', 'abundance', or 'surplus' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

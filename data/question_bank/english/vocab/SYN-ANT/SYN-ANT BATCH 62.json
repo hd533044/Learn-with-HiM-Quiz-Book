@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_3051",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REBUT**",
+    "options": {
+      "A": "Refute",
+      "B": "Confirm",
+      "C": "Validate",
+      "D": "Corroborate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rebut' means to claim or prove that evidence or an accusation is false. 'Refute', 'deny', or 'disprove' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3052",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REBUT**",
+    "options": {
+      "A": "Refute",
+      "B": "Deny",
+      "C": "Confirm",
+      "D": "Disprove"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rebut' means to disprove. 'Confirm', 'validate', or 'corroborate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3053",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RECALCITRANT**",
+    "options": {
+      "A": "Obstinate",
+      "B": "Compliant",
+      "C": "Obedient",
+      "D": "Yielding"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Recalcitrant' means having an obstinately uncooperative attitude toward authority. 'Obstinate', 'stubborn', or 'defiant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3054",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RECALCITRANT**",
+    "options": {
+      "A": "Obstinate",
+      "B": "Stubborn",
+      "C": "Compliant",
+      "D": "Defiant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Recalcitrant' means uncooperative. 'Compliant', 'obedient', or 'yielding' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3055",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RECANT**",
+    "options": {
+      "A": "Renounce",
+      "B": "Maintain",
+      "C": "Affirm",
+      "D": "Assert"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Recant' means to say that one no longer holds an opinion or belief. 'Renounce', 'retract', or 'disavow' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3056",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RECANT**",
+    "options": {
+      "A": "Renounce",
+      "B": "Retract",
+      "C": "Affirm",
+      "D": "Disavow"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Recant' means to retract a belief. 'Affirm', 'maintain', or 'assert' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3057",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RECEPTIVE**",
+    "options": {
+      "A": "Open-minded",
+      "B": "Close-minded",
+      "C": "Resistant",
+      "D": "Stubborn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Receptive' means willing to consider or accept new suggestions and ideas. 'Open-minded', 'responsive', or 'amenable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3058",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RECEPTIVE**",
+    "options": {
+      "A": "Open-minded",
+      "B": "Responsive",
+      "C": "Close-minded",
+      "D": "Amenable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Receptive' means willing to accept ideas. 'Close-minded', 'resistant', or 'stubborn' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3059",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RECONDITE**",
+    "options": {
+      "A": "Obscure",
+      "B": "Clear",
+      "C": "Simple",
+      "D": "Obvious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Recondite' means (of a subject or knowledge) little known; abstruse. 'Obscure', 'abstruse', or 'esoteric' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3060",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RECONDITE**",
+    "options": {
+      "A": "Obscure",
+      "B": "Abstruse",
+      "C": "Clear",
+      "D": "Esoteric"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Recondite' means little known. 'Clear', 'obvious', or 'simple' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3061",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RECRUDESCENCE**",
+    "options": {
+      "A": "Recurrence",
+      "B": "End",
+      "C": "Termination",
+      "D": "Conclusion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Recrudescence' refers to the recurrence of a disease or undesirable condition. 'Recurrence', 'renewal', or 'revival' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3062",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RECRUDESCENCE**",
+    "options": {
+      "A": "Recurrence",
+      "B": "Renewal",
+      "C": "Termination",
+      "D": "Revival"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Recrudescence' is the recurrence of something. 'Termination', 'end', or 'conclusion' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3063",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RECTIFY**",
+    "options": {
+      "A": "Correct",
+      "B": "Worsen",
+      "C": "Damage",
+      "D": "Corrupt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rectify' means to put right; correct. 'Correct', 'fix', or 'remedy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3064",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RECTIFY**",
+    "options": {
+      "A": "Correct",
+      "B": "Fix",
+      "C": "Worsen",
+      "D": "Remedy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rectify' means to correct. 'Worsen', 'damage', or 'corrupt' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3065",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RECTITUDE**",
+    "options": {
+      "A": "Righteousness",
+      "B": "Immorality",
+      "C": "Dishonesty",
+      "D": "Corruption"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rectitude' refers to morally correct behavior or thinking; righteousness. 'Righteousness', 'integrity', or 'honesty' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3066",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RECTITUDE**",
+    "options": {
+      "A": "Righteousness",
+      "B": "Integrity",
+      "C": "Immorality",
+      "D": "Honesty"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rectitude' means moral uprightness. 'Immorality', 'dishonesty', or 'corruption' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3067",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RECUR**",
+    "options": {
+      "A": "Reoccur",
+      "B": "Stop",
+      "C": "End",
+      "D": "Halt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Recur' means to occur again periodically or frequently. 'Reoccur', 'repeat', or 'happen again' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3068",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RECUR**",
+    "options": {
+      "A": "Reoccur",
+      "B": "Repeat",
+      "C": "Stop",
+      "D": "Happen again"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Recur' means to happen again. 'Stop', 'end', or 'halt' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3069",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REDOUBTABLE**",
+    "options": {
+      "A": "Formidable",
+      "B": "Weak",
+      "C": "Friendly",
+      "D": "Weakling"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Redoubtable' means (of a person) formidable, especially as an opponent. 'Formidable', 'daunting', or 'frightening' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3070",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REDOUBTABLE**",
+    "options": {
+      "A": "Formidable",
+      "B": "Daunting",
+      "C": "Weak",
+      "D": "Frightening"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Redoubtable' means formidable. 'Weak', 'friendly', or 'weakling' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3071",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REDRESS**",
+    "options": {
+      "A": "Remedy",
+      "B": "Damage",
+      "C": "Worsen",
+      "D": "Harm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Redress' means to remedy or set right (an undesirable or unfair situation). 'Remedy', 'rectify', or 'correct' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3072",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REDRESS**",
+    "options": {
+      "A": "Remedy",
+      "B": "Rectify",
+      "C": "Worsen",
+      "D": "Correct"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Redress' means to set right. 'Worsen', 'damage', or 'harm' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3073",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REDUNDANT**",
+    "options": {
+      "A": "Superfluous",
+      "B": "Necessary",
+      "C": "Essential",
+      "D": "Required"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Redundant' means not or no longer needed or useful; superfluous. 'Superfluous', 'excessive', or 'unnecessary' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3074",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REDUNDANT**",
+    "options": {
+      "A": "Superfluous",
+      "B": "Excessive",
+      "C": "Necessary",
+      "D": "Unnecessary"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Redundant' means superfluous. 'Necessary', 'essential', or 'required' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3075",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REFRACTORY**",
+    "options": {
+      "A": "Stubborn",
+      "B": "Compliant",
+      "C": "Obedient",
+      "D": "Yielding"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Refractory' means stubborn or unmanageable. 'Stubborn', 'unruly', or 'recalcitrant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3076",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REFRACTORY**",
+    "options": {
+      "A": "Stubborn",
+      "B": "Unruly",
+      "C": "Compliant",
+      "D": "Recalcitrant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Refractory' means stubborn. 'Compliant', 'obedient', or 'yielding' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3077",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REFUTE**",
+    "options": {
+      "A": "Rebut",
+      "B": "Confirm",
+      "C": "Validate",
+      "D": "Corroborate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Refute' means to prove (a statement or theory) to be wrong or false. 'Rebut', 'deny', or 'disprove' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3078",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REFUTE**",
+    "options": {
+      "A": "Rebut",
+      "B": "Deny",
+      "C": "Confirm",
+      "D": "Disprove"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Refute' means to disprove. 'Confirm', 'validate', or 'corroborate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3079",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REGENERATE**",
+    "options": {
+      "A": "Renew",
+      "B": "Destroy",
+      "C": "Abolish",
+      "D": "End"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Regenerate' means to regrow (new tissue) or to revive or reform. 'Renew', 'revive', or 'restore' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3080",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REGENERATE**",
+    "options": {
+      "A": "Renew",
+      "B": "Revive",
+      "C": "Destroy",
+      "D": "Restore"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Regenerate' means to renew. 'Destroy', 'abolish', or 'end' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3081",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REGRESS**",
+    "options": {
+      "A": "Relapse",
+      "B": "Progress",
+      "C": "Advance",
+      "D": "Improve"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Regress' means to return to a former or less developed state. 'Relapse', 'revert', or 'backslide' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3082",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REGRESS**",
+    "options": {
+      "A": "Relapse",
+      "B": "Revert",
+      "C": "Progress",
+      "D": "Backslide"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Regress' means to go back. 'Progress', 'advance', or 'improve' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3083",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REITERATE**",
+    "options": {
+      "A": "Repeat",
+      "B": "Stop",
+      "C": "Cease",
+      "D": "Halt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reiterate' means to say something again or a number of times, typically for emphasis or clarity. 'Repeat', 'restate', or 'echo' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3084",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REITERATE**",
+    "options": {
+      "A": "Repeat",
+      "B": "Restate",
+      "C": "Stop",
+      "D": "Echo"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reiterate' means to repeat. 'Stop', 'cease', or 'halt' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3085",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REJUVENATE**",
+    "options": {
+      "A": "Revitalize",
+      "B": "Age",
+      "C": "Wear out",
+      "D": "Tire"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rejuvenate' means to make (someone or something) look or feel younger, fresher, or more lively. 'Revitalize', 'renew', or 'refresh' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3086",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REJUVENATE**",
+    "options": {
+      "A": "Revitalize",
+      "B": "Renew",
+      "C": "Age",
+      "D": "Refresh"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rejuvenate' means to make younger. 'Age', 'wear out', or 'tire' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3087",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RELENTLESS**",
+    "options": {
+      "A": "Unremitting",
+      "B": "Yielding",
+      "C": "Gentle",
+      "D": "Soft"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Relentless' means unceasingly intense. 'Unremitting', 'persistent', or 'constant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3088",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RELENTLESS**",
+    "options": {
+      "A": "Unremitting",
+      "B": "Persistent",
+      "C": "Yielding",
+      "D": "Constant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Relentless' means unceasing. 'Yielding', 'gentle', or 'soft' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3089",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RELEVANT**",
+    "options": {
+      "A": "Pertinent",
+      "B": "Irrelevant",
+      "C": "Extraneous",
+      "D": "Unrelated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Relevant' means closely connected or appropriate to the matter at hand. 'Pertinent', 'germane', or 'applicable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3090",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RELEVANT**",
+    "options": {
+      "A": "Pertinent",
+      "B": "Germane",
+      "C": "Irrelevant",
+      "D": "Applicable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Relevant' means connected. 'Irrelevant', 'extraneous', or 'unrelated' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3091",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RELINQUISH**",
+    "options": {
+      "A": "Abandon",
+      "B": "Keep",
+      "C": "Maintain",
+      "D": "Retain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Relinquish' means to voluntarily cease to keep or claim; give up. 'Abandon', 'surrender', or 'forsake' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3092",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RELINQUISH**",
+    "options": {
+      "A": "Abandon",
+      "B": "Surrender",
+      "C": "Maintain",
+      "D": "Forsake"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Relinquish' means to give up. 'Maintain', 'keep', or 'retain' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3093",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REMEDIATE**",
+    "options": {
+      "A": "Correct",
+      "B": "Worsen",
+      "C": "Damage",
+      "D": "Corrupt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Remediate' means to give a remedy for; correct. 'Correct', 'remedy', or 'fix' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3094",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REMEDIATE**",
+    "options": {
+      "A": "Correct",
+      "B": "Remedy",
+      "C": "Worsen",
+      "D": "Fix"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Remediate' means to correct. 'Worsen', 'damage', or 'corrupt' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3095",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REMINISCENCE**",
+    "options": {
+      "A": "Recollection",
+      "B": "Forgetfulness",
+      "C": "Amnesia",
+      "D": "Oblivion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reminiscence' refers to a story told about a past event remembered by the narrator. 'Recollection', 'memory', or 'recall' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3096",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REMINISCENCE**",
+    "options": {
+      "A": "Recollection",
+      "B": "Memory",
+      "C": "Forgetfulness",
+      "D": "Recall"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reminiscence' is a memory. 'Forgetfulness', 'amnesia', or 'oblivion' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3097",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REMISS**",
+    "options": {
+      "A": "Negligent",
+      "B": "Careful",
+      "C": "Attentive",
+      "D": "Diligent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Remiss' means lacking care or attention to duty; negligent. 'Negligent', 'careless', or 'lax' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3098",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REMISS**",
+    "options": {
+      "A": "Negligent",
+      "B": "Careless",
+      "C": "Careful",
+      "D": "Lax"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Remiss' means negligent. 'Careful', 'attentive', or 'diligent' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3099",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REMIT**",
+    "options": {
+      "A": "Send",
+      "B": "Keep",
+      "C": "Hold",
+      "D": "Retain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Remit' means to send (money) in payment or as a gift. 'Send', 'transmit', or 'dispatch' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3100",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REMIT**",
+    "options": {
+      "A": "Send",
+      "B": "Transmit",
+      "C": "Keep",
+      "D": "Dispatch"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Remit' means to send. 'Keep', 'hold', or 'retain' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

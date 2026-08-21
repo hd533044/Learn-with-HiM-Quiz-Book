@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0551",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FRACTIOUS**",
+    "options": {
+      "A": "Peevish",
+      "B": "Affable",
+      "C": "Docile",
+      "D": "Complaisant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fractious' means irritable, quarrelsome, and bad-tempered. 'Peevish', 'irascible', or 'testy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0552",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FRACTIOUS**",
+    "options": {
+      "A": "Irascible",
+      "B": "Testy",
+      "C": "Affable",
+      "D": "Petulant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Fractious' means irritable and unruly. 'Affable', 'good-natured', or 'docile' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0553",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FRUGAL**",
+    "options": {
+      "A": "Parsimonious",
+      "B": "Extravagant",
+      "C": "Prodigal",
+      "D": "Lavish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Frugal' means sparing or economical with regard to money or food. 'Parsimonious', 'thrifty', or 'economical' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0554",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FRUGAL**",
+    "options": {
+      "A": "Thrifty",
+      "B": "Economical",
+      "C": "Extravagant",
+      "D": "Prudent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Frugal' means careful in spending. 'Extravagant', 'lavish', or 'prodigal' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0555",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FULMINATE**",
+    "options": {
+      "A": "Inveigh",
+      "B": "Laud",
+      "C": "Compliment",
+      "D": "Extol"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Fulminate' means to express vehement protest or rage against something. 'Inveigh', 'rail', or 'denounce' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0556",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FULMINATE**",
+    "options": {
+      "A": "Denounce",
+      "B": "Berate",
+      "C": "Rail",
+      "D": "Praise"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Fulminate' means to protest angrily. 'Praise', 'applaud', or 'commend' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0557",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FURTIVE**",
+    "options": {
+      "A": "Surreptitious",
+      "B": "Overt",
+      "C": "Conspicuous",
+      "D": "Candid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Furtive' means attempting to avoid notice or attention, typically because of guilt. 'Surreptitious', 'clandestine', or 'stealthy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0558",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FURTIVE**",
+    "options": {
+      "A": "Stealthy",
+      "B": "Clandestine",
+      "C": "Overt",
+      "D": "Secretive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Furtive' means secret and stealthy. 'Overt', 'open', or 'unconcealed' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0559",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**FUTILE**",
+    "options": {
+      "A": "Fruitless",
+      "B": "Productive",
+      "C": "Efficacious",
+      "D": "Effective"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Futile' means incapable of producing any useful result; pointless. 'Fruitless', 'vain', or 'ineffectual' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0560",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**FUTILE**",
+    "options": {
+      "A": "Pointless",
+      "B": "Vain",
+      "C": "Fruitful",
+      "D": "Bootless"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Futile' means useless or ineffective. 'Fruitful', 'productive', or 'efficacious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0561",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GAINSAY**",
+    "options": {
+      "A": "Contradict",
+      "B": "Affirm",
+      "C": "Endorse",
+      "D": "Corroborate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Gainsay' means to deny or contradict a fact or statement. 'Contradict', 'dispute', or 'deny' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0562",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GAINSAY**",
+    "options": {
+      "A": "Dispute",
+      "B": "Repudiate",
+      "C": "Affirm",
+      "D": "Deny"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Gainsay' means to oppose or contradict. 'Affirm', 'concur', or 'endorse' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0563",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GARNER**",
+    "options": {
+      "A": "Accumulate",
+      "B": "Disperse",
+      "C": "Squander",
+      "D": "Dissipate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Garner' means to gather or collect (something, especially information or approval). 'Accumulate', 'amass', or 'hoard' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0564",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GARNER**",
+    "options": {
+      "A": "Amass",
+      "B": "Disperse",
+      "C": "Collect",
+      "D": "Store"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Garner' means to gather or store up. 'Disperse', 'scatter', or 'dissipate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0565",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GARRULOUS**",
+    "options": {
+      "A": "Loquacious",
+      "B": "Taciturn",
+      "C": "Reticent",
+      "D": "Laconic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Garrulous' means excessively talkative, especially on trivial matters. 'Loquacious', 'voluble', or 'verbose' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0566",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GARRULOUS**",
+    "options": {
+      "A": "Voluble",
+      "B": "Chatty",
+      "C": "Taciturn",
+      "D": "Loquacious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Garrulous' means excessively talkative. 'Taciturn', 'reticent', or 'laconic' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0567",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GAUNT**",
+    "options": {
+      "A": "Haggard",
+      "B": "Corpulent",
+      "C": "Plump",
+      "D": "Stout"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Gaunt' means lean and haggard, especially because of suffering, hunger, or age. 'Haggard', 'emaciated', or 'bony' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0568",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GAUNT**",
+    "options": {
+      "A": "Emaciated",
+      "B": "Scrawny",
+      "C": "Corpulent",
+      "D": "Haggard"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Gaunt' means lean and haggard. 'Corpulent', 'plump', or 'stout' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0569",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GERMANE**",
+    "options": {
+      "A": "Extraneous",
+      "B": "Pertinent",
+      "C": "Irrelevant",
+      "D": "Immaterial"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Germane' means relevant to a subject under consideration. 'Pertinent', 'applicable', or 'apposite' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0570",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GERMANE**",
+    "options": {
+      "A": "Apposite",
+      "B": "Relevant",
+      "C": "Pertinent",
+      "D": "Irrelevant"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Germane' means relevant and appropriate. 'Irrelevant', 'extraneous', or 'inapplicable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0571",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GLIB**",
+    "options": {
+      "A": "Articulate",
+      "B": "Hesitant",
+      "C": "Inarticulate",
+      "D": "Halting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Glib' means fluent and voluble but insincere and shallow. 'Articulate', 'smooth-tongued', or 'voluble' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0572",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GLIB**",
+    "options": {
+      "A": "Voluble",
+      "B": "Smooth",
+      "C": "Hesitant",
+      "D": "Fluent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Glib' means speaking with smooth fluency. 'Hesitant', 'inarticulate', or 'halting' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0573",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GRANDILOQUENT**",
+    "options": {
+      "A": "Pompous",
+      "B": "Simple",
+      "C": "Restrained",
+      "D": "Plain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Grandiloquent' means pompous or extravagant in language, style, or manner. 'Pompous', 'bombastic', or 'magniloquent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0574",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GRANDILOQUENT**",
+    "options": {
+      "A": "Bombastic",
+      "B": "Turgid",
+      "C": "Magniloquent",
+      "D": "Unpretentious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Grandiloquent' means high-flown and pompous. 'Unpretentious', 'plain', or 'restrained' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0575",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GREGARIOUS**",
+    "options": {
+      "A": "Sociable",
+      "B": "Reclusive",
+      "C": "Introverted",
+      "D": "Hermitic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Gregarious' means fond of company; sociable. 'Sociable', 'companionable', or 'convivial' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0576",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GREGARIOUS**",
+    "options": {
+      "A": "Convivial",
+      "B": "Sociable",
+      "C": "Reclusive",
+      "D": "Outgoing"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Gregarious' means enjoying the company of others. 'Reclusive', 'solitary', or 'introverted' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0577",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**GUILE**",
+    "options": {
+      "A": "Deceit",
+      "B": "Candor",
+      "C": "Frankness",
+      "D": "Honesty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Guile' means sly or cunning intelligence; deceit. 'Deceit', 'cunning', or 'artifice' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0578",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**GUILE**",
+    "options": {
+      "A": "Chicanery",
+      "B": "Artifice",
+      "C": "Candor",
+      "D": "Duplicity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Guile' means sly deceit. 'Candor', 'sincerity', or 'artlessness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0579",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HACKNEYED**",
+    "options": {
+      "A": "Original",
+      "B": "Trite",
+      "C": "Fresh",
+      "D": "Novel"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Hackneyed' means (of a phrase or idea) lacking significance through having been overused. 'Trite', 'banal', or 'clichéd' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0580",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HACKNEYED**",
+    "options": {
+      "A": "Banal",
+      "B": "Platitudinous",
+      "C": "Clichéd",
+      "D": "Novel"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Hackneyed' means worn out by overuse. 'Novel', 'fresh', or 'original' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0581",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HALCYON**",
+    "options": {
+      "A": "Tranquil",
+      "B": "Turbulent",
+      "C": "Stormy",
+      "D": "Agitated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Halcyon' denotes a period of time in the past that was idyllically happy and peaceful. 'Tranquil', 'serene', or 'peaceful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0582",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HALCYON**",
+    "options": {
+      "A": "Serene",
+      "B": "Turbulent",
+      "C": "Placid",
+      "D": "Calm"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Halcyon' means peaceful and serene. 'Turbulent', 'stormy', or 'chaotic' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0583",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HARANGUE**",
+    "options": {
+      "A": "Tirade",
+      "B": "Panegyric",
+      "C": "Tribute",
+      "D": "Eulogy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Harangue' refers to a lengthy and aggressive speech. 'Tirade', 'diatribe', or 'screed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0584",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HARANGUE**",
+    "options": {
+      "A": "Diatribe",
+      "B": "Tirade",
+      "C": "Philippic",
+      "D": "Panegyric"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Harangue' is an angry, forceful speech. 'Panegyric', 'eulogy', or 'tribute' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0585",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HARBINGER**",
+    "options": {
+      "A": "Forerunner",
+      "B": "Consequence",
+      "C": "Result",
+      "D": "Outcome"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Harbinger' refers to a person or thing that announces or signals the approach of another. 'Forerunner', 'herald', or 'precursor' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0586",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HAUGHTY**",
+    "options": {
+      "A": "Arrogant",
+      "B": "Disdainful",
+      "C": "Imperious",
+      "D": "Humble"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Haughty' means arrogantly superior and disdainful. 'Humble', 'modest', or 'meek' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0587",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HEDONIST**",
+    "options": {
+      "A": "Sybarite",
+      "B": "Ascetic",
+      "C": "Puritan",
+      "D": "Recluse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hedonist' refers to a person who believes that the pursuit of pleasure is the most important thing in life. 'Sybarite', 'voluptuary', or 'epicure' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0588",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HEDONIST**",
+    "options": {
+      "A": "Voluptuary",
+      "B": "Epicure",
+      "C": "Sybarite",
+      "D": "Ascetic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Hedonist' means a pleasure-seeker. 'Ascetic', 'puritan', or 'disciplinarian' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0589",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HEGEMONY**",
+    "options": {
+      "A": "Dominance",
+      "B": "Subjugation",
+      "C": "Servitude",
+      "D": "Submission"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hegemony' means leadership or dominance, especially by one country or social group over others. 'Dominance', 'supremacy', or 'ascendancy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0590",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HEGEMONY**",
+    "options": {
+      "A": "Supremacy",
+      "B": "Subjugation",
+      "C": "Ascendancy",
+      "D": "Dominance"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Hegemony' means leadership or authority over others. 'Subjugation', 'subordination', or 'servitude' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0591",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HERETIC**",
+    "options": {
+      "A": "Dissenter",
+      "B": "Conformist",
+      "C": "Believer",
+      "D": "Follower"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Heretic' refers to a person holding an opinion at odds with what is generally accepted. 'Dissenter', 'apostate', or 'nonconformist' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0592",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HERETIC**",
+    "options": {
+      "A": "Schismatic",
+      "B": "Conformist",
+      "C": "Dissenter",
+      "D": "Iconoclast"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Heretic' means a religious or ideological dissenter. 'Conformist', 'adherent', or 'believer' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0593",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HETEROGENEOUS**",
+    "options": {
+      "A": "Diverse",
+      "B": "Uniform",
+      "C": "Homogeneous",
+      "D": "Identical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Heterogeneous' means diverse in character or content. 'Diverse', 'miscellaneous', or 'variegated' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0594",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HETEROGENEOUS**",
+    "options": {
+      "A": "Motley",
+      "B": "Diverse",
+      "C": "Variegated",
+      "D": "Homogeneous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Heterogeneous' means mixed and varied. 'Homogeneous', 'uniform', or 'identical' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0595",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HIATUS**",
+    "options": {
+      "A": "Interruption",
+      "B": "Continuity",
+      "C": "Perpetuation",
+      "D": "Progression"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hiatus' refers to a pause or gap in a sequence, series, or process. 'Interruption', 'interval', or 'break' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0596",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HIATUS**",
+    "options": {
+      "A": "Interval",
+      "B": "Break",
+      "C": "Continuity",
+      "D": "Lull"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hiatus' means an interruption or break. 'Continuity', 'perpetuation', or 'continuation' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0597",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HOMOGENEOUS**",
+    "options": {
+      "A": "Uniform",
+      "B": "Diverse",
+      "C": "Heterogeneous",
+      "D": "Motley"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Homogeneous' means of the same kind; alike. 'Uniform', 'consistent', or 'unvarying' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0598",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HOMOGENEOUS**",
+    "options": {
+      "A": "Unvarying",
+      "B": "Uniform",
+      "C": "Heterogeneous",
+      "D": "Consistent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Homogeneous' means uniform throughout. 'Heterogeneous', 'varied', or 'mixed' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0599",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HYPERBOLE**",
+    "options": {
+      "A": "Exaggeration",
+      "B": "Understatement",
+      "C": "Meiosis",
+      "D": "Litotes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hyperbole' refers to exaggerated statements or claims not meant to be taken literally. 'Exaggeration', 'overstatement', or 'magnification' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0600",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HYPERBOLE**",
+    "options": {
+      "A": "Overstatement",
+      "B": "Magnification",
+      "C": "Understatement",
+      "D": "Amplification"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hyperbole' means deliberate overstatement. 'Understatement' or 'litotes' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

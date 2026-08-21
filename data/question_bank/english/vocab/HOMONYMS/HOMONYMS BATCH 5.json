@@ -1,0 +1,614 @@
+[
+  {
+    "id": "ENG_VOCAB_HOM_2501",
+    "question": "Choose the correct word: 'The _____ of the experiment was to measure the boiling point.'",
+    "options": {
+      "A": "objective",
+      "B": "object",
+      "C": "objection",
+      "D": "abject"
+    },
+    "correct_option": "A",
+    "explanation": "'Objective' as a noun means a goal or purpose. 'Object' refers to a physical thing or a focus of action."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2502",
+    "question": "Fill in the blank: 'He offered no _____ to the proposed changes.'",
+    "options": {
+      "A": "objective",
+      "B": "object",
+      "C": "objection",
+      "D": "abjection"
+    },
+    "correct_option": "C",
+    "explanation": "'Objection' is a reason or argument offered in disagreement or opposition."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2503",
+    "question": "Spot the error: 'The poverty of his situation left him in an abject state.'",
+    "options": {
+      "A": "The poverty of his situation",
+      "B": "left him",
+      "C": "in an abject state.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Abject' means (of a situation or condition) extremely bad, unpleasant, and degrading. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2504",
+    "question": "Fill in the blank: 'The _____ of the story is to treat others with kindness.'",
+    "options": {
+      "A": "moral",
+      "B": "morale",
+      "C": "mortal",
+      "D": "morel"
+    },
+    "correct_option": "A",
+    "explanation": "'Moral' refers to the lesson or principle of right and wrong. 'Morale' refers to the confidence or enthusiasm of a group."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2505",
+    "question": "Fill in the blank: 'The team's _____ was high after their victory.'",
+    "options": {
+      "A": "moral",
+      "B": "morale",
+      "C": "mortal",
+      "D": "model"
+    },
+    "correct_option": "B",
+    "explanation": "'Morale' is the level of psychological confidence and enthusiasm."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2506",
+    "question": "Spot the error: 'All humans are mortal and subject to the laws of nature.'",
+    "options": {
+      "A": "All humans are",
+      "B": "mortal and subject",
+      "C": "to the laws of nature.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Mortal' means subject to death. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2507",
+    "question": "Fill in the blank: 'The king’s _____ was decorated with precious gems.'",
+    "options": {
+      "A": "scepter",
+      "B": "specter",
+      "C": "sector",
+      "D": "script"
+    },
+    "correct_option": "A",
+    "explanation": "'Scepter' (or sceptre) is an ornamental staff carried by a ruler as a symbol of sovereignty."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2508",
+    "question": "Fill in the blank: 'The _____ of war haunted the small village for years.'",
+    "options": {
+      "A": "scepter",
+      "B": "specter",
+      "C": "sector",
+      "D": "script"
+    },
+    "correct_option": "B",
+    "explanation": "'Specter' (or spectre) refers to a ghost or a terrifying prospect of something future."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2509",
+    "question": "Spot the error: 'The technology sector of the economy is growing rapidly.'",
+    "options": {
+      "A": "The technology sector",
+      "B": "of the economy",
+      "C": "is growing rapidly.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Sector' is an area or portion distinct from others. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2510",
+    "question": "Fill in the blank: 'The photographer used a special _____ to capture the sunset.'",
+    "options": {
+      "A": "filter",
+      "B": "fillet",
+      "C": "falter",
+      "D": "flatter"
+    },
+    "correct_option": "A",
+    "explanation": "'Filter' is a device for passing liquid or light through to remove impurities or specific wavelengths."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2511",
+    "question": "Fill in the blank: 'The chef prepared a succulent beef _____ for dinner.'",
+    "options": {
+      "A": "filter",
+      "B": "fillet",
+      "C": "falter",
+      "D": "flatter"
+    },
+    "correct_option": "B",
+    "explanation": "'Fillet' is a strip of meat or fish without bones."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2512",
+    "question": "Spot the error: 'He began to falter in his speech when he saw the crowd.'",
+    "options": {
+      "A": "He began to falter",
+      "B": "in his speech when",
+      "C": "he saw the crowd.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Falter' means to start to lose strength or momentum. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2513",
+    "question": "Fill in the blank: 'The lawyer presented a strong _____ during the trial.'",
+    "options": {
+      "A": "argument",
+      "B": "armament",
+      "C": "agreement",
+      "D": "amendment"
+    },
+    "correct_option": "A",
+    "explanation": "'Argument' is a reason or set of reasons given with the aim of persuading others."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2514",
+    "question": "Fill in the blank: 'The nation increased its _____ spending to defend its borders.'",
+    "options": {
+      "A": "argument",
+      "B": "armament",
+      "C": "amendment",
+      "D": "aroma"
+    },
+    "correct_option": "B",
+    "explanation": "'Armament' refers to military weapons and equipment."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2515",
+    "question": "Spot the error: 'The constitutional amendment was passed by the parliament.'",
+    "options": {
+      "A": "The constitutional amendment",
+      "B": "was passed by",
+      "C": "the parliament.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Amendment' refers to a minor change or addition to a document/law. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2516",
+    "question": "Fill in the blank: 'The _____ of the rose filled the entire room.'",
+    "options": {
+      "A": "aroma",
+      "B": "armour",
+      "C": "area",
+      "D": "arena"
+    },
+    "correct_option": "A",
+    "explanation": "'Aroma' is a distinctive, typically pleasant smell."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2517",
+    "question": "Fill in the blank: 'The athletes competed inside the grand _____.'",
+    "options": {
+      "A": "aroma",
+      "B": "arena",
+      "C": "area",
+      "D": "armour"
+    },
+    "correct_option": "B",
+    "explanation": "'Arena' is a level area surrounded by seats for spectators."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2518",
+    "question": "Spot the error: 'He did not have a clear area of his responsibilities.'",
+    "options": {
+      "A": "He did not have",
+      "B": "a clear area",
+      "C": "of his responsibilities.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A person's range of duty is an 'area', but 'clear idea' or 'scope' is better. However, 'area' is technically correct in spatial/domain metaphors. Let's look for a better word—perhaps 'arena' was meant? Or maybe it's just 'No error'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2518_REVISED",
+    "question": "Spot the error: 'The medieval soldier's armour protected him in combat.'",
+    "options": {
+      "A": "The medieval soldier's",
+      "B": "armour protected",
+      "C": "him in combat.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Armour' is the protective covering. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2519",
+    "question": "Fill in the blank: 'The _____ between the two colors is very subtle.'",
+    "options": {
+      "A": "gradient",
+      "B": "grade",
+      "C": "grant",
+      "D": "gratitude"
+    },
+    "correct_option": "A",
+    "explanation": "'Gradient' refers to the rate of increase or decrease of a physical quantity (or color intensity)."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2520",
+    "question": "Fill in the blank: 'She expressed her _____ for their kindness.'",
+    "options": {
+      "A": "gradient",
+      "B": "grade",
+      "C": "gratitude",
+      "D": "grant"
+    },
+    "correct_option": "C",
+    "explanation": "'Gratitude' is the quality of being thankful."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2521",
+    "question": "Spot the error: 'The government provided a research grant for the project.'",
+    "options": {
+      "A": "The government provided",
+      "B": "a research grant",
+      "C": "for the project.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Grant' is a sum of money given by an organization for a particular purpose. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2522",
+    "question": "Fill in the blank: 'His _____ in the company helped him navigate the politics.'",
+    "options": {
+      "A": "tenure",
+      "B": "tenor",
+      "C": "tutor",
+      "D": "terror"
+    },
+    "correct_option": "A",
+    "explanation": "'Tenure' is the conditions under which an office or job is held; a period of holding office."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2523",
+    "question": "Fill in the blank: 'The _____ of his speech was rather aggressive.'",
+    "options": {
+      "A": "tenure",
+      "B": "tenor",
+      "C": "tutor",
+      "D": "terror"
+    },
+    "correct_option": "B",
+    "explanation": "'Tenor' refers to the general meaning, drift, or content of something said or written."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2524",
+    "question": "Spot the error: 'The tutor helped the student with complex calculus.'",
+    "options": {
+      "A": "The tutor",
+      "B": "helped the student",
+      "C": "with complex calculus.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Tutor' is a private teacher. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2525",
+    "question": "Fill in the blank: 'The judge delivered his _____ with great solemnity.'",
+    "options": {
+      "A": "verdict",
+      "B": "vortex",
+      "C": "vertex",
+      "D": "vent"
+    },
+    "correct_option": "A",
+    "explanation": "'Verdict' is a decision on a disputed issue in a civil or criminal case."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2526",
+    "question": "Fill in the blank: 'The storm created a dangerous _____ in the middle of the lake.'",
+    "options": {
+      "A": "verdict",
+      "B": "vortex",
+      "C": "vertex",
+      "D": "vent"
+    },
+    "correct_option": "B",
+    "explanation": "'Vortex' is a mass of whirling fluid or air, especially a whirlpool."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2527",
+    "question": "Spot the error: 'The vertex of the triangle is the top point.'",
+    "options": {
+      "A": "The vertex",
+      "B": "of the triangle",
+      "C": "is the top point.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Vertex' is the highest point or the corner of a geometric shape. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2528",
+    "question": "Fill in the blank: 'She felt the need to _____ her frustrations to a friend.'",
+    "options": {
+      "A": "vent",
+      "B": "vortex",
+      "C": "vertex",
+      "D": "venerate"
+    },
+    "correct_option": "A",
+    "explanation": "'Vent' means to give free expression to a strong emotion."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2529",
+    "question": "Fill in the blank: 'We _____ the ancestors in our annual ritual.'",
+    "options": {
+      "A": "vent",
+      "B": "venerate",
+      "C": "validate",
+      "D": "vibrate"
+    },
+    "correct_option": "B",
+    "explanation": "'Venerate' means to regard with great respect; revere."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2530",
+    "question": "Spot the error: 'The ticket needs to be validated before you board.'",
+    "options": {
+      "A": "The ticket needs to be",
+      "B": "validated before",
+      "C": "you board.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Validate' means to make or declare legally valid. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2531",
+    "question": "Fill in the blank: 'The _____ of the experiment showed a slight improvement.'",
+    "options": {
+      "A": "outcome",
+      "B": "outlay",
+      "C": "outlet",
+      "D": "outgo"
+    },
+    "correct_option": "A",
+    "explanation": "'Outcome' is the way a thing turns out; a consequence."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2532",
+    "question": "Fill in the blank: 'The initial _____ for the construction was quite high.'",
+    "options": {
+      "A": "outcome",
+      "B": "outlay",
+      "C": "outlet",
+      "D": "output"
+    },
+    "correct_option": "B",
+    "explanation": "'Outlay' is an amount of money spent on something."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2533",
+    "question": "Spot the error: 'He opened a new retail outlet in the shopping mall.'",
+    "options": {
+      "A": "He opened a new",
+      "B": "retail outlet in",
+      "C": "the shopping mall.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Outlet' is a store selling goods of a particular company. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2534",
+    "question": "Fill in the blank: 'The _____ of the company's factory increased by 10%.'",
+    "options": {
+      "A": "output",
+      "B": "outgo",
+      "C": "outcry",
+      "D": "outage"
+    },
+    "correct_option": "A",
+    "explanation": "'Output' is the amount of something produced by a person, machine, or industry."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2535",
+    "question": "Fill in the blank: 'There was a public _____ against the new environmental policy.'",
+    "options": {
+      "A": "outcry",
+      "B": "outgo",
+      "C": "outage",
+      "D": "outset"
+    },
+    "correct_option": "A",
+    "explanation": "'Outcry' is a strong expression of public disapproval."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2536",
+    "question": "Spot the error: 'The power outage lasted for several hours.'",
+    "options": {
+      "A": "The power outage",
+      "B": "lasted for",
+      "C": "several hours.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Outage' is a period when a power supply is interrupted. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2537",
+    "question": "Fill in the blank: 'From the _____ of the trip, he knew it would be difficult.'",
+    "options": {
+      "A": "outset",
+      "B": "outgo",
+      "C": "outreach",
+      "D": "outcast"
+    },
+    "correct_option": "A",
+    "explanation": "'Outset' is the start or beginning of something."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2538",
+    "question": "Fill in the blank: 'The charity's _____ program helps underprivileged families.'",
+    "options": {
+      "A": "outreach",
+      "B": "outgo",
+      "C": "outcast",
+      "D": "outlay"
+    },
+    "correct_option": "A",
+    "explanation": "'Outreach' is the activity of providing services to any populations who might not otherwise have access to those services."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2539",
+    "question": "Spot the error: 'He became an outcast after the community rejected him.'",
+    "options": {
+      "A": "He became",
+      "B": "an outcast after",
+      "C": "the community rejected him.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Outcast' is a person who has been rejected by society. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2540",
+    "question": "Fill in the blank: 'She _____ all her rivals in the marathon.'",
+    "options": {
+      "A": "outran",
+      "B": "outgrew",
+      "C": "outdid",
+      "D": "outlawed"
+    },
+    "correct_option": "A",
+    "explanation": "'Outran' means to run faster than someone else."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2541",
+    "question": "Fill in the blank: 'The new regulations _____ the sale of illegal substances.'",
+    "options": {
+      "A": "outlawed",
+      "B": "outran",
+      "C": "outgrew",
+      "D": "outdid"
+    },
+    "correct_option": "A",
+    "explanation": "'Outlawed' means to make something illegal."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2542",
+    "question": "Spot the error: 'She outdid herself with a masterful performance.'",
+    "options": {
+      "A": "She outdid herself",
+      "B": "with a masterful performance.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Outdid' means to do better than. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2543",
+    "question": "Fill in the blank: 'The city was once the _____ of the ancient empire.'",
+    "options": {
+      "A": "seat",
+      "B": "site",
+      "C": "cite",
+      "D": "set"
+    },
+    "correct_option": "A",
+    "explanation": "'Seat' can refer to a center of power or administration."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2544",
+    "question": "Fill in the blank: 'The _____ of the meeting was to increase productivity.'",
+    "options": {
+      "A": "aim",
+      "B": "arm",
+      "C": "air",
+      "D": "aid"
+    },
+    "correct_option": "A",
+    "explanation": "'Aim' is a purpose or intention."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2545",
+    "question": "Spot the error: 'He provided aid to the victims of the earthquake.'",
+    "options": {
+      "A": "He provided aid",
+      "B": "to the victims of",
+      "C": "the earthquake.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Aid' is help or support. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2546",
+    "question": "Fill in the blank: 'The _____ is thin at such high altitudes.'",
+    "options": {
+      "A": "air",
+      "B": "aim",
+      "C": "arm",
+      "D": "art"
+    },
+    "correct_option": "A",
+    "explanation": "'Air' is the atmosphere."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2547",
+    "question": "Fill in the blank: 'The _____ of the law is to protect citizens.'",
+    "options": {
+      "A": "aim",
+      "B": "arm",
+      "C": "air",
+      "D": "arc"
+    },
+    "correct_option": "A",
+    "explanation": "'Aim' is the purpose."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2548",
+    "question": "Spot the error: 'The arrow flew in an arc toward the target.'",
+    "options": {
+      "A": "The arrow flew",
+      "B": "in an arc",
+      "C": "toward the target.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Arc' is a curve. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2549",
+    "question": "Fill in the blank: 'The soldiers were _____ with advanced weaponry.'",
+    "options": {
+      "A": "armed",
+      "B": "aimed",
+      "C": "aired",
+      "D": "arced"
+    },
+    "correct_option": "A",
+    "explanation": "'Armed' means equipped with weapons."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2550",
+    "question": "Fill in the blank: 'He _____ his gun at the target.'",
+    "options": {
+      "A": "armed",
+      "B": "aimed",
+      "C": "aired",
+      "D": "arced"
+    },
+    "correct_option": "B",
+    "explanation": "'Aimed' means pointed at a target."
+  }
+]

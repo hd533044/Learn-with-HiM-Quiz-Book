@@ -1,0 +1,602 @@
+[
+  {
+    "id": "ENG_VOCAB_PHRA_2001",
+    "question": "Choose the correct meaning of the phrasal verb 'ask after'.",
+    "options": {
+      "A": "To inquire about someone's health, welfare, or news.",
+      "B": "To chase someone aggressively.",
+      "C": "To search for a lost item.",
+      "D": "To request a favor."
+    },
+    "correct_option": "A",
+    "rationale": "'Ask after' means to ask for information or news about someone, especially regarding their health."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2002",
+    "question": "Fill in the blank: 'He always _____ his older brother and tries to imitate his career path.'",
+    "options": {
+      "A": "looks up to",
+      "B": "looks down on",
+      "C": "looks out for",
+      "D": "looks back on"
+    },
+    "correct_option": "A",
+    "rationale": "'Look up to' means to admire or respect someone greatly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2003",
+    "question": "Spot the error: 'The manager looks down on employees who arrive late.'",
+    "options": {
+      "A": "The manager looks down on",
+      "B": "employees who",
+      "C": "arrive late.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Look down on' means to regard someone with a feeling of superiority or contempt. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2004",
+    "question": "Fill in the blank: 'Older siblings usually _____ their younger brothers and sisters while parents are away.'",
+    "options": {
+      "A": "look after",
+      "B": "look into",
+      "C": "look over",
+      "D": "look through"
+    },
+    "correct_option": "A",
+    "rationale": "'Look after' means to take care of someone or something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2005",
+    "question": "Choose the meaning of 'look out for':",
+    "options": {
+      "A": "To be vigilant or watch for potential danger, or to protect someone's interests.",
+      "B": "To search for a physical object in the dark.",
+      "C": "To review a document thoroughly.",
+      "D": "To ignore an approaching threat."
+    },
+    "correct_option": "A",
+    "explanation": "'Look out for' implies staying alert or taking care of someone's well-being."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2006",
+    "question": "Fill in the blank: 'When I _____ my childhood days, I realize how simple life used to be.'",
+    "options": {
+      "A": "look back on",
+      "B": "look forward to",
+      "C": "look up to",
+      "D": "look down on"
+    },
+    "correct_option": "A",
+    "rationale": "'Look back on' means to remember or reflect on past events."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2007",
+    "question": "Spot the error: 'She looked through the financial report quickly before the presentation.'",
+    "options": {
+      "A": "She looked through",
+      "B": "the financial report quickly",
+      "C": "before the presentation.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Look through' means to examine something quickly or read rapidly. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2008",
+    "question": "What does 'ask for' mean?",
+    "options": {
+      "A": "To provoke trouble or request something directly.",
+      "B": "To apologize for a mistake.",
+      "C": "To refuse an invitation.",
+      "D": "To evaluate a situation."
+    },
+    "correct_option": "A",
+    "rationale": "'Ask for' can mean to request an item or, idiomatically in phrases like 'you are asking for trouble', to invite a negative outcome."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2009",
+    "question": "Fill in the blank: 'The suspect tried to _____ the detective's questions during the interrogation.'",
+    "options": {
+      "A": "evade",
+      "B": "brush aside",
+      "C": "brush up",
+      "D": "brush off"
+    },
+    "correct_option": "B",
+    "rationale": "'Brush aside' means to dismiss or treat something as unimportant. Let's use 'brush aside'."
+  },
+  {
+    "id": "ENG_VOC_PHRA_2010",
+    "question": "Spot the error: 'I need to brush up on my French before traveling to Paris.'",
+    "options": {
+      "A": "I need to brush up on",
+      "B": "my French before",
+      "C": "traveling to Paris.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Brush up on' means to refresh or improve one's knowledge of a skill or subject. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2011",
+    "question": "What does 'bear out' mean?",
+    "options": {
+      "A": "To confirm, support, or substantiate the truth of something.",
+      "B": "To endure physical pain bravely.",
+      "C": "To carry heavy loads outdoors.",
+      "D": "To produce a favorable outcome."
+    },
+    "correct_option": "A",
+    "explanation": "'Bear out' means to prove or corroborate a statement or theory."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2012",
+    "question": "Fill in the blank: 'The forensic evidence _____ the witness's testimony completely.'",
+    "options": {
+      "A": "bore out",
+      "B": "bore down",
+      "C": "bore up",
+      "D": "bore away"
+    },
+    "correct_option": "A",
+    "rationale": "'Bore out' (past tense of bear out) means substantiated or confirmed."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2013",
+    "question": "Spot the error: 'The athlete bore up well under intense pressure.'",
+    "options": {
+      "A": "The athlete bore up",
+      "B": "well under",
+      "C": "intense pressure.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Bear up' means to remain cheerful or resilient under difficult circumstances. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2014",
+    "question": "Fill in the blank: 'The storm caused the roof to _____ under the heavy weight of snow.'",
+    "options": {
+      "A": "cave in",
+      "B": "cave out",
+      "C": "cave up",
+      "D": "cave down"
+    },
+    "correct_option": "A",
+    "rationale": "'Cave in' means to collapse inward under pressure."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2015",
+    "question": "Choose the meaning of 'blow up':",
+    "options": {
+      "A": "To explode or lose one's temper suddenly.",
+      "B": "To inflate a balloon gently.",
+      "C": "Both A and B are correct.",
+      "D": "To cancel a journey."
+    },
+    "correct_option": "C",
+    "explanation": "'Blow up' can mean to explode, inflate, or become suddenly angry."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2016",
+    "question": "Spot the error: 'The argument blew up into a massive dispute.'",
+    "options": {
+      "A": "The argument blew up",
+      "B": "into a massive dispute.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Blew up' means erupted or intensified rapidly. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2017",
+    "question": "Fill in the blank: 'The truth finally came to light when the documents were _____.'",
+    "options": {
+      "A": "brought to light",
+      "B": "blown over",
+      "C": "blown out",
+      "D": "broken out"
+    },
+    "correct_option": "A",
+    "explanation": "Let's test 'blown over' meaning to subside: 'The scandal eventually blew over.'"
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2018",
+    "question": "What does 'blow over' mean?",
+    "options": {
+      "A": "To pass by or fade away without causing lasting harm (like a storm or scandal).",
+      "B": "To overturn a vehicle while driving.",
+      "C": "To finish a task prematurely.",
+      "D": "To exhale deeply."
+    },
+    "correct_option": "A",
+    "explanation": "'Blow over' means to subside or pass without serious consequences."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2019",
+    "question": "Spot the error: 'A major crisis broke out across the region overnight.'",
+    "options": {
+      "A": "A major crisis broke out",
+      "B": "across the region",
+      "C": "overnight.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Break out' means to start suddenly (used for wars, diseases, fires, or crises). Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2020",
+    "question": "Fill in the blank: 'The prisoner managed to _____ of maximum security confinement.'",
+    "options": {
+      "A": "break out",
+      "B": "break in",
+      "C": "break through",
+      "D": "break down"
+    },
+    "correct_option": "A",
+    "explanation": "'Break out' also means to escape from confinement or prison."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2021",
+    "question": "What does 'break through' mean?",
+    "options": {
+      "A": "To make a way through a barrier or achieve a significant scientific discovery.",
+      "B": "To smash a window physically.",
+      "C": "To interrupt a private meeting.",
+      "D": "To fail an inspection."
+    },
+    "correct_option": "A",
+    "explanation": "'Break through' means to advance past an obstacle or achieve a major breakthrough."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2022",
+    "question": "Fill in the blank: 'Scientists are hoping to _____ a cure for the disease soon.'",
+    "options": {
+      "A": "hit upon",
+      "B": "hit out",
+      "C": "hit back",
+      "D": "hit off"
+    },
+    "correct_option": "A",
+    "explanation": "'Hit upon' means to find or discover something unexpectedly or by inspiration."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2023",
+    "question": "What does 'hit it off' mean?",
+    "options": {
+      "A": "To get along well with someone immediately upon meeting.",
+      "B": "To strike someone in anger.",
+      "C": "To cancel a scheduled appointment.",
+      "D": "To finish a project ahead of schedule."
+    },
+    "correct_option": "A",
+    "explanation": "'Hit it off' is an idiom meaning to quickly form a good, friendly relationship with someone."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2024",
+    "question": "Spot the error: 'They hit it off right from their very first conversation.'",
+    "options": {
+      "A": "They hit it off",
+      "B": "right from their",
+      "C": "very first conversation.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Idiomatic phrasal expression used correctly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2025",
+    "question": "Fill in the blank: 'The politician tried to _____ criticism during the press conference.'",
+    "options": {
+      "A": "fend off",
+      "B": "fend up",
+      "C": "fend down",
+      "D": "fend out"
+    },
+    "correct_option": "A",
+    "explanation": "'Fend off' means to defend oneself against an attack, criticism, or unwanted questions."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2026",
+    "question": "What does 'egg on' mean?",
+    "options": {
+      "A": "To encourage or urge someone to do something, often foolish.",
+      "B": "To cook breakfast hurriedly.",
+      "C": "To throw eggs at an opponent.",
+      "D": "To protect someone from harm."
+    },
+    "correct_option": "A",
+    "explanation": "'Egg on' means to urge or incite someone to take a risky action."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2027",
+    "question": "Spot the error: 'His friends egged him on to jump across the ditch.'",
+    "options": {
+      "A": "His friends egged him on",
+      "B": "to jump across",
+      "C": "the ditch.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Egg on' is correctly used here to mean encouragement into a foolish act. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2028",
+    "question": "Fill in the blank: 'The committee decided to _____ the proposal until further notice.'",
+    "options": {
+      "A": "shelve",
+      "B": "hold over",
+      "C": "hold up",
+      "D": "hold out"
+    },
+    "correct_option": "B",
+    "explanation": "'Hold over' means to postpone or defer something to a later date."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2029",
+    "question": "What does 'hold out' mean?",
+    "options": {
+      "A": "To resist, persist, or last under difficult conditions.",
+      "B": "To stretch one's hand outward.",
+      "C": "Both A and B are correct.",
+      "D": "To surrender unconditionally."
+    },
+    "correct_option": "C",
+    "explanation": "'Hold out' can mean to endure/persist or to extend a hand or offer."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2030",
+    "question": "Spot the error: 'The garrison managed to hold out for several weeks against the siege.'",
+    "options": {
+      "A": "The garrison managed",
+      "B": "to hold out for",
+      "C": "several weeks against the siege.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Hold out' meaning to resist/endure under siege is used correctly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2031",
+    "question": "Fill in the blank: 'Traffic was severely _____ due to an accident on the bridge.'",
+    "options": {
+      "A": "held up",
+      "B": "held down",
+      "C": "held off",
+      "D": "held back"
+    },
+    "correct_option": "A",
+    "explanation": "'Hold up' means to delay or obstruct progress."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2032",
+    "question": "Choose the meaning of 'hold back':",
+    "options": {
+      "A": "To restrain oneself, conceal information, or hold someone physically.",
+      "B": "To retreat from a battlefield.",
+      "C": "To store goods in a warehouse.",
+      "D": "To postpone a meeting."
+    },
+    "correct_option": "A",
+    "explanation": "'Hold back' means to exercise restraint or keep something secret."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2033",
+    "question": "Spot the error: 'She could not hold back her tears during the emotional scene.'",
+    "options": {
+      "A": "She could not hold back",
+      "B": "her tears during",
+      "C": "the emotional scene.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Hold back' meaning to restrain emotions is used correctly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2034",
+    "question": "Fill in the blank: 'The authorities managed to _____ the spread of the contagious disease.'",
+    "options": {
+      "A": "hold off",
+      "B": "hold on",
+      "C": "hold up",
+      "D": "hold out"
+    },
+    "correct_option": "A",
+    "explanation": "'Hold off' means to delay or keep at a distance."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2035",
+    "question": "What does 'iron out' mean?",
+    "options": {
+      "A": "To resolve differences, difficulties, or problems.",
+      "B": "To press wrinkles out of clothing with an iron.",
+      "C": "Both A and B are correct.",
+      "D": "To smooth metallic surfaces."
+    },
+    "correct_option": "C",
+    "explanation": "'Iron out' has a literal meaning for clothes and a figurative meaning for resolving disputes."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2036",
+    "question": "Spot the error: 'The two diplomats managed to iron out their disagreements before the summit.'",
+    "options": {
+      "A": "The two diplomats managed",
+      "B": "to iron out their",
+      "C": "disagreements before the summit.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Iron out' is used correctly to mean settling differences. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2037",
+    "question": "Fill in the blank: 'The company hopes to _____ new clients by offering discounted introductory rates.'",
+    "options": {
+      "A": "reel in",
+      "B": "reel off",
+      "C": "reel back",
+      "D": "reel down"
+    },
+    "correct_option": "A",
+    "explanation": "'Reel in' metaphorically means to successfully attract or capture customers or clients."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2038",
+    "question": "What does 'reel off' mean?",
+    "options": {
+      "A": "To say or recite a long list of facts, names, or items quickly and effortlessly.",
+      "B": "To unwind a fishing line from a spool.",
+      "C": "To fail to complete a race.",
+      "D": "To dismiss employees systematically."
+    },
+    "correct_option": "A",
+    "explanation": "'Reel off' means to state facts or statistics rapidly from memory."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2039",
+    "question": "Spot the error: 'He reeled off the statistics of the company effortlessly.'",
+    "options": {
+      "A": "He reeled off",
+      "B": "the statistics of",
+      "C": "the company effortlessly.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Reel off' is used correctly to mean reciting facts fluently. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2040",
+    "question": "Fill in the blank: 'The corrupt official tried to _____ his subordinate to take the blame.'",
+    "options": {
+      "A": "lean on",
+      "B": "lean up",
+      "C": "lean out",
+      "D": "lean over"
+    },
+    "correct_option": "A",
+    "explanation": "'Lean on' means to pressure, coerce, or intimidate someone."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2041",
+    "question": "Choose the meaning of 'laugh off':",
+    "options": {
+      "A": "To dismiss a serious problem or insult by laughing it off as unimportant.",
+      "B": "To mock someone publicly.",
+      "C": "To recover from a fit of laughter.",
+      "D": "To smile awkwardly."
+    },
+    "correct_option": "A",
+    "explanation": "'Laugh off' means treating a negative situation lightly to minimize its impact."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2042",
+    "question": "Spot the error: 'She laughed off the criticism as petty jealousy.'",
+    "options": {
+      "A": "She laughed off",
+      "B": "the criticism as",
+      "C": "petty jealousy.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Laugh off' is used correctly here. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2043",
+    "question": "Fill in the blank: 'The project manager had to _____ the scope creep before it ruined the budget.'",
+    "options": {
+      "A": "clamp down on",
+      "B": "crop up",
+      "C": "crowd out",
+      "D": "cut across"
+    },
+    "correct_option": "A",
+    "explanation": "'Clamp down on' means to suppress or curb strictly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2044",
+    "question": "What does 'crop up' mean?",
+    "options": {
+      "A": "To appear or happen unexpectedly.",
+      "B": "To harvest crops early.",
+      "C": "To grow tall quickly.",
+      "D": "To cut short an activity."
+    },
+    "correct_option": "A",
+    "explanation": "'Crop up' means to occur or manifest unexpectedly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2045",
+    "question": "Spot the error: 'Unexpected technical issues cropped up just before the software launch.'",
+    "options": {
+      "A": "Unexpected technical issues",
+      "B": "cropped up just",
+      "C": "before the software launch.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Cropped up' means appeared unexpectedly. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2046",
+    "question": "Fill in the blank: 'Small local businesses are being _____ by large corporate monopolies.'",
+    "options": {
+      "A": "crowded out",
+      "B": "cropped up",
+      "C": "clamped down",
+      "D": "carried away"
+    },
+    "correct_option": "A",
+    "explanation": "'Crowd out' means to displace or force someone/something out by taking up all space or resources."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2047",
+    "question": "What does 'carry away' mean idiomatically?",
+    "options": {
+      "A": "To become overly emotional, enthusiastic, or lose self-control.",
+      "B": "To physically transport goods.",
+      "C": "To win a prize easily.",
+      "D": "To dismiss a worker."
+    },
+    "correct_option": "A",
+    "explanation": "'Get carried away' or 'carried away' means losing emotional control or perspective."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2048",
+    "question": "Spot the error: 'Don't get carried away by your initial success.'",
+    "options": {
+      "A": "Don't get carried away",
+      "B": "by your initial success.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Get carried away' is used correctly to mean becoming overly excited or overconfident. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2049",
+    "question": "Fill in the blank: 'The detective decided to _____ the suspect's movements throughout the day.'",
+    "options": {
+      "A": "check up on",
+      "B": "check off",
+      "C": "check out",
+      "D": "check in"
+    },
+    "correct_option": "A",
+    "explanation": "'Check up on' means to investigate or verify someone's activities or condition."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2050",
+    "question": "What is the meaning of 'die down'?",
+    "options": {
+      "A": "To diminish, subside, or become less intense (like wind, noise, or anger).",
+      "B": "To pass away quietly in sleep.",
+      "C": "To extinguish a candle completely.",
+      "D": "To fail an operational procedure."
+    },
+    "correct_option": "A",
+    "explanation": "'Die down' means to calm down, lessen, or fade in intensity."
+  }
+]

@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_181",
+    "passage_title": "The Evolutionary Ecology of Batesian versus Müllerian Mimicry",
+    "passage_text": "In evolutionary biology, mimicry systems represent some of the most striking phenotypic manifestations of natural selection operating through predatory cognitive ecology. The evolutionary dynamics of adaptive resemblance are classically divided into two distinct modalities: **Batesian mimicry** and **Müllerian mimicry**. Discovered in 1862 by English naturalist Henry Walter Bates in Amazonian butterflies, Batesian mimicry represents an asymmetrical parasitic relationship. A palatable, non-defended mimic species evolves a visual phenotype resembling a chemically unpalatable, toxic, or noxious 'model' species. Because visual predators (primarily birds) learn through aversive conditioning to associate the model's conspicuous warning coloration (aposematism) with toxicity, the mimic enjoys reduced predation. However, Batesian mimicry exhibits negative frequency-dependent selection: the evolutionary system remains stable only if the palatable mimic remains significantly rarer than the toxic model. If the mimic population expands excessively, naïve predators encounter palatable mimics more frequently than toxic models, extinguishing the conditioned avoidance response and collapsing the protective mimicry shield. In stark contrast, German zoologist Fritz Müller demonstrated in 1879 that Müllerian mimicry represents a mutualistic convergence. Two or more distinct, unpalatable, and co-occurring species evolve shared aposematic color patterns (mimicry rings). Unlike the Batesian dynamic, Müllerian mimicry exhibits positive frequency-dependent selection: by sharing a unified warning signal, the species collectively distribute the mortality cost of educating naïve local predators, diluting per-capita predation losses and accelerating predator aversive associative learning.",
+    "questions": [
+      {
+        "id": "ENG_RC_181_Q1",
+        "question": "What primary ecological difference distinguishes Batesian mimicry from Müllerian mimicry?",
+        "options": {
+          "A": "Batesian mimicry occurs only in aquatic fish, whereas Müllerian mimicry occurs exclusively in terrestrial plants.",
+          "B": "Batesian mimicry is a parasitic relationship where an edible species mimics a toxic model, while Müllerian mimicry is a mutualistic convergence where multiple toxic species share a common warning pattern.",
+          "C": "Batesian mimicry requires complete transparency, while Müllerian mimicry requires nocturnal activity.",
+          "D": "Batesian mimics synthesize lethal neurotoxins, while Müllerian models are completely harmless."
+        },
+        "correct_option": "B",
+        "rationale": "The text contrasts Batesian mimicry (a parasitic dynamic where a palatable mimic copies a noxious model) with Müllerian mimicry (a mutualistic dynamic where multiple unpalatable species converge on a shared warning pattern)."
+      },
+      {
+        "id": "ENG_RC_181_Q2",
+        "question": "Why does Batesian mimicry rely on negative frequency-dependent selection to maintain evolutionary stability?",
+        "options": {
+          "A": "Because predators refuse to hunt during winter months.",
+          "B": "If mimics become too abundant relative to models, predators encounter harmless mimics more often, degrading the learned avoidance conditioning.",
+          "C": "Because toxic models migrate to new continents when mimic populations grow.",
+          "D": "Because mimics transform into predators when their population density increases."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that if edible mimics become too common relative to toxic models, predators fail to learn or retain the aversive association, breaking the protective benefit."
+      },
+      {
+        "id": "ENG_RC_181_Q3",
+        "question": "How does Müllerian mimicry benefit the participating unpalatable species collectively?",
+        "options": {
+          "A": "It allows them to cross-breed and form a single hybrid species.",
+          "B": "It shares and dilutes the per-capita mortality cost of educating naïve predators across all co-mimicking species.",
+          "C": "It eliminates the metabolic energy required to synthesize flight muscles.",
+          "D": "It prevents all avian predators from reproducing in that habitat."
+        },
+        "correct_option": "B",
+        "rationale": "The text notes that in Müllerian mimicry, sharing a warning signal allows co-occurring toxic species to 'collectively distribute the mortality cost of educating naïve local predators.'"
+      },
+      {
+        "id": "ENG_RC_181_Q4",
+        "question": "What evolutionary term describes conspicuous visual warning coloration used by toxic organisms?",
+        "options": {
+          "A": "Aposematism",
+          "B": "Crypsis",
+          "C": "Bioluminescence",
+          "D": "Countershading"
+        },
+        "correct_option": "A",
+        "rationale": "The passage defines conspicuous warning coloration associated with unpalatability or toxicity as 'aposematism'."
+      },
+      {
+        "id": "ENG_RC_181_Q5",
+        "question": "As used in the passage, the word 'palatable' means:",
+        "options": {
+          "A": "Edible, harmless, or non-toxic to consume",
+          "B": "Lethally venomous upon physical contact",
+          "C": "Completely blind and deaf",
+          "D": "Incapable of aerodynamic flight"
+        },
+        "correct_option": "A",
+        "rationale": "'Palatable' describes food or prey that is pleasant to taste, edible, and non-toxic to a predator."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_182",
+    "passage_title": "The Structural Geology of Strike-Slip Fault Mechanics and Restraining Bends",
+    "passage_text": "In structural geology and geodynamics, strike-slip fault systems accommodate horizontal shear displacement along near-vertical fracture planes parallel to the fault trace. While idealized strike-slip faults are modeled as linear planar discontinuities, real-world fault zones exhibit complex geometric segmented traces characterized by oversteps, stepovers, and bends. The local stress tensor and deformation kinematics along a strike-slip system are governed by the geometric orientation of these bends relative to the regional slip vector. When the orientation of a fault bend opposes the sense of lateral shear—such as a left bend along a right-lateral (dextral) strike-slip fault, or a right bend along a left-lateral (sinistral) fault—it creates a **restraining bend** (compressional stepover). Restraining bends generate intense localized crustal shortening and tectonic transpression, forming elevated topographic push-up ranges, thrust faults, and complex **positive flower structures** (palm-tree structures) where upward-diverging reverse faults root into a single sub-vertical strike-slip zone at depth (e.g., the Transverse Ranges along the San Andreas Fault). Conversely, when a bend steps in the direction of lateral slip, it forms a **releasing bend** (dilatational stepover). Releasing bends produce localized crustal extension and transtension, facilitating lithospheric subsidence that generates rhomboidal **pull-apart basins** (negative flower structures), which frequently accumulate thick lacustrine or marine sedimentary sequences (e.g., the Dead Sea basin along the Dead Sea Transform).",
+    "questions": [
+      {
+        "id": "ENG_RC_182_Q1",
+        "question": "What geometric combination creates a 'restraining bend' along a strike-slip fault?",
+        "options": {
+          "A": "A bend orientation that steps in the exact direction of lateral shear displacement.",
+          "B": "A bend orientation that opposes the sense of lateral slip (such as a left bend in a dextral fault).",
+          "C": "A completely straight fault trace with zero horizontal offset.",
+          "D": "A vertical circular sinkhole in sedimentary limestone."
+        },
+        "correct_option": "B",
+        "rationale": "The text defines a restraining bend as occurring when the bend opposes the sense of lateral shear, such as a left bend on a right-lateral (dextral) fault."
+      },
+      {
+        "id": "ENG_RC_182_Q2",
+        "question": "What structural geological feature is characteristically generated at restraining bends due to tectonic transpression?",
+        "options": {
+          "A": "Deep, dropped pull-apart basins filled with water.",
+          "B": "Positive flower structures (palm-tree structures) with crustal shortening and thrust uplift.",
+          "C": "Submarine hydrothermal vent chimneys.",
+          "D": "Active shield volcanoes erupting basaltic lava."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that restraining bends produce transpressional crustal shortening, generating push-up ranges and 'positive flower structures (palm-tree structures)' with diverging thrust faults."
+      },
+      {
+        "id": "ENG_RC_182_Q3",
+        "question": "Which real-world geographical basin is cited as an example of a pull-apart basin formed at a releasing bend?",
+        "options": {
+          "A": "The Dead Sea basin along the Dead Sea Transform",
+          "B": "The Transverse Ranges along the San Andreas Fault",
+          "C": "The Mariana Trench in the Pacific Ocean",
+          "D": "The Grand Canyon in North America"
+        },
+        "correct_option": "A",
+        "rationale": "The text explicitly cites the Dead Sea basin along the Dead Sea Transform as an example of a rhomboidal pull-apart basin generated by a releasing bend."
+      },
+      {
+        "id": "ENG_RC_182_Q4",
+        "question": "What structural deformation characterizes a 'releasing bend' (dilatational stepover)?",
+        "options": {
+          "A": "Localized crustal extension and transtension resulting in tectonic subsidence",
+          "B": "Intense vertical rock compression creating high mountain peaks",
+          "C": "The complete crystallization of subterranean salt domes",
+          "D": "The permanent cessation of all earthquake activity"
+        },
+        "correct_option": "A",
+        "rationale": "The passage notes that releasing bends create 'localized crustal extension and transtension, facilitating lithospheric subsidence that generates rhomboidal pull-apart basins.'"
+      },
+      {
+        "id": "ENG_RC_182_Q5",
+        "question": "As used in the passage, the word 'dextral' refers to a fault where relative horizontal displacement moves:",
+        "options": {
+          "A": "To the right of an observer standing on one side of the fault",
+          "B": "Strictly vertically downward into the mantle",
+          "C": "To the left of an observer looking across the fault line",
+          "D": "In a continuous circular vortex"
+        },
+        "correct_option": "A",
+        "rationale": "In structural geology, 'dextral' (right-lateral) describes strike-slip fault motion where the opposite block moves to the right relative to the observer."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_183",
+    "passage_title": "The Structural Anthropology of Marcel Mauss and The Gift",
+    "passage_text": "In his seminal 1925 essay *Essai sur le don* (*The Gift*), French sociologist and anthropologist Marcel Mauss dismantled the utilitarian assumption of classical economics that human exchange originated as self-interested, atomized barter. Analyzing ethnographic records from archaic societies—most notably the **potlatch** of Pacific Northwest indigenous nations and the **kula ring** of the Trobriand Islanders—Mauss revealed that non-capitalist exchange is structured around the institutional framework of the **total social fact** (*fait social total*). Total social facts are practices that simultaneously engage religious, juridical, moral, political, and economic dimensions of society. Mauss demonstrated that no gift is ever truly 'free', altruistic, or disinterested; rather, every gift exchange operates under an iron triangular matrix of three universal social obligations: the obligation to **give**, the obligation to **receive**, and the obligation to **reciprocate**. Refusing a gift or failing to return an equivalent or superior gift signals social hostility, incurs loss of social status (mana), or invites spiritual retribution. Drawing on Maori concepts of the **hau** (the spiritual essence or 'spirit of the gift' that resides in the exchanged object and demands return to its original owner), Mauss argued that gifts are not inert physical commodities, but extensions of personhood. Through reciprocal cycles of competitive prestation, gift economies forge durable social bonds, alliances, and moral solidarity while neutralizing violent conflict.",
+    "questions": [
+      {
+        "id": "ENG_RC_183_Q1",
+        "question": "What classical economic premise regarding early human exchange was challenged by Marcel Mauss?",
+        "options": {
+          "A": "The idea that paper money was invented in ancient Greece.",
+          "B": "The utilitarian assumption that human exchange originated as purely self-interested, individualistic barter.",
+          "C": "The belief that agricultural crops require seasonal water irrigation.",
+          "D": "The hypothesis that nomadic societies had no formal spoken languages."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explains that Mauss overturned the utilitarian economic assumption that exchange began as individual, self-interested barter transactions."
+      },
+      {
+        "id": "ENG_RC_183_Q2",
+        "question": "What three universal social obligations constitute the core matrix of gift exchange in Mauss's theory?",
+        "options": {
+          "A": "To trade, to hoard, and to consume",
+          "B": "To give, to receive, and to reciprocate",
+          "C": "To conquer, to tax, and to legislate",
+          "D": "To pray, to confess, and to fast"
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly states that gift exchange operates under a triangular matrix of three universal obligations: 'the obligation to give, the obligation to receive, and the obligation to reciprocate.'"
+      },
+      {
+        "id": "ENG_RC_183_Q3",
+        "question": "How did Mauss define a 'total social fact' (*fait social total*)?",
+        "options": {
+          "A": "A single isolated economic transaction recorded on an invoice.",
+          "B": "A social phenomenon that simultaneously integrates religious, legal, moral, political, and economic dimensions of a society.",
+          "C": "A scientific equation that can be mathematically verified in a laboratory.",
+          "D": "A constitutional law passed by an absolute monarch."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines total social facts as practices that 'simultaneously engage religious, juridical, moral, political, and economic dimensions of society.'"
+      },
+      {
+        "id": "ENG_RC_183_Q4",
+        "question": "In Maori cosmology, what is the *hau* referenced in the text?",
+        "options": {
+          "A": "A wooden ocean canoe used in long-distance trade voyages.",
+          "B": "The spiritual essence or 'spirit of the gift' within an object that demands reciprocal return to its origin.",
+          "C": "A bronze coin utilized as commodity money in markets.",
+          "D": "A ceremonial feast held to celebrate military victories."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains the Maori *hau* as the spiritual essence embedded in an object that yearns for and compels reciprocal return to its original giver."
+      },
+      {
+        "id": "ENG_RC_183_Q5",
+        "question": "As used in the passage, the word 'prestation' refers to:",
+        "options": {
+          "A": "A customary social payment, gift, or service rendered under communal obligation",
+          "B": "The physical construction of stone architectural monoliths",
+          "C": "The mathematical calculation of banking interest rates",
+          "D": "A military surrender executed during battle"
+        },
+        "correct_option": "A",
+        "rationale": "In anthropology, 'prestation' denotes a formal payment, gift exchange, or service performed under structural social and reciprocal obligations."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_184",
+    "passage_title": "The Quantum Electrodynamics of Quantum Tunneling and Scanning Probe Microscopy",
+    "passage_text": "In classical Newtonian mechanics, a physical particle possessing kinetic energy $E$ encountering a potential energy barrier of height $V_0$ is strictly prohibited from penetrating or crossing the barrier if $E < V_0$; the particle undergoes complete elastic reflection at the boundary. In quantum mechanics, however, matter exhibits wave-particle duality described by the stationary Schrödinger wave equation: $(-\\hbar^2/2m)\\nabla^2\\psi + V(x)\\psi = E\\psi$. Inside the classically forbidden barrier region ($V_0 > E$), the wave function $\\psi(x)$ does not drop discontinuously to zero; rather, it decays exponentially as $\\psi(x) = \\psi(0)e^{-\\kappa x}$, where the decay parameter is $\\kappa = \\sqrt{2m(V_0 - E)} / \\hbar$. If the physical barrier width ($d$) is sufficiently narrow (on the order of a few nanometers), the wave function maintains a non-zero amplitude at the distal boundary, allowing the particle to emerge with finite probability. This quantum phenomenon is **quantum tunneling**. In 1981, Gerd Binnig and Heinrich Rohrer at IBM Zurich leveraged electron tunneling to invent the **Scanning Tunneling Microscope (STM)**. The STM positions an atomically sharp conductive metallic tip within sub-nanometer proximity of a conductive sample surface in an ultra-high vacuum. When a small bias voltage ($V_b$) is applied, electrons tunnel across the vacuum barrier, generating a tunneling current ($I$). Because the tunneling current is exponentially sensitive to the tip-sample separation distance ($I \\propto V_b e^{-2\\kappa d}$), a displacement of merely 0.1 nanometers alters the current by an order of magnitude, enabling true real-space atomic-resolution topographical imaging.",
+    "questions": [
+      {
+        "id": "ENG_RC_184_Q1",
+        "question": "How does quantum tunneling violate classical Newtonian physical laws?",
+        "options": {
+          "A": "It allows particles to travel faster than the speed of light in a vacuum.",
+          "B": "It permits particles with kinetic energy less than a potential barrier ($E < V_0$) to penetrate and cross the barrier.",
+          "C": "It permanently converts electrons into neutral neutrons.",
+          "D": "It eliminates the gravitational mass of subatomic particles."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that while classical physics forbids a particle from crossing a barrier when $E < V_0$, quantum mechanics allows finite penetration through exponential wave function persistence."
+      },
+      {
+        "id": "ENG_RC_184_Q2",
+        "question": "What mathematical behavior describes the quantum wave function $\\psi(x)$ inside a classically forbidden barrier?",
+        "options": {
+          "A": "It increases exponentially toward infinity.",
+          "B": "It decays exponentially as a function of barrier thickness and particle mass ($\psi(x) = \psi(0)e^{-\kappa x}$).",
+          "C": "It oscillates as a constant sine wave with zero attenuation.",
+          "D": "It immediately collapses to absolute zero at the outer surface."
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly states that inside the barrier region, the wave function decays exponentially according to $\psi(x) = \psi(0)e^{-\kappa x}$."
+      },
+      {
+        "id": "ENG_RC_184_Q3",
+        "question": "Why is the Scanning Tunneling Microscope (STM) capable of achieving atomic-scale spatial resolution?",
+        "options": {
+          "A": "It utilizes high-intensity laser beams to vaporize surface atoms.",
+          "B": "The tunneling current depends exponentially on the tip-sample distance, making it sensitive to sub-angstrom spatial displacements.",
+          "C": "It captures optical photographs using high-speed digital shutter lenses.",
+          "D": "It measures radioactive gamma ray decay from gold atoms."
+        },
+        "correct_option": "B",
+        "rationale": "The passage highlights that because the tunneling current is exponentially dependent on separation distance ($I \propto e^{-2\kappa d}$), tiny distance changes of 0.1 nm produce massive tenfold current shifts."
+      },
+      {
+        "id": "ENG_RC_184_Q4",
+        "question": "Who invented the Scanning Tunneling Microscope at IBM Zurich in 1981?",
+        "options": {
+          "A": "Gerd Binnig and Heinrich Rohrer",
+          "B": "Albert Einstein and Max Planck",
+          "C": "Louis de Broglie and Erwin Schrödinger",
+          "D": "Isaac Newton and Robert Hooke"
+        },
+        "correct_option": "A",
+        "rationale": "The text explicitly credits Gerd Binnig and Heinrich Rohrer at IBM Zurich with inventing the STM in 1981."
+      },
+      {
+        "id": "ENG_RC_184_Q5",
+        "question": "As used in the passage, the word 'distal' refers to a position that is:",
+        "options": {
+          "A": "Situated away from the point of origin or attachment; the far side",
+          "B": "Located directly at the center of an atomic nucleus",
+          "C": "Completely submerged in cryogenic liquid nitrogen",
+          "D": "Moving at extreme supersonic velocities"
+        },
+        "correct_option": "A",
+        "rationale": "'Distal' is an anatomical and physical directional term meaning situated away from the center, origin, or proximal surface (i.e., the far boundary of the barrier)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_185",
+    "passage_title": "The Behavioral Economics of Hyperbolic Discounting and Dynamic Inconsistency",
+    "passage_text": "In neoclassical intertemporal choice models, economic agents are assumed to evaluate future payoffs using a standard **exponential discounting** function: $D(t) = \\delta^t$, where $\\delta$ is a constant discount factor ($0 < \\delta < 1$). Exponential discounting enforces **dynamic consistency**—if an agent prefers alternative $A$ over alternative $B$ at time $t_1$, their relative preference between $A$ and $B$ will remain invariant when evaluated at any subsequent time $t_2$. However, decades of empirical behavioral experiments conducted by George Ainslie and David Laibson demonstrated that human decision-makers systematically violate exponential consistency, exhibiting **hyperbolic discounting** modeled through quasi-hyperbolic $(\\beta-\\delta)$ preference functions: $U_t = u_t + \\beta \\sum_{\\tau=1}^T \\delta^\\tau u_{t+\\tau}$. The parameter $\\beta < 1$ represents **present bias**—a sharp, disproportionate psychological preference for immediate gratification over utility realized at any future delay. Present bias generates severe dynamic inconsistency: an individual will rationally plan today to begin an exercise regimen, cease smoking, or allocate salary to retirement savings tomorrow, but when 'tomorrow' arrives and becomes the immediate 'present', the $\\beta$-discounting parameter kicks in, collapsing willpower and prompting procrastination. Behavioral economists differentiate between **naive agents** (who mistakenly believe their future selves will follow through on present plans) and **sophisticated agents** (who recognize their future self-control deficits and voluntarily adopt binding **commitment devices**, such as illiquid savings accounts or financial penalty contracts).",
+    "questions": [
+      {
+        "id": "ENG_RC_185_Q1",
+        "question": "What is the core assumption of 'dynamic consistency' in standard exponential discounting models?",
+        "options": {
+          "A": "Economic agents constantly change their preferences randomly every hour.",
+          "B": "Relative preferences between two future choices remain stable and invariant over time.",
+          "C": "Human beings place zero value on any monetary payout received today.",
+          "D": "All financial assets lose half their purchasing power each year."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that exponential discounting enforces dynamic consistency, meaning that relative preferences between two alternatives do not flip simply because time elapses."
+      },
+      {
+        "id": "ENG_RC_185_Q2",
+        "question": "What psychological phenomenon is mathematically captured by the present-bias parameter ($\\beta < 1$) in hyperbolic discounting?",
+        "options": {
+          "A": "An intense, disproportionate preference for immediate consumption over future rewards.",
+          "B": "The absolute refusal to spend any paper money in commercial markets.",
+          "C": "The complete inability to remember events that occurred yesterday.",
+          "D": "An irrational desire to pay higher taxes to the government."
+        },
+        "correct_option": "A",
+        "rationale": "The passage defines $\beta < 1$ as 'present bias—a sharp, disproportionate psychological preference for immediate gratification over utility realized at any future delay.'"
+      },
+      {
+        "id": "ENG_RC_185_Q3",
+        "question": "How does dynamic inconsistency manifest in everyday personal decision-making?",
+        "options": {
+          "A": "Individuals calculate calculus equations before purchasing groceries.",
+          "B": "Individuals make plans for future self-improvement (dieting, saving) but procrastinate and default to gratification when the moment arrives.",
+          "C": "Consumers refuse to buy goods unless they are offered at a 50% discount.",
+          "D": "Workers demand to be paid exclusively in gold bullion."
+        },
+        "correct_option": "B",
+        "rationale": "The text illustrates dynamic inconsistency as making rational long-term plans for tomorrow, but abandoning willpower and procrastinating when 'tomorrow' becomes the immediate present."
+      },
+      {
+        "id": "ENG_RC_185_Q4",
+        "question": "What distinguishes a 'sophisticated agent' from a 'naive agent' in behavioral economics?",
+        "options": {
+          "A": "Sophisticated agents have university degrees in advanced physics.",
+          "B": "Sophisticated agents anticipate their future self-control failures and proactively adopt binding commitment devices.",
+          "C": "Sophisticated agents never spend any money on consumer goods.",
+          "D": "Sophisticated agents refuse to use bank credit cards."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that sophisticated agents 'recognize their future self-control deficits and voluntarily adopt binding commitment devices' (like penalty contracts or illiquid accounts)."
+      },
+      {
+        "id": "ENG_RC_185_Q5",
+        "question": "As used in the passage, the word 'invariant' most nearly means:",
+        "options": {
+          "A": "Constant, unalterable, or unchanging over time",
+          "B": "Highly volatile and subject to random fluctuations",
+          "C": "Legally prohibited by banking regulations",
+          "D": "Extremely expensive to purchase"
+        },
+        "correct_option": "A",
+        "rationale": "'Invariant' describes something that does not change, alter, or vary under transformations or across time."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_186",
+    "passage_title": "The Structural Virology and Epigenetic Latency of Herpes Simplex Virus",
+    "passage_text": "Herpes Simplex Virus Type 1 (HSV-1) is an enveloped, double-stranded DNA human neurotropic alphaherpesvirus capable of establishing lifelong infection through a biphasic life cycle: productive **lytic replication** in mucosal epithelial cells and persistent **epigenetic latency** within sensory neuronal nuclei of the trigeminal ganglia. During primary lytic infection at the mucosal epithelium, viral immediate-early, early, and late genes are transcribed in a coordinated cascade, generating progeny virions that cause vesicular epithelial lesions. Progeny virions enter sensory nerve endings and undergo retrograde axonal transport along microtubules via dynein motor complexes to neuronal cell bodies. Inside the sensory neuron nucleus, HSV-1 encounters a cellular environment lacking the viral tegument transactivator protein VP16. In the absence of VP16 and its host cofactor HCF-1, the viral genome circularizes into an extrachromosomal episome and undergoes extensive chromatinization. Cellular histone methyltransferases assemble repressive heterochromatin (characterized by trimethylated histone H3 lysine 9, $H3K9me3$, and $H3K27me3$) across the viral lytic promoters, silencing viral transcription. The sole region transcriptionally active during latency is the **Latency-Associated Transcript (LAT)** locus. LATs encode non-coding RNAs and microRNAs that promote neuronal survival by suppressing host cell apoptosis and maintaining heterochromatic silencing of lytic promoters. Upon exposure to physiological or environmental stressors (e.g., ultraviolet radiation, fever, hypercortisolemia), heterochromatic barriers are remodeled by histone demethylases, initiating viral reactivation, anterograde axonal transport via kinesin motors, and recurrent mucosal shedding.",
+    "questions": [
+      {
+        "id": "ENG_RC_186_Q1",
+        "question": "Where does HSV-1 establish lifelong dormant latency in the human host?",
+        "options": {
+          "A": "In red blood cells within the spleen",
+          "B": "In sensory neuronal nuclei of the trigeminal ganglia",
+          "C": "In alveolar macrophage cells in the lungs",
+          "D": "In epithelial keratinocytes of the fingernails"
+        },
+        "correct_option": "B",
+        "rationale": "The passage explicitly states that HSV-1 establishes 'persistent epigenetic latency within sensory neuronal nuclei of the trigeminal ganglia.'"
+      },
+      {
+        "id": "ENG_RC_186_Q2",
+        "question": "What molecular mechanism silences the HSV-1 viral genome to establish latency inside sensory neurons?",
+        "options": {
+          "A": "The complete destruction of the viral DNA by host lysosomes.",
+          "B": "Episomal circularization and assembly of repressive heterochromatin ($H3K9me3/H3K27me3$) across lytic promoters in the absence of VP16.",
+          "C": "The chemical conversion of viral DNA into structural lipid droplets.",
+          "D": "The insertion of the viral genome directly into host mitochondrial DNA."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that lacking VP16, the viral DNA circularizes into an episome and cellular enzymes wrap it in repressive heterochromatin ($H3K9me3$ and $H3K27me3$), silencing lytic transcription."
+      },
+      {
+        "id": "ENG_RC_186_Q3",
+        "question": "What is the primary functional role of the Latency-Associated Transcript (LAT) locus during viral dormancy?",
+        "options": {
+          "A": "To synthesize structural viral capsid proteins that lyse the neuron.",
+          "B": "To encode non-coding RNAs and microRNAs that suppress neuronal apoptosis and maintain heterochromatic silencing of lytic genes.",
+          "C": "To stimulate the host immune system to produce high-affinity antibodies.",
+          "D": "To digest neurotransmitters inside the synaptic cleft."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that LATs encode non-coding RNAs that promote neuronal survival by blocking apoptosis and keeping lytic promoters in a silenced heterochromatic state."
+      },
+      {
+        "id": "ENG_RC_186_Q4",
+        "question": "Which molecular motor complexes drive the retrograde and anterograde axonal transport of HSV-1 virions?",
+        "options": {
+          "A": "Myosin motors for both inward and outward transport",
+          "B": "Dynein motor complexes for retrograde transport to the soma, and kinesin motors for anterograde transport to the axon terminals",
+          "C": "Hemoglobin carriers for passive vascular diffusion",
+          "D": "Actin filaments driven solely by Brownian thermal motion"
+        },
+        "correct_option": "B",
+        "rationale": "The text details that retrogradely traveling virions use dynein motors to reach the soma, while reactivated virions use kinesin motors for anterograde transport back to mucosal endings."
+      },
+      {
+        "id": "ENG_RC_186_Q5",
+        "question": "As used in the passage, the word 'episome' refers to:",
+        "options": {
+          "A": "A circular non-integrated extrachromosomal DNA element that replicates independently in the nucleus",
+          "B": "A toxic bacterial enzyme that dissolves skin tissue",
+          "C": "A specialized protein that pumps glucose across cellular membranes",
+          "D": "A microscopic white blood cell produced in bone marrow"
+        },
+        "correct_option": "A",
+        "rationale": "In virology and genetics, an 'episome' is a segment of DNA that can exist and replicate as an extrachromosomal, closed-circular plasmid-like unit in the nucleus without integrating into host chromosomes."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_187",
+    "passage_title": "The Glaciology of Heinrich Events and Iceberg-Rafted Debris",
+    "passage_text": "In paleoclimatology and Quaternary marine geology, **Heinrich Events** describe episodic, massive discharges of armada-like iceberg fleets into the subpolar North Atlantic during the Last Glacial Period. Discovered in 1988 by German marine geologist Hartmut Heinrich through the stratigraphy of deep-sea sediment cores, these intervals are identified by conspicuous, recurrent layers of **Iceberg-Rafted Debris (IRD)**. IRD layers are characterized by poorly sorted, coarse terrigenous lithic grains—including limestone, dolomite, and quartzite—deposited in deep-sea pelagic muds far from continental margins. These lithic grains were plucked from the continental bedrock of the Canadian Shield and Hudson Bay by the Laurentide Ice Sheet, incorporated into basal glacial ice, and transported across the open ocean within icebergs before settling onto the seafloor upon melting. Occurring roughly every 7,000 to 10,000 years (H1 through H6), Heinrich events are intimately linked to sub-orbital **Dansgaard-Oeschger (D-O) cycles**. The standard glaciological trigger model—the 'binge-purge' oscillator formulated by Douglas MacAyeal—posits that the Laurentide Ice Sheet grew unstably over millennia, trapping geothermal heat at its bed until basal till thawed into lubricated soft mud. This triggered catastrophic surge purges that drained millions of cubic kilometers of ice into the ocean through the Hudson Strait. The colossal influx of melting freshwater lowered surface sea salinity, shutting down North Atlantic Deep Water (NADW) formation and causing severe cooling across Europe.",
+    "questions": [
+      {
+        "id": "ENG_RC_187_Q1",
+        "question": "What sedimentary signature in deep-sea sediment cores identifies the occurrence of a Heinrich Event?",
+        "options": {
+          "A": "Thick beds of pure volcanic obsidian glass shards.",
+          "B": "Layers of coarse Iceberg-Rafted Debris (IRD) composed of terrigenous minerals like limestone and quartzite.",
+          "C": "Fossilized tropical coral skeletons in arctic waters.",
+          "D": "Uniform deposits of pulverized magnetic meteorites."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that Heinrich Events are identified by distinct stratigraphic layers of Iceberg-Rafted Debris (IRD) containing terrigenous grains like limestone, dolomite, and quartzite."
+      },
+      {
+        "id": "ENG_RC_187_Q2",
+        "question": "According to MacAyeal's 'binge-purge' hypothesis, what physical mechanism initiated Heinrich ice purges?",
+        "options": {
+          "A": "Massive asteroid impacts in the North Sea.",
+          "B": "Trapped geothermal heat thawing basal till into slippery mud beneath a thickening ice sheet, initiating runaway ice stream surges.",
+          "C": "Sudden solar radiation flares that evaporated all surface glaciers.",
+          "D": "The tectonic uplift of the Appalachian Mountains."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that during the 'binge' phase, ice thickened until geothermal heat thawed basal sediment into lubricated mud, triggering catastrophic purge surges into the Hudson Strait."
+      },
+      {
+        "id": "ENG_RC_187_Q3",
+        "question": "From which geographical region was the majority of the Iceberg-Rafted Debris originally plucked by glaciers?",
+        "options": {
+          "A": "The Sahara Desert in North Africa",
+          "B": "The Canadian Shield and Hudson Bay bedrock beneath the Laurentide Ice Sheet",
+          "C": "The interior plateau of East Antarctica",
+          "D": "The volcanic islands of the South Pacific"
+        },
+        "correct_option": "B",
+        "rationale": "The author specifies that lithic grains were plucked from the Canadian Shield and Hudson Bay bedrock by the Laurentide Ice Sheet."
+      },
+      {
+        "id": "ENG_RC_187_Q4",
+        "question": "What oceanographic consequence resulted from the massive melting of iceberg armadas during Heinrich events?",
+        "options": {
+          "A": "It drastically increased ocean salinity, causing hyper-dense convection.",
+          "B": "The massive freshwater lid lowered surface salinity, shutting down North Atlantic Deep Water (NADW) formation and cooling Europe.",
+          "C": "It caused the complete evaporation of the Gulf Stream current.",
+          "D": "It turned global ocean surface waters into an alkaline boiling solution."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that freshwater from melting icebergs reduced surface salinity, collapsing NADW downwelling and triggering severe European cooling."
+      },
+      {
+        "id": "ENG_RC_187_Q5",
+        "question": "As used in the passage, the word 'terrigenous' describes sediments that are:",
+        "options": {
+          "A": "Derived from the physical erosion and weathering of continental landmasses",
+          "B": "Formed exclusively from the biological skeletons of microscopic marine plankton",
+          "C": "Synthesized artificially by human industrial manufacturing",
+          "D": "Discharged from subterranean extraterrestrial meteorites"
+        },
+        "correct_option": "A",
+        "rationale": "In marine geology, 'terrigenous' refers to mineral sediments that originate from the erosion of land and continents rather than biological or chemical ocean processes."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_188",
+    "passage_title": "The Epistemology of Karl Popper versus Imre Lakatos: Research Programmes",
+    "passage_text": "In the philosophy of science, while Karl Popper established falsificationism as the criterion of demarcation, his model faced severe historical critiques: in real-world scientific practice, scientists do not immediately abandon theories upon encountering isolated anomalous or contrary observations. To resolve the tension between Popper's normative falsificationism and Thomas Kuhn's historical paradigm shifts, Hungarian philosopher Imre Lakatos formulated the **Methodology of Scientific Research Programmes (MSRP)**. Lakatos conceptualized scientific development not in terms of isolated theories, but as evolving historical **research programmes**. A research programme consists of two structural components: the **'hard core'** and the **'protective belt'**. The 'hard core' comprises foundational, non-negotiable theoretical postulates that are protected from direct empirical refutation by a methodological convention termed the **negative heuristic** ('do not touch the hard core'). Surrounding the hard core is the 'protective belt' of auxiliary hypotheses, observational assumptions, and mathematical models. When anomalies arise, the **positive heuristic** guides scientists to modify, adjust, or replace auxiliary hypotheses in the protective belt to accommodate the data without sacrificing the hard core. Lakatos categorized research programmes into two developmental trajectories: a programme is **progressive** if its theoretical modifications predict novel empirical facts (some of which are experimentally confirmed), whereas it is **degenerating** if it produces only ad-hoc, post-hoc explanations to patch anomalies without generating novel predictive growth.",
+    "questions": [
+      {
+        "id": "ENG_RC_188_Q1",
+        "question": "What primary historical limitation of Karl Popper's falsificationism did Imre Lakatos seek to resolve?",
+        "options": {
+          "A": "The fact that scientists never use mathematics in their experiments.",
+          "B": "The historical reality that scientists do not immediately discard fundamental theories when encountering isolated anomalies.",
+          "C": "The assumption that religious texts should replace peer-reviewed journals.",
+          "D": "The belief that technology has no connection to scientific inquiry."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explains that Lakatos sought to address the reality that real-world scientists do not immediately abandon overarching frameworks in response to isolated disconfirming data."
+      },
+      {
+        "id": "ENG_RC_188_Q2",
+        "question": "In Lakatos's MSRP framework, what constitutes the 'hard core' of a research programme?",
+        "options": {
+          "A": "A collection of laboratory glassware used in chemistry.",
+          "B": "Foundational, non-negotiable theoretical tenets protected from refutation by the negative heuristic.",
+          "C": "A published list of governmental research grant amounts.",
+          "D": "The physical brick foundation of university laboratory buildings."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines the hard core as the foundational, non-negotiable theoretical postulates that the negative heuristic forbids scientists from modifying or abandoning."
+      },
+      {
+        "id": "ENG_RC_188_Q3",
+        "question": "What role is served by the 'protective belt' of auxiliary hypotheses when empirical anomalies emerge?",
+        "options": {
+          "A": "It absorbs empirical refutations by being adjusted or replaced, insulating the hard core from direct falsification.",
+          "B": "It immediately invalidates every mathematical equation in the discipline.",
+          "C": "It forces researchers to convert their findings into theological doctrines.",
+          "D": "It eliminates the need to conduct future experimental observations."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that the protective belt consists of auxiliary hypotheses that are modified or replaced to accommodate anomalies while keeping the hard core intact."
+      },
+      {
+        "id": "ENG_RC_188_Q4",
+        "question": "How does Lakatos distinguish a 'progressive' research programme from a 'degenerating' one?",
+        "options": {
+          "A": "Progressive programmes receive more commercial corporate sponsorship than degenerating ones.",
+          "B": "Progressive programmes predict novel empirical facts that receive experimental confirmation, while degenerating programmes offer only ad-hoc excuses for anomalies.",
+          "C": "Progressive programmes reject all past historical documents completely.",
+          "D": "Progressive programmes rely exclusively on supercomputer simulations."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that a programme is progressive if theoretical shifts predict novel, confirmed empirical facts, whereas it is degenerating if it only creates ad-hoc patches."
+      },
+      {
+        "id": "ENG_RC_188_Q5",
+        "question": "As used in the passage, the word 'heuristic' refers to:",
+        "options": {
+          "A": "A guiding rule, methodology, or procedural strategy for problem-solving",
+          "B": "A legal contract enforced by supreme constitutional courts",
+          "C": "A physical defect inside an electronic microscope lens",
+          "D": "A financial penalty levied on academic institutions"
+        },
+        "correct_option": "A",
+        "rationale": "'Heuristic' in methodology and philosophy refers to an investigative rule, guiding principle, or procedural strategy used to solve problems or direct inquiry."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_189",
+    "passage_title": "The Quantum Electrodynamics of Quantum Entanglement and Quantum Teleportation",
+    "passage_text": "In quantum information theory, **quantum teleportation**—theoretically formulated in 1993 by Charles Bennett and colleagues and experimentally realized in 1997 by Anton Zeilinger's group—describes the protocol by which the exact quantum state of an arbitrary qubit ($\\vert\\psi\\rangle = \\alpha\\vert 0\\rangle + \\beta\\vert 1\\rangle$) is transferred from a sender (Alice) to a spatially distant receiver (Bob) without transmitting the physical particle itself. Quantum teleportation does not violate the no-cloning theorem (which proves that an unknown quantum state cannot be duplicated) because the original state is irreversibly destroyed during the protocol. The protocol requires two shared resources: a pre-existing pair of maximally entangled Bell state photons (e.g., $\\vert\\Phi^+\\rangle = \\frac{1}{\\sqrt{2}}(\\vert 00\\rangle + \\vert 11\\rangle)$) shared between Alice and Bob, and a conventional classical communication channel. To initiate teleportation, Alice performs a joint **Bell State Measurement (BSM)** on the unknown input qubit and her half of the entangled pair. This projective measurement entangles the unknown qubit with Alice's photon and projects them onto one of four orthogonal Bell states, obliterating the original state. Alice then transmits the two-bit classical result of her measurement to Bob via a classical channel. Upon receiving these two classical bits, Bob executes one of four corresponding unitary quantum logic gate transformations (identity $I$, Pauli-$X$, Pauli-$Z$, or $iY$) on his half of the entangled pair. This unitary operation rotates Bob's photon into an exact replica of the original state $\\vert\\psi\\rangle$. Crucially, because Bob cannot reconstruct the state until receiving the two classical bits, quantum teleportation cannot transmit information faster than the speed of light, preserving relativistic causality.",
+    "questions": [
+      {
+        "id": "ENG_RC_189_Q1",
+        "question": "What is the primary objective of the quantum teleportation protocol?",
+        "options": {
+          "A": "Physically transporting macroscopic biological organisms across geographic distances.",
+          "B": "Transferring the exact quantum state of an arbitrary qubit to a distant particle using shared entanglement and classical communication.",
+          "C": "Generating infinite free electrical energy using quantum vacuum fluctuations.",
+          "D": "Transmitting radio waves faster than the speed of light in deep space."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explains that quantum teleportation transfers the exact quantum state of an arbitrary qubit to a distant receiver without transmitting the physical particle itself."
+      },
+      {
+        "id": "ENG_RC_189_Q2",
+        "question": "Why does quantum teleportation NOT violate the quantum no-cloning theorem?",
+        "options": {
+          "A": "Because the no-cloning theorem applies only to gravitational waves.",
+          "B": "Because the original input quantum state is destroyed during Alice's projective Bell State Measurement.",
+          "C": "Because the receiver creates billions of identical copies simultaneously.",
+          "D": "Because the protocol operates only at temperatures below absolute zero."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that the protocol obeys the no-cloning theorem because Alice's Bell State Measurement irreversibly projects and destroys the original state."
+      },
+      {
+        "id": "ENG_RC_189_Q3",
+        "question": "What role is served by the classical communication channel during quantum teleportation?",
+        "options": {
+          "A": "It transmits the physical mass of the electron through a copper wire.",
+          "B": "It carries the two classical measurement bits required for Bob to execute the correct unitary gate transformation on his entangled photon.",
+          "C": "It cools the quantum computer's dilution refrigerator.",
+          "D": "It calculates the financial transaction fees for telecommunication networks."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that Alice must send her two-bit classical measurement result over a classical channel so Bob knows which unitary Pauli gate to apply to reconstruct the state."
+      },
+      {
+        "id": "ENG_RC_189_Q4",
+        "question": "Why is quantum teleportation strictly constrained by the cosmic speed of light ($c$)?",
+        "options": {
+          "A": "Photons lose their quantum entanglement if they move faster than audio sound waves.",
+          "B": "Bob cannot reconstruct the quantum state until he receives Alice's classical measurement bits, which cannot travel faster than light.",
+          "C": "The quantum vacuum absorbs all information transmitted across distances exceeding one meter.",
+          "D": "The Heisenberg uncertainty principle prohibits particles from possessing kinetic energy."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence highlights that because Bob requires the classical communication bits to reconstruct the state, no information travels superluminally, preserving relativistic causality."
+      },
+      {
+        "id": "ENG_RC_189_Q5",
+        "question": "As used in the passage, the term 'unitary' in quantum physics refers to an operation that:",
+        "options": {
+          "A": "Preserves quantum state probability amplitudes and is mathematically reversible",
+          "B": "Destroys all information and converts energy into random waste heat",
+          "C": "Operates only on a single isolated atomic nucleus",
+          "D": "Is executed exclusively by mechanical gears in clocks"
+        },
+        "correct_option": "A",
+        "rationale": "In quantum mechanics and linear algebra, a 'unitary transformation' is a linear, norm-preserving, reversible operation that conserves the total probability sum (equal to 1)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_190",
+    "passage_title": "The Agrarian Political Economy of James C. Scott’s Moral Economy of the Peasant",
+    "passage_text": "In his 1976 foundational work of political anthropology and agrarian economics, *The Moral Economy of the Peasant: Rebellion and Subsistence in Southeast Asia*, political scientist James C. Scott challenged neoclassical rational-choice interpretations of peasant behavior. Standard microeconomic models assumed that agrarian cultivators behave as profit-maximizing, risk-tolerant entrepreneurs seeking to optimize yield margins. Scott demonstrated that in traditional, vulnerable agrarian communities operating close to the biological margin of starvation, peasant economic rationality is governed by the **'safety-first' principle**. Peasant households prioritize avoiding catastrophic harvest shortfalls that threaten biological survival over maximizing average profit. Consequently, peasants exhibit risk-averse technical strategies: diversifying crop varieties, planting dispersed fragmented plots across microclimates, and relying on traditional drought-resistant (though lower-yielding) cultivars. Furthermore, traditional pre-colonial villages maintained a shared **moral economy** rooted in two normative pillars: the right to subsistence and the norm of reciprocity. Village institutions—such as communal land redistribution, grain sharing, and patron-client obligations—acted as collective social insurance mechanisms that guaranteed basic survival for all community members during lean harvest years. Scott argued that peasant rebellions are triggered not by absolute poverty, but by the coercive imposition of modern colonial-capitalist state institutions (such as rigid cash taxes and fixed land rents) that destroyed these traditional subsistence safety nets, converting fluctuating agricultural risks into lethal existential crises.",
+    "questions": [
+      {
+        "id": "ENG_RC_190_Q1",
+        "question": "What primary economic decision-making principle governs peasant agriculture in James C. Scott's framework?",
+        "options": {
+          "A": "Aggressive speculative profit maximization through commercial cash crops.",
+          "B": "The 'safety-first' principle prioritizing subsistence security and avoiding catastrophic harvest failure over maximizing average yield.",
+          "C": "The complete elimination of all agricultural farming in favor of nomadic hunting.",
+          "D": "Maximizing exports of grain to foreign international stock exchanges."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that operating near the margin of starvation, peasant rationality is dictated by the 'safety-first' principle—minimizing the risk of catastrophe rather than maximizing profits."
+      },
+      {
+        "id": "ENG_RC_190_Q2",
+        "question": "Which of the following agrarian practices exemplifies the risk-averse 'safety-first' strategy?",
+        "options": {
+          "A": "Planting a single high-yield, chemically vulnerable monoculture crop.",
+          "B": "Cultivating diversified crops and dispersing fragmented plots across multiple microclimates.",
+          "C": "Taking high-interest loans to purchase luxury consumer electronics.",
+          "D": "Refusing to store any reserve grain seeds for the next planting season."
+        },
+        "correct_option": "B",
+        "rationale": "The passage lists 'diversifying crop varieties, planting dispersed fragmented plots across microclimates, and relying on traditional drought-resistant... cultivars' as risk-averse tactics."
+      },
+      {
+        "id": "ENG_RC_190_Q3",
+        "question": "What two normative principles formed the foundation of the traditional village 'moral economy'?",
+        "options": {
+          "A": "The right to subsistence and the norm of reciprocity.",
+          "B": "Private property hoarding and corporate competition.",
+          "C": "Military conscription and royal taxation.",
+          "D": "Atheism and industrial mechanization."
+        },
+        "correct_option": "A",
+        "rationale": "The text explicitly states that the moral economy was rooted in two normative pillars: 'the right to subsistence and the norm of reciprocity.'"
+      },
+      {
+        "id": "ENG_RC_190_Q4",
+        "question": "According to Scott, what was the true structural catalyst behind historic peasant rebellions?",
+        "options": {
+          "A": "Sudden fluctuations in global cryptocurrency values.",
+          "B": "The introduction of modern capitalist state structures (fixed cash taxes and rigid rents) that dismantled traditional subsistence safety nets.",
+          "C": "The complete absence of religious temples in rural villages.",
+          "D": "A biological desire to eliminate all agricultural farmlands."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that rebellions were sparked when colonial-capitalist state institutions imposed fixed cash rents and taxes, destroying traditional communal subsistence guarantees."
+      },
+      {
+        "id": "ENG_RC_190_Q5",
+        "question": "As used in the passage, the word 'subsistence' refers to:",
+        "options": {
+          "A": "The minimum level of food, resources, and necessities required to sustain biological life",
+          "B": "A luxurious surplus of financial capital stored in offshore bank accounts",
+          "C": "The legal documentation required to incorporate a commercial company",
+          "D": "A military siege of a fortified stone city"
+        },
+        "correct_option": "A",
+        "rationale": "'Subsistence' denotes the state of having just enough food, resources, or income to maintain survival or basic physical existence."
+      }
+    ]
+  }
+]

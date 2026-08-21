@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_0701",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Tumefaction",
+      "B": "Tumifaction",
+      "C": "Tumefacsion",
+      "D": "Tumafaction"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Tumefaction' - the action or process of swelling or becoming swollen; 't-u-m-e-f-a-c-t-i-o-n'). Options B, C, and D alter the connecting vowels or corrupt the '-tion' suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0702",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Tumultuous",
+      "B": "Turbidaty",
+      "C": "Turgidity",
+      "D": "Turpitude"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is incorrectly spelt; the correct spelling is 'Turbidity' (spelled with '-di-', not '-da-' - the quality of being cloudy, opaque, or thick with suspended matter). Other options are correct: Tumultuous (making an uproar or loud, confused noise), Turgidity (the state of being swollen and congested), Turpitude (depraved or wicked behavior or character).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0703",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Ubiquity",
+      "B": "Ubicwity",
+      "C": "Ubiquety",
+      "D": "Ubiqwity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Ubiquity' - the fact of appearing everywhere or of being very common; 'u-b-i-q-u-i-t-y'). Options B, C, and D are faulty phonetic variants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0704",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Ulterior",
+      "B": "Ultimatum",
+      "C": "Umbrageous",
+      "D": "Unanimus"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Unanimous' (contains '-mous', not '-mus' - held or agreed by everyone). Other options are correct: Ulterior (existing beyond what is obvious or admitted; intentionally hidden), Ultimatum (a final demand or statement of terms), Umbrageous (affording shade / apt to take offense).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0705",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Unassailable",
+      "B": "Unasailable",
+      "C": "Unassailible",
+      "D": "Unassailabel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Unassailable' - unable to be attacked, questioned, or defeated; double 's', ends in '-able'). Options B, C, and D drop 's' or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0706",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Unblemished",
+      "B": "Unceremonious",
+      "C": "Unconcscious",
+      "D": "Unctuous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Unconscious' (contains 'sc', not 'ncsc' - not awake or aware). Other options are correct: Unblemished (not damaged or marked in any way), Unceremonious (having or showing a lack of courtesy; rough or abrupt), Unctuous (excessively flattering or ingratiating; oily).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0707",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Undulate",
+      "B": "Undalate",
+      "C": "Undulat",
+      "D": "Undoolate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Undulate' - move or go with a smooth up-and-down movement; 'u-n-d-u-l-a-t-e'). Options B, C, and D introduce erroneous vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0708",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Unequivocally",
+      "B": "Unexceptionable",
+      "C": "Unfathomable",
+      "D": "Ungovernible"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ungovernable' (ends in '-able', not '-ible' - impossible to govern, manage, or control). Other options are correct: Unequivocally (in a way that leaves no doubt), Unexceptionable (not open to objection, but not particularly interesting), Unfathomable (incapable of being fully explored or understood).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0709",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Unilateral",
+      "B": "Unilateral",
+      "C": "Uniletaral",
+      "D": "Unelateral"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Unilateral' - performed by or affecting only one person, group, or country involved in a situation; 'u-n-i-l-a-t-e-r-a-l'). Options C and D alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0710",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Unintelligible",
+      "B": "Universalism",
+      "C": "Unobtrusiv",
+      "D": "Unprepossessing"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Unobtrusive' (ends in '-ive' with silent 'e' - not conspicuous or attracting attention). Other options are correct: Unintelligible (impossible to understand), Universalism (loyalty to and concern for others without regard to national or other allegiances), Unprepossessing (not particularly attractive or appealing to look at).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0711",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Unrequited",
+      "B": "Unrequeted",
+      "C": "Unrekwited",
+      "D": "Unreqwited"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Unrequited' - of a feeling, especially love: not returned or rewarded; 'u-n-r-e-q-u-i-t-e-d'). Options B, C, and D are erroneous phonetic alterations.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0712",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Unscrupulous",
+      "B": "Unsophisticated",
+      "C": "Unsubstanciated",
+      "D": "Untenable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Unsubstantiated' (spelled with '-tia-', not '-cia-' - not supported or proven by evidence). Other options are correct: Unscrupulous (having or showing no moral principles), Unsophisticated (lacking refined worldly knowledge or tastes), Untenable (not able to be maintained or defended against attack or objection).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0713",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Unwieldy",
+      "B": "Unweildy",
+      "C": "Unwieldly",
+      "D": "Unweldie"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Unwieldy' - difficult to carry or move because of its size, shape, or weight; 'i-e' in '-wield-'). Options B, C, and D invert vowels or add redundant syllables.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0714",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Urbanization",
+      "B": "Usurpation",
+      "C": "Utilitarian",
+      "D": "Utopien"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Utopian' (ends in '-an', not '-en' - modeled on or aiming for a state in which everything is perfect). Other options are correct: Urbanization (the process of making an area more urban), Usurpation (the act of taking someone's power or property by force), Utilitarian (designed to be useful or practical rather than attractive).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0715",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Uxorious",
+      "B": "Uxorias",
+      "C": "Uxoreous",
+      "D": "Uxxorious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Uxorious' - having or showing an excessive fondness for one's wife; single 'x', 'u-x-o-r-i-o-u-s'). Options B, C, and D duplicate consonants or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0716",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Vacillating",
+      "B": "Vacuous",
+      "C": "Vagabound",
+      "D": "Vagrancy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Vagabond' (ends in '-bond', not '-bound' - a person who wanders from place to place without a home or job). Other options are correct: Vacillating (wavering between different opinions or actions), Vacuous (having or showing a lack of thought or intelligence; mindless), Vagrancy (the state of living as a vagrant; homelessness).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0717",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Valedictory",
+      "B": "Valadictory",
+      "C": "Valedictery",
+      "D": "Valedectory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Valedictory' - serving as a farewell; 'v-a-l-e-d-i-c-t-o-r-y'). Options B, C, and D alter the internal or suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0718",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Valiant",
+      "B": "Valorous",
+      "C": "Vandalissm",
+      "D": "Vanguard"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Vandalism' (single 's' in '-ism' - action involving deliberate destruction of or damage to public or private property). Other options are correct: Valiant (possessing or showing courage or determination), Valorous (showing great courage in the face of danger), Vanguard (a group of people leading the way in new developments or ideas).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0719",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Vanquish",
+      "B": "Vancwish",
+      "C": "Venquish",
+      "D": "Vanquesh"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Vanquish' - defeat thoroughly; 'v-a-n-q-u-i-s-h'). Options B, C, and D alter vowels or use 'cw'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0720",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Variegation",
+      "B": "Vascular",
+      "C": "Vaudeville",
+      "D": "Vegeration"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Vegetation' (spelled with '-ge-ta-', not '-ge-ra-' - plants considered collectively). Other options are correct: Variegation (the appearance of different colors in streaks or patches), Vascular (relating to or affecting blood vessels or plant fluid tubes), Vaudeville (a type of entertainment popular chiefly in the early 20th century).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0721",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Vehemence",
+      "B": "Vehemance",
+      "C": "Vehamence",
+      "D": "Vahimence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Vehemence' - the display of strong feeling; passion; ends in '-ence'). Options B, C, and D alter internal vowels or the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0722",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Velocipede",
+      "B": "Venality",
+      "C": "Vendetta",
+      "D": "Venialaty"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Veniality' (spelled with '-i-', not '-a-' - the quality of being slight, pardonable, or excusable, as a sin). Other options are correct: Velocipede (an early form of bicycle), Venality (the condition of being susceptible to bribery), Vendetta (a prolonged and bitter feud).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0723",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Ventriloquism",
+      "B": "Ventriloquesm",
+      "C": "Ventriloquizm",
+      "D": "Ventriliquism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Ventriloquism' - the art of speaking without moving the lips; 'v-e-n-t-r-i-l-o-q-u-i-s-m'). Options B, C, and D alter connecting vowels or replace 's' with 'z'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0724",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Veracity",
+      "B": "Verbatim",
+      "C": "Verbiage",
+      "D": "Verbosety"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Verbosity' (spelled with '-si-', not '-se-' - the quality of using more words than are needed; wordiness). Other options are correct: Veracity (conformity to facts; accuracy; truthfulness), Verbatim (in exactly the same words as were used originally), Verbiage (speech or writing that uses too many words or excessively technical expressions).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0725",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Verisimilitude",
+      "B": "Veresimilitude",
+      "C": "Verisimilatude",
+      "D": "Verisimeletude"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Verisimilitude' - the appearance of being true or real; 'v-e-r-i-s-i-m-i-l-i-t-u-d-e'). Options B, C, and D alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0726",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Vermicelli",
+      "B": "Vermiculite",
+      "C": "Vernacular",
+      "D": "Versatality"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Versatility' (spelled with '-ti-', not '-ta-' - ability to adapt or be adapted to many different functions or activities). Other options are correct: Vermicelli (pasta made in long slender threads), Vermiculite (a hydrous, silicate mineral that expands greatly when heated), Vernacular (the language or dialect spoken by the ordinary people in a particular country or region).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0727",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Vertebrate",
+      "B": "Vertabrate",
+      "C": "Vertebrite",
+      "D": "Vertibrate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Vertebrate' - an animal of a large group distinguished by the possession of a backbone or spinal column; 'v-e-r-t-e-b-r-a-t-e'). Options B, C, and D alter the internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0728",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Vertical",
+      "B": "Vertiginous",
+      "C": "Vestibulary",
+      "D": "Vexatiouss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Vexatious' (ends in single 's' - causing or tending to cause annoyance, frustration, or worry). Other options are correct: Vertical (at right angles to a horizontal plane), Vertiginous (causing vertigo, especially by being extremely high or steep), Vestibulary (relating to a vestibule).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0729",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Viability",
+      "B": "Viebility",
+      "C": "Viabalaty",
+      "D": "Viabilety"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Viability' - ability to work successfully; 'v-i-a-b-i-l-i-t-y'). Options B, C, and D alter the vowel sequence.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0730",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Vibration",
+      "B": "Vicarious",
+      "C": "Viceroyalty",
+      "D": "Viciouss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Vicious' (ends in single 's' - deliberately cruel or violent). Other options are correct: Vibration (an instance of vibrating; rapid motion back and forth), Vicarious (experienced in the imagination through the feelings or actions of another person), Viceroyalty (the office, tenure, or jurisdiction of a viceroy).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0731",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Victorious",
+      "B": "Victorius",
+      "C": "Victerious",
+      "D": "Victoreous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Victorious' - having won a victory; triumphant; 'v-i-c-t-o-r-i-o-u-s'). Options B, C, and D truncate or alter the adjective ending.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0732",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Victual",
+      "B": "Videlicet",
+      "C": "Vigilante",
+      "D": "Vignete"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Vignette' (double 't' - a brief evocative description, account, or episode). Other options are correct: Victual (food or provisions), Videlicet (that is to say; namely), Vigilante (a member of a self-appointed group of citizens who undertake law enforcement in their community without legal authority).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0733",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Vilification",
+      "B": "Villification",
+      "C": "Vilifacation",
+      "D": "Vilefication"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Vilification' - abusively disparaging speech or writing; single 'l', 'v-i-l-i-f-i-c-a-t-i-o-n'). Options B, C, and D double 'l' or corrupt internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0734",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Vindication",
+      "B": "Vindictive",
+      "C": "Vinegar",
+      "D": "Vintnerry"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Vintnery' (single 'r' - the business or establishment of a wine merchant). Other options are correct: Vindication (the action of clearing someone of blame or suspicion), Vindictive (having or showing a strong or unreasoning desire for revenge), Vinegar (a sour-tasting liquid containing acetic acid).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0735",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Virulence",
+      "B": "Virulance",
+      "C": "Virralence",
+      "D": "Verulence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Virulence' - the severity or harmfulness of a disease or poison / bitter hostility; ends in '-ence'). Options B, C, and D alter the prefix or suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0736",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Viscosity",
+      "B": "Visionary",
+      "C": "Visualization",
+      "D": "Vitalaty"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Vitality' (spelled with '-i-', not '-a-' - the state of being strong and active; energy). Other options are correct: Viscosity (the state of being thick, sticky, and semi-fluid in consistency), Visionary (thinking about or planning the future with imagination or wisdom), Visualization (the representation of an object, situation, or set of information as a chart or image).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0737",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Vitiate",
+      "B": "Vitciate",
+      "C": "Veteate",
+      "D": "Vicheate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Vitiate' - spoil or impair the quality or efficiency of; 'v-i-t-i-a-t-e'). Options B, C, and D alter vowels or consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0738",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Vitreous",
+      "B": "Vituperative",
+      "C": "Vivacious",
+      "D": "Viviparos"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Viviparous' (ends in '-ous', not '-os' - bringing forth live young that have developed inside the body of the parent). Other options are correct: Vitreous (like glass in appearance or physical properties), Vituperative (bitter and abusive), Vivacious (attractively lively and animated).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0739",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Vociferation",
+      "B": "Voseferation",
+      "C": "Vociforation",
+      "D": "Vociferasion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Vociferation' - clamorous or vehement crying out; 'v-o-c-i-f-e-r-a-t-i-o-n'). Options B, C, and D alter the consonant stems or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0740",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Volatilization",
+      "B": "Volition",
+      "C": "Volubility",
+      "D": "Volumterous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Volumetric' (relating to the measurement of volume) or 'Voluptuous' (curvaceous and attractive), whereas 'Volumterous' is a nonexistent corrupted form. Other options are correct: Volatilization (the conversion of a chemical substance from a liquid or solid state to a gaseous state), Volition (the faculty or power of using one's will), Volubility (the quality of talking fluently, readily, or incessantly).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0741",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Voracious",
+      "B": "Voratious",
+      "C": "Voraceous",
+      "D": "Veracious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Voracious' - wanting or devouring great quantities of food; 'v-o-r-a-c-i-o-u-s'; note that 'veracious' means truthful, but 'voracious' matches the intended appetite context). Options B and C are invalid transcriptions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0742",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Vortex",
+      "B": "Voyeurism",
+      "C": "Vulnerabillity",
+      "D": "Vulgarity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Vulnerability' (single 'l' before 'ity' - the quality or state of being exposed to the possibility of being attacked or harmed). Other options are correct: Vortex (a mass of whirling fluid or air, especially a whirlpool or whirlwind), Voyeurism (the practice of gaining sexual pleasure from watching others when they are naked or engaged in sexual activity), Vulgarity (the state or quality of being vulgar; crude or unrefined).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0743",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Wainscoting",
+      "B": "Wainscotting",
+      "C": "Wainscoting",
+      "D": "Wenscoting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Wainscoting' - wooden paneling that lines the lower part of the walls of a room; 'w-a-i-n-s-c-o-t-i-n-g'). Option D alters the diphthong.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0744",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Waive",
+      "B": "Walpurgis",
+      "C": "Waranty",
+      "D": "Wastrel"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Warranty' (double 'r' - a written guarantee, issued to the purchaser of an article by its manufacturer). Other options are correct: Waive (refrain from insisting on or using a right or claim), Walpurgis (relating to Walpurgis Night, April 30), Wastrel (a wasteful or good-for-nothing person).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0745",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Waterlogged",
+      "B": "Waterloged",
+      "C": "Waterlawged",
+      "D": "Waterlagged"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Waterlogged' - saturated with or full of water so as to be heavy or unmanageable; double 'g'). Options B, C, and D drop consonants or distort root vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0746",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Wavelength",
+      "B": "Weathering",
+      "C": "Weightiness",
+      "D": "Welterweigt"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Welterweight' (contains 'h' in '-weight' - a weight in boxing and other sports intermediate between lightweight and middleweight). Other options are correct: Wavelength (the distance between successive crests of a wave), Weathering (wear away or change the appearance or texture of something by long exposure to the air), Weightiness (the quality of being heavy or important).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0747",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Wherewithal",
+      "B": "Wherewithall",
+      "C": "Wharewithal",
+      "D": "Wherewithalll"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Wherewithal' - the money or other means needed for a particular purpose; ends in single 'l'). Options B, C, and D double the terminal 'l' or alter prefix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0748",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Whimsicality",
+      "B": "Wholesome",
+      "C": "Wilderness",
+      "D": "Willingeness"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Willingness' (spelled without the extra 'e' before '-ness' - the quality or state of being prepared to do something; readiness). Other options are correct: Whimsicality (the quality of being playfully quaint or fanciful), Wholesome (conducive to or suggestive of good health and physical well-being), Wilderness (an uncultivated, uninhabited, and inhospitable region).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0749",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Witticism",
+      "B": "Witacism",
+      "C": "Wittisism",
+      "D": "Wittecism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Witticism' - a witty remark; double 't', 'w-i-t-t-i-c-i-s-m'). Options B, C, and D drop 't' or replace 'c' with 's'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0750",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Woebegone",
+      "B": "Wonderment",
+      "C": "Woollen",
+      "D": "Workmanshipy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Workmanship' (ends in '-ship', no 'y' - the degree of skill with which a product is made or a job done). Other options are correct: Woebegone (sad or miserable in appearance), Wonderment (a state of awed admiration or respect), Woollen (made of wool; standard UK spelling).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

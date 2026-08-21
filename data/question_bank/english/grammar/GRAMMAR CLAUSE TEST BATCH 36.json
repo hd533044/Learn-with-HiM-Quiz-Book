@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_CLAU_1551",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the type of dependent clause in the sentence: 'The scientist who discovered the vaccine was awarded a prize.'",
+    "options": {
+      "A": "Noun clause",
+      "B": "Adjective (relative) clause",
+      "C": "Adverbial clause of time",
+      "D": "Adverbial clause of manner"
+    },
+    "correct_option": "B",
+    "explanation": "The clause 'who discovered the vaccine' modifies the noun 'scientist', functioning as an adjective (relative) clause.",
+    "tags": ["grammar", "clauses", "relative_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1552",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She asked me that what I was doing in her office.'",
+    "options": {
+      "A": "She asked me",
+      "B": "that what",
+      "C": "I was doing in her office.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "In indirect WH-questions, combining 'that' and a WH-word ('that what') is incorrect. Correct: 'She asked me what I was doing...'",
+    "tags": ["grammar", "clauses", "noun_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1553",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause function: 'I know what you did last summer.'",
+    "options": {
+      "A": "Adjective clause modifying 'know'",
+      "B": "Noun clause acting as the direct object",
+      "C": "Adverbial clause of time",
+      "D": "Independent main clause"
+    },
+    "correct_option": "B",
+    "explanation": "The clause 'what you did last summer' answers the question 'what?' after the verb 'know', functioning as a noun clause (direct object).",
+    "tags": ["grammar", "clauses", "noun_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1554",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct conjunction for the adverbial clause of concession: '___ he worked hard, he failed the exam.'",
+    "options": {
+      "A": "Because",
+      "B": "Although",
+      "C": "Since",
+      "D": "Unless"
+    },
+    "correct_option": "B",
+    "explanation": "'Although' introduces an adverbial clause of concession (contrast/unexpected result).",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1555",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Wherever you will go, my blessings will follow you.'",
+    "options": {
+      "A": "Wherever you will go,",
+      "B": "my blessings",
+      "C": "will follow you.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "In conditional or place clauses introduced by words like 'wherever', 'when', or 'if', the future tense ('will') is replaced by the present tense. Correct: 'Wherever you go...'",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1556",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Since the roads were blocked, we had to take an alternate route.'",
+    "options": {
+      "A": "Adverbial clause of cause/reason",
+      "B": "Adjective clause modifying roads",
+      "C": "Noun clause acting as subject",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "The clause 'Since the roads were blocked' explains the cause or reason for the main action, forming an adverbial clause.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1557",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The reason why he resigned ___ still unclear.'",
+    "options": {
+      "A": "is",
+      "B": "are",
+      "C": "were",
+      "D": "have been"
+    },
+    "correct_option": "A",
+    "explanation": "The subject of the sentence is the singular noun phrase/clause headed by 'reason', requiring the singular verb 'is'.",
+    "tags": ["grammar", "clauses", "subject_verb_agreement", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1558",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He talks as if he knows everything about quantum physics.'",
+    "options": {
+      "A": "He talks",
+      "B": "as if he knows",
+      "C": "everything about quantum physics.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "After 'as if' / 'as though' denoting a hypothetical present comparison, the subjunctive past tense should be used. Correct: 'as if he knew...'",
+    "tags": ["grammar", "clauses", "subjunctive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1559",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct relative pronoun: 'The laptop ___ screen was cracked got repaired yesterday.'",
+    "options": {
+      "A": "which",
+      "B": "whose",
+      "C": "that",
+      "D": "whom"
+    },
+    "correct_option": "B",
+    "explanation": "'Whose' is the relative possessive pronoun used for both human and non-human antecedents.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1560",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause: 'Whatever you decide to do will have my full support.'",
+    "options": {
+      "A": "Noun clause acting as the subject",
+      "B": "Adjective clause modifying support",
+      "C": "Adverbial clause of condition",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "The clause 'Whatever you decide to do' functions as the subject of the sentence (Noun clause).",
+    "tags": ["grammar", "clauses", "noun_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1561",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man whom you thought was your friend turned out to be a spy.'",
+    "options": {
+      "A": "The man whom you thought",
+      "B": "was your friend",
+      "C": "turned out to be a spy.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The pronoun acts as the subject of 'was your friend', requiring the nominative case 'who', not 'whom'.",
+    "tags": ["grammar", "clauses", "relative_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1562",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Make hay ___ the sun shines.'",
+    "options": {
+      "A": "while",
+      "B": "until",
+      "C": "unless",
+      "D": "although"
+    },
+    "correct_option": "A",
+    "explanation": "'While' introduces an adverbial clause of time denoting simultaneous occurrence.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1563",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding restrictive vs. non-restrictive relative clauses:",
+    "options": {
+      "A": "My eldest brother, who lives in Canada, is an architect.",
+      "B": "My eldest brother who lives in Canada is an architect.",
+      "C": "Both are grammatically valid depending on context.",
+      "D": "Neither is valid."
+    },
+    "correct_option": "C",
+    "explanation": "Option A treats the clause as non-restrictive (he has only one eldest brother, or the clause is extra info). Option B treats it as restrictive (if he has multiple brothers). Both are valid depending on intended context.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1564",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He worked hard so that he will pass the examination.'",
+    "options": {
+      "A": "He worked hard",
+      "B": "so that he will",
+      "C": "pass the examination.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Sequence of tenses: a past tense main clause ('worked') requires a past modal ('might' or 'could') in purpose clauses introduced by 'so that'.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1565",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Unless you submit the documents by Friday, your application will be rejected.'",
+    "options": {
+      "A": "Adverbial clause of condition",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent main clause"
+    },
+    "correct_option": "A",
+    "explanation": "The clause 'Unless you submit the documents by Friday' sets the condition for the main clause result.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1566",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'This is the house ___ I was born.'",
+    "options": {
+      "A": "where",
+      "B": "which",
+      "C": "that",
+      "D": "whose"
+    },
+    "correct_option": "A",
+    "explanation": "Relative adverb 'where' (equivalent to 'in which') is used to modify a place antecedent.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1567",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The book that you lent me it is extremely interesting.'",
+    "options": {
+      "A": "The book that you lent me",
+      "B": "it is extremely",
+      "C": "interesting.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Redundant pronoun error: 'it' repeats the subject noun phrase 'The book'. Correct: 'The book that you lent me is extremely interesting.'",
+    "tags": ["grammar", "clauses", "redundancy", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1568",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct clause to complete the sentence: 'She acted as though ___.'",
+    "options": {
+      "A": "she owns the company",
+      "B": "she owned the company",
+      "C": "she has owned the company",
+      "D": "she will own the company"
+    },
+    "correct_option": "B",
+    "explanation": "After 'as though', unreal present comparisons require the past subjunctive ('owned').",
+    "tags": ["grammar", "clauses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1569",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause function: 'The rumor that the CEO was resigning spread rapidly.'",
+    "options": {
+      "A": "Noun clause in apposition to 'rumor'",
+      "B": "Adjective clause modifying rumor",
+      "C": "Adverbial clause of manner",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "The clause 'that the CEO was resigning' defines or explains the abstract noun 'rumor', functioning as a noun clause in apposition.",
+    "tags": ["grammar", "clauses", "noun_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1570",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'No sooner had the bell rung than the students rushed out.'",
+    "options": {
+      "A": "No sooner had the bell rung",
+      "B": "than the students",
+      "C": "rushed out.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'No sooner had... rung' is appropriately paired with 'than' and past tense 'rushed'.",
+    "tags": ["grammar", "clauses", "correlatives", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1571",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Hardly had we stepped outside ___ it began to pour.'",
+    "options": {
+      "A": "than",
+      "B": "when",
+      "C": "then",
+      "D": "that"
+    },
+    "correct_option": "B",
+    "explanation": "The correlative conjunction for 'Hardly' in time clauses is 'when'.",
+    "tags": ["grammar", "clauses", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1572",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He is the only man who can do this job.",
+      "B": "He is the only man that can do this job.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "When an antecedent is modified by 'the only', both 'who' and 'that' are accepted relative pronouns, though 'that' is traditionally preferred by some grammarians.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1573",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked me that why I was late.'",
+    "options": {
+      "A": "He asked me",
+      "B": "that why",
+      "C": "I was late.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Redundant conjunction: 'that' cannot precede a WH-word in indirect questions.",
+    "tags": ["grammar", "clauses", "noun_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1574",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Whatever happens, we must remain calm.'",
+    "options": {
+      "A": "Adverbial clause of concession",
+      "B": "Noun clause as subject",
+      "C": "Adjective clause modifying happens",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "'Whatever happens' functions as an adverbial clause of concession (meaning 'no matter what happens').",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1575",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She speaks ___ she knows all the answers.'",
+    "options": {
+      "A": "as if",
+      "B": "so that",
+      "C": "even though",
+      "D": "whereas"
+    },
+    "correct_option": "A",
+    "explanation": "'As if' introduces a manner/comparison clause.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1576",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct relative pronoun: 'The artist ___ paintings were exhibited won national acclaim.'",
+    "options": {
+      "A": "who",
+      "B": "whom",
+      "C": "whose",
+      "D": "which"
+    },
+    "correct_option": "C",
+    "explanation": "Possessive relative pronoun 'whose' is required to indicate ownership of the paintings.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1577",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man whom you saw him yesterday is our director.'",
+    "options": {
+      "A": "The man whom you saw him",
+      "B": "yesterday is",
+      "C": "our director.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Redundant pronoun 'him' repeats the object represented by 'whom'. Correct: 'The man whom you saw yesterday...'",
+    "tags": ["grammar", "clauses", "relative_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1578",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause: 'The belief that ghosts exist is superstitious.'",
+    "options": {
+      "A": "Noun clause in apposition to 'belief'",
+      "B": "Adjective clause modifying belief",
+      "C": "Adverbial clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "The clause 'that ghosts exist' explains the noun 'belief', functioning as a noun clause in apposition.",
+    "tags": ["grammar", "clauses", "noun_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1579",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Do you know ___ the train arrives?'",
+    "options": {
+      "A": "when",
+      "B": "that when",
+      "C": "if that",
+      "D": "what time when"
+    },
+    "correct_option": "A",
+    "explanation": "The noun clause acts as the direct object using the correct interrogative conjunction 'when'.",
+    "tags": ["grammar", "clauses", "noun_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1580",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "This is the same book which I lost last week.",
+      "B": "This is the same book that I lost last week.",
+      "C": "Both are equally preferred.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "B",
+    "explanation": "When an antecedent is preceded by 'the same', traditional grammar strictly requires 'that' rather than 'which'.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1581",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is one of those men who always helps others in need.'",
+    "options": {
+      "A": "He is one of those men",
+      "B": "who always helps",
+      "C": "others in need.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The antecedent of 'who' is 'men' (plural), so the verb in the relative clause must be plural ('help'). Correct: 'who always help others.'",
+    "tags": ["grammar", "clauses", "relative_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1582",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Walk carefully lest you should slip on the wet floor.'",
+    "options": {
+      "A": "Adverbial clause of purpose/result",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "The clause introduced by 'lest' (meaning 'for fear that') forms an adverbial clause of purpose.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1583",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He behaves ___ he owned the entire building.'",
+    "options": {
+      "A": "as if",
+      "B": "so that",
+      "C": "even though",
+      "D": "because"
+    },
+    "correct_option": "A",
+    "explanation": "'As if' introduces a hypothetical comparison clause.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1584",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct relative pronoun: 'The committee, ___ members disagreed vehemently, failed to reach a consensus.'",
+    "options": {
+      "A": "who",
+      "B": "whom",
+      "C": "whose",
+      "D": "which"
+    },
+    "correct_option": "C",
+    "explanation": "'Whose' can refer to collective noun antecedents when indicating possession of the members ('whose members').",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1585",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The reason why he failed is because he did not study.'",
+    "options": {
+      "A": "The reason why he failed",
+      "B": "is because",
+      "C": "he did not study.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Using 'because' after 'The reason why... is' creates a tautological redundancy. Correct: 'The reason why he failed is that he did not study.'",
+    "tags": ["grammar", "clauses", "redundancy", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1586",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause function: 'What you need right now is a long vacation.'",
+    "options": {
+      "A": "Noun clause acting as the subject",
+      "B": "Adjective clause modifying vacation",
+      "C": "Adverbial clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "The clause 'What you need right now' serves as the subject of the sentence.",
+    "tags": ["grammar", "clauses", "noun_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1587",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ hard he tried, he could not clear the hurdle.'",
+    "options": {
+      "A": "However",
+      "B": "Whatever",
+      "C": "Whenever",
+      "D": "Wherever"
+    },
+    "correct_option": "A",
+    "explanation": "'However hard he tried' introduces an adverbial clause of concession.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1588",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He told me that he would come tomorrow.",
+      "B": "He told me that he would come the next day.",
+      "C": "Both are correct depending on reporting context.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Reported speech time adjustments depend on whether the reporting time frame is immediate or delayed.",
+    "tags": ["grammar", "clauses", "reported_speech", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1589",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man whom I thought was trustworthy cheated me.'",
+    "options": {
+      "A": "The man whom I thought",
+      "B": "was trustworthy",
+      "C": "cheated me.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The relative pronoun is the subject of 'was trustworthy', so 'who' is required instead of 'whom'.",
+    "tags": ["grammar", "clauses", "relative_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1590",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Wherever you go in this city, you will find friendly people.'",
+    "options": {
+      "A": "Adverbial clause of place",
+      "B": "Adjective clause modifying city",
+      "C": "Noun clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "'Wherever you go in this city' functions as an adverbial clause of place.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1591",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She acted ___ she had never seen me before.'",
+    "options": {
+      "A": "as though",
+      "B": "so that",
+      "C": "in order that",
+      "D": "because"
+    },
+    "correct_option": "A",
+    "explanation": "'As though' introduces a hypothetical manner/comparison clause.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1592",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'This is the most challenging task ___ I have ever undertaken.'",
+    "options": {
+      "A": "which",
+      "B": "that",
+      "C": "who",
+      "D": "whom"
+    },
+    "correct_option": "B",
+    "explanation": "Following a superlative adjective ('most challenging task'), the relative pronoun 'that' is preferred.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1593",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The manager insisted that the report is submitted by noon.'",
+    "options": {
+      "A": "The manager insisted",
+      "B": "that the report is",
+      "C": "submitted by noon.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Mandative subjunctive requires the base verb 'be' after 'insisted that'. Correct: 'that the report be submitted...'",
+    "tags": ["grammar", "clauses", "subjunctive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1594",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause function: 'The fact that he apologized makes a big difference.'",
+    "options": {
+      "A": "Noun clause in apposition to 'fact'",
+      "B": "Adjective clause modifying fact",
+      "C": "Adverbial clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "The clause 'that he apologized' defines the noun 'fact', functioning as a noun clause in apposition.",
+    "tags": ["grammar", "clauses", "noun_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1595",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Scarcely had the match begun ___ it started to rain.'",
+    "options": {
+      "A": "than",
+      "B": "when",
+      "C": "then",
+      "D": "that"
+    },
+    "correct_option": "B",
+    "explanation": "'Scarcely' is correctly paired with 'when'.",
+    "tags": ["grammar", "clauses", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1596",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He is one of those individuals who always keep their promises.",
+      "B": "He is one of those individuals who always keeps their promises.",
+      "C": "Both are acceptable.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "A",
+    "explanation": "The antecedent of 'who' is 'individuals' (plural), so the relative clause verb is plural ('keep').",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1597",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man which stole your car was caught by the police.'",
+    "options": {
+      "A": "The man which",
+      "B": "stole your car was",
+      "C": "caught by the police.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "For human antecedents like 'man', the relative pronoun must be 'who', not 'which'. Correct: 'The man who stole...'",
+    "tags": ["grammar", "clauses", "relative_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1598",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Although the weather was harsh, the climbers reached the peak.'",
+    "options": {
+      "A": "Adverbial clause of concession",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "'Although the weather was harsh' introduces an adverbial clause of concession.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1599",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ comes first will receive the award.'",
+    "options": {
+      "A": "Whoever",
+      "B": "Whomever",
+      "C": "Whose",
+      "D": "Whom"
+    },
+    "correct_option": "A",
+    "explanation": "The compound relative pronoun 'Whoever' acts as the subject of the clause 'comes first'.",
+    "tags": ["grammar", "clauses", "noun_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1600",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is the smartest boy whom I have ever met in my life.'",
+    "options": {
+      "A": "He is the smartest boy",
+      "B": "whom I have ever",
+      "C": "met in my life.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Following a superlative adjective ('smartest boy'), the relative pronoun 'that' is preferred over 'whom' or 'who'.",
+    "tags": ["grammar", "clauses", "relative_clauses", "spotting_errors"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_0301",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Dodecahedron",
+      "B": "Dodecahedren",
+      "C": "Dodecohedron",
+      "D": "Dodecaheadron"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Dodecahedron' - a three-dimensional shape having twelve plane faces; 'd-o-d-e-c-a-h-e-d-r-o-n'). Options B, C, and D alter the connecting vowels or the Greek geometric root '-hedron'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0302",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Dourness",
+      "B": "Dramatisation",
+      "C": "Drudgery",
+      "D": "Duplicatous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Duplicitous' (spelled with '-i-', not '-a-' - deceitful; dishonest). Other options are correct: Dourness (the quality of being stern, gloomy, or severe), Dramatisation (the adaptation of a literary work for the stage), Drudgery (hard, menial, or dull work).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0303",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Ebullient",
+      "B": "Ebulient",
+      "C": "Ebulliant",
+      "D": "Ebullyent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Ebullient' - cheerful and full of energy; double 'l', ends in '-ient'). Options B, C, and D drop a consonant or alter the terminal suffix vowel.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0304",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Eccentricity",
+      "B": "Ecclesiastical",
+      "C": "Echinoderm",
+      "D": "Echalon"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Echelon' (contains 'e' before 'l' - a level or rank in an organization or society). Other options are correct: Eccentricity (the quality of being unconventional and slightly strange), Ecclesiastical (relating to the Christian Church or its clergy), Echinoderm (a marine invertebrate such as a starfish or sea urchin).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0305",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Echocardiogram",
+      "B": "Ecocardiogram",
+      "C": "Echochardiogram",
+      "D": "Echocardiogrem"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Echocardiogram' - a test that uses ultrasound waves to produce visual images of the heart; 'echo-' + 'cardio-' + 'gram'). Options B, C, and D drop or misplace 'h' or corrupt the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0306",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Eclecticism",
+      "B": "Econometric",
+      "C": "Effervescent",
+      "D": "Efficasious"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Efficacious' (spelled with '-aci-', not '-asi-' - successful in producing a desired or intended result; effective). Other options are correct: Eclecticism (the practice of deriving ideas from a broad and diverse range of sources), Econometric (relating to the application of statistical methods to economic data), Effervescent (giving off bubbles; vivacious and enthusiastic).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0307",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Effrontery",
+      "B": "Efrontery",
+      "C": "Effrontary",
+      "D": "Effrontry"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Effrontery' - insolent or impertinent behavior; double 'f', ends in '-ery'). Options B, C, and D omit a consonant or alter the final vowel group.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0308",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Effulgent",
+      "B": "Egregious",
+      "C": "Ejaculation",
+      "D": "Eldritch"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correctly spelt here ('Ejaculation' - the action of ejecting semen / something said quickly and suddenly). In SSC tests, it often appears incorrectly as 'Ejacelation'. Other options are correct: Effulgent (shining brightly; radiant), Egregious (outstandingly bad; shocking), Eldritch (weird and sinister or ghostly).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0309",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Eleemosynary",
+      "B": "Eleemosanary",
+      "C": "Elemosynary",
+      "D": "Eleemosinery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Eleemosynary' - relating to or dependent on charity; charitable; 'e-l-e-e-m-o-s-y-n-a-r-y'). Options B, C, and D alter the vowel composition derived from Greek 'eleemosyne'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0310",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Elegiac",
+      "B": "Eligability",
+      "C": "Elimination",
+      "D": "Elongation"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is incorrectly spelt; the correct spelling is 'Eligibility' (spelled with '-i-', not '-a-' - the state of having the right for something). Other options are correct: Elegiac (having a mournful quality), Elimination (the complete removal or destruction of something), Elongation (the lengthening of something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0311",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Embarrassment",
+      "B": "Embarasment",
+      "C": "Embarrassmant",
+      "D": "Embarment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Embarrassment' - a feeling of self-consciousness or awkwardness; double 'r', double 's', ends in '-ment'). Options B, C, and D drop consonants or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0312",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Embezzler",
+      "B": "Embroider",
+      "C": "Emmissary",
+      "D": "Emolument"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Emissary' (single 'm', double 's' - a person sent on a special diplomatic mission). Other options are correct: Embezzler (a person who misappropriates funds entrusted to them), Embroider (decorate cloth with needlework), Emolument (a salary, fee, or profit from employment or office).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0313",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Encephalitis",
+      "B": "Encefalitis",
+      "C": "Encephalytis",
+      "D": "Encephalites"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Encephalitis' - inflammation of the brain, caused by infection or allergy; 'e-n-c-e-p-h-a-l-i-t-i-s'). Options B, C, and D corrupt the medical root '-itis' or prefix 'encephalo-'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0314",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Encomium",
+      "B": "Encumbrance",
+      "C": "Encyclical",
+      "D": "Endeavouring"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correctly spelt here ('Encumbrance' - an impediment or burden; ends in '-ance'). Frequently tested as 'Encumberance'. Other options are correct: Encomium (a speech or piece of writing that praises someone or something highly), Encyclical (a papal letter sent to all bishops of the Roman Catholic Church), Endeavouring (trying hard to do or achieve something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0315",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Enfranchisement",
+      "B": "Enfranchisment",
+      "C": "Enfranchizement",
+      "D": "Enfranchaisement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Enfranchisement' - the giving of a right or privilege, especially the right to vote; 'e-n-f-r-a-n-c-h-i-s-e-m-e-n-t'). Options B, C, and D drop 'e' or alter the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0316",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Enigmatic",
+      "B": "Ennui",
+      "C": "Ensemble",
+      "D": "Entreprenuer"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Entrepreneur' (ends in '-eur', not '-uer' - a person who sets up a business, taking on financial risks). Other options are correct: Enigmatic (difficult to interpret or understand; mysterious), Ennui (a feeling of listlessness and dissatisfaction arising from a lack of occupation or excitement), Ensemble (a group of musicians, actors, or dancers who perform together).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0317",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Epigrammatic",
+      "B": "Epigramatic",
+      "C": "Epigrammatick",
+      "D": "Epegrammatic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Epigrammatic' - concise, clever, and amusing; double 'm', 'e-p-i-g-r-a-m-m-a-t-i-c'). Options B, C, and D drop a consonant or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0318",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Epiphany",
+      "B": "Episcopalian",
+      "C": "Epistolery",
+      "D": "Epitome"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Epistolary' (ends in '-ary', not '-ery' - relating to the writing of letters). Other options are correct: Epiphany (an experience of a sudden and striking realization), Episcopalian (of or relating to an episcopal church or form of church government), Epitome (a person or thing that is a perfect example of a particular quality or type).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0319",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Equanimity",
+      "B": "Equanemity",
+      "C": "Equinimity",
+      "D": "Equanematey"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Equanimity' - mental calmness, composure, and evenness of temper, especially in a difficult situation; 'e-q-u-a-n-i-m-i-t-y'). Options B, C, and D alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0320",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Equilibrium",
+      "B": "Equinox",
+      "C": "Equiped",
+      "D": "Equivocation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Equipped' (double 'p' - supplied with the necessary items for a purpose). Other options are correct: Equilibrium (a state in which opposing forces or influences are balanced), Equinox (the time or date at which the sun crosses the celestial equator), Equivocation (the use of ambiguous language to conceal the truth).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0321",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Erysipelas",
+      "B": "Erisipelas",
+      "C": "Erysepelas",
+      "D": "Erysipelus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Erysipelas' - an acute, sometimes recurrent disease caused by a bacterial infection, resulting in skin inflammation; 'e-r-y-s-i-p-e-l-a-s'). Options B, C, and D corrupt the Greek root.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0322",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Esoteric",
+      "B": "Espresso",
+      "C": "Essential",
+      "D": "Etymolagy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Etymology' (spelled with '-lo-', not '-la-' - the study of the origin of words and the way in which their meanings have changed throughout history). Other options are correct: Esoteric (intended for or likely to be understood by only a small number of people with a specialized knowledge), Espresso (strong black coffee made by forcing steam through ground coffee beans), Essential (absolutely necessary; extremely important).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0323",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Eucharist",
+      "B": "Eucharest",
+      "C": "Euchirist",
+      "D": "Eucarist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Eucharist' - the Christian ceremony commemorating the Last Supper, in which bread and wine are consecrated and consumed; 'e-u-c-h-a-r-i-s-t'). Options B, C, and D drop 'h' or alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0324",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Eugenic",
+      "B": "Euphemistic",
+      "C": "Euphonius",
+      "D": "Evangelical"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Euphonious' (contains 'o' in '-ous' - pleasant-sounding; agreeable to the ear). Other options are correct: Eugenic (relating to or fitted for the production of good offspring), Euphemistic (using polite or mild expressions to replace harsh ones), Evangelical (of or according to the teaching of the Christian gospel).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0325",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Exacerbate",
+      "B": "Exacerbate",
+      "C": "Exasorbate",
+      "D": "Exassurbate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Exacerbate' - make a problem, bad situation, or negative feeling worse; 'e-x-a-c-e-r-b-a-t-e'). Options C and D are phonetically corrupted forms.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0326",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Exaggeration",
+      "B": "Excandescence",
+      "C": "Exchequer",
+      "D": "Excommunication"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is incorrectly spelt; the correct spelling is 'Excandescent' or 'Incandescence' / 'Excandescent' (spelled 'e-x-c-a-n-d-e-s-c-e-n-t' meaning growing white or hot). In standard SSC questions, the intended word 'Excandescent' is tested, or 'Incandescence'. Other options are correct: Exaggeration (a statement that represents something as better or worse than it really is), Exchequer (a royal or national treasury), Excommunication (the action of officially excluding someone from participation in the sacraments and services of the religious community).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0327",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Excoriate",
+      "B": "Excoriatee",
+      "C": "Exkoriate",
+      "D": "Excooriate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Excoriate' - damage or remove part of the surface of the skin / criticize someone severely; 'e-x-c-o-r-i-a-t-e'). Options B, C, and D are faulty orthographic variations.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0328",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Excruciating",
+      "B": "Exculpatory",
+      "C": "Excursion",
+      "D": "Execrable"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correctly spelt here ('Execrable' - extremely bad or unpleasant; ends in '-able'). Frequently tested as 'Execrible'. Other options are correct: Excruciating (intensely painful), Exculpatory (tending to clear from a charge of fault or guilt), Excursion (a short journey or trip, especially one taken as a leisure activity).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0329",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Exhilaration",
+      "B": "Exileration",
+      "C": "Exhileration",
+      "D": "Exheliration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Exhilaration' - a feeling of great happiness, excitement, or elation; contains 'h' and spelled '-la-'). Options B, C, and D drop 'h' or substitute '-li-' for '-la-'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0330",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Exhortation",
+      "B": "Exhumation",
+      "C": "Exigency",
+      "D": "Exonorate"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Exonerate' (spelled with '-er-', not '-or-' - absolve someone from blame for a fault or wrongdoing). Other options are correct: Exhortation (an address or communication emphatically urging someone to do something), Exhumation (the action of digging up something buried, especially a corpse), Exigency (an urgent need or demand).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0331",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Exorbitant",
+      "B": "Exhorbitant",
+      "C": "Exorbitent",
+      "D": "Exsorbitant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Exorbitant' - unreasonably high; excessive; does not contain 'h', ends in '-ant'). Options B, C, and D improperly insert 'h' or alter the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0332",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Exorcism",
+      "B": "Expatiate",
+      "C": "Expatriation",
+      "D": "Expectorant"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correctly spelt here ('Expatiate' - speak or write in detail about a topic; 'e-x-p-a-t-i-a-t-e'). Frequently confused with 'Expiate'. Other options are correct: Exorcism (the expulsion or attempted expulsion of a supposed evil spirit from a person or place), Expatriation (the process of leaving one's country of residence), Expectorant (a medicine that promotes the secretion of sputum by the air passages).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0333",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Expeditious",
+      "B": "Expeditiouss",
+      "C": "Expeditious",
+      "D": "Expaditious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Expeditious' - done with speed and efficiency; 'e-x-p-e-d-i-t-i-o-u-s'). Option D alters the internal vowel to '-adi-'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0334",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Expurgate",
+      "B": "Extemporaneous",
+      "C": "Extradition",
+      "D": "Extravagance"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correctly spelt here ('Extradition' - the surrender of an alleged criminal by one state or nation to another). Other options are correct: Expurgate (remove matter thought to be objectionable or unsuitable from a book or account), Extemporaneous (spoken or done without preparation), Extravagance (lack of restraint in spending money or use of resources).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0335",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Facetious",
+      "B": "Fasetious",
+      "C": "Facetius",
+      "D": "Faceteous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Facetious' - treating serious issues with deliberately inappropriate humor; 'f-a-c-e-t-i-o-u-s'). Options B, C, and D are faulty phonetic variants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0336",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Fallacious",
+      "B": "Fallibility",
+      "C": "Fascination",
+      "D": "Fashist"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Fascist' (contains 'sc' - an advocate or follower of fascism). Other options are correct: Fallacious (based on a mistaken belief), Fallibility (the tendency to make mistakes or be wrong), Fascination (the state of being fascinated; great attraction).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0337",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Feasible",
+      "B": "Feasable",
+      "C": "Feesible",
+      "D": "Feasibble"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Feasible' - possible to do easily or conveniently; ends in '-ible'). Options B, C, and D alter the suffix to '-able' or distort the root vowel.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0338",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Fermentation",
+      "B": "Fertilisation",
+      "C": "Ficticious",
+      "D": "Filament"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Fictitious' (spelled with '-tious', not '-cious' - not real or true; imaginary or fabricated). Other options are correct: Fermentation (the chemical breakdown of a substance by bacteria, yeasts, or other microorganisms), Fertilisation (the action or process of fertilizing an egg or plant), Filament (a slender threadlike object or fiber).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0339",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Flagitious",
+      "B": "Flagitious",
+      "C": "Flagitiouss",
+      "D": "Flajitious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Flagitious' - of a person or their actions: criminal; villainous; 'f-l-a-g-i-t-i-o-u-s'). Options C and D corrupt the consonant root or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0340",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Flamboyance",
+      "B": "Flatulence",
+      "C": "Flexability",
+      "D": "Fluctuation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Flexibility' (spelled with '-i-', not '-a-' - the quality of bending easily without breaking). Other options are correct: Flamboyance (the tendency to attract attention through exuberance and stylishness), Flatulence (the accumulation of gas in the alimentary canal), Fluctuation (an irregular rising and falling in number or amount).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0341",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Fluorescent",
+      "B": "Flourescent",
+      "C": "Fluorescant",
+      "D": "Florescent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Fluorescent' - having or showing fluorescence; 'f-l-u-o-r-e-s-c-e-n-t', starts with 'fluo-'). Options B, C, and D misplace vowels as 'flou-' or modify the ending.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0342",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Forbearance",
+      "B": "Foreclosure",
+      "C": "Forefeiture",
+      "D": "Formidable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Forfeiture' (spelled 'f-o-r-f-e-i-t-u-r-e', drops 'e' after 'for-' - the loss of property or rights as a penalty). Other options are correct: Forbearance (patient self-control; restraint and tolerance), Foreclosure (the action of taking possession of a mortgaged property when the mortgagor fails to keep up their mortgage payments), Formidable (inspiring fear or respect through being impressively large, powerful, or capable).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0343",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Fortuitous",
+      "B": "Fortutious",
+      "C": "Fortuityous",
+      "D": "Fortuetous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Fortuitous' - happening by accident or chance rather than design; 'f-o-r-t-u-i-t-o-u-s'). Options B, C, and D alter the vowel order.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0344",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Fractious",
+      "B": "Fragility",
+      "C": "Fraternization",
+      "D": "Frivolousness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt here ('Fractious' - irritable and quarrelsome; 'f-r-a-c-t-i-o-u-s'). Often tested against 'Fractius'. Other options are correct: Fragility (the quality of being easily broken or damaged), Fraternization (the action of fraternizing; associating with someone intimately or friendly), Frivolousness (the quality of not having any serious purpose or value).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0345",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Fulminating",
+      "B": "Fullminating",
+      "C": "Fulmenating",
+      "D": "Fulminaiting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Fulminating' - expressing vehement protest / exploding violently; single 'l', 'f-u-l-m-i-n-a-t-i-n-g'). Options B, C, and D duplicate consonants or corrupt vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0346",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Fundamental",
+      "B": "Furthest",
+      "C": "Furtively",
+      "D": "Fusilade"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Fusillade' (double 'l' - a series of shots fired or missiles thrown all at the same time or in quick succession). Other options are correct: Fundamental (forming a necessary base or core; of central importance), Furthest (at the greatest distance in space or time), Furtively (in a way that attempts to avoid notice or attention; secretively).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0347",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Gargantuan",
+      "B": "Gargentean",
+      "C": "Gargantuen",
+      "D": "Gargantuan"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Gargantuan' - enormous; gigantic; 'g-a-r-g-a-n-t-u-a-n'). Options B and C corrupt the vowel suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0348",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Gastronomy",
+      "B": "Gelatinous",
+      "C": "Genealogical",
+      "D": "Genuflecsion"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Genuflection' (spelled with '-ct-', not '-cs-' - the act of bending the knee in worship or reverence). Other options are correct: Gastronomy (the practice or art of choosing, cooking, and eating good food), Gelatinous (having a jelly-like consistency), Genealogical (relating to the study or tracing of lines of family descent).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0349",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Gerontocracy",
+      "B": "Jerontocracy",
+      "C": "Gerantocracy",
+      "D": "Gerontocrasy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Gerontocracy' - a state, society, or group governed by old people; starts with 'G' and ends in '-cracy'). Options B, C, and D are faulty variants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0350",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Gestation",
+      "B": "Gesticulation",
+      "C": "Glomerular",
+      "D": "Gargalize"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Gargle' or 'Gargalize' is non-standard for 'Gargle' (wash one's mouth and throat). In test context: 'Gargalize' is incorrect. Other options are correct: Gestation (the process of carrying or being carried in the womb between conception and birth), Gesticulation (a dramatic gesture used instead of or alongside speaking), Glomerular (relating to a cluster of nerve endings or blood vessels in the kidney).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

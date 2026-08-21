@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0701",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA place where currency, coins, or medals are officially manufactured by the authority of the government",
+    "options": {
+      "A": "Mint",
+      "B": "Arsenal",
+      "C": "Brewery",
+      "D": "Archives"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mint) is correct[cite: 2]. A 'Mint' is an industrial facility where a nation's official coinage and medals are coined[cite: 2]. 'Arsenal' stores military weapons[cite: 2], and 'Archives' stores historical records[cite: 2].",
+    "tags": ["vocab", "ows", "places", "finance", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0702",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who hates, distrusts, or avoids humankind and society",
+    "options": {
+      "A": "Misanthrope",
+      "B": "Philanthropist",
+      "C": "Misogynist",
+      "D": "Altruist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Misanthrope) is correct[cite: 2]. A 'Misanthrope' dislikes and avoids other human beings[cite: 2]. 'Philanthropist' loves and promotes human welfare[cite: 2], and 'Misogynist' dislikes women specifically[cite: 2].",
+    "tags": ["vocab", "ows", "people", "personality", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0703",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who hoards wealth and spends as little money as possible; a stingy individual",
+    "options": {
+      "A": "Miser",
+      "B": "Spendthrift",
+      "C": "Profligate",
+      "D": "Extravagant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Miser) is correct[cite: 2]. A 'Miser' lives wretchedly in order to hoard money and hates spending it[cite: 2]. 'Spendthrift' and 'Profligate' spend money wastefully[cite: 2].",
+    "tags": ["vocab", "ows", "people", "money", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0704",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn unexpected, unfortunate, and unlucky accident or incident that causes damage",
+    "options": {
+      "A": "Mishap",
+      "B": "Fluke",
+      "C": "Serendipity",
+      "D": "Miracle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mishap) is correct[cite: 2]. A 'Mishap' is an unforeseen unfortunate accident[cite: 2]. 'Fluke' is an accidental stroke of good luck[cite: 2].",
+    "tags": ["vocab", "ows", "events", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0705",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who dislikes, despises, or is strongly prejudiced against women",
+    "options": {
+      "A": "Misogynist",
+      "B": "Misanthrope",
+      "C": "Misologist",
+      "D": "Philogynist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Misogynist) is correct[cite: 2]. A 'Misogynist' holds a deep hatred of women[cite: 2]. 'Misologist' hates reasoning or argument[cite: 2], and 'Philogynist' admires women[cite: 2].",
+    "tags": ["vocab", "ows", "people", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0706",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has a hatred of reasoned argument, logic, or intellectual enlightenment",
+    "options": {
+      "A": "Misologist",
+      "B": "Misoneist",
+      "C": "Misogynist",
+      "D": "Misanthrope"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Misologist) is correct[cite: 2]. A 'Misologist' hates debate, reason, or intellectual discussion[cite: 2]. 'Misoneist' hates new ideas or changes[cite: 2].",
+    "tags": ["vocab", "ows", "mind", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0707",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has a strong hatred, intolerance, or fear of anything new or of novel changes",
+    "options": {
+      "A": "Misoneist",
+      "B": "Misologist",
+      "C": "Iconoclast",
+      "D": "Radical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Misoneist) is correct[cite: 2]. A 'Misoneist' has an aversion to innovation or novelty[cite: 2]. 'Iconoclast' destroys traditional images or attacks established beliefs[cite: 2].",
+    "tags": ["vocab", "ows", "people", "ideas", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0708",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA device, formula, rhyme, or pattern of letters designed to aid human memory",
+    "options": {
+      "A": "Mnemonic",
+      "B": "Axiom",
+      "C": "Maxim",
+      "D": "Hypothesis"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mnemonic) is correct[cite: 2]. A 'Mnemonic' is a technique or tool designed to facilitate memorization[cite: 2]. 'Axiom' is a self-evident truth[cite: 2].",
+    "tags": ["vocab", "ows", "memory", "learning", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0709",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large, disorderly, and aggressive crowd of people, especially one intent on causing trouble",
+    "options": {
+      "A": "Mob",
+      "B": "Congregation",
+      "C": "Audience",
+      "D": "Clientele"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mob) is correct[cite: 2]. A 'Mob' is a tumultuous, violent crowd[cite: 2]. 'Congregation' is an assembly of religious worshippers[cite: 2], and 'Clientele' is a collection of customers[cite: 2].",
+    "tags": ["vocab", "ows", "collective_nouns", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0710",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA particular method, procedure, or habitual way of operating or working",
+    "options": {
+      "A": "Modus operandi",
+      "B": "Status quo",
+      "C": "Etiquette",
+      "D": "Protocol"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Modus operandi) is correct[cite: 2]. 'Modus operandi' refers to an established routine or operating pattern (often used of criminals)[cite: 2]. 'Protocol' is a code of diplomatic procedure[cite: 2].",
+    "tags": ["vocab", "ows", "latin", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0711",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLasting for only an extremely brief period of time; fleeting",
+    "options": {
+      "A": "Momentary",
+      "B": "Momentous",
+      "C": "Perpetual",
+      "D": "Eternal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Momentary) is correct[cite: 2]. 'Momentary' means brief or transient[cite: 2]. 'Momentous' means of immense significance[cite: 2], and 'Perpetual' means unending[cite: 2].",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0712",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOf great importance, significance, or consequence, especially in having a bearing on future events",
+    "options": {
+      "A": "Momentous",
+      "B": "Trivial",
+      "C": "Momentary",
+      "D": "Frivolous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Momentous) is correct[cite: 2]. 'Momentous' means having vital, historic importance[cite: 2]. 'Trivial' and 'Frivolous' mean minor and of little worth[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "importance", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0713",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sovereign head of state, especially a king, queen, or emperor",
+    "options": {
+      "A": "Monarch",
+      "B": "Autocrat",
+      "C": "Dictator",
+      "D": "Demagogue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Monarch) is correct[cite: 2]. A 'Monarch' is a hereditary royal sovereign[cite: 2]. 'Demagogue' is an opportunistic leader appealing to popular prejudice[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0714",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA system of government headed by a king, queen, or hereditary ruler",
+    "options": {
+      "A": "Monarchy",
+      "B": "Anarchy",
+      "C": "Oligarchy",
+      "D": "Plutocracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Monarchy) is correct[cite: 2]. 'Monarchy' is supreme authority vested in a single royal ruler[cite: 2]. 'Anarchy' is complete lawlessness without government[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "cracy", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0715",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA formal cautionary advice or warning of impending danger",
+    "options": {
+      "A": "Monition",
+      "B": "Harangue",
+      "C": "Diatribe",
+      "D": "Oration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Monition) is correct[cite: 2]. 'Monition' is a forewarning or notice of caution regarding danger[cite: 2]. 'Harangue' is an aggressive tirade[cite: 2].",
+    "tags": ["vocab", "ows", "warnings", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0716",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who practices marrying only one spouse at a time",
+    "options": {
+      "A": "Monogamist",
+      "B": "Polygamist",
+      "C": "Polyandrist",
+      "D": "Celibate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Monogamist) is correct[cite: 2]. A 'Monogamist' observes the custom of having one partner at a time[cite: 2]. 'Polygamist' has multiple wives[cite: 2], and 'Polyandrist' has multiple husbands[cite: 2].",
+    "tags": ["vocab", "ows", "marriage", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0717",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe custom, practice, or state of being married to only one person at a time",
+    "options": {
+      "A": "Monogamy",
+      "B": "Polygamy",
+      "C": "Polyandry",
+      "D": "Bigamy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Monogamy) is correct[cite: 2]. 'Monogamy' is the practice of having a single spouse at one time[cite: 2]. 'Bigamy' is the crime of marrying while already married to another.",
+    "tags": ["vocab", "ows", "marriage", "society", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0718",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn obsessive enthusiasm for or abnormal preoccupation with one single idea or topic",
+    "options": {
+      "A": "Monomania",
+      "B": "Bibliomania",
+      "C": "Dipsomania",
+      "D": "Pyromania"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Monomania) is correct[cite: 2]. 'Monomania' is an exaggerated mental obsession with one subject[cite: 2]. 'Pyromania' is a compulsive urge to set fires[cite: 2].",
+    "tags": ["vocab", "ows", "mania", "psychology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0719",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe exclusive control of the supply of or trade in a particular commodity or service",
+    "options": {
+      "A": "Monopoly",
+      "B": "Oligopoly",
+      "C": "Duopoly",
+      "D": "Cartel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Monopoly) is correct[cite: 2]. A 'Monopoly' is absolute market dominance by a single enterprise or seller[cite: 2]. 'Cartel' is an association of manufacturers to maintain prices.",
+    "tags": ["vocab", "ows", "economics", "business", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0720",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who believes that there is only one supreme God",
+    "options": {
+      "A": "Monotheist",
+      "B": "Polytheist",
+      "C": "Pantheist",
+      "D": "Atheist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Monotheist) is correct[cite: 2]. A 'Monotheist' believes in a single universal deity[cite: 2]. A 'Polytheist' worships several gods[cite: 2], and a 'Pantheist' sees God in all nature[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0721",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nDull, tedious, and repetitious; lacking in variety and interest",
+    "options": {
+      "A": "Monotonous",
+      "B": "Heterogeneous",
+      "C": "Multitudinous",
+      "D": "Scintillating"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Monotonous) is correct[cite: 2]. 'Monotonous' means unvarying, boring, and tedious[cite: 2]. 'Scintillating' means sparkling and brightly animated[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0722",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA structure, statue, or building erected to preserve the memory of a person or notable event",
+    "options": {
+      "A": "Monument",
+      "B": "Mausoleum",
+      "C": "Epitaph",
+      "D": "Cenotaph"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Monument) is correct[cite: 2]. A 'Monument' is an enduring structure commemorating historical individuals or victories[cite: 2]. 'Epitaph' is a text inscription on a gravestone[cite: 2].",
+    "tags": ["vocab", "ows", "architecture", "history", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0723",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo secure a ship or boat in a fixed place with cables, lines, or an anchor",
+    "options": {
+      "A": "Moor",
+      "B": "Navigate",
+      "C": "Flounder",
+      "D": "Traverse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Moor) is correct[cite: 2]. 'Moor' means to attach a boat to the shore or sea bottom using an anchor and ropes[cite: 2]. 'Flounder' means to struggle clumsily[cite: 2].",
+    "tags": ["vocab", "ows", "nautical", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0724",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe essential customs, values, and moral conventions of a community or social group",
+    "options": {
+      "A": "Mores",
+      "B": "Ethics",
+      "C": "Etiquette",
+      "D": "Protocol"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mores) is correct[cite: 2]. 'Mores' refers to the fundamental moral habits and traditional rules of a group[cite: 2]. 'Protocol' is diplomatic etiquette[cite: 2].",
+    "tags": ["vocab", "ows", "society", "culture", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0725",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA legal agreement in which a bank lends money at interest in exchange for taking title of the debtor's property",
+    "options": {
+      "A": "Mortgage",
+      "B": "Lease",
+      "C": "Collateral",
+      "D": "Rebate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mortgage) is correct[cite: 2]. A 'Mortgage' is a secured property loan agreement with a creditor[cite: 2]. A 'Lease' is a temporary rental agreement[cite: 2].",
+    "tags": ["vocab", "ows", "finance", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0726",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA building, room, or facility in which dead bodies are kept before burial or autopsy",
+    "options": {
+      "A": "Mortuary",
+      "B": "Sanatorium",
+      "C": "Cemetery",
+      "D": "Infirmary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mortuary) is correct[cite: 2]. A 'Mortuary' (or morgue) is a depository for corpses awaiting funeral rites or post-mortem study[cite: 2]. 'Cemetery' is a burial ground[cite: 2].",
+    "tags": ["vocab", "ows", "places", "death", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0727",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA picture, pattern, or decorative design made by setting small pieces of colored stone, glass, or tile together",
+    "options": {
+      "A": "Mosaic",
+      "B": "Graffiti",
+      "C": "Portrait",
+      "D": "Caricature"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mosaic) is correct[cite: 2]. A 'Mosaic' is an inlaid surface decoration composed of small colored pieces of stone or glass[cite: 2]. 'Graffiti' is public wall writing[cite: 2].",
+    "tags": ["vocab", "ows", "art", "architecture", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0728",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo wrap or cover up tightly for warmth or to deaden a sound",
+    "options": {
+      "A": "Muffle",
+      "B": "Smother",
+      "C": "Engulf",
+      "D": "Embed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Muffle) is correct[cite: 2]. 'Muffle' means to envelop for warmth or suppress the volume of a sound[cite: 2]. 'Smother' means to suffocate by covering airways[cite: 2].",
+    "tags": ["vocab", "ows", "actions", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0729",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExisting or present in great numbers; manifold or numerous",
+    "options": {
+      "A": "Multitudinous",
+      "B": "Scant",
+      "C": "Sparse",
+      "D": "Insignificant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Multitudinous) is correct[cite: 2]. 'Multitudinous' means consisting of an immense number or variety of parts[cite: 2]. 'Scant' and 'Sparse' mean thin or meager in quantity[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0730",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA human or animal body embalmed and treated with preservatives and wrapped in bandages (as in ancient Egypt)",
+    "options": {
+      "A": "Mummy",
+      "B": "Carcass",
+      "C": "Fossil",
+      "D": "Relic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mummy) is correct[cite: 2]. A 'Mummy' is an artificially preserved dead body[cite: 2]. 'Carcass' is the dead body of an animal[cite: 2], and 'Fossil' is petrified ancient remains[cite: 2].",
+    "tags": ["vocab", "ows", "history", "death", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0731",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn open rebellion or defiance against lawful authority, especially by soldiers or sailors against their officers",
+    "options": {
+      "A": "Mutiny",
+      "B": "Junta",
+      "C": "Anarchy",
+      "D": "Defiance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mutiny) is correct[cite: 2]. 'Mutiny' is an insurrection by armed personnel against their commanding officers[cite: 2]. 'Junta' is a military cabal governing a nation[cite: 2].",
+    "tags": ["vocab", "ows", "military", "crime", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0732",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nShort-sighted; lacking foresight, intellectual scope, or long-term vision",
+    "options": {
+      "A": "Myopic",
+      "B": "Visionary",
+      "C": "Pragmatic",
+      "D": "Astute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Myopic) is correct[cite: 2]. 'Myopic' means nearsighted or narrow-minded without long-term foresight[cite: 2]. 'Visionary' refers to someone thinking ahead with wisdom[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0733",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSomething that is difficult or impossible to understand, explain, or unravel; an enigma",
+    "options": {
+      "A": "Mystery",
+      "B": "Axiom",
+      "C": "Truism",
+      "D": "Manifesto"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mystery) is correct[cite: 2]. A 'Mystery' is a secret or baffling problem that cannot be explained[cite: 2]. 'Axiom' is an established rule[cite: 2].",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0734",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abnormal, irrational fear of telling lies or myths",
+    "options": {
+      "A": "Mythophobia",
+      "B": "Claustrophobia",
+      "C": "Hydrophobia",
+      "D": "Acrophobia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mythophobia) is correct[cite: 2]. 'Mythophobia' is the pathological fear of making false statements or telling myths[cite: 2]. 'Claustrophobia' is fear of enclosed spaces[cite: 2].",
+    "tags": ["vocab", "ows", "phobia", "psychology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0735",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person or thing having the exact same name as another",
+    "options": {
+      "A": "Namesake",
+      "B": "Pseudonym",
+      "C": "Acronym",
+      "D": "Homonym"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Namesake) is correct[cite: 2]. A 'Namesake' is an individual named after another or bearing the identical name[cite: 2]. 'Pseudonym' is a fictitious pen name[cite: 2].",
+    "tags": ["vocab", "ows", "people", "language", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0736",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExcessive, obsessive interest in or admiration of oneself and one's physical appearance",
+    "options": {
+      "A": "Narcissism",
+      "B": "Altruism",
+      "C": "Stoicism",
+      "D": "Apathy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Narcissism) is correct[cite: 2]. 'Narcissism' is extreme self-admiration and vanity[cite: 2]. 'Altruism' is unselfish care for the welfare of others[cite: 2].",
+    "tags": ["vocab", "ows", "psychology", "personality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0737",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has an excessive, vain fascination with themselves and their own appearance",
+    "options": {
+      "A": "Narcissist",
+      "B": "Philanthropist",
+      "C": "Misanthrope",
+      "D": "Ascetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Narcissist) is correct[cite: 2]. A 'Narcissist' is a person full of excessive self-love[cite: 2]. 'Philanthropist' is a lover of humanity[cite: 2], and 'Ascetic' lives an austere life[cite: 2].",
+    "tags": ["vocab", "ows", "personality", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0738",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person, plant, or animal born, reared, or originating naturally in a particular locality",
+    "options": {
+      "A": "Native",
+      "B": "Alien",
+      "C": "Immigrant",
+      "D": "Expatriate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Native) is correct[cite: 2]. 'Native' (or Indigenous) refers to an organism associated with a place by birth or origin[cite: 2]. 'Alien' and 'Expatriate' refer to foreigners[cite: 2].",
+    "tags": ["vocab", "ows", "geography", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0739",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo plan and direct the course of a ship, aircraft, or vehicle by using charts and instruments",
+    "options": {
+      "A": "Navigate",
+      "B": "Flounder",
+      "C": "Moor",
+      "D": "Traverse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Navigate) is correct[cite: 2]. 'Navigate' is to steer or guide a ship or craft along a designated path[cite: 2]. 'Moor' is to secure a ship to anchor[cite: 2].",
+    "tags": ["vocab", "ows", "travel", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0740",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe characteristic whinnying sound or high-pitched call uttered by a horse",
+    "options": {
+      "A": "Neigh",
+      "B": "Caw",
+      "C": "Screech",
+      "D": "Grunt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Neigh) is correct[cite: 2]. 'Neigh' (or whinny) is the vocal sound of a horse[cite: 2]. 'Caw' is the call of a crow[cite: 2], and 'Screech' is a harsh piercing cry[cite: 2].",
+    "tags": ["vocab", "ows", "sounds", "animals", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0741",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA distinct district or community within a town or city; the people living in close proximity",
+    "options": {
+      "A": "Neighbourhood",
+      "B": "Hinterland",
+      "C": "Ghetto",
+      "D": "Hamlet"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Neighbourhood) is correct[cite: 2]. A 'Neighbourhood' is a localized community district[cite: 2]. 'Hamlet' is a very small settlement[cite: 2], and 'Ghetto' is an impoverished isolated slum[cite: 2].",
+    "tags": ["vocab", "ows", "places", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0742",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe inescapable, deserved punishment or downfall arising from wrong actions; retributive justice",
+    "options": {
+      "A": "Nemesis",
+      "B": "Amnesty",
+      "C": "Impunity",
+      "D": "Sanctuary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nemesis) is correct[cite: 2]. 'Nemesis' refers to an agent of retribution or inevitable downfall satisfying natural justice[cite: 2]. 'Impunity' is exemption from penalty[cite: 2].",
+    "tags": ["vocab", "ows", "mythology", "justice", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0743",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA newly coined word, term, or modern expression",
+    "options": {
+      "A": "Neologism",
+      "B": "Archaism",
+      "C": "Solecism",
+      "D": "Tautology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Neologism) is correct[cite: 2]. 'Neologism' is a newly introduced or invented word[cite: 2]. 'Archaism' is an obsolete ancient word, and 'Solecism' is a grammatical blunder[cite: 2].",
+    "tags": ["vocab", "ows", "language", "words", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0744",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has recently converted to a new religion, belief, or began an unfamiliar activity",
+    "options": {
+      "A": "Neophyte",
+      "B": "Veteran",
+      "C": "Virtuoso",
+      "D": "Curator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Neophyte) is correct[cite: 2]. A 'Neophyte' (or novice) is a beginner or new religious convert[cite: 2]. 'Veteran' is a long-experienced practitioner[cite: 2].",
+    "tags": ["vocab", "ows", "people", "religion", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0745",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe practice among those with power or influence of favouring relatives or friends, especially in appointments",
+    "options": {
+      "A": "Nepotism",
+      "B": "Altruism",
+      "C": "Egalitarianism",
+      "D": "Patriotism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nepotism) is correct[cite: 2]. 'Nepotism' is patronage and unfair bias shown to family relatives in jobs and politics[cite: 2]. 'Altruism' is unselfish charity[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "society", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0746",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA physician or medical specialist who studies and treats disorders of the nervous system",
+    "options": {
+      "A": "Neurologist",
+      "B": "Cardiologist",
+      "C": "Dermatologist",
+      "D": "Radiologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Neurologist) is correct[cite: 2]. A 'Neurologist' specializes in brain, spine, and nerve disorders[cite: 2]. 'Cardiologist' treats heart diseases[cite: 2], and 'Dermatologist' treats skin[cite: 2].",
+    "tags": ["vocab", "ows", "medical", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0747",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe branch of medicine or biology that deals with the anatomy and diseases of the nervous system",
+    "options": {
+      "A": "Neurology",
+      "B": "Cytology",
+      "C": "Entomology",
+      "D": "Haematology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Neurology) is correct[cite: 2]. 'Neurology' is the scientific study of the nervous system[cite: 2]. 'Haematology' is the study of blood[cite: 2], and 'Cytology' is the study of cells[cite: 2].",
+    "tags": ["vocab", "ows", "science", "medical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0748",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA shallow decorative hollow or recess in a wall, especially one used for displaying a statue",
+    "options": {
+      "A": "Niche",
+      "B": "Altar",
+      "C": "Cellar",
+      "D": "Attic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Niche) is correct[cite: 2]. A 'Niche' is an architectural alcove in a wall for statues or urns[cite: 2]. 'Altar' is an offering table in worship places[cite: 2].",
+    "tags": ["vocab", "ows", "architecture", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0749",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe philosophical rejection of all religious and moral principles, often in the belief that life is meaningless",
+    "options": {
+      "A": "Nihilism",
+      "B": "Pantheism",
+      "C": "Theocracy",
+      "D": "Fatalism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nihilism) is correct[cite: 2]. 'Nihilism' asserts that values are baseless and existence is meaningless[cite: 2]. 'Pantheism' sees God in everything[cite: 2], and 'Fatalism' believes in destiny[cite: 2].",
+    "tags": ["vocab", "ows", "philosophy", "ideas", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0750",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA transcendent state of liberation from the cycle of rebirth and suffering; spiritual salvation",
+    "options": {
+      "A": "Nirvana",
+      "B": "Elysium",
+      "C": "Utopia",
+      "D": "Sanctuary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Nirvana) is correct[cite: 2]. 'Nirvana' is the Buddhist/Hindu concept of ultimate release from rebirth and earthly suffering[cite: 2]. 'Elysium' is Greek paradise[cite: 2], and 'Utopia' is ideal society[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "philosophy", "pyq_ssc"]
+  }
+]

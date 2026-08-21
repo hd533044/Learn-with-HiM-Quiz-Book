@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_1251",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medicine or remedy that is believed to cure all diseases and ailments",
+    "options": {
+      "A": "Antidote",
+      "B": "Panacea",
+      "C": "Placebo",
+      "D": "Tonic"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Panacea) is correct. A 'Panacea' is a universal remedy or cure-all for any disease or difficulty. 'Antidote' neutralizes a specific poison.",
+    "tags": ["vocab", "ows", "medical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1252",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA government or state ruled by a single absolute dictator or monarch",
+    "options": {
+      "A": "Autocracy",
+      "B": "Democracy",
+      "C": "Oligarchy",
+      "D": "Federation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Autocracy) is correct. An 'Autocracy' is a system of government where supreme political power is concentrated in the hands of one person.",
+    "tags": ["vocab", "ows", "politics", "cracy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1253",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who leaves their own country to settle permanently in another",
+    "options": {
+      "A": "Immigrant",
+      "B": "Emigrant",
+      "C": "Expatriate",
+      "D": "Tourist"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Emigrant) is correct. An 'Emigrant' is someone who exits their native country to live abroad. (Note: An immigrant enters a foreign land).",
+    "tags": ["vocab", "ows", "people", "citizenship", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1254",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA book or volume containing detailed maps and geographical charts",
+    "options": {
+      "A": "Dictionary",
+      "B": "Atlas",
+      "C": "Directory",
+      "D": "Gazetteer"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Atlas) is correct. An 'Atlas' is a bound collection of geographical maps and reference charts.",
+    "tags": ["vocab", "ows", "books", "geography", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1255",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCapable of being heard; loud enough to reach human ears",
+    "options": {
+      "A": "Inaudible",
+      "B": "Audible",
+      "C": "Silent",
+      "D": "Muted"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Audible) is correct. 'Audible' describes sounds clear and loud enough to be heard. 'Inaudible' cannot be heard.",
+    "tags": ["vocab", "ows", "sound", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1256",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA government in which power is exercised by elected representatives of the people",
+    "options": {
+      "A": "Autocracy",
+      "B": "Oligarchy",
+      "C": "Democracy",
+      "D": "Plutocracy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Democracy) is correct. 'Democracy' is a system of government by the whole population through elected officials.",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1257",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn enclosure or building where aquatic animals and plants are kept",
+    "options": {
+      "A": "Aviary",
+      "B": "Apiary",
+      "C": "Aquarium",
+      "D": "Zoo"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Aquarium) is correct. An 'Aquarium' is a transparent tank or facility for keeping fish and water plants.",
+    "tags": ["vocab", "ows", "places", "animals", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1258",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who studies the stars, planets, and outer space science",
+    "options": {
+      "A": "Astrologer",
+      "B": "Geologist",
+      "C": "Astronomer",
+      "D": "Anthropologist"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Astronomer) is correct. An 'Astronomer' is a scientist studying celestial bodies and the universe.",
+    "tags": ["vocab", "ows", "science", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1259",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who writes life stories of other people",
+    "options": {
+      "A": "Autobiographer",
+      "B": "Historian",
+      "C": "Biographer",
+      "D": "Novelist"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Biographer) is correct. A 'Biographer' writes the detailed story of another person's life.",
+    "tags": ["vocab", "ows", "people", "literature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1260",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA state of complete lawlessness and political disorder resulting from absence of government",
+    "options": {
+      "A": "Monarchy",
+      "B": "Democracy",
+      "C": "Anarchy",
+      "D": "Oligarchy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Anarchy) is correct. 'Anarchy' is a condition of lawlessness or political disorder due to the lack of a controlling authority.",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1261",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA collection of historical records or documents providing information about a place, institution, or group",
+    "options": {
+      "A": "Library",
+      "B": "Museum",
+      "C": "Archives",
+      "D": "Mint"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Archives) is correct. 'Archives' is the correct term for a collection of historical documents or records.",
+    "tags": ["vocab", "ows", "places", "history", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1262",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who opposes official or established religious beliefs",
+    "options": {
+      "A": "Believer",
+      "B": "Devotee",
+      "C": "Heretic",
+      "D": "Saint"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Heretic) is correct. A 'Heretic' holds opinions contrary to orthodox religious doctrine.",
+    "tags": ["vocab", "ows", "religion", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1263",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who enters a building illegally with intent to steal",
+    "options": {
+      "A": "Smuggler",
+      "B": "Poacher",
+      "C": "Burglar",
+      "D": "Pirate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Burglar) is correct. A 'Burglar' unlawfully enters a building to commit theft.",
+    "tags": ["vocab", "ows", "crime", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1264",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who eats human flesh",
+    "options": {
+      "A": "Herbivore",
+      "B": "Carnivore",
+      "C": "Cannibal",
+      "D": "Omnivore"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Cannibal) is correct. A 'Cannibal' is a human or animal that feeds on flesh of its own species.",
+    "tags": ["vocab", "ows", "people", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1265",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who travels from place to place selling miscellaneous goods",
+    "options": {
+      "A": "Merchant",
+      "B": "Shopkeeper",
+      "C": "Peddler",
+      "D": "Customer"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Peddler) is correct. A 'Peddler' (or hawker) travels about selling small items.",
+    "tags": ["vocab", "ows", "professions", "trade", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1266",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA short journey made for pleasure or educational exploration",
+    "options": {
+      "A": "Voyage",
+      "B": "Expedition",
+      "C": "Excursion",
+      "D": "Migration"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Excursion) is correct. An 'Excursion' is a brief pleasure trip or outing.",
+    "tags": ["vocab", "ows", "travel", "leisure", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1267",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medicine that kills bacteria or prevents infection",
+    "options": {
+      "A": "Antidote",
+      "B": "Sedative",
+      "C": "Antiseptic",
+      "D": "Laxative"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Antiseptic) is correct. An 'Antiseptic' substance prevents the growth of disease-causing microorganisms.",
+    "tags": ["vocab", "ows", "medical", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1268",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small village or rural community smaller than a town",
+    "options": {
+      "A": "City",
+      "B": "Metropolis",
+      "C": "Village",
+      "D": "Capital"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Village) is correct. A 'Village' is a human settlement smaller than a town.",
+    "tags": ["vocab", "ows", "places", "geography", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1269",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn instrument used for viewing objects at a distance, especially in astronomy",
+    "options": {
+      "A": "Microscope",
+      "B": "Periscope",
+      "C": "Telescope",
+      "D": "Stethoscope"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Telescope) is correct. A 'Telescope' magnifies distant objects in space.",
+    "tags": ["vocab", "ows", "instruments", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1270",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who pretends to be what they are not; a deceiver",
+    "options": {
+      "A": "Hypocrite",
+      "B": "Sincere",
+      "C": "Imposter",
+      "D": "Authentic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Imposter) is correct. An 'Imposter' practices deception by assuming a false identity.",
+    "tags": ["vocab", "ows", "people", "deception", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1271",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who hates or distrusts humankind",
+    "options": {
+      "A": "Philanthropist",
+      "B": "Humanitarian",
+      "C": "Misanthrope",
+      "D": "Altruist"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Misanthrope) is correct. A 'Misanthrope' is a person who dislikes humankind and avoids society.",
+    "tags": ["vocab", "ows", "people", "personality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1272",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who collects or studies stamps",
+    "options": {
+      "A": "Numismatist",
+      "B": "Cartographer",
+      "C": "Philatelist",
+      "D": "Lexicographer"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Philatelist) is correct. A 'Philatelist' collects and studies postage stamps.",
+    "tags": ["vocab", "ows", "hobbies", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1273",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA state of society without government or law",
+    "options": {
+      "A": "Democracy",
+      "B": "Monarchy",
+      "C": "Anarchy",
+      "D": "Oligarchy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Anarchy) is correct. 'Anarchy' refers to a society devoid of law and government order.",
+    "tags": ["vocab", "ows", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1274",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA speech or writing in praise of someone, especially a person who has recently died",
+    "options": {
+      "A": "Elegy",
+      "B": "Dirge",
+      "C": "Eulogy",
+      "D": "Epitaph"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Eulogy) is correct. A 'Eulogy' is a speech praising someone, typically at a funeral.",
+    "tags": ["vocab", "ows", "literature", "speeches", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1275",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who can neither read nor write",
+    "options": {
+      "A": "Educated",
+      "B": "Literate",
+      "C": "Illiterate",
+      "D": "Scholar"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Illiterate) is correct. An 'Illiterate' person lacks the ability to read and write.",
+    "tags": ["vocab", "ows", "education", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1276",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn animal that feeds on plants",
+    "options": {
+      "A": "Carnivore",
+      "B": "Omnivore",
+      "C": "Herbivore",
+      "D": "Insectivore"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Herbivore) is correct. A 'Herbivore' is an animal that feeds exclusively on vegetation.",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1277",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who compiles dictionaries",
+    "options": {
+      "A": "Author",
+      "B": "Editor",
+      "C": "Lexicographer",
+      "D": "Publisher"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Lexicographer) is correct. A 'Lexicographer' compiles, writes, and edits dictionaries.",
+    "tags": ["vocab", "ows", "professions", "books", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1278",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCapable of being bent easily without breaking",
+    "options": {
+      "A": "Rigid",
+      "B": "Stiff",
+      "C": "Flexible",
+      "D": "Brittle"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Flexible) is correct. 'Flexible' means pliable and capable of bending easily.",
+    "tags": ["vocab", "ows", "materials", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1279",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn establishment where public money is coined under government authority",
+    "options": {
+      "A": "Bank",
+      "B": "Treasury",
+      "C": "Mint",
+      "D": "Depot"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Mint) is correct. A 'Mint' is an industrial facility producing legal tender coins.",
+    "tags": ["vocab", "ows", "places", "finance", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1280",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who hates or dislikes women",
+    "options": {
+      "A": "Feminist",
+      "B": "Philogynist",
+      "C": "Misogynist",
+      "D": "Altruist"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Misogynist) is correct. A 'Misogynist' is a person with a deep-seated prejudice or hatred against women.",
+    "tags": ["vocab", "ows", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1281",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has no money and is extremely poor",
+    "options": {
+      "A": "Millionaire",
+      "B": "Opulent",
+      "C": "Destitute",
+      "D": "Affluent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Destitute) is correct. 'Destitute' means lacking all basic necessities of life due to extreme poverty.",
+    "tags": ["vocab", "ows", "people", "poverty", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1282",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is new to a profession or training; a beginner",
+    "options": {
+      "A": "Veteran",
+      "B": "Expert",
+      "C": "Novice",
+      "D": "Master"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Novice) is correct. A 'Novice' is an inexperienced beginner in any trade or field.",
+    "tags": ["vocab", "ows", "people", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1283",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn animal that feeds on both plants and meat",
+    "options": {
+      "A": "Herbivore",
+      "B": "Carnivore",
+      "C": "Omnivore",
+      "D": "Insectivore"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Omnivore) is correct. An 'Omnivore' consumes both plant and animal matter.",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1284",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who walks on foot rather than traveling by vehicle",
+    "options": {
+      "A": "Driver",
+      "B": "Rider",
+      "C": "Pedestrian",
+      "D": "Pilot"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Pedestrian) is correct. A 'Pedestrian' is someone walking along a road or street.",
+    "tags": ["vocab", "ows", "people", "travel", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1285",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA cure for all diseases or problems",
+    "options": {
+      "A": "Antidote",
+      "B": "Placebo",
+      "C": "Panacea",
+      "D": "Tonic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Panacea) is correct. A 'Panacea' serves as a universal remedy for all ills.",
+    "tags": ["vocab", "ows", "medical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1286",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who loves humankind and supports charitable causes",
+    "options": {
+      "A": "Misanthrope",
+      "B": "Egoist",
+      "C": "Philanthropist",
+      "D": "Cynic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Philanthropist) is correct. A 'Philanthropist' promotes human welfare through generous donations.",
+    "tags": ["vocab", "ows", "people", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1287",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn imaginary ideal society free of poverty and suffering; a utopia",
+    "options": {
+      "A": "Dystopia",
+      "B": "Hell",
+      "C": "Utopia",
+      "D": "Slum"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Utopia) is correct. A 'Utopia' represents an imaginary perfect political or social paradise.",
+    "tags": ["vocab", "ows", "philosophy", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1288",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nGovernment by a small group of privileged people",
+    "options": {
+      "A": "Democracy",
+      "B": "Autocracy",
+      "C": "Oligarchy",
+      "D": "Monarchy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Oligarchy) is correct. 'Oligarchy' is political rule by a small elite group.",
+    "tags": ["vocab", "ows", "politics", "cracy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1289",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA government in which all power is vested in religious leaders",
+    "options": {
+      "A": "Democracy",
+      "B": "Autocracy",
+      "C": "Theocracy",
+      "D": "Plutocracy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Theocracy) is correct. 'Theocracy' is governance by religious clerics.",
+    "tags": ["vocab", "ows", "politics", "religion", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1290",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who acts without monetary reward; someone doing work voluntarily",
+    "options": {
+      "A": "Mercenary",
+      "B": "Employee",
+      "C": "Volunteer",
+      "D": "Professional"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Volunteer) is correct. A 'Volunteer' offers services freely without being paid.",
+    "tags": ["vocab", "ows", "people", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1291",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA speech delivered at the end of a play or literary work addressing the audience",
+    "options": {
+      "A": "Prologue",
+      "B": "Preface",
+      "C": "Epilogue",
+      "D": "Introduction"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Epilogue) is correct. An 'Epilogue' is a concluding section or speech at the end of a dramatic work.",
+    "tags": ["vocab", "ows", "literature", "theatre", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1292",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who loves and collects books",
+    "options": {
+      "A": "Philatelist",
+      "B": "Numismatist",
+      "C": "Bibliophile",
+      "D": "Cartographer"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Bibliophile) is correct. A 'Bibliophile' is an avid collector and lover of books.",
+    "tags": ["vocab", "ows", "people", "hobbies", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1293",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who kills someone else for political reasons or money; a hired killer",
+    "options": {
+      "A": "Soldier",
+      "B": "Guard",
+      "C": "Assassin",
+      "D": "Policeman"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Assassin) is correct. An 'Assassin' is someone who murders an important person for political or monetary motives.",
+    "tags": ["vocab", "ows", "crime", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1294",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA place where public sports events and athletic matches are held",
+    "options": {
+      "A": "Gymnasium",
+      "B": "Court",
+      "C": "Stadium",
+      "D": "Ring"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Stadium) is correct. A 'Stadium' is a large venue designed for sports matches and public spectacles.",
+    "tags": ["vocab", "ows", "places", "sports", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1295",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA written declaration made under oath before an authorized magistrate",
+    "options": {
+      "A": "Contract",
+      "B": "Agreement",
+      "C": "Affidavit",
+      "D": "Treaty"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Affidavit) is correct. An 'Affidavit' is a verified written statement confirmed by oath or affirmation for use as legal evidence.",
+    "tags": ["vocab", "ows", "law", "documents", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1296",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who studies human history and prehistory through excavation of sites and artifacts",
+    "options": {
+      "A": "Anthropologist",
+      "B": "Geologist",
+      "C": "Archaeologist",
+      "D": "Historian"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Archaeologist) is correct. An 'Archaeologist' recovers human history through the excavation of ancient material remains.",
+    "tags": ["vocab", "ows", "science", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1297",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is skilled in foreign languages",
+    "options": {
+      "A": "Monolingual",
+      "B": "Illiterate",
+      "C": "Linguist",
+      "D": "Author"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Linguist) is correct. A 'Linguist' is proficient in speaking and studying multiple languages.",
+    "tags": ["vocab", "ows", "language", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1298",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who breaks laws and flees justice to avoid arrest",
+    "options": {
+      "A": "Citizen",
+      "B": "Magistrate",
+      "C": "Fugitive",
+      "D": "Constable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Fugitive) is correct. A 'Fugitive' is a person running away from legal custody or police pursuit.",
+    "tags": ["vocab", "ows", "law", "crime", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1299",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA short journey made for pleasure or sightseeing",
+    "options": {
+      "A": "Voyage",
+      "B": "Expedition",
+      "C": "Excursion",
+      "D": "Migration"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Excursion) is correct. An 'Excursion' refers to a short, pleasurable trip or outing.",
+    "tags": ["vocab", "ows", "travel", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1300",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn expert judge in matters of taste, fine art, food, or wine",
+    "options": {
+      "A": "Amateur",
+      "B": "Novice",
+      "C": "Connoisseur",
+      "D": "Tyro"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Connoisseur) is correct. A 'Connoisseur' is an informed and critical expert judge of the fine arts or gourmet cuisine.",
+    "tags": ["vocab", "ows", "people", "art", "pyq_ssc"]
+  }
+]

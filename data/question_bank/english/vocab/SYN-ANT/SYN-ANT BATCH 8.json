@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0351",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DERIVATIVE**",
+    "options": {
+      "A": "Original",
+      "B": "Unoriginal",
+      "C": "Primary",
+      "D": "Seminal"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Derivative' means imitative of the work of another artist, writer, etc., and usually disapproved of for that reason. 'Unoriginal', 'imitative', or 'secondary' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0352",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DERIVATIVE**",
+    "options": {
+      "A": "Imitative",
+      "B": "Copied",
+      "C": "Original",
+      "D": "Secondary"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Derivative' means lacking originality. 'Original', 'innovative', or 'seminal' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0353",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DESICCATE**",
+    "options": {
+      "A": "Dehydrate",
+      "B": "Moisten",
+      "C": "Hydrate",
+      "D": "Inundate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Desiccate' means to remove the moisture from something, typically in order to preserve it; dry out. 'Dehydrate', 'dry', or 'parch' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0354",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DESICCATE**",
+    "options": {
+      "A": "Parch",
+      "B": "Drain",
+      "C": "Hydrate",
+      "D": "Wither"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Desiccate' means to dry out completely. 'Hydrate', 'moisten', or 'soak' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0355",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DESULTORY**",
+    "options": {
+      "A": "Systematic",
+      "B": "Haphazard",
+      "C": "Methodical",
+      "D": "Organized"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Desultory' means lacking a plan, purpose, or enthusiasm; occurring haphazardly. 'Haphazard', 'random', or 'erratic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0356",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DESULTORY**",
+    "options": {
+      "A": "Random",
+      "B": "Aimless",
+      "C": "Methodical",
+      "D": "Erratic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Desultory' means disconnected and lacking method. 'Methodical', 'systematic', or 'orderly' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0357",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DETRIMENT**",
+    "options": {
+      "A": "Advantage",
+      "B": "Benefit",
+      "C": "Harm",
+      "D": "Gain"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Detriment' means the state of being harmed or damaged; damage or injury. 'Harm', 'impairment', or 'loss' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0358",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DETRIMENT**",
+    "options": {
+      "A": "Advantage",
+      "B": "Disadvantage",
+      "C": "Damage",
+      "D": "Hurt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Detriment' means harm or loss. 'Advantage', 'benefit', or 'asset' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0359",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DIAPHANOUS**",
+    "options": {
+      "A": "Opaque",
+      "B": "Sheer",
+      "C": "Thick",
+      "D": "Heavy"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Diaphanous' describes fabric that is light, delicate, and translucent. 'Sheer', 'translucent', or 'gossamer' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0360",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DIAPHANOUS**",
+    "options": {
+      "A": "Translucent",
+      "B": "Gossamer",
+      "C": "Opaque",
+      "D": "Transparent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Diaphanous' means light and translucent. 'Opaque', 'thick', or 'dense' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0361",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DIATRIBE**",
+    "options": {
+      "A": "Eulogy",
+      "B": "Tirade",
+      "C": "Panegyric",
+      "D": "Commendation"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Diatribe' refers to a forceful and bitter verbal attack against someone or something. 'Tirade', 'harangue', or 'invective' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0362",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DIATRIBE**",
+    "options": {
+      "A": "Invective",
+      "B": "Harangue",
+      "C": "Eulogy",
+      "D": "Castigation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Diatribe' is a bitter verbal attack. 'Eulogy', 'panegyric', or 'praise' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0363",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DIFFIDENT**",
+    "options": {
+      "A": "Confident",
+      "B": "Timid",
+      "C": "Audacious",
+      "D": "Brazen"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Diffident' means modest or shy because of a lack of self-confidence. 'Timid', 'shy', or 'bashful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0364",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DIFFIDENT**",
+    "options": {
+      "A": "Reticent",
+      "B": "Bashful",
+      "C": "Assertive",
+      "D": "Timid"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Diffident' means shy and lacking confidence. 'Assertive', 'confident', or 'bold' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0365",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DIFFUSE**",
+    "options": {
+      "A": "Disperse",
+      "B": "Concentrate",
+      "C": "Compress",
+      "D": "Condense"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Diffuse' means to spread or cause to spread over a wide area or among a large number of people. 'Disperse', 'scatter', or 'disseminate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0366",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DIFFUSE**",
+    "options": {
+      "A": "Scattered",
+      "B": "Dispersed",
+      "C": "Concentrated",
+      "D": "Copious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Diffuse' means spread out or verbose. 'Concentrated', 'compact', or 'succinct' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0367",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DILATORY**",
+    "options": {
+      "A": "Tardy",
+      "B": "Prompt",
+      "C": "Punctual",
+      "D": "Expeditious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Dilatory' means slow to act; intended to cause delay. 'Tardy', 'unhurried', or 'sluggish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0368",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DILATORY**",
+    "options": {
+      "A": "Sluggish",
+      "B": "Procrastinating",
+      "C": "Prompt",
+      "D": "Lax"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Dilatory' means causing delay or slow. 'Prompt', 'punctual', or 'expeditious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0369",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DILETTANTE**",
+    "options": {
+      "A": "Amateur",
+      "B": "Professional",
+      "C": "Connoisseur",
+      "D": "Expert"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Dilettante' refers to a person who cultivates an area of interest without real commitment or knowledge. 'Amateur', 'dabbler', or 'tyro' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0370",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DILETTANTE**",
+    "options": {
+      "A": "Dabbler",
+      "B": "Novice",
+      "C": "Expert",
+      "D": "Amateur"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Dilettante' is an amateur or superficial dabbler. 'Expert', 'professional', or 'connoisseur' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0371",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DIMINUTIVE**",
+    "options": {
+      "A": "Petite",
+      "B": "Colossal",
+      "C": "Gigantic",
+      "D": "Enormous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Diminutive' means extremely or unusually small. 'Petite', 'tiny', or 'miniature' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0372",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DIMINUTIVE**",
+    "options": {
+      "A": "Minute",
+      "B": "Petite",
+      "C": "Colossal",
+      "D": "Puny"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Diminutive' means very small. 'Colossal', 'huge', or 'mammoth' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0373",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISABUSE**",
+    "options": {
+      "A": "Enlighten",
+      "B": "Deceive",
+      "C": "Mislead",
+      "D": "Delude"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Disabuse' means to persuade someone that an idea or belief is mistaken. 'Enlighten', 'undeceive', or 'set straight' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0374",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISABUSE**",
+    "options": {
+      "A": "Undeceive",
+      "B": "Disillusion",
+      "C": "Delude",
+      "D": "Clarify"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Disabuse' means to free someone from a misconception. 'Delude', 'mislead', or 'deceive' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0375",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISCERN**",
+    "options": {
+      "A": "Perceive",
+      "B": "Overlook",
+      "C": "Ignore",
+      "D": "Disregard"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Discern' means to recognize or find out; distinguish. 'Perceive', 'differentiate', or 'detect' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0376",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISCERN**",
+    "options": {
+      "A": "Distinguish",
+      "B": "Overlook",
+      "C": "Recognize",
+      "D": "Detect"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Discern' means to notice or perceive. 'Overlook', 'miss', or 'ignore' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0377",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISCORDANT**",
+    "options": {
+      "A": "Inharmonious",
+      "B": "Melodious",
+      "C": "Harmonious",
+      "D": "Congruous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Discordant' means disagreeing or incongruous; harsh and jarring because of a lack of harmony. 'Inharmonious', 'dissonant', or 'jarring' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0378",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISCORDANT**",
+    "options": {
+      "A": "Dissonant",
+      "B": "Jarring",
+      "C": "Harmonious",
+      "D": "Strident"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Discordant' means lacking harmony. 'Harmonious', 'consonant', or 'melodious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0379",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISCREDIT**",
+    "options": {
+      "A": "Disgrace",
+      "B": "Honor",
+      "C": "Praise",
+      "D": "Exalt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Discredit' means to harm the good reputation of someone or cause an idea to seem false or unreliable. 'Disgrace', 'dishonor', or 'debunk' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0380",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISCREDIT**",
+    "options": {
+      "A": "Dishonor",
+      "B": "Disgrace",
+      "C": "Validate",
+      "D": "Disprove"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Discredit' means to cast doubt or dishonor upon. 'Validate', 'honor', or 'substantiate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0381",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISCREPANCY**",
+    "options": {
+      "A": "Inconsistency",
+      "B": "Agreement",
+      "C": "Concordance",
+      "D": "Similarity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Discrepancy' refers to an illogical or surprising lack of compatibility or similarity between two or more facts. 'Inconsistency', 'disparity', or 'divergence' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0382",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISCREPANCY**",
+    "options": {
+      "A": "Divergence",
+      "B": "Incongruity",
+      "C": "Consistency",
+      "D": "Variance"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Discrepancy' means a mismatch or difference. 'Consistency', 'accordance', or 'conformity' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0383",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISDAIN**",
+    "options": {
+      "A": "Scorn",
+      "B": "Admiration",
+      "C": "Esteem",
+      "D": "Reverence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Disdain' means the feeling that someone or something is unworthy of one's consideration or respect. 'Scorn', 'contempt', or 'derision' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0384",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISDAIN**",
+    "options": {
+      "A": "Contempt",
+      "B": "Derision",
+      "C": "Veneration",
+      "D": "Spite"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Disdain' means contemptuous dislike. 'Veneration', 'admiration', or 'respect' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0385",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISINGENUOUS**",
+    "options": {
+      "A": "Deceitful",
+      "B": "Frank",
+      "C": "Candid",
+      "D": "Artless"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Disingenuous' means not candid or sincere, typically by pretending that one knows less about something than one really does. 'Deceitful', 'insincere', or 'duplicitous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0386",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISINGENUOUS**",
+    "options": {
+      "A": "Duplicitous",
+      "B": "Guileful",
+      "C": "Candid",
+      "D": "Insincere"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Disingenuous' means insincere or untruthful. 'Candid', 'frank', or 'ingenuous' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0387",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISPARAGE**",
+    "options": {
+      "A": "Belittle",
+      "B": "Extol",
+      "C": "Commend",
+      "D": "Applaud"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Disparage' means to regard or represent as being of little worth. 'Belittle', 'deprecate', or 'denigrate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0388",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISPARAGE**",
+    "options": {
+      "A": "Decry",
+      "B": "Denigrate",
+      "C": "Extol",
+      "D": "Deride"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Disparage' means to speak slightingly of. 'Extol', 'praise', or 'laud' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0389",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISPARATE**",
+    "options": {
+      "A": "Dissimilar",
+      "B": "Identical",
+      "C": "Homogeneous",
+      "D": "Uniform"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Disparate' means essentially different in kind; not allowing comparison. 'Dissimilar', 'contrasting', or 'diverse' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0390",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISPARATE**",
+    "options": {
+      "A": "Divergent",
+      "B": "Distinct",
+      "C": "Homogeneous",
+      "D": "Incongruous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Disparate' means distinct or fundamentally different. 'Homogeneous', 'similar', or 'uniform' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0391",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISPASSIONATE**",
+    "options": {
+      "A": "Biased",
+      "B": "Impartial",
+      "C": "Prejudiced",
+      "D": "Emotional"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Dispassionate' means not influenced by strong emotion, and so able to be rational and impartial. 'Impartial', 'unbiased', or 'objective' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0392",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISPASSIONATE**",
+    "options": {
+      "A": "Objective",
+      "B": "Neutral",
+      "C": "Biased",
+      "D": "Detached"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Dispassionate' means objective and detached. 'Biased', 'prejudiced', or 'passionate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0393",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISSEMINATE**",
+    "options": {
+      "A": "Circulate",
+      "B": "Gather",
+      "C": "Suppress",
+      "D": "Withhold"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Disseminate' means to spread (something, especially information) widely. 'Circulate', 'disperse', or 'broadcast' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0394",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISSEMINATE**",
+    "options": {
+      "A": "Broadcast",
+      "B": "Propagate",
+      "C": "Suppress",
+      "D": "Diffuse"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Disseminate' means to spread broadly. 'Suppress', 'withhold', or 'conceal' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0395",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISSIPATE**",
+    "options": {
+      "A": "Squander",
+      "B": "Conserve",
+      "C": "Hoard",
+      "D": "Accumulate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Dissipate' means to disperse, scatter, or waste/fritter away (money, energy, or resources). 'Squander', 'waste', or 'deplete' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0396",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISSIPATE**",
+    "options": {
+      "A": "Fritter",
+      "B": "Waste",
+      "C": "Conserve",
+      "D": "Disperse"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Dissipate' means to squander or scatter. 'Conserve', 'accumulate', or 'preserve' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0397",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISSONANCE**",
+    "options": {
+      "A": "Discord",
+      "B": "Harmony",
+      "C": "Euphony",
+      "D": "Concord"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Dissonance' refers to a lack of harmony among musical notes, or a tension/clash resulting from the combination of two disharmonious elements. 'Discord', 'cacophony', or 'incongruity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0398",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISSONANCE**",
+    "options": {
+      "A": "Cacophony",
+      "B": "Discord",
+      "C": "Harmony",
+      "D": "Friction"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Dissonance' means harsh clashing sounds or disagreement. 'Harmony', 'concord', or 'euphony' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0399",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DISTEND**",
+    "options": {
+      "A": "Dilate",
+      "B": "Shrink",
+      "C": "Contract",
+      "D": "Deflate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Distend' means to swell or cause to swell by pressure from inside. 'Dilate', 'expand', or 'bloat' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0400",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DISTEND**",
+    "options": {
+      "A": "Expand",
+      "B": "Inflate",
+      "C": "Dilate",
+      "D": "Contract"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Distend' means to swell outward. 'Contract', 'shrink', or 'deflate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

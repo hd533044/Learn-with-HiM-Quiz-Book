@@ -1,0 +1,721 @@
+[
+  {
+    "cloze_id": "ENG_CLOZE_SET_111",
+    "passage_title": "The Global Semiotic Landscape of Microplastics",
+    "passage_text": "Microplastic particles have permeated virtually every trophic level of marine and terrestrial ecosystems, acting as recalcitrant environmental (1) _________. Originating from the physical fragmentation of synthetic polymers and the direct shedding of synthetic textiles, these microscopic pollutants resist natural bio-degradation. In marine environments, buoyant plastic debris adsorbs hydrophobic chemical toxins, transforming individual particles into toxic vectors that marine fauna readily (2) _________. This ingestion introduces endocrine-disrupting chemicals into the food web, resulting in chronic physiological (3) _________ across aquatic populations. Furthermore, the presence of synthetic polymers in agricultural soils alters microbial biodiversity and impairs root moisture absorption. Addressing this escalating ecological crisis requires stringent regulatory (4) _________ on single-use polymers and substantial public funding for biodegradable material alternatives. Without concerted international intervention, microplastic accumulation will permanently compromise planetary biospheric (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_111_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "contaminants",
+          "B": "nutrients",
+          "C": "catalysts",
+          "D": "remedies"
+        },
+        "correct_option": "A",
+        "rationale": "'Contaminants' refers to polluting or poisonous substances introduced into the natural environment."
+      },
+      {
+        "id": "ENG_CLOZE_111_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "ingest",
+          "B": "excrete",
+          "C": "repel",
+          "D": "synthesize"
+        },
+        "correct_option": "A",
+        "rationale": "'Ingest' means to take food or other substances into the body by swallowing."
+      },
+      {
+        "id": "ENG_CLOZE_111_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "dysfunction",
+          "B": "resilience",
+          "C": "vitality",
+          "D": "equilibrium"
+        },
+        "correct_option": "A",
+        "rationale": "'Dysfunction' denotes an abnormality or impairment in the normal functioning of an organ or biological system."
+      },
+      {
+        "id": "ENG_CLOZE_111_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "restrictions",
+          "B": "subsidies",
+          "C": "exemptions",
+          "D": "incentives"
+        },
+        "correct_option": "A",
+        "rationale": "'Restrictions' indicates legal limits or controls imposed on single-use plastics to reduce pollution."
+      },
+      {
+        "id": "ENG_CLOZE_111_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "integrity",
+          "B": "decay",
+          "C": "obsolescence",
+          "D": "depletion"
+        },
+        "correct_option": "A",
+        "rationale": "'Integrity' in an ecological context refers to the state of being whole, sound, and functioning unimpaired."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_112",
+    "passage_title": "The Structural Evolution of Global Supply Chains",
+    "passage_text": "Contemporary international commerce is anchored in intricate global supply chains designed under the doctrine of 'just-in-time' lean manufacturing. While this operational paradigm maximized capital (1) _________ by minimizing inventory storage costs, it inadvertently introduced systemic vulnerabilities to macroeconomic shocks. Recent geopolitical confrontations and global health emergencies have exposed the fragility of hyper-optimized logistical networks, causing cascading shipping bottlenecks and material (2) _________. In response, multinational corporations are actively reconfiguring their procurement strategies from single-source cost minimization to geographic (3) _________. Strategies such as 'near-shoring' and 'friend-shoring' seek to insulate critical production lines from unpredictable foreign political (4) _________. However, restructuring global manufacturing corridors requires substantial capital outlays and risks fueling structural price (5) _________ across consumer goods.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_112_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "efficiency",
+          "B": "waste",
+          "C": "stagnation",
+          "D": "redundancy"
+        },
+        "correct_option": "A",
+        "rationale": "'Capital efficiency' describes optimizing resource deployment to produce maximum financial output with minimal idle stock."
+      },
+      {
+        "id": "ENG_CLOZE_112_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "shortages",
+          "B": "surpluses",
+          "C": "deluges",
+          "D": "bounties"
+        },
+        "correct_option": "A",
+        "rationale": "'Shortages' refers to a deficiency in the quantity of raw materials and goods available relative to market demand."
+      },
+      {
+        "id": "ENG_CLOZE_112_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "diversification",
+          "B": "centralization",
+          "C": "monopolization",
+          "D": "isolation"
+        },
+        "correct_option": "A",
+        "rationale": "'Geographic diversification' means spreading supplier sources across multiple regions to reduce regional supply disruption risks."
+      },
+      {
+        "id": "ENG_CLOZE_112_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "upheavals",
+          "B": "alliances",
+          "C": "treaties",
+          "D": "accords"
+        },
+        "correct_option": "A",
+        "rationale": "'Political upheavals' denotes sudden, disruptive political turmoil or changes that jeopardize supply line continuity."
+      },
+      {
+        "id": "ENG_CLOZE_112_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "inflation",
+          "B": "deflation",
+          "C": "stagnation",
+          "D": "stabilization"
+        },
+        "correct_option": "A",
+        "rationale": "'Price inflation' refers to the sustained increase in the general price level of goods resulting from higher supply costs."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_113",
+    "passage_title": "Behavioral Neurobiology of Addiction",
+    "passage_text": "Neurobiological models of chemical substance dependence identify dysregulation within the mesolimbic dopamine pathway as the central engine of addiction. The ventral tegmental area (VTA) projects dopaminergic neurons to the nucleus accumbens, forming a circuit responsible for encoding reward and incentive (1) _________. Addictive substances trigger supraphysiological surges of dopamine, reinforcing maladaptive consumption behaviors far more intensely than natural evolutionary rewards. Chronic substance exposure prompts neuroadaptive cellular down-regulation, reducing dopamine receptor density and producing profound psychological (2) _________. Consequently, individuals require progressively larger doses to achieve the initial hedonic response, a phenomenon known as pharmacodynamic (3) _________. Concurrently, structural remodeling in the prefrontal cortex compromises executive control and impulse inhibition, leaving individuals acutely (4) _________ to cue-induced relapse. Effective clinical therapies must combine pharmacological receptor stabilization with cognitive behavioral techniques to restore neural (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_113_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "salience",
+          "B": "apathy",
+          "C": "indifference",
+          "D": "revulsion"
+        },
+        "correct_option": "A",
+        "rationale": "'Incentive salience' is the neurobiological term for the motivational 'wanting' attribute assigned to reward-predicting stimuli."
+      },
+      {
+        "id": "ENG_CLOZE_113_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "tolerance",
+          "B": "euphoria",
+          "C": "serenity",
+          "D": "ecstasy"
+        },
+        "correct_option": "A",
+        "rationale": "'Tolerance' denotes the state of reduced sensitivity to a drug resulting from repeated administration."
+      },
+      {
+        "id": "ENG_CLOZE_113_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "tolerance",
+          "B": "toxicity",
+          "C": "immunity",
+          "D": "lethality"
+        },
+        "correct_option": "A",
+        "rationale": "'Pharmacodynamic tolerance' is the formal pharmacological term for the decreased cellular responsiveness to a drug."
+      },
+      {
+        "id": "ENG_CLOZE_113_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "vulnerable",
+          "B": "impervious",
+          "C": "resistant",
+          "D": "immune"
+        },
+        "correct_option": "A",
+        "rationale": "'Vulnerable' means susceptible to physical or emotional harm, accurately describing patients susceptible to relapse."
+      },
+      {
+        "id": "ENG_CLOZE_113_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "homeostasis",
+          "B": "decay",
+          "C": "atrophy",
+          "D": "turbulence"
+        },
+        "correct_option": "A",
+        "rationale": "'Homeostasis' refers to the state of steady internal, physical, and chemical conditions maintained by living systems."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_114",
+    "passage_title": "The Geopolitics of Rare Earth Minerals",
+    "passage_text": "The international race toward industrial decarbonization has elevated rare earth elements (REEs) into indispensable geopolitical (1) _________. Despite their name, elements such as neodymium, dysprosium, and terbium are relatively abundant in Earth's crust, but economically viable mineral deposits are rare and environmentally hazardous to extract. These specialized metals are vital for manufacturing permanent magnets utilized in wind turbine generators and electric vehicle traction motors. A high concentration of processing and refining capacity within a single sovereign territory creates acute supply chain (2) _________ for importing nations. Disruptions in supply or strategic export curbs could severely (3) _________ Western renewable energy deployment and advanced defense aerospace manufacturing. To counter this strategic vulnerability, allied nations are forming critical mineral partnerships to reopen domestic mines and develop alternative chemical (4) _________. Achieving genuine mineral security will require decades of sustained capital subsidies and technological (5) _________ in recycling metallurgy.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_114_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "commodities",
+          "B": "byproducts",
+          "C": "impediments",
+          "D": "redundancies"
+        },
+        "correct_option": "A",
+        "rationale": "'Commodities' refers to valuable raw materials or primary agricultural products that can be bought and sold on global markets."
+      },
+      {
+        "id": "ENG_CLOZE_114_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "vulnerabilities",
+          "B": "immunities",
+          "C": "advantages",
+          "D": "guarantees"
+        },
+        "correct_option": "A",
+        "rationale": "'Vulnerabilities' reflects the structural geopolitical risks and exposure faced by nations reliant on a single external supplier."
+      },
+      {
+        "id": "ENG_CLOZE_114_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "impede",
+          "B": "catalyze",
+          "C": "accelerate",
+          "D": "expedite"
+        },
+        "correct_option": "A",
+        "rationale": "'Impede' means to delay, prevent, or obstruct the progress or movement of renewable energy manufacturing."
+      },
+      {
+        "id": "ENG_CLOZE_114_Q4",
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "substitutes",
+          "B": "additives",
+          "C": "pollutants",
+          "D": "monopolies"
+        },
+        "correct_option": "A",
+        "rationale": "'Substitutes' denotes alternative materials or elements engineered to replace scarce rare earths in technological applications."
+      },
+      {
+        "id": "ENG_CLOZE_114_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "innovations",
+          "B": "regressions",
+          "C": "stagnations",
+          "D": "prohibitions"
+        },
+        "correct_option": "A",
+        "rationale": "'Innovations' refers to new technological methods and scientific breakthroughs in recycling valuable metals."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_115",
+    "passage_title": "The Aesthetics and Ideology of Romanticism",
+    "passage_text": "Emerging in late eighteenth-century Europe as a philosophical and aesthetic revolt against the cold rationalism of the Enlightenment and the mechanized standardization of the Industrial Revolution, Romanticism championed subjective emotional (1) _________. Romantic poets and painters rejected the mechanistic Cartesian view of the natural world as an inert clockwork machine, conceptualizing nature instead as a dynamic, living spiritual force. Central to Romantic aesthetic theory was the concept of the 'sublime'—an overwhelming sensory experience of natural grandeur that evokes awe mingled with existential (2) _________. Writers such as William Wordsworth and Samuel Taylor Coleridge elevated rural vernacular speech and folklore, celebrating the solitary imagination against urban commercial (3) _________. Politically, Romanticism nourished nationalist movements by celebrating unique cultural heritage and linguistic (4) _________. By dethroning pure objective empiricism in favor of intuition and poetic passion, the Romantic movement permanently redefined Western artistic (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_115_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "authenticity",
+          "B": "conformity",
+          "C": "repression",
+          "D": "stagnation"
+        },
+        "correct_option": "A",
+        "rationale": "'Emotional authenticity' captures the core Romantic priority of genuine, uninhibited personal feeling over artificial social conventions."
+      },
+      {
+        "id": "ENG_CLOZE_115_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "terror",
+          "B": "complacency",
+          "C": "boredom",
+          "D": "indifference"
+        },
+        "correct_option": "A",
+        "rationale": "In 18th-century aesthetics (e.g., Edmund Burke), the sublime is characterized by an awe-inspiring grandeur that elicits astonishment and terror."
+      },
+      {
+        "id": "ENG_CLOZE_115_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "corruption",
+          "B": "benevolence",
+          "C": "harmony",
+          "D": "purity"
+        },
+        "correct_option": "A",
+        "rationale": "'Commercial corruption' conveys the Romantic critique of industrial cities as degrading moral and spiritual purity."
+      },
+      {
+        "id": "ENG_CLOZE_115_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "identity",
+          "B": "erasure",
+          "C": "neutrality",
+          "D": "uniformity"
+        },
+        "correct_option": "A",
+        "rationale": "'Linguistic identity' refers to the distinct language and folklore that early Romantic nationalism sought to preserve."
+      },
+      {
+        "id": "ENG_CLOZE_115_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "sensibility",
+          "B": "rigidity",
+          "C": "dogmatism",
+          "D": "apathy"
+        },
+        "correct_option": "A",
+        "rationale": "'Sensibility' denotes the capacity for refined emotion and artistic appreciation that Romanticism reshaped."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_116",
+    "passage_title": "Astrobiology and the Search for Biosignatures",
+    "passage_text": "The scientific search for extraterrestrial life has transitioned from speculative hypotheses to rigorous spectroscopic analysis of exoplanetary atmospheres. Utilizing space telescopes equipped with coronagraphs and transit transmission spectrometers, astrophysicists can detect the chemical (1) _________ of distant planetary atmospheres as starlight filters through gaseous envelopes. Astrobiologists focus on identifying robust 'biosignatures'—chemical disequilibrium states that cannot be easily explained by abiotic geological or photochemical (2) _________. A quintessential example is the simultaneous presence of abundant atmospheric methane and oxygen, two gases that react rapidly and would rapidly deplete unless continuously (3) _________ by active biological processes. However, researchers must rigorously eliminate 'false positives' produced by non-biological volcanic outgassing or photolytic water loss. Establishing the existence of extraterrestrial microbial organisms will require confirming multiple corroborating spectroscopic (4) _________ alongside direct orbital imaging. Such a discovery would fundamentally revolutionize humanity's philosophical understanding of cosmic biological (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_116_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "composition",
+          "B": "fabrication",
+          "C": "destruction",
+          "D": "obliteration"
+        },
+        "correct_option": "A",
+        "rationale": "'Atmospheric composition' is the standard scientific term for the specific mixture and ratio of gases comprising a planet's air."
+      },
+      {
+        "id": "ENG_CLOZE_116_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "mechanisms",
+          "B": "anomalies",
+          "C": "illusions",
+          "D": "impediments"
+        },
+        "correct_option": "A",
+        "rationale": "'Abiotic mechanisms' refers to natural, non-living chemical and physical processes (such as volcanism)."
+      },
+      {
+        "id": "ENG_CLOZE_116_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "replenished",
+          "B": "extinguished",
+          "C": "condensed",
+          "D": "eradicated"
+        },
+        "correct_option": "A",
+        "rationale": "'Replenished' means restored or resupplied, matching the biological generation of reactive gases."
+      },
+      {
+        "id": "ENG_CLOZE_116_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "signatures",
+          "B": "omissions",
+          "C": "distortions",
+          "D": "fabrications"
+        },
+        "correct_option": "A",
+        "rationale": "'Spectroscopic signatures' denotes distinctive spectral lines that identify specific chemical compounds in light data."
+      },
+      {
+        "id": "ENG_CLOZE_116_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "prevalence",
+          "B": "extinction",
+          "C": "scarcity",
+          "D": "cessation"
+        },
+        "correct_option": "A",
+        "rationale": "'Biological prevalence' refers to how widespread, common, or abundant life is across the universe."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_117",
+    "passage_title": "The Jurisprudence of Digital Privacy and Surveillance",
+    "passage_text": "The ubiquitous expansion of digital surveillance technologies and algorithmic telemetry has strained classical constitutional doctrines governing individual privacy rights. Historically, Fourth Amendment jurisprudence in common-law jurisdictions was anchored in property-based concepts of physical (1) _________, protecting citizens from warrantless physical entries into homes and private spaces. In the landmark 1967 decision *Katz v. United States*, the judiciary expanded this boundary by articulating the 'reasonable expectation of privacy' test, acknowledging that constitutional protections safeguard people rather than physical places. However, the subsequent emergence of the 'third-party doctrine' established that individuals forfeit constitutional privacy protections over data voluntarily (2) _________ to commercial intermediaries, such as telecommunication providers and digital platforms. In modern big-data ecosystems, where automated geo-location tracking and predictive behavioral analytics yield intimate psychological profiles, legal scholars argue that this doctrine is functionally (3) _________. Protecting civil liberties in the digital era requires comprehensive statutory data frameworks that restrict unauthorized corporate data monetization and enforce strict procedural (4) _________ on government surveillance agencies. Reconciling national security interests with fundamental privacy rights remains a paramount democratic (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_117_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "trespass",
+          "B": "ownership",
+          "C": "forfeiture",
+          "D": "conveyance"
+        },
+        "correct_option": "A",
+        "rationale": "'Physical trespass' is the traditional common-law tort/doctrine involving unauthorized entry onto real property."
+      },
+      {
+        "id": "ENG_CLOZE_117_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "disclosed",
+          "B": "concealed",
+          "C": "withheld",
+          "D": "redacted"
+        },
+        "correct_option": "A",
+        "rationale": "'Voluntarily disclosed' accurately describes handing over personal information to third-party corporate servers."
+      },
+      {
+        "id": "ENG_CLOZE_117_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "obsolete",
+          "B": "immutable",
+          "C": "infallible",
+          "D": "sacrosanct"
+        },
+        "correct_option": "A",
+        "rationale": "'Obsolete' means no longer produced or used; out of date, capturing the outdated nature of the third-party doctrine."
+      },
+      {
+        "id": "ENG_CLOZE_117_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "restraints",
+          "B": "exemptions",
+          "C": "entitlements",
+          "D": "prerogatives"
+        },
+        "correct_option": "A",
+        "rationale": "'Procedural restraints' refers to formal legal restrictions and judicial warrant requirements placed on surveillance powers."
+      },
+      {
+        "id": "ENG_CLOZE_117_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "imperative",
+          "B": "triviality",
+          "C": "anachronism",
+          "D": "indulgence"
+        },
+        "correct_option": "A",
+        "rationale": "'Democratic imperative' signifies an essential, urgent, and unavoidable requirement for maintaining a free society."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_118",
+    "passage_title": "The Bioethics of Human Germline Gene Editing",
+    "passage_text": "The advent of precision genomic editors has elevated human germline modification from theoretical speculation into an imminent clinical reality. Unlike somatic cell therapies, which introduce genetic modifications confined exclusively to an individual patient's non-reproductive tissues, germline interventions alter the nuclear genome of early embryos or gametes. Consequently, these engineered genetic modifications become (1) _________, propagating down through all subsequent generations. Proponents argue that germline editing offers the ultimate prophylactic solution to permanently (2) _________ debilitating monogenic disorders, such as Huntington's disease and cystic fibrosis, from ancestral family lineages. Conversely, bioethicists warn that the technology carries profound risks of unintended 'off-target' genomic mutations and unknown epigenetic dysregulations. Furthermore, unequal commercial access to genetic enhancement technologies could create genetic socio-economic (3) _________, dividing humanity into enhanced and non-enhanced biological classes. International scientific bodies have advocated a global moratorium on clinical implantation until comprehensive safety protocols and broad societal (4) _________ are achieved. Navigating the frontier of genetic engineering demands balancing compassionate therapeutic ambition with ethical (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_118_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "heritable",
+          "B": "transient",
+          "C": "ephemeral",
+          "D": "dormant"
+        },
+        "correct_option": "A",
+        "rationale": "'Heritable' denotes a characteristic transmissible from parent to offspring through reproductive DNA."
+      },
+      {
+        "id": "ENG_CLOZE_118_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "eradicate",
+          "B": "exacerbate",
+          "C": "proliferate",
+          "D": "instigate"
+        },
+        "correct_option": "A",
+        "rationale": "'Eradicate' means to completely eliminate or wipe out severe hereditary genetic disorders."
+      },
+      {
+        "id": "ENG_CLOZE_118_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "stratification",
+          "B": "homogeneity",
+          "C": "cohesion",
+          "D": "solidarity"
+        },
+        "correct_option": "A",
+        "rationale": "'Genetic stratification' describes the rigid hierarchical division of society based on genetic enhancement access."
+      },
+      {
+        "id": "ENG_CLOZE_118_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "consensus",
+          "B": "discord",
+          "C": "polarization",
+          "D": "anarchy"
+        },
+        "correct_option": "A",
+        "rationale": "'Societal consensus' refers to broad democratic agreement and shared moral standards across populations."
+      },
+      {
+        "id": "ENG_CLOZE_118_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "prudence",
+          "B": "recklessness",
+          "C": "audacity",
+          "D": "indifference"
+        },
+        "correct_option": "A",
+        "rationale": "'Ethical prudence' conveys cautious, wise, and responsible decision-making regarding genetic interventions."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_119",
+    "passage_title": "The Fluid Dynamics of Glacial Calving",
+    "passage_text": "Marine-terminating outlet glaciers and floating ice shelves in Greenland and Antarctica serve as critical mechanical buttresses that regulate the discharge of interior ice sheets into the global ocean. As ocean temperatures rise, warm, dense circumpolar deep water infiltrates continental shelf cavities, accelerating the basal (1) _________ of floating ice tongues from below. This thermal thinning destabilizes the structural ice shelf, causing mechanical stress concentrations along basal crevasses. Under increasing hydrostatic pressure differentials and tidal flexing, brittle structural failure occurs along fracture lines, triggering massive tabular iceberg (2) _________. When these protective floating ice shelves disintegrate, the resistive back-stress (buttressing force) opposing the tributary glaciers is suddenly removed. Consequently, upstream grounded glaciers experience dramatic flow (3) _________, draining land-based ice into the ocean at speeds several times their historic baseline. This rapid cryospheric response highlights the non-linear, dynamic (4) _________ of polar ice sheets to ocean thermal forcing. Climate oceanographic models must accurately integrate ice-ocean boundary interactions to formulate reliable sea-level rise (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_119_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "melting",
+          "B": "freezing",
+          "C": "accumulation",
+          "D": "crystallization"
+        },
+        "correct_option": "A",
+        "rationale": "'Basal melting' is the physical process of warm sub-surface ocean water eroding the underside of an ice shelf."
+      },
+      {
+        "id": "ENG_CLOZE_119_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "calving",
+          "B": "fusion",
+          "C": "coalescence",
+          "D": "anchoring"
+        },
+        "correct_option": "A",
+        "rationale": "'Glacial calving' is the glaciological term for the sudden breaking off and separation of large ice masses from an ice shelf."
+      },
+      {
+        "id": "ENG_CLOZE_119_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "acceleration",
+          "B": "deceleration",
+          "C": "cessation",
+          "D": "stagnation"
+        },
+        "correct_option": "A",
+        "rationale": "'Flow acceleration' describes the rapid surge and faster velocity of glaciers once resistive buttresses collapse."
+      },
+      {
+        "id": "ENG_CLOZE_119_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "sensitivity",
+          "B": "indifference",
+          "C": "immunity",
+          "D": "rigidity"
+        },
+        "correct_option": "A",
+        "rationale": "'Dynamic sensitivity' conveys how strongly and non-linearly polar ice responds to thermal changes in seawater."
+      },
+      {
+        "id": "ENG_CLOZE_119_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "projections",
+          "B": "fabrications",
+          "C": "reversals",
+          "D": "aberrations"
+        },
+        "correct_option": "A",
+        "rationale": "'Sea-level rise projections' is the standard scientific term for predictive computational forecasts of ocean heights."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_120",
+    "passage_title": "The Economic Theory of Platform Monopolies",
+    "passage_text": "In the digital economy, modern technology platforms operate under fundamentally distinct economic dynamics compared to traditional industrial enterprises. Industrial manufacturing is characterized by diminishing marginal returns and linear supply curves, whereas multi-sided digital platforms benefit from powerful direct and indirect (1) _________ effects. Direct effects occur when the utility of a platform increases for every user as the aggregate network of users expands (e.g., social networks). Indirect effects arise when an expanding user base on one side of the platform attracts complementary third-party developers, merchants, and advertisers on the other side. These positive feedback loops generate 'winner-take-all' market concentration, leading to entrenched natural (2) _________. Because digital platforms possess zero marginal distribution costs and capture vast troves of consumer behavioral data, they can erect formidable entry (3) _________ that prevent competition from innovative startups. Antitrust regulators are increasingly updating legacy market competition metrics, shifting their analytical focus from consumer retail price metrics to algorithmic self-preferencing and platform (4) _________. Ensuring vibrant digital market competition requires establishing proactive interoperability and data portability (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_120_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "network",
+          "B": "friction",
+          "C": "scarcity",
+          "D": "diminishing"
+        },
+        "correct_option": "A",
+        "rationale": "'Network effects' is the established economic term where a product or service gains additional value as more people use it."
+      },
+      {
+        "id": "ENG_CLOZE_120_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "monopolies",
+          "B": "democracies",
+          "C": "insolvencies",
+          "D": "bankruptcies"
+        },
+        "correct_option": "A",
+        "rationale": "'Monopolies' refers to market structures where a single corporate entity dominates the entire sector."
+      },
+      {
+        "id": "ENG_CLOZE_120_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "barriers",
+          "B": "avenues",
+          "C": "incentives",
+          "D": "portals"
+        },
+        "correct_option": "A",
+        "rationale": "'Entry barriers' is the standard economic concept denoting obstacles that make it difficult for new firms to enter a market."
+      },
+      {
+        "id": "ENG_CLOZE_120_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "neutrality",
+          "B": "bias",
+          "C": "nepotism",
+          "D": "collusion"
+        },
+        "correct_option": "A",
+        "rationale": "'Platform neutrality' refers to the regulatory principle that dominant platforms should treat all ecosystem participants fairly without self-preferencing."
+      },
+      {
+        "id": "ENG_CLOZE_120_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "mandates",
+          "B": "prohibitions",
+          "C": "impediments",
+          "D": "exemptions"
+        },
+        "correct_option": "A",
+        "rationale": "'Mandates' denotes official statutory obligations or regulatory requirements enacted by law."
+      }
+    ]
+  }
+]

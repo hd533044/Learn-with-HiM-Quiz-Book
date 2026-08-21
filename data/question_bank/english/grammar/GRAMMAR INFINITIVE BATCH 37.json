@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_NFV_1601",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Walking down the dark street, a loud noise startled her.'",
+    "options": {
+      "A": "Walking down the dark street,",
+      "B": "a loud noise",
+      "C": "startled her.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "This is a dangling modifier error. The participial phrase 'Walking down the dark street' logically modifies a person, not 'a loud noise'. Correct: 'While she was walking down the dark street, a loud noise startled her.'",
+    "tags": ["grammar", "non_finite_verbs", "dangling_modifiers", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1602",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He went to the library ___ some research papers.'",
+    "options": {
+      "A": "for printing",
+      "B": "to print",
+      "C": "printing",
+      "D": "for print"
+    },
+    "correct_option": "B",
+    "explanation": "An infinitive of purpose ('to print') is used to express the intention or reason for an action.",
+    "tags": ["grammar", "non_finite_verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1603",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence featuring a gerund phrase:",
+    "options": {
+      "A": "Swimming in the open ocean is exhilarating.",
+      "B": "Swimming across the channel, he felt exhausted.",
+      "C": "He loves to swim every morning.",
+      "D": "She jumped into the pool swimming."
+    },
+    "correct_option": "A",
+    "explanation": "In option A, 'Swimming in the open ocean' functions as a gerund phrase acting as the subject of the sentence.",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1604",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Instead of study for the exam, he spent all night playing video games.'",
+    "options": {
+      "A": "Instead of study",
+      "B": "for the exam, he spent",
+      "C": "all night playing video games.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Prepositions (such as 'instead of') must be followed by gerunds, not base verbs. Correct: 'Instead of studying...'",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1605",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The instructions were difficult ___.'",
+    "options": {
+      "A": "to understand",
+      "B": "understanding",
+      "C": "understand",
+      "D": "to be understand"
+    },
+    "correct_option": "A",
+    "explanation": "Certain adjectives describing ease or difficulty ('difficult', 'easy', 'hard') are followed by active infinitives with a passive sense ('difficult to understand').",
+    "tags": ["grammar", "non_finite_verbs", "infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1606",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the non-finite verb form in the sentence: 'Having finished her project, she submitted it to the manager.'",
+    "options": {
+      "A": "Present participle",
+      "B": "Perfect participle",
+      "C": "Gerund",
+      "D": "Bare infinitive"
+    },
+    "correct_option": "B",
+    "explanation": "'Having finished' is a perfect participle indicating an action completed prior to the action in the main clause.",
+    "tags": ["grammar", "non_finite_verbs", "participles", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1607",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is too weak solving this complex mathematical problem.'",
+    "options": {
+      "A": "He is too weak",
+      "B": "solving this complex",
+      "C": "mathematical problem.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The correlative structure 'too... to' requires an infinitive, not a gerund. Correct: 'too weak to solve...'",
+    "tags": ["grammar", "non_finite_verbs", "infinitives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1608",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I caught him ___ through my private documents.'",
+    "options": {
+      "A": "prying",
+      "B": "to pry",
+      "C": "pry",
+      "D": "pried"
+    },
+    "correct_option": "A",
+    "explanation": "Verbs of perception/action ('catch', 'find', 'leave') take a present participle (-ing) to describe an ongoing action being witnessed.",
+    "tags": ["grammar", "non_finite_verbs", "participles", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1609",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence with a split infinitive (or acceptable usage):",
+    "options": {
+      "A": "To boldly go where no man has gone before.",
+      "B": "To go boldly where no man has gone before.",
+      "C": "Both are grammatically acceptable, though B avoids the split.",
+      "D": "Neither is acceptable."
+    },
+    "correct_option": "C",
+    "explanation": "Placing an adverb between 'to' and the verb ('to boldly go') is a split infinitive; while sometimes discouraged in strict formal prose, it is common and idiomatic.",
+    "tags": ["grammar", "non_finite_verbs", "split_infinitives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1610",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Accused of embezzlement, the board member resigned immediately.'",
+    "options": {
+      "A": "Accused of embezzlement,",
+      "B": "the board member",
+      "C": "resigned immediately.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The past participial phrase 'Accused of embezzlement' correctly modifies 'the board member'. The sentence is correct.",
+    "tags": ["grammar", "non_finite_verbs", "participles", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1611",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She insisted on ___ the agreement before signing.'",
+    "options": {
+      "A": "reviewing",
+      "B": "to review",
+      "C": "review",
+      "D": "to reviewing"
+    },
+    "correct_option": "A",
+    "explanation": "Prepositions like 'on' require a gerund ('reviewing').",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1612",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the function of the underlined non-finite verb: 'To succeed in life requires persistent effort.'",
+    "options": {
+      "A": "Direct object",
+      "B": "Subject of the sentence",
+      "C": "Adjective modifying life",
+      "D": "Adverbial modifier"
+    },
+    "correct_option": "B",
+    "explanation": "'To succeed in life' is an infinitive phrase acting as the subject of the verb 'requires'.",
+    "tags": ["grammar", "non_finite_verbs", "infinitives", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1613",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He let me knowing his decision ahead of time.'",
+    "options": {
+      "A": "He let me knowing",
+      "B": "his decision",
+      "C": "ahead of time.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The causative verb 'let' is followed by a bare infinitive (without 'to' or '-ing'). Correct: 'let me know...'",
+    "tags": ["grammar", "non_finite_verbs", "bare_infinitives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1614",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'There is no point ___ about spilled milk.'",
+    "options": {
+      "A": "crying",
+      "B": "to cry",
+      "C": "cry",
+      "D": "to crying"
+    },
+    "correct_option": "A",
+    "explanation": "The idiomatic expression 'There is no point' takes a gerund ('crying').",
+    "tags": ["grammar", "non_finite_verbs", "idiomatic_gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1615",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct participle form: '___ by the loud explosion, the birds flew away in all directions.'",
+    "options": {
+      "A": "Frightening",
+      "B": "Frightened",
+      "C": "Having frightened",
+      "D": "To frighten"
+    },
+    "correct_option": "B",
+    "explanation": "Past participle 'Frightened' is used passively to indicate the state of the birds caused by the explosion.",
+    "tags": ["grammar", "non_finite_verbs", "participles", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1616",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Looking out the window, a beautiful rainbow was seen across the valley.'",
+    "options": {
+      "A": "Looking out the window,",
+      "B": "a beautiful rainbow",
+      "C": "was seen across the valley.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Dangling modifier: a rainbow cannot look out the window. Correct: 'Looking out the window, she saw a beautiful rainbow...'",
+    "tags": ["grammar", "non_finite_verbs", "dangling_modifiers", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1617",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'We spent the entire afternoon ___ for our lost keys.'",
+    "options": {
+      "A": "searching",
+      "B": "to search",
+      "C": "search",
+      "D": "for searching"
+    },
+    "correct_option": "A",
+    "explanation": "The structure 'spend time + [gerund]' is standard in English ('spent the afternoon searching').",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1618",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "She stopped to smoke because it's bad for health.",
+      "B": "She stopped smoking because it's bad for health.",
+      "C": "Both are identical in meaning.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "B",
+    "explanation": "'Stopped smoking' means quitting the habit entirely, whereas 'stopped to smoke' means pausing an activity to light a cigarette.",
+    "tags": ["grammar", "non_finite_verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1619",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He avoided to answer the direct question posed by the journalist.'",
+    "options": {
+      "A": "He avoided to answer",
+      "B": "the direct question",
+      "C": "posed by the journalist.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The verb 'avoid' requires a gerund, not an infinitive. Correct: 'avoided answering...'",
+    "tags": ["grammar", "non_finite_verbs", "gerund_vs_infinitive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1620",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It is no use ___ over spilt milk.'",
+    "options": {
+      "A": "cry",
+      "B": "crying",
+      "C": "to cry",
+      "D": "to crying"
+    },
+    "correct_option": "B",
+    "explanation": "The idiom 'It is no use' is followed by a gerund ('crying').",
+    "tags": ["grammar", "non_finite_verbs", "idiomatic_gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1621",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the non-finite phrase: 'Eager to impress the interviewers, she arrived half an hour early.'",
+    "options": {
+      "A": "Participial phrase",
+      "B": "Infinitive phrase",
+      "C": "Gerund phrase",
+      "D": "Prepositional phrase"
+    },
+    "correct_option": "B",
+    "explanation": "'Eager to impress the interviewers' begins with the infinitive adjective complement structure, functioning as an adjectival phrase modifying 'she'.",
+    "tags": ["grammar", "non_finite_verbs", "infinitives", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1622",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Would you mind to open the conference hall windows?'",
+    "options": {
+      "A": "Would you mind",
+      "B": "to open",
+      "C": "the conference hall windows?",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Would you mind' takes a gerund object. Correct: 'Would you mind opening...'",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1623",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was seen ___ the building hurriedly.'",
+    "options": {
+      "A": "leave",
+      "B": "leaving",
+      "C": "to leave",
+      "D": "Both B and C are correct"
+    },
+    "correct_option": "D",
+    "explanation": "In passive perception structures, both present participles ('leaving') and full infinitives ('to leave') are acceptable.",
+    "tags": ["grammar", "non_finite_verbs", "perception_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1624",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "She is busy preparing for her final examinations.",
+      "B": "She is busy to prepare for her final examinations.",
+      "C": "She is busy prepare for her final examinations.",
+      "D": "She is busy for preparing for her final examinations."
+    },
+    "correct_option": "A",
+    "explanation": "The adjective phrase 'busy' takes a gerund directly ('busy preparing').",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1625",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Having been elected as president, his first priority was reforming tax laws.'",
+    "options": {
+      "A": "Having been elected as president,",
+      "B": "his first priority",
+      "C": "was reforming tax laws.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Dangling modifier: 'Having been elected' modifies the person, but the subject of the main clause is 'his first priority'. Correct: 'Having been elected president, he made reforming tax laws his first priority.'",
+    "tags": ["grammar", "non_finite_verbs", "dangling_modifiers", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1626",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I remember ___ the Statue of Liberty when I was a child.'",
+    "options": {
+      "A": "visiting",
+      "B": "to visit",
+      "C": "to have visited",
+      "D": "visit"
+    },
+    "correct_option": "A",
+    "explanation": "'Remember + gerund' refers to recalling a past memory or experience.",
+    "tags": ["grammar", "non_finite_verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1627",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct non-finite form: 'She made the children ___ their rooms before going out to play.'",
+    "options": {
+      "A": "clean",
+      "B": "to clean",
+      "C": "cleaning",
+      "D": "cleaned"
+    },
+    "correct_option": "A",
+    "explanation": "Causative verb 'make' in active voice takes a bare infinitive ('clean').",
+    "tags": ["grammar", "non_finite_verbs", "causative_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1628",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has great difficulty to understand spoken English.'",
+    "options": {
+      "A": "He has great difficulty",
+      "B": "to understand",
+      "C": "spoken English.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The expression 'have difficulty' is followed by a gerund, not an infinitive. Correct: 'difficulty in understanding...' or 'difficulty understanding...'",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1629",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The car needs ___ before we embark on the road trip.'",
+    "options": {
+      "A": "servicing",
+      "B": "to service",
+      "C": "service",
+      "D": "to serviced"
+    },
+    "correct_option": "A",
+    "explanation": "When 'need' or 'want' takes a gerund as its object, it carries a passive meaning ('needs servicing' = needs to be serviced).",
+    "tags": ["grammar", "non_finite_verbs", "gerund_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1630",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "She succeeded in clearing the competitive exam on her first attempt.",
+      "B": "She succeeded to clear the competitive exam on her first attempt.",
+      "C": "She succeeded clearing the competitive exam on her first attempt.",
+      "D": "She succeeded for clearing the competitive exam on her first attempt."
+    },
+    "correct_option": "A",
+    "explanation": "'Succeed in' + gerund is the correct collocation.",
+    "tags": ["grammar", "non_finite_verbs", "prepositional_gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1631",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Not knowing the password, access to the server was denied.'",
+    "options": {
+      "A": "Not knowing the password,",
+      "B": "access to the server",
+      "C": "was denied.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Dangling modifier error: 'Not knowing the password' logically attaches to a person, not 'access to the server'.",
+    "tags": ["grammar", "non_finite_verbs", "dangling_modifiers", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1632",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He apologized for ___ late for the meeting.'",
+    "options": {
+      "A": "being",
+      "B": "to be",
+      "C": "be",
+      "D": "have been"
+    },
+    "correct_option": "A",
+    "explanation": "Prepositions (such as 'for') are followed by gerunds ('being').",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1633",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'I look forward ___ you at the conference.'",
+    "options": {
+      "A": "to seeing",
+      "B": "to see",
+      "C": "seeing",
+      "D": "for seeing"
+    },
+    "correct_option": "A",
+    "explanation": "The 'to' in 'look forward to' is a preposition, requiring the gerund 'seeing'.",
+    "tags": ["grammar", "non_finite_verbs", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1634",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is proficient to design web applications.'",
+    "options": {
+      "A": "He is proficient",
+      "B": "to design",
+      "C": "web applications.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Proficient' takes 'in' + gerund. Correct: 'proficient in designing...'",
+    "tags": ["grammar", "non_finite_verbs", "prepositional_gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1635",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She had her bicycle ___ at the local repair shop.'",
+    "options": {
+      "A": "repaired",
+      "B": "repair",
+      "C": "repairing",
+      "D": "to repair"
+    },
+    "correct_option": "A",
+    "explanation": "Causative 'have + object + past participle' denotes having a service performed by someone else ('repaired').",
+    "tags": ["grammar", "non_finite_verbs", "causative_structures", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1636",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "To save money, budgeting is essential.",
+      "B": "To save money, one must budget carefully.",
+      "C": "Both are acceptable, though B avoids a dangling modifier.",
+      "D": "Neither is acceptable."
+    },
+    "correct_option": "C",
+    "explanation": "Option A technically features a dangling infinitive modifier (budgeting doesn't save money; the person budgets). Option B fixes this by providing an explicit subject 'one'.",
+    "tags": ["grammar", "non_finite_verbs", "dangling_modifiers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1637",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She spent all weekend to clean her apartment.'",
+    "options": {
+      "A": "She spent all weekend",
+      "B": "to clean",
+      "C": "her apartment.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The verb phrase 'spend time' is followed by a gerund, not an infinitive. Correct: 'spent all weekend cleaning...'",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1638",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He tried ___ the heavy chest, but it wouldn't budge.'",
+    "options": {
+      "A": "to lift",
+      "B": "lifting",
+      "C": "lift",
+      "D": "to lifting"
+    },
+    "correct_option": "A",
+    "explanation": "'Try + infinitive' indicates an attempt or effort to achieve something.",
+    "tags": ["grammar", "non_finite_verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1639",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'If your computer is freezing, try ___ the system cache.'",
+    "options": {
+      "A": "clearing",
+      "B": "to clear",
+      "C": "clear",
+      "D": "to clearing"
+    },
+    "correct_option": "A",
+    "explanation": "'Try + gerund' means experimenting with a method or solution to see if it works.",
+    "tags": ["grammar", "non_finite_verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1640",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He prevented me to enter the restricted zone.'",
+    "options": {
+      "A": "He prevented me",
+      "B": "to enter",
+      "C": "the restricted zone.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Prevent' takes 'from' + gerund. Correct: 'prevented me from entering...'",
+    "tags": ["grammar", "non_finite_verbs", "prepositional_gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1641",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is capable ___ complex technical tasks independently.'",
+    "options": {
+      "A": "of handling",
+      "B": "to handle",
+      "C": "handling",
+      "D": "for handling"
+    },
+    "correct_option": "A",
+    "explanation": "'Capable of' takes a gerund.",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1642",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Reading books broadens one's horizon.",
+      "B": "To read books broadens one's horizon.",
+      "C": "Both are grammatically valid.",
+      "D": "Neither is valid."
+    },
+    "correct_option": "C",
+    "explanation": "Both gerunds ('Reading') and infinitives ('To read') function correctly as sentence subjects.",
+    "tags": ["grammar", "non_finite_verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1643",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The manager prohibited us using office printers for personal prints.'",
+    "options": {
+      "A": "The manager prohibited us",
+      "B": "using office printers",
+      "C": "for personal prints.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Prohibit' takes 'from' + gerund. Correct: 'prohibited us from using...'",
+    "tags": ["grammar", "non_finite_verbs", "prepositional_gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1644",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was busy ___ his presentation slides.'",
+    "options": {
+      "A": "finalizing",
+      "B": "to finalize",
+      "C": "finalize",
+      "D": "for finalizing"
+    },
+    "correct_option": "A",
+    "explanation": "Adjective phrase 'busy' takes a gerund directly.",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1645",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'There is no harm ___ extra precautions.'",
+    "options": {
+      "A": "in taking",
+      "B": "to take",
+      "C": "take",
+      "D": "of taking"
+    },
+    "correct_option": "A",
+    "explanation": "The idiom 'There is no harm in' is followed by a gerund.",
+    "tags": ["grammar", "non_finite_verbs", "idiomatic_gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1646",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She objected to sign the contract without legal counsel.'",
+    "options": {
+      "A": "She objected",
+      "B": "to sign",
+      "C": "the contract without legal counsel.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The phrasal verb 'object to' takes 'to' as a preposition, requiring a gerund. Correct: 'objected to signing...'",
+    "tags": ["grammar", "non_finite_verbs", "prepositional_gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1647",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'We regret ___ you that your application has been rejected.'",
+    "options": {
+      "A": "to inform",
+      "B": "informing",
+      "C": "inform",
+      "D": "to informing"
+    },
+    "correct_option": "A",
+    "explanation": "'Regret + infinitive' is formally used when delivering bad news ('regret to inform').",
+    "tags": ["grammar", "non_finite_verbs", "gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1648",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Having read the report, the conclusions seemed obvious to him.",
+      "B": "Having read the report, he found the conclusions obvious.",
+      "C": "Both are acceptable.",
+      "D": "Neither is acceptable."
+    },
+    "correct_option": "B",
+    "explanation": "Option B avoids a dangling modifier by placing the person ('he') immediately after the participial phrase 'Having read the report'. Option A is dangling.",
+    "tags": ["grammar", "non_finite_verbs", "dangling_modifiers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1649",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has a habit to chew his fingernails when nervous.'",
+    "options": {
+      "A": "He has a habit",
+      "B": "to chew",
+      "C": "his fingernails when nervous.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Nouns like 'habit' typically take a gerund or a prepositional gerund phrase ('habit of chewing'), though sometimes infinitive complements appear in specific contexts, 'habit of chewing' is standard idiom.",
+    "tags": ["grammar", "non_finite_verbs", "gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_NFV_1650",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She managed ___ her presentation right before the deadline.'",
+    "options": {
+      "A": "finishing",
+      "B": "to finish",
+      "C": "finish",
+      "D": "to finishing"
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'manage' takes an infinitive complement ('to finish').",
+    "tags": ["grammar", "non_finite_verbs", "infinitives", "rule_based"]
+  }
+]

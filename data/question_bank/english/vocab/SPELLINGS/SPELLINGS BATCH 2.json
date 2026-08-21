@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_0051",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Abberration",
+      "B": "Aberation",
+      "C": "Aberration",
+      "D": "Abbaration"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correctly spelt ('Aberration' - a departure from what is normal, usual, or expected; spelled with single 'b' and double 'r'). Options A, B, and D are incorrect orthographic variants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0052",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Abscess",
+      "B": "Abysmal",
+      "C": "Acessible",
+      "D": "Acquiesce"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Accessible' (double 'c', double 's' - able to be reached or entered). Other options are correct: Abscess (a swollen area within body tissue containing pus), Abysmal (extremely bad; appalling), Acquiesce (accept something reluctantly but without protest).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0053",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Acclimatize",
+      "B": "Aclimatize",
+      "C": "Acclamatize",
+      "D": "Acclimmatize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Acclimatize' - become accustomed to a new climate or new conditions; double 'c', single 'm'). Options B, C, and D incorrectly alter consonant doubling or vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0054",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Accomplice",
+      "B": "Accumulate",
+      "C": "Ackowledge",
+      "D": "Acquisition"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Acknowledge' (requires 'n' after 'k' - accept or admit the existence or truth of). Other options are correct: Accomplice (a person who helps another commit a crime), Accumulate (gather together or acquire an increasing number of), Acquisition (an asset or object bought or obtained).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0055",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Adolescence",
+      "B": "Adolesence",
+      "C": "Adolecense",
+      "D": "Adolescense"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Adolescence' - the period following the onset of puberty during which a young person transitions into an adult; spelled with '-sc-' and ending in '-ence'). Options B, C, and D are faulty phonetic variations.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0056",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Adulterate",
+      "B": "Adventitious",
+      "C": "Affectionate",
+      "D": "Agression"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Aggression' (double 'g', double 's' - hostile or violent behavior). Other options are correct: Adulterate (render something poorer in quality by adding another substance), Adventitious (happening according to chance rather than design), Affectionate (readily feeling or showing fondness).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0057",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Alleviate",
+      "B": "Aleviate",
+      "C": "Alliviate",
+      "D": "Alleviette"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Alleviate' - make suffering, deficiency, or a problem less severe; double 'l' followed by 'e'). Options B, C, and D misuse vowel and consonant patterns.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0058",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Alliteration",
+      "B": "Amalgamation",
+      "C": "Ambassdor",
+      "D": "Ambiguous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Ambassador' (spelled with '-a-' before 'dor' - an accredited diplomat). Other options are correct: Alliteration (the occurrence of the same letter/sound at the beginning of adjacent words), Amalgamation (the action or process of uniting multiple entities into one), Ambiguous (open to more than one interpretation).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0059",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Ammunition",
+      "B": "Amunition",
+      "C": "Amunnition",
+      "D": "Ammunision"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Ammunition' - a supply or quantity of bullets and shells; double 'm', single 'n'). Options B, C, and D are common spelling corruptions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0060",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Annihilate",
+      "B": "Annoyance",
+      "C": "Annonymous",
+      "D": "Antediluvian"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Anonymous' (single 'n' in the root '-onym-' - not identified by name). Other options are correct: Annihilate (destroy utterly; obliterate), Annoyance (the feeling or state of being annoyed), Antediluvian (of or belonging to the time before the biblical Flood; ridiculously old-fashioned).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0061",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Antiquated",
+      "B": "Antequated",
+      "C": "Antikwated",
+      "D": "Antiquited"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Antiquated' - old-fashioned or outdated; derived from Latin 'antiquus'). Options B, C, and D are faulty transcriptions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0062",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Apparatus",
+      "B": "Appartment",
+      "C": "Apprehension",
+      "D": "Appropriate"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is incorrectly spelt; the correct spelling is 'Apartment' (single 'p' - a suite of rooms forming one residence). Other options are correct: Apparatus (the technical equipment or machinery needed for a particular activity), Apprehension (anxiety or fear that something bad will happen), Appropriate (suitable or proper in the circumstances).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0063",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Archaeology",
+      "B": "Archeology",
+      "C": "Archeaology",
+      "D": "Archaology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Archaeology' - the study of human history and prehistory through excavation; standard UK/academic spelling with 'ae'). Options B, C, and D alter the diphthong improperly.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0064",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Aristocracy",
+      "B": "Artillery",
+      "C": "Asphyxiation",
+      "D": "Assasin"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Assassin' (two pairs of double 's' - a murderer of an important person). Other options are correct: Aristocracy (the highest class in certain societies), Artillery (large-caliber guns used in warfare), Asphyxiation (the state of being deprived of oxygen).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0065",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Asymmetrical",
+      "B": "Assymmetrical",
+      "C": "Asymetrical",
+      "D": "Assymetrical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Asymmetrical' - having parts that fail to correspond to one another in shape or size; single 's', double 'm'). Options B, C, and D misuse the consonant doubling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0066",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Atmosphere",
+      "B": "Audacious",
+      "C": "Audiance",
+      "D": "Auxiliary"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Audience' (ends in '-ence', not '-ance' - the assembled spectators or listeners). Other options are correct: Atmosphere (the envelope of gases surrounding the earth), Audacious (showing a willingness to take surprisingly bold risks), Auxiliary (providing supplementary or additional help and support).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0067",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Brevity",
+      "B": "Brevety",
+      "C": "Bravity",
+      "D": "Brivity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Brevity' - concise and exact use of words in writing or speech; from Latin 'brevis'). Options B, C, and D are invalid vowel alterations.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0068",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Bulletin",
+      "B": "Burglary",
+      "C": "Cacophany",
+      "D": "Calamitous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Cacophony' (spelled with 'o' before 'ny' - a harsh, discordant mixture of sounds). Other options are correct: Bulletin (a short official statement or summary of news), Burglary (entry into a building illegally with intent to commit a crime), Calamitous (catastrophic; disastrous).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0069",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Calligraphy",
+      "B": "Caligraphy",
+      "C": "Calligrophy",
+      "D": "Caligrophy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Calligraphy' - decorative handwriting or handwritten lettering; double 'l', single 'p'). Options B, C, and D corrupt the Greek root 'kallos' (beauty).",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0070",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Camaraderie",
+      "B": "Catastrophe",
+      "C": "Chamelion",
+      "D": "Chancellor"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Chameleon' (contains 'e' after 'l' - a small slow-moving lizard capable of changing color). Other options are correct: Camaraderie (mutual trust and friendship among people), Catastrophe (an event causing great and often sudden damage or suffering), Chancellor (a senior state or legal official).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0071",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Chrysanthemum",
+      "B": "Chrysenthemum",
+      "C": "Chrysanthimum",
+      "D": "Chrisanthemum"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Chrysanthemum' - a popular garden plant of the daisy family; 'chrys-' + '-an-' + '-themum'). Options B, C, and D alter the vowel composition.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0072",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Coincidence",
+      "B": "Commemoration",
+      "C": "Commited",
+      "D": "Commodity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Committed' (double 'm', double 't' - pledged or bound to a certain course or policy). Other options are correct: Coincidence (a remarkable concurrence of events or circumstances without apparent causal connection), Commemoration (the action of remembering and showing respect on a special occasion), Commodity (a raw material or primary agricultural product that can be bought and sold).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0073",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Connoisseur",
+      "B": "Conoisseur",
+      "C": "Connoiseur",
+      "D": "Connoiseur"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Connoisseur' - an expert judge in matters of taste; double 'n', double 's'). Options B, C, and D fail to double both sets of consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0074",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Consensus",
+      "B": "Contemptible",
+      "C": "Convalesence",
+      "D": "Corroborate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Convalescence' (spelled with '-scence' - time spent recovering from an illness or medical treatment). Other options are correct: Consensus (a general agreement), Contemptible (deserving contempt; despicable), Corroborate (confirm or give support to a statement, theory, or finding).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0075",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Crescendo",
+      "B": "Chrescendo",
+      "C": "Crecendo",
+      "D": "Cressendo"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Crescendo' - a gradual increase in loudness in a piece of music; spelled 'c-r-e-s-c-e-n-d-o'). Options B, C, and D misrepresent the Italian musical term.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0076",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Deceitful",
+      "B": "Deficiency",
+      "C": "Delinquint",
+      "D": "Demarcation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Delinquent' (ends in '-ent' - tending to commit crime, particularly minor crime). Other options are correct: Deceitful (guilty of or involving deceit; deceptive), Deficiency (a lack or shortage), Demarcation (the action of fixing the boundary or limits of something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0077",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Desiccate",
+      "B": "Dessicate",
+      "C": "Desicate",
+      "D": "Dessiccate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Desiccate' - remove the moisture from; single 's', double 'c'). Options B, C, and D confuse the consonant doubling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0078",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Deteriorate",
+      "B": "Detrimental",
+      "C": "Dexteraty",
+      "D": "Dialect"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Dexterity' (spelled with '-i-' before 'ty' - skill in performing tasks, especially with the hands). Other options are correct: Deteriorate (become progressively worse), Detrimental (tending to cause harm), Dialect (a particular form of a language peculiar to a specific region or social group).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0079",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Diarrhoea",
+      "B": "Diarrhea",
+      "C": "Diarhea",
+      "D": "Diarhoea"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Diarrhoea' - standard UK spelling with double 'r' and 'oe'; 'Diarrhea' is US). In standard SSC PYQs, the UK form 'Diarrhoea' is primarily tested. Options C and D are corrupted variants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0080",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Disastrous",
+      "B": "Disciplinarian",
+      "C": "Dissappointment",
+      "D": "Disseminate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Disappointment' (single 's', double 'p' - sadness or displeasure caused by the non-fulfillment of one's hopes). Other options are correct: Disastrous (causing great damage; catastrophic), Disciplinarian (a person who believes in or practices firm discipline), Disseminate (spread or disperse widely).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0081",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Dysentery",
+      "B": "Dysentry",
+      "C": "Disentery",
+      "D": "Dyssentery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Dysentery' - infection of the intestines resulting in severe diarrhea; spelled 'd-y-s-e-n-t-e-r-y'). Options B, C, and D misspell the prefix or drop the internal 'e'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0082",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Ecstasy",
+      "B": "Effervescence",
+      "C": "Egaliterian",
+      "D": "Elucidate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Egalitarian' (spelled with '-ari-' - believing in or based on the principle that all people are equal). Other options are correct: Ecstasy (an overwhelming feeling of great happiness), Effervescence (bubbles in a liquid; fizz / vivacity and enthusiasm), Elucidate (make something clear; explain).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0083",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Emancipation",
+      "B": "Emancapation",
+      "C": "Emancupation",
+      "D": "Imancipation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Emancipation' - the fact or process of being set free from legal, social, or political restrictions; starts with 'E-' and uses '-ci-'). Options B, C, and D are faulty vowel corruptions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0084",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Embezzlement",
+      "B": "Emergency",
+      "C": "Emmigrant",
+      "D": "Empirical"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Emigrant' (single 'm' - a person who leaves their own country in order to settle permanently in another). Other options are correct: Embezzlement (theft or misappropriation of funds placed in one's trust), Emergency (a serious, unexpected, and often dangerous situation), Empirical (based on, concerned with, or verifiable by observation or experience).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0085",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Encyclopaedia",
+      "B": "Encyclopidia",
+      "C": "Encyclipaedia",
+      "D": "Encyclopadea"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Encyclopaedia' - a comprehensive reference work; standard classical/UK spelling with '-paedia'). Options B, C, and D are incorrect phonetic misspellings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0086",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Endurance",
+      "B": "Enthusiasm",
+      "C": "Ephemral",
+      "D": "Epidemiology"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Ephemeral' (spelled with '-er-' - lasting for a very short time). Other options are correct: Endurance (the ability to sustain prolonged physical or mental effort), Enthusiasm (intense and eager enjoyment, interest, or approval), Epidemiology (the branch of medicine dealing with the incidence and control of diseases).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0087",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Equilibrium",
+      "B": "Equillibrium",
+      "C": "Equalibrium",
+      "D": "Equilibriam"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Equilibrium' - a state in which opposing forces or influences are balanced; single 'l', single 'r'). Options B, C, and D misplace consonant doubling and vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0088",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Equivocal",
+      "B": "Eradication",
+      "C": "Erroneous",
+      "D": "Espionaj"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Espionage' (spelled with '-age' - the practice of spying or of using spies). Other options are correct: Equivocal (open to more than one interpretation; ambiguous), Eradication (the complete destruction of every trace of something), Erroneous (wrong; incorrect).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0089",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Etiquette",
+      "B": "Etiqutte",
+      "C": "Ettiquette",
+      "D": "Etiquete"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Etiquette' - the customary code of polite behavior; single 't' initially, double 't' in '-ette'). Options B, C, and D are faulty variants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0090",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Euphemism",
+      "B": "Euphoria",
+      "C": "Evacution",
+      "D": "Exasperate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Evacuation' (requires 'a' after 'u' - the action of evacuating a person or a place). Other options are correct: Euphemism (a mild or indirect word substituted for one considered too harsh), Euphoria (a feeling or state of intense excitement and happiness), Exasperate (irritate intensely; infuriate).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0091",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Exemplary",
+      "B": "Examplary",
+      "C": "Exemplery",
+      "D": "Examplery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Exemplary' - serving as a desirable model; representing the best of its kind; spelled with 'e', not 'a'). Options B, C, and D incorrectly follow the root spelling 'example'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0092",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Exhaustion",
+      "B": "Exhuberant",
+      "C": "Expatriate",
+      "D": "Expedient"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is incorrectly spelt; the correct spelling is 'Exuberant' (no 'h' - full of energy, excitement, and cheerfulness). Other options are correct: Exhaustion (a state of extreme physical or mental fatigue), Expatriate (a person who lives outside their native country), Expedient (convenient and practical although possibly improper or immoral).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0093",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Extempore",
+      "B": "Extemporey",
+      "C": "Extempory",
+      "D": "Extampore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Extempore' - spoken or done without preparation; derived from Latin 'ex tempore'). Options B, C, and D are invalid additions or vowel distortions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0094",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Fastidious",
+      "B": "Feasability",
+      "C": "Ferocious",
+      "D": "Fluorescence"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is incorrectly spelt; the correct spelling is 'Feasibility' (spelled with '-i-' before 'lity' - the state or degree of being easily or conveniently done). Other options are correct: Fastidious (very attentive to and concerned about accuracy and detail), Ferocious (savagely fierce, cruel, or violent), Fluorescence (the emission of light by a substance that has absorbed light).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0095",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Flamboyant",
+      "B": "Flamboiant",
+      "C": "Flamboyent",
+      "D": "Flamboyantt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Flamboyant' - tending to attract attention because of their exuberance, confidence, and stylishness; ends in '-ant'). Options B, C, and D are corrupted forms.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0096",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Forfeit",
+      "B": "Formidable",
+      "C": "Fourty",
+      "D": "Fraudulent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Forty' (drops the 'u' from 'four' - the number 40). Other options are correct: Forfeit (lose or be deprived of property or a right as a penalty), Formidable (inspiring fear or respect through being impressively large, powerful, or capable), Fraudulent (obtained, done by, or involving deception).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0097",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Garrulous",
+      "B": "Garulous",
+      "C": "Garralous",
+      "D": "Garrilous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Garrulous' - excessively talkative, especially on trivial matters; double 'r', single 'l'). Options B, C, and D fail consonant doubling or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0098",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Genealogy",
+      "B": "Gluttony",
+      "C": "Goverment",
+      "D": "Grandiose"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Government' (contains 'n' before 'ment' - the governing body of a nation, state, or community). Other options are correct: Genealogy (a line of descent traced continuously from an ancestor), Gluttony (habitual greed or excess in eating), Grandiose (impressive and imposing in appearance or style).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0099",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Gregarious",
+      "B": "Gragarious",
+      "C": "Gregareous",
+      "D": "Gregorios"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Gregarious' - fond of company; sociable; from Latin 'gregarius'). Options B, C, and D are faulty transcriptions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_00100",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Guillotine",
+      "B": "Hallucination",
+      "C": "Haphazzard",
+      "D": "Heinous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Haphazard' (single 'z' - lacking any obvious principle of organization). Other options are correct: Guillotine (a machine with a heavy blade used for beheading), Hallucination (an experience involving the apparent perception of something not present), Heinous (utterly odious or wicked).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

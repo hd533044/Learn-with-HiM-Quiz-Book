@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0801",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA stableman, attendant, or person who looks after horses at an inn",
+    "options": {
+      "A": "Ostler",
+      "B": "Janitor",
+      "C": "Stevedore",
+      "D": "Curator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ostler) is correct[cite: 2]. An 'Ostler' (or hostler) is employed to tend horses at an inn or stable[cite: 2]. 'Janitor' is a building caretaker[cite: 2], and 'Stevedore' is a ship laborer[cite: 2].",
+    "tags": ["vocab", "ows", "professions", "animals", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0802",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo banish, exclude, or turn someone out of society, fellowship, or a group",
+    "options": {
+      "A": "Ostracise",
+      "B": "Emancipate",
+      "C": "Vindicate",
+      "D": "Exonerate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ostracise) is correct[cite: 2]. 'Ostracise' means to socially banish, shun, or exclude someone from a community[cite: 2]. 'Vindicate' means to clear of blame[cite: 2].",
+    "tags": ["vocab", "ows", "society", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0803",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo surpass, excel, or be more successful than someone else",
+    "options": {
+      "A": "Outdo",
+      "B": "Underperform",
+      "C": "Yield",
+      "D": "Succumb"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Outdo) is correct[cite: 2]. 'Outdo' means to outperform, surpass, or achieve greater success than another[cite: 2]. 'Succumb' means to yield or give in.",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0804",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has broken the law, especially one who remains at large or is a fugitive",
+    "options": {
+      "A": "Outlaw",
+      "B": "Magistrate",
+      "C": "Judge",
+      "D": "Constable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Outlaw) is correct[cite: 2]. An 'Outlaw' is a habitual criminal hiding from the law or deprived of its protection[cite: 2].",
+    "tags": ["vocab", "ows", "law", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0805",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nPertaining to, resembling, or characteristic of sheep",
+    "options": {
+      "A": "Ovine",
+      "B": "Bovine",
+      "C": "Canine",
+      "D": "Feline"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ovine) is correct[cite: 2]. 'Ovine' relates to sheep[cite: 2]. 'Bovine' relates to cattle or oxen[cite: 2], 'Canine' to dogs, and 'Feline' to cats.",
+    "tags": ["vocab", "ows", "animals", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0806",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe ethical belief and political ideology that war and violence are unjustified and all disputes should be settled peacefully",
+    "options": {
+      "A": "Pacifism",
+      "B": "Militarism",
+      "C": "Imperialism",
+      "D": "Totalitarianism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pacifism) is correct[cite: 2]. 'Pacifism' is opposition to war, armed conflict, and violence as a means of settling disputes[cite: 2].",
+    "tags": ["vocab", "ows", "philosophy", "politics", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0807",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who opposes war, armed conflict, or the use of military force under any circumstances",
+    "options": {
+      "A": "Pacifist",
+      "B": "Belligerent",
+      "C": "Militant",
+      "D": "Warmonger"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pacifist) is correct[cite: 2]. A 'Pacifist' holds that all warfare is unjustifiable and promotes peace[cite: 2]. 'Belligerent' and 'Militant' are warlike and combative.",
+    "tags": ["vocab", "ows", "people", "politics", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0808",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA standardized set of 52 playing cards used in various games",
+    "options": {
+      "A": "Pack",
+      "B": "Deck",
+      "C": "Bundle",
+      "D": "Bale"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pack) is correct[cite: 2]. A 'Pack' (or deck) is a complete set of 52 playing cards[cite: 2]. 'Bale' is a compacted bundle of cotton or hay[cite: 2].",
+    "tags": ["vocab", "ows", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0809",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medical doctor who specializes in the treatment, care, and diseases of children",
+    "options": {
+      "A": "Paediatrician",
+      "B": "Geriatrician",
+      "C": "Cardiologist",
+      "D": "Dermatologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Paediatrician) is correct[cite: 2]. A 'Paediatrician' is a child specialist physician[cite: 2]. 'Geriatrician' treats elderly patients.",
+    "tags": ["vocab", "ows", "medical", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0810",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA word, phrase, number, or sequence that reads the same backward as forward (e.g., radar or madam)",
+    "options": {
+      "A": "Palindrome",
+      "B": "Acronym",
+      "C": "Homonym",
+      "D": "Synonym"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Palindrome) is correct[cite: 2]. A 'Palindrome' is symmetrical in spelling from left-to-right and right-to-left[cite: 2]. 'Acronym' is an abbreviation pronounced as a word[cite: 2].",
+    "tags": ["vocab", "ows", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0811",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo make an offense, pain, or severe problem less severe or serious without removing the cause",
+    "options": {
+      "A": "Palliation",
+      "B": "Aggravation",
+      "C": "Exacerbation",
+      "D": "Amplification"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Palliation) is correct[cite: 2]. 'Palliation' involves easing the severity of pain or disease symptoms temporarily without curing the root cause[cite: 2]. 'Aggravation' makes things worse.",
+    "tags": ["vocab", "ows", "medical", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0812",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nClear, distinct, and tangible enough to be touched, felt, or easily perceived",
+    "options": {
+      "A": "Palpable",
+      "B": "Intangible",
+      "C": "Abstract",
+      "D": "Imperceptible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Palpable) is correct[cite: 2]. 'Palpable' describes something concrete and tangible enough to be touched or felt[cite: 2]. 'Intangible' and 'Abstract' lack physical form[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0813",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA universal remedy, cure-all, or solution for all diseases and difficulties",
+    "options": {
+      "A": "Panacea",
+      "B": "Antidote",
+      "C": "Placebo",
+      "D": "Elixir"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Panacea) is correct[cite: 2]. A 'Panacea' is a legendary universal cure for all diseases or problems[cite: 2]. 'Placebo' is an inactive substance given for psychological relief.",
+    "tags": ["vocab", "ows", "medical", "pyq_ssc", "repeated_13_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0814",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nWild, chaotic, and noisy uproar or confusion; pandemonium",
+    "options": {
+      "A": "Pandemonium",
+      "B": "Serenity",
+      "C": "Tranquillity",
+      "D": "Harmony"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pandemonium) is correct[cite: 2]. 'Pandemonium' denotes wild uproar, chaos, and lawless noise[cite: 2]. 'Serenity' and 'Tranquillity' mean calm peacefulness[cite: 2].",
+    "tags": ["vocab", "ows", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0815",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo gratify, indulge, or cater to an immoral, base, or distasteful desire",
+    "options": {
+      "A": "Pander",
+      "B": "Edify",
+      "C": "Purify",
+      "D": "Sanctify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pander) is correct[cite: 2]. 'Pander' means to gratify or indulge someone's weakness or base desires[cite: 2]. 'Edify' means to uplift morally and intellectually[cite: 2].",
+    "tags": ["vocab", "ows", "verbs", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0816",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sudden, uncontrollable outbreak of collective fear, terror, or panic affecting a crowd",
+    "options": {
+      "A": "Panic",
+      "B": "Equilibrium",
+      "C": "Composure",
+      "D": "Sangfroid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Panic) is correct[cite: 2]. 'Panic' is sudden, groundless terror causing wild unthinking behavior[cite: 2]. 'Composure' and 'Sangfroid' mean calm self-control[cite: 2].",
+    "tags": ["vocab", "ows", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0817",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA wide, unbroken, and comprehensive panoramic view of an entire surrounding area",
+    "options": {
+      "A": "Panorama",
+      "B": "Mirage",
+      "C": "Illusion",
+      "D": "Vignette"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Panorama) is correct[cite: 2]. A 'Panorama' is an unbroken, sweeping view of a vast region[cite: 2].",
+    "tags": ["vocab", "ows", "geography", "art", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0818",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe philosophical belief and theological doctrine that God is identical with the universe and nature",
+    "options": {
+      "A": "Pantheism",
+      "B": "Monotheism",
+      "C": "Polytheism",
+      "D": "Atheism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pantheism) is correct[cite: 2]. 'Pantheism' is the belief that the universe and nature are manifestations of God[cite: 2]. 'Monotheism' worships one distinct deity[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "philosophy", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0819",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA classical temple dedicated to all the gods of a particular religion or mythology",
+    "options": {
+      "A": "Pantheon",
+      "B": "Cathedral",
+      "C": "Chapel",
+      "D": "Synagogue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pantheon) is correct[cite: 2]. A 'Pantheon' is a sacred temple housing all gods of a pantheon[cite: 2]. 'Cathedral' is a principal Christian church[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "architecture", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0820",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small pantry, room, or larder in a large house where food, dishes, and cutlery are stored",
+    "options": {
+      "A": "Pantry",
+      "B": "Cellar",
+      "C": "Attic",
+      "D": "Scullery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pantry) is correct[cite: 2]. A 'Pantry' is a food storage and preparation room near the kitchen[cite: 2]. 'Cellar' is an underground wine basement[cite: 2].",
+    "tags": ["vocab", "ows", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0821",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA simple story designed to illustrate a moral, spiritual, or religious lesson",
+    "options": {
+      "A": "Parable",
+      "B": "Fable",
+      "C": "Ballad",
+      "D": "Epic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Parable) is correct[cite: 2]. A 'Parable' is an allegorical story teaching a moral lesson, often used by Jesus[cite: 2]. 'Fable' features animal characters[cite: 2].",
+    "tags": ["vocab", "ows", "literature", "stories", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0822",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn organism that lives in, on, or at the expense of another living host organism without providing benefit",
+    "options": {
+      "A": "Parasite",
+      "B": "Predator",
+      "C": "Symbiont",
+      "D": "Host"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Parasite) is correct[cite: 2]. A 'Parasite' lives off a host organism, deriving nutrients at the host's expense[cite: 2]. 'Predator' kills and consumes prey[cite: 2].",
+    "tags": ["vocab", "ows", "biology", "nature", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0823",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo boil food briefly and partially in water as a preliminary cooking step",
+    "options": {
+      "A": "Parboil",
+      "B": "Simmer",
+      "C": "Sauté",
+      "D": "Roast"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Parboil) is correct[cite: 2]. 'Parboil' means to cook food partially by boiling it briefly[cite: 2].",
+    "tags": ["vocab", "ows", "cooking", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0824",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHaving a narrow, restricted, or provincial outlook and scope",
+    "options": {
+      "A": "Parochial",
+      "B": "Cosmopolitan",
+      "C": "Universal",
+      "D": "Broadminded"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Parochial) is correct[cite: 2]. 'Parochial' (or provincial) means narrow in outlook or confined to a local region[cite: 2]. 'Cosmopolitan' means worldly and broadminded[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0825",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nConditional freedom granted to a prisoner before completing their full sentence, based on good behavior",
+    "options": {
+      "A": "Parole",
+      "B": "Amnesty",
+      "C": "Acquittal",
+      "D": "Pardon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Parole) is correct[cite: 2]. 'Parole' is early conditional release from prison[cite: 2]. 'Amnesty' is an official government pardon for political offenses[cite: 2].",
+    "tags": ["vocab", "ows", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0826",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe crime of murdering one's own father, mother, or close relative",
+    "options": {
+      "A": "Parricide",
+      "B": "Patricide",
+      "C": "Matricide",
+      "D": "Fratricide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Parricide) is correct[cite: 2]. 'Parricide' is the murder of a parent or close relative[cite: 2]. 'Patricide' is specifically killing one's father[cite: 2].",
+    "tags": ["vocab", "ows", "killing", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0827",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has suddenly acquired new wealth, power, or social prestige; an upstart",
+    "options": {
+      "A": "Parvenu",
+      "B": "Veteran",
+      "C": "Aristocrat",
+      "D": "Noble"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Parvenu) is correct[cite: 2]. A 'Parvenu' (or upstart) is a person newly rich who has not yet gained social grace[cite: 2].",
+    "tags": ["vocab", "ows", "society", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0828",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA government grant or sole legal right giving an inventor exclusive monopoly to make and sell an invention",
+    "options": {
+      "A": "Patent",
+      "B": "Copyright",
+      "C": "Trademark",
+      "D": "Monopoly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Patent) is correct[cite: 2]. A 'Patent' grants an inventor exclusive commercial rights to an invention[cite: 2]. 'Copyright' protects original literary and artistic works.",
+    "tags": ["vocab", "ows", "law", "business", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0829",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe medical branch of science dealing with the study of the causes and nature of diseases",
+    "options": {
+      "A": "Pathology",
+      "B": "Cardiology",
+      "C": "Neurology",
+      "D": "Dermatology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pathology) is correct[cite: 2]. 'Pathology' investigates structural and functional changes in tissues caused by disease[cite: 2].",
+    "tags": ["vocab", "ows", "science", "medical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0830",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe crime of murdering one's own father",
+    "options": {
+      "A": "Patricide",
+      "B": "Matricide",
+      "C": "Fratricide",
+      "D": "Sororicide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Patricide) is correct[cite: 2]. 'Patricide' is the murder of one's father[cite: 2]. 'Matricide' is killing one's mother[cite: 2].",
+    "tags": ["vocab", "ows", "killing", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0831",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nBased on or tracing ancestral descent exclusively through the male line",
+    "options": {
+      "A": "Patrilineal",
+      "B": "Matrilineal",
+      "C": "Fraternal",
+      "D": "Sororal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Patrilineal) is correct[cite: 2]. 'Patrilineal' traces lineage and inheritance through the paternal line[cite: 2]. 'Matrilineal' traces ancestry through the mother.",
+    "tags": ["vocab", "ows", "society", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0832",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nProperty or estate inherited from one's father or ancestors",
+    "options": {
+      "A": "Patrimony",
+      "B": "Inheritance",
+      "C": "Alimony",
+      "D": "Bounty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Patrimony) is correct[cite: 2]. 'Patrimony' is property inherited specifically from one's father or male ancestors[cite: 2].",
+    "tags": ["vocab", "ows", "law", "property", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0833",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who loves, supports, and defends their country; a nationalist",
+    "options": {
+      "A": "Patriot",
+      "B": "Traitor",
+      "C": "Renegade",
+      "D": "Mercenary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Patriot) is correct[cite: 2]. A 'Patriot' is devoted to the love and defense of their homeland[cite: 2]. 'Traitor' betrays their nation[cite: 2].",
+    "tags": ["vocab", "ows", "people", "politics", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0834",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo go around an area or beat bounds regularly to maintain security and keep a watch",
+    "options": {
+      "A": "Patrol",
+      "B": "Prowl",
+      "C": "Traverse",
+      "D": "Navigate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Patrol) is correct[cite: 2]. 'Patrol' means to monitor and guard an assigned sector regularly[cite: 2]. 'Prowl' means to roam stealthily looking for prey or crime[cite: 2].",
+    "tags": ["vocab", "ows", "security", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0835",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is extremely poor, destitute, and lacking all means of financial support",
+    "options": {
+      "A": "Pauper",
+      "B": "Millionaire",
+      "C": "Magnate",
+      "D": "Plutocrat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pauper) is correct[cite: 2]. A 'Pauper' is a very poor person dependent on public charity[cite: 2].",
+    "tags": ["vocab", "ows", "people", "poverty", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0836",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe method, theory, and professional practice of teaching and education",
+    "options": {
+      "A": "Pedagogy",
+      "B": "Demography",
+      "C": "Etymology",
+      "D": "Taxonomy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pedagogy) is correct[cite: 2]. 'Pedagogy' is the method and practice of instructional teaching[cite: 2].",
+    "tags": ["vocab", "ows", "education", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0837",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who excessively insists on strict adherence to formal rules, minor details, or book learning",
+    "options": {
+      "A": "Pedant",
+      "B": "Novice",
+      "C": "Amateur",
+      "D": "Dilettante"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pedant) is correct[cite: 2]. A 'Pedant' is overly concerned with minute formal rules and academic displays[cite: 2].",
+    "tags": ["vocab", "ows", "personality", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0838",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCharacterized by a narrow, ostentatious display of scholarly learning and rigid rules",
+    "options": {
+      "A": "Pedantic",
+      "B": "Erudite",
+      "C": "Lucid",
+      "D": "Pragmatic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pedantic) is correct[cite: 2]. 'Pedantic' describes a style or person overly focused on minor academic details[cite: 2]. 'Erudite' means genuinely scholarly[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0839",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who travels or walks on foot along streets and roads rather than driving",
+    "options": {
+      "A": "Pedestrian",
+      "B": "Equestrian",
+      "C": "Jockey",
+      "D": "Acrobat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pedestrian) is correct[cite: 2]. A 'Pedestrian' is a person walking on foot[cite: 2]. 'Equestrian' relates to horseback riding.",
+    "tags": ["vocab", "ows", "people", "travel", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0840",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe medical branch of clinical science dealing with children and their illnesses",
+    "options": {
+      "A": "Pediatrics",
+      "B": "Geriatrics",
+      "C": "Orthopaedics",
+      "D": "Dermatology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pediatrics) is correct[cite: 2]. 'Pediatrics' is the medical care of infants and children[cite: 2]. 'Geriatrics' treats elderly health problems[cite: 2].",
+    "tags": ["vocab", "ows", "medical", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0841",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA financial penalty, fine, or sanction imposed for breaking a law, rule, or contract",
+    "options": {
+      "A": "Penalty",
+      "B": "Rebate",
+      "C": "Bounty",
+      "D": "Perquisite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Penalty) is correct[cite: 2]. A 'Penalty' is a punishment or fine for violating legal or contractual rules[cite: 2]. 'Rebate' is a partial tax refund[cite: 2].",
+    "tags": ["vocab", "ows", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0842",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA strong, innate inclination, taste, or special liking for something",
+    "options": {
+      "A": "Penchant",
+      "B": "Aversion",
+      "C": "Antipathy",
+      "D": "Loathing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Penchant) is correct[cite: 2]. A 'Penchant' is a strong habitual preference or liking[cite: 2]. 'Aversion' and 'Antipathy' mean intense dislike[cite: 2].",
+    "tags": ["vocab", "ows", "emotions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0843",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large mass or strip of land almost entirely surrounded by water except for a narrow land connection",
+    "options": {
+      "A": "Peninsula",
+      "B": "Island",
+      "C": "Archipelago",
+      "D": "Isthmus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Peninsula) is correct[cite: 2]. A 'Peninsula' is land projecting into water and bordered by water on three sides[cite: 2]. 'Isthmus' connects two land areas[cite: 2].",
+    "tags": ["vocab", "ows", "geography", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0844",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nEngaged in deep, serious, and often melancholy thought or reflection",
+    "options": {
+      "A": "Pensive",
+      "B": "Frivolous",
+      "C": "Facetious",
+      "D": "Jocular"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pensive) is correct[cite: 2]. 'Pensive' means engaged in deep or wistful thoughtfulness[cite: 2]. 'Frivolous' and 'Jocular' mean playful and lacking seriousness[cite: 2].",
+    "tags": ["vocab", "ows", "mind", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0845",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLasting indefinitely, continuously, or permanently without interruption",
+    "options": {
+      "A": "Perpetual",
+      "B": "Ephemeral",
+      "C": "Transient",
+      "D": "Momentary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Perpetual) is correct[cite: 2]. 'Perpetual' means everlasting, continuous, and never ending[cite: 2]. 'Transient' and 'Momentary' last only briefly[cite: 2].",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0846",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA casual tip, gratuity, or incidental benefit awarded in addition to regular wages",
+    "options": {
+      "A": "Perquisite",
+      "B": "Remuneration",
+      "C": "Honorarium",
+      "D": "Alimony"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Perquisite) is correct[cite: 2]. A 'Perquisite' (perk) is a customary fringe benefit attached to an employment position[cite: 2].",
+    "tags": ["vocab", "ows", "work", "finance", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0847",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo subject someone to persistent hostility, harassment, or ill-treatment, especially for religious or political beliefs",
+    "options": {
+      "A": "Persecute",
+      "B": "Prosecute",
+      "C": "Exonerate",
+      "D": "Vindicate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Persecute) is correct[cite: 2]. 'Persecute' means to oppress or harass persistently due to beliefs[cite: 2]. 'Prosecute' is to institute legal proceedings against a criminal[cite: 2].",
+    "tags": ["vocab", "ows", "law", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0848",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSteadfast persistence, determination, and constant effort in doing something despite difficulty",
+    "options": {
+      "A": "Perseverance",
+      "B": "Indolence",
+      "C": "Sloth",
+      "D": "Apathy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Perseverance) is correct[cite: 2]. 'Perseverance' is steadfast persistence in pursuit of a goal despite obstacles[cite: 2]. 'Indolence' and 'Sloth' mean laziness[cite: 2].",
+    "tags": ["vocab", "ows", "personality", "abstract", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0849",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe staff, workers, or employees working in an organization, institution, or armed forces branch",
+    "options": {
+      "A": "Personnel",
+      "B": "Clientele",
+      "C": "Audience",
+      "D": "Mob"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Personnel) is correct[cite: 2]. 'Personnel' refers to the human workforce employed by a business or military unit[cite: 2].",
+    "tags": ["vocab", "ows", "work", "collective_nouns", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0850",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who habitually anticipates the worst possible outcome or sees the dark side of life",
+    "options": {
+      "A": "Pessimist",
+      "B": "Optimist",
+      "C": "Fatalist",
+      "D": "Stoic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pessimist) is correct[cite: 2]. A 'Pessimist' tends to see the worst aspects of things or believe that the worst will happen[cite: 2]. 'Optimist' expects favorable outcomes[cite: 2].",
+    "tags": ["vocab", "ows", "personality", "people", "pyq_ssc"]
+  }
+]

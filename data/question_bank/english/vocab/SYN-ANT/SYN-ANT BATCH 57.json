@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_2801",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OSTENSIBLE**",
+    "options": {
+      "A": "Apparent",
+      "B": "Actual",
+      "C": "Real",
+      "D": "Genuine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ostensibile' means stated or appearing to be true, but not necessarily so. 'Apparent', 'seeming', or 'professed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2802",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OSTENSIBLE**",
+    "options": {
+      "A": "Apparent",
+      "B": "Seeming",
+      "C": "Actual",
+      "D": "Professed"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ostensibile' means appearing to be true. 'Actual', 'real', or 'genuine' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2803",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OSTENTATIOUS**",
+    "options": {
+      "A": "Showy",
+      "B": "Modest",
+      "C": "Unassuming",
+      "D": "Plain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ostentatious' means characterized by vulgar or pretentious display; designed to impress. 'Showy', 'pretentious', or 'flamboyant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2804",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OSTENTATIOUS**",
+    "options": {
+      "A": "Showy",
+      "B": "Flamboyant",
+      "C": "Modest",
+      "D": "Pretentious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ostentatious' means showy. 'Modest', 'unassuming', or 'plain' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2805",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OSTRACIZE**",
+    "options": {
+      "A": "Exclude",
+      "B": "Welcome",
+      "C": "Accept",
+      "D": "Include"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ostracize' means to exclude from a society or group. 'Exclude', 'shun', or 'reject' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2806",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OSTRACIZE**",
+    "options": {
+      "A": "Exclude",
+      "B": "Shun",
+      "C": "Include",
+      "D": "Reject"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ostracize' means to exclude. 'Include', 'welcome', or 'accept' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2807",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OVERT**",
+    "options": {
+      "A": "Open",
+      "B": "Covert",
+      "C": "Secret",
+      "D": "Hidden"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Overt' means done or shown openly; not secret or hidden. 'Open', 'public', or 'apparent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2808",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OVERT**",
+    "options": {
+      "A": "Open",
+      "B": "Public",
+      "C": "Covert",
+      "D": "Apparent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Overt' means open. 'Covert', 'secret', or 'hidden' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2809",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**OVERWHELM**",
+    "options": {
+      "A": "Overpower",
+      "B": "Yield",
+      "C": "Surrender",
+      "D": "Give in"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Overwhelm' means to bury or drown beneath a huge mass; to defeat completely. 'Overpower', 'crush', or 'submerge' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2810",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**OVERWHELM**",
+    "options": {
+      "A": "Overpower",
+      "B": "Crush",
+      "C": "Yield",
+      "D": "Submerge"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Overwhelm' means to defeat completely. 'Yield', 'surrender', or 'give in' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2811",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PACIFY**",
+    "options": {
+      "A": "Placate",
+      "B": "Provoke",
+      "C": "Enrage",
+      "D": "Inflame"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pacify' means to quell the anger, agitation, or excitement of. 'Placate', 'appease', or 'soothe' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2812",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PACIFY**",
+    "options": {
+      "A": "Placate",
+      "B": "Appease",
+      "C": "Provoke",
+      "D": "Soothe"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pacify' means to calm. 'Provoke', 'enrage', or 'inflame' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2813",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PALATABLE**",
+    "options": {
+      "A": "Tasty",
+      "B": "Distasteful",
+      "C": "Unpleasant",
+      "D": "Offensive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Palatable' means (of food or drink) pleasant to taste; (of an action or proposal) acceptable or satisfactory. 'Tasty', 'delicious', or 'savory' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2814",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PALATABLE**",
+    "options": {
+      "A": "Tasty",
+      "B": "Savory",
+      "C": "Distasteful",
+      "D": "Delicious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Palatable' means pleasant to taste. 'Distasteful', 'unpleasant', or 'offensive' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2815",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PALLIATE**",
+    "options": {
+      "A": "Alleviate",
+      "B": "Aggravate",
+      "C": "Worsen",
+      "D": "Intensify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Palliate' means to make (a disease or its symptoms) less severe or unpleasant without removing the cause. 'Alleviate', 'soothe', or 'relieve' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2816",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PALLIATE**",
+    "options": {
+      "A": "Alleviate",
+      "B": "Soothe",
+      "C": "Aggravate",
+      "D": "Relieve"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Palliate' means to make less severe. 'Aggravate', 'worsen', or 'intensify' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2817",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PALPABLE**",
+    "options": {
+      "A": "Tangible",
+      "B": "Intangible",
+      "C": "Imperceptible",
+      "D": "Invisible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Palpable' means able to be touched or felt; (of a feeling or atmosphere) so intense as to seem almost tangible. 'Tangible', 'noticeable', or 'obvious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2818",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PALPABLE**",
+    "options": {
+      "A": "Tangible",
+      "B": "Noticeable",
+      "C": "Intangible",
+      "D": "Obvious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Palpable' means tangible. 'Intangible', 'imperceptible', or 'invisible' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2819",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PALTRY**",
+    "options": {
+      "A": "Meager",
+      "B": "Abundant",
+      "C": "Ample",
+      "D": "Substantial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Paltry' means (of an amount) small or meager. 'Meager', 'trifling', or 'insignificant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2820",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PALTRY**",
+    "options": {
+      "A": "Meager",
+      "B": "Trifling",
+      "C": "Abundant",
+      "D": "Insignificant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Paltry' means small. 'Abundant', 'ample', or 'substantial' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2821",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PANACEA**",
+    "options": {
+      "A": "Cure-all",
+      "B": "Disease",
+      "C": "Ailment",
+      "D": "Problem"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Panacea' refers to a solution or remedy for all difficulties or diseases. 'Cure-all', 'universal remedy', or 'solution' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2822",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PANACEA**",
+    "options": {
+      "A": "Cure-all",
+      "B": "Universal remedy",
+      "C": "Disease",
+      "D": "Solution"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Panacea' is a cure-all. 'Disease', 'ailment', or 'problem' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2823",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PARADIGM**",
+    "options": {
+      "A": "Model",
+      "B": "Exception",
+      "C": "Anomaly",
+      "D": "Deviation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Paradigm' refers to a typical example or pattern of something; a model. 'Model', 'pattern', or 'exemplar' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2824",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PARADIGM**",
+    "options": {
+      "A": "Model",
+      "B": "Pattern",
+      "C": "Anomaly",
+      "D": "Exemplar"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Paradigm' is a model or pattern. 'Anomaly', 'exception', or 'deviation' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2825",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PARADOX**",
+    "options": {
+      "A": "Contradiction",
+      "B": "Consistency",
+      "C": "Agreement",
+      "D": "Truth"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Paradox' refers to a seemingly absurd or self-contradictory statement or proposition. 'Contradiction', 'inconsistency', or 'puzzle' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2826",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PARADOX**",
+    "options": {
+      "A": "Contradiction",
+      "B": "Inconsistency",
+      "C": "Consistency",
+      "D": "Puzzle"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Paradox' is a contradiction. 'Consistency', 'agreement', or 'truth' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2827",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PARAMOUNT**",
+    "options": {
+      "A": "Supreme",
+      "B": "Minor",
+      "C": "Secondary",
+      "D": "Subordinate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Paramount' means more important than anything else; supreme. 'Supreme', 'chief', or 'paramount' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2828",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PARAMOUNT**",
+    "options": {
+      "A": "Supreme",
+      "B": "Chief",
+      "C": "Secondary",
+      "D": "Top"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Paramount' means supreme. 'Secondary', 'minor', or 'subordinate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2829",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PARIAH**",
+    "options": {
+      "A": "Outcast",
+      "B": "Insider",
+      "C": "Member",
+      "D": "Leader"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pariah' refers to an outcast. 'Outcast', 'leper', or 'pariah' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2830",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PARIAH**",
+    "options": {
+      "A": "Outcast",
+      "B": "Leper",
+      "C": "Insider",
+      "D": "Rejected"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pariah' is an outcast. 'Insider', 'member', or 'leader' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2831",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PARSIMONIOUS**",
+    "options": {
+      "A": "Miserly",
+      "B": "Generous",
+      "C": "Lavish",
+      "D": "Bountiful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Parsimonious' means unwilling to spend money or use resources; stingy or frugal. 'Miserly', 'stingy', or 'tight-fisted' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2832",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PARSIMONIOUS**",
+    "options": {
+      "A": "Miserly",
+      "B": "Stingy",
+      "C": "Generous",
+      "D": "Tight-fisted"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Parsimonious' means stingy. 'Generous', 'lavish', or 'bountiful' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2833",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PARTISAN**",
+    "options": {
+      "A": "Biased",
+      "B": "Neutral",
+      "C": "Impartial",
+      "D": "Unbiased"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Partisan' refers to a strong supporter of a party, cause, or person; prejudiced in favor of a particular cause. 'Biased', 'prejudiced', or 'one-sided' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2834",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PARTISAN**",
+    "options": {
+      "A": "Biased",
+      "B": "Prejudiced",
+      "C": "Neutral",
+      "D": "One-sided"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Partisan' means biased. 'Neutral', 'impartial', or 'unbiased' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2835",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PATHOS**",
+    "options": {
+      "A": "Pity",
+      "B": "Joy",
+      "C": "Happiness",
+      "D": "Glee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pathos' refers to a quality that evokes pity or sadness. 'Pity', 'poignancy', or 'sadness' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2836",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PATHOS**",
+    "options": {
+      "A": "Pity",
+      "B": "Poignancy",
+      "C": "Joy",
+      "D": "Sadness"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pathos' is a quality of sadness. 'Joy', 'happiness', or 'glee' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2837",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PAUCITY**",
+    "options": {
+      "A": "Scarcity",
+      "B": "Abundance",
+      "C": "Plenty",
+      "D": "Surplus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Paucity' refers to the presence of something only in small or insufficient quantities or amounts; scarcity. 'Scarcity', 'dearth', or 'shortage' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2838",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PAUCITY**",
+    "options": {
+      "A": "Scarcity",
+      "B": "Dearth",
+      "C": "Abundance",
+      "D": "Shortage"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Paucity' means scarcity. 'Abundance', 'plenty', or 'surplus' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2839",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PEDANTIC**",
+    "options": {
+      "A": "Over-precise",
+      "B": "Simple",
+      "C": "Practical",
+      "D": "Sensible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pedantic' refers to being excessively concerned with minor details and rules or with displaying academic learning. 'Over-precise', 'academic', or 'bookish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2840",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PEDANTIC**",
+    "options": {
+      "A": "Over-precise",
+      "B": "Academic",
+      "C": "Simple",
+      "D": "Bookish"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pedantic' means overly concerned with details. 'Simple', 'practical', or 'sensible' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2841",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PENCHANT**",
+    "options": {
+      "A": "Liking",
+      "B": "Dislike",
+      "C": "Aversion",
+      "D": "Hatred"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Penchant' refers to a strong or habitual liking for something or tendency to do something. 'Liking', 'fondness', or 'preference' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2842",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PENCHANT**",
+    "options": {
+      "A": "Liking",
+      "B": "Fondness",
+      "C": "Aversion",
+      "D": "Preference"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Penchant' means a strong liking. 'Aversion', 'dislike', or 'hatred' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2843",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PENITENT**",
+    "options": {
+      "A": "Remorseful",
+      "B": "Unrepentant",
+      "C": "Stubborn",
+      "D": "Obdurate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Penitent' means feeling or showing sorrow and regret for having done wrong; repentant. 'Remorseful', 'contrite', or 'repentant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2844",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PENITENT**",
+    "options": {
+      "A": "Remorseful",
+      "B": "Contrite",
+      "C": "Unrepentant",
+      "D": "Repentant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Penitent' means feeling regret. 'Unrepentant', 'stubborn', or 'obdurate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2845",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PERCEPTIVE**",
+    "options": {
+      "A": "Insightful",
+      "B": "Unobservant",
+      "C": "Dull",
+      "D": "Blind"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Perceptive' means having or showing sensitive insight. 'Insightful', 'observant', or 'discerning' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2846",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PERCEPTIVE**",
+    "options": {
+      "A": "Insightful",
+      "B": "Observant",
+      "C": "Unobservant",
+      "D": "Discerning"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Perceptive' means insightful. 'Unobservant', 'dull', or 'blind' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2847",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PEREMPTORY**",
+    "options": {
+      "A": "Authoritative",
+      "B": "Hesitant",
+      "C": "Indecisive",
+      "D": "Meek"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Peremptory' means (especially of a person's manner or actions) insisting on immediate attention or obedience, especially in a brusquely imperious way. 'Authoritative', 'commanding', or 'dogmatic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2848",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PEREMPTORY**",
+    "options": {
+      "A": "Authoritative",
+      "B": "Commanding",
+      "C": "Hesitant",
+      "D": "Dogmatic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Peremptory' means commanding. 'Hesitant', 'indecisive', or 'meek' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2849",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PERFIDY**",
+    "options": {
+      "A": "Treachery",
+      "B": "Loyalty",
+      "C": "Fidelity",
+      "D": "Faithfulness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Perfidy' refers to the state of deceitfulness; untrustworthiness. 'Treachery', 'betrayal', or 'disloyalty' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2850",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PERFIDY**",
+    "options": {
+      "A": "Treachery",
+      "B": "Betrayal",
+      "C": "Loyalty",
+      "D": "Disloyalty"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Perfidy' means treachery. 'Loyalty', 'fidelity', or 'faithfulness' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

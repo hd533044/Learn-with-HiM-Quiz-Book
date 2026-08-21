@@ -1,0 +1,722 @@
+[
+  {
+    "cloze_id": "ENG_CLOZE_SET_121",
+    "passage_title": "The Neurobiology of Sleep Architecture and Memory Consolidation",
+    "passage_text": "Sleep is not a passive state of neural quiescence, but an active, metabolically regulated process essential for biological survival. Mammalian sleep oscillates cyclically between rapid eye movement (REM) sleep and non-REM (NREM) sleep stages, orchestrating distinct electrophysiological (1) _________. During slow-wave NREM sleep, high-amplitude, low-frequency delta oscillations facilitate the active transfer of declarative memory traces from the temporary storage of the hippocampus to the permanent (2) _________ of the neocortex. Simultaneously, the brain's glymphatic system expands interstitial space volume, allowing cerebrospinal fluid to actively flush away neurotoxic metabolic (3) _________, including amyloid-beta and tau proteins. Conversely, REM sleep is characterized by desynchronized, wake-like theta wave activity that supports procedural memory consolidation and emotional (4) _________. Chronic sleep deprivation disrupts this critical restorative cycle, elevating the long-term risk of neurodegenerative (5) _________ and cardiovascular dysfunction.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_121_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "signatures",
+          "B": "distortions",
+          "C": "omissions",
+          "D": "anomalies"
+        },
+        "correct_option": "A",
+        "rationale": "'Electrophysiological signatures' refers to the distinct, characteristic brainwave patterns that identify specific sleep stages."
+      },
+      {
+        "id": "ENG_CLOZE_121_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "architecture",
+          "B": "obsolescence",
+          "C": "deterioration",
+          "D": "transience"
+        },
+        "correct_option": "A",
+        "rationale": "'Neocortical architecture' refers to the enduring structural neural networks of the cerebral cortex where long-term memories are stored."
+      },
+      {
+        "id": "ENG_CLOZE_121_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "byproducts",
+          "B": "nutrients",
+          "C": "enzymes",
+          "D": "hormones"
+        },
+        "correct_option": "A",
+        "rationale": "'Metabolic byproducts' denotes waste substances (such as amyloid-beta) produced during cellular activity that must be cleared."
+      },
+      {
+        "id": "ENG_CLOZE_121_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "calibration",
+          "B": "suppression",
+          "C": "provocation",
+          "D": "alienation"
+        },
+        "correct_option": "A",
+        "rationale": "'Emotional calibration' (or regulation) describes the fine-tuning and processing of emotional experiences during REM sleep."
+      },
+      {
+        "id": "ENG_CLOZE_121_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "pathologies",
+          "B": "triumphs",
+          "C": "panaceas",
+          "D": "remedies"
+        },
+        "correct_option": "A",
+        "rationale": "'Neurodegenerative pathologies' is the medical term for diseases involving progressive structural and functional decay of neurons."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_122",
+    "passage_title": "The Thermodynamics of Carbon Capture and Sequestration",
+    "passage_text": "Direct air capture (DAC) technologies are increasingly viewed as a critical technological pathway to achieve net-negative emissions in the global fight against climate change. Unlike point-source carbon capture at industrial smoke stacks, DAC systems must extract carbon dioxide from the ambient atmosphere, where its volumetric concentration is exceedingly (1) _________ (approximately 420 parts per million). This low baseline partial pressure imposes severe thermodynamic constraints, necessitating massive volumetric air throughput and significant thermal energy (2) _________ to regenerate chemical sorbents. Liquid solvent systems utilize potassium hydroxide to precipitate carbonate compounds, while solid sorbent filters employ amine-functionalized porous matrices that bind $CO_2$ through chemical (3) _________. Once captured and desorbed under elevated temperatures, the pure $CO_2$ gas is compressed and injected into deep subterranean basalt formations for permanent in-situ mineral (4) _________. Scaling this emerging climate solution to gigaton-scale capacity will require drastic cost reductions, low-carbon energy integration, and robust long-term geological monitoring (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_122_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "dilute",
+          "B": "saturated",
+          "C": "dense",
+          "D": "concentrated"
+        },
+        "correct_option": "A",
+        "rationale": "'Dilute' accurately describes a chemical substance present in very low concentrations (such as 420 ppm of $CO_2$ in air)."
+      },
+      {
+        "id": "ENG_CLOZE_122_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "inputs",
+          "B": "savings",
+          "C": "leaks",
+          "D": "exemptions"
+        },
+        "correct_option": "A",
+        "rationale": "'Thermal energy inputs' refers to the substantial energy required to heat and regenerate chemical sorbents."
+      },
+      {
+        "id": "ENG_CLOZE_122_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "adsorption",
+          "B": "repulsion",
+          "C": "dilution",
+          "D": "evaporation"
+        },
+        "correct_option": "A",
+        "rationale": "'Adsorption' is the physical or chemical process by which gas molecules adhere to the surface of a solid matrix."
+      },
+      {
+        "id": "ENG_CLOZE_122_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "carbonation",
+          "B": "liquefaction",
+          "C": "vaporization",
+          "D": "combustion"
+        },
+        "correct_option": "A",
+        "rationale": "'Mineral carbonation' is the chemical reaction where $CO_2$ reacts with minerals (like basalt) to form solid, stable carbonate rocks."
+      },
+      {
+        "id": "ENG_CLOZE_122_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "protocols",
+          "B": "impediments",
+          "C": "exemptions",
+          "D": "prohibitions"
+        },
+        "correct_option": "A",
+        "rationale": "'Monitoring protocols' denotes standardized regulatory procedures and scientific guidelines for observing storage safety."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_123",
+    "passage_title": "The Sociology of Bureaucratic Ritualism",
+    "passage_text": "In his seminal mid-twentieth-century sociological critique of formal organizations, Robert K. Merton analyzed the dysfunctional consequences of modern bureaucratic structures. While Max Weber envisioned rational-legal bureaucracy as the zenith of administrative efficiency and functional (1) _________, Merton demonstrated that bureaucratic environments often cultivate trained incapacity. Bureaucrats are conditioned to adhere rigidly to standardized administrative rules, procedural guidelines, and formal documentation hierarchies. Over time, an organizational goal displacement occurs: adherence to formal rules—originally designed as technical means to achieve institutional ends—becomes an absolute (2) _________ in itself. This phenomenon, termed 'bureaucratic ritualism', strips the administrative apparatus of flexibility and imaginative responsiveness. When faced with novel crises or unique individual cases, ritualistic administrators exhibit extreme cognitive (3) _________, refusing to deviate from procedural precedents. This compulsive legalism alienates citizens, generating administrative delays and fostering public (4) _________. Reforming modern administrative institutions requires transitioning from rigid compliance-driven oversight to adaptive, outcome-oriented governance (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_123_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "predictability",
+          "B": "anarchy",
+          "C": "arbitrariness",
+          "D": "chaos"
+        },
+        "correct_option": "A",
+        "rationale": "'Predictability' is a core virtue of Max Weber's ideal rational-legal bureaucracy, ensuring uniform and rule-governed outcomes."
+      },
+      {
+        "id": "ENG_CLOZE_123_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "objective",
+          "B": "hindrance",
+          "C": "accident",
+          "D": "distraction"
+        },
+        "correct_option": "A",
+        "rationale": "'An absolute objective in itself' expresses Merton's concept of goal displacement, where following rules becomes the ultimate purpose."
+      },
+      {
+        "id": "ENG_CLOZE_123_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "rigidity",
+          "B": "malleability",
+          "C": "agility",
+          "D": "dexterity"
+        },
+        "correct_option": "A",
+        "rationale": "'Cognitive rigidity' denotes the inability to adapt mental thinking and behavior to new, changing, or unexpected events."
+      },
+      {
+        "id": "ENG_CLOZE_123_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "cynicism",
+          "B": "adoration",
+          "C": "reverence",
+          "D": "enthusiasm"
+        },
+        "correct_option": "A",
+        "rationale": "'Public cynicism' refers to distrustful, pessimistic, and disillusioned attitudes among citizens toward rigid institutions."
+      },
+      {
+        "id": "ENG_CLOZE_123_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "frameworks",
+          "B": "dogmas",
+          "C": "stumbling blocks",
+          "D": "stagnations"
+        },
+        "correct_option": "A",
+        "rationale": "'Governance frameworks' is the natural institutional term for structured policy systems and administrative models."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_124",
+    "passage_title": "The Evolutionary Immunology of the Human Microbiome",
+    "passage_text": "The human organism is not an autonomous biological entity, but a complex holobiont comprising trillions of symbiotic microorganisms that colonize the gastrointestinal tract, skin, and mucosal surfaces. Far from functioning as passive commensals, the gut microbiota co-evolved alongside the mammalian immune system to establish immune (1) _________. During neonatal development, microbial metabolites—particularly short-chain fatty acids (SCFAs) like butyrate and propionate—interact with pattern recognition receptors on gut epithelial cells, stimulating the differentiation of naive T cells into regulatory T (Treg) cells. These regulatory populations suppress excessive inflammatory cascades and prevent autoimmune (2) _________. Furthermore, a dense, diverse commensal community provides colonization resistance, outcompeting invading opportunistic (3) _________ for essential nutrients and mucosal attachment sites. However, modern anthropogenic disruptions—including widespread antibiotic overuse, ultra-processed dietary regimens, and sanitized environments—can induce severe microbial (4) _________. This ecological disruption is strongly correlated with the rising incidence of chronic inflammatory, allergic, and metabolic (5) _________ in industrialized societies.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_124_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "homeostasis",
+          "B": "chaos",
+          "C": "deficiency",
+          "D": "rebellion"
+        },
+        "correct_option": "A",
+        "rationale": "'Immune homeostasis' refers to the state of balanced, non-pathological immune system regulation and self-tolerance."
+      },
+      {
+        "id": "ENG_CLOZE_124_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "destruction",
+          "B": "preservation",
+          "C": "proliferation",
+          "D": "dormancy"
+        },
+        "correct_option": "A",
+        "rationale": "'Autoimmune destruction' captures the pathological scenario where the immune system attacks and damages the body's own tissues."
+      },
+      {
+        "id": "ENG_CLOZE_124_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "pathogens",
+          "B": "antibodies",
+          "C": "vitamins",
+          "D": "minerals"
+        },
+        "correct_option": "A",
+        "rationale": "'Opportunistic pathogens' is the biological term for microorganisms that cause disease when the host's natural defenses are weak."
+      },
+      {
+        "id": "ENG_CLOZE_124_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "dysbiosis",
+          "B": "symbiosis",
+          "C": "continuity",
+          "D": "stagnation"
+        },
+        "correct_option": "A",
+        "rationale": "'Dysbiosis' is the scientific term denoting a microbial imbalance or maladaptation on or inside the body."
+      },
+      {
+        "id": "ENG_CLOZE_124_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "disorders",
+          "B": "remedies",
+          "C": "immunities",
+          "D": "panaceas"
+        },
+        "correct_option": "A",
+        "rationale": "'Metabolic disorders' is the standard medical phrase for diseases like obesity, diabetes, and metabolic syndrome."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_125",
+    "passage_title": "The Geomorphology of Desertification and Dust Storm Dynamics",
+    "passage_text": "Desertification represents a catastrophic form of land degradation in arid, semi-arid, and dry sub-humid ecosystems, driven by an interplay of climate variability and unsustainable anthropogenic land management. Overgrazing by livestock, intensive agricultural tillage, and deforestation strip the landscape of protective vegetative cover, exposing fragile topsoils to accelerated aerodynamic (1) _________. When soil moisture drops below critical capillary thresholds, the cohesive forces binding soil aggregates disintegrate into loose, silt-sized particulates. Strong atmospheric pressure gradients and turbulent convective winds initiate 'saltation'—a process where bouncing sand grains dislodge millions of microscopic dust particles into the boundary layer. These particulate plumes can coalesce into massive convective dust storms (haboobs) that travel thousands of kilometers, transporting pathogens and mineral aerosols across continental (2) _________. Locally, topsoil loss severely reduces agricultural (3) _________, forcing rural agrarian communities into cyclical economic distress and climate-induced (4) _________. Halting dryland desertification demands sustainable land stewardship, including agroforestry shelterbelts, rotational grazing management, and watershed restoration (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_125_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "erosion",
+          "B": "accretion",
+          "C": "solidification",
+          "D": "stratification"
+        },
+        "correct_option": "A",
+        "rationale": "'Aerodynamic erosion' (wind erosion) refers to the detachment and removal of topsoil by wind forces."
+      },
+      {
+        "id": "ENG_CLOZE_125_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "boundaries",
+          "B": "trenches",
+          "C": "faults",
+          "D": "canyons"
+        },
+        "correct_option": "A",
+        "rationale": "'Continental boundaries' refers to geographical borders across which transcontinental dust storms travel."
+      },
+      {
+        "id": "ENG_CLOZE_125_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "productivity",
+          "B": "sterility",
+          "C": "depletion",
+          "D": "fragility"
+        },
+        "correct_option": "A",
+        "rationale": "'Agricultural productivity' refers to crop yields and soil fertility, which decline when topsoil is lost."
+      },
+      {
+        "id": "ENG_CLOZE_125_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "migration",
+          "B": "stagnation",
+          "C": "inertia",
+          "D": "repatriation"
+        },
+        "correct_option": "A",
+        "rationale": "'Climate-induced migration' denotes populations forced to relocate due to environmental degradation and loss of livelihoods."
+      },
+      {
+        "id": "ENG_CLOZE_125_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "initiatives",
+          "B": "impediments",
+          "C": "prohibitions",
+          "D": "sanctions"
+        },
+        "correct_option": "A",
+        "rationale": "'Restoration initiatives' is the natural policy term for structured ecological conservation programs and projects."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_126",
+    "passage_title": "The Philosophy of Existentialism and Radical Freedom",
+    "passage_text": "Existentialist philosophy, crystallizing in post-World War II Europe through the works of Jean-Paul Sartre, Simone de Beauvoir, and Albert Camus, posited a radical rethinking of human ontology. Sartre famously distilled the movement's central dictum as 'existence precedes essence'. Rejecting classical Aristotelian and theological essentialism—which asserted that human beings possess a predetermined nature or divine purpose—Sartre maintained that humans first exist, encounter themselves in the world, and only subsequently define their (1) _________ through autonomous actions. This unconstrained autonomy is not a tranquil liberation, but a source of profound existential 'anguish', as individuals realize they are entirely responsible for their moral choices without metaphysical (2) _________. Attempting to escape this terrifying accountability by adopting conventional social roles or blaming external circumstances is diagnosed by Sartre as living in 'bad faith' (*mauvaise foi*). To achieve authentic existence, an individual must confront the fundamental absurdity of the universe while courageously forging personal meaning through committed, self-defining (3) _________. Beauvoir expanded this framework by demonstrating how patriarchal societal institutions historically denied women the freedom of existential (4) _________. Ultimately, existentialism demands that human beings abandon comforting illusions and embrace the burden of radical (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_126_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "identity",
+          "B": "extinction",
+          "C": "ancestry",
+          "D": "anatomy"
+        },
+        "correct_option": "A",
+        "rationale": "'Define their identity' encapsulates the core existentialist idea that humans create their own essence through choices."
+      },
+      {
+        "id": "ENG_CLOZE_126_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "justifications",
+          "B": "illusions",
+          "C": "anomalies",
+          "D": "impediments"
+        },
+        "correct_option": "A",
+        "rationale": "'Metaphysical justifications' refers to divine or external moral excuses that existentialism rejects."
+      },
+      {
+        "id": "ENG_CLOZE_126_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "choices",
+          "B": "reflexes",
+          "C": "instincts",
+          "D": "habits"
+        },
+        "correct_option": "A",
+        "rationale": "'Self-defining choices' reflects the existentialist emphasis on deliberate actions and decisions that construct personal meaning."
+      },
+      {
+        "id": "ENG_CLOZE_126_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "transcendence",
+          "B": "immanence",
+          "C": "complacency",
+          "D": "subjugation"
+        },
+        "correct_option": "A",
+        "rationale": "In Beauvoir's feminist existentialism, 'transcendence' is the active movement toward freedom, projects, and self-definition."
+      },
+      {
+        "id": "ENG_CLOZE_126_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "responsibility",
+          "B": "indifference",
+          "C": "conformity",
+          "D": "passivity"
+        },
+        "correct_option": "A",
+        "rationale": "'Radical responsibility' is Sartre's concept that human beings bear complete accountability for their actions in an open universe."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_127",
+    "passage_title": "The Biophysics of Photosynthetic Light-Harvesting Complexes",
+    "passage_text": "Photosynthesis is the fundamental bioenergetic engine of the biosphere, converting solar electromagnetic radiation into chemically stable metabolic energy. The initial light-driven reactions occur within specialized multi-protein supercomplexes embedded in the thylakoid membranes of chloroplasts, termed Photosystem I (PSI) and Photosystem II (PSII). The process begins when photon absorption excites pigment molecules—primarily chlorophylls and carotenoids—in the peripheral antenna (1) _________. Remarkably, the transfer of electronic excitation energy from antenna pigments to the reaction center special pair (P680 in PSII) operates at near-unity quantum efficiency (exceeding 95%). Ultrafast laser spectroscopy reveals that this ultra-efficient energy transport exploits coherent quantum (2) _________, allowing the excitation wavepacket to sample multiple spatial pathways simultaneously to locate the lowest-energy reaction center trap. At the reaction center, charge separation occurs: an excited electron is transferred across a chain of electron acceptors, driving the photolysis of water into molecular oxygen, protons, and electrons. The resulting proton accumulation inside the thylakoid lumen creates an electrochemical proton-motive force that drives ATP (3) _________. Understanding these quantum biological mechanics provides crucial blueprints for engineering next-generation artificial photosynthetic (4) _________ capable of generating zero-carbon solar (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_127_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "complexes",
+          "B": "chambers",
+          "C": "reservoirs",
+          "D": "conduits"
+        },
+        "correct_option": "A",
+        "rationale": "'Antenna complexes' is the precise biochemical term for light-harvesting protein-pigment arrays that absorb photons."
+      },
+      {
+        "id": "ENG_CLOZE_127_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "coherence",
+          "B": "decoherence",
+          "C": "friction",
+          "D": "turbulence"
+        },
+        "correct_option": "A",
+        "rationale": "'Quantum coherence' is the physical phenomenon where wave-like properties allow simultaneous sampling of energy pathways."
+      },
+      {
+        "id": "ENG_CLOZE_127_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "synthase",
+          "B": "hydrolysis",
+          "C": "decay",
+          "D": "dissolution"
+        },
+        "correct_option": "A",
+        "rationale": "'ATP synthase' is the transmembrane enzyme complex powered by the proton gradient to produce ATP."
+      },
+      {
+        "id": "ENG_CLOZE_127_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "devices",
+          "B": "fossils",
+          "C": "minerals",
+          "D": "impediments"
+        },
+        "correct_option": "A",
+        "rationale": "'Artificial photosynthetic devices' refers to engineered biomimetic solar energy conversion technologies."
+      },
+      {
+        "id": "ENG_CLOZE_127_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "fuels",
+          "B": "wastes",
+          "C": "poisons",
+          "D": "toxins"
+        },
+        "correct_option": "A",
+        "rationale": "'Solar fuels' (such as green hydrogen) are chemical fuels produced directly from sunlight via artificial photosynthesis."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_128",
+    "passage_title": "The Political Economy of Sovereign Debt Restructuring",
+    "passage_text": "When sovereign nations experience severe fiscal crises and insolvency, the absence of an international statutory bankruptcy court creates complex collective action dilemmas during debt restructuring negotiations. Unlike corporate entities governed by domestic bankruptcy codes that impose mandatory debt standstills and asset liquidation rules, sovereign debt workouts rely on voluntary negotiations between debtor governments and disparate international (1) _________. The proliferation of cross-border sovereign bond issuances in recent decades has fragmented the creditor landscape, replacing centralized bank syndicates with thousands of individual institutional bondholders. This dispersion empowers litigious 'holdout' creditors and distressed-debt hedge funds to reject negotiated restructuring terms, pursuing aggressive litigation in foreign courts to demand full nominal bond (2) _________. To neutralize holdout leverage, modern sovereign bond contracts incorporate Collective Action Clauses (CACs). These contractual mechanisms allow a supermajority of bondholders to approve a restructuring agreement and legally (3) _________ the modified terms on dissenting minorities. However, navigating debt distress also requires sovereign governments to execute politically painful fiscal (4) _________ while maintaining domestic social (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_128_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "creditors",
+          "B": "debtors",
+          "C": "citizens",
+          "D": "emissaries"
+        },
+        "correct_option": "A",
+        "rationale": "'Creditors' refers to the bondholders, banks, and institutions that lend money to sovereign governments."
+      },
+      {
+        "id": "ENG_CLOZE_128_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "repayment",
+          "B": "forgiveness",
+          "C": "waiver",
+          "D": "cancellation"
+        },
+        "correct_option": "A",
+        "rationale": "'Repayment' of principal is what holdout funds demand when they refuse debt haircut deals."
+      },
+      {
+        "id": "ENG_CLOZE_128_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "bind",
+          "B": "exempt",
+          "C": "dissolve",
+          "D": "pardon"
+        },
+        "correct_option": "A",
+        "rationale": "Collective Action Clauses legally 'bind' all creditors, forcing dissenting minorities to accept majority terms."
+      },
+      {
+        "id": "ENG_CLOZE_128_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "adjustments",
+          "B": "extravagances",
+          "C": "luxuries",
+          "D": "donations"
+        },
+        "correct_option": "A",
+        "rationale": "'Fiscal adjustments' is the standard economic policy term for austerity measures, spending cuts, and revenue reforms."
+      },
+      {
+        "id": "ENG_CLOZE_128_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "stability",
+          "B": "upheaval",
+          "C": "turmoil",
+          "D": "rebellion"
+        },
+        "correct_option": "A",
+        "rationale": "'Social stability' represents public peace and cohesion that debtor governments must preserve during economic crises."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_129",
+    "passage_title": "The Linguistics of Grammaticalization",
+    "passage_text": "In evolutionary and historical linguistics, grammaticalization is the universal diachronic process whereby lexical words (such as nouns and verbs) gradually evolve into functional grammatical morphemes (such as affixes, prepositions, and auxiliaries). This linguistic transformation operates along a continuous directional cline characterized by three interconnected phenomena: semantic bleaching, phonetic reduction, and syntactic (1) _________. Semantic bleaching occurs when an open-class content word sheds its specific concrete semantic meaning in favor of abstract grammatical functions. For instance, the English lexical verb *willan* (originally meaning 'to desire' or 'to want') lost its volitional autonomy to become a future tense auxiliary (2) _________. Concurrently, frequent phonetic erosion compresses acoustic forms—such as the phrase 'going to' phonologically reducing into 'gonna'. As items become grammaticalized, they lose syntactic mobility, becoming rigidly fixed in sentence word order and eventually fusing as bound morphological (3) _________. Linguists note that grammaticalization is largely (4) _________; grammatical markers rarely revert back into fully independent lexical words. Analyzing these evolutionary pathways provides profound insights into how human cognitive constraints shape the universal emergence of linguistic (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_129_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "fixation",
+          "B": "freedom",
+          "C": "flexibility",
+          "D": "dispersion"
+        },
+        "correct_option": "A",
+        "rationale": "'Syntactic fixation' refers to grammaticalized words becoming permanently constrained to specific positions in sentence structures."
+      },
+      {
+        "id": "ENG_CLOZE_129_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "marker",
+          "B": "obstacle",
+          "C": "anomaly",
+          "D": "artifact"
+        },
+        "correct_option": "A",
+        "rationale": "'Auxiliary marker' is the linguistic classification for functional helper words indicating tense, mood, or aspect."
+      },
+      {
+        "id": "ENG_CLOZE_129_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "affixes",
+          "B": "nouns",
+          "C": "idioms",
+          "D": "proverbs"
+        },
+        "correct_option": "A",
+        "rationale": "'Bound morphological affixes' (prefixes and suffixes) represent the end stage where independent words fuse onto root words."
+      },
+      {
+        "id": "ENG_CLOZE_129_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "unidirectional",
+          "B": "reversible",
+          "C": "random",
+          "D": "chaotic"
+        },
+        "correct_option": "A",
+        "rationale": "'Unidirectional' is the foundational principle of grammaticalization stating that language shifts proceed forward from lexical to grammatical."
+      },
+      {
+        "id": "ENG_CLOZE_129_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "structures",
+          "B": "anomalies",
+          "C": "errors",
+          "D": "defects"
+        },
+        "correct_option": "A",
+        "rationale": "'Linguistic structures' refers to the organized grammatical patterns and systems that characterize human natural languages."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_130",
+    "passage_title": "The Quantum Mechanics of Superconducting Qubits",
+    "passage_text": "Quantum computation promises to deliver exponential algorithmic speedups over classical computing paradigms by exploiting the quantum physical phenomena of superposition and entanglement. In superconducting quantum circuit architectures, the fundamental physical unit of information is the 'qubit'. Unlike classical semiconductor transistors that register discrete binary states (0 or 1), a qubit can exist in a linear coherent (1) _________ of both basis states simultaneously ($\alpha|0\rangle + \beta|1\rangle$). Superconducting qubits are fabricated as microscopic planar circuits cooled to millikelvin temperatures within dilution refrigerators to eliminate thermal thermal noise. The critical non-linear circuit element is the Josephson junction—a nanometer-scale insulating oxide barrier sandwiched between two superconducting aluminum electrodes. Cooper pairs traverse the insulating barrier via quantum mechanical (2) _________, providing an unharmonic inductive potential that allows discrete energy levels to be individually addressed and manipulated using microwave pulses. However, sustaining quantum information is severely limited by environmental 'decoherence'—the loss of quantum phase information caused by stray electromagnetic radiation, dielectric substrate defects, and cosmic ray (3) _________. Achieving fault-tolerant quantum computation requires developing sophisticated quantum error-correction (4) _________ that distribute logical quantum information across hundreds of entangled physical qubits to preserve calculation (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_130_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "superposition",
+          "B": "separation",
+          "C": "annihilation",
+          "D": "stagnation"
+        },
+        "correct_option": "A",
+        "rationale": "'Coherent superposition' is the fundamental quantum state where a qubit exists simultaneously across linear combinations of basis states."
+      },
+      {
+        "id": "ENG_CLOZE_130_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "tunneling",
+          "B": "friction",
+          "C": "combustion",
+          "D": "evaporation"
+        },
+        "correct_option": "A",
+        "rationale": "'Quantum tunneling' is the quantum phenomenon where particles (Cooper pairs) penetrate through a physical potential barrier."
+      },
+      {
+        "id": "ENG_CLOZE_130_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "strikes",
+          "B": "miracles",
+          "C": "vaccines",
+          "D": "shields"
+        },
+        "correct_option": "A",
+        "rationale": "'Cosmic ray strikes' refers to ionizing radiation from space hitting quantum chips and disrupting fragile quantum coherence."
+      },
+      {
+        "id": "ENG_CLOZE_130_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "codes",
+          "B": "viruses",
+          "C": "defects",
+          "D": "impediments"
+        },
+        "correct_option": "A",
+        "rationale": "'Quantum error-correction codes' (such as surface codes) are algorithmic schemes used to protect logical qubits from errors."
+      },
+      {
+        "id": "ENG_CLOZE_130_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "fidelity",
+          "B": "corruption",
+          "C": "decay",
+          "D": "obsolescence"
+        },
+        "correct_option": "A",
+        "rationale": "'Calculation fidelity' is the technical metric representing the accuracy, reliability, and correctness of quantum computing operations."
+      }
+    ]
+  }
+]

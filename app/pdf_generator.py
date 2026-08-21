@@ -74,7 +74,13 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         "all": "ALL-TIME"
     }
     
-    subj_label = subject.upper() if subject != "all" else "ALL SUBJECTS"
+    subject_map = {
+        "english": "ENGLISH LANGUAGE",
+        "computer": "COMPUTER AWARENESS",
+        "gk": "GENERAL KNOWLEDGE (GK)",
+        "all": "ALL SUBJECTS"
+    }
+    subj_label = subject_map.get(subject.lower(), subject.upper())
     time_label = time_labels.get(timeframe, "ALL-TIME")
     summary_title = f"{subj_label} REPORT ({time_label})"
 

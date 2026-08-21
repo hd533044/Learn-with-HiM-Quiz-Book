@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_MOD_1501",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You should have informed me earlier so that I can make arrangements.'",
+    "options": {
+      "A": "You should have informed",
+      "B": "me earlier so that",
+      "C": "I can make arrangements.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Sequence of tenses in purpose clauses following past modals ('should have informed') requires 'might' or 'could', not the present modal 'can'. Correct: 'so that I could make arrangements.'",
+    "tags": ["grammar", "modals", "sequence_of_tenses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1502",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'We ___ reserve tickets in advance as the show is very popular.'",
+    "options": {
+      "A": "must",
+      "B": "might",
+      "C": "can",
+      "D": "may"
+    },
+    "correct_option": "A",
+    "explanation": "'Must' expresses strong necessity or obligation stemming from external facts (the high popularity of the show).",
+    "tags": ["grammar", "modals", "obligation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1503",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'He ___ run a mile in under five minutes when he was young.'",
+    "options": {
+      "A": "could",
+      "B": "can",
+      "C": "may",
+      "D": "must"
+    },
+    "correct_option": "A",
+    "explanation": "Past general ability is expressed using the modal 'could'.",
+    "tags": ["grammar", "modals", "ability", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1504",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You need not to worry about the expenses; everything is covered.'",
+    "options": {
+      "A": "You need not to worry",
+      "B": "about the expenses;",
+      "C": "everything is covered.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "When 'need' acts as a modal auxiliary in negative sentences ('need not'), it is followed by a bare infinitive (without 'to'). Correct: 'You need not worry...'",
+    "tags": ["grammar", "modals", "semi_modals", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1505",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It is raining heavily; you ___ take an umbrella with you.'",
+    "options": {
+      "A": "had better",
+      "B": "would rather",
+      "C": "used to",
+      "D": "ought"
+    },
+    "correct_option": "A",
+    "explanation": "'Had better' is used to give strong advice or recommendations with an implied warning of negative consequences if ignored.",
+    "tags": ["grammar", "modals", "advice", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1506",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal for remote possibility: 'The weather looks clear now, but it ___ rain later this evening.'",
+    "options": {
+      "A": "might",
+      "B": "must",
+      "C": "shall",
+      "D": "will"
+    },
+    "correct_option": "A",
+    "explanation": "'Might' or 'may' expresses possibility, with 'might' often denoting a slightly lower degree of likelihood.",
+    "tags": ["grammar", "modals", "possibility", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1507",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He daren't to question his supervisor's decision.'",
+    "options": {
+      "A": "He daren't to question",
+      "B": "his supervisor's",
+      "C": "decision.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Like 'need', when 'dare' functions as a modal auxiliary ('daren't'), it is followed by a bare infinitive. Correct: 'He daren't question...'",
+    "tags": ["grammar", "modals", "semi_modals", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1508",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'You ___ submit your assignment by Friday without fail.'",
+    "options": {
+      "A": "shall",
+      "B": "can",
+      "C": "might",
+      "D": "may"
+    },
+    "correct_option": "A",
+    "explanation": "'Shall' used with second or third-person subjects denotes an official command, rule, or strong obligation.",
+    "tags": ["grammar", "modals", "command", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1509",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct past deduction: 'The lights are out and nobody is answering the doorbell; they ___ out.'",
+    "options": {
+      "A": "must have gone",
+      "B": "should have gone",
+      "C": "might go",
+      "D": "can go"
+    },
+    "correct_option": "A",
+    "explanation": "'Must have + past participle' expresses a logical deduction or certainty about a past event based on current evidence.",
+    "tags": ["grammar", "modals", "past_deduction", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1510",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'We ought respect our elders and teachers.'",
+    "options": {
+      "A": "We ought respect",
+      "B": "our elders",
+      "C": "and teachers.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The semi-modal 'ought' must always be followed by the full infinitive particle 'to'. Correct: 'We ought to respect...'",
+    "tags": ["grammar", "modals", "semi_modals", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1511",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ you please lend me your pen for a moment?'",
+    "options": {
+      "A": "Could",
+      "B": "Must",
+      "C": "Shall",
+      "D": "Should"
+    },
+    "correct_option": "A",
+    "explanation": "'Could' is used to make polite requests.",
+    "tags": ["grammar", "modals", "requests", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1512",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'I ___ rather starve than beg for money.'",
+    "options": {
+      "A": "would",
+      "B": "should",
+      "C": "could",
+      "D": "might"
+    },
+    "correct_option": "A",
+    "explanation": "The fixed idiomatic expression 'would rather' expresses preference.",
+    "tags": ["grammar", "modals", "preference", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1513",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She must have attended the meeting, but she chose to skip it.'",
+    "options": {
+      "A": "She must have attended",
+      "B": "the meeting, but",
+      "C": "she chose to skip it.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "If she chose to skip it, a positive deduction 'must have attended' contradicts the second clause. It should indicate unfulfilled obligation or criticism: 'She should have attended...'",
+    "tags": ["grammar", "modals", "logical_consistency", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1514",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'You ___ worry about the report; I have already finished it.'",
+    "options": {
+      "A": "need not",
+      "B": "must not",
+      "C": "ought not",
+      "D": "shall not"
+    },
+    "correct_option": "A",
+    "explanation": "'Need not' indicates an absence of necessity or obligation.",
+    "tags": ["grammar", "modals", "absence_of_obligation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1515",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'Visitors ___ touch the artifacts in the museum.'",
+    "options": {
+      "A": "must not",
+      "B": "need not",
+      "C": "may not",
+      "D": "dare not"
+    },
+    "correct_option": "A",
+    "explanation": "'Must not' expresses prohibition or strict rules against an action.",
+    "tags": ["grammar", "modals", "prohibition", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1516",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If I knew her address, I can send her an invitation.'",
+    "options": {
+      "A": "If I knew",
+      "B": "her address, I can",
+      "C": "send her an invitation.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Second conditional structure requires a past modal in the main clause to match the hypothetical past tense in the 'if' clause. Correct: 'I could send...'",
+    "tags": ["grammar", "modals", "conditionals", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1517",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ I use your telephone to make an urgent call?'",
+    "options": {
+      "A": "May",
+      "B": "Must",
+      "C": "Will",
+      "D": "Should"
+    },
+    "correct_option": "A",
+    "explanation": "'May' is formally used to ask for permission.",
+    "tags": ["grammar", "modals", "permission", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1518",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding past criticism or regret:",
+    "options": {
+      "A": "You should tell me the truth.",
+      "B": "You should have told me the truth.",
+      "C": "You must tell me the truth.",
+      "D": "You can tell me the truth."
+    },
+    "correct_option": "B",
+    "explanation": "'Should have + past participle' expresses unfulfilled past duty, regret, or mild reproach.",
+    "tags": ["grammar", "modals", "regret", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1519",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He used to playing tennis every evening when he was a student.'",
+    "options": {
+      "A": "He used to playing",
+      "B": "tennis every evening",
+      "C": "when he was a student.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The semi-modal habit marker 'used to' is followed by a base/bare infinitive verb, not a gerund. Correct: 'used to play...'",
+    "tags": ["grammar", "modals", "past_habits", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1520",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She ___ have left already; her car is no longer in the driveway.'",
+    "options": {
+      "A": "must",
+      "B": "might",
+      "C": "can",
+      "D": "should"
+    },
+    "correct_option": "A",
+    "explanation": "'Must have' expresses a confident logical deduction based on available physical evidence.",
+    "tags": ["grammar", "modals", "deduction", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1521",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'You ___ not worry about the results; everything will be fine.'",
+    "options": {
+      "A": "need",
+      "B": "must",
+      "C": "ought",
+      "D": "shall"
+    },
+    "correct_option": "A",
+    "explanation": "'Need not' indicates that an action is unnecessary.",
+    "tags": ["grammar", "modals", "absence_of_obligation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1522",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He will be able to complete the project if he gets the necessary funds.'",
+    "options": {
+      "A": "He will be able to complete",
+      "B": "the project if he gets",
+      "C": "the necessary funds.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. Future conditional structure using 'will be able to' with a present tense condition ('gets') is standard.",
+    "tags": ["grammar", "modals", "ability", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1523",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'We ___ to respect the laws of the country we live in.'",
+    "options": {
+      "A": "ought",
+      "B": "must",
+      "C": "should",
+      "D": "can"
+    },
+    "correct_option": "A",
+    "explanation": "'Ought' is followed by 'to' ('ought to') to express moral obligation or duty.",
+    "tags": ["grammar", "modals", "moral_obligation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1524",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal for polite offer: '___ I get you a cup of coffee?'",
+    "options": {
+      "A": "Shall",
+      "B": "Must",
+      "C": "Will",
+      "D": "Ought"
+    },
+    "correct_option": "A",
+    "explanation": "'Shall I...?' or 'Shall we...?' is standard for making offers or suggestions in British and formal English.",
+    "tags": ["grammar", "modals", "offers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1525",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She could able to finish the race despite her injury.'",
+    "options": {
+      "A": "She could able to finish",
+      "B": "the race despite",
+      "C": "her injury.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'Could' cannot be combined directly with 'able to'. Use either 'was able to' or 'could'. Correct: 'She was able to finish...'",
+    "tags": ["grammar", "modals", "ability", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1526",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He ___ have avoided the accident if he had driven more carefully.'",
+    "options": {
+      "A": "could",
+      "B": "can",
+      "C": "must",
+      "D": "shall"
+    },
+    "correct_option": "A",
+    "explanation": "'Could have + past participle' expresses past capacity or possibility that remained unfulfilled.",
+    "tags": ["grammar", "modals", "past_possibility", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1527",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'You ___ speak loudly in the library; silence is mandatory.'",
+    "options": {
+      "A": "must not",
+      "B": "need not",
+      "C": "might not",
+      "D": "will not"
+    },
+    "correct_option": "A",
+    "explanation": "'Must not' expresses prohibition under institutional rules.",
+    "tags": ["grammar", "modals", "prohibition", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1528",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You had better to consult a specialist for this chronic back pain.'",
+    "options": {
+      "A": "You had better to consult",
+      "B": "a specialist for this",
+      "C": "chronic back pain.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The semi-modal expression 'had better' is followed by a bare infinitive (without 'to'). Correct: 'You had better consult...'",
+    "tags": ["grammar", "modals", "advice", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1529",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'If you want to pass the exam, you ___ study harder.'",
+    "options": {
+      "A": "must",
+      "B": "might",
+      "C": "may",
+      "D": "could"
+    },
+    "correct_option": "A",
+    "explanation": "'Must' expresses a strong internal necessity or requirement for achieving a goal.",
+    "tags": ["grammar", "modals", "necessity", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1530",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He might have missed his train, as he left late.",
+      "B": "He must have missed his train, as he left late.",
+      "C": "Both A and B are plausible depending on certainty.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "'Might have' denotes a possibility of a past event, whereas 'must have' denotes a strong logical deduction. Both are grammatically correct with slight semantic differences.",
+    "tags": ["grammar", "modals", "deduction", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1531",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Children under five years of age should not allowed to enter without supervision.'",
+    "options": {
+      "A": "Children under five years",
+      "B": "of age should not allowed",
+      "C": "to enter without supervision.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Passive modal construction requires 'be + past participle'. Correct: 'should not be allowed.'",
+    "tags": ["grammar", "modals", "passive_modals", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1532",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He ___ swim across the river when he was a teenager.'",
+    "options": {
+      "A": "could",
+      "B": "can",
+      "C": "may",
+      "D": "must"
+    },
+    "correct_option": "A",
+    "explanation": "'Could' is used for general past ability.",
+    "tags": ["grammar", "modals", "ability", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1533",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal for advice: 'You ___ apologize to her for your rude behavior.'",
+    "options": {
+      "A": "ought to",
+      "B": "might",
+      "C": "may",
+      "D": "can"
+    },
+    "correct_option": "A",
+    "explanation": "'Ought to' expresses moral duty or strong advice.",
+    "tags": ["grammar", "modals", "advice", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1534",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You need not to worry about the results as they will be published tomorrow.'",
+    "options": {
+      "A": "You need not to worry",
+      "B": "about the results as they",
+      "C": "will be published tomorrow.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Modal 'need not' takes a bare infinitive. Correct: 'You need not worry...'",
+    "tags": ["grammar", "modals", "semi_modals", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1535",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ I help you carry these heavy grocery bags?'",
+    "options": {
+      "A": "Shall",
+      "B": "Must",
+      "C": "Ought",
+      "D": "Would"
+    },
+    "correct_option": "A",
+    "explanation": "'Shall I...?' is standard for offering assistance.",
+    "tags": ["grammar", "modals", "offers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1536",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'She ___ have finished her assignment by now; she started hours ago.'",
+    "options": {
+      "A": "should",
+      "B": "might",
+      "C": "can",
+      "D": "shall"
+    },
+    "correct_option": "A",
+    "explanation": "'Should have + past participle' expresses expectation that an action has been completed.",
+    "tags": ["grammar", "modals", "expectation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1537",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is working very hard so that he can secure a scholarship last year.'",
+    "options": {
+      "A": "He is working very hard",
+      "B": "so that he can secure",
+      "C": "a scholarship last year.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Past time marker 'last year' is inconsistent with present continuous and present modal. It requires past tense and past modal: 'He worked... so that he could secure...'",
+    "tags": ["grammar", "modals", "tense_consistency", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1538",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Candidates ___ answer all questions in the descriptive section.'",
+    "options": {
+      "A": "must",
+      "B": "might",
+      "C": "may",
+      "D": "could"
+    },
+    "correct_option": "A",
+    "explanation": "'Must' expresses formal obligation or requirement in examination guidelines.",
+    "tags": ["grammar", "modals", "obligation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1539",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "You shouldn't have spoken to him like that.",
+      "B": "You mustn't have spoken to him like that.",
+      "C": "You needn't have spoken to him like that.",
+      "D": "Both A and C are valid depending on context."
+    },
+    "correct_option": "D",
+    "explanation": "'Shouldn't have' criticizes past behavior (you were wrong to do it), whereas 'needn't have' indicates the action was unnecessary in hindsight. Both are grammatically correct with different nuances.",
+    "tags": ["grammar", "modals", "nuance", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1540",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If you want to succeed, you ought work consistently.'",
+    "options": {
+      "A": "If you want to succeed,",
+      "B": "you ought work",
+      "C": "consistently.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Ought' must be followed by 'to'. Correct: 'you ought to work...'",
+    "tags": ["grammar", "modals", "semi_modals", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1541",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He ___ be at home; his bicycle is parked outside.'",
+    "options": {
+      "A": "must",
+      "B": "might",
+      "C": "can",
+      "D": "should"
+    },
+    "correct_option": "A",
+    "explanation": "'Must' expresses a strong logical deduction based on visual evidence.",
+    "tags": ["grammar", "modals", "deduction", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1542",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: '___ you mind if I open the window for some air?'",
+    "options": {
+      "A": "Would",
+      "B": "Should",
+      "C": "Must",
+      "D": "Shall"
+    },
+    "correct_option": "A",
+    "explanation": "'Would you mind if...?' is the standard polite formula for requesting permission.",
+    "tags": ["grammar", "modals", "permission", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1543",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'We must to finish this project before the weekend arrives.'",
+    "options": {
+      "A": "We must to finish",
+      "B": "this project before",
+      "C": "the weekend arrives.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Modal auxiliaries ('must', 'can', 'should') are followed directly by the bare infinitive without 'to'. Correct: 'We must finish...'",
+    "tags": ["grammar", "modals", "auxiliaries", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1544",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She ___ have attended the seminar, but she fell ill.'",
+    "options": {
+      "A": "was to",
+      "B": "ought",
+      "C": "must",
+      "D": "shall"
+    },
+    "correct_option": "A",
+    "explanation": "'Was/were to have + past participle' expresses a planned or intended past action that failed to materialize.",
+    "tags": ["grammar", "modals", "unfulfilled_intentions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1545",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'You ___ tell anyone about this secret; it is strictly confidential.'",
+    "options": {
+      "A": "must not",
+      "B": "need not",
+      "C": "might not",
+      "D": "shall not"
+    },
+    "correct_option": "A",
+    "explanation": "'Must not' expresses strict prohibition.",
+    "tags": ["grammar", "modals", "prohibition", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1546",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has able to solve complex calculus problems since childhood.'",
+    "options": {
+      "A": "He has able to",
+      "B": "solve complex calculus",
+      "C": "problems since childhood.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Present perfect form requires the auxiliary 'been' before 'able to'. Correct: 'He has been able to solve...'",
+    "tags": ["grammar", "modals", "ability", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1547",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ I help you with your luggage?'",
+    "options": {
+      "A": "Shall",
+      "B": "Would",
+      "C": "Must",
+      "D": "Ought"
+    },
+    "correct_option": "A",
+    "explanation": "'Shall I...?' is used for offering help or making suggestions.",
+    "tags": ["grammar", "modals", "offers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1548",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'It is crucial that he ___ informed immediately.'",
+    "options": {
+      "A": "be",
+      "B": "is",
+      "C": "was",
+      "D": "will be"
+    },
+    "correct_option": "A",
+    "explanation": "Mandative subjunctive requires the base verb form 'be' following 'It is crucial that'.",
+    "tags": ["grammar", "modals", "mandative_subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1549",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You needn't to worry about the transport; I have arranged a car.'",
+    "options": {
+      "A": "You needn't to worry",
+      "B": "about the transport;",
+      "C": "I have arranged a car.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Modal 'needn't' takes a bare infinitive without 'to'. Correct: 'You needn't worry...'",
+    "tags": ["grammar", "modals", "semi_modals", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_1550",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'We ___ have booked the tickets earlier; now they are completely sold out.'",
+    "options": {
+      "A": "should",
+      "B": "must",
+      "C": "might",
+      "D": "can"
+    },
+    "correct_option": "A",
+    "explanation": "'Should have + past participle' expresses regret over a missed opportunity or past failure to act.",
+    "tags": ["grammar", "modals", "regret", "rule_based"]
+  }
+]

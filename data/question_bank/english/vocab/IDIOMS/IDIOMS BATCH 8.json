@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0351",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Feather in your cap**",
+    "options": {
+      "A": "An achievement or honor to be proud of",
+      "B": "A decorative bird plume worn on hats",
+      "C": "A minor fashion accessory",
+      "D": "A military uniform badge"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'feather in your cap' is an accomplishment that brings pride and distinction.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0352",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Feed the flames**",
+    "options": {
+      "A": "To add fuel to a fire, making a bad situation or argument worse",
+      "B": "To cook food over a campfire",
+      "C": "To extinguish a burning blaze",
+      "D": "To warm up during winter"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'feed the flames' means to worsen or intensify an already volatile situation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0353",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Feel the pinch**",
+    "options": {
+      "A": "To experience financial hardship, poverty, or shortage of money",
+      "B": "To suffer from a physical skin irritation",
+      "C": "To feel pain after an injury",
+      "D": "To be arrested by police officers"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'feel the pinch' means suffering from a sudden lack of financial funds.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0354",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Feet of clay**",
+    "options": {
+      "A": "A hidden weakness or flaw in a person who is admired or idolized",
+      "B": "A foot medical infection",
+      "C": "Wearing heavy ceramic boots",
+      "D": "Inability to walk fast"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having 'feet of clay' implies a secret fault or hidden vulnerability in an admired figure.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0355",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fifth column**",
+    "options": {
+      "A": "A secret group of traitors or sympathizers working subversively within a country",
+      "B": "A column in a structural building",
+      "C": "A military parade formation",
+      "D": "An architectural monument"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'fifth column' refers to clandestine sympathizers working inside enemy lines.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0356",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fight shy of**",
+    "options": {
+      "A": "To avoid, shrink from, or hesitate to approach something",
+      "B": "To fight an opponent in a boxing ring",
+      "C": "To be timid around strangers",
+      "D": "To argue aggressively in public"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'fight shy of' means to steer clear of or avoid a task or person.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0357",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fine-tooth comb**",
+    "options": {
+      "A": "Examining or searching something with extreme thoroughness and detail",
+      "B": "A grooming hair tool",
+      "C": "A dental cleaning instrument",
+      "D": "A tool used for weaving fabric"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Going through something with a 'fine-tooth comb' means searching meticulously.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0358",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fire away**",
+    "options": {
+      "A": "To begin speaking, asking questions, or giving permission to start",
+      "B": "To shoot a firearm in battle",
+      "C": "To ignite a campfire",
+      "D": "To run away from a blaze"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Saying 'fire away' means telling someone to go ahead and start asking or speaking.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0359",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**First water**",
+    "options": {
+      "A": "Of the highest quality, grade, or brilliance (usually applied to gems)",
+      "B": "Fresh drinking water from a spring",
+      "C": "Ocean water near the shore",
+      "D": "Contaminated flood liquid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A diamond or person of the 'first water' is of supreme quality.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0360",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fish out of water**",
+    "options": {
+      "A": "In an uncomfortable, awkward, or unfamiliar environment",
+      "B": "A seafood dish served on plates",
+      "C": "A marine animal washed ashore",
+      "D": "A happy swimmer in a pool"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being like a 'fish out of water' means feeling deeply out of place in a strange situation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0361",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fit as a fiddle**",
+    "options": {
+      "A": "In robust, excellent physical health and condition",
+      "B": "A well-tuned musical instrument",
+      "C": "Wearing tailor-made clothing",
+      "D": "Compact and small in size"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'fit as a fiddle' means being in exceptionally good health.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0362",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Flash in the pan**",
+    "options": {
+      "A": "A temporary success that does not last or repeat itself",
+      "B": "A kitchen grease fire",
+      "C": "A bright photography camera flash",
+      "D": "A fast cooking recipe"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'flash in the pan' is a brief moment of success with no lasting impact.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0363",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Flog a dead horse**",
+    "options": {
+      "A": "To waste energy on a hopeless, exhausted task or unalterable issue",
+      "B": "To abuse animals on a farm",
+      "C": "To ride a fast horse in races",
+      "D": "To train livestock for labor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'flog a dead horse' means wasting effort on something that cannot be revived.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0364",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fly by night**",
+    "options": {
+      "A": "Untrustworthy, unreliable, and prone to financial scamming or disappearing",
+      "B": "Traveling on night flights",
+      "C": "Nocturnal animals in forests",
+      "D": "Working late shifts in offices"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'fly-by-night' business is shady, unreliable, and fraudulent.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0365",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fly in the face of**",
+    "options": {
+      "A": "To openly defy, oppose, or contradict accepted rules or conventions",
+      "B": "To face strong wind gusts outdoors",
+      "C": "To argue with strangers",
+      "D": "To wear protective face masks"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'fly in the face of' means to act in direct defiance of established norms.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0366",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Foist on**",
+    "options": {
+      "A": "To palm off, force, or impose an unwanted thing or person upon someone",
+      "B": "To lift heavy weights",
+      "C": "To climb up a ladder",
+      "D": "To distribute gifts generously"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'foist something on' someone means forcing them to accept an unwanted item.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0367",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Follow your nose**",
+    "options": {
+      "A": "To go straight ahead or trust your instinctive intuition",
+      "B": "To follow a scent trail like a hound",
+      "C": "To suffer from a cold",
+      "D": "To undergo cosmetic rhinoplasty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'follow your nose' means proceeding straight forward or trusting instincts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0368",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Food for thought**",
+    "options": {
+      "A": "Something worth pondering, thinking about, or reflecting upon seriously",
+      "B": "A healthy cooking recipe book",
+      "C": "Groceries bought from a market",
+      "D": "Nutritional dietary advice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Food for thought' refers to an idea or issue that merits serious consideration.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0369",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Foot the bill**",
+    "options": {
+      "A": "To pay for a purchase or expense",
+      "B": "To walk long distances on foot",
+      "C": "To kick soccer balls",
+      "D": "To review restaurant menus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'foot the bill' means bearing the financial cost.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0370",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**For a song**",
+    "options": {
+      "A": "Extremely cheaply; at a very low cost",
+      "B": "As a musical performance reward",
+      "C": "Free of charge as a gift",
+      "D": "At an exorbitant price"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Buying something 'for a song' means acquiring it very cheaply.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0371",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Force to reckon with**",
+    "options": {
+      "A": "A person or thing of powerful influence that must be respected or feared",
+      "B": "A mathematical accounting tool",
+      "C": "A military combat weapon",
+      "D": "A weak opponent in sports"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being a 'force to be reckoned with' means possessing formidable power and influence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0372",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Foul play**",
+    "options": {
+      "A": "Criminal activity, treachery, or murder",
+      "B": "A penalty in a football game",
+      "C": "Bad weather during outdoor sports",
+      "D": "A poorly directed theater play"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Foul play' denotes criminal wrongdoing or violence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0373",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Four corners of the earth**",
+    "options": {
+      "A": "From all parts or remote regions of the world",
+      "B": "The geographical poles",
+      "C": "A square-shaped room",
+      "D": "Local neighborhood areas"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'four corners of the earth' signifies every remote corner of the globe.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0374",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Free and easy**",
+    "options": {
+      "A": "Casual, relaxed, unconstrained, and carefree in manner",
+      "B": "Items distributed without payment",
+      "C": "Lazy and irresponsible behavior",
+      "D": "Unsecured financial loans"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'free and easy' means relaxed, uninhibited, and informal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0375",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**French leave**",
+    "options": {
+      "A": "Leaving a gathering or post without permission or saying goodbye",
+      "B": "An official vacation approved in France",
+      "C": "Learning a European language",
+      "D": "A military troop retreat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Taking 'French leave' means departing secretly without authorization.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0376",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fret and fume**",
+    "options": {
+      "A": "To show great irritation, agitation, and angry anxiety",
+      "B": "To relax in a sauna bath",
+      "C": "To smoke cigarettes outdoors",
+      "D": "To play musical guitar frets"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'fret and fume' means to display intense worry and anger.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0377",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Front runner**",
+    "options": {
+      "A": "The contestant or candidate leading in a race or competition",
+      "B": "An athlete running a sprint",
+      "C": "A door entrance guard",
+      "D": "A sports team coach"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'front runner' is the leading contender in an election or contest.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0378",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fruit of the poisonous tree**",
+    "options": {
+      "A": "Evidence obtained illegally that is inadmissible in a court of law",
+      "B": "Poisonous berries in a forest",
+      "C": "Unhealthy food items",
+      "D": "A toxic botanical plant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. In law, 'fruit of the poisonous tree' describes inadmissible evidence derived from illegal acts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0379",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Full blast**",
+    "options": {
+      "A": "At maximum speed, volume, or power capacity",
+      "B": "An explosion in a factory",
+      "C": "A sudden gust of wind",
+      "D": "A musical trumpet sound"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Operating at 'full blast' means running at maximum possible intensity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0380",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Full of beans**",
+    "options": {
+      "A": "Lively, energetic, enthusiastic, and full of high spirits",
+      "B": "Eating a heavy meal of vegetables",
+      "C": "Suffering from stomach bloating",
+      "D": "Working on a farm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'full of beans' means having abundant energy and liveliness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0381",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Furore**",
+    "options": {
+      "A": "An outbreak of public anger, excitement, or controversy",
+      "B": "A cold winter jacket",
+      "C": "A furry animal pet",
+      "D": "A fast racing car"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'furore' is an uproar or state of intense public excitement and reaction.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0382",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Gain ground**",
+    "options": {
+      "A": "To make headway, advance, or grow in popularity",
+      "B": "To purchase real estate plots",
+      "C": "To lose footing on mud",
+      "D": "To dig garden trenches"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'gain ground' means to advance successfully or gain acceptance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0383",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Gall and wormwood**",
+    "options": {
+      "A": "A source of bitter resentment, annoyance, or severe bitterness",
+      "B": "A medicinal herbal tonic",
+      "C": "Poisonous plant leaves",
+      "D": "Bitter tasting food"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Gall and wormwood' denotes something intensely bitter and hateful.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0384",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Game is up**",
+    "options": {
+      "A": "The deceit, plot, or illegal scheme has been discovered and has failed",
+      "B": "A sports match has finished",
+      "C": "A video game level is completed",
+      "D": "Time to start playing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. When the 'game is up', a deception or criminal scheme has been exposed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0385",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**untlet**",
+    "options": {
+      "A": "To accept a severe challenge or undergo harsh criticism and trials",
+      "B": "To wear protective iron gloves",
+      "C": "To throw a weapon at enemies",
+      "D": "To race horses on tracks"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (To run the gauntlet) means to face severe criticism or a series of trials.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0386",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Gather roses**",
+    "options": {
+      "A": "To enjoy the pleasures of life without worrying about hardships",
+      "B": "To pick flowers in a garden",
+      "C": "To prune rose bushes",
+      "D": "To sell floral arrangements"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'gather roses' means enjoying life's pleasures.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0387",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get a grip**",
+    "options": {
+      "A": "To regain self-control, composure, and emotional stability",
+      "B": "To hold handles tightly",
+      "C": "To open a stubborn jar",
+      "D": "To slip on ice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get a grip' means taking control of your emotions during a crisis.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0388",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get afoot**",
+    "options": {
+      "A": "To be in the process of happening or developing",
+      "B": "To walk on foot",
+      "C": "To suffer a foot injury",
+      "D": "To buy new boots"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Something 'afoot' is stirring or developing secretly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0389",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get cracking**",
+    "options": {
+      "A": "To start doing something quickly without delay",
+      "B": "To crack nuts open",
+      "C": "To break glass windows",
+      "D": "To solve math puzzles"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get cracking' means to start working immediately with speed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0390",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get down to brass tacks**",
+    "options": {
+      "A": "To focus on the essential, practical facts of a situation",
+      "B": "To manufacture hardware tools",
+      "C": "To sit down on chairs",
+      "D": "To decorate furniture"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get down to brass tacks' means focusing on the core, practical details.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0391",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get even with**",
+    "options": {
+      "A": "To take revenge or retaliate against someone for a wrong done",
+      "B": "To divide numbers equally",
+      "C": "To balance a bank account",
+      "D": "To make peace with rivals"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get even with' someone means exacting revenge for a prior offense.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0392",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get off lightly**",
+    "options": {
+      "A": "To escape severe punishment, penalty, or harm with a mild outcome",
+      "B": "To lose weight on a diet",
+      "C": "To travel with light luggage",
+      "D": "To exit a vehicle quickly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get off lightly' means facing a much milder penalty than expected.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0393",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get the better of**",
+    "options": {
+      "A": "To defeat, outsmart, or overcome an opponent or temptation",
+      "B": "To be superior in age",
+      "C": "To improve physical health",
+      "D": "To win a lottery prize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get the better of' someone means winning or gaining advantage over them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0394",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get the green light**",
+    "options": {
+      "A": "To receive official permission or approval to proceed with a project",
+      "B": "To drive through a traffic signal",
+      "C": "To turn on room lamps",
+      "D": "To win a running race signal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get the green light' means obtaining authorization to move forward.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0395",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get wind of**",
+    "options": {
+      "A": "To hear rumors, find out, or discover secret or confidential information",
+      "B": "To feel a breeze outside",
+      "C": "To suffer from a cold wind",
+      "D": "To breathe fresh air"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get wind of' something means hearing a rumor about a secret matter.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0396",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Gild the lily**",
+    "options": {
+      "A": "To try to improve or embellish something that is already perfect or complete",
+      "B": "To paint flowers with gold",
+      "C": "To grow plants in greenhouses",
+      "D": "To decorate a birthday cake"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'gild the lily' means unnecessarily adorning something already fine.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0397",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give a piece of your mind**",
+    "options": {
+      "A": "To scold or reprimand someone angrily and frankly",
+      "B": "To share a creative idea",
+      "C": "To offer medical psychiatric advice",
+      "D": "To donate brain organs"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'give someone a piece of your mind' means rebuking them sharply.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0398",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give chase**",
+    "options": {
+      "A": "To pursue or run after someone in order to catch them",
+      "B": "To hunt wild game",
+      "C": "To participate in sports",
+      "D": "To run away from danger"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'give chase' means to pursue a fleeing suspect or animal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0399",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give quarter**",
+    "options": {
+      "A": "To show mercy or spare the life of a defeated opponent",
+      "B": "To divide money into four parts",
+      "C": "To rent a residential apartment",
+      "D": "To offer financial discounts"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'give quarter' means showing mercy to a vanquished enemy (often used negatively as 'show no quarter').",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0400",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give the benefit of the doubt**",
+    "options": {
+      "A": "To accept someone's statement or innocence without proof of guilt",
+      "B": "To doubt someone's honesty completely",
+      "C": "To give financial loans to strangers",
+      "D": "To question a legal verdict"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Giving someone the benefit of the doubt means believing them innocent when unproven.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

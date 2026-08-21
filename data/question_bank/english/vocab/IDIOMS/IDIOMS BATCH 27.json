@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_1301",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have the Midas touch**",
+    "options": {
+      "A": "Possessing a talent for sculpting gold statues",
+      "B": "Suffering from a rare dermatological sensitivity",
+      "C": "An uncanny ability to make financial profit or succeed in any venture",
+      "D": "Spending money lavishly on luxury jewelry"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Having the 'Midas touch' refers to the ability to easily generate wealth or achieve extraordinary success in any business or activity undertaken.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1302",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have your cake and eat it too**",
+    "options": {
+      "A": "Baking confectionery goods for a large celebration",
+      "B": "To enjoy two mutually exclusive benefits or desirable things at the same time",
+      "C": "To eat a hearty dessert after fasting all day",
+      "D": "To share food generously with friends and family"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'To have your cake and eat it too' means wanting to have two incompatible advantages simultaneously, which is impossible.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1303",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Head in the clouds**",
+    "options": {
+      "A": "Living in an unrealistic dream world; daydreaming and out of touch with reality",
+      "B": "Flying in an airplane at high cruising altitude",
+      "C": "Suffering from acute vertigo in mountain regions",
+      "D": "Predicting weather storms using scientific charts"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having one's 'head in the clouds' means being impractical, absent-minded, or daydreaming instead of focusing on realistic matters.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1304",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Head over heels**",
+    "options": {
+      "A": "Performing acrobatic gymnastics cartwheels",
+      "B": "Falling down a staircase due to clumsiness",
+      "C": "Deeply, passionately, and completely in love",
+      "D": "Struggling with intense physical dizziness"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Being 'head over heels' (often 'head over heels in love') means being completely and deeply infatuated or enamored.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1305",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hear on the grapevine**",
+    "options": {
+      "A": "Harvesting grape crops in an agricultural vineyard",
+      "B": "To learn rumors or unofficial news through informal word-of-mouth gossip",
+      "C": "Listening to high-frequency audio recordings",
+      "D": "Receiving an official government postal communication"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Hearing something 'on the grapevine' means learning about it through informal channels, gossip, or rumors.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1306",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Heart and soul**",
+    "options": {
+      "A": "Suffering from acute emotional heartbreak",
+      "B": "A philosophical doctrine on biological life",
+      "C": "With complete dedication, wholehearted enthusiasm, and all one's energy",
+      "D": "Practicing mindfulness meditation techniques"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Putting your 'heart and soul' into an effort means doing it with complete devotion, passion, and energy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1307",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Helter-skelter**",
+    "options": {
+      "A": "In a hurried, disorderly, and confused or chaotic manner",
+      "B": "Moving forward in a slow, disciplined military column",
+      "C": "Constructing an amusement park spiral slide",
+      "D": "Operating under strict administrative schedules"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Helter-skelter' describes a state of disorderly, hurried confusion or chaos.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1308",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Herculean task**",
+    "options": {
+      "A": "A simple routine household chore",
+      "B": "An athletic gym exercise for building muscles",
+      "C": "A short writing test in an examination",
+      "D": "A job requiring tremendous, extraordinary effort, strength, or courage"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. A 'Herculean task' is an undertaking that demands enormous physical strength, supreme effort, or great endurance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1309",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hide one's light under a bushel**",
+    "options": {
+      "A": "To conceal one's talents, abilities, or achievements out of modesty or shyness",
+      "B": "Extinguishing a table lamp before retiring to bed",
+      "C": "Storing grain provisions in woven wooden baskets",
+      "D": "Working during night blackouts without illumination"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'hide one's light under a bushel' means keeping one's skills, intelligence, or virtues secret instead of showing them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1310",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**High and dry**",
+    "options": {
+      "A": "Sailing safely through calm ocean waters",
+      "B": "In a stranded, abandoned, or helpless situation without aid",
+      "C": "Drying laundry on a sunny rooftop terrace",
+      "D": "Hiking across high-altitude arid plateaus"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Leaving someone 'high and dry' means leaving them stranded, deserted, or helpless in a difficult spot.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1311",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**High and low**",
+    "options": {
+      "A": "Everywhere; searching in every possible place or quarter",
+      "B": "Measuring tall and short objects with a ruler",
+      "C": "Rich and poor social classes in a nation",
+      "D": "High mountain peaks and low ocean trenches"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Searching 'high and low' means searching thoroughly in every conceivable location.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1312",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hit below the belt**",
+    "options": {
+      "A": "To wear a formal leather belt incorrectly",
+      "B": "To score a decisive point in a sports tournament",
+      "C": "To strike or attack someone unfairly, cruelly, or against the rules",
+      "D": "To box according to strict athletic standards"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'hit below the belt' means using an unfair, unsporting, or cruel tactic against someone.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1313",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hit the jackpot**",
+    "options": {
+      "A": "To suddenly win, gain, or achieve massive unexpected wealth or great success",
+      "B": "Playing cards in a casino tournament for modest stakes",
+      "C": "Suffering a minor financial loss in stock trading",
+      "D": "Purchasing a high-priced commercial property"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'hit the jackpot' means achieving sudden, extraordinary success or winning a huge sum of money.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1314",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hit the nail on the head**",
+    "options": {
+      "A": "Hammering steel fasteners into woodworking planks",
+      "B": "To say or identify something that is precisely correct or true",
+      "C": "Inflicting an accidental thumb injury with a tool",
+      "D": "Assembling furniture following written instructions"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'hit the nail on the head' means describing the exact cause or stating the exact truth about a situation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1315",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hit the sack**",
+    "options": {
+      "A": "To go to bed or go to sleep",
+      "B": "To punch a heavy boxing gym bag during training",
+      "C": "To carry grain sacks into a storage barn",
+      "D": "To dismiss an employee from an official post"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hit the sack' (or hit the hay) is a colloquial idiom meaning to go to bed or sleep.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1316",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hobson's choice**",
+    "options": {
+      "A": "A wide variety of tempting alternatives to pick from",
+      "B": "An intellectual choice made after extensive debate",
+      "C": "No real choice at all; taking what is available or getting nothing",
+      "D": "A democratic vote cast in a public election"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hobson's choice' refers to a choice where only one option is presented (take it or leave it), meaning no genuine choice exists.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1317",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hold all the aces**",
+    "options": {
+      "A": "Dealing playing cards evenly in a parlor game",
+      "B": "To be in a position of total advantage and complete control over a situation",
+      "C": "Winning an amateur tennis championship match",
+      "D": "Bluffing about one's resources in negotiations"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'hold all the aces' means possessing every major advantage over rivals, ensuring victory.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1318",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hold good**",
+    "options": {
+      "A": "To remain valid, applicable, true, or in force",
+      "B": "To grasp quality merchandise securely in hands",
+      "C": "To display moral virtue during trials",
+      "D": "To save financial assets for future generations"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. If a rule, condition, or argument 'holds good', it remains valid, true, and effective.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1319",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hold one's horses**",
+    "options": {
+      "A": "Tethering livestock animals in a rural stable",
+      "B": "Riding thoroughbred horses in a competitive race",
+      "C": "To wait patiently, slow down, or stop being impatient",
+      "D": "Managing a farm estate with strict discipline"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hold your horses' is an instruction to be patient, calm down, and wait before taking hasty action.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1320",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hold one's tongue**",
+    "options": {
+      "A": "Experiencing oral physical pain after an accident",
+      "B": "Speaking loudly and aggressively in a public forum",
+      "C": "To keep silent and refrain from speaking out",
+      "D": "Translating foreign vocabulary into native speech"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'hold one's tongue' means to stay quiet and avoid speaking, especially when tempted to say something unwise.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1321",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hold out an olive branch**",
+    "options": {
+      "A": "Cultivating Mediterranean olive groves in agriculture",
+      "B": "To make an offer of peace, reconciliation, or cessation of hostility",
+      "C": "Presenting herbal remedies to a sick friend",
+      "D": "Surrendering unconditional defeat in an athletic contest"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Holding out an 'olive branch' signifies making a gesture of peace or initiating reconciliation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1322",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hold water**",
+    "options": {
+      "A": "Storing drinking water in ceramic vessels",
+      "B": "Irrigating farmland using hydraulic canals",
+      "C": "Swimming in deep municipal reservoirs",
+      "D": "To be sound, logical, valid, and capable of withstanding scrutiny or criticism"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. If an argument, theory, or excuse 'holds water', it proves to be valid, reasonable, and believable under examination.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1323",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hue and cry**",
+    "options": {
+      "A": "A loud public clamor, outcry of alarm, or energetic protest",
+      "B": "Painting colorful murals on public city walls",
+      "C": "A weeping child lost in a busy marketplace",
+      "D": "A musical orchestra performing harmonic melodies"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'hue and cry' is a loud public clamor, noisy protest, or strong public outcry over an issue or chase.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1324",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hush money**",
+    "options": {
+      "A": "Money paid secretly as a bribe to prevent someone from disclosing damaging information",
+      "B": "Legal consultation fees paid to courtroom solicitors",
+      "C": "Voluntary contributions donated to charitable shelters",
+      "D": "Pocket money given to children for school expenses"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hush money' refers to a bribe paid to keep someone from revealing embarrassing, illegal, or disreputable facts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1325",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In a fix**",
+    "options": {
+      "A": "Repairing broken carpentry furniture in a workshop",
+      "B": "In a difficult, awkward, or perplexing predicament with no easy solution",
+      "C": "Stuck in heavy urban road traffic during rush hour",
+      "D": "Finalizing a formal legal agreement successfully"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'in a fix' means finding oneself in a troublesome, perplexing, or awkward situation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1326",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In a flutter**",
+    "options": {
+      "A": "Watching butterflies hover over garden blooms",
+      "B": "In a state of nervous excitement, agitation, or confusion",
+      "C": "Flying a light kite in high atmospheric winds",
+      "D": "Suffering from acute pulmonary respiratory issues"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'in a flutter' means being in a state of nervous confusion, agitation, or excited anxiety.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1327",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In a nutshell**",
+    "options": {
+      "A": "Enclosed tightly inside a wooden container",
+      "B": "Extremely complex, confused, and hard to understand",
+      "C": "Expressed in very few words; briefly and concisely",
+      "D": "Hidden away from public scrutiny in a vault"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'In a nutshell' means expressing something in a very clear, condensed, and concise summary.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1328",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In a tight corner**",
+    "options": {
+      "A": "Standing in the corner of an enclosed room",
+      "B": "In a difficult, perilous, or awkward situation that is hard to escape",
+      "C": "Navigating a sharp turn on a racing track",
+      "D": "Restricting commercial retail space in shopping centers"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'in a tight corner' (or tight spot) means being in a difficult, dangerous, or constrained predicament.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1329",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In black and white**",
+    "options": {
+      "A": "Dressed in monochrome formal evening garments",
+      "B": "Filmed using vintage antique camera techniques",
+      "C": "Vague, ambiguous, and subject to multiple interpretations",
+      "D": "In clear written or printed form; formally documented"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. Having something 'in black and white' means having it clearly documented in writing or print.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1330",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In cold blood**",
+    "options": {
+      "A": "Done deliberately, ruthlessly, callously, and without emotion or mercy",
+      "B": "Suffering from severe freezing hypothermia",
+      "C": "Performing emergency clinical surgery on trauma patients",
+      "D": "Acting impulsively in sudden self-defense"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing something 'in cold blood' means committing an act (especially a crime) with premeditated cruelty and zero remorse.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1331",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In doldrums**",
+    "options": {
+      "A": "Sailing smoothly across tropical ocean currents",
+      "B": "In a state of stagnation, depression, low spirits, or inactivity",
+      "C": "Participating in high-energy athletic tournaments",
+      "D": "Celebrating a corporate financial breakthrough"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'in the doldrums' means experiencing a slump, dullness, low spirits, or stagnant progress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1332",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In full swing**",
+    "options": {
+      "A": "Playing on children's playground equipment",
+      "B": "Beginning a new project with extreme caution",
+      "C": "At the peak or highest point of active, energetic operation",
+      "D": "Concluding an event ahead of schedule"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. When an event or activity is 'in full swing', it is operating at its maximum level of energy and momentum.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1333",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In high spirits**",
+    "options": {
+      "A": "Extremely cheerful, lively, optimistic, and joyful",
+      "B": "Under the intoxicating influence of strong beverages",
+      "C": "Experiencing spiritual hallucinations in ancient ruins",
+      "D": "Suffering from high fever and physical fatigue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in high spirits' means feeling very happy, cheerful, vibrant, and enthusiastic.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1334",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In hot water**",
+    "options": {
+      "A": "Taking a hot medicinal bath after work",
+      "B": "Boiling tea leaves in a kitchen kettle",
+      "C": "Swimming in geothermal spring pools",
+      "D": "In serious trouble, disgrace, or facing severe disciplinary difficulties"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. Being 'in hot water' means being in serious trouble or facing harsh reprimand and difficulty.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1335",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In one's element**",
+    "options": {
+      "A": "Conducting scientific chemical laboratory experiments",
+      "B": "In a situation, environment, or activity that is natural, comfortable, and well-suited to one",
+      "C": "Exposed to harsh seasonal weather elements outdoors",
+      "D": "Struggling to adapt to a foreign work culture"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'in one's element' means being in a setting or doing a task where one feels completely confident and at home.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1336",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the blues**",
+    "options": {
+      "A": "Feeling dejected, depressed, gloomy, or unhappy",
+      "B": "Wearing sky-blue casual attire",
+      "C": "Listening to jazz musical performances in clubs",
+      "D": "Sailing across deep oceanic waters"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in the blues' (or having the blues) means feeling sad, melancholic, or depressed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1337",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the driver's seat**",
+    "options": {
+      "A": "Steering a motor vehicle along a highway",
+      "B": "In a dominant position of authority, direction, and total control",
+      "C": "Working as a professional commercial chauffeur",
+      "D": "Sitting passenger in the front seat of a car"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'in the driver's seat' means being in charge and controlling the direction of a situation or organization.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1338",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the fast lane**",
+    "options": {
+      "A": "Driving at high speed on an expressway corridor",
+      "B": "Leading a high-pressure, exciting, fast-paced, and eventful lifestyle",
+      "C": "Running in the inner lane of an athletic track",
+      "D": "Arriving ahead of schedule at an office meeting"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Living 'life in the fast lane' means living a rapid, exciting, dynamic, and often risky or hectic lifestyle.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1339",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the limelight**",
+    "options": {
+      "A": "At the center of intense public attention, interest, and prominence",
+      "B": "Working backstage in theater lighting operations",
+      "C": "Standing underneath bright street illumination lamps",
+      "D": "Hiding from paparazzi cameras in secluded retreats"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'in the limelight' means occupying the center stage of public interest, focus, or fame.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1340",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the long run**",
+    "options": {
+      "A": "Over an extended period of time in the ultimate future; eventually",
+      "B": "Completing the final lap of a long-distance track race",
+      "C": "Traveling across vast country highways on foot",
+      "D": "During a brief, temporary period of time"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'In the long run' means over a long future period, or considering ultimate outcomes rather than immediate ones.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1341",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the nick of time**",
+    "options": {
+      "A": "At the very last possible moment, just before it is too late",
+      "B": "Arriving hours after the scheduled conference has ended",
+      "C": "Right at the exact beginning of an appointment",
+      "D": "At an uncertain date in the distant future"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'In the nick of time' means happening just in time to prevent a disaster or meet a critical deadline.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1342",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the offing**",
+    "options": {
+      "A": "Likely to happen or appear in the near future",
+      "B": "Sailing far away from the coastline towards the open sea",
+      "C": "Discarded and forgotten permanently in an archive",
+      "D": "Happening rarely once in a decade"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. If an event is 'in the offing', it is approaching, imminent, or likely to occur soon.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1343",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the pipeline**",
+    "options": {
+      "A": "Transporting liquid petroleum through steel conduits",
+      "B": "Plumbing repairs underway in domestic water systems",
+      "C": "Currently being planned, developed, produced, or processed for the future",
+      "D": "A failed initiative that has been scrapped"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. When a project or policy is 'in the pipeline', it is currently in progress, being prepared, or on its way.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1344",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the red**",
+    "options": {
+      "A": "Dressed in bright crimson ceremonial robes",
+      "B": "Generating massive commercial profits in trading",
+      "C": "Operating with a financial deficit, spending more than income, or in debt",
+      "D": "Experiencing extreme rage during an altercation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Being 'in the red' means losing money, owing debts, or running a financial deficit.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1345",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the same boat**",
+    "options": {
+      "A": "Commuting jointly across a river on a public passenger ferry",
+      "B": "Sharing the same difficult, dangerous, or unpleasant circumstances as others",
+      "C": "Rowing together in a sports regatta race",
+      "D": "Working for the same commercial shipping firm"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'in the same boat' means facing the identical hardships, challenges, or risks as companions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1346",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the teeth of**",
+    "options": {
+      "A": "Directly against, in spite of, or in open defiance of severe opposition or difficulty",
+      "B": "Suffering from acute dental pain in jaw molars",
+      "C": "Chewing tough meat provisions with difficulty",
+      "D": "Smiling broadly when greeting guests at a banquet"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing something 'in the teeth of' means persisting directly against fierce resistance, severe danger, or stormy opposition.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1347",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In the twinkling of an eye**",
+    "options": {
+      "A": "Suffering from optical strain due to bright light",
+      "B": "Extremely quickly; in an instant or fraction of a second",
+      "C": "Winking affectionately across a dining room",
+      "D": "Observing glittering night stars in clear skies"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'In the twinkling of an eye' means taking place almost instantaneously or in a split second.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1348",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**In vogue**",
+    "options": {
+      "A": "Obsolete, outdated, and no longer practiced in society",
+      "B": "Currently fashionable, popular, trendy, or in general widespread use",
+      "C": "Publishing articles in high-fashion international magazines",
+      "D": "Dressed in bizarre, eccentric theatrical costumes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Something that is 'in vogue' is highly fashionable, popular, and currently in style.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1349",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Ins and outs**",
+    "options": {
+      "A": "The complete, detailed, complex, and intricate particulars of a situation or system",
+      "B": "Entering and exiting a public building through revolving doors",
+      "C": "The alternating high and low ocean tide patterns",
+      "D": "Winners and losers in an athletic tournament"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'ins and outs' refers to all the intricate details, complexities, and specific workings of a matter.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1350",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Iron out**",
+    "options": {
+      "A": "Pressing wrinkles out of laundry garments using a flatiron",
+      "B": "Forging molten steel rods in a heavy industrial foundry",
+      "C": "To resolve, settle, smooth over, or eliminate difficulties and differences",
+      "D": "Flattening scrap metal sheets in a recycling yard"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'iron out' differences or problems means resolving minor difficulties or coming to an agreement through discussion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

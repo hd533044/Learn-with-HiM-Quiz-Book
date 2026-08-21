@@ -101,19 +101,62 @@ GK_TOPIC_METADATA = {
     }
 }
 
+# Comprehensive English Topics Metadata
+ENGLISH_TOPIC_METADATA = {
+    # Comprehension Section
+    "eng_comp_cloze_test": {"en": "📖 Cloze Test", "section": "comprehension"},
+    "eng_comp_para_jumbles": {"en": "🔀 Para Jumbles / Sentence Rearrangement", "section": "comprehension"},
+    "eng_comp_rc": {"en": "📑 Reading Comprehension (RC)", "section": "comprehension"},
+    
+    # Vocab Section
+    "eng_vocab_homonyms": {"en": "🔡 Homonyms", "section": "vocab"},
+    "eng_vocab_idioms": {"en": "💬 Idioms & Phrases", "section": "vocab"},
+    "eng_vocab_ows": {"en": "💡 One Word Substitution (OWS)", "section": "vocab"},
+    "eng_vocab_phrasal_verbs": {"en": "🎯 Phrasal Verbs", "section": "vocab"},
+    "eng_vocab_spellings": {"en": "✍️ Correct Spellings", "section": "vocab"},
+    "eng_vocab_syn_ant": {"en": "🔠 Synonyms & Antonyms", "section": "vocab"},
+    
+    # Grammar Section
+    "eng_gram_adjective": {"en": "📌 Adjectives", "section": "grammar"},
+    "eng_gram_adverb": {"en": "📌 Adverbs", "section": "grammar"},
+    "eng_gram_articles": {"en": "📌 Articles (A, An, The)", "section": "grammar"},
+    "eng_gram_clause_test": {"en": "📌 Clause Test", "section": "grammar"},
+    "eng_gram_conditionals": {"en": "📌 Conditionals", "section": "grammar"},
+    "eng_gram_conjunction": {"en": "📌 Conjunctions", "section": "grammar"},
+    "eng_gram_infinitive": {"en": "📌 Infinitives, Gerunds & Participles", "section": "grammar"},
+    "eng_gram_modals": {"en": "📌 Modals", "section": "grammar"},
+    "eng_gram_narration": {"en": "📌 Direct & Indirect Narration", "section": "grammar"},
+    "eng_gram_noun": {"en": "📌 Nouns", "section": "grammar"},
+    "eng_gram_preposition": {"en": "📌 Prepositions", "section": "grammar"},
+    "eng_gram_pronoun": {"en": "📌 Pronouns", "section": "grammar"},
+    "eng_gram_question_tag": {"en": "📌 Question Tags", "section": "grammar"},
+    "eng_gram_tense": {"en": "📌 Tenses", "section": "grammar"},
+    "eng_gram_verb": {"en": "📌 Verbs & Subject-Verb Agreement", "section": "grammar"},
+    "eng_gram_voice": {"en": "📌 Active & Passive Voice", "section": "grammar"},
+}
+
+
 def get_available_topics(subject: str = "computer", language: str = "en") -> list:
     """Returns list of tuples (topic_key, clean_display_name)."""
     lang_key = "hi" if language == "hi" else "en"
-    metadata = GK_TOPIC_METADATA if subject == "gk" else COMPUTER_TOPIC_METADATA
+    if subject == "gk":
+        metadata = GK_TOPIC_METADATA
+    elif subject == "english":
+        metadata = ENGLISH_TOPIC_METADATA
+    else:
+        metadata = COMPUTER_TOPIC_METADATA
     return [(k, v.get(lang_key, v["en"])) for k, v in metadata.items()]
+
 
 def is_hindi_text(text: str) -> bool:
     if not text:
         return False
     return any('\u0900' <= char <= '\u097F' for char in str(text))
 
+
 def clean_option_prefix(opt_text: str) -> str:
-    return re.sub(r'^[A-Da-d1-4][\.\)]\s*', '', str(opt_text)).strip()
+    return re.sub(r'^[A-Da-d1-4][\.\)\:\-]\s*', '', str(opt_text)).strip()
+
 
 def randomize_question_options(q: dict) -> dict:
     opts = list(q.get("options", []))
@@ -127,17 +170,21 @@ def randomize_question_options(q: dict) -> dict:
     shuffled_opts = list(clean_options)
     random.shuffle(shuffled_opts)
 
-    new_correct_idx = shuffled_opts.index(correct_answer_value)
+    try:
+        new_correct_idx = shuffled_opts.index(correct_answer_value)
+    except ValueError:
+        new_correct_idx = 0
 
     new_q = dict(q)
     new_q["options"] = shuffled_opts
     new_q["correct_option"] = new_correct_idx
     return new_q
 
+
 def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
-    q_text = q.get("question")
+    q_text = q.get("question") or q.get("question_text")
     raw_opts = q.get("options")
-    raw_correct = q.get("correct_option")
+    raw_correct = q.get("correct_option") if q.get("correct_option") is not None else q.get("correct_answer")
     expl = q.get("explanation", "")
     category = q.get("category", "General")
 
@@ -163,6 +210,12 @@ def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
         elif isinstance(raw_correct, str) and raw_correct.upper() in ("A", "B", "C", "D"):
             mapping = {"A": 0, "B": 1, "C": 2, "D": 3}
             correct_idx = mapping.get(raw_correct.upper(), 0)
+        elif isinstance(raw_correct, str):
+            clean_ans = clean_option_prefix(raw_correct).lower()
+            for idx, opt in enumerate(clean_opts):
+                if clean_option_prefix(opt).lower() == clean_ans:
+                    correct_idx = idx
+                    break
 
     if len(clean_opts) < 2:
         return None
@@ -172,7 +225,7 @@ def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
         detected_lang = force_lang
 
     q_id_val = q.get("id")
-    unique_id = f"sc_{category}_{q_id_val}" if q_id_val is not None else str(hash(str(q_text)))
+    unique_id = f"{category}_{q_id_val}" if q_id_val is not None else str(hash(str(q_text)))
 
     return {
         "id": unique_id,
@@ -183,6 +236,7 @@ def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
         "language": detected_lang,
         "chapter": category
     }
+
 
 def get_user_seen_identifiers(user_id: int) -> set:
     if not user_id:
@@ -203,14 +257,115 @@ def get_user_seen_identifiers(user_id: int) -> set:
 
     return seen_ids
 
+
+def get_english_base_dir() -> str:
+    candidates = [
+        os.path.join(QUESTION_BANK_DIR, "english"),
+        os.path.join(DATA_DIR, "question_bank", "english"),
+        os.path.join(BASE_DIR, "data", "question_bank", "english")
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return candidates[0]
+
+
+def load_english_questions(topic_key: str = "MIXED") -> list:
+    """Loads English questions from corresponding batch JSON files."""
+    base_eng = get_english_base_dir()
+    if not os.path.exists(base_eng):
+        logger.warning(f"English question bank path not found: {base_eng}")
+        return []
+
+    target_files = []
+
+    def scan_dir(folder_path, prefix_filter=None):
+        out = []
+        if os.path.exists(folder_path):
+            for root, _, files in os.walk(folder_path):
+                for f in files:
+                    if f.endswith(".json"):
+                        if prefix_filter:
+                            if f.lower().startswith(prefix_filter.lower()):
+                                out.append(os.path.join(root, f))
+                        else:
+                            out.append(os.path.join(root, f))
+        return out
+
+    # COMPREHENSION
+    if topic_key == "eng_comp_cloze_test":
+        target_files = scan_dir(os.path.join(base_eng, "comprehension", "CLOZE TEST"))
+    elif topic_key == "eng_comp_para_jumbles":
+        target_files = scan_dir(os.path.join(base_eng, "comprehension", "PARA JUMBLES"))
+    elif topic_key == "eng_comp_rc":
+        target_files = scan_dir(os.path.join(base_eng, "comprehension", "READING COMPREHENSION"))
+
+    # VOCAB
+    elif topic_key == "eng_vocab_homonyms":
+        target_files = scan_dir(os.path.join(base_eng, "vocab", "HOMONYMS"))
+    elif topic_key == "eng_vocab_idioms":
+        target_files = scan_dir(os.path.join(base_eng, "vocab", "IDIOMS"))
+    elif topic_key == "eng_vocab_ows":
+        target_files = scan_dir(os.path.join(base_eng, "vocab", "OWS"))
+    elif topic_key == "eng_vocab_phrasal_verbs":
+        target_files = scan_dir(os.path.join(base_eng, "vocab", "PHRASEL VERBS"))
+    elif topic_key == "eng_vocab_spellings":
+        target_files = scan_dir(os.path.join(base_eng, "vocab", "SPELLINGS"))
+    elif topic_key == "eng_vocab_syn_ant":
+        target_files = scan_dir(os.path.join(base_eng, "vocab", "SYN-ANT"))
+
+    # GRAMMAR (Flat directory or prefix based)
+    elif topic_key.startswith("eng_gram_"):
+        gram_sub = topic_key.replace("eng_gram_", "").upper()
+        gram_dir = os.path.join(base_eng, "grammar")
+        target_files = scan_dir(gram_dir, prefix_filter=f"GRAMMAR {gram_sub}")
+        if not target_files:
+            target_files = scan_dir(os.path.join(gram_dir, gram_sub))
+
+    elif topic_key == "MIXED":
+        target_files = scan_dir(base_eng)
+
+    all_loaded = []
+    for fp in target_files:
+        try:
+            with open(fp, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                category_name = os.path.splitext(os.path.basename(fp))[0]
+                if isinstance(data, list):
+                    for item in data:
+                        if isinstance(item, dict):
+                            item.setdefault("category", category_name)
+                            all_loaded.append(item)
+                elif isinstance(data, dict):
+                    # In case the json wraps questions under a key
+                    qs = data.get("questions") or data.get("data")
+                    if isinstance(qs, list):
+                        for item in qs:
+                            if isinstance(item, dict):
+                                item.setdefault("category", category_name)
+                                all_loaded.append(item)
+                    else:
+                        data.setdefault("category", category_name)
+                        all_loaded.append(data)
+        except Exception as e:
+            logger.error(f"Error loading English JSON file {fp}: {e}")
+
+    return all_loaded
+
+
 def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: str = "en", user_id: int = None, topic: str = "MIXED", subject: str = "computer") -> list:
-    """STRICT SUBJECT, LANGUAGE & TOPIC ISOLATION ENGINE WITH EXACT FOLDER MAPPING."""
+    """STRICT SUBJECT, LANGUAGE & TOPIC ISOLATION ENGINE WITH FULL ENGLISH INTEGRATION."""
     all_raw_questions = []
     lang_sub = "hi" if language == "hi" else "en"
     loaded_from_specific_file = False
 
-    # 1. GENERAL KNOWLEDGE (GK) MODE
-    if subject == "gk":
+    # 1. ENGLISH SUBJECT
+    if subject == "english":
+        all_raw_questions = load_english_questions(topic)
+        loaded_from_specific_file = True
+
+    # 2. GENERAL KNOWLEDGE (GK) MODE
+    elif subject == "gk":
         gk_file_name = f"gk_questions_{lang_sub}.json"
         potential_gk_paths = [
             os.path.join(QUESTION_BANK_DIR, "gk", gk_file_name),
@@ -229,7 +384,7 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                 except Exception as e:
                     logger.error(f"Error reading GK file {p}: {e}")
 
-    # 2. SHORTCUT KEYS MODE (COMPUTER)
+    # 3. SHORTCUT KEYS MODE (COMPUTER)
     elif topic == "SHORTCUTS":
         shortcut_file_name = f"shortcut_{lang_sub}.json"
         potential_shortcut_paths = [
@@ -250,8 +405,8 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                 except Exception as e:
                     logger.error(f"Error reading shortcut keys file {p}: {e}")
 
-    # 3. TOPIC-WISE MODE (COMPUTER)
-    elif topic and topic != "MIXED":
+    # 4. TOPIC-WISE MODE (COMPUTER)
+    elif topic and topic != "MIXED" and subject == "computer":
         topic_filename = f"{topic}_{lang_sub}.json"
         potential_topic_paths = [
             os.path.join(TOPICS_DIR, "computer", lang_sub, topic_filename),
@@ -271,7 +426,7 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                 except Exception as e:
                     logger.error(f"Error loading topic file {p}: {e}")
 
-    # 4. MIXED PRACTICE MODE & MASTER BANK FALLBACK (COMPUTER)
+    # 5. MIXED PRACTICE MODE & MASTER BANK FALLBACK (COMPUTER)
     if subject == "computer" and not loaded_from_specific_file:
         master_file_name = "all_questions_hindi.json" if language == "hi" else "all_questions_english.json"
         master_candidates = [
@@ -291,25 +446,19 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                 except Exception as e:
                     logger.error(f"Error loading master file {m_path}: {e}")
 
-    # 5. STRICT CATEGORY FILTERING & LANGUAGE VERIFICATION
+    # 6. STRICT VERIFICATION & PARSING
     verified_bank = []
     seen_unique_texts = set()
 
     for q in all_raw_questions:
-        if not loaded_from_specific_file and topic and topic != "MIXED":
-            cat = str(q.get("category", "")).strip()
-            cat_clean = cat.replace("_", " ").lower()
-            topic_clean = topic.replace("_", " ").lower()
-            if cat_clean != topic_clean:
-                continue
-
         verified_q = verify_and_correct_question(q, force_lang=language)
         if verified_q:
-            q_is_hindi = is_hindi_text(verified_q["question"])
-            if language == "hi" and not q_is_hindi:
-                continue
-            if language == "en" and q_is_hindi:
-                continue
+            if subject != "english":
+                q_is_hindi = is_hindi_text(verified_q["question"])
+                if language == "hi" and not q_is_hindi:
+                    continue
+                if language == "en" and q_is_hindi:
+                    continue
 
             norm_text = re.sub(r'\W+', '', verified_q["question"].lower())
             if norm_text in seen_unique_texts:
@@ -321,7 +470,7 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
         logger.warning(f"No questions verified for subject={subject}, topic={topic}, lang={language}")
         return []
 
-    # 6. NON-REPETITION & EXHAUSTION CYCLING
+    # 7. EXHAUSTION CYCLING & RESHUFFLING
     user_seen_ids = get_user_seen_identifiers(user_id)
     if seen_ids:
         user_seen_ids.update({str(sid) for sid in seen_ids})
@@ -361,10 +510,12 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
         selected_questions = verified_bank[:needed_count]
 
     random.shuffle(selected_questions)
+    # Strictly randomize options for each question so answers are uniformly distributed
     return [randomize_question_options(q) for q in selected_questions]
 
+
 def fetch_multi_topic_questions(needed_count: int, topic_keys: list, subject: str = "computer", language: str = "en", user_id: int = None) -> list:
-    """Fetches unique, evenly distributed questions across 2 to 4 selected topics."""
+    """Fetches unique, evenly distributed questions across 2 to 5 selected topics."""
     if not topic_keys:
         return []
 
@@ -393,7 +544,81 @@ def fetch_multi_topic_questions(needed_count: int, topic_keys: list, subject: st
         combined_questions.extend(extra_qs)
 
     random.shuffle(combined_questions)
-    return combined_questions[:needed_count]
+    return [randomize_question_options(q) for q in combined_questions[:needed_count]]
+
+
+def fetch_english_full_mock_25(language: str = "en", user_id: int = None) -> list:
+    """
+    Constructs an authentic 25-Question English Competitive Exam Mock:
+    - 5 RC or Cloze Test (only one per mock, all questions from single passage batch)
+    - 2-3 Para Jumbles
+    - 2-3 Homonyms
+    - 2-3 Phrasal Verbs
+    - 5-7 Mixed Vocab (2 OWS, 2 Idioms, 2-3 Syn-Ant)
+    - Remaining questions (approx. 5-7) from Grammar
+    """
+    mock_qs = []
+    seen_ids = get_user_seen_identifiers(user_id)
+
+    # 1. 5 Questions: RC or Cloze Test (choose one randomly)
+    comp_topic = random.choice(["eng_comp_rc", "eng_comp_cloze_test"])
+    comp_qs = fetch_pyqs_for_quiz(needed_count=5, seen_ids=seen_ids, language=language, user_id=user_id, topic=comp_topic, subject="english")
+    for q in comp_qs:
+        seen_ids.add(str(q.get("id")))
+    mock_qs.extend(comp_qs[:5])
+
+    # 2. 2-3 Questions: Para Jumbles
+    pj_count = random.choice([2, 3])
+    pj_qs = fetch_pyqs_for_quiz(needed_count=pj_count, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_comp_para_jumbles", subject="english")
+    for q in pj_qs:
+        seen_ids.add(str(q.get("id")))
+    mock_qs.extend(pj_qs[:pj_count])
+
+    # 3. 2-3 Questions: Homonyms
+    homo_count = random.choice([2, 3])
+    homo_qs = fetch_pyqs_for_quiz(needed_count=homo_count, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_homonyms", subject="english")
+    for q in homo_qs:
+        seen_ids.add(str(q.get("id")))
+    mock_qs.extend(homo_qs[:homo_count])
+
+    # 4. 2-3 Questions: Phrasal Verbs
+    pv_count = random.choice([2, 3])
+    pv_qs = fetch_pyqs_for_quiz(needed_count=pv_count, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_phrasal_verbs", subject="english")
+    for q in pv_qs:
+        seen_ids.add(str(q.get("id")))
+    mock_qs.extend(pv_qs[:pv_count])
+
+    # 5. Mixed Vocab: 2 OWS, 2 Idioms, 2-3 Syn-Ant
+    ows_qs = fetch_pyqs_for_quiz(needed_count=2, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_ows", subject="english")
+    for q in ows_qs: seen_ids.add(str(q.get("id")))
+    mock_qs.extend(ows_qs[:2])
+
+    idiom_qs = fetch_pyqs_for_quiz(needed_count=2, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_idioms", subject="english")
+    for q in idiom_qs: seen_ids.add(str(q.get("id")))
+    mock_qs.extend(idiom_qs[:2])
+
+    syn_count = random.choice([2, 3])
+    syn_qs = fetch_pyqs_for_quiz(needed_count=syn_count, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_syn_ant", subject="english")
+    for q in syn_qs: seen_ids.add(str(q.get("id")))
+    mock_qs.extend(syn_qs[:syn_count])
+
+    # 6. Rest of Questions from Grammar to complete exactly 25
+    remaining_needed = max(0, 25 - len(mock_qs))
+    if remaining_needed > 0:
+        grammar_keys = [k for k in ENGLISH_TOPIC_METADATA.keys() if k.startswith("eng_gram_")]
+        random.shuffle(grammar_keys)
+        gram_qs = fetch_multi_topic_questions(needed_count=remaining_needed, topic_keys=grammar_keys[:5], subject="english", language=language, user_id=user_id)
+        mock_qs.extend(gram_qs[:remaining_needed])
+
+    # Fallback to general english if bank has fewer questions
+    if len(mock_qs) < 25:
+        deficit = 25 - len(mock_qs)
+        extra = fetch_pyqs_for_quiz(needed_count=deficit, seen_ids=seen_ids, language=language, user_id=user_id, topic="MIXED", subject="english")
+        mock_qs.extend(extra[:deficit])
+
+    random.shuffle(mock_qs)
+    return [randomize_question_options(q) for q in mock_qs[:25]]
+
 
 def fetch_full_mock_questions(needed_count: int = 20, language: str = "en", user_id: int = None) -> list:
     """Generates balanced questions split between Computer Awareness and General Knowledge."""
@@ -410,4 +635,4 @@ def fetch_full_mock_questions(needed_count: int = 20, language: str = "en", user
 
     mock_pool = comp_qs + gk_qs
     random.shuffle(mock_pool)
-    return mock_pool
+    return [randomize_question_options(q) for q in mock_pool]

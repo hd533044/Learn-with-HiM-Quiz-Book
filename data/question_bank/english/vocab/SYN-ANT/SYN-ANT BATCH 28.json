@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_1351",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BESTIAL**",
+    "options": {
+      "A": "Savage",
+      "B": "Inhuman",
+      "C": "Civilized",
+      "D": "Brutal"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bestial' means savagely cruel or animal-like. 'Civilized', 'human', or 'gentle' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1352",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BIFURCATE**",
+    "options": {
+      "A": "Divide",
+      "B": "Unite",
+      "C": "Join",
+      "D": "Merge"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bifurcate' means to divide into two branches or parts. 'Divide', 'fork', or 'split' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1353",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BIFURCATE**",
+    "options": {
+      "A": "Fork",
+      "B": "Unite",
+      "C": "Split",
+      "D": "Branch"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Bifurcate' means to split in two. 'Unite', 'merge', or 'join' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1354",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BLANDISHMENT**",
+    "options": {
+      "A": "Flattery",
+      "B": "Criticism",
+      "C": "Rebuke",
+      "D": "Censure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Blandishment' refers to flattering or coaxing talk or action. 'Flattery', 'cajolery', or 'wheedling' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1355",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BLANDISHMENT**",
+    "options": {
+      "A": "Coaxing",
+      "B": "Wheedling",
+      "C": "Criticism",
+      "D": "Flattery"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Blandishment' is deceptive flattery. 'Criticism', 'rebuke', or 'censure' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1356",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BLATANT**",
+    "options": {
+      "A": "Flagrant",
+      "B": "Inconspicuous",
+      "C": "Subtle",
+      "D": "Hidden"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Blatant' means (of bad behavior) done openly and unashamedly. 'Flagrant', 'glaring', or 'obvious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1357",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BLATANT**",
+    "options": {
+      "A": "Glaring",
+      "B": "Obvious",
+      "C": "Inconspicuous",
+      "D": "Flagrant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Blatant' means shockingly obvious. 'Inconspicuous', 'subtle', or 'covert' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1358",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BOLSTER**",
+    "options": {
+      "A": "Reinforce",
+      "B": "Undermine",
+      "C": "Weaken",
+      "D": "Damage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bolster' means to support or strengthen. 'Reinforce', 'fortify', or 'prop up' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1359",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BOLSTER**",
+    "options": {
+      "A": "Reinforce",
+      "B": "Fortify",
+      "C": "Undermine",
+      "D": "Prop up"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bolster' means to support. 'Undermine', 'weaken', or 'sabotage' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1360",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BOMBASTIC**",
+    "options": {
+      "A": "Pompous",
+      "B": "Modest",
+      "C": "Simple",
+      "D": "Restrained"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bombastic' means high-sounding but with little meaning; inflated. 'Pompous', 'grandiloquent', or 'verbose' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1361",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BOMBASTIC**",
+    "options": {
+      "A": "Pompous",
+      "B": "Grandiloquent",
+      "C": "Restrained",
+      "D": "Inflated"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bombastic' means inflated and wordy. 'Restrained', 'modest', or 'simple' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1362",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BOORISH**",
+    "options": {
+      "A": "Uncouth",
+      "B": "Refined",
+      "C": "Urbane",
+      "D": "Sophisticated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Boorish' means rough and bad-mannered. 'Uncouth', 'churlish', or 'rude' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1363",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BOORISH**",
+    "options": {
+      "A": "Uncouth",
+      "B": "Churlish",
+      "C": "Refined",
+      "D": "Crude"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Boorish' means crude and ill-mannered. 'Refined', 'urbane', or 'sophisticated' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1364",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BOURGEOIS**",
+    "options": {
+      "A": "Middle-class",
+      "B": "Aristocratic",
+      "C": "Proletarian",
+      "D": "Radical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bourgeois' relates to the middle class, typically with reference to its perceived materialistic values or conventional attitudes.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1365",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BOURGEOIS**",
+    "options": {
+      "A": "Conventional",
+      "B": "Materialistic",
+      "C": "Radical",
+      "D": "Middle-class"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bourgeois' is often associated with conventional middle-class views. 'Radical', 'revolutionary', or 'nonconformist' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1366",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BOVINE**",
+    "options": {
+      "A": "Cow-like",
+      "B": "Agile",
+      "C": "Nimble",
+      "D": "Animated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bovine' means relating to or affecting cattle; slow-moving and dull-witted. 'Cow-like', 'slow', or 'dull' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1367",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BOVINE**",
+    "options": {
+      "A": "Slow",
+      "B": "Dull",
+      "C": "Animated",
+      "D": "Sluggish"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bovine' means slow and dull. 'Animated', 'lively', or 'agile' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1368",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BREVITY**",
+    "options": {
+      "A": "Conciseness",
+      "B": "Prolixity",
+      "C": "Verbosity",
+      "D": "Lengthiness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Brevity' refers to concise and exact use of words in writing or speech. 'Conciseness', 'terseness', or 'succinctness' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1369",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BREVITY**",
+    "options": {
+      "A": "Conciseness",
+      "B": "Terseness",
+      "C": "Verbosity",
+      "D": "Succinctness"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Brevity' means shortness. 'Verbosity', 'lengthiness', or 'prolixity' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1370",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BRUSQUE**",
+    "options": {
+      "A": "Abrupt",
+      "B": "Polite",
+      "C": "Courteous",
+      "D": "Gracious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Brusque' means abrupt or offhand in speech or manner. 'Abrupt', 'curt', or 'blunt' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1371",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BRUSQUE**",
+    "options": {
+      "A": "Curt",
+      "B": "Blunt",
+      "C": "Courteous",
+      "D": "Abrupt"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Brusque' means rude and abrupt. 'Courteous', 'gracious', or 'polite' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1372",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BUCOLIC**",
+    "options": {
+      "A": "Rustic",
+      "B": "Urban",
+      "C": "Metropolitan",
+      "D": "City"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bucolic' relates to the pleasant aspects of the countryside and country life. 'Rustic', 'pastoral', or 'rural' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1373",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BUCOLIC**",
+    "options": {
+      "A": "Rustic",
+      "B": "Pastoral",
+      "C": "Urban",
+      "D": "Rural"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bucolic' refers to country life. 'Urban', 'metropolitan', or 'city-like' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1374",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BURGEON**",
+    "options": {
+      "A": "Flourish",
+      "B": "Wither",
+      "C": "Decline",
+      "D": "Shrink"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Burgeon' means to begin to grow or increase rapidly; flourish. 'Flourish', 'thrive', or 'prosper' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1375",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BURGEON**",
+    "options": {
+      "A": "Flourish",
+      "B": "Thrive",
+      "C": "Wither",
+      "D": "Prosper"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Burgeon' means to grow or flourish. 'Wither', 'decline', or 'stagnate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1376",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BUTTRESS**",
+    "options": {
+      "A": "Reinforce",
+      "B": "Undermine",
+      "C": "Weaken",
+      "D": "Destroy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Buttress' means to provide support for or to strengthen. 'Reinforce', 'support', or 'fortify' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1377",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BUTTRESS**",
+    "options": {
+      "A": "Reinforce",
+      "B": "Fortify",
+      "C": "Undermine",
+      "D": "Support"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Buttress' means to support or strengthen. 'Undermine', 'weaken', or 'sabotage' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1378",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CACOPHONY**",
+    "options": {
+      "A": "Dissonance",
+      "B": "Harmony",
+      "C": "Symphony",
+      "D": "Euphony"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cacophony' refers to a harsh, discordant mixture of sounds. 'Dissonance', 'noise', or 'din' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1379",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CACOPHONY**",
+    "options": {
+      "A": "Dissonance",
+      "B": "Discord",
+      "C": "Euphony",
+      "D": "Din"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Cacophony' is a harsh noise. 'Euphony', 'harmony', or 'melody' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1380",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CADENCE**",
+    "options": {
+      "A": "Rhythm",
+      "B": "Silence",
+      "C": "Static",
+      "D": "Stagnation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cadence' refers to a rhythmic flow of a sequence of sounds or words. 'Rhythm', 'beat', or 'inflection' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1381",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CAJOLE**",
+    "options": {
+      "A": "Coax",
+      "B": "Coerce",
+      "C": "Force",
+      "D": "Intimidate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cajole' means to persuade someone to do something by sustained coaxing or flattery. 'Wheedle', 'entice', or 'inveigle' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1382",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CAJOLE**",
+    "options": {
+      "A": "Coax",
+      "B": "Wheedle",
+      "C": "Coerce",
+      "D": "Entice"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Cajole' means to persuade through flattery. 'Coerce', 'force', or 'bully' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1383",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CANDOR**",
+    "options": {
+      "A": "Frankness",
+      "B": "Deceit",
+      "C": "Guile",
+      "D": "Duplicity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Candor' refers to the quality of being open and honest in expression; frankness. 'Sincerity', 'honesty', or 'openness' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1384",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CANDOR**",
+    "options": {
+      "A": "Frankness",
+      "B": "Sincerity",
+      "C": "Guile",
+      "D": "Honesty"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Candor' is honest expression. 'Guile', 'deception', or 'duplicity' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1385",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CAPRICIOUS**",
+    "options": {
+      "A": "Fickle",
+      "B": "Constant",
+      "C": "Steadfast",
+      "D": "Stable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Capricious' means given to sudden and unaccountable changes of mood or behavior. 'Fickle', 'mercurial', or 'volatile' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1386",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CAPRICIOUS**",
+    "options": {
+      "A": "Fickle",
+      "B": "Mercurial",
+      "C": "Stable",
+      "D": "Volatile"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Capricious' means unpredictable. 'Stable', 'constant', or 'steadfast' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1387",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CASTIGATE**",
+    "options": {
+      "A": "Chastise",
+      "B": "Praise",
+      "C": "Laud",
+      "D": "Applaud"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Castigate' means to reprimand (someone) severely. 'Chastise', 'reprimand', or 'rebuke' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1388",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CASTIGATE**",
+    "options": {
+      "A": "Chastise",
+      "B": "Reprimand",
+      "C": "Praise",
+      "D": "Rebuke"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Castigate' means to severely punish or criticize. 'Praise', 'commend', or 'laud' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1389",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CATALYST**",
+    "options": {
+      "A": "Stimulus",
+      "B": "Inhibitor",
+      "C": "Obstacle",
+      "D": "Hindrance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Catalyst' refers to a substance that increases the rate of a chemical reaction, or a person or thing that precipitates an event. 'Stimulus', 'impetus', or 'spur' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1390",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CATALYST**",
+    "options": {
+      "A": "Stimulus",
+      "B": "Impetus",
+      "C": "Inhibitor",
+      "D": "Spur"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Catalyst' is a stimulant or accelerant. 'Inhibitor', 'hindrance', or 'obstacle' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1391",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CAUSTIC**",
+    "options": {
+      "A": "Sarcastic",
+      "B": "Mild",
+      "C": "Gentle",
+      "D": "Soothing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Caustic' means able to burn or corrode, or (in speech) sarcastic in a scathing and bitter way. 'Sarcastic', 'scathing', or 'acidic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1392",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CAUSTIC**",
+    "options": {
+      "A": "Scathing",
+      "B": "Acidic",
+      "C": "Soothing",
+      "D": "Biting"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Caustic' means biting and harsh. 'Soothing', 'gentle', or 'mild' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1393",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CESSION**",
+    "options": {
+      "A": "Yielding",
+      "B": "Acquisition",
+      "C": "Gain",
+      "D": "Retention"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cession' refers to the formal giving up of rights, property, or territory. 'Yielding', 'surrender', or 'giving up' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1394",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CESSION**",
+    "options": {
+      "A": "Yielding",
+      "B": "Surrender",
+      "C": "Acquisition",
+      "D": "Relinquishment"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Cession' means a giving up. 'Acquisition', 'retention', or 'gain' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1395",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CHAGRIN**",
+    "options": {
+      "A": "Annoyance",
+      "B": "Satisfaction",
+      "C": "Delight",
+      "D": "Joy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Chagrin' refers to distress or embarrassment at having failed or been humiliated. 'Annoyance', 'mortification', or 'vexation' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1396",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CHAGRIN**",
+    "options": {
+      "A": "Annoyance",
+      "B": "Mortification",
+      "C": "Satisfaction",
+      "D": "Vexation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Chagrin' means distress due to failure. 'Satisfaction', 'pleasure', or 'joy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1397",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CHASTE**",
+    "options": {
+      "A": "Pure",
+      "B": "Lecherous",
+      "C": "Impure",
+      "D": "Lustful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Chaste' means abstaining from extramarital, or from all, sexual intercourse; without unnecessary ornamentation. 'Pure', 'virtuous', or 'modest' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1398",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CHASTE**",
+    "options": {
+      "A": "Pure",
+      "B": "Virtuous",
+      "C": "Lustful",
+      "D": "Modest"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Chaste' means pure or abstinent. 'Lustful', 'impure', or 'lecherous' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1399",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CHASTISE**",
+    "options": {
+      "A": "Scold",
+      "B": "Laud",
+      "C": "Praise",
+      "D": "Acclaim"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Chastise' means to reprimand or punish severely. 'Scold', 'rebuke', or 'castigate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1400",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CHASTISE**",
+    "options": {
+      "A": "Scold",
+      "B": "Rebuke",
+      "C": "Praise",
+      "D": "Castigate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Chastise' means to rebuke or punish. 'Praise', 'commend', or 'laud' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

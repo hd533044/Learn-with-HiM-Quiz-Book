@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_3351",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STIMULATE**",
+    "options": {
+      "A": "Incite",
+      "B": "Discourage",
+      "C": "Deter",
+      "D": "Hinder"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stimulate' means to raise levels of physiological or nervous activity in the body, or to encourage interest or activity. 'Incite', 'spur', or 'provoke' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3352",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STIMULATE**",
+    "options": {
+      "A": "Incite",
+      "B": "Spur",
+      "C": "Deter",
+      "D": "Provoke"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stimulate' means to encourage. 'Deter', 'discourage', or 'hinder' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3353",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STINT**",
+    "options": {
+      "A": "Skimp",
+      "B": "Splurge",
+      "C": "Lavish",
+      "D": "Spend"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stint' means to be very economical or mean about spending or providing something. 'Skimp', 'scrimp', or 'withhold' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3354",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STINT**",
+    "options": {
+      "A": "Skimp",
+      "B": "Scrimp",
+      "C": "Splurge",
+      "D": "Withhold"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stint' means to skimp. 'Splurge', 'lavish', or 'spend' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3355",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STIPULATE**",
+    "options": {
+      "A": "Specify",
+      "B": "Vague",
+      "C": "General",
+      "D": "Ambiguous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stipulate' means to demand or specify (a requirement), typically as part of a bargain or agreement. 'Specify', 'require', or 'state' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3356",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STIPULATE**",
+    "options": {
+      "A": "Specify",
+      "B": "Require",
+      "C": "Vague",
+      "D": "State"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stipulate' means to specify. 'Vague', 'general', or 'ambiguous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3357",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STOIC**",
+    "options": {
+      "A": "Indifferent",
+      "B": "Emotional",
+      "C": "Passionate",
+      "D": "Sensitive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stoic' refers to a person who can endure pain or hardship without showing their feelings or complaining. 'Indifferent', 'impassive', or 'unemotional' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3358",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STOIC**",
+    "options": {
+      "A": "Indifferent",
+      "B": "Impassive",
+      "C": "Emotional",
+      "D": "Unemotional"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stoic' means unemotional. 'Emotional', 'passionate', or 'sensitive' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3359",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STOLID**",
+    "options": {
+      "A": "Unemotional",
+      "B": "Emotional",
+      "C": "Passionate",
+      "D": "Excitable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stolid' means calm, dependable, and showing little emotion or animation. 'Unemotional', 'impassive', or 'calm' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3360",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STOLID**",
+    "options": {
+      "A": "Unemotional",
+      "B": "Impassive",
+      "C": "Emotional",
+      "D": "Calm"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stolid' means unemotional. 'Emotional', 'passionate', or 'excitable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3361",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STRATAGEM**",
+    "options": {
+      "A": "Tactic",
+      "B": "Honesty",
+      "C": "Frankness",
+      "D": "Truthfulness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stratagem' refers to a plan or scheme, especially one used to outwit an opponent or achieve an end. 'Tactic', 'ruse', or 'scheme' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3362",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STRATAGEM**",
+    "options": {
+      "A": "Tactic",
+      "B": "Ruse",
+      "C": "Honesty",
+      "D": "Scheme"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stratagem' is a scheme. 'Honesty', 'frankness', or 'truthfulness' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3363",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STRICTURE**",
+    "options": {
+      "A": "Constraint",
+      "B": "Freedom",
+      "C": "Liberty",
+      "D": "Permission"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stricture' refers to a restriction on a person or activity; a sternly critical or censorious remark. 'Constraint', 'restriction', or 'censure' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3364",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STRICTURE**",
+    "options": {
+      "A": "Constraint",
+      "B": "Restriction",
+      "C": "Freedom",
+      "D": "Censure"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stricture' is a restriction. 'Freedom', 'liberty', or 'permission' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3365",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STRIDENT**",
+    "options": {
+      "A": "Harsh",
+      "B": "Soft",
+      "C": "Mellow",
+      "D": "Gentle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Strident' means loud and harsh; grating. 'Harsh', 'raucous', or 'grating' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3366",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STRIDENT**",
+    "options": {
+      "A": "Harsh",
+      "B": "Raucous",
+      "C": "Soft",
+      "D": "Grating"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Strident' means harsh. 'Soft', 'mellow', or 'gentle' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3367",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STRUT**",
+    "options": {
+      "A": "Swagger",
+      "B": "Shuffle",
+      "C": "Limp",
+      "D": "Crawl"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Strut' means to walk with a stiff, erect, and apparently arrogant or conceited gait. 'Swagger', 'swaggering', or 'parade' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3368",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STRUT**",
+    "options": {
+      "A": "Swagger",
+      "B": "Parade",
+      "C": "Shuffle",
+      "D": "Swaggering"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Strut' means an arrogant walk. 'Shuffle', 'limp', or 'crawl' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3369",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STUPEFY**",
+    "options": {
+      "A": "Astonish",
+      "B": "Clarify",
+      "C": "Explain",
+      "D": "Enlighten"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stupefy' means to make (someone) unable to think or feel properly. 'Astonish', 'stun', or 'bewilder' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3370",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STUPEFY**",
+    "options": {
+      "A": "Astonish",
+      "B": "Stun",
+      "C": "Clarify",
+      "D": "Bewilder"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stupefy' means to stun. 'Clarify', 'explain', or 'enlighten' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3371",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STUPOR**",
+    "options": {
+      "A": "Lethargy",
+      "B": "Alertness",
+      "C": "Vigilance",
+      "D": "Consciousness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stupor' refers to a state of near-unconsciousness or insensibility. 'Lethargy', 'daze', or 'torpor' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3372",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STUPOR**",
+    "options": {
+      "A": "Lethargy",
+      "B": "Daze",
+      "C": "Alertness",
+      "D": "Torpor"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Stupor' is a state of near-unconsciousness. 'Alertness', 'vigilance', or 'consciousness' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3373",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUAVE**",
+    "options": {
+      "A": "Charming",
+      "B": "Crude",
+      "C": "Rude",
+      "D": "Unpolished"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Suave' means (especially of a man) charming, confident, and elegant. 'Charming', 'sophisticated', or 'smooth' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3374",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUAVE**",
+    "options": {
+      "A": "Charming",
+      "B": "Sophisticated",
+      "C": "Crude",
+      "D": "Smooth"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Suave' means charming. 'Crude', 'rude', or 'unpolished' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3375",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUBJUGATE**",
+    "options": {
+      "A": "Conquer",
+      "B": "Liberate",
+      "C": "Free",
+      "D": "Release"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Subjugate' means to bring under domination or control. 'Conquer', 'vanquish', or 'enslave' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3376",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUBJUGATE**",
+    "options": {
+      "A": "Conquer",
+      "B": "Vanquish",
+      "C": "Liberate",
+      "D": "Enslave"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Subjugate' means to conquer. 'Liberate', 'free', or 'release' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3377",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUBLIME**",
+    "options": {
+      "A": "Magnificent",
+      "B": "Base",
+      "C": "Lowly",
+      "D": "Mean"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sublime' means of such excellence, grandeur, or beauty as to inspire great admiration or awe. 'Magnificent', 'grand', or 'majestic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3378",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUBLIME**",
+    "options": {
+      "A": "Magnificent",
+      "B": "Grand",
+      "C": "Base",
+      "D": "Majestic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sublime' means magnificent. 'Base', 'lowly', or 'mean' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3379",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUBSERVIENT**",
+    "options": {
+      "A": "Obsequious",
+      "B": "Assertive",
+      "C": "Dominant",
+      "D": "Independent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Subservient' means prepared to obey others unquestioningly. 'Obsequious', 'servile', or 'fawning' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3380",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUBSERVIENT**",
+    "options": {
+      "A": "Obsequious",
+      "B": "Servile",
+      "C": "Assertive",
+      "D": "Fawning"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Subservient' means submissive. 'Assertive', 'dominant', or 'independent' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3381",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUBSIDE**",
+    "options": {
+      "A": "Abate",
+      "B": "Intensify",
+      "C": "Increase",
+      "D": "Escalate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Subside' means to become less intense, violent, or severe. 'Abate', 'lessen', or 'diminish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3382",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUBSIDE**",
+    "options": {
+      "A": "Abate",
+      "B": "Lessen",
+      "C": "Intensify",
+      "D": "Diminish"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Subside' means to become less intense. 'Intensify', 'increase', or 'escalate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3383",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUBSTANTIATE**",
+    "options": {
+      "A": "Verify",
+      "B": "Disprove",
+      "C": "Refute",
+      "D": "Deny"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Substantiate' means to provide evidence to support or prove the truth of. 'Verify', 'corroborate', or 'confirm' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3384",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUBSTANTIATE**",
+    "options": {
+      "A": "Verify",
+      "B": "Corroborate",
+      "C": "Disprove",
+      "D": "Confirm"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Substantiate' means to prove. 'Disprove', 'refute', or 'deny' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3385",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUBTERFUGE**",
+    "options": {
+      "A": "Deception",
+      "B": "Honesty",
+      "C": "Frankness",
+      "D": "Truth"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Subterfuge' refers to deceit used in order to achieve one's goal. 'Deception', 'trickery', or 'pretext' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3386",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUBTERFUGE**",
+    "options": {
+      "A": "Deception",
+      "B": "Trickery",
+      "C": "Honesty",
+      "D": "Pretext"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Subterfuge' is deception. 'Honesty', 'frankness', or 'truth' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3387",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUBTLE**",
+    "options": {
+      "A": "Delicate",
+      "B": "Obvious",
+      "C": "Blatant",
+      "D": "Crude"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Subtle' means so delicate or precise as to be difficult to analyze or describe. 'Delicate', 'fine', or 'nuanced' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3388",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUBTLE**",
+    "options": {
+      "A": "Delicate",
+      "B": "Fine",
+      "C": "Obvious",
+      "D": "Nuanced"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Subtle' means delicate. 'Obvious', 'blatant', or 'crude' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3389",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUBVERT**",
+    "options": {
+      "A": "Destabilize",
+      "B": "Support",
+      "C": "Strengthen",
+      "D": "Reinforce"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Subvert' means to undermine the power and authority of (an established system or institution). 'Destabilize', 'undermine', or 'corrupt' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3390",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUBVERT**",
+    "options": {
+      "A": "Destabilize",
+      "B": "Undermine",
+      "C": "Support",
+      "D": "Corrupt"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Subvert' means to undermine. 'Support', 'strengthen', or 'reinforce' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3391",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUCCINCT**",
+    "options": {
+      "A": "Concise",
+      "B": "Wordy",
+      "C": "Verbose",
+      "D": "Long-winded"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Succinct' means (especially of something written or spoken) briefly and clearly expressed. 'Concise', 'terse', or 'pithy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3392",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUCCINCT**",
+    "options": {
+      "A": "Concise",
+      "B": "Terse",
+      "C": "Verbose",
+      "D": "Pithy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Succinct' means concise. 'Verbose', 'wordy', or 'long-winded' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3393",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUCCOR**",
+    "options": {
+      "A": "Aid",
+      "B": "Hindrance",
+      "C": "Obstacle",
+      "D": "Block"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Succor' refers to assistance and support in times of hardship and distress. 'Aid', 'help', or 'support' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3394",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUCCOR**",
+    "options": {
+      "A": "Aid",
+      "B": "Help",
+      "C": "Hindrance",
+      "D": "Support"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Succor' is aid/help. 'Hindrance', 'obstacle', or 'block' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3395",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUFFICIENT**",
+    "options": {
+      "A": "Adequate",
+      "B": "Insufficient",
+      "C": "Meager",
+      "D": "Lacking"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sufficient' means enough; adequate. 'Adequate', 'enough', or 'ample' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3396",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUFFICIENT**",
+    "options": {
+      "A": "Adequate",
+      "B": "Enough",
+      "C": "Insufficient",
+      "D": "Ample"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sufficient' means adequate. 'Insufficient', 'meager', or 'lacking' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3397",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SULLY**",
+    "options": {
+      "A": "Tarnish",
+      "B": "Purify",
+      "C": "Cleanse",
+      "D": "Sanitize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sully' means to damage the purity or integrity of; defile. 'Tarnish', 'stain', or 'soil' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3398",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SULLY**",
+    "options": {
+      "A": "Tarnish",
+      "B": "Stain",
+      "C": "Purify",
+      "D": "Soil"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sully' means to stain or tarnish. 'Purify', 'cleanse', or 'sanitize' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3399",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUMPTUOUS**",
+    "options": {
+      "A": "Luxurious",
+      "B": "Meager",
+      "C": "Scanty",
+      "D": "Poor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sumptuous' means splendid and expensive-looking. 'Luxurious', 'lavish', or 'magnificent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3400",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUMPTUOUS**",
+    "options": {
+      "A": "Luxurious",
+      "B": "Lavish",
+      "C": "Meager",
+      "D": "Magnificent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sumptuous' means luxurious. 'Meager', 'scanty', or 'poor' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

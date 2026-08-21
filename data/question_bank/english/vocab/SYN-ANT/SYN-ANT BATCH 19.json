@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0901",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREMONITION**",
+    "options": {
+      "A": "Foreboding",
+      "B": "Hindsight",
+      "C": "Recollection",
+      "D": "Assurance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Premonition' refers to a strong feeling that something is about to happen, especially something unpleasant. 'Foreboding', 'presentiment', or 'intuition' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0902",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREMONITION**",
+    "options": {
+      "A": "Presentiment",
+      "B": "Forewarning",
+      "C": "Hindsight",
+      "D": "Misgiving"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Premonition' is forward-looking intuition/forewarning. 'Hindsight' (understanding after the event) is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0903",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREPONDERANCE**",
+    "options": {
+      "A": "Dominance",
+      "B": "Scarcity",
+      "C": "Minority",
+      "D": "Deficiency"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Preponderance' means the quality or fact of being greater in number, quantity, or importance. 'Dominance', 'predominance', or 'prevalence' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0904",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREPONDERANCE**",
+    "options": {
+      "A": "Dominance",
+      "B": "Prevalence",
+      "C": "Paucity",
+      "D": "Ascendancy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Preponderance' means superiority in weight, power, or quantity. 'Paucity', 'minority', or 'scarcity' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0905",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREROGATIVE**",
+    "options": {
+      "A": "Privilege",
+      "B": "Obligation",
+      "C": "Duty",
+      "D": "Prohibition"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prerogative' means a right or privilege exclusive to a particular individual or class. 'Privilege', 'entitlement', or 'birthright' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0906",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREROGATIVE**",
+    "options": {
+      "A": "Privilege",
+      "B": "Duty",
+      "C": "Right",
+      "D": "Perquisite"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Prerogative' is an exclusive right or privilege. 'Duty', 'obligation', or 'liability' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0907",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRESCIENT**",
+    "options": {
+      "A": "Clairvoyant",
+      "B": "Myopic",
+      "C": "Unaware",
+      "D": "Oblivious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prescient' means having or showing knowledge of events before they take place. 'Clairvoyant', 'visionary', or 'prophetic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0908",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRESCIENT**",
+    "options": {
+      "A": "Prophetic",
+      "B": "Visionary",
+      "C": "Foresighted",
+      "D": "Myopic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Prescient' means having foresight. 'Myopic', 'shortsighted', or 'unforeseeing' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0909",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PREVARICATE**",
+    "options": {
+      "A": "Equivocate",
+      "B": "Authenticate",
+      "C": "Validate",
+      "D": "Corroborate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prevaricate' means to speak or act in an evasive way to avoid telling the truth. 'Equivocate', 'hedge', or 'fabricate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0910",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PREVARICATE**",
+    "options": {
+      "A": "Equivocate",
+      "B": "Hedge",
+      "C": "Dissemble",
+      "D": "Confront"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Prevaricate' means to evade or distort the truth. 'Confront' or 'speak straightforwardly/honestly' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0911",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRISTINE**",
+    "options": {
+      "A": "Immaculate",
+      "B": "Sullied",
+      "C": "Contaminated",
+      "D": "Tarnished"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pristine' means in its original condition; unspoiled, clean, and fresh. 'Immaculate', 'pure', or 'unblemished' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0912",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRISTINE**",
+    "options": {
+      "A": "Unspoiled",
+      "B": "Immaculate",
+      "C": "Sullied",
+      "D": "Pure"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pristine' means completely pure and fresh. 'Sullied', 'polluted', or 'corrupted' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0913",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROBITY**",
+    "options": {
+      "A": "Integrity",
+      "B": "Duplicity",
+      "C": "Knavery",
+      "D": "Perfidy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Probity' means the quality of having strong moral principles; honesty and decency. 'Integrity', 'rectitude', or 'uprightness' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0914",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROBITY**",
+    "options": {
+      "A": "Rectitude",
+      "B": "Integrity",
+      "C": "Uprightness",
+      "D": "Perfidy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Probity' means total honesty. 'Perfidy', 'knavery', or 'corruption' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0915",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROCLIVITY**",
+    "options": {
+      "A": "Propensity",
+      "B": "Aversion",
+      "C": "Antipathy",
+      "D": "Repulsion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Proclivity' means a tendency to choose or do something regularly; an inclination. 'Propensity', 'predilection', or 'penchant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0916",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROCLIVITY**",
+    "options": {
+      "A": "Penchant",
+      "B": "Predilection",
+      "C": "Propensity",
+      "D": "Aversion"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Proclivity' means a strong natural leaning. 'Aversion', 'disinclination', or 'reluctance' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0917",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRODIGAL**",
+    "options": {
+      "A": "Extravagant",
+      "B": "Parsimonious",
+      "C": "Frugal",
+      "D": "Thrifty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prodigal' means spending money or using resources freely and recklessly; wastefully extravagant. 'Extravagant', 'profligate', or 'spendthrift' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0918",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRODIGAL**",
+    "options": {
+      "A": "Spendthrift",
+      "B": "Profligate",
+      "C": "Parsimonious",
+      "D": "Wasteful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Prodigal' means reckless with expenditure. 'Parsimonious', 'thrifty', or 'economical' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0919",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRODIGIOUS**",
+    "options": {
+      "A": "Colossal",
+      "B": "Diminutive",
+      "C": "Insignificant",
+      "D": "Trivial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prodigious' means remarkably or impressively great in extent, size, or degree. 'Colossal', 'immense', or 'stupendous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0920",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRODIGIOUS**",
+    "options": {
+      "A": "Stupendous",
+      "B": "Monumental",
+      "C": "Colossal",
+      "D": "Diminutive"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Prodigious' means enormous or extraordinary. 'Diminutive', 'small', or 'unremarkable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0921",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROFLIGATE**",
+    "options": {
+      "A": "Dissolute",
+      "B": "Frugal",
+      "C": "Ascetic",
+      "D": "Austere"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Profligate' means recklessly extravagant or completely given over to dissipation. 'Dissolute', 'wasteful', or 'licentious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0922",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROFLIGATE**",
+    "options": {
+      "A": "Dissolute",
+      "B": "Spendthrift",
+      "C": "Frugal",
+      "D": "Licentious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Profligate' means wasteful and self-indulgent. 'Frugal', 'economical', or 'ascetic' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0923",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROFOUND**",
+    "options": {
+      "A": "Deep",
+      "B": "Superficial",
+      "C": "Facile",
+      "D": "Shallow"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Profound' means very great or intense; having or showing great knowledge or insight. 'Deep', 'intense', or 'philosophical' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0924",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROFOUND**",
+    "options": {
+      "A": "Deep",
+      "B": "Sagacious",
+      "C": "Superficial",
+      "D": "Erudite"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Profound' means having great intellectual depth. 'Superficial', 'shallow', or 'cursory' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0925",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROLIFERATE**",
+    "options": {
+      "A": "Multiply",
+      "B": "Dwindle",
+      "C": "Decline",
+      "D": "Diminish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Proliferate' means to increase rapidly in numbers; multiply. 'Multiply', 'mushroom', or 'burgeon' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0926",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROLIFERATE**",
+    "options": {
+      "A": "Mushroom",
+      "B": "Burgeon",
+      "C": "Dwindle",
+      "D": "Propagate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Proliferate' means to spread or multiply rapidly. 'Dwindle', 'decline', or 'diminish' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0927",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROLIFIC**",
+    "options": {
+      "A": "Fecund",
+      "B": "Barren",
+      "C": "Sterile",
+      "D": "Unproductive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prolific' means producing much fruit, foliage, or many offspring; producing many works. 'Fecund', 'fertile', or 'productive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0928",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROLIFIC**",
+    "options": {
+      "A": "Fecund",
+      "B": "Productive",
+      "C": "Fertile",
+      "D": "Barren"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Prolific' means highly productive. 'Barren', 'infertile', or 'unproductive' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0929",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROLIX**",
+    "options": {
+      "A": "Verbose",
+      "B": "Succinct",
+      "C": "Pithy",
+      "D": "Laconic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prolix' means (of speech or writing) using or containing too many words; tediously lengthy. 'Verbose', 'wordy', or 'long-winded' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0930",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROLIX**",
+    "options": {
+      "A": "Wordy",
+      "B": "Verbose",
+      "C": "Pithy",
+      "D": "Rambling"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Prolix' means unnecessarily long and wordy. 'Pithy', 'succinct', or 'terse' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0931",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROPENSITY**",
+    "options": {
+      "A": "Inclination",
+      "B": "Aversion",
+      "C": "Antipathy",
+      "D": "Dislike"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Propensity' means an inclination or natural tendency to behave in a particular way. 'Inclination', 'predisposition', or 'penchant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0932",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROPENSITY**",
+    "options": {
+      "A": "Penchant",
+      "B": "Inclination",
+      "C": "Antipathy",
+      "D": "Predisposition"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Propensity' means a natural inclination. 'Antipathy', 'aversion', or 'disinclination' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0933",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROPITIATE**",
+    "options": {
+      "A": "Appease",
+      "B": "Provoke",
+      "C": "Enrage",
+      "D": "Infuriate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Propitiate' means to win or regain the favor of (a god, spirit, or person) by doing something that pleases them. 'Appease', 'placate', or 'mollify' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0934",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROPITIATE**",
+    "options": {
+      "A": "Placate",
+      "B": "Mollify",
+      "C": "Appease",
+      "D": "Enrage"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Propitiate' means to win over or appease. 'Enrage', 'antagonize', or 'provoke' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0935",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROPITIOUS**",
+    "options": {
+      "A": "Auspicious",
+      "B": "Ominous",
+      "C": "Inauspicious",
+      "D": "Sinister"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Propitious' means giving or indicating a good chance of success; favorable. 'Auspicious', 'favorable', or 'promising' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0936",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROPITIOUS**",
+    "options": {
+      "A": "Auspicious",
+      "B": "Promising",
+      "C": "Ominous",
+      "D": "Favorable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Propitious' means favorable or lucky. 'Ominous', 'inauspicious', or 'unfavorable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0937",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROSAIC**",
+    "options": {
+      "A": "Mundane",
+      "B": "Poetic",
+      "C": "Fanciful",
+      "D": "Extraordinary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prosaic' means having the style or diction of prose; lacking poetic beauty; commonplace or unromantic. 'Mundane', 'pedestrian', or 'humdrum' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0938",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROSAIC**",
+    "options": {
+      "A": "Humdrum",
+      "B": "Pedestrian",
+      "C": "Banal",
+      "D": "Poetic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Prosaic' means dull and ordinary. 'Poetic', 'imaginative', or 'fascinating' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0939",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PROSCRIBE**",
+    "options": {
+      "A": "Prohibit",
+      "B": "Permit",
+      "C": "Sanction",
+      "D": "Authorize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Proscribe' means to forbid, especially by law. 'Prohibit', 'ban', or 'outlaw' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0940",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PROSCRIBE**",
+    "options": {
+      "A": "Ban",
+      "B": "Forbid",
+      "C": "Authorize",
+      "D": "Interdict"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Proscribe' means to officially forbid. 'Authorize', 'permit', or 'sanction' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0941",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PRUDENT**",
+    "options": {
+      "A": "Judicious",
+      "B": "Reckless",
+      "C": "Imprudent",
+      "D": "Foolhardy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Prudent' means acting with or showing care and thought for the future. 'Judicious', 'sagacious', or 'cautious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0942",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PRUDENT**",
+    "options": {
+      "A": "Sagacious",
+      "B": "Judicious",
+      "C": "Foolhardy",
+      "D": "Discreet"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Prudent' means wise and cautious. 'Foolhardy', 'rash', or 'imprudent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0943",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PUGNACIOUS**",
+    "options": {
+      "A": "Belligerent",
+      "B": "Pacific",
+      "C": "Peaceable",
+      "D": "Conciliatory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pugnacious' means eager or quick to argue, quarrel, or fight. 'Belligerent', 'combative', or 'truculent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0944",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PUGNACIOUS**",
+    "options": {
+      "A": "Combative",
+      "B": "Truculent",
+      "C": "Peaceable",
+      "D": "Bellicose"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Pugnacious' means eager to fight. 'Peaceable', 'pacific', or 'amicable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0945",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PUNCTILIOUS**",
+    "options": {
+      "A": "Meticulous",
+      "B": "Careless",
+      "C": "Slovenly",
+      "D": "Heedless"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Punctilious' means showing great attention to detail or correct behavior. 'Meticulous', 'scrupulous', or 'fastidious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0946",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PUNCTILIOUS**",
+    "options": {
+      "A": "Fastidious",
+      "B": "Meticulous",
+      "C": "Careless",
+      "D": "Scrupulous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Punctilious' means strictly careful with rules and details. 'Careless', 'slovenly', or 'lax' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0947",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**PUSILLANIMOUS**",
+    "options": {
+      "A": "Craven",
+      "B": "Valiant",
+      "C": "Intrepid",
+      "D": "Audacious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Pusillanimous' means showing a lack of courage or determination; timid. 'Craven', 'cowardly', or 'timorous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0948",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**PUSILLANIMOUS**",
+    "options": {
+      "A": "Cowardly",
+      "B": "Craven",
+      "C": "Timorous",
+      "D": "Valiant"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Pusillanimous' means cowardly and faint-hearted. 'Valiant', 'courageous', or 'intrepid' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0949",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUELL**",
+    "options": {
+      "A": "Suppress",
+      "B": "Instigate",
+      "C": "Foment",
+      "D": "Incite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quell' means to put an end to (a rebellion or other disorder), typically by the use of force. 'Suppress', 'subdue', or 'quash' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0950",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUELL**",
+    "options": {
+      "A": "Subdue",
+      "B": "Quash",
+      "C": "Instigate",
+      "D": "Suppress"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Quell' means to crush or suppress disorder. 'Instigate', 'foment', or 'incite' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

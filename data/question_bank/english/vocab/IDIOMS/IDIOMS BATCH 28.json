@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_1351",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Jack of all trades**",
+    "options": {
+      "A": "A person who is competent in many skills but not an expert in any",
+      "B": "A master craftsman specializing in a single trade",
+      "C": "An unlicensed worker in the construction sector",
+      "D": "A trader who deals exclusively in foreign goods"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'A jack of all trades' refers to someone who has a broad range of skills or can do many different types of work, but is not a master of any single one.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1352",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Jaundiced eye**",
+    "options": {
+      "A": "Viewing something with prejudice, bias, bitterness, or cynicism",
+      "B": "Suffering from a physical ophthalmic disease",
+      "C": "Having acute, sharp eyesight in low light",
+      "D": "Looking at colorful paintings in an art gallery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To look at something with a 'jaundiced eye' means viewing it through a biased, cynical, or pessimistic lens.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1353",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Jump on the bandwagon**",
+    "options": {
+      "A": "To board a festival parade truck",
+      "B": "To join a popular trend or activity simply because it is successful",
+      "C": "To lead a new social reform movement from the front",
+      "D": "To avoid participating in public events"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'jump on the bandwagon' means to follow a trend, cause, or movement because it has become popular or successful.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1354",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Jump the gun**",
+    "options": {
+      "A": "To fire a firearm during target practice",
+      "B": "To act hastily or prematurely before the proper or designated time",
+      "C": "To jump over hurdles in an athletic competition",
+      "D": "To escape from an armed conflict safely"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'jump the gun' means doing something too soon or before the proper time, often without waiting for a signal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1355",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Jump through hoops**",
+    "options": {
+      "A": "To undergo a complex, tedious series of tests or demands to achieve an objective",
+      "B": "To perform acrobatics in a circus ring",
+      "C": "To play basketball in an amateur tournament",
+      "D": "To make a fast escape from a dangerous situation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'jump through hoops' means going through an elaborate, difficult, or tedious set of procedures to satisfy someone or achieve a goal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1356",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep a straight face**",
+    "options": {
+      "A": "To apply facial makeup evenly",
+      "B": "To look directly into a camera lens",
+      "C": "To suppress laughter and maintain a serious or solemn expression",
+      "D": "To display anger during an argument"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'keep a straight face' means to avoid smiling or laughing despite finding something very funny.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1357",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep a stiff upper lip**",
+    "options": {
+      "A": "To remain calm, brave, and unemotional in the face of adversity or pain",
+      "B": "To speak with a severe speech impediment",
+      "C": "To smile insincerely at strangers",
+      "D": "To suffer from cold winter chills"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Keeping a 'stiff upper lip' means showing fortitude, courage, and self-restraint during hardships or sorrow.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1358",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep abreast of**",
+    "options": {
+      "A": "To fall behind current industry trends",
+      "B": "To stay informed, up to date, and aware of recent developments",
+      "C": "To run side by side in an athletic race",
+      "D": "To guard confidential trade secrets"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'keep abreast of' something means staying fully informed and updated regarding news or progress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1359",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep an ear to the ground**",
+    "options": {
+      "A": "To listen to underground vibrations",
+      "B": "To remain alert, watchful, and informed about emerging trends or rumors",
+      "C": "To lie on the floor while resting",
+      "D": "To ignore public opinions intentionally"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Keeping an 'ear to the ground' means paying close attention to hints, gossip, and upcoming developments.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1360",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep at arm's length**",
+    "options": {
+      "A": "To measure clothing dimensions accurately",
+      "B": "To exercise upper arm muscles with weights",
+      "C": "To avoid familiarity or close contact; maintain social distance",
+      "D": "To embrace an associate warmly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Keeping someone 'at arm's length' means avoiding becoming too friendly or intimate with them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1361",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep body and soul together**",
+    "options": {
+      "A": "To practice spiritual yoga exercises",
+      "B": "To manage barely to survive or obtain the bare essentials of life",
+      "C": "To lead a wealthy, luxurious lifestyle",
+      "D": "To resolve an intellectual philosophical dispute"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'keep body and soul together' means to earn just enough money or secure enough food to stay alive.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1362",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep fingers crossed**",
+    "options": {
+      "A": "To hope for good luck, success, or a favorable outcome",
+      "B": "To suffer from joint stiffness in fingers",
+      "C": "To give a signal for silence in a library",
+      "D": "To weave handmade textiles using yarn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Keeping one's 'fingers crossed' means hoping intensely that things will turn out well.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1363",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep one's chin up**",
+    "options": {
+      "A": "To raise your head during medical examinations",
+      "B": "To act arrogantly towards subordinate colleagues",
+      "C": "To remain cheerful, hopeful, and resilient during difficult times",
+      "D": "To look upward while walking along city roads"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'keep one's chin up' means to maintain optimism and good spirits despite misfortune or adversity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1364",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep one's head**",
+    "options": {
+      "A": "To avoid physical head injuries in sports",
+      "B": "To remain calm, rational, and collected in a crisis",
+      "C": "To wear protective helmets at construction sites",
+      "D": "To boast about one's intellectual achievements"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'keep one's head' means to stay calm, self-controlled, and clear-headed in a stressful situation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1365",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep one's own counsel**",
+    "options": {
+      "A": "To keep your thoughts, plans, and intentions secret to yourself",
+      "B": "To hire a private legal attorney in court",
+      "C": "To offer professional psychological therapy",
+      "D": "To discuss private family matters openly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'keep one's own counsel' means to keep one's opinions, secrets, or plans to oneself without sharing them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1366",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep someone posted**",
+    "options": {
+      "A": "To assign a guard to a security checkpoint",
+      "B": "To deliver letters via the postal system",
+      "C": "To regularly provide someone with the latest news, updates, or information",
+      "D": "To attach notices to a public bulletin board"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'keep someone posted' means to keep them continually informed of the newest developments.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1367",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep the pot boiling**",
+    "options": {
+      "A": "To cook meals continuously in a restaurant kitchen",
+      "B": "To maintain livelihood, keep interest alive, or ensure steady activity",
+      "C": "To boil drinking water for sanitation purposes",
+      "D": "To heat up an argument unnecessarily"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'keep the pot boiling' means to maintain interest or momentum in an activity, or to earn just enough to sustain life.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1368",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep the wolf from the door**",
+    "options": {
+      "A": "To have barely enough income to stave off starvation, poverty, or debts",
+      "B": "To guard livestock pens against wild beasts",
+      "C": "To install heavy steel security gates at home",
+      "D": "To prevent unauthorized strangers from entering"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Keeping the 'wolf from the door' means maintaining enough money or food to prevent extreme hunger or ruin.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1369",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Keep under wraps**",
+    "options": {
+      "A": "To cover food with protective packaging",
+      "B": "To wrap warm blankets during cold seasons",
+      "C": "To keep something secret, confidential, and undisclosed",
+      "D": "To pack merchandise for postal dispatch"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Keeping something 'under wraps' means keeping it hidden, private, or secret from public knowledge.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1370",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Kettle of fish**",
+    "options": {
+      "A": "A traditional seafood culinary recipe",
+      "B": "A completely different, messy, or awkward state of affairs",
+      "C": "A fresh catch of river trout in a bucket",
+      "D": "A peaceful marine ecosystem"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'fine kettle of fish' (or 'a different kettle of fish') refers to an awkward, complex predicament or an entirely different situation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1371",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Kick against the pricks**",
+    "options": {
+      "A": "To resist authority or established control in a futile way that only hurts oneself",
+      "B": "To play soccer with improper spiked boots",
+      "C": "To clear thorny shrubs from an agricultural plot",
+      "D": "To strike a dangerous opponent in combat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'kick against the pricks' means to uselessly hurt yourself by resisting inevitable authority or superior power.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1372",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Kick the bucket**",
+    "options": {
+      "A": "To clean household floors using water buckets",
+      "B": "To pass away or die",
+      "C": "To abandon an ongoing commercial project",
+      "D": "To damage industrial cleaning equipment"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Kick the bucket' is an informal idiom that means to die.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1373",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Kick up a row**",
+    "options": {
+      "A": "To row a sports boat with immense speed",
+      "B": "To arrange garden plants in neat rows",
+      "C": "To create a loud disturbance, fuss, or angry quarrel",
+      "D": "To organize classroom seating properly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'kick up a row' (or fuss) means to create a noisy scene, commotion, or angry disturbance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1374",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Kill two birds with one stone**",
+    "options": {
+      "A": "To achieve two distinct objectives or solve two problems with a single action",
+      "B": "To hunt wild game using stone projectiles",
+      "C": "To throw rocks into a river lake",
+      "D": "To double the financial cost of a project"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'kill two birds with one stone' means accomplishing two separate goals through one single effort.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1375",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Knock for six**",
+    "options": {
+      "A": "To score six runs in a cricket match",
+      "B": "To overwhelm, astonish, or deeply shock someone",
+      "C": "To strike a competitor six times physically",
+      "D": "To break six fragile glassware items"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'knock someone for six' means to shock, upset, or overwhelm them completely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1376",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Knock off**",
+    "options": {
+      "A": "To stop work at the end of the day or reduce a price",
+      "B": "To push an object off a desk",
+      "C": "To score high grades in an examination",
+      "D": "To start a morning work shift"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'knock off' means to finish work for the day, or colloquially to deduct an amount from a cost.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1377",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Knock on wood**",
+    "options": {
+      "A": "An expression said to avert bad luck or maintain good fortune after a boast",
+      "B": "To test the strength of carpentry timber",
+      "C": "To rap on a wooden door to gain entry",
+      "D": "To carve wooden decorative sculptures"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Knock on wood' (or touch wood) is said to prevent bad luck after mentioning good fortune.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1378",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Know all the ropes**",
+    "options": {
+      "A": "To understand completely how to do a job or how a system works; be experienced",
+      "B": "To tie complex knots in maritime sailing",
+      "C": "To manufacture heavy rope cords in a mill",
+      "D": "To climb mountain cliffs using safety harnesses"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'know the ropes' means having thorough knowledge and familiarity with the procedures of a trade or task.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1379",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Know which way the wind blows**",
+    "options": {
+      "A": "To understand the likely future course of events or how public opinion is shifting",
+      "B": "To study meteorological weather charts scientifically",
+      "C": "To sail an ocean vessel using wind power",
+      "D": "To measure high-altitude atmospheric gales"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Knowing 'which way the wind blows' means understanding current trends and predicting future developments.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1380",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Knuckle down**",
+    "options": {
+      "A": "To play children's marble games on the ground",
+      "B": "To surrender meekly to an adversary",
+      "C": "To begin working hard and earnestly with great focus and effort",
+      "D": "To crack one's finger joints during work"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'knuckle down' means applying oneself diligently and seriously to a task.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1381",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Labour of love**",
+    "options": {
+      "A": "Work undertaken for pleasure and personal devotion rather than for financial gain",
+      "B": "A difficult chore assigned to manual laborers",
+      "C": "A paid commercial construction contract",
+      "D": "A legal divorce proceeding dispute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'labour of love' is a task done purely out of personal interest, passion, or affection without expecting money.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1382",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lame duck**",
+    "options": {
+      "A": "An injured waterfowl resting on a lake shore",
+      "B": "A culinary poultry dish served at dinners",
+      "C": "An elected official or organization nearing the end of power and rendered ineffective",
+      "D": "A swift, highly successful sports player"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. A 'lame duck' refers to an official or institution nearing the end of term with depleted influence or unable to function effectively.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1383",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Last ditch effort**",
+    "options": {
+      "A": "Digging drainage trenches along farm boundaries",
+      "B": "A final, desperate attempt to avoid disaster or achieve success",
+      "C": "A scheduled routine maintenance check",
+      "D": "Clearing roadside channels after heavy rains"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'last-ditch effort' is a desperate, final attempt made when everything else has failed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1384",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Laugh in one's sleeve**",
+    "options": {
+      "A": "To laugh quietly, secretly, or mock someone behind their back",
+      "B": "To wipe tears with a long shirt sleeve",
+      "C": "To laugh out loud uproariously in an auditorium",
+      "D": "To wear decorative clothing items at a gala"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'laugh in one's sleeve' means to laugh secretly or rejoice inwardly at someone else's expense.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1385",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Laughing stock**",
+    "options": {
+      "A": "A popular stand-up comedian in a theater",
+      "B": "A profitable supply of market merchandise",
+      "C": "A cheerful group of friends enjoying a party",
+      "D": "A person or thing that is the target of widespread ridicule and mockery"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. A 'laughing stock' is someone or something that appears so ridiculous as to be subjected to public mockery.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1386",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lay bare**",
+    "options": {
+      "A": "To uncover, reveal, disclose, or expose completely to view",
+      "B": "To remove furniture from an empty room",
+      "C": "To demolish an ancient stone wall",
+      "D": "To conceal facts under false pretenses"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lay bare' means to reveal, expose, or make fully known something previously hidden.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1387",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lay down one's arms**",
+    "options": {
+      "A": "To surrender, stop fighting, or give up weapons",
+      "B": "To rest one's upper limbs after physical labor",
+      "C": "To stockpile firearms for military warfare",
+      "D": "To train soldiers in combat techniques"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lay down one's arms' means to cease fighting and surrender.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1388",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lay heads together**",
+    "options": {
+      "A": "To consult, deliberate, or plan together collaboratively",
+      "B": "To collide accidentally during a physical sport",
+      "C": "To whisper gossip quietly in crowds",
+      "D": "To sleep in close proximity in a camp"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lay heads together' (or put heads together) means to confer, consult, and brainstorm a solution jointly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1389",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lead someone by the nose**",
+    "options": {
+      "A": "To guide a lost tourist through a city",
+      "B": "To dominate, control, or make someone obey you completely",
+      "C": "To treat nasal breathing disorders clinically",
+      "D": "To lead an animal using an olfactory scent"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'lead someone by the nose' means to completely dominate and control their actions without resistance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1390",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lead someone up the garden path**",
+    "options": {
+      "A": "To guide visitors through a botanical park",
+      "B": "To deceive, mislead, or give false hopes to someone deliberately",
+      "C": "To construct a stone walkway in a garden",
+      "D": "To accompany an associate home after work"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'lead someone up the garden path' means to trick, mislead, or deceive them with false information.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1391",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Leave in the lurch**",
+    "options": {
+      "A": "To abandon someone in a difficult, vulnerable, or helpless situation",
+      "B": "To drive an automobile off a paved road",
+      "C": "To leave an evening dinner party early",
+      "D": "To forget personal travel bags at a hotel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'leave someone in the lurch' means to desert or abandon them when they are in trouble and need assistance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1392",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Leave no stone unturned**",
+    "options": {
+      "A": "To do everything possible and explore every avenue to achieve a goal",
+      "B": "To landscape a stone garden thoroughly",
+      "C": "To clear heavy rocks from a rural road",
+      "D": "To conduct archaeological digs in mountains"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'leave no stone unturned' means to use every possible resource or method to accomplish a purpose.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1393",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Let bygones be bygones**",
+    "options": {
+      "A": "To forgive past offenses, grievances, and quarrels; make a fresh start",
+      "B": "To dwell obsessively on past historical events",
+      "C": "To collect antique vintage artifacts",
+      "D": "To repeat the same errors continuously"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Let bygones be bygones' means agreeing to forget past disagreements and forgive old wrongs.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1394",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Let sleeping dogs lie**",
+    "options": {
+      "A": "To allow domestic pets to rest undisturbed",
+      "B": "To avoid interfering in a situation that could cause trouble if provoked",
+      "C": "To ignore aggressive guard animals on a farm",
+      "D": "To wake up early before morning alarms"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Let sleeping dogs lie' means to leave a situation alone to avoid stirring up old disputes or trouble.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1395",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Let the cat out of the bag**",
+    "options": {
+      "A": "To rescue a domestic pet from an enclosed space",
+      "B": "To reveal a secret carelessly, mistakenly, or prematurely",
+      "C": "To unpack grocery bags on a kitchen table",
+      "D": "To provoke an aggressive argument in public"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'let the cat out of the bag' means to inadvertently or indiscreetly disclose a secret.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1396",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Let the grass grow under one's feet**",
+    "options": {
+      "A": "To plant green lawn turf in domestic gardens",
+      "B": "To delay, procrastinate, or waste time through inactivity",
+      "C": "To walk barefoot across natural pastures",
+      "D": "To maintain landscaping with regular watering"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'let the grass grow under your feet' means to remain inactive, waste time, or delay taking necessary action.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1397",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lick into shape**",
+    "options": {
+      "A": "To mold, train, or organize someone/something into an efficient condition",
+      "B": "To eat confectionery sweets rapidly",
+      "C": "To sculpt wet pottery clay into art",
+      "D": "To paint geometric figures on canvas"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'lick into shape' means to whip, train, or organize a disorganized person or system into proper working order.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1398",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Lie low**",
+    "options": {
+      "A": "To rest on the floor after strenuous physical labor",
+      "B": "To stay hidden, keep a low profile, and avoid drawing attention",
+      "C": "To tell minor falsehoods to escape blame",
+      "D": "To build low-level foundation masonry"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'lie low' means keeping out of sight or avoiding public notice until danger or scrutiny passes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1399",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Life and soul of the party**",
+    "options": {
+      "A": "The most vivacious, entertaining, and energetic person at a gathering",
+      "B": "The host who finances an evening dinner",
+      "C": "A quiet spectator observing social events",
+      "D": "A spiritual speaker at a commemorative service"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being the 'life and soul of the party' means being the most vibrant, fun, and energetic presence in a social setting.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1400",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Light at the end of the tunnel**",
+    "options": {
+      "A": "An oncoming subway train approaching a passenger platform",
+      "B": "A sign of hope or an approaching end to a long period of hardship",
+      "C": "An electrical illumination fault inside an underpass",
+      "D": "Sunrise visible over a distant horizon"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Light at the end of the tunnel' signifies an indication that a long period of difficulty, struggle, or suffering is finally nearing its end.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

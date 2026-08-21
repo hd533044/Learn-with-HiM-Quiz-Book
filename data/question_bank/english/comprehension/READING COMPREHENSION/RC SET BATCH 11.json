@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_201",
+    "passage_title": "The Structural Geology of Ophiolite Sequences and Seafloor Spreading",
+    "passage_text": "In marine geology and plate tectonics, an **ophiolite** represents a section of Earth's oceanic crust and underlying upper mantle that has been tectonically emplaced (obducted) onto continental margin edges during convergent plate collisions. The discovery of complete ophiolite suites—such as the Semail Ophiolite in Oman or the Troodos Ophiolite in Cyprus—provided direct geological proof for the vertical stratigraphy of oceanic crust long before deep-sea drilling cores became feasible. An idealized Penrose ophiolite sequence exhibits a distinct, predictable vertical succession from bottom to top: (1) **Ultramafic tectonites** (harzburgite and dunite representing depleted mantle residuum); (2) **Cumulate mafic rocks** (layered gabbros crystallized from slowly cooling magma chambers); (3) **Sheeted dike complex** (parallel vertical diabase dikes representing conduits that fed submarine fissure eruptions); (4) **Pillow lavas** (rapidly quenched basaltic lobes formed when magma extruded into freezing seawater); and (5) **Pelagic sediments** (deep-sea cherts, shales, and limestones capping the volcanic sequence). The presence of the sheeted dike complex is diagnostic, demonstrating that oceanic crust continuously pulls apart along mid-ocean ridge spreading centers, allowing successive batches of magma to fracture and inject into older dikes.",
+    "questions": [
+      {
+        "id": "ENG_RC_201_Q1",
+        "question": "What geological process is responsible for emplacing ophiolites onto continental margins?",
+        "options": {
+          "A": "Subterranean salt diapirism and halokinesis.",
+          "B": "Tectonic obduction during continental convergence and plate collision.",
+          "C": "Catastrophic meteorite impacts in deep oceanic trenches.",
+          "D": "Wind-blown eolian sand deposition across desert shields."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explains that an ophiolite is oceanic crust and upper mantle that has been tectonically obducted onto continental margins during plate collisions."
+      },
+      {
+        "id": "ENG_RC_201_Q2",
+        "question": "What geological significance is attributed to the sheeted dike complex in an ophiolite sequence?",
+        "options": {
+          "A": "It proves that oceanic crust spreads apart at mid-ocean ridges as magma fills fractured conduits.",
+          "B": "It marks the boundary between the atmosphere and the stratosphere.",
+          "C": "It contains massive reserves of pure petroleum and natural gas.",
+          "D": "It acts as a permanent thermal barrier blocking all geothermal heat flow."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that sheeted dikes demonstrate continuous spreading along mid-ocean ridge centers, allowing magma to fracture and inject into older dikes."
+      },
+      {
+        "id": "ENG_RC_201_Q3",
+        "question": "Which rock layer sits directly above the sheeted dike complex in an ideal Penrose ophiolite sequence?",
+        "options": {
+          "A": "Granite batholiths",
+          "B": "Pillow lavas formed by rapid quenching in seawater",
+          "C": "Uranium ore veins",
+          "D": "Glacial tillites"
+        },
+        "correct_option": "B",
+        "rationale": "The sequence described runs from ultramafic tectonites to cumulate gabbros, sheeted dikes, pillow lavas, and finally capping pelagic sediments."
+      },
+      {
+        "id": "ENG_RC_201_Q4",
+        "question": "What do the bottom ultramafic tectonites (harzburgite and dunite) represent in the ophiolite column?",
+        "options": {
+          "A": "Depleted mantle rock left behind after partial melting extracted basaltic melts",
+          "B": "Sedimentary sandstone deposited by ancient rivers",
+          "C": "Melted glacial ice mixed with organic peat",
+          "D": "Chemical precipitates from evaporated ancient seas"
+        },
+        "correct_option": "A",
+        "rationale": "The passage notes that ultramafic tectonites represent the depleted mantle residuum remaining after extraction of basaltic melts."
+      },
+      {
+        "id": "ENG_RC_201_Q5",
+        "question": "As used in the passage, the word 'obducted' refers to tectonic plates that are:",
+        "options": {
+          "A": "Thrust or pushed up onto the edge of a continental plate during collision",
+          "B": "Subducted vertically downward into the molten core",
+          "C": "Shattered into microscopic dust by earthquakes",
+          "D": "Eroded completely by wind-driven sandstorms"
+        },
+        "correct_option": "A",
+        "rationale": "In geology, 'obduction' is the thrusting of oceanic lithosphere onto the edge of a continental plate (the reverse of subduction)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_202",
+    "passage_title": "The Evolutionary Biomechanics of Terrestrial Plant Vascular Systems",
+    "passage_text": "The evolutionary transition of ancestral plants from aquatic green algae environments to terrestrial landmasses roughly 470 million years ago necessitated radical biomechanical adaptations to overcome gravity and desiccation. Chief among these innovations was the evolution of vascular tissue—**xylem** and **phloem**—which enabled upright structural growth and long-distance hydraulic transport. Primitive vascular plants (such as early Devonian *Rhynia*) utilized primary xylem reinforced with **lignin**, a complex cross-linked phenolic polymer embedded within cellulose microfibrils. Lignin imparts high compressive strength and rigidity to cell walls, transforming flimsy aquatic filaments into rigid, self-supporting stems capable of competing for sunlight in vertical canopies. Fluid transport within xylem conduits operates via the **cohesion-tension theory**: water evaporates from leaf stomata via transpiration, generating negative hydrostatic tension that pulls continuous water columns upward from roots through dead tracheid and vessel elements. This pulling force is sustained by unbroken intermolecular hydrogen bonding between water molecules. However, this negative pressure regime introduces a severe physical hazard: **cavitation**. Under extreme drought stress or freezing temperatures, gas bubbles can enter xylem conduits, breaking the water column and forming an air blockage (embolism) that permanently deactivates the vessel. To mitigate embolism risks, angiosperms evolved bordered pit membranes with microscopic porous nano-valves that prevent gas spread while permitting safe water bypass.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_202_Q1",
+        "question": "What primary biomechanical function is provided by lignin in plant vascular cell walls?",
+        "options": {
+          "A": "It captures solar photons to perform photosynthesis.",
+          "B": "It imparts compressive strength and rigidity, enabling upright structural growth against gravity.",
+          "C": "It stores excess starch reserves during winter dormancy.",
+          "D": "It actively pumps sodium ions across root membranes."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that lignin is a phenolic polymer that imparts high compressive strength and rigidity to cell walls, enabling self-supporting vertical growth."
+      },
+      {
+        "id": "ENG_RC_SET_202_Q2",
+        "question": "According to the cohesion-tension theory, what drives the upward movement of water through xylem vessels?",
+        "options": {
+          "A": "Mechanical pumping action generated by muscular root contractions.",
+          "B": "Negative hydrostatic tension created by foliar transpiration, sustained by intermolecular hydrogen bonding between water molecules.",
+          "C": "Boiling water inside roots driven by geothermal heat.",
+          "D": "Magnetic attraction between iron minerals and xylem walls."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that evaporation from leaf stomata generates negative hydrostatic tension that pulls unbroken water columns upward, sustained by hydrogen bonding."
+      },
+      {
+        "id": "ENG_RC_SET_202_Q3",
+        "question": "What dangerous physical phenomenon threatens xylem transport during severe drought stress?",
+        "options": {
+          "A": "Photosynthetic runaway explosions",
+          "B": "Xylem cavitation and embolism blockages caused by gas bubble expansion",
+          "C": "The complete crystallization of cellulose fibers into diamond",
+          "D": "Osmotic cell bursting due to excess water pressure"
+        },
+        "correct_option": "B",
+        "rationale": "The text notes that extreme drought introduces cavitation, where gas bubbles enter conduits and form embolisms that block water flow."
+      },
+      {
+        "id": "ENG_RC_SET_202_Q4",
+        "question": "How do advanced angiosperms mitigate the spread of xylem embolisms?",
+        "options": {
+          "A": "By shedding all leaves during summer droughts.",
+          "B": "By utilizing bordered pit membranes with microscopic nano-valves that trap air bubbles while allowing water bypass.",
+          "C": "By sealing root tips with waterproof beeswax.",
+          "D": "By reversing water flow downward into the soil."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that angiosperms evolved bordered pit membranes with microscopic nano-valves to prevent gas spread while permitting safe water bypass."
+      },
+      {
+        "id": "ENG_RC_SET_202_Q5",
+        "question": "As used in the passage, the word 'transpiration' refers to:",
+        "options": {
+          "A": "The evaporation of water from plant aerial surfaces, primarily through leaf stomata",
+          "B": "The absorption of mineral nutrients directly from bedrock",
+          "C": "The metabolic conversion of sugar into carbon dioxide gas",
+          "D": "The genetic mutation of pollen grains during pollination"
+        },
+        "correct_option": "A",
+        "rationale": "'Transpiration' is the physiological process where moisture is carried from roots to small pores on leaves, where it changes to vapor and evaporates."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_203",
+    "passage_title": "The Structural Sociology of Randall Collins and Interaction Ritual Chains",
+    "passage_text": "In contemporary sociological theory, American sociologist Randall Collins synthesized micro-sociology and macrosociology in his 2004 masterwork *Interaction Ritual Chains*, developing a comprehensive explanatory model for human motivation, stratification, and societal institutions. Collins built upon Émile Durkheim's sociology of religion and Erving Goffman's face-to-face interaction rituals to argue that **macro-level social structures** (such as class stratification, political power, and large organizations) do not exist as independent metaphysical entities; rather, they are emergent properties generated, sustained, and reproduced entirely by repetitive **micro-level interaction rituals**. According to Collins' theory, an interaction ritual is successfully generated when four necessary ingredients align: (1) two or more individuals physically assembled in the same space; (2) mutual focus of attention upon a shared object or activity; (3) shared emotional mood or affective communion; and (4) bodily synchronization. When these conditions are met, the interaction generates three primary outcomes: **emotional energy** (feelings of confidence, enthusiasm, and moral righteousness); **solidarity symbols** (sacred objects or emblems representing group membership); and **moral belonging**. Individuals are rational actors who continuously navigate daily life seeking to maximize their emotional energy by moving through chains of interaction rituals. Institutions and social hierarchies persist simply because powerful actors monopolize access to high-energy interaction rituals, reproducing stratification.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_203_Q1",
+        "question": "What is the foundational ontological claim of Randall Collins' theory of Interaction Ritual Chains?",
+        "options": {
+          "A": "Macro-level social structures are independent entities that dictate human thoughts without micro-interactions.",
+          "B": "Macro-level social structures are emergent properties generated and sustained entirely by repetitive micro-level interaction rituals.",
+          "C": "Human behavior is governed exclusively by genetic instincts encoded in DNA.",
+          "D": "Social institutions exist only in written legal statues and courtrooms."
+        },
+        "correct_option": "B",
+        "rationale": "The text states Collins argued that macro structures do not exist independently, but are emergent properties generated and sustained by micro-level interaction rituals."
+      },
+      {
+        "id": "ENG_RC_SET_203_Q2",
+        "question": "Which of the following is cited as a necessary ingredient for a successful interaction ritual?",
+        "options": {
+          "A": "The presence of armed military guards.",
+          "B": "Physical assembly, mutual focus of attention, shared mood, and bodily synchronization.",
+          "C": "The written exchange of legal financial contracts.",
+          "D": "Complete isolation of individuals in separate rooms."
+        },
+        "correct_option": "B",
+        "rationale": "The passage lists the four ingredients: physical assembly, mutual focus of attention, shared emotional mood, and bodily synchronization."
+      },
+      {
+        "id": "ENG_RC_SET_203_Q3",
+        "question": "What primary psychological and social outcomes are generated by successful interaction rituals?",
+        "options": {
+          "A": "Emotional energy, group solidarity symbols, and a sense of moral belonging.",
+          "B": "Financial bankruptcy, debt accumulation, and legal prosecution.",
+          "C": "Physical exhaustion, amnesia, and sensory deprivation.",
+          "D": "Complete social isolation and political anarchy."
+        },
+        "correct_option": "A",
+        "rationale": "The text details that rituals generate emotional energy (confidence/enthusiasm), solidarity symbols (group emblems), and moral belonging."
+      },
+      {
+        "id": "ENG_RC_SET_203_Q4",
+        "question": "How does Collins explain the persistence of social stratification and inequality?",
+        "options": {
+          "A": "Through genetic differences in physical strength.",
+          "B": "Because powerful actors monopolize access to high-energy interaction rituals, reproducing hierarchy.",
+          "C": "By divine appointment of royal monarchs.",
+          "D": "Through random lottery selection in schools."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that social hierarchies persist because powerful actors monopolize access to high-energy interaction rituals."
+      },
+      {
+        "id": "ENG_RC_SET_203_Q5",
+        "question": "As used in the passage, the word 'emergent' describes a property that:",
+        "options": {
+          "A": "Arises from the collaborative interaction of simpler constituent parts but cannot be reduced to them",
+          "B": "Appears suddenly due to a physical medical emergency",
+          "C": "Is imported from foreign international trade markets",
+          "D": "Remains permanently hidden and undetectable"
+        },
+        "correct_option": "A",
+        "rationale": "In philosophy and sociology, an 'emergent property' is one that a complex entity has, but which the individual parts do not independently possess—arising from their collective interaction."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_204",
+    "passage_title": "The Quantum Mechanics of Quantum Annealing and Quantum Adiabatic Optimization",
+    "passage_text": "In computational physics and quantum information science, optimization problems—such as the Traveling Salesperson Problem or protein folding—involve finding the absolute global minimum of an extremely complex cost function across vast combinatorial landscapes. Classical computers utilize thermal simulated annealing, traversing energy barriers via thermal fluctuations. In contrast, **Quantum Annealing** leverages quantum mechanics to solve combinatorial optimization through **quantum adiabatic evolution**. The physical apparatus begins in a simple, easily prepared initial Hamiltonian ($H_0$) whose ground state is a uniform superposition of all possible binary configurations. The quantum system is then evolved smoothly and continuously over a finite time interval $t_f$ into a final, complex problem Hamiltonian ($H_1$) whose unknown ground state encodes the optimal solution to the optimization problem. According to the **Adiabatic Theorem of Quantum Mechanics**, if the system is evolved sufficiently slowly and never crosses an energy level crossing (avoiding diabatic transitions), the quantum system will remain perpetually in its instantaneous ground state throughout the entire evolution, culminating in the correct global minimum solution. Unlike gate-based quantum computers requiring complex error-corrected quantum logic gates, quantum annealers (such as those engineered by D-Wave Systems) exploit quantum tunneling to bypass high, narrow potential energy barriers directly, potentially accelerating computational search times across rugged energy landscapes.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_204_Q1",
+        "question": "What is the primary computational objective of quantum annealing and optimization algorithms?",
+        "options": {
+          "A": "Encrypting confidential military messages using prime numbers.",
+          "B": "Finding the absolute global minimum of a complex cost function across combinatorial search spaces.",
+          "C": "Simulating the gravitational pull of distant galaxies.",
+          "D": "Transmitting video files across fiber-optic internet lines."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence states that optimization problems involve finding the absolute global minimum of a complex cost function across combinatorial landscapes."
+      },
+      {
+        "id": "ENG_RC_SET_204_Q2",
+        "question": "How does quantum annealing differ fundamentally from classical thermal simulated annealing?",
+        "options": {
+          "A": "Classical annealing uses thermal kinetic fluctuations to cross barriers, whereas quantum annealing exploits quantum tunneling through barriers.",
+          "B": "Classical annealing operates only at absolute zero temperatures inside a vacuum.",
+          "C": "Quantum annealing requires no physical hardware or electricity.",
+          "D": "Classical annealing is millions of times faster than quantum algorithms."
+        },
+        "correct_option": "A",
+        "rationale": "The text highlights that classical annealing uses thermal fluctuations, whereas quantum annealing leverages quantum mechanics and quantum tunneling through barriers."
+      },
+      {
+        "id": "ENG_RC_SET_204_Q35",
+        "question": "What does the Adiabatic Theorem of Quantum Mechanics guarantee under slow evolution?",
+        "options": {
+          "A": "The quantum system will remain perpetually in its instantaneous ground state, ending at the global minimum solution.",
+          "B": "The quantum system will instantly decay into thermal radiation.",
+          "C": "The qubits will permanently lose their electrical charge.",
+          "D": "The computational processor will melt from extreme heat."
+        },
+        "correct_option": "A",
+        "rationale": "The passage notes that if evolved sufficiently slowly, the system remains in its instantaneous ground state, ensuring it arrives at the correct global minimum."
+      },
+      {
+        "id": "ENG_RC_SET_204_Q4",
+        "question": "What is represented by the final problem Hamiltonian ($H_1$) in a quantum annealer?",
+        "options": {
+          "A": "A random noise signal generated by laboratory electrical wiring.",
+          "B": "The complex cost function whose unknown ground state encodes the optimal solution to the optimization problem.",
+          "C": "The initial uniform superposition of all binary states.",
+          "D": "The physical cooling temperature of the dilution refrigerator."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that the final Hamiltonian ($H_1$) is structured so that its ground state encodes the optimal solution to the target problem."
+      },
+      {
+        "id": "ENG_RC_SET_204_Q5",
+        "question": "As used in the passage, the word 'adiabatic' describes a thermodynamic or quantum process that occurs:",
+        "options": {
+          "A": "Without heat exchange with the external environment, or sufficiently slowly to prevent state transitions",
+          "B": "At lightning-fast speeds exceeding the speed of light",
+          "C": "Only in the presence of strong chemical acids",
+          "D": "With massive losses of electrical energy as waste heat"
+        },
+        "correct_option": "A",
+        "rationale": "In physics, 'adiabatic' in thermodynamics means no heat transfer occurs; in quantum mechanics, it refers to a change slow enough that the system stays in its instantaneous eigenstate."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_205",
+    "passage_title": "The Agrarian Political Economy of Karl Polanyi and the 'Great Transformation'",
+    "passage_text": "In his seminal 1944 socio-economic masterwork *The Great Transformation*, political economist Karl Polanyi challenged classical liberal economic orthodoxy regarding the natural emergence of market capitalism. Polanyi argued that self-regulating market economies did not evolve spontaneously from human barter propensities; rather, industrial markets were aggressively constructed and imposed upon society through state legislation, violent enclosure acts, and colonial policies during the nineteenth century. The core thesis of Polanyi's work is the concept of **fictitious commodities**—elements essential to industrial production (**land**, **labor**, and **money**) that are treated as economic commodities traded on open markets, despite not being originally produced for sale. Land is merely nature; labor is human life itself; and money is merely purchasing power regulated by central banks. Subjecting these vital pillars of human existence to the blind price fluctuations of self-regulating markets threatens total social and ecological annihilation. To prevent societal collapse, Polanyi identified a foundational historical dynamic termed the **double movement**: whenever market forces attempt to commodify land, labor, and money without restraint (market expansion), society instinctively generates a protective counter-movement through social legislation, labor union mobilization, factory acts, tariff protections, and environmental conservation laws. Polanyi demonstrated that the catastrophic rise of twentieth-century fascism was the pathological political outcome of society freezing in a paralysis between unyielding market expansion and protective social self-defense.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_205_Q1",
+        "question": "What was Karl Polanyi's central argument regarding the historical origin of self-regulating market capitalism?",
+        "options": {
+          "A": "Markets evolved naturally and spontaneously from ancient tribal barter instincts.",
+          "B": "Markets were aggressively constructed and imposed upon society through coercive state legislation, enclosures, and colonial policies.",
+          "C": "Markets were invented by ancient Roman emperors to collect religious taxes.",
+          "D": "Markets appeared instantaneously as a result of genetic human mutations."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentences state that Polanyi challenged the view of natural market emergence, arguing that self-regulating markets were aggressively constructed by state legislation and enclosures."
+      },
+      {
+        "id": "ENG_RC_SET_205_Q2",
+        "question": "What are the three 'fictitious commodities' identified by Polanyi in *The Great Transformation*?",
+        "options": {
+          "A": "Gold, silver, and copper currency",
+          "B": "Land, labor, and money",
+          "C": "Wheat, cotton, and steel manufacturing",
+          "D": "Automobiles, electricity, and telecommunications"
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly names land, labor, and money as the three fictitious commodities that are treated as market goods despite not being originally produced for sale."
+      },
+      {
+        "id": "ENG_RC_SET_205_Q3",
+        "question": "Why does Polanyi classify land, labor, and money as 'fictitious' commodities?",
+        "options": {
+          "A": "Because they are manufactured in underground chemical laboratories.",
+          "B": "Because they are not originally produced for sale on commercial markets (land is nature, labor is human life, money is purchasing power).",
+          "C": "Because their market prices never change over time.",
+          "D": "Because they have no value to human societies."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains they are fictitious because land is nature, labor is human life, and money is purchasing power—none of which were originally produced to be sold as commodities."
+      },
+      {
+        "id": "ENG_RC_SET_205_Q4",
+        "question": "What does Polanyi mean by the historical dynamic termed the 'double movement'?",
+        "options": {
+          "A": "The rhythmic expansion of market capitalism seeking to commodify everything, countered by society's protective self-defense legislation.",
+          "B": "The two World Wars fought across Europe during the twentieth century.",
+          "C": "The seasonal migration of agricultural workers between northern and southern hemispheres.",
+          "D": "The simultaneous rise of communism and absolute monarchy."
+        },
+        "correct_option": "A",
+        "rationale": "The text defines the double movement as market forces expanding to commodify land, labor, and money, countered by society generating protective social legislation and labor laws."
+      },
+      {
+        "id": "ENG_RC_SET_205_Q5",
+        "question": "As used in the passage, the word 'enclosure' refers to:",
+        "options": {
+          "A": "The legal abolition of open common agricultural land in Britain to create private sheep pastures and farms",
+          "B": "The physical construction of concrete security walls around prison facilities",
+          "C": "The sealing of diplomatic embassy buildings during wartime",
+          "D": "The packaging of manufactured retail goods in cardboard boxes"
+        },
+        "correct_option": "A",
+        "rationale": "In economic history, the 'enclosure acts' were parliamentary laws in Britain that privatized and fenced off common agricultural land, displacing tenant farmers."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_206",
+    "passage_title": "The Evolutionary Biomechanics of Terrestrial Locomotion and Froude Number Scaling",
+    "passage_text": "In comparative biomechanics and evolutionary morphology, analyzing animal locomotion across vastly disparate body sizes—from a tiny field mouse to an immense African elephant—requires dimensionless physical scaling laws. Pioneered by British zoologist R. McNeill Alexander, the biomechanical analysis of terrestrial quadrupeds utilizes the **Froude number ($Fr$)**, a dimensionless hydrodynamic parameter originally formulated in naval architecture to study ship wave drag. In biomechanics, the walking Froude number is defined as: $Fr = v^2 / (g \\cdot l)$, where $v$ is forward velocity, $g$ is gravitational acceleration, and $l$ is hip height (leg length). Alexander discovered that animals of radically different sizes dynamically transition from a walk to a trot or gallop at virtually the same Froude number ($Fr \\approx 0.25$ to $0.5$). At this critical kinetic threshold, walking becomes mechanically unstable because the inverted pendulum mechanics of the stiff leg (where kinetic energy and gravitational potential energy exchange out of phase) can no longer sustain the required centripetal acceleration without lifting all feet off the ground; the animal must transition to a bouncing spring-mass gait (trot or gallop) where kinetic and potential energy peak simultaneously in-phase. This universal Froude scaling explains why a giraffe, a human, and a dog walk with remarkably similar relative dynamics despite their vastly different anatomical scales.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_206_Q1",
+        "question": "What is the primary scientific utility of the Froude number in comparative animal biomechanics?",
+        "options": {
+          "A": "It measures the exact body temperature of warm-blooded mammals.",
+          "B": "It provides a dimensionless scaling law to compare terrestrial locomotion and gait transitions across animals of vastly different body sizes.",
+          "C": "It calculates the daily caloric food intake required for avian flight.",
+          "D": "It determines the genetic mutation rate across mammalian species."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that biomechanics uses the Froude number as a dimensionless parameter to analyze terrestrial locomotion and gait transitions across disparate body sizes."
+      },
+      {
+        "id": "ENG_RC_SET_206_Q2",
+        "question": "How is the walking Froude number ($Fr$) mathematically defined in biomechanics?",
+        "options": {
+          "A": "$Fr = v^2 / (g \\cdot l)$ (velocity squared divided by gravitational acceleration times leg length)",
+          "B": "$Fr = m \\cdot c^2$ (mass times speed of light squared)",
+          "C": "$Fr = F / A$ (force divided by surface area)",
+          "D": "$Fr = \\lambda / \nu$ (wavelength divided by frequency)"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly defines the Froude number formula as $Fr = v^2 / (g \cdot l)$, where $v$ is velocity, $g$ is gravity, and $l$ is hip height."
+      },
+      {
+        "id": "ENG_RC_SET_206_Q3",
+        "question": "Why do quadrupeds undergo a gait transition from a walk to a trot or gallop at approximately $Fr \\approx 0.25$?",
+        "options": {
+          "A": "Because their leg bones melt from frictional heat.",
+          "B": "Because the inverted pendulum mechanics of walking become unstable, forcing the animal to adopt a bouncing spring-mass gait.",
+          "C": "Because predators force them to run faster to escape.",
+          "D": "Because gravity decreases at higher speeds."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that at $Fr \approx 0.25$, stiff-legged walking mechanics can no longer sustain centripetal acceleration without lifting all feet, forcing a transition to a bouncing spring-mass gait."
+      },
+      {
+        "id": "ENG_RC_SET_206_Q4",
+        "question": "What mechanical energy exchange characterizes the standard walking gait modeled as an inverted pendulum?",
+        "options": {
+          "A": "Kinetic energy and gravitational potential energy exchange completely out of phase.",
+          "B": "Kinetic and potential energy peak simultaneously in-phase.",
+          "C": "All mechanical energy is instantly converted into sound waves.",
+          "D": "Energy remains permanently locked at absolute zero."
+        },
+        "correct_option": "A",
+        "rationale": "The passage notes that in walking (inverted pendulum), kinetic energy and gravitational potential energy exchange out of phase, whereas in running/trotting they peak in-phase."
+      },
+      {
+        "id": "ENG_RC_SET_206_Q5",
+        "question": "As used in the passage, the word 'dimensionless' in physics and scaling laws means a quantity that:",
+        "options": {
+          "A": "Has no physical units of measurement (such as meters or seconds) because base units cancel out mathematically",
+          "B": "Exists purely as an imaginary mathematical number inside a vacuum",
+          "C": "Cannot be calculated using a standard pocket calculator",
+          "D": "Possesses infinite physical length and mass"
+        },
+        "correct_option": "A",
+        "rationale": "In physics and fluid dynamics, a 'dimensionless quantity' is a pure number with no associated physical units (like meters, seconds, or kilograms), as the units cancel out in the ratio."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_207",
+    "passage_title": "The Structural Virology and Epigenetic Memory of Bacteriophage Mu Transposition",
+    "passage_text": "In molecular genetics and structural virology, **Bacteriophage Mu** is a temperate bacteriophage that infects *Escherichia coli* and is renowned for its unique lifestyle as a transposable phage. Unlike conventional temperate phages that integrate into host chromosomes via site-specific recombination (producing a stable prophage), Bacteriophage Mu replicates exclusively by **replicative transposition** (copy-paste transposition driven by a transposase enzyme). Upon infecting a host cell, the Mu DNA genome integrates randomly into multiple sites throughout the host bacterial chromosome. During lytic induction, the phage-encoded transposase enzyme ($Mu \\text{A}$) binds to specific terminal inverted repeat sequences on the viral DNA and catalyzes the simultaneous joining of donor and target DNA molecules. Rather than excising cleanly, Mu initiates DNA replication directly from the transpososome complex: the host replication machinery generates two complete copies of the viral genome while fusing them to flanking host DNA segments. This generates branched, multimeric 'fuse-joint' DNA molecules that are subsequently resolved by host Rec-system homologous recombination proteins. Furthermore, Mu exhibits epigenetic transcriptional control: the same double-stranded DNA sequence encodes two alternative immunity repressor proteins (*c* and *mom*) regulated by Dam-methylase adenine methylation and structural DNA supercoiling. This robust transposable architecture has made Bacteriophage Mu an indispensable experimental model for deciphering eukaryotic retrotransposon and retroviral (HIV) integration mechanisms.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_207_Q1",
+        "question": "What fundamental biological mechanism distinguishes Bacteriophage Mu's replication from standard temperate phages?",
+        "options": {
+          "A": "It replicates exclusively through RNA transcription without DNA intermediates.",
+          "B": "It replicates via replicative transposition (copy-paste transposition driven by transposase), integrating randomly into multiple chromosomal sites.",
+          "C": "It infects only eukaryotic plant cells in tropical rainforests.",
+          "D": "It destroys host bacterial ribosomes without injecting viral DNA."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that unlike phages using site-specific recombination, Mu replicates via replicative transposition, integrating randomly across the host chromosome."
+      },
+      {
+        "id": "ENG_RC_SET_207_Q2",
+        "question": "What protein enzyme catalyzes the joining of donor and target DNA molecules during Mu transposition?",
+        "options": {
+          "A": "RNA polymerase",
+          "B": "Transposase enzyme ($Mu \text{A}$)",
+          "C": "Ribosomal transcriptase",
+          "D": "Lysozyme peptidase"
+        },
+        "correct_option": "B",
+        "rationale": "The text states that the phage-encoded transposase enzyme ($Mu \text{A}$) binds terminal repeats and catalyzes the joining of donor and target DNA."
+      },
+      {
+        "id": "ENG_RC_SET_207_Q3",
+        "question": "What structural DNA intermediates are generated during Mu's replicative transposition cycle before resolution?",
+        "options": {
+          "A": "Branched, multimeric 'fuse-joint' DNA molecules fused to flanking host DNA segments.",
+          "B": "Perfect single-stranded circular plasmids devoid of proteins.",
+          "C": "Crystalline diamond lattices of carbon atoms.",
+          "D": "Linear RNA transcripts without nucleotide bases."
+        },
+        "correct_option": "A",
+        "rationale": "The passage notes that replication generates branched, multimeric 'fuse-joint' DNA molecules that must be resolved by host Rec recombination proteins."
+      },
+      {
+        "id": "ENG_RC_SET_207_Q4",
+        "question": "Why is Bacteriophage Mu valued as an experimental model in molecular biology laboratories?",
+        "options": {
+          "A": "It provides a model for understanding eukaryotic retrotransposons and retroviral (HIV) integration mechanisms.",
+          "B": "It cures human viral infections upon injection.",
+          "C": "It generates electricity when exposed to ultraviolet light.",
+          "D": "It replaces the need for electron microscopes."
+        },
+        "correct_option": "A",
+        "rationale": "The final sentence notes that Mu's transposable architecture serves as an indispensable model for deciphering retrotransposon and retroviral (HIV) integration."
+      },
+      {
+        "id": "ENG_RC_SET_207_Q5",
+        "question": "As used in the passage, the word 'transient' describes a state or phenomenon that is:",
+        "options": {
+          "A": "Lasting for only a short time; fleeting or temporary",
+          "B": "Permanent, eternal, and unchanging across millennia",
+          "C": "Massive in physical weight and volume",
+          "D": "Invisible to all scientific instruments"
+        },
+        "correct_option": "A",
+        "rationale": "'Transient' means lasting for a very short time, temporary, or passing quickly through a state."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_208",
+    "passage_title": "The Quantum Electrodynamics of Quantum Dots and Semiconductor Nanocrystals",
+    "passage_text": "In semiconductor physics and nanotechnology, **Quantum Dots (QDs)**—pioneered by Alexey Ekimov and Louis Brus—are colloidal semiconductor nanocrystals (such as cadmium selenide, $CdSe$) whose physical dimensions are smaller than the natural **exciton Bohr radius** of the bulk material (typically 2 to 10 nanometers). Because quantum confinement restricts electron and hole wave functions in all three spatial dimensions, continuous energy bands break down into discrete, atomic-like quantized electronic energy levels. The direct physical consequence of quantum confinement is **size-tunable bandgap energy**: as quantum dot particle radius decreases, the effective optical bandgap widens due to quantum mechanical confinement energy scaling inversely with particle mass and squared radius ($E_g \\propto 1/R^2$). Consequently, by merely synthesizing different physical sizes of identical chemical composition ($CdSe$), quantum dots can absorb and emit photons spanning the entire visible light spectrum—smaller nanocrystals emit high-energy blue/ultraviolet light, while larger nanocrystals emit low-energy red/infrared light. This sharp, symmetrical photoluminescence emission, combined with high quantum yields and photochemical photostability, has revolutionized biomedical fluorescence imaging, LED display technologies, and quantum computing single-photon sources.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_208_Q1",
+        "question": "What physical criterion defines a semiconductor nanocrystal as a 'Quantum Dot'?",
+        "options": {
+          "A": "Its physical dimensions are smaller than the natural exciton Bohr radius of the bulk material.",
+          "B": "It is composed entirely of pure radioactive uranium metal.",
+          "C": "It conducts electricity with zero resistance at room temperature.",
+          "D": "It exists exclusively in liquid gaseous form."
+        },
+        "correct_option": "A",
+        "rationale": "The opening sentence explains that QDs are colloidal semiconductor nanocrystals whose physical dimensions are smaller than the natural exciton Bohr radius of the bulk material."
+      },
+      {
+        "id": "ENG_RC_SET_208_Q2",
+        "question": "How does particle size affect the optical bandgap energy of a quantum dot?",
+        "options": {
+          "A": "Bandgap energy is completely independent of particle size.",
+          "B": "Smaller particle radius widens the optical bandgap due to inverse-square quantum confinement energy scaling ($E_g \propto 1/R^2$).",
+          "C": "Larger particles emit ultraviolet light, while tiny particles emit invisible gamma rays.",
+          "D": "Decreasing particle size reduces the bandgap energy to absolute zero."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that as particle radius decreases, confinement energy scales inversely with squared radius ($E_g \propto 1/R^2$), widening the bandgap and shifting emission to higher energies (blue)."
+      },
+      {
+        "id": "ENG_RC_SET_208_Q3",
+        "question": "What optical property enables quantum dots of identical chemical composition ($CdSe$) to emit different colors of light?",
+        "options": {
+          "A": "Varying physical particle size determines the confinement energy and emitted photon wavelength.",
+          "B": "Adding radioactive isotopes to the crystal lattice.",
+          "C": "Mixing the dots with liquid organic dyes.",
+          "D": "Heating the nanocrystals to boiling volcanic temperatures."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that by synthesizing different physical sizes of the same chemical composition ($CdSe$), quantum dots emit photons across the visible spectrum (small = blue, large = red)."
+      },
+      {
+        "id": "ENG_RC_SET_208_Q4",
+        "question": "Which prominent scientists are credited with pioneering the discovery of quantum dots?",
+        "options": {
+          "A": "Alexey Ekimov and Louis Brus",
+          "B": "Albert Einstein and Niels Bohr",
+          "C": "James Watson and Francis Crick",
+          "D": "Pierre and Marie Curie"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly credits Alexey Ekimov and Louis Brus with pioneering quantum dots."
+      },
+      {
+        "id": "ENG_RC_SET_208_Q5",
+        "question": "As used in the passage, the word 'colloidal' refers to a mixture where:",
+        "options": {
+          "A": "Microscopic insoluble particles are suspended evenly throughout a continuous fluid medium",
+          "B": "Solid rocks are melted into liquid lava inside a furnace",
+          "C": "Gases are compressed into solid crystal diamonds",
+          "D": "Salts are dissolved completely into invisible ions in water"
+        },
+        "correct_option": "A",
+        "rationale": "In chemistry, a 'colloid' is a mixture in which one substance of microscopically dispersed insoluble particles is suspended throughout another substance."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_209",
+    "passage_title": "The Jurisprudence of Ronald Dworkin and 'Law as Integrity'",
+    "passage_text": "In his landmark 1986 jurisprudential treatise *Law's Empire*, American legal philosopher Ronald Dworkin launched a devastating critique of legal positivism (defended by H.L.A. Hart) and legal realism, formulating his normative theory of **law as integrity**. Dworkin rejected Hart's positivist claim that law is merely a system of social rules identified by pedigree (rules of recognition) devoid of moral content. Instead, Dworkin argued that law is an interpretive enterprise comprising both explicit statutory rules and unwritten **principles of political morality**. To decide hard cases where statutes and precedents are silent or ambiguous, Dworkin introduced the hypothetical jurist of superhuman wisdom, **Judge Hercules**. When adjudicating hard cases, Judge Hercules constructs a coherent, morally best interpretation of the community's constitutional and common-law history, treating the body of law as an ongoing **chain novel**. Just as a novelist writing chapter ten of a serialized book must interpret all preceding chapters to write a chapter that fits coherently and advances the narrative in its best moral light, Judge Hercules must balance two dimensions: **fit** (the interpretation must cohere with prior legal precedents and statutory texts) and **justification** (the interpretation must present the law in its morally superior, most just political light). Through law as integrity, Dworkin insisted that rights are trumps over collective policy goals, ensuring that judicial decisions are guided by principled integrity rather than pragmatic judicial whim.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_209_Q1",
+        "question": "What central claim of legal positivism was rejected by Ronald Dworkin's theory of law as integrity?",
+        "options": {
+          "A": "The claim that judges must wear traditional black judicial robes.",
+          "B": "The positivist claim that law is merely a system of rules identified by pedigree and devoid of necessary moral content.",
+          "C": "The assumption that parliaments have the authority to pass tax legislation.",
+          "D": "The belief that written legal statutes exist in public law libraries."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explains that Dworkin critiqued legal positivism's view that law is identified purely by pedigree rules without necessary moral content."
+      },
+      {
+        "id": "ENG_RC_SET_209_Q2",
+        "question": "What is the function of the hypothetical 'Judge Hercules' in Dworkin's jurisprudence?",
+        "options": {
+          "A": "To rewrite the national constitution through military executive decrees.",
+          "B": "To construct a coherent, morally best interpretation of legal history when adjudicating hard cases, balancing fit and justification.",
+          "C": "To prosecute criminal defendants in jury trials.",
+          "D": "To audit the financial budgets of commercial banking institutions."
+        },
+        "correct_option": "B",
+        "rationale": "The text states Judge Hercules represents an idealized jurist who constructs a morally superior, coherent interpretation of prior law balancing fit and justification."
+      },
+      {
+        "id": "ENG_RC_SET_209_Q3",
+        "question": "How does Dworkin's 'chain novel' analogy illustrate the adjudicative task of a judge?",
+        "options": {
+          "A": "Judges write entirely fictional stories unrelated to previous legal cases.",
+          "B": "A judge writing a chapter must interpret prior legal history coherently while advancing the legal narrative in its best moral light.",
+          "C": "Judges work collaboratively in large teams to publish bestselling paperback novels.",
+          "D": "Judges must destroy all previous court rulings before issuing a new verdict."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that like a novelist writing chapter ten, a judge must cohere with prior chapters (fit) while making the story morally best (justification)."
+      },
+      {
+        "id": "ENG_RC_SET_209_Q4",
+        "question": "What two dual dimensions must Judge Hercules balance when interpreting the law?",
+        "options": {
+          "A": "Speed and cost-efficiency",
+          "B": "Fit (coherence with prior legal precedents) and justification (presenting the law in its morally best light)",
+          "C": "Military necessity and economic inflation",
+          "D": "Public popularity and legislative election cycles"
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly names the two dimensions: fit (coherence with precedents) and justification (moral superiority/justice)."
+      },
+      {
+        "id": "ENG_RC_SET_209_Q5",
+        "question": "As used in the passage, the word 'pedigree' in legal theory refers to:",
+        "options": {
+          "A": "The historical lineage, source, or formal rule-based origin through which a legal rule is validated as valid law",
+          "B": "The biological ancestry and genetic family tree of a criminal defendant",
+          "C": "The breed registration papers of domestic farm animals",
+          "D": "The architectural blueprints of courthouse buildings"
+        },
+        "correct_option": "A",
+        "rationale": "In legal positivism, 'pedigree' refers to the formal, rule-based origin or source (such as enactment by a legislature) that determines whether a rule qualifies as valid law."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_210",
+    "passage_title": "The Structural Geology and Rheology of Continental Crustal Exhumation",
+    "passage_text": "In structural geology and geodynamics, the mechanical strength of the continental lithosphere is governed by its rheological stratification, classically modeled as a 'jelly sandwich' or 'crème brûlée' profile: a brittle upper crust, a ductile lower crust, and a strong mantle lithosphere. During continental collisions or regional extension, understanding how dense, high-grade metamorphic rocks (such as eclogites and granulites) are exhumed from depths exceeding 40 to 80 kilometers back to the Earth's surface presents a major mechanical paradox. Rocks buried at such lithostatic pressures should undergo gravitational sinking or remain trapped unless driven by buoyant forces. Exhumation is facilitated by two primary geodynamic mechanisms: **tectonic unroofing** and **erosional unroofing**. Tectonic unroofing occurs through lithospheric extension along crustal-scale low-angle detachment faults, which rapidly removes upper-crustal overburden and triggers isostatic rebound (footwall uplift driven by buoyancy forces analogous to an iceberg rising in water). Concurrently, rapid surface erosion driven by intensive precipitation removes topograph mass, unloading the crust and inducing accelerated vertical ductile flow from the lower crust toward the surface, a process termed **channel flow**. As hot, weak mid-crustal rocks flow upward through narrow tectonic conduits (channels), they preserve inverted metamorphic pressure-temperature-time ($P-T-t$) paths, providing structural geologists with an accessible archive of deep continental collision dynamics.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_210_Q1",
+        "question": "What mechanical paradox confronts geologists studying the exhumation of high-grade metamorphic rocks from deep crustal depths?",
+        "options": {
+          "A": "Rocks buried at 80 km depths face intense lithostatic pressure and should remain trapped or sink unless acted upon by buoyant forces.",
+          "B": "Deep-crustal rocks evaporate into gaseous steam at room temperature.",
+          "C": "Rocks at great depths are composed entirely of liquid water.",
+          "D": "Deep crustal rocks possess negative gravitational mass and float into outer space."
+        },
+        "correct_option": "A",
+        "rationale": "The opening text notes that exhuming dense rocks from depths exceeding 40–80 km presents a mechanical paradox because they experience crushing pressure and would sink or remain trapped without buoyant uplift."
+      },
+      {
+        "id": "ENG_RC_SET_210_Q2",
+        "question": "How does tectonic unroofing drive the uplift of deep footwall basement rocks?",
+        "options": {
+          "A": "Through continuous volcanic eruptions filling valleys with lava.",
+          "B": "Through lithospheric extension along low-angle detachment faults that removes upper overburden, triggering isostatic buoyancy rebound.",
+          "C": "By freezing subsurface groundwater into solid glaciers.",
+          "D": "By compressing continental plates vertically into flat sheets."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that tectonic unroofing removes upper-crustal overburden via low-angle detachment faults, prompting isostatic rebound (footwall uplift)."
+      },
+      {
+        "id": "ENG_RC_SET_210_Q3",
+        "question": "What physical process drives 'channel flow' in orogenic belts?",
+        "options": {
+          "A": "Rapid surface erosion unloads crustal mass, driving accelerated vertical ductile flow of weak mid-crustal rocks through narrow conduits.",
+          "B": "Rivers carving deep canyons through granite batholiths.",
+          "C": "Ocean currents flooding subterranean limestone caves.",
+          "D": "Wind blowing sand dunes across mountain peaks."
+        },
+        "correct_option": "A",
+        "rationale": "The passage states that rapid surface erosion removes topographic mass, unloading the crust and driving vertical ductile flow of weak mid-crustal rocks upward through channels."
+      },
+      {
+        "id": "ENG_RC_SET_210_Q4",
+        "question": "What geological data is preserved by hot mid-crustal rocks flowing upward through narrow tectonic channels?",
+        "options": {
+          "A": "Inverted metamorphic pressure-temperature-time ($P-T-t$) paths",
+          "B": "Fossilized tropical seashells from ancient deserts",
+          "C": "Radiocarbon isotopes of modern atmospheric pollution",
+          "D": "Magnetic compass readings of modern true north"
+        },
+        "correct_option": "A",
+        "rationale": "The final sentence notes that channeled rocks preserve inverted metamorphic pressure-temperature-time ($P-T-t$) paths recording deep collision dynamics."
+      },
+      {
+        "id": "ENG_RC_SET_210_Q5",
+        "question": "As used in the passage, the word 'rheological' refers to the study of:",
+        "options": {
+          "A": "The flow and deformation of matter (solids and fluids) under applied mechanical stress",
+          "B": "The chemical composition of ancient atmospheric gases trapped in ice",
+          "C": "The electrical conductivity of lightning strikes during storms",
+          "D": "The biological evolution of marine invertebrate fossils"
+        },
+        "correct_option": "A",
+        "rationale": "In geophysics and physics, 'rheology' is the branch of physics studying the flow and deformation of matter, particularly viscous liquids and deforming rocks."
+      }
+    ]
+  }
+]

@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_111",
+    "passage_title": "The Neurobiology of Circadian Entrainment",
+    "passage_text": "Circadian rhythms are autonomous, endogenous oscillations with a period of approximately twenty-four hours that regulate behavioral, physiological, and metabolic cascades in eukaryotic organisms. In mammals, the master pacemaker orchestrating this temporal synchrony resides in the suprachiasmatic nucleus (SCN) of the anterior hypothalamus. At the cell-autonomous level, molecular oscillation is driven by a cell-intrinsic transcriptional-translational autoregulatory feedback loop (TTFL). The transcription factors CLOCK and BMAL1 heterodimerize to activate the transcription of Period (*Per1, Per2, Per3*) and Cryptochrome (*Cry1, Cry2*) genes via E-box promoter elements. Translated PER and CRY proteins accumulate in the cytoplasm, form multimeric complexes, translocate into the nucleus, and repress CLOCK:BMAL1-mediated transcription. This cycle is synchronized to environmental day-night cycles primarily through photic entrainment. Intrinsically photosensitive retinal ganglion cells (ipRGCs) expressing the photopigment melanopsin detect short-wavelength blue light, transmitting depolarizing action potentials directly to the SCN via the retinohypothalamic tract (RHT). Disruption of this photic transduction pathway impairs endocrine rhythms, causing chronic desynchrony implicated in metabolic syndrome and affective disorders.",
+    "questions": [
+      {
+        "id": "ENG_RC_111_Q1",
+        "question": "What anatomical structure serves as the primary master pacemaker for mammalian circadian rhythms?",
+        "options": {
+          "A": "The hippocampus in the temporal lobe",
+          "B": "The suprachiasmatic nucleus of the anterior hypothalamus",
+          "C": "The adrenal cortex in the endocrine system",
+          "D": "The substantia nigra in the midbrain"
+        },
+        "correct_option": "B",
+        "rationale": "The text states that in mammals, the master pacemaker orchestrating temporal synchrony resides in the suprachiasmatic nucleus (SCN) of the anterior hypothalamus."
+      },
+      {
+        "id": "ENG_RC_111_Q2",
+        "question": "How do PER and CRY proteins regulate the transcriptional-translational feedback loop (TTFL)?",
+        "options": {
+          "A": "By binding directly to melanopsin photopigments in the retina.",
+          "B": "By translocating to the nucleus to inhibit the transcriptional activity of CLOCK and BMAL1.",
+          "C": "By accelerating the synthesis of retinal ganglion cell axons along the optic nerve.",
+          "D": "By permanently degrading all nuclear DNA in hypothalamic neurons."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that translated PER and CRY proteins translocate into the nucleus and repress CLOCK:BMAL1-mediated transcription."
+      },
+      {
+        "id": "ENG_RC_111_Q3",
+        "question": "Which pathway directly conveys photic information from the eye to the central biological clock?",
+        "options": {
+          "A": "The corticospinal tract via myelinated motor neurons",
+          "B": "The retinohypothalamic tract via melanopsin-expressing ipRGCs",
+          "C": "The lateral lemniscus via auditory sensory receptors",
+          "D": "The spinothalamic pathway via peripheral thermoreceptors"
+        },
+        "correct_option": "B",
+        "rationale": "The passage describes ipRGCs expressing melanopsin transmitting signals to the SCN via the retinohypothalamic tract (RHT)."
+      },
+      {
+        "id": "ENG_RC_111_Q4",
+        "question": "As used in the passage, the word 'endogenous' most nearly means:",
+        "options": {
+          "A": "Originating or produced from within the organism",
+          "B": "Induced purely by artificial external chemicals",
+          "C": "Harmful and pathologically destructive",
+          "D": "Inherited exclusively through paternal lineage"
+        },
+        "correct_option": "A",
+        "rationale": "'Endogenous' refers to substances, processes, or rhythms originating internally within a biological system."
+      },
+      {
+        "id": "ENG_RC_111_Q5",
+        "question": "What broad medical consequence does the author associate with chronic circadian desynchrony?",
+        "options": {
+          "A": "Immediate skeletal calcification and muscular atrophy",
+          "B": "Metabolic dysregulation and affective mood disorders",
+          "C": "Total loss of long-wavelength color vision",
+          "D": "The complete cessation of microglial cell division"
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence highlights that circadian disruption leads to endocrine imbalances implicated in metabolic syndrome and affective disorders."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_112",
+    "passage_title": "The Agrarian Hydraulic Hypothesis and Early Statehood",
+    "passage_text": "In his seminal mid-twentieth-century treatise *Oriental Despotism*, historian Karl Wittfogel proposed the 'hydraulic hypothesis' to explain the genesis of centralized bureaucratic states in arid alluvial river valleys such as the Nile, Tigris-Euphrates, Indus, and Yellow rivers. Wittfogel posited that large-scale intensive agriculture in flood-prone, semi-arid regions necessitated extensive irrigation networks, sluice gates, and flood-control levees. Because constructing and maintaining these monumental public hydraulic works exceeded the logistics of localized kin-groups, society required a centralized managerial bureaucracy to mobilize mass labor, levy taxes, and distribute water quotas. This administrative apparatus gradually monopolized political and economic power, spawning an authoritarian state where society was subordinate to a despotic sovereign. While contemporary archaeologists criticize Wittfogel for technological determinism—demonstrating that many complex Mesopotamian irrigation canals were managed locally centuries prior to state emergence—the hydraulic hypothesis established environmental management and infrastructure logistics as central drivers of political complexity.",
+    "questions": [
+      {
+        "id": "ENG_RC_112_Q1",
+        "question": "What is the primary argument of Karl Wittfogel's hydraulic hypothesis?",
+        "options": {
+          "A": "Maritime trade routes were the sole catalyst for democratic city-states.",
+          "B": "The engineering demands of large-scale irrigation necessitated centralized bureaucratic states.",
+          "C": "Nomadic pastoralism inherently prevented the development of organized religions.",
+          "D": "Rain-fed mountain agriculture produced the earliest monarchies."
+        },
+        "correct_option": "B",
+        "rationale": "Wittfogel argued that coordinating large-scale irrigation and flood control required centralized managerial administrations, resulting in bureaucratic states."
+      },
+      {
+        "id": "ENG_RC_112_Q2",
+        "question": "Which ecological setting was central to the emergence of Wittfogel's proposed hydraulic civilizations?",
+        "options": {
+          "A": "Temperate rainforests with abundant annual precipitation",
+          "B": "Arid or semi-arid alluvial river valleys subject to seasonal flooding",
+          "C": "Isolated alpine valleys reliant solely on glacial runoff",
+          "D": "Tropical archipelagos with coral reef systems"
+        },
+        "correct_option": "B",
+        "rationale": "The passage explicitly names arid alluvial river valleys (Nile, Tigris-Euphrates, Indus, Yellow River) as the focal environments."
+      },
+      {
+        "id": "ENG_RC_112_Q3",
+        "question": "Why do modern archaeologists critique Wittfogel's thesis?",
+        "options": {
+          "A": "Archaeological evidence proves that ancient civilizations never used irrigation canals.",
+          "B": "He committed technological determinism, ignoring evidence of decentralized local canal management before statehood.",
+          "C": "He claimed that monarchies were universally benevolent rather than authoritarian.",
+          "D": "His research was based entirely on inaccurate satellite imagery."
+        },
+        "correct_option": "B",
+        "rationale": "The text notes that critics cite technological determinism, as complex canals were often maintained locally long before centralized state bureaucracies emerged."
+      },
+      {
+        "id": "ENG_RC_112_Q4",
+        "question": "As used in the passage, the word 'alluvial' relates to:",
+        "options": {
+          "A": "Soil, silt, or sediment deposited by running water in river valleys",
+          "B": "Volcanic rock formed from cooling basaltic magma",
+          "C": "Arid dunes shaped exclusively by desert wind currents",
+          "D": "Subterranean limestone caves dissolved by acid rain"
+        },
+        "correct_option": "A",
+        "rationale": "'Alluvial' refers to clay, silt, sand, or gravel deposited by flowing streams and rivers in valleys and floodplains."
+      },
+      {
+        "id": "ENG_RC_112_Q5",
+        "question": "Despite modern criticism, what enduring value did Wittfogel's thesis contribute to historical anthropology?",
+        "options": {
+          "A": "It proved that ancient states had no legal codes governing property rights.",
+          "B": "It underscored the critical role of environmental management and logistical infrastructure in state formation.",
+          "C": "It demonstrated that monetary taxation was invented exclusively in Western Europe.",
+          "D": "It established that kin-groups are inherently incapable of cooperative farming."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that the hypothesis 'established environmental management and infrastructure logistics as central drivers of political complexity.'"
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_113",
+    "passage_title": "The Physics of Superconductivity and the Meissner Effect",
+    "passage_text": "Discovered by Heike Kamerlingh Onnes in mercury cooled below 4.2 Kelvin, superconductivity is a macroscopic quantum state defined by two distinct physical phenomena: exact zero electrical resistance and the complete expulsion of magnetic flux fields, termed the Meissner effect. Conventional superconductivity is rigorously described by the Bardeen-Cooper-Schrieffer (BCS) theory. In a normal metallic lattice, conducting electrons experience resistance due to thermal collisions with vibrating ionic cores (phonons) and lattice impurities. Below a material-specific critical temperature ($T_c$), an electron traversing the crystal lattice induces a subtle local distortion in the positively charged cation grid. This transient positive polarization creates an effective attractive potential that binds a second electron of opposite momentum and spin, forming a 'Cooper pair'. Because paired fermions behave effectively as composite bosons, they condense into a single coherent ground state described by a macroscopic quantum wave function. This condensate moves through the crystal lattice without scattering, eliminating all electrical resistance. When an external magnetic field is applied, spontaneous screening currents arise on the superconductor's surface, generating an equal and opposite internal magnetic field that expels external flux.",
+    "questions": [
+      {
+        "id": "ENG_RC_113_Q1",
+        "question": "What two definitive physical properties characterize the superconducting state?",
+        "options": {
+          "A": "Infinite magnetic permeability and zero optical reflectivity",
+          "B": "Zero electrical resistance and the Meissner effect (magnetic flux expulsion)",
+          "C": "Constant thermal expansion and negative gravitational mass",
+          "D": "High electrical impedance and spontaneous radioactive decay"
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence defines superconductivity by two phenomena: 'exact zero electrical resistance and the complete expulsion of magnetic flux fields, termed the Meissner effect.'"
+      },
+      {
+        "id": "ENG_RC_113_Q2",
+        "question": "According to BCS theory, how do two mutually repulsive electrons form a Cooper pair?",
+        "options": {
+          "A": "Through direct magnetic dipole alignment at ultra-high pressures.",
+          "B": "Via phonon-mediated lattice polarization that generates an attractive potential.",
+          "C": "By absorbing high-energy gamma-ray photons emitted from the core.",
+          "D": "Through nuclear fusion between valence electron orbitals."
+        },
+        "correct_option": "B",
+        "rationale": "BCS theory explains that an electron induces a positive distortion in the cation lattice (phonon interaction), creating an attractive potential that pairs it with a second electron."
+      },
+      {
+        "id": "ENG_RC_113_Q3",
+        "question": "Why does a superconducting Bose-Einstein-like condensate move through a lattice without electrical resistance?",
+        "options": {
+          "A": "The composite bosons condense into a single coherent quantum state that resists scattering.",
+          "B": "The material instantly converts all electrical current into sound waves.",
+          "C": "The positive ionic cores of the metal vanish entirely at low temperatures.",
+          "D": "The electrons move so rapidly that they exceed the speed of light."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that paired electrons act as composite bosons, condensing into a coherent quantum ground state that traverses the lattice without scattering."
+      },
+      {
+        "id": "ENG_RC_113_Q4",
+        "question": "How does a superconductor achieve the expulsion of external magnetic fields during the Meissner effect?",
+        "options": {
+          "A": "By dissolving its crystalline surface into liquid helium",
+          "B": "By generating spontaneous surface screening currents that cancel the internal magnetic field",
+          "C": "By absorbing all ambient heat to neutralize magnetism",
+          "D": "By transforming into a dielectric insulator"
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that surface screening currents induce an equal and opposite internal magnetic field that expels external flux."
+      },
+      {
+        "id": "ENG_RC_113_Q5",
+        "question": "As used in the passage, the word 'transient' most nearly means:",
+        "options": {
+          "A": "Permanent and unchanging",
+          "B": "Temporary or lasting for only a brief duration",
+          "C": "Electrically dangerous and explosive",
+          "D": "Artificially fabricated in a factory"
+        },
+        "correct_option": "B",
+        "rationale": "'Transient' describes a temporary state or phenomenon that lasts for a very short time."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_114",
+    "passage_title": "The Epistemological Turn in Modernist Literature",
+    "passage_text": "The transition from nineteenth-century Victorian realism to early twentieth-century literary modernism represented an ontological and epistemological rupture prompted by the cataclysm of World War I, Freudian psychoanalysis, and Einsteinian relativity. Victorian realists like George Eliot and Charles Dickens operated under an implicit positivist faith in an objective, knowable external reality, employing authoritative third-person omniscient narrators to construct linear chronological plots and moral social portraits. Modernist prose writers, including Virginia Woolf, James Joyce, and William Faulkner, rejected this narrative panopticon as an artificial illusion. Recognizing that human experience is fundamentally mediated through subjective consciousness, modernists decentralized the narrator, deploying radical formal techniques such as free indirect discourse, polyphonic perspectives, and stream of consciousness. Chronological linearity was shattered into fragmented, non-sequential temporalities that mirrored the associative mechanics of human memory. In modernist poetics, truth was no longer conceived as an external social fact accessible through empiricism, but as an elusive, multifaceted perceptual reality constructed within the interiority of the human mind.",
+    "questions": [
+      {
+        "id": "ENG_RC_114_Q1",
+        "question": "What fundamental worldview underpinned nineteenth-century Victorian realist fiction?",
+        "options": {
+          "A": "A profound skepticism regarding the existence of physical matter.",
+          "B": "A positivist belief in an objective, knowable reality accessible via empirical observation.",
+          "C": "The complete rejection of linear chronology in storytelling.",
+          "D": "An insistence on using stream of consciousness to explore the subconscious."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that Victorian realists operated under 'an implicit positivist faith in an objective, knowable external reality' using omniscient narration."
+      },
+      {
+        "id": "ENG_RC_114_Q2",
+        "question": "Which formal narrative techniques were championed by modernists to capture internal subjective consciousness?",
+        "options": {
+          "A": "Third-person omniscient judgment and strict chronological diary entries",
+          "B": "Stream of consciousness, free indirect discourse, and polyphonic perspectives",
+          "C": "Monorhyme poetic schemes and didactic moral allegories",
+          "D": "Mathematical equations embedded directly into dialogues"
+        },
+        "correct_option": "B",
+        "rationale": "The text lists 'free indirect discourse, polyphonic perspectives, and stream of consciousness' as methods modernists used to reflect human consciousness."
+      },
+      {
+        "id": "ENG_RC_114_Q3",
+        "question": "According to the passage, how did modernist writers treat narrative temporality (time)?",
+        "options": {
+          "A": "They insisted on strict mathematical chronologies divided into uniform chapters.",
+          "B": "They fragmented linear time into non-sequential structures reflecting the associative nature of memory.",
+          "C": "They eliminated all references to the past or future to write exclusively in the present tense.",
+          "D": "They structured plots around celestial calendar cycles exclusively."
+        },
+        "correct_option": "B",
+        "rationale": "The author notes that linear chronology was broken into 'fragmented, non-sequential temporalities that mirrored the associative mechanics of human memory.'"
+      },
+      {
+        "id": "ENG_RC_114_Q4",
+        "question": "The metaphor 'narrative panopticon' refers to:",
+        "options": {
+          "A": "An all-seeing, omniscient third-person narrator monitoring and judging every character.",
+          "B": "A prison designed exclusively to detain controversial authors.",
+          "C": "A literary journal that published anonymous wartime poetry.",
+          "D": "A mechanical printing press used during the Industrial Revolution."
+        },
+        "correct_option": "A",
+        "rationale": "In this context, the 'narrative panopticon' refers to the traditional omniscient narrator who possesses total, God-like visibility over all characters and events."
+      },
+      {
+        "id": "ENG_RC_114_Q5",
+        "question": "Which historical and intellectual developments catalyzed the modernist literary revolt?",
+        "options": {
+          "A": "The Protestant Reformation and the invention of movable type.",
+          "B": "World War I, Freudian psychoanalysis, and Einsteinian relativistic physics.",
+          "C": "The fall of the Roman Empire and the spread of Scholastic philosophy.",
+          "D": "The discovery of agrarian crop rotation and enclosure laws."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence identifies 'World War I, Freudian psychoanalysis, and Einsteinian relativity' as the catalysts of the modern rupture."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_115",
+    "passage_title": "Biogeochemical Cycling: The Oceanic Biological Pump",
+    "passage_text": "The oceanic biological carbon pump is a primary planetary mechanism regulating atmospheric carbon dioxide concentrations and global climate. In the sunlit epipelagic zone (the upper 200 meters), photosynthetic phytoplankton fix dissolved inorganic carbon into organic particulate matter. When these organisms die or are consumed and excreted by zooplankton, a portion of this organic carbon aggregates into marine snow—a matrix of dead cells, fecal pellets, and mineral ballasts that sinks down the water column into the mesopelagic and bathypelagic zones. Throughout its descent, heterotrophic bacteria remineralize the majority of this sinking organic matter back into dissolved inorganic carbon through aerobic respiration. However, approximately one to five percent of the initial surface carbon avoids respiration and reaches benthic sediments, where it is sequestered for millennia. The operational efficiency of this pump depends on the availability of limiting micronutrients—particularly bioavailable iron, nitrogen, and silicate—which regulate phytoplankton bloom dynamics in High-Nutrient, Low-Chlorophyll (HNLC) oceanic regions such as the Southern Ocean.",
+    "questions": [
+      {
+        "id": "ENG_RC_115_Q1",
+        "question": "What is the primary role of the oceanic biological carbon pump in the Earth's climate system?",
+        "options": {
+          "A": "Increasing global atmospheric temperatures by releasing methane gas from sea floors.",
+          "B": "Fixing surface atmospheric carbon dioxide and sequestering it in deep benthic oceans.",
+          "C": "Desalinating sea water to provide freshwater for coastal ecosystems.",
+          "D": "Accelerating the tectonic subduction of oceanic crust plates."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that the biological pump regulates atmospheric carbon dioxide by fixing inorganic carbon and sequestering organic particles in deep marine sediments."
+      },
+      {
+        "id": "ENG_RC_115_Q2",
+        "question": "What constitutes 'marine snow' as described in the passage?",
+        "options": {
+          "A": "Frozen ice crystals formed in sub-polar ocean surface waters.",
+          "B": "Sinking aggregates of dead phytoplankton cells, zooplankton fecal pellets, and mineral ballasts.",
+          "C": "Synthetic microplastic waste accumulating in the ocean gyres.",
+          "D": "Mineral salts precipitated from deep-sea hydrothermal vents."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines marine snow as a sinking matrix of 'dead cells, fecal pellets, and mineral ballasts.'"
+      },
+      {
+        "id": "ENG_RC_115_Q3",
+        "question": "What process occurs to the majority of sinking organic matter during its descent through the water column?",
+        "options": {
+          "A": "It is instantly converted into hydrocarbon petroleum by geothermal heat.",
+          "B": "It is remineralized back into dissolved inorganic carbon by heterotrophic bacterial respiration.",
+          "C": "It is consumed by photosynthetic phytoplankton living in the bathypelagic abyss.",
+          "D": "It floats back to the surface due to buoyant gas production."
+        },
+        "correct_option": "B",
+        "rationale": "The author specifies that heterotrophic bacteria remineralize the vast majority of sinking organic matter back into dissolved inorganic carbon via respiration."
+      },
+      {
+        "id": "ENG_RC_115_Q4",
+        "question": "What characterizes High-Nutrient, Low-Chlorophyll (HNLC) oceanic regions?",
+        "options": {
+          "A": "An abundance of major nutrients accompanied by a deficiency in limiting micronutrients like iron.",
+          "B": "Total absence of any solar radiation throughout the entire year.",
+          "C": "Extreme salinity that prevents bacterial remineralization.",
+          "D": "Excessive phytoplankton blooms that deplete all dissolved oxygen."
+        },
+        "correct_option": "A",
+        "rationale": "The text identifies iron as a limiting micronutrient in HNLC regions like the Southern Ocean, which restricts phytoplankton blooms despite available macronutrients."
+      },
+      {
+        "id": "ENG_RC_115_Q5",
+        "question": "As used in the passage, the word 'sequestered' most closely means:",
+        "options": {
+          "A": "Isolated or stored away securely for long periods",
+          "B": "Dispersed rapidly into the upper atmosphere",
+          "C": "Heated to extreme temperatures",
+          "D": "Exposed to direct sunlight"
+        },
+        "correct_option": "A",
+        "rationale": "'Sequestered' means to set apart, isolate, or store away—in this context, locking carbon in benthic sediments for millennia."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_116",
+    "passage_title": "The Geopolitics of the Peace of Westphalia",
+    "passage_text": "Signed in 1648, the Peace of Westphalia brought a conclusion to the devastating Thirty Years' War in the Holy Roman Empire and the Eighty Years' War between Spain and the Dutch Republic. Beyond redrawing European territorial boundaries, the treaties negotiated at Münster and Osnabrück established the bedrock principles of modern public international law, formalizing what political scientists term the 'Westphalian state system'. Prior to 1648, European politics was characterized by overlapping, hierarchical jurisdictions under the supranational moral and political authority of the Papacy and the Holy Roman Empire. Westphalia fundamentally dismantled this feudal-theocratic order by recognizing *cuius regio, eius religio* (whose realm, his religion) and enshrining sovereign statehood. Under this doctrine, sovereign states were established as autonomous, juridically equal entities possessing exclusive domestic jurisdiction over their territory and populations, free from external political or religious intervention. This institutionalized secular state sovereignty, establishing interstate diplomacy, permanent embassies, and the balance-of-power doctrine as the governing dynamics of international relations.",
+    "questions": [
+      {
+        "id": "ENG_RC_116_Q1",
+        "question": "What structural transformation did the Peace of Westphalia introduce to European governance?",
+        "options": {
+          "A": "The unification of all European states under a single imperial monarch.",
+          "B": "The replacement of supranational feudal-religious authority with autonomous, sovereign statehood.",
+          "C": "The complete abolition of standing armies and national border patrols.",
+          "D": "The establishment of a universal currency regulated by the Papacy."
+        },
+        "correct_option": "B",
+        "rationale": "The passage emphasizes that Westphalia dismantled the feudal-theocratic dominance of the Empire and Papacy, replacing it with the sovereign state system."
+      },
+      {
+        "id": "ENG_RC_116_Q2",
+        "question": "What is the primary meaning of the principle *cuius regio, eius religio* in the Westphalian settlement?",
+        "options": {
+          "A": "Rulers had the autonomous right to determine the religious practice within their own realms.",
+          "B": "Citizens were allowed to vote democratically on national taxation policies.",
+          "C": "All religious symbols were permanently banned from European state buildings.",
+          "D": "The Papacy retained final veto power over international border treaties."
+        },
+        "correct_option": "A",
+        "rationale": "The Latin maxim established that the ruler of each sovereign realm possessed the authority to dictate its domestic religious allegiance."
+      },
+      {
+        "id": "ENG_RC_116_Q3",
+        "question": "Under the Westphalian system, what defines the legal relationship between individual states?",
+        "options": {
+          "A": "Hierarchical subservience to the Holy Roman Emperor",
+          "B": "Juridical equality and exclusive domestic territorial jurisdiction",
+          "C": "Mandatory military intervention whenever religious disputes arise",
+          "D": "Economic centralization under a single continental merchant bank"
+        },
+        "correct_option": "B",
+        "rationale": "The text states that sovereign states were recognized as 'autonomous, juridically equal entities possessing exclusive domestic jurisdiction.'"
+      },
+      {
+        "id": "ENG_RC_116_Q4",
+        "question": "Which of the following conflicts was directly resolved by the Peace of Westphalia?",
+        "options": {
+          "A": "The Napoleonic Wars",
+          "B": "The Thirty Years' War",
+          "C": "The Seven Years' War",
+          "D": "The War of the Spanish Succession"
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explicitly identifies the conclusion of the Thirty Years' War as a direct outcome of the Peace of Westphalia."
+      },
+      {
+        "id": "ENG_RC_116_Q5",
+        "question": "As used in the passage, the word 'supranational' describes an authority that:",
+        "options": {
+          "A": "Transcends or extends beyond national boundaries and sovereignty",
+          "B": "Operates exclusively within local provincial villages",
+          "C": "Lacks any military or moral legitimacy",
+          "D": "Focuses strictly on domestic agricultural policy"
+        },
+        "correct_option": "A",
+        "rationale": "'Supranational' denotes an authority, organization, or power that transcends individual national governments (such as the medieval Papacy)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_117",
+    "passage_title": "The Enzymatic Mechanics of CRISPR-Cas9 Gene Editing",
+    "passage_text": "Originally discovered as an adaptive immune mechanism in bacteria and archaea to defend against bacteriophage infection, the CRISPR-Cas9 system has revolutionized molecular genetics as a programmable site-specific genome editing technology. The functional endonuclease complex comprises two fundamental elements: the Cas9 protein and a single-guide RNA (sgRNA). The sgRNA contains a 20-nucleotide synthetic sequence engineered to be complementary to the specific genomic target sequence. Cas9 interrogates genomic DNA until it recognizes a downstream 2-to-6 base pair DNA sequence known as the Protospacer Adjacent Motif (PAM)—typically 5'-NGG-3' in *Streptococcus pyogenes*. Upon PAM binding, Cas9 unwinds the DNA duplex, allowing the sgRNA to hybridize with the target strand through Watson-Crick base pairing. Once hybridized, the RuvC and HNH nuclease domains of Cas9 cleave both strands of the phosphodiester backbone, producing a targeted double-strand break (DSB). The host cell then attempts repair via Non-Homologous End Joining (NHEJ)—which introduces stochastic insertions/deletions that knock out gene function—or Homology-Directed Repair (HDR), which incorporates an exogenous donor DNA template to achieve precise gene insertion or sequence correction.",
+    "questions": [
+      {
+        "id": "ENG_RC_117_Q1",
+        "question": "What natural biological function did CRISPR-Cas9 serve prior to its adaptation for gene editing?",
+        "options": {
+          "A": "A photosynthetic light-harvesting complex in marine algae",
+          "B": "An adaptive immune defense mechanism against bacteriophage infections in bacteria",
+          "C": "A hormone signaling pathway regulating insect metamorphosis",
+          "D": "A digestive enzyme responsible for breakdown of cellulose in herbivores"
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence notes that CRISPR-Cas9 originated as an adaptive immune mechanism in bacteria and archaea to neutralize bacteriophages."
+      },
+      {
+        "id": "ENG_RC_117_Q2",
+        "question": "What is the critical role of the Protospacer Adjacent Motif (PAM) in Cas9 targeting?",
+        "options": {
+          "A": "It permanently deactivates the Cas9 endonuclease domains.",
+          "B": "It serves as the essential initial binding motif that triggers DNA unwinding and guide RNA pairing.",
+          "C": "It synthesizes donor DNA templates during homology-directed repair.",
+          "D": "It prevents bacteriophage DNA from entering the host cell wall."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that Cas9 must recognize the PAM sequence before unwinding DNA and testing sgRNA complementarity."
+      },
+      {
+        "id": "ENG_RC_117_Q3",
+        "question": "Which cellular repair pathway is utilized when researchers want to achieve precise sequence insertion using a donor template?",
+        "options": {
+          "A": "Non-Homologous End Joining (NHEJ)",
+          "B": "Homology-Directed Repair (HDR)",
+          "C": "Lysosomal autophagy",
+          "D": "Mitochondrial oxidative phosphorylation"
+        },
+        "correct_option": "B",
+        "rationale": "The text states that Homology-Directed Repair (HDR) uses an exogenous donor DNA template to achieve precise sequence insertion."
+      },
+      {
+        "id": "ENG_RC_117_Q4",
+        "question": "Which specific nuclease domains within Cas9 are responsible for cleaving the DNA backbone?",
+        "options": {
+          "A": "RuvC and HNH domains",
+          "B": "CLOCK and BMAL1 domains",
+          "C": "PER and CRY domains",
+          "D": "NMDA and AMPA domains"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly names the RuvC and HNH nuclease domains as the catalytic engines that cleave the target DNA."
+      },
+      {
+        "id": "ENG_RC_117_Q5",
+        "question": "As used in the passage, the word 'endonuclease' refers to an enzyme that:",
+        "options": {
+          "A": "Synthesizes lipids within the smooth endoplasmic reticulum",
+          "B": "Cleaves phosphodiester bonds within a polynucleotide chain",
+          "C": "Pumps sodium ions across an axon membrane",
+          "D": "Transfers sensory impulses to the hypothalamic nucleus"
+        },
+        "correct_option": "B",
+        "rationale": "An endonuclease is an enzyme that hydrolyzes internal phosphodiester bonds within a DNA or RNA molecule."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_118",
+    "passage_title": "The Socio-Economic Dynamics of the Dutch Tulip Mania",
+    "passage_text": "In the 1630s, the Dutch Republic was the epicentre of global maritime commerce, fueled by the chartered Dutch East India Company (VOC) and an expanding merchant burgher class. This newfound affluence fostered a voracious domestic appetite for luxury status symbols, culminating in 'Tulipmania'. Introduced from the Ottoman Empire, tulips were prized for their exotic, nonpareil petals. Especially coveted were 'broken' cultivars—such as the *Semper Augustus*—which displayed flame-like variegations across their petals (later discovered to be the pathological effect of the tulip breaking potyvirus). Because cultivating bulb offspring from seed required up to a decade, supply was highly inelastic. By 1636, trading moved beyond physical transactions into a sophisticated futures market. Speculators convened in tavern backrooms (*collegies*) to trade forward contracts for bulbs still dormant in frozen winter soil. At its speculative apex in February 1637, single bulbs traded for sums exceeding the price of an Amsterdam townhouse. However, when an auction in Haarlem failed to find buyers at expected prices, market confidence evaporated overnight. Contract defaults cascaded through the merchant class, resulting in government market intervention and establishing Tulipmania as history's quintessential speculative asset bubble.",
+    "questions": [
+      {
+        "id": "ENG_RC_118_Q1",
+        "question": "What underlying biological phenomenon caused the prized variegated patterns in 'broken' tulips like the *Semper Augustus*?",
+        "options": {
+          "A": "Targeted selective hybrid pollination by Ottoman botanists",
+          "B": "An infection caused by the tulip breaking potyvirus",
+          "C": "Elevated iron concentrations in Dutch coastal soil",
+          "D": "Genetic mutations induced by extreme freezing winters"
+        },
+        "correct_option": "B",
+        "rationale": "The passage reveals that the flame-like petal variegations were 'the pathological effect of the tulip breaking potyvirus.'"
+      },
+      {
+        "id": "ENG_RC_118_Q2",
+        "question": "Why was the supply of desirable tulip bulbs extremely inelastic during the 1630s?",
+        "options": {
+          "A": "The Dutch government banned the importation of foreign flora.",
+          "B": "Growing mature flowering bulbs from seed took up to a decade.",
+          "C": "Spanish naval blockades prevented merchant ships from reaching Dutch ports.",
+          "D": "Bulbs could only be cultivated in subterranean greenhouses."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that supply was inelastic because 'cultivating bulb offspring from seed required up to a decade.'"
+      },
+      {
+        "id": "ENG_RC_118_Q3",
+        "question": "What financial instrument facilitated the speculative frenzy in the final months of Tulipmania?",
+        "options": {
+          "A": "Gold-backed paper banknotes issued by the central bank",
+          "B": "Futures and forward contracts traded for dormant bulbs still in the soil",
+          "C": "Government-subsidized low-interest agricultural mortgages",
+          "D": "Maritime insurance policies underwritten by the East India Company"
+        },
+        "correct_option": "B",
+        "rationale": "The author explains that trade shifted into a futures market where speculators traded 'forward contracts for bulbs still dormant in frozen winter soil.'"
+      },
+      {
+        "id": "ENG_RC_118_Q4",
+        "question": "As used in the passage, the word 'nonpareil' means:",
+        "options": {
+          "A": "Having no match or equal; unrivaled",
+          "B": "Extremely fragile and short-lived",
+          "C": "Artificially colored using mineral dyes",
+          "D": "Highly toxic when consumed"
+        },
+        "correct_option": "A",
+        "rationale": "'Nonpareil' means having no equal or match; peerless and unrivaled."
+      },
+      {
+        "id": "ENG_RC_118_Q5",
+        "question": "What occurred when an auction in Haarlem failed to attract expected bids in February 1637?",
+        "options": {
+          "A": "The Ottoman Empire declared war on the Dutch Republic.",
+          "B": "Market confidence evaporated, triggering cascading contract defaults and the bubble's collapse.",
+          "C": "The price of Amsterdam real estate increased tenfold immediately.",
+          "D": "The Dutch government mandated the destruction of all flower gardens."
+        },
+        "correct_option": "B",
+        "rationale": "The passage describes how confidence collapsed overnight after the failed auction, causing contract defaults that burst the speculative bubble."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_119",
+    "passage_title": "The Geodynamic Mechanics of Plate Tectonics and Mantle Convection",
+    "passage_text": "The conceptual journey toward plate tectonics began with Alfred Wegener's 1912 continental drift hypothesis, which was dismissed by the geological establishment for decades due to the absence of a plausible geophysical propulsion mechanism. The paradigm shift occurred in the 1960s with the confirmation of seafloor spreading and paleomagnetic reversals recorded symmetrically along mid-ocean ridges. Modern geodynamics conceptualizes Earth's lithosphere—comprising the crust and uppermost rigid mantle—as a mosaic of rigid plates floating upon the ductile, partially molten asthenosphere. The kinetic motion of these lithospheric plates is driven by mantle convection, which transfers internal geothermal heat from the radioactive decay of radioisotopes and residual primordial heat from planetary accretion toward the surface. Two primary mechanical forces govern plate kinematics: 'ridge push' and 'slab pull'. While ridge push operates as a gravitational sliding force away from elevated mid-ocean ridges where new basaltic crust forms, 'slab pull' is the dominant driving engine. Because cold oceanic lithosphere cools, thickens, and densifies as it ages away from ridge axes, it eventually becomes negatively buoyant relative to the underlying asthenosphere, sinking into the subduction zone and dragging the trailing plate behind it.",
+    "questions": [
+      {
+        "id": "ENG_RC_119_Q1",
+        "question": "Why was Alfred Wegener's initial hypothesis of continental drift rejected by mainstream geologists?",
+        "options": {
+          "A": "He lacked fossil evidence comparing South America and Africa.",
+          "B": "He failed to provide a viable physical mechanism explaining how continents moved through the oceanic crust.",
+          "C": "He claimed that Earth's mantle was completely solid and immobile.",
+          "D": "He based his calculations entirely on lunar gravitational tides."
+        },
+        "correct_option": "B",
+        "rationale": "Wegener's theory was dismissed because he could not provide a plausible geophysical propulsion mechanism to explain continental drift."
+      },
+      {
+        "id": "ENG_RC_119_Q2",
+        "question": "What empirical observation in the 1960s provided critical evidence for seafloor spreading?",
+        "options": {
+          "A": "The complete absence of volcanic activity along the Pacific Ring of Fire",
+          "B": "Symmetrical patterns of paleomagnetic stripe reversals recorded across mid-ocean ridges",
+          "C": "The discovery that oceanic crust is billions of years older than continental granite",
+          "D": "Direct visual measurement of continental shelf movements using radar satellites"
+        },
+        "correct_option": "B",
+        "rationale": "The text notes that the confirmation of 'paleomagnetic reversals recorded symmetrically along mid-ocean ridges' proved seafloor spreading."
+      },
+      {
+        "id": "ENG_RC_119_Q3",
+        "question": "According to modern geodynamics, what is the dominant mechanical force driving plate motion?",
+        "options": {
+          "A": "Atmospheric pressure differentials at polar ice caps",
+          "B": "Slab pull caused by the negative buoyancy of cold, dense subducting oceanic lithosphere",
+          "C": "Tidal friction exerted by lunar and solar gravitational pull",
+          "D": "Centrifugal force generated by Earth's daily axial rotation"
+        },
+        "correct_option": "B",
+        "rationale": "The author explicitly identifies 'slab pull' as the dominant driving engine, caused by cold, dense oceanic lithosphere sinking into subduction zones."
+      },
+      {
+        "id": "ENG_RC_119_Q4",
+        "question": "What layer of the Earth immediately underlies the rigid lithosphere?",
+        "options": {
+          "A": "The ductile, partially molten asthenosphere",
+          "B": "The solid iron-nickel inner core",
+          "C": "The outer gaseous stratosphere",
+          "D": "The granitic continental shield"
+        },
+        "correct_option": "A",
+        "rationale": "The passage describes the lithosphere as plates 'floating upon the ductile, partially molten asthenosphere.'"
+      },
+      {
+        "id": "ENG_RC_119_Q5",
+        "question": "As used in the passage, the word 'buoyant' refers to:",
+        "options": {
+          "A": "The tendency of an object or mass to float or rise in a fluid medium",
+          "B": "The capacity to conduct electrical current without resistance",
+          "C": "The susceptibility of rock to undergo radioactive decay",
+          "D": "The rate at which a mineral changes its crystalline structure"
+        },
+        "correct_option": "A",
+        "rationale": "'Buoyancy' refers to the ability or tendency of a body to float or rise when immersed in a fluid of greater density."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_120",
+    "passage_title": "The Economic Logic of the Tragedy of the Commons",
+    "passage_text": "In his influential 1968 essay, ecologist Garrett Hardin articulated the conceptual paradigm known as the 'Tragedy of the Commons' to illustrate the structural dilemma inherent in the exploitation of open-access shared resources. Hardin utilized the parable of an open pasture accessible to all herdsmen. In this scenario, each rational herdsman seeks to maximize individual economic utility. When deciding whether to add an additional animal to the herd, the herdsman captures the full positive utility of the sale of the animal ($+1$). Conversely, the negative utility—the cumulative environmental degradation caused by overgrazing—is shared fractionally among all herdsmen utilizing the pasture ($-1/n$). Because the individual gain consistently exceeds the individual fraction of the shared loss, each herdsman is economically incentivized to expand their herd indefinitely in a finite pasture. The tragic outcome is inevitable ecological collapse. While institutional economists such as Elinor Ostrom later demonstrated that localized community self-governance and customary tenure rules can manage common-pool resources without tragedy, Hardin's model remains a foundational framework for analyzing transnational environmental dilemmas such as oceanic overfishing, atmospheric greenhouse gas emissions, and orbital debris accumulation.",
+    "questions": [
+      {
+        "id": "ENG_RC_120_Q1",
+        "question": "What is the core economic asymmetry driving the Tragedy of the Commons in Hardin's model?",
+        "options": {
+          "A": "The state captures all profits while herdsmen bear the costs.",
+          "B": "The individual captures the entire positive benefit of resource use while the environmental cost is distributed among all users.",
+          "C": "Private property rights prevent any collective investment in public pasture infrastructure.",
+          "D": "Herdsmen are prevented from trading animals in open market auctions."
+        },
+        "correct_option": "B",
+        "rationale": "Hardin's model illustrates that an individual gains $+1$ utility from an extra animal while bearing only a small fraction ($-1/n$) of the pasture's collective degradation."
+      },
+      {
+        "id": "ENG_RC_120_Q2",
+        "question": "What contribution did Elinor Ostrom make to the theoretical debate surrounding the commons?",
+        "options": {
+          "A": "She proved that centralized military dictatorships are the only method to prevent overfishing.",
+          "B": "She demonstrated that localized communities can successfully govern shared resources through customary rules without central state coercion.",
+          "C": "She showed that open pasture farming is mathematically impossible in all climates.",
+          "D": "She argued that all natural resources should be fully privatized by corporations."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that Ostrom proved 'localized community self-governance and customary tenure rules can manage common-pool resources without tragedy.'"
+      },
+      {
+        "id": "ENG_RC_120_Q3",
+        "question": "Which of the following contemporary issues is cited as an example of a modern global commons dilemma?",
+        "options": {
+          "A": "Domestic patent licensing for pharmaceuticals",
+          "B": "Atmospheric greenhouse gas emissions and oceanic overfishing",
+          "C": "Local zoning permits for suburban housing complexes",
+          "D": "National currency printing quotas in central banks"
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence lists 'oceanic overfishing, atmospheric greenhouse gas emissions, and orbital debris accumulation' as modern examples."
+      },
+      {
+        "id": "ENG_RC_120_Q4",
+        "question": "As used in the passage, the word 'parable' refers to:",
+        "options": {
+          "A": "A simple narrative used to illustrate a moral or conceptual principle",
+          "B": "A binding international treaty signed by sovereign nations",
+          "C": "A complex thermodynamic mathematical formula",
+          "D": "An archaeological artifact recovered from ancient ruins"
+        },
+        "correct_option": "A",
+        "rationale": "A 'parable' is a simple story or allegorical scenario used to teach a lesson or illustrate a theoretical concept."
+      },
+      {
+        "id": "ENG_RC_120_Q5",
+        "question": "What is the primary conclusion regarding rational individual behavior in an unregulated commons?",
+        "options": {
+          "A": "Individual self-interest automatically produces an optimal ecological balance without regulation.",
+          "B": "Individually rational economic choices can culminate in collective ecological and resource ruin.",
+          "C": "Herdsmen will voluntarily reduce their herd size to protect competitors.",
+          "D": "Shared pastures invariably produce higher crop yields than privately owned farms."
+        },
+        "correct_option": "B",
+        "rationale": "The essence of the Tragedy of the Commons is that individual rational pursuit of self-interest in an open-access resource leads to collective overexploitation and collapse."
+      }
+    ]
+  }
+]

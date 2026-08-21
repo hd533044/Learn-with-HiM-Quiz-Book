@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_CLAU_1651",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'I will buy the house provided that it meets my requirements.'",
+    "options": {
+      "A": "Adverbial clause of condition",
+      "B": "Noun clause acting as subject",
+      "C": "Adjective clause modifying house",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "'Provided that' introduces a condition, making it an adverbial clause of condition.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1652",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The reason why he left is because he was bored.'",
+    "options": {
+      "A": "The reason why he left",
+      "B": "is because",
+      "C": "he was bored.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Using 'because' after 'The reason why... is' is redundant. Use 'that' instead of 'because'.",
+    "tags": ["grammar", "clauses", "redundancy", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1653",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct clause to complete the sentence: 'She is the woman ___.'",
+    "options": {
+      "A": "whom I spoke to",
+      "B": "who I spoke to",
+      "C": "that I spoke to",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "In casual and some formal contexts, 'whom', 'who', and 'that' are all acceptable in relative clauses when the relative pronoun is the object of the preposition.",
+    "tags": ["grammar", "clauses", "relative_clauses", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1654",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause: 'Whoever wins the game will receive a trophy.'",
+    "options": {
+      "A": "Noun clause as subject",
+      "B": "Adjective clause modifying winner",
+      "C": "Adverbial clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "The entire clause 'Whoever wins the game' acts as the subject of the sentence.",
+    "tags": ["grammar", "clauses", "noun_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1655",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked me where did I go.'",
+    "options": {
+      "A": "He asked me",
+      "B": "where did I go.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Indirect questions require declarative order. Correct: 'where I went'.",
+    "tags": ["grammar", "clauses", "noun_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1656",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He talks as though ___ the king.'",
+    "options": {
+      "A": "he is",
+      "B": "he were",
+      "C": "he has been",
+      "D": "he will be"
+    },
+    "correct_option": "B",
+    "explanation": "'As though' for unreal present comparison requires the subjunctive 'were'.",
+    "tags": ["grammar", "clauses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1657",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'He stayed indoors since it was raining.'",
+    "options": {
+      "A": "Adverbial clause of cause",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "'Since it was raining' provides the reason/cause for the main clause action.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1658",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man that I saw him yesterday is here.'",
+    "options": {
+      "A": "The man that I saw",
+      "B": "him yesterday",
+      "C": "is here.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The pronoun 'him' is redundant because the relative pronoun 'that' already functions as the object of 'saw'.",
+    "tags": ["grammar", "clauses", "relative_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1659",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I don't know ___ he left so early.'",
+    "options": {
+      "A": "why",
+      "B": "that why",
+      "C": "the reason why that",
+      "D": "reason why"
+    },
+    "correct_option": "A",
+    "explanation": "'Why' is the correct subordinating conjunction for this noun clause.",
+    "tags": ["grammar", "clauses", "noun_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1660",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct clause to modify 'car': 'The car ___ is in the garage.'",
+    "options": {
+      "A": "that I bought yesterday",
+      "B": "what I bought yesterday",
+      "C": "who I bought yesterday",
+      "D": "whose I bought yesterday"
+    },
+    "correct_option": "A",
+    "explanation": "'That' (or 'which') is the correct relative pronoun for non-human antecedents.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1661",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Whoever tells the truth they will be rewarded.'",
+    "options": {
+      "A": "Whoever tells",
+      "B": "the truth",
+      "C": "they will be rewarded.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "The pronoun 'they' is redundant as 'Whoever' already functions as the subject.",
+    "tags": ["grammar", "clauses", "noun_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1662",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'We went inside ___ it started raining.'",
+    "options": {
+      "A": "until",
+      "B": "as soon as",
+      "C": "before",
+      "D": "although"
+    },
+    "correct_option": "B",
+    "explanation": "'As soon as' introduces an adverbial clause of time.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1663",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'He will join the team provided that he is selected.'",
+    "options": {
+      "A": "Adverbial clause of condition",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "Adverbial clause of condition.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1664",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The girl whom you were talking to her is my sister.'",
+    "options": {
+      "A": "The girl whom you were",
+      "B": "talking to her",
+      "C": "is my sister.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Redundant 'her' after 'to'. Correct: '...talking to is my sister.'",
+    "tags": ["grammar", "clauses", "relative_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1665",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I believe ___ you can do it.'",
+    "options": {
+      "A": "that",
+      "B": "what",
+      "C": "which",
+      "D": "if"
+    },
+    "correct_option": "A",
+    "explanation": "Subordinating conjunction 'that' introduces the noun clause object.",
+    "tags": ["grammar", "clauses", "noun_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1666",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct relative pronoun: 'This is the place ___ we first met.'",
+    "options": {
+      "A": "where",
+      "B": "that",
+      "C": "which",
+      "D": "in that"
+    },
+    "correct_option": "A",
+    "explanation": "Relative adverb 'where' (equivalent to 'in which') refers to the place.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1667",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I don't know that why he is angry.'",
+    "options": {
+      "A": "I don't know",
+      "B": "that why",
+      "C": "he is angry.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Cannot combine 'that' and 'why' in indirect questions. Correct: 'I don't know why he is angry.'",
+    "tags": ["grammar", "clauses", "noun_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1668",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Whatever he says makes sense.'",
+    "options": {
+      "A": "Noun clause as subject",
+      "B": "Adjective clause modifying says",
+      "C": "Adverbial clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "The clause 'Whatever he says' functions as the subject.",
+    "tags": ["grammar", "clauses", "noun_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1669",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Work hard ___ you should fail.'",
+    "options": {
+      "A": "lest",
+      "B": "unless",
+      "C": "until",
+      "D": "although"
+    },
+    "correct_option": "A",
+    "explanation": "'Lest' (meaning 'for fear that') is followed by 'should' in the clause.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1670",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He behaves as if he was the boss.",
+      "B": "He behaves as if he were the boss.",
+      "C": "He behaves as if he is the boss.",
+      "D": "Both B and C are acceptable.",
+    },
+    "correct_option": "D",
+    "explanation": "In casual usage, 'is' (C) is acceptable, while formal subjunctive requires 'were' (B). Both are common in contemporary English.",
+    "tags": ["grammar", "clauses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1671",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man who I spoke to yesterday is the expert.'",
+    "options": {
+      "A": "The man who I spoke to",
+      "B": "yesterday",
+      "C": "is the expert.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "In formal English, when the relative pronoun is the object of the preposition, 'whom' is preferred. Correct: 'The man whom I spoke to...'",
+    "tags": ["grammar", "clauses", "relative_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1672",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Until the bell rings, stay in your seats.'",
+    "options": {
+      "A": "Adverbial clause of time",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "Adverbial clause of time.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1673",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ is true, you must tell me.'",
+    "options": {
+      "A": "If what you said",
+      "B": "That what you said",
+      "C": "Whatever you said",
+      "D": "Whether what you said"
+    },
+    "correct_option": "A",
+    "explanation": "Condition introduced by 'If'.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1674",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct relative pronoun: 'The village ___ I was born is very small.'",
+    "options": {
+      "A": "where",
+      "B": "in which",
+      "C": "which",
+      "D": "Both A and B"
+    },
+    "correct_option": "D",
+    "explanation": "Both 'where' and 'in which' are valid relative adverbials for place.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1675",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The reason why he failed is because he was lazy.'",
+    "options": {
+      "A": "The reason why he failed",
+      "B": "is because",
+      "C": "he was lazy.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Redundant: 'reason... is that', not 'because'.",
+    "tags": ["grammar", "clauses", "redundancy", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1676",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Where there is a will, there is a way.'",
+    "options": {
+      "A": "Adverbial clause of place",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "Adverbial clause of place.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1677",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He asked me ___ I had finished the task.'",
+    "options": {
+      "A": "if",
+      "B": "that if",
+      "C": "that",
+      "D": "whether or not that"
+    },
+    "correct_option": "A",
+    "explanation": "Indirect yes/no questions take 'if' or 'whether'.",
+    "tags": ["grammar", "clauses", "noun_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1678",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "The boy, who was playing, fell down.",
+      "B": "The boy who was playing fell down.",
+      "C": "Both are grammatically valid.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Depending on if the clause is restrictive or non-restrictive, both punctuations are valid.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1679",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The house that I bought it is beautiful.'",
+    "options": {
+      "A": "The house that",
+      "B": "I bought it",
+      "C": "is beautiful.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Redundant pronoun: 'it' repeats the object antecedent.",
+    "tags": ["grammar", "clauses", "redundancy", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1680",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'While you were sleeping, the mail arrived.'",
+    "options": {
+      "A": "Adverbial clause of time",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "Adverbial clause of time.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1681",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Whatever ___ is yours.'",
+    "options": {
+      "A": "you want",
+      "B": "you do want",
+      "C": "do you want",
+      "D": "that you want"
+    },
+    "correct_option": "A",
+    "explanation": "Noun clause structure: subject + verb.",
+    "tags": ["grammar", "clauses", "noun_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1682",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct relative pronoun: 'The person ___ phone was ringing left the meeting.'",
+    "options": {
+      "A": "who",
+      "B": "which",
+      "C": "whose",
+      "D": "whom"
+    },
+    "correct_option": "C",
+    "explanation": "'Whose' indicates possession.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1683",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The reason why he failed is because he did not study.'",
+    "options": {
+      "A": "The reason why he failed",
+      "B": "is because",
+      "C": "he did not study.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Redundant 'reason... is because'.",
+    "tags": ["grammar", "clauses", "redundancy", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1684",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Although it was late, we continued working.'",
+    "options": {
+      "A": "Adverbial clause of concession",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "Adverbial clause of concession.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1685",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He asked me ___ my name was.'",
+    "options": {
+      "A": "what",
+      "B": "that what",
+      "C": "if what",
+      "D": "the what"
+    },
+    "correct_option": "A",
+    "explanation": "WH-word conjunction.",
+    "tags": ["grammar", "clauses", "noun_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1686",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "The city, which I visited, was beautiful.",
+      "B": "The city that I visited was beautiful.",
+      "C": "Both are grammatically valid.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both restrictive (that) and non-restrictive (which) relative clauses are valid here.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1687",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man whom I saw him yesterday is here.'",
+    "options": {
+      "A": "The man whom I saw him",
+      "B": "yesterday is here.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "A",
+    "explanation": "Redundant object pronoun.",
+    "tags": ["grammar", "clauses", "redundancy", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1688",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Since he was tired, he went to bed.'",
+    "options": {
+      "A": "Adverbial clause of cause",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "Adverbial clause of cause.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1689",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ you do is your business.'",
+    "options": {
+      "A": "Whatever",
+      "B": "What",
+      "C": "Which",
+      "D": "That"
+    },
+    "correct_option": "A",
+    "explanation": "Noun clause as subject.",
+    "tags": ["grammar", "clauses", "noun_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1690",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct relative pronoun: 'The person ___ phone rang during the lecture was embarrassed.'",
+    "options": {
+      "A": "who",
+      "B": "whose",
+      "C": "which",
+      "D": "that"
+    },
+    "correct_option": "B",
+    "explanation": "Possessive relative pronoun.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1691",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I don't know that why he is angry.'",
+    "options": {
+      "A": "I don't know",
+      "B": "that why",
+      "C": "he is angry.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Redundant 'that why'.",
+    "tags": ["grammar", "clauses", "noun_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1692",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Whatever happens, we must be prepared.'",
+    "options": {
+      "A": "Adverbial clause of concession",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "Adverbial clause of concession.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1693",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He behaves ___ he owned the entire building.'",
+    "options": {
+      "A": "as if",
+      "B": "so that",
+      "C": "because",
+      "D": "although"
+    },
+    "correct_option": "A",
+    "explanation": "Hypothetical comparison.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1694",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct relative pronoun: 'The committee, ___ members disagreed, failed to reach a consensus.'",
+    "options": {
+      "A": "whose",
+      "B": "which",
+      "C": "who",
+      "D": "whom"
+    },
+    "correct_option": "A",
+    "explanation": "Possessive relative pronoun.",
+    "tags": ["grammar", "clauses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1695",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The reason why he failed is because he did not study.'",
+    "options": {
+      "A": "The reason why he failed",
+      "B": "is because",
+      "C": "he did not study.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Redundant 'reason... is because'.",
+    "tags": ["grammar", "clauses", "redundancy", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1696",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause function: 'What you need right now is a long vacation.'",
+    "options": {
+      "A": "Noun clause as subject",
+      "B": "Adjective clause",
+      "C": "Adverbial clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "Noun clause as subject.",
+    "tags": ["grammar", "clauses", "noun_clauses", "identification"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1697",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ hard he tried, he could not clear the hurdle.'",
+    "options": {
+      "A": "However",
+      "B": "Whatever",
+      "C": "Whenever",
+      "D": "Wherever"
+    },
+    "correct_option": "A",
+    "explanation": "Adverbial clause of concession.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1698",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He told me that he would come tomorrow.",
+      "B": "He told me that he would come the next day.",
+      "C": "Both are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Reported speech time variations.",
+    "tags": ["grammar", "clauses", "reported_speech", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1699",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man whom I saw him yesterday is here.'",
+    "options": {
+      "A": "The man whom I saw him",
+      "B": "yesterday is here.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "A",
+    "explanation": "Redundant pronoun.",
+    "tags": ["grammar", "clauses", "relative_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CLAU_1700",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the clause type: 'Where there is a will, there is a way.'",
+    "options": {
+      "A": "Adverbial clause of place",
+      "B": "Noun clause",
+      "C": "Adjective clause",
+      "D": "Independent clause"
+    },
+    "correct_option": "A",
+    "explanation": "Adverbial clause of place.",
+    "tags": ["grammar", "clauses", "adverbial_clauses", "identification"]
+  }
+]

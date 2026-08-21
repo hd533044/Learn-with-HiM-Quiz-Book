@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_0751",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Wrathfully",
+      "B": "Rathfully",
+      "C": "Wrathfuly",
+      "D": "Wrathfullly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Wrathfully' - with great anger or fury; starts with silent 'W', ends in '-fully'). Options B, C, and D drop 'W', drop an 'l', or add extra consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0752",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Wretchedness",
+      "B": "Xanthic",
+      "C": "Xenocentrism",
+      "D": "Xerophitic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Xerophytic' (spelled with '-phy-', not '-phi-' - adapted to a dry environment). Other options are correct: Wretchedness (the state of being very miserable or unfortunate), Xanthic (of or relating to a yellow color), Xenocentrism (preference for products, styles, or ideas of a different culture).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0753",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Xylophone",
+      "B": "Zylophone",
+      "C": "Xylafone",
+      "D": "Xilophone"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Xylophone' - a musical instrument played by striking a row of wooden bars; starts with 'Xy-', ends with '-phone'). Options B, C, and D alter the initial consonant or connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0754",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Yardstick",
+      "B": "Yarnspinner",
+      "C": "Yesteryear",
+      "D": "Yieldinglyy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Yieldingly' (ends in single 'y' - in a submissive, compliant, or flexible manner). Other options are correct: Yardstick (a standard used for comparison), Yarnspinner (a teller of tales), Yesteryear (last year or the past in general).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0755",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Zealotry",
+      "B": "Zelotry",
+      "C": "Zealatry",
+      "D": "Zealotrey"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Zealotry' - fanatical and uncompromising pursuit of religious, political, or other ideals; 'z-e-a-l-o-t-r-y'). Options B, C, and D alter vowels or the standard suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0756",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Zeitgeist",
+      "B": "Zeppelin",
+      "C": "Zoolatry",
+      "D": "Zooplanktonn"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Zooplankton' (ends in single 'n' - plankton consisting of small animals and the immature stages of larger animals). Other options are correct: Zeitgeist (the defining spirit or mood of a particular period of history), Zeppelin (a large rigid airship), Zoolatry (the worship of animals).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0757",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Abbreviation",
+      "B": "Abreviation",
+      "C": "Abbrevation",
+      "D": "Abbrevition"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Abbreviation' - a shortened form of a word or phrase; double 'b', '-via-'). Options B, C, and D drop a consonant or alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0758",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Abdication",
+      "B": "Abduction",
+      "C": "Aberant",
+      "D": "Abeyance"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Aberrant' (double 'r' - departing from an accepted standard). Other options are correct: Abdication (renouncing a throne or failure to fulfill a duty), Abduction (the action of forcibly taking someone away against their will), Abeyance (a state of temporary disuse or suspension).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0759",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Abhorrence",
+      "B": "Abhorence",
+      "C": "Abhorrance",
+      "D": "Abhoranse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Abhorrence' - a feeling of revulsion or disgusted loathing; double 'r', ends in '-ence'). Options B, C, and D drop 'r' or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0760",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Abidance",
+      "B": "Abjection",
+      "C": "Abjuration",
+      "D": "Ablusion"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ablution' (spelled with '-tion', not '-sion' - an act of washing oneself, often ritualistic). Other options are correct: Abidance (the act of abiding by or conforming to something), Abjection (a state of misery or degradation), Abjuration (the solemn renunciation of a belief, cause, or claim).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0761",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Abnegation",
+      "B": "Abnigasion",
+      "C": "Abnegasion",
+      "D": "Abnegashun"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Abnegation' - the act of renouncing or rejecting something; 'a-b-n-e-g-a-t-i-o-n'). Options B, C, and D alter the vowels or phonetic suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0762",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Abnormal",
+      "B": "Abolitionist",
+      "C": "Abominable",
+      "D": "Aborigene"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Aborigine' (ends in '-ine', not '-ene' - an indigenous inhabitant). Other options are correct: Abnormal (deviating from what is normal or typical), Abolitionist (a person who favors the abolition of a practice, especially slavery), Abominable (causing moral revulsion; very bad or unpleasant).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0763",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Abrasion",
+      "B": "Abrazion",
+      "C": "Abration",
+      "D": "Abrassion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Abrasion' - the process of scraping or wearing away; single 's', ends in '-sion'). Options B, C, and D alter the consonant stem or double 's'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0764",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Abridgement",
+      "B": "Abrogation",
+      "C": "Abscondence",
+      "D": "Absolutionn"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Absolution' (ends in single 'n' - formal release from guilt, obligation, or punishment). Other options are correct: Abridgement (a shortened version of a larger work), Abrogation (the repeal or abolition of a law, right, or agreement), Abscondence (the action of departing secretly and hiding).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0765",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Absorbency",
+      "B": "Absorbansy",
+      "C": "Absorbancy",
+      "D": "Absorbensy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Absorbency' - the capacity to absorb liquids; ends in '-ency'). Options B, C, and D alter the vowel or replace 'c' with 's'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0766",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Abstemiousness",
+      "B": "Abstention",
+      "C": "Abstinence",
+      "D": "Abstractedlyy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Abstractedly' (ends in single 'y' - in a manner indicating preoccupation). Other options are correct: Abstemiousness (the practice of restraining oneself, especially in eating/drinking), Abstention (the act of refraining from something), Abstinence (the practice of restraining oneself from indulging in something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0767",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Abstruse",
+      "B": "Abstrus",
+      "C": "Abstruce",
+      "D": "Abstroose"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Abstruse' - difficult to understand; obscure; 'a-b-s-t-r-u-s-e'). Options B, C, and D drop silent 'e' or alter phonetic vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0768",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Academism",
+      "B": "Acanthus",
+      "C": "Accelerater",
+      "D": "Accentuation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Accelerator' (ends in '-tor', not '-ter' - a device or pedal for increasing speed). Other options are correct: Academism (traditional or formal academic style), Acanthus (a herbaceous plant with prickly leaves), Accentuation (the action of emphasizing something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0769",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Acceptability",
+      "B": "Acceptabilaty",
+      "C": "Acceptablety",
+      "D": "Acceptabelity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Acceptability' - the quality of being satisfactory and able to be agreed to; 'a-c-c-e-p-t-a-b-i-l-i-t-y'). Options B, C, and D alter the connecting vowel sequence.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0770",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Accession",
+      "B": "Accidental",
+      "C": "Acclamation",
+      "D": "Acclamitize"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Acclimatize' (spelled with '-cli-', not '-clami-' - become accustomed to a new climate). Other options are correct: Accession (the attainment of a certain position of rank or power), Accidental (happening by chance, unintentionally), Acclamation (loud and enthusiastic approval).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0771",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Acclivity",
+      "B": "Aclivity",
+      "C": "Acclivety",
+      "D": "Acclivitey"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Acclivity' - an upward slope; double 'c', 'a-c-c-l-i-v-i-t-y'). Options B, C, and D drop 'c' or alter vowel endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0772",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Accompaniment",
+      "B": "Accomplice",
+      "C": "Accoutrement",
+      "D": "Accredetation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Accreditation' (spelled with '-di-', not '-de-' - the action of granting official authorization or approval). Other options are correct: Accompaniment (an event or situation happening at the same time as another / musical backing), Accomplice (a partner in a crime), Accoutrement (additional items of dress or equipment).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0773",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Accretion",
+      "B": "Acretion",
+      "C": "Accresion",
+      "D": "Accrecion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Accretion' - the process of growth or increase, typically by the gradual accumulation of additional layers; double 'c', '-tion'). Options B, C, and D drop 'c' or change suffix letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0774",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Accrue",
+      "B": "Accumulation",
+      "C": "Accuracy",
+      "D": "Accusasion"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Accusation' (spelled with '-tion', not '-sion' - a charge or claim that someone has done something illegal or wrong). Other options are correct: Accrue (be received by someone in regular or increasing amounts over time), Accumulation (the acquisition or gradual gathering of something), Accuracy (the quality or state of being correct or precise).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0775",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Acerbity",
+      "B": "Asserbity",
+      "C": "Acerbety",
+      "D": "Acerbaty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Acerbity' - bitterness or sharpness of temper or tone; 'a-c-e-r-b-i-t-y'). Options B, C, and D replace 'c' with 'ss' or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0776",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Acetylene",
+      "B": "Achievability",
+      "C": "Acidification",
+      "D": "Acousticc"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Acoustic' (ends in single 'c' - relating to sound or the sense of hearing). Other options are correct: Acetylene (a colorless hydrocarbon gas), Achievability (the quality of being capable of accomplishment), Acidification (the process of becoming acidic).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0777",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Acquiescence",
+      "B": "Acquiescense",
+      "C": "Acquiesance",
+      "D": "Acquisence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Acquiescence' - the reluctant acceptance of something without protest; 'a-c-q-u-i-e-s-c-e-n-c-e'). Options B, C, and D alter suffix consonants or drop 'e'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0778",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Acquisitive",
+      "B": "Acrimoniousness",
+      "C": "Acrobatics",
+      "D": "Acromegally"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Acromegaly' (single 'l' before 'y' - abnormal growth of the hands, feet, and face caused by overproduction of growth hormone). Other options are correct: Acquisitive (excessively interested in acquiring money or material things), Acrimoniousness (bitterness or harshness in tone or manner), Acrobatics (spectacular gymnastic feats).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0779",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Actuarial",
+      "B": "Actuariel",
+      "C": "Actuareal",
+      "D": "Acturial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Actuarial' - relating to actuaries or the calculation of insurance risks; 'a-c-t-u-a-r-i-a-l'). Options B, C, and D alter the connecting vowel or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0780",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Acuity",
+      "B": "Acupuncture",
+      "C": "Adamantine",
+      "D": "Adaptabilaty"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Adaptability' (spelled with '-i-', not '-a-' - the quality of being able to adjust to new conditions). Other options are correct: Acuity (sharpness or keenness of thought, vision, or hearing), Acupuncture (a complementary medical practice using thin needles), Adamantine (unbreakable).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0781",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Addendum",
+      "B": "Adendum",
+      "C": "Addendem",
+      "D": "Addandam"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Addendum' - an item of additional material added at the end of a book or publication; double 'd', '-dum'). Options B, C, and D drop 'd' or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0782",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Adduction",
+      "B": "Adenoid",
+      "C": "Adequacy",
+      "D": "Adherance"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Adherence' (ends in '-ence', not '-ance' - attachment or commitment to a person, cause, or rule). Other options are correct: Adduction (the movement of a body part toward the body's midline), Adenoid (a mass of enlarged lymphatic tissue between the back of the nose and the throat), Adequacy (the state or quality of being adequate).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0783",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Adjudication",
+      "B": "Adjudecation",
+      "C": "Adjudicasion",
+      "D": "Adjudeaction"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Adjudication' - the legal process of resolving a dispute; 'a-d-j-u-d-i-c-a-t-i-o-n'). Options B, C, and D alter the connecting vowel or suffix spelling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0784",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Adjuration",
+      "B": "Adjutant",
+      "C": "Administration",
+      "D": "Admissable"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Admissible' (ends in '-ible', not '-able' - acceptable or valid, especially as evidence in court). Other options are correct: Adjuration (a solemn oath or earnest urge), Adjutant (a military officer who acts as an administrative assistant to a senior officer), Administration (the management of any organization or government).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0785",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Admonitory",
+      "B": "Admonetary",
+      "C": "Admonetory",
+      "D": "Admonitary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Admonitory' - giving or conveying a warning or reprimand; 'a-d-m-o-n-i-t-o-r-y'). Options B, C, and D alter the vowels in the stem or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0786",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Adoration",
+      "B": "Adroitly",
+      "C": "Adulteration",
+      "D": "Adumbrationn"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Adumbration' (ends in single 'n' - a faint or foreshadowed outline of something). Other options are correct: Adoration (deep love and respect), Adroitly (in a clever or skillful way), Adulteration (the action of making something poorer in quality by the addition of another substance).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0787",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Adversary",
+      "B": "Adversery",
+      "C": "Advarsary",
+      "D": "Adversiry"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Adversary' - one's opponent in a contest, conflict, or dispute; ends in '-ary'). Options B, C, and D alter vowels throughout the stem.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0788",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Aeration",
+      "B": "Aerial",
+      "C": "Aerobatics",
+      "D": "Aerodinamic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Aerodynamic' (spelled with 'y', not 'i' - having a shape which reduces the drag from air moving past). Other options are correct: Aeration (the introduction of air into a material), Aerial (existing, happening, or operating in the air), Aerobatics (feats of spectacular flying performed in one or more aircraft).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0789",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Aesthetician",
+      "B": "Asthetician",
+      "C": "Estheticion",
+      "D": "Aesthetitian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Aesthetician' - a person who is knowledgeable about aesthetics / a beautician; 'a-e-s-t-h-e-t-i-c-i-a-n'). Options B, C, and D alter diphthongs or suffix consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0790",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Affectation",
+      "B": "Affiliation",
+      "C": "Affinity",
+      "D": "Affirmasion"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Affirmation' (spelled with '-tion', not '-sion' - the action or process of affirming something). Other options are correct: Affectation (behavior, speech, or writing that is artificial and designed to impress), Affiliation (the state of being officially attached to an organization), Affinity (a natural liking for or attraction to a person, thing, or idea).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0791",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Affliction",
+      "B": "Afliction",
+      "C": "Afflicsion",
+      "D": "Afflictionn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Affliction' - a cause of pain or harm; double 'f', 'a-f-f-l-i-c-t-i-o-n'). Options B, C, and D drop consonants or alter suffix forms.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0792",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Affluence",
+      "B": "Aforementioned",
+      "C": "Aficionado",
+      "D": "Agglomerasion"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Agglomeration' (spelled with '-tion', not '-sion' - a mass or collection of things). Other options are correct: Affluence (the state of having a great deal of money; wealth), Aforementioned (denoting a thing or person previously mentioned), Aficionado (a person who is very knowledgeable and enthusiastic about an activity or subject).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0793",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Aggrandizement",
+      "B": "Agrandizement",
+      "C": "Aggrandizmant",
+      "D": "Aggrandisment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Aggrandizement' - the act of increasing the power, status, or wealth of someone; double 'g', '-ment'). Options B, C, and D drop 'g' or drop silent 'e' improperly.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0794",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Aggravation",
+      "B": "Aggregation",
+      "C": "Aggression",
+      "D": "Agilityy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Agility' (ends in single 'y' - ability to move quickly and easily). Other options are correct: Aggravation (the state of being made worse or irritated), Aggregation (the formation of a number of things into a cluster), Aggression (hostile or violent behavior).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0795",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Agnosticism",
+      "B": "Agnostesism",
+      "C": "Agnostacism",
+      "D": "Agnosticizm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Agnosticism' - the view that the existence of God is unknowable; 'a-g-n-o-s-t-i-c-i-s-m'). Options B, C, and D alter connecting vowels or change 's' to 'z'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0796",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Agrarian",
+      "B": "Agoraphobia",
+      "C": "Alabaster",
+      "D": "Alchemey"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Alchemy' (ends in '-my', not '-mey' - the medieval forerunner of chemistry). Other options are correct: Agrarian (relating to cultivated land or the cultivation of land), Agoraphobia (extreme fear of open or crowded spaces), Alabaster (a fine-grained, translucent form of gypsum).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0797",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Alienation",
+      "B": "Alianation",
+      "C": "Alienasion",
+      "D": "Aleanation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Alienation' - the state or experience of being isolated from a group or an activity; 'a-l-i-e-n-a-t-i-o-n'). Options B, C, and D alter the vowel positions or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0798",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Alignment",
+      "B": "Alimentary",
+      "C": "Alkalinity",
+      "D": "Allegator"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Alligator' (spelled with '-i-', not '-e-' - a large reptile of the crocodile order). Other options are correct: Alignment (arrangement in a straight line or in correct relative positions), Alimentary (relating to nourishment or sustained bodily life), Alkalinity (the state or condition of being alkaline).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0799",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Allegory",
+      "B": "Alegory",
+      "C": "Allegorry",
+      "D": "Allegary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Allegory' - a story, poem, or picture that can be interpreted to reveal a hidden meaning; double 'l', single 'r', 'a-l-l-e-g-o-r-y'). Options B, C, and D alter consonant counts or vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_0800",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Allergy",
+      "B": "Alliteration",
+      "C": "Allocation",
+      "D": "Alotropism"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Allotropism' (double 'l' - the property of some chemical elements to exist in two or more different forms). Other options are correct: Allergy (a damaging immune response by the body to a substance), Alliteration (the occurrence of the same letter or sound at the beginning of adjacent words), Allocation (the action or process of allocating or distributing something).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

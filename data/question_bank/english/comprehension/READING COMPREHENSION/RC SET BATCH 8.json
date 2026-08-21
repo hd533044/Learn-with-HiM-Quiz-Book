@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_171",
+    "passage_title": "The Biophysics of Optogenetics and Microbial Rhodopsins",
+    "passage_text": "In cellular neuroscience, elucidating the causal links between specific neural circuit activity and behavioral outputs was long hindered by the coarse spatial and temporal resolution of electrical microstimulation and pharmacological interventions. In the mid-2000s, Karl Deisseroth, Edward Boyden, and Gero Miesenböck pioneered **optogenetics**, a revolutionary bioengineering technology that integrates genetic targeting with optical physics to achieve millisecond-scale, cell-type-specific neuromodulation. The molecular foundation of optogenetics relies on microbial opsins—single-component, seven-transmembrane retinylidene photoproteins. When engineered into viral vectors under specific promoter control, microbial opsins express in targeted neuronal subpopulations. Channelrhodopsin-2 (ChR2), derived from the unicellular green alga *Chlamydomonas reinhardtii*, functions as a light-gated cation channel. Upon absorption of blue light (~470 nm), the all-trans-retinal chromophore undergoes photoisomerization to 13-cis-retinal, opening the pore and driving an inward flux of sodium ($Na^+$) and calcium ($Ca^{2+}$) ions down their electrochemical gradients to induce rapid membrane depolarization and action potential firing. Conversely, light-driven ion pumps like Halorhodopsin (NpHR, from *Natronomonas pharaonis*) transport chloride anions ($Cl^-$) inward under yellow-orange light (~590 nm), while Archaerhodopsin (Arch) pumps protons outward, hyperpolarizing the neuron and silencing action potentials with sub-second precision. By permitting bidirectional optical interrogation of intact neural circuits in freely moving organisms, optogenetics has transformed our understanding of neuropsychiatric circuitry, sensory perception, and memory engrams.",
+    "questions": [
+      {
+        "id": "ENG_RC_171_Q1",
+        "question": "What primary limitation of traditional neurostimulation methods did optogenetics overcome?",
+        "options": {
+          "A": "The inability to measure electrical signals using computer software.",
+          "B": "The coarse spatial and temporal resolution that lacked cell-type specificity.",
+          "C": "The complete absence of optical lenses in microscopic imaging.",
+          "D": "The requirement for radioactive isotopes during brain surgery."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explains that optogenetics overcame the coarse spatial and temporal resolution of electrical microstimulation and pharmacological interventions by enabling cell-type-specific optical control."
+      },
+      {
+        "id": "ENG_RC_171_Q2",
+        "question": "How does Channelrhodopsin-2 (ChR2) stimulate neuronal action potentials upon blue light illumination?",
+        "options": {
+          "A": "By triggering photoisomerization of retinal, opening the pore to allow an influx of cations ($Na^+/Ca^{2+}$) that depolarizes the membrane.",
+          "B": "By expelling all cytoplasmic water through membrane aquaporins.",
+          "C": "By hydrolyzing ATP to pump chloride ions out of the synaptic cleft.",
+          "D": "By chemically dismantling the lipid bilayer of the axonal terminal."
+        },
+        "correct_option": "A",
+        "rationale": "The text details that blue light causes retinal photoisomerization, opening the ChR2 channel and driving an inward flux of sodium and calcium ions that depolarizes the membrane."
+      },
+      {
+        "id": "ENG_RC_171_Q3",
+        "question": "What optical mechanism is utilized by Halorhodopsin (NpHR) to silence neuronal activity?",
+        "options": {
+          "A": "Pumping chloride anions ($Cl^-$) into the neuron under yellow-orange light to induce hyperpolarization.",
+          "B": "Absorbing all ambient photons to heat the surrounding cerebrospinal fluid.",
+          "C": "Releasing dopamine directly into the extracellular matrix.",
+          "D": "Permanently sealing all potassium leak channels in the soma."
+        },
+        "correct_option": "A",
+        "rationale": "The passage states that Halorhodopsin (NpHR) transports chloride anions inward upon absorbing yellow-orange light (~590 nm), hyperpolarizing the neuron and suppressing action potentials."
+      },
+      {
+        "id": "ENG_RC_171_Q4",
+        "question": "From which organism was Channelrhodopsin-2 originally isolated?",
+        "options": {
+          "A": "*Natronomonas pharaonis*",
+          "B": "*Chlamydomonas reinhardtii*",
+          "C": "*Drosophila melanogaster*",
+          "D": "*Escherichia coli*"
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly names the unicellular green alga *Chlamydomonas reinhardtii* as the biological source of Channelrhodopsin-2."
+      },
+      {
+        "id": "ENG_RC_171_Q5",
+        "question": "As used in the passage, the term 'hyperpolarizing' refers to:",
+        "options": {
+          "A": "Making the interior electrical potential of a neuron more negative relative to the outside, inhibiting firing",
+          "B": "Raising the physical temperature of cellular organelles above physiological norms",
+          "C": "Aligning magnetic dipoles within the nucleus of an atom",
+          "D": "Freezing biological tissue samples for electron microscopy"
+        },
+        "correct_option": "A",
+        "rationale": "In electrophysiology, 'hyperpolarization' is an increase in the negativity of a cell's membrane potential relative to its resting state, making the neuron less likely to fire an action potential."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_172",
+    "passage_title": "The Triffin Dilemma and the Structural Collapse of the Bretton Woods System",
+    "passage_text": "Established at the 1944 United Nations Monetary and Financial Conference, the **Bretton Woods system** created an international gold-exchange standard designed to ensure post-war monetary stability. Under this architecture, participating nations pegged their domestic currencies to the United States dollar at fixed parities, while the US Treasury guaranteed the convertibility of dollars into physical gold for foreign central banks at the statutory rate of $35 per ounce. However, in 1960, Belgian-American economist Robert Triffin exposed an inherent, unresolvable structural contradiction within the system, now known as the **Triffin Dilemma**. To satisfy expanding global trade and provide liquidity for international reserve accumulation, the United States had to run persistent balance-of-payments deficits, exporting billions of dollars abroad. Yet, as the volume of dollar liabilities held by foreign central banks multiplied, it inevitably outpaced the physical gold reserves stored in US vaults. If the US curtailed its balance-of-payments deficits to preserve the gold backing of the dollar, international commerce would starve for liquidity, inducing global deflation. Conversely, if the US continued running deficits to supply liquidity, global confidence in dollar-gold convertibility would evaporate. By the late 1960s, European central banks—most notably France under Charles de Gaulle—began converting their dollar holdings into physical bullion, draining US gold reserves. On August 15, 1971, facing an unsustainable run on gold, President Richard Nixon unilaterally suspended the convertibility of the dollar, terminating the Bretton Woods order and ushering in the modern era of unbacked, fiat floating currencies.",
+    "questions": [
+      {
+        "id": "ENG_RC_172_Q1",
+        "question": "What core structural paradox defines the 'Triffin Dilemma' in an international reserve currency system?",
+        "options": {
+          "A": "A reserve currency issuer cannot simultaneously balance domestic income taxes with military expenditures.",
+          "B": "Providing global liquidity requires running balance-of-payments deficits that inevitably undermine confidence in the currency's metallic backing.",
+          "C": "Commercial banks cannot issue loans while maintaining physical branch offices.",
+          "D": "High tariff barriers always cause deflation in agricultural export markets."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that the reserve currency country must run deficits to supply international liquidity, but accumulating foreign liabilities inevitably exceeds physical gold reserves, destroying confidence."
+      },
+      {
+        "id": "ENG_RC_172_Q2",
+        "question": "What fixed conversion rate was guaranteed by the US Treasury under the original Bretton Woods agreement?",
+        "options": {
+          "A": "$35 per ounce of physical gold",
+          "B": "$100 per metric ton of refined silver",
+          "C": "One dollar per British pound sterling",
+          "D": "Zero dollars for non-convertible paper notes"
+        },
+        "correct_option": "A",
+        "rationale": "The passage states that the US Treasury guaranteed the convertibility of dollars into physical gold at the statutory rate of $35 per ounce."
+      },
+      {
+        "id": "ENG_RC_172_Q3",
+        "question": "Which historical action by foreign central banks precipitated the US gold reserve crisis in the late 1960s?",
+        "options": {
+          "A": "They completely stopped trading with American merchant ships.",
+          "B": "They aggressively redeemed their foreign dollar holdings for physical gold bullion from US vaults.",
+          "C": "They banned the use of paper currency across European markets.",
+          "D": "They adopted the Soviet ruble as their official legal tender."
+        },
+        "correct_option": "B",
+        "rationale": "The text notes that European central banks (notably France) began converting massive dollar reserves into physical gold bullion, draining US gold reserves."
+      },
+      {
+        "id": "ENG_RC_172_Q4",
+        "question": "What was the direct historical outcome of the 'Nixon Shock' on August 15, 1971?",
+        "options": {
+          "A": "The immediate re-establishment of the classical British gold standard.",
+          "B": "The unilateral suspension of dollar-gold convertibility, transitioning the world to a floating fiat currency regime.",
+          "C": "The complete dissolution of the International Monetary Fund.",
+          "D": "The nationalization of all private commercial banks in the United States."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence explains that Nixon suspended gold convertibility, which dissolved the fixed-rate Bretton Woods order and inaugurated the modern era of floating fiat currencies."
+      },
+      {
+        "id": "ENG_RC_172_Q5",
+        "question": "As used in the passage, the word 'convertibility' refers to:",
+        "options": {
+          "A": "The legal right to exchange paper currency for an underlying physical asset (such as gold) at a fixed rate",
+          "B": "The ability to transform agricultural land into industrial factories",
+          "C": "The modification of a diesel vehicle into an electric car",
+          "D": "The philosophical translation of ancient texts into modern prose"
+        },
+        "correct_option": "A",
+        "rationale": "In international finance, 'convertibility' is the ability to freely exchange a paper currency for gold, foreign currency, or other monetary reserves at a pegged rate."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_173",
+    "passage_title": "The Endosymbiotic Chemolithoautotrophy of Hydrothermal Vent Riftia pachyptila",
+    "passage_text": "Discovered in 1977 along the Galápagos Rift, deep-sea hydrothermal vent ecosystems challenge the dogma that all macroscopic terrestrial and marine life is fundamentally dependent on solar photosynthesis. In the pitch-black, abyssal benthic zone, towering hydrothermal chimneys ('black smokers') discharge mineral-rich, superheated fluids laden with high concentrations of dissolved hydrogen sulfide ($H_2S$). The keystone metazoan of Pacific vent fields is the giant hydrothermal vent tube worm, *Riftia pachyptila*, which can grow up to two meters in length. Adult *Riftia* lack a functional mouth, gut, and digestive tract; they survive through an obligate endosymbiotic mutualism with chemolithoautotrophic sulfur-oxidizing bacteria (*Candidatus* Endoriftia persephone) housed within a specialized, highly vascularized internal organ termed the **trophosome**. To nourish its symbionts, *Riftia* extends a bright red branchial plume into the turbulent interface where cold, oxygenated seawater mixes with warm, sulfide-rich vent effluent. The worm's extracellular hemoglobin possesses a unique quaternary structure: it simultaneously binds dissolved oxygen ($O_2$) and hydrogen sulfide ($H_2S$) with high affinity at distinct chemical binding sites. This specialized carrier protein transports sulfide through the vascular system without poisoning the worm's mitochondrial cytochrome c oxidase. Inside the trophosome, the endosymbionts oxidize sulfide into sulfate ($SO_4^{2-}$), utilizing the generated ATP and reducing power (NADPH) to fix dissolved inorganic carbon into organic nutrients via the Calvin-Benson-Bassham cycle, sustaining the host.",
+    "questions": [
+      {
+        "id": "ENG_RC_173_Q1",
+        "question": "How do adult giant tube worms (*Riftia pachyptila*) obtain metabolic energy in the absence of a digestive tract?",
+        "options": {
+          "A": "By absorbing ambient geothermal heat directly through their chitinous tube walls.",
+          "B": "Through an obligate endosymbiosis with chemolithoautotrophic sulfur-oxidizing bacteria housed in the trophosome.",
+          "C": "By capturing microscopic zooplankton using stinging tentacles on their branchial plume.",
+          "D": "By performing anaerobic fermentation of sedimentary limestone rocks."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that adult *Riftia* lack a mouth and gut, relying entirely on symbiotic chemolithoautotrophic bacteria in the trophosome to synthesize nutrients from sulfide."
+      },
+      {
+        "id": "ENG_RC_173_Q2",
+        "question": "What unique biochemical feature characterizes the extracellular hemoglobin of *Riftia pachyptila*?",
+        "options": {
+          "A": "It binds both dissolved oxygen and toxic hydrogen sulfide simultaneously at distinct binding sites.",
+          "B": "It breaks down hydrogen sulfide into radioactive uranium isotopes.",
+          "C": "It reflects ultraviolet light to illuminate deep-sea caves.",
+          "D": "It functions without using any iron or porphyrin rings."
+        },
+        "correct_option": "A",
+        "rationale": "The passage highlights that *Riftia*'s unique hemoglobin binds both oxygen ($O_2$) and toxic hydrogen sulfide ($H_2S$) simultaneously at separate sites, transporting sulfide safely to the trophosome."
+      },
+      {
+        "id": "ENG_RC_173_Q3",
+        "question": "Why is the high affinity for hydrogen sulfide in *Riftia*'s blood essential for the host's survival?",
+        "options": {
+          "A": "It prevents sulfide from poisoning the host's mitochondrial respiratory chain (cytochrome c oxidase).",
+          "B": "It dissolves the mineral chimney walls to enlarge the worm's burrow.",
+          "C": "It generates bright blue bioluminescence to attract mates.",
+          "D": "It permanently deactivates the endosymbiont's Calvin cycle enzymes."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that binding sulfide prevents it from poisoning the worm's own mitochondrial cytochrome c oxidase while delivering it to the bacterial symbionts."
+      },
+      {
+        "id": "ENG_RC_173_Q4",
+        "question": "What is the primary metabolic energy source powering the primary production in deep hydrothermal vents?",
+        "options": {
+          "A": "Solar photons absorbed by chlorophyll pigments",
+          "B": "Chemical energy derived from the oxidation of reduced inorganic sulfur compounds ($H_2S$)",
+          "C": "Gravitational kinetic energy from tidal friction",
+          "D": "Decomposition of dead whale falls from the surface"
+        },
+        "correct_option": "B",
+        "rationale": "Primary production at vents is driven by chemolithoautotrophy—oxidizing dissolved hydrogen sulfide ($H_2S$) discharging from vent fluids."
+      },
+      {
+        "id": "ENG_RC_173_Q5",
+        "question": "As used in the passage, the word 'obligate' describes a biological relationship that is:",
+        "options": {
+          "A": "Essential and mandatory for the survival of the organism",
+          "B": "Occasional, opportunistic, and non-essential",
+          "C": "Harmful and parasitic to both host and symbiont",
+          "D": "Artificially engineered in a laboratory setting"
+        },
+        "correct_option": "A",
+        "rationale": "In biology, an 'obligate' relationship is one where the organisms are functionally dependent on each other for survival and cannot live independently."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_174",
+    "passage_title": "Michel Foucault and the Architecture of Biopolitics and Panopticism",
+    "passage_text": "In his seminal works *Discipline and Punish* (1975) and *The History of Sexuality* (1976), French philosopher Michel Foucault traced a profound historical mutation in the mechanics of power in Western civilization. Classical sovereign power, exemplified by absolute monarchies, operated through the spectacle of physical violence, public executions, and the sovereign right to 'take life or let live' (*faire mourir et laisser vivre*). In the eighteenth and nineteenth centuries, this juridical sovereign model was eclipsed by two interlocking modalities of power: **disciplinary power** and **biopower**. Disciplinary power targets the individual anatomical body (*anatomo-politics*), training, optimizing, and surveillance-monitoring subjects through institutional architectures like prisons, factories, barracks, and schools. Foucault utilized Jeremy Bentham's architectural blueprint of the **Panopticon**—an annular inspection prison where a central watchtower observes inmates in backlit cells without inmates ever knowing when they are being watched—as the ultimate diagram of disciplinary society. The permanent visibility induces an internalized state of conscious self-surveillance in the inmate, making external physical coercion redundant. Concurrently, **biopower** emerged as a regulatory technology targeting the aggregate biological population (*biopolitics*), managing demographic birth rates, mortality patterns, public hygiene, epidemiology, and life expectancy through statistical enumeration and public policy interventions.",
+    "questions": [
+      {
+        "id": "ENG_RC_174_Q1",
+        "question": "How did classical sovereign power differ fundamentally from modern disciplinary power in Foucault's analysis?",
+        "options": {
+          "A": "Sovereign power operated through public spectacles of violent punishment ('taking life'), while disciplinary power trains and surveys the anatomical body.",
+          "B": "Sovereign power was based on democratic voting, while disciplinary power relies on religious scripture.",
+          "C": "Sovereign power operated exclusively through hospital sanitation policies.",
+          "D": "Disciplinary power has no physical presence in modern educational institutions."
+        },
+        "correct_option": "A",
+        "rationale": "The text contrasts sovereign power (spectacles of physical punishment and 'taking life') with disciplinary power that trains, monitors, and optimizes individual bodies."
+      },
+      {
+        "id": "ENG_RC_174_Q2",
+        "question": "What psychological effect does the architectural design of the Panopticon produce in the inmate?",
+        "options": {
+          "A": "It induces total physical amnesia regarding statutory laws.",
+          "B": "It creates a conscious, permanent state of visibility that internalizes self-surveillance and disciplined behavior.",
+          "C": "It encourages collective political rebellions against prison wardens.",
+          "D": "It eliminates the inmate's biological circadian rhythm completely."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that continuous potential visibility 'induces an internalized state of conscious self-surveillance in the inmate, making external physical coercion redundant.'"
+      },
+      {
+        "id": "ENG_RC_174_Q3",
+        "question": "What is the primary operational focus of 'biopolitics' as conceptualized by Foucault?",
+        "options": {
+          "A": "The manual labor output of factory assembly lines.",
+          "B": "Managing and regulating aggregate biological populations through birth rates, mortality, hygiene, and epidemiology.",
+          "C": "The architectural construction of medieval feudal castles.",
+          "D": "The solitary sensory confinement of political dissidents."
+        },
+        "correct_option": "B",
+        "rationale": "The text defines biopolitics as a regulatory technology targeting the aggregate biological population through statistical management of birth rates, mortality, public hygiene, and health."
+      },
+      {
+        "id": "ENG_RC_174_Q4",
+        "question": "Who was the original designer of the architectural Panopticon utilized by Foucault as a philosophical metaphor?",
+        "options": {
+          "A": "Jeremy Bentham",
+          "B": "Charles de Gaulle",
+          "C": "David Harvey",
+          "D": "Karl Marx"
+        },
+        "correct_option": "A",
+        "rationale": "The text explicitly credits English utilitarian philosopher Jeremy Bentham with designing the Panopticon blueprint."
+      },
+      {
+        "id": "ENG_RC_174_Q5",
+        "question": "As used in the passage, the word 'annular' describes a geometric structure that is:",
+        "options": {
+          "A": "Ring-shaped, circular, or formed in a loop",
+          "B": "Shaped like a tall triangular pyramid",
+          "C": "Completely underground and subterranean",
+          "D": "Built with irregular, random angles"
+        },
+        "correct_option": "A",
+        "rationale": "'Annular' means ring-shaped or forming a circle, referring to the circular perimeter of prison cells surrounding the central inspection tower."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_175",
+    "passage_title": "Paleoclimatology of the Younger Dryas and the Meltwater Hypothesis",
+    "passage_text": "Approximately 12,900 years ago, as the planet was steadily emerging from the Last Glacial Maximum into the warm Holocene epoch, Earth's climate was abruptly plunged back into near-glacial cold for twelve hundred years—a severe paleoclimatic oscillation termed the **Younger Dryas**. High-resolution Greenland ice core records (GISP2 and NGRIP) reveal that surface temperatures over the North Atlantic plummeted by up to 10°C within less than a single decade. The prevailing oceanographic mechanism explaining this sudden climatic snap is the catastrophic drainage of proglacial **Lake Agassiz**. As the southern margin of the Laurentide Ice Sheet retreated, a catastrophic ice dam failure diverted enormous volumes of low-density, buoyant glacial meltwater eastward through the St. Lawrence River valley into the subpolar North Atlantic. This sudden flood capped the dense, saline surface waters of the subpolar gyre with a buoyant freshwater lid. By diluting surface salinity, the freshwater influx arrested thermohaline convection and shut down the Atlantic Meridional Overturning Circulation (AMOC), cutting off northward heat transport from the tropics. Consequently, the Northern Hemisphere cooled precipitously, while the 'bipolar seesaw' caused the Southern Ocean to warm. While alternative hypotheses invoke a bolide impact event (the Younger Dryas impact hypothesis), isotopic and geomorphological evidence strongly supports catastrophic meltwater forcing of ocean circulation.",
+    "questions": [
+      {
+        "id": "ENG_RC_175_Q1",
+        "question": "What was the defining climatic characteristic of the Younger Dryas episode?",
+        "options": {
+          "A": "An abrupt, intense return to near-glacial cooling across the Northern Hemisphere during an ongoing warming trend.",
+          "B": "A global heatwave that melted all polar ice caps within one century.",
+          "C": "A multi-millennium mega-drought across tropical equatorial rainforests.",
+          "D": "The complete cessation of all global atmospheric precipitation."
+        },
+        "correct_option": "A",
+        "rationale": "The opening sentence explains that as Earth was warming, it was abruptly plunged back into near-glacial conditions for ~1,200 years during the Younger Dryas."
+      },
+      {
+        "id": "ENG_RC_175_Q2",
+        "question": "How did the drainage of Lake Agassiz trigger the shutdown of the AMOC conveyor belt?",
+        "options": {
+          "A": "It evaporated all water in the North Atlantic basin.",
+          "B": "It discharged a massive pulse of buoyant freshwater that lowered salinity and halted dense water downwelling.",
+          "C": "It introduced toxic volcanic ash that blocked solar insolation.",
+          "D": "It caused a sudden tectonic uplift of the Mid-Atlantic Ridge."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that buoyant freshwater capped dense saline waters, preventing thermohaline sinking and shutting down the AMOC heat conveyor."
+      },
+      {
+        "id": "ENG_RC_175_Q3",
+        "question": "What is meant by the 'bipolar seesaw' in paleoclimatology as described in the passage?",
+        "options": {
+          "A": "The rapid reversal of Earth's magnetic north and south poles.",
+          "B": "A thermal asymmetry where Northern Hemisphere cooling coincides with Southern Ocean warming due to altered ocean heat transport.",
+          "C": "The alternating volcanic eruptions at the North and South Poles.",
+          "D": "The seasonal migration of marine mammals between hemispheres."
+        },
+        "correct_option": "B",
+        "rationale": "The text notes that when AMOC collapsed, the Northern Hemisphere cooled while the 'bipolar seesaw' caused the Southern Ocean to retain heat and warm."
+      },
+      {
+        "id": "ENG_RC_175_Q4",
+        "question": "Which ice sheet's retreat was directly associated with the formation and release of Lake Agassiz?",
+        "options": {
+          "A": "The Laurentide Ice Sheet across North America",
+          "B": "The Fennoscandian Ice Sheet across Scandinavia",
+          "C": "The Antarctic Ice Sheet",
+          "D": "The Alpine Glacial Complex in Switzerland"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly names the retreat of the Laurentide Ice Sheet as the source of proglacial Lake Agassiz's sudden breach."
+      },
+      {
+        "id": "ENG_RC_175_Q5",
+        "question": "As used in the passage, the word 'proglacial' refers to an area, lake, or feature that is:",
+        "options": {
+          "A": "Situated immediately in front of or formed by a retreating glacier or ice sheet",
+          "B": "Permanently buried thousands of meters beneath solid ice",
+          "C": "Composed entirely of volcanic basaltic magma",
+          "D": "Exclusively found in tropical marine archipelagos"
+        },
+        "correct_option": "A",
+        "rationale": "In geology and glaciology, 'proglacial' denotes landforms, lakes, or sediment bodies that form immediately adjacent to or just beyond the front margin of a glacier."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_176",
+    "passage_title": "Quantum Non-Locality, Bell's Theorem, and the Aspect Experiments",
+    "passage_text": "In 1935, Albert Einstein, Boris Podolsky, and Nathan Rosen (EPR) formulated a foundational thought experiment asserting that quantum mechanics was incomplete. EPR argued that if measuring one particle of an entangled pair instantaneously determines the state of its distant partner, quantum theory requires either 'spooky action at a distance' (violating the speed-of-light locality of Special Relativity) or the existence of predetermined, local 'hidden variables' that pre-program measurement outcomes. In 1964, Northern Irish physicist John Stewart Bell translated this metaphysical dispute into a rigorous, mathematically testable theorem. Bell proved that **no physical theory based on local hidden variables can reproduce all the statistical predictions of quantum mechanics**. Bell formulated an upper mathematical bound—the **Bell Inequality** ($|S| \\leq 2$ in the CHSH formulation)—governing the maximum statistical correlation between measurements performed on separated particles under local realism. Quantum mechanics, conversely, predicted a maximum violation reaching the Tsirelson bound ($|S| = 2\\sqrt{2} \\approx 2.828$). In 1982, French physicist Alain Aspect executed definitive experiments utilizing polarization-entangled photon pairs and ultra-fast optical switches that changed analyzer orientations while the photons were in flight. Aspect's experimental results decisively violated Bell's inequality ($S > 2$), ruling out local hidden-variable theories and empirically proving that the universe is fundamentally **non-local**.",
+    "questions": [
+      {
+        "id": "ENG_RC_176_Q1",
+        "question": "What central claim did Albert Einstein, Boris Podolsky, and Nathan Rosen advance in the 1935 EPR paradox?",
+        "options": {
+          "A": "Quantum mechanics was incomplete because local realism required predetermined hidden variables to avoid spooky action at a distance.",
+          "B": "Light waves are completely incapable of being polarized by optical filters.",
+          "C": "Entangled photons travel thousands of times slower than classical radio waves.",
+          "D": "Electrons possess no electrical charge or intrinsic quantum spin."
+        },
+        "correct_option": "A",
+        "rationale": "The passage explains that EPR argued quantum mechanics was incomplete, asserting that local realism and the avoidance of superluminal 'spooky action' necessitated local hidden variables."
+      },
+      {
+        "id": "ENG_RC_176_Q2",
+        "question": "What is the primary significance of Bell's Theorem in the philosophy of physics?",
+        "options": {
+          "A": "It proved that gravity and electromagnetism are the exact same physical force.",
+          "B": "It proved that no local hidden-variable theory can reproduce all the statistical predictions of quantum mechanics.",
+          "C": "It proved that the speed of light in a vacuum varies depending on daytime temperatures.",
+          "D": "It demonstrated that quantum computers cannot calculate prime factorizations."
+        },
+        "correct_option": "B",
+        "rationale": "Bell proved mathematically that local hidden-variable theories impose a strict inequality limit that quantum mechanics predicts will be violated."
+      },
+      {
+        "id": "ENG_RC_176_Q3",
+        "question": "How did Alain Aspect ensure that measurement settings could not communicate signals between detectors during his 1982 experiment?",
+        "options": {
+          "A": "By placing detectors in deep underground lead vaults.",
+          "B": "By using ultra-fast optical switches to change polarizer angles while the entangled photons were already in flight.",
+          "C": "By cooling the entire laboratory down to absolute zero.",
+          "D": "By performing measurements over a two-year time delay."
+        },
+        "correct_option": "B",
+        "rationale": "The text notes that Aspect used ultrafast switches that changed analyzer orientations while photons were in flight, closing the locality communication loophole."
+      },
+      {
+        "id": "ENG_RC_176_Q4",
+        "question": "What was the conclusive verdict of Aspect's experimental violation of Bell's Inequality ($S > 2$)?",
+        "options": {
+          "A": "It confirmed classical Newtonian mechanics as universally correct.",
+          "B": "It ruled out local hidden-variable theories and confirmed quantum non-locality.",
+          "C": "It proved that light does not exist as photons.",
+          "D": "It demonstrated that entangled particles have no physical connection."
+        },
+        "correct_option": "B",
+        "rationale": "Aspect's experimental violation of the classical bound confirmed quantum predictions and proved that nature is fundamentally non-local."
+      },
+      {
+        "id": "ENG_RC_176_Q5",
+        "question": "As used in the passage, the word 'non-local' describes physical interactions where:",
+        "options": {
+          "A": "Particles can exhibit correlated states instantaneously without signals traveling through intermediate space at sub-light speeds",
+          "B": "Physical objects cannot be located using GPS satellite coordinates",
+          "C": "Chemical reactions occur only inside high-vacuum laboratories",
+          "D": "Sensory information is lost during digital telecommunications"
+        },
+        "correct_option": "A",
+        "rationale": "In quantum physics, 'non-locality' refers to the ability of entangled quantum states to instantaneously influence measurement statistics across arbitrary distances without a local physical intermediary signal."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_177",
+    "passage_title": "The Evolutionary Genomics and Polygenic Architecture of the Human Leukocyte Antigen (HLA) Complex",
+    "passage_text": "Located on the short arm of chromosome 6 (6p21.3), the **Human Leukocyte Antigen (HLA)** complex constitutes the most polymorphic genetic region in the human genome, playing an indispensable role in adaptive immune surveillance. The HLA complex encodes cell-surface glycoproteins that bind peptide fragments derived from pathogens and present them to T lymphocytes. **HLA Class I** molecules (HLA-A, -B, -C), expressed on virtually all nucleated cells, present endogenous intracellular antigens (such as viral or mutated oncogenic proteins) to $CD8^+$ cytotoxic T cells. Conversely, **HLA Class II** molecules (HLA-DR, -DQ, -DP), expressed primarily on professional antigen-presenting cells (dendritic cells, macrophages, B cells), present exogenous endocytosed antigens to $CD4^+$ helper T cells. The staggering evolutionary polymorphism of HLA genes—with thousands of distinct allelic variants documented globally—is maintained by balancing selection, primarily via heterozygote advantage (overdominance) and negative frequency-dependent selection driven by co-evolving pathogens. An individual with heterozygous HLA loci can present a broader repertoire of pathogen-derived peptides, enhancing immunological resistance. However, this hypervariable architecture carries a severe evolutionary trade-off: specific HLA alleles exhibit strong genetic linkage with autoimmune pathologies (e.g., HLA-B27 with ankylosing spondylitis, and HLA-DQ2/DQ8 with celiac disease) and govern allograft rejection dynamics in organ transplantation.",
+    "questions": [
+      {
+        "id": "ENG_RC_177_Q1",
+        "question": "What is the primary immunological function of HLA glycoproteins?",
+        "options": {
+          "A": "Synthesizing red blood cell hemoglobin in bone marrow.",
+          "B": "Binding pathogen-derived peptide fragments and presenting them on the cell surface to T lymphocytes.",
+          "C": "Directly digesting bacterial cell walls with acidic lysozyme enzymes.",
+          "D": "Pumping sodium ions across nerve axon membranes during action potentials."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that HLA molecules encode cell-surface glycoproteins that 'bind peptide fragments derived from pathogens and present them to T lymphocytes.'"
+      },
+      {
+        "id": "ENG_RC_177_Q2",
+        "question": "How do HLA Class I and Class II molecules differ in their cellular expression and target immune cells?",
+        "options": {
+          "A": "Class I is expressed on red blood cells for antibody synthesis, while Class II is found only in the stomach.",
+          "B": "Class I presents endogenous antigens on nucleated cells to $CD8^+$ T cells, while Class II presents exogenous antigens on antigen-presenting cells to $CD4^+$ T cells.",
+          "C": "Class I functions only in children, whereas Class II develops exclusively during old age.",
+          "D": "Class I destroys viral capsids, while Class II produces antibiotic proteins."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that Class I (on nucleated cells) presents endogenous antigens to $CD8^+$ T cells, whereas Class II (on antigen-presenting cells) presents exogenous antigens to $CD4^+$ T cells."
+      },
+      {
+        "id": "ENG_RC_177_Q3",
+        "question": "What evolutionary mechanism maintains the hypervariable polymorphism of the HLA complex across human populations?",
+        "options": {
+          "A": "Genetic drift during extreme population bottlenecks.",
+          "B": "Balancing selection, including heterozygote advantage and pathogen-driven frequency-dependent selection.",
+          "C": "The complete absence of meiotic recombination in chromosome 6.",
+          "D": "Artificial chemical mutagenesis in pharmaceutical laboratories."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that balancing selection (heterozygote advantage and negative frequency-dependent selection driven by pathogens) maintains HLA polymorphism."
+      },
+      {
+        "id": "ENG_RC_177_Q4",
+        "question": "What clinical evolutionary trade-off is associated with specific hypervariable HLA alleles?",
+        "options": {
+          "A": "Immediate structural bone loss during childhood.",
+          "B": "Elevated susceptibility to autoimmune diseases (e.g., HLA-B27 and ankylosing spondylitis) and organ transplant rejection.",
+          "C": "The inability to metabolize glucose carbohydrates.",
+          "D": "The loss of long-wavelength color vision."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence notes that HLA alleles carry evolutionary costs, exhibiting strong genetic linkages to autoimmune disorders and governing organ transplant rejection."
+      },
+      {
+        "id": "ENG_RC_177_Q5",
+        "question": "As used in the passage, the word 'polymorphic' refers to a genetic region that:",
+        "options": {
+          "A": "Contains multiple distinct allelic variants and forms within a population",
+          "B": "Lacks any functional protein-coding capacity",
+          "C": "Is inherited strictly along the maternal mitochondrial line",
+          "D": "Remains completely identical across all living organisms"
+        },
+        "correct_option": "A",
+        "rationale": "In genetics, 'polymorphic' describes a gene, locus, or region that exists in multiple different forms or alleles within a population."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_178",
+    "passage_title": "The Microeconomics of Asymmetric Information and Stiglitz-Weiss Credit Rationing",
+    "passage_text": "In neoclassical general equilibrium theory, competitive loan markets are assumed to clear automatically through the price mechanism: if demand for capital exceeds supply, commercial banks raise interest rates until equilibrium is restored. In their seminal 1981 paper, economists Joseph Stiglitz and Andrew Weiss overturned this orthodoxy by constructing the theory of **credit rationing under asymmetric information**. Stiglitz and Weiss demonstrated that in credit markets, the interest rate serves a dual role: it is not only a price for borrowed funds, but also an endogenous screening and incentive mechanism that affects borrower behavior via two market failures: **adverse selection** and **moral hazard**. When banks raise interest rates to clear excess loan demand, safe, conservative borrowers—who possess low-risk projects with modest profit margins—exit the market because they cannot cover high borrowing costs. Concurrently, high interest rates selectively attract high-risk, speculative borrowers who pursue volatile projects with large upside payoffs (adverse selection). Furthermore, higher interest rates induce existing borrowers to undertake riskier business ventures to generate returns sufficient to service costly debt (moral hazard). Because higher interest rates alter the risk composition of the loan pool, the bank's expected return function is non-monotonic—it peaks at an optimal rate and declines thereafter. Consequently, rational profit-maximizing banks refuse to raise interest rates to clear the market, choosing instead to ration credit by denying loans to creditworthy applicants.",
+    "questions": [
+      {
+        "id": "ENG_RC_178_Q1",
+        "question": "Why do competitive loan markets fail to clear purely through interest rate increases in the Stiglitz-Weiss model?",
+        "options": {
+          "A": "Because national governments legally prohibit banks from setting interest rates.",
+          "B": "Because raising interest rates induces adverse selection and moral hazard, increasing default risk and lowering the bank's net expected return.",
+          "C": "Because paper currency loses all value when loans are issued.",
+          "D": "Because commercial banks have infinite capital reserves and do not care about profits."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that raising interest rates drives away safe borrowers (adverse selection) and incentivizes excessive risk-taking (moral hazard), reducing expected bank returns."
+      },
+      {
+        "id": "ENG_RC_178_Q2",
+        "question": "How does 'adverse selection' operate when commercial banks increase loan interest rates?",
+        "options": {
+          "A": "Conservative, low-risk borrowers exit the market, leaving a pool dominated by high-risk speculative borrowers.",
+          "B": "Banks select only government officials to receive low-interest mortgages.",
+          "C": "All borrowers simultaneously repay their debts ahead of schedule.",
+          "D": "Borrowers stop using digital banking technology."
+        },
+        "correct_option": "A",
+        "rationale": "The passage states that high rates cause safe borrowers to drop out, selectively attracting high-risk borrowers pursuing volatile projects."
+      },
+      {
+        "id": "ENG_RC_178_Q3",
+        "question": "What is 'moral hazard' in the context of high borrowing interest rates?",
+        "options": {
+          "A": "Borrowers refuse to sign written legal contracts in court.",
+          "B": "Higher debt service costs incentivize borrowers to switch from safe to riskier investments to achieve necessary returns.",
+          "C": "Bank managers embezzle deposits from customer accounts.",
+          "D": "Consumers stop purchasing manufactured retail goods."
+        },
+        "correct_option": "B",
+        "rationale": "The author notes that moral hazard occurs when high debt costs induce borrowers to undertake riskier business ventures to generate high enough yields."
+      },
+      {
+        "id": "ENG_RC_178_Q4",
+        "question": "What shape does a bank's expected return function exhibit relative to interest rates in this model?",
+        "options": {
+          "A": "A strictly linear line with infinite positive slope",
+          "B": "A non-monotonic curve that reaches an optimal peak and then declines as default risk escalates",
+          "C": "A flat horizontal line with zero variance",
+          "D": "An exponential curve that doubles every week"
+        },
+        "correct_option": "B",
+        "rationale": "The passage explicitly describes the expected return function as 'non-monotonic—it peaks at an optimal rate and declines thereafter' due to deteriorating borrower pool quality."
+      },
+      {
+        "id": "ENG_RC_178_Q5",
+        "question": "As used in the passage, the word 'endogenous' describes a mechanism or variable that:",
+        "options": {
+          "A": "Originates from or is determined within the internal dynamics of a system",
+          "B": "Is imposed purely by external foreign military forces",
+          "C": "Is entirely fictional and mathematically invalid",
+          "D": "Has no effect on human economic behavior"
+        },
+        "correct_option": "A",
+        "rationale": "'Endogenous' in economics describes a factor, variable, or mechanism that is generated internally from within the operation of the economic model itself."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_179",
+    "passage_title": "The Geodynamics of Mantle Plumes and Large Igneous Provinces (LIPs)",
+    "passage_text": "While plate tectonic theory elegantly explains volcanism along convergent subduction zones and divergent mid-ocean ridges, it cannot account for intraplate volcanism—such as the Hawaiian-Emperor seamount chain or the Yellowstone hotspot. In 1971, geophysicist W. Jason Morgan formulated the **mantle plume hypothesis** to resolve this anomaly. Morgan postulated that narrow, buoyant cylindrical upwellings of hot, solid mantle rock ascend from the core-mantle boundary (the $D''$ layer, approximately 2,900 km deep) through thermal buoyancy. As a rising plume head approaches the base of the rigid lithosphere, the sudden decrease in confining lithostatic pressure triggers massive **decompression melting** without requiring external heat inputs, as the plume's adiabat crosses the solidus curve of peridotite. When an enormous, bulbous plume head breaches the continental or oceanic lithosphere, it erupts millions of cubic kilometers of flood basalt over geologically brief intervals (less than two million years), constructing a **Large Igneous Province (LIP)**. Major continental flood basalt events—such as the Siberian Traps (~252 Ma) and the Deccan Traps (~66 Ma)—coincide with Earth's most catastrophic mass extinction boundaries. Massive degassing of mantle sulfur dioxide, carbon dioxide, and thermogenic methane from intruded sedimentary basins triggers runaway hyperthermal warming, ocean anoxia, and catastrophic ozone layer depletion.",
+    "questions": [
+      {
+        "id": "ENG_RC_179_Q1",
+        "question": "What geological phenomenon was the mantle plume hypothesis formulated to explain?",
+        "options": {
+          "A": "The daily rise and fall of ocean tides.",
+          "B": "Intraplate volcanism and hotspot tracks that occur far from tectonic plate boundaries.",
+          "C": "The crystallization of quartz crystals inside granite caves.",
+          "D": "The formation of polar glaciers in Antarctica."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explains that mantle plumes were proposed by Morgan to account for intraplate hotspot volcanism (like Hawaii or Yellowstone) that standard plate boundaries cannot explain."
+      },
+      {
+        "id": "ENG_RC_179_Q2",
+        "question": "Where does a deep mantle plume originate anatomically within Earth's interior?",
+        "options": {
+          "A": "The core-mantle boundary (the $D''$ layer at ~2,900 km depth)",
+          "B": "The shallow continental soil layer (~5 meters depth)",
+          "C": "The upper atmospheric ozone layer",
+          "D": "The solid iron inner core at the center of the planet"
+        },
+        "correct_option": "A",
+        "rationale": "The text states that buoyant plumes ascend from 'the core-mantle boundary (the $D''$ layer, approximately 2,900 km deep).'"
+      },
+      {
+        "id": "ENG_RC_179_Q3",
+        "question": "What thermodynamic process triggers magma generation when a solid mantle plume reaches the base of the lithosphere?",
+        "options": {
+          "A": "Decompression melting as confining pressure drops and the plume's adiabat crosses the solidus curve.",
+          "B": "Immediate freezing into sedimentary limestone rock.",
+          "C": "The introduction of cryogenic liquid nitrogen from the crust.",
+          "D": "Chemical reaction with surface rainwater."
+        },
+        "correct_option": "A",
+        "rationale": "The passage details that as confining pressure decreases, decompression melting occurs because the plume's adiabatic temperature path crosses the peridotite melting solidus."
+      },
+      {
+        "id": "ENG_RC_179_Q4",
+        "question": "Why are Large Igneous Provinces (LIPs) like the Siberian Traps linked to global mass extinction events?",
+        "options": {
+          "A": "They completely drain all ocean basins into the mantle.",
+          "B": "Massive volcanic outpourings release catastrophic volumes of $CO_2$, $SO_2$, and methane, driving global warming, ocean anoxia, and ozone depletion.",
+          "C": "They reverse the gravitational pull of the Earth, expelling the atmosphere into space.",
+          "D": "They eliminate all radioactive decay from the planet."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence explains that massive flood basalt eruptions degas sulfur dioxide, carbon dioxide, and methane, inducing severe warming, ocean anoxia, and ozone destruction."
+      },
+      {
+        "id": "ENG_RC_179_Q5",
+        "question": "As used in the passage, the term 'solidus' in thermodynamics and geology refers to:",
+        "options": {
+          "A": "The locus of points on a phase diagram below which a mineral mixture is completely solid",
+          "B": "A legal contract signed by sovereign mining companies",
+          "C": "A volcanic crater completely filled with glacial ice",
+          "D": "The maximum speed of seismic waves through seawater"
+        },
+        "correct_option": "A",
+        "rationale": "In geophysics and thermodynamics, the 'solidus' is the boundary line or temperature on a phase diagram below which a substance is completely solid and above which melting begins."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_180",
+    "passage_title": "The Philosophy of Language: Hilary Putnam’s Semantic Externalism and Twin Earth",
+    "passage_text": "In his landmark 1975 philosophical paper *The Meaning of 'Meaning'*, American philosopher Hilary Putnam revolutionized the philosophy of language and mind by dismantling traditional internalist semantics. Semantic internalism—advocated by René Descartes, John Locke, and Gottlob Frege—asserted that the meaning of a word is determined entirely by psychological states inside the speaker's head ('meanings are in the head'). Putnam challenged this orthodoxy through his famous **Twin Earth thought experiment**. Putnam asked readers to imagine a planet called 'Twin Earth', identical to Earth in every macroscopic detail, where every Earthling has an exact physical and psychological doppelgänger. The sole difference is that the clear, drinkable liquid filling Twin Earth's oceans and rivers is not $H_2O$, but a complex chemical compound with a different formula, abbreviated as $XYZ$, which is superficially indistinguishable from water in taste, appearance, and boiling point. When an Earthling named Oscar in 1750 (prior to the advent of modern chemistry) uttered the word 'water', he referred strictly to $H_2O$. When his Twin-Earth doppelgänger Oscar$_2$ uttered 'water', he referred to $XYZ$. Because both Oscars were in identical psychological, neurophysiological, and conceptual states in 1750, yet referred to fundamentally different chemical substances, Putnam famously concluded: **'Cut the pie any way you like, 'meanings' just ain't in the head!'** Putnam established **semantic externalism**—the thesis that the meaning and reference of natural kind terms are determined partly by the external physical environment and social linguistic division of labor.",
+    "questions": [
+      {
+        "id": "ENG_RC_180_Q1",
+        "question": "What classical philosophical premise did Hilary Putnam overturn with his Twin Earth thought experiment?",
+        "options": {
+          "A": "The idea that physical matter is made of subatomic atoms.",
+          "B": "Semantic internalism—the belief that the meaning of a word is determined entirely by psychological mental states inside the speaker's head.",
+          "C": "The mathematical validity of formal symbolic logic.",
+          "D": "The belief that language was invented before written scripts."
+        },
+        "correct_option": "B",
+        "rationale": "Putnam attacked semantic internalism (the Frege/Locke doctrine that 'meanings are in the head'), showing that psychological states do not uniquely fix reference."
+      },
+      {
+        "id": "ENG_RC_180_Q2",
+        "question": "In the Twin Earth thought experiment, how does the liquid on Twin Earth differ from Earth water?",
+        "options": {
+          "A": "It is completely toxic and glows bright green in the dark.",
+          "B": "It has identical macroscopic properties (taste, boiling point) but possesses a completely different chemical formula ($XYZ$ instead of $H_2O$).",
+          "C": "It evaporates instantly at room temperature.",
+          "D": "It exists only in solid crystalline forms."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that the liquid on Twin Earth is superficially indistinguishable from water in appearance and taste, but has a distinct chemical formula ($XYZ$)."
+      },
+      {
+        "id": "ENG_RC_180_Q3",
+        "question": "Why did Oscar on Earth and Oscar$_2$ on Twin Earth mean different things by the word 'water' in 1750 despite identical mental states?",
+        "options": {
+          "A": "They were speaking two completely unrelated foreign languages.",
+          "B": "Their words referred to different underlying physical substances ($H_2O$ vs. $XYZ$) in their respective external environments.",
+          "C": "Oscar$_2$ was deliberately attempting to deceive his peers.",
+          "D": "One of the Oscars had lost his memory due to an accident."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that despite identical psychological states, Oscar referred to $H_2O$ while Twin Oscar referred to $XYZ$, because reference is fixed by the external environment."
+      },
+      {
+        "id": "ENG_RC_180_Q4",
+        "question": "What core thesis is established by Putnam's 'semantic externalism'?",
+        "options": {
+          "A": "All human languages will eventually merge into a single global dialect.",
+          "B": "The meaning and reference of linguistic terms are determined in part by the external physical environment and social linguistic division of labor.",
+          "C": "Words have no real meaning and communication is an illusion.",
+          "D": "Dilation of time occurs near the event horizon of black holes."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence defines semantic externalism: 'the meaning and reference of natural kind terms are determined partly by the external physical environment and social linguistic division of labor.'"
+      },
+      {
+        "id": "ENG_RC_180_Q5",
+        "question": "As used in the passage, the term 'doppelgänger' refers to:",
+        "options": {
+          "A": "An exact, identical counterpart, duplicate, or double of a person",
+          "B": "An alien species inhabiting deep outer space",
+          "C": "A microscopic single-celled organism",
+          "D": "A specialized laboratory glass telescope"
+        },
+        "correct_option": "A",
+        "rationale": "'Doppelgänger' refers to an exact counterpart, duplicate, or look-alike double of a person."
+      }
+    ]
+  }
+]

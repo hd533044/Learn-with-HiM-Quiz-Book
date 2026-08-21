@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_1251",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grasp at straws**",
+    "options": {
+      "A": "Collecting dry hay to build rural farm shelters",
+      "B": "Weaving traditional baskets from dried agricultural reeds",
+      "C": "Trying any desperate measure or remedy, however unlikely to succeed, in an emergency",
+      "D": "Drinking beverages quickly through disposable plastic tubes"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'grasp at straws' means resorting to any desperate, feeble hope or attempt when facing a hopeless situation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1252",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grasp the nettle**",
+    "options": {
+      "A": "To confront and tackle an unpleasant, difficult problem boldly and decisively",
+      "B": "To harvest prickly botanical weed leaves for culinary tea",
+      "C": "To suffer an itchy allergic skin reaction from toxic plants",
+      "D": "To back away timidly from an aggressive challenger"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'grasp the nettle' means facing a challenging or dangerous problem with courage rather than hesitating.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1253",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Graveyard shift**",
+    "options": {
+      "A": "Relocating burial grounds during municipal urban expansion",
+      "B": "A work shift that takes place during the middle of the night, typically midnight to morning",
+      "C": "A dangerous rescue mission carried out in stormy weather",
+      "D": "A solemn commemorative ceremony held for fallen soldiers"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. The 'graveyard shift' refers to a work period occurring late into the night, such as from midnight until early morning.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1254",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grease someone's palm**",
+    "options": {
+      "A": "Applying herbal moisturizer to cure dry skin",
+      "B": "Shaking hands enthusiastically with an old friend",
+      "C": "Performing heavy mechanical maintenance in a garage",
+      "D": "Giving someone a bribe in order to secure an illicit favor or service"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. To 'grease someone's palm' means to bribe them secretly to get something done.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1255",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grease the wheels**",
+    "options": {
+      "A": "Applying motor lubricant to transport vehicles",
+      "B": "To facilitate, expedite, or make a process run smoothly, often through money or influence",
+      "C": "Racing motorcars along a designated asphalt track",
+      "D": "Repairing broken industrial factory mechanisms"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'grease the wheels' means to help an affair proceed easily and without obstruction, sometimes through financial incentives.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1256",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Green horn**",
+    "options": {
+      "A": "An inexperienced newcomer, novice, or beginner who is easily duped",
+      "B": "A musical wind instrument crafted from polished brass",
+      "C": "A rare botanical plant cultivated in domestic greenhouses",
+      "D": "A person motivated by extreme professional jealousy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'greenhorn' is an untrained person who lacks experience and worldly wisdom in a particular trade or activity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1257",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Green light**",
+    "options": {
+      "A": "An electronic signal installed at city road junctions",
+      "B": "Official permission, sanction, or approval to go ahead with a project",
+      "C": "A colored neon lamp used in film studio production",
+      "D": "An environmental campaign promoting clean energy"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To get or give the 'green light' means receiving or granting formal permission to start an enterprise.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1258",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Green thumb**",
+    "options": {
+      "A": "An accidental physical bruise on a gardener's finger",
+      "B": "An exceptional, natural talent for growing plants and gardening successfully",
+      "C": "A biometric fingerprint scanner used for office security",
+      "D": "Staining one's hands with industrial green dye"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having a 'green thumb' (or green fingers) means possessing an innate ability to make plants flourish.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1259",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Green with envy**",
+    "options": {
+      "A": "Feeling extremely, passionately, and visibly jealous of another person",
+      "B": "Suffering from acute nausea caused by motion sickness",
+      "C": "Wearing emerald gemstones during formal banquets",
+      "D": "Demonstrating high competence in landscape design"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'green with envy' means experiencing profound, bitter jealousy or resentment.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1260",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grey area**",
+    "options": {
+      "A": "An overcast sky threatening heavy seasonal rain",
+      "B": "An ill-defined, ambiguous situation or topic not clearly governed by rules",
+      "C": "An unpainted concrete wall in a warehouse",
+      "D": "A neutral buffer zone separating two warring states"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'grey area' is an ambiguous or borderline subject where clear-cut rules, distinctions, or answers do not exist.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1261",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grey matter**",
+    "options": {
+      "A": "Intellect, intelligence, or brain power",
+      "B": "A dark volcanic rock sample studied by geologists",
+      "C": "Dust and debris accumulated in old libraries",
+      "D": "A depressive mental state requiring medical therapy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Grey matter' is an informal term for a person's intelligence, brain capacity, or reasoning faculties.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1262",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grin and bear it**",
+    "options": {
+      "A": "Smiling cheerfully when receiving a financial bonus",
+      "B": "Mocking an opponent who has suffered an athletic injury",
+      "C": "To endure pain, adversity, or misfortune patiently and without complaining",
+      "D": "Hunting wild animals during harsh winter blizzards"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'grin and bear it' means accepting an unpleasant situation with stoic patience and good grace.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1263",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grist to the mill**",
+    "options": {
+      "A": "Processed flour bags loaded onto freight transport",
+      "B": "A heavy stone wheel used in traditional grain grinding",
+      "C": "Discarded agricultural waste used as cattle fodder",
+      "D": "Useful material, experience, or information that can be turned to one's advantage"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Grist to the mill' refers to anything that can be made useful, profitable, or advantageous in achieving a purpose.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1264",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Guinea pig**",
+    "options": {
+      "A": "A domestic rodent kept as a child's household pet",
+      "B": "A person or thing used as a subject for experimental testing or trials",
+      "C": "An expensive livestock breed sold at rural cattle fairs",
+      "D": "A gold coin minted during historic colonial regimes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'guinea pig' refers to anyone or anything serving as the subject of a new experiment, trial, or test.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1265",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hairy moment**",
+    "options": {
+      "A": "A brief, terrifying, or dangerously critical experience",
+      "B": "A visit to a barbershop for a grooming trim",
+      "C": "A minor disagreement over trivial household chores",
+      "D": "A lengthy wait in a crowded railway terminal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'hairy moment' is a frightening, perilous, or alarming interval where danger is narrowly averted.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1266",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Halcyon days**",
+    "options": {
+      "A": "A period of violent political upheaval and civil strife",
+      "B": "A calm, peaceful, happy, and prosperous era in the past",
+      "C": "Harsh winter days with severe freezing temperatures",
+      "D": "A time of extreme financial poverty and struggle"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Halcyon days' refers to an idyllic, tranquil, and joyful time in one's past.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1267",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hale and hearty**",
+    "options": {
+      "A": "In robust, vibrant, and energetic good physical health",
+      "B": "Suffering from recurring winter respiratory coughs",
+      "C": "Possessing a loud, cheerful vocal laugh in conversations",
+      "D": "Consuming a heavy banquet meal after fasting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'hale and hearty' describes someone who is in excellent health, robust, and vigorous (often of an older person).",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1268",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hammer and tongs**",
+    "options": {
+      "A": "With intense energy, fierce enthusiasm, or noisy aggression",
+      "B": "Heavy iron tools utilized in blacksmith casting",
+      "C": "Working with calm, systematic, and quiet precision",
+      "D": "Maintaining strict military security along a border"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing something 'hammer and tongs' means acting or arguing with all one's might, passion, noise, or violence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1269",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hand in glove**",
+    "options": {
+      "A": "Wearing bespoke leather winter fashion items",
+      "B": "Working in extremely close collusion, association, or conspiracy with someone",
+      "C": "Competing against each other in an athletic boxing bout",
+      "D": "Handling delicate museum glassware with precautions"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'hand in glove' with someone means being in extremely close partnership or collusion, often for a dubious purpose.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1270",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hand to mouth**",
+    "options": {
+      "A": "Practicing proper dining etiquette during formal banquets",
+      "B": "Consuming street food hurriedly while walking",
+      "C": "Having only enough money to satisfy immediate basic needs without any savings",
+      "D": "Whispering confidential gossip into a companion's ear"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Living 'from hand to mouth' means surviving with barely enough food or money for daily existence, with zero financial reserve.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1271",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hands down**",
+    "options": {
+      "A": "Easily, decisively, and without any real effort or dispute",
+      "B": "Surrendering weapon supplies during an armed standoff",
+      "C": "Placing hands on a desk during a classroom lesson",
+      "D": "Failing an examination due to inadequate preparation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Winning something 'hands down' means achieving an effortless, undisputed, and decisive victory.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1272",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hang by a thread**",
+    "options": {
+      "A": "Stitching a torn garment using fragile cotton thread",
+      "B": "To be in an extremely precarious, perilous, or critical situation",
+      "C": "Suspending theatrical backdrops on stage ropes",
+      "D": "Tying decorative ornaments onto festive trees"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'hang by a thread' means being in a dangerously fragile state where the slightest mishap could cause disaster.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1273",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hang fire**",
+    "options": {
+      "A": "Lighting a wood bonfire during an outdoor campout",
+      "B": "Extinguishing a warehouse blaze using fire retardants",
+      "C": "Discharging fireworks into the night sky",
+      "D": "To be delayed, suspended, hesitant, or slow in taking decisive action"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. When an initiative or matter 'hangs fire', it is delayed, held in suspense, or hesitates to progress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1274",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hang in the balance**",
+    "options": {
+      "A": "Weighing gold jewelry on balance scales",
+      "B": "To be in an unresolved, critical state where the outcome is entirely uncertain",
+      "C": "Balancing acrobatically on a circus tightrope",
+      "D": "Settling personal debts evenly among associates"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. If a matter 'hangs in the balance', its final result is precarious and in great doubt.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1275",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hard and fast**",
+    "options": {
+      "A": "Running at top speed on a concrete athletic track",
+      "B": "Constructing solid masonry foundations for skyscrapers",
+      "C": "Strict, fixed, definite, and unalterable (usually of rules or principles)",
+      "D": "Changing corporate policies with high frequency"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hard and fast' rules are rigid, strictly defined, and allow for no exceptions or modifications.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1276",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hard nut to crack**",
+    "options": {
+      "A": "A tough, intricate problem or a stubborn person difficult to deal with",
+      "B": "A walnut shell requiring a metal crushing tool",
+      "C": "A minor obstacle easily overcome by team effort",
+      "D": "An uncooperative worker assigned to manual farming"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'hard nut to crack' is a difficult dilemma to solve or a person who resists persuasion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1277",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hard of hearing**",
+    "options": {
+      "A": "Refusing deliberately to obey reasonable advice",
+      "B": "Partially deaf or experiencing impaired auditory ability",
+      "C": "Listening to loud rock music through headphones",
+      "D": "Speaking in soft whispers during quiet meetings"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'hard of hearing' means suffering from partial deafness or hearing loss.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1278",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hard pressed**",
+    "options": {
+      "A": "Ironing cotton clothes with a heavy hot iron",
+      "B": "Experiencing severe financial, temporal, or operational difficulties and pressure",
+      "C": "Crushing fruit extracts in an industrial juicer",
+      "D": "Being tightly surrounded by a crowd at an entrance"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'hard pressed' means finding yourself in a tough situation with extreme demands on your time, resources, or money.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1279",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Harp on**",
+    "options": {
+      "A": "Playing classical melodies on a large string instrument",
+      "B": "To dwell, talk, or write about a subject continuously and tiresomely",
+      "C": "Attending an orchestral rehearsal at an auditorium",
+      "D": "Traveling across rural trails with musical troupes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'harp on' (the same string) means repeating or obsessing over a particular topic in a boring or irritating way.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1280",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a bee in one's bonnet**",
+    "options": {
+      "A": "Trapping stinging insects inside a summer hat",
+      "B": "To have an obsessive, fixed idea or preoccupation that dominates one's thoughts",
+      "C": "Wearing eccentric floral millinery to formal galas",
+      "D": "Complaining about minor insect bites during gardening"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having 'a bee in one's bonnet' means having an obsession or persistent idea that you talk about continually.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1281",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a big mouth**",
+    "options": {
+      "A": "Possessing distinct facial anatomical dimensions",
+      "B": "Singing operatic solos with extraordinary vocal power",
+      "C": "To be boastful, excessively talkative, and prone to revealing secrets indiscreetly",
+      "D": "Eating food in massive mouthfuls at meals"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Having 'a big mouth' means being unable to keep secrets or talking boastfully and tactlessly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1282",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a bone to pick with**",
+    "options": {
+      "A": "Sharing a meal of roasted meat with dinner guests",
+      "B": "Excavating fossil skeletons during paleontological digs",
+      "C": "Helping an associate resolve an intricate dilemma",
+      "D": "To have a dispute, grievance, or complaint that one needs to discuss or settle with someone"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. Having 'a bone to pick' means having a grievance or reason to quarrel with someone.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1283",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a chip on one's shoulder**",
+    "options": {
+      "A": "Carrying heavy timber blocks on one's back",
+      "B": "To hold a persistent grudge, grievance, or belligerent attitude due to perceived unfairness",
+      "C": "Suffering from a minor joint dislocation injury",
+      "D": "Wearing military rank insignia with immense pride"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having 'a chip on one's shoulder' means harboring resentment and easily getting angry or feeling slighted.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1284",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a field day**",
+    "options": {
+      "A": "Organizing an outdoor sports festival on open grounds",
+      "B": "To enjoy a grand opportunity for unrestricted fun, profit, or criticism",
+      "C": "Harvesting agricultural cereal crops during autumn",
+      "D": "Participating in rigorous military drill exercises"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having 'a field day' means having an occasion of great excitement, profit, or freedom to do what one wishes (often criticizing others).",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1285",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a finger in every pie**",
+    "options": {
+      "A": "Baking assorted sweet pastries in a confectionery",
+      "B": "Tasting culinary dishes during banquet preparation",
+      "C": "To be involved in an excessive number of diverse matters, projects, or enterprises",
+      "D": "Stealing small snacks from bakery counters"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Having 'a finger in every pie' means participating in many different activities, often meddling where not invited.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1286",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a green thumb**",
+    "options": {
+      "A": "To possess a natural, outstanding talent for cultivating and growing plants",
+      "B": "Staining one's hand with chemical paint residue",
+      "C": "Experiencing pain in hand joints after gardening",
+      "D": "Using modern hydroponic technology for farming"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having 'a green thumb' signifies a natural skill for gardening and plant cultivation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1287",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a heart of stone**",
+    "options": {
+      "A": "Suffering from acute calcified cardiovascular disease",
+      "B": "To be completely unfeeling, cruel, cold, and utterly devoid of compassion",
+      "C": "Possessing a solid stone sculpture in one's home",
+      "D": "Displaying remarkable courage during physical danger"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A person with 'a heart of stone' is cold, merciless, pitiless, and unsympathetic.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1288",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a soft spot for**",
+    "options": {
+      "A": "Suffering a localized tender muscle inflammation",
+      "B": "Resting on a cushioned chair in a lounge",
+      "C": "To have a special fondness, affection, or vulnerability toward someone or something",
+      "D": "Failing to maintain discipline in an office"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Having 'a soft spot' for someone means feeling particular warmth, affection, or indulgence toward them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1289",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have all one's eggs in one basket**",
+    "options": {
+      "A": "Carrying poultry goods safely to a retail market",
+      "B": "To risk everything on a single venture, investment, or course of action",
+      "C": "Storing grocery provisions in traditional woven baskets",
+      "D": "Diversifying financial assets across diverse portfolios"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Putting 'all your eggs in one basket' means depending entirely on the success of a single plan, risking total ruin if it fails.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1290",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have an axe to grind**",
+    "options": {
+      "A": "Sharpening woodcutting tools in a mechanical workshop",
+      "B": "Supporting public community initiatives with sincerity",
+      "C": "Passing regulatory environmental forestry policies",
+      "D": "To have a private, selfish motive, hidden interest, or personal grievance to pursue"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. Having 'an axe to grind' means acting out of a hidden, self-serving motive or a personal grudge.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1291",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have an itchy palm**",
+    "options": {
+      "A": "Suffering from a dermatological allergy on one's hands",
+      "B": "To have an excessive greed for money or a constant desire for bribes",
+      "C": "Performing strenuous manual labor with tools",
+      "D": "Washing hands frequently with strong soap"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having 'an itchy palm' is an idiomatic way of describing someone who is greedy for money or receptive to bribes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1292",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have bigger fish to fry**",
+    "options": {
+      "A": "Preparing large seafood delicacies for a formal banquet",
+      "B": "Catching massive marine fish during deep-sea expeditions",
+      "C": "To have more important, pressing, or profitable matters to attend to",
+      "D": "Managing a commercial restaurant kitchen efficiently"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Having 'bigger fish to fry' means having more significant or urgent business that requires your focus.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1293",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have cold feet**",
+    "options": {
+      "A": "Suffering from poor peripheral circulation during winter",
+      "B": "To experience sudden loss of courage or nervousness right before taking action",
+      "C": "Walking barefoot across ice surfaces in mountains",
+      "D": "Refusing to wear thermal socks during outdoor travel"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Getting or having 'cold feet' means hesitating or feeling sudden fear about proceeding with a committed plan.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1294",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have deep pockets**",
+    "options": {
+      "A": "Wearing customized winter coats with oversized pockets",
+      "B": "To possess vast financial resources and abundant wealth",
+      "C": "Hiding stolen merchandise inside personal garments",
+      "D": "Being exceedingly miserly with small pocket change"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having 'deep pockets' describes an individual or organization that has access to large amounts of financial capital.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1295",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have feet of clay**",
+    "options": {
+      "A": "Stepping into wet agricultural mud by accident",
+      "B": "Wearing ceramic footwear models in an art gallery",
+      "C": "To possess a hidden, unexpected character flaw in an otherwise revered figure",
+      "D": "Inability to run fast during athletic track competitions"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Having 'feet of clay' implies having a major hidden weakness or fault in someone who is widely admired.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1296",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have no backbone**",
+    "options": {
+      "A": "Suffering from a severe spinal orthopedic disorder",
+      "B": "To lack courage, willpower, firmness, or strength of character",
+      "C": "Invertebrate marine creatures studied in zoology",
+      "D": "Exhibiting exceptional physical flexibility in gymnastics"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having 'no backbone' means being spineless, cowardly, and lacking the resolve to stand up for oneself.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1297",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have one foot in the grave**",
+    "options": {
+      "A": "Digging a burial plot in a cemetery",
+      "B": "To be extremely old, near death, or dangerously close to failing completely",
+      "C": "Stumbling into an open ditch in the dark",
+      "D": "Attending a funeral service for a departed colleague"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having 'one foot in the grave' means being very near death due to advanced age or serious illness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1298",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have one's hands full**",
+    "options": {
+      "A": "Carrying multiple grocery packages home",
+      "B": "Holding a collection of expensive gold coins",
+      "C": "To be completely occupied, overloaded, and extremely busy with tasks",
+      "D": "Wearing heavy protective mittens during winter"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Having 'one's hands full' means being totally absorbed in dealing with difficult, busy, or overwhelming responsibilities.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1299",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have one's heart in one's mouth**",
+    "options": {
+      "A": "To be in a state of extreme fear, anxiety, or acute suspense",
+      "B": "Suffering from severe gastrointestinal nausea",
+      "C": "Speaking with immense emotional passion in a debate",
+      "D": "Experiencing a sudden cardiovascular emergency"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having your 'heart in your mouth' means feeling intense fear, nervous suspense, or apprehension.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1300",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have the last laugh**",
+    "options": {
+      "A": "Concluding a comedy theatrical play with a joke",
+      "B": "To achieve ultimate success, victory, or vindication after facing earlier doubt or ridicule",
+      "C": "Laughing uncontrollably during an office meeting",
+      "D": "Mocking an associate who failed an examination"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having 'the last laugh' means ultimately winning, succeeding, or proving yourself right after being doubted, defeated, or mocked previously.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

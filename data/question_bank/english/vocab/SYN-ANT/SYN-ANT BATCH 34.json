@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_1651",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DUPE**",
+    "options": {
+      "A": "Deceive",
+      "B": "Trick",
+      "C": "Enlighten",
+      "D": "Hoodwink"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Dupe' means to deceive or trick someone. 'Enlighten', 'guide', or 'protect' serves as its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1652",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DUPLICITY**",
+    "options": {
+      "A": "Deceit",
+      "B": "Honesty",
+      "C": "Candor",
+      "D": "Sincerity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Duplicity' refers to deceitfulness or double-dealing. 'Deceit', 'fraud', or 'guile' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1653",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DUPLICITY**",
+    "options": {
+      "A": "Deceit",
+      "B": "Guile",
+      "C": "Honesty",
+      "D": "Chicanery"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Duplicity' means deceitfulness. 'Honesty', 'candor', or 'sincerity' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1654",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EBULLIENT**",
+    "options": {
+      "A": "Exuberant",
+      "B": "Morose",
+      "C": "Apathetic",
+      "D": "Lethargic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ebullient' means cheerful and full of energy. 'Exuberant', 'buoyant', or 'vivacious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1655",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EBULLIENT**",
+    "options": {
+      "A": "Exuberant",
+      "B": "Depressed",
+      "C": "Vivacious",
+      "D": "Enthusiastic"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Ebullient' means joyful and highly energetic. 'Depressed', 'morose', or 'apathetic' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1656",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ECCENTRIC**",
+    "options": {
+      "A": "Unconventional",
+      "B": "Ordinary",
+      "C": "Common",
+      "D": "Conventional"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Eccentric' refers to a person or their behavior that is unconventional and slightly strange. 'Unconventional', 'bizarre', or 'peculiar' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1657",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ECCENTRIC**",
+    "options": {
+      "A": "Bizarre",
+      "B": "Unconventional",
+      "C": "Ordinary",
+      "D": "Peculiar"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Eccentric' means strange or departing from the norm. 'Ordinary', 'conventional', or 'normal' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1658",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ECLECTIC**",
+    "options": {
+      "A": "Diverse",
+      "B": "Uniform",
+      "C": "Homogeneous",
+      "D": "Similar"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Eclectic' means deriving ideas, style, or taste from a broad and diverse range of sources. 'Diverse', 'varied', or 'wide-ranging' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1659",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ECLECTIC**",
+    "options": {
+      "A": "Diverse",
+      "B": "Homogeneous",
+      "C": "Varied",
+      "D": "Comprehensive"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Eclectic' means drawn from diverse sources. 'Homogeneous', 'uniform', or 'narrow' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1660",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EFFICACY**",
+    "options": {
+      "A": "Effectiveness",
+      "B": "Incompetence",
+      "C": "Failure",
+      "D": "Ineptitude"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Efficacy' refers to the ability to produce a desired or intended result. 'Effectiveness', 'success', or 'potency' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1661",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EFFICACY**",
+    "options": {
+      "A": "Effectiveness",
+      "B": "Potency",
+      "C": "Inefficacy",
+      "D": "Success"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Efficacy' means the power to produce an effect. 'Inefficacy', 'failure', or 'incompetence' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1662",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EFFRONTERY**",
+    "options": {
+      "A": "Impudence",
+      "B": "Modesty",
+      "C": "Timidity",
+      "D": "Respect"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Effrontery' refers to insolent or impertinent behavior. 'Impudence', 'audacity', or 'nerve' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1663",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EFFRONTERY**",
+    "options": {
+      "A": "Audacity",
+      "B": "Impudence",
+      "C": "Timidity",
+      "D": "Insolence"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Effrontery' means shameless boldness. 'Timidity', 'modesty', or 'respect' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1664",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ELICIT**",
+    "options": {
+      "A": "Extract",
+      "B": "Suppress",
+      "C": "Hide",
+      "D": "Repress"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Elicit' means to evoke or draw out (a response, answer, or fact) from someone. 'Extract', 'evoke', or 'obtain' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1665",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ELICIT**",
+    "options": {
+      "A": "Evoke",
+      "B": "Extract",
+      "C": "Suppress",
+      "D": "Draw"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Elicit' means to bring forth or draw out. 'Suppress', 'hide', or 'repress' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1666",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ELUCIDATE**",
+    "options": {
+      "A": "Clarify",
+      "B": "Obscure",
+      "C": "Confuse",
+      "D": "Confound"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Elucidate' means to make (something) clear; explain. 'Clarify', 'illuminate', or 'explain' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1667",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ELUCIDATE**",
+    "options": {
+      "A": "Explain",
+      "B": "Clarify",
+      "C": "Obscure",
+      "D": "Illuminate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Elucidate' means to explain clearly. 'Obscure', 'confuse', or 'muddle' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1668",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EMANCIPATE**",
+    "options": {
+      "A": "Liberate",
+      "B": "Enslave",
+      "C": "Bind",
+      "D": "Subjugate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Emancipate' means to set free, especially from legal, social, or political restrictions. 'Liberate', 'free', or 'unchain' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1669",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EMANCIPATE**",
+    "options": {
+      "A": "Liberate",
+      "B": "Enslave",
+      "C": "Release",
+      "D": "Unchain"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Emancipate' means to free. 'Enslave', 'bind', or 'subjugate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1670",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EMBELLISH**",
+    "options": {
+      "A": "Adorn",
+      "B": "Deface",
+      "C": "Spoil",
+      "D": "Mar"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Embellish' means to make (something) more attractive by the addition of decorative details or features. 'Adorn', 'decorate', or 'beautify' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1671",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EMBELLISH**",
+    "options": {
+      "A": "Adorn",
+      "B": "Decorate",
+      "C": "Deface",
+      "D": "Enhance"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Embellish' means to decorate or improve the appearance of something. 'Deface', 'spoil', or 'mar' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1672",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EMINENT**",
+    "options": {
+      "A": "Illustrious",
+      "B": "Obscure",
+      "C": "Unknown",
+      "D": "Insignificant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Eminent' means (of a person) famous and respected within a particular sphere or profession. 'Illustrious', 'distinguished', or 'renowned' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1673",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EMINENT**",
+    "options": {
+      "A": "Illustrious",
+      "B": "Unknown",
+      "C": "Renowned",
+      "D": "Prominent"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Eminent' means widely known and respected. 'Unknown', 'obscure', or 'insignificant' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1674",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EMPATHY**",
+    "options": {
+      "A": "Compassion",
+      "B": "Apathy",
+      "C": "Callousness",
+      "D": "Indifference"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Empathy' is the ability to understand and share the feelings of another. 'Compassion', 'sympathy', or 'understanding' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1675",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EMPATHY**",
+    "options": {
+      "A": "Compassion",
+      "B": "Understanding",
+      "C": "Apathy",
+      "D": "Sympathy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Empathy' means caring and understanding another's feelings. 'Apathy', 'indifference', or 'callousness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1676",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EMPIRICAL**",
+    "options": {
+      "A": "Observational",
+      "B": "Theoretical",
+      "C": "Hypothetical",
+      "D": "Speculative"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Empirical' means based on, concerned with, or verifiable by observation or experience rather than theory or pure logic. 'Observational', 'practical', or 'experiential' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1677",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EMPIRICAL**",
+    "options": {
+      "A": "Observational",
+      "B": "Practical",
+      "C": "Theoretical",
+      "D": "Factual"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Empirical' means based on real observation. 'Theoretical', 'hypothetical', or 'speculative' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1678",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EMULATE**",
+    "options": {
+      "A": "Imitate",
+      "B": "Neglect",
+      "C": "Shun",
+      "D": "Reject"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Emulate' means to match or surpass (a person or achievement), typically by imitation. 'Imitate', 'copy', or 'mirror' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1679",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EMULATE**",
+    "options": {
+      "A": "Imitate",
+      "B": "Mirror",
+      "C": "Neglect",
+      "D": "Follow"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Emulate' means to eagerly imitate or attempt to match. 'Neglect', 'shun', or 'originate' serves as its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1680",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ENERVATE**",
+    "options": {
+      "A": "Exhaust",
+      "B": "Invigorate",
+      "C": "Energize",
+      "D": "Stimulate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Enervate' means to cause (someone) to feel drained of energy or vitality; weaken. 'Exhaust', 'tire', or 'fatigue' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1681",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENERVATE**",
+    "options": {
+      "A": "Exhaust",
+      "B": "Invigorate",
+      "C": "Weaken",
+      "D": "Tire"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Enervate' means to drain of energy. 'Invigorate', 'energize', or 'strengthen' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1682",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ENFRANCHISE**",
+    "options": {
+      "A": "Empower",
+      "B": "Subjugate",
+      "C": "Oppress",
+      "D": "Disenfranchise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Enfranchise' means to give the right to vote to; to free (a slave). 'Empower', 'liberate', or 'emancipate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1683",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENFRANCHISE**",
+    "options": {
+      "A": "Empower",
+      "B": "Liberate",
+      "C": "Subjugate",
+      "D": "Authorize"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Enfranchise' means to free or grant rights to. 'Subjugate', 'oppress', or 'disenfranchise' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1684",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ENGENDER**",
+    "options": {
+      "A": "Produce",
+      "B": "Destroy",
+      "C": "Halt",
+      "D": "Prevent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Engender' means to cause or give rise to (a feeling, situation, or condition). 'Produce', 'generate', or 'create' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1685",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENGENDER**",
+    "options": {
+      "A": "Produce",
+      "B": "Generate",
+      "C": "Destroy",
+      "D": "Arouse"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Engender' means to create or produce. 'Destroy', 'prevent', or 'halt' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1686",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ENIGMA**",
+    "options": {
+      "A": "Mystery",
+      "B": "Clarity",
+      "C": "Solution",
+      "D": "Answer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Enigma' refers to a person or thing that is mysterious, puzzling, or difficult to understand. 'Mystery', 'riddle', or 'conundrum' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1687",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENIGMA**",
+    "options": {
+      "A": "Mystery",
+      "B": "Riddle",
+      "C": "Clarity",
+      "D": "Puzzle"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Enigma' is a puzzle or mystery. 'Clarity', 'solution', or 'explication' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1688",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ENMITY**",
+    "options": {
+      "A": "Hostility",
+      "B": "Friendship",
+      "C": "Amity",
+      "D": "Affection"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Enmity' means the state or feeling of being actively opposed or hostile to someone or something. 'Hostility', 'animosity', or 'antagonism' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1689",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENMITY**",
+    "options": {
+      "A": "Hostility",
+      "B": "Animosity",
+      "C": "Friendship",
+      "D": "Antagonism"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Enmity' means deep-seated hatred. 'Friendship', 'amity', or 'goodwill' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1690",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ENNUI**",
+    "options": {
+      "A": "Lassitude",
+      "B": "Enthusiasm",
+      "C": "Energy",
+      "D": "Vigor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ennui' means a feeling of listlessness and dissatisfaction arising from a lack of occupation or excitement. 'Lassitude', 'boredom', or 'tedium' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1691",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENNUI**",
+    "options": {
+      "A": "Boredom",
+      "B": "Lassitude",
+      "C": "Enthusiasm",
+      "D": "Tedium"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ennui' means weariness and boredom. 'Enthusiasm', 'excitement', or 'energy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1692",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ENTHRALL**",
+    "options": {
+      "A": "Captivate",
+      "B": "Repel",
+      "C": "Bore",
+      "D": "Disgust"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Enthrall' means to capture the fascinated attention of. 'Captivate', 'enchant', or 'fascinate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1693",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ENTHRALL**",
+    "options": {
+      "A": "Captivate",
+      "B": "Enchant",
+      "C": "Repel",
+      "D": "Fascinate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Enthrall' means to spellbind or captivate. 'Repel', 'bore', or 'disgust' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1694",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EPHEMERAL**",
+    "options": {
+      "A": "Transient",
+      "B": "Permanent",
+      "C": "Everlasting",
+      "D": "Enduring"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ephemeral' means lasting for a very short time. 'Transient', 'fleeting', or 'momentary' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1695",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EPHEMERAL**",
+    "options": {
+      "A": "Transient",
+      "B": "Fleeting",
+      "C": "Permanent",
+      "D": "Momentary"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ephemeral' means fleeting and short-lived. 'Permanent', 'enduring', or 'everlasting' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1696",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EPITOME**",
+    "options": {
+      "A": "Paragon",
+      "B": "Flaw",
+      "C": "Exception",
+      "D": "Anomaly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Epitome' refers to a person or thing that is a perfect example of a particular quality or type. 'Paragon', 'embodiment', or 'exemplar' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1697",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EPITOME**",
+    "options": {
+      "A": "Paragon",
+      "B": "Embodiment",
+      "C": "Flaw",
+      "D": "Exemplar"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Epitome' means a perfect example or ideal. 'Flaw', 'imperfection', or 'anomaly' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1698",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EQUANIMITY**",
+    "options": {
+      "A": "Composure",
+      "B": "Agitation",
+      "C": "Anxiety",
+      "D": "Panic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Equanimity' means mental calmness, composure, and evenness of temper, especially in a difficult situation. 'Composure', 'calm', or 'serenity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1699",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**EQUANIMITY**",
+    "options": {
+      "A": "Composure",
+      "B": "Serenity",
+      "C": "Agitation",
+      "D": "Calmness"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Equanimity' means calm composure. 'Agitation', 'panic', or 'anxiety' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1700",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**EQUIVOCAL**",
+    "options": {
+      "A": "Ambiguous",
+      "B": "Certain",
+      "C": "Definite",
+      "D": "Clear"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Equivocal' means open to more than one interpretation; ambiguous. 'Ambiguous', 'indefinite', or 'vague' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

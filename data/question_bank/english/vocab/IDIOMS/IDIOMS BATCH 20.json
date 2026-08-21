@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0951",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Do a good turn**",
+    "options": {
+      "A": "To rotate around in a full circle",
+      "B": "To perform an act of kindness, favor, or helpful service for someone",
+      "C": "To change one's political opinion abruptly",
+      "D": "To take an alternative detour on a journey"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'do a good turn' means to perform an act that helps or benefits another person.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0952",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Double-dealer**",
+    "options": {
+      "A": "A merchant who trades in two wholesale categories",
+      "B": "A deceitful, hypocritical, or treacherous person who tricks both sides",
+      "C": "A card dealer working in two gaming casinos",
+      "D": "A mediator resolving commercial disputes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'double-dealer' is someone who acts with duplicity and deceit, misleading others.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0953",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Draw a blank**",
+    "options": {
+      "A": "To fail to get an answer, find a result, or remember something",
+      "B": "To sketch a portrait with black ink",
+      "C": "To win a prize in a lottery draw",
+      "D": "To sign a cheque without an amount"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'draw a blank' means to be completely unable to recall information or produce a result.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0954",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Draw in one's horns**",
+    "options": {
+      "A": "To play brass instruments softly",
+      "B": "To sketch animal illustrations in art",
+      "C": "To restrain one's demands, reduce expenses, or become less aggressive",
+      "D": "To attack an opponent with immense force"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'draw in one's horns' means to curb one's expenditure, pride, or aggressive behavior.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0955",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Drive someone up the wall**",
+    "options": {
+      "A": "To transport someone up a steep mountain road",
+      "B": "To annoy, irritate, or exasperate someone intensely",
+      "C": "To assist a friend in home construction",
+      "D": "To encourage someone to achieve excellence"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'drive someone up the wall' means to make them extremely frustrated, angry, or irritated.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0956",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Drop in the ocean**",
+    "options": {
+      "A": "A tiny, insignificant amount compared to what is needed or the whole",
+      "B": "A heavy rainstorm over coastal waters",
+      "C": "A valuable pearl lost in deep waters",
+      "D": "A sudden reduction in sea tides"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'drop in the ocean' (or drop in the bucket) is a very small, negligible fraction of a large whole.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0957",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dwell on**",
+    "options": {
+      "A": "To construct a residential home in the countryside",
+      "B": "To move constantly between rental apartments",
+      "C": "To think, speak, or write about something at excessive length",
+      "D": "To overlook an error deliberately"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'dwell on' means to obsess over, linger upon, or discuss a topic for a prolonged period.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0958",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Eat one's heart out**",
+    "options": {
+      "A": "To suffer from intense grief, jealousy, or bitter longing in silence",
+      "B": "To eat a massive feast until full",
+      "C": "To undergo major thoracic cardiac surgery",
+      "D": "To display affection passionately in public"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'eat one's heart out' means to brood secretly with excessive grief or jealousy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0959",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Eke out**",
+    "options": {
+      "A": "To throw away surplus food items",
+      "B": "To expand a corporate enterprise rapidly",
+      "C": "To make a small supply last or make a living with great difficulty",
+      "D": "To borrow large sums of money from banks"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'eke out' a living or existence means to manage with difficulty through frugal effort.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0960",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Every inch**",
+    "options": {
+      "A": "Entirely, completely, and in every single respect",
+      "B": "A precise measurement on a tailor's tape",
+      "C": "A small fraction of land property",
+      "D": "Advancing step-by-step with hesitation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Every inch' (e.g., 'every inch a king') means totally and in all respects.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0961",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fall foul of**",
+    "options": {
+      "A": "To clean up a foul-smelling swamp",
+      "B": "To commit a penalty rule foul in a sports match",
+      "C": "To get into trouble, disagreement, or conflict with someone or the law",
+      "D": "To suffer a sudden physical injury while running"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'fall foul of' means to come into conflict with authority or get into legal trouble.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0962",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fall out**",
+    "options": {
+      "A": "To drop out of an aircraft parachute",
+      "B": "To quarrel, argue, or break off friendly relations with someone",
+      "C": "To step out of a military line formation",
+      "D": "To lose hair due to illness"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'fall out' with someone means to have an argument and cease being friends.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0963",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Feather in one's cap**",
+    "options": {
+      "A": "A decorative plumage on festive hats",
+      "B": "A distinguished achievement or honor of which one can be proud",
+      "C": "A minor and negligible reward",
+      "D": "A sign of cowardice during battle"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'feather in one's cap' is an accomplishment that brings pride and honor.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0964",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Feel one's pulse**",
+    "options": {
+      "A": "To examine a patient's heartbeat clinically",
+      "B": "To count seconds during an athletic race",
+      "C": "To find out or sound out someone's views or secret intentions",
+      "D": "To feel intense physical exhaustion"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'feel someone's pulse' idiomatically means to sound out their opinions or intentions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0965",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fight tooth and nail**",
+    "options": {
+      "A": "To engage in a martial grooming ritual",
+      "B": "To fight or contest with absolute fierceness, energy, and total effort",
+      "C": "To suffer dental and fingernail injuries",
+      "D": "To surrender easily without resisting"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'fight tooth and nail' means to battle with utmost vigor and all available resources.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0966",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Find one's feet**",
+    "options": {
+      "A": "To buy appropriate footwear sizes",
+      "B": "To recover physical mobility after surgery",
+      "C": "To discover missing shoes under furniture",
+      "D": "To become accustomed to, confident in, and familiar with a new situation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. To 'find one's feet' means to gain confidence and adjust comfortably to a new environment.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0967",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fly off the handle**",
+    "options": {
+      "A": "To lose one's temper suddenly, violently, and without control",
+      "B": "To detach a door handle accidentally",
+      "C": "To pilot an aircraft erratically",
+      "D": "To break a carpentry hammer tool"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'fly off the handle' means to react with sudden and uncontrollable fury.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0968",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Follow suit**",
+    "options": {
+      "A": "To buy identical clothing attire",
+      "B": "To conform to corporate dress codes",
+      "C": "To file a matching lawsuit in a court",
+      "D": "To do the same thing as someone else has just done; imitate"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. To 'follow suit' means to imitate an action or follow the example set by another.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0969",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Foot the bill**",
+    "options": {
+      "A": "To bear the financial expense or pay for something",
+      "B": "To reject an invoice disdainfully",
+      "C": "To calculate account balances manually",
+      "D": "To divide restaurant tabs equally"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'foot the bill' means to take financial responsibility and pay the costs.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0970",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get down to business**",
+    "options": {
+      "A": "To invest capital into a new startup",
+      "B": "To stop wasting time and start focusing on the core, serious matter",
+      "C": "To commute downtown to a workplace",
+      "D": "To sign commercial trade contracts"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'get down to business' means to begin working earnestly on the primary task.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0971",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get cold feet**",
+    "options": {
+      "A": "To become nervous, lose courage, or hesitate right before an important event",
+      "B": "To suffer from poor blood circulation in winter",
+      "C": "To stand bare-footed on cold floors",
+      "D": "To refuse to wear thermal socks"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get cold feet' means experiencing sudden fear or second thoughts before doing something big.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0972",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get into a soup**",
+    "options": {
+      "A": "To cook a hot vegetable broth",
+      "B": "To eat dinner in a hurry",
+      "C": "To land oneself in a difficult, embarrassing, or complicated mess",
+      "D": "To attend a culinary competition"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'get into a soup' means finding oneself in a troublesome and awkward predicament.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0973",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get the upper hand**",
+    "options": {
+      "A": "To hold a hand high in greeting",
+      "B": "To secure a dominant, winning advantage or control over an opponent",
+      "C": "To receive a promotion to senior manager",
+      "D": "To suffer a wrist bone fracture"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'get the upper hand' means establishing a position of advantage or supremacy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0974",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Gird up the loins**",
+    "options": {
+      "A": "To brace and prepare oneself firmly for strenuous action or difficulty",
+      "B": "To loosen clothes before resting",
+      "C": "To fasten a belt during formal dinner",
+      "D": "To recover from waist fatigue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'gird up one's loins' means getting ready for a tough or challenging task.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0975",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give a wide berth**",
+    "options": {
+      "A": "To avoid, keep a safe distance from, or steer clear of someone/something",
+      "B": "To allocate large passenger cabins on a ship",
+      "C": "To welcome guests with warm hospitality",
+      "D": "To park a vessel next to a dock"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'give a wide berth' means keeping far away to avoid trouble or conflict.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0976",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give currency to**",
+    "options": {
+      "A": "To distribute cash to the public",
+      "B": "To lend money with high interest",
+      "C": "To circulate, popularize, or spread a rumor or report widely",
+      "D": "To exchange foreign currency banknotes"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'give currency to' means to cause an idea, belief, or rumor to become widely spread.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0977",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give the devil his due**",
+    "options": {
+      "A": "To perform dark occult rituals",
+      "B": "To acknowledge the good qualities or give credit even to a disagreeable person",
+      "C": "To punish an enemy without mercy",
+      "D": "To pay outstanding financial debts"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Give the devil his due' means giving credit to someone who deserves it, despite their flaws.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0978",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go about**",
+    "options": {
+      "A": "To roam aimlessly around town",
+      "B": "To set about doing, handle, or perform a particular task",
+      "C": "To travel across multiple foreign continents",
+      "D": "To abandon an ongoing commercial project"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'go about' something means to start dealing with it or perform everyday activities.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0979",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go for broke**",
+    "options": {
+      "A": "To risk everything, committing all resources in an all-out effort to succeed",
+      "B": "To suffer total financial bankruptcy",
+      "C": "To break a contract illegally",
+      "D": "To purchase damaged goods at discounts"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go for broke' means to risk all one's capital and energy on a single venture.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0980",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go the whole hog**",
+    "options": {
+      "A": "To raise livestock on a farm",
+      "B": "To eat pork in large quantities",
+      "C": "To do something completely, thoroughly, and without holding back",
+      "D": "To waste money on unnecessary luxuries"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'go the whole hog' means to do something thoroughly and completely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0981",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Good Samaritan**",
+    "options": {
+      "A": "A generous and charitable person who helps strangers in distress selflessly",
+      "B": "A wealthy merchant who loans money",
+      "C": "A religious preacher traveling between cities",
+      "D": "An elected political leader"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'Good Samaritan' is a compassionate person who voluntarily aids those in difficulty.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0982",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grapevine**",
+    "options": {
+      "A": "An informal, unofficial channel through which rumors and gossip circulate",
+      "B": "A vineyard trellis for growing fruit",
+      "C": "A direct telephone line connection",
+      "D": "An official government newsletter"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'grapevine' is the informal transmission of gossip, rumors, or unconfirmed news.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0983",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grasp the nettle**",
+    "options": {
+      "A": "To harvest medicinal weed leaves",
+      "B": "To handle or tackle an unpleasant, difficult problem boldly and decisively",
+      "C": "To suffer a painful stinging plant rash",
+      "D": "To back down from an aggressive adversary"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'grasp the nettle' means confronting a thorny situation without flinching.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0984",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grease the wheels**",
+    "options": {
+      "A": "To lubricate machinery engines with oil",
+      "B": "To ride a vehicle at high velocity",
+      "C": "To facilitate a smooth operation or expedite a process, often through favors/money",
+      "D": "To repair broken transport carts"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'grease the wheels' means to help a process run smoothly, sometimes with influence or money.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0985",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Green with envy**",
+    "options": {
+      "A": "Feeling extremely, intensely jealous or covetous of someone else",
+      "B": "Suffering from acute food poisoning nausea",
+      "C": "Wearing bright green emerald jewelry",
+      "D": "Possessing a talent for botany gardening"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'green with envy' means consumed with extreme jealousy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0986",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grin and bear it**",
+    "options": {
+      "A": "To smile happily when rewarded",
+      "B": "To endure pain, misfortune, or hardship stoically and without complaining",
+      "C": "To mock an opponent who is in agony",
+      "D": "To hunt wild bears in winter"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'grin and bear it' means to endure an unpleasant situation patiently with a brave face.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0987",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grist to the mill**",
+    "options": {
+      "A": "Grain delivered to a flour mill",
+      "B": "Useful material, experience, or information that can be turned to advantage",
+      "C": "A heavy stone wheel used in grinding",
+      "D": "Wasted farm byproduct"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Grist to the mill' is anything that can be utilized profitably or to one's advantage.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0988",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hair of the dog**",
+    "options": {
+      "A": "An alcoholic drink consumed as an antidote to relieve a hangover",
+      "B": "Dog fur used in textile spinning",
+      "C": "A herbal cure for animal bites",
+      "D": "A grooming brush for pets"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hair of the dog' refers to an alcoholic drink taken to relieve the symptoms of a hangover.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0989",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hammer and tongs**",
+    "options": {
+      "A": "Blacksmith tools used in a workshop",
+      "B": "With immense energy, enthusiasm, or fierce, noisy aggression",
+      "C": "In an organized and systematic manner",
+      "D": "Operating under heavy military surveillance"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Doing something or arguing 'hammer and tongs' means with extreme vigor and noise.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0990",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Hang fire**",
+    "options": {
+      "A": "To light a bonfire in an outdoor pit",
+      "B": "To extinguish a burning structure with water",
+      "C": "To delay, hesitate, or remain unresolved; be suspended",
+      "D": "To discharge artillery shells rapidly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'hang fire' means to delay taking action or for a matter to remain suspended.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0991",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a bone to pick with**",
+    "options": {
+      "A": "To have a matter or grievance about which one needs to quarrel or complain",
+      "B": "To share a meal of roasted meat",
+      "C": "To search for fossil bones in an excavation",
+      "D": "To help someone in solving a dilemma"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having 'a bone to pick' means having a disagreement, dispute, or complaint to discuss with someone.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0992",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have a chip on one's shoulder**",
+    "options": {
+      "A": "To carry wooden blocks on one's back",
+      "B": "To suffer from a dislocated joint injury",
+      "C": "To hold a persistent feeling of grievance, resentment, or readiness to quarrel",
+      "D": "To wear military rank epaulets proudly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Having a 'chip on one's shoulder' means having an angry attitude due to perceived unfairness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0993",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have an iron will**",
+    "options": {
+      "A": "A legally binding testament inscribed on metal",
+      "B": "Possessing exceptional, stubborn, and unbreakable determination",
+      "C": "Suffering from severe physical rigidity",
+      "D": "Exercising with heavy weights daily"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. An 'iron will' denotes extraordinary firmness of purpose and unwavering resolve.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0994",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have bigger fish to fry**",
+    "options": {
+      "A": "To have more important, pressing, or lucrative matters to attend to",
+      "B": "To prepare a large seafood dinner party",
+      "C": "To catch giant fish in ocean expeditions",
+      "D": "To operate a commercial fishing trawler"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having 'bigger fish to fry' means having higher-priority or more significant tasks to do.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0995",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have cold feet**",
+    "options": {
+      "A": "To lose courage or confidence and become hesitant right before an action",
+      "B": "To experience numbness from winter ice",
+      "C": "To refuse to wear warm footwear",
+      "D": "To suffer from poor blood circulation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having 'cold feet' means experiencing sudden apprehension or fear of proceeding.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0996",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have deep pockets**",
+    "options": {
+      "A": "Wearing customized oversized coats",
+      "B": "To possess vast financial resources and abundant wealth",
+      "C": "To hide stolen objects in garments",
+      "D": "To be extremely stingy with small change"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having 'deep pockets' means having lots of money and substantial financial backing.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0997",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have feet of clay**",
+    "options": {
+      "A": "To possess a hidden, unexpected character flaw in an otherwise admired figure",
+      "B": "To step into wet muddy soil accidentally",
+      "C": "To wear pottery sculpture footwear",
+      "D": "To be unable to walk fast in races"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having 'feet of clay' implies having a major hidden flaw or weakness in someone revered.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0998",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Have your hands full**",
+    "options": {
+      "A": "To carry multiple shopping bags",
+      "B": "To hold a collection of precious gems",
+      "C": "To be completely occupied, extremely busy, and overwhelmed with work",
+      "D": "To wear heavy winter mittens"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Having 'your hands full' means being completely overloaded with responsibilities or tasks.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0999",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Head and shoulders above**",
+    "options": {
+      "A": "Measuring taller than average in height",
+      "B": "Vastly superior to, or far better than others in quality or ability",
+      "C": "Carrying someone on your back",
+      "D": "Suffering from upper body posture issues"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'head and shoulders above' means being markedly superior in standard or skill.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1000",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Heart in one's mouth**",
+    "options": {
+      "A": "In a state of extreme fear, intense anxiety, or acute suspense",
+      "B": "Suffering from severe gastrointestinal nausea",
+      "C": "Speaking with intense emotional passion",
+      "D": "Experiencing a sudden thoracic cardiac episode"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having your 'heart in your mouth' means being gripped by sudden, intense terror or apprehension.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

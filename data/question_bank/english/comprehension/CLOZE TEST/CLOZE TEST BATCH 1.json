@@ -1,0 +1,722 @@
+[
+  {
+    "cloze_id": "ENG_CLOZE_SET_141",
+    "passage_title": "The Evolutionary Neurobiology of Primate Mirror Neurons",
+    "passage_text": "Originally discovered in the ventral premotor cortex (area F5) and the inferior parietal lobule of macaque monkeys, mirror neurons are specialized visuomotor cells that fire both when an individual executes a goal-directed motor action and when they passively observe another agent performing an equivalent movement. Neurophysiologists hypothesize that this neural (1) _________ mechanism serves as the foundational substrate for action understanding, observational learning, and primitive motor imitation. By mapping visual sensory inputs directly onto internal motor representations, the mirror neuron network enables immediate cognitive (2) _________ of others' motor intentions without requiring explicit inferential reasoning. In humans, putative mirror neuron circuits located in the premotor cortex, supplementary motor area, and inferior frontal gyrus are implicated in higher-order socio-cognitive functions, particularly emotional (3) _________ and the development of theory of mind. However, neuroscientists caution against overextending these findings, warning that attributing complex linguistic faculties or cultural evolution exclusively to mirror networks risks biological (4) _________. Determining the exact degree to which mirror neuron dysfunctions contribute to neuropsychiatric conditions, such as autism spectrum disorders, remains an active frontier in cognitive (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_141_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "mirroring",
+          "B": "severing",
+          "C": "stagnating",
+          "D": "dormancy"
+        },
+        "correct_option": "A",
+        "rationale": "'Neural mirroring mechanism' is the precise functional term describing how these neurons reflect and match observed physical actions internally."
+      },
+      {
+        "id": "ENG_CLOZE_141_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "decoding",
+          "B": "erasure",
+          "C": "distortion",
+          "D": "suppression"
+        },
+        "correct_option": "A",
+        "rationale": "'Cognitive decoding' refers to the neural comprehension and interpretation of observed actions and their underlying intentions."
+      },
+      {
+        "id": "ENG_CLOZE_141_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "empathy",
+          "B": "apathy",
+          "C": "animosity",
+          "D": "antagonism"
+        },
+        "correct_option": "A",
+        "rationale": "'Emotional empathy' denotes the capacity to share and vicariously experience the feelings and affective states of another individual."
+      },
+      {
+        "id": "ENG_CLOZE_141_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "reductionism",
+          "B": "expansion",
+          "C": "pluralism",
+          "D": "holism"
+        },
+        "correct_option": "A",
+        "rationale": "'Biological reductionism' is the philosophical error of oversimplifying complex socio-cultural phenomena down to a single biological mechanism."
+      },
+      {
+        "id": "ENG_CLOZE_141_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "neuroscience",
+          "B": "astronomy",
+          "C": "geology",
+          "D": "paleontology"
+        },
+        "correct_option": "A",
+        "rationale": "'Cognitive neuroscience' is the academic field studying the biological substrates and neural mechanisms underlying mental processes."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_142",
+    "passage_title": "The Geomorphology of Karst Hydrology and Speleogenesis",
+    "passage_text": "Karst landscapes are distinctive geological terrains characterized by subterranean drainage systems, sinkholes (dolines), disappearing streams, and extensive cave networks developed in soluble carbonate bedrock, primarily limestone and dolomite. The fundamental geochemical engine driving speleogenesis—the structural development of caves—is the dissolution of calcium carbonate ($CaCO_3$) by weak carbonic acid ($H_2CO_3$). Atmospheric precipitation absorbs carbon dioxide as it falls, but its corrosive potential is dramatically augmented as soil waters percolate through organic-rich topsoils, where microbial respiration generates elevated partial pressures of $CO_2$. When this acidic groundwater infiltrates fractures, bedding planes, and tectonic faults within the limestone matrix, it chemically leaches carbonate rock along structural (1) _________. Initially, dissolution proceeds at a laminar, transport-controlled rate until fracture apertures widen to a critical threshold (typically 5 to 10 millimeters), a hydrodynamic tipping point termed 'breakthrough'. Once breakthrough is attained, rapid conduit flow occurs, transforming micro-fractures into cavernous underground river (2) _________. Over geological epochs, groundwater table fluctuations precipitate speleothems—such as stalactites and stalagmites—through the degassing of dissolved $CO_2$ and the subsequent (3) _________ of calcite crystals. However, karst aquifers are exceptionally vulnerable to anthropogenic groundwater (4) _________, as thin soil covers and rapid conduit velocities offer minimal natural filtration against industrial pollutants, jeopardizing regional water (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_142_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "discontinuities",
+          "B": "solidifications",
+          "C": "barriers",
+          "D": "foundations"
+        },
+        "correct_option": "A",
+        "rationale": "'Structural discontinuities' is the precise geological term for mechanical breaks, fissures, joints, and faults in rock formations."
+      },
+      {
+        "id": "ENG_CLOZE_142_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "channels",
+          "B": "trenches",
+          "C": "plumes",
+          "D": "shelves"
+        },
+        "correct_option": "A",
+        "rationale": "'Underground river channels' denotes the cavernous subterranean pathways carved out by continuous karst water flow."
+      },
+      {
+        "id": "ENG_CLOZE_142_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "precipitation",
+          "B": "evaporation",
+          "C": "combustion",
+          "D": "liquefaction"
+        },
+        "correct_option": "A",
+        "rationale": "In mineralogy and chemistry, 'precipitation' refers to the formation of a solid mineral phase (calcite) emerging out of a saturated liquid solution."
+      },
+      {
+        "id": "ENG_CLOZE_142_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "contamination",
+          "B": "purification",
+          "C": "distillation",
+          "D": "conservation"
+        },
+        "correct_option": "A",
+        "rationale": "'Groundwater contamination' describes the introduction of harmful synthetic chemicals, effluent, or pollutants into freshwater aquifers."
+      },
+      {
+        "id": "ENG_CLOZE_142_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "security",
+          "B": "scarcity",
+          "C": "inadequacy",
+          "D": "deprivation"
+        },
+        "correct_option": "A",
+        "rationale": "'Water security' refers to the reliable availability of an acceptable quantity and quality of water for production, ecosystems, and human health."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_143",
+    "passage_title": "The Structural Sociology of Pierre Bourdieu and Symbolic Power",
+    "passage_text": "In contemporary sociological theory, French sociologist Pierre Bourdieu sought to overcome the antinomy between objectivism (structural determinism) and subjectivism (phenomenological agency) by developing a comprehensive theory of social practice. Central to Bourdieu's theoretical edifice are three interconnected conceptual constructs: field, habitus, and capital. A 'field' represents an autonomous social arena—such as the artistic, academic, or political realm—structured as a competitive game where agents struggle to accumulate and mobilize species-specific forms of capital (economic, cultural, social, and symbolic). 'Habitus' denotes the internalized system of durable, transposable dispositions, cognitive schemes, and bodily practices acquired through early socioeconomic socialization. The habitus operates below the level of conscious reflection, generating practices that are objectively adapted to the requirements of the field without being the product of conscious strategic (1) _________. Bourdieu argued that social stratification and class hierarchies are reproduced through 'symbolic violence'—the process whereby subordinate classes internalize and accept the cultural classifications, aesthetic tastes, and institutional values of the dominant class as natural, legitimate, and universal, thereby misrecognizing their own objective (2) _________. Educational institutions play a pivotal role in this reproduction by converting inherited cultural capital into seemingly meritocratic academic (3) _________. Consequently, schooling legitimizes social inequality under the guise of individual cognitive (4) _________. Exposing these covert mechanisms of cultural reproduction serves as the primary objective of Bourdieu's critical reflexive (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_143_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "calculation",
+          "B": "coercion",
+          "C": "paralysis",
+          "D": "stagnation"
+        },
+        "correct_option": "A",
+        "rationale": "'Strategic calculation' is what Bourdieu rejects in pure rational-choice theory, arguing habitus operates via internalized bodily dispositions."
+      },
+      {
+        "id": "ENG_CLOZE_143_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "subjugation",
+          "B": "empowerment",
+          "C": "ascendancy",
+          "D": "dominance"
+        },
+        "correct_option": "A",
+        "rationale": "'Objective subjugation' reflects the state of being dominated or subordinate that dominated classes fail to recognize due to symbolic violence."
+      },
+      {
+        "id": "ENG_CLOZE_143_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "credentials",
+          "B": "exemptions",
+          "C": "liabilities",
+          "D": "infractions"
+        },
+        "correct_option": "A",
+        "rationale": "'Academic credentials' (diplomas, degrees) represent the institutionalized form of cultural capital sanctioned by educational systems."
+      },
+      {
+        "id": "ENG_CLOZE_143_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "merit",
+          "B": "inertia",
+          "C": "decline",
+          "D": "apathy"
+        },
+        "correct_option": "A",
+        "rationale": "'Cognitive merit' refers to the illusion of purely personal talent or intelligence used to justify hierarchical school outcomes."
+      },
+      {
+        "id": "ENG_CLOZE_143_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "sociology",
+          "B": "astrophysics",
+          "C": "theology",
+          "D": "jurisprudence"
+        },
+        "correct_option": "A",
+        "rationale": "'Reflexive sociology' is Bourdieu's signature academic methodology requiring researchers to critically analyze their own social positions."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_144",
+    "passage_title": "The Polymer Chemistry and Synthesis of Conducting Plastics",
+    "passage_text": "For over a century, synthetic organic polymers—such as polyethylene, polystyrene, and polyvinyl chloride (PVC)—were universally classified as electrical insulators due to their saturated carbon backbones comprising localized $sp^3$-hybridized sigma ($\sigma$) bonds with large electronic band gaps. This material dogma was overturned in the late 1970s by Alan Heeger, Alan MacDiarmid, and Hideki Shirakawa through the groundbreaking synthesis of intrinsically conducting polyacetylene. The fundamental chemical prerequisite for electrical conductivity in organic polymers is the presence of an extended conjugated $\pi$-electron system, characterized by alternating single and double carbon-carbon bonds along the polymer backbone. In conjugated architectures, continuous overlap of adjacent carbon $p_z$-orbitals forms delocalized $\pi$ (valence) and $\pi^*$ (conduction) bands. In their pristine, neutral state, these conjugated polymers behave as semiconductors with finite band gaps. However, electrical conductivity can be increased by over ten orders of magnitude through chemical or electrochemical 'doping'. Doping involves partial oxidation (p-doping) or reduction (n-doping) of the polymer chain, which removes or adds electrons to create mobile self-localized charge carriers termed (1) _________ and polarons. Unlike conventional inorganic semiconductors where doping introduces rigid lattice impurities, dopant counter-ions in polymers induce local geometric quinoid chain distortions that facilitate rapid intra-chain and inter-chain charge (2) _________. Conducting and semiconducting polymers—such as PEDOT:PSS, polyaniline, and polythiophenes—have inaugurated the field of organic electronics, enabling flexible displays, organic light-emitting diodes (OLEDs), and wearable bio-electronic (3) _________. These materials combine the optical and electronic properties of metals with the mechanical flexibility and low-cost solution processability of commodity (4) _________. Advancing organic photovoltaic efficiency requires synthesizing novel donor-acceptor copolymers with optimized frontier molecular orbital alignments to maximize solar power conversion (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_144_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "solitons",
+          "B": "neutrons",
+          "C": "phonons",
+          "D": "protons"
+        },
+        "correct_option": "A",
+        "rationale": "'Solitons' (along with polarons and bipolarons) are the characteristic quasiparticle charge carriers in conjugated conducting polymers like polyacetylene."
+      },
+      {
+        "id": "ENG_CLOZE_144_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "transport",
+          "B": "cessation",
+          "C": "stagnation",
+          "D": "neutralization"
+        },
+        "correct_option": "A",
+        "rationale": "'Charge transport' is the physics and chemical term for the kinetic movement of charge carriers (electrons or holes) through a conductive medium."
+      },
+      {
+        "id": "ENG_CLOZE_144_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "sensors",
+          "B": "fossilizations",
+          "C": "monoliths",
+          "D": "excavations"
+        },
+        "correct_option": "A",
+        "rationale": "'Bio-electronic sensors' refers to wearable electronic devices and biomedical diagnostic interfaces made from flexible conductive polymers."
+      },
+      {
+        "id": "ENG_CLOZE_144_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "plastics",
+          "B": "minerals",
+          "C": "alloys",
+          "D": "ceramics"
+        },
+        "correct_option": "A",
+        "rationale": "'Commodity plastics' refers to synthetic polymers like polyethylene that offer cheap, lightweight, and flexible material processing."
+      },
+      {
+        "id": "ENG_CLOZE_144_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "efficiency",
+          "B": "friction",
+          "C": "inertia",
+          "D": "resistance"
+        },
+        "correct_option": "A",
+        "rationale": "'Power conversion efficiency' (PCE) is the standard thermodynamic percentage metric measuring how effectively solar cells convert light to electricity."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_145",
+    "passage_title": "The Agrarian Ecology of Soil Microbial Consortia and Nitrogen Fixation",
+    "passage_text": "Nitrogen is an essential limiting macronutrient required for the synthesis of amino acids, proteins, and nucleic acids across all terrestrial vegetation. Although molecular dinitrogen ($N_2$) comprises approximately seventy-eight percent of Earth's atmosphere, this gaseous reservoir is biologically unavailable to eukaryotic plants due to the extraordinary chemical stability of the covalent triple bond ($N\\equiv N$). Biological nitrogen fixation (BNF) is executed exclusively by specialized prokaryotic microorganisms termed diazotrophs, which possess the multi-subunit enzyme complex nitrogenase. The catalytic core of nitrogenase comprises two proteins: the iron (Fe) protein, which hydrolyzes ATP to transfer high-energy reducing equivalents, and the molybdenum-iron (MoFe) protein, which catalyzes the reductive cleavage of $N_2$ into bioavailable ammonia ($NH_3$). Because the catalytic Fe-Mo cofactor is irreversibly denatured and deactivated by molecular oxygen ($O_2$), diazotrophic organisms have evolved complex physiological adaptations to maintain anaerobic microenvironments. In symbiotic mutualisms established between rhizobial bacteria and leguminous plants, host roots synthesize leghemoglobin—a specialized oxygen-binding hemoprotein that buffers free oxygen concentrations, delivering a steady flux of $O_2$ for bacterial respiration without poisoning the nitrogenase (1) _________. Inside root nodules, differentiated bacteroids export synthesized ammonium ions directly to the host plant in exchange for dicarboxylic acids derived from plant (2) _________. However, the widespread overapplication of synthetic Haber-Bosch nitrogen fertilizers in intensive industrial agriculture disrupts this ancestral biological partnership. Abundant synthetic nitrate in topsoils inhibits symbiotic nodule formation, suppresses endogenous nitrogen fixation, and causes environmental eutrophication through agricultural (3) _________. Restoring natural soil microbial consortia through bio-inoculants is crucial to building regenerative and ecologically sustainable farming (4) _________ that minimize chemical dependencies while enhancing long-term soil (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_145_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "complex",
+          "B": "inhibitor",
+          "C": "toxin",
+          "D": "residue"
+        },
+        "correct_option": "A",
+        "rationale": "'Nitrogenase complex' is the formal biochemical term for the catalytic enzyme system responsible for biological nitrogen fixation."
+      },
+      {
+        "id": "ENG_CLOZE_145_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "photosynthesis",
+          "B": "decomposition",
+          "C": "fermentation",
+          "D": "putrefaction"
+        },
+        "correct_option": "A",
+        "rationale": "'Plant photosynthesis' generates the carbohydrates and carbon sources (dicarboxylic acids) that the host plant exchanges with symbiotic rhizobia."
+      },
+      {
+        "id": "ENG_CLOZE_145_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "runoff",
+          "B": "harvesting",
+          "C": "tillage",
+          "D": "aeration"
+        },
+        "correct_option": "A",
+        "rationale": "'Agricultural runoff' refers to water carrying synthetic fertilizers into lakes and rivers, triggering aquatic eutrophication and algal blooms."
+      },
+      {
+        "id": "ENG_CLOZE_145_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "systems",
+          "B": "anomalies",
+          "C": "stagnations",
+          "D": "distortions"
+        },
+        "correct_option": "A",
+        "rationale": "'Farming systems' is the standard agricultural economics term describing holistic, structured agricultural practices."
+      },
+      {
+        "id": "ENG_CLOZE_145_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "fertility",
+          "B": "depletion",
+          "C": "sterility",
+          "D": "aridity"
+        },
+        "correct_option": "A",
+        "rationale": "'Soil fertility' denotes the capacity of agricultural land to sustain plant growth and deliver consistent biological yields over time."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_146",
+    "passage_title": "The Critical Theory of the Frankfurt School and Instrumental Reason",
+    "passage_text": "Developed in the 1930s and 1940s by German philosophers Max Horkheimer, Theodor W. Adorno, and Herbert Marcuse, the Critical Theory of the Frankfurt School synthesized Western Marxism, Hegelian dialectics, and Freudian psychoanalysis into a profound critique of advanced industrial modernity. In their foundational 1947 text *Dialectic of Enlightenment*, Horkheimer and Adorno sought to explain why humanity, instead of entering a truly human condition of universal emancipation, was sinking into a new kind of barbarism exemplified by totalitarianism, fascist authoritarianism, and industrial warfare. They diagnosed the root cause as the fatal degeneration of Enlightenment rationality into mere 'instrumental reason' (*Zweckrationalität*). Instrumental reason is a formal, calculating mode of thought concerned strictly with efficiency, mathematical operationalization, and technical means, while systematically excluding the critical, normative evaluation of ethical ends. Under the hegemony of instrumental rationality, nature and human beings alike are reduced to quantifiable, manipulable objects of administrative (1) _________. Furthermore, through the modern 'culture industry'—mass media, standardized entertainment, and advertising—cultural production is subordinated to commercial commodification, producing uniform cultural commodities that induce psychological conformism and pacify working-class (2) _________. Art loses its autonomous, disruptive capacity for critical negation, functioning instead as ideological (3) _________ that reconciles individuals to the existing social order. Marcuse extended this analysis in *One-Dimensional Man*, demonstrating how affluent consumer capitalism integrates potential opposition by delivering material comforts that manufacture false consumer (4) _________. Overcoming this totalizing administrative apparatus requires revitalizing negative dialectics and non-instrumental, communicative (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_146_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "domination",
+          "B": "liberation",
+          "C": "emancipation",
+          "D": "solidarity"
+        },
+        "correct_option": "A",
+        "rationale": "'Administrative domination' is a core Frankfurt School concept describing how modern institutions control, quantify, and manipulate subjects."
+      },
+      {
+        "id": "ENG_CLOZE_146_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "consciousness",
+          "B": "complacency",
+          "C": "obedience",
+          "D": "servility"
+        },
+        "correct_option": "A",
+        "rationale": "'Working-class consciousness' refers to the political and critical awareness of workers, which the culture industry lulls into conformism."
+      },
+      {
+        "id": "ENG_CLOZE_146_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "propaganda",
+          "B": "emancipation",
+          "C": "enlightenment",
+          "D": "transcendence"
+        },
+        "correct_option": "A",
+        "rationale": "'Ideological propaganda' reflects how mass culture acts as an indoctrination mechanism reconciling citizens to existing power structures."
+      },
+      {
+        "id": "ENG_CLOZE_146_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "needs",
+          "B": "shortages",
+          "C": "crises",
+          "D": "deficits"
+        },
+        "correct_option": "A",
+        "rationale": "'False consumer needs' is Marcuse's famous term for artificial desires manufactured by modern corporate advertising to maintain social control."
+      },
+      {
+        "id": "ENG_CLOZE_146_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "rationality",
+          "B": "apathy",
+          "C": "passivity",
+          "D": "stagnation"
+        },
+        "correct_option": "A",
+        "rationale": "'Communicative rationality' (later developed by Jürgen Habermas) represents the non-coercive, dialogue-based alternative to instrumental reason."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_147",
+    "passage_title": "The Quantum Mechanics of Topological Insulators",
+    "passage_text": "In condensed matter physics, topological insulators represent an extraordinary quantum phase of matter that defies traditional Landau symmetry-breaking classifications. A topological insulator is a material that behaves as an electrical insulator in its three-dimensional interior (bulk), while possessing robust, topologically protected metallic conduction states on its two-dimensional exterior (1) _________. The theoretical discovery of this state of matter, pioneered by Charles Kane, Eugene Mele, and Shoucheng Zhang, stems from relativistic quantum mechanics and the mathematics of algebraic topology. In heavy-element semiconductors—such as bismuth selenide ($Bi_2Se_3$) and bismuth telluride ($Bi_2Te_3$)—strong atomic spin-orbit coupling (the relativistic interaction between an electron's intrinsic magnetic spin and the electric field of the heavy atomic nucleus) induces an inverted electronic band structure. The normal energetic ordering of the conduction and valence bands is inverted at discrete points in momentum space, an inversion characterized by non-trivial topological bulk invariants termed $\\mathbb{Z}_2$ topological numbers. Under the bulk-boundary correspondence principle, this non-trivial bulk topology guarantees the existence of gapless conducting surface states crossing the energy band gap. The surface electrons exhibit a linear Dirac dispersion relation ($E = \\hbar v_F k$), behaving as massless two-dimensional Dirac fermions. Crucially, time-reversal symmetry enforces 'spin-momentum locking', wherein the electron's spin orientation is strictly locked perpendicular to its propagation momentum vector ($k$). Because time-reversal symmetry forbids backscattering between Kramers pairs, surface electrical currents are completely immune to backscattering from non-magnetic crystalline defects and structural (2) _________. This dissipationless quantum transport holds profound promise for engineering low-power spintronic devices, topological quantum computational (3) _________, and fault-tolerant quantum information (4) _________ capable of operating without excessive thermal energy (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_147_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "surfaces",
+          "B": "cores",
+          "C": "nuclei",
+          "D": "vacuums"
+        },
+        "correct_option": "A",
+        "rationale": "'Exterior surfaces' (or boundaries) is the definitive anatomical region where gapless metallic conduction occurs in topological insulators."
+      },
+      {
+        "id": "ENG_CLOZE_147_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "impurities",
+          "B": "miracles",
+          "C": "shields",
+          "D": "conduits"
+        },
+        "correct_option": "A",
+        "rationale": "'Structural impurities' denotes physical irregularities or lattice defects in crystals that normally scatter electrons and cause electrical resistance."
+      },
+      {
+        "id": "ENG_CLOZE_147_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "architectures",
+          "B": "anomalies",
+          "C": "extinctions",
+          "D": "deficits"
+        },
+        "correct_option": "A",
+        "rationale": "'Computational architectures' refers to the structured hardware design and electronic frameworks used to construct quantum computers."
+      },
+      {
+        "id": "ENG_CLOZE_147_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "processors",
+          "B": "fossils",
+          "C": "monoliths",
+          "D": "excavations"
+        },
+        "correct_option": "A",
+        "rationale": "'Information processors' refers to computer microchips and quantum processing units that perform logical and mathematical calculations."
+      },
+      {
+        "id": "ENG_CLOZE_147_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "dissipation",
+          "B": "generation",
+          "C": "accumulation",
+          "D": "retention"
+        },
+        "correct_option": "A",
+        "rationale": "'Energy dissipation' is the thermodynamic loss of energy as waste heat resulting from internal resistance during electronic transport."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_148",
+    "passage_title": "The Behavioral Economics of Nudge Theory and Choice Architecture",
+    "passage_text": "Traditional microeconomic models operate on the assumption of *Homo economicus*—the idealized human agent endowed with perfect cognitive calculation, unlimited willpower, and invariant, well-ordered preferences. In their 2008 paradigm-shifting treatise *Nudge: Improving Decisions About Health, Wealth, and Happiness*, behavioral economist Richard Thaler and legal scholar Cass Sunstein synthesized decades of cognitive psychology to challenge this normative assumption. Recognizing that bounded rationality, present bias, status quo inertia, and cognitive heuristics systematically distort human judgment, Thaler and Sunstein formulated the concept of 'libertarian paternalism' and introduced 'Nudge Theory'. A nudge is defined as any subtle alteration in the 'choice architecture'—the contextual environment in which human beings make decisions—that alters people's behavior in a predictable direction without forbidding any choices or significantly altering their economic incentives. To count as a pure nudge, the intervention must be easy and cheap to avoid; nudges are not coercive mandates or statutory bans. A quintessential real-world application involves modifying default options in retirement savings or organ donation programs. Under classical 'opt-in' frameworks, where citizens must complete complex administrative paperwork to participate, enrollment rates remain chronically low due to cognitive (1) _________. When choice architects transition the baseline rule to an 'opt-out' automatic enrollment structure, participation rates surge dramatically, as human inertia is harnessed in favor of socially beneficial outcomes. Similar behavioral interventions utilize social norm framing, salient nutritional labeling, and physical environmental layout adjustments to encourage healthier dietary habits and promote household energy (2) _________. However, critics raise ethical concerns regarding paternalistic manipulation and the lack of democratic (3) _________, arguing that nudges treat citizens as passive behavioral subjects rather than autonomous reflective agents. Furthermore, relying exclusively on minor behavioral nudges risks diverting political willpower away from indispensable structural legislative (4) _________ and fiscal regulatory (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_148_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "inertia",
+          "B": "agility",
+          "C": "hyperactivity",
+          "D": "zeal"
+        },
+        "correct_option": "A",
+        "rationale": "'Cognitive inertia' (or status quo bias) is the behavioral tendency to stick with current default states due to mental friction or procrastination."
+      },
+      {
+        "id": "ENG_CLOZE_148_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "conservation",
+          "B": "depletion",
+          "C": "extravagance",
+          "D": "combustion"
+        },
+        "correct_option": "A",
+        "rationale": "'Energy conservation' refers to the reduction of energy consumption through behavioral changes and efficient resource management."
+      },
+      {
+        "id": "ENG_CLOZE_148_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "transparency",
+          "B": "secrecy",
+          "C": "monopoly",
+          "D": "obscurity"
+        },
+        "correct_option": "A",
+        "rationale": "'Democratic transparency' is the institutional principle that governmental decision-making and public policy mechanisms must be open and observable to the public."
+      },
+      {
+        "id": "ENG_CLOZE_148_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "reforms",
+          "B": "stagnations",
+          "C": "paralyses",
+          "D": "regressions"
+        },
+        "correct_option": "A",
+        "rationale": "'Legislative reforms' denotes formal statutory and systemic policy overhauls enacted through constitutional parliamentary processes."
+      },
+      {
+        "id": "ENG_CLOZE_148_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "mandates",
+          "B": "exemptions",
+          "C": "anomalies",
+          "D": "deficits"
+        },
+        "correct_option": "A",
+        "rationale": "'Regulatory mandates' refers to binding, enforceable legal commands, taxes, and economic regulations imposed by governing authorities."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_149",
+    "passage_title": "The Astrophysics of Gravitational Wave Interferometry",
+    "passage_text": "Predicted by Albert Einstein in 1916 as an inescapable consequence of his General Theory of Relativity, gravitational waves are transverse quadrupolar perturbations in the fabric of spacetime that propagate outward from accelerating mass distributions at the speed of light. For a century, gravitational waves evaded direct empirical detection because their coupling to matter is exceedingly faint; extreme astrophysical cataclysms—such as the coalescence of binary black hole systems or merging binary neutron stars—generate strain amplitudes ($h = \\Delta L / L$) on Earth of merely $10^{-21}$, equivalent to measuring a displacement smaller than one ten-thousandth the diameter of a proton across a four-kilometer baseline. The historic breakthrough occurred in September 2015 when the Laser Interferometer Gravitational-Wave Observatory (LIGO) recorded event GW150914. LIGO operates as a dual-arm orthogonal Michelson interferometer equipped with Fabry-Pérot resonant optical cavities. A stabilized laser beam is split down two perpendicular ultra-high vacuum arms four kilometers in length. Suspended fused-silica test mass mirrors reflect the light hundreds of times before the beams recombine at the beam splitter. When a gravitational wave traverses the detector, it stretches spacetime along one spatial arm while compressing the orthogonal arm, inducing a relative optical phase shift that generates constructive optical (1) _________ at the photodetector. To resolve these sub-attometer strains, LIGO must isolate its test mass mirrors from extreme background noise through multi-stage quadruple pendulum suspensions, active hydraulic seismic isolation platforms, and quantum squeezed light techniques that reduce quantum photon shot (2) _________. Gravitational wave astronomy has revolutionized observational astrophysics, inaugurating the era of 'multi-messenger' astronomy. In 2017, the detection of gravitational waves from colliding neutron stars (GW170817), accompanied by concurrent electromagnetic observations across gamma-ray, X-ray, optical, and radio spectra, confirmed that kilonova nucleosynthesis serves as the cosmic forge producing heavy r-process (3) _________ such as gold, platinum, and uranium. Analyzing gravitational wave polarizations provides unprecedented, pristine tests of General Relativity in the strong-field dynamical (4) _________, promising to unveil the physics of cosmological inflation and resolve fundamental puzzles regarding the nature of cosmic (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_149_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "interference",
+          "B": "dispersion",
+          "C": "combustion",
+          "D": "refraction"
+        },
+        "correct_option": "A",
+        "rationale": "'Constructive optical interference' is the wave interaction principle where aligned light waves reinforce each other to produce a measurable laser signal at the detector."
+      },
+      {
+        "id": "ENG_CLOZE_149_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "noise",
+          "B": "harmonies",
+          "C": "constants",
+          "D": "crystals"
+        },
+        "correct_option": "A",
+        "rationale": "'Quantum photon shot noise' is the fundamental statistical fluctuation in photon arrival times that limits optical measurement precision in laser interferometry."
+      },
+      {
+        "id": "ENG_CLOZE_149_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "elements",
+          "B": "vacuums",
+          "C": "tides",
+          "D": "currents"
+        },
+        "correct_option": "A",
+        "rationale": "'Heavy r-process elements' refers to the heavy chemical elements on the periodic table (like gold and platinum) forged through rapid neutron capture during neutron star collisions."
+      },
+      {
+        "id": "ENG_CLOZE_149_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "regime",
+          "B": "deficit",
+          "C": "vacuum",
+          "D": "paralysis"
+        },
+        "correct_option": "A",
+        "rationale": "'Strong-field dynamical regime' is the theoretical physics term for conditions of extreme gravitational fields and velocities where relativistic effects dominate."
+      },
+      {
+        "id": "ENG_CLOZE_149_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "singularities",
+          "B": "uniformities",
+          "C": "stagnations",
+          "D": "symmetries"
+        },
+        "correct_option": "A",
+        "rationale": "'Cosmic singularities' refers to points in spacetime (like the center of black holes or the Big Bang) where gravitational density becomes infinite and general relativity breaks down."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_150",
+    "passage_title": "The Structural Evolutionary Biology of Evolutionary Developmental Biology",
+    "passage_text": "Throughout the twentieth century, the Modern Synthesis of evolutionary biology integrated Mendelian genetics with Darwinian natural selection, conceptualizing morphological evolution primarily as gradual alterations in structural gene frequencies within populations. However, the Modern Synthesis largely treated embryonic development as a closed, unanalyzed 'black box', assuming that the development of a multicellular organism from a single-celled zygote had no independent causal influence on the trajectory of macro-evolutionary change. In the late twentieth century, the revolutionary paradigm of Evolutionary Developmental Biology ('Evo-Devo') emerged to bridge this conceptual chasm between genetics, development, and evolution. Evo-Devo demonstrates that morphological diversification is not driven by the de novo creation of thousands of unique species-specific structural genes; rather, diverse animal body plans are constructed using an ancient, highly conserved 'genetic toolkit' shared across virtually all metazoan phyla. Central to this toolkit are *Hox* homeobox genes, which encode sequence-specific transcription factors that establish anterior-posterior spatial (1) _________ along embryonic axes in organisms ranging from fruit flies to humans. The staggering morphological disparity observed across animal phyla arises primarily through regulatory evolution—specifically, mutations within cis-regulatory elements (such as transcriptional enhancers and silencers) that modulate the spatial, temporal, and quantitative expression (2) _________ of conserved developmental genes without disrupting their vital pleiotropic protein-coding functions. Furthermore, Evo-Devo reveals the profound evolutionary importance of 'developmental constraints' and 'evolvability'. Embryonic developmental pathways are modular, allowing specific morphological structures (such as insect wings or tetrapod limbs) to evolve semi-independently without compromising overall systemic developmental (3) _________. Developmental plasticity—the capacity of a single genotype to produce distinct morphological phenotypes in response to environmental cues—can precede genetic fixation, providing a mechanism for rapid ecological adaptation. By demonstrating that evolution operates by tinkering with pre-existing developmental gene regulatory networks (GRNs), Evo-Devo has permanently expanded our understanding of macro-evolutionary innovation and the deep phylogenetic (4) _________ that unites all complex animal (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_150_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "patterning",
+          "B": "erasure",
+          "C": "extinction",
+          "D": "stagnation"
+        },
+        "correct_option": "A",
+        "rationale": "'Spatial patterning' is the developmental biology term describing how tissues and body segments are organized and specified along embryonic axes."
+      },
+      {
+        "id": "ENG_CLOZE_150_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "dynamics",
+          "B": "deficits",
+          "C": "omissions",
+          "D": "aberrations"
+        },
+        "correct_option": "A",
+        "rationale": "'Expression dynamics' refers to the precise temporal timing, physical location, and concentration levels at which developmental genes are transcribed and translated."
+      },
+      {
+        "id": "ENG_CLOZE_150_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "integrity",
+          "B": "decay",
+          "C": "dissolution",
+          "D": "obsolescence"
+        },
+        "correct_option": "A",
+        "rationale": "'Systemic developmental integrity' describes the overall functional cohesion and viable physical wholeness of the developing organism."
+      },
+      {
+        "id": "ENG_CLOZE_150_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "homology",
+          "B": "disparity",
+          "C": "animosity",
+          "D": "alienation"
+        },
+        "correct_option": "A",
+        "rationale": "'Deep phylogenetic homology' is the core Evo-Devo concept that morphologically diverse organisms share underlying homologous genetic circuits and developmental mechanisms inherited from common ancestors."
+      },
+      {
+        "id": "ENG_CLOZE_150_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "lineages",
+          "B": "vacuums",
+          "C": "minerals",
+          "D": "artifacts"
+        },
+        "correct_option": "A",
+        "rationale": "'Animal lineages' denotes evolutionary descent lines and genealogical branches of organisms tracing back through deep evolutionary time."
+      }
+    ]
+  }
+]

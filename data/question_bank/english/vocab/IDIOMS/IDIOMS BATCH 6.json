@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0251",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Be-all and end-all**",
+    "options": {
+      "A": "A minor detail in a large plan",
+      "B": "The absolute most important part or ultimate purpose of something",
+      "C": "The beginning and middle stages of a project",
+      "D": "An alternative option among many"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. The 'be-all and end-all' refers to the supreme or absolute core purpose of an activity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0252",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Below the belt**",
+    "options": {
+      "A": "Fair and honorable in competition",
+      "B": "Wearing a belt incorrectly",
+      "C": "Unfair, unsporting, or breaking the rules of engagement",
+      "D": "A martial arts defensive stance"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. A blow 'below the belt' is an unfair, cruel, or unsportsmanlike attack.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0253",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Between the devil and the deep blue sea**",
+    "options": {
+      "A": "In a secure and comfortable refuge",
+      "B": "Faced with two equally difficult or dangerous choices",
+      "C": "Sailing on a calm ocean voyage",
+      "D": "Making a quick and easy decision"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being between the devil and the deep blue sea means facing a dilemma with two bad options.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0254",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Beyond the pale**",
+    "options": {
+      "A": "Within acceptable social and moral limits",
+      "B": "Unacceptable, improper, or outside the bounds of good behavior",
+      "C": "Painted in light pastel colors",
+      "D": "Located in a distant foreign country"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Behavior that is 'beyond the pale' is unreasonable, unacceptable, or socially offensive.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0255",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Big bug**",
+    "options": {
+      "A": "An important, influential, or prominent person",
+      "B": "A large insect found in gardens",
+      "C": "A minor employee in an office",
+      "D": "A software program error"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'big bug' (or bigwig) refers to an important or high-ranking person.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0256",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bird's-eye view**",
+    "options": {
+      "A": "A microscopic, detailed examination",
+      "B": "An underground perspective from below",
+      "C": "A comprehensive, overall view from a high angle looking down",
+      "D": "Having poor eyesight"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. A 'bird's-eye view' gives a broad overview from an elevated position.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0257",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bite off more than you can chew**",
+    "options": {
+      "A": "To eat a very large meal quickly",
+      "B": "To take on a commitment or task that is too large or difficult to manage",
+      "C": "To share food generously with friends",
+      "D": "To cut meat into small pieces"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'bite off more than you can chew' means undertaking more responsibilities than you can handle.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0258",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bite the dust**",
+    "options": {
+      "A": "To clean dusty floors thoroughly",
+      "B": "To fall in battle, suffer defeat, or die",
+      "C": "To plant seeds in dry soil",
+      "D": "To win a championship race"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'bite the dust' means to suffer a defeat or to die.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0259",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Blaze a trail**",
+    "options": {
+      "A": "To start a forest fire accidentally",
+      "B": "To pioneer a new method, movement, or course of action",
+      "C": "To walk on a marked hiking path",
+      "D": "To clear snow off a road"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'blaze a trail' means to lead the way in pioneering a new activity or invention.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0260",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Blow hot and cold**",
+    "options": {
+      "A": "To maintain a steady, reliable attitude",
+      "B": "To change one's opinions, mood, or loyalty constantly and unpredictably",
+      "C": "To control air conditioning systems",
+      "D": "To drink hot tea on a cold day"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'blow hot and cold' means to vacillate constantly between opposing attitudes or feelings.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0261",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Blue blood**",
+    "options": {
+      "A": "A medical blood disorder",
+      "B": "Belonging to an aristocratic, noble family",
+      "C": "A person working in manual labor",
+      "D": "A rare animal species"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Blue blood' denotes noble birth or aristocracy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0262",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Body politic**",
+    "options": {
+      "A": "A government health ministry",
+      "B": "The people of a nation considered collectively as an organized political group",
+      "C": "A physical fitness training group",
+      "D": "A political party convention"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. The 'body politic' refers to a nation or society considered as a corporate political entity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0263",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Born with a silver spoon in one's mouth**",
+    "options": {
+      "A": "Born into a wealthy, privileged, and affluent family",
+      "B": "Born with an eating disorder",
+      "C": "Working hard from an early age",
+      "D": "Receiving a cutlery gift at birth"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being born with a silver spoon in your mouth means entering life into wealth and luxury.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0264",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Brave the elements**",
+    "options": {
+      "A": "To fight chemistry laboratory chemicals",
+      "B": "To go out or travel in harsh, stormy, or unpleasant weather conditions",
+      "C": "To construct a weather station",
+      "D": "To stay indoors during sunshine"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'brave the elements' means to venture outside despite bad weather.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0265",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bread and butter**",
+    "options": {
+      "A": "A standard breakfast menu item",
+      "B": "A person's livelihood, main source of income, or essential basics",
+      "C": "A gourmet cooking recipe",
+      "D": "A temporary part-time job"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Your 'bread and butter' represents your main source of income or livelihood.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0266",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Break a leg**",
+    "options": {
+      "A": "A traditional good luck wish given to performers before going on stage",
+      "B": "A physical injury warning during sports",
+      "C": "A curse wishing bad fortune",
+      "D": "A medical instruction for bone healing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Break a leg' is an idiomatic wish of good luck to actors and performers.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0267",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bring to light**",
+    "options": {
+      "A": "To turn on electric room lamps",
+      "B": "To reveal, uncover, or disclose hidden facts or secrets",
+      "C": "To take photographs in bright sunshine",
+      "D": "To paint a dark room white"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'bring to light' means to disclose or make known previously hidden facts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0268",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Brown study**",
+    "options": {
+      "A": "A room painted in dark brown colors",
+      "B": "A state of deep, absorption in thought; reverie",
+      "C": "A difficult academic textbook",
+      "D": "A failed university examination"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'brown study' is a state of deep musing or abstraction.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0269",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bull market**",
+    "options": {
+      "A": "A financial market characterized by rising prices and optimism",
+      "B": "A livestock farming auction",
+      "C": "A falling stock market trend",
+      "D": "A grocery supermarket store"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'bull market' is a financial market with surging share prices and investor confidence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0270",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Burn bridges**",
+    "options": {
+      "A": "To destroy a river crossing structure",
+      "B": "To ruin relationships or make a retreat impossible by your actions",
+      "C": "To commute across a city bridge",
+      "D": "To build construction links"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'burn your bridges' means to eliminate any possibility of a return or reconciliation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0271",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Burn the candle at both ends**",
+    "options": {
+      "A": "To light candles in a church",
+      "B": "To exhaust oneself by working excessively hard and sleeping too little",
+      "C": "To waste household wax supplies",
+      "D": "To celebrate a birthday party"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'burn the candle at both ends' means overworking yourself to the point of exhaustion.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0272",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Burst your bubble**",
+    "options": {
+      "A": "To pop a toy balloon with a pin",
+      "B": "To shatter someone's illusions, false hopes, or high expectations",
+      "C": "To boil soapy water in a tub",
+      "D": "To win a gaming competition"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'burst someone's bubble' means to ruin their happy illusion or delusion with reality.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0273",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**By hook or by crook**",
+    "options": {
+      "A": "Using any means possible, whether fair or foul, to achieve a goal",
+      "B": "Fishing with a hook and line",
+      "C": "Following legal regulations strictly",
+      "D": "Traveling along winding mountain paths"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing something 'by hook or by crook' means using any method necessary, honest or dishonest.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0274",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**By the skin of one's teeth**",
+    "options": {
+      "A": "By a very narrow margin; barely succeeding",
+      "B": "Having strong dental hygiene",
+      "C": "Chewing hard food items",
+      "D": "Smiling broadly at friends"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Escaping 'by the skin of your teeth' means succeeding or surviving by a hair's breadth.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0275",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Call a spade a spade**",
+    "options": {
+      "A": "To speak the plain truth bluntly without evasion or politeness",
+      "B": "To garden using tools",
+      "C": "To play card games professionally",
+      "D": "To use coded language in speech"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'call a spade a spade' means speaking frankly and directly without mincing words.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0276",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Carrot and stick**",
+    "options": {
+      "A": "A policy combining rewards (carrot) and punishments (stick) to induce behavior",
+      "B": "A vegetarian cooking recipe",
+      "C": "A gardening tool set",
+      "D": "A children's playground game"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'carrot and stick' approach uses a mix of reward and punishment to motivate.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0277",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Castles in the air**",
+    "options": {
+      "A": "Impractical dreams, fantasies, or grandiose hopes with no basis in reality",
+      "B": "Luxury penthouse apartments",
+      "C": "Architectural building blueprints",
+      "D": "Cloud formations in the sky"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Building 'castles in the air' means indulging in daydreams and impossible plans.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0278",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Catch-22**",
+    "options": {
+      "A": "A paradoxical situation from which an individual cannot escape due to contradictory rules",
+      "B": "A popular computer software code",
+      "C": "An easy problem with simple solutions",
+      "D": "A sports penalty rule"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'Catch-22' is a tricky predicament with no way out due to mutually conflicting conditions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0279",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Change colors**",
+    "options": {
+      "A": "To paint clothing fabric",
+      "B": "To betray your party, loyalty, or principles and switch sides",
+      "C": "To dye hair at a salon",
+      "D": "To adjust camera lighting"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'change colors' means to turn traitor and shift political allegiance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0280",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Chase rainbows**",
+    "options": {
+      "A": "To pursue illusory, impossible, or impractical goals",
+      "B": "To study weather optics",
+      "C": "To paint colorful canvases",
+      "D": "To enjoy outdoor nature hikes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'chase rainbows' means trying to attain something unattainable.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0281",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Chew the fat**",
+    "options": {
+      "A": "To eat greasy snack food",
+      "B": "To chat in a relaxed, friendly, and leisurely manner for a long time",
+      "C": "To complain about kitchen cooking",
+      "D": "To chew food thoroughly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'chew the fat' means to engage in friendly, casual conversation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0282",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Child's play**",
+    "options": {
+      "A": "A difficult professional challenge",
+      "B": "An activity that is exceptionally easy to accomplish",
+      "C": "A theatrical play acted by children",
+      "D": "A playground toy game"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Something that is 'child's play' is very simple and easy to do.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0283",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Chip on your shoulder**",
+    "options": {
+      "A": "Holding a grudge, feeling resentful, or acting aggressively due to perceived unfairness",
+      "B": "Carrying heavy timber on your back",
+      "C": "A shoulder joint injury",
+      "D": "Wearing decorative shoulder epaulets"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having a 'chip on your shoulder' means holding a grievance or being quarrelsome.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0284",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Clam up**",
+    "options": {
+      "A": "To speak loudly and angrily",
+      "B": "To become suddenly silent, secretive, or uncommunicative",
+      "C": "To harvest seafood at a beach",
+      "D": "To close a window tightly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'clam up' means to refuse to speak or clamor out of nervousness or secrecy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0285",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Clear the air**",
+    "options": {
+      "A": "To ventilate a stuffy room",
+      "B": "To remove tension, doubts, or misunderstandings by open discussion",
+      "C": "To forecast weather conditions",
+      "D": "To spray air freshener"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'clear the air' means to resolve doubts and end bad feelings through frank talk.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0286",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cliffhanger**",
+    "options": {
+      "A": "A dangerous mountain climbing sport",
+      "B": "A situation or story with a suspenseful ending leaving the outcome uncertain",
+      "C": "A rocky precipice near the ocean",
+      "D": "A movie director"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'cliffhanger' is a suspenseful plot or situation with an uncertain outcome.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0287",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Close shave**",
+    "options": {
+      "A": "A barber facial haircut",
+      "B": "A narrow escape from danger, accident, or disaster",
+      "C": "A clean-shaven face",
+      "D": "A skin scratch injury"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'close shave' represents a narrow escape from misfortune.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0288",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cloud nine**",
+    "options": {
+      "A": "A state of intense happiness, bliss, and elation",
+      "B": "Flying in an airplane above clouds",
+      "C": "Experiencing clinical depression",
+      "D": "A stormy weather forecast"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being on 'cloud nine' means feeling supremely happy and elated.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0289",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cold feet**",
+    "options": {
+      "A": "Experiencing freezing weather in winter",
+      "B": "Losing courage, confidence, or nerve right before a big event",
+      "C": "Wearing thin socks",
+      "D": "Suffering from foot circulation issues"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Getting 'cold feet' means hesitating due to sudden nervousness or fear.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0290",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Come to blows**",
+    "options": {
+      "A": "To start fighting physically with punches",
+      "B": "To blow out birthday candles",
+      "C": "To experience strong wind gusts",
+      "D": "To reach a peaceful agreement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'come to blows' means to resort to physical fighting during an argument.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0291",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Come to terms**",
+    "options": {
+      "A": "To reach an agreement or accept an unpleasant situation after compromise",
+      "B": "To study university glossary terms",
+      "C": "To sign a business lease contract",
+      "D": "To reject negotiations completely"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'come to terms' means reaching a mutual settlement or reconciling with reality.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0292",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cook the books**",
+    "options": {
+      "A": "To burn old library novels",
+      "B": "To falsify financial accounts, records, or bookkeeping figures fraudulently",
+      "C": "To write a cooking recipe book",
+      "D": "To bind books professionally"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'cook the books' means to manipulate financial records illegally for fraud.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0293",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cool your heels**",
+    "options": {
+      "A": "To rest tired feet after running",
+      "B": "To be forced to wait patiently for a long time",
+      "C": "To swim in cold water",
+      "D": "To ice a sports injury"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'cool your heels' means to wait somewhere impatiently because you are made to wait.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0294",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Corner the market**",
+    "options": {
+      "A": "To build shops at street corners",
+      "B": "To gain monopolistic control over the supply of a commodity",
+      "C": "To shop at local grocery stores",
+      "D": "To invest in real estate land"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'corner the market' means acquiring a monopoly over a product or stock.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0295",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Couch potato**",
+    "options": {
+      "A": "A lazy person who spends excessive time sitting on a couch watching TV",
+      "B": "A farmer growing root vegetables",
+      "C": "A soft living room furniture item",
+      "D": "A snack food eaten during movies"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'couch potato' is a sedentary, lazy person who watches excessive television.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0296",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cream of the crop**",
+    "options": {
+      "A": "The best, finest, and highest-quality people or things in a group",
+      "B": "Dairy milk products from farms",
+      "C": "The lowest tier of a society",
+      "D": "Agricultural grain harvest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'cream of the crop' represents the absolute best elements of any category.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0297",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Crocodile tears**",
+    "options": {
+      "A": "Insincere, false, or hypocritical displays of sorrow or grief",
+      "B": "Tears shed during a sad movie",
+      "C": "Genuine sorrow over a loss",
+      "D": "Reptile defense mechanisms"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Crocodile tears' are fake, insincere expressions of sadness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0298",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cross your bridges when you come to them**",
+    "options": {
+      "A": "To worry about problems prematurely before they actually happen",
+      "B": "To deal with a difficulty only when it arises rather than worrying in advance",
+      "C": "To travel across river bridges safely",
+      "D": "To design civil engineering structures"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. This idiom advises dealing with problems only when they actually occur.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0299",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cry wolf**",
+    "options": {
+      "A": "To raise a false alarm, creating unnecessary panic so real danger is ignored",
+      "B": "To hunt wild wolves in forests",
+      "C": "To howl like an animal at night",
+      "D": "To call for emergency help during a disaster"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'cry wolf' means to give false alarms, leading to distrust when real danger hits.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0300",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Curate's egg**",
+    "options": {
+      "A": "Something that is partly good and partly bad",
+      "B": "A breakfast dish served to clergy",
+      "C": "A completely rotten food item",
+      "D": "A fresh organic farm egg"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'curate's egg' describes something of mixed quality, having both good and bad parts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

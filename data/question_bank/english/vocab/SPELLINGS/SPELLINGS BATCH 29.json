@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_1401",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Anachronistic",
+      "B": "Anacronistic",
+      "C": "Anachronistick",
+      "D": "Anachranistic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Anachronistic' - belonging to a different time period; out of date; contains 'ch' in '-chron-'). Options B, C, and D drop 'h', alter root vowels, or add archaic endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1402",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Anaesthetic",
+      "B": "Anagram",
+      "C": "Analogous",
+      "D": "Analitical"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Analytical' (spelled with 'y', 'a-n-a-l-y-t-i-c-a-l' - relating to logical reasoning or analysis). Other options are correct: Anaesthetic (a substance that induces insensitivity to pain; UK spelling), Anagram (a word formed by rearranging letters), Analogous (comparable in certain respects).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1403",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Anarchist",
+      "B": "Anarkist",
+      "C": "Anarchest",
+      "D": "Anarchyst"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Anarchist' - a person who believes in or promotes anarchy; 'a-n-a-r-c-h-i-s-t'). Options B, C, and D substitute 'k' for 'ch' or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1404",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Anathema",
+      "B": "Anatomical",
+      "C": "Ancestry",
+      "D": "Ancillery"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ancillary' (ends in '-ary', not '-ery' - providing necessary support). Other options are correct: Anathema (something vehemently disliked), Anatomical (relating to bodily structure), Ancestry (family descent).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1405",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Androgynous",
+      "B": "Androgenous",
+      "C": "Androgynus",
+      "D": "Androginous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Androgynous' - partly male and partly female in appearance; contains 'y' in '-gyn-'). Options B, C, and D alter root vowels or suffix spelling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1406",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Anecdote",
+      "B": "Angiography",
+      "C": "Anglicism",
+      "D": "Animadverce"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Animadvert' (verb) or 'Animadversion' (noun, criticism), whereas 'Animadverce' with a 'c' is invalid. Other options are correct: Anecdote (a short amusing story), Angiography (radiography of blood vessels), Anglicism (an English idiom or feature).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1407",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Animus",
+      "B": "Anemius",
+      "C": "Animuss",
+      "D": "Animes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Animus' - hostility or ill feeling; motivation; 'a-n-i-m-u-s'). Options B, C, and D alter internal vowels or consonant counts.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1408",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Annexation",
+      "B": "Annihilation",
+      "C": "Annotasion",
+      "D": "Announcement"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Annotation' (spelled with '-tion', not '-sion' - a note of explanation added to a text). Other options are correct: Annexation (taking over territory), Annihilation (complete destruction), Announcement (a formal public statement).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1409",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Annunciation",
+      "B": "Announciation",
+      "C": "Anunciation",
+      "D": "Annunciasion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Annunciation' - a formal announcement; double 'n', '-nun-'). Options B, C, and D retain the 'ou' from 'announce', drop a consonant, or alter the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1410",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Anonymous",
+      "B": "Anorexia",
+      "C": "Antagonistic",
+      "D": "Antartic"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Antarctic' (contains 'c' after 't', 'A-n-t-a-r-c-t-i-c' - relating to the south polar region). Other options are correct: Anonymous (of unknown name), Anorexia (an eating disorder), Antagonistic (showing active opposition).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1411",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Antecedent",
+      "B": "Anticedent",
+      "C": "Antecedant",
+      "D": "Antacedent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Antecedent' - a thing or event existing before another; 'a-n-t-e-c-e-d-e-n-t'). Options B, C, and D alter the prefix 'ante-' or the suffix '-ent'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1412",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Antechamber",
+      "B": "Anticipation",
+      "C": "Antidote",
+      "D": "Antihistamein"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Antihistamine' (spelled with '-mine', not '-mein' - a drug countering allergies). Other options are correct: Antechamber (a waiting room leading to a larger one), Anticipation (expectation), Antidote (a medicine to counteract poison).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1413",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Antipodean",
+      "B": "Antipodian",
+      "C": "Antipodeen",
+      "D": "Antepodean"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Antipodean' - relating to Australia/New Zealand or the opposite side of the earth; 'a-n-t-i-p-o-d-e-a-n'). Options B, C, and D alter prefix or suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1414",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Antiquarian",
+      "B": "Antiquity",
+      "C": "Antiseptic",
+      "D": "Antitheticall"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Antithetical' (ends in single 'l' - directly opposed). Other options are correct: Antiquarian (relating to historical antiques), Antiquity (the ancient past), Antiseptic (preventing microbial growth).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1415",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Antonym",
+      "B": "Antonim",
+      "C": "Antonymm",
+      "D": "Antanom"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Antonym' - a word opposite in meaning; 'a-n-t-o-n-y-m'). Options B, C, and D alter vowel composition or double final consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1416",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Anxiety",
+      "B": "Aphorism",
+      "C": "Apocalypse",
+      "D": "Apocryphaa"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Apocrypha' (ends in single 'a' - uncanonical writings). Other options are correct: Anxiety (worry or unease), Aphorism (a pithy observation containing a truth), Apocalypse (an event of catastrophic destruction).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1417",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Apoliticism",
+      "B": "Apolitacism",
+      "C": "Apolleticism",
+      "D": "Apoliticizm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Apoliticism' - political apathy or indifference; 'a-p-o-l-i-t-i-c-i-s-m'). Options B, C, and D alter connecting vowels, duplicate consonants, or use 'z'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1418",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Apologetic",
+      "B": "Apoplectic",
+      "C": "Apostasy",
+      "D": "Apostel"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Apostle' (spelled with '-tle', not '-tel' - a leader or disciple). Other options are correct: Apologetic (expressing regret), Apoplectic (furious; overcome with anger), Apostasy (abandonment of a religious belief).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1419",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Apotheosis",
+      "B": "Apothiosis",
+      "C": "Apotheocis",
+      "D": "Apotheosys"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Apotheosis' - the culmination or highest point; 'a-p-o-t-h-e-o-s-i-s'). Options B, C, and D alter root vowels or the Greek suffix '-sis'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1420",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Apparition",
+      "B": "Appearance",
+      "C": "Appeasable",
+      "D": "Appelation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Appellation' (double 'l' - a name or title). Other options are correct: Apparition (a ghost), Appearance (the way someone looks), Appeasable (able to be pacified).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1421",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Appendicitis",
+      "B": "Apendicitis",
+      "C": "Appendicites",
+      "D": "Appendisitis"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Appendicitis' - inflammation of the appendix; double 'p', ends in '-itis'). Options B, C, and D drop 'p', alter suffix vowels, or replace 'c' with 's'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1422",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Appertain",
+      "B": "Appetite",
+      "C": "Applicability",
+      "D": "Appreciationn"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Appreciation' (ends in single 'n' - recognition of good qualities). Other options are correct: Appertain (relate to; belong), Appetite (natural desire for food), Applicability (relevance).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1423",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Approbation",
+      "B": "Aprobation",
+      "C": "Approbasian",
+      "D": "Approbashun"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Approbation' - approval or praise; double 'p', ends in '-tion'). Options B, C, and D drop 'p' or use corrupt phonetic endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1424",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Appropriation",
+      "B": "Approximation",
+      "C": "Appurtenance",
+      "D": "Aquariom"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Aquarium' (ends in '-ium', not '-iom' - a transparent fish tank). Other options are correct: Appropriation (taking something for one's own use), Approximation (an estimated value), Appurtenance (an accessory item).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1425",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Aqueduct",
+      "B": "Aquaduct",
+      "C": "Aquiduct",
+      "D": "Aqueduck"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Aqueduct' - an artificial channel for conveying water; 'a-q-u-e-d-u-c-t'). Options B, C, and D alter the connecting vowel or modify the terminal consonant.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1426",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Arbitration",
+      "B": "Arboretum",
+      "C": "Arborescent",
+      "D": "Arcaneley"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Arcanely' (ends in '-ly', not '-ley' - in a mysterious manner). Other options are correct: Arbitration (settling a dispute using an arbitrator), Arboretum (a botanical tree garden), Arborescent (tree-like in appearance).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1427",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Archaeologist",
+      "B": "Archeaologist",
+      "C": "Archaiologist",
+      "D": "Archaeolagist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Archaeologist' - a person who studies human history via excavation; contains 'ae', 'a-r-c-h-a-e-o-l-o-g-i-s-t'). Options B, C, and D alter the diphthongs or connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1428",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Archangel",
+      "B": "Archbishop",
+      "C": "Archidiocese",
+      "D": "Archipelago"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Archdiocese' (spelled 'a-r-c-h-d-i-o-c-e-s-e', no 'i' after 'arch-'). Other options are correct: Archangel (an angel of high rank), Archbishop (chief bishop), Archipelago (a group of islands).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1429",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Architectural",
+      "B": "Architecturiel",
+      "C": "Arkitectural",
+      "D": "Architecturall"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Architectural' - relating to architecture; 'a-r-c-h-i-t-e-c-t-u-r-a-l'). Options B, C, and D alter suffix vowels, replace 'ch' with 'k', or double 'l'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1430",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Archival",
+      "B": "Ardent",
+      "C": "Ardor",
+      "D": "Aristocrasy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Aristocracy' (ends in '-cracy', not '-crasy' - the highest social class). Other options are correct: Archival (relating to archives), Ardent (passionate), Ardor (enthusiasm or passion).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1431",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Arithmetic",
+      "B": "Arithmatic",
+      "C": "Arithmetick",
+      "D": "Arethmetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Arithmetic' - the branch of mathematics dealing with numbers; 'a-r-i-t-h-m-e-t-i-c'). Options B, C, and D alter internal vowels or add archaic endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1432",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Armament",
+      "B": "Armistice",
+      "C": "Aromatic",
+      "D": "Arraingment"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Arraignment' (spelled with '-aig-', not '-aing-' - bringing a prisoner to court to face charges). Other options are correct: Armament (military weapons), Armistice (a truce), Aromatic (having a pleasant smell).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1433",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Arrhythmia",
+      "B": "Arythmia",
+      "C": "Arrhythmea",
+      "D": "Arhythmia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Arrhythmia' - abnormal heart rhythm; double 'r', 'h-y-t-h', ends in '-ia'). Options B, C, and D drop consonants or distort the Greek root.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1434",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Arrogance",
+      "B": "Arsonist",
+      "C": "Arteriosclerosis",
+      "D": "Articullate"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Articulate' (single 'l' - expressing oneself fluently). Other options are correct: Arrogance (haughty behavior), Arsonist (one who sets fires illegally), Arteriosclerosis (hardening of the arteries).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1435",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Artisan",
+      "B": "Artizan",
+      "C": "Articen",
+      "D": "Artezan"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Artisan' - a skilled manual worker; 'a-r-t-i-s-a-n'). Options B, C, and D substitute 'z' or alter connecting vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1436",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Ascendant",
+      "B": "Asceticism",
+      "C": "Ascribable",
+      "D": "Asepsiss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Asepsis' (ends in single 's' - absence of bacteria). Other options are correct: Ascendant (rising in power), Asceticism (severe self-discipline), Ascribable (attributable to a cause).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1437",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Asinine",
+      "B": "Assinine",
+      "C": "Asinene",
+      "D": "Assinene"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Asinine' - extremely foolish or stupid; single 's', 'a-s-i-n-i-n-e'). Options B, C, and D double 's' or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1438",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Askance",
+      "B": "Asphyxia",
+      "C": "Aspiration",
+      "D": "Assailent"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Assailant' (ends in '-ant', not '-ent' - an attacker). Other options are correct: Askance (with suspicion or disapproval), Asphyxia (deprivation of oxygen), Aspiration (a hope or ambition).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1439",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Assemblage",
+      "B": "Asemblage",
+      "C": "Assemblege",
+      "D": "Assembladge"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Assemblage' - a collection or gathering; double 's', ends in '-age'). Options B, C, and D drop 's' or alter the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1440",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Assiduous",
+      "B": "Assimilation",
+      "C": "Association",
+      "D": "Assonence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Assonance' (ends in '-ance', not '-ence' - vowel sound repetition in poetry). Other options are correct: Assiduous (showing great care and perseverance), Assimilation (absorbing information or ideas), Association (an organized group).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1441",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Assuagement",
+      "B": "Assuagmant",
+      "C": "Asuagement",
+      "D": "Assuagemant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Assuagement' - easing or mitigation of pain/distress; double 's', retains 'e' before '-ment'). Options B, C, and D drop 'e', drop 's', or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1442",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Assumption",
+      "B": "Asterisk",
+      "C": "Astigmatism",
+      "D": "Astranomy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Astronomy' (spelled with '-o-', not '-a-' in the third syllable - study of celestial bodies). Other options are correct: Assumption (something accepted as true without proof), Asterisk (a star symbol (*)), Astigmatism (an optical eye defect).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1443",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Astuteness",
+      "B": "Astutniss",
+      "C": "Astuteniss",
+      "D": "Astutness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Astuteness' - cleverness or shrewdness; retains 'e' before '-ness'). Options B, C, and D drop 'e' or alter the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1444",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Asymmetrical",
+      "B": "Asymptomatic",
+      "C": "Asynchrony",
+      "D": "Atheissm"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Atheism' (single 's' in '-ism' - disbelief in God). Other options are correct: Asymmetrical (lacking symmetry), Asymptomatic (showing no symptoms), Asynchrony (lack of simultaneity).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1445",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Atmospheric",
+      "B": "Atmospharic",
+      "C": "Atmospherec",
+      "D": "Atmospherick"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Atmospheric' - relating to the atmosphere or mood; 'a-t-m-o-s-p-h-e-r-i-c'). Options B, C, and D alter the connecting vowel or add obsolete archaic suffixes.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1446",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Atomization",
+      "B": "Atrocious",
+      "C": "Attainable",
+      "D": "Attandance"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Attendance' (spelled with '-en-', not '-an-' in the second syllable - presence at an event). Other options are correct: Atomization (breaking into fine particles), Atrocious (horrifyingly wicked), Attainable (achievable).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1447",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Attenuate",
+      "B": "Attenuayt",
+      "C": "Atenuate",
+      "D": "Atteneuate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Attenuate' - reduce in force or value; double 't', single 'n', 'a-t-t-e-n-u-a-t-e'). Options B, C, and D drop 't' or introduce redundant vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1448",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Attestation",
+      "B": "Attributable",
+      "C": "Attrition",
+      "D": "Audasity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Audacity' (spelled with 'c', not 's' - boldness or insolence). Other options are correct: Attestation (evidence or proof), Attributable (caused by a specified factor), Attrition (gradual reduction in strength through sustained pressure).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1449",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Audiovisual",
+      "B": "Audiovisuel",
+      "C": "Audiovisuall",
+      "D": "Audieovisual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Audiovisual' - using both sight and sound; 'a-u-d-i-o-v-i-s-u-a-l'). Options B, C, and D alter the vowel suffix or add extra letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1450",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Auditory",
+      "B": "Augmentation",
+      "C": "Augury",
+      "D": "Auricullar"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Auricular' (single 'l' - relating to the ear or hearing). Other options are correct: Auditory (relating to hearing), Augmentation (making greater in size or amount), Augury (an omen or sign).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

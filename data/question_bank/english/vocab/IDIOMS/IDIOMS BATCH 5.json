@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0201",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Under the weather**",
+    "options": {
+      "A": "Feeling slightly ill, unwell, or out of sorts",
+      "B": "Standing outside during a heavy thunderstorm",
+      "C": "Enjoying the warm sunshine outdoors",
+      "D": "Traveling across rough ocean waters"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Feeling 'under the weather' means feeling mildly sick or low in health.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0202",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Up in arms**",
+    "options": {
+      "A": "Protesting fiercely and angrily in opposition to something",
+      "B": "Stretching arms upward during exercise",
+      "C": "Surrendering with hands raised high",
+      "D": "Carrying heavy military weapons"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'up in arms' means being fiercely angry and ready to protest.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0203",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Up to the mark**",
+    "options": {
+      "A": "Meeting the required standard or expected quality",
+      "B": "Drawing lines on a blackboard",
+      "C": "Scoring high grades in examinations",
+      "D": "Falling below expectations"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'up to the mark' means reaching the necessary standard of performance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0204",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Upper hand**",
+    "options": {
+      "A": "Holding objects in a palm",
+      "B": "A commanding, superior position of advantage over an opponent",
+      "C": "A physical hand injury",
+      "D": "Greeting someone with a handshake"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Having the 'upper hand' means holding the controlling advantage in a contest.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0205",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Vanish into thin air**",
+    "options": {
+      "A": "To dissolve in water rapidly",
+      "B": "To disappear completely and mysteriously without leaving a trace",
+      "C": "To fly an aircraft high into the clouds",
+      "D": "To evaporate due to hot weather"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'vanish into thin air' means to disappear completely out of sight.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0206",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Velocity of light**",
+    "options": {
+      "A": "Moving with extreme swiftness and speed",
+      "B": "A physics measurement experiment",
+      "C": "Illuminating a dark room",
+      "D": "A camera flash reflection"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (At the speed of light / lightning speed) denotes extreme swiftness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0207",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Venture into**",
+    "options": {
+      "A": "To step back from fear",
+      "B": "To embark on a risky or new business enterprise",
+      "C": "To invest savings safely in banks",
+      "D": "To close down a shop"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'venture into' means entering an uncharted or risky field of activity.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0208",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Vested interest**",
+    "options": {
+      "A": "A personal stake, financial motivation, or advantage in an outcome",
+      "B": "A formal suit jacket garment",
+      "C": "Bank interest savings rates",
+      "D": "Charitable public donations"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'vested interest' refers to a personal or financial stake in maintaining or changing a situation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0209",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Vicious circle**",
+    "options": {
+      "A": "A geometric circle drawing",
+      "B": "A complex mathematical equation",
+      "C": "A frustrating situation where one problem creates another, making it worse",
+      "D": "A race track loop"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. A 'vicious circle' is a self-reinforcing sequence of negative events where each problem feeds the next.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0210",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Vie with**",
+    "options": {
+      "A": "To cooperate harmoniously",
+      "B": "To compete, contend, or rival fiercely with someone",
+      "C": "To ignore an opponent",
+      "D": "To watch a game as spectator"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'vie with' someone means to strive for superiority and compete against them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0211",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Virgin territory**",
+    "options": {
+      "A": "An explored tourist destination",
+      "B": "Unexplored, untouched, or completely new area of study or land",
+      "C": "A protected wildlife park",
+      "D": "Farmed agricultural land"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Virgin territory' refers to a subject or region that has never been explored before.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0212",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Voice in the wilderness**",
+    "options": {
+      "A": "A popular public broadcast",
+      "B": "An unheeded warning or expression of opinion that is ignored by others",
+      "C": "An echo in a canyon",
+      "D": "A loud singer in a concert"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'voice in the wilderness' is a protest or warning that nobody pays attention to.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0213",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wag the dog**",
+    "options": {
+      "A": "To create a diversion to distract attention from a major issue",
+      "B": "To train a pet animal",
+      "C": "To play fetch outdoors",
+      "D": "To obey orders blindly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'wag the dog' means diverting public attention away from an important matter using a trivial distraction.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0214",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Waiting in the wings**",
+    "options": {
+      "A": "Standing on a theater stage ready to perform",
+      "B": "Prepared and waiting eagerly to take over a role, job, or opportunity",
+      "C": "Waiting for an airplane flight",
+      "D": "Observing birds flying overhead"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'waiting in the wings' means standing ready to step in when needed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0215",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Walk a tightrope**",
+    "options": {
+      "A": "To perform circus acrobatics",
+      "B": "To be in a delicate, precarious situation requiring extreme caution",
+      "C": "To exercise on a gym rope",
+      "D": "To climb mountain ridges"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'walk a tightrope' means handling a sensitive situation with extreme care to avoid disaster.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0216",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Washing dirty linen in public**",
+    "options": {
+      "A": "To do laundry at a public laundromat",
+      "B": "To discuss private quarrels, secrets, or embarrassing family matters openly in front of strangers",
+      "C": "To clean hotel bed sheets",
+      "D": "To air clothes outdoors"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Washing dirty linen in public' means airing private quarrels where everyone can see.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0217",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Water down**",
+    "options": {
+      "A": "To dilute, weaken, or tone down the strength or impact of a statement or policy",
+      "B": "To water garden plants",
+      "C": "To wash dishes in a sink",
+      "D": "To dive into a swimming pool"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'water down' means to moderate or soften a policy so it is less effective or controversial.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0218",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wave a magic wand**",
+    "options": {
+      "A": "To perform stage magic tricks",
+      "B": "To solve a difficult problem instantly and effortlessly",
+      "C": "To direct an orchestra with a baton",
+      "D": "To gesture goodbye to friends"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'wave a magic wand' means hoping for an instant, miraculous solution to complex difficulties.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0219",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wear the trousers**",
+    "options": {
+      "A": "To work as a tailor",
+      "B": "To be the dominant, ruling, or decision-making person in a household or relationship",
+      "C": "To dress in formal business attire",
+      "D": "To buy new clothing items"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Wearing the trousers traditionally means holding the authority and control in a marriage.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0220",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Weather the storm**",
+    "options": {
+      "A": "To survive and endure a period of severe crisis or difficulty safely",
+      "B": "To build a shelter against rain",
+      "C": "To forecast meteorological changes",
+      "D": "To sail a ship through a hurricane"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'weather the storm' means successfully enduring a tough crisis.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0221",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wet behind the ears**",
+    "options": {
+      "A": "Immature, naive, inexperienced, and lacking worldly knowledge",
+      "B": "Just finishing a swimming lesson",
+      "C": "Suffering from an ear infection",
+      "D": "Washing hair in a bath"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'wet behind the ears' describes someone who is very young and inexperienced.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0222",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Whistle in the dark**",
+    "options": {
+      "A": "To try to remain brave and show confidence when feeling afraid or uncertain",
+      "B": "To walk home through a dark alley",
+      "C": "To signal friends during a blackout",
+      "D": "To play music at a night club"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'whistle in the dark' means putting on a brave front when feeling scared.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0223",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**White elephant**",
+    "options": {
+      "A": "An expensive, burdensome possession that is useless and costs too much to maintain",
+      "B": "A rare albino animal in a zoo",
+      "C": "A valuable ivory antique sculpture",
+      "D": "A sacred religious symbol"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'white elephant' is a costly possession that is more trouble than it is worth.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0224",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wild goose chase**",
+    "options": {
+      "A": "A foolish, hopeless search or pursuit of something unattainable",
+      "B": "Hunting waterfowl on a lake",
+      "C": "An exciting wildlife safari adventure",
+      "D": "A fast car driving competition"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'wild goose chase' is a futile search for something that cannot be found.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0225",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Windfall**",
+    "options": {
+      "A": "An unexpected piece of good fortune, financial gain, or windfall",
+      "B": "Fruit blown off trees by storm winds",
+      "C": "A sudden drop in stock prices",
+      "D": "A destructive hurricane gale"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'windfall' is an unexpected stroke of good luck or financial gain.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0226",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wipe the slate clean**",
+    "options": {
+      "A": "To clean classroom chalkboards",
+      "B": "To make a fresh start by forgetting past mistakes, debts, or wrongdoings",
+      "C": "To delete files on a computer hard drive",
+      "D": "To redecorate a kitchen wall"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'wipe the slate clean' means to make a fresh start ignoring past errors.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0227",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wolf in sheep's clothing**",
+    "options": {
+      "A": "A dangerous, hypocritical person who pretends to be harmless or friendly",
+      "B": "A shepherd protecting sheep from predators",
+      "C": "A winter coat made of wool",
+      "D": "A wild animal trapped in a farm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'wolf in sheep's clothing' is a dangerous deceiver masking as a kind friend.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0228",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wooden spoon**",
+    "options": {
+      "A": "A kitchen cooking utensil",
+      "B": "A fictitious prize given to the last-place finisher in a contest",
+      "C": "A carved wooden antique artifact",
+      "D": "A cheap dining table accessory"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. The 'wooden spoon' is a symbolic booby prize awarded to the last person in a race.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0229",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Word of mouth**",
+    "options": {
+      "A": "Oral communication; information passed informally by spoken word between people",
+      "B": "A dental health checkup procedure",
+      "C": "Printed newspaper advertising",
+      "D": "Official legal documentation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Word of mouth' refers to informal oral communication and recommendations.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0230",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Work like a Trojan**",
+    "options": {
+      "A": "To work with immense energy, endurance, and tireless effort",
+      "B": "To build ancient Greek architecture",
+      "C": "To serve as a military soldier",
+      "D": "To work slowly with frequent breaks"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'work like a Trojan' means to labor with exceptional energy and diligence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0231",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Worm's eye view**",
+    "options": {
+      "A": "A perspective from ground level looking upward",
+      "B": "An underground insect habitat",
+      "C": "A microscopic scientific analysis",
+      "D": "An aerial bird's eye perspective"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'worm's-eye view' is an optical perspective from a low, close-up ground position.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0232",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Worry the bone**",
+    "options": {
+      "A": "To persist in discussing a minor point or issue annoyingly",
+      "B": "A dog chewing on meat",
+      "C": "A medical bone fracture check",
+      "D": "To solve a complex puzzle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'worry the bone' means obsessively dwelling on a minor detail.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0233",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Wrong end of the stick**",
+    "options": {
+      "A": "A misunderstanding or completely mistaken interpretation of a situation",
+      "B": "Holding a walking cane incorrectly",
+      "C": "Using a broken gardening tool",
+      "D": "Winning a sports competition"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Getting the 'wrong end of the stick' means misunderstanding a situation completely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0234",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**X marks the spot**",
+    "options": {
+      "A": "Used to pinpoint an exact hidden location or treasure spot on a map",
+      "B": "Crossing out a mistake on paper",
+      "C": "An algebraic mathematical variable",
+      "D": "A railway crossing sign"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'X marks the spot' indicates the exact precise location of something.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0235",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Yellow-bellied**",
+    "options": {
+      "A": "Cowardly, fearful, and lacking backbone",
+      "B": "A brightly colored bird species",
+      "C": "Suffering from a stomach illness",
+      "D": "Brave and adventurous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'yellow-bellied' person is a coward.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0236",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Yen for**",
+    "options": {
+      "A": "A strong desire, yearning, or craving for something",
+      "B": "Japanese currency exchange",
+      "C": "A physical workout routine",
+      "D": "An allergy to food"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having a 'yen for' something means possessing a strong longing or craving for it.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0237",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Your guess is as good as mine**",
+    "options": {
+      "A": "I have no idea or knowledge about the matter whatsoever",
+      "B": "We share identical opinions on politics",
+      "C": "You are smarter than I am",
+      "D": "Let's make a friendly wager"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Your guess is as good as mine' means I know as little about it as you do.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0238",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n** Zealot **",
+    "options": {
+      "A": "A fanatical, excessively zealous person devoted to a cause",
+      "B": "A calm and neutral observer",
+      "C": "An unconcerned bystander",
+      "D": "A lazy worker"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A zealot displays fanatical enthusiasm.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0239",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Zero hour**",
+    "options": {
+      "A": "The exact precise time set for the beginning of a military operation or critical event",
+      "B": "Midnight at the end of the year",
+      "C": "A clock malfunction",
+      "D": "Lunch break time at work"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Zero hour' is the critical moment when an operation is scheduled to commence.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0240",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Zero tolerance**",
+    "options": {
+      "A": "A strict policy of punishing all violations immediately with no exceptions",
+      "B": "Complete forgiveness of mistakes",
+      "C": "An open and permissive rule",
+      "D": "Mathematical zero calculations"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'zero tolerance' policy permits no leniency or rule-breaking whatsoever.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0241",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Zest for life**",
+    "options": {
+      "A": "Enthusiasm, vigor, excitement, and passionate enjoyment of living",
+      "B": "Citrus fruit flavoring",
+      "C": "Physical exhaustion and fatigue",
+      "D": "A depressive mental state"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having a 'zest for life' means living with immense enthusiasm and joy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0242",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Zigzag career**",
+    "options": {
+      "A": "An erratic career path with many diverse shifts and changes in direction",
+      "B": "A straight promotion track",
+      "C": "Unemployed status",
+      "D": "Working in engineering"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A zigzag career involves winding, varied shifts in occupation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0243",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Zone out**",
+    "options": {
+      "A": "To lose concentration, daydream, or become temporarily inattentive",
+      "B": "To enter a restricted security zone",
+      "C": "To fall into a deep sleep at night",
+      "D": "To focus intensely on work"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'zone out' means to dissociate mentally and lose focus on surroundings.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0244",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Zoom in**",
+    "options": {
+      "A": "To focus closely and examine something in detailed particular",
+      "B": "To drive a car at high speed",
+      "C": "To fly an airplane upward",
+      "D": "To zoom past a checkpoint"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'zoom in' means to concentrate sharply on a specific aspect.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0245",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**A tall order**",
+    "options": {
+      "A": "A task, request, or demand that is very difficult to accomplish",
+      "B": "Ordering food at a restaurant",
+      "C": "A tall skyscraper building",
+      "D": "An easy daily chore"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'tall order' is a hard challenge or demanding request.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0246",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Acid test**",
+    "options": {
+      "A": "A decisive trial or conclusive test of value, quality, or authenticity",
+      "B": "A chemical laboratory experiment",
+      "C": "An easy multiple-choice exam",
+      "D": "A medical blood test"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. An 'acid test' serves as the ultimate proof of quality or genuineness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0247",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Apple-pie order**",
+    "options": {
+      "A": "Neat, tidy, and impeccably organized",
+      "B": "A sweet pastry recipe",
+      "C": "A chaotic kitchen mess",
+      "D": "A bakery order list"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Apple-pie order' means in perfect order and immaculate neatness.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0248",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At one's wits' end**",
+    "options": {
+      "A": "Extremely worried, confused, and not knowing what else to do to solve a problem",
+      "B": "Smart and highly intelligent",
+      "C": "Relaxed and peaceful",
+      "D": "Laughing at a joke"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being at your 'wits' end' means feeling completely bewildered and out of ideas.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0249",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bad egg**",
+    "options": {
+      "A": "An untrustworthy, dishonest, or thoroughly disreputable person",
+      "B": "A spoiled food item in the fridge",
+      "C": "A broken chicken egg",
+      "D": "A clumsy athlete"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'bad egg' refers to a dishonest or unreliable individual.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0250",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Beat about the bush**",
+    "options": {
+      "A": "To approach a subject evasively without coming directly to the point",
+      "B": "To trim garden shrubbery",
+      "C": "To search for hiding animals",
+      "D": "To beat drums in a forest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'beat about the bush' means to avoid speaking directly about a sensitive topic.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

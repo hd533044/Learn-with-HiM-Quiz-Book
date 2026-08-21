@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_1101",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TURGID**",
+    "options": {
+      "A": "Bombastic",
+      "B": "Simple",
+      "C": "Restrained",
+      "D": "Concise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Turgid' means swollen and distended, or (of language or style) tediously pompous or bombastic. 'Bombastic', 'grandiloquent', or 'inflated' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1102",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TURGID**",
+    "options": {
+      "A": "Pompous",
+      "B": "Grandiloquent",
+      "C": "Simple",
+      "D": "Swollen"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Turgid' means overly complex, bombastic, or inflated. 'Simple', 'plain', or 'restrained' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1103",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TYRO**",
+    "options": {
+      "A": "Novice",
+      "B": "Expert",
+      "C": "Virtuoso",
+      "D": "Master"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tyro' refers to a beginner or novice. 'Novice', 'neophyte', or 'fledgling' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1104",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TYRO**",
+    "options": {
+      "A": "Beginner",
+      "B": "Neophyte",
+      "C": "Virtuoso",
+      "D": "Greenhorn"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tyro' is an inexperienced newcomer. 'Virtuoso', 'expert', or 'master' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1105",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**UBIQUITOUS**",
+    "options": {
+      "A": "Omnipresent",
+      "B": "Rare",
+      "C": "Scarce",
+      "D": "Infrequent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ubiquitous' means present, appearing, or found everywhere. 'Omnipresent', 'pervasive', or 'universal' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1106",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**UBIQUITOUS**",
+    "options": {
+      "A": "Pervasive",
+      "B": "Universal",
+      "C": "Rare",
+      "D": "Omnipresent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ubiquitous' means found everywhere. 'Rare', 'scarce', or 'infrequent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1107",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**UMBRAGE**",
+    "options": {
+      "A": "Resentment",
+      "B": "Delight",
+      "C": "Satisfaction",
+      "D": "Goodwill"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Umbrage' refers to offense or annoyance. 'Resentment', 'pique', or 'indignation' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1108",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**UMBRAGE**",
+    "options": {
+      "A": "Pique",
+      "B": "Offense",
+      "C": "Satisfaction",
+      "D": "Resentment"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Umbrage' means offense or anger. 'Satisfaction', 'pleasure', or 'contentment' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1109",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**UNCTUOUS**",
+    "options": {
+      "A": "Fulsome",
+      "B": "Sincere",
+      "C": "Genuine",
+      "D": "Blunt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Unctuous' means excessively or ingratiatingly flattering; oily. 'Fulsome', 'sycophantic', or 'smarmy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1110",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**UNCTUOUS**",
+    "options": {
+      "A": "Smarmy",
+      "B": "Oily",
+      "C": "Sincere",
+      "D": "Glib"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Unctuous' means falsely smooth or hypocritically flattering. 'Sincere', 'candid', or 'genuine' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1111",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**UNGAINLY**",
+    "options": {
+      "A": "Awkward",
+      "B": "Graceful",
+      "C": "Lithe",
+      "D": "Elegant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ungainly' means awkward; clumsy. 'Awkward', 'clumsy', or 'gawky' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1112",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**UNGAINLY**",
+    "options": {
+      "A": "Clumsy",
+      "B": "Awkward",
+      "C": "Graceful",
+      "D": "Gawky"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ungainly' means clumsy or uncoordinated. 'Graceful', 'elegant', or 'lithe' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1113",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**UPBRAID**",
+    "options": {
+      "A": "Chide",
+      "B": "Laud",
+      "C": "Praise",
+      "D": "Commend"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Upbraid' means to find fault with (someone); scold. 'Chide', 'reproach', or 'castigate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1114",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**UPBRAID**",
+    "options": {
+      "A": "Scold",
+      "B": "Chide",
+      "C": "Praise",
+      "D": "Reprimand"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Upbraid' means to severely reprimand. 'Praise', 'laud', or 'commend' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1115",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**URBANE**",
+    "options": {
+      "A": "Suave",
+      "B": "Boorish",
+      "C": "Uncouth",
+      "D": "Churlish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Urbane' means (of a person) courteous and refined in manner. 'Suave', 'sophisticated', or 'debonair' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1116",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**URBANE**",
+    "options": {
+      "A": "Debonair",
+      "B": "Suave",
+      "C": "Boorish",
+      "D": "Cultivated"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Urbane' means sophisticated and polished. 'Boorish', 'uncouth', or 'crude' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1117",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**USURP**",
+    "options": {
+      "A": "Arrogate",
+      "B": "Surrender",
+      "C": "Relinquish",
+      "D": "Abdicate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Usurp' means to take (a position of power or importance) illegally or by force. 'Arrogate', 'seize', or 'commandeer' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1118",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**USURP**",
+    "options": {
+      "A": "Arrogate",
+      "B": "Seize",
+      "C": "Relinquish",
+      "D": "Appropriate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Usurp' means to take by force unlawfully. 'Relinquish', 'surrender', or 'yield' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1119",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VACILLATE**",
+    "options": {
+      "A": "Fluctuate",
+      "B": "Persist",
+      "C": "Decide",
+      "D": "Resolve"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vacillate' means to alternate or waver between different opinions or actions; be indecisive. 'Fluctuate', 'waver', or 'oscillate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1120",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VACILLATE**",
+    "options": {
+      "A": "Waver",
+      "B": "Oscillate",
+      "C": "Resolve",
+      "D": "Hesitate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Vacillate' means to waver indecisively. 'Resolve', 'decide', or 'persevere' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1121",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VACUOUS**",
+    "options": {
+      "A": "Inane",
+      "B": "Sagacious",
+      "C": "Insightful",
+      "D": "Profound"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vacuous' means having or showing a lack of thought or intelligence; mindless. 'Inane', 'fatuous', or 'empty-headed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1122",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VACUOUS**",
+    "options": {
+      "A": "Mindless",
+      "B": "Inane",
+      "C": "Insightful",
+      "D": "Asinine"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Vacuous' means mindless and empty. 'Insightful', 'intelligent', or 'profound' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1123",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VALIANT**",
+    "options": {
+      "A": "Gallant",
+      "B": "Craven",
+      "C": "Timorous",
+      "D": "Pusillanimous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Valiant' means possessing or showing courage or determination. 'Gallant', 'intrepid', or 'brave' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1124",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VALIANT**",
+    "options": {
+      "A": "Brave",
+      "B": "Gallant",
+      "C": "Craven",
+      "D": "Courageous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Valiant' means brave. 'Craven', 'cowardly', or 'timid' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1125",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VAPID**",
+    "options": {
+      "A": "Insipid",
+      "B": "Piquant",
+      "C": "Lively",
+      "D": "Zesty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vapid' means offering nothing that is stimulating or challenging; dull or flat. 'Insipid', 'lifeless', or 'uninspiring' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1126",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VAPID**",
+    "options": {
+      "A": "Insipid",
+      "B": "Dull",
+      "C": "Lively",
+      "D": "Colorless"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Vapid' means dull or uninteresting. 'Lively', 'piquant', or 'stimulating' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1127",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VARIEGATED**",
+    "options": {
+      "A": "Multicolored",
+      "B": "Monochrome",
+      "C": "Uniform",
+      "D": "Homogeneous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Variegated' means exhibiting different colors, especially as irregular patches or streaks. 'Multicolored', 'polychromatic', or 'motley' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1128",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VARIEGATED**",
+    "options": {
+      "A": "Multicolored",
+      "B": "Motley",
+      "C": "Monochrome",
+      "D": "Diversified"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Variegated' means multi-colored or varied. 'Monochrome', 'uniform', or 'plain' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1129",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VEHEMENT**",
+    "options": {
+      "A": "Fervent",
+      "B": "Apathetic",
+      "C": "Mild",
+      "D": "Passive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vehement' means showing strong feeling; forceful, passionate, or intense. 'Fervent', 'ardent', or 'passionate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1130",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VEHEMENT**",
+    "options": {
+      "A": "Fervent",
+      "B": "Impassioned",
+      "C": "Mild",
+      "D": "Ardent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Vehement' means highly intense or passionate. 'Mild', 'lukewarm', or 'apathetic' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1131",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VENERABLE**",
+    "options": {
+      "A": "Revered",
+      "B": "Disreputable",
+      "C": "Contemptible",
+      "D": "Infamous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Venerable' means accorded a great deal of respect, especially because of age, wisdom, or character. 'Revered', 'hallowed', or 'august' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1132",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VENERABLE**",
+    "options": {
+      "A": "August",
+      "B": "Revered",
+      "C": "Contemptible",
+      "D": "Esteemed"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Venerable' means worthy of respect. 'Contemptible', 'disreputable', or 'despicable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1133",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VERACIOUS**",
+    "options": {
+      "A": "Truthful",
+      "B": "Mendacious",
+      "C": "Deceitful",
+      "D": "Dishonest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Veracious' means speaking or representing the truth; accurate. 'Truthful', 'honest', or 'scrupulous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1134",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VERACIOUS**",
+    "options": {
+      "A": "Honest",
+      "B": "Truthful",
+      "C": "Mendacious",
+      "D": "Candid"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Veracious' means truthful. 'Mendacious', 'deceitful', or 'dishonest' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1135",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VERBOSE**",
+    "options": {
+      "A": "Prolix",
+      "B": "Laconic",
+      "C": "Succinct",
+      "D": "Terse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Verbose' means using or expressed in more words than are needed. 'Prolix', 'wordy', or 'loquacious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1136",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VERBOSE**",
+    "options": {
+      "A": "Wordy",
+      "B": "Prolix",
+      "C": "Laconic",
+      "D": "Circumlocutory"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Verbose' means wordy. 'Laconic', 'terse', or 'succinct' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1137",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VEXATION**",
+    "options": {
+      "A": "Irritation",
+      "B": "Solace",
+      "C": "Delight",
+      "D": "Pleasure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vexation' refers to the state of being annoyed, frustrated, or worried. 'Irritation', 'exasperation', or 'pique' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1138",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VEXATION**",
+    "options": {
+      "A": "Annoyance",
+      "B": "Irritation",
+      "C": "Solace",
+      "D": "Chagrin"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Vexation' means annoyance or distress. 'Solace', 'comfort', or 'pleasure' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1139",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VICARIOUS**",
+    "options": {
+      "A": "Derivative",
+      "B": "Direct",
+      "C": "Firsthand",
+      "D": "Primary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vicarious' means experienced in the imagination through the feelings or actions of another person. 'Derivative', 'indirect', or 'secondary' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1140",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VICARIOUS**",
+    "options": {
+      "A": "Indirect",
+      "B": "Secondary",
+      "C": "Firsthand",
+      "D": "Substituted"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Vicarious' means experienced second-hand. 'Firsthand', 'direct', or 'primary' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1141",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VILIFY**",
+    "options": {
+      "A": "Defame",
+      "B": "Extol",
+      "C": "Laud",
+      "D": "Commend"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vilify' means to speak ill of; defame or slander. 'Defame', 'denigrate', or 'malign' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1142",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VILIFY**",
+    "options": {
+      "A": "Malign",
+      "B": "Slander",
+      "C": "Extol",
+      "D": "Denigrate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Vilify' means to slander or disparage. 'Extol', 'praise', or 'laud' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1143",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VINDICATE**",
+    "options": {
+      "A": "Exonerate",
+      "B": "Incriminate",
+      "C": "Condemn",
+      "D": "Blame"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vindicate' means to clear (someone) of blame or suspicion. 'Exonerate', 'absolve', or 'exculpate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1144",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VINDICATE**",
+    "options": {
+      "A": "Exculpate",
+      "B": "Absolve",
+      "C": "Incriminate",
+      "D": "Exonerate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Vindicate' means to clear of guilt. 'Incriminate', 'condemn', or 'convict' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1145",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VIRULENT**",
+    "options": {
+      "A": "Venomous",
+      "B": "Innocuous",
+      "C": "Harmless",
+      "D": "Salubrious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Virulent' means extremely severe or harmful in its effects; bitterly hostile. 'Venomous', 'toxic', or 'pernicious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1146",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VIRULENT**",
+    "options": {
+      "A": "Venomous",
+      "B": "Malignant",
+      "C": "Innocuous",
+      "D": "Toxic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Virulent' means highly poisonous or bitterly hostile. 'Innocuous', 'harmless', or 'benign' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1147",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VISCOUS**",
+    "options": {
+      "A": "Viscid",
+      "B": "Watery",
+      "C": "Fluid",
+      "D": "Dilute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Viscous' means having a thick, sticky consistency between solid and liquid. 'Viscid', 'glutinous', or 'syrupy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1148",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VISCOUS**",
+    "options": {
+      "A": "Sticky",
+      "B": "Viscid",
+      "C": "Fluid",
+      "D": "Glutinous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Viscous' means thick and sticky. 'Fluid', 'watery', or 'free-flowing' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1149",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**VITIATE**",
+    "options": {
+      "A": "Impair",
+      "B": "Purify",
+      "C": "Validate",
+      "D": "Sanctify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Vitiate' means to spoil or impair the quality or efficiency of. 'Impair', 'corrupt', or 'debase' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1150",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**VITIATE**",
+    "options": {
+      "A": "Debase",
+      "B": "Corrupt",
+      "C": "Purify",
+      "D": "Impair"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Vitiate' means to corrupt or spoil the quality of something. 'Purify', 'validate', or 'mend' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

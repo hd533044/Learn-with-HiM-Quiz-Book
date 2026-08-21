@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0101",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANOMALOUS**",
+    "options": {
+      "A": "Conventional",
+      "B": "Atypical",
+      "C": "Ordinary",
+      "D": "Standard"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Anomalous' means deviating from what is standard, normal, or expected. 'Atypical', 'abnormal', or 'irregular' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0102",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANOMALOUS**",
+    "options": {
+      "A": "Conforming",
+      "B": "Eccentric",
+      "C": "Aberrant",
+      "D": "Peculiar"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Anomalous' means irregular or abnormal. 'Conforming', 'customary', or 'typical' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0103",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANTIPATHY**",
+    "options": {
+      "A": "Affinity",
+      "B": "Aversion",
+      "C": "Fondness",
+      "D": "Attraction"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Antipathy' refers to a deep-seated feeling of dislike, hatred, or aversion.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0104",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANTIPATHY**",
+    "options": {
+      "A": "Repugnance",
+      "B": "Abhorrence",
+      "C": "Affection",
+      "D": "Enmity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Antipathy' means dislike or hostility. 'Affection', 'amity', or 'affinity' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0105",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**APATHETIC**",
+    "options": {
+      "A": "Indifferent",
+      "B": "Zealous",
+      "C": "Fervent",
+      "D": "Passionate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Apathetic' means showing or feeling no interest, enthusiasm, or concern. 'Indifferent' or 'unconcerned' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0106",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**APATHETIC**",
+    "options": {
+      "A": "Impassive",
+      "B": "Callous",
+      "C": "Enthusiastic",
+      "D": "Lethargic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Apathetic' means indifferent and unfeeling. 'Enthusiastic', 'zealous', or 'concerned' is its opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0107",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**APOCRYPHAL**",
+    "options": {
+      "A": "Spurious",
+      "B": "Authentic",
+      "C": "Verifiable",
+      "D": "Genuine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Apocryphal' describes a story or statement of doubtful authenticity, although widely circulated as true. 'Spurious' or 'dubious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0108",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**APOCRYPHAL**",
+    "options": {
+      "A": "Fabricated",
+      "B": "Fictitious",
+      "C": "Authentic",
+      "D": "Untrue"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Apocryphal' means of questionable authority/fake. 'Authentic', 'genuine', or 'veritable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0109",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**APPEASE**",
+    "options": {
+      "A": "Mollify",
+      "B": "Provoke",
+      "C": "Irritate",
+      "D": "Inflame"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Appease' means to pacify or placate someone by acceding to their demands. 'Mollify', 'pacify', or 'propitiate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0110",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**APPEASE**",
+    "options": {
+      "A": "Placate",
+      "B": "Assuage",
+      "C": "Conciliate",
+      "D": "Antagonize"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Appease' means to calm or satisfy. 'Antagonize', 'provoke', or 'enrage' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0111",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**APPREHENSION**",
+    "options": {
+      "A": "Confidence",
+      "B": "Trepidation",
+      "C": "Assurance",
+      "D": "Certainty"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Apprehension' refers to anxiety, dread, or fear that something bad or unpleasant will happen. 'Trepidation' or 'misgiving' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0112",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**APPREHENSION**",
+    "options": {
+      "A": "Foreboding",
+      "B": "Dread",
+      "C": "Serenity",
+      "D": "Consternation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Apprehension' means fearful expectation. 'Serenity', 'composure', or 'tranquility' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0113",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**APPROBATION**",
+    "options": {
+      "A": "Commendation",
+      "B": "Reproof",
+      "C": "Censure",
+      "D": "Disparagement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Approbation' means approval, endorsement, or praise. 'Commendation' or 'acclamation' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0114",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**APPROBATION**",
+    "options": {
+      "A": "Applause",
+      "B": "Sanction",
+      "C": "Endorsement",
+      "D": "Condemnation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Approbation' is formal praise/approval. 'Condemnation', 'censure', or 'disapproval' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0115",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ARDUOUS**",
+    "options": {
+      "A": "Strenuous",
+      "B": "Facile",
+      "C": "Effortless",
+      "D": "Trivial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Arduous' means involving or requiring strenuous effort; difficult and tiring. 'Strenuous', 'laborious', or 'demanding' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0116",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ARDUOUS**",
+    "options": {
+      "A": "Onerous",
+      "B": "Burdensome",
+      "C": "Formidable",
+      "D": "Effortless"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Arduous' means tough and exhausting. 'Effortless', 'easy', or 'facile' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0117",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ARTFUL**",
+    "options": {
+      "A": "Ingenuous",
+      "B": "Crafty",
+      "C": "Naive",
+      "D": "Guileless"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Artful' means clever or skillful, especially in a crafty or cunning way. 'Crafty', 'wily', or 'sly' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0118",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ARTFUL**",
+    "options": {
+      "A": "Cunning",
+      "B": "Shrewd",
+      "C": "Guileless",
+      "D": "Deceitful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Artful' means cunning or tricky. 'Guileless', 'ingenuous', or 'candid' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0119",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ARTLESS**",
+    "options": {
+      "A": "Devious",
+      "B": "Ingenuous",
+      "C": "Duplicitous",
+      "D": "Scheming"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Artless' means without guile or deception; natural and simple. 'Ingenuous', 'candid', or 'naive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0120",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ARTLESS**",
+    "options": {
+      "A": "Sincere",
+      "B": "Innocent",
+      "C": "Disingenuous",
+      "D": "Unpretentious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Artless' means honest and innocent. 'Disingenuous', 'crafty', or 'calculating' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0121",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ASCETIC**",
+    "options": {
+      "A": "Austere",
+      "B": "Hedonistic",
+      "C": "Sybaritic",
+      "D": "Voluptuous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ascetic' describes a lifestyle characterized by severe self-discipline and abstention from all forms of indulgence. 'Austere', 'abstemious', or 'monastic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0122",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ASCETIC**",
+    "options": {
+      "A": "Puritanical",
+      "B": "Self-denying",
+      "C": "Hedonistic",
+      "D": "Abstinent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ascetic' means self-denying. 'Hedonistic', 'sybaritic', or 'self-indulgent' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0123",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ASPERITY**",
+    "options": {
+      "A": "Harshness",
+      "B": "Mildness",
+      "C": "Gentleness",
+      "D": "Suavity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Asperity' means harshness of tone or manner; sharpness. 'Harshness', 'severity', or 'acerbic quality' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0124",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ASPERITY**",
+    "options": {
+      "A": "Bitterness",
+      "B": "Roughness",
+      "C": "Mildness",
+      "D": "Astringency"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Asperity' means severity and bitterness. 'Mildness', 'gentleness', or 'amenity' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0125",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ASSIDUOUS**",
+    "options": {
+      "A": "Diligent",
+      "B": "Slothful",
+      "C": "Indolent",
+      "D": "Negligent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Assiduous' means showing great care, attention, and effort. 'Diligent', 'meticulous', or 'sedulous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0126",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ASSIDUOUS**",
+    "options": {
+      "A": "Sedulous",
+      "B": "Industrious",
+      "C": "Indolent",
+      "D": "Persevering"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Assiduous' means hardworking and attentive. 'Indolent', 'lazy', or 'slothful' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0127",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ASSUAGE**",
+    "options": {
+      "A": "Exacerbate",
+      "B": "Pacify",
+      "C": "Aggravate",
+      "D": "Intensify"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Assuage' means to make (an unpleasant feeling) less intense; satisfy (an appetite or desire). 'Pacify', 'soothe', or 'relieve' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0128",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ASSUAGE**",
+    "options": {
+      "A": "Mitigate",
+      "B": "Allay",
+      "C": "Inflame",
+      "D": "Mollify"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Assuage' means to relieve or ease. 'Inflame', 'exacerbate', or 'provoke' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0129",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ASTUTE**",
+    "options": {
+      "A": "Shrewd",
+      "B": "Gullible",
+      "C": "Dense",
+      "D": "Naive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Astute' means having or showing an ability to accurately assess situations and turn this to one's advantage. 'Shrewd', 'sagacious', or 'cunning' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0130",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ASTUTE**",
+    "options": {
+      "A": "Perspicacious",
+      "B": "Ingenious",
+      "C": "Crafty",
+      "D": "Obtuse"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Astute' means sharp-witted. 'Obtuse', 'foolish', or 'dull' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0131",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ATROPHY**",
+    "options": {
+      "A": "Flourish",
+      "B": "Wither",
+      "C": "Develop",
+      "D": "Strengthen"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Atrophy' means to waste away, typically due to the degeneration of cells, or gradually decline in effectiveness. 'Wither', 'deteriorate', or 'shrivel' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0132",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ATROPHY**",
+    "options": {
+      "A": "Degenerate",
+      "B": "Decay",
+      "C": "Flourish",
+      "D": "Wane"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Atrophy' means wasting away. 'Flourish', 'grow', or 'thrive' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0133",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ATTENUATE**",
+    "options": {
+      "A": "Weaken",
+      "B": "Reinforce",
+      "C": "Fortify",
+      "D": "Thicken"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Attenuate' means to reduce the force, effect, or value of; make thin. 'Weaken', 'diminish', or 'enfeeble' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0134",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ATTENUATE**",
+    "options": {
+      "A": "Debilitate",
+      "B": "Siphon",
+      "C": "Fortify",
+      "D": "Dilute"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Attenuate' means to diminish or enfeeble. 'Fortify', 'strengthen', or 'amplify' is its opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0135",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AUDACIOUS**",
+    "options": {
+      "A": "Timid",
+      "B": "Dauntless",
+      "C": "Diffident",
+      "D": "Meek"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Audacious' means showing a willingness to take surprisingly bold risks; daring. 'Dauntless', 'bold', or 'intrepid' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0136",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AUDACIOUS**",
+    "options": {
+      "A": "Brazen",
+      "B": "Temerarious",
+      "C": "Timid",
+      "D": "Gallant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Audacious' means daring or insolent. 'Timid', 'cautious', or 'meek' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0137",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AUGMENT**",
+    "options": {
+      "A": "Enlarge",
+      "B": "Curtail",
+      "C": "Truncate",
+      "D": "Diminish"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Augment' means to make (something) greater by adding to it; increase. 'Enlarge', 'expand', or 'boost' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0138",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AUGMENT**",
+    "options": {
+      "A": "Amplify",
+      "B": "Escalate",
+      "C": "Curtail",
+      "D": "Enhance"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Augment' means to increase. 'Curtail', 'diminish', or 'reduce' is the opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0139",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AUSPICIOUS**",
+    "options": {
+      "A": "Ominous",
+      "B": "Propitious",
+      "C": "Sinister",
+      "D": "Inauspicious"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Auspicious' means giving or being a sign of future success; favorable. 'Propitious', 'promising', or 'fortunate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0140",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AUSPICIOUS**",
+    "options": {
+      "A": "Favorable",
+      "B": "Opportunistic",
+      "C": "Ominous",
+      "D": "Promising"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Auspicious' means favorable. 'Ominous', 'unfavorable', or 'foreboding' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0141",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AUSTERE**",
+    "options": {
+      "A": "Severe",
+      "B": "Elaborate",
+      "C": "Extravagant",
+      "D": "Gentle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Austere' means severe or strict in manner, attitude, or appearance; plain. 'Severe', 'ascetic', or 'stringent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0142",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AUSTERE**",
+    "options": {
+      "A": "Harsh",
+      "B": "Rigid",
+      "C": "Grim",
+      "D": "Extravagant"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Austere' means strictly simple or harsh. 'Extravagant', 'lavish', or 'indulgent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0143",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AUTONOMY**",
+    "options": {
+      "A": "Sovereignty",
+      "B": "Dependence",
+      "C": "Subjugation",
+      "D": "Servitude"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Autonomy' refers to the right or condition of self-government; independence. 'Sovereignty' or 'self-rule' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0144",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AUTONOMY**",
+    "options": {
+      "A": "Liberty",
+      "B": "Self-determination",
+      "C": "Dependence",
+      "D": "Independence"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Autonomy' means independence. 'Dependence', 'subjugation', or 'subjection' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0145",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AVARICE**",
+    "options": {
+      "A": "Greed",
+      "B": "Generosity",
+      "C": "Philanthropy",
+      "D": "Altruism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Avarice' means extreme greed for wealth or material gain. 'Greed', 'cupidity', or 'rapacity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0146",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AVARICE**",
+    "options": {
+      "A": "Cupidity",
+      "B": "Penuriousness",
+      "C": "Covetousness",
+      "D": "Magnanimity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Avarice' is greed/miserliness. 'Magnanimity', 'generosity', or 'benevolence' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0147",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AVER**",
+    "options": {
+      "A": "Assert",
+      "B": "Deny",
+      "C": "Contradict",
+      "D": "Disprove"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Aver' means to state or assert to be the case. 'Assert', 'affirm', or 'avow' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0148",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AVER**",
+    "options": {
+      "A": "Avow",
+      "B": "Proclaim",
+      "C": "Refute",
+      "D": "Affirm"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Aver' means to assert positively. 'Refute', 'deny', or 'disavow' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0149",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AVERSION**",
+    "options": {
+      "A": "Disinclination",
+      "B": "Propensity",
+      "C": "Predilection",
+      "D": "Affinity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Aversion' means a strong dislike or disinclination towards something. 'Disinclination', 'antipathy', or 'reluctance' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0150",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AVERSION**",
+    "options": {
+      "A": "Loathing",
+      "B": "Predilection",
+      "C": "Repugnance",
+      "D": "Distaste"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Aversion' means dislike or avoidance. 'Predilection', 'penchant', or 'fondness' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

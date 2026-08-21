@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0051",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ADROIT**",
+    "options": {
+      "A": "Clumsy",
+      "B": "Dexterous",
+      "C": "Awkward",
+      "D": "Inept"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Adroit' means clever or skillful in using the hands or mind. 'Dexterous', 'nimble', or 'adept' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0052",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ADROIT**",
+    "options": {
+      "A": "Deft",
+      "B": "Skillful",
+      "C": "Maladroit",
+      "D": "Adept"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Adroit' means skillful and adept. 'Maladroit', 'clumsy', or 'inept' serves as its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0053",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ADULATION**",
+    "options": {
+      "A": "Flattery",
+      "B": "Derision",
+      "C": "Condemnation",
+      "D": "Scorn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Adulation' refers to excessive admiration or praise. 'Flattery', 'fawning', or 'sycophancy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0054",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ADULATION**",
+    "options": {
+      "A": "Worship",
+      "B": "Idolatry",
+      "C": "Opprobrium",
+      "D": "Praise"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Adulation' means excessive praise. 'Opprobrium', 'censure', or 'disdain' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0055",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ADVERSITY**",
+    "options": {
+      "A": "Prosperity",
+      "B": "Affliction",
+      "C": "Fortune",
+      "D": "Opulence"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Adversity' refers to a difficult or unpleasant situation, misfortune, or distress. 'Affliction' or 'hardship' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0056",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ADVERSITY**",
+    "options": {
+      "A": "Calamity",
+      "B": "Prosperity",
+      "C": "Catastrophe",
+      "D": "Misery"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Adversity' means hardship or misfortune. 'Prosperity' or 'good fortune' is the opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0057",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFABLE**",
+    "options": {
+      "A": "Genial",
+      "B": "Aloof",
+      "C": "Sullen",
+      "D": "Surly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Affable' means friendly, good-natured, or easy to talk to. 'Genial', 'amiable', or 'cordial' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0058",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFABLE**",
+    "options": {
+      "A": "Courteous",
+      "B": "Sociable",
+      "C": "Cantankerous",
+      "D": "Amiable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Affable' means pleasant and friendly. 'Cantankerous', 'surly', or 'unfriendly' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0059",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFECTATION**",
+    "options": {
+      "A": "Pretension",
+      "B": "Sincerity",
+      "C": "Artlessness",
+      "D": "Candor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Affectation' refers to behavior, speech, or writing that is artificial and designed to impress. 'Pretension' or 'posturing' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0060",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFECTATION**",
+    "options": {
+      "A": "Hypocrisy",
+      "B": "Simplicity",
+      "C": "Facade",
+      "D": "Ostentation"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Affectation' means artificial behavior. 'Simplicity', 'naturalness', or 'candor' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0061",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AFFLUENT**",
+    "options": {
+      "A": "Destitute",
+      "B": "Opulent",
+      "C": "Impecunious",
+      "D": "Indigent"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Affluent' means having a great deal of money; wealthy. 'Opulent', 'prosperous', or 'rich' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0062",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AFFLUENT**",
+    "options": {
+      "A": "Wealthy",
+      "B": "Prosperous",
+      "C": "Impecunious",
+      "D": "Loaded"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Affluent' means wealthy. 'Impecunious', 'poor', or 'destitute' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0063",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AGGRANDIZEMENT**",
+    "options": {
+      "A": "Degradation",
+      "B": "Exaltation",
+      "C": "Humiliation",
+      "D": "Abasement"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Aggrandizement' refers to the act of increasing power, status, or wealth. 'Exaltation', 'elevation', or 'enhancement' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0064",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AGGRANDIZEMENT**",
+    "options": {
+      "A": "Magnification",
+      "B": "Enlargement",
+      "C": "Belittlement",
+      "D": "Promotion"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Aggrandizement' is praise or elevation of status. 'Belittlement', 'curtailment', or 'debasement' is the opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0065",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AGILITY**",
+    "options": {
+      "A": "Nimbleness",
+      "B": "Sluggishness",
+      "C": "Lethargy",
+      "D": "Torpor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Agility' means ability to move quickly and easily. 'Nimbleness', 'litheness', or 'dexterity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0066",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AGILITY**",
+    "options": {
+      "A": "Suppleness",
+      "B": "Alacrity",
+      "C": "Lethargy",
+      "D": "Swiftness"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Agility' means quickness and energy. 'Lethargy', 'clumsiness', or 'sluggishness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0067",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALACRITY**",
+    "options": {
+      "A": "Apathy",
+      "B": "Briskness",
+      "C": "Hesitance",
+      "D": "Reluctance"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Alacrity' means brisk and cheerful readiness. 'Briskness', 'eagerness', or 'promptness' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0068",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALACRITY**",
+    "options": {
+      "A": "Promptitude",
+      "B": "Enthusiasm",
+      "C": "Reluctance",
+      "D": "Celerity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Alacrity' means readiness and eagerness. 'Reluctance', 'apathy', or 'slowness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0069",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALLAY**",
+    "options": {
+      "A": "Aggravate",
+      "B": "Alleviate",
+      "C": "Exacerbate",
+      "D": "Intensify"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Allay' means to diminish or put at rest (fear, hunger, or pain). 'Alleviate', 'assuage', or 'pacify' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0070",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALLAY**",
+    "options": {
+      "A": "Soothe",
+      "B": "Assuage",
+      "C": "Exacerbate",
+      "D": "Mollify"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Allay' means to calm or lessen. 'Exacerbate', 'worsen', or 'provoke' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0071",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALLEVIATE**",
+    "options": {
+      "A": "Mitigate",
+      "B": "Heighten",
+      "C": "Worsen",
+      "D": "Inflame"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Alleviate' means to make (suffering, deficiency, or a problem) less severe. 'Mitigate', 'relieve', or 'ease' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0072",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALLEVIATE**",
+    "options": {
+      "A": "Moderate",
+      "B": "Palliate",
+      "C": "Aggravate",
+      "D": "Assuage"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Alleviate' means to relieve. 'Aggravate', 'intensify', or 'compound' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0073",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALLURING**",
+    "options": {
+      "A": "Repulsive",
+      "B": "Captivating",
+      "C": "Revolting",
+      "D": "Hideous"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Alluring' means powerfully and mysteriously attractive or fascinating. 'Captivating', 'enticing', or 'charming' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0074",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALLURING**",
+    "options": {
+      "A": "Repugnant",
+      "B": "Enchanting",
+      "C": "Seductive",
+      "D": "Beguiling"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Alluring' means attractive. 'Repugnant', 'repulsive', or 'deterrent' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0075",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ALTRUISTIC**",
+    "options": {
+      "A": "Selfish",
+      "B": "Philanthropic",
+      "C": "Miserly",
+      "D": "Egoistic"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Altruistic' means showing a disinterested and selfless concern for the well-being of others. 'Philanthropic' or 'benevolent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0076",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ALTRUISTIC**",
+    "options": {
+      "A": "Charitable",
+      "B": "Magnanimous",
+      "C": "Egoistic",
+      "D": "Unselfish"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Altruistic' means selfless. 'Egoistic', 'self-centered', or 'mercenary' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0077",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMALGAMATE**",
+    "options": {
+      "A": "Separate",
+      "B": "Consolidate",
+      "C": "Disintegrate",
+      "D": "Isolate"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Amalgamate' means to combine or unite to form one organization or structure. 'Consolidate', 'merge', or 'blend' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0078",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMALGAMATE**",
+    "options": {
+      "A": "Blend",
+      "B": "Fuse",
+      "C": "Coalesce",
+      "D": "Disintegrate"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Amalgamate' means to combine. 'Disintegrate', 'divide', or 'separate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0079",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMBIGUOUS**",
+    "options": {
+      "A": "Equivocal",
+      "B": "Explicit",
+      "C": "Lucid",
+      "D": "Definite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ambiguous' means open to more than one interpretation; not having one obvious meaning. 'Equivocal', 'vague', or 'enigmatic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0080",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMBIGUOUS**",
+    "options": {
+      "A": "Obscure",
+      "B": "Cryptic",
+      "C": "Unambiguous",
+      "D": "Doubtful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ambiguous' means vague or unclear. 'Unambiguous', 'explicit', or 'lucid' is the direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0081",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMELIORATE**",
+    "options": {
+      "A": "Worsen",
+      "B": "Improve",
+      "C": "Deteriorate",
+      "D": "Damage"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Ameliorate' means to make (something bad or unsatisfactory) better. 'Improve', 'enhance', or 'better' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0082",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMELIORATE**",
+    "options": {
+      "A": "Upgrade",
+      "B": "Amend",
+      "C": "Deteriorate",
+      "D": "Refine"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ameliorate' means to improve. 'Deteriorate', 'worsen', or 'vitiate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0083",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMENABLE**",
+    "options": {
+      "A": "Compliant",
+      "B": "Intractable",
+      "C": "Stubborn",
+      "D": "Refractory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Amenable' means open and responsive to suggestion; easily persuaded or controlled. 'Compliant', 'tractable', or 'docile' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0084",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMENABLE**",
+    "options": {
+      "A": "Pliable",
+      "B": "Submissive",
+      "C": "Intractable",
+      "D": "Obedient"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Amenable' means cooperative and submissive. 'Intractable', 'obstinate', or 'unyielding' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0085",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMIABLE**",
+    "options": {
+      "A": "Churlish",
+      "B": "Affable",
+      "C": "Hostile",
+      "D": "Belligerent"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Amiable' means having or displaying a friendly and pleasant manner. 'Affable', 'genial', or 'cordial' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0086",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMIABLE**",
+    "options": {
+      "A": "Good-natured",
+      "B": "Charming",
+      "C": "Disagreeable",
+      "D": "Friendly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Amiable' means friendly and pleasant. 'Disagreeable', 'quarrelsome', or 'unfriendly' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0087",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMICABLE**",
+    "options": {
+      "A": "Harmonious",
+      "B": "Contentious",
+      "C": "Discordant",
+      "D": "Adversarial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Amicable' means characterized by friendly goodwill and peaceable relations. 'Harmonious', 'friendly', or 'cordial' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0088",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMICABLE**",
+    "options": {
+      "A": "Peaceable",
+      "B": "Hostile",
+      "C": "Polite",
+      "D": "Civil"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Amicable' means friendly and peaceful. 'Hostile', 'antagonistic', or 'contentious' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0089",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMNESTY**",
+    "options": {
+      "A": "Reprieve",
+      "B": "Punishment",
+      "C": "Prosecution",
+      "D": "Retribution"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Amnesty' refers to an official pardon for people who have been convicted of political offenses. 'Reprieve', 'pardon', or 'absolution' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0090",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMNESTY**",
+    "options": {
+      "A": "Forgiveness",
+      "B": "Immunity",
+      "C": "Condemnation",
+      "D": "Exoneration"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Amnesty' is a grant of official pardon. 'Condemnation', 'punishment', or 'prosecution' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0091",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**AMORPHOUS**",
+    "options": {
+      "A": "Shapeless",
+      "B": "Structured",
+      "C": "Definite",
+      "D": "Crystalline"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Amorphous' means without a clearly defined shape or form. 'Shapeless', 'formless', or 'unstructured' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0092",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**AMORPHOUS**",
+    "options": {
+      "A": "Vague",
+      "B": "Indeterminate",
+      "C": "Definite",
+      "D": "Formless"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Amorphous' means lacking distinct shape. 'Definite', 'structured', or 'distinct' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0093",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANACHRONISTIC**",
+    "options": {
+      "A": "Antiquated",
+      "B": "Contemporary",
+      "C": "Modern",
+      "D": "Futuristic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Anachronistic' means belonging or appropriate to an earlier period, often out of date. 'Antiquated', 'archaic', or 'outmoded' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0094",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANACHRONISTIC**",
+    "options": {
+      "A": "Obsolete",
+      "B": "Archaic",
+      "C": "Contemporary",
+      "D": "Outdated"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Anachronistic' means chronologically out of place/antiquated. 'Contemporary', 'modern', or 'timely' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0095",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANARCHY**",
+    "options": {
+      "A": "Lawlessness",
+      "B": "Order",
+      "C": "Hierarchy",
+      "D": "Discipline"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Anarchy' refers to a state of disorder due to absence or non-recognition of authority or other controlling systems. 'Lawlessness' or 'chaos' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0096",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANARCHY**",
+    "options": {
+      "A": "Mayhem",
+      "B": "Turmoil",
+      "C": "Chaos",
+      "D": "Order"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Anarchy' means total chaos or absence of rule. 'Order', 'governance', or 'harmony' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0097",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANATHEMA**",
+    "options": {
+      "A": "Benediction",
+      "B": "Abomination",
+      "C": "Blessing",
+      "D": "Approval"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Anathema' refers to something or someone that one vehemently dislikes; a formal curse. 'Abomination', 'bane', or 'curse' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0098",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANATHEMA**",
+    "options": {
+      "A": "Execration",
+      "B": "Curse",
+      "C": "Benediction",
+      "D": "Bane"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Anathema' means a formal curse or despised object. 'Benediction' or 'blessing' is the opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0099",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ANIMOSITY**",
+    "options": {
+      "A": "Hostility",
+      "B": "Affection",
+      "C": "Amity",
+      "D": "Goodwill"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Animosity' means strong hostility, antipathy, or active ill will. 'Hostility', 'enmity', or 'rancor' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0100",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ANIMOSITY**",
+    "options": {
+      "A": "Antipathy",
+      "B": "Enmity",
+      "C": "Benevolence",
+      "D": "Acrimony"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Animosity' means hatred or hostility. 'Benevolence', 'amity', or 'friendliness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

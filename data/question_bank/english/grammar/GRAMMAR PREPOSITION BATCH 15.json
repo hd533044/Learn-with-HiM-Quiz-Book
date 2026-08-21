@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_PREP_701",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'The cat is hiding ___ the bed.'",
+    "options": {
+      "A": "under",
+      "B": "on",
+      "C": "in",
+      "D": "over"
+    },
+    "correct_option": "A",
+    "explanation": "'Under' is the correct preposition to denote position directly below another object.",
+    "tags": ["grammar", "prepositions", "place", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_702",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has great affection towards his younger brother.'",
+    "options": {
+      "A": "He has",
+      "B": "great affection",
+      "C": "towards",
+      "D": "his younger brother."
+    },
+    "correct_option": "C",
+    "explanation": "The noun 'affection' takes the preposition 'for' ('affection for someone'), not 'towards'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_703",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She divided the property ___ her three children.'",
+    "options": {
+      "A": "between",
+      "B": "among",
+      "C": "amidst",
+      "D": "through"
+    },
+    "correct_option": "B",
+    "explanation": "'Among' is used when distributing or dividing something among more than two entities.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_704",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He jumped ___ the swimming pool.'",
+    "options": {
+      "A": "in",
+      "B": "into",
+      "C": "on",
+      "D": "onto"
+    },
+    "correct_option": "B",
+    "explanation": "'Into' indicates movement with direction toward the inside of a space or container.",
+    "tags": ["grammar", "prepositions", "movement", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_705",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He abstains himself from drinking alcohol.'",
+    "options": {
+      "A": "He abstains",
+      "B": "himself from",
+      "C": "drinking alcohol.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Abstain' is an intransitive verb and cannot take a reflexive pronoun ('himself'). It should be 'He abstains from...'",
+    "tags": ["grammar", "prepositions", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_706",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The train is running ___ schedule.'",
+    "options": {
+      "A": "in",
+      "B": "behind",
+      "C": "at",
+      "D": "on"
+    },
+    "correct_option": "B",
+    "explanation": "'Behind schedule' is the standard idiomatic expression for a delay.",
+    "tags": ["grammar", "prepositions", "idiomatic_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_707",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She was born ___ July.'",
+    "options": {
+      "A": "on",
+      "B": "at",
+      "C": "in",
+      "D": "by"
+    },
+    "correct_option": "C",
+    "explanation": "'In' is used for months, years, centuries, and long periods of time.",
+    "tags": ["grammar", "prepositions", "time", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_708",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I congratulated him for his grand success.'",
+    "options": {
+      "A": "I congratulated",
+      "B": "him for",
+      "C": "his grand success.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'congratulate' takes the preposition 'on', not 'for' ('congratulated him on his success').",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_709",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He distributed the rewards ___ the winners.'",
+    "options": {
+      "A": "between",
+      "B": "among",
+      "C": "upon",
+      "D": "to"
+    },
+    "correct_option": "B",
+    "explanation": "When dealing with a group of more than two winners, 'among' is appropriate.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_710",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She is good ___ mathematics.'",
+    "options": {
+      "A": "in",
+      "B": "at",
+      "C": "with",
+      "D": "on"
+    },
+    "correct_option": "B",
+    "explanation": "'Good at' is the standard idiomatic collocation for aptitude in a subject or skill.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_711",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has no control on his children.'",
+    "options": {
+      "A": "He has no",
+      "B": "control on",
+      "C": "his children.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The noun 'control' takes the preposition 'over' ('control over someone').",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_712",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He sailed ___ the Pacific Ocean.'",
+    "options": {
+      "A": "across",
+      "B": "through",
+      "C": "over",
+      "D": "on"
+    },
+    "correct_option": "A",
+    "explanation": "'Across' is used when crossing a surface, area, or line like an ocean or desert.",
+    "tags": ["grammar", "prepositions", "movement", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_713",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'The book consists ___ three chapters.'",
+    "options": {
+      "A": "in",
+      "B": "of",
+      "C": "with",
+      "D": "from"
+    },
+    "correct_option": "B",
+    "explanation": "'Consist of' is used to show what something is composed of.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_714",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She resembles to her mother in appearance.'",
+    "options": {
+      "A": "She resembles",
+      "B": "to her mother",
+      "C": "in appearance.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Resemble' is a transitive verb and does not take any preposition after it. It should be 'She resembles her mother.'",
+    "tags": ["grammar", "prepositions", "transitive_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_715",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He succeeded ___ passing the civil services exam.'",
+    "options": {
+      "A": "to",
+      "B": "in",
+      "C": "at",
+      "D": "by"
+    },
+    "correct_option": "B",
+    "explanation": "'Succeed' takes the preposition 'in' when followed by a gerund.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_716",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'The plane flew ___ the clouds.'",
+    "options": {
+      "A": "above",
+      "B": "over",
+      "C": "under",
+      "D": "below"
+    },
+    "correct_option": "B",
+    "explanation": "'Over' is typically used when movement or position is directly across or higher than an object, often covering it.",
+    "tags": ["grammar", "prepositions", "position", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_717",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'We should abide with the rules of the institution.'",
+    "options": {
+      "A": "We should",
+      "B": "abide with",
+      "C": "the rules of",
+      "D": "the institution."
+    },
+    "correct_option": "B",
+    "explanation": "The phrasal verb meaning to comply with rules is 'abide by', not 'abide with'.",
+    "tags": ["grammar", "prepositions", "phrasal_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_718",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is junior ___ me in the department.'",
+    "options": {
+      "A": "than",
+      "B": "from",
+      "C": "to",
+      "D": "with"
+    },
+    "correct_option": "C",
+    "explanation": "Adjectives ending in '-ior' ('junior', 'senior', 'superior', 'inferior') are followed by 'to'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_719",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She has no taste ___ classical music.'",
+    "options": {
+      "A": "of",
+      "B": "for",
+      "C": "in",
+      "D": "at"
+    },
+    "correct_option": "B",
+    "explanation": "'Taste for' is the standard expression indicating liking or preference for something.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_720",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He ordered for a cup of coffee.'",
+    "options": {
+      "A": "He ordered",
+      "B": "for a cup",
+      "C": "of coffee.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Order' is transitive when used for food or items; it does not take 'for' ('He ordered a cup of coffee').",
+    "tags": ["grammar", "prepositions", "transitive_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_721",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The bridge was built ___ the river.'",
+    "options": {
+      "A": "over",
+      "B": "across",
+      "C": "under",
+      "D": "through"
+    },
+    "correct_option": "A",
+    "explanation": "'Over' is used for structures spanning from one side to another across a barrier like a river.",
+    "tags": ["grammar", "prepositions", "position", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_722",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He is blind ___ his son's faults.'",
+    "options": {
+      "A": "in",
+      "B": "of",
+      "C": "to",
+      "D": "with"
+    },
+    "correct_option": "C",
+    "explanation": "'Blind to' is used metaphorically to mean ignoring or failing to notice flaws.",
+    "tags": ["grammar", "prepositions", "idiomatic_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_723",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She entered into the room quietly.'",
+    "options": {
+      "A": "She entered into",
+      "B": "the room",
+      "C": "quietly.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'Enter' means to go into; adding 'into' is redundant unless used metaphorically (e.g., 'enter into an agreement'). It should be 'She entered the room.'",
+    "tags": ["grammar", "prepositions", "transitive_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_724",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He takes pride ___ his achievements.'",
+    "options": {
+      "A": "on",
+      "B": "in",
+      "C": "at",
+      "D": "with"
+    },
+    "correct_option": "B",
+    "explanation": "The idiom is 'take pride in' something.",
+    "tags": ["grammar", "prepositions", "idiomatic_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_725",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'The police are investigating ___ the matter.'",
+    "options": {
+      "A": "into",
+      "B": "on",
+      "C": "at",
+      "D": "no preposition needed"
+    },
+    "correct_option": "D",
+    "explanation": "'Investigate' is a transitive verb and takes its object directly without a preposition.",
+    "tags": ["grammar", "prepositions", "transitive_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_726",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'We discussed about the political situation.'",
+    "options": {
+      "A": "We discussed",
+      "B": "about the",
+      "C": "political situation.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Discuss' means to talk about; using 'about' after it creates a redundant error. It should be 'We discussed the political situation.'",
+    "tags": ["grammar", "prepositions", "transitive_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_727",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He succeeded ___ winning the championship trophy.'",
+    "options": {
+      "A": "to",
+      "B": "in",
+      "C": "at",
+      "D": "by"
+    },
+    "correct_option": "B",
+    "explanation": "'Succeed in' + gerund is the correct structure.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_728",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She is proficient ___ French.'",
+    "options": {
+      "A": "in",
+      "B": "at",
+      "C": "with",
+      "D": "on"
+    },
+    "correct_option": "A",
+    "explanation": "'Proficient in' is the standard prepositional pairing for languages or skills.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_729",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He reached to Delhi yesterday.'",
+    "options": {
+      "A": "He reached",
+      "B": "to Delhi",
+      "C": "yesterday.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Reach' is transitive and does not take 'to' ('He reached Delhi yesterday').",
+    "tags": ["grammar", "prepositions", "transitive_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_730",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was accused ___ theft.'",
+    "options": {
+      "A": "for",
+      "B": "of",
+      "C": "with",
+      "D": "about"
+    },
+    "correct_option": "B",
+    "explanation": "'Accused of' is the fixed prepositional combination.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_731",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'The book was written ___ Shakespeare.'",
+    "options": {
+      "A": "with",
+      "B": "by",
+      "C": "through",
+      "D": "from"
+    },
+    "correct_option": "B",
+    "explanation": "'By' is used to indicate the agent performing an action in passive voice.",
+    "tags": ["grammar", "prepositions", "passive_voice", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_732",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He writes with ink.'",
+    "options": {
+      "A": "He writes",
+      "B": "with ink.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "When writing using an uncounted medium like ink or paint, use 'in ink' ('writes in ink'), whereas 'with' is used for instruments ('with a pen').",
+    "tags": ["grammar", "prepositions", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_733",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is fearful ___ stray dogs.'",
+    "options": {
+      "A": "from",
+      "B": "of",
+      "C": "with",
+      "D": "at"
+    },
+    "correct_option": "B",
+    "explanation": "'Fearful of' is standard.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_734",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He is suspicious ___ everyone.'",
+    "options": {
+      "A": "of",
+      "B": "with",
+      "C": "from",
+      "D": "against"
+    },
+    "correct_option": "A",
+    "explanation": "'Suspicious of' is the standard expression.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_735",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The train departed from the station in time.'",
+    "options": {
+      "A": "The train departed",
+      "B": "from the station",
+      "C": "in time.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "For scheduled departures, 'on time' (punctual) is correct.",
+    "tags": ["grammar", "prepositions", "idiomatic_usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_736",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is true ___ his words.'",
+    "options": {
+      "A": "to",
+      "B": "with",
+      "C": "for",
+      "D": "in"
+    },
+    "correct_option": "A",
+    "explanation": "'True to one's word' is an established idiomatic expression.",
+    "tags": ["grammar", "prepositions", "idiomatic_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_737",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She confided ___ her best friend.'",
+    "options": {
+      "A": "to",
+      "B": "in",
+      "C": "with",
+      "D": "on"
+    },
+    "correct_option": "B",
+    "explanation": "'Confide in' means to trust someone with secrets or private matters.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_738",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He died from overwork and exhaustion.'",
+    "options": {
+      "A": "He died",
+      "B": "from overwork",
+      "C": "and exhaustion.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "While diseases use 'die of', causes like overwork, hunger, thirst, or wounds use 'die from'. The sentence is correct.",
+    "tags": ["grammar", "prepositions", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_739",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The climate of this region is conducive ___ health.'",
+    "options": {
+      "A": "for",
+      "B": "to",
+      "C": "with",
+      "D": "in"
+    },
+    "correct_option": "B",
+    "explanation": "'Conducive to' means favorable to or tending to produce a result.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_740",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He complied ___ all the regulations.'",
+    "options": {
+      "A": "with",
+      "B": "to",
+      "C": "by",
+      "D": "on"
+    },
+    "correct_option": "A",
+    "explanation": "'Comply with' is standard.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_741",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is married with an engineer.'",
+    "options": {
+      "A": "She is",
+      "B": "married with",
+      "C": "an engineer.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "One is 'married to' someone, not 'married with'.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_742",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He abstained ___ voting in the election.'",
+    "options": {
+      "A": "from",
+      "B": "off",
+      "C": "out",
+      "D": "against"
+    },
+    "correct_option": "A",
+    "explanation": "'Abstain from' is standard.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_743",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'She takes after her mother.' (Meaning: resembles)",
+    "options": {
+      "A": "after",
+      "B": "over",
+      "C": "in",
+      "D": "by"
+    },
+    "correct_option": "A",
+    "explanation": "'Take after' is a phrasal verb meaning to resemble a parent or ancestor.",
+    "tags": ["grammar", "prepositions", "phrasal_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_744",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am disgusted at his rude behavior.'",
+    "options": {
+      "A": "I am disgusted",
+      "B": "at his rude",
+      "C": "behavior.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. 'Disgusted with' or 'disgusted at' are both accepted when referring to behavior.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_745",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is proficient ___ solving complex puzzles.'",
+    "options": {
+      "A": "in",
+      "B": "at",
+      "C": "with",
+      "D": "on"
+    },
+    "correct_option": "A",
+    "explanation": "'Proficient in' takes gerund phrases smoothly.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_746",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'The manager deals ___ office stationery.'",
+    "options": {
+      "A": "with",
+      "B": "in",
+      "C": "at",
+      "D": "on"
+    },
+    "correct_option": "B",
+    "explanation": "'Deal in' means to trade in a commodity; 'deal with' means to handle a person or problem.",
+    "tags": ["grammar", "prepositions", "phrasal_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_747",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has no authority over his subordinates.'",
+    "options": {
+      "A": "He has no",
+      "B": "authority over",
+      "C": "his subordinates.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Authority over' is standard.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_748",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is envious ___ her sister's success.'",
+    "options": {
+      "A": "of",
+      "B": "from",
+      "C": "with",
+      "D": "about"
+    },
+    "correct_option": "A",
+    "explanation": "'Envious of' is standard.",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_749",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct preposition: 'He differs ___ me on this issue.'",
+    "options": {
+      "A": "from",
+      "B": "with",
+      "C": "to",
+      "D": "against"
+    },
+    "correct_option": "B",
+    "explanation": "When differing in opinion with a person, use 'differ with'; when differing in characteristics from something, use 'differ from'.",
+    "tags": ["grammar", "prepositions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PREP_750",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He desisted to do any further work.'",
+    "options": {
+      "A": "He desisted",
+      "B": "to do",
+      "C": "any further work.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Desist' takes the preposition 'from' followed by a gerund ('desisted from doing').",
+    "tags": ["grammar", "prepositions", "fixed_prepositions", "spotting_errors"]
+  }
+]

@@ -1,0 +1,602 @@
+[
+  {
+    "id": "ENG_VOCAB_HOM_2451",
+    "question": "Choose the correct homonym to fill in the blank: 'The sudden gust of wind blew away the delicate _____ of the flower.'",
+    "options": {
+      "A": "petal",
+      "B": "pedal",
+      "C": "metal",
+      "D": "meddle"
+    },
+    "correct_option": "A",
+    "explanation": "'Petal' is a segment of the corolla of a flower, while 'pedal' is a foot-operated lever."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2452",
+    "question": "Fill in the blank: 'It is unwise to _____ in affairs that do not concern you.'",
+    "options": {
+      "A": "metal",
+      "B": "meddle",
+      "C": "model",
+      "D": "muddle"
+    },
+    "correct_option": "B",
+    "explanation": "'Meddle' means to interfere in something that is not one's concern."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2453",
+    "question": "Spot the error: 'Gold is a precious meddle used in jewelry.'",
+    "options": {
+      "A": "Gold is",
+      "B": "a precious meddle",
+      "C": "used in jewelry.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A chemical element like gold or iron is spelled 'metal', whereas 'meddle' means to interfere. Correct: 'a precious metal'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2454",
+    "question": "Fill in the blank: 'The old castle stood in a state of advanced _____.'",
+    "options": {
+      "A": "ruin",
+      "B": "rune",
+      "C": "realm",
+      "D": "reign"
+    },
+    "correct_option": "A",
+    "explanation": "'Ruin' refers to the physical destruction or collapse of a building or structure."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2455",
+    "question": "Fill in the blank: 'The archaeologist carved an ancient _____ onto the stone tablet.'",
+    "options": {
+      "A": "ruin",
+      "B": "rune",
+      "C": "route",
+      "D": "root"
+    },
+    "correct_option": "B",
+    "explanation": "'Rune' is a letter of an ancient Germanic alphabet, thought to have magical powers."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2456",
+    "question": "Spot the error: 'The tree's deep route absorbed essential nutrients from the soil.'",
+    "options": {
+      "A": "The tree's deep route",
+      "B": "absorbed essential",
+      "C": "nutrients from the soil.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The underground part of a plant is a 'root', while a pathway or direction is a 'route'. Correct: 'deep root'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2457",
+    "question": "Fill in the blank: 'The company CEO will _____ the annual shareholders' meeting.'",
+    "options": {
+      "A": "preside",
+      "B": "provide",
+      "C": "proceed",
+      "D": "precede"
+    },
+    "correct_option": "A",
+    "explanation": "'Preside' means to be in charge of a meeting, ceremony, or trial."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2458",
+    "question": "Fill in the blank: 'The government promised to _____ financial relief to the disaster victims.'",
+    "options": {
+      "A": "preside",
+      "B": "provide",
+      "C": "prevent",
+      "D": "propose"
+    },
+    "correct_option": "B",
+    "explanation": "'Provide' means to make available for use; supply."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2459",
+    "question": "Spot the error: 'She tried to deter the criminal from committing the crime.'",
+    "options": {
+      "A": "She tried to deter",
+      "B": "the criminal from",
+      "C": "committing the crime.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Deter' means to discourage someone from doing something through doubt or fear. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2460",
+    "question": "Fill in the blank: 'The detective examined the suspect's _____ to see if he was lying.'",
+    "options": {
+      "A": "demeanor",
+      "B": "diameter",
+      "C": "dilemma",
+      "D": "directive"
+    },
+    "correct_option": "A",
+    "explanation": "'Demeanor' refers to outward behavior or bearing."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2461",
+    "question": "Fill in the blank: 'The tailor measured the _____ of the cylindrical pillar.'",
+    "options": {
+      "A": "demeanor",
+      "B": "diameter",
+      "C": "perimeter",
+      "D": "diagnose"
+    },
+    "correct_option": "B",
+    "explanation": "'Diameter' is a straight line passing from side to side through the center of a body or figure."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2462",
+    "question": "Spot the error: 'The doctor was unable to diagnosis the rare infection.'",
+    "options": {
+      "A": "The doctor was unable",
+      "B": "to diagnosis",
+      "C": "the rare infection.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "After 'to', the base verb form is needed ('diagnose'), not the noun ('diagnosis'). Correct: 'to diagnose'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2463",
+    "question": "Fill in the blank: 'The ship's cargo bay was filled with heavy iron _____.'",
+    "options": {
+      "A": "bars",
+      "B": "barks",
+      "C": "barks",
+      "D": "bears"
+    },
+    "correct_option": "A",
+    "explanation": "'Bars' refers to long, rigid pieces of metal or wood."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2464",
+    "question": "Fill in the blank: 'The protective outer layer of a tree trunk is called _____.'",
+    "options": {
+      "A": "bar",
+      "B": "bark",
+      "C": "board",
+      "D": "branch"
+    },
+    "correct_option": "B",
+    "explanation": "'Bark' is the tough outer covering of woody trees."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2465",
+    "question": "Spot the error: 'The hunting dog began to bark fiercely at the stranger.'",
+    "options": {
+      "A": "The hunting dog",
+      "B": "began to bark",
+      "C": "fiercely at the stranger.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Bark' is used correctly for the sharp sound made by a dog. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2466",
+    "question": "Fill in the blank: 'The knight drew his weapon to _____ off the attackers.'",
+    "options": {
+      "A": "fend",
+      "B": "find",
+      "C": "fond",
+      "D": "feed"
+    },
+    "correct_option": "A",
+    "explanation": "'Fend' means to defend or ward off."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2467",
+    "question": "Fill in the blank: 'The baker used pure vanilla extract for flavoring and sweet _____.'",
+    "options": {
+      "A": "scent",
+      "B": "cent",
+      "C": "sent",
+      "D": "scion"
+    },
+    "correct_option": "A",
+    "explanation": "'Scent' refers to a distinctive smell, typically a pleasant one."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2468",
+    "question": "Spot the error: 'He did not have a single cent left in his bank account.'",
+    "options": {
+      "A": "He did not have",
+      "B": "a single cent",
+      "C": "left in his bank account.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "A monetary unit (penny) is spelled 'cent'. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2469",
+    "question": "Fill in the blank: 'The package was _____ via courier service yesterday.'",
+    "options": {
+      "A": "scent",
+      "B": "cent",
+      "C": "sent",
+      "D": "scion"
+    },
+    "correct_option": "C",
+    "explanation": "'Sent' is the past tense and past participle of 'send'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2470",
+    "question": "Fill in the blank: 'The wealthy industrialist left his entire estate to his only _____.'",
+    "options": {
+      "A": "scent",
+      "B": "scion",
+      "C": "scene",
+      "D": "sine"
+    },
+    "correct_option": "B",
+    "explanation": "'Scion' refers to a descendant of a notable family."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2471",
+    "question": "Fill in the blank: 'The police arrived quickly at the _____ of the accident.'",
+    "options": {
+      "A": "scene",
+      "B": "seen",
+      "C": "sin",
+      "D": "sign"
+    },
+    "correct_option": "A",
+    "explanation": "'Scene' is the place where an incident in real life or fiction occurs."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2472",
+    "question": "Spot the error: 'I have never seen such a breathtaking landscape before.'",
+    "options": {
+      "A": "I have never seen",
+      "B": "such a breathtaking",
+      "C": "landscape before.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Seen' is the correct past participle following 'have'. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2473",
+    "question": "Fill in the blank: 'The hiker lost his way in the dense forest _____.'",
+    "options": {
+      "A": "vale",
+      "B": "veil",
+      "C": "vane",
+      "D": "vein"
+    },
+    "correct_option": "A",
+    "explanation": "'Vale' means a valley."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2474",
+    "question": "Fill in the blank: 'The nurse injected the medicine directly into his _____.'",
+    "options": {
+      "A": "vane",
+      "B": "vein",
+      "C": "vain",
+      "D": "vale"
+    },
+    "correct_option": "B",
+    "explanation": "'Vein' is a blood vessel carrying blood toward the heart."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2475",
+    "question": "Spot the error: 'He checked the weather vane on the rooftop to see the wind direction.'",
+    "options": {
+      "A": "He checked the weather vane",
+      "B": "on the rooftop",
+      "C": "to see the wind direction.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "A weathercock indicating wind direction is spelled 'weather vane'. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2476",
+    "question": "Fill in the blank: 'All his efforts to win the prize proved _____.'",
+    "options": {
+      "A": "vane",
+      "B": "vein",
+      "C": "vain",
+      "D": "vale"
+    },
+    "correct_option": "C",
+    "explanation": "'Vain' means producing no result; useless or futile."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2477",
+    "question": "Fill in the blank: 'The weaver used a traditional wooden _____ to make cloth.'",
+    "options": {
+      "A": "loom",
+      "B": "room",
+      "C": "doom",
+      "D": "gloom"
+    },
+    "correct_option": "A",
+    "explanation": "'Loom' is an apparatus for making fabric by weaving yarn or thread."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2478",
+    "question": "Spot the error: 'Dark storm clouds began to loom on the horizon.'",
+    "options": {
+      "A": "Dark storm clouds",
+      "B": "began to loom",
+      "C": "on the horizon.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Loom' can also mean to appear as a vague threatening shape. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2479",
+    "question": "Fill in the blank: 'The knight raised his heavy iron _____ to strike the shield.'",
+    "options": {
+      "A": "mace",
+      "B": "maze",
+      "C": "mass",
+      "D": "mess"
+    },
+    "correct_option": "A",
+    "explanation": "'Mace' is a heavy spiked club used as a weapon in the Middle Ages."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2480",
+    "question": "Fill in the blank: 'The tourists got lost in the complex garden _____.'",
+    "options": {
+      "A": "mace",
+      "B": "maze",
+      "C": "mass",
+      "D": "muse"
+    },
+    "correct_option": "B",
+    "explanation": "'Maze' is a network of paths and hedges designed as a puzzle."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2481",
+    "question": "Spot the error: 'The priest celebrated morning mass in the cathedral.'",
+    "options": {
+      "A": "The priest celebrated",
+      "B": "morning mass",
+      "C": "in the cathedral.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "A religious service in the Catholic church is 'mass'. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2482",
+    "question": "Fill in the blank: 'The artist paused to _____ over his next painting subject.'",
+    "options": {
+      "A": "muse",
+      "B": "muss",
+      "C": "mute",
+      "D": "moot"
+    },
+    "correct_option": "A",
+    "explanation": "'Muse' means to be absorbed in thought or to reflect deeply."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2483",
+    "question": "Fill in the blank: 'The question of whether the law applied was considered a _____ point.'",
+    "options": {
+      "A": "mute",
+      "B": "moot",
+      "C": "meet",
+      "D": "meat"
+    },
+    "correct_option": "B",
+    "explanation": "A 'moot point' is subject to debate, having little practical relevance."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2484",
+    "question": "Spot the error: 'Please press the remote button to mute the television sound.'",
+    "options": {
+      "A": "Please press the remote button",
+      "B": "to mute the television sound.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Mute' means to deaden or eliminate sound. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2485",
+    "question": "Fill in the blank: 'The hunter tracked the wounded deer through the snowy _____.'",
+    "options": {
+      "A": "moor",
+      "B": "more",
+      "C": "pore",
+      "D": "pour"
+    },
+    "correct_option": "A",
+    "explanation": "'Moor' refers to a tract of open uncultivated upland."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2486",
+    "question": "Fill in the blank: 'Please _____ some hot water into the teapot.'",
+    "options": {
+      "A": "pore",
+      "B": "pour",
+      "C": "poor",
+      "D": "power"
+    },
+    "correct_option": "B",
+    "explanation": "'Pour' means to cause a liquid to flow in a steady stream."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2487",
+    "question": "Spot the error: 'She spent hours pouring over ancient historical texts.'",
+    "options": {
+      "A": "She spent hours",
+      "B": "pouring over",
+      "C": "ancient historical texts.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "To study or examine something attentively is spelled 'pore over', not 'pour over'. Correct: 'poring over'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2488",
+    "question": "Fill in the blank: 'Sweat escapes the human body through tiny skin _____.'",
+    "options": {
+      "A": "pores",
+      "B": "pours",
+      "C": "paws",
+      "D": "pokes"
+    },
+    "correct_option": "A",
+    "explanation": "'Pores' are minute openings in the skin through which sweat or moisture passes."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2489",
+    "question": "Fill in the blank: 'The shepherd used his trained dog to herd the _____.'",
+    "options": {
+      "A": "flock",
+      "B": "frock",
+      "C": "block",
+      "D": "clock"
+    },
+    "correct_option": "A",
+    "explanation": "'Flock' refers to a grouping of sheep, goats, or birds."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2490",
+    "question": "Spot the error: 'The priest wore a long religious frock during the ceremony.'",
+    "options": {
+      "A": "The priest wore a long",
+      "B": "religious frock",
+      "C": "during the ceremony.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "A woman's or child's dress, or a monk's gown, is a 'frock'. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2491",
+    "question": "Fill in the blank: 'The jeweler examined the precious gemstone through a magnifying _____.'",
+    "options": {
+      "A": "lens",
+      "B": "lance",
+      "C": "lense",
+      "D": "line"
+    },
+    "correct_option": "A",
+    "explanation": "'Lens' is a piece of glass or other transparent substance with curved sides for concentrating or dispersing light rays."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2492",
+    "question": "Fill in the blank: 'The medieval knight rode forward brandishing a long wooden _____.'",
+    "options": {
+      "A": "lens",
+      "B": "lance",
+      "C": "line",
+      "D": "lawn"
+    },
+    "correct_option": "B",
+    "explanation": "'Lance' is a long weapon with a wooden shaft and pointed steel head, used by a horseman."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2493",
+    "question": "Spot the error: 'The manager outlined the primary object of the business strategy.'",
+    "options": {
+      "A": "The manager outlined",
+      "B": "the primary object",
+      "C": "of the business strategy.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Object' can function as a noun meaning a goal, purpose, or material item. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2494",
+    "question": "Fill in the blank: 'The artist sketched the delicate _____ of the mountain range.'",
+    "options": {
+      "A": "contour",
+      "B": "cantor",
+      "C": "concur",
+      "D": "conifer"
+    },
+    "correct_option": "A",
+    "explanation": "'Contour' is an outline representing or bounding the shape or form of something."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2495",
+    "question": "Fill in the blank: 'The _____ led the congregation in singing hymns at the service.'",
+    "options": {
+      "A": "contour",
+      "B": "cantor",
+      "C": "cancer",
+      "D": "censor"
+    },
+    "correct_option": "B",
+    "explanation": "'Cantor' is an official who sings liturgical music or leads prayer in a synagogue or church."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2496",
+    "question": "Spot the error: 'Government authorities decided to censor the offensive movie scenes.'",
+    "options": {
+      "A": "Government authorities",
+      "B": "decided to censor",
+      "C": "the offensive movie scenes.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Censor' means to suppress unacceptable parts of a book, film, or document. Correct spelling and usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2497",
+    "question": "Fill in the blank: 'The sudden economic crisis brought financial _____ to many families.'",
+    "options": {
+      "A": "ruin",
+      "B": "rune",
+      "C": "rein",
+      "D": "reign"
+    },
+    "correct_option": "A",
+    "explanation": "'Ruin' represents complete financial or moral collapse."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2498",
+    "question": "Fill in the blank: 'The ship dropped its anchor in the calm _____.'",
+    "options": {
+      "A": "harbor",
+      "B": "arbor",
+      "C": "armor",
+      "D": "author"
+    },
+    "correct_option": "A",
+    "explanation": "'Harbor' is a place on the coast where ships may moor safely."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2499",
+    "question": "Spot the error: 'The author dedicated her new book to her parents.'",
+    "options": {
+      "A": "The author dedicated",
+      "B": "her new book",
+      "C": "to her parents.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Author' is correctly used to describe a writer of a book. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2500",
+    "question": "What is the primary difference between a homophone and a homograph?",
+    "options": {
+      "A": "Homophones sound alike regardless of spelling, while homographs are spelled identically regardless of sound.",
+      "B": "Homophones have opposite meanings.",
+      "C": "Homographs are exclusively used as verbs.",
+      "D": "There is no difference in modern linguistics."
+    },
+    "correct_option": "A",
+    "explanation": "Homophones focus on sound identity, whereas homographs focus on written spelling identity."
+  }
+]

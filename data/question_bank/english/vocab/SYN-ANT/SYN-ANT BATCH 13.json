@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0601",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ICONOCLAST**",
+    "options": {
+      "A": "Conformist",
+      "B": "Rebel",
+      "C": "Adherent",
+      "D": "Traditionalist"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Iconoclast' refers to a person who attacks cherished beliefs or institutions. 'Rebel', 'heretic', or 'dissenter' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0602",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ICONOCLAST**",
+    "options": {
+      "A": "Dissenter",
+      "B": "Heretic",
+      "C": "Conformist",
+      "D": "Nonconformist"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Iconoclast' means one who destroys traditions or sacred images. 'Conformist', 'traditionalist', or 'believer' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0603",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IDIOSYNCRASY**",
+    "options": {
+      "A": "Conformity",
+      "B": "Generality",
+      "C": "Eccentricity",
+      "D": "Normality"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Idiosyncrasy' refers to a mode of behavior or way of thought peculiar to an individual. 'Eccentricity', 'peculiarity', or 'quirk' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0604",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IDIOSYNCRASY**",
+    "options": {
+      "A": "Peculiarity",
+      "B": "Quirk",
+      "C": "Foible",
+      "D": "Conformity"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Idiosyncrasy' is an individual peculiarity. 'Conformity', 'standard', or 'normality' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0605",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IGNOMINIOUS**",
+    "options": {
+      "A": "Disgraceful",
+      "B": "Glorious",
+      "C": "Honorable",
+      "D": "Illustrious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ignominious' means deserving or causing public disgrace or shame. 'Disgraceful', 'shameful', or 'humiliating' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0606",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IGNOMINIOUS**",
+    "options": {
+      "A": "Shameful",
+      "B": "Dishonorable",
+      "C": "Illustrious",
+      "D": "Inglorious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ignominious' means disgraceful and humiliating. 'Illustrious', 'honorable', or 'glorious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0607",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMMUTABLE**",
+    "options": {
+      "A": "Unchangeable",
+      "B": "Variable",
+      "C": "Mutable",
+      "D": "Fluctuating"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Immutable' means unchanging over time or unable to be changed. 'Unchangeable', 'fixed', or 'permanent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0608",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMMUTABLE**",
+    "options": {
+      "A": "Unvarying",
+      "B": "Invariable",
+      "C": "Permanent",
+      "D": "Variable"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Immutable' means incapable of change. 'Variable', 'mutable', or 'alterable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0609",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPASSIVE**",
+    "options": {
+      "A": "Emotional",
+      "B": "Stoical",
+      "C": "Excitable",
+      "D": "Passionate"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Impassive' means not feeling or showing emotion. 'Stoical', 'unemotional', or 'inscrutable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0610",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMPASSIVE**",
+    "options": {
+      "A": "Inexpressive",
+      "B": "Unmoved",
+      "C": "Demonstrative",
+      "D": "Apathetic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Impassive' means showing no emotion. 'Demonstrative', 'expressive', or 'emotional' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0611",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPECUNIOUS**",
+    "options": {
+      "A": "Affluent",
+      "B": "Penniless",
+      "C": "Opulent",
+      "D": "Wealthy"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Impecunious' means having little or no money. 'Penniless', 'destitute', or 'indigent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0612",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMPECUNIOUS**",
+    "options": {
+      "A": "Destitute",
+      "B": "Indigent",
+      "C": "Penurious",
+      "D": "Opulent"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Impecunious' means poor or penniless. 'Opulent', 'wealthy', or 'affluent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0613",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPEDE**",
+    "options": {
+      "A": "Hinder",
+      "B": "Facilitate",
+      "C": "Expedite",
+      "D": "Accelerate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Impede' means to delay or prevent someone or something by obstructing them; hinder. 'Hinder', 'obstruct', or 'hamper' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0614",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMPEDE**",
+    "options": {
+      "A": "Thwart",
+      "B": "Obstruct",
+      "C": "Expedite",
+      "D": "Hamper"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Impede' means to hinder or slow down. 'Expedite', 'facilitate', or 'assist' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0615",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPERIOUS**",
+    "options": {
+      "A": "Overbearing",
+      "B": "Submissive",
+      "C": "Humble",
+      "D": "Servile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Imperious' means assuming power or authority without justification; arrogant and domineering. 'Overbearing', 'domineering', or 'dictatorial' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0616",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMPERIOUS**",
+    "options": {
+      "A": "Domineering",
+      "B": "Dictatorial",
+      "C": "Submissive",
+      "D": "Autocratic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Imperious' means domineering and haughty. 'Submissive', 'humble', or 'servile' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0617",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPERTINENT**",
+    "options": {
+      "A": "Insolent",
+      "B": "Courteous",
+      "C": "Deferential",
+      "D": "Respectful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Impertinent' means not showing proper respect; rude or insolent. 'Insolent', 'impudent', or 'cheeky' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0618",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMPERTINENT**",
+    "options": {
+      "A": "Impudent",
+      "B": "Insolent",
+      "C": "Respectful",
+      "D": "Brazen"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Impertinent' means disrespectful or rude. 'Respectful', 'deferential', or 'polite' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0619",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPLACABLE**",
+    "options": {
+      "A": "Relentless",
+      "B": "Forgiving",
+      "C": "Merciful",
+      "D": "Yielding"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Implacable' means unable to be placated or appeased; relentless. 'Relentless', 'unappeasable', or 'inexorable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0620",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMPLACABLE**",
+    "options": {
+      "A": "Inexorable",
+      "B": "Unbending",
+      "C": "Placable",
+      "D": "Relentless"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Implacable' means impossible to soothe or satisfy. 'Placable', 'forgiving', or 'yielding' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0621",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPLICIT**",
+    "options": {
+      "A": "Tacit",
+      "B": "Explicit",
+      "C": "Stated",
+      "D": "Expressed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Implicit' means implied though not plainly expressed. 'Tacit', 'unspoken', or 'inferred' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0622",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMPLICIT**",
+    "options": {
+      "A": "Inferred",
+      "B": "Tacit",
+      "C": "Explicit",
+      "D": "Unexpressed"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Implicit' means hinted or unspoken. 'Explicit', 'direct', or 'clear' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0623",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPUGN**",
+    "options": {
+      "A": "Challenge",
+      "B": "Validate",
+      "C": "Support",
+      "D": "Endorse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Impugn' means to dispute the truth, validity, or honesty of (a statement or motive); call into question. 'Challenge', 'dispute', or 'query' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0624",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMPUGN**",
+    "options": {
+      "A": "Challenge",
+      "B": "Question",
+      "C": "Vindicate",
+      "D": "Dispute"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Impugn' means to call into question or attack integrity. 'Vindicate', 'defend', or 'corroborate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0625",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPUNITY**",
+    "options": {
+      "A": "Immunity",
+      "B": "Liability",
+      "C": "Accountability",
+      "D": "Vulnerability"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Impunity' means exemption from punishment or freedom from the injurious consequences of an action. 'Immunity', 'exemption', or 'indemnity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0626",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMPUNITY**",
+    "options": {
+      "A": "Exemption",
+      "B": "Liability",
+      "C": "Dispensation",
+      "D": "Immunity"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Impunity' means freedom from penalty. 'Liability', 'accountability', or 'vulnerability' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0627",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INADVERTENT**",
+    "options": {
+      "A": "Unintentional",
+      "B": "Deliberate",
+      "C": "Premeditated",
+      "D": "Intentional"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Inadvertent' means not resulting from or achieved through deliberate planning. 'Unintentional', 'accidental', or 'unwitting' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0628",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INADVERTENT**",
+    "options": {
+      "A": "Unwitting",
+      "B": "Accidental",
+      "C": "Deliberate",
+      "D": "Unintended"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Inadvertent' means accidental or unplanned. 'Deliberate', 'intentional', or 'calculated' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0629",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INANE**",
+    "options": {
+      "A": "Silly",
+      "B": "Sensible",
+      "C": "Meaningful",
+      "D": "Wise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Inane' means silly or stupid. 'Silly', 'fatuous', or 'vacuous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0630",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INANE**",
+    "options": {
+      "A": "Fatuous",
+      "B": "Pointless",
+      "C": "Meaningful",
+      "D": "Absurd"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Inane' means senseless or empty. 'Meaningful', 'profound', or 'sensible' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0631",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INCHOATE**",
+    "options": {
+      "A": "Rudimentary",
+      "B": "Developed",
+      "C": "Mature",
+      "D": "Finished"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Inchoate' means just begun and so not fully formed or developed; rudimentary. 'Rudimentary', 'nascent', or 'embryonic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0632",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INCHOATE**",
+    "options": {
+      "A": "Formless",
+      "B": "Nascent",
+      "C": "Embryonic",
+      "D": "Developed"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Inchoate' means in early stages or unformed. 'Developed', 'mature', or 'completed' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0633",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INCIPIENT**",
+    "options": {
+      "A": "Nascent",
+      "B": "Terminal",
+      "C": "Final",
+      "D": "Mature"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Incipient' means in an initial stage; beginning to happen or develop. 'Nascent', 'embryonic', or 'emerging' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0634",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INCIPIENT**",
+    "options": {
+      "A": "Developing",
+      "B": "Emerging",
+      "C": "Nascent",
+      "D": "Full-blown"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Incipient' means in early beginning stages. 'Full-blown', 'mature', or 'terminal' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0635",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INCONGRUOUS**",
+    "options": {
+      "A": "Incompatible",
+      "B": "Harmonious",
+      "C": "Congruous",
+      "D": "Consistent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Incongruous' means not in harmony or keeping with the surroundings or other aspects of something. 'Incompatible', 'discordant', or 'inconsistent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0636",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INCONGRUOUS**",
+    "options": {
+      "A": "Incompatible",
+      "B": "Harmonious",
+      "C": "Discordant",
+      "D": "Inappropriate"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Incongruous' means out of place or clashing. 'Harmonious', 'fitting', or 'consistent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0637",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INCONTROVERTIBLE**",
+    "options": {
+      "A": "Indisputable",
+      "B": "Questionable",
+      "C": "Debatable",
+      "D": "Ambiguous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Incontrovertible' means not able to be denied or disputed. 'Indisputable', 'irrefutable', or 'unquestionable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0638",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INCONTROVERTIBLE**",
+    "options": {
+      "A": "Irrefutable",
+      "B": "Indisputable",
+      "C": "Debatable",
+      "D": "Certain"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Incontrovertible' means beyond doubt. 'Debatable', 'disputable', or 'questionable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0639",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INCORRIGIBLE**",
+    "options": {
+      "A": "Intractable",
+      "B": "Reformable",
+      "C": "Manageable",
+      "D": "Tractable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Incorrigible' means (of a person or their tendencies) not able to be corrected, improved, or reformed. 'Intractable', 'unreformable', or 'inveterate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0640",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INCORRIGIBLE**",
+    "options": {
+      "A": "Inveterate",
+      "B": "Hopeless",
+      "C": "Reformable",
+      "D": "Hardened"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Incorrigible' means impossible to reform. 'Reformable', 'correctable', or 'repentant' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0641",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INDOLENT**",
+    "options": {
+      "A": "Slothful",
+      "B": "Industrious",
+      "C": "Diligent",
+      "D": "Assiduous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Indolent' means wanting to avoid activity or exertion; lazy. 'Slothful', 'lazy', or 'lethargic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0642",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INDOLENT**",
+    "options": {
+      "A": "Slothful",
+      "B": "Sedentary",
+      "C": "Industrious",
+      "D": "Shiftless"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Indolent' means habitually lazy. 'Industrious', 'diligent', or 'energetic' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0643",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INEFFABLE**",
+    "options": {
+      "A": "Indescribable",
+      "B": "Definable",
+      "C": "Utterable",
+      "D": "Expressible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ineffable' means too great or extreme to be expressed or described in words. 'Indescribable', 'inexpressible', or 'unutterable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0644",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INEFFABLE**",
+    "options": {
+      "A": "Inexpressible",
+      "B": "Indescribable",
+      "C": "Expressible",
+      "D": "Unutterable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ineffable' means beyond words. 'Expressible', 'definable', or 'communicable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0645",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INEXORABLE**",
+    "options": {
+      "A": "Relentless",
+      "B": "Pliant",
+      "C": "Yielding",
+      "D": "Flexible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Inexorable' means impossible to stop or prevent; unyielding. 'Relentless', 'unstoppable', or 'implacable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0646",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INEXORABLE**",
+    "options": {
+      "A": "Relentless",
+      "B": "Implacable",
+      "C": "Yielding",
+      "D": "Unavoidable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Inexorable' means unstoppable and rigid. 'Yielding', 'flexible', or 'appeasable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0647",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INGENIOUS**",
+    "options": {
+      "A": "Inventive",
+      "B": "Unimaginative",
+      "C": "Clumsy",
+      "D": "Inept"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ingenious' means (of a person) clever, original, and inventive. 'Inventive', 'creative', or 'resourceful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0648",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INGENIOUS**",
+    "options": {
+      "A": "Resourceful",
+      "B": "Uninventive",
+      "C": "Inventive",
+      "D": "Astute"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Ingenious' means brilliantly clever and inventive. 'Uninventive', 'clumsy', or 'dull' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0649",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**INGENUOUS**",
+    "options": {
+      "A": "Guileless",
+      "B": "Disingenuous",
+      "C": "Deceitful",
+      "D": "Crafty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ingenuous' means innocent, naive, and unsuspecting; frank. 'Guileless', 'candid', or 'artless' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0650",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**INGENUOUS**",
+    "options": {
+      "A": "Artless",
+      "B": "Naive",
+      "C": "Guileless",
+      "D": "Disingenuous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Ingenuous' means simple and candid. 'Disingenuous', 'cunning', or 'deceitful' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

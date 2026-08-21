@@ -1,0 +1,952 @@
+[
+  {
+    "id": "ENG_PJ_101",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid shift has forced central banks worldwide to reconsider their regulatory frameworks.",
+      "B": "Decentralized digital currencies have experienced unprecedented adoption over the past decade.",
+      "C": "Consequently, policymakers are now actively piloting their own central bank digital currencies.",
+      "D": "What began as a niche cryptographic experiment has transformed into a multi-trillion-dollar asset class."
+    },
+    "options": {
+      "A": "B-D-A-C",
+      "B": "D-B-C-A",
+      "C": "B-A-D-C",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces the broad topic (adoption of decentralized digital currencies). Sentence D elaborates on this growth from experiment to asset class. Sentence A refers back to 'This rapid shift' forcing central banks to respond, and Sentence C presents the consequence ('Consequently, policymakers are now actively piloting...')."
+  },
+  {
+    "id": "ENG_PJ_102",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Marine ecosystems across the globe are experiencing severe stress due to rising ocean temperatures.",
+    "jumbled_sentences": {
+      "P": "When thermal thresholds are exceeded, corals expel their vital symbiotic microalgae.",
+      "Q": "This catastrophic bleaching leaves the underlying calcium carbonate skeletons bare and vulnerable.",
+      "R": "Among the most vulnerable marine structures are tropical scleractinian coral reefs.",
+      "S": "Without these endosymbionts, the host polyps rapidly starve and succumb to infectious disease."
+    },
+    "fixed_end": "6: The resulting collapse of reef frameworks threatens thousands of dependent pelagic species.",
+    "options": {
+      "A": "R-P-Q-S",
+      "B": "P-R-S-Q",
+      "C": "R-P-S-Q",
+      "D": "P-Q-R-S"
+    },
+    "correct_option": "C",
+    "rationale": "Statement 1 introduces ocean thermal stress. Sentence R narrows the focus to tropical coral reefs. Sentence P explains what happens when thermal thresholds are exceeded (expelling microalgae). Sentence S details the immediate biological consequence ('Without these endosymbionts...'). Sentence Q describes the bleaching outcome, leading directly into Sentence 6 (reef framework collapse)."
+  },
+  {
+    "id": "ENG_PJ_103",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "However, excessive reliance on algorithmic automation can introduce systemic cognitive complacency.",
+      "B": "Modern commercial aviation relies heavily on advanced automated flight management systems.",
+      "C": "When rare sensor anomalies occur, pilots may struggle to regain manual situational awareness.",
+      "D": "These sophisticated platforms handle navigation, fuel optimization, and routine aerodynamic control."
+    },
+    "options": {
+      "A": "B-D-A-C",
+      "B": "B-A-D-C",
+      "C": "D-B-A-C",
+      "D": "A-C-B-D"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces automated flight management systems. Sentence D explains what 'These sophisticated platforms' do. Sentence A introduces the counterpoint ('However, excessive reliance...'). Sentence C illustrates the consequence of that complacency during sensor anomalies."
+  },
+  {
+    "id": "ENG_PJ_104",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The Industrial Revolution fundamentally altered the spatial dynamics of human settlements.",
+    "jumbled_sentences": {
+      "P": "Peasant laborers dispossessed by agrarian reforms migrated en masse to manufacturing hubs.",
+      "Q": "This demographic influx triggered unprecedented and unregulated urbanization across northern cities.",
+      "R": "Steam-powered factories required vast concentrations of centralized labor near coalfields and railheads.",
+      "S": "Consequently, high-density tenements proliferated, creating acute public health and sanitation crises."
+    },
+    "fixed_end": "6: Municipal governments were eventually forced to enact sweeping public health and housing legislation.",
+    "options": {
+      "A": "R-P-Q-S",
+      "B": "P-R-S-Q",
+      "C": "R-Q-P-S",
+      "D": "Q-P-R-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 outlines the shift in spatial dynamics. Sentence R explains why factories needed centralized labor. Sentence P shows the migration of dispossessed peasants. Sentence Q describes 'This demographic influx' causing rapid urbanization. Sentence S describes the resulting tenement sanitation crises, leading into Sentence 6 (municipal legislation)."
+  },
+  {
+    "id": "ENG_PJ_105",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "These biological pacemakers synchronize internal metabolic cascades with external day-night cycles.",
+      "B": "Virtually all terrestrial organisms have evolved endogenous circadian rhythms.",
+      "C": "Disrupting this delicate temporal alignment elevates the risk of metabolic and immune disorders.",
+      "D": "In mammals, this master molecular clock resides within the hypothalamic suprachiasmatic nucleus."
+    },
+    "options": {
+      "A": "B-A-D-C",
+      "B": "B-D-A-C",
+      "C": "A-B-D-C",
+      "D": "D-B-A-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces circadian rhythms. Sentence A refers back to 'These biological pacemakers' and their function. Sentence D specifies where the master clock is located in mammals. Sentence C concludes with the pathological effects of disrupting this alignment."
+  },
+  {
+    "id": "ENG_PJ_106",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Classical epigraphy long viewed the Indus Valley script as an undeciphered linguistic enigma.",
+    "jumbled_sentences": {
+      "P": "Most surviving inscriptions are exceptionally brief, averaging four to five characters on steatite seals.",
+      "Q": "Without a bilingual text akin to the Rosetta Stone, definitive translation remains elusive.",
+      "R": "This brevity makes statistical frequency analysis of grammatical syntax exceedingly challenging.",
+      "S": "Furthermore, researchers remain divided on whether the underlying language is Dravidian or Indo-Aryan."
+    },
+    "fixed_end": "6: Modern computational linguists are now deploying machine-learning models to detect latent structural patterns.",
+    "options": {
+      "A": "P-R-S-Q",
+      "B": "P-S-R-Q",
+      "C": "R-P-Q-S",
+      "D": "S-P-R-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the undeciphered Indus script. Sentence P highlights the extreme brevity of inscriptions on seals. Sentence R explains the problem caused by 'This brevity'. Sentence S adds another complication ('Furthermore, researchers remain divided...'). Sentence Q sums up why definitive translation remains elusive, leading into Sentence 6 (computational ML models)."
+  },
+  {
+    "id": "ENG_PJ_107",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Such feedback loops accelerate surface temperature rise far beyond initial radiative forcing.",
+      "B": "Arctic sea ice plays a crucial role in regulating planetary albedo by reflecting solar radiation.",
+      "C": "As global temperatures rise, retreating reflective ice exposes darker ocean water beneath.",
+      "D": "This darker marine surface absorbs significantly more thermal energy, causing further melting."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "C-D-B-A",
+      "C": "B-D-C-A",
+      "D": "C-B-D-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B establishes the baseline function of Arctic sea ice. Sentence C introduces the disruption as temperatures rise. Sentence D explains what 'This darker marine surface' does (absorbing heat). Sentence A synthesizes the phenomenon into 'Such feedback loops'."
+  },
+  {
+    "id": "ENG_PJ_108",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The development of antibiotic therapy was hailed as the greatest medical triumph of the twentieth century.",
+    "jumbled_sentences": {
+      "P": "However, decades of unconstrained agricultural and clinical overuse have eroded their efficacy.",
+      "Q": "Bacterial pathogens have rapidly evolved diverse biochemical resistance mechanisms.",
+      "R": "Horizontal gene transfer via plasmids allows resistance traits to spread across distinct species.",
+      "S": "Consequently, routine bacterial infections are once again becoming potentially lethal clinical hazards."
+    },
+    "fixed_end": "6: Global health agencies now warn of a looming post-antibiotic era unless novel therapeutics are discovered.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-R-P-S",
+      "C": "P-R-Q-S",
+      "D": "Q-P-S-R"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 lauds the initial discovery of antibiotics. Sentence P introduces the turning point ('However, decades of unconstrained...'). Sentence Q describes the emergence of resistance. Sentence R explains how horizontal gene transfer spreads it. Sentence S details the clinical consequence ('Consequently, routine bacterial infections...'), flowing directly into Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_109",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "In response, international consortia are standardizing lattice-based post-quantum cryptography.",
+      "B": "Quantum computers leverage superposition and entanglement to execute complex calculations exponentially faster.",
+      "C": "This computational leap threatens to render conventional RSA and elliptic-curve encryption obsolete.",
+      "D": "Such cryptographic algorithms protect the entirety of global financial transactions and telecommunications."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "D-B-C-A",
+      "D": "C-D-B-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces quantum computation speedups. Sentence C explains the threat to conventional encryption schemes. Sentence D clarifies the importance of 'Such cryptographic algorithms'. Sentence A concludes with the preventative response ('In response, international consortia...')."
+  },
+  {
+    "id": "ENG_PJ_110",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: For millennia, traditional agriculturalists relied on natural precipitation and cyclical river floods.",
+    "jumbled_sentences": {
+      "P": "These large-scale irrigation canals, sluices, and levees required continuous coordinated labor.",
+      "Q": "To maximize crop yields in arid valleys, societies began constructing monumental hydraulic infrastructure.",
+      "R": "This administrative apparatus gradually monopolized authority, giving rise to centralized autocratic states.",
+      "S": "Managing this massive logistical mobilization necessitated a specialized managerial bureaucracy."
+    },
+    "fixed_end": "6: Historian Karl Wittfogel famously codified this evolutionary trajectory as the 'hydraulic hypothesis'.",
+    "options": {
+      "A": "Q-P-S-R",
+      "B": "P-Q-S-R",
+      "C": "Q-S-P-R",
+      "D": "S-R-Q-P"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 sets the early agricultural baseline. Sentence Q introduces the construction of hydraulic infrastructure. Sentence P refers to 'These large-scale irrigation canals' requiring coordinated labor. Sentence S notes that managing this required a bureaucracy. Sentence R shows how this apparatus became a centralized state, linking to Wittfogel's hydraulic hypothesis in Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_111",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "These micro-debris fragments bypass wastewater filtration systems and enter marine food webs.",
+      "B": "Synthetic textiles shed millions of microscopic plastic fibers during routine laundry cycles.",
+      "C": "Over time, accumulating plastic toxins induce severe endocrine and reproductive dysfunctions in aquatic organisms.",
+      "D": "Filter-feeding marine fauna inevitably ingest these synthetic particles, mistaking them for organic plankton."
+    },
+    "options": {
+      "A": "B-A-D-C",
+      "B": "B-D-A-C",
+      "C": "A-B-D-C",
+      "D": "D-C-B-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces synthetic textiles shedding fibers. Sentence A traces how 'These micro-debris fragments' enter marine food webs. Sentence D shows marine fauna ingesting them. Sentence C details the resulting toxicological consequences over time."
+  },
+  {
+    "id": "ENG_PJ_112",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The James Webb Space Telescope was deployed to uncover the earliest epochs of cosmic history.",
+    "jumbled_sentences": {
+      "P": "Its primary gold-coated beryllium mirror captures faint infrared photons emitted over thirteen billion years ago.",
+      "Q": "These ancient signals have been red-shifted by cosmic expansion from visible light into deep infrared wavelengths.",
+      "R": "Spectroscopic instruments analyze this light to determine the chemical composition of primordial galaxies.",
+      "S": "Early data reveals that massive, well-structured galaxies formed much earlier than standard models predicted."
+    },
+    "fixed_end": "6: Consequently, cosmologists are currently revising theoretical frameworks regarding early galactic evolution.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 states JWST's cosmic mission. Sentence P describes its mirror capturing infrared light. Sentence Q explains why 'These ancient signals' are in infrared. Sentence R explains how spectrometers analyze this light. Sentence S presents the unexpected early findings, leading directly to Sentence 6 (revising theoretical frameworks)."
+  },
+  {
+    "id": "ENG_PJ_113",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This asymmetric payoff structure creates a compelling individual incentive to exploit open pastures indefinitely.",
+      "B": "In an unregulated commons, an individual herdsman captures the full economic profit of adding another animal.",
+      "C": "However, the resulting environmental degradation from overgrazing is shared fractionally among all users.",
+      "D": "Inevitably, the cumulative pursuit of individual self-interest precipitates complete ecological collapse."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "A-B-C-D",
+      "D": "C-B-A-D"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B presents the herdsman's positive private gain. Sentence C contrasts this with the distributed collective loss ('However, the resulting environmental degradation...'). Sentence A identifies 'This asymmetric payoff structure' and its incentive. Sentence D concludes with the tragic ecological collapse."
+  },
+  {
+    "id": "ENG_PJ_114",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Language acquisition in early childhood exhibits extraordinary syntactic efficiency.",
+    "jumbled_sentences": {
+      "P": "Despite being exposed to fragmented, imperfect everyday speech, children master complex grammatical structures rapidly.",
+      "Q": "This discrepancy between minimal sensory input and rich structural output is termed the 'poverty of the stimulus'.",
+      "R": "Linguist Noam Chomsky posited that humans are born with an innate Universal Grammar module.",
+      "S": "This biologically hardwired cognitive mechanism allows infants to deduce linguistic rules intuitively."
+    },
+    "fixed_end": "6: Contemporary cognitive neuroscience continues to investigate the neural correlates of this innate capacity.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces child language acquisition. Sentence P describes children mastering syntax despite flawed input. Sentence Q names this 'poverty of the stimulus'. Sentence R introduces Chomsky's Universal Grammar solution. Sentence S elaborates on 'This biologically hardwired cognitive mechanism', connecting to Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_115",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Such algorithmic curation models inadvertently optimize for sensationalism and affective polarization.",
+      "B": "Digital content platforms rely on machine-learning models to maximize user dwell time and interaction velocity.",
+      "C": "Users are progressively insulated within ideological echo chambers that confirm their pre-existing biases.",
+      "D": "Because emotionally provocative posts generate higher engagement, feeds prioritize contentious material."
+    },
+    "options": {
+      "A": "B-D-A-C",
+      "B": "B-A-D-C",
+      "C": "D-B-A-C",
+      "D": "A-C-B-D"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces platform algorithms maximizing dwell time. Sentence D explains why contentious posts generate higher engagement. Sentence A synthesizes this as 'Such algorithmic curation models' optimizing for polarization. Sentence C highlights the resulting insulated echo chambers."
+  },
+  {
+    "id": "ENG_PJ_116",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The 1930s witnessed the birth of the Chicago School of urban sociology.",
+    "jumbled_sentences": {
+      "P": "They conceptualized the expanding industrial metropolis as a series of five concentric geometric rings.",
+      "Q": "Zone I formed the commercial downtown core, surrounded by an unstable, decaying Zone II in transition.",
+      "R": "Sociologists Robert Park and Ernest Burgess applied ecological principles to human residential patterns.",
+      "S": "Outer zones housed working-class families and affluent commuters seeking suburban space."
+    },
+    "fixed_end": "6: This concentric model established urban spatial organization as an active reflection of socioeconomic stratification.",
+    "options": {
+      "A": "R-P-Q-S",
+      "B": "P-R-Q-S",
+      "C": "R-Q-P-S",
+      "D": "P-Q-R-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the Chicago School. Sentence R introduces Park and Burgess applying ecological concepts. Sentence P describes their concentric ring hypothesis. Sentence Q details inner Zones I and II. Sentence S details the outer zones, concluding into Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_117",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "When these floating ice shelves disintegrate, the resistive buttressing force opposing upstream glaciers is lost.",
+      "B": "Rising ocean temperatures drive basal melting along the undersides of marine-terminating ice shelves.",
+      "C": "Consequently, grounded inland ice discharges into the ocean at drastically accelerated velocities.",
+      "D": "This thermal thinning induces structural fracturing, triggering massive iceberg calving events."
+    },
+    "options": {
+      "A": "B-D-A-C",
+      "B": "B-A-D-C",
+      "C": "D-B-A-C",
+      "D": "A-C-B-D"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces warm water melting ice shelves from below. Sentence D explains how 'This thermal thinning' causes fractures and calving. Sentence A explains what happens when shelves disintegrate (loss of buttressing force). Sentence C shows the consequence ('Consequently, grounded inland ice discharges...')."
+  },
+  {
+    "id": "ENG_PJ_118",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Superconductivity is a macroscopic quantum state characterized by zero electrical resistance.",
+    "jumbled_sentences": {
+      "P": "Below a critical temperature, lattice vibrations induce subtle attractive potentials between electrons.",
+      "Q": "This paired state, termed a Cooper pair, allows electrons to behave as composite bosons.",
+      "R": "In standard metals, conducting electrons experience resistance due to collisions with vibrating ionic lattices.",
+      "S": "These composite bosons condense into a coherent ground state that traverses the lattice without scattering."
+    },
+    "fixed_end": "6: Additionally, superconductors completely expel interior magnetic fields via the Meissner effect.",
+    "options": {
+      "A": "R-P-Q-S",
+      "B": "P-Q-R-S",
+      "C": "R-Q-P-S",
+      "D": "P-R-S-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 defines superconductivity. Sentence R explains why normal resistance occurs. Sentence P shows how low temperatures alter electron interactions. Sentence Q introduces 'This paired state, termed a Cooper pair'. Sentence S explains how these bosons move without scattering, linking to the Meissner effect in Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_119",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This cognitive bias leads investors to hold losing assets excessively while selling winners prematurely.",
+      "B": "Prospect Theory demonstrates that human decision-makers evaluate outcomes as gains or losses relative to a reference point.",
+      "C": "Empirical studies reveal that the psychological pain of a loss is twice as intense as the pleasure of an equivalent gain.",
+      "D": "This pronounced asymmetry in emotional weighting is formally termed loss aversion."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-D-B-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces Prospect Theory's reference point evaluation. Sentence C quantifies the difference between losses and gains. Sentence D names 'This pronounced asymmetry' as loss aversion. Sentence A describes the practical consequence in financial markets ('This cognitive bias leads investors...')."
+  },
+  {
+    "id": "ENG_PJ_120",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Deep-sea hydrothermal vents thrive in complete isolation from solar radiation.",
+    "jumbled_sentences": {
+      "P": "Chemoautotrophic bacteria oxidize hydrogen sulfide discharging from mineral chimneys to synthesize organic carbon.",
+      "Q": "These specialized microbial communities form the primary trophic foundation of the entire vent ecosystem.",
+      "R": "Endosymbiotic bacteria live within specialized organs of giant tube worms, providing them with metabolic energy.",
+      "S": "Instead of photosynthesis, these unique biocenoses are powered entirely by chemosynthesis."
+    },
+    "fixed_end": "6: Astrobiologists now view such chemosynthetic environments as prime analogs for potential life on icy moons like Europa.",
+    "options": {
+      "A": "S-P-Q-R",
+      "B": "P-Q-S-R",
+      "C": "S-Q-P-R",
+      "D": "P-S-R-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 highlights the absence of sunlight. Sentence S contrasts photosynthesis with chemosynthesis. Sentence P explains how chemoautotrophic bacteria synthesize organic carbon. Sentence Q notes they form the ecosystem's foundation. Sentence R gives a specific mutualistic example (giant tube worms), leading to Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_121",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health authorities are mandating strict reductions in antibiotic usage across livestock agriculture.",
+      "B": "Agricultural operations routinely administer sub-therapeutic doses of antibiotics to promote livestock growth.",
+      "C": "This continuous low-level exposure creates an ideal selective environment for resistant bacterial strains to emerge.",
+      "D": "These resilient pathogens frequently jump from animal populations into human communities via water runoff and food products."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B outlines the practice of dosing livestock with antibiotics. Sentence C describes how 'This continuous low-level exposure' selects for resistance. Sentence D tracks how 'These resilient pathogens' transfer to humans. Sentence A states the policy consequence ('Consequently, public health authorities...')."
+  },
+  {
+    "id": "ENG_PJ_122",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1912, Alfred Wegener proposed the revolutionary hypothesis of continental drift.",
+    "jumbled_sentences": {
+      "P": "He noted the jigsaw puzzle fit of South America and Africa alongside matching fossil distributions.",
+      "Q": "However, mainstream geologists dismissed his theory because he lacked a viable propulsion mechanism.",
+      "R": "The breakthrough came in the 1960s with the discovery of symmetrical paleomagnetic stripes across mid-ocean ridges.",
+      "S": "This seafloor spreading evidence confirmed that tectonic plates are driven by subterranean mantle convection."
+    },
+    "fixed_end": "6: Today, plate tectonics serves as the unifying paradigm of modern geophysics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Wegener's hypothesis. Sentence P presents his initial observational evidence. Sentence Q explains why geologists initially dismissed it. Sentence R introduces the 1960s paleomagnetic evidence. Sentence S explains seafloor spreading and mantle convection, leading to Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_123",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This enzymatic cleavage induces a targeted double-strand break in the host cell's DNA.",
+      "B": "The CRISPR-Cas9 genome editing complex utilizes a synthetic single-guide RNA to locate target sequences.",
+      "C": "Once complementary base-pairing is established, the Cas9 endonuclease activates its catalytic domains.",
+      "D": "The cell then repairs the break, allowing researchers to knock out genes or insert precise donor sequences."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "A-B-C-D"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces CRISPR-Cas9 using guide RNA. Sentence C describes base pairing and endonuclease activation. Sentence A describes 'This enzymatic cleavage' creating a double-strand break. Sentence D explains the subsequent repair process."
+  },
+  {
+    "id": "ENG_PJ_124",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Karl Popper sought to resolve the long-standing philosophical problem of demarcation.",
+    "jumbled_sentences": {
+      "P": "Logical positivists maintained that scientific theories must be verified through empirical induction.",
+      "Q": "Popper countered that no finite quantity of positive observations can ever logically prove a universal claim.",
+      "R": "Instead, he proposed falsifiability as the definitive criterion distinguishing science from pseudoscience.",
+      "S": "Under this framework, a theory is scientific only if it makes risky predictions capable of being disproven."
+    },
+    "fixed_end": "6: Theories that explain away every contradictory observation fail this test of scientific legitimacy.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Popper and the demarcation problem. Sentence P states the logical positivist view of verification. Sentence Q shows Popper's counter-argument on induction. Sentence R introduces falsifiability. Sentence S explains what makes a theory scientific under this framework, linking directly to Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_125",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "These positive feedback loops create natural monopolies where a single dominant platform captures market share.",
+      "B": "Multi-sided digital platforms benefit from powerful direct and indirect network effects.",
+      "C": "As the user base expands, the platform becomes increasingly valuable to advertisers and developers.",
+      "D": "Consequently, nascent startups face near-insurmountable barrier-to-entry thresholds."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "A-B-C-D"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces network effects in digital platforms. Sentence C describes how expanding user bases attract third parties. Sentence A characterizes 'These positive feedback loops' creating monopolies. Sentence D shows the resulting barrier for startups ('Consequently, nascent startups...')."
+  },
+  {
+    "id": "ENG_PJ_126",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The 1648 Peace of Westphalia concluded decades of catastrophic religious warfare across Europe.",
+    "jumbled_sentences": {
+      "P": "The negotiated treaties formally dismantled the supranational political hegemony of the Holy Roman Empire.",
+      "Q": "In its place, the treaties recognized sovereign states as autonomous, legally equal geopolitical entities.",
+      "R": "Rulers were granted exclusive domestic jurisdiction over their territory and internal religious practices.",
+      "S": "This established the fundamental principle of non-intervention in the domestic affairs of foreign realms."
+    },
+    "fixed_end": "6: The resulting 'Westphalian state system' remains the cornerstone of modern international law.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the Peace of Westphalia. Sentence P describes the dismantling of supranational imperial hegemony. Sentence Q shows the establishment of autonomous sovereign states. Sentence R explains domestic jurisdiction. Sentence S details non-intervention, concluding into Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_127",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This loss of purchasing power erodes consumer confidence and stifles domestic consumption.",
+      "B": "Cost-push inflation occurs when aggregate supply decreases due to surging input and energy costs.",
+      "C": "Firms pass these elevated manufacturing expenses directly onto consumers via higher retail prices.",
+      "D": "As prices escalate across essential goods, real household disposable income contracts sharply."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines cost-push inflation. Sentence C explains firms passing expenses onto consumers. Sentence D shows real disposable income contracting as prices rise. Sentence A sums up the impact ('This loss of purchasing power erodes...')."
+  },
+  {
+    "id": "ENG_PJ_128",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Microglial cells serve as the resident immune macrophages of the central nervous system.",
+    "jumbled_sentences": {
+      "P": "During early brain development, neurons form an excessive, redundant density of synaptic connections.",
+      "Q": "Microglia actively monitor these neural circuits, identifying underutilized or inactive synaptic junctions.",
+      "R": "Complement proteins tag these redundant pathways, signaling microglia to engulf and eliminate them.",
+      "S": "This process of synaptic pruning optimizes the signal-to-noise ratio in developing neural networks."
+    },
+    "fixed_end": "6: Aberrant or excessive microglial pruning in late adolescence is now strongly linked to schizophrenia.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces microglia. Sentence P explains the initial excess of synapses in development. Sentence Q describes microglia monitoring inactive junctions. Sentence R explains complement tagging and engulfment. Sentence S defines 'This process of synaptic pruning', leading into the pathology mentioned in Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_129",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid nativization demonstrates the human brain's innate capacity to construct structured syntax.",
+      "B": "A pidgin emerges as a rudimentary, structurally simplified contact language among multilingual groups.",
+      "C": "When a new generation of children acquires this pidgin as a primary native language, a creole is born.",
+      "D": "These child learners spontaneously expand its vocabulary, regularize grammar, and build complex tense systems."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines a pidgin. Sentence C describes the emergence of a creole when children learn it. Sentence D explains how 'These child learners' add complex grammatical structures. Sentence A identifies 'This rapid nativization' as proof of innate linguistic capacity."
+  },
+  {
+    "id": "ENG_PJ_130",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: During main-sequence stellar evolution, gravitational collapse is held in check by nuclear fusion.",
+    "jumbled_sentences": {
+      "P": "Hydrogen nuclei fuse into helium within the core, releasing outward thermal radiation pressure.",
+      "Q": "When core hydrogen is exhausted, massive stars fuse progressively heavier elements up to iron-56.",
+      "R": "Because iron fusion is endothermic, it absorbs rather than releases outward thermal energy.",
+      "S": "Deprived of radiation pressure, the core undergoes sudden, catastrophic gravitational collapse."
+    },
+    "fixed_end": "6: The resulting rebound shockwave triggers a violent Type II core-collapse supernova explosion.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 sets the balance between gravity and fusion. Sentence P explains hydrogen fusion providing outward pressure. Sentence Q moves to heavier element fusion up to iron. Sentence R explains that iron fusion is endothermic. Sentence S details the resulting core collapse, culminating in the supernova in Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_131",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "These micro-scale physical interactions collectively grant Roman concrete remarkable self-healing properties.",
+      "B": "Ancient Roman concrete monuments have withstood two millennia of weathering and seismic activity.",
+      "C": "When exposed to moisture, this volcanic mixture precipitates rare tobermorite crystals across micro-cracks.",
+      "D": "Engineers incorporated reactive volcanic pozzolana ash and quicklime into their marine mortar formulations."
+    },
+    "options": {
+      "A": "B-D-C-A",
+      "B": "B-C-D-A",
+      "C": "D-B-C-A",
+      "D": "D-C-B-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B presents the historical durability of Roman monuments. Sentence D explains the chemical ingredients (pozzolana ash and quicklime). Sentence C explains how 'this volcanic mixture' reacts with moisture to form crystals. Sentence A synthesizes this as 'These micro-scale physical interactions' enabling self-healing."
+  },
+  {
+    "id": "ENG_PJ_132",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Modern neoclassical economics long viewed negative externalities as market failures requiring state taxes.",
+    "jumbled_sentences": {
+      "P": "In 1960, economist Ronald Coase challenged this orthodoxy by arguing that externalities are reciprocal.",
+      "Q": "He demonstrated that restricting a factory's emissions harms the producer just as pollution harms neighbors.",
+      "R": "The Coase Theorem proves that if property rights are clear and transaction costs zero, parties will bargain efficiently.",
+      "S": "Under these conditions, an optimal resource allocation is reached regardless of initial entitlement assignments."
+    },
+    "fixed_end": "6: However, in real-world contexts with high bargaining friction, state regulation remains indispensable.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 describes the traditional view on externalities. Sentence P introduces Coase's challenge. Sentence Q explains the reciprocal nature of harm. Sentence R states the Coase Theorem premise. Sentence S explains the allocation outcome under zero transaction costs, leading into the real-world caveat in Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_133",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid depolarization causes voltage-gated calcium channels to open at the presynaptic terminal.",
+      "B": "An electrical action potential travels rapidly down the length of a neuronal axon.",
+      "C": "Influx of calcium triggers synaptic vesicles to fuse with the membrane, releasing neurotransmitters.",
+      "D": "These chemical messengers diffuse across the synaptic cleft to bind with postsynaptic receptors."
+    },
+    "options": {
+      "A": "B-A-C-D",
+      "B": "B-C-A-D",
+      "C": "A-B-C-D",
+      "D": "C-D-B-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B starts with the action potential traveling down the axon. Sentence A explains that 'This rapid depolarization' opens calcium channels. Sentence C shows calcium triggering neurotransmitter release. Sentence D follows 'These chemical messengers' diffusing across the synaptic cleft."
+  },
+  {
+    "id": "ENG_PJ_134",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1803, the United States Supreme Court decided the landmark case of Marbury v. Madison.",
+    "jumbled_sentences": {
+      "P": "Chief Justice John Marshall established that the Constitution is the paramount, supreme law of the land.",
+      "Q": "He argued that any legislative statute conflicting with constitutional provisions is inherently void.",
+      "R": "Marshall famously declared that it is emphatically the province of the judiciary to say what the law is.",
+      "S": "This ruling formally codified the doctrine of judicial review within the American legal system."
+    },
+    "fixed_end": "6: Ever since, the judiciary has served as the ultimate institutional arbiter of constitutional boundaries.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Marbury v. Madison. Sentence P establishes the Constitution as paramount law. Sentence Q shows that conflicting statutes are void. Sentence R quotes Marshall on the judiciary's duty. Sentence S identifies this as the formal establishment of judicial review, leading to Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_135",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, improving engine efficiency multiplied aggregate national coal extraction rather than reducing it.",
+      "B": "In 1865, economist William Stanley Jevons analyzed the impact of technological improvements on coal usage.",
+      "C": "As steam engines became more fuel-efficient, the unit cost of mechanical power dropped significantly.",
+      "D": "This cost reduction spurred widespread adoption across railways, metallurgy, and manufacturing industries."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces Jevons analyzing coal usage. Sentence C explains how fuel efficiency lowered unit costs. Sentence D describes 'This cost reduction' driving broad adoption. Sentence A states the paradoxical conclusion ('Consequently, improving engine efficiency multiplied...')."
+  },
+  {
+    "id": "ENG_PJ_136",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Direct air capture technologies extract carbon dioxide directly from ambient atmosphere.",
+    "jumbled_sentences": {
+      "P": "Because atmospheric CO2 is extremely dilute (around 420 ppm), enormous volumes of air must be processed.",
+      "Q": "Chemical sorbents bind the CO2 molecules, separating them from ambient oxygen and nitrogen.",
+      "R": "The captured gas is then heated to high temperatures to release a pure, concentrated CO2 stream.",
+      "S": "This concentrated gas is compressed and injected into deep basalt formations for permanent mineralization."
+    },
+    "fixed_end": "6: Scaling this infrastructure globally is essential to achieving net-negative emissions targets.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces direct air capture. Sentence P explains the challenge of low concentration requiring high volume. Sentence Q describes chemical sorbent capture. Sentence R explains thermal desorption of pure CO2. Sentence S details compression and underground mineralization, leading to Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_137",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "These acquired mobile cassettes encode diverse defense enzymes like extended-spectrum beta-lactamases.",
+      "B": "Horizontal gene transfer allows bacteria to rapidly share antibiotic resistance genes across species.",
+      "C": "Plasmids containing resistance traits are transferred directly through conjugative pili.",
+      "D": "As a result, exposed pathogens neutralize clinical antibiotics and survive aggressive treatments."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces horizontal gene transfer. Sentence C explains the mechanism of plasmid transfer via pili. Sentence A details what 'These acquired mobile cassettes' encode. Sentence D concludes with the clinical consequence ('As a result, exposed pathogens...')."
+  },
+  {
+    "id": "ENG_PJ_138",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The term 'banality of evil' was coined by political theorist Hannah Arendt in 1963.",
+    "jumbled_sentences": {
+      "P": "She attended the Jerusalem trial of Nazi bureaucrat Adolf Eichmann, expecting a sadistic monster.",
+      "Q": "Instead, Arendt encountered an ordinary, unreflective functionary motivated by careerist ambition.",
+      "R": "Eichmann had completely abdicated his capacity for critical moral judgment and independent thought.",
+      "S": "She argued that catastrophic atrocities can be executed by regular citizens caught in bureaucratic conformity."
+    },
+    "fixed_end": "6: Her thesis challenged traditional assumptions that monumental evil requires monstrous psychological pathology.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Arendt's phrase. Sentence P describes her expectation at Eichmann's trial. Sentence Q shows her actual observation of an unreflective bureaucrat. Sentence R highlights his abdication of moral thought. Sentence S states her broader argument about bureaucratic conformity, connecting smoothly to Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_139",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid cooling induces sea ice formation, triggering brine rejection that expels dense salts.",
+      "B": "The Atlantic Meridional Overturning Circulation transports warm, saline water to the high North Atlantic.",
+      "C": "This hyper-dense water plunges to the ocean floor, forming North Atlantic Deep Water.",
+      "D": "Upon reaching subpolar seas, these surface waters lose heat to the cold polar atmosphere."
+    },
+    "options": {
+      "A": "B-D-A-C",
+      "B": "B-A-D-C",
+      "C": "D-B-A-C",
+      "D": "A-C-B-D"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces the northward transport of warm water by AMOC. Sentence D shows these waters cooling in subpolar seas. Sentence A explains that 'This rapid cooling' leads to ice formation and brine rejection. Sentence C concludes with the sinking of 'This hyper-dense water' to form NADW."
+  },
+  {
+    "id": "ENG_PJ_140",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1865, Gregor Mendel published his foundational hybridization experiments on garden peas.",
+    "jumbled_sentences": {
+      "P": "He demonstrated that phenotypic physical traits are inherited as discrete, particulate hereditary units.",
+      "Q": "These particulate factors, which we now know as alleles, segregate independently during gamete formation.",
+      "R": "However, the contemporary nineteenth-century scientific community largely ignored his mathematical findings.",
+      "S": "It was not until 1900 that botanists independently rediscovered and verified Mendel's hereditary laws."
+    },
+    "fixed_end": "6: This rediscovery catalyzed the Modern Synthesis uniting Mendelian genetics with Darwinian evolution.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Mendel's 1865 experiments. Sentence P explains his discovery of discrete hereditary units. Sentence Q explains allele segregation. Sentence R notes the contemporary neglect of his work ('However, the contemporary nineteenth-century...'). Sentence S describes their 1900 rediscovery, leading to the Modern Synthesis in Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_141",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Such choice architecture harnesses human inertia to dramatically boost retirement savings.",
+      "B": "Default options exert a powerful subconscious influence on human decision-making.",
+      "C": "When companies switch enrollment from opt-in to automatic opt-out, employee participation surges.",
+      "D": "Under opt-in systems, many employees procrastinate indefinitely despite desiring to save money."
+    },
+    "options": {
+      "A": "B-D-C-A",
+      "B": "B-C-D-A",
+      "C": "D-C-B-A",
+      "D": "A-B-D-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B establishes the general power of default options. Sentence D describes the friction of opt-in systems. Sentence C contrasts this with the surge when switching to automatic opt-out. Sentence A concludes with 'Such choice architecture' harnessing inertia."
+  },
+  {
+    "id": "ENG_PJ_142",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1916, Albert Einstein predicted the existence of gravitational waves in General Relativity.",
+    "jumbled_sentences": {
+      "P": "He calculated that accelerating massive objects would produce ripples propagating through spacetime.",
+      "Q": "However, because gravitational interactions are faint, direct detection was deemed nearly impossible.",
+      "R": "A century later, the LIGO collaboration constructed kilometer-scale laser interferometers.",
+      "S": "In September 2015, LIGO detected the gravitational wave strain from colliding black holes."
+    },
+    "fixed_end": "6: This triumph inaugurated the modern era of multi-messenger gravitational astrophysics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Einstein's 1916 prediction. Sentence P explains spacetime ripples from accelerating mass. Sentence Q notes the difficulty of detection. Sentence R introduces LIGO's laser interferometers a century later. Sentence S records the historic 2015 detection, concluding into Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_143",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This non-linear dispersion allows electrons to behave as massless relativistic Dirac fermions.",
+      "B": "Graphene consists of a single two-dimensional layer of carbon atoms in a honeycomb lattice.",
+      "C": "Its unique band structure features conical touching points known as Dirac points.",
+      "D": "Consequently, graphene exhibits exceptional electrical conductivity and quantum Hall effects at room temperature."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines graphene's 2D lattice. Sentence C describes its band structure and Dirac points. Sentence A explains the physical behavior resulting from 'This non-linear dispersion'. Sentence D concludes with 'Consequently, graphene exhibits...'"
+  },
+  {
+    "id": "ENG_PJ_144",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Throughout the mid-twentieth century, many developing nations adopted Import Substitution Industrialization.",
+    "jumbled_sentences": {
+      "P": "Governments erected high protective tariffs to shield fledgling domestic industries from foreign competition.",
+      "Q": "Subsidized loans and state-backed manufacturing enterprises were established to produce consumer goods.",
+      "R": "However, protracted protectionism fostered chronic operational inefficiencies and poor product quality.",
+      "S": "Furthermore, high capital import costs induced severe sovereign debt and balance-of-payments crises."
+    },
+    "fixed_end": "6: By the late twentieth century, structural exhaustion forced these nations to embrace open trade liberalization.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Import Substitution Industrialization. Sentence P describes protective tariffs. Sentence Q outlines state subsidies and manufacturing. Sentence R introduces the resulting inefficiencies ('However, protracted protectionism...'). Sentence S adds debt crises ('Furthermore, high capital import costs...'), leading to trade liberalization in Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_145",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid release of chemical energy drives rapid physiological fight-or-flight reactions.",
+      "B": "Perceived threats trigger the hypothalamic-pituitary-adrenal axis to release stress hormones.",
+      "C": "Cortisol and adrenaline surge through the bloodstream, elevating heart rate and blood glucose levels.",
+      "D": "While adaptive in acute emergencies, chronic activation of this pathway causes cardiovascular damage."
+    },
+    "options": {
+      "A": "B-C-A-D",
+      "B": "B-A-C-D",
+      "C": "C-B-A-D",
+      "D": "A-B-C-D"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B describes perceived threats activating the HPA axis. Sentence C details the surge of cortisol and adrenaline. Sentence A explains that 'This rapid release of chemical energy' powers fight-or-flight. Sentence D provides the contrast with chronic activation risks."
+  },
+  {
+    "id": "ENG_PJ_146",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Eusocial insect colonies display extraordinary levels of reproductive and behavioral division of labor.",
+    "jumbled_sentences": {
+      "P": "Sterile worker castes dedicate their entire lifespans to foraging and defending the colony.",
+      "Q": "This apparent evolutionary altruism long puzzled biologists adhering to individual natural selection.",
+      "R": "W.D. Hamilton resolved this dilemma by formulating the theory of kin selection and inclusive fitness.",
+      "S": "He showed that workers propagate their own genes indirectly by rearing closely related sisters."
+    },
+    "fixed_end": "6: In haplodiploid Hymenoptera, high genetic relatedness among sisters strongly reinforces this cooperation.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces eusocial colony structure. Sentence P describes sterile worker castes. Sentence Q raises the puzzle of altruism. Sentence R introduces Hamilton's kin selection. Sentence S explains indirect genetic propagation through rearing sisters, linking directly to haplodiploid genetics in Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_147",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This sudden collapse of asset prices triggers panic selling and widespread institutional insolvency.",
+      "B": "Speculative financial bubbles develop when asset prices detach from underlying fundamental valuations.",
+      "C": "Excessive leverage and euphoric optimism drive market prices to unsustainable speculative peaks.",
+      "D": "When market sentiment inevitably reverses, buyers evaporate and market liquidity dries up completely."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines speculative bubbles. Sentence C describes leverage and euphoria pushing prices to peaks. Sentence D shows sentiment reversing and liquidity drying up. Sentence A concludes with 'This sudden collapse of asset prices' causing insolvency."
+  },
+  {
+    "id": "ENG_PJ_148",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: Modernist literature emerged in the early twentieth century as a reaction against Victorian realism.",
+    "jumbled_sentences": {
+      "P": "Victorian novelists relied on authoritative omniscient narrators to depict an objective moral reality.",
+      "Q": "Modernist writers rejected this convention, viewing human experience as subjective and fragmented.",
+      "R": "Authors like James Joyce and Virginia Woolf pioneered stream-of-consciousness narrative techniques.",
+      "S": "Linear chronological timelines were shattered to mirror the associative inner workings of human memory."
+    },
+    "fixed_end": "6: Consequently, literary truth was reconceptualized as an internal psychological reality.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces modernism vs. Victorian realism. Sentence P describes Victorian omniscient realism. Sentence Q explains the modernist rejection of this objective view. Sentence R names key authors using stream-of-consciousness. Sentence S details temporal fragmentation, leading to Sentence 6."
+  },
+  {
+    "id": "ENG_PJ_149",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, central banks in open economies must choose between exchange rate stability and monetary autonomy.",
+      "B": "The Mundell-Fleming trilemma states that an economy cannot simultaneously achieve three macroeconomic goals.",
+      "C": "These goals comprise a fixed exchange rate, free capital mobility, and an independent monetary policy.",
+      "D": "If capital moves freely, attempting to fix exchange rates while setting interest rates triggers capital flight."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces the trilemma's impossibility theorem. Sentence C lists 'These goals'. Sentence D explains the mechanism of failure when attempting all three under free capital flows. Sentence A summarizes the necessary policy trade-off ('Consequently, central banks...')."
+  },
+  {
+    "id": "ENG_PJ_150",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: The Permian-Triassic extinction eliminated over ninety percent of all marine species.",
+    "jumbled_sentences": {
+      "P": "Massive flood basalt eruptions in the Siberian Traps released immense volumes of greenhouse gases.",
+      "Q": "This volcanic pulse caused rapid atmospheric warming and widespread ocean acidification.",
+      "R": "Anoxic, low-oxygen conditions expanded across ocean basins, suffocating marine invertebrates.",
+      "S": "Terrestrial ecosystems experienced catastrophic collapse, destroying complex forest biomes."
+    },
+    "fixed_end": "6: Life on Earth required over five million years to re-establish stable ecological diversity.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 establishes the severity of the Permian-Triassic extinction. Sentence P identifies the Siberian Traps volcanic trigger. Sentence Q explains the greenhouse warming and acidification. Sentence R describes marine anoxia and invertebrate suffocation. Sentence S describes terrestrial collapse, concluding into the 5-million-year recovery timeline in Sentence 6."
+  }
+]

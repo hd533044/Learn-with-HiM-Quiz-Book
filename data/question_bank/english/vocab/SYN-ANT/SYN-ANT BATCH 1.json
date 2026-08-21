@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0001",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABATE**",
+    "options": {
+      "A": "Subside",
+      "B": "Enlarge",
+      "C": "Intensify",
+      "D": "Prolong"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abate' means to lessen, reduce in intensity, or subside. 'Subside' is the exact synonym. 'Intensify' and 'enlarge' are antonyms.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0002",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABATE**",
+    "options": {
+      "A": "Mitigate",
+      "B": "Dwindle",
+      "C": "Aggravate",
+      "D": "Wane"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Abate' means to diminish or ease. 'Aggravate' or 'intensify' means to increase or make worse, making it the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0003",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABERRANT**",
+    "options": {
+      "A": "Abnormal",
+      "B": "Conforming",
+      "C": "Conventional",
+      "D": "Customary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Aberrant' means deviating from the normal, standard, or expected type. 'Abnormal' or 'deviant' is its direct synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0004",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABERRANT**",
+    "options": {
+      "A": "Atypical",
+      "B": "Anomalous",
+      "C": "Typical",
+      "D": "Eccentric"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Aberrant' means unusual or deviating from the norm. 'Typical' or 'normal' serves as its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0005",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABEYANCE**",
+    "options": {
+      "A": "Continuation",
+      "B": "Suspension",
+      "C": "Operation",
+      "D": "Revival"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Abeyance' refers to a state of temporary disuse, postponement, or suspension.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0006",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABEYANCE**",
+    "options": {
+      "A": "Resumption",
+      "B": "Dormancy",
+      "C": "Latency",
+      "D": "Stagnation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abeyance' is a temporary halt or cessation; 'Resumption' or 'continuation' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0007",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABHOR**",
+    "options": {
+      "A": "Relish",
+      "B": "Detest",
+      "C": "Admire",
+      "D": "Cherish"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Abhor' means to regard with disgust and hatred. 'Detest' or 'loathe' is the exact synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0008",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABHOR**",
+    "options": {
+      "A": "Despise",
+      "B": "Abominate",
+      "C": "Admire",
+      "D": "Scorn"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Abhor' means to hate deeply. Its opposite is 'Admire', 'love', or 'cherish'.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0009",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABJURE**",
+    "options": {
+      "A": "Renounce",
+      "B": "Embrace",
+      "C": "Adopt",
+      "D": "Espouse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abjure' means to solemnly renounce or give up a belief, claim, or course of action. 'Renounce' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0010",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABJURE**",
+    "options": {
+      "A": "Repudiate",
+      "B": "Forswear",
+      "C": "Relinquish",
+      "D": "Espouse"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Abjure' means to formally reject, whereas 'Espouse' means to adopt, support, or embrace.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0011",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABLUTION**",
+    "options": {
+      "A": "Cleansing",
+      "B": "Contamination",
+      "C": "Pollution",
+      "D": "Desecration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ablution' refers to the act of washing oneself, especially as a religious rite. 'Cleansing' or 'purification' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0012",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABNEGATION**",
+    "options": {
+      "A": "Renunciation",
+      "B": "Indulgence",
+      "C": "Denial",
+      "D": "Relinquishment"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Abnegation' is the act of renouncing or rejecting something (self-denial). Its antonym is 'Indulgence' or 'acceptance'.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0013",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABORTIVE**",
+    "options": {
+      "A": "Fruitful",
+      "B": "Productive",
+      "C": "Futile",
+      "D": "Successful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Abortive' means failing to produce the intended result; unsuccessful or futile.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0014",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABORTIVE**",
+    "options": {
+      "A": "Vain",
+      "B": "Unsuccessful",
+      "C": "Ineffectual",
+      "D": "Productive"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Abortive' means failed or useless. 'Productive', 'successful', or 'efficacious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0015",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABRADE**",
+    "options": {
+      "A": "Erode",
+      "B": "Smoothen",
+      "C": "Polish",
+      "D": "Protect"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abrade' means to scrape, wear away, or rub off by friction. 'Erode' or 'wear down' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0016",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABRIDGE**",
+    "options": {
+      "A": "Shorten",
+      "B": "Expand",
+      "C": "Condense",
+      "D": "Truncate"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Abridge' means to shorten or condense a text. 'Expand', 'lengthen', or 'amplify' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0017",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABROGATE**",
+    "options": {
+      "A": "Enact",
+      "B": "Revoke",
+      "C": "Ratify",
+      "D": "Establish"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Abrogate' means to repeal, abolish, or formally annul a law, right, or formal agreement. 'Revoke' or 'repeal' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0018",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABROGATE**",
+    "options": {
+      "A": "Rescind",
+      "B": "Annul",
+      "C": "Ratify",
+      "D": "Quash"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Abrogate' means to repeal or cancel. 'Ratify', 'institute', or 'enforce' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0019",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABSCISSION**",
+    "options": {
+      "A": "Severance",
+      "B": "Attachment",
+      "C": "Adhesion",
+      "D": "Junction"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abscission' refers to the act of cutting off or the natural detachment of plant parts. 'Severance' or 'removal' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0020",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABSCOND**",
+    "options": {
+      "A": "Decamp",
+      "B": "Flee",
+      "C": "Vanish",
+      "D": "Appear"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Abscond' means to leave hurriedly and secretly to escape custody. 'Appear', 'arrive', or 'stay' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0021",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABSOLVE**",
+    "options": {
+      "A": "Condemn",
+      "B": "Inculpate",
+      "C": "Exonerate",
+      "D": "Incriminate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Absolve' means to declare someone free from guilt, blame, or punishment. 'Exonerate' or 'acquit' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0022",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABSOLVE**",
+    "options": {
+      "A": "Vindicate",
+      "B": "Pardon",
+      "C": "Acquit",
+      "D": "Blame"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Absolve' means to clear of blame. 'Blame', 'convict', or 'charge' is its opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0023",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABSTAIN**",
+    "options": {
+      "A": "Refrain",
+      "B": "Indulge",
+      "C": "Partake",
+      "D": "Participate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abstain' means to restrain oneself from doing or enjoying something. 'Refrain' or 'desist' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0024",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABSTEMIOUS**",
+    "options": {
+      "A": "Ascetic",
+      "B": "Gluttonous",
+      "C": "Temperate",
+      "D": "Frugal"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Abstemious' means indulging only very moderately in food and drink. 'Gluttonous', 'greedy', or 'self-indulgent' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0025",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABSTRUSE**",
+    "options": {
+      "A": "Lucid",
+      "B": "Obscure",
+      "C": "Obvious",
+      "D": "Manifest"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Abstruse' means difficult to understand, esoteric, or obscure.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0026",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABSTRUSE**",
+    "options": {
+      "A": "Recondite",
+      "B": "Arcane",
+      "C": "Esoteric",
+      "D": "Pellucid"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Abstruse' means puzzling or hard to comprehend. 'Pellucid', 'clear', or 'transparent' is its opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0027",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ABYSMAL**",
+    "options": {
+      "A": "Dreadful",
+      "B": "Superb",
+      "C": "Exemplary",
+      "D": "Outstanding"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Abysmal' means extremely bad, appalling, or bottomless. 'Dreadful', 'atrocious', or 'terrible' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0028",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ABYSMAL**",
+    "options": {
+      "A": "Appalling",
+      "B": "Deplorable",
+      "C": "Excruciating",
+      "D": "Terrific"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Abysmal' means exceedingly bad. 'Terrific', 'excellent', or 'superb' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0029",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACCEDE**",
+    "options": {
+      "A": "Consent",
+      "B": "Refuse",
+      "C": "Dissent",
+      "D": "Decline"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Accede' means to agree to a demand, request, or treaty. 'Consent', 'concur', or 'comply' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0030",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACCEDE**",
+    "options": {
+      "A": "Acquiesce",
+      "B": "Dissent",
+      "C": "Yield",
+      "D": "Concur"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Accede' means to agree. 'Dissent', 'refuse', or 'reject' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0031",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACCELERATE**",
+    "options": {
+      "A": "Hasten",
+      "B": "Retard",
+      "C": "Impede",
+      "D": "Delay"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Accelerate' means to increase speed or hasten the progress of something. 'Hasten' or 'expedite' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0032",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACCELERATE**",
+    "options": {
+      "A": "Quicken",
+      "B": "Hurry",
+      "C": "Retard",
+      "D": "Spur"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Accelerate' means to speed up. 'Retard', 'decelerate', or 'delay' is the opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0033",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACCOLADE**",
+    "options": {
+      "A": "Tribute",
+      "B": "Censure",
+      "C": "Rebuke",
+      "D": "Reprimand"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. An 'accolade' is an award, praise, or privilege granted as a special honor. 'Tribute' or 'kudos' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0034",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACCOLADE**",
+    "options": {
+      "A": "Honor",
+      "B": "Laurel",
+      "C": "Critique",
+      "D": "Condemnation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Accolade' means high praise or an award. 'Condemnation', 'censure', or 'disapproval' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0035",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACCOMMODATING**",
+    "options": {
+      "A": "Obliging",
+      "B": "Hostile",
+      "C": "Obstinate",
+      "D": "Stubborn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Accommodating' means willing to fit in with someone's wishes or needs; helpful. 'Obliging' or 'cooperative' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0036",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACCOMPLICE**",
+    "options": {
+      "A": "Confederate",
+      "B": "Abettor",
+      "C": "Adversary",
+      "D": "Associate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. An 'accomplice' is a partner in wrongdoing. An 'adversary' or 'opponent' acts against them, making it the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0037",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACCORD**",
+    "options": {
+      "A": "Concord",
+      "B": "Discord",
+      "C": "Dispute",
+      "D": "Friction"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Accord' means an official agreement, harmony, or consensus. 'Concord' or 'unanimity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0038",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACCORD**",
+    "options": {
+      "A": "Consensus",
+      "B": "Harmony",
+      "C": "Treaty",
+      "D": "Discord"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Accord' denotes agreement and harmony. 'Discord', 'conflict', or 'dissent' is the direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0039",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACCRUE**",
+    "options": {
+      "A": "Accumulate",
+      "B": "Dissipate",
+      "C": "Diminish",
+      "D": "Disperse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Accrue' means to accumulate, grow, or be received in regular or increasing amounts over time.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0040",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACERBIC**",
+    "options": {
+      "A": "Caustic",
+      "B": "Mellifluous",
+      "C": "Biting",
+      "D": "Astringent"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Acerbic' means sharp, sour, or harsh in tone. 'Mellifluous', 'sweet', or 'mild' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0041",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACME**",
+    "options": {
+      "A": "Nadir",
+      "B": "Base",
+      "C": "Zenith",
+      "D": "Bottom"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Acme' represents the highest point of achievement or excellence. 'Zenith', 'pinnacle', or 'apex' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0042",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACME**",
+    "options": {
+      "A": "Nadir",
+      "B": "Apex",
+      "C": "Peak",
+      "D": "Culmination"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Acme' is the highest peak. 'Nadir' is the lowest point or rock bottom, making it the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0043",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACQUIESCE**",
+    "options": {
+      "A": "Comply",
+      "B": "Resist",
+      "C": "Object",
+      "D": "Defy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Acquiesce' means to accept something reluctantly but without protest. 'Comply', 'concur', or 'yield' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0044",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACQUIESCE**",
+    "options": {
+      "A": "Accede",
+      "B": "Consent",
+      "C": "Protest",
+      "D": "Assent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Acquiesce' means to quietly agree or submit. 'Protest', 'dissent', or 'object' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0045",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACRIMONIOUS**",
+    "options": {
+      "A": "Rancorous",
+      "B": "Cordial",
+      "C": "Amicable",
+      "D": "Genial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Acrimonious' means angry, bitter, and sharp in language or tone. 'Rancorous' or 'caustic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0046",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACRIMONIOUS**",
+    "options": {
+      "A": "Spiteful",
+      "B": "Biting",
+      "C": "Harmonious",
+      "D": "Acerbic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Acrimonious' means hostile and bitter. 'Harmonious', 'peaceful', or 'amicable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0047",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ACUMEN**",
+    "options": {
+      "A": "Astuteness",
+      "B": "Ignorance",
+      "C": "Stupidity",
+      "D": "Obtuseness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Acumen' means the ability to make good judgments and quick decisions; shrewdness. 'Astuteness' or 'insight' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0048",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ACUMEN**",
+    "options": {
+      "A": "Sagacity",
+      "B": "Shrewdness",
+      "C": "Perspicacity",
+      "D": "Obtuseness"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Acumen' represents mental sharpness and insight. 'Obtuseness' or 'folly' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0049",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ADAMANT**",
+    "options": {
+      "A": "Unyielding",
+      "B": "Pliable",
+      "C": "Flexible",
+      "D": "Compliant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Adamant' means refusing to be persuaded or to change one's mind; resolute. 'Unyielding' or 'inflexible' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0050",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ADAMANT**",
+    "options": {
+      "A": "Stubborn",
+      "B": "Intransigent",
+      "C": "Yielding",
+      "D": "Obstinate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Adamant' means stubbornly unbending. 'Yielding', 'submissive', or 'flexible' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

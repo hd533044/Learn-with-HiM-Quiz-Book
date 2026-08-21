@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_PRON_1001",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Between you and I, he is not reliable.'",
+    "options": {
+      "A": "Between you and I,",
+      "B": "he is not",
+      "C": "reliable.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The preposition 'between' must be followed by objective case pronouns. It should be 'Between you and me'.",
+    "tags": ["grammar", "pronouns", "case", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1002",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It was ___ who solved the puzzle.'",
+    "options": {
+      "A": "him",
+      "B": "he",
+      "C": "her",
+      "D": "me"
+    },
+    "correct_option": "B",
+    "explanation": "After the verb 'to be' (was, is, were), the pronoun must be in the nominative/subjective case ('he').",
+    "tags": ["grammar", "pronouns", "nominative_case", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1003",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: 'Each of the students has done ___ homework.'",
+    "options": {
+      "A": "their",
+      "B": "his",
+      "C": "her",
+      "D": "its"
+    },
+    "correct_option": "B",
+    "explanation": "'Each' is a singular indefinite pronoun and requires a singular possessive pronoun. Traditionally, 'his' is used for gender-neutral singular.",
+    "tags": ["grammar", "pronouns", "agreement", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1004",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The jury is divided in their opinion.'",
+    "options": {
+      "A": "The jury",
+      "B": "is divided",
+      "C": "in their opinion.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "If the jury is 'divided', it acts as plural individuals. Therefore, it should be 'The jury are divided in their opinion.'",
+    "tags": ["grammar", "pronouns", "collective_nouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1005",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'One should do ___ duty.'",
+    "options": {
+      "A": "his",
+      "B": "her",
+      "C": "one's",
+      "D": "their"
+    },
+    "correct_option": "C",
+    "explanation": "When 'One' is used as an indefinite pronoun, its possessive form is 'one's'.",
+    "tags": ["grammar", "pronouns", "indefinite_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1006",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: 'I, you, and he ___ responsible for this loss.'",
+    "options": {
+      "A": "are",
+      "B": "am",
+      "C": "is",
+      "D": "were"
+    },
+    "correct_option": "A",
+    "explanation": "When multiple personal pronouns are used (1st, 2nd, 3rd person), they form a plural subject, requiring a plural verb ('are').",
+    "tags": ["grammar", "pronouns", "subject_verb_agreement", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1007",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is taller than me.'",
+    "options": {
+      "A": "He is",
+      "B": "taller than",
+      "C": "me.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "In formal comparisons after 'than', the subjective case is preferred: 'He is taller than I [am].'",
+    "tags": ["grammar", "pronouns", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1008",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ of the two brothers is honest.'",
+    "options": {
+      "A": "Either",
+      "B": "Any",
+      "C": "Neither",
+      "D": "Both"
+    },
+    "correct_option": "A",
+    "explanation": "'Either' is used for choosing one out of two, while 'Any' is for more than two.",
+    "tags": ["grammar", "pronouns", "distributive_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1009",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: 'The book that ___ on the table is mine.'",
+    "options": {
+      "A": "is",
+      "B": "are",
+      "C": "were",
+      "D": "be"
+    },
+    "correct_option": "A",
+    "explanation": "The relative pronoun 'that' refers to 'book' (singular), so the verb must be singular ('is').",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1010",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'None of the two candidates have applied.'",
+    "options": {
+      "A": "None of",
+      "B": "the two candidates",
+      "C": "have applied.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "For two people/things, use 'Neither' instead of 'None'. 'None' is for more than two.",
+    "tags": ["grammar", "pronouns", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1011",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It is I ___ am your friend.'",
+    "options": {
+      "A": "who",
+      "B": "which",
+      "C": "that",
+      "D": "whom"
+    },
+    "correct_option": "A",
+    "explanation": "The relative pronoun 'who' refers to the antecedent 'I', so the verb 'am' follows accordingly.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1012",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: 'Give me ___ you have in your pocket.'",
+    "options": {
+      "A": "that",
+      "B": "which",
+      "C": "what",
+      "D": "who"
+    },
+    "correct_option": "C",
+    "explanation": "'What' acts as a relative pronoun meaning 'the thing(s) that'.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1013",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'My house is bigger than him.'",
+    "options": {
+      "A": "My house is",
+      "B": "bigger than",
+      "C": "him.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "You must compare the house with the house of the other person. Correct: 'My house is bigger than his' (possessive pronoun).",
+    "tags": ["grammar", "pronouns", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1014",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ of the players played well.'",
+    "options": {
+      "A": "All",
+      "B": "Every",
+      "C": "Each",
+      "D": "None"
+    },
+    "correct_option": "A",
+    "explanation": "'All' can be used with a plural noun as a pronoun; 'Every' cannot be used alone as a pronoun.",
+    "tags": ["grammar", "pronouns", "indefinite_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1015",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: '___ did you invite to the party?'",
+    "options": {
+      "A": "Who",
+      "B": "Whom",
+      "C": "Which",
+      "D": "Whose"
+    },
+    "correct_option": "B",
+    "explanation": "'Whom' is the objective case, used when the pronoun is the object of the verb 'invite'.",
+    "tags": ["grammar", "pronouns", "case", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1016",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man whom I thought was my friend betrayed me.'",
+    "options": {
+      "A": "The man whom",
+      "B": "I thought was my friend",
+      "C": "betrayed me.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The pronoun acts as the subject of 'was my friend', so 'who' is needed, not 'whom'.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1017",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is the ___ person I have met.'",
+    "options": {
+      "A": "only",
+      "B": "alone",
+      "C": "single",
+      "D": "one"
+    },
+    "correct_option": "A",
+    "explanation": "'Only' acts as an adjective here modifying 'person'.",
+    "tags": ["grammar", "pronouns", "adjectives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1018",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: 'One must be careful about ___ health.'",
+    "options": {
+      "A": "their",
+      "B": "his",
+      "C": "one's",
+      "D": "your"
+    },
+    "correct_option": "C",
+    "explanation": "Indefinite 'one' requires the possessive 'one's'.",
+    "tags": ["grammar", "pronouns", "indefinite_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1019",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is as intelligent if not more than his brother.'",
+    "options": {
+      "A": "He is as intelligent",
+      "B": "if not more",
+      "C": "than his brother.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Correct structure: 'as intelligent as, if not more intelligent than his brother.' Incomplete comparison.",
+    "tags": ["grammar", "pronouns", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1020",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ of these two cars is yours?'",
+    "options": {
+      "A": "Which",
+      "B": "Who",
+      "C": "Whom",
+      "D": "Whose"
+    },
+    "correct_option": "A",
+    "explanation": "'Which' is used for selection between a limited number of alternatives.",
+    "tags": ["grammar", "pronouns", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1021",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: 'I hurt ___ while cutting the vegetables.'",
+    "options": {
+      "A": "me",
+      "B": "mine",
+      "C": "myself",
+      "D": "my"
+    },
+    "correct_option": "C",
+    "explanation": "Reflexive pronoun 'myself' is used because the subject 'I' is also the object.",
+    "tags": ["grammar", "pronouns", "reflexive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1022",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The committee members are quarreling amongst themselves.'",
+    "options": {
+      "A": "The committee members",
+      "B": "are quarreling",
+      "C": "amongst themselves.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Amongst themselves' is appropriate for a group.",
+    "tags": ["grammar", "pronouns", "collective_nouns", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1023",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ did you give the letter?'",
+    "options": {
+      "A": "Who",
+      "B": "Whom",
+      "C": "Which",
+      "D": "What"
+    },
+    "correct_option": "B",
+    "explanation": "'Whom' is the objective case, used as the indirect object here.",
+    "tags": ["grammar", "pronouns", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1024",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: 'She is the girl ___ won the race.'",
+    "options": {
+      "A": "who",
+      "B": "whom",
+      "C": "whose",
+      "D": "which"
+    },
+    "correct_option": "A",
+    "explanation": "'Who' is the subject of the relative clause ('won the race').",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1025",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is the most intelligent boy who I have ever met.'",
+    "options": {
+      "A": "He is the most intelligent",
+      "B": "boy who",
+      "C": "I have ever met.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "After superlative adjectives ('most intelligent'), use the relative pronoun 'that' instead of 'who'.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1026",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ is your favorite book?'",
+    "options": {
+      "A": "What",
+      "B": "Which",
+      "C": "Who",
+      "D": "Whose"
+    },
+    "correct_option": "A",
+    "explanation": "'What' is used for asking about items in a general, unlimited set.",
+    "tags": ["grammar", "pronouns", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1027",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: 'This pen is ___.'",
+    "options": {
+      "A": "my",
+      "B": "mine",
+      "C": "me",
+      "D": "myself"
+    },
+    "correct_option": "B",
+    "explanation": "'Mine' is the possessive pronoun used when the noun follows previously.",
+    "tags": ["grammar", "pronouns", "possessive_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1028",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Everyone should respect their parents.'",
+    "options": {
+      "A": "Everyone should",
+      "B": "respect",
+      "C": "their parents.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Everyone' is singular, so 'their' is technically inconsistent. Use 'his' (or 'his/her' for gender neutrality).",
+    "tags": ["grammar", "pronouns", "agreement", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1029",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I ___ have completed the task.'",
+    "options": {
+      "A": "myself",
+      "B": "me",
+      "C": "I",
+      "D": "my"
+    },
+    "correct_option": "A",
+    "explanation": "'Myself' acts as an intensive pronoun for emphasis.",
+    "tags": ["grammar", "pronouns", "intensive_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1030",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: '___ book is on the table?'",
+    "options": {
+      "A": "Who",
+      "B": "Whose",
+      "C": "Which",
+      "D": "What"
+    },
+    "correct_option": "B",
+    "explanation": "'Whose' is the interrogative possessive pronoun/adjective.",
+    "tags": ["grammar", "pronouns", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1031",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Each of the participants have been notified.'",
+    "options": {
+      "A": "Each of the participants",
+      "B": "have been notified.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "'Each of...' always takes a singular verb. Correct: 'has been notified'.",
+    "tags": ["grammar", "pronouns", "agreement", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1032",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ is the best policy.'",
+    "options": {
+      "A": "That",
+      "B": "This",
+      "C": "It",
+      "D": "What"
+    },
+    "correct_option": "A",
+    "explanation": "Used proverbially, 'Honesty is the best policy' (though 'that' or 'it' can refer back to it in discourse).",
+    "tags": ["grammar", "pronouns", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1033",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: 'They enjoyed ___ during the holidays.'",
+    "options": {
+      "A": "them",
+      "B": "themselves",
+      "C": "their",
+      "D": "they"
+    },
+    "correct_option": "B",
+    "explanation": "Reflexive pronoun 'themselves' is needed with the verb 'enjoy'.",
+    "tags": ["grammar", "pronouns", "reflexive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1034",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'None of the students did not submit their project.'",
+    "options": {
+      "A": "None of the students",
+      "B": "did not submit",
+      "C": "their project.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'None' is already negative. Double negative: 'None... did not'. Correct: 'None of the students submitted...'",
+    "tags": ["grammar", "pronouns", "spotting_errors", "negation"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1035",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is the boy ___ I admire the most.'",
+    "options": {
+      "A": "who",
+      "B": "whom",
+      "C": "whose",
+      "D": "which"
+    },
+    "correct_option": "B",
+    "explanation": "'Whom' is the objective case, object of the verb 'admire'.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1036",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: '___ did you see at the mall?'",
+    "options": {
+      "A": "Who",
+      "B": "Whom",
+      "C": "Which",
+      "D": "That"
+    },
+    "correct_option": "B",
+    "explanation": "'Whom' is the object of the verb 'did see'.",
+    "tags": ["grammar", "pronouns", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1037",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Each other's cars were damaged in the crash.'",
+    "options": {
+      "A": "Each other's",
+      "B": "cars were damaged",
+      "C": "in the crash.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Sentence is correct. 'Each other's' is the possessive form.",
+    "tags": ["grammar", "pronouns", "reciprocal_pronouns", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1038",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ is knocking at the door?'",
+    "options": {
+      "A": "Who",
+      "B": "Whom",
+      "C": "Which",
+      "D": "What"
+    },
+    "correct_option": "A",
+    "explanation": "'Who' is the subject of 'is knocking'.",
+    "tags": ["grammar", "pronouns", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1039",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: 'The pen ___ I bought yesterday is lost.'",
+    "options": {
+      "A": "who",
+      "B": "whom",
+      "C": "which",
+      "D": "whose"
+    },
+    "correct_option": "C",
+    "explanation": "'Which' is the relative pronoun for non-human antecedents.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1040",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'They, not he, is responsible for this.'",
+    "options": {
+      "A": "They, not he,",
+      "B": "is responsible",
+      "C": "for this.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "When the subject is 'A, not B', the verb must agree with 'A'. 'They' is plural; correct: 'are responsible'.",
+    "tags": ["grammar", "pronouns", "subject_verb_agreement", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1041",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is the woman ___ helped me.'",
+    "options": {
+      "A": "who",
+      "B": "whom",
+      "C": "which",
+      "D": "whose"
+    },
+    "correct_option": "A",
+    "explanation": "'Who' is the subject of the verb 'helped'.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1042",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: '___ car is this?'",
+    "options": {
+      "A": "Who",
+      "B": "Whom",
+      "C": "Which",
+      "D": "Whose"
+    },
+    "correct_option": "D",
+    "explanation": "'Whose' indicates possession.",
+    "tags": ["grammar", "pronouns", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1043",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The book, which I read, were very interesting.'",
+    "options": {
+      "A": "The book,",
+      "B": "which I read,",
+      "C": "were very interesting.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'The book' is the subject, requiring singular verb 'was'.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1044",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ of the two is the better player?'",
+    "options": {
+      "A": "Who",
+      "B": "Which",
+      "C": "Whom",
+      "D": "What"
+    },
+    "correct_option": "B",
+    "explanation": "'Which' is used for selection among a definite number.",
+    "tags": ["grammar", "pronouns", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1045",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: 'He was ___ I saw at the theater.'",
+    "options": {
+      "A": "who",
+      "B": "whom",
+      "C": "whose",
+      "D": "that"
+    },
+    "correct_option": "B",
+    "explanation": "Objective case 'whom' for the object of 'saw'.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1046",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am the one who have won the prize.'",
+    "options": {
+      "A": "I am the one",
+      "B": "who have won",
+      "C": "the prize.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Antecedent 'I' requires the verb 'have' (Correct). Wait: 'I am the one who has won...'. Antecedent of 'who' is 'the one' (singular). Correct: 'has won'.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1047",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He ___ helped me is my friend.'",
+    "options": {
+      "A": "who",
+      "B": "whom",
+      "C": "which",
+      "D": "whose"
+    },
+    "correct_option": "A",
+    "explanation": "'Who' is the subject of the clause.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1048",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun: '___ is your name?'",
+    "options": {
+      "A": "Who",
+      "B": "Which",
+      "C": "What",
+      "D": "Whose"
+    },
+    "correct_option": "C",
+    "explanation": "Standard interrogative for identity.",
+    "tags": ["grammar", "pronouns", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1049",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man whose house I bought has left.'",
+    "options": {
+      "A": "The man whose house",
+      "B": "I bought",
+      "C": "has left.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Sentence is correct.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_PRON_1050",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is the ___ person I trust.'",
+    "options": {
+      "A": "who",
+      "B": "whom",
+      "C": "whose",
+      "D": "only"
+    },
+    "correct_option": "D",
+    "explanation": "Contextually, 'only' modifies 'person'.",
+    "tags": ["grammar", "pronouns", "usage", "rule_based"]
+  }
+]

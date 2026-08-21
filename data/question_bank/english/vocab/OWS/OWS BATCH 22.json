@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_1051",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small object, keepsake, or token kept as a reminder of a person, place, or event",
+    "options": {
+      "A": "Memento",
+      "B": "Souvenir",
+      "C": "Relic",
+      "D": "Artifact"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Souvenir) is correct. A 'Souvenir' (or memento) is an item kept to remind someone of a place they've visited or an event they attended[cite: 2]. 'Relic' refers to surviving remains or holy objects from the past[cite: 2].",
+    "tags": ["vocab", "ows", "objects", "memory", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1052",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sudden, involuntary, and localized muscular contraction or twitch",
+    "options": {
+      "A": "Spasm",
+      "B": "Fracture",
+      "C": "Laceration",
+      "D": "Contusion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Spasm) is correct. A 'Spasm' is a sudden, abnormal, involuntary muscular contraction[cite: 2]. 'Laceration' is a deep jagged tear in the skin[cite: 2].",
+    "tags": ["vocab", "ows", "medical", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1053",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA small sample or part taken to show what the whole is like, especially for scientific analysis",
+    "options": {
+      "A": "Prototype",
+      "B": "Specimen",
+      "C": "Facsimile",
+      "D": "Replica"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Specimen) is correct. A 'Specimen' is a single item or sample selected for scientific testing or display[cite: 2]. 'Prototype' is an original design model[cite: 2].",
+    "tags": ["vocab", "ows", "science", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1054",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe formulation of a theory, hypothesis, or guess without firm evidence",
+    "options": {
+      "A": "Verification",
+      "B": "Substantiation",
+      "C": "Speculation",
+      "D": "Attestation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Speculation) is correct. 'Speculation' is forming theories or conjectures without firm, verified evidence[cite: 2].",
+    "tags": ["vocab", "ows", "thinking", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1055",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study, exploration, and mapping of caves",
+    "options": {
+      "A": "Speleology",
+      "B": "Seismology",
+      "C": "Ophiology",
+      "D": "Ornithology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Speleology) is correct. 'Speleology' is the scientific exploration and study of cave structures[cite: 2]. 'Seismology' studies earthquakes[cite: 2].",
+    "tags": ["vocab", "ows", "science", "geography", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1056",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who spends money wastefully, recklessly, and extravagantly",
+    "options": {
+      "A": "Spendthrift",
+      "B": "Miser",
+      "C": "Niggard",
+      "D": "Pauper"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Spendthrift) is correct. A 'Spendthrift' is someone who spends money prodigally and recklessly. 'Miser' hoards money and hates spending[cite: 2].",
+    "tags": ["vocab", "ows", "people", "money", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1057",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn older unmarried woman; a woman who has passed the usual age for marrying",
+    "options": {
+      "A": "Matron",
+      "B": "Spinster",
+      "C": "Maiden",
+      "D": "Bride"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Spinster) is correct. A 'Spinster' refers to an older woman who has never been married[cite: 2]. 'Maiden' is a young unmarried girl[cite: 2].",
+    "tags": ["vocab", "ows", "people", "lifestyle", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1058",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who speaks, acts, or makes statements officially on behalf of a group or organization",
+    "options": {
+      "A": "Spokesman",
+      "B": "Auditor",
+      "C": "Compere",
+      "D": "Janitor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Spokesman) is correct. A 'Spokesman' (or spokesperson) makes statements on behalf of a collective body[cite: 2].",
+    "tags": ["vocab", "ows", "professions", "communication", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1059",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOccurring at irregular, scattered, or isolated intervals of time; intermittent",
+    "options": {
+      "A": "Sporadic",
+      "B": "Perpetual",
+      "C": "Continuous",
+      "D": "Constant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sporadic) is correct. 'Sporadic' means happening at irregular intervals or scattered instances[cite: 2]. 'Continuous' means without interruption.",
+    "tags": ["vocab", "ows", "adjectives", "time", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1060",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot genuine, authentic, or true; fake or counterfeit",
+    "options": {
+      "A": "Spurious",
+      "B": "Authentic",
+      "C": "Veritable",
+      "D": "Pristine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Spurious) is correct. 'Spurious' describes counterfeit or fake claims and items that are not what they purport to be[cite: 2]. 'Authentic' means genuine[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1061",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sudden, frantic rush or mass movement of a frightened crowd of people or panicked animals",
+    "options": {
+      "A": "Stampede",
+      "B": "Exodus",
+      "C": "Migration",
+      "D": "Procession"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Stampede) is correct. A 'Stampede' is a sudden panicked rush of a crowd[cite: 2]. 'Exodus' is a mass departure of people[cite: 2].",
+    "tags": ["vocab", "ows", "events", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1062",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn upright structural support post, pillar, or bar forming a barrier",
+    "options": {
+      "A": "Stanchion",
+      "B": "Shaft",
+      "C": "Beam",
+      "D": "Girder"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Stanchion) is correct. A 'Stanchion' is an upright vertical post providing structural support or forming a barrier[cite: 2].",
+    "tags": ["vocab", "ows", "architecture", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1063",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA financial statement or bank printout detailing account debits and credits",
+    "options": {
+      "A": "Statement",
+      "B": "Inventory",
+      "C": "Ledger",
+      "D": "Balance sheet"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Statement) is correct. A financial 'Statement' lists account transactions over a period[cite: 2].",
+    "tags": ["vocab", "ows", "finance", "documents", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1064",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn attractively tall, graceful, and dignified woman resembling a statue",
+    "options": {
+      "A": "Statuesque",
+      "B": "Stumpy",
+      "C": "Dwarf",
+      "D": "Petite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Statuesque) is correct. 'Statuesque' describes a woman of striking, sculptural tallness and graceful beauty[cite: 2].",
+    "tags": ["vocab", "ows", "appearance", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1065",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA written law, rule, or enactment passed by a legislative body",
+    "options": {
+      "A": "Statute",
+      "B": "Protocol",
+      "C": "Manifesto",
+      "D": "Treaty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Statute) is correct. A 'Statute' is a formal written enactment of a legislative authority[cite: 2].",
+    "tags": ["vocab", "ows", "law", "government", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1066",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nIncapable of reproducing or producing children; barren",
+    "options": {
+      "A": "Sterile",
+      "B": "Fertile",
+      "C": "Fecund",
+      "D": "Prolific"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sterile) is correct. 'Sterile' means barren and unable to produce offspring[cite: 2]. 'Fertile' and 'Fecund' are capable of abundant reproduction[cite: 2].",
+    "tags": ["vocab", "ows", "biology", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1067",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA dockworker or laborer whose job is to load and unload cargo from ships",
+    "options": {
+      "A": "Stevedore",
+      "B": "Janitor",
+      "C": "Ostler",
+      "D": "Curator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Stevedore) is correct. A 'Stevedore' (or docker) loads and unloads vessel cargoes[cite: 2]. 'Janitor' cares for buildings[cite: 2].",
+    "tags": ["vocab", "ows", "professions", "nautical", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1068",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who can endure severe pain, hardship, or adversity without showing feelings or complaining",
+    "options": {
+      "A": "Stoic",
+      "B": "Hedonist",
+      "C": "Epicurean",
+      "D": "Sybarite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Stoic) is correct. A 'Stoic' is indifferent to pain or emotional extremes[cite: 2]. 'Hedonist' seeks sensual pleasure above all[cite: 2].",
+    "tags": ["vocab", "ows", "people", "personality", "pyq_ssc", "repeated_9_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1069",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe philosophical attitude of indifference to emotional pain, pleasure, and adversity",
+    "options": {
+      "A": "Stoicism",
+      "B": "Hedonism",
+      "C": "Nihilism",
+      "D": "Epicureanism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Stoicism) is correct. 'Stoicism' is endurance of pain or hardship without display of feelings[cite: 2].",
+    "tags": ["vocab", "ows", "philosophy", "abstract", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1070",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOne who hides away secretly on a ship or aircraft to obtain a free passage",
+    "options": {
+      "A": "Stowaway",
+      "B": "Pirate",
+      "C": "Smuggler",
+      "D": "Fugitive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Stowaway) is correct. A 'Stowaway' conceals themselves aboard a vessel to travel clandestinely without paying fare[cite: 2].",
+    "tags": ["vocab", "ows", "people", "travel", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1071",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA form of government controlled and ruled by the military class",
+    "options": {
+      "A": "Stratocracy",
+      "B": "Oligarchy",
+      "C": "Plutocracy",
+      "D": "Theocracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Stratocracy) is correct. 'Stratocracy' is a military government where state power is held by army generals[cite: 2]. 'Theocracy' is rule by religious clergy.",
+    "tags": ["vocab", "ows", "politics", "cracy", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1072",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nDemanding rigorous, uncompromising adherence to rules, discipline, or principles",
+    "options": {
+      "A": "Strict",
+      "B": "Lax",
+      "C": "Remiss",
+      "D": "Permissive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Strict) is correct. 'Strict' means demanding exact compliance with rules and standards[cite: 2]. 'Lax' and 'Permissive' mean lenient.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1073",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA bitter, angry, and violent conflict or disagreement over fundamental issues",
+    "options": {
+      "A": "Strife",
+      "B": "Harmony",
+      "C": "Concord",
+      "D": "Amity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Strife) is correct. 'Strife' is bitter, violent conflict or corporate discord[cite: 2]. 'Harmony' and 'Amity' mean peaceful relations[cite: 2].",
+    "tags": ["vocab", "ows", "conflict", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1074",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSpeaking with an involuntary stammer, lisp, or halting repetition of sounds",
+    "options": {
+      "A": "Stuttering",
+      "B": "Articulating",
+      "C": "Pronouncing",
+      "D": "Declaring"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Stuttering) is correct. 'Stuttering' is speech impediment marked by repeating initial consonant sounds[cite: 2].",
+    "tags": ["vocab", "ows", "speech", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1075",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExcessively obedient, subservient, and eager to follow orders slavishly",
+    "options": {
+      "A": "Subservient",
+      "B": "Rebellious",
+      "C": "Insurgent",
+      "D": "Defiant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Subservient) is correct. 'Subservient' means overly compliant, docile, and servile[cite: 2]. 'Rebellious' and 'Defiant' resist authority[cite: 2].",
+    "tags": ["vocab", "ows", "behaviour", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1076",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe absolute bare minimum of food or money needed to maintain basic physical survival",
+    "options": {
+      "A": "Subsistence",
+      "B": "Luxury",
+      "C": "Opulence",
+      "D": "Affluence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Subsistence) is correct. 'Subsistence' is the minimum amount of sustenance required to support life[cite: 2].",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1077",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHaving juicy, tender, fleshy, and thick moisture-storing tissues (of plants)",
+    "options": {
+      "A": "Succulent",
+      "B": "Desiccated",
+      "C": "Parched",
+      "D": "Arid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Succulent) is correct. 'Succulent' describes plants with thick fleshy leaves adapted for retaining water[cite: 2]. 'Desiccated' and 'Parched' mean thoroughly dried out.",
+    "tags": ["vocab", "ows", "botany", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1078",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe constitutional right and legal privilege of voting in political elections; franchise",
+    "options": {
+      "A": "Suffrage",
+      "B": "Disenfranchisement",
+      "C": "Autocracy",
+      "D": "Oligarchy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Suffrage) is correct. 'Suffrage' (franchise) is the civil right to vote[cite: 2].",
+    "tags": ["vocab", "ows", "politics", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1079",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA brief, concise account presenting the main points of a subject; an abstract",
+    "options": {
+      "A": "Summary",
+      "B": "Expansion",
+      "C": "Elaboration",
+      "D": "Amplification"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Summary) is correct. A 'Summary' is a brief condensation summarizing the core points of a text[cite: 2].",
+    "tags": ["vocab", "ows", "writing", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1080",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nSplendid, lavish, magnificent, and extremely expensive-looking",
+    "options": {
+      "A": "Sumptuous",
+      "B": "Destitute",
+      "C": "Meager",
+      "D": "Sordid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Sumptuous) is correct. 'Sumptuous' means lavish, luxurious, and costly in appearance[cite: 2]. 'Destitute' means extremely poor[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1081",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOf the highest possible degree, quality, or standard; supreme",
+    "options": {
+      "A": "Superlative",
+      "B": "Inferior",
+      "C": "Mediocre",
+      "D": "Substandard"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Superlative) is correct. 'Superlative' means of the highest excellence or supreme quality[cite: 2]. 'Mediocre' means average or ordinary[cite: 2].",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1082",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA baseless religious belief or practice resulting from ignorance, fear of the unknown, or trust in magic",
+    "options": {
+      "A": "Superstition",
+      "B": "Science",
+      "C": "Reason",
+      "D": "Logic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Superstition) is correct. 'Superstition' is a traditional irrational belief attributing supernatural causes to natural events[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1083",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo ask, beg, or entreat for something earnestly, humbly, and submissively",
+    "options": {
+      "A": "Supplicate",
+      "B": "Demand",
+      "C": "Command",
+      "D": "Assert"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Supplicate) is correct. 'Supplicate' means to petition humbly or beg earnestly for a favor[cite: 2].",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1084",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select. the word which means the same as the group of words given:\n\nAn amount, supply, or quantity left over beyond what is needed; excess",
+    "options": {
+      "A": "Surplus",
+      "B": "Deficit",
+      "C": "Scarcity",
+      "D": "Darth"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Surplus) is correct. 'Surplus' is an excess amount remaining after requirements have been met[cite: 2]. 'Deficit' is a shortage.",
+    "tags": ["vocab", "ows", "economics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1085",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nKept secret, hidden, or done stealthily, especially because it would not be approved of",
+    "options": {
+      "A": "Surreptitious",
+      "B": "Overt",
+      "C": "Manifest",
+      "D": "Conspicuous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Surreptitious) is correct. 'Surreptitious' means stealthy, clandestine, and kept secret[cite: 2]. 'Overt' and 'Manifest' mean open and observable.",
+    "tags": ["vocab", "ows", "adjectives", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1086",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA poet's or artist's final, supreme work produced just before death or retirement",
+    "options": {
+      "A": "Swan song",
+      "B": "Prelude",
+      "C": "verture",
+      "D": "Prologue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Swan song) is correct. A 'Swan song' is a metaphorical final performance or parting work of an artist[cite: 2].",
+    "tags": ["vocab", "ows", "art", "idioms", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1087",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large clustered colony or mass of flying bees leaving a hive together",
+    "options": {
+      "A": "Swarm",
+      "B": "Flock",
+      "C": "Herd",
+      "D": "Shoal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Swarm) is correct. A 'Swarm' is a dense cluster of flying insects like bees[cite: 2].",
+    "tags": ["vocab", "ows", "collective_nouns", "animals", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1088",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe smallest linguistic unit of speech that can be pronounced as a single sound segment",
+    "options": {
+      "A": "Syllable",
+      "B": "Phoneme",
+      "C": "Morpheme",
+      "D": "Acronym"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Syllable) is correct. A 'Syllable' is a unit of pronunciation having one vowel sound with surrounding consonants[cite: 2].",
+    "tags": ["vocab", "ows", "language", "grammar", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1089",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA logical argument involving two premises from which a definitive conclusion is deduced",
+    "options": {
+      "A": "Syllogism",
+      "B": "Axiom",
+      "C": "Hypothesis",
+      "D": "Paradox"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Syllogism) is correct. A 'Syllogism' is a deductive reasoning form consisting of a major premise, minor premise, and conclusion[cite: 2].",
+    "tags": ["vocab", "ows", "logic", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1090",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA large-scale elaborate musical composition written for a full orchestra",
+    "options": {
+      "A": "Symphony",
+      "B": "Ballad",
+      "C": "Sonnet",
+      "D": "Hymn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Symphony) is correct. A 'Symphony' is an extended musical composition scored for full orchestra[cite: 2].",
+    "tags": ["vocab", "ows", "music", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1091",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA building where Jewish people gather for religious worship, prayer, and scriptural study",
+    "options": {
+      "A": "Synagogue",
+      "B": "Cathedral",
+      "C": "Chapel",
+      "D": "Pantheon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Synagogue) is correct. A 'Synagogue' is a Jewish house of worship and religious instruction[cite: 2].",
+    "tags": ["vocab", "ows", "religion", "places", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1092",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nWords that have the exact same or nearly identical meaning in the same language",
+    "options": {
+      "A": "Synonyms",
+      "B": "Antonyms",
+      "C": "Homonyms",
+      "D": "Acronyms"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Synonyms) is correct. 'Synonyms' are words sharing matching or equivalent meanings[cite: 2]. 'Antonyms' have opposite meanings.",
+    "tags": ["vocab", "ows", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1093",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nShowing poor taste, vulgarity, and cheap quality; tacky",
+    "options": {
+      "A": "Tacky",
+      "B": "Exquisite",
+      "C": "Sumptuous",
+      "D": "Opulent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tacky) is correct. 'Tacky' describes cheap, garish, and poor-quality material or taste[cite: 2]. 'Exquisite' means extremely beautiful and refined.",
+    "tags": ["vocab", "ows", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1094",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nRelating to, connected with, or perceived through the sense of touch",
+    "options": {
+      "A": "Tactile",
+      "B": "Audible",
+      "C": "Visual",
+      "D": "Olfactory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tactile) is correct. 'Tactile' pertains to the physical sense of touch[cite: 2]. 'Olfactory' relates to the sense of smell.",
+    "tags": ["vocab", "ows", "science", "senses", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1095",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA harsh, bad-tempered, and quarrelsome person",
+    "options": {
+      "A": "Tartar",
+      "B": "Samaritan",
+      "C": "Philanthropist",
+      "D": "Altruist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tartar) is correct. A 'Tartar' is a fierce, irritable, or difficult person[cite: 2].",
+    "tags": ["vocab", "ows", "people", "personality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1096",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nRepetitious statement in which the exact same thing is said twice in different words; redundancy",
+    "options": {
+      "A": "Tautology",
+      "B": "Malapropism",
+      "C": "Solecism",
+      "D": "Euphemism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Tautology) is correct. 'Tautology' is the redundant repetition of meaning using different words[cite: 2].",
+    "tags": ["vocab", "ows", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1097",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA specialist taxidermist who preserves, cleans, and mounts the skins of animals",
+    "options": {
+      "A": "Taxidermist",
+      "B": "Ornithologist",
+      "C": "Entomologist",
+      "D": "Geologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Taxidermist) is correct. A 'Taxidermist' mounts animal skins for preservation and display[cite: 2].",
+    "tags": ["vocab", "ows", "professions", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1098",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe art, skill, and technique of cleaning and preserving animal skins",
+    "options": {
+      "A": "Taxidermy",
+      "B": "Cerography",
+      "C": "Calligraphy",
+      "D": "Cartography"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Taxidermy) is correct. 'Taxidermy' is the art of stuffing and mounting animal skins[cite: 2].",
+    "tags": ["vocab", "ows", "art", "science", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1099",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe branch of science dealing with the laws and principles of biological classification",
+    "options": {
+      "A": "Taxonomy",
+      "B": "Etymology",
+      "C": "Ethnology",
+      "D": "Ecology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Taxonomy) is correct. 'Taxonomy' is the scientific classification of organisms into hierarchical categories[cite: 2].",
+    "tags": ["vocab", "ows", "science", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_1100",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who completely abstains from taking alcoholic drinks",
+    "options": {
+      "A": "Teetotaller",
+      "B": "Dipsomaniac",
+      "C": "Hedonist",
+      "D": "Epicure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Teetotaller) is correct. A 'Teetotaller' practices total abstinence from alcohol[cite: 2]. 'Dipsomaniac' suffers from alcohol craving[cite: 2].",
+    "tags": ["vocab", "ows", "people", "habits", "pyq_ssc", "repeated_4_times"]
+  }
+]

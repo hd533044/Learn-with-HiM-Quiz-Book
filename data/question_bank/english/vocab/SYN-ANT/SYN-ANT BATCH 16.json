@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0751",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MALEVOLENT**",
+    "options": {
+      "A": "Malicious",
+      "B": "Benevolent",
+      "C": "Altruistic",
+      "D": "Benign"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Malevolent' means having or showing a wish to do evil to others. 'Malicious', 'spiteful', or 'venomous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0752",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MALEVOLENT**",
+    "options": {
+      "A": "Spiteful",
+      "B": "Vindictive",
+      "C": "Benevolent",
+      "D": "Malignant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Malevolent' means wishing harm to others. 'Benevolent', 'charitable', or 'kindly' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0753",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MALIGN**",
+    "options": {
+      "A": "Defame",
+      "B": "Praise",
+      "C": "Laud",
+      "D": "Exalt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Malign' means to speak about someone in a spitefully critical manner. 'Defame', 'slander', or 'vilify' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0754",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MALIGN**",
+    "options": {
+      "A": "Vilify",
+      "B": "Disparage",
+      "C": "Praise",
+      "D": "Slander"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Malign' means to defame or speak ill of. 'Praise', 'eulogize', or 'commend' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0755",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MALLEABLE**",
+    "options": {
+      "A": "Pliable",
+      "B": "Rigid",
+      "C": "Intractable",
+      "D": "Inflexible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Malleable' means easily influenced or pliable; able to be hammered or pressed permanently out of shape without breaking. 'Pliable', 'ductile', or 'tractable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0756",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MALLEABLE**",
+    "options": {
+      "A": "Pliant",
+      "B": "Ductile",
+      "C": "Rigid",
+      "D": "Supple"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Malleable' means easily shaped or persuaded. 'Rigid', 'inflexible', or 'intractable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0757",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MAVERICK**",
+    "options": {
+      "A": "Nonconformist",
+      "B": "Conformist",
+      "C": "Orthodox",
+      "D": "Traditionalist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Maverick' refers to an unorthodox or independent-minded person. 'Nonconformist', 'individualist', or 'dissenter' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0758",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MAVERICK**",
+    "options": {
+      "A": "Rebel",
+      "B": "Iconoclast",
+      "C": "Conformist",
+      "D": "Nonconformist"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Maverick' refers to an independent rebel. 'Conformist', 'follower', or 'traditionalist' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0759",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MEAGER**",
+    "options": {
+      "A": "Scanty",
+      "B": "Copious",
+      "C": "Abundant",
+      "D": "Profuse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Meager' means lacking in quantity or quality. 'Scanty', 'sparse', or 'paltry' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0760",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MEAGER**",
+    "options": {
+      "A": "Paltry",
+      "B": "Scanty",
+      "C": "Copious",
+      "D": "Exiguous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Meager' means small in amount. 'Copious', 'plentiful', or 'abundant' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0761",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MELLIFLUOUS**",
+    "options": {
+      "A": "Dulcet",
+      "B": "Harsh",
+      "C": "Raucous",
+      "D": "Grated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mellifluous' means sweet or musical; pleasant to hear. 'Dulcet', 'euphonious', or 'honeyed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0762",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MELLIFLUOUS**",
+    "options": {
+      "A": "Dulcet",
+      "B": "Euphonious",
+      "C": "Cacophonous",
+      "D": "Harmonious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mellifluous' means smooth and sweet-sounding. 'Cacophonous', 'strident', or 'harsh' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0763",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MENDACIOUS**",
+    "options": {
+      "A": "Untruthful",
+      "B": "Veracious",
+      "C": "Honest",
+      "D": "Truthful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mendacious' means not telling the truth; lying. 'Untruthful', 'dishonest', or 'deceitful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0764",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MENDACIOUS**",
+    "options": {
+      "A": "Deceitful",
+      "B": "Untruthful",
+      "C": "Veracious",
+      "D": "Hypocritical"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mendacious' means habitually untruthful. 'Veracious', 'honest', or 'truthful' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0765",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MERCURIAL**",
+    "options": {
+      "A": "Volatile",
+      "B": "Constant",
+      "C": "Equable",
+      "D": "Stable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mercurial' means subject to sudden or unpredictable changes of mood or mind. 'Volatile', 'capricious', or 'erratic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0766",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MERCURIAL**",
+    "options": {
+      "A": "Fickle",
+      "B": "Capricious",
+      "C": "Steadfast",
+      "D": "Erratic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mercurial' means erratic and unpredictable. 'Steadfast', 'stable', or 'constant' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0767",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**METICULOUS**",
+    "options": {
+      "A": "Punctilious",
+      "B": "Careless",
+      "C": "Slovenly",
+      "D": "Negligent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Meticulous' means showing great attention to detail; very careful and precise. 'Punctilious', 'scrupulous', or 'fastidious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0768",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**METICULOUS**",
+    "options": {
+      "A": "Scrupulous",
+      "B": "Punctilious",
+      "C": "Fastidious",
+      "D": "Careless"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Meticulous' means extremely precise and careful. 'Careless', 'negligent', or 'sloppy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0769",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MISANTHROPE**",
+    "options": {
+      "A": "Cynic",
+      "B": "Philanthropist",
+      "C": "Altruist",
+      "D": "Benefactor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Misanthrope' refers to a person who dislikes humankind and avoids human society. 'Cynic', 'man-hater', or 'recluse' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0770",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MISANTHROPE**",
+    "options": {
+      "A": "Cynic",
+      "B": "Philanthropist",
+      "C": "Skeptic",
+      "D": "Egoist"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Misanthrope' is one who hates humanity. 'Philanthropist' (one who loves humanity) is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0771",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MITIGATE**",
+    "options": {
+      "A": "Alleviate",
+      "B": "Exacerbate",
+      "C": "Aggravate",
+      "D": "Intensify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mitigate' means to make less severe, serious, or painful. 'Alleviate', 'assuage', or 'palliate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0772",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MITIGATE**",
+    "options": {
+      "A": "Assuage",
+      "B": "Palliate",
+      "C": "Exacerbate",
+      "D": "Mollify"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mitigate' means to ease or lessen. 'Exacerbate', 'aggravate', or 'intensify' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0773",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MOLLIFY**",
+    "options": {
+      "A": "Placate",
+      "B": "Enrage",
+      "C": "Provoke",
+      "D": "Infuriate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mollify' means to appease the anger or anxiety of (someone). 'Placate', 'pacify', or 'propitiate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0774",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MOLLIFY**",
+    "options": {
+      "A": "Pacify",
+      "B": "Appease",
+      "C": "Placate",
+      "D": "Enrage"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Mollify' means to pacify or soften anger. 'Enrage', 'infuriate', or 'incense' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0775",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MONOTONOUS**",
+    "options": {
+      "A": "Tedious",
+      "B": "Varied",
+      "C": "Exciting",
+      "D": "Diverse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Monotonous' means dull, tedious, and repetitious; lacking in variety and interest. 'Tedious', 'unvarying', or 'humdrum' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0776",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MONOTONOUS**",
+    "options": {
+      "A": "Humdrum",
+      "B": "Dreary",
+      "C": "Varied",
+      "D": "Tedious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Monotonous' means unvarying and boring. 'Varied', 'diverse', or 'stimulating' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0777",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MORBID**",
+    "options": {
+      "A": "Ghoulish",
+      "B": "Wholesome",
+      "C": "Salubrious",
+      "D": "Healthy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Morbid' means characterized by an abnormal and unhealthy interest in disturbing and unpleasant subjects. 'Ghoulish', 'macabre', or 'unhealthy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0778",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MORBID**",
+    "options": {
+      "A": "Macabre",
+      "B": "Ghoulish",
+      "C": "Wholesome",
+      "D": "Gruesome"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Morbid' means unhealthy and macabre. 'Wholesome', 'healthy', or 'cheerful' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0779",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MORIBUND**",
+    "options": {
+      "A": "Dying",
+      "B": "Flourishing",
+      "C": "Thriving",
+      "D": "Vibrant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Moribund' means at the point of death; in terminal decline. 'Dying', 'declining', or 'expiring' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0780",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MORIBUND**",
+    "options": {
+      "A": "Stagnant",
+      "B": "Dying",
+      "C": "Declining",
+      "D": "Flourishing"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Moribund' means near death or failing. 'Flourishing', 'thriving', or 'alive' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0781",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MOROSE**",
+    "options": {
+      "A": "Sullen",
+      "B": "Jovial",
+      "C": "Genial",
+      "D": "Cheerful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Morose' means sullen and ill-tempered. 'Sullen', 'gloomy', or 'sour' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0782",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MOROSE**",
+    "options": {
+      "A": "Sullen",
+      "B": "Surly",
+      "C": "Cheerful",
+      "D": "Saturnine"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Morose' means gloomy and sour-tempered. 'Cheerful', 'buoyant', or 'jovial' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0783",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MOTLEY**",
+    "options": {
+      "A": "Variegated",
+      "B": "Uniform",
+      "C": "Homogeneous",
+      "D": "Monochrome"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Motley' means incongruously varied in appearance or character; disparate. 'Variegated', 'assorted', or 'heterogeneous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0784",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MOTLEY**",
+    "options": {
+      "A": "Heterogeneous",
+      "B": "Diverse",
+      "C": "Variegated",
+      "D": "Homogeneous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Motley' means mixed and multicolored. 'Homogeneous', 'uniform', or 'monochromatic' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0785",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MUNDANE**",
+    "options": {
+      "A": "Prosaic",
+      "B": "Extraordinary",
+      "C": "Exceptional",
+      "D": "Spiritual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Mundane' means lacking interest or excitement; dull or worldly. 'Prosaic', 'ordinary', or 'banal' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0786",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MUNDANE**",
+    "options": {
+      "A": "Prosaic",
+      "B": "Pedestrian",
+      "C": "Extraordinary",
+      "D": "Humdrum"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Mundane' means routine or commonplace. 'Extraordinary', 'celestial', or 'remarkable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0787",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MUNIFICENT**",
+    "options": {
+      "A": "Generous",
+      "B": "Parsimonious",
+      "C": "Niggardly",
+      "D": "Stingy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Munificent' means larger or more generous than is usual or necessary. 'Generous', 'bountiful', or 'magnanimous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0788",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MUNIFICENT**",
+    "options": {
+      "A": "Bountiful",
+      "B": "Lavish",
+      "C": "Parsimonious",
+      "D": "Magnanimous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Munificent' means extremely generous. 'Parsimonious', 'stingy', or 'penurious' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0789",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**MYOPIC**",
+    "options": {
+      "A": "Shortsighted",
+      "B": "Farsighted",
+      "C": "Visionary",
+      "D": "Prescient"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Myopic' means nearsighted; lacking imagination, foresight, or intellectual insight. 'Shortsighted', 'narrow-minded', or 'unimaginative' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0790",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**MYOPIC**",
+    "options": {
+      "A": "Shortsighted",
+      "B": "Narrow",
+      "C": "Visionary",
+      "D": "Parochial"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Myopic' means lacking foresight. 'Visionary', 'farsighted', or 'prescient' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0791",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NADIR**",
+    "options": {
+      "A": "Bottom",
+      "B": "Zenith",
+      "C": "Apex",
+      "D": "Pinnacle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nadir' refers to the lowest point in the fortunes of a person or organization. 'Bottom', 'rock-bottom', or 'depth' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0792",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NADIR**",
+    "options": {
+      "A": "Base",
+      "B": "Depth",
+      "C": "Zenith",
+      "D": "Abyss"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Nadir' is the lowest rock-bottom point. 'Zenith', 'pinnacle', or 'acme' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0793",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NASCENT**",
+    "options": {
+      "A": "Budding",
+      "B": "Dying",
+      "C": "Moribund",
+      "D": "Senescent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nascent' means just coming into existence and beginning to display signs of future potential. 'Budding', 'incipient', or 'embryonic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0794",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NASCENT**",
+    "options": {
+      "A": "Incipient",
+      "B": "Embryonic",
+      "C": "Budding",
+      "D": "Moribund"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Nascent' means developing or newly born. 'Moribund', 'dying', or 'senescent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0795",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NEBULOUS**",
+    "options": {
+      "A": "Vague",
+      "B": "Clear",
+      "C": "Distinct",
+      "D": "Definite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nebulous' means in the form of a cloud or haze; hazy; vague or ill-defined. 'Vague', 'indistinct', or 'obscure' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0796",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NEBULOUS**",
+    "options": {
+      "A": "Hazy",
+      "B": "Distinct",
+      "C": "Indistinct",
+      "D": "Amorphous"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Nebulous' means cloudy or vague. 'Distinct', 'clear', or 'well-defined' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0797",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NEFARIOUS**",
+    "options": {
+      "A": "Iniquitous",
+      "B": "Virtuous",
+      "C": "Noble",
+      "D": "Honorable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Nefarious' means (typically of an action or activity) wicked or criminal. 'Iniquitous', 'heinous', or 'villainous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0798",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NEFARIOUS**",
+    "options": {
+      "A": "Heinous",
+      "B": "Virtuous",
+      "C": "Villainous",
+      "D": "Iniquitous"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Nefarious' means grossly wicked. 'Virtuous', 'noble', or 'exemplary' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0799",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**NEOPHYTE**",
+    "options": {
+      "A": "Novice",
+      "B": "Veteran",
+      "C": "Master",
+      "D": "Expert"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Neophyte' refers to a person who is new to a subject, skill, or belief. 'Novice', 'tyro', or 'beginner' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0800",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**NEOPHYTE**",
+    "options": {
+      "A": "Tyro",
+      "B": "Novice",
+      "C": "Veteran",
+      "D": "Fledgling"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Neophyte' means a beginner. 'Veteran', 'expert', or 'master' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_2401",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HARANGUE**",
+    "options": {
+      "A": "Tirade",
+      "B": "Diatribe",
+      "C": "Praise",
+      "D": "Lecture"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Harangue' is an aggressive, lengthy speech. 'Praise', 'acclaim', or 'laud' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2402",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HARBINGER**",
+    "options": {
+      "A": "Herald",
+      "B": "Follower",
+      "C": "Descendant",
+      "D": "End"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Harbinger' refers to a person or thing that announces the approach of another. 'Herald', 'forerunner', or 'precursor' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2403",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HARBINGER**",
+    "options": {
+      "A": "Herald",
+      "B": "Forerunner",
+      "C": "Successor",
+      "D": "Precursor"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Harbinger' signals what is to come. 'Successor' or 'follower' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2404",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HAUGHTY**",
+    "options": {
+      "A": "Arrogant",
+      "B": "Humble",
+      "C": "Modest",
+      "D": "Meek"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Haughty' means arrogantly superior and disdainful. 'Arrogant', 'proud', or 'supercilious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2405",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HAUGHTY**",
+    "options": {
+      "A": "Arrogant",
+      "B": "Supercilious",
+      "C": "Humble",
+      "D": "Proud"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Haughty' means arrogant. 'Humble', 'meek', or 'modest' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2406",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HEDONIST**",
+    "options": {
+      "A": "Pleasure-seeker",
+      "B": "Ascetic",
+      "C": "Puritan",
+      "D": "Stoic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hedonist' refers to a person who believes that the pursuit of pleasure is the most important thing. 'Pleasure-seeker', 'sybarite', or 'voluptuary' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2407",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HEDONIST**",
+    "options": {
+      "A": "Pleasure-seeker",
+      "B": "Sybarite",
+      "C": "Ascetic",
+      "D": "Voluptuary"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hedonist' pursues pleasure. 'Ascetic', 'stoic', or 'puritan' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2408",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HEGEMONY**",
+    "options": {
+      "A": "Dominance",
+      "B": "Subservience",
+      "C": "Submission",
+      "D": "Compliance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hegemony' refers to leadership or dominance, especially by one country or social group over others. 'Dominance', 'supremacy', or 'authority' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2409",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HEGEMONY**",
+    "options": {
+      "A": "Dominance",
+      "B": "Supremacy",
+      "C": "Subservience",
+      "D": "Authority"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hegemony' means dominance. 'Subservience', 'submission', or 'compliance' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2410",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HEINOUS**",
+    "options": {
+      "A": "Wicked",
+      "B": "Virtuous",
+      "C": "Moral",
+      "D": "Admirable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Heinous' means utterly odious or wicked. 'Wicked', 'evil', or 'atrocious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2411",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HEINOUS**",
+    "options": {
+      "A": "Wicked",
+      "B": "Evil",
+      "C": "Virtuous",
+      "D": "Atrocious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Heinous' means wicked. 'Virtuous', 'moral', or 'admirable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2412",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HERESY**",
+    "options": {
+      "A": "Unorthodoxy",
+      "B": "Orthodoxy",
+      "C": "Conformity",
+      "D": "Compliance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Heresy' refers to belief or opinion contrary to orthodox religious (or other) doctrine. 'Unorthodoxy', 'dissent', or 'nonconformity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2413",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HERESY**",
+    "options": {
+      "A": "Unorthodoxy",
+      "B": "Dissent",
+      "C": "Orthodoxy",
+      "D": "Nonconformity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Heresy' is a departure from orthodoxy. 'Orthodoxy', 'conformity', or 'compliance' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2414",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HESITATE**",
+    "options": {
+      "A": "Waver",
+      "B": "Decide",
+      "C": "Act",
+      "D": "Proceed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hesitate' means to pause before doing something. 'Waver', 'falter', or 'dither' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2415",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HESITATE**",
+    "options": {
+      "A": "Waver",
+      "B": "Falter",
+      "C": "Decide",
+      "D": "Dither"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hesitate' means to pause or waver. 'Decide', 'act', or 'proceed' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2416",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HETERODOX**",
+    "options": {
+      "A": "Unorthodox",
+      "B": "Orthodox",
+      "C": "Conventional",
+      "D": "Traditional"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Heterodox' means contrary to accepted standards or beliefs. 'Unorthodox', 'dissenting', or 'heretical' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2417",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HETERODOX**",
+    "options": {
+      "A": "Unorthodox",
+      "B": "Dissenting",
+      "C": "Orthodox",
+      "D": "Heretical"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Heterodox' means nonconforming. 'Orthodox', 'conventional', or 'traditional' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2418",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HINDRANCE**",
+    "options": {
+      "A": "Obstacle",
+      "B": "Aid",
+      "C": "Help",
+      "D": "Assistance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hindrance' refers to a thing that provides resistance, delay, or obstruction. 'Obstacle', 'impediment', or 'barrier' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2419",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HINDRANCE**",
+    "options": {
+      "A": "Obstacle",
+      "B": "Impediment",
+      "C": "Aid",
+      "D": "Barrier"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hindrance' means an obstruction. 'Aid', 'assistance', or 'help' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2420",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HISTRIONIC**",
+    "options": {
+      "A": "Theatrical",
+      "B": "Reserved",
+      "C": "Quiet",
+      "D": "Subdued"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Histrionic' means overly theatrical or melodramatic in character or style. 'Theatrical', 'melodramatic', or 'exaggerated' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2421",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HISTRIONIC**",
+    "options": {
+      "A": "Theatrical",
+      "B": "Melodramatic",
+      "C": "Reserved",
+      "D": "Exaggerated"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Histrionic' means overly dramatic. 'Reserved', 'subdued', or 'restrained' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2422",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HOARD**",
+    "options": {
+      "A": "Store",
+      "B": "Spend",
+      "C": "Distribute",
+      "D": "Give"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hoard' means to amass or store up. 'Store', 'stockpile', or 'accumulate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2423",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HOARD**",
+    "options": {
+      "A": "Store",
+      "B": "Stockpile",
+      "C": "Spend",
+      "D": "Accumulate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hoard' means to stockpile. 'Spend', 'distribute', or 'give' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2424",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HOODWINK**",
+    "options": {
+      "A": "Deceive",
+      "B": "Reveal",
+      "C": "Enlighten",
+      "D": "Clarify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hoodwink' means to deceive or trick. 'Deceive', 'trick', or 'beguile' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2425",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HOODWINK**",
+    "options": {
+      "A": "Deceive",
+      "B": "Trick",
+      "C": "Enlighten",
+      "D": "Beguile"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hoodwink' means to trick. 'Enlighten', 'reveal', or 'clarify' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2426",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HUMANE**",
+    "options": {
+      "A": "Compassionate",
+      "B": "Cruel",
+      "C": "Brutal",
+      "D": "Inhuman"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Humane' means having or showing compassion or benevolence. 'Compassionate', 'kind', or 'benevolent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2427",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HUMANE**",
+    "options": {
+      "A": "Compassionate",
+      "B": "Kind",
+      "C": "Cruel",
+      "D": "Benevolent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Humane' means compassionate. 'Cruel', 'brutal', or 'inhuman' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2428",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HUMBLE**",
+    "options": {
+      "A": "Modest",
+      "B": "Arrogant",
+      "C": "Haughty",
+      "D": "Proud"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Humble' means having or showing a modest estimation of one's own importance. 'Modest', 'meek', or 'unassuming' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2429",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HUMBLE**",
+    "options": {
+      "A": "Modest",
+      "B": "Meek",
+      "C": "Arrogant",
+      "D": "Unassuming"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Humble' means modest. 'Arrogant', 'proud', or 'haughty' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2430",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HYPERBOLE**",
+    "options": {
+      "A": "Exaggeration",
+      "B": "Understatement",
+      "C": "Litotes",
+      "D": "Fact"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hyperbole' refers to exaggerated statements or claims not meant to be taken literally. 'Exaggeration', 'overstatement', or 'amplification' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2431",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HYPERBOLE**",
+    "options": {
+      "A": "Exaggeration",
+      "B": "Overstatement",
+      "C": "Understatement",
+      "D": "Amplification"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hyperbole' means exaggeration. 'Understatement' or 'litotes' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2432",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**HYPOTHETICAL**",
+    "options": {
+      "A": "Theoretical",
+      "B": "Actual",
+      "C": "Real",
+      "D": "Factual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Hypothetical' means based on a hypothesis. 'Theoretical', 'supposed', or 'speculative' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2433",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**HYPOTHETICAL**",
+    "options": {
+      "A": "Theoretical",
+      "B": "Supposed",
+      "C": "Actual",
+      "D": "Speculative"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Hypothetical' means supposed. 'Actual', 'real', or 'factual' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2434",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ICONOCLAST**",
+    "options": {
+      "A": "Rebel",
+      "B": "Conformist",
+      "C": "Traditionalist",
+      "D": "Follower"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Iconoclast' refers to a person who attacks cherished beliefs or institutions. 'Rebel', 'nonconformist', or 'dissenter' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2435",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ICONOCLAST**",
+    "options": {
+      "A": "Rebel",
+      "B": "Nonconformist",
+      "C": "Conformist",
+      "D": "Dissenter"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Iconoclast' is one who breaks traditions. 'Conformist', 'traditionalist', or 'follower' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2436",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IDIOSYNCRASY**",
+    "options": {
+      "A": "Peculiarity",
+      "B": "Normality",
+      "C": "Regularity",
+      "D": "Uniformity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Idiosyncrasy' refers to a mode of behavior or way of thought peculiar to an individual. 'Peculiarity', 'eccentricity', or 'quirk' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2437",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IDIOSYNCRASY**",
+    "options": {
+      "A": "Peculiarity",
+      "B": "Eccentricity",
+      "C": "Normality",
+      "D": "Quirk"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Idiosyncrasy' is a personal quirk. 'Normality', 'regularity', or 'uniformity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2438",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IGNOMINY**",
+    "options": {
+      "A": "Dishonor",
+      "B": "Honor",
+      "C": "Respect",
+      "D": "Glory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ignominy' refers to public shame or disgrace. 'Dishonor', 'shame', or 'humiliation' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2439",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IGNOMINY**",
+    "options": {
+      "A": "Dishonor",
+      "B": "Shame",
+      "C": "Honor",
+      "D": "Humiliation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ignominy' is public shame. 'Honor', 'glory', or 'renown' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2440",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ILLICIT**",
+    "options": {
+      "A": "Illegal",
+      "B": "Legal",
+      "C": "Lawful",
+      "D": "Permissible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Illicit' means forbidden by laws, rules, or custom. 'Illegal', 'unlawful', or 'prohibited' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2441",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ILLICIT**",
+    "options": {
+      "A": "Illegal",
+      "B": "Unlawful",
+      "C": "Legal",
+      "D": "Prohibited"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Illicit' means forbidden. 'Legal', 'lawful', or 'permissible' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2442",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMBUE**",
+    "options": {
+      "A": "Instill",
+      "B": "Empty",
+      "C": "Drain",
+      "D": "Remove"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Imbue' means to inspire or permeate with a feeling or quality. 'Instill', 'infuse', or 'permeate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2443",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMBUE**",
+    "options": {
+      "A": "Instill",
+      "B": "Infuse",
+      "C": "Empty",
+      "D": "Permeate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Imbue' means to fill or saturate. 'Empty', 'drain', or 'remove' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2444",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMMUTABLE**",
+    "options": {
+      "A": "Unchanging",
+      "B": "Changeable",
+      "C": "Mutable",
+      "D": "Variable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Immutable' means unchanging over time or unable to be changed. 'Unchanging', 'fixed', or 'permanent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2445",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMMUTABLE**",
+    "options": {
+      "A": "Unchanging",
+      "B": "Fixed",
+      "C": "Mutable",
+      "D": "Permanent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Immutable' means unchangeable. 'Mutable', 'changeable', or 'variable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2446",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPASSIVE**",
+    "options": {
+      "A": "Emotionless",
+      "B": "Emotional",
+      "C": "Passionate",
+      "D": "Expressive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Impassive' means not feeling or showing emotion. 'Emotionless', 'stolid', or 'phlegmatic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2447",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMPASSIVE**",
+    "options": {
+      "A": "Emotionless",
+      "B": "Stolid",
+      "C": "Emotional",
+      "D": "Phlegmatic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Impassive' means emotionless. 'Emotional', 'passionate', or 'expressive' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2448",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPECCABLE**",
+    "options": {
+      "A": "Flawless",
+      "B": "Defective",
+      "C": "Faulty",
+      "D": "Imperfect"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Impeccable' means (of behavior, performance, or appearance) in accordance with the highest standards; faultless. 'Flawless', 'perfect', or 'faultless' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2449",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**IMPECCABLE**",
+    "options": {
+      "A": "Flawless",
+      "B": "Perfect",
+      "C": "Flawed",
+      "D": "Faultless"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Impeccable' means faultless. 'Flawed', 'defective', or 'faulty' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2450",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**IMPECUNIOUS**",
+    "options": {
+      "A": "Poor",
+      "B": "Wealthy",
+      "C": "Affluent",
+      "D": "Opulent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Impecunious' means having little or no money. 'Poor', 'indigent', or 'penniless' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

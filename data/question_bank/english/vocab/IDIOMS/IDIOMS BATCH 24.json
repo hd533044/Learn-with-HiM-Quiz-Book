@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_1151",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Eager beaver**",
+    "options": {
+      "A": "A sluggish worker who avoids assigned duties",
+      "B": "A person who is exceptionally enthusiastic, zealous, and hardworking",
+      "C": "An animal trained to construct water barriers",
+      "D": "A competitor who loses confidence easily"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. An 'eager beaver' refers to an overly keen, enthusiastic, and hardworking individual.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1152",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Early bird**",
+    "options": {
+      "A": "A person who wakes up, arrives, or acts before the usual time",
+      "B": "A rare avian species observed at dawn",
+      "C": "Someone who procrastinates on morning tasks",
+      "D": "A competitor who arrives late to an event"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. An 'early bird' is someone who gets up early or arrives ahead of others.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1153",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Eat crow**",
+    "options": {
+      "A": "To hunt wild birds in rural pastures",
+      "B": "To admit a humiliating mistake and accept being proven wrong",
+      "C": "To suffer severe malnutrition during hard times",
+      "D": "To boast arrogantly about one's achievements"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'eat crow' means being forced to admit an embarrassing error or undergo public humiliation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1154",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Eat humble pie**",
+    "options": {
+      "A": "To apologize humbly and accept submission or humiliation for an error",
+      "B": "To eat simple, low-cost homemade meals during poverty",
+      "C": "To boast quietly about personal victories",
+      "D": "To prepare traditional baked desserts for a feast"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'eat humble pie' means to apologize abjectly and act submissively after being proven wrong.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1155",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Eat one's words**",
+    "options": {
+      "A": "To speak indistinctly or mumble in public",
+      "B": "To retract, take back, or admit that what one said was wrong",
+      "C": "To repeat a phrase many times for emphasis",
+      "D": "To interrupt someone rudely during a lecture"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'eat one's words' means to admit that a previous statement or claim was completely mistaken.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1156",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Egg on**",
+    "options": {
+      "A": "To encourage, urge, or incite someone to do something foolish or risky",
+      "B": "To prepare farm poultry dishes for a banquet",
+      "C": "To throw food items at rivals during a protest",
+      "D": "To calm down an angry mob through reasoning"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'egg someone on' means to urge or provoke them into committing a reckless or bad act.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1157",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Elephant in the room**",
+    "options": {
+      "A": "A large exotic animal displayed in a private zoo",
+      "B": "A major obvious problem or topic that everyone avoids discussing",
+      "C": "A decorative antique statue placed in a hallway",
+      "D": "A crowded public venue with poor ventilation"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. An 'elephant in the room' is an obvious, major truth or problem that people deliberately ignore because it is uncomfortable.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1158",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Every cloud has a silver lining**",
+    "options": {
+      "A": "High-altitude storm clouds carry heavy precious minerals",
+      "B": "Every difficult, unpleasant, or sad situation has some positive aspect",
+      "C": "Meteorological changes can be predicted using modern satellites",
+      "D": "Sudden downpours ruin agricultural crops permanently"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. This proverb/idiom emphasizes that even the worst circumstances hold some hope, benefit, or comfort.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1159",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Every dog has his day**",
+    "options": {
+      "A": "Domestic pets require regular outdoor exercise",
+      "B": "Everyone will eventually enjoy a period of good fortune or success",
+      "C": "Hunting hounds perform best during daylight hours",
+      "D": "Hard work always leads to instant recognition"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Every dog has his day' means that even the most unlucky or ordinary person will have a moment of success or luck.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1160",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Face the music**",
+    "options": {
+      "A": "To listen to an orchestra performance attentively",
+      "B": "To dance in rhythm with classical melodies",
+      "C": "To confront and accept unpleasant consequences or criticism for one's actions",
+      "D": "To sing on stage in front of a critical audience"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'face the music' means to accept the unpleasant results or punishment resulting from one's behavior.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1161",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fair and square**",
+    "options": {
+      "A": "Honest, just, and strictly according to the rules",
+      "B": "Arranged in neat geometric patterns",
+      "C": "Conducted with deceitful business methods",
+      "D": "Completed with average craftsmanship"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing something 'fair and square' means acting honestly, justly, and within the rules.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1162",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fair-weather friend**",
+    "options": {
+      "A": "A loyal companion who stands by you in all crises",
+      "B": "A companion who remains friendly only during easy times and deserts you in trouble",
+      "C": "A colleague who works exclusively in outdoor weather conditions",
+      "D": "An associate who shares identical intellectual hobbies"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'fair-weather friend' is someone whose loyalty vanishes when hardship or adversity arises.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1163",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fall flat**",
+    "options": {
+      "A": "To fail completely to produce the intended effect, amusement, or response",
+      "B": "To trip and fall down on a level floor",
+      "C": "To deflate a rubber tire by accident",
+      "D": "To lie down on a bed after a tiring day"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. If a joke, speech, or initiative 'falls flat', it fails completely to generate interest or impact.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1164",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fall foul of**",
+    "options": {
+      "A": "To get into conflict, trouble, or dispute with someone or the law",
+      "B": "To commit an accidental foul in an athletic match",
+      "C": "To clean up contaminated wastewater tanks",
+      "D": "To contract an infectious foodborne disease"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'fall foul of' means to come into opposition, disagreement, or trouble with an authority or rule.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1165",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fall in line**",
+    "options": {
+      "A": "To conform to rules, policies, or expectations and behave acceptably",
+      "B": "To stand in a queue at a railway ticket counter",
+      "C": "To stumble during a military marching drill",
+      "D": "To draw straight pencil lines on paper"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'fall in line' means to adhere to established rules, discipline, or standard conduct.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1166",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fall short of**",
+    "options": {
+      "A": "To fail to reach an expected standard, goal, or target",
+      "B": "To measure shorter in height than peers",
+      "C": "To shorten a speech to save audience time",
+      "D": "To land close to a target in archery"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'fall short of' means to be deficient or fail to achieve the required benchmark or requirement.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1167",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Far and wide**",
+    "options": {
+      "A": "Over a large area; everywhere or extensively",
+      "B": "Restricted to a small neighborhood sector",
+      "C": "Measuring highway widths precisely with meters",
+      "D": "Traveling exclusively by air transport"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Far and wide' means covering a broad geographical expanse or across extensive distances.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1168",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Feather in one's cap**",
+    "options": {
+      "A": "A decorative plume worn during theatrical galas",
+      "B": "An achievement or honor to be proud of",
+      "C": "A sign of cowardice shown during conflict",
+      "D": "A minor accessory worn to indicate political alignment"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'feather in one's cap' is an accomplishment or distinction that brings pride.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1169",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Feather one's own nest**",
+    "options": {
+      "A": "To furnish one's home with luxurious upholstery",
+      "B": "To make money illicitly or selfishly using one's position of authority",
+      "C": "To provide soft bedding for domestic birds",
+      "D": "To clean household furniture thoroughly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'feather one's own nest' means enriching oneself dishonestly by exploiting an official position.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1170",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Feel the pinch**",
+    "options": {
+      "A": "To suffer from sudden economic hardship or financial shortage",
+      "B": "To experience a sharp physical pain in the skin",
+      "C": "To be arrested by law enforcement officers",
+      "D": "To feel extreme irritation from tight clothing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'feel the pinch' means experiencing the stress of financial strain or lack of funds.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1171",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fifth column**",
+    "options": {
+      "A": "A decorative pillar supporting historic architecture",
+      "B": "A clandestine group of traitors or subversives working inside a nation for its enemy",
+      "C": "A military infantry squad marching in a review",
+      "D": "A regular newspaper column written by guest authors"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'fifth column' is a group within a country at war that works secretly to assist the enemy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1172",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fight shy of**",
+    "options": {
+      "A": "To avoid, keep away from, or shrink from approaching something",
+      "B": "To engage in a fistfight with a shy opponent",
+      "C": "To overcome personal timidity in public speaking",
+      "D": "To argue aggressively during town hall debates"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'fight shy of' means to deliberately avoid or hesitate to deal with a person or matter.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1173",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fight tooth and nail**",
+    "options": {
+      "A": "To fight or contest with immense energy, fierceness, and total effort",
+      "B": "To suffer severe oral and hand trauma in athletics",
+      "C": "To surrender meekly without offering resistance",
+      "D": "To engage in a martial arts sparring ritual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'fight tooth and nail' means using all available power and determination to contest something.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1174",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fish in troubled waters**",
+    "options": {
+      "A": "To catch fish in stormy, dangerous ocean rapids",
+      "B": "To take selfish advantage of a chaotic or conflicted situation for personal gain",
+      "C": "To navigate a fishing vessel through high tidal waves",
+      "D": "To clean up an oil-contaminated coastal harbor"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'fish in troubled waters' means exploiting others' confusion, disputes, or difficulties for one's own benefit.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1175",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fish out of water**",
+    "options": {
+      "A": "A marine creature kept in a glass aquarium",
+      "B": "A seafood dish served at a coastal resort",
+      "C": "A person in an uncomfortable, awkward, or unfamiliar environment",
+      "D": "An expert swimmer competing in open-water races"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. A 'fish out of water' is someone feeling uneasy, awkward, or misplaced in an unfamiliar setting.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1176",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fit as a fiddle**",
+    "options": {
+      "A": "A well-tuned classical musical instrument",
+      "B": "In robust, excellent physical health and condition",
+      "C": "Wearing perfectly tailored bespoke attire",
+      "D": "Having a natural aptitude for musical arts"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'fit as a fiddle' means being in peak physical condition and vigorous health.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1177",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Flash in the pan**",
+    "options": {
+      "A": "A sudden grease fire erupting on a kitchen stove",
+      "B": "A short-lived, temporary success that is not repeated",
+      "C": "A bright photography camera strobe flash",
+      "D": "A rapid stir-fry cooking technique"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'flash in the pan' is a sudden, brief success that fails to yield lasting value or repetition.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1178",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Flesh and blood**",
+    "options": {
+      "A": "Human physical bodily tissues and organs",
+      "B": "A close biological relative or human nature with its natural frailties",
+      "C": "A medical blood sample drawn for pathology",
+      "D": "A severe trauma sustained in an accident"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Flesh and blood' refers to one's own family/relatives or normal human beings with standard emotional and physical limits.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1179",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Flog a dead horse**",
+    "options": {
+      "A": "To waste energy on an unalterable issue or lost cause",
+      "B": "To mistreat farm animals in an agricultural stable",
+      "C": "To train horses for high-speed hurdle racing",
+      "D": "To revive an ancient farming technique successfully"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'flog a dead horse' means expending useless effort on a matter that cannot be altered or revived.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1180",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fly by night**",
+    "options": {
+      "A": "Traveling on red-eye night flights across continents",
+      "B": "Nocturnal wildlife hunting for food after dusk",
+      "C": "Untrustworthy, unreliable, and prone to disappearing after financial scams",
+      "D": "Working late night shifts in municipal transport"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. A 'fly-by-night' operation or person is untrustworthy, irresponsible, and likely to vanish to avoid debts.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1181",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fly in the face of**",
+    "options": {
+      "A": "To openly oppose, defy, or contradict accepted principles or facts",
+      "B": "To face strong windstorms while flying gliders",
+      "C": "To wear protective safety visors in workshops",
+      "D": "To insult an associate politely during a conversation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'fly in the face of' means to boldly disregard or contradict established rules, beliefs, or conventions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1182",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fly in the ointment**",
+    "options": {
+      "A": "A medicinal balm applied to treat insect stings",
+      "B": "A small defect or minor drawback that spoils the overall enjoyment of something",
+      "C": "A contaminated ointment discarded by doctors",
+      "D": "An unexpected bonus awarded to a project team"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'fly in the ointment' is a small, annoying detail or flaw that mars what would otherwise be perfect.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1183",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fly off the handle**",
+    "options": {
+      "A": "To lose one's temper suddenly, violently, and without control",
+      "B": "To break a door handle during heavy usage",
+      "C": "To pilot a light aircraft through turbulent weather",
+      "D": "To detach a mechanical lever accidentally"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'fly off the handle' means to react with sudden, uncontrolled rage over a matter.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1184",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Follow in someone's footsteps**",
+    "options": {
+      "A": "To track a hiker across a muddy wilderness trail",
+      "B": "To do the same work or follow the same career path as someone before you",
+      "C": "To shadow an undercover suspect stealthily",
+      "D": "To match running strides in an endurance race"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'follow in someone's footsteps' means to pursue the same career, lifestyle, or course of action as a predecessor.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1185",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Follow suit**",
+    "options": {
+      "A": "To purchase identical bespoke clothing at a tailor",
+      "B": "To file a corresponding court petition in a lawsuit",
+      "C": "To do the same thing as someone else; imitate their action",
+      "D": "To adhere strictly to corporate formal dress codes"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'follow suit' means to imitate another person's actions or follow their example.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1186",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Food for thought**",
+    "options": {
+      "A": "Nutritional dietary recommendations for mental health",
+      "B": "An idea, issue, or fact that provides serious mental stimulation or reflection",
+      "C": "Groceries purchased for cooking a family feast",
+      "D": "A culinary philosophy book written by a chef"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Food for thought' refers to something that warrants serious, deep consideration or reflection.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1187",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fool's paradise**",
+    "options": {
+      "A": "A state of illusory happiness based on false hopes or ignorance of trouble",
+      "B": "A theme park designed for comedy entertainment",
+      "C": "A serene tropical resort for relaxation",
+      "D": "A haven established for theatrical actors"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Living in a 'fool's paradise' means experiencing short-lived happiness derived from false beliefs or delusions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1188",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Foot the bill**",
+    "options": {
+      "A": "To pay the cost or settle the financial expense of something",
+      "B": "To kick an invoice across the floor in anger",
+      "C": "To dispute restaurant charges with management",
+      "D": "To calculate ledger balances manually"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'foot the bill' means to take financial responsibility and pay the expenses.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1189",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**For good**",
+    "options": {
+      "A": "Permanently; forever",
+      "B": "For moral and charitable purposes only",
+      "C": "For a brief, temporary interval",
+      "D": "In exchange for quality merchandise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing or leaving something 'for good' means doing so permanently and irrevocably.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1190",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**For the time being**",
+    "options": {
+      "A": "Permanently throughout the future",
+      "B": "Temporarily; for the present moment until a change occurs",
+      "C": "Precisely on time according to the clock",
+      "D": "During a scheduled historical era"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'For the time being' means temporarily or for now, subject to later changes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1191",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Forty winks**",
+    "options": {
+      "A": "Winking repeatedly during a dramatic play",
+      "B": "A short, light nap or sleep during the day",
+      "C": "Counting numbers rapidly in mental math",
+      "D": "Suffering from severe optical fatigue"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Forty winks' is a colloquial term for a short daytime nap.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1192",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Foul play**",
+    "options": {
+      "A": "A referee penalty in outdoor sports",
+      "B": "Unfair, deceptive, criminal, or violent behavior (especially murder)",
+      "C": "A badly performed theatrical production",
+      "D": "Playing games in rainy weather"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Foul play' refers to illegal, violent, or dishonest activity, often in the context of a crime or suspicious death.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1193",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**French leave**",
+    "options": {
+      "A": "An official paid sabbatical vacation in Europe",
+      "B": "Departure or absence from work or a gathering without permission or notice",
+      "C": "A tactical troop retreat ordered by military leadership",
+      "D": "Learning a foreign language abroad"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Taking 'French leave' means slipping away or absenting oneself without announcing it or asking for permission.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1194",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**From pillar to post**",
+    "options": {
+      "A": "Driven or moved from one place, difficulty, or predicament to another continuously",
+      "B": "Commuting smoothly along marked city roads",
+      "C": "Delivering letters between postal stations",
+      "D": "Erecting structural columns in building architecture"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Moving 'from pillar to post' means being continuously shunted from one difficult situation or place to another without respite.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1195",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**From the horse's mouth**",
+    "options": {
+      "A": "Directly from the original, primary, and most authoritative source",
+      "B": "From an animal veterinarian trainer",
+      "C": "From an unverified street rumor",
+      "D": "From a biological textbook study"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Getting information 'from the horse's mouth' means obtaining it directly from the person with firsthand knowledge.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1196",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Gain ground**",
+    "options": {
+      "A": "To make progress, advance, or become more popular and successful",
+      "B": "To purchase extensive plots of farmland",
+      "C": "To lose balance on slippery terrain",
+      "D": "To dig excavation trenches for construction"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'gain ground' means to advance, make steady progress, or gain an advantage over competitors.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1197",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get a grip on oneself**",
+    "options": {
+      "A": "To regain self-control, composure, and emotional stability",
+      "B": "To hold a handrail tightly on a moving train",
+      "C": "To perform physical fitness strength exercises",
+      "D": "To panic uncontrollably during a crisis"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get a grip on oneself' means controlling one's emotions and behaving calmly after a shock or panic.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1198",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get cold feet**",
+    "options": {
+      "A": "To lose courage, become nervous, and hesitate before undertaking an action",
+      "B": "To suffer from poor blood circulation during winter",
+      "C": "To stand bare-footed on cold ice floors",
+      "D": "To refuse to participate in winter sports"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Getting 'cold feet' means experiencing a sudden loss of confidence or second thoughts right before an important event.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1199",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get down to brass tacks**",
+    "options": {
+      "A": "To start considering the basic, essential, and practical facts of a matter",
+      "B": "To manufacture small brass hardware nails",
+      "C": "To sit down on chairs in an office conference",
+      "D": "To decorate interior furniture with metal pins"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get down to brass tacks' means focusing on the core, fundamental realities rather than superficial details.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1200",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get into hot water**",
+    "options": {
+      "A": "To take a relaxing warm bath after work",
+      "B": "To boil drinking water for cooking",
+      "C": "To get into serious trouble, embarrassment, or difficulty",
+      "D": "To swim in geothermal heated pools"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'get into hot water' means landing in serious trouble, danger, or facing harsh censure.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

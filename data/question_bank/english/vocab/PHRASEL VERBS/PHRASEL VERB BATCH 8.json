@@ -1,0 +1,614 @@
+[
+  {
+    "id": "ENG_VOCAB_PHRA_2101",
+    "question": "What is the meaning of the phrasal verb 'ask after'?",
+    "options": {
+      "A": "To inquire about someone's health or well-being.",
+      "B": "To follow someone closely.",
+      "C": "To search for an item.",
+      "D": "To request an interview."
+    },
+    "correct_option": "A",
+    "rationale": "'Ask after' means to ask for news or information about someone's health or condition."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2102",
+    "question": "Fill in the blank: 'The employees decided to _____ their demands for better pay.'",
+    "options": {
+      "A": "press for",
+      "B": "press on",
+      "C": "press out",
+      "D": "press down"
+    },
+    "correct_option": "A",
+    "rationale": "'Press for' means to continuously make requests or demands for something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2103",
+    "question": "Spot the error: 'Despite the heavy rain, they pressed on with their journey.'",
+    "options": {
+      "A": "Despite the heavy rain,",
+      "B": "they pressed on",
+      "C": "with their journey.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Press on' means to continue moving forward or doing something despite difficulties. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2104",
+    "question": "What does 'rule out' mean?",
+    "options": {
+      "A": "To exclude or dismiss a possibility.",
+      "B": "To draw lines on paper.",
+      "C": "To govern a country.",
+      "D": "To cancel an event."
+    },
+    "correct_option": "A",
+    "rationale": "'Rule out' means to dismiss or eliminate from consideration."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2105",
+    "question": "Fill in the blank: 'The doctor could not _____ the possibility of an infection.'",
+    "options": {
+      "A": "rule out",
+      "B": "rule in",
+      "C": "rule over",
+      "D": "rule up"
+    },
+    "correct_option": "A",
+    "rationale": "'Rule out' means to dismiss the possibility of something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2106",
+    "question": "Choose the meaning of 'run across':",
+    "options": {
+      "A": "To find or meet by chance.",
+      "B": "To sprint quickly over a street.",
+      "C": "To run out of fuel.",
+      "D": "To chase a criminal."
+    },
+    "correct_option": "A",
+    "explanation": "'Run across' means to find or encounter someone or something unexpectedly."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2107",
+    "question": "Spot the error: 'I ran across an old diary while cleaning my room.'",
+    "options": {
+      "A": "I ran across",
+      "B": "an old diary while",
+      "C": "cleaning my room.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Run across' is used correctly to mean finding something by chance. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2108",
+    "question": "Fill in the blank: 'The company managed to _____ its competitors in product innovation.'",
+    "options": {
+      "A": "run circles around",
+      "B": "run down",
+      "C": "run into",
+      "D": "run over"
+    },
+    "correct_option": "A",
+    "explanation": "'Run circles around' is an idiomatic expression meaning to outperform or surpass someone easily."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2109",
+    "question": "What does 'run down' mean when referring to a person?",
+    "options": {
+      "A": "To criticize someone or be exhausted/fatigued.",
+      "B": "To chase someone downhill.",
+      "C": "To hit with a car.",
+      "D": "To promote someone."
+    },
+    "correct_option": "A",
+    "explanation": "'Run down' can mean to speak ill of someone or to feel physically exhausted."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2110",
+    "question": "Spot the error: 'She felt completely run down after working double shifts.'",
+    "options": {
+      "A": "She felt completely",
+      "B": "run down after",
+      "C": "working double shifts.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Run down' is used correctly to mean exhausted. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2111",
+    "question": "Fill in the blank: 'The car lost control and _____ a stray dog.'",
+    "options": {
+      "A": "ran over",
+      "B": "ran into",
+      "C": "ran down",
+      "D": "ran across"
+    },
+    "correct_option": "A",
+    "explanation": "'Run over' means to knock a person or animal down with a vehicle."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2112",
+    "question": "What does 'save up' mean?",
+    "options": {
+      "A": "To accumulate money over time for a specific purpose.",
+      "B": "To rescue someone from danger.",
+      "C": "To keep files on a computer.",
+      "D": "To store food in a pantry."
+    },
+    "correct_option": "A",
+    "explanation": "'Save up' means to hoard or store money gradually for future use."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2113",
+    "question": "Spot the error: 'He is saving up for a new motorcycle.'",
+    "options": {
+      "A": "He is saving up",
+      "B": "for a new",
+      "C": "motorcycle.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Saving up' is used correctly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2114",
+    "question": "Fill in the blank: 'The heavy rain began to _____ as evening approached.'",
+    "options": {
+      "A": "ease off",
+      "B": "ease up",
+      "C": "Both A and B are correct.",
+      "D": "ease in"
+    },
+    "correct_option": "C",
+    "explanation": "Both 'ease off' and 'ease up' mean to become less intense or severe (used for rain, traffic, pain, etc.)."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2115",
+    "question": "Choose the meaning of 'scratch out':",
+    "options": {
+      "A": "To delete or cross out writing.",
+      "B": "To injure with fingernails.",
+      "C": "To draw a picture rapidly.",
+      "D": "To win a competition."
+    },
+    "correct_option": "A",
+    "explanation": "'Scratch out' means to obliterate or cross out text."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2116",
+    "question": "Spot the error: 'He scratched out his old address and wrote the new one.'",
+    "options": {
+      "A": "He scratched out",
+      "B": "his old address and",
+      "C": "wrote the new one.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Scratch out' is used correctly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2117",
+    "question": "Fill in the blank: 'The company tried to _____ its financial missteps before the audit.'",
+    "options": {
+      "A": "smooth over",
+      "B": "smooth out",
+      "C": "Both A and B are correct.",
+      "D": "smooth down"
+    },
+    "correct_option": "C",
+    "explanation": "Both 'smooth over' and 'smooth out' mean to make difficulties or problems seem less serious or resolve them."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2118",
+    "question": "What does 'stand out' mean?",
+    "options": {
+      "A": "To be exceptionally noticeable or prominent.",
+      "B": "To stand outside a building.",
+      "C": "To refuse to compromise.",
+      "D": "To protect someone."
+    },
+    "correct_option": "A",
+    "explanation": "'Stand out' means to be easily distinguished or noticeable."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2119",
+    "question": "Spot the error: 'Her brilliant academic performance made her stand out among peers.'",
+    "options": {
+      "A": "Her brilliant performance",
+      "B": "made her stand out",
+      "C": "among peers.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Stand out' is used correctly to mean being prominent. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2120",
+    "question": "Fill in the blank: 'The old traditions still _____ in rural communities.'",
+    "options": {
+      "A": "stick around",
+      "B": "stick it out",
+      "C": "stick by",
+      "D": "stick fast"
+    },
+    "correct_option": "D",
+    "explanation": "'Stick fast' or 'remain firm'. Let's use 'hold on' or 'linger on'. Alternatively, 'stick around' means stay in a place."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2120_REV",
+    "question": "Fill in the blank: 'Do you want to _____ after the meeting for a quick chat?'",
+    "options": {
+      "A": "stick around",
+      "B": "stick out",
+      "C": "stick to",
+      "D": "stick up"
+    },
+    "correct_option": "A",
+    "explanation": "'Stick around' means to stay somewhere waiting or visiting."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2121",
+    "question": "What does 'stick to' mean?",
+    "options": {
+      "A": "To adhere or persist with a plan, promise, or rule.",
+      "B": "To glue two items together.",
+      "C": "To follow someone secretly.",
+      "D": "To stop trying."
+    },
+    "correct_option": "A",
+    "explanation": "'Stick to' means to continue doing or using something without changing."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2122",
+    "question": "Fill in the blank: 'No matter what happens, we must _____ our original strategy.'",
+    "options": {
+      "A": "stick to",
+      "B": "stick out",
+      "C": "stick by",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both 'stick to' and 'stick by' mean to remain loyal or committed to a plan or person."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2123",
+    "question": "Spot the error: 'He decided to stick it out until the project was completed.'",
+    "options": {
+      "A": "He decided to",
+      "B": "stick it out until",
+      "C": "the project was completed.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Stick it out' means to endure a difficult situation to the end. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2124",
+    "question": "Fill in the blank: 'The details of the contract are still being _____ out.'",
+    "options": {
+      "A": "hammered",
+      "B": "ironed",
+      "C": "pounded",
+      "D": "punched"
+    },
+    "correct_option": "A",
+    "explanation": "'Hammer out' means to achieve an agreement or solution through prolonged discussion or debate."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2125",
+    "question": "What does 'tide over' mean?",
+    "options": {
+      "A": "To help someone through a difficult period with temporary support or money.",
+      "B": "To cross an ocean safely.",
+      "C": "To swim against a strong current.",
+      "D": "To control the weather."
+    },
+    "correct_option": "A",
+    "explanation": "'Tide over' means to sustain someone temporarily during times of need."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2126",
+    "question": "Spot the error: 'This small loan will tide me over until I get my paycheck.'",
+    "options": {
+      "A": "This small loan will",
+      "B": "tide me over until",
+      "C": "I get my paycheck.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Tide over' is used correctly to mean temporary financial assistance or survival. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2127",
+    "question": "Fill in the blank: 'The protesters refused to _____ despite the police warning.'",
+    "options": {
+      "A": "disperse",
+      "B": "back down",
+      "C": "step down",
+      "D": "give up"
+    },
+    "correct_option": "B",
+    "explanation": "'Back down' means to yield or withdraw a demand."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2128",
+    "question": "What does 'track down' mean?",
+    "options": {
+      "A": "To search for and find someone or something after a long pursuit.",
+      "B": "To follow footprints in the mud.",
+      "C": "To design a railroad track.",
+      "D": "To destroy a record."
+    },
+    "correct_option": "A",
+    "explanation": "'Track down' means to pursue and capture or locate someone/something."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2129",
+    "question": "Spot the error: 'The police tracked down the stolen vehicle within 24 hours.'",
+    "options": {
+      "A": "The police tracked down",
+      "B": "the stolen vehicle within",
+      "C": "24 hours.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Track down' is used correctly to mean locating a missing item. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2130",
+    "question": "Fill in the blank: 'The agreement began to _____ after minor disagreements arose.'",
+    "options": {
+      "A": "fritter away",
+      "B": "fall apart",
+      "C": "fall back",
+      "D": "fall behind"
+    },
+    "correct_option": "B",
+    "explanation": "'Fall apart' means to disintegrate or collapse."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2131",
+    "question": "What does 'fritter away' mean?",
+    "options": {
+      "A": "To waste money, time, or resources foolishly in small amounts.",
+      "B": "To fry food until crisp.",
+      "C": "To shred paper documents.",
+      "D": "To distribute gifts."
+    },
+    "correct_option": "A",
+    "explanation": "'Fritter away' means wasting assets gradually on trivial matters."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2132",
+    "question": "Spot the error: 'He frittered away his inheritance on useless gadgets.'",
+    "options": {
+      "A": "He frittered away",
+      "B": "his inheritance on",
+      "C": "useless gadgets.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Frittered away' is used correctly to mean wasting money. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2133",
+    "question": "Fill in the blank: 'The government plans to _____ new tax laws next month.'",
+    "options": {
+      "A": "bring in",
+      "B": "bring up",
+      "C": "bring about",
+      "D": "bring round"
+    },
+    "correct_option": "A",
+    "explanation": "'Bring in' means to introduce a new law, rule, or policy."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2134",
+    "question": "What does 'bring round' mean?",
+    "options": {
+      "A": "To persuade someone to agree with your point of view, or to revive someone who has fainted.",
+      "B": "To drive a car in a circle.",
+      "C": "To deliver food to a house.",
+      "D": "To cancel an appointment."
+    },
+    "correct_option": "A",
+    "explanation": "'Bring round' means to cause someone to change their mind or recover consciousness."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2135",
+    "question": "Spot the error: 'We finally brought him round to our perspective.'",
+    "options": {
+      "A": "We finally brought him round",
+      "B": "to our perspective.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Brought him round' means successfully persuaded. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2136",
+    "question": "Fill in the blank: 'The meeting was _____ because half the board members were absent.'",
+    "options": {
+      "A": "called off",
+      "B": "put off",
+      "C": "Both A and B are correct.",
+      "D": "called on"
+    },
+    "correct_option": "C",
+    "explanation": "Both 'called off' (cancelled) and 'put off' (postponed) are logical, though cancellation vs postponement differs slightly; 'put off' or 'called off' are both frequently used in test contexts for delayed meetings."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2137",
+    "question": "What does 'face up to' mean?",
+    "options": {
+      "A": "To accept and deal with an unpleasant fact or problem.",
+      "B": "To look someone directly in the eye while fighting.",
+      "C": "To apply facial cosmetics.",
+      "D": "To build a wall."
+    },
+    "correct_option": "A",
+    "explanation": "'Face up to' means confronting a difficult reality or challenge head-on."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2138",
+    "question": "Spot the error: 'You need to face up to your responsibilities as a manager.'",
+    "options": {
+      "A": "You need to face up to",
+      "B": "your responsibilities",
+      "C": "as a manager.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Face up to' is used correctly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2139",
+    "question": "Fill in the blank: 'The heavy machinery began to _____ smoke and toxic gases.'",
+    "options": {
+      "A": "give off",
+      "B": "give out",
+      "C": "give in",
+      "D": "give away"
+    },
+    "correct_option": "A",
+    "explanation": "'Give off' means to emit or release gas, light, or smell."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2140",
+    "question": "What does 'give out' mean?",
+    "options": {
+      "A": "To distribute items or to become exhausted/stop working.",
+      "B": "To surrender in battle.",
+      "C": "To reveal a secret.",
+      "D": "To explode."
+    },
+    "correct_option": "A",
+    "explanation": "'Give out' can mean distributing things or failing/running out of strength."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2141",
+    "question": "Spot the error: 'His legs finally gave out after running twenty miles.'",
+    "options": {
+      "A": "His legs finally gave out",
+      "B": "after running twenty miles.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Gave out' means collapsed or failed due to exhaustion. Correct. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2142",
+    "question": "Fill in the blank: 'The old car finally _____ on the way to the countryside.'",
+    "options": {
+      "A": "gave out",
+      "B": "broke down",
+      "C": "Both A and B are correct.",
+      "D": "gave up"
+    },
+    "correct_option": "C",
+    "explanation": "Both 'gave out' and 'broke down' can mean a machine stopping working due to mechanical failure."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2143",
+    "question": "What does 'zero in on' mean?",
+    "options": {
+      "A": "To direct all attention or focus toward a specific target or object.",
+      "B": "To score zero points in a game.",
+      "C": "To erase data completely.",
+      "D": "To calculate a mathematical average."
+    },
+    "correct_option": "A",
+    "explanation": "'Zero in on' means focusing closely on a particular person, thing, or objective."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2144",
+    "question": "Spot the error: 'The police zeroed in on the suspect's hiding place.'",
+    "options": {
+      "A": "The police zeroed in on",
+      "B": "the suspect's hiding place.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Zeroed in on' is used correctly to mean focusing attention. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2145",
+    "question": "Fill in the blank: 'The team managed to _____ the obstacle and complete the project on time.'",
+    "options": {
+      "A": "surmount",
+      "B": "work around",
+      "C": "get over",
+      "D": "Both B and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both 'work around' and 'get over' serve as phrasal verbs meaning to overcome a barrier or problem."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2146",
+    "question": "What does 'wind up' mean in informal speech?",
+    "options": {
+      "A": "To tease or provoke someone playfully or annoyingly.",
+      "B": "To close a business.",
+      "C": "To finish a speech.",
+      "D": "Both A and B are correct."
+    },
+    "correct_option": "D",
+    "explanation": "'Wind up' can mean to close down/conclude or to tease/provoke someone."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2147",
+    "question": "Spot the error: 'Stop winding me up; I am not in the mood for jokes.'",
+    "options": {
+      "A": "Stop winding me up;",
+      "B": "I am not in the mood",
+      "C": "for jokes.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Winding me up' means teasing or provoking. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2148",
+    "question": "Fill in the blank: 'The startup is looking to _____ new investors for its expansion phase.'",
+    "options": {
+      "A": "bring in",
+      "B": "bring on",
+      "C": "bring down",
+      "D": "bring off"
+    },
+    "correct_option": "A",
+    "explanation": "'Bring in' means to involve someone or introduce a new element/investor into a situation."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2149",
+    "question": "What is the meaning of 'zone out'?",
+    "options": {
+      "A": "To lose concentration or become completely inattentive.",
+      "B": "To divide a city into residential sectors.",
+      "C": "To fall asleep instantly.",
+      "D": "To cross a time boundary."
+    },
+    "correct_option": "A",
+    "explanation": "'Zone out' means to disconnect mentally or lose focus on one's surroundings."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2150",
+    "question": "Spot the error: 'He zoned out halfway through the long technical presentation.'",
+    "options": {
+      "A": "He zoned out",
+      "B": "halfway through the long",
+      "C": "technical presentation.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Zoned out' is used correctly to describe losing focus. No error."
+  }
+]

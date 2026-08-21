@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0301",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONVIVIAL**",
+    "options": {
+      "A": "Morose",
+      "B": "Genial",
+      "C": "Sullen",
+      "D": "Aloof"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Convivial' means friendly, lively, and enjoyable; cheerful. 'Genial', 'jovial', or 'festive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0302",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONVIVIAL**",
+    "options": {
+      "A": "Affable",
+      "B": "Sociable",
+      "C": "Jovial",
+      "D": "Morose"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Convivial' means sociable and lively. 'Morose', 'gloomy', or 'unsociable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0303",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COPIOUS**",
+    "options": {
+      "A": "Abundant",
+      "B": "Meager",
+      "C": "Scanty",
+      "D": "Scarce"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Copious' means abundant in supply or quantity. 'Abundant', 'plentiful', or 'profuse' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0304",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COPIOUS**",
+    "options": {
+      "A": "Plentiful",
+      "B": "Sparse",
+      "C": "Profuse",
+      "D": "Ample"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Copious' means plentiful. 'Sparse', 'meager', or 'scanty' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0305",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CORPULENT**",
+    "options": {
+      "A": "Emaciated",
+      "B": "Obese",
+      "C": "Slender",
+      "D": "Gaunt"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Corpulent' means fat or bulky of body. 'Obese', 'portly', or 'stout' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0306",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CORPULENT**",
+    "options": {
+      "A": "Slender",
+      "B": "Portly",
+      "C": "Rotund",
+      "D": "Fleshy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Corpulent' means excessively fat. 'Slender', 'lean', or 'gaunt' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0307",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CORROBORATE**",
+    "options": {
+      "A": "Refute",
+      "B": "Contradict",
+      "C": "Substantiate",
+      "D": "Disprove"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Corroborate' means to confirm or give support to a statement, theory, or finding. 'Substantiate', 'verify', or 'validate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0308",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CORROBORATE**",
+    "options": {
+      "A": "Validate",
+      "B": "Authenticate",
+      "C": "Contradict",
+      "D": "Confirm"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Corroborate' means to support with evidence. 'Contradict', 'refute', or 'disprove' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0309",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COVERT**",
+    "options": {
+      "A": "Furtive",
+      "B": "Overt",
+      "C": "Explicit",
+      "D": "Manifest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Covert' means not openly acknowledged or displayed; secret. 'Furtive', 'clandestine', or 'stealthy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0310",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COVERT**",
+    "options": {
+      "A": "Surreptitious",
+      "B": "Stealthy",
+      "C": "Open",
+      "D": "Hidden"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Covert' means concealed. 'Open', 'overt', or 'public' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0311",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COVETOUS**",
+    "options": {
+      "A": "Greedy",
+      "B": "Generous",
+      "C": "Benevolent",
+      "D": "Altruistic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Covetous' means having or showing a great desire to possess something belonging to someone else. 'Greedy', 'grasping', or 'rapacious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0312",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COVETOUS**",
+    "options": {
+      "A": "Avaricious",
+      "B": "Acquisitive",
+      "C": "Rapacious",
+      "D": "Generous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Covetous' means greedy. 'Generous', 'charitable', or 'unselfish' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0313",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CRASS**",
+    "options": {
+      "A": "Coarse",
+      "B": "Refined",
+      "C": "Polite",
+      "D": "Sophisticated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Crass' means lacking sensitivity, refinement, or intelligence. 'Coarse', 'gross', or 'vulgar' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0314",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CRASS**",
+    "options": {
+      "A": "Boorish",
+      "B": "Refined",
+      "C": "Loutish",
+      "D": "Uncouth"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Crass' means rude and insensitive. 'Refined', 'delicate', or 'sophisticated' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0315",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CRAVEN**",
+    "options": {
+      "A": "Cowardly",
+      "B": "Valiant",
+      "C": "Intrepid",
+      "D": "Gallant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Craven' means contemptibly lacking in courage; cowardly. 'Cowardly', 'pusillanimous', or 'timorous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0316",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CRAVEN**",
+    "options": {
+      "A": "Timid",
+      "B": "Pusillanimous",
+      "C": "Fearful",
+      "D": "Valiant"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Craven' means cowardly. 'Valiant', 'courageous', or 'brave' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0317",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CREDULOUS**",
+    "options": {
+      "A": "Gullible",
+      "B": "Skeptical",
+      "C": "Cynical",
+      "D": "Suspicious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Credulous' means having or showing too great a readiness to believe things. 'Gullible', 'naive', or 'trusting' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0318",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CREDULOUS**",
+    "options": {
+      "A": "Unsuspecting",
+      "B": "Gullible",
+      "C": "Skeptical",
+      "D": "Ingenuous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Credulous' means overly willing to believe. 'Skeptical', 'cynical', or 'disbelieving' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0319",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CULPABLE**",
+    "options": {
+      "A": "Blameworthy",
+      "B": "Innocent",
+      "C": "Exemplary",
+      "D": "Impeccable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Culpable' means deserving blame; guilty. 'Blameworthy', 'guilty', or 'reprehensible' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0320",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CULPABLE**",
+    "options": {
+      "A": "Guilty",
+      "B": "Reprehensible",
+      "C": "Innocent",
+      "D": "Censurable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Culpable' means guilty or blamable. 'Innocent', 'blameless', or 'faultless' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0321",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CURSORY**",
+    "options": {
+      "A": "Superficial",
+      "B": "Thorough",
+      "C": "Meticulous",
+      "D": "Exhaustive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cursory' means hasty and therefore not thorough or detailed. 'Superficial', 'perfunctory', or 'desultory' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0322",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CURSORY**",
+    "options": {
+      "A": "Hasty",
+      "B": "Perfunctory",
+      "C": "Casual",
+      "D": "Meticulous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Cursory' means hasty and shallow. 'Meticulous', 'thorough', or 'exhaustive' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0323",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CURTAIL**",
+    "options": {
+      "A": "Lengthen",
+      "B": "Truncate",
+      "C": "Extend",
+      "D": "Expand"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Curtail' means to reduce in extent or quantity; impose a restriction on. 'Truncate', 'abridge', or 'shorten' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0324",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CURTAIL**",
+    "options": {
+      "A": "Shorten",
+      "B": "Diminish",
+      "C": "Retrench",
+      "D": "Prolong"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Curtail' means to cut short. 'Prolong', 'extend', or 'lengthen' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0325",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CYNICAL**",
+    "options": {
+      "A": "Misanthropic",
+      "B": "Optimistic",
+      "C": "Trusting",
+      "D": "Idealistic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cynical' means believing that people are motivated purely by self-interest; distrustful. 'Misanthropic', 'skeptical', or 'pessimistic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0326",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CYNICAL**",
+    "options": {
+      "A": "Skeptical",
+      "B": "Idealistic",
+      "C": "Derisive",
+      "D": "Distrustful"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Cynical' means distrustful and pessimistic. 'Idealistic', 'optimistic', or 'trusting' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0327",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DAUNTLESS**",
+    "options": {
+      "A": "Intrepid",
+      "B": "Timid",
+      "C": "Apprehensive",
+      "D": "Craven"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Dauntless' means showing fearlessness and determination. 'Intrepid', 'resolute', or 'fearless' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0328",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DAUNTLESS**",
+    "options": {
+      "A": "Fearless",
+      "B": "Audacious",
+      "C": "Craven",
+      "D": "Gallant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Dauntless' means bold and fearless. 'Craven', 'timid', or 'cowardly' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0329",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DEARTH**",
+    "options": {
+      "A": "Scarcity",
+      "B": "Surplus",
+      "C": "Abundance",
+      "D": "Plethora"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Dearth' means a scarcity or lack of something. 'Scarcity', 'shortage', or 'paucity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0330",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DEARTH**",
+    "options": {
+      "A": "Paucity",
+      "B": "Deficiency",
+      "C": "Famine",
+      "D": "Abundance"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Dearth' means a shortage or lack. 'Abundance', 'surplus', or 'profusion' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0331",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DEBACLE**",
+    "options": {
+      "A": "Catastrophe",
+      "B": "Triumph",
+      "C": "Success",
+      "D": "Victory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Debacle' refers to a sudden and ignominious failure; a fiasco. 'Catastrophe', 'fiasco', or 'disaster' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0332",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DEBACLE**",
+    "options": {
+      "A": "Fiasco",
+      "B": "Collapse",
+      "C": "Triumph",
+      "D": "Rout"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Debacle' means a total collapse or disaster. 'Triumph', 'success', or 'victory' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0333",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DEBILITATE**",
+    "options": {
+      "A": "Enfeeble",
+      "B": "Strengthen",
+      "C": "Invigorate",
+      "D": "Fortify"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Debilitate' means to make someone very weak and infirm. 'Enfeeble', 'weaken', or 'sap' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0334",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DEBILITATE**",
+    "options": {
+      "A": "Weaken",
+      "B": "Incapacitate",
+      "C": "Invigorate",
+      "D": "Enervate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Debilitate' means to enfeeble or drain. 'Invigorate', 'fortify', or 'energize' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0335",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DECORUM**",
+    "options": {
+      "A": "Propriety",
+      "B": "Impropriety",
+      "C": "Rudeness",
+      "D": "Indecency"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Decorum' refers to behavior in keeping with good taste and propriety. 'Propriety', 'seemliness', or 'etiquette' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0336",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DECORUM**",
+    "options": {
+      "A": "Etiquette",
+      "B": "Impropriety",
+      "C": "Politeness",
+      "D": "Modesty"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Decorum' is proper behavior. 'Impropriety', 'indecency', or 'rudeness' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0337",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DEFAME**",
+    "options": {
+      "A": "Vilify",
+      "B": "Extol",
+      "C": "Exalt",
+      "D": "Compliment"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Defame' means to damage the good reputation of someone. 'Vilify', 'slander', or 'malign' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0338",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DEFAME**",
+    "options": {
+      "A": "Malign",
+      "B": "Slander",
+      "C": "Laud",
+      "D": "Disparage"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Defame' means to speak ill of. 'Laud', 'praise', or 'honor' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0339",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DEFERENCE**",
+    "options": {
+      "A": "Respect",
+      "B": "Contempt",
+      "C": "Disdain",
+      "D": "Insolence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Deference' means polite submission and respect. 'Respect', 'reverence', or 'regard' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0340",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DEFERENCE**",
+    "options": {
+      "A": "Veneration",
+      "B": "Homage",
+      "C": "Contempt",
+      "D": "Obeisance"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Deference' means showing humble respect. 'Contempt', 'insolence', or 'disrespect' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0341",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DELETERIOUS**",
+    "options": {
+      "A": "Harmful",
+      "B": "Beneficial",
+      "C": "Salubrious",
+      "D": "Advantageous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Deleterious' means causing harm or damage. 'Harmful', 'detrimental', or 'injurious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0342",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DELETERIOUS**",
+    "options": {
+      "A": "Detrimental",
+      "B": "Pernicious",
+      "C": "Salubrious",
+      "D": "Injurious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Deleterious' means harmful. 'Salubrious', 'beneficial', or 'wholesome' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0343",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DELINEATE**",
+    "options": {
+      "A": "Depict",
+      "B": "Distort",
+      "C": "Confuse",
+      "D": "Obscure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Delineate' means to describe or portray something precisely. 'Depict', 'outline', or 'sketch' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0344",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DELINEATE**",
+    "options": {
+      "A": "Describe",
+      "B": "Obscure",
+      "C": "Trace",
+      "D": "Portray"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Delineate' means to clearly describe or portray. 'Obscure', 'distort', or 'misrepresent' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0345",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DEMAGOGUE**",
+    "options": {
+      "A": "Agitator",
+      "B": "Peacemaker",
+      "C": "Mediator",
+      "D": "Arbitrator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'demagogue' is a political leader who seeks support by appealing to popular desires and prejudices rather than rational argument. 'Agitator', 'rabble-rouser', or 'firebrand' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0346",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DEMURE**",
+    "options": {
+      "A": "Modest",
+      "B": "Brazen",
+      "C": "Reserved",
+      "D": "Coy"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Demure' means reserved, modest, and shy. 'Brazen', 'shameless', or 'audacious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0347",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DENIGRATE**",
+    "options": {
+      "A": "Disparage",
+      "B": "Praise",
+      "C": "Extol",
+      "D": "Acclaim"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Denigrate' means to criticize unfairly; disparage. 'Disparage', 'belittle', or 'decry' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0348",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DENIGRATE**",
+    "options": {
+      "A": "Belittle",
+      "B": "Deprecate",
+      "C": "Extol",
+      "D": "Deride"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Denigrate' means to belittle. 'Extol', 'commend', or 'praise' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0349",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**DERIDE**",
+    "options": {
+      "A": "Mock",
+      "B": "Venerate",
+      "C": "Respect",
+      "D": "Revere"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Deride' means to express contempt for; ridicule. 'Mock', 'scoff', or 'taunt' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0350",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**DERIDE**",
+    "options": {
+      "A": "Ridicule",
+      "B": "Venerate",
+      "C": "Taunt",
+      "D": "Jeer"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Deride' means to ridicule and mock. 'Venerate', 'respect', or 'praise' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

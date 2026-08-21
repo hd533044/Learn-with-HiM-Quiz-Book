@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_231",
+    "passage_title": "The Structural Geology of Strike-Slip Duplexes and Transpressional Ridges",
+    "passage_text": "In structural geology, strike-slip fault zones rarely manifest as single, continuous planar fractures over regional distances; rather, they form complex anastomosing networks characterized by converging and diverging strands that isolate lens-shaped crustal blocks known as **duplexes**. When tectonic motion across a strike-slip boundary is accompanied by simultaneous components of orthogonal convergence (oblique convergence), the regime becomes **transpressional**, forcing crustal rocks to undergo both lateral shear and vertical uplift. Under transpressional kinematics, second-order structures develop systematically according to the Riedel shear model: synthetic **Riedel shears ($R$)** form at acute angles to the main fault trace, antithetic **Rist/conjugate shears ($R'$)** form at obtuse angles, and **P-shears** develop sub-parallel to the principal displacement zone. As transpressional deformation intensifies within restraining bends, these secondary reverse and strike-slip faults link together to form **positive flower structures** (or palm-tree structures), characterized by upward-diverging reverse faults that root into a single, sub-vertical strike-slip fault at mid-crustal depths. This structural architecture produces high-relief mountain ranges, rapid exhumation of metamorphic basement rocks, and asymmetric sedimentary basins along structural margins (e.g., the Santa Cruz Mountains along the San Andreas Fault system).",
+    "questions": [
+      {
+        "id": "ENG_RC_231_Q1",
+        "question": "What structural feature is formed when converging and diverging strands of a strike-slip fault isolate lens-shaped crustal blocks?",
+        "options": {
+          "A": "Subterranean salt diapirs",
+          "B": "Crustal duplexes",
+          "C": "Volcanic calderas",
+          "D": "Glacial moraines"
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that fault zones form complex networks that isolate lens-shaped crustal blocks known as duplexes."
+      },
+      {
+        "id": "ENG_RC_231_Q2",
+        "question": "What kinematic condition defines a 'transpressional' tectonic regime?",
+        "options": {
+          "A": "Pure extension with zero horizontal shear.",
+          "B": "Simultaneous lateral shear displacement and orthogonal crustal convergence.",
+          "C": "Complete absence of any tectonic stress.",
+          "D": "Rapid vertical sinking into the mantle."
+        },
+        "correct_option": "B",
+        "rationale": "The text defines transpressional regimes as occurring when strike-slip motion is accompanied by simultaneous orthogonal convergence, causing both shear and uplift."
+      },
+      {
+        "id": "ENG_RC_231_Q3",
+        "question": "How are synthetic Riedel shears ($R$) oriented relative to the main strike-slip fault trace?",
+        "options": {
+          "A": "At acute angles to the main fault trace.",
+          "B": "At exact 90-degree right angles.",
+          "C": "Parallel to the Earth's magnetic equator.",
+          "D": "Randomly without geometric pattern."
+        },
+        "correct_option": "A",
+        "rationale": "The passage states that synthetic Riedel shears ($R$) form at acute angles to the main fault trace."
+      },
+      {
+        "id": "ENG_RC_231_Q4",
+        "question": "What is the characteristic geometry of a 'positive flower structure' at mid-crustal depths?",
+        "options": {
+          "A": "Downward-converging normal faults that sink into a magma chamber.",
+          "B": "Upward-diverging reverse faults that root into a single sub-vertical strike-slip fault at depth.",
+          "C": "Horizontal sedimentary layers completely undisturbed by faults.",
+          "D": "Concentric rings of basaltic lava flows."
+        },
+        "correct_option": "B",
+        "rationale": "The text describes positive flower structures as featuring upward-diverging reverse faults rooted in a single sub-vertical strike-slip fault at depth."
+      },
+      {
+        "id": "ENG_RC_231_Q5",
+        "question": "As used in the passage, the word 'anastomosing' describes a network that is:",
+        "options": {
+          "A": "Interconnected and branching out into a net-like mesh of splitting and rejoining strands",
+          "B": "Completely rigid and unchanging over geological time",
+          "C": "Formed exclusively from liquid water droplets in clouds",
+          "D": "Parallel and strictly linear without intersections"
+        },
+        "correct_option": "A",
+        "rationale": "In geology and anatomy, 'anastomosing' describes a network of branching and reconnecting channels, veins, or fault strands resembling a braided web."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_232",
+    "passage_title": "The Evolutionary Biomechanics of Insect Flight Muscle Systems",
+    "passage_text": "In evolutionary entomology, the mechanical power required for insect flight is generated by two fundamentally distinct muscular architectures: **synchronous flight muscle systems** and **asynchronous flight muscle systems**. Synchronous muscles (found in dragonflies, butterflies, and locusts) operate via classical neuro-muscular control: each individual wing stroke is directly triggered by a discrete electrical action potential delivered from the central nervous system to the flight muscle fibers. Consequently, maximum wingbeat frequencies in synchronous insects are physiologically limited by calcium ion clearing and nerve firing rates to roughly 100 to 200 Hertz. In contrast, advanced evolutionary orders (such as Diptera, Hymenoptera, and Coleoptera) evolved **asynchronous flight muscles**, where wingbeat frequency is decoupled from neural firing rates. In asynchronous systems, a single nerve impulse initiates a continuous, self-sustaining mechanical oscillation of the thoracic exoskeleton. When the dorsal-longitudinal muscles contract, they distort the thoracic walls, stretching the opposing vertical dorsoventral muscles. This mechanical stretch automatically triggers an intrinsic myogenic contraction in the stretched muscles without requiring a nerve impulse. This stretch-activation mechanism bypasses neural synaptic delays, enabling phenomenal wingbeat frequencies exceeding 1,000 Hertz in tiny midges and mosquitoes, providing superior agility and aerodynamic power output.",
+    "questions": [
+      {
+        "id": "ENG_RC_232_Q1",
+        "question": "What is the primary operational difference between synchronous and asynchronous insect flight muscles?",
+        "options": {
+          "A": "Synchronous muscles use chemical energy, while asynchronous muscles use solar power.",
+          "B": "Synchronous muscles require a separate nerve impulse for every single wing stroke, whereas asynchronous muscles use self-sustaining mechanical oscillations decoupled from nerve firing rates.",
+          "C": "Synchronous muscles are found only in aquatic insects, while asynchronous muscles are found in mammals.",
+          "D": "Synchronous muscles generate zero mechanical power."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that synchronous muscles require a discrete action potential per wing stroke, whereas asynchronous muscles decouple wingbeat frequency from nerve firing."
+      },
+      {
+        "id": "ENG_RC_232_Q2",
+        "question": "What physiological factor limits the maximum wingbeat frequency of insects with synchronous flight muscles?",
+        "options": {
+          "A": "The speed of sound in humid air.",
+          "B": "Calcium ion clearing and nerve firing rates from the central nervous system.",
+          "C": "The total physical weight of the insect's antennae.",
+          "D": "The availability of dietary glucose in flower nectar."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that synchronous insect wingbeat frequencies are limited by calcium ion clearing and nerve firing rates to roughly 100 to 200 Hz."
+      },
+      {
+        "id": "ENG_RC_SET_232_Q3",
+        "question": "How does the 'stretch-activation' mechanism operate within asynchronous flight muscles?",
+        "options": {
+          "A": "Stretching an opposing muscle automatically triggers its intrinsic myogenic contraction without needing a nerve impulse.",
+          "B": "Stretching the wing tendon severs the nerve connection entirely.",
+          "C": "Stretching the thorax cools the insect down to freezing temperatures.",
+          "D": "Stretching causes the muscle to turn into liquid protein."
+        },
+        "correct_option": "A",
+        "rationale": "The text details that stretching opposing muscles triggers an intrinsic myogenic contraction automatically without requiring a nerve impulse."
+      },
+      {
+        "id": "ENG_RC_232_Q4",
+        "question": "Which insect orders are explicitly cited as possessing asynchronous flight muscles capable of exceeding 1,000 Hz?",
+        "options": {
+          "A": "Diptera, Hymenoptera, and Coleoptera",
+          "B": "Dragonflies and butterflies",
+          "C": "Orthoptera and mantids",
+          "D": "Aquatic beetles and stoneflies"
+        },
+        "correct_option": "A",
+        "rationale": "The passage lists Diptera, Hymenoptera, and Coleoptera as orders possessing asynchronous muscles achieving high frequencies."
+      },
+      {
+        "id": "ENG_RC_232_Q5",
+        "question": "As used in the passage, the word 'myogenic' describes a muscular contraction that is:",
+        "options": {
+          "A": "Originating directly within muscle tissue itself rather than being initiated by a nerve stimulus",
+          "B": "Caused exclusively by the conscious command of the brain",
+          "C": "Artificial and synthesized inside a chemical laboratory",
+          "D": "Weak, sluggish, and easily paralyzed by cold temperatures"
+        },
+        "correct_option": "A",
+        "rationale": "In physiology, 'myogenic' means originating from muscle cells rather than from neural nerve impulses (neurogenic)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_233",
+    "passage_title": "The Microeconomics of Search Theory and Peter Diamond’s Search Friction Model",
+    "passage_text": "In neoclassical microeconomic theory, frictionless markets are assumed to clear instantaneously through continuous price adjustments. In the labor market, this traditional model implies that unemployed workers find jobs immediately as real wages adjust. In 1971, economist Peter Diamond challenged this clearing paradigm by formulating the **Diamond Search Friction Model**, demonstrating that decentralized search introduces profound market imperfections. In real-world decentralized markets, finding trading partners or job vacancies is neither instantaneous nor costless; it requires costly, time-consuming **search frictions**. Workers must expend time, energy, and financial resources interviewing for vacancies, while firms incur recruitment and advertising costs. Because matching is frictional, the labor market exhibits multiple equilibria and wage stickiness. Diamond proved that decentralized search grants individual firms temporary monopsony power over workers who have matched with them, leading to sub-optimal employment levels and involuntary unemployment. Subsequent extensions by Dale Mortensen and Christopher Pissarides (the Diamond-Mortensen-Pissarides model) formalized the matching function, showing that equilibrium unemployment is determined by the balance between job creation by firms and job destruction rates, earning them the 2010 Nobel Prize in Economics.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_233_Q1",
+        "question": "What core assumption of neoclassical market clearing is challenged by Peter Diamond's Search Friction Model?",
+        "options": {
+          "A": "The assumption that workers and jobs match instantaneously and costlessly without friction.",
+          "B": "The belief that governments should levy corporate income taxes.",
+          "C": "The mathematical validity of algebraic supply and demand curves.",
+          "D": "The existence of physical currency notes and coins."
+        },
+        "correct_option": "A",
+        "rationale": "The opening text explains that Diamond challenged frictionless clearing models, showing that decentralized search introduces market imperfections and search costs."
+      },
+      {
+        "id": "ENG_RC_SET_233_Q2",
+        "question": "What are 'search frictions' in the context of the Diamond labor market model?",
+        "options": {
+          "A": "Mechanical resistance inside computer server processors.",
+          "B": "Costly, time-consuming barriers and expenditures required for workers and firms to locate matching partners.",
+          "C": "Legal taxes imposed on employment contracts by labor courts.",
+          "D": "Physical friction between factory machinery belts."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines search frictions as the costly, time-consuming expenditures required for workers and firms to find each other."
+      },
+      {
+        "id": "ENG_RC_SET_233_Q3",
+        "question": "What market distortion does decentralized search impart to individual firms once a worker-firm match is established?",
+        "options": {
+          "A": "Temporary monopsony power over the matched worker.",
+          "B": "Absolute legal immunity from all labor safety laws.",
+          "C": "Exemption from paying corporate taxes permanently.",
+          "D": "Control over global monetary interest rates."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that decentralized search grants individual firms temporary monopsony power over matched workers, leading to sub-optimal employment."
+      },
+      {
+        "id": "ENG_RC_SET_233_Q4",
+        "question": "According to the Diamond-Mortensen-Pissarides model, what determines equilibrium unemployment in the labor market?",
+        "options": {
+          "A": "The total volume of gold stored in commercial bank vaults.",
+          "B": "The balance between job creation rates by firms and job destruction rates.",
+          "C": "The annual rate of agricultural crop failures.",
+          "D": "The number of university graduates majoring in literature."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that equilibrium unemployment is determined by the balance between job creation by firms and job destruction rates."
+      },
+      {
+        "id": "ENG_RC_SET_233_Q5",
+        "question": "As used in the passage, the word 'monopsony' refers to a market structure characterized by:",
+        "options": {
+          "A": "A single dominant buyer facing many competing sellers (such as one employer hiring workers in a labor market)",
+          "B": "A single dominant seller controlling all retail consumer goods",
+          "C": "Thousands of independent merchants competing with zero regulation",
+          "D": "An economy operating entirely through barter without money"
+        },
+        "correct_option": "A",
+        "rationale": "In economics, a 'monopsony' is a market where there is only one buyer (or dominant employer) for many sellers (workers), giving the buyer market power over wages."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_234",
+    "passage_title": "The Quantum Mechanics of Quantum Error Correction and Toric Codes",
+    "passage_text": "In quantum computing, protecting fragile quantum information from environmental decoherence and operational gate errors represents the single greatest engineering hurdle toward scalable quantum processors. Classical digital computers achieve fault tolerance simply by repeating bits (repetition codes) and utilizing majority voting; however, the **no-cloning theorem** strictly prohibits duplicating an unknown quantum state, rendering classical redundancy useless. Furthermore, quantum errors are continuous, manifesting not only as discrete bit-flips (Pauli-$X$ errors) but also as continuous phase-flips (Pauli-$Z$ errors) and combinations thereof. To overcome these obstacles, physicist Alexei Kitaev formulated **Quantum Error Correction (QEC)** codes, most notably the **Toric Code**. The Toric Code encodes logical qubits non-locally across a two-dimensional lattice mapped onto the surface of a torus. Physical qubits reside on the edges of a square lattice grid, while error-checking syndrome measurements are performed locally by measuring operators associated with the vertices (star operators, detecting phase-flips) and faces (plaquette operators, detecting bit-flips). Because error syndromes are measured without directly observing the quantum states of the data qubits themselves, wave function collapse is avoided. If an environmental error occurs, it creates point-like topological quasiparticle excitations (anyons) at adjacent vertices or faces. Detecting syndromes maps these error anyons, allowing quantum decoders to apply corrective recovery operations before decoherence destroys the logical qubit.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_234_Q1",
+        "question": "Why are classical error-correction repetition codes useless for protecting quantum information?",
+        "options": {
+          "A": "Because classical codes require too much electrical power.",
+          "B": "Because the no-cloning theorem strictly prohibits duplicating an unknown quantum state.",
+          "C": "Because classical bits cannot be stored on silicon microchips.",
+          "D": "Because classical computers operate slower than quantum processors."
+        },
+        "correct_option": "B",
+        "rationale": "The opening text notes that classical repetition codes depend on copying bits, which is strictly forbidden for quantum states by the no-cloning theorem."
+      },
+      {
+        "id": "ENG_RC_SET_234_Q2",
+        "question": "What two types of fundamental quantum errors must quantum error-correction codes simultaneously detect and correct?",
+        "options": {
+          "A": "Thermal melting and mechanical vibration.",
+          "B": "Discrete bit-flips (Pauli-$X$) and continuous phase-flips (Pauli-$Z$).",
+          "C": "Electrical voltage surges and magnetic field collapses.",
+          "D": "Gravitational redshift and relativistic time dilation."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that quantum errors manifest as discrete bit-flips (Pauli-$X$) and continuous phase-flips (Pauli-$Z$)."
+      },
+      {
+        "id": "ENG_RC_SET_234_Q3",
+        "question": "How does Kitaev's Toric Code detect quantum errors without causing wave function collapse?",
+        "options": {
+          "A": "By measuring local vertex (star) and face (plaquette) syndrome operators without directly observing the quantum states of data qubits.",
+          "B": "By freezing the entire quantum computer down to absolute zero.",
+          "C": "By printing out physical paper copies of every qubit state.",
+          "D": "By deleting all data whenever an error is suspected."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that error syndrome measurements check local star and plaquette operators without directly observing data qubits, avoiding wave function collapse."
+      },
+      {
+        "id": "ENG_RC_SET_234_Q4",
+        "question": "What physical entities are created at adjacent vertices or faces when an environmental error occurs in a Toric Code lattice?",
+        "options": {
+          "A": "Radioactive gamma-ray photons",
+          "B": "Point-like topological quasiparticle excitations (anyons)",
+          "C": "Molten droplets of metallic copper",
+          "D": "Toxic chemical gas molecules"
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that errors create point-like topological quasiparticle excitations (anyons) at adjacent vertices or faces."
+      },
+      {
+        "id": "ENG_RC_SET_234_Q5",
+        "question": "As used in the passage, the word 'torus' describes a geometric surface shaped like a:",
+        "options": {
+          "A": "Doughnut or ring",
+          "B": "Flat two-dimensional square sheet",
+          "C": "Point-like mathematical zero-dimensional dot",
+          "D": "Long straight cylindrical tube"
+        },
+        "correct_option": "A",
+        "rationale": "In geometry and topology, a 'torus' is a surface of revolution generated by revolving a circle in three-dimensional space about an axis coplanar with the circle (a doughnut shape)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_235",
+    "passage_title": "The Agrarian Political Economy of Karl Wittfogel’s Oriental Despotism",
+    "passage_text": "In his controversial 1957 macrosociological treatise *Oriental Despotism: A Comparative Study of Total Power*, German-American political sociologist Karl Wittfogel formulated the theory of the **hydraulic civilization** (or Asiatic mode of production), seeking to explain why large-scale agrarian societies in arid river basins (such as dynastic China, ancient Egypt, Mesopotamia, and pre-Columbian Peru) developed uniquely pervasive, despotic state structures quite distinct from European feudalism. Wittfogel argued that in arid and semi-arid environments where agricultural survival depended entirely on artificial irrigation, flood control, and massive canal construction, agricultural productivity could not be achieved through isolated peasant family farming. Organizing, constructing, and maintaining colossal hydraulic infrastructure required centralized managerial coordination, forced labor mobilization, and intricate bureaucratic planning across vast geographic scales. Consequently, the managerial bureaucracy that controlled the water supply inevitably seized absolute political monopoly, establishing a totalitarian **managerial-despotic state**. Unlike Western feudalism—where economic power (land ownership) and political-military power were decentralized and fragmented among competing barons, guilds, and the church—hydraulic civilizations concentrated all economic, religious, and political power within an all-encompassing state apparatus, crushing civil society and preventing the autonomous rise of independent capitalist classes.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_235_Q1",
+        "question": "What historical phenomenon did Karl Wittfogel seek to explain with his theory of 'hydraulic civilizations'?",
+        "options": {
+          "A": "Why industrial capitalism emerged first in nineteenth-century Britain.",
+          "B": "Why large-scale agrarian societies in arid river basins developed pervasive, despotic centralized state structures.",
+          "C": "Why nomadic pastoral tribes abandoned animal herding for maritime sailing.",
+          "D": "Why democratic elections were practiced in ancient Greek city-states."
+        },
+        "correct_option": "B",
+        "rationale": "The opening text states that Wittfogel sought to explain why arid river basin societies (Egypt, China, Mesopotamia) developed pervasive, despotic centralized states."
+      },
+      {
+        "id": "ENG_RC_SET_235_Q2",
+        "question": "According to Wittfogel, why did agriculture in arid river basins necessitate centralized state coordination?",
+        "options": {
+          "A": "Because farming required massive artificial irrigation, flood control, and canal networks that individual peasants could not build alone.",
+          "B": "Because religious law strictly prohibited farming without a royal permit.",
+          "C": "Because river water was extremely toxic and required chemical purification.",
+          "D": "Because agricultural land was owned exclusively by foreign invaders."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that arid farming depended on artificial irrigation and colossal canal infrastructure, requiring centralized managerial coordination and forced labor mobilization."
+      },
+      {
+        "id": "ENG_RC_SET_235_Q3",
+        "question": "How did the political structure of hydraulic civilizations differ from Western European feudalism?",
+        "options": {
+          "A": "Western feudalism concentrated all power in a single emperor, while hydraulic states decentralized power.",
+          "B": "Hydraulic civilizations concentrated economic, political, and religious power within an all-encompassing state apparatus, whereas European feudalism fragmented power among barons, church, and guilds.",
+          "C": "European feudalism had zero laws, while hydraulic states had written constitutions.",
+          "D": "Hydraulic civilizations operated without any government bureaucracy."
+        },
+        "correct_option": "B",
+        "rationale": "The passage highlights that unlike decentralized European feudalism, hydraulic states concentrated all economic, religious, and political power within an all-encompassing state apparatus."
+      },
+      {
+        "id": "ENG_RC_SET_235_Q4",
+        "question": "What was the political fate of civil society under Wittfogel's model of Oriental Despotism?",
+        "options": {
+          "A": "Civil society flourished and established independent parliamentary democracies.",
+          "B": "Civil society was crushed by the all-encompassing state apparatus, preventing the autonomous rise of capitalist classes.",
+          "C": "Civil society took absolute control of all royal palaces and armies.",
+          "D": "Civil society migrated entirely to uninhabited polar islands."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that hydraulic despotism concentrated all power, 'crushing civil society and preventing the autonomous rise of independent capitalist classes.'"
+      },
+      {
+        "id": "ENG_RC_SET_235_Q5",
+        "question": "As used in the passage, the word 'despotic' describes a political ruler or government that exercises:",
+        "options": {
+          "A": "Absolute, unconstrained, and tyrannical power without legal limits or civil liberties",
+          "B": "Strictly limited democratic authority governed by a written constitution",
+          "C": "Temporary, elected emergency powers lasting only one week",
+          "D": "Complete indifference to all matters of taxation and public policy"
+        },
+        "correct_option": "A",
+        "rationale": "'Despotic' describes a ruler or government holding absolute, autocratic power exercised in a cruel or tyrannical manner without institutional checks."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_236",
+    "passage_title": "The Structural Geology and Geodynamics of Subduction Zone Megathrust Earthquakes",
+    "passage_text": "In plate tectonics and seismology, the most catastrophic seismic events on Earth—generating moment magnitudes ($M_w$) exceeding 9.0 (such as the 1960 Chile, 2004 Sumatra, and 2011 Tohoku earthquakes)—occur along subduction zone **megathrust faults**. A subduction megathrust represents the shallow, gently dipping interface where a dense oceanic lithospheric plate plunges beneath a buoyant overriding continental or island arc plate. The mechanical behavior of the megathrust interface is segmented downdip into distinct thermal and frictional zones: (1) The shallowest updip section (trenches and accretionary prisms) is generally velocity-stable and seismically quiet, deforming through stable frictional sliding or aseismic creep. (2) The intermediate **seismogenic zone** (typically spanning depths between 10 and 45 kilometers, where ambient temperatures range from 150°C to 350°C) is locked by strong frictional asperities; here, tectonic plate convergence causes elastic strain to accumulate over centuries. When shear stress exceeds the static frictional strength of the locked asperities, catastrophic dynamic rupture initiates, propagating seismic waves along the subduction interface. (3) Below 45 kilometers, increasing metamorphic temperatures induce ductile transition, where rocks deform via stable crystal plasticity rather than brittle faulting. The seismic rupture potential of megathrusts is heavily modulated by pore-fluid overpressures released through metamorphic dehydration reactions (such as serpentinite dewatering in the subducting slab), which reduce normal clamping stress and facilitate massive coseismic slip.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_236_Q1",
+        "question": "Where do the most catastrophic seismic events on Earth (magnitudes exceeding $M_w$ 9.0) predominantly occur?",
+        "options": {
+          "A": "Along deep continental transform fault zones like the San Andreas Fault.",
+          "B": "Along shallow, gently dipping subduction zone megathrust faults.",
+          "C": "In the center of stable continental cratons.",
+          "D": "Along divergent mid-ocean ridge spreading centers."
+        },
+        "correct_option": "B",
+        "rationale": "The opening text states that the most catastrophic seismic events ($M_w > 9.0$) occur along subduction zone megathrust faults."
+      },
+      {
+        "id": "ENG_RC_SET_236_Q2",
+        "question": "What physical process characterizes the intermediate **seismogenic zone** (10 to 45 km depth) of a megathrust fault during the inter-seismic period?",
+        "options": {
+          "A": "Continuous, silent seismic slip without any stress accumulation.",
+          "B": "The interface is locked by frictional asperities, causing elastic strain to accumulate over centuries.",
+          "C": "Rapid melting of solid rock into liquid magma chambers.",
+          "D": "The complete absence of any tectonic plate convergence."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that the seismogenic zone is locked by frictional asperities, causing tectonic convergence to accumulate elastic strain over centuries until rupture."
+      },
+      {
+        "id": "ENG_RC_SET_236_Q3",
+        "question": "What structural transition prevents brittle earthquake faulting at depths exceeding 45 kilometers along a subduction interface?",
+        "options": {
+          "A": "Increasing metamorphic temperatures induce a transition to stable crystal plasticity and ductile deformation.",
+          "B": "The complete absence of any solid rock below 45 km.",
+          "C": "Freezing temperatures that turn rock into hard permafrost.",
+          "D": "Intense magnetic fields that repel tectonic plates."
+        },
+        "correct_option": "A",
+        "rationale": "The text notes that below 45 km, increasing temperatures induce ductile transition where rocks deform via crystal plasticity rather than brittle faulting."
+      },
+      {
+        "id": "ENG_RC_SET_236_Q4",
+        "question": "How do metamorphic dehydration reactions (like serpentinite dewatering) influence megathrust earthquake slip?",
+        "options": {
+          "A": "They generate pore-fluid overpressures that reduce normal clamping stress, facilitating massive coseismic slip.",
+          "B": "They cement the fault interface permanently with solid granite.",
+          "C": "They absorb all seismic wave energy, eliminating ground shaking.",
+          "D": "They cool the subducting slab down to absolute zero."
+        },
+        "correct_option": "A",
+        "rationale": "The final sentence states that pore-fluid overpressures released through dehydration reactions reduce normal clamping stress and facilitate massive coseismic slip."
+      },
+      {
+        "id": "ENG_RC_SET_236_Q5",
+        "question": "As used in the passage, the word 'asperity' refers to:",
+        "options": {
+          "A": "A rough, friction-locked patch or irregularity along a fault plane that impedes smooth sliding",
+          "B": "A smooth, frictionless layer of liquid oil lubricating tectonic plates",
+          "C": "An active volcanic vent erupting basaltic lava",
+          "D": "A deep marine trench carved by ocean currents"
+        },
+        "correct_option": "A",
+        "rationale": "In seismology and structural geology, an 'asperity' is a high-friction patch or bump along a fault interface where fault surfaces lock and accumulate elastic stress."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_237",
+    "passage_title": "The Quantum Mechanics of the Quantum Anomalous Hall Effect",
+    "passage_text": "In condensed matter physics, the **Quantum Anomalous Hall Effect (QAHE)** represents an extraordinary topological quantum phase where quantized Hall resistance plateaus emerge at zero external magnetic field. Unlike the standard Integer Quantum Hall Effect—which requires enormous superconducting magnets producing Tesla-scale external magnetic fields to break time-reversal symmetry—the QAHE is driven entirely by internal relativistic interactions. Pioneered theoretically by Duncan Haldane in 1988 and first experimentally realized in 2013 by Xueqiang Qi, Ke Wang, and Qikun Xue, the QAHE is engineered in magnetically doped topological insulator thin films (such as chromium-doped $(Bi,Sb)_2Te_3$). In these magnetic topological insulators, spontaneous out-of-plane magnetization breaks time-reversal symmetry internally. Simultaneously, strong atomic spin-orbit coupling in the heavy-element crystal lattice inverts the electronic band structure. The synergistic combination of internal magnetization and spin-orbit coupling opens a topological energy gap in the bulk while forcing the emergence of chiral, dissipationless **one-dimensional edge states** along the perimeter of the material. These edge electrons conduct electrical current with absolute zero resistance ($R_{xx} = 0$) and quantized Hall resistance ($R_{xy} = h / e^2$) without requiring any external magnetic coils, holding immense promise for ultra-low-power microelectronic logic and lossless quantum computing interconnects.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_237_Q1",
+        "question": "What feature distinguishes the Quantum Anomalous Hall Effect (QAHE) from the standard Integer Quantum Hall Effect?",
+        "options": {
+          "A": "QAHE requires enormous external superconducting magnets to operate.",
+          "B": "QAHE exhibits quantized Hall resistance plateaus at zero external magnetic field, driven by internal relativistic interactions.",
+          "C": "QAHE occurs only in liquid helium at absolute zero.",
+          "D": "QAHE eliminates electrical resistance by converting electrons into sound waves."
+        },
+        "correct_option": "B",
+        "rationale": "The opening text explains that QAHE achieves quantized Hall resistance plateaus at zero external magnetic field, unlike standard QHE which requires Tesla-scale magnets."
+      },
+      {
+        "id": "ENG_RC_SET_237_Q2",
+        "question": "What internal physical mechanism breaks time-reversal symmetry in magnetically doped topological insulators?",
+        "options": {
+          "A": "Spontaneous out-of-plane magnetization from magnetic dopants like chromium.",
+          "B": "External mechanical vibration applied by ultrasonic transducers.",
+          "C": "The complete removal of all atomic nuclei from the crystal.",
+          "D": "Intense thermal heating from laser diodes."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that spontaneous out-of-plane magnetization in chromium-doped topological insulators breaks time-reversal symmetry internally."
+      },
+      {
+        "id": "ENG_RC_SET_237_Q3",
+        "question": "What role is played by strong atomic spin-orbit coupling in the QAHE crystal lattice?",
+        "options": {
+          "A": "It melts the semiconductor crystal into liquid glass.",
+          "B": "It inverts the electronic band structure, which, combined with magnetization, opens a bulk energy gap and creates chiral edge states.",
+          "C": "It accelerates electrons to exceed the speed of light.",
+          "D": "It neutralizes all electrical charges inside the atoms."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that spin-orbit coupling inverts electronic band structures, opening a bulk gap and forcing chiral edge states to form along the perimeter."
+      },
+      {
+        "id": "ENG_RC_SET_237_Q4",
+        "question": "Which research team achieved the first experimental realization of the QAHE in 2013?",
+        "options": {
+          "A": "Xueqiang Qi, Ke Wang, and Qikun Xue",
+          "B": "Daniel Tsui, Horst Störmer, and Arthur Gossard",
+          "C": "Charles Bennett and Gilles Brassard",
+          "D": "Gerd Binnig and Heinrich Rohrer"
+        },
+        "correct_option": "A",
+        "rationale": "The text explicitly credits Xueqiang Qi, Ke Wang, and Qikun Xue with experimentally realizing the QAHE in 2013."
+      },
+      {
+        "id": "ENG_RC_SET_237_Q5",
+        "question": "As used in the passage, the word 'chiral' describes edge states that:",
+        "options": {
+          "A": "Propagates strictly in one unidirectional path along a boundary without backscattering",
+          "B": "Oscillate randomly back and forth in both directions",
+          "C": "Possess a spherical, symmetrical geometry",
+          "D": "Emit bright fluorescent colored light"
+        },
+        "correct_option": "A",
+        "rationale": "In physics, 'chiral' edge states are unidirectional transport channels where particles move strictly in one direction along a boundary."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_238",
+    "passage_title": "The Agrarian Political Economy of Ester Boserup’s Theory of Agricultural Intensification",
+    "passage_text": "In her pioneering 1965 economic anthropology treatise *The Conditions of Agricultural Growth: The Economics of Agrarian Change Under Population Pressure*, Danish economist Ester Boserup challenged the dominant neo-Malthusian paradigm established by Thomas Malthus. Malthus had argued that agricultural food production grows arithmetically while human population grows geometrically, meaning population growth is strictly constrained by food ceilings, forcing famine and mortality checks. Boserup inverted this causal direction entirely, formulating the **theory of agricultural intensification**. She argued that population growth is the independent variable that drives agricultural technological evolution. When population density in a region is sparse, agrarian communities utilize extensive, low-labor farming systems—such as **slash-and-burn (swidden) agriculture**—where forest plots are cleared, farmed for a year or two, and left to lie fallow for decades to restore soil fertility naturally. As demographic pressures mount and population density increases, fallow periods are progressively shortened. Shortening fallow times inevitably reduces natural soil fertility and triggers weed invasion, forcing peasant societies to abandon swidden methods and invent more labor-intensive, capital-improving agricultural technologies—such as manual hoeing, animal-drawn plowing, organic manuring, terracing, and complex multi-cropping irrigation systems. Boserup demonstrated that necessity is the mother of invention: population pressure forces humanity to increase agricultural productivity per unit of land through intensification, disproving Malthusian limits.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_238_Q1",
+        "question": "How did Ester Boserup's theory of agricultural intensification invert the Malthusian population model?",
+        "options": {
+          "A": "She argued that food production determines population limits, whereas Malthus argued population growth drives agricultural technological innovation.",
+          "B": "She argued that population growth is the independent variable that drives agricultural technological evolution, rather than food ceilings limiting population.",
+          "C": "She claimed that human populations have zero connection to agricultural farming.",
+          "D": "She proved that food production decreases whenever populations increase."
+        },
+        "correct_option": "B",
+        "rationale": "The opening text explains that Malthus viewed food ceilings as a strict limit on population, whereas Boserup inverted this, showing population pressure drives agricultural innovation."
+      },
+      {
+        "id": "ENG_RC_SET_238_Q2",
+        "question": "What characterizes extensive, low-labor farming systems like slash-and-burn (swidden) agriculture in sparse population conditions?",
+        "options": {
+          "A": "Continuous multi-cropping without ever letting soil rest.",
+          "B": "Forest plots are farmed briefly and left to lie fallow for decades to naturally restore soil fertility.",
+          "C": "Heavy reliance on chemical synthetic nitrogen fertilizers and tractors.",
+          "D": "Underground hydroponic greenhouse cultivation."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that swidden agriculture involves clearing forest plots, farming them briefly, and leaving them fallow for decades to restore soil fertility."
+      },
+      {
+        "id": "ENG_RC_SET_238_Q3",
+        "question": "What agricultural consequence is triggered when demographic pressure forces a shortening of fallow periods?",
+        "options": {
+          "A": "Soil fertility declines and weeds invade, forcing societies to adopt more labor-intensive intensification methods like plowing and irrigation.",
+          "B": "Crops grow twice as tall without requiring any labor.",
+          "C": "Soil transforms instantly into solid granite rock.",
+          "D": "All agricultural pests vanish permanently."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that shorter fallows reduce soil fertility and bring weeds, forcing peasants to invent labor-intensive technologies like plows and manuring."
+      },
+      {
+        "id": "ENG_RC_SET_238_Q4",
+        "question": "What was the broader theoretical takeaway of Boserup's empirical anthropological research?",
+        "options": {
+          "A": "Human populations are strictly doomed to starvation by Malthusian limits.",
+          "B": "Population pressure forces agricultural intensification, proving that technological innovation responds to demographic necessity.",
+          "C": "Agrarian societies never alter their farming techniques over time.",
+          "D": "Hunting and gathering is superior to all forms of farming."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that population pressure forces increased land productivity through intensification, disproving Malthusian limits."
+      },
+      {
+        "id": "ENG_RC_SET_238_Q5",
+        "question": "As used in the passage, the word 'fallow' refers to agricultural land that is:",
+        "options": {
+          "A": "Left unplanted and uncultivated for a period of time to allow soil nutrients and fertility to recover naturally",
+          "B": "Planted with high-yield commercial cash crops every single season",
+          "C": "Permanently paved over with asphalt concrete highways",
+          "D": "Flooded with saltwater to kill all living vegetation"
+        },
+        "correct_option": "A",
+        "rationale": "In agriculture, 'fallow' land is plowed or tilled but left unseeded and uncropped for one or more growing cycles to restore organic fertility."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_239",
+    "passage_title": "The Quantum Mechanics of Quantum Metrology and Squeezed Coherent States",
+    "passage_text": "In quantum measurement science and precision metrology—exemplified by gravitational wave detectors like LIGO—measurement sensitivity is fundamentally constrained by the **Heisenberg Uncertainty Principle**, which establishes a fundamental lower bound on the product of uncertainties between conjugate variables: $\\Delta X \\cdot \\Delta P \\geq \\hbar / 2$. In standard laser interferometers, measurement precision is limited by **quantum shot noise**—the statistical Poisson fluctuation in photon arrival times, which generates phase uncertainty in optical detectors. To surpass this standard quantum limit (SQL), quantum metrologists engineer **squeezed coherent states** of light. In a standard coherent laser state, quantum phase noise and amplitude noise are distributed symmetrically as a circular error distribution in phase space. By utilizing non-linear optical crystals (such as optical parametric oscillators), physicists can 'squeeze' the quantum noise ellipse, trading off precision in one variable for heightened precision in its conjugate variable. For example, in **amplitude-squeezed light**, phase uncertainty is drastically reduced below the standard quantum limit at the direct expense of increased amplitude uncertainty. By injecting squeezed vacuum states into the dark port of LIGO's interferometer, gravitational wave astronomers successfully suppress quantum shot noise, enabling unprecedented sub-attometer displacement sensitivity to detect colliding black holes across the cosmos.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_239_Q1",
+        "question": "What fundamental physical law constrains measurement sensitivity in precision optical metrology?",
+        "options": {
+          "A": "The second law of thermodynamics.",
+          "B": "The Heisenberg Uncertainty Principle, establishing a lower bound on conjugate variable uncertainties ($\Delta X \cdot \Delta P \ge \hbar/2$).",
+          "C": "Newton's law of universal gravitation.",
+          "D": "Ohm's law of electrical resistance."
+        },
+        "correct_option": "B",
+        "rationale": "The opening text states that measurement sensitivity is constrained by the Heisenberg Uncertainty Principle."
+      },
+      {
+        "id": "ENG_RC_SET_239_Q2",
+        "question": "What is 'quantum shot noise' in the context of standard laser interferometers?",
+        "options": {
+          "A": "Mechanical rattling caused by acoustic sound waves in the laboratory.",
+          "B": "Statistical Poisson fluctuations in photon arrival times that generate phase uncertainty in optical detectors.",
+          "C": "Thermal melting of laser mirrors by high-intensity light beams.",
+          "D": "Radioactive gamma-ray emission from optical lenses."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines quantum shot noise as statistical Poisson fluctuations in photon arrival times causing phase uncertainty."
+      },
+      {
+        "id": "ENG_RC_SET_239_Q3",
+        "question": "How do quantum metrologists engineer 'squeezed coherent states' of light to surpass the standard quantum limit?",
+        "options": {
+          "A": "By cooling optical lasers down to absolute zero inside a vacuum.",
+          "B": "By using non-linear optical crystals to deform the quantum noise ellipse in phase space, trading precision in one variable for heightened precision in its conjugate.",
+          "C": "By passing laser light through thick lead shielding plates.",
+          "D": "By doubling the electrical voltage supplied to mirror actuators."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that non-linear optical crystals 'squeeze' the quantum noise ellipse, reducing noise in one conjugate variable while increasing it in the other."
+      },
+      {
+        "id": "ENG_RC_SET_239_Q4",
+        "question": "How is squeezed light utilized in gravitational wave observatories like LIGO?",
+        "options": {
+          "A": "Squeezed vacuum states are injected into the dark port of the interferometer to suppress quantum shot noise and boost displacement sensitivity.",
+          "B": "Squeezed light is used to melt rock and drill underground vacuum tunnels.",
+          "C": "Squeezed light powers the emergency backup diesel generators.",
+          "D": "Squeezed light cools the mirror suspensions to room temperature."
+        },
+        "correct_option": "A",
+        "rationale": "The passage notes that injecting squeezed vacuum states into LIGO's dark port suppresses quantum shot noise and enables sub-attometer displacement sensitivity."
+      },
+      {
+        "id": "ENG_RC_SET_239_Q5",
+        "question": "As used in the passage, the word 'conjugate' in physics refers to pairs of physical variables that:",
+        "options": {
+          "A": "Cannot be simultaneously measured with arbitrary precision due to quantum uncertainty (such as position and momentum)",
+          "B": "Are chemically bonded together using covalent electron pairs",
+          "C": "Travel in opposite directions at supersonic speeds",
+          "D": "Possess identical electrical charges and masses"
+        },
+        "correct_option": "A",
+        "rationale": "In quantum mechanics, 'conjugate variables' (like position/momentum or phase/amplitude) are pairs of observables that do not commute and are bound by uncertainty relations."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_240",
+    "passage_title": "The Structural Geology and Geodynamics of Orogenic Wedges and Critical Taper Theory",
+    "passage_text": "In structural geology and mountain belt mechanics, **Critical Taper Theory**—formulated by geophysicists James Davis, John Suppe, and Frank Dahlen in 1983—provides the foundational mechanical model explaining the structural evolution and geometry of accretionary prisms and compressional mountain belts (orogens) such as the Himalayas and the Zagros Mountains. Treating an orogenic wedge as a Coulomb wedge sliding over a basal detachment fault, Critical Taper Theory posits that a wedge deforms internally via distributed brittle faulting and folding until it achieves a stable, mechanically balanced **critical taper angle ($\alpha + \beta$)**, where $\alpha$ is the topographic surface slope and $\beta$ is the dip of the basal décollement. The wedge's internal state of stress is everywhere incipiently failing (critically stressed). If tectonic convergence continues without adding surface mass, the wedge becomes over-tapered (too steep), triggering internal extensional faulting and gravitational collapse to flatten the wedge back to critical geometry. Conversely, if high erosional denudation removes surface mass faster than tectonic accretion adds material, the wedge becomes under-tapered (too shallow), causing internal shortening, thrust faulting, and crustal thickening until the stable critical taper angle is restored. This self-regulating mechanical feedback loop demonstrates that mountain building is governed by mechanical equilibrium between basal frictional resistance and internal gravitational potential energy.",
+    "questions": [
+      {
+        "id": "ENG_RC_SET_240_Q1",
+        "question": "What primary geological phenomenon is explained by Critical Taper Theory?",
+        "options": {
+          "A": "The formation of deep ocean trenches along subduction zones.",
+          "B": "The structural evolution, geometry, and internal mechanical stability of accretionary wedges and mountain belts (orogens).",
+          "C": "The crystallization of granite batholiths inside continental crust.",
+          "D": "The generation of basaltic lava flows at mid-ocean ridges."
+        },
+        "correct_option": "B",
+        "rationale": "The opening text explains that Critical Taper Theory models the structural evolution and geometry of accretionary prisms and compressional mountain belts."
+      },
+      {
+        "id": "ENG_RC_SET_240_Q2",
+        "question": "How is the total critical taper angle of an orogenic wedge mathematically defined in terms of its surface and basal slopes?",
+        "options": {
+          "A": "$\\alpha + \\beta$ (where $\\alpha$ is the topographic surface slope and $\\beta$ is the dip of the basal décollement).",
+          "B": "$\\alpha \\cdot \\beta$ (surface slope multiplied by basal dip).",
+          "C": "$\\beta - \\alpha$ (basal dip minus surface slope).",
+          "D": "Constant 90 degrees."
+        },
+        "correct_option": "A",
+        "rationale": "The passage defines the critical taper angle as $\alpha + \beta$, where $\alpha$ is surface slope and $\beta$ is the basal décollement dip."
+      },
+      {
+        "id": "ENG_RC_SET_240_Q3",
+        "question": "What structural response occurs if an orogenic wedge becomes 'over-tapered' (too steep) due to continuous tectonic convergence?",
+        "options": {
+          "A": "It triggers internal extensional faulting and gravitational collapse to flatten the wedge back to critical geometry.",
+          "B": "It immediately sinks into the molten core of the Earth.",
+          "C": "It transforms into solid liquid water.",
+          "D": "It stops all internal earthquake activity permanently."
+        },
+        "correct_option": "A",
+        "rationale": "The text notes that an over-tapered wedge triggers internal extensional faulting and gravitational collapse to flatten back to the stable critical angle."
+      },
+      {
+        "id": "ENG_RC_SET_240_Q4",
+        "question": "What mechanical adjustment occurs if rapid surface erosion makes an orogenic wedge 'under-tapered' (too shallow)?",
+        "options": {
+          "A": "Internal shortening, thrust faulting, and crustal thickening occur until the stable critical taper angle is restored.",
+          "B": "The entire mountain range dissolves into the atmosphere.",
+          "C": "Volcanic eruptions cover the mountains in basalt.",
+          "D": "The wedge slides sideways into the ocean."
+        },
+        "correct_option": "A",
+        "rationale": "The passage explains that under-tapered wedges undergo internal shortening and thrust faulting to thicken the crust and restore the stable critical angle."
+      },
+      {
+        "id": "ENG_RC_SET_240_Q5",
+        "question": "As used in the passage, the word 'décollement' refers to:",
+        "options": {
+          "A": "A basal detachment fault plane along which overlying strata slide relative to underlying basement rocks",
+          "B": "A volcanic crater filled with boiling sulfur water",
+          "C": "A sedimentary layer composed entirely of organic peat",
+          "D": "A high-altitude atmospheric wind current"
+        },
+        "correct_option": "A",
+        "rationale": "In structural geology, a 'décollement' (detachment fault) is a basal fault surface along which tectonic sliding and decoupling occur."
+      }
+    ]
+  }
+]

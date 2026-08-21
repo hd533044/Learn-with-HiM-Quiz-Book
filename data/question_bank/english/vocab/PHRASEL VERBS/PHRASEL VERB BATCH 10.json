@@ -1,0 +1,615 @@
+[
+  {
+    "id": "ENG_VOCAB_PHRA_2201",
+    "question": "Choose the correct meaning of the phrasal verb 'add up'.",
+    "options": {
+      "A": "To make sense or be logical.",
+      "B": "To increase in physical size.",
+      "C": "To write a total sum.",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "rationale": "'Add up' can mean to calculate a total sum or, metaphorically, for facts/details to make sense and be consistent."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2202",
+    "question": "Fill in the blank: 'His explanation of the missing funds just doesn't _____.'",
+    "options": {
+      "A": "add up",
+      "B": "add on",
+      "C": "add in",
+      "D": "add to"
+    },
+    "correct_option": "A",
+    "rationale": "'Add up' means to make sense or be logical when evaluated."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2203",
+    "question": "Spot the error: 'The evidence presented in the trial simply didn't add up.'",
+    "options": {
+      "A": "The evidence presented",
+      "B": "in the trial simply",
+      "C": "didn't add up.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "rationale": "'Add up' is used correctly here to indicate lack of logical consistency. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2204",
+    "question": "What does 'ask around' mean?",
+    "options": {
+      "A": "To ask multiple people the same question in order to get information or help.",
+      "B": "To turn around when someone calls your name.",
+      "C": "To invite neighbors to a party.",
+      "D": "To interrogate a suspect."
+    },
+    "correct_option": "A",
+    "rationale": "'Ask around' means to inquire from various people to gather information."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2205",
+    "question": "Fill in the blank: 'I don't know where to buy spare parts, but I'll _____ and let you know.'",
+    "options": {
+      "A": "ask around",
+      "B": "ask for",
+      "C": "ask out",
+      "D": "ask after"
+    },
+    "correct_option": "A",
+    "rationale": "'Ask around' means to inquire among several people."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2206",
+    "question": "Choose the meaning of 'back away':",
+    "options": {
+      "A": "To retreat or move backward from something unpleasant or threatening.",
+      "B": "To reverse an automobile into a garage.",
+      "C": "To support a project financially.",
+      "D": "To cancel a business contract."
+    },
+    "correct_option": "A",
+    "explanation": "'Back away' means to move backwards away from danger or opposition."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2207",
+    "question": "Fill in the blank: 'When the wild animal growled, the hikers slowly _____.'",
+    "options": {
+      "A": "backed away",
+      "B": "backed down",
+      "C": "backed out",
+      "D": "backed up"
+    },
+    "correct_option": "A",
+    "rationale": "'Backed away' indicates moving backward in caution or fear."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2208",
+    "question": "Spot the error: 'The government refused to back down on its new environmental policies.'",
+    "options": {
+      "A": "The government refused",
+      "B": "to back down on",
+      "C": "its new policies.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Back down' means to yield or concede. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2209",
+    "question": "What does 'bank on' mean?",
+    "options": {
+      "A": "To rely or depend on someone or something confidently.",
+      "B": "To deposit cash directly at a bank counter.",
+      "C": "To rob a financial institution.",
+      "D": "To save money for retirement."
+    },
+    "correct_option": "A",
+    "rationale": "'Bank on' is an informal phrasal verb meaning to count or rely on."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2210",
+    "question": "Fill in the blank: 'You can _____ his support during the elections; he never breaks a promise.'",
+    "options": {
+      "A": "bank on",
+      "B": "bank up",
+      "C": "bank in",
+      "D": "bank away"
+    },
+    "correct_option": "A",
+    "rationale": "'Bank on' means to place absolute reliance on."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2211",
+    "question": "Choose the meaning of 'black out':",
+    "options": {
+      "A": "To faint, lose consciousness, or conceal information/lights.",
+      "B": "To paint a wall entirely with black paint.",
+      "C": "To erase computer files permanently.",
+      "D": "To experience a total solar eclipse."
+    },
+    "correct_option": "A",
+    "explanation": "'Black out' refers to losing consciousness or extinguishing lights for safety/secrecy."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2212",
+    "question": "Spot the error: 'Due to the concussion, he blacked out for several minutes.'",
+    "options": {
+      "A": "Due to the concussion,",
+      "B": "he blacked out for",
+      "C": "several minutes.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Blacked out' means losing consciousness. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2213",
+    "question": "Fill in the blank: 'The city experienced a massive power failure that _____ the entire district.'",
+    "options": {
+      "A": "blacked out",
+      "B": "blew out",
+      "C": "burned out",
+      "D": "broke out"
+    },
+    "correct_option": "A",
+    "explanation": "'Black out' can describe a widespread loss of electrical power."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2214",
+    "question": "What does 'bottle up' mean?",
+    "options": {
+      "A": "To suppress or conceal emotions rather than expressing them.",
+      "B": "To pack beverages into glass bottles for sale.",
+      "C": "To trap water inside a narrow container.",
+      "D": "To finish a task hastily."
+    },
+    "correct_option": "A",
+    "rationale": "'Bottle up' means to keep feelings hidden or restrained inside."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2215",
+    "question": "Fill in the blank: 'It is unhealthy to _____ your anger instead of talking about it.'",
+    "options": {
+      "A": "bottle up",
+      "B": "bottle down",
+      "C": "bottle in",
+      "D": "bottle off"
+    },
+    "correct_option": "A",
+    "rationale": "'Bottle up' means holding emotions back."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2216",
+    "question": "Spot the error: 'She bottled up her frustrations until she finally cried.'",
+    "options": {
+      "A": "She bottled up",
+      "B": "her frustrations until",
+      "C": "she finally cried.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Bottled up' is used correctly to mean suppressing emotions. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2217",
+    "question": "Fill in the blank: 'The sudden strike by transport workers will _____ major delays.'",
+    "options": {
+      "A": "bring about",
+      "B": "bring around",
+      "C": "bring down",
+      "D": "bring forward"
+    },
+    "correct_option": "A",
+    "explanation": "'Bring about' means to cause to happen."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2218",
+    "question": "What does 'bring forward' mean in an administrative context?",
+    "options": {
+      "A": "To change the date or time of an event to an earlier schedule.",
+      "B": "To present a physical item to an audience.",
+      "C": "To promote an employee to a senior rank.",
+      "D": "To support an argument with facts."
+    },
+    "correct_option": "A",
+    "explanation": "'Bring forward' means to reschedule an event to an earlier time."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2219",
+    "question": "Spot the error: 'The meeting has been brought forward to Thursday morning.'",
+    "options": {
+      "A": "The meeting has been",
+      "B": "brought forward to",
+      "C": "Thursday morning.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Brought forward' is used correctly to denote rescheduling to an earlier slot. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2220",
+    "question": "Fill in the blank: 'The scandal was enough to _____ the ruling administration.'",
+    "options": {
+      "A": "bring down",
+      "B": "bring up",
+      "C": "bring out",
+      "D": "bring round"
+    },
+    "correct_option": "A",
+    "explanation": "'Bring down' means to cause the downfall, defeat, or overthrow of a government or leader."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2221",
+    "question": "Choose the meaning of 'butt in':",
+    "options": {
+      "A": "To interrupt a conversation or activity rudely.",
+      "B": "To push someone firmly from behind.",
+      "C": "To join a queue legally.",
+      "D": "To crash an automobile into a barrier."
+    },
+    "correct_option": "A",
+    "explanation": "'Butt in' means to interfere or interrupt intrusively."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2222",
+    "question": "Spot the error: 'Please do not butt in while others are speaking.'",
+    "options": {
+      "A": "Please do not butt in",
+      "B": "while others are",
+      "C": "speaking.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Butt in' is used correctly to mean interrupting. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2223",
+    "question": "Fill in the blank: 'The match had to be canceled because the pitch began to _____.'",
+    "options": {
+      "A": "break up",
+      "B": "break down",
+      "C": "break off",
+      "D": "break in"
+    },
+    "correct_option": "A",
+    "explanation": "'Break up' can mean for a surface (like a sports pitch or road) to deteriorate or disintegrate."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2224",
+    "question": "What does 'burn down' mean?",
+    "options": {
+      "A": "To burn completely to the ground (used for buildings or structures).",
+      "B": "To reduce body weight through intensive exercise.",
+      "C": "To extinguish a bonfire with water.",
+      "D": "To consume fuel inefficiently."
+    },
+    "correct_option": "A",
+    "explanation": "'Burn down' means a structure is entirely destroyed by fire."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2225",
+    "question": "Spot the error: 'The old wooden barn burned down during the lightning storm.'",
+    "options": {
+      "A": "The old wooden barn",
+      "B": "burned down during",
+      "C": "the lightning storm.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Burned down' is used correctly for a structure destroyed by fire. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2226",
+    "question": "Fill in the blank: 'Working sixty hours a week will eventually cause you to _____.'",
+    "options": {
+      "A": "burn out",
+      "B": "burn down",
+      "C": "burn up",
+      "D": "burn off"
+    },
+    "correct_option": "A",
+    "explanation": "'Burn out' means to suffer physical or mental collapse due to overwork or stress."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2227",
+    "question": "Choose the meaning of 'buy out':",
+    "options": {
+      "A": "To purchase all the shares or ownership rights of a business partner or company.",
+      "B": "To purchase grocery items in bulk quantities.",
+      "C": "To bribe an official to avoid legal penalties.",
+      "D": "To pay off a mortgage early."
+    },
+    "correct_option": "A",
+    "explanation": "'Buy out' means to acquire full ownership by purchasing someone else's share."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2228",
+    "question": "Spot the error: 'The larger corporation bought out the smaller startup last month.'",
+    "options": {
+      "A": "The larger corporation",
+      "B": "bought out the smaller",
+      "C": "startup last month.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Bought out' is used correctly in a corporate acquisition context. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2229",
+    "question": "Fill in the blank: 'We need to _____ some extra cash before booking the vacation.'",
+    "options": {
+      "A": "rake in",
+      "B": "scrape together",
+      "C": "run down",
+      "D": "roll out"
+    },
+    "correct_option": "B",
+    "explanation": "'Scrape together' means to manage to collect or gather money/resources with difficulty."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2230",
+    "question": "What does 'roll out' mean?",
+    "options": {
+      "A": "To officially launch or introduce a new product, service, or policy to the public.",
+      "B": "To wake up and get out of bed sluggishly.",
+      "C": "To level dough using a rolling pin.",
+      "D": "To flatten metal sheets in a factory."
+    },
+    "correct_option": "A",
+    "explanation": "'Roll out' means to release or launch a new initiative or product gradually."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2231",
+    "question": "Spot the error: 'The tech giant plans to roll out its new operating system next week.'",
+    "options": {
+      "A": "The tech giant plans",
+      "B": "to roll out its new",
+      "C": "operating system next week.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Roll out' is used correctly to mean launching a new product. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2232",
+    "question": "Fill in the blank: 'The criminal tried to _____ the crime by destroying security camera footage.'",
+    "options": {
+      "A": "cover up",
+      "B": "cover over",
+      "C": "cover down",
+      "D": "cover in"
+    },
+    "correct_option": "A",
+    "explanation": "'Cover up' means to conceal wrongdoings, mistakes, or crimes."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2233",
+    "question": "What does 'cry out for' mean?",
+    "options": {
+      "A": "To be in urgent need of something.",
+      "B": "To shout in physical pain.",
+      "C": "To complain excessively about minor issues.",
+      "D": "To protest against government laws."
+    },
+    "correct_option": "A",
+    "explanation": "'Cry out for' means to need something desperately."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2234",
+    "question": "Spot the error: 'The dilapidated school building is crying out for urgent repairs.'",
+    "options": {
+      "A": "The dilapidated school building",
+      "B": "is crying out for",
+      "C": "urgent repairs.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Crying out for' is used correctly to indicate desperate need. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2235",
+    "question": "Fill in the blank: 'The negotiations reached an impasse, and both parties decided to _____.'",
+    "options": {
+      "A": "call it a day",
+      "B": "call the shots",
+      "C": "call names",
+      "D": "call attention"
+    },
+    "correct_option": "A",
+    "explanation": "'Call it a day' is an idiomatic expression meaning to stop working on something for the day."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2236",
+    "question": "Choose the meaning of 'chip in':",
+    "options": {
+      "A": "To contribute money or effort toward a shared goal or project.",
+      "B": "To break a piece off a ceramic dish.",
+      "C": "To interrupt someone speaking.",
+      "D": "To gamble money in a casino."
+    },
+    "correct_option": "A",
+    "explanation": "'Chip in' means to give some money or help when several people are working together."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2237",
+    "question": "Spot the error: 'If everyone chips in a small amount, we can buy a nice gift.'",
+    "options": {
+      "A": "If everyone chips in",
+      "B": "a small amount, we can",
+      "C": "buy a nice gift.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Chips in' is used correctly to mean contributing collectively. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2238",
+    "question": "Fill in the blank: 'The old tradition has slowly begun to _____ over the decades.'",
+    "options": {
+      "A": "die out",
+      "B": "die down",
+      "C": "die off",
+      "D": "die away"
+    },
+    "correct_option": "A",
+    "explanation": "'Die out' means to become extinct or disappear completely over time."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2239",
+    "question": "What does 'duck out of' mean?",
+    "options": {
+      "A": "To avoid or evade an obligation, responsibility, or duty.",
+      "B": "To duck physically underneath a low ceiling.",
+      "C": "To leave a swimming pool quickly.",
+      "D": "To escape from a locked enclosure."
+    },
+    "correct_option": "A",
+    "explanation": "'Duck out of' means to shirk or avoid a commitment."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2240",
+    "question": "Spot the error: 'He tried to duck out of his turn to wash the dishes.'",
+    "options": {
+      "A": "He tried to duck out of",
+      "B": "his turn to wash",
+      "C": "the dishes.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Duck out of' is used correctly to mean avoiding a task. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2241",
+    "question": "Fill in the blank: 'The company plans to _____ its older manufacturing equipment.'",
+    "options": {
+      "A": "phase out",
+      "B": "phase in",
+      "C": "phase up",
+      "D": "phase down"
+    },
+    "correct_option": "A",
+    "explanation": "'Phase out' means to withdraw or discontinue gradually."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2242",
+    "question": "What does 'pig out' mean idiomatically?",
+    "options": {
+      "A": "To eat a very large amount of food greedily.",
+      "B": "To behave in an unruly or messy manner.",
+      "C": "To sleep for an extended duration.",
+      "D": "To spend money extravagantly."
+    },
+    "correct_option": "A",
+    "explanation": "'Pig out' is an informal phrasal verb meaning to overeat."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2243",
+    "question": "Spot the error: 'We pigged out on pizza and ice cream during the movie marathon.'",
+    "options": {
+      "A": "We pigged out on pizza",
+      "B": "and ice cream during",
+      "C": "the movie marathon.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Pigged out' is used correctly to mean overeating. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2244",
+    "question": "Fill in the blank: 'The detective decided to _____ the suspect to see where he went.'",
+    "options": {
+      "A": "tail off",
+      "B": "tail after",
+      "C": "tail away",
+      "D": "tail down"
+    },
+    "correct_option": "B",
+    "explanation": "Wait, the standard phrasal verb meaning to follow secretly is 'tail' (transitive) or 'shadow', but 'tail off' means to decrease in size or number. Let's use 'tail off' in a suitable sentence: 'Attendance at the seminar began to _____ toward the end.'",
+    "correct_option_revised": "A"
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2244_REV",
+    "question": "Fill in the blank: 'Sales figures usually _____ during the final quarter of the fiscal year.'",
+    "options": {
+      "A": "tail off",
+      "B": "tail up",
+      "C": "tail in",
+      "D": "tail on"
+    },
+    "correct_option": "A",
+    "explanation": "'Tail off' means to diminish or decrease gradually in quantity or quality."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2245",
+    "question": "What does 'warm up' mean before physical exercise?",
+    "options": {
+      "A": "To prepare the body for strenuous exercise through light activity.",
+      "B": "To heat up leftover food in a microwave.",
+      "C": "To increase the room temperature.",
+      "D": "To become emotionally excited."
+    },
+    "correct_option": "A",
+    "explanation": "'Warm up' means to prepare muscles and joints for athletic performance."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2246",
+    "question": "Spot the error: 'Athletes must warm up thoroughly before starting the race.'",
+    "options": {
+      "A": "Athletes must warm up",
+      "B": "thoroughly before starting",
+      "C": "the race.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Warm up' is used correctly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2247",
+    "question": "Fill in the blank: 'The crowd began to _____ when the rock band finally walked on stage.'",
+    "options": {
+      "A": "warm up",
+      "B": "warm down",
+      "C": "warm in",
+      "D": "warm out"
+    },
+    "correct_option": "A",
+    "explanation": "'Warm up' can also mean to become more enthusiastic, friendly, or lively."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2248",
+    "question": "What does 'wind down' mean?",
+    "options": {
+      "A": "To relax after a period of hard work or tension.",
+      "B": "To close a business permanently.",
+      "C": "Both A and B are correct.",
+      "D": "To wind a clock spring backward."
+    },
+    "correct_option": "C",
+    "explanation": "'Wind down' means to relax or to gradually bring operations to a close."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2249",
+    "question": "Spot the error: 'After a stressful week at the office, she likes to wind down by reading.'",
+    "options": {
+      "A": "After a stressful week",
+      "B": "at the office, she likes",
+      "C": "to wind down by reading.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Wind down' is used correctly to mean relaxing. No error."
+  },
+  {
+    "id": "ENG_VOCAB_PHRA_2250",
+    "question": "Fill in the blank: 'The project will officially _____ by the end of next month.'",
+    "options": {
+      "A": "wind up",
+      "B": "wind down",
+      "C": "Both A and B are correct.",
+      "D": "wind out"
+    },
+    "correct_option": "C",
+    "explanation": "Both 'wind up' and 'wind down' can signify bringing a project or meeting to a final conclusion."
+  }
+]

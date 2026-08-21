@@ -1,0 +1,602 @@
+[
+  {
+    "id": "ENG_VOCAB_HOM_2651",
+    "question": "Choose the correct homonym to fill in the blank: 'The new manager tried to _____ his authority over the entire department.'",
+    "options": {
+      "A": "wield",
+      "B": "weald",
+      "C": "wild",
+      "D": "yield"
+    },
+    "correct_option": "A",
+    "explanation": "'Wield' means to hold and use a weapon, tool, or power/authority, whereas 'weald' is a wooded country or area of woodland."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2652",
+    "question": "Fill in the blank: 'Farmers in the valley hope the fertile land will _____ a bountiful harvest this year.'",
+    "options": {
+      "A": "wield",
+      "B": "weald",
+      "C": "yield",
+      "D": "shield"
+    },
+    "correct_option": "C",
+    "explanation": "'Yield' (verb) means to produce or provide a natural product, crop, or financial return."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2653",
+    "question": "Spot the error: 'The wild animals roamed freely across the national park.'",
+    "options": {
+      "A": "The wild animals",
+      "B": "roamed freely",
+      "C": "across the national park.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Wild' correctly describes undomesticated animals living in a natural state. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2654",
+    "question": "Fill in the blank: 'The knight polished his heavy steel _____ before entering the tournament.'",
+    "options": {
+      "A": "shield",
+      "B": "sheaf",
+      "C": "shelf",
+      "D": "shift"
+    },
+    "correct_option": "A",
+    "explanation": "'Shield' is a broad piece of armor held or strapped to the arm for protection."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2655",
+    "question": "Fill in the blank: 'The farmer gathered the harvested wheat into a neat _____.'",
+    "options": {
+      "A": "shield",
+      "B": "sheaf",
+      "C": "shelf",
+      "D": "sheet"
+    },
+    "correct_option": "B",
+    "explanation": "'Sheaf' refers to a bundle of grain stalks tied together after reaping."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2656",
+    "question": "Spot the error: 'He placed the heavy books on the wooden shelf.'",
+    "options": {
+      "A": "He placed the heavy books",
+      "B": "on the wooden shelf.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Shelf' is correctly used to describe a flat board fixed horizontally for holding items. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2657",
+    "question": "Fill in the blank: 'The traveler rested in the cool shade of the forest _____.'",
+    "options": {
+      "A": "weald",
+      "B": "wield",
+      "C": "wild",
+      "D": "wind"
+    },
+    "correct_option": "A",
+    "explanation": "'Weald' is an archaic or literary term for a wooded upland area."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2658",
+    "question": "Fill in the blank: 'The carpenter used a fine chisel to _____ the wood into a decorative shape.'",
+    "options": {
+      "A": "hew",
+      "B": "hue",
+      "C": "due",
+      "D": "pew"
+    },
+    "correct_option": "A",
+    "explanation": "'Hew' means to chop or cut something (especially wood or coal) with an axe or sharp tool."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2659",
+    "question": "Fill in the blank: 'The sunset painted the sky in a brilliant _____ of orange and purple.'",
+    "options": {
+      "A": "hew",
+      "B": "hue",
+      "C": "dew",
+      "D": "few"
+    },
+    "correct_option": "B",
+    "explanation": "'Hue' refers to a gradation of color; a tint or shade."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2660",
+    "question": "Spot the error: 'The train was due to arrive at the station at midnight.'",
+    "options": {
+      "A": "The train was due",
+      "B": "to arrive at the station",
+      "C": "at midnight.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Due' correctly denotes expected or scheduled arrival time. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2661",
+    "question": "Fill in the blank: 'The church congregation sat quietly in the wooden _____.'",
+    "options": {
+      "A": "pew",
+      "B": "hew",
+      "C": "hue",
+      "D": "queue"
+    },
+    "correct_option": "A",
+    "explanation": "'Pew' is a long bench with a back, installed in rows in the body of a church."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2662",
+    "question": "Fill in the blank: 'The criminal tried to _____ the stolen goods across the border.'",
+    "options": {
+      "A": "smuggle",
+      "B": "struggle",
+      "C": "snuggle",
+      "D": "strangle"
+    },
+    "correct_option": "A",
+    "explanation": "'Smuggle' means to move goods illegally into or out of a country."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2663",
+    "question": "Fill in the blank: 'The children liked to _____ close to their mother on cold winter nights.'",
+    "options": {
+      "A": "smuggle",
+      "B": "struggle",
+      "C": "snuggle",
+      "D": "straddle"
+    },
+    "correct_option": "C",
+    "explanation": "'Snuggle' means to settle or move into a warm, comfortable position close to another person."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2664",
+    "question": "Spot the error: 'The mountaineer had to struggle against the fierce blizzard winds.'",
+    "options": {
+      "A": "The mountaineer had to struggle",
+      "B": "against the fierce blizzard winds.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Struggle' means to make forceful efforts to overcome a difficulty. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2665",
+    "question": "Fill in the blank: 'The tailor used sharp shears to cut the bolt of silk _____.'",
+    "options": {
+      "A": "fabric",
+      "B": "forge",
+      "C": "fable",
+      "D": "feint"
+    },
+    "correct_option": "A",
+    "explanation": "'Fabric' refers to cloth or manufactured material."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2666",
+    "question": "Fill in the blank: 'The blacksmith hammered the glowing iron horseshoe in the hot _____.'",
+    "options": {
+      "A": "forge",
+      "B": "force",
+      "C": "fringe",
+      "D": "flange"
+    },
+    "correct_option": "A",
+    "explanation": "'Forge' (noun) is a workshop containing a fire for heating iron and other metals."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2667",
+    "question": "Spot the error: 'He tried to forge his supervisor's signature on the document.'",
+    "options": {
+      "A": "He tried to forge",
+      "B": "his supervisor's signature",
+      "C": "on the document.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Forge' (verb) also means to produce a fraudulent copy or imitation of a document or signature. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2668",
+    "question": "Fill in the blank: 'The boxer made a clever _____ with his left hand before landing the punch.'",
+    "options": {
+      "A": "feint",
+      "B": "faint",
+      "C": "feud",
+      "D": "fleet"
+    },
+    "correct_option": "A",
+    "explanation": "'Feint' is a deceptive or pretended blow, thrust, or movement directed at a point other than the one intended to be attacked."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2669",
+    "question": "Fill in the blank: 'The intense heat caused the hiker to grow dizzy and _____.'",
+    "options": {
+      "A": "feint",
+      "B": "faint",
+      "C": "feud",
+      "D": "freak"
+    },
+    "correct_option": "B",
+    "explanation": "'Faint' means having a feeling of weakness, dizziness, or losing consciousness."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2670",
+    "question": "Spot the error: 'The two families had a bitter feud lasting over three generations.'",
+    "options": {
+      "A": "The two families had",
+      "B": "a bitter feud lasting",
+      "C": "over three generations.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Feud' refers to a prolonged and bitter quarrel or dispute. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2671",
+    "question": "Fill in the blank: 'The navy admiral commanded a powerful _____ of warships.'",
+    "options": {
+      "A": "fleet",
+      "B": "float",
+      "C": "flock",
+      "D": "flight"
+    },
+    "correct_option": "A",
+    "explanation": "'Fleet' is a group of ships sailing under the same ownership or command."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2672",
+    "question": "Fill in the blank: 'The wooden logs began to _____ down the rushing river.'",
+    "options": {
+      "A": "fleet",
+      "B": "float",
+      "C": "flow",
+      "D": "flock"
+    },
+    "correct_option": "B",
+    "explanation": "'Float' means to rest or move on or near the surface of a liquid without sinking."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2673",
+    "question": "Spot the error: 'A large flock of migratory birds flew across the clear sky.'",
+    "options": {
+      "A": "A large flock of",
+      "B": "migratory birds flew",
+      "C": "across the clear sky.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Flock' is correctly used for a gathering of birds. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2674",
+    "question": "Fill in the blank: 'The royal family lived in a magnificent historic _____.'",
+    "options": {
+      "A": "castle",
+      "B": "chateau",
+      "C": "cottage",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "While 'castle' refers to a fortified medieval residence, 'chateau' or 'cottage' are alternate housing structures; 'castle' matches the royal grandeur best in classic vocabulary questions."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2675",
+    "question": "Fill in the blank: 'The wine expert examined the vintage _____ with great care.'",
+    "options": {
+      "A": "cask",
+      "B": "task",
+      "C": "mask",
+      "D": "flask"
+    },
+    "correct_option": "A",
+    "explanation": "'Cask' is a large wooden barrel, typically used for aging wine or beer."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2676",
+    "question": "Spot the error: 'Completing the research report was a challenging task for the graduate student.'",
+    "options": {
+      "A": "Completing the research report",
+      "B": "was a challenging task",
+      "C": "for the graduate student.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Task' refers to a piece of work assigned or done as part of a duty. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2677",
+    "question": "Fill in the blank: 'The hiker filled his metal _____ with fresh spring water.'",
+    "options": {
+      "A": "cask",
+      "B": "flask",
+      "C": "basket",
+      "D": "mask"
+    },
+    "correct_option": "B",
+    "explanation": "'Flask' is a small container for holding liquids."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2678",
+    "question": "What does the homonym pair 'complement' vs 'compliment' test?",
+    "options": {
+      "A": "The distinction between completing something (complement) and offering praise (compliment).",
+      "B": "The difference between verbal nouns and adjectives.",
+      "C": "Nothing, they are completely identical in meaning and spelling.",
+      "D": "Grammatical gender in modern English."
+    },
+    "correct_option": "A",
+    "explanation": "'Complement' adds to/completes, whereas 'compliment' expresses admiration or praise."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2679",
+    "question": "Fill in the blank: 'The historical research paper provided a fascinating _____ into ancient trade.'",
+    "options": {
+      "A": "insight",
+      "B": "incite",
+      "C": "excite",
+      "D": "indict"
+    },
+    "correct_option": "A",
+    "explanation": "'Insight' means a deep understanding of a person or thing."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2680",
+    "question": "Fill in the blank: 'The agitator tried to _____ the crowd into a violent riot.'",
+    "options": {
+      "A": "insight",
+      "B": "incite",
+      "C": "invite",
+      "D": "indict"
+    },
+    "correct_option": "B",
+    "explanation": "'Incite' means to encourage or stir up violent or unlawful behavior."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2681",
+    "question": "Spot the error: 'The grand jury voted to indict the corrupt official for bribery.'",
+    "options": {
+      "A": "The grand jury voted",
+      "B": "to indict the corrupt official",
+      "C": "for bribery.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Indict' means formally accuse of or charge with a serious crime. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2682",
+    "question": "Fill in the blank: 'The antique desk was crafted from solid mahogany _____.'",
+    "options": {
+      "A": "wood",
+      "B": "would",
+      "C": "wad",
+      "D": "ward"
+    },
+    "correct_option": "A",
+    "explanation": "'Wood' is the hard fibrous material constituting the main substance of the trunk or branches of a tree."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2683",
+    "question": "Fill in the blank: 'She asked if he _____ mind helping her with the heavy luggage.'",
+    "options": {
+      "A": "wood",
+      "B": "would",
+      "C": "wad",
+      "D": "word"
+    },
+    "correct_option": "B",
+    "explanation": "'Would' is the past tense modal verb used in conditional and polite requests."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2684",
+    "question": "Spot the error: 'He rolled a thick wad of banknotes and put them in his pocket.'",
+    "options": {
+      "A": "He rolled a thick wad",
+      "B": "of banknotes and put",
+      "C": "them in his pocket.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Wad' refers to a lump or bundle of a soft material or paper money. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2685",
+    "question": "Fill in the blank: 'The patient was admitted to the hospital's surgical _____.'",
+    "options": {
+      "A": "ward",
+      "B": "word",
+      "C": "world",
+      "D": "warp"
+    },
+    "correct_option": "A",
+    "explanation": "'Ward' is a separate room or division in a hospital sharing communal staff and facilities."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2686",
+    "question": "Fill in the blank: 'Choose every single _____ in this contract with extreme care.'",
+    "options": {
+      "A": "ward",
+      "B": "word",
+      "C": "work",
+      "D": "warp"
+    },
+    "correct_option": "B",
+    "explanation": "'Word' is a single distinct meaningful element of speech or writing."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2687",
+    "question": "Spot the error: 'Heat and humidity caused the wooden door to warp and jam in its frame.'",
+    "options": {
+      "A": "Heat and humidity caused",
+      "B": "the wooden door to warp",
+      "C": "and jam in its frame.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Warp' means to become or cause to become bent or twisted out of shape. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2688",
+    "question": "Fill in the blank: 'The medieval castle was defended by a deep, stone-lined _____.'",
+    "options": {
+      "A": "moat",
+      "B": "mote",
+      "C": "meet",
+      "D": "meat"
+    },
+    "correct_option": "A",
+    "explanation": "'Moat' is a deep, wide defensive ditch surrounding a castle."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2689",
+    "question": "Fill in the blank: 'Even a single _____ of dust can scratch camera lenses.'",
+    "options": {
+      "A": "moat",
+      "B": "mote",
+      "C": "mate",
+      "D": "mite"
+    },
+    "correct_option": "B",
+    "explanation": "'Mote' refers to a tiny piece of a substance, such as a speck of dust."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2690",
+    "question": "Spot the error: 'A tiny dust mite caused an allergic reaction in her eyes.'",
+    "options": {
+      "A": "A tiny dust mite",
+      "B": "caused an allergic reaction",
+      "C": "in her eyes.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Mite' correctly refers to a tiny arachnid/bug. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2691",
+    "question": "Fill in the blank: 'The shepherd guided his sheep across the open mountain _____.'",
+    "options": {
+      "A": "moor",
+      "B": "more",
+      "C": "merely",
+      "D": "mirror"
+    },
+    "correct_option": "A",
+    "explanation": "'Moor' is an expanse of open rolling uncultivated land."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2692",
+    "question": "Fill in the blank: 'The sailors used heavy ropes to _____ the ship securely to the dock.'",
+    "options": {
+      "A": "moor",
+      "B": "move",
+      "C": "mash",
+      "D": "melt"
+    },
+    "correct_option": "A",
+    "explanation": "'Moor' (verb) also means to make a boat secure with ropes or anchors."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2693",
+    "question": "Spot the error: 'We would love to visit your country once more.'",
+    "options": {
+      "A": "We would love to visit",
+      "B": "your country once more.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Once more' means again. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2694",
+    "question": "Fill in the blank: 'The knight adjusted his iron helmet before entering the _____.'",
+    "options": {
+      "A": "lists",
+      "B": "lest",
+      "C": "loss",
+      "D": "less"
+    },
+    "correct_option": "A",
+    "explanation": "'Lists' (or list) historically refers to an arena or barrier enclosing an area for jousting tournaments."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2695",
+    "question": "Fill in the blank: 'He took careful notes _____ he should forget the instructions.'",
+    "options": {
+      "A": "lists",
+      "B": "lest",
+      "C": "least",
+      "D": "lost"
+    },
+    "correct_option": "B",
+    "explanation": "'Lest' is a conjunction meaning 'with the intention of preventing something undesirable; in case'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2696",
+    "question": "Spot the error: 'Choosing the path of least resistance is not always wise.'",
+    "options": {
+      "A": "Choosing the path",
+      "B": "of least resistance",
+      "C": "is not always wise.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Least' is the superlative form of little. Correct usage. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2697",
+    "question": "Fill in the blank: 'The metal alloy showed remarkable resistance to wear and _____.'",
+    "options": {
+      "A": "tear",
+      "B": "tier",
+      "C": "tour",
+      "D": "tare"
+    },
+    "correct_option": "A",
+    "explanation": "The standard idiom is 'wear and tear', referring to damage from ordinary use."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2698",
+    "question": "Fill in the blank: 'The wedding cake was built with five elegant decorative _____.'",
+    "options": {
+      "A": "tear",
+      "B": "tiers",
+      "C": "tires",
+      "D": "tours"
+    },
+    "correct_option": "B",
+    "explanation": "'Tier' refers to a row or level of a structure placed one above another."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2699",
+    "question": "Spot the error: 'A single tear rolled down her cheek during the touching song.'",
+    "options": {
+      "A": "A single tear",
+      "B": "rolled down her cheek",
+      "C": "during the touching song.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Tear' (noun, drop of liquid from the eye) is used correctly. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2700",
+    "question": "Congratulations! You have completed **Homonyms & Confusables Batch 8** (Items 2651–2700). Total completed Homonyms questions: **400 / 500+**. Would you like to proceed directly to Batch 9 of Homonyms?",
+    "options": {
+      "A": "Yes, generate Homonyms Batch 9",
+      "B": "Switch to Fixed Prepositions Batch 1",
+      "C": "Review incorrect answers",
+      "D": "Pause session"
+    },
+    "correct_option": "A",
+    "explanation": "This concludes Batch 8 of Homonyms. Ready for the next batch."
+  }
+]

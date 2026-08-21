@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_TENS_001",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the correct form of the verb to fill in the blank: 'He usually ___ to office by metro, but today he is taking a cab.'",
+    "options": {
+      "A": "go",
+      "B": "goes",
+      "C": "is going",
+      "D": "has gone"
+    },
+    "correct_option": "B",
+    "explanation": "The adverb 'usually' indicates a habitual action, which requires the Simple Present tense. For a third-person singular subject ('He'), the verb takes the '-es' suffix ('goes').",
+    "tags": ["grammar", "tenses", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_002",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Which tense is used in the following sentence? 'By this time next year, she will have completed her graduation.'",
+    "options": {
+      "A": "Future Simple",
+      "B": "Future Continuous",
+      "C": "Future Perfect",
+      "D": "Future Perfect Continuous"
+    },
+    "correct_option": "C",
+    "explanation": "The structure 'will have + past participle' represents the Future Perfect tense, which expresses an action that will be completed before a specified point in the future.",
+    "tags": ["grammar", "tenses", "identification", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_003",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the error in the sentence: 'I am knowing her for a long time, but we never spoke before.'",
+    "options": {
+      "A": "I am knowing",
+      "B": "her for a long time",
+      "C": "but we never spoke",
+      "D": "before"
+    },
+    "correct_option": "A",
+    "explanation": "Verbs of perception, cognition, and state (such as 'know', 'want', 'believe') are generally not used in continuous tenses. The correct form is 'I have known' because of the time phrase 'for a long time'.",
+    "tags": ["grammar", "tenses", "spotting_errors", "stative_verbs"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_004",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb form: 'If it ___, we will cancel the outdoor match.'",
+    "options": {
+      "A": "rain",
+      "B": "rained",
+      "C": "rains",
+      "D": "will rain"
+    },
+    "correct_option": "C",
+    "explanation": "In a First Conditional sentence, the 'if' clause takes the Simple Present tense, while the main clause takes the future modal ('will + verb').",
+    "tags": ["grammar", "tenses", "conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_005",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the correct sentence representing the Past Perfect Continuous tense.",
+    "options": {
+      "A": "They had played football for two hours.",
+      "B": "They were playing football when it started to rain.",
+      "C": "They had been playing football for two hours before it began to rain.",
+      "D": "They have been playing football since morning."
+    },
+    "correct_option": "C",
+    "explanation": "The Past Perfect Continuous tense uses 'had been + verb-ing' alongside a duration and a point in the past ('had been playing... before it began'). Option A is Past Perfect, Option B is Past Continuous, and Option D is Present Perfect Continuous.",
+    "tags": ["grammar", "tenses", "sentence_structure", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_006",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank with the appropriate tense form: 'Hardly had I stepped out of the house ___ it started pouring heavily.'",
+    "options": {
+      "A": "than",
+      "B": "when",
+      "C": "then",
+      "D": "that"
+    },
+    "correct_option": "B",
+    "explanation": "The correlative conjunction pairing for 'Hardly... / Scarcely...' is always 'when' (or 'before'). Conversely, 'No sooner' is paired with 'than'.",
+    "tags": ["grammar", "tenses", "conjunctions", "inversion"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_007",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the correct sentence structure for a general scientific truth.",
+    "options": {
+      "A": "Water boiled at 100 degrees Celsius.",
+      "B": "Water boils at 100 degrees Celsius.",
+      "C": "Water is boiling at 100 degrees Celsius.",
+      "D": "Water has boiled at 100 degrees Celsius."
+    },
+    "correct_option": "B",
+    "explanation": "Universal truths, scientific facts, and general habits are always stated in the Simple Present tense.",
+    "tags": ["grammar", "tenses", "facts", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_008",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Complete the sentence: 'She ___ her project last night before the lights went out.'",
+    "options": {
+      "A": "finish",
+      "B": "finishes",
+      "C": "had finished",
+      "D": "has finished"
+    },
+    "correct_option": "C",
+    "explanation": "When two past actions happened one after the other, the earlier completed action is placed in the Past Perfect tense ('had finished'), while the later action uses the Simple Past ('went out').",
+    "tags": ["grammar", "tenses", "past_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_009",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'When I met him yesterday, he tells me that he had lost his job.'",
+    "options": {
+      "A": "When I met him",
+      "B": "yesterday, he",
+      "C": "tells me that",
+      "D": "he had lost his job."
+    },
+    "correct_option": "C",
+    "explanation": "The primary clause is in the past tense ('When I met him'). Therefore, the reporting verb must also be in the past tense ('told me'), maintaining sequence of tenses.",
+    "tags": ["grammar", "tenses", "sequence_of_tenses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_010",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the correct form: 'It is high time we ___ something to curb air pollution.'",
+    "options": {
+      "A": "do",
+      "B": "did",
+      "C": "have done",
+      "D": "will do"
+    },
+    "correct_option": "B",
+    "explanation": "After expressions like 'It is time', 'It is high time', or 'It is about time', the verb following the subject must be in the Simple Past tense to denote a present subjunctive meaning.",
+    "tags": ["grammar", "tenses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_011",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'By the time the police arrived, the thieves ___ away.'",
+    "options": {
+      "A": "ran",
+      "B": "have run",
+      "C": "had run",
+      "D": "were running"
+    },
+    "correct_option": "C",
+    "explanation": "The past action completed prior to another past action ('the police arrived') requires the Past Perfect tense ('had run').",
+    "tags": ["grammar", "tenses", "past_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_012",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Which tense is indicated by the phrase 'She has been writing novels for five years'?",
+    "options": {
+      "A": "Present Perfect",
+      "B": "Present Perfect Continuous",
+      "C": "Past Perfect Continuous",
+      "D": "Simple Present"
+    },
+    "correct_option": "B",
+    "explanation": "The construction 'has/have been + verb-ing' with an indication of duration ('for five years') signifies the Present Perfect Continuous tense.",
+    "tags": ["grammar", "tenses", "identification", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_013",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the incorrect sentence among the following options:",
+    "options": {
+      "A": "He is owning a luxury villa in Goa.",
+      "B": "I understand your point of view.",
+      "C": "She smells the fragrance of the fresh flowers.",
+      "D": "They belong to an ancient noble family."
+    },
+    "correct_option": "A",
+    "explanation": "Verb 'own' signifies possession and is a stative verb; it cannot be used in the continuous form ('is owning'). It should be 'He owns a luxury villa in Goa.'",
+    "tags": ["grammar", "tenses", "stative_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_014",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'Look! The children ___ football in the mud.'",
+    "options": {
+      "A": "play",
+      "B": "played",
+      "C": "are playing",
+      "D": "have played"
+    },
+    "correct_option": "C",
+    "explanation": "Interjections like 'Look!', 'Listen!', or 'Behold!' point to actions happening at the exact moment of speech, requiring the Present Continuous tense.",
+    "tags": ["grammar", "tenses", "present_continuous", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_015",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the correct form: 'Unless you work hard, you ___ the examination.'",
+    "options": {
+      "A": "will pass",
+      "B": "would pass",
+      "C": "will not pass",
+      "D": "would not pass"
+    },
+    "correct_option": "C",
+    "explanation": "'Unless' is conditional and negative in meaning (equivalent to 'if not'). In conditional sentences matching a present condition, the main clause requires a negative future outcome ('will not pass').",
+    "tags": ["grammar", "tenses", "conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_016",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I wish I knew her address, I would have mailed her the invitation card.'",
+    "options": {
+      "A": "I wish I knew",
+      "B": "her address,",
+      "C": "I would have mailed",
+      "D": "her the invitation card."
+    },
+    "correct_option": "C",
+    "explanation": "This is a mixed or incorrect subjunctive structure. Following a past subjunctive condition ('I wish I knew' - present hypothetical), the result clause in the past requires 'would mail', or if it referred to an unfulfilled past wish, it should be 'I wish I had known... I would have mailed'. As written, the clause mismatch is incorrect.",
+    "tags": ["grammar", "tenses", "subjunctive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_017",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He talks as if he ___ everything about the universe.'",
+    "options": {
+      "A": "knows",
+      "B": "knew",
+      "C": "had known",
+      "D": "has known"
+    },
+    "correct_option": "B",
+    "explanation": "After 'as if' or 'as though' denoting an unreal or hypothetical situation in the present, the past subjunctive ('knew') is used.",
+    "tags": ["grammar", "tenses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_018",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the tense in: 'The sun sets in the west.'",
+    "options": {
+      "A": "Present Continuous",
+      "B": "Simple Present",
+      "C": "Present Perfect",
+      "D": "Simple Past"
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'sets' represents a habitual action and universal fact expressed in the Simple Present tense.",
+    "tags": ["grammar", "tenses", "identification", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_019",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence form using 'since':",
+    "options": {
+      "A": "I saw him since he came to Delhi.",
+      "B": "I have seen him since he came to Delhi.",
+      "C": "I had seen him since he came to Delhi.",
+      "D": "I see him since he came to Delhi."
+    },
+    "correct_option": "B",
+    "explanation": "When 'since' functions as a conjunction meaning 'from the time when', the main clause is typically in the Present Perfect tense, and the subordinate clause is in the Simple Past.",
+    "tags": ["grammar", "tenses", "conjunctions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_020",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Complete the sentence: 'By next month, we ___ in this house for ten years.'",
+    "options": {
+      "A": "will live",
+      "B": "will have lived",
+      "C": "will be living",
+      "D": "will have been living"
+    },
+    "correct_option": "D",
+    "explanation": "To express an ongoing action extending up to a specific point in the future along with a duration ('for ten years'), the Future Perfect Continuous tense ('will have been living') is used.",
+    "tags": ["grammar", "tenses", "future_tenses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_021",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The train had left before we reached the station.'",
+    "options": {
+      "A": "The train had left",
+      "B": "before",
+      "C": "we reached",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. The earlier action uses Past Perfect ('had left') and the later action uses Simple Past ('reached') relative to 'before'.",
+    "tags": ["grammar", "tenses", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_022",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He ___ English for three years before he moved to London.'",
+    "options": {
+      "A": "has studied",
+      "B": "had studied",
+      "C": "is studying",
+      "D": "studied"
+    },
+    "correct_option": "B",
+    "explanation": "An action that continued for a period of time up to a point in the past requires the Past Perfect tense ('had studied').",
+    "tags": ["grammar", "tenses", "past_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_023",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The Prime Minister ___ the nation tomorrow evening.'",
+    "options": {
+      "A": "addresses",
+      "B": "will address",
+      "C": "is addressing",
+      "D": "Both B and C"
+    },
+    "correct_option": "D",
+    "explanation": "Both the Future Simple ('will address') and Present Continuous ('is addressing' for official fixed arrangements) can be used to describe scheduled future events.",
+    "tags": ["grammar", "tenses", "future_arrangements", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_024",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Identify the incorrect tense usage in the sentence: 'She did not went to the market yesterday.'",
+    "options": {
+      "A": "She",
+      "B": "did not went",
+      "C": "to the market",
+      "D": "yesterday."
+    },
+    "correct_option": "B",
+    "explanation": "The auxiliary verb 'did' already carries the past tense. The main verb following 'did/did not' must be in its base/root form ('go'). It should be 'did not go'.",
+    "tags": ["grammar", "tenses", "auxiliary_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_025",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'While I ___ down the street, I met an old school friend.'",
+    "options": {
+      "A": "walk",
+      "B": "walked",
+      "C": "was walking",
+      "D": "had walked"
+    },
+    "correct_option": "C",
+    "explanation": "An ongoing action in the past that was interrupted by another short action uses the Past Continuous tense ('was walking').",
+    "tags": ["grammar", "tenses", "past_continuous", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_026",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the correct sentence:",
+    "options": {
+      "A": "I have completed my work two hours ago.",
+      "B": "I completed my work two hours ago.",
+      "C": "I had completed my work two hours ago.",
+      "D": "I was completing my work two hours ago."
+    },
+    "correct_option": "B",
+    "explanation": "Specific past time markers like 'two hours ago', 'yesterday', or 'in 1995' require the Simple Present-free Simple Past tense ('completed').",
+    "tags": ["grammar", "tenses", "simple_past", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_027",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Every boy and every girl ___ present in the class today.'",
+    "options": {
+      "A": "were",
+      "B": "are",
+      "C": "was",
+      "D": "have been"
+    },
+    "correct_option": "C",
+    "explanation": "When singular subjects are joined by 'every' or 'each', they take a singular verb ('was'), even if linked by 'and'.",
+    "tags": ["grammar", "subject_verb_agreement", "pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_028",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb: 'Neither the teacher nor the students ___ present at the seminar.'",
+    "options": {
+      "A": "was",
+      "B": "were",
+      "C": "is",
+      "D": "has been"
+    },
+    "correct_option": "B",
+    "explanation": "When subjects are connected by 'neither... nor', the verb agrees with the subject closest to it. Since 'students' is plural, the plural verb 'were' is required.",
+    "tags": ["grammar", "subject_verb_agreement", "conjunctions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_029",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Bread and butter are my favorite breakfast.'",
+    "options": {
+      "A": "Bread and butter",
+      "B": "are",
+      "C": "my favorite",
+      "D": "breakfast."
+    },
+    "correct_option": "B",
+    "explanation": "Certain compound nouns expressing a single composite idea (like 'Bread and butter', 'Slow and steady', 'Rice and curry') take a singular verb ('is').",
+    "tags": ["grammar", "subject_verb_agreement", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_030",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'A number of students ___ participating in the annual fest.'",
+    "options": {
+      "A": "is",
+      "B": "are",
+      "C": "has",
+      "D": "was"
+    },
+    "correct_option": "B",
+    "explanation": "'A number of' takes a plural verb, whereas 'The number of' takes a singular verb.",
+    "tags": ["grammar", "subject_verb_agreement", "quantifiers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_031",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the correct form: 'The committee ___ divided in their opinions regarding the new policy.'",
+    "options": {
+      "A": "is",
+      "B": "was",
+      "C": "are",
+      "D": "has been"
+    },
+    "correct_option": "C",
+    "explanation": "Collective nouns take a plural verb when members are acting individually or are divided in their views ('are divided'), but a singular verb when acting as a single unit.",
+    "tags": ["grammar", "subject_verb_agreement", "nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_032",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Ten miles ___ a long distance to walk on foot.'",
+    "options": {
+      "A": "are",
+      "B": "were",
+      "C": "is",
+      "D": "have been"
+    },
+    "correct_option": "C",
+    "explanation": "Expressions of distance, time, weight, or amount representing a single cumulative quantity take a singular verb.",
+    "tags": ["grammar", "subject_verb_agreement", "nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_033",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'One of my friends are going to the USA next month.'",
+    "options": {
+      "A": "One of my friends",
+      "B": "are",
+      "C": "going to the USA",
+      "D": "next month."
+    },
+    "correct_option": "B",
+    "explanation": "The phrase 'One of + plural noun' is followed by a singular verb because the head word is 'One'. It should be 'is going'.",
+    "tags": ["grammar", "subject_verb_agreement", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_034",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb: 'The poet and philosopher ___ passed away.'",
+    "options": {
+      "A": "has",
+      "B": "have",
+      "C": "are",
+      "D": "were"
+    },
+    "correct_option": "A",
+    "explanation": "When an article ('The') appears only before the first noun joined by 'and' ('The poet and philosopher'), it refers to a single person holding both roles, requiring a singular verb ('has').",
+    "tags": ["grammar", "subject_verb_agreement", "articles", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_035",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Mathematics ___ considered a difficult subject by many students.'",
+    "options": {
+      "A": "are",
+      "B": "were",
+      "C": "is",
+      "D": "have"
+    },
+    "correct_option": "C",
+    "explanation": "Nouns ending in '-ics' that denote branches of study or sciences (such as Mathematics, Physics, Economics) take singular verbs.",
+    "tags": ["grammar", "subject_verb_agreement", "nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_036",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Each of the participants were given a certificate of appreciation.'",
+    "options": {
+      "A": "Each of",
+      "B": "the participants",
+      "C": "were given",
+      "D": "a certificate."
+    },
+    "correct_option": "C",
+    "explanation": "Pronouns like 'Each', 'Everyone', 'Somebody' are grammatically singular and require a singular verb ('was given').",
+    "tags": ["grammar", "subject_verb_agreement", "pronouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_037",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'More than one person ___ involved in the conspiracy.'",
+    "options": {
+      "A": "were",
+      "B": "was",
+      "C": "have been",
+      "D": "are"
+    },
+    "correct_option": "B",
+    "explanation": "Despite its plural meaning, 'More than one + singular noun' takes a singular verb ('was'). Conversely, 'More than two/three + plural noun' takes a plural verb.",
+    "tags": ["grammar", "subject_verb_agreement", "quantifiers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_038",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The jury ___ reached its verdict.'",
+    "options": {
+      "A": "have",
+      "B": "has",
+      "C": "are",
+      "D": "were"
+    },
+    "correct_option": "B",
+    "explanation": "When the jury acts collectively as a single cohesive body ('reached its verdict'), it takes a singular verb ('has').",
+    "tags": ["grammar", "subject_verb_agreement", "collective_nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_039",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The furniture in this showroom look very elegant and expensive.'",
+    "options": {
+      "A": "The furniture",
+      "B": "in this showroom",
+      "C": "look",
+      "D": "very elegant."
+    },
+    "correct_option": "C",
+    "explanation": "Uncountable nouns such as 'furniture', 'information', 'scenery', 'advice', and 'luggage' take singular verbs ('looks').",
+    "tags": ["grammar", "subject_verb_agreement", "uncountable_nouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_040",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Either he or his friends ___ responsible for the error.'",
+    "options": {
+      "A": "is",
+      "B": "are",
+      "C": "was",
+      "D": "has been"
+    },
+    "correct_option": "B",
+    "explanation": "With 'either... or', the verb agrees with the subject closest to it ('friends'). Since 'friends' is plural, the plural verb 'are' is required.",
+    "tags": ["grammar", "subject_verb_agreement", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_041",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding pronoun agreement:",
+    "options": {
+      "A": "Every student must bring their own notebook.",
+      "B": "Every student must bring his or her own notebook.",
+      "C": "Every student must bring our own notebook.",
+      "D": "Every student must bring your own notebook."
+    },
+    "correct_option": "B",
+    "explanation": "Traditionally and formally, singular indefinite antecedents ('every student') require singular pronouns ('his or her'). (Note: Modern usage increasingly accepts gender-neutral singular 'their', but formal exams adhere to 'his or her').",
+    "tags": ["grammar", "pronouns", "agreement", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_042",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Let you and I finish this assignment before sunset.'",
+    "options": {
+      "A": "Let you",
+      "B": "and I",
+      "C": "finish this assignment",
+      "D": "before sunset."
+    },
+    "correct_option": "B",
+    "explanation": "The verb/preposition 'let' takes objective case pronouns. Therefore, it should be 'Let you and me', not 'I'.",
+    "tags": ["grammar", "pronouns", "case", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_043",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It was ___ who solved the difficult puzzle.'",
+    "options": {
+      "A": "me",
+      "B": "him",
+      "C": "I",
+      "D": "them"
+    },
+    "correct_option": "C",
+    "explanation": "In cleft sentences governed by the verb 'to be' ('It was ___ who...'), the pronoun following the verb serves as the subjective complement and must be in the nominative case ('I').",
+    "tags": ["grammar", "pronouns", "case", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_044",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct pronoun order for a normal/positive context: 'You, he and I ___ good friends.'",
+    "options": {
+      "A": "are",
+      "B": "am",
+      "C": "is",
+      "D": "were"
+    },
+    "correct_option": "A",
+    "explanation": "When pronouns of different persons are combined in a plural subject, the verb is always plural ('are'). The pronoun order convention for normal statements is Second Person, Third Person, First Person (2-3-1).",
+    "tags": ["grammar", "pronouns", "person_order", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_045",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The book is yours, but mine is better than it.'",
+    "options": {
+      "A": "The book is yours,",
+      "B": "but mine",
+      "C": "is better than it.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "When comparing two similar objects (your book and my book), to avoid tautology or incorrect reference, possessive pronouns or proper comparisons are used. 'better than yours' or 'better than that of...' is structurally sounder, but in pure pronoun grammar, comparing 'mine' to 'yours' avoids repeating 'the book'.",
+    "tags": ["grammar", "pronouns", "comparisons", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_046",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank with the correct relative pronoun: 'This is the same man ___ helped me yesterday.'",
+    "options": {
+      "A": "who",
+      "B": "whom",
+      "C": "that",
+      "D": "whose"
+    },
+    "correct_option": "C",
+    "explanation": "After words like 'the same', 'all', 'none', 'only', or superlative adjectives, the relative pronoun 'that' is preferred over 'who' or 'which'.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_047",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Neither of the three boys submitted their project report on time.'",
+    "options": {
+      "A": "Neither of",
+      "B": "the three boys",
+      "C": "submitted their",
+      "D": "project report on time."
+    },
+    "correct_option": "A",
+    "explanation": "'Neither' is strictly used for a choice between two items. When referring to three or more items, 'None' should be used instead of 'Neither'.",
+    "tags": ["grammar", "pronouns", "quantifiers", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_048",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence form using reflexive pronouns:",
+    "options": {
+      "A": "Myself and Rahul attended the conference.",
+      "B": "Rahul and myself attended the conference.",
+      "C": "Rahul and I attended the conference.",
+      "D": "Me and Rahul attended the conference."
+    },
+    "correct_option": "C",
+    "explanation": "Reflexive pronouns ('myself', 'yourself') cannot be used as standalone subjects. They require a preceding noun/pronoun antecedent. Option C uses the correct subjective case 'Rahul and I'.",
+    "tags": ["grammar", "pronouns", "reflexive_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_049",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The manager and ___ assistant finalized the blueprint.'",
+    "options": {
+      "A": "his",
+      "B": "him",
+      "C": "he",
+      "D": "himself"
+    },
+    "correct_option": "A",
+    "explanation": "A possessive determiner/adjective ('his') is required before the noun 'assistant' to denote possession.",
+    "tags": ["grammar", "pronouns", "possessive_adjectives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_050",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The boy whom you thought was your friend has betrayed you.'",
+    "options": {
+      "A": "The boy whom",
+      "B": "you thought was",
+      "C": "your friend has",
+      "D": "betrayed you."
+    },
+    "correct_option": "A",
+    "explanation": "The relative pronoun serves as the subject of the verb 'was', not as the object of 'thought'. Therefore, the subjective form 'who' must be used instead of 'whom'.",
+    "tags": ["grammar", "pronouns", "relative_pronouns", "spotting_errors"]
+  }
+]

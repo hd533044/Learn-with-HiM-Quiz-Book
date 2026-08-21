@@ -1,0 +1,952 @@
+[
+  {
+    "id": "ENG_PJ_301",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Supervolcano calderas accumulate colossal volumes of silica-rich, gas-charged rhyolitic magma in crustal reservoirs.",
+      "C": "When structural roof collapse occurs, sudden catastrophic decompression triggers explosive runaway degassing.",
+      "D": "Enormous ash and tephra columns pierce the stratosphere, dispersing millions of tons of sulfur aerosols globally."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces supervolcano calderas accumulating rhyolitic magma. Sentence C describes roof collapse and catastrophic decompression. Sentence D details massive ash plumes piercing the stratosphere. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_302",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1859, Edwin Drake struck petroleum at a depth of sixty-nine feet in Titusville, Pennsylvania.",
+    "jumbled_sentences": {
+      "P": "He utilized a steam-powered cable-tool drill inside an iron pipe casing to prevent borehole collapse.",
+      "Q": "This mechanical technique proved that petroleum could be extracted systematically from deep subterranean reservoirs.",
+      "R": "The strike triggered the historic Pennsylvania oil rush, attracting thousands of prospectors and investors.",
+      "S": "Cheap kerosene refined from crude oil rapidly replaced expensive whale oil as the primary global illuminant."
+    },
+    "fixed_end": "6: Drake's well inaugurated the modern commercial petroleum industry and transformed global energy geopolitics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Drake striking oil in 1859. Sentence P describes his cable-tool iron casing drilling apparatus. Sentence Q explains proving systematic deep oil extraction. Sentence R notes the Pennsylvania oil rush. Sentence S explains kerosene replacing whale oil, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_303",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health ministries mandate nationwide vaccination campaigns to maintain high herd immunity.",
+      "B": "Measles is an exceptionally contagious airborne paramyxovirus with a basic reproduction number ($R_0$) exceeding twelve.",
+      "C": "A single infected individual can transmit viral respiratory droplets to up to eighteen susceptible contacts.",
+      "D": "When community immunization rates dip below ninety-five percent, explosive localized outbreaks erupt rapidly."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces the high transmissibility of the measles virus. Sentence C quantifies individual transmission rates. Sentence D explains outbreaks erupting when vaccination drops below 95%. Sentence A gives the policy conclusion ('Consequently, public health ministries...')."
+  },
+  {
+    "id": "ENG_PJ_304",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1909, Robert Millikan performed the famous oil drop experiment at the University of Chicago.",
+    "jumbled_sentences": {
+      "P": "He sprayed microscopic oil droplets into an electrically charged chamber between two horizontal metal plates.",
+      "Q": "By adjusting the electric voltage, he balanced gravitational downward pull with upward electrostatic force.",
+      "R": "Millikan calculated the net electrical charge carried on hundreds of individually suspended droplets.",
+      "S": "He discovered that all measured charges were integer multiples of a single fundamental constant value ($e$)."
+    },
+    "fixed_end": "6: The experiment determined the precise elementary charge of the electron, earning Millikan the 1923 Nobel Prize in Physics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Millikan's 1909 oil drop experiment. Sentence P describes spraying droplets between charged plates. Sentence Q explains balancing gravitational and electrostatic forces. Sentence R notes calculating charges on suspended droplets. Sentence S reveals that charges were integer multiples of elementary charge ($e$), leading to the Nobel Prize in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_305",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Subduction trench collisions generate hydrous dacitic magmas beneath volcanic continental margins.",
+      "C": "Ascending silica-rich melts stall in upper crustal chambers, fractionating into gas-saturated rhyolites.",
+      "D": "Sudden tectonic faulting breaches magma chamber seals, initiating explosive plinian ash eruptions."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces hydrous dacitic magmas at subduction margins. Sentence C describes melts fractionating into gas-saturated rhyolite. Sentence D explains tectonic breaching triggering plinian eruptions. Sentence A concludes with 'This rapid crystallization' creating porous pumice."
+  },
+  {
+    "id": "ENG_PJ_306",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1896, French physicist Henri Becquerel discovered spontaneous radioactivity by accident.",
+    "jumbled_sentences": {
+      "P": "He placed phosphorescent uranium potassium sulfate crystals on photographic plates wrapped in black paper.",
+      "Q": "Because overcast weather prevented sunlight exposure, he placed the prepared plates in a dark desk drawer.",
+      "R": "Days later, upon developing the unexposed plates, he found distinct dark silhouettes etched onto the emulsion.",
+      "S": "Becquerel realized the uranium salts emitted penetrating invisible radiation without requiring solar phosphorescence."
+    },
+    "fixed_end": "6: His discovery opened the atomic era, sharing the 1903 Nobel Prize in Physics with Marie and Pierre Curie.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Becquerel discovering radioactivity in 1896. Sentence P describes preparing uranium crystals on photographic plates. Sentence Q explains placing plates in a dark drawer due to overcast skies. Sentence R notes dark silhouettes developing on the plates. Sentence S deduces spontaneous invisible radiation, leading to the Nobel Prize in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_307",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, antitrust regulators scrutinize vertical corporate mergers that restrict supply access.",
+      "B": "Vertical integration occurs when a firm acquires upstream suppliers or downstream distribution corridors.",
+      "C": "While vertical mergers can streamline supply chains and lower internal transaction costs, they can foreclose competition.",
+      "D": "Dominant integrated conglomerates can deny critical input access to independent manufacturing rivals."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B defines vertical integration. Sentence C balances supply chain efficiency against anti-competitive foreclosure. Sentence D explains integrated firms foreclosing inputs from rivals. Sentence A gives the regulatory antitrust conclusion ('Consequently, antitrust regulators...')."
+  },
+  {
+    "id": "ENG_PJ_308",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1851, French physicist Léon Foucault demonstrated the Earth's diurnal rotation using a giant pendulum.",
+    "jumbled_sentences": {
+      "P": "He suspended a twenty-eight kilogram brass-coated lead sphere from the dome of the Panthéon in Paris.",
+      "Q": "The sixty-seven meter steel cable allowed the pendulum to swing freely in a constant vertical plane.",
+      "R": "As hours passed, the plane of oscillation appeared to rotate clockwise relative to the Panthéon's floor.",
+      "S": "Foucault explained that the swing plane remained fixed in space while the Earth rotated beneath it."
+    },
+    "fixed_end": "6: The Foucault pendulum provided the first direct, dynamic laboratory proof of Earth's axial rotation.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Foucault demonstrating Earth's rotation in 1851. Sentence P describes the suspended brass sphere at the Panthéon. Sentence Q details the 67-meter cable allowing free swing. Sentence R observes the apparent rotation of the swing plane. Sentence S explains the Earth rotating beneath the fixed swing plane, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_309",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Continental arc volcanoes generate volatile-rich, highly viscous dacitic and rhyolitic magmas.",
+      "C": "As magma ascends toward the surface, decompression exsolves dissolved water vapor into expanding bubbles.",
+      "D": "The violent bursting of these bubbles shatters the viscous molten rock into airborne tephra."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces continental arc volcanoes with viscous dacitic/rhyolitic magmas. Sentence C describes decompression exsolving dissolved water into bubbles. Sentence D explains bubble bursting shattering magma into tephra. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_310",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1912, Henrietta Swan Leavitt discovered the period-luminosity relation of Cepheid variable stars.",
+    "jumbled_sentences": {
+      "P": "Working as a human computer at Harvard Observatory, she cataloged pulsating stars in the Magellanic Clouds.",
+      "Q": "She noticed that brighter Cepheids exhibited longer, more protracted pulsation cycles.",
+      "R": "Because stars in the Small Magellanic Cloud were equidistant from Earth, apparent brightness reflected intrinsic luminosity.",
+      "S": "Leavitt formulated a mathematical calibration linking a star's pulsation period to its absolute magnitude."
+    },
+    "fixed_end": "6: Her discovery provided astronomers with the first 'standard candle' to measure intergalactic cosmic distances.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Leavitt's 1912 period-luminosity discovery. Sentence P describes her cataloging pulsating stars at Harvard. Sentence Q notes brighter stars having longer pulsation periods. Sentence R explains equal distance allowing calibration of true luminosity. Sentence S formalizes the period-magnitude formula, leading to standard candles in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_311",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, central banks enforce stringent countercyclical reserve requirements on commercial lenders.",
+      "B": "Excessive credit expansion during economic booms fuels speculative asset bubbles.",
+      "C": "Commercial banks relax underwriting standards, extending risky subprime loans to overleveraged borrowers.",
+      "D": "When asset prices peak and contract, cascading loan defaults trigger acute banking sector insolvency."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces credit expansion fueling asset bubbles. Sentence C explains banks relaxing underwriting standards. Sentence D describes loan defaults causing banking insolvency when prices contract. Sentence A presents the countercyclical reserve policy solution ('Consequently, central banks enforce...')."
+  },
+  {
+    "id": "ENG_PJ_312",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1860, the first Pony Express mail delivery service was launched across the North American continent.",
+    "jumbled_sentences": {
+      "P": "Relay stations were established every ten to fifteen miles along a two-thousand-mile frontier trail.",
+      "Q": "Riders switched exhausted horses rapidly, galloping continuously through day and night across wilderness.",
+      "R": "This equestrian relay system reduced coast-to-coast message transit times from twenty-four days to ten days.",
+      "S": "However, in October 1861, the first transcontinental telegraph line was completed across the continent."
+    },
+    "fixed_end": "6: Capable of instantaneous electrical message transmission, the telegraph forced the Pony Express to cease operations within days.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the 1860 Pony Express launch. Sentence P details relay stations every 10–15 miles. Sentence Q describes riders galloping day and night. Sentence R highlights transit time dropping to 10 days. Sentence S introduces the 1861 transcontinental telegraph line, leading to the shutdown in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_313",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Silicic lava domes form when viscous dacitic magma extrudes slowly onto volcanic summit craters.",
+      "C": "Degassing volatiles build immense internal gas overpressures beneath the solidifying lava spine.",
+      "D": "Sudden structural collapse of the overpressured dome triggers catastrophic block-and-ash pyroclastic flows."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces silicic lava domes forming in summit craters. Sentence C describes gas overpressures building beneath the solidifying spine. Sentence D details dome collapse triggering block-and-ash flows. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_314",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1935, Albert Einstein, Boris Podolsky, and Nathan Rosen published the EPR paradox in quantum mechanics.",
+    "jumbled_sentences": {
+      "P": "They challenged the Copenhagen interpretation, which asserted physical properties are indeterminate until measured.",
+      "Q": "They proposed a thought experiment involving two spatially separated, quantum-entangled particles.",
+      "R": "Measuring one particle's state instantly determines the state of the other, implying 'spooky action at a distance'.",
+      "S": "They argued that either quantum mechanics was incomplete or local realism was fundamentally violated."
+    },
+    "fixed_end": "6: In 1964, John Stewart Bell formulated Bell's Theorem, proving quantum entanglement violates local realism.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the 1935 EPR paradox. Sentence P explains the challenge to the Copenhagen interpretation. Sentence Q introduces the two-entangled-particle thought experiment. Sentence R describes instantaneous measurement correlation ('spooky action'). Sentence S states their dilemma (incompleteness vs. local realism violation), leading to Bell's Theorem in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_315",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, telecommunications engineers deploy active repeaters to boost fiber-optic signals.",
+      "B": "Infrared laser pulses propagating through silica optical fibers experience inevitable optical attenuation.",
+      "C": "Rayleigh scattering off microscopic glass density fluctuations scatters photon packets out of the fiber core.",
+      "D": "Over long transit distances, cumulative signal dispersion degrades digital bit-rate transmission fidelity."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces optical attenuation in silica fibers. Sentence C explains Rayleigh scattering dispersing photons. Sentence D notes cumulative dispersion degrading signal fidelity. Sentence A provides the engineering repeater solution ('Consequently, telecommunications engineers deploy...')."
+  },
+  {
+    "id": "ENG_PJ_316",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1879, American physicist Edwin Hall discovered the Hall effect at Johns Hopkins University.",
+    "jumbled_sentences": {
+      "P": "He passed an electrical current through a thin gold leaf strip placed within a perpendicular magnetic field.",
+      "Q": "He observed a transverse voltage developing across the conductor perpendicular to both current and magnetic field.",
+      "R": "Lorentz forces deflect moving electrical charge carriers toward one lateral edge of the conductor.",
+      "S": "This charge accumulation creates a steady transverse electric field that balances the magnetic deflection force."
+    },
+    "fixed_end": "6: The Hall effect enabled physicists to determine whether charge carriers in a material are positive holes or negative electrons.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Hall discovering the Hall effect in 1879. Sentence P describes passing current through gold leaf in a magnetic field. Sentence Q notes the transverse voltage that developed. Sentence R explains Lorentz force deflecting charges. Sentence S explains charge buildup balancing the magnetic force, leading to carrier identification in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_317",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Explosive maar-diatreme volcanoes erupt when ascending basaltic magma intersects karstic aquifers.",
+      "C": "Extreme contact heat instantly flashes trapped groundwater into pressurized explosive steam.",
+      "D": "Violent phreatomagmatic blasts excavate broad, crater-like maar basins surrounded by bedded ejecta."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces maar-diatreme volcanoes encountering karstic aquifers. Sentence C describes contact heat flashing groundwater to steam. Sentence D explains phreatomagmatic blasts excavating maar basins. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_318",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1925, Austrian physicist Wolfgang Pauli formulated the Pauli Exclusion Principle in quantum mechanics.",
+    "jumbled_sentences": {
+      "P": "He sought to explain why electrons in multi-electron atoms arrange themselves into discrete orbital shells.",
+      "Q": "Pauli asserted that no two fermions can occupy the exact same quantum state simultaneously.",
+      "R": "In an atom, no two electrons can share the identical set of four quantum numbers ($n, l, m_l, m_s$).",
+      "S": "This quantum restriction forces electrons into progressively higher energy shells, preventing atomic collapse."
+    },
+    "fixed_end": "6: The exclusion principle explains the periodic chemical properties of elements and the structural stability of matter.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Pauli's 1925 Exclusion Principle. Sentence P explains the goal of understanding electron shell arrangement. Sentence Q states the principle that no two fermions share identical quantum states. Sentence R specifies the four quantum numbers in atoms. Sentence S explains higher shell filling preventing collapse, leading to periodic properties in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_319",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, urban water managers mandate low-flow plumbing retrofits across arid metropolitan municipalities.",
+      "B": "Municipal water distribution systems suffer massive potable water losses through aging, leaky subterranean pipelines.",
+      "C": "Undetected pipe fractures and corrosion leak billions of gallons of treated water into surrounding subsoils.",
+      "D": "This municipal infrastructure decay severely exacerbates regional reservoir water depletion during chronic summer droughts."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces potable water loss through aging pipes. Sentence C describes undetected fractures leaking treated water. Sentence D shows infrastructure decay worsening reservoir depletion during drought. Sentence A gives the water management retrofit policy ('Consequently, urban water managers...')."
+  },
+  {
+    "id": "ENG_PJ_320",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1827, German physicist Georg Ohm published his mathematical theory of the galvanic circuit.",
+    "jumbled_sentences": {
+      "P": "He conducted experiments using thermocouples to generate stable, precise electrical potential differences.",
+      "Q": "Ohm measured the electrical current flowing through metal conductors of varying lengths and thicknesses.",
+      "R": "He discovered that electrical current is directly proportional to voltage and inversely proportional to resistance ($I = V/R$).",
+      "S": "Initially, the German academic establishment ridiculed his work as an unsubstantiated mathematical delusion."
+    },
+    "fixed_end": "6: Decades later, Ohm's Law was universally recognized as the foundational cornerstone of electrical circuit analysis.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Ohm's 1827 galvanic circuit theory. Sentence P describes his thermocouple experimental setup. Sentence Q explains measuring current across various conductors. Sentence R states Ohm's law ($I = V/R$). Sentence S notes initial academic skepticism, leading to universal recognition in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_321",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Subduction arc volcanoes generate gas-rich, highly viscous dacitic and rhyolitic magmas.",
+      "C": "As magma ascends into the volcanic conduit, decompression exsolves dissolved water vapor into expanding bubbles.",
+      "D": "The violent rupture of these expanding bubbles fragments magma into airborne tephra."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces subduction arc volcanoes with viscous dacitic/rhyolitic magmas. Sentence C describes decompression exsolving dissolved water into bubbles. Sentence D explains bubble rupture fragmenting magma into tephra. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_322",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1911, Austrian physicist Victor Hess discovered cosmic rays during high-altitude balloon flights.",
+    "jumbled_sentences": {
+      "P": "He carried precision electroscopes in an open-basket balloon to altitudes exceeding five kilometers.",
+      "Q": "He observed that ionization rates decreased slightly up to one kilometer, but increased dramatically at higher altitudes.",
+      "R": "Because ionization persisted during a total solar eclipse, Hess deduced the radiation did not originate from the Sun.",
+      "S": "He concluded that powerful ionizing radiation enters Earth's upper atmosphere from deep outer space."
+    },
+    "fixed_end": "6: Hess was awarded the 1936 Nobel Prize in Physics for discovering high-energy cosmic rays.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Hess discovering cosmic rays in 1911. Sentence P describes carrying electroscopes on high-altitude balloon flights. Sentence Q notes ionization increasing at high altitudes. Sentence R describes the solar eclipse test ruling out the Sun. Sentence S concludes that radiation originates from outer space, leading to the Nobel Prize in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_323",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, conservation authorities construct wildlife crossings over highways to mitigate vehicular collisions.",
+      "B": "Highway transportation corridors sever continuous forest biomes into fragmented landscape patches.",
+      "C": "Migratory ungulates and large carnivores attempting to cross multi-lane highways suffer high roadkill mortality.",
+      "D": "Physical highway barriers restrict inter-population gene flow, inducing localized genetic inbreeding."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces highways severing forest biomes. Sentence C describes roadkill mortality among crossing animals. Sentence D shows barriers restricting gene flow and causing inbreeding. Sentence A presents the wildlife crossing conservation remedy ('Consequently, conservation authorities...')."
+  },
+  {
+    "id": "ENG_PJ_324",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1845, Michael Faraday discovered that magnetic fields interact directly with light waves.",
+    "jumbled_sentences": {
+      "P": "He placed a block of high-density flint glass between the poles of a powerful electromagnet.",
+      "Q": "He transmitted a beam of plane-polarized light through the glass parallel to the magnetic field lines.",
+      "R": "Faraday observed that activating the electromagnet rotated the light beam's polarization plane.",
+      "S": "The degree of optical rotation was proportional to the strength of the applied magnetic field."
+    },
+    "fixed_end": "6: The 'Faraday effect' provided the first empirical proof that light and electromagnetism are intimately linked.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Faraday discovering magneto-optical interactions in 1845. Sentence P describes placing flint glass between electromagnet poles. Sentence Q explains transmitting polarized light through the glass. Sentence R observes magnetic activation rotating the polarization plane. Sentence S notes rotation proportional to magnetic strength, proving electromagnetic light theory in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_325",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Rift basin volcanism generates alkali-rich, gas-saturated rhyolitic magmas.",
+      "C": "Tectonic extension decompresses ascending magma chambers, triggering rapid volatile bubble exsolution.",
+      "D": "Violent gas expansion fractures the viscous melt into airborne pumice and pyroclastic ash."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces rift basin alkali-rich rhyolitic magmas. Sentence C describes tectonic extension causing decompression and bubble exsolution. Sentence D explains gas expansion fracturing magma into tephra. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_326",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1927, German physicist Werner Heisenberg formulated the Quantum Uncertainty Principle.",
+    "jumbled_sentences": {
+      "P": "He analyzed the physical limits of measuring a subatomic particle's position and momentum simultaneously.",
+      "Q": "He demonstrated that measuring an electron's position with high-energy photons inevitably alters its momentum.",
+      "R": "He formalized the inequality $\\Delta x \\cdot \\Delta p \\geq \\hbar / 2$, defining fundamental limits of physical measurement.",
+      "S": "Heisenberg proved that quantum indeterminacy is an intrinsic property of nature rather than experimental error."
+    },
+    "fixed_end": "6: The Uncertainty Principle demolished classical determinism, establishing probabilistic mechanics as fundamental physics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Heisenberg's 1927 Uncertainty Principle. Sentence P describes measuring position and momentum limits. Sentence Q explains photon disturbance during measurement. Sentence R introduces the mathematical inequality $\\Delta x \\cdot \\Delta p \\geq \\hbar/2$. Sentence S proves indeterminacy is intrinsic, leading to the end of classical determinism in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_327",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health agencies enforce stringent water chlorination standards across municipal treatment plants.",
+      "B": "*Vibrio cholerae* bacteria contaminate municipal drinking water supplies lacking adequate sewage treatment.",
+      "C": "Upon ingestion, the bacterium secretes cholera toxin, activating adenylate cyclase in intestinal enterocytes.",
+      "D": "Massive chloride secretion induces severe osmotic watery diarrhea, triggering lethal hypovolemic dehydration."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces *Vibrio cholerae* contaminating untreated water. Sentence C explains cholera toxin secretion in the gut. Sentence D details chloride secretion causing severe dehydration. Sentence A gives the chlorination policy solution ('Consequently, public health agencies...')."
+  },
+  {
+    "id": "ENG_PJ_328",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1808, English chemist Humphry Davy discovered sodium and potassium using electrolytic isolation.",
+    "jumbled_sentences": {
+      "P": "He constructed a massive voltaic pile battery containing two thousand pairs of metal plates.",
+      "Q": "Davy passed high-voltage direct current through molten caustic potash and caustic soda.",
+      "R": "Minute metallic globules of potassium burst into lilac flames upon contacting ambient water.",
+      "S": "He proved that potash and soda were chemical compounds of oxygen and highly reactive alkali metals."
+    },
+    "fixed_end": "6: Davy's electrolytic technique revolutionized chemistry, unlocking the isolation of magnesium, calcium, and barium.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Davy isolating sodium and potassium in 1808. Sentence P describes his massive 2,000-plate battery. Sentence Q explains passing direct current through molten potash and soda. Sentence R details potassium globules bursting into flames. Sentence S proves they are alkali metal oxides, leading to isolating other elements in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_329",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Silica-rich magma chambers beneath volcanic calderas undergo extreme magmatic differentiation.",
+      "C": "Fractional crystallization concentrates volatile water and carbon dioxide in residual rhyolitic melts.",
+      "D": "Overpressured volatile bubbles shatter the cooling crust, triggering cataclysmic ignimbrite eruptions."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces silica-rich magma undergoing magmatic differentiation. Sentence C explains fractional crystallization concentrating volatiles in rhyolitic melt. Sentence D details overpressured bubbles triggering ignimbrite eruptions. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_330",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1926, Austrian physicist Erwin Schrödinger formulated wave mechanics in quantum physics.",
+    "jumbled_sentences": {
+      "P": "He extended Louis de Broglie's matter wave hypothesis into a rigorous partial differential equation.",
+      "Q": "The Schrödinger equation describes the continuous temporal evolution of a quantum system's wave function ($\\psi$).",
+      "R": "Max Born interpreted the squared wave function amplitude ($|\\psi|^2$) as the probability density of locating a particle.",
+      "S": "The wave equation accurately predicted the quantized electronic energy spectra of hydrogen atoms."
+    },
+    "fixed_end": "6: Schrödinger's formulation provided the mathematical foundation for modern quantum chemistry and solid-state physics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Schrödinger formulating wave mechanics in 1926. Sentence P extends de Broglie's matter waves into a differential equation. Sentence Q explains the wave function ($\\psi$) evolution. Sentence R introduces Born's probabilistic interpretation ($|\\psi|^2$). Sentence S notes predicting hydrogen energy spectra, leading to solid-state physics in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_331",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, national agricultural agencies enforce strict biosecurity quarantine on imported tropical timber.",
+      "B": "Invasive emerald ash borer beetles lay eggs beneath the bark of native North American ash trees.",
+      "C": "Hatched beetle larvae bore tortuous serpentine galleries through vascular phloem and xylem vessels.",
+      "D": "Disrupted nutrient transport starves canopy foliage, killing mature ash trees within three years."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces emerald ash borer beetles laying eggs in ash trees. Sentence C describes larvae chewing galleries in vascular vessels. Sentence D shows blocked nutrient transport killing trees. Sentence A gives the biosecurity quarantine solution ('Consequently, national agricultural agencies...')."
+  },
+  {
+    "id": "ENG_PJ_332",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1888, German physicist Heinrich Hertz experimentally verified the existence of electromagnetic waves.",
+    "jumbled_sentences": {
+      "P": "He constructed a high-voltage spark gap transmitter connected to an induction coil.",
+      "Q": "Across his laboratory, he placed an open wire loop with a tiny spark gap as an electromagnetic receiver.",
+      "R": "When a spark jumped across the transmitter, tiny sparks simultaneously jumped across the receiver loop.",
+      "S": "Hertz measured the velocity and wavelength of the invisible radiation, proving it moved at the speed of light."
+    },
+    "fixed_end": "6: His experiments conclusively proved Maxwell's electromagnetic theory, paving the way for wireless radio technology.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Hertz verifying electromagnetic waves in 1888. Sentence P describes building the spark gap transmitter. Sentence Q describes placing the receiver loop across the lab. Sentence R notes simultaneous sparks jumping across the receiver. Sentence S details measuring wave velocity at light speed, proving Maxwell's equations in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_333",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Ocean-continent convergent margins produce water-rich, viscous andesitic stratovolcanoes.",
+      "C": "Hydrous subduction fluids lower mantle melting points, generating gas-charged magma plumes.",
+      "D": "Catastrophic decompression in summit conduits shatters the magma into airborne tephra."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces ocean-continent convergent margin stratovolcanoes. Sentence C explains hydrous fluids generating gas-charged magma. Sentence D describes conduit decompression shattering magma into tephra. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_334",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1913, Robert Millikan confirmed Albert Einstein's quantum photoelectric equation through precision experiments.",
+    "jumbled_sentences": {
+      "P": "He designed an evacuated chamber containing a rotating wheel of freshly shaved alkali metal surfaces.",
+      "Q": "Millikan illuminated the clean metallic surfaces with monochromatic light of precisely calibrated frequencies.",
+      "R": "He measured the stopping potential required to halt the emitted photoelectrons across frequencies.",
+      "S": "He plotted stopping voltage against light frequency, obtaining a straight line whose slope yielded Planck's constant ($h$)."
+    },
+    "fixed_end": "6: Millikan's empirical precision confirmed the quantum photon hypothesis beyond any scientific doubt.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Millikan verifying Einstein's photoelectric equation in 1913. Sentence P describes shaved alkali metal surfaces in an evacuated chamber. Sentence Q details monochromatic illumination. Sentence R describes measuring stopping potential. Sentence S details plotting voltage vs. frequency to yield Planck's constant, confirming the photon hypothesis in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_335",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, maritime shipping regulations mandate ballast water treatment systems on all commercial vessels.",
+      "B": "Transoceanic cargo vessels fill ballast water tanks in coastal ports to maintain vessel stability.",
+      "C": "When ballast water is discharged in foreign harbors, non-native marine species are inadvertently introduced.",
+      "D": "Invasive zebra mussels and toxic dinoflagellates outcompete native benthic fauna, collapsing regional ecosystems."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces cargo ships taking on ballast water in coastal ports. Sentence C explains ballast discharge introducing non-native species. Sentence D details invasive mussels collapsing native ecosystems. Sentence A presents the ballast water treatment mandate ('Consequently, maritime shipping regulations...')."
+  },
+  {
+    "id": "ENG_PJ_336",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1856, William Henry Perkin accidentally synthesized mauveine, the first synthetic organic aniline dye.",
+    "jumbled_sentences": {
+      "P": "As an eighteen-year-old student, he was attempting to synthesize the anti-malarial drug quinine from coal tar.",
+      "Q": "Upon oxidizing aniline sulfate with potassium dichromate, he obtained a thick, black tarry residue.",
+      "R": "When he cleaned the reaction flask with alcohol, the residue dissolved into a brilliant, intense purple solution.",
+      "S": "Perkin discovered that the purple solution dyed silk fabrics with remarkable resistance to fading from sunlight."
+    },
+    "fixed_end": "6: His discovery launched the modern synthetic chemical industry and revolutionized Victorian textile fashion.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Perkin discovering mauveine in 1856. Sentence P describes attempting to synthesize quinine from coal tar. Sentence Q describes obtaining a black tarry residue. Sentence R notes the residue dissolving in alcohol into an intense purple solution. Sentence S details testing the dye on silk, leading to the chemical industry revolution in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_337",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Subduction trench volcanism produces gas-rich, highly viscous dacitic and rhyolitic magmas.",
+      "C": "As magma ascends into shallow conduits, decompression causes dissolved water to expand into bubbles.",
+      "D": "The violent bursting of these bubbles fragments the magma into airborne tephra."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces subduction trench volcanism with viscous dacitic/rhyolitic magmas. Sentence C describes decompression causing dissolved water to expand into bubbles. Sentence D explains bubble bursting shattering magma into tephra. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_338",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1930, British physicist Paul Dirac published *The Principles of Quantum Mechanics*, establishing quantum formalism.",
+    "jumbled_sentences": {
+      "P": "He developed the elegant bra-ket vector notation ($\langle\phi|\psi\rangle$) to represent quantum states and inner products.",
+      "Q": "Dirac showed that Werner Heisenberg's matrix mechanics and Erwin Schrödinger's wave mechanics were mathematically equivalent.",
+      "R": "He formulated transformation theory, unifying quantum states as vectors in an abstract Hilbert space.",
+      "S": "He introduced the relativistic Dirac equation, predicting electron spin and the existence of antimatter."
+    },
+    "fixed_end": "6: Dirac's textbook remains the definitive, foundational treatise on the mathematical formulation of quantum mechanics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Dirac's 1930 textbook. Sentence P describes introducing bra-ket notation. Sentence Q shows proving the equivalence of matrix and wave mechanics. Sentence R explains transformation theory in Hilbert space. Sentence S notes the Dirac equation predicting antimatter, leading to the lasting legacy in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_339",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, conservation authorities mandate microchip tagging on all commercial captive-bred parrots.",
+      "B": "Illegal wildlife poaching traps thousands of endangered wild parrots across Neotropical rainforests.",
+      "C": "Smugglers transport captured birds across porous borders to supply lucrative black-market pet trades.",
+      "D": "Depleted wild populations suffer acute demographic collapse, disrupting regional forest seed dispersal."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces illegal poaching of wild parrots in Neotropical forests. Sentence C describes smuggling birds across borders for the pet trade. Sentence D details wild population collapse and disrupted seed dispersal. Sentence A provides the microchip tagging policy solution ('Consequently, conservation authorities...')."
+  },
+  {
+    "id": "ENG_PJ_340",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1877, Italian astronomer Giovanni Schiaparelli observed geometric line networks on the surface of Mars.",
+    "jumbled_sentences": {
+      "P": "He described these faint linear surface features using the Italian word *canali*, meaning natural channels or grooves.",
+      "Q": "English translations mistranslated the term as 'canals', implying artificial, engineered waterways.",
+      "R": "American astronomer Percival Lowell popularized the theory that dying Martian civilizations built canals for irrigation.",
+      "S": "He constructed the Flagstaff Observatory in Arizona, producing detailed maps of hypothetical Martian canal networks."
+    },
+    "fixed_end": "6: In 1965, NASA's Mariner 4 flyby photographed a cratered Martian desert, proving the canals were optical illusions.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Schiaparelli observing linear networks on Mars (1877). Sentence P notes his Italian description (*canali*). Sentence Q explains the mistranslation as 'canals'. Sentence R describes Lowell's theory of engineered irrigation. Sentence S notes Lowell building Flagstaff Observatory to map canals, leading to Mariner 4 disproving them in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_341",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Back-arc rift volcanism produces alkali-rich, gas-saturated rhyolitic magmas in crustal reservoirs.",
+      "C": "Tectonic crustal extension decompresses ascending magma chambers, triggering rapid volatile bubble exsolution.",
+      "D": "Violent gas expansion fractures the viscous melt into airborne pumice and pyroclastic ash."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces back-arc rift alkali-rich rhyolitic magmas. Sentence C describes tectonic extension causing decompression and bubble exsolution. Sentence D explains gas expansion fracturing magma into tephra. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_342",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1932, Carl Anderson discovered the positron while studying cosmic rays in a cloud chamber.",
+    "jumbled_sentences": {
+      "P": "He placed a lead plate inside a Wilson cloud chamber surrounded by a powerful magnetic field.",
+      "Q": "He observed a particle track whose curvature matched an electron but deflected in the opposite positive direction.",
+      "R": "Anderson confirmed that the particle carried a positive charge identical in magnitude to an electron's charge.",
+      "S": "He named the anti-electron 'positron', confirming Paul Dirac's theoretical prediction of antimatter."
+    },
+    "fixed_end": "6: Anderson was awarded the 1936 Nobel Prize in Physics for experimentally discovering the first antimatter particle.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Anderson discovering the positron in 1932. Sentence P describes his cloud chamber setup with a lead plate and magnetic field. Sentence Q observes the positive track curvature. Sentence R confirms positive charge matching electron mass. Sentence S names the positron and confirms Dirac's prediction, leading to the Nobel Prize in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_343",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health programs promote childhood measles immunization to prevent long-term immune amnesia.",
+      "B": "Measles virus infects CD150-expressing memory B and T lymphocytes throughout the human lymphoid system.",
+      "C": "Viral lysis destroys pre-existing immune memory cells generated against previously encountered pathogens.",
+      "D": "This immunological ablation leaves surviving children vulnerable to secondary opportunistic infections for years."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces measles infecting memory lymphocytes. Sentence C explains viral lysis destroying pre-existing memory cells. Sentence D notes children left vulnerable to secondary infections. Sentence A presents the childhood immunization policy solution ('Consequently, public health programs...')."
+  },
+  {
+    "id": "ENG_PJ_344",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1856, Henry Bessemer patented the pneumatic converter process for mass-producing steel.",
+    "jumbled_sentences": {
+      "P": "He blasted compressed atmospheric air through molten pig iron in an egg-shaped tilting converter.",
+      "Q": "Oxygen reacted exothermically with silicon and carbon impurities, raising the molten bath's temperature.",
+      "R": "This internal combustion removed impurities without requiring external fuel, refining a batch in twenty minutes.",
+      "S": "The Bessemer process slashed steel production costs, making structural steel cheaper than wrought iron."
+    },
+    "fixed_end": "6: Cheap Bessemer steel enabled the construction of transcontinental railways, steamships, and urban skyscrapers.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Bessemer patenting the converter in 1856. Sentence P describes blasting compressed air through molten iron. Sentence Q explains oxygen reacting exothermically with impurities. Sentence R highlights refining in 20 minutes without external fuel. Sentence S notes steel costs dropping, leading to railways and skyscrapers in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_345",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Subduction trench volcanism produces gas-rich, highly viscous dacitic and rhyolitic magmas.",
+      "C": "As magma ascends into shallow conduits, decompression causes dissolved water to expand into bubbles.",
+      "D": "The violent bursting of these bubbles fragments the magma into airborne tephra."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces subduction trench volcanism with viscous dacitic/rhyolitic magmas. Sentence C describes decompression causing dissolved water to expand into bubbles. Sentence D explains bubble bursting shattering magma into tephra. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_346",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1934, Irène Curie and Frédéric Joliot-Curie discovered artificial radioactivity at the Radium Institute in Paris.",
+    "jumbled_sentences": {
+      "P": "They bombarded aluminum foil targets with energetic alpha particles emitted from a polonium source.",
+      "Q": "They observed that the aluminum foil continued emitting positrons even after the alpha source was removed.",
+      "R": "They proved that alpha irradiation transmuted stable aluminum-27 into a novel radioactive isotope, phosphorus-30.",
+      "S": "This marked the first synthesis of an artificial radioactive isotope not found in nature."
+    },
+    "fixed_end": "6: Their discovery enabled the production of radioisotopes for biomedical imaging, earning them the 1935 Nobel Prize in Chemistry.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the Joliot-Curies discovering artificial radioactivity in 1934. Sentence P describes bombarding aluminum foil with alpha particles. Sentence Q notes sustained positron emission after removing the source. Sentence R proves transmutation into phosphorus-30. Sentence S notes the first artificial radioisotope, leading to biomedical imaging and their Nobel Prize in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_347",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health programs promote seasonal influenza vaccination to reduce epidemic morbidity.",
+      "B": "Influenza A virus genomes undergo continuous point mutations in surface hemagglutinin and neuraminidase genes.",
+      "C": "This gradual genetic drift alters antigenic epitopes recognized by neutralizing host antibodies.",
+      "D": "Pre-existing immunity becomes ineffective, allowing newly drifted strains to cause seasonal outbreaks."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces Influenza A point mutations in surface genes. Sentence C explains antigenic drift altering antibody recognition epitopes. Sentence D notes pre-existing immunity failing against drifted strains. Sentence A presents seasonal vaccination policy ('Consequently, public health programs...')."
+  },
+  {
+    "id": "ENG_PJ_348",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1895, Italian inventor Guglielmo Marconi developed the first practical long-distance wireless radio telegraph.",
+    "jumbled_sentences": {
+      "P": "He improved Heinrich Hertz's spark transmitter by grounding the antenna and elevating a metal receiver plate.",
+      "Q": "He transmitted coded Morse signals across the hills of his father's estate near Bologna, Italy.",
+      "R": "In 1899, Marconi sent the first wireless telegraph signals across the English Channel to France.",
+      "S": "In December 1901, he achieved transatlantic transmission, sending the Morse letter 'S' from Cornwall to Newfoundland."
+    },
+    "fixed_end": "6: Marconi's transatlantic breakthrough proved that radio waves could curve around Earth's horizon, revolutionizing global communications.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-P-Q-S"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Marconi developing long-distance wireless radio in 1895. Sentence P describes grounding the antenna and elevating the receiver. Sentence Q details initial Morse transmission across his family estate. Sentence R notes crossing the English Channel in 1899. Sentence S records the 1901 transatlantic signal, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_349",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Island arc caldera volcanoes generate gas-rich, highly viscous dacitic and rhyolitic magmas.",
+      "C": "As magma ascends into shallow conduits, decompression causes dissolved water to expand into bubbles.",
+      "D": "The violent bursting of these bubbles fragments the magma into airborne tephra."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces island arc caldera volcanoes with viscous dacitic/rhyolitic magmas. Sentence C describes decompression causing dissolved water to expand into bubbles. Sentence D explains bubble bursting shattering magma into tephra. Sentence A concludes with 'This rapid crystallization' forming porous pumice."
+  },
+  {
+    "id": "ENG_PJ_350",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1938, Otto Hahn and Fritz Strassmann discovered nuclear fission in uranium at the Kaiser Wilhelm Institute in Berlin.",
+    "jumbled_sentences": {
+      "P": "They bombarded uranium nuclei with thermal neutrons, identifying barium isotopes among the products.",
+      "Q": "Lise Meitner and Otto Frisch provided the theoretical physical explanation of the split nucleus.",
+      "R": "They calculated that mass loss during nuclear fission was converted into kinetic energy via $E = mc^2$.",
+      "S": "Physicists realized that secondary neutrons released during fission could sustain a self-propagating chain reaction."
+    },
+    "fixed_end": "6: This realization prompted Albert Einstein and Leo Szilard to write to President Roosevelt, launching the atomic era.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Hahn and Strassmann discovering fission in 1938. Sentence P describes detecting barium from neutron bombardment. Sentence Q introduces Meitner and Frisch's theoretical model. Sentence R calculates mass-energy conversion via $E=mc^2$. Sentence S explains secondary neutrons enabling chain reactions, leading to the letter to Roosevelt in Statement 6."
+  }
+]

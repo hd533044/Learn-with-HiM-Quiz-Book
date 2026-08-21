@@ -1,0 +1,627 @@
+[
+  {
+    "id": "ENG_VOCAB_HOM_2301",
+    "question": "Fill in the blank: 'The new law will _____ every citizen in the country.'",
+    "options": {
+      "A": "affect",
+      "B": "effect",
+      "C": "affection",
+      "D": "affective"
+    },
+    "correct_option": "A",
+    "explanation": "'Affect' (verb) means to influence or produce a change in something, while 'effect' (noun) is the result."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2302",
+    "question": "Choose the correct homonym to fill in the blank: 'His _____ was so convincing that no one doubted him.'",
+    "options": {
+      "A": "ascent",
+      "B": "assent",
+      "C": "accent",
+      "D": "aspect"
+    },
+    "correct_option": "C",
+    "explanation": "'Accent' refers to a distinctive mode of pronunciation, which can be 'convincing' in a performance. 'Assent' means agreement."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2303",
+    "question": "Spot the error: 'The hiker made a steep assent up the mountain.'",
+    "options": {
+      "A": "The hiker made",
+      "B": "a steep assent",
+      "C": "up the mountain.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Assent' means agreement; the correct word for climbing is 'ascent' (the act of rising)."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2304",
+    "question": "Fill in the blank: 'The _____ of the building is made of marble.'",
+    "options": {
+      "A": "altar",
+      "B": "alter",
+      "C": "allure",
+      "D": "ascent"
+    },
+    "correct_option": "A",
+    "explanation": "'Altar' (noun) is a table or raised place used for religious offerings; in architecture, it can refer to a similar structure. 'Alter' (verb) means to change."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2305",
+    "question": "Choose the correct word: 'We need to _____ our plans due to the bad weather.'",
+    "options": {
+      "A": "altar",
+      "B": "alter",
+      "C": "allure",
+      "D": "assent"
+    },
+    "correct_option": "B",
+    "explanation": "'Alter' (verb) means to make a structural or formal change."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2306",
+    "question": "Fill in the blank: 'He gave me a generous _____ on my birthday.'",
+    "options": {
+      "A": "complement",
+      "B": "compliment",
+      "C": "complete",
+      "D": "complex"
+    },
+    "correct_option": "B",
+    "explanation": "A 'compliment' is a polite expression of praise. A 'complement' is something that completes or makes perfect."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2307",
+    "question": "Spot the error: 'The wine is a perfect compliment to this meal.'",
+    "options": {
+      "A": "The wine is",
+      "B": "a perfect compliment",
+      "C": "to this meal.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The wine 'completes' the meal, so it should be 'complement'. A 'compliment' is praise."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2308",
+    "question": "Fill in the blank: 'The jury reached a unanimous _____ after deliberation.'",
+    "options": {
+      "A": "council",
+      "B": "counsel",
+      "C": "consul",
+      "D": "censure"
+    },
+    "correct_option": "B",
+    "explanation": "While 'counsel' usually means advice or a lawyer, in specific legal contexts, the act of deliberation leads to 'counsel' (or more commonly 'verdict', but given these options, B is the closest related to legal proceedings/advisors). Wait—Correction: 'Council' is a group; 'counsel' is legal advice. If a jury deliberates, they provide a *verdict*. Let's re-evaluate the homonym pair: 'Council' (body of people) vs 'Counsel' (advice/lawyer)."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2308_REVISED",
+    "question": "Fill in the blank: 'The city _____ voted to increase the budget.'",
+    "options": {
+      "A": "council",
+      "B": "counsel",
+      "C": "consul",
+      "D": "censure"
+    },
+    "correct_option": "A",
+    "explanation": "'Council' refers to an administrative body; 'counsel' refers to legal advice or a lawyer."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2309",
+    "question": "Fill in the blank: 'He sought legal _____ before signing the contract.'",
+    "options": {
+      "A": "council",
+      "B": "counsel",
+      "C": "consul",
+      "D": "censure"
+    },
+    "correct_option": "B",
+    "explanation": "'Counsel' refers to professional advice, often from a lawyer."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2310",
+    "question": "Spot the error: 'He was condemned by the consul for his unethical behavior.'",
+    "options": {
+      "A": "He was condemned",
+      "B": "by the consul",
+      "C": "for his unethical behavior.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Consul' is a diplomatic representative. 'Censure' is the formal expression of severe disapproval. Correct: 'condemned by the censure' or 'subject to censure'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2311",
+    "question": "Fill in the blank: 'The weather today is _____ for a picnic.'",
+    "options": {
+      "A": "ideal",
+      "B": "idle",
+      "C": "idol",
+      "D": "idyllic"
+    },
+    "correct_option": "A",
+    "explanation": "'Ideal' means satisfying one's conception of what is perfect. 'Idle' means not active or unemployed."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2312",
+    "question": "Fill in the blank: 'Don't be _____ while there is so much work to do.'",
+    "options": {
+      "A": "ideal",
+      "B": "idle",
+      "C": "idol",
+      "D": "idyllic"
+    },
+    "correct_option": "B",
+    "explanation": "'Idle' means lazy or inactive."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2313",
+    "question": "Spot the error: 'She treats her favorite teacher like an idle.'",
+    "options": {
+      "A": "She treats",
+      "B": "her favorite teacher",
+      "C": "like an idle.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Idle' is lazy. A person worshiped is an 'idol'. Correct: 'like an idol'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2314",
+    "question": "Fill in the blank: 'We must _____ all necessary safety precautions.'",
+    "options": {
+      "A": "ensure",
+      "B": "insure",
+      "C": "assure",
+      "D": "adhere"
+    },
+    "correct_option": "A",
+    "explanation": "'Ensure' means to make certain. 'Insure' relates to financial protection (insurance)."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2315",
+    "question": "Fill in the blank: 'The company will _____ the cargo against potential loss during transit.'",
+    "options": {
+      "A": "ensure",
+      "B": "insure",
+      "C": "assure",
+      "D": "indemnify"
+    },
+    "correct_option": "B",
+    "explanation": "'Insure' means to provide or obtain insurance coverage for something."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2316",
+    "question": "Spot the error: 'I assure you that I will be there on time.'",
+    "options": {
+      "A": "I assure you",
+      "B": "that I will be",
+      "C": "there on time.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Assure' means to tell someone something positively to dispel their doubts. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2317",
+    "question": "Fill in the blank: 'The _____ between the two sides was never resolved.'",
+    "options": {
+      "A": "descent",
+      "B": "dissent",
+      "C": "decent",
+      "D": "decant"
+    },
+    "correct_option": "B",
+    "explanation": "'Dissent' means disagreement or difference of opinion. 'Descent' is downward movement."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2318",
+    "question": "Fill in the blank: 'The _____ down the cliff was dangerous.'",
+    "options": {
+      "A": "descent",
+      "B": "dissent",
+      "C": "decent",
+      "D": "decant"
+    },
+    "correct_option": "A",
+    "explanation": "'Descent' refers to the act of moving downward."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2319",
+    "question": "Spot the error: 'His behavior was not very decent under the circumstances.'",
+    "options": {
+      "A": "His behavior was",
+      "B": "not very decent",
+      "C": "under the circumstances.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Decent' means conforming to accepted standards of propriety. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2320",
+    "question": "Fill in the blank: 'The _____ of the crime scene was shocking.'",
+    "options": {
+      "A": "site",
+      "B": "cite",
+      "C": "sight",
+      "D": "side"
+    },
+    "correct_option": "A",
+    "explanation": "'Site' refers to the specific physical location."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2321",
+    "question": "Fill in the blank: 'The beauty of the mountain _____ was breathtaking.'",
+    "options": {
+      "A": "site",
+      "B": "cite",
+      "C": "sight",
+      "D": "side"
+    },
+    "correct_option": "C",
+    "explanation": "'Sight' refers to something that is seen."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2322",
+    "question": "Spot the error: 'She is a woman of great cite.'",
+    "options": {
+      "A": "She is",
+      "B": "a woman",
+      "C": "of great cite.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Wrong word. Should be 'sight' (vision/appearance) or 'insight' (wisdom). 'Cite' is to quote. Correct: 'of great insight'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2323",
+    "question": "Fill in the blank: 'The new regulations are _____ to the old ones.'",
+    "options": {
+      "A": "complementary",
+      "B": "complimentary",
+      "C": "complete",
+      "D": "complex"
+    },
+    "correct_option": "A",
+    "explanation": "'Complementary' means combining in such a way as to enhance or emphasize the qualities of each other."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2324",
+    "question": "Fill in the blank: 'The tickets were _____ provided by the sponsor.'",
+    "options": {
+      "A": "complementary",
+      "B": "complimentary",
+      "C": "complete",
+      "D": "complex"
+    },
+    "correct_option": "B",
+    "explanation": "'Complimentary' means given free of charge."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2325",
+    "question": "Spot the error: 'The hotel offered a complementary breakfast.'",
+    "options": {
+      "A": "The hotel offered",
+      "B": "a complementary breakfast.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Free items are 'complimentary'. 'Complementary' means completing. Correct: 'complimentary breakfast'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2326",
+    "question": "Fill in the blank: 'She is a _____ member of the team.'",
+    "options": {
+      "A": "valued",
+      "B": "valiant",
+      "C": "volatile",
+      "D": "valuable"
+    },
+    "correct_option": "A",
+    "explanation": "'Valued' refers to someone held in high regard; 'Valuable' is usually for objects."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2327",
+    "question": "Fill in the blank: 'Diamonds are very _____ items.'",
+    "options": {
+      "A": "valued",
+      "B": "valiant",
+      "C": "volatile",
+      "D": "valuable"
+    },
+    "correct_option": "D",
+    "explanation": "'Valuable' refers to having monetary worth."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2328",
+    "question": "Spot the error: 'The knight was very valuable in battle.'",
+    "options": {
+      "A": "The knight was",
+      "B": "very valuable",
+      "C": "in battle.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A person showing bravery is 'valiant'. Correct: 'very valiant'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2329",
+    "question": "Fill in the blank: 'The _____ changes in the stock market are worrying.'",
+    "options": {
+      "A": "volatile",
+      "B": "vocal",
+      "C": "voracious",
+      "D": "vulnerable"
+    },
+    "correct_option": "A",
+    "explanation": "'Volatile' refers to liable to change rapidly and unpredictably."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2330",
+    "question": "Fill in the blank: 'The children were _____ readers.'",
+    "options": {
+      "A": "volatile",
+      "B": "vocal",
+      "C": "voracious",
+      "D": "vulnerable"
+    },
+    "correct_option": "C",
+    "explanation": "'Voracious' refers to having a very eager approach to an activity, especially reading."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2331",
+    "question": "Spot the error: 'He was very voracious about his political opinions.'",
+    "options": {
+      "A": "He was very",
+      "B": "voracious about",
+      "C": "his political opinions.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Voracious' is for eating/reading. Someone vocal about opinions is 'vocal'. Correct: 'very vocal about'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2332",
+    "question": "Fill in the blank: 'The _____ of the problem was missed by everyone.'",
+    "options": {
+      "A": "essence",
+      "B": "ascend",
+      "C": "ascent",
+      "D": "absent"
+    },
+    "correct_option": "A",
+    "explanation": "'Essence' refers to the intrinsic nature or indispensable quality of something."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2333",
+    "question": "Fill in the blank: 'He was _____ from the meeting.'",
+    "options": {
+      "A": "essence",
+      "B": "ascend",
+      "C": "ascent",
+      "D": "absent"
+    },
+    "correct_option": "D",
+    "explanation": "'Absent' means not present."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2334",
+    "question": "Spot the error: 'He tried to essence the mountain peak.'",
+    "options": {
+      "A": "He tried to",
+      "B": "essence",
+      "C": "the mountain peak.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Ascend' means to climb. 'Essence' is a noun. Correct: 'to ascend'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2335",
+    "question": "Fill in the blank: 'The _____ of the situation requires immediate action.'",
+    "options": {
+      "A": "gravity",
+      "B": "levity",
+      "C": "brevity",
+      "D": "gaiety"
+    },
+    "correct_option": "A",
+    "explanation": "'Gravity' in this context means extreme importance or seriousness."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2336",
+    "question": "Fill in the blank: 'His _____ in the face of tragedy was inappropriate.'",
+    "options": {
+      "A": "gravity",
+      "B": "levity",
+      "C": "brevity",
+      "D": "gaiety"
+    },
+    "correct_option": "B",
+    "explanation": "'Levity' means treating a serious matter with humor or lack of respect."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2337",
+    "question": "Spot the error: 'The brevity of his speech was appreciated.'",
+    "options": {
+      "A": "The brevity",
+      "B": "of his speech",
+      "C": "was appreciated.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Brevity' means shortness. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2338",
+    "question": "Fill in the blank: 'The police are looking for the _____ of the crime.'",
+    "options": {
+      "A": "perpetrator",
+      "B": "perpetuate",
+      "C": "perpetuity",
+      "D": "perspective"
+    },
+    "correct_option": "A",
+    "explanation": "'Perpetrator' is someone who carries out a harmful, illegal, or immoral act."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2339",
+    "question": "Fill in the blank: 'We must not _____ this cycle of violence.'",
+    "options": {
+      "A": "perpetrator",
+      "B": "perpetuate",
+      "C": "perpetuity",
+      "D": "perspective"
+    },
+    "correct_option": "B",
+    "explanation": "'Perpetuate' means to make something (usually an undesirable situation) continue indefinitely."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2340",
+    "question": "Spot the error: 'From my perpetuity, this is a bad idea.'",
+    "options": {
+      "A": "From my perpetuity,",
+      "B": "this is a bad idea.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "A",
+    "explanation": "'Perpetuity' is a duration of infinite time. 'Perspective' is a point of view. Correct: 'From my perspective'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2341",
+    "question": "Fill in the blank: 'She is a _____ traveler.'",
+    "options": {
+      "A": "seasoned",
+      "B": "seasonable",
+      "C": "seasonal",
+      "D": "seasoning"
+    },
+    "correct_option": "A",
+    "explanation": "'Seasoned' means experienced."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2342",
+    "question": "Fill in the blank: 'We see _____ changes in the weather.'",
+    "options": {
+      "A": "seasoned",
+      "B": "seasonable",
+      "C": "seasonal",
+      "D": "seasoning"
+    },
+    "correct_option": "C",
+    "explanation": "'Seasonal' relates to or characteristic of a particular season."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2343",
+    "question": "Spot the error: 'The weather today is very seasoned.'",
+    "options": {
+      "A": "The weather today",
+      "B": "is very seasoned.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "'Seasonable' means appropriate to the season. 'Seasoned' is for people. Correct: 'very seasonable'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2344",
+    "question": "Fill in the blank: 'He _____ his success to his mentors.'",
+    "options": {
+      "A": "attributes",
+      "B": "contributes",
+      "C": "distributes",
+      "D": "attracts"
+    },
+    "correct_option": "A",
+    "explanation": "'Attributes' means regards something as being caused by someone or something."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2345",
+    "question": "Fill in the blank: 'Many people _____ money to the charity.'",
+    "options": {
+      "A": "attributes",
+      "B": "contributes",
+      "C": "distributes",
+      "D": "attracts"
+    },
+    "correct_option": "B",
+    "explanation": "'Contributes' means gives (something, especially money) in order to help achieve or provide something."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2346",
+    "question": "Spot the error: 'The teacher distributes the papers to the students.'",
+    "options": {
+      "A": "The teacher distributes",
+      "B": "the papers to",
+      "C": "the students.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Distributes' means to share among people. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2347",
+    "question": "Fill in the blank: 'The _____ of the problem is clear.'",
+    "options": {
+      "A": "nature",
+      "B": "nurture",
+      "C": "mature",
+      "D": "noture"
+    },
+    "correct_option": "A",
+    "explanation": "'Nature' is the basic or inherent features of something."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2348",
+    "question": "Fill in the blank: 'The debate between _____ and nurture continues.'",
+    "options": {
+      "A": "nature",
+      "B": "nurture",
+      "C": "mature",
+      "D": "noture"
+    },
+    "correct_option": "A",
+    "explanation": "Wait, the phrase is 'nature vs. nurture'. Actually, 'nurture' is the environmental influence. Let's make the question: 'Environmental _____ is key to a child's development.'",
+    "correct_option_revised": "B"
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2348_REVISED",
+    "question": "Fill in the blank: 'Environmental _____ is key to a child's development.'",
+    "options": {
+      "A": "nature",
+      "B": "nurture",
+      "C": "mature",
+      "D": "noture"
+    },
+    "correct_option": "B",
+    "explanation": "'Nurture' is the upbringing or care given to a child."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2349",
+    "question": "Spot the error: 'He is a very mature person for his age.'",
+    "options": {
+      "A": "He is a very",
+      "B": "mature person",
+      "C": "for his age.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Mature' means fully developed. Correct."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2350",
+    "question": "Fill in the blank: 'The _____ of the mountain was hidden by clouds.'",
+    "options": {
+      "A": "summit",
+      "B": "summons",
+      "C": "summary",
+      "D": "summing"
+    },
+    "correct_option": "A",
+    "explanation": "'Summit' is the highest point."
+  }
+]

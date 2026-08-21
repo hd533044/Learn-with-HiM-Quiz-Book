@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_191",
+    "passage_title": "The Structural Geology of Detachment Faults and Metamorphic Core Complexes",
+    "passage_text": "In extensional geodynamics and continental rifting, the classical Andersonian model of faulting posited that high-angle planar normal faults (dipping at roughly 60°) accommodate upper-crustal stretching until locking occurs at dips below 30°. In the late 1970s and 1980s, regional mapping across the Basin and Range province of western North America revealed anomalous structural terranes that challenged this framework: **Metamorphic Core Complexes (MCCs)**. An MCC represents the tectonic exhumation of ductilely deformed mid-to-lower continental crust along regional, low-angle (typically dipping <30°) **detachment faults**. The architecture of an MCC is characterized by a structural duality. The **hanging wall** (upper plate) consists of brittle, fault-bounded blocks of unmetamorphosed or low-grade supracrustal rocks displaced along high-angle secondary normal faults that sole out into the master detachment. In stark contrast, the **footwall** (lower plate) comprises high-grade metamorphic and igneous basement rocks that underwent pervasive ductile shearing, mylonitization, and partial melting (anatexis) under amphibolite-to-greenschist facies conditions prior to tectonic exhumation. Kinematic models explain the paradoxical low-angle slip via two primary mechanisms: the **rolling-hinge model**, where detachment faults initiate at steep angles and progressively rotate to sub-horizontal orientations as the footwall flexes upward in response to isostatic unloading; and fluid-overpressure mechanisms, wherein high pore-fluid pressures along the fault plane dramatically reduce effective normal stress, allowing low-angle frictional sliding.",
+    "questions": [
+      {
+        "id": "ENG_RC_191_Q1",
+        "question": "What structural anomaly in extensional tectonics led geologists to identify Metamorphic Core Complexes?",
+        "options": {
+          "A": "The discovery of low-angle detachment faults that exhumed ductile mid-crustal basement beneath brittle upper plates.",
+          "B": "The complete absence of seismic activity along oceanic subduction zones.",
+          "C": "The emergence of volcanic islands in the middle of stable continental cratons.",
+          "D": "The discovery that all continental faults dip at strictly vertical 90° angles."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that MCCs challenged Andersonian high-angle models by showing low-angle detachment faults exhuming ductile lower crust beneath brittle upper crust."
+      },
+      {
+        "id": "ENG_RC_191_Q2",
+        "question": "How does the structural lithology of the hanging wall differ from the footwall in a Metamorphic Core Complex?",
+        "options": {
+          "A": "The hanging wall contains high-grade ductile mylonites, while the footwall consists of unmetamorphosed sediments.",
+          "B": "The hanging wall consists of brittle, unmetamorphosed supracrustal blocks, while the footwall comprises ductilely sheared metamorphic and igneous basement rocks.",
+          "C": "Both plates are composed exclusively of volcanic ash and basaltic lava.",
+          "D": "The hanging wall is completely molten liquid magma, while the footwall is brittle limestone."
+        },
+        "correct_option": "B",
+        "rationale": "The passage highlights the structural duality: the upper plate/hanging wall has brittle, unmetamorphosed blocks, while the lower plate/footwall has ductilely deformed metamorphic basement."
+      },
+      {
+        "id": "ENG_RC_191_Q3",
+        "question": "According to the 'rolling-hinge' kinematic model, how do detachment faults attain low-angle orientations?",
+        "options": {
+          "A": "They initiate at steep angles and progressively rotate to sub-horizontal dips as the footwall isostatically rebounds and flexes upward.",
+          "B": "They are formed by meteorite impact craters that melt surface rocks.",
+          "C": "They are folded into horizontal planes by massive continental ice sheets.",
+          "D": "They are forced downward by the weight of growing volcanic calderas."
+        },
+        "correct_option": "A",
+        "rationale": "The rolling-hinge model explains that faults start steep and rotate to shallow low angles as isostatic unloading causes the footwall to flex upward."
+      },
+      {
+        "id": "ENG_RC_191_Q4",
+        "question": "How does fluid overpressure facilitate mechanical sliding along low-angle detachment fault planes?",
+        "options": {
+          "A": "By freezing the fault rocks into rigid crystalline ice.",
+          "B": "By reducing the effective normal stress clamping the fault, allowing frictional failure at low angles.",
+          "C": "By dissolving all quartz minerals into gaseous vapors.",
+          "D": "By reversing the Earth's magnetic polarity along the fault zone."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that high pore-fluid pressures reduce effective normal stress, lowering frictional resistance and enabling low-angle slip."
+      },
+      {
+        "id": "ENG_RC_191_Q5",
+        "question": "As used in the passage, the word 'exhumation' refers to:",
+        "options": {
+          "A": "The geological process of bringing deeply buried rocks to the Earth's surface through erosion and tectonic unroofing",
+          "B": "The biological decay of organic material inside sedimentary mud",
+          "C": "The chemical precipitation of salt minerals in drying lakes",
+          "D": "The explosive eruption of volcanic ash into the stratosphere"
+        },
+        "correct_option": "A",
+        "rationale": "In structural geology, 'exhumation' refers to the unroofing and displacement of deeply buried metamorphic or plutonic rocks toward the surface."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_192",
+    "passage_title": "The Evolutionary Neurobiology of Cephalopod RNA Editing",
+    "passage_text": "In the central dogma of molecular biology, genetic information flows faithfully from DNA to messenger RNA (mRNA) via transcription, and subsequently to proteins via translation. Most metazoans diversify their proteomic repertoire primarily through alternative pre-mRNA splicing or genomic gene duplication. However, coleoid cephalopods (octopuses, squids, and cuttlefish) have evolved a radically distinct, non-canonical evolutionary strategy: **massive, ubiquitous adenosine-to-inosine (A-to-I) mRNA editing**. Catalyzed by Adenosine Deaminases Acting on RNA (ADAR) enzymes, this hydrolytic deamination converts specific adenosine bases into inosine. Because the cellular translational machinery interprets inosine ($I$) as guanosine ($G$), A-to-I editing recodes nonsynonymous codons, altering the amino acid sequence of translated proteins without mutating the underlying genomic DNA. Transcriptomic sequencing reveals that while humans utilize RNA editing primarily in non-coding repetitive regions, coleoid cephalopods recode over sixty percent of their neural transcripts, specifically targeting voltage-gated potassium channels, sodium-potassium ATPases, and synaptic vesicle release proteins (such as synaptotagmin). Biophysical assays demonstrate that this extensive recoding is dynamically regulated in response to ambient environmental thermal shifts, fine-tuning neural electrical kinetics in cold waters. However, this phenotypic plasticity carries a profound evolutionary cost: maintaining the complex double-stranded secondary RNA structures required for ADAR binding severely constrains genomic evolution, freezing nucleotide sequences and dramatically suppressing genomic mutation rates across coleoid lineages.",
+    "questions": [
+      {
+        "id": "ENG_RC_192_Q1",
+        "question": "How do coleoid cephalopods fundamentally diversify their neural proteome compared to most other metazoans?",
+        "options": {
+          "A": "By undergoing rapid polyploid chromosome duplication every generation.",
+          "B": "Through extensive adenosine-to-inosine (A-to-I) mRNA editing that recodes amino acid sequences post-transcriptionally.",
+          "C": "By eliminating all ribosomal translation in favor of direct DNA-to-lipid synthesis.",
+          "D": "By absorbing exogenous genetic material directly from oceanic bacterial viruses."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that cephalopods rely on massive A-to-I mRNA editing mediated by ADAR enzymes to recode codons and diversify their neural proteins without altering DNA."
+      },
+      {
+        "id": "ENG_RC_192_Q2",
+        "question": "How does the ribosome interpret inosine ($I$) during protein translation?",
+        "options": {
+          "A": "As an immediate stop codon that truncates the protein.",
+          "B": "As guanosine ($G$), altering the translated amino acid wherever nonsynonymous edits occur.",
+          "C": "As thymine ($T$), which prevents polypeptide elongation.",
+          "D": "As an invalid base that causes ribosomal degradation."
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly states that 'Because the cellular translational machinery interprets inosine ($I$) as guanosine ($G$), A-to-I editing recodes nonsynonymous codons.'"
+      },
+      {
+        "id": "ENG_RC_192_Q3",
+        "question": "What functional physiological advantage does extensive RNA editing provide to cephalopods?",
+        "options": {
+          "A": "It enables rapid regeneration of severed limbs in volcanic thermal vents.",
+          "B": "It allows dynamic, temperature-dependent fine-tuning of neural electrical kinetics and ion channel function in cold water.",
+          "C": "It generates bright fluorescent skin pigmentation for deep-sea hunting.",
+          "D": "It eliminates the metabolic need to consume dietary proteins."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that RNA editing is regulated in response to temperature shifts, fine-tuning electrical kinetics of neural ion channels in cold marine environments."
+      },
+      {
+        "id": "ENG_RC_192_Q4",
+        "question": "What major evolutionary trade-off is incurred by cephalopods to preserve high levels of RNA editing?",
+        "options": {
+          "A": "They lose the ability to perform sexual reproduction.",
+          "B": "Preserving the double-stranded RNA secondary structures needed for ADAR binding constrains genomic evolution and suppresses mutation rates.",
+          "C": "Their physical lifespan is reduced to less than forty-eight hours.",
+          "D": "They become completely blind to long-wavelength visual light."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence explains that maintaining RNA secondary structures for ADAR binding freezes surrounding DNA sequences and suppresses genomic evolutionary rates."
+      },
+      {
+        "id": "ENG_RC_192_Q5",
+        "question": "As used in the passage, the word 'ubiquitous' most nearly means:",
+        "options": {
+          "A": "Extremely rare and found only in isolated specimens",
+          "B": "Present, appearing, or found everywhere; pervasive",
+          "C": "Lethally toxic to surrounding cellular organelles",
+          "D": "Incapable of being measured by modern laboratory equipment"
+        },
+        "correct_option": "B",
+        "rationale": "'Ubiquitous' means omnipresent, widespread, or existing everywhere across a domain (in this context, widespread across the transcriptome)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_193",
+    "passage_title": "The Microeconomics of Mechanism Design and the Vickrey-Clarke-Groves (VCG) Mechanism",
+    "passage_text": "In microeconomic game theory and information economics, **Mechanism Design**—pioneered by Leonid Hurwicz, Eric Maskin, and Roger Myerson—inverts traditional economic analysis. Instead of analyzing the equilibrium outcomes produced by an existing market institution, mechanism design begins with a desired normative societal objective (such as Pareto efficiency or revenue maximization) and engineers a game (rules, allocation mechanisms, and payment rules) that incentivizes self-interested, strategic participants to truthfully reveal their private information. The central intellectual triumph of this framework is the **Vickrey-Clarke-Groves (VCG) mechanism**. The VCG mechanism solves the fundamental problem of public goods provision and combinatorial auctions where individual valuations are private knowledge. In a VCG auction, each agent submits a sealed bid representing their valuation for various bundles of goods. The social planner computes the allocation that maximizes total reported social welfare. Crucially, the payment charged to each winning agent is set equal to the **externality cost** that their presence imposes on all other participants—specifically, the difference between the total social welfare of other agents had the winner not participated and the actual social welfare received by others with the winner included. By setting individual payments equal to social opportunity costs, the VCG mechanism aligns private incentives with collective welfare, making **truthful bidding (truth-telling) a dominant strategy** regardless of what other players do (strategy-proofness).",
+    "questions": [
+      {
+        "id": "ENG_RC_193_Q1",
+        "question": "How does the approach of Mechanism Design fundamentally differ from classical microeconomic market analysis?",
+        "options": {
+          "A": "It assumes that all market participants are completely altruistic.",
+          "B": "It starts with a desired social outcome and engineers game rules that incentivize private truth-telling, rather than just observing existing markets.",
+          "C": "It eliminates all forms of private property and money from the economy.",
+          "D": "It relies exclusively on central government price-fixing mandates."
+        },
+        "correct_option": "B",
+        "rationale": "The opening lines explain that mechanism design inverts traditional analysis by starting with a desired objective and designing rules to induce strategic agents to reveal private information truthfully."
+      },
+      {
+        "id": "ENG_RC_193_Q2",
+        "question": "How is the payment amount determined for a winning participant in a Vickrey-Clarke-Groves (VCG) mechanism?",
+        "options": {
+          "A": "The winner pays their own maximum submitted bid in full.",
+          "B": "The winner pays the externality cost their presence imposes on all other players (the social opportunity cost).",
+          "C": "The payment is determined by a random lottery draw.",
+          "D": "The winner pays a fixed 10% tax directly to the commercial banking sector."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that the VCG payment is equal to the externality cost imposed on others—the loss in welfare other participants suffer because the winner claimed the resource."
+      },
+      {
+        "id": "ENG_RC_193_Q3",
+        "question": "What is the primary game-theoretic property achieved by aligning individual payments with social opportunity costs in VCG?",
+        "options": {
+          "A": "Truthful bidding becomes a dominant strategy for every participant, irrespective of others' actions.",
+          "B": "All participants receive equal financial payouts regardless of their bids.",
+          "C": "The auctioneer always maximizes corporate monopoly profits.",
+          "D": "Market transactions take weeks to clear."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that aligning private payments with social costs makes truthful bidding (truth-telling) a dominant strategy (strategy-proofness)."
+      },
+      {
+        "id": "ENG_RC_193_Q4",
+        "question": "Which prominent economists shared the Nobel Prize for pioneering the field of Mechanism Design?",
+        "options": {
+          "A": "John Maynard Keynes, Milton Friedman, and Friedrich Hayek",
+          "B": "Leonid Hurwicz, Eric Maskin, and Roger Myerson",
+          "C": "Adam Smith, David Ricardo, and Thomas Malthus",
+          "D": "Robert Lucas, Eugene Fama, and Joseph Stiglitz"
+        },
+        "correct_option": "B",
+        "rationale": "The passage explicitly names Leonid Hurwicz, Eric Maskin, and Roger Myerson as the pioneers of mechanism design."
+      },
+      {
+        "id": "ENG_RC_193_Q5",
+        "question": "As used in the passage, the word 'dominant' in game theory refers to a strategy that:",
+        "options": {
+          "A": "Yields the highest payoff for a player regardless of the strategies chosen by opponents",
+          "B": "Is enforced through physical threats and violence",
+          "C": "Is chosen by a single monopoly firm to crush competitors",
+          "D": "Always results in negative financial returns"
+        },
+        "correct_option": "A",
+        "rationale": "In game theory, a 'dominant strategy' is an action that yields the strictly best outcome for a player regardless of what choices the other players make."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_194",
+    "passage_title": "The Physical Chemistry of Supercritical Fluids and Supercritical CO2 Extraction",
+    "passage_text": "In thermodynamics, when a pure chemical substance is subjected to temperatures and pressures exceeding its specific **thermodynamic critical point** (critical temperature $T_c$ and critical pressure $P_c$), the physical boundary between the liquid and gaseous phases vanishes. The resulting substance is a **supercritical fluid (SCF)**. Supercritical fluids occupy a unique, hybrid thermodynamic domain: they exhibit gas-like transport properties (low dynamic viscosity, zero surface tension, and high molecular diffusion rates) coupled with liquid-like solvating power (high density capable of dissolving non-volatile solutes). Carbon dioxide ($CO_2$) is the premier industrial SCF due to its mild, easily accessible critical parameters ($T_c = 31.1^\\circ\\text{C}$, $P_c = 7.38\\text{ MPa}$ or 72.8 atm), non-toxicity, non-flammability, and low cost. The solvent power of supercritical carbon dioxide ($scCO_2$) is continuously tunable simply by manipulating system pressure or temperature, which directly modulates fluid density without altering chemical identity. In industrial **Supercritical Fluid Extraction (SFE)**—such as the decaffeination of unroasted coffee beans or the isolation of pharmaceutical botanical extracts—pressurized $scCO_2$ penetrates deep into porous cellular matrices, dissolving targeted lipophilic compounds (e.g., caffeine) while leaving proteins and carbohydrates intact. Depressurization to ambient atmospheric levels converts the $CO_2$ into a gas that flashes off completely, leaving pure, solvent-free extract residues and eliminating toxic organic solvent disposal.",
+    "questions": [
+      {
+        "id": "ENG_RC_194_Q1",
+        "question": "What thermodynamic condition defines the state of a supercritical fluid?",
+        "options": {
+          "A": "The fluid is cooled to absolute zero under ultra-high vacuum.",
+          "B": "Temperature and pressure exceed the substance's critical point, causing the liquid-gas phase boundary to disappear.",
+          "C": "The liquid is mixed with equal volumes of molten lead.",
+          "D": "The substance is converted entirely into radioactive plasma."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that a supercritical fluid forms when temperature and pressure exceed the critical point ($T_c$ and $P_c$), eliminating the distinct phase boundary between liquid and gas."
+      },
+      {
+        "id": "ENG_RC_194_Q2",
+        "question": "What combination of physical properties makes supercritical fluids exceptionally effective extraction solvents?",
+        "options": {
+          "A": "High viscosity, heavy surface tension, and zero diffusion rates.",
+          "B": "Gas-like transport properties (low viscosity, high diffusivity) combined with liquid-like density and dissolving power.",
+          "C": "Strong electrical conductivity and nuclear radioactivity.",
+          "D": "Extreme acidity capable of dissolving all glass and steel vessels."
+        },
+        "correct_option": "B",
+        "rationale": "The text highlights the hybrid nature of SCFs: gas-like low viscosity and high diffusivity for penetrating matrices, alongside liquid-like density for dissolving non-volatile solutes."
+      },
+      {
+        "id": "ENG_RC_194_Q3",
+        "question": "Why is carbon dioxide ($CO_2$) the preferred medium for industrial supercritical extraction?",
+        "options": {
+          "A": "It requires extreme heating above 5,000°C to reach its critical point.",
+          "B": "It possesses mild critical parameters ($31.1^\\circ\\text{C}$, 7.38 MPa), is non-toxic, non-flammable, and leaves zero solvent residues upon depressurization.",
+          "C": "It is an extremely rare and expensive laboratory chemical.",
+          "D": "It permanently fuses with extracted caffeine molecules."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that $CO_2$ has accessible critical conditions ($31.1^\circ\text{C}$, 7.38 MPa), is non-toxic, inexpensive, and separates cleanly as gas upon depressurization."
+      },
+      {
+        "id": "ENG_RC_194_Q4",
+        "question": "How do chemical engineers tune the solvent dissolving power of supercritical $CO_2$ without adding chemical additives?",
+        "options": {
+          "A": "By altering system temperature and pressure, which directly modulates fluid density and solvating strength.",
+          "B": "By exposing the fluid to intense ultraviolet laser radiation.",
+          "C": "By adding heavy radioactive isotopes to the chamber.",
+          "D": "By freezing the extraction vessel into solid dry ice."
+        },
+        "correct_option": "A",
+        "rationale": "The author explains that solvent power is continuously tunable simply by manipulating pressure and temperature to alter fluid density."
+      },
+      {
+        "id": "ENG_RC_194_Q5",
+        "question": "As used in the passage, the word 'lipophilic' refers to chemical compounds that:",
+        "options": {
+          "A": "Dissolve readily in fats, oils, and non-polar lipid solvents",
+          "B": "Explode upon contact with atmospheric oxygen",
+          "C": "Bind strongly to pure water molecules through hydrogen bonds",
+          "D": "Reflect all incoming visual sunlight"
+        },
+        "correct_option": "A",
+        "rationale": "'Lipophilic' (fat-loving) describes chemical substances that have an affinity for, and dissolve in, lipids, non-polar solvents, and fats."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_195",
+    "passage_title": "The Structural Sociology of Zygmunt Bauman and 'Liquid Modernity'",
+    "passage_text": "In his influential turn-of-the-millennium sociological treatise *Liquid Modernity* (2000), Polish-British sociologist Zygmunt Bauman diagnosed a profound structural shift in the nature of late-twentieth-century capitalism and social relations. Bauman contrasted classical industrial capitalism—termed **'solid modernity'**—with contemporary late capitalism, which he characterized as **'liquid modernity'**. Solid modernity (modeled on the Fordist assembly-line factory and Weberian bureaucratic state) was marked by spatial fixity, durable long-term institutions, permanent career employment, strong labor unions, and stable collective identities rooted in social classes. In contrast, liquid modernity is defined by the deregulation, flexibilization, and radical liquefaction of all enduring social bonds, institutions, and commitments. In liquid modern society, capital has become extraterritorial, weightless, and hyper-mobile, unburdened by commitments to local labor forces or physical plant maintenance. This institutional volatility dismantles long-term planning, replacing enduring vocational careers with precarious, short-term contract labor (the 'gig economy'). Furthermore, liquid modernity shifts the burden of systemic risk onto the individual: collective political problems are privatized and individualized, framing systemic structural unemployment or poverty as personal moral or biographical failures. Human relationships are commodified and reconstituted as disposable, fragile consumer connections easily terminated at will, generating pervasive existential insecurity (**unsicherheit**).",
+    "questions": [
+      {
+        "id": "ENG_RC_195_Q1",
+        "question": "What primary structural characteristics defined 'solid modernity' in Zygmunt Bauman's framework?",
+        "options": {
+          "A": "Nomadic hunter-gatherer tribal migrations without permanent settlements.",
+          "B": "Spatial fixity, durable institutions, lifetime career employment, strong labor unions, and stable class structures.",
+          "C": "Instantaneous digital financial trading without factories.",
+          "D": "The complete absence of written laws and government courts."
+        },
+        "correct_option": "B",
+        "rationale": "The text defines solid modernity as characterized by spatial permanence, durable institutions, Fordist lifetime employment, labor unions, and stable collective class identities."
+      },
+      {
+        "id": "ENG_RC_195_Q2",
+        "question": "How does capital operate in 'liquid modernity' compared to solid industrial capitalism?",
+        "options": {
+          "A": "It is permanently bound to local municipal factory buildings.",
+          "B": "It has become extraterritorial, hyper-mobile, and detached from commitments to local labor forces.",
+          "C": "It consists exclusively of physical gold bullion stored in subterranean vaults.",
+          "D": "It is completely owned and distributed by state-controlled labor unions."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that liquid capital is 'extraterritorial, weightless, and hyper-mobile, unburdened by commitments to local labor forces or physical plant maintenance.'"
+      },
+      {
+        "id": "ENG_RC_195_Q3",
+        "question": "What is the consequence of the individualization of systemic risk in liquid modern society?",
+        "options": {
+          "A": "All citizens receive universal lifelong pensions from the state.",
+          "B": "Systemic structural failures (unemployment, poverty) are privatized and framed as personal biographical shortcomings.",
+          "C": "Labor strikes become legally mandatory across all corporations.",
+          "D": "Corporate executives are personally imprisoned during market recessions."
+        },
+        "correct_option": "B",
+        "rationale": "The text notes that liquid modernity privatizes systemic risks, 'framing systemic structural unemployment or poverty as personal moral or biographical failures.'"
+      },
+      {
+        "id": "ENG_RC_195_Q4",
+        "question": "How are interpersonal relationships transformed in liquid modernity according to Bauman?",
+        "options": {
+          "A": "They become lifelong indissoluble religious covenants.",
+          "B": "They are commodified into fragile, disposable consumer connections easily disconnected when inconvenient.",
+          "C": "They are arranged entirely by mathematical algorithms in census bureaus.",
+          "D": "They are completely prohibited in urban metropolitan centers."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that relationships are reconstituted as 'disposable, fragile consumer connections easily terminated at will, generating pervasive existential insecurity.'"
+      },
+      {
+        "id": "ENG_RC_195_Q5",
+        "question": "As used in the passage, the word 'precarious' describes conditions that are:",
+        "options": {
+          "A": "Uncertain, insecure, unstable, and dependent on chance",
+          "B": "Guaranteed by constitutional statutory law",
+          "C": "Extremely wealthy and financially prosperous",
+          "D": "Permanently etched into stone monuments"
+        },
+        "correct_option": "A",
+        "rationale": "'Precarious' describes situations characterized by vulnerability, instability, uncertainty, and a lack of security."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_196",
+    "passage_title": "The Quantum Electrodynamics of SQUID Magnetometry and the Josephson Effect",
+    "passage_text": "In superconducting quantum physics, the **Superconducting Quantum Interference Device (SQUID)** is the most sensitive instrument known to science for measuring minute magnetic flux fields, capable of resolving magnetic perturbations as faint as a few femtoteslas ($10^{-15}\\text{ T}$)—orders of magnitude weaker than the magnetic field generated by human neural firing in the cerebral cortex. The operation of a DC-SQUID relies on the interplay of two macroscopic quantum phenomena: **flux quantization** in superconducting loops and the **DC Josephson effect**. When a closed superconducting ring is cooled below its critical transition temperature ($T_c$), the macroscopic phase coherence of Cooper pairs enforces the quantization of magnetic flux trapped within the loop to integer multiples of the fundamental magnetic flux quantum: $\\Phi_0 = h / (2e) \\approx 2.0678 \\times 10^{-15}\\text{ Wb}$. A DC-SQUID is engineered by inserting two parallel **Josephson junctions**—thin nanometer-scale insulating barriers—into the superconducting ring. Cooper pairs tunnel through both insulating barriers via quantum tunneling without generating a voltage drop, provided the bias current remains below a critical current threshold ($I_c$). When an external magnetic flux ($\\Phi$) threads the loop, it induces a phase difference across the two junctions, causing the total critical current to modulate periodically as a function of the applied flux: $I_c(\\Phi) = 2I_0 |\\cos(\\pi \\Phi / \\Phi_0)|$. By converting tiny flux shifts into measurable voltage oscillations, SQUIDs enable **Magnetoencephalography (MEG)** to map real-time millisecond neural activity and facilitate searches for cosmological dark matter axions.",
+    "questions": [
+      {
+        "id": "ENG_RC_196_Q1",
+        "question": "What is the primary technological capability of a Superconducting Quantum Interference Device (SQUID)?",
+        "options": {
+          "A": "Generating infinite electrical current from sunlight.",
+          "B": "Measuring ultra-faint magnetic flux fields with femtotesla-scale sensitivity.",
+          "C": "Vaporizing heavy radioactive waste elements.",
+          "D": "Accelerating protons to the speed of light in deep underground rings."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explains that SQUIDs are the most sensitive detectors for measuring minute magnetic fields down to femtotesla ($10^{-15}\text{ T}$) scales."
+      },
+      {
+        "id": "ENG_RC_196_Q2",
+        "question": "What two macroscopic quantum phenomena underpin the physical operation of a DC-SQUID?",
+        "options": {
+          "A": "Blackbody radiation and the photoelectric threshold.",
+          "B": "Magnetic flux quantization in superconducting loops and the Josephson tunneling effect.",
+          "C": "Nuclear fission and beta radioactive decay.",
+          "D": "Gravitational lensing and cosmic redshift."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explicitly states that SQUID operation relies on the combination of flux quantization in superconducting rings and the DC Josephson effect across junctions."
+      },
+      {
+        "id": "ENG_RC_196_Q3",
+        "question": "What is the value and definition of the fundamental magnetic flux quantum ($\\Phi_0$)?",
+        "options": {
+          "A": "$\\Phi_0 = h / (2e) \\approx 2.0678 \\times 10^{-15}\\text{ Wb}$",
+          "B": "$\\Phi_0 = mc^2 / \\hbar$",
+          "C": "$\\Phi_0 = 100\\text{ Tesla}$",
+          "D": "$\\Phi_0 = 0\\text{ Volts}$"
+        },
+        "correct_option": "A",
+        "rationale": "The text gives the exact formula and value for the magnetic flux quantum as $\Phi_0 = h / (2e) \approx 2.0678 \times 10^{-15}\text{ Wb}$."
+      },
+      {
+        "id": "ENG_RC_196_Q4",
+        "question": "Which biomedical neuroimaging technology relies directly on SQUID magnetometers to track millisecond neural activity?",
+        "options": {
+          "A": "Standard optical retinal photography",
+          "B": "Magnetoencephalography (MEG)",
+          "C": "X-ray computerized tomography (CT)",
+          "D": "Ultrasound abdominal sonography"
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence highlights Magnetoencephalography (MEG) as a key clinical neuroimaging application enabled by SQUIDs mapping cerebral magnetic fields."
+      },
+      {
+        "id": "ENG_RC_196_Q5",
+        "question": "As used in the passage, the term 'coherence' in quantum physics refers to:",
+        "options": {
+          "A": "The state where quantum wave functions maintain a fixed, predictable phase relationship over space and time",
+          "B": "The complete loss of all electrical energy as waste heat",
+          "C": "The physical melting of a solid crystal into a liquid",
+          "D": "The random, erratic movement of dust particles in air"
+        },
+        "correct_option": "A",
+        "rationale": "In quantum physics, 'phase coherence' describes the property of waves or quantum states maintaining a definite, stable phase relationship, enabling macroscopic interference phenomena."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_197",
+    "passage_title": "The Agrarian Political Economy of the Corn Laws and David Ricardo's Theory of Comparative Advantage",
+    "passage_text": "In early nineteenth-century Great Britain, the contentious parliamentary debates surrounding the **Corn Laws**—protectionist import tariffs enacted in 1815 that restricted the importation of foreign grain to shield domestic landowners from European agricultural competition—crystallized modern trade theory. Landed aristocrats argued that grain self-sufficiency was vital for national security during wartime. In his 1817 masterwork *On the Principles of Political Economy and Taxation*, classical economist David Ricardo dismantled protectionist mercantilism by formulating the **Theory of Comparative Advantage** and the **Ricardian theory of land rent**. Ricardo demonstrated that high grain tariffs artificially forced Britain to cultivate marginal, low-fertility soils, driving up the cost of food. Because subsistence food costs determined nominal manufacturing wages, high grain prices squeezed industrial manufacturing profit margins, shifting wealth from dynamic industrial capitalists to unproductive, rent-seeking landlords. To prove the folly of protectionism, Ricardo showed that international trade is governed not by **absolute advantage** (Adam Smith's principle), but by comparative advantage. Even if Country $A$ can produce both manufactured cloth and grain with fewer labor hours than Country $B$, trade remains mutually beneficial if each nation specializes in the commodity for which it has the lowest **domestic opportunity cost**. By repealing the Corn Laws in 1846, Britain embraced unilateral trade liberalization, lowering food costs, accelerating industrial capital accumulation, and cementing its position as the 'workshop of the world'.",
+    "questions": [
+      {
+        "id": "ENG_RC_197_Q1",
+        "question": "What was the primary purpose of the British Corn Laws enacted in 1815?",
+        "options": {
+          "A": "To distribute free agricultural land to factory workers in Manchester.",
+          "B": "To impose high protective tariffs on imported foreign grain to shield domestic aristocratic landowners from competition.",
+          "C": "To prohibit the domestic cultivation of wheat across England.",
+          "D": "To force all commercial banks to convert their reserves into grain seeds."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explains that the Corn Laws were protectionist tariffs enacted in 1815 to restrict grain imports and protect domestic landowners."
+      },
+      {
+        "id": "ENG_RC_197_Q2",
+        "question": "According to David Ricardo, how did high grain tariffs harm British industrial manufacturing?",
+        "options": {
+          "A": "They forced factories to burn grain instead of coal in steam engines.",
+          "B": "They inflated food costs, which forced employers to pay higher nominal subsistence wages, squeezing industrial manufacturing profits.",
+          "C": "They caused an immediate shortage of iron and textile machinery.",
+          "D": "They legally banned the construction of cotton textile mills."
+        },
+        "correct_option": "B",
+        "rationale": "The text details that high food prices elevated nominal subsistence wages, transferring wealth to landlords while compressing manufacturing profit margins."
+      },
+      {
+        "id": "ENG_RC_197_Q3",
+        "question": "What core insight distinguishes Ricardo's 'Comparative Advantage' from Adam Smith's 'Absolute Advantage'?",
+        "options": {
+          "A": "Trade is beneficial only if a country can produce all goods cheaper than any competitor.",
+          "B": "Mutually beneficial trade occurs whenever nations specialize based on lowest domestic opportunity costs, even if one nation is less efficient at producing everything in absolute terms.",
+          "C": "Trade should be restricted exclusively to gold and silver bullion.",
+          "D": "Nations should only trade with immediate geographic neighbors."
+        },
+        "correct_option": "B",
+        "rationale": "Ricardo proved that absolute superiority does not matter; mutual gains from trade occur whenever countries specialize in goods where they possess the lowest relative opportunity cost."
+      },
+      {
+        "id": "ENG_RC_197_Q4",
+        "question": "What was the economic consequence of the formal repeal of the Corn Laws in 1846?",
+        "options": {
+          "A": "Britain suffered immediate industrial bankruptcy and famine.",
+          "B": "Britain embraced trade liberalization, lowering food costs and fueling industrial capital expansion.",
+          "C": "The British navy was completely dismantled.",
+          "D": "All agricultural farming in the British Isles ceased permanently."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence explains that the 1846 repeal established trade liberalization, lowering food costs, boosting industrial investment, and making Britain the 'workshop of the world'."
+      },
+      {
+        "id": "ENG_RC_197_Q5",
+        "question": "As used in the passage, the term 'opportunity cost' in economics refers to:",
+        "options": {
+          "A": "The financial cost of purchasing advertising in commercial newspapers",
+          "B": "The value of the next best alternative that is forgone when making a specific economic choice",
+          "C": "The statutory sales tax levied on luxury imported goods",
+          "D": "The salary paid to corporate executive officers"
+        },
+        "correct_option": "B",
+        "rationale": "In economics, 'opportunity cost' is the loss of potential gain from other alternatives when one alternative is chosen."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_198",
+    "passage_title": "The Evolutionary Biomechanics of Avian Flight and Feather Morphogenesis",
+    "passage_text": "The macro-evolutionary transition from non-avian theropod dinosaurs to birds represents one of the most thoroughly documented anatomical transformations in vertebrate paleontology, exemplified by fossil *Konservat-Lagerstätten* such as *Archaeopteryx* from Solnhofen and feathered dromaeosaurs (e.g., *Microraptor*) from the Early Cretaceous Jehol Biota. Classical aerodynamic models hypothesized that feathers evolved specifically for powered flight ('trees-down' arboreal gliding versus 'ground-up' cursorial running). However, developmental evolutionary biology (**Evo-Devo**) and phylogenetic bracketing reveal that feather morphogenesis preceded aerodynamic flight by tens of millions of years. The initial evolutionary radiation of feathers produced simple, unbranched hollow filaments (Stage I, proto-feathers or 'dino-fuzz') in basal coelurosaurs, serving primarily for **thermoregulatory insulation** or social display. The structural innovation enabling powered aerodynamic flight was the transition from radially symmetrical downy tufts to planar, **asymmetrical flight feathers (remiges)**. An asymmetrical airfoil feather possesses a narrow, rigid leading-edge vane and a broad, flexible trailing-edge vane supported by interlocking microscopic **barbules and hooklets (hamuli)**. Under aerodynamic loading during the flapping downstroke, this structural asymmetry creates a net upward lift force while preventing torsional aeroelastic flutter. Furthermore, skeletomuscular adaptations—including a deeply keeled sternum (carina) for anchoring massive pectoralis muscles, fused clavicles (furcula) acting as an elastic spring, and pneumatic hollow bones—synergistically reduced body mass while maximizing mechanical power output.",
+    "questions": [
+      {
+        "id": "ENG_RC_198_Q1",
+        "question": "According to contemporary evolutionary developmental biology (Evo-Devo), what was the original primary function of early proto-feathers before the evolution of flight?",
+        "options": {
+          "A": "Underwater propulsion for chasing marine fish.",
+          "B": "Thermoregulatory insulation and behavioral display.",
+          "C": "Poisonous defense mechanisms against large sauropod predators.",
+          "D": "Digesting plant cellulose through symbiotic bacteria."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that simple unbranched proto-feathers evolved tens of millions of years before flight, serving initially for thermoregulatory insulation and social display."
+      },
+      {
+        "id": "ENG_RC_198_Q2",
+        "question": "What specific morphological structural innovation distinguishes aerodynamic flight feathers (remiges) from downy feathers?",
+        "options": {
+          "A": "They are composed entirely of pure metallic titanium crystals.",
+          "B": "They possess an asymmetrical planar airfoil structure with interlocking barbules and hamuli that resist aerodynamic torsion.",
+          "C": "They are completely detached from the avian skeletal wings.",
+          "D": "They lack a central rachis shaft completely."
+        },
+        "correct_option": "B",
+        "rationale": "The passage highlights that aerodynamic remiges feature asymmetrical vanes (narrow leading edge, broad trailing edge) with interlocking barbules and hamuli that produce lift and prevent flutter."
+      },
+      {
+        "id": "ENG_RC_198_Q3",
+        "question": "What skeletal function is served by the deeply keeled sternum (carina) in flying birds?",
+        "options": {
+          "A": "It anchors the massive pectoralis flight muscles required for the downstroke.",
+          "B": "It stores heavy calcium deposits for eggshell manufacturing.",
+          "C": "It protects the brain from high-g diving accelerations.",
+          "D": "It filters oxygen directly from ambient air into the bloodstream."
+        },
+        "correct_option": "A",
+        "rationale": "The text states that the keeled sternum (carina) anchors the massive pectoralis flight muscles required to generate mechanical power for flight."
+      },
+      {
+        "id": "ENG_RC_198_Q4",
+        "question": "Which exceptional fossil formation provided feathered dromaeosaur specimens like *Microraptor*?",
+        "options": {
+          "A": "The Early Cretaceous Jehol Biota in China",
+          "B": "The Burgess Shale in Canada",
+          "C": "The La Brea Tar Pits in California",
+          "D": "The Olduvai Gorge in Tanzania"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly cites the Early Cretaceous Jehol Biota in China as providing feathered dromaeosaurs such as *Microraptor*."
+      },
+      {
+        "id": "ENG_RC_198_Q5",
+        "question": "As used in the passage, the word 'pneumatic' describes bones that are:",
+        "options": {
+          "A": "Hollow and filled with air sacs/cavities to reduce mass while maintaining structural strength",
+          "B": "Solid, dense, and reinforced with heavy iron ores",
+          "C": "Composed entirely of flexible rubber-like cartilage",
+          "D": "Subject to spontaneous radioactive decay"
+        },
+        "correct_option": "A",
+        "rationale": "In anatomy and paleontology, 'pneumatic bones' are bones containing internal air spaces, sinuses, or air sac extensions that lighten the skeleton for flight."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_199",
+    "passage_title": "The Structural Anatomy of Post-Structuralist Deconstruction and Jacques Derrida",
+    "passage_text": "In his revolutionary 1967 philosophical texts—most notably *Of Grammatology* and *Writing and Difference*—French philosopher Jacques Derrida formulated the critical strategy known as **deconstruction**, delivering a foundational challenge to Western metaphysics. Derrida argued that from Plato to structural linguistics (Ferdinand de Saussure), Western philosophy is dominated by **logocentrism** and the 'metaphysics of presence'—the assumption that spoken language (*logos*) enjoys privileged, immediate access to authentic meaning, pure thought, and objective truth, while written language is denigrated as a secondary, corrupting representation. Derrida overturned this hierarchy by demonstrating that speech itself operates through the structural mechanics of writing, introducing the neologism **différance** (deliberately combining the French verbs *différer*, meaning both 'to defer' and 'to differ'). Derrida argued that meaning is never fully present or fixed in a single signifier; rather, meaning is perpetually **differed** through spatial contrast with other signifiers in a differential network, and perpetually **deferred** along an endless temporal chain of sign substitutions without ever arriving at an ultimate, grounded foundation (a transcendental signified). Deconstructive reading does not aim to destroy texts, but to subvert the rigid **binary oppositions** upon which Western philosophical hierarchies are constructed (e.g., Speech/Writing, Nature/Culture, Mind/Body, Male/Female). By locating internal textual contradictions, marginal moments, and aporias—points of undecidability where a text's logic unravels itself—deconstruction reveals that meaning is inherently unstable, multiple, and contingent.",
+    "questions": [
+      {
+        "id": "ENG_RC_199_Q1",
+        "question": "What is 'logocentrism' as defined in Jacques Derrida's philosophical critique?",
+        "options": {
+          "A": "The mathematical study of logarithmic algebraic equations.",
+          "B": "The historical Western metaphysics that privileges spoken language as having direct access to authentic presence and truth while denigrating writing.",
+          "C": "The belief that language should be replaced entirely by visual corporate logos.",
+          "D": "The requirement that all legal documents be written in classical Latin."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines logocentrism as the Western metaphysical assumption that speech (*logos*) enjoys immediate access to authentic thought and truth over written text."
+      },
+      {
+        "id": "ENG_RC_199_Q2",
+        "question": "What two interconnected meanings are encapsulated in Derrida's neologism *différance*?",
+        "options": {
+          "A": "To synthesize and to dissolve",
+          "B": "To differ (spatial distinction) and to defer (temporal postponement of meaning)",
+          "C": "To conquer and to govern",
+          "D": "To verify and to falsify"
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly states that *différance* combines the French senses of 'to differ' (spatial distinction across sign networks) and 'to defer' (temporal postponement of fixed meaning)."
+      },
+      {
+        "id": "ENG_RC_199_Q3",
+        "question": "How does deconstruction treat traditional philosophical binary oppositions (e.g., Speech/Writing, Nature/Culture)?",
+        "options": {
+          "A": "It proves that the dominant term is permanently superior by scientific law.",
+          "B": "It subverts and destabilizes the hierarchy, exposing the internal textual contradictions and dependency of the privileged term on the subordinated term.",
+          "C": "It translates both terms into classical mathematical variables.",
+          "D": "It eliminates all vowels from written words."
+        },
+        "correct_option": "B",
+        "rationale": "The author explains that deconstruction subverts rigid binary hierarchies by locating aporias and internal contradictions where textual logic unravels."
+      },
+      {
+        "id": "ENG_RC_199_Q4",
+        "question": "What is an 'aporia' in the context of a deconstructive reading?",
+        "options": {
+          "A": "A physical tear in an ancient papyrus manuscript",
+          "B": "An internal textual impasse or point of undecidability where the text's argumentative logic contradicts or subverts itself",
+          "C": "A complete consensus among literary critics regarding an author's intention",
+          "D": "A legal contract signed by academic publishers"
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines an aporia as a 'point of undecidability where a text's logic unravels itself', revealing the instability of meaning."
+      },
+      {
+        "id": "ENG_RC_199_Q5",
+        "question": "As used in the passage, the phrase 'transcendental signified' refers to:",
+        "options": {
+          "A": "An ultimate, fixed, external foundation of meaning independent of linguistic signs",
+          "B": "A commercial television advertisement broadcast across continents",
+          "C": "A medical term for an inflamed optic nerve",
+          "D": "An elementary grammatical punctuation mark"
+        },
+        "correct_option": "A",
+        "rationale": "In post-structuralist semiotics, a 'transcendental signified' is an ultimate, unshakeable, fixed foundation of meaning (such as God, Reason, or absolute Truth) that exists outside the play of signifiers."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_200",
+    "passage_title": "The Quantum Mechanics of the Fractional Quantum Hall Effect and Anyonic Statistics",
+    "passage_text": "While the Integer Quantum Hall Effect (IQHE) is completely explained by single-particle non-interacting electron band theory in Landau levels, the discovery of the **Fractional Quantum Hall Effect (FQHE)** in 1982 by Daniel Tsui, Horst Störmer, and Arthur Gossard revealed a profound macroscopic manifestation of strongly correlated electron physics. In ultraclean two-dimensional electron gases subjected to intense magnetic fields ($B > 10\\text{ T}$) and millikelvin temperatures, the Hall resistance displays quantized plateaus at rational fractional filling factors: $R_{xy} = h / (\\nu e^2)$, where $\\nu$ is a fraction with an odd denominator (e.g., $\\nu = 1/3, 2/5, 3/7$). In 1983, Robert Laughlin provided the microscopic theoretical explanation by formulating the **Laughlin many-body wave function**: $\\Psi_m(z_1, \\dots, z_N) = \\prod_{j < k} (z_j - z_k)^m \\exp\\left(-\\frac{1}{4}\\sum_l |z_l|^2\\right)$, where $m$ is an odd integer (with $\\nu = 1/m$). Laughlin proved that Coulomb repulsion forces the electrons to condense into a novel, incompressible quantum liquid state characterized by topological order. Remarkably, the elementary quasiparticle excitations of this topological fluid possess **fractional fractional electrical charge** ($e^* = e / m$, so $e^* = e/3$ for $\\nu = 1/3$) and obey **fractional statistics**. Unlike three-dimensional space where particles are strictly categorized as either fermions or bosons under particle exchange, two-dimensional quasiparticles in the FQHE are **anyons**. Braiding one anyon around another imparts a fractional quantum phase shift ($\theta = \\pi / m$). In non-Abelian FQHE states (such as $\\nu = 5/2$), anyon braiding operations execute matrix transformations within degenerate ground-state subspaces, providing the physical foundation for fault-tolerant **topological quantum computation**.",
+    "questions": [
+      {
+        "id": "ENG_RC_200_Q1",
+        "question": "What fundamental physical observation distinguishes the Fractional Quantum Hall Effect (FQHE) from the Integer Quantum Hall Effect (IQHE)?",
+        "options": {
+          "A": "FQHE occurs at high room temperatures in ordinary copper wires.",
+          "B": "FQHE exhibits quantized Hall resistance plateaus at rational fractional filling factors ($\nu = 1/3, 2/5$) driven by strong electron-electron interactions.",
+          "C": "FQHE eliminates all magnetic fields from the laboratory.",
+          "D": "FQHE converts electrons into neutral photons."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that unlike the single-particle IQHE, the FQHE arises from strongly correlated electron interactions that yield resistance plateaus at rational fractional filling factors with odd denominators."
+      },
+      {
+        "id": "ENG_RC_200_Q2",
+        "question": "What extraordinary property is exhibited by the quasiparticle excitations in Laughlin's $\\nu = 1/3$ quantum liquid state?",
+        "options": {
+          "A": "They carry an exact fractional electrical charge of $e/3$ and obey anyonic braiding statistics.",
+          "B": "They possess infinite negative gravitational mass.",
+          "C": "They travel faster than the speed of light in deep space.",
+          "D": "They dissolve the physical semiconductor substrate."
+        },
+        "correct_option": "A",
+        "rationale": "The passage details that elementary excitations in the $\nu=1/3$ state carry fractional electrical charges ($e^* = e/3$) and obey anyonic quantum exchange statistics."
+      },
+      {
+        "id": "ENG_RC_200_Q3",
+        "question": "Why are two-dimensional quasiparticles in FQHE termed 'anyons' rather than standard fermions or bosons?",
+        "options": {
+          "A": "They exist only inside high-temperature volcanic magma.",
+          "B": "Exchanging or braiding them imparts an arbitrary fractional phase shift ($\theta = \pi/m$) rather than simple $+1$ (bosons) or $-1$ (fermions).",
+          "C": "They are completely invisible to electron microscopes.",
+          "D": "They can only be observed during solar eclipses."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that in 2D space, particles are not confined to bosonic ($+1$) or fermionic ($-1$) sign flips, but can acquire fractional phase shifts ($\theta = \pi/m$) upon braiding, defining them as anyons."
+      },
+      {
+        "id": "ENG_RC_200_Q4",
+        "question": "What cutting-edge technological application is enabled by non-Abelian anyon braiding in states like $\\nu = 5/2$?",
+        "options": {
+          "A": "Fault-tolerant topological quantum computation",
+          "B": "Direct combustion in commercial jet engines",
+          "C": "Agricultural fertilization of grain crops",
+          "D": "Deep-sea submarine radio communications"
+        },
+        "correct_option": "A",
+        "rationale": "The final sentence states that non-Abelian anyon braiding operations provide the hardware foundation for fault-tolerant topological quantum computers."
+      },
+      {
+        "id": "ENG_RC_200_Q5",
+        "question": "As used in the passage, the word 'incompressible' in quantum liquids means:",
+        "options": {
+          "A": "Resistant to changes in density due to an energy gap required to create excitations",
+          "B": "Completely impossible to understand or comprehend mathematically",
+          "C": "Converted permanently into a solid diamond crystal",
+          "D": "Exploding violently under atmospheric pressure"
+        },
+        "correct_option": "A",
+        "rationale": "In condensed matter physics, an 'incompressible quantum liquid' is a ground state where there is a finite energy gap to compress the density or create bulk quasiparticle excitations."
+      }
+    ]
+  }
+]

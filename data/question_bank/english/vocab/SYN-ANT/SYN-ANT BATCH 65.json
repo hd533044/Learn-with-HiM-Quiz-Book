@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_3201",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SATIATE**",
+    "options": {
+      "A": "Satisfy",
+      "B": "Starve",
+      "C": "Deprive",
+      "D": "Hunger"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Satiate' means to satisfy (a desire or an appetite) to the full. 'Satisfy', 'sate', or 'fill' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3202",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SATIATE**",
+    "options": {
+      "A": "Satisfy",
+      "B": "Sate",
+      "C": "Starve",
+      "D": "Fill"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Satiate' means to satisfy fully. 'Starve', 'deprive', or 'hunger' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3203",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SATURNINE**",
+    "options": {
+      "A": "Gloomy",
+      "B": "Cheerful",
+      "C": "Happy",
+      "D": "Joyful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Saturnine' means (of a person or their manner) slow and gloomy. 'Gloomy', 'morose', or 'sullen' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3204",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SATURNINE**",
+    "options": {
+      "A": "Gloomy",
+      "B": "Morose",
+      "C": "Sullen",
+      "D": "Cheerful"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Saturnine' means gloomy. 'Cheerful', 'happy', or 'joyful' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3205",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SAVANT**",
+    "options": {
+      "A": "Scholar",
+      "B": "Dunce",
+      "C": "Fool",
+      "D": "Ignoramus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Savant' refers to a learned person, especially a distinguished scientist. 'Scholar', 'expert', or 'intellectual' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3206",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SAVANT**",
+    "options": {
+      "A": "Scholar",
+      "B": "Expert",
+      "C": "Dunce",
+      "D": "Intellectual"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Savant' is a learned person. 'Dunce', 'fool', or 'ignoramus' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3207",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SAVOR**",
+    "options": {
+      "A": "Relish",
+      "B": "Dislike",
+      "C": "Hate",
+      "D": "Loathe"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Savor' means to enjoy or appreciate (something pleasant) completely, especially by dwelling on it. 'Relish', 'enjoy', or 'appreciate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3208",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SAVOR**",
+    "options": {
+      "A": "Relish",
+      "B": "Enjoy",
+      "C": "Dislike",
+      "D": "Appreciate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Savor' means to enjoy. 'Dislike', 'hate', or 'loathe' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3209",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SCANT**",
+    "options": {
+      "A": "Meager",
+      "B": "Abundant",
+      "C": "Plenty",
+      "D": "Ample"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Scant' means barely sufficient or adequate. 'Meager', 'sparse', or 'limited' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3210",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SCANT**",
+    "options": {
+      "A": "Meager",
+      "B": "Sparse",
+      "C": "Abundant",
+      "D": "Limited"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Scant' means small amount. 'Abundant', 'plenty', or 'ample' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3211",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SCATHING**",
+    "options": {
+      "A": "Bitter",
+      "B": "Mild",
+      "C": "Gentle",
+      "D": "Kind"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Scathing' means witheringly scornful; severely critical. 'Bitter', 'harsh', or 'caustic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3212",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SCATHING**",
+    "options": {
+      "A": "Bitter",
+      "B": "Harsh",
+      "C": "Mild",
+      "D": "Caustic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Scathing' means severely critical. 'Mild', 'gentle', or 'kind' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3213",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SCISSION**",
+    "options": {
+      "A": "Split",
+      "B": "Union",
+      "C": "Connection",
+      "D": "Link"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Scission' refers to the act of cutting or separating; a split. 'Split', 'severance', or 'division' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3214",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SCISSION**",
+    "options": {
+      "A": "Split",
+      "B": "Severance",
+      "C": "Union",
+      "D": "Division"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Scission' is a split. 'Union', 'connection', or 'link' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3215",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SCOFF**",
+    "options": {
+      "A": "Mock",
+      "B": "Praise",
+      "C": "Applaud",
+      "D": "Admire"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Scoff' means to speak about someone or something in a scornfully derisive or mocking way. 'Mock', 'ridicule', or 'sneer' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3216",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SCOFF**",
+    "options": {
+      "A": "Mock",
+      "B": "Ridicule",
+      "C": "Praise",
+      "D": "Sneer"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Scoff' means to mock. 'Praise', 'applaud', or 'admire' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3217",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SCOURGE**",
+    "options": {
+      "A": "Affliction",
+      "B": "Blessing",
+      "C": "Boon",
+      "D": "Benefit"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Scourge' refers to a person or thing that causes great trouble or suffering. 'Affliction', 'bane', or 'menace' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3218",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SCOURGE**",
+    "options": {
+      "A": "Affliction",
+      "B": "Bane",
+      "C": "Blessing",
+      "D": "Menace"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Scourge' is a cause of suffering. 'Blessing', 'boon', or 'benefit' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3219",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SCRUPULOUS**",
+    "options": {
+      "A": "Diligent",
+      "B": "Careless",
+      "C": "Negligent",
+      "D": "Slovenly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Scrupulous' means (of a person or process) diligent, thorough, and extremely attentive to details. 'Diligent', 'meticulous', or 'careful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3220",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SCRUPULOUS**",
+    "options": {
+      "A": "Diligent",
+      "B": "Meticulous",
+      "C": "Careless",
+      "D": "Thorough"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Scrupulous' means diligent and thorough. 'Careless', 'negligent', or 'slovenly' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3221",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SCRUTINIZE**",
+    "options": {
+      "A": "Examine",
+      "B": "Ignore",
+      "C": "Disregard",
+      "D": "Neglect"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Scrutinize' means to examine or inspect closely and thoroughly. 'Examine', 'inspect', or 'analyze' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3222",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SCRUTINIZE**",
+    "options": {
+      "A": "Examine",
+      "B": "Inspect",
+      "C": "Ignore",
+      "D": "Analyze"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Scrutinize' means to examine closely. 'Ignore', 'disregard', or 'neglect' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3223",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SCURRILOUS**",
+    "options": {
+      "A": "Abusive",
+      "B": "Respectful",
+      "C": "Courteous",
+      "D": "Polite"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Scurrilous' means making or spreading scandalous claims about someone with the intention of damaging their reputation. 'Abusive', 'insulting', or 'scandalous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3224",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SCURRILOUS**",
+    "options": {
+      "A": "Abusive",
+      "B": "Insulting",
+      "C": "Respectful",
+      "D": "Scandalous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Scurrilous' means abusive. 'Respectful', 'courteous', or 'polite' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3225",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SEDATE**",
+    "options": {
+      "A": "Calm",
+      "B": "Excited",
+      "C": "Agitated",
+      "D": "Frantic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sedate' means calm, dignified, and unhurried; quiet and rather dull. 'Calm', 'tranquil', or 'composed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3226",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SEDATE**",
+    "options": {
+      "A": "Calm",
+      "B": "Tranquil",
+      "C": "Excited",
+      "D": "Composed"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sedate' means calm. 'Excited', 'agitated', or 'frantic' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3227",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SEDENTARY**",
+    "options": {
+      "A": "Inactive",
+      "B": "Active",
+      "C": "Mobile",
+      "D": "Energetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sedentary' means (of a person) tending to spend much time seated; somewhat inactive. 'Inactive', 'sitting', or 'stationary' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3228",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SEDENTARY**",
+    "options": {
+      "A": "Inactive",
+      "B": "Stationary",
+      "C": "Active",
+      "D": "Sitting"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sedentary' means inactive. 'Active', 'mobile', or 'energetic' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3229",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SEDITIOUS**",
+    "options": {
+      "A": "Rebellious",
+      "B": "Loyal",
+      "C": "Obedient",
+      "D": "Faithful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Seditious' means inciting or causing people to rebel against the authority of a state or monarch. 'Rebellious', 'insurgent', or 'treasonous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3230",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SEDITIOUS**",
+    "options": {
+      "A": "Rebellious",
+      "B": "Insurgent",
+      "C": "Loyal",
+      "D": "Treasonous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Seditious' means rebellious. 'Loyal', 'obedient', or 'faithful' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3231",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SEDULOUS**",
+    "options": {
+      "A": "Diligent",
+      "B": "Lazy",
+      "C": "Indolent",
+      "D": "Slothful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sedulous' means (of a person or action) showing dedication and diligence. 'Diligent', 'assiduous', or 'meticulous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3232",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SEDULOUS**",
+    "options": {
+      "A": "Diligent",
+      "B": "Assiduous",
+      "C": "Lazy",
+      "D": "Meticulous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sedulous' means diligent. 'Lazy', 'indolent', or 'slothful' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3233",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SEMINAL**",
+    "options": {
+      "A": "Influential",
+      "B": "Unimportant",
+      "C": "Trivial",
+      "D": "Insignificant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Seminal' means (of a work, event, moment, or figure) strongly influencing later developments. 'Influential', 'pioneering', or 'formative' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3234",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SEMINTAL**",
+    "options": {
+      "A": "Influential",
+      "B": "Pioneering",
+      "C": "Unimportant",
+      "D": "Formative"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Seminal' means influential. 'Unimportant', 'trivial', or 'insignificant' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3235",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SENSUOUS**",
+    "options": {
+      "A": "Pleasurable",
+      "B": "Unpleasant",
+      "C": "Repulsive",
+      "D": "Distasteful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sensuous' means relating to or affecting the senses rather than the intellect; attractive or gratifying physically, especially sexually. 'Pleasurable', 'appealing', or 'luxurious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3236",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SENSUOUS**",
+    "options": {
+      "A": "Pleasurable",
+      "B": "Appealing",
+      "C": "Unpleasant",
+      "D": "Luxurious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sensuous' means pleasurable to the senses. 'Unpleasant', 'repulsive', or 'distasteful' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3237",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SENTENTIOUS**",
+    "options": {
+      "A": "Pithy",
+      "B": "Verbose",
+      "C": "Wordy",
+      "D": "Long-winded"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sententious' means given to moralizing in a pompous or affected manner; (of language) full of pithy aphorisms. 'Pithy', 'terse', or 'aphoristic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3238",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SENTENTIOUS**",
+    "options": {
+      "A": "Pithy",
+      "B": "Terse",
+      "C": "Verbose",
+      "D": "Aphoristic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sententious' (in language sense) means pithy. 'Verbose', 'wordy', or 'long-winded' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3239",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SENTIENT**",
+    "options": {
+      "A": "Conscious",
+      "B": "Unconscious",
+      "C": "Insensate",
+      "D": "Inanimate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sentient' means able to perceive or feel things. 'Conscious', 'aware', or 'feeling' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3240",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SENTIENT**",
+    "options": {
+      "A": "Conscious",
+      "B": "Aware",
+      "C": "Unconscious",
+      "D": "Feeling"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sentient' means conscious. 'Unconscious', 'insensate', or 'inanimate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3241",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SEPTIC**",
+    "options": {
+      "A": "Infected",
+      "B": "Clean",
+      "C": "Sterile",
+      "D": "Pure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Septic' means infected with microorganisms, especially harmful bacteria. 'Infected', 'putrid', or 'corrupt' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3242",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SEPTIC**",
+    "options": {
+      "A": "Infected",
+      "B": "Putrid",
+      "C": "Clean",
+      "D": "Corrupt"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Septic' means infected. 'Clean', 'sterile', or 'pure' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3243",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SEQUENTIAL**",
+    "options": {
+      "A": "Consecutive",
+      "B": "Random",
+      "C": "Disordered",
+      "D": "Chaotic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sequential' means following in a logical order or sequence. 'Consecutive', 'successive', or 'ordered' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3244",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SEQUENTIAL**",
+    "options": {
+      "A": "Consecutive",
+      "B": "Successive",
+      "C": "Random",
+      "D": "Ordered"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sequential' means ordered. 'Random', 'disordered', or 'chaotic' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3245",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SERENE**",
+    "options": {
+      "A": "Calm",
+      "B": "Agitated",
+      "C": "Turbulent",
+      "D": "Stormy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Serene' means calm, peaceful, and untroubled. 'Calm', 'tranquil', or 'placid' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3246",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SERENE**",
+    "options": {
+      "A": "Calm",
+      "B": "Tranquil",
+      "C": "Agitated",
+      "D": "Placid"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Serene' means calm. 'Agitated', 'turbulent', or 'stormy' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3247",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SERVILE**",
+    "options": {
+      "A": "Subservient",
+      "B": "Independent",
+      "C": "Assertive",
+      "D": "Dominant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Servile' means having or showing an excessive willingness to serve or please others. 'Subservient', 'obsequious', or 'fawning' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3248",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SERVILE**",
+    "options": {
+      "A": "Subservient",
+      "B": "Obsequious",
+      "C": "Independent",
+      "D": "Fawning"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Servile' means submissive. 'Independent', 'assertive', or 'dominant' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3249",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SHACKLE**",
+    "options": {
+      "A": "Fetter",
+      "B": "Release",
+      "C": "Free",
+      "D": "Liberate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Shackle' means to chain or restrain (a prisoner) with shackles; to inhibit. 'Fetter', 'restrain', or 'chain' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3250",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SHACKLE**",
+    "options": {
+      "A": "Fetter",
+      "B": "Restrain",
+      "C": "Release",
+      "D": "Chain"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Shackle' means to restrain. 'Release', 'free', or 'liberate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

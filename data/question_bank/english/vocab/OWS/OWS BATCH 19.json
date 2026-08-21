@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0901",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA strong intuitive feeling or foreboding that an unpleasant event is about to happen",
+    "options": {
+      "A": "Serendipity",
+      "B": "Premonition",
+      "C": "Elysium",
+      "D": "Ecstasy"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Premonition) is correct. A 'Premonition' is a strong prior hunch or foreboding of a future misfortune. 'Serendipity' is an accidental stroke of good luck.",
+    "tags": ["vocab", "ows", "emotions", "mind", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0902",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo make evasive, ambiguous, or misleading statements in order to avoid telling the truth",
+    "options": {
+      "A": "Vindicate",
+      "B": "Exonerate",
+      "C": "Prevaricate",
+      "D": "Corroborate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Prevaricate) is correct. 'Prevaricate' means to act or speak evasively to conceal the truth. 'Vindicate' and 'Exonerate' mean to clear someone of blame.",
+    "tags": ["vocab", "ows", "verbs", "behaviour", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0903",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA collective group or family of lions living together in the wild",
+    "options": {
+      "A": "Flock",
+      "B": "Pride",
+      "C": "Shoal",
+      "D": "Swarm"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Pride) is correct. A 'Pride' is the collective term for a group of lions. 'Flock' is for birds or sheep, and 'Shoal' is for fish.",
+    "tags": ["vocab", "ows", "collective_nouns", "animals", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0904",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA special legal advantage, immunity, or right available exclusively to a particular person or group",
+    "options": {
+      "A": "Obligation",
+      "B": "Duty",
+      "C": "Privilege",
+      "D": "Burden"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Privilege) is correct. A 'Privilege' is a special advantage or right restricted to specific individuals or classes.",
+    "tags": ["vocab", "ows", "law", "society", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0905",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is placed on a probationary trial period when newly hired for a job",
+    "options": {
+      "A": "Probationer",
+      "B": "Veteran",
+      "C": "Novice",
+      "D": "Apprentice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Probationer) is correct. A 'Probationer' is an employee undergoing a trial period to test suitability. 'Apprentice' learns a formal trade under a master.",
+    "tags": ["vocab", "ows", "work", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0906",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo postpone, put off, or delay doing something until a future time",
+    "options": {
+      "A": "Accelerate",
+      "B": "Expedite",
+      "C": "Procrastinate",
+      "D": "Facilitate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Procrastinate) is correct. 'Procrastinate' means to delay or postpone action habitually. 'Accelerate' and 'Expedite' mean to speed up.",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0907",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe habit, practice, or art of delaying and postponing tasks unnecessarily",
+    "options": {
+      "A": "Perseverance",
+      "B": "Diligence",
+      "C": "Procrastination",
+      "D": "Industry"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Procrastination) is correct. 'Procrastination' is the action of delaying or postponing tasks. 'Perseverance' and 'Diligence' denote steady effort.",
+    "tags": ["vocab", "ows", "habits", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0908",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA young child or person endowed with exceptional, brilliant qualities and talents",
+    "options": {
+      "A": "Prodigy",
+      "B": "Novice",
+      "C": "Tyro",
+      "D": "Dunce"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Prodigy) is correct. A 'Prodigy' is a young person with extraordinary mental or physical talents. 'Tyro' and 'Novice' are beginners.",
+    "tags": ["vocab", "ows", "people", "talent", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0909",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA high degree of competence, skill, and expert proficiency in a field",
+    "options": {
+      "A": "Ineptness",
+      "B": "Clumsiness",
+      "C": "Proficiency",
+      "D": "Maladroit"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Proficiency) is correct. 'Proficiency' means advanced skill, competence, or expertise. 'Ineptness' and 'Clumsiness' denote lack of skill.",
+    "tags": ["vocab", "ows", "skill", "abstract", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0910",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA general outline or external shape sketching the characteristic features of a person or object",
+    "options": {
+      "A": "Profile",
+      "B": "Caricature",
+      "C": "Portrait",
+      "D": "Facsimile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Profile) is correct. A 'Profile' is an outline view or general biographical summary of a person's character.",
+    "tags": ["vocab", "ows", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0911",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nRecklessly wasteful, extravagant, and profligate in the use of resources",
+    "options": {
+      "A": "Frugal",
+      "B": "Profligate",
+      "C": "Thrifty",
+      "D": "Economical"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Profligate) is correct. 'Profligate' means wildly extravagant and wasteful. 'Frugal' and 'Thrifty' mean careful and economical with money.",
+    "tags": ["vocab", "ows", "adjectives", "money", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0912",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe industrial working-class people regarded collectively as a social group",
+    "options": {
+      "A": "Bourgeoisie",
+      "B": "Aristocracy",
+      "C": "Proletariat",
+      "D": "Plutocracy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C (Proletariat) is correct. 'Proletariat' refers to wage-earning manual labourers in society. 'Bourgeoisie' represents the middle class.",
+    "tags": ["vocab", "ows", "society", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0913",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nRapid, widespread, and sudden increase in the number or amount of something",
+    "options": {
+      "A": "Proliferation",
+      "B": "Stagnation",
+      "C": "Retardation",
+      "D": "Atrophy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Proliferation) is correct. 'Proliferation' means rapid multiplication and spread. 'Atrophy' means gradual decline or wasting away.",
+    "tags": ["vocab", "ows", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0914",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn introductory speech, verse, or preface preceding a literary work or play",
+    "options": {
+      "A": "Epilogue",
+      "B": "Prologue",
+      "C": "Postscript",
+      "D": "Codicil"
+    },
+    "correct_option": "B",
+    "explanation": "Option B (Prologue) is correct. A 'Prologue' is an opening introductory scene or speech in a literary text. 'Epilogue' is the concluding section.",
+    "tags": ["vocab", "ows", "literature", "theatre", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0915",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA rigid bar, pole, or timber used as a structural prop or support",
+    "options": {
+      "A": "Prop",
+      "B": "Shaft",
+      "C": "Stanchion",
+      "D": "Cylinder"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Prop) is correct. A 'Prop' is a temporary or permanent structural support used to hold something upright.",
+    "tags": ["vocab", "ows", "objects", "tools", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0916",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA messenger, teacher, or divine spokesperson sent by God to deliver sacred messages",
+    "options": {
+      "A": "Prophet",
+      "B": "Apostle",
+      "C": "Emissary",
+      "D": "Ambassador"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Prophet) is correct. A 'Prophet' is regarded as an inspired teacher or proclaimer of divine will.",
+    "tags": ["vocab", "ows", "religion", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0917",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe mechanical force or driving power that pushes an object forward",
+    "options": {
+      "A": "Propulsion",
+      "B": "Resistance",
+      "C": "Friction",
+      "D": "Drag"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Propulsion) is correct. 'Propulsion' is the action of driving forward or generating forward momentum.",
+    "tags": ["vocab", "ows", "physics", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0918",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who has abandoned their former religious faith or political party to adopt another",
+    "options": {
+      "A": "Proselyte",
+      "B": "Apostate",
+      "C": "Renegade",
+      "D": "Turncoat"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Proselyte) is correct. A 'Proselyte' is a convert to a new religious faith, sect, or doctrine.",
+    "tags": ["vocab", "ows", "religion", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0919",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe leading central hero, character, or champion in a literary story, drama, or film",
+    "options": {
+      "A": "Protagonist",
+      "B": "Antagonist",
+      "C": "Villain",
+      "D": "Adversary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Protagonist) is correct. The 'Protagonist' is the principal main character in a play or narrative. 'Antagonist' is the opposing rival.",
+    "tags": ["vocab", "ows", "literature", "theatre", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0920",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA formal code of correct diplomatic behavior, rules, and etiquette observed at official meetings",
+    "options": {
+      "A": "Protocol",
+      "B": "Statute",
+      "C": "Manifesto",
+      "D": "Mandate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Protocol) is correct. 'Protocol' is the official set of rules governing state ceremonies and diplomatic relations.",
+    "tags": ["vocab", "ows", "law", "politics", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0921",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe original first model, design, or mock-up of something from which other forms are developed",
+    "options": {
+      "A": "Prototype",
+      "B": "Facsimile",
+      "C": "Caricature",
+      "D": "Replica"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Prototype) is correct. A 'Prototype' is the primary working model of a new device or invention. 'Replica' is an exact copy.",
+    "tags": ["vocab", "ows", "technology", "objects", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0922",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nDry feed, fodder, or provisions supplied for farm animals and livestock",
+    "options": {
+      "A": "Provender",
+      "B": "Bullion",
+      "C": "Contraband",
+      "D": "Ration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Provender) is correct. 'Provender' refers to dry food or fodder for cattle and livestock.",
+    "tags": ["vocab", "ows", "agriculture", "animals", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0923",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn excessive, narrow-minded concern for local regional interests over national unity",
+    "options": {
+      "A": "Provincialism",
+      "B": "Cosmopolitanism",
+      "C": "Patriotism",
+      "D": "Nationalism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Provincialism) is correct. 'Provincialism' is narrowness of mind or regional bias. 'Cosmopolitanism' embraces global perspectives.",
+    "tags": ["vocab", "ows", "society", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0924",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA suspicious person who moves stealthily or loiters near a place with intent to commit a crime",
+    "options": {
+      "A": "Prowler",
+      "B": "Burglar",
+      "C": "Intruder",
+      "D": "Emissary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Prowler) is correct. A 'Prowler' sneaks around stealthily scouting for property to steal.",
+    "tags": ["vocab", "ows", "crime", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0925",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA specialist who analyzes election trends, voting patterns, and public opinion polls",
+    "options": {
+      "A": "Psephologist",
+      "B": "Astrologer",
+      "C": "Geologist",
+      "D": "Entomologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Psephologist) is correct. A 'Psephologist' scientifically studies elections and voting statistics.",
+    "tags": ["vocab", "ows", "science", "politics", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0926",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific analysis and statistical study of elections and voting trends",
+    "options": {
+      "A": "Psephology",
+      "B": "Demography",
+      "C": "Sociology",
+      "D": "Ethnology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Psephology) is correct. 'Psephology' is the statistical study of election polling and voting behavior. 'Demography' studies human populations.",
+    "tags": ["vocab", "ows", "science", "politics", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0927",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA fictitious assumed pen name adopted by an author to hide their real identity",
+    "options": {
+      "A": "Pseudonym",
+      "B": "Acronym",
+      "C": "Homonym",
+      "D": "Namesake"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pseudonym) is correct. A 'Pseudonym' is an author's false literary pen name. 'Namesake' shares another person's exact name.",
+    "tags": ["vocab", "ows", "literature", "writing", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0928",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA scientist who specializes in the study of the human mind and mental behavior",
+    "options": {
+      "A": "Psychologist",
+      "B": "Neurologist",
+      "C": "Pathologist",
+      "D": "Geologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Psychologist) is correct. A 'Psychologist' studies mental processes, emotions, and behavioural psychology.",
+    "tags": ["vocab", "ows", "science", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0929",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study of the human mind, mental states, and behavioral patterns",
+    "options": {
+      "A": "Psychology",
+      "B": "Neurology",
+      "C": "Sociology",
+      "D": "Anatomy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Psychology) is correct. 'Psychology' is the science analyzing mental functions and behavior.",
+    "tags": ["vocab", "ows", "science", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0930",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExtremely attentive, meticulous, and precise in observing formal rules and etiquette",
+    "options": {
+      "A": "Punctilious",
+      "B": "Remiss",
+      "C": "Lax",
+      "D": "Negligent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Punctilious) is correct. 'Punctilious' means showing great attention to correct conduct and formal detail. 'Remiss' and 'Lax' mean careless.",
+    "tags": ["vocab", "ows", "adjectives", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0931",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who places bets, wagers money, or makes risky investments on games or races",
+    "options": {
+      "A": "Punter",
+      "B": "Broker",
+      "C": "Accountant",
+      "D": "Auditor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Punter) is correct. A 'Punter' is a gambler who places financial wagers, especially on sports or horse racing.",
+    "tags": ["vocab", "ows", "people", "sports", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0932",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo rot, decay, and undergo decomposition of organic matter, producing a foul, fetid smell",
+    "options": {
+      "A": "Putrefy",
+      "B": "Preserve",
+      "C": "Consolidate",
+      "D": "Sterilize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Putrefy) is correct. 'Putrefy' means to rot and foully decompose organic tissue.",
+    "tags": ["vocab", "ows", "biology", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0933",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn obsessive, compulsive psychiatric urge or desire to set fires to property",
+    "options": {
+      "A": "Pyromania",
+      "B": "Kleptomania",
+      "C": "Bibliomania",
+      "D": "Dipsomania"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Pyromania) is correct. 'Pyromania' is a mental disorder causing compulsive fire-setting. 'Kleptomania' is compulsion to steal.",
+    "tags": ["vocab", "ows", "mania", "medical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0934",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA rectangular courtyard, open square, or quad enclosed by large building blocks",
+    "options": {
+      "A": "Quadrangle",
+      "B": "Rotunda",
+      "C": "Atrium",
+      "D": "Cloister"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Quadrangle) is correct. A 'Quadrangle' is a four-sided rectangular courtyard enclosed by buildings.",
+    "tags": ["vocab", "ows", "architecture", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0935",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAny animal that has four feet or legs",
+    "options": {
+      "A": "Quadruped",
+      "B": "Biped",
+      "C": "Invertebrate",
+      "D": "Amphibian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Quadruped) is correct. A 'Quadruped' is a four-footed animal. A 'Biped' walks on two legs.",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0936",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo shake, quiver, or tremble, especially in a person's voice due to emotion",
+    "options": {
+      "A": "Quaver",
+      "B": "Steady",
+      "C": "Firm",
+      "D": "Stablize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Quaver) is correct. 'Quaver' means to shake or tremble, typically referring to a trembling voice.",
+    "tags": ["vocab", "ows", "sound", "verbs", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0937",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA long, adventurous search, hunt, or pursuit undertaken to find something",
+    "options": {
+      "A": "Quest",
+      "B": "Stroll",
+      "C": "Jaunt",
+      "D": "Excursion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Quest) is correct. A 'Quest' is an expedition or search undertaken to achieve a specific goal.",
+    "tags": ["vocab", "ows", "travel", "general", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0938",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA writing pen fashioned from a large bird's flight feather",
+    "options": {
+      "A": "Quill",
+      "B": "Stylus",
+      "C": "Crayon",
+      "D": "Chalk"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Quill) is correct. A 'Quill' is a pen made from a bird feather used historically with ink wells.",
+    "tags": ["vocab", "ows", "writing", "tools", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0939",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTaking place, recurring, or celebrated once every five years",
+    "options": {
+      "A": "Quinquennial",
+      "B": "Triennial",
+      "C": "Biennial",
+      "D": "Annual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Quinquennial) is correct. 'Quinquennial' means lasting or happening every five years. 'Triennial' happens every three years.",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0940",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA skilled, witty storyteller full of interesting and amusing anecdotes",
+    "options": {
+      "A": "Raconteur",
+      "B": "Orator",
+      "C": "Compere",
+      "D": "Charlatan"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Raconteur) is correct. A 'Raconteur' is a gifted raconteur skilled at telling entertaining stories.",
+    "tags": ["vocab", "ows", "people", "communication", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0941",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe emission and propagation of energy in the form of waves or rays through space",
+    "options": {
+      "A": "Radiation",
+      "B": "Conduction",
+      "C": "Convection",
+      "D": "Absorption"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Radiation) is correct. 'Radiation' is the transmission of energy via electromagnetic waves.",
+    "tags": ["vocab", "ows", "science", "physics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0942",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who advocates sweeping, fundamental, and complete political or social reform",
+    "options": {
+      "A": "Radical",
+      "B": "Conservative",
+      "C": "Reactionary",
+      "D": "Orthodox"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Radical) is correct. A 'Radical' favors extreme, fundamental political transformations. 'Conservative' resists rapid changes.",
+    "tags": ["vocab", "ows", "politics", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0943",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medical specialist who uses X-rays, ultrasound, and CT scans for disease diagnosis",
+    "options": {
+      "A": "Radiologist",
+      "B": "Pathologist",
+      "C": "Cardiologist",
+      "D": "Neurologist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Radiologist) is correct. A 'Radiologist' diagnoses medical conditions using imaging technology like X-rays.",
+    "tags": ["vocab", "ows", "medical", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0944",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe medical science dealing with X-rays and high-energy radiation for diagnosing and treating diseases",
+    "options": {
+      "A": "Radiology",
+      "B": "Pathology",
+      "C": "Cardiology",
+      "D": "Neurology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Radiology) is correct. 'Radiology' is the medical specialty utilizing imaging radiation.",
+    "tags": ["vocab", "ows", "science", "medical", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0945",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOf meat or food having a stale, putrid smell or unpleasant rancid taste",
+    "options": {
+      "A": "Rancid",
+      "B": "Fresh",
+      "C": "Savory",
+      "D": "Palatable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Rancid) is correct. 'Rancid' describes fats or foods spoiled with a stale, foul smell and taste.",
+    "tags": ["vocab", "ows", "food", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0946",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCharacterized by bitter, deep-seated resentment, grudge, or lingering hostility",
+    "options": {
+      "A": "Rancorous",
+      "B": "Amicable",
+      "C": "Cordial",
+      "D": "Benevolent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Rancorous) is correct. 'Rancorous' means marked by bitterness and deep resentment. 'Amicable' and 'Cordial' mean friendly.",
+    "tags": ["vocab", "ows", "emotions", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0947",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sum of money demanded or paid for the release of a captured prisoner or hostage",
+    "options": {
+      "A": "Ransom",
+      "B": "Bounty",
+      "C": "Rebate",
+      "D": "Honorarium"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ransom) is correct. 'Ransom' is the payment demanded for freeing a captive.",
+    "tags": ["vocab", "ows", "law", "finance", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0948",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExtremely greedy, predatory, and grasping for money or material plunder",
+    "options": {
+      "A": "Rapacious",
+      "B": "Altruistic",
+      "C": "Magnanimous",
+      "D": "Bountiful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Rapacious) is correct. 'Rapacious' means aggressively greedy and extortionate. 'Magnanimous' means generous and forgiving.",
+    "tags": ["vocab", "ows", "character", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0949",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA partial refund, discount, or deduction allowed on a debt or tax payment",
+    "options": {
+      "A": "Rebate",
+      "B": "Penalty",
+      "C": "Fine",
+      "D": "Tribute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Rebate) is correct. A 'Rebate' is a partial return of a sum paid or discount on a price.",
+    "tags": ["vocab", "ows", "finance", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0950",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo formally withdraw, renounce, or disavow a prior statement, belief, or oath",
+    "options": {
+      "A": "Recant",
+      "B": "Affirm",
+      "C": "Assert",
+      "D": "Corroborate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Recant) is correct. 'Recant' means to take back or publicly retract an opinion or belief. 'Affirm' and 'Assert' mean to state firmly.",
+    "tags": ["vocab", "ows", "verbs", "law", "pyq_ssc"]
+  }
+]

@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_121",
+    "passage_title": "The Biomechanics of Avian Flight and Feather Aerodynamics",
+    "passage_text": "Avian flight represents a remarkable evolutionary optimization of musculoskeletal mechanics, cardiovascular endurance, and fluid dynamics. Generating aerodynamic lift requires an asymmetrical pressure differential across the wing airfoil, classically modeled through the Bernoulli principle and circulation theorems derived from the Kutta-Joukowski condition. As air traverses the convex upper surface (camber) of the wing, it accelerates relative to the flatter ventral surface, reducing local static pressure and generating upward net force. Crucial to this aerodynamic efficacy is the structural hierarchy of flight feathers (remiges). Each remex consists of a central hollow rachis flanked by a vane formed of parallel barbs. These barbs branch into micro-structural barbules equipped with interlocking microscopic hooklets (hamuli). This interlocking matrix provides a resilient, continuous aerodynamic plane capable of resisting upward bending loads while remaining permeable enough to self-repair following mechanical shearing. In high-angle-of-attack maneuvers or low-speed landings, birds deploy the alula—a specialized group of feathers attached to the pollex (digit II)—which acts as a leading-edge slot, preventing aerodynamic stall by re-energizing the boundary layer over the dorsal wing surface.",
+    "questions": [
+      {
+        "id": "ENG_RC_121_Q1",
+        "question": "How does the camber of an avian wing generate aerodynamic lift according to the passage?",
+        "options": {
+          "A": "By increasing turbulent drag behind the trailing edge.",
+          "B": "By causing air to accelerate over the convex upper surface, reducing static pressure relative to the ventral side.",
+          "C": "By vibrating the microscopic barbules to push air directly downward.",
+          "D": "By absorbing warm thermal currents into the hollow core of the rachis."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that as air traverses the convex upper camber, it accelerates relative to the ventral surface, creating lower pressure on top and generating lift."
+      },
+      {
+        "id": "ENG_RC_121_Q2",
+        "question": "What structural role is served by the microscopic hamuli on flight feathers?",
+        "options": {
+          "A": "They interlock adjacent barbules to create a cohesive, flexible, and self-healing aerodynamic surface.",
+          "B": "They inject digestive enzymes into predatory insects caught during flight.",
+          "C": "They prevent bone marrow loss within the hollow humeral bones.",
+          "D": "They act as thermal sensors to detect changes in atmospheric barometric pressure."
+        },
+        "correct_option": "A",
+        "rationale": "The passage states that barbules are equipped with microscopic hooklets (hamuli) that interlock to create a resilient aerodynamic plane that can self-repair after shearing."
+      },
+      {
+        "id": "ENG_RC_121_Q3",
+        "question": "What is the primary aerodynamic function of the alula during low-speed flight or steep landing angles?",
+        "options": {
+          "A": "To fold the wings completely against the sternum to minimize friction.",
+          "B": "To function as a leading-edge slot that re-energizes the boundary layer and prevents aerodynamic stalls.",
+          "C": "To generate forward thrust through rapid circular flapping motions.",
+          "D": "To discharge excess electrostatic charge into the surrounding air."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explicitly notes that deploying the alula creates a leading-edge slot that re-energizes the boundary layer over the dorsal surface, preventing stall."
+      },
+      {
+        "id": "ENG_RC_121_Q4",
+        "question": "As used in the passage, the word 'ventral' refers to which anatomical aspect of an organism or wing?",
+        "options": {
+          "A": "The underside or lower surface",
+          "B": "The outermost tip of a limb",
+          "C": "The back or dorsal upper ridge",
+          "D": "The internal marrow cavity"
+        },
+        "correct_option": "A",
+        "rationale": "'Ventral' is an anatomical direction denoting the underside, belly, or lower surface of an animal or structure."
+      },
+      {
+        "id": "ENG_RC_121_Q5",
+        "question": "Which term describes the main flight feathers responsible for generating aerodynamic forces?",
+        "options": {
+          "A": "Remiges",
+          "B": "Pollex",
+          "C": "Hamuli",
+          "D": "Alula"
+        },
+        "correct_option": "A",
+        "rationale": "The text explicitly introduces flight feathers with the scientific term 'remiges' (singular: remex)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_122",
+    "passage_title": "The Structural Logic of Roman Concrete and the Pantheon Dome",
+    "passage_text": "The architectural preservation of ancient Roman monuments over two millennia is primarily attributable to the material engineering of *opus caementicium* (Roman concrete). Unlike contemporary Portland cement formulations—which degrade under maritime moisture and thermal cycling—Roman hydraulic concrete utilized a reactive blend of volcanic ash (pozzolana, notably from Pozzuoli), quicklime, and volcanic aggregate (*caementa*). When slaked with seawater, a post-cure chemical reaction generates rare aluminous tobermorite and phillipsite crystals that intergrow across micro-cracks over centuries, conferring an autonomous self-healing capability. The zenith of this structural engineering is exemplified by the unreinforced concrete dome of the Pantheon in Rome, commissioned by Emperor Hadrian. To span a diameter of 43.3 meters without internal pillars or modern reinforcing steel tensile bars, Roman architects engineered an ingenious gradient in density and thickness. The dome's foundation consists of dense travertine aggregate, transitioning sequentially through tuff and broken brick, and culminating in lightweight vesicular pumice aggregate at the crown. Furthermore, the dome incorporates stepped exterior rings, interior geometric coffers that reduce dead load mass, and a central nine-meter open oculus that eliminates the structural stresses of a heavy apex crown.",
+    "questions": [
+      {
+        "id": "ENG_RC_122_Q1",
+        "question": "What chemical property grants Roman concrete its remarkable durability and self-healing capability?",
+        "options": {
+          "A": "The addition of modern high-carbon structural rebar.",
+          "B": "The ongoing crystallization of aluminous tobermorite and phillipsite across micro-cracks.",
+          "C": "The total absence of water or moisture in the initial mortar mix.",
+          "D": "A synthetic resin coating applied to the exterior surface."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that volcanic pozzolana and quicklime react with seawater to form tobermorite and phillipsite crystals that intergrow across micro-cracks over centuries."
+      },
+      {
+        "id": "ENG_RC_122_Q2",
+        "question": "How did Roman engineers modulate the material composition of the Pantheon dome from base to apex?",
+        "options": {
+          "A": "By increasing the proportion of lead at the top of the structure.",
+          "B": "By transitioning from heavy travertine at the base to lightweight vesicular pumice near the top.",
+          "C": "By using solely pure marble slabs throughout all structural tiers.",
+          "D": "By replacing stone foundations with timber scaffolding."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that the aggregate transitioned sequentially from dense travertine at the base through tuff and brick to lightweight vesicular pumice at the crown."
+      },
+      {
+        "id": "ENG_RC_122_Q3",
+        "question": "What engineering benefit is provided by the recessed geometric coffers on the interior of the dome?",
+        "options": {
+          "A": "They act as thermal chimneys to circulate warm volcanic steam.",
+          "B": "They reduce the dead-weight mass of the concrete dome without sacrificing structural stiffness.",
+          "C": "They support decorative glass windows that illuminate the crypts.",
+          "D": "They absorb seismic vibrations through pneumatic air valves."
+        },
+        "correct_option": "B",
+        "rationale": "The passage mentions that the interior geometric coffers 'reduce dead load mass' while retaining structural integrity."
+      },
+      {
+        "id": "ENG_RC_122_Q4",
+        "question": "As used in the passage, the word 'oculus' refers to:",
+        "options": {
+          "A": "A circular central opening at the crown of a dome",
+          "B": "A heavy stone pillar supporting an archway",
+          "C": "An underground drainage conduit for rainwater",
+          "D": "A ceremonial altar placed at the temple entrance"
+        },
+        "correct_option": "A",
+        "rationale": "'Oculus' (Latin for 'eye') in architecture denotes a circular opening at the apex of a dome or in a wall."
+      },
+      {
+        "id": "ENG_RC_122_Q5",
+        "question": "Why does the presence of the oculus benefit the structural integrity of the Pantheon dome?",
+        "options": {
+          "A": "It eliminates the structural dead-load stresses that would otherwise concentrate at a heavy apex crown.",
+          "B": "It allows rainwater to constantly hydrate the lower travertine foundations.",
+          "C": "It provides anchoring points for external suspension cables.",
+          "D": "It prevents wind turbulence from touching the outer stepped rings."
+        },
+        "correct_option": "A",
+        "rationale": "The text notes that the open oculus 'eliminates the structural stresses of a heavy apex crown.'"
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_123",
+    "passage_title": "The Epistemology of Karl Popper and the Demarcation Problem",
+    "passage_text": "In the philosophy of science, the 'demarcation problem' concerns the philosophical criteria used to distinguish empirical science from non-science, pseudoscience, and metaphysics. Throughout the early twentieth century, the logical positivists of the Vienna Circle advocated the verificationist criterion of meaning, asserting that a proposition is scientifically meaningful only if it is empirically verifiable through inductive observation. In his 1934 masterwork *The Logic of Scientific Discovery*, philosopher Karl Popper dismantled verificationism by highlighting the inherent logical asymmetry between verification and falsification. Following David Hume's critique of induction, Popper noted that no finite quantity of positive empirical observations (such as observing ten thousand white swans) can ever logically prove a universal affirmative claim ('all swans are white'), as a single disconfirming observation (a black swan) refutes it. Consequently, Popper proposed 'falsifiability' as the criterion of demarcation: for a theoretical system to be considered scientific, it must make bold, empirically testable predictions that are capable of being conclusively refuted by potential observational data. Theories that are structured to explain away every possible contrary outcome—such as Marxist historical determinism or Freudian psychoanalysis—fail the test of falsifiability, functioning as dogmatic belief systems rather than empirical sciences.",
+    "questions": [
+      {
+        "id": "ENG_RC_123_Q1",
+        "question": "What is the primary philosophical focus of the 'demarcation problem'?",
+        "options": {
+          "A": "Determining national maritime boundaries in international law.",
+          "B": "Establishing criteria to differentiate empirical science from pseudoscience and metaphysics.",
+          "C": "Calculating the mathematical limits of quantum superpositions.",
+          "D": "Balancing economic budgets between public and private sectors."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence defines the demarcation problem as distinguishing empirical science from non-science, pseudoscience, and metaphysics."
+      },
+      {
+        "id": "ENG_RC_123_Q2",
+        "question": "Why did Karl Popper reject the logical positivists' verificationist criterion?",
+        "options": {
+          "A": "He believed that human sensory perception was completely illusory.",
+          "B": "Inductive verification cannot logically validate universal claims, whereas a single counter-instance can falsify them.",
+          "C": "He argued that mathematics should completely replace observational data in all sciences.",
+          "D": "He maintained that religious scriptures were the only source of absolute truth."
+        },
+        "correct_option": "B",
+        "rationale": "Popper highlighted the asymmetry between verification and falsification: no number of white swans can prove 'all swans are white', but one black swan refutes it."
+      },
+      {
+        "id": "ENG_RC_123_Q3",
+        "question": "According to Popper, what characteristic must a hypothesis possess to be classified as scientific?",
+        "options": {
+          "A": "It must be universally accepted by political institutions.",
+          "B": "It must make bold, risky predictions that are vulnerable to observational refutation (falsification).",
+          "C": "It must be immune to any potential disconfirming experimental results.",
+          "D": "It must align completely with classical Aristotelian teleology."
+        },
+        "correct_option": "B",
+        "rationale": "Popper required that a scientific theory make testable predictions that could potentially be contradicted and refuted by observation."
+      },
+      {
+        "id": "ENG_RC_123_Q4",
+        "question": "Why did Popper categorize Freudian psychoanalysis and Marxist historicism as pseudoscientific?",
+        "options": {
+          "A": "They were written in languages other than Latin or Greek.",
+          "B": "They adjusted their interpretations to explain away every possible contradictory outcome, lacking falsifiability.",
+          "C": "They relied excessively on advanced differential calculus equations.",
+          "D": "They lacked historical documents describing their founders."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that theories structured to accommodate and explain away every contrary outcome cannot be falsified, making them non-scientific."
+      },
+      {
+        "id": "ENG_RC_123_Q5",
+        "question": "As used in the passage, the word 'asymmetry' describes:",
+        "options": {
+          "A": "A fundamental lack of equivalence or balance between two processes",
+          "B": "A state of perfect geometric harmony",
+          "C": "A physical disorder of the nervous system",
+          "D": "An unresolvable economic deficit"
+        },
+        "correct_option": "A",
+        "rationale": "'Asymmetry' denotes an imbalance or lack of symmetry—in this case, between the infinite observations needed to verify versus the single observation needed to falsify."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_124",
+    "passage_title": "The Behavioral Ecology of Eusociality in Hymenoptera",
+    "passage_text": "Eusociality represents the pinnacle of social evolution in the animal kingdom, characterized by overlapping adult generations, cooperative brood care, and a reproductive division of labor featuring sterile worker castes that labor on behalf of fertile queens. The evolutionary emergence of this apparent altruism long perplexed evolutionary theorists, as Darwin himself conceded that sterile worker castes posed a severe challenge to natural selection. The dilemma was resolved by W.D. Hamilton's formulation of kin selection and inclusive fitness theory, formalized by Hamilton's rule ($rB > C$), which posits that altruistic traits evolve when the genetic relatedness ($r$) between the actor and recipient multiplied by the reproductive benefit ($B$) to the recipient outweighs the reproductive cost ($C$) to the actor. In the insect order Hymenoptera (ants, bees, and wasps), kin selection is strongly amplified by the haplodiploid sex-determination mechanism. Males develop from unfertilized haploid eggs (possessing only one set of maternal chromosomes), while females develop from fertilized diploid eggs. Consequently, full sisters share all of their father's genes (100%) and half of their mother's genes (50%), yielding an average coefficient of relatedness of $r = 0.75$ among full sisters. Because female workers are more closely related to their sisters ($r = 0.75$) than they would be to their own potential offspring ($r = 0.50$), natural selection genetically favors rearing sisters rather than reproducing directly.",
+    "questions": [
+      {
+        "id": "ENG_RC_124_Q1",
+        "question": "What three diagnostic characteristics define a eusocial animal society?",
+        "options": {
+          "A": "Solitary foraging, nocturnal hunting, and high adult mortality",
+          "B": "Overlapping adult generations, cooperative brood care, and a reproductive division of labor with sterile castes",
+          "C": "Asexual cloning, absence of hierarchy, and nomadic migration",
+          "D": "Internal fertilization, aquatic larval stages, and absence of parental investment"
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence explicitly defines eusociality by overlapping adult generations, cooperative care of young, and reproductive division of labor."
+      },
+      {
+        "id": "ENG_RC_124_Q2",
+        "question": "According to Hamilton's Rule ($rB > C$), when will an altruistic behavior be favored by natural selection?",
+        "options": {
+          "A": "When the direct physical cost to the actor exceeds all genetic benefits.",
+          "B": "When the product of genetic relatedness ($r$) and recipient benefit ($B$) exceeds the reproductive cost ($C$) to the altruist.",
+          "C": "When all members of a population become biologically sterile.",
+          "D": "When genetic relatedness between individuals drops to zero."
+        },
+        "correct_option": "B",
+        "rationale": "Hamilton's rule demonstrates that altruism spreads when the inclusive fitness benefit discounted by relatedness exceeds the personal fitness cost ($rB > C$)."
+      },
+      {
+        "id": "ENG_RC_124_Q3",
+        "question": "How does the haplodiploid genetic system in Hymenoptera produce an unusually high coefficient of relatedness ($r = 0.75$) among full sisters?",
+        "options": {
+          "A": "Haploid males pass 100% of their identical genes to all daughters, who also share 50% of their mother's genes.",
+          "B": "Females reproduce exclusively via spontaneous mitotic fission without chromosomes.",
+          "C": "Workers exchange genetic segments during cooperative larval feeding.",
+          "D": "Haploid queens suppress all paternal mutations using specialized hormones."
+        },
+        "correct_option": "A",
+        "rationale": "Because fathers are haploid, all daughters inherit the exact same paternal genome ($0.50$) plus half of the mother's genome ($0.25$), totaling $r = 0.75$."
+      },
+      {
+        "id": "ENG_RC_124_Q4",
+        "question": "Why is it genetically advantageous for a Hymenopteran female worker to care for the queen's brood rather than produce her own offspring?",
+        "options": {
+          "A": "She shares higher genetic relatedness with full sisters ($r = 0.75$) than with direct offspring ($r = 0.50$).",
+          "B": "She lacks the muscular appendages necessary to build personal nests.",
+          "C": "Her offspring would automatically be born without functional digestive tracts.",
+          "D": "The queen physically destroys any worker attempting to forage independently."
+        },
+        "correct_option": "A",
+        "rationale": "The passage notes that sisters ($r = 0.75$) share more genes than a mother shares with her offspring ($r = 0.50$), favoring sibling-rearing over direct reproduction."
+      },
+      {
+        "id": "ENG_RC_124_Q5",
+        "question": "As used in the passage, the term 'haploid' refers to an organism or cell that:",
+        "options": {
+          "A": "Contains only a single complete set of unpaired chromosomes",
+          "B": "Possesses multiple duplicated nuclei within a single cell wall",
+          "C": "Has undergone severe pathological chromosomal mutation",
+          "D": "Is incapable of producing metabolic energy"
+        },
+        "correct_option": "A",
+        "rationale": "'Haploid' describes a cell or organism containing a single set of chromosomes, typical of unfertilized Hymenopteran males."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_125",
+    "passage_title": "The Semiotics of Charles Sanders Peirce",
+    "passage_text": "While Swiss linguist Ferdinand de Saussure established a dyadic structuralist model of the linguistic sign consisting of the *signifier* (acoustic/visual form) and the *signified* (mental concept), American pragmatist philosopher Charles Sanders Peirce formulated a comprehensive, triadic semiotic framework. Peirce defined semiosis as an irreducible three-part relational dynamic comprising the *Representamen* (the sign vehicle), the *Object* (the entity or phenomenon referenced), and the *Interpretant* (the mental effect, understanding, or subsequent sign generated in the mind of the interpreter). Crucially, Peirce categorized signs based on the ground of relation between the Representamen and its Object into three fundamental modes: icon, index, and symbol. An **icon** signifies by virtue of qualitative resemblance or topological isomorphism (such as a portrait, a scale model, or an architectural floorplan). An **index** signifies through direct existential, physical, or causal contiguity with its object (such as smoke indexing fire, a medical symptom indexing pathology, or a weather vane indexing wind direction). A **symbol** signifies purely through an arbitrary, conventionalized social rule or habit of interpretation (such as national flags, algebraic notations, and natural language words).",
+    "questions": [
+      {
+        "id": "ENG_RC_125_Q1",
+        "question": "What primary structural difference distinguishes Peirce's semiotic model from Saussure's linguistic model?",
+        "options": {
+          "A": "Peirce proposed a triadic model (Representamen, Object, Interpretant), whereas Saussure used a dyadic model (signifier and signified).",
+          "B": "Saussure focused exclusively on animal body language, while Peirce studied ancient stone inscriptions.",
+          "C": "Peirce argued that symbols have no meaning in human communication.",
+          "D": "Saussure required mathematical equations to validate linguistic signs."
+        },
+        "correct_option": "A",
+        "rationale": "The text contrasts Saussure's dyadic model (*signifier* and *signified*) with Peirce's triadic framework (*Representamen*, *Object*, and *Interpretant*)."
+      },
+      {
+        "id": "ENG_RC_125_Q2",
+        "question": "According to Peirce, how does an 'indexical' sign establish its connection to its referent object?",
+        "options": {
+          "A": "Through formal democratic legislation passed by a parliament.",
+          "B": "Via physical, causal, or existential contiguity between sign and object.",
+          "C": "Through qualitative artistic mimicry and visual abstraction.",
+          "D": "By deliberately misrepresenting empirical facts."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines an index as signifying through 'direct existential, physical, or causal contiguity' (such as smoke caused by fire)."
+      },
+      {
+        "id": "ENG_RC_125_Q3",
+        "question": "Which of the following serves as an example of an 'icon' in Peircean semiotics?",
+        "options": {
+          "A": "A rising column of smoke seen over a forest canopy",
+          "B": "A detailed architectural blueprint resembling the physical layout of a building",
+          "C": "The English word 'democracy' printed on paper",
+          "D": "A medical fever reading indicating an active viral infection"
+        },
+        "correct_option": "B",
+        "rationale": "An icon signifies through physical resemblance or qualitative isomorphism, such as an architectural floorplan or a portrait."
+      },
+      {
+        "id": "ENG_RC_125_Q4",
+        "question": "Natural human language words and algebraic notations belong to which Peircean sign category?",
+        "options": {
+          "A": "Symbols, because their meaning relies on conventional, arbitrary social consensus.",
+          "B": "Indices, because they are caused by biological vocal cord vibrations.",
+          "C": "Icons, because letters physically resemble the ideas they describe.",
+          "D": "Vestiges, because they are biological remnants of primate evolution."
+        },
+        "correct_option": "A",
+        "rationale": "The passage identifies words, flags, and algebraic notations as symbols that operate through arbitrary social rules and conventions."
+      },
+      {
+        "id": "ENG_RC_125_Q5",
+        "question": "As used in the passage, the term 'Interpretant' refers to:",
+        "options": {
+          "A": "The human vocal apparatus responsible for speech",
+          "B": "The mental effect or cognitive understanding generated in the mind of the receiver",
+          "C": "The physical canvas on which a painting is displayed",
+          "D": "The dictionary containing alphabetical definitions"
+        },
+        "correct_option": "B",
+        "rationale": "Peirce defines the Interpretant as the mental effect, concept, or subsequent cognitive response produced in the interpreter's mind."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_126",
+    "passage_title": "Cryosphere Dynamics and the Atlantic Meridional Overturning Circulation",
+    "passage_text": "The Atlantic Meridional Overturning Circulation (AMOC) is a planetary-scale oceanographic conveyor belt that redistributes thermal energy from equatorial regions to the North Atlantic, moderating northwestern European climates and governing global precipitation belts. The northern terminus of this circulation operates through thermohaline convection. In the Norwegian, Greenland, and Labrador Seas, warm, saline surface waters transported northward by the Gulf Stream cool under polar winds. As sea ice forms, it undergoes brine rejection, expelling salts into the surrounding water column. This cold, hyper-saline water becomes exceedingly dense, plunging down the continental slope to form North Atlantic Deep Water (NADW), which flows southward along the oceanic floor. However, contemporary climate forcing poses a severe destabilization risk to this mechanism through cryospheric melting. Accelerated mass loss from the Greenland Ice Sheet and Arctic sea ice discharges vast volumes of low-density, buoyant freshwater into subpolar sinking zones. This freshwater cap reduces surface water density, preventing downwelling and potentially triggering a critical tipping point toward a catastrophic slowdown or collapse of the AMOC.",
+    "questions": [
+      {
+        "id": "ENG_RC_126_Q1",
+        "question": "What primary physical mechanism drives the formation of North Atlantic Deep Water (NADW)?",
+        "options": {
+          "A": "Thermal expansion caused by underwater hydrothermal eruptions",
+          "B": "Thermohaline convection driven by the cooling and brine-rejection densification of saline surface waters",
+          "C": "Centrifugal forces pulling surface water toward the equator",
+          "D": "Evaporative drying of deep ocean trenches in summer months"
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that cooling winds and salt expulsion during sea ice formation (brine rejection) make water dense, causing it to sink and form NADW."
+      },
+      {
+        "id": "ENG_RC_126_Q2",
+        "question": "How does the melting of the Greenland Ice Sheet threaten the stability of the AMOC conveyor belt?",
+        "options": {
+          "A": "It introduces massive volumes of buoyant freshwater that lower surface density and inhibit deep water sinking.",
+          "B": "It accelerates tectonic plate subduction beneath the North Sea basin.",
+          "C": "It removes all salt from the global ocean within weeks.",
+          "D": "It permanently freezes equatorial ocean surface currents."
+        },
+        "correct_option": "A",
+        "rationale": "Freshwater runoff from melting ice is less dense than saline seawater, forming a buoyant cap that prevents the sinking required for circulation."
+      },
+      {
+        "id": "ENG_RC_126_Q3",
+        "question": "What is 'brine rejection' as described in the text?",
+        "options": {
+          "A": "The expulsion of salts into surrounding seawater during the freezing of sea ice",
+          "B": "The commercial extraction of salt from coastal lagoons",
+          "C": "The evaporation of freshwater from subpolar cloud formations",
+          "D": "The filtration of sediment by deep benthic sponges"
+        },
+        "correct_option": "A",
+        "rationale": "The text states that as sea ice forms, 'it undergoes brine rejection, expelling salts into the surrounding water column' to increase its density."
+      },
+      {
+        "id": "ENG_RC_126_Q4",
+        "question": "Which geographical region's temperate climate is directly buffered and moderated by the AMOC?",
+        "options": {
+          "A": "Northwestern Europe",
+          "B": "The central Sahara Desert",
+          "C": "The Antarctic interior plateau",
+          "D": "The Atacama trench"
+        },
+        "correct_option": "A",
+        "rationale": "The opening sentence explains that AMOC transports thermal energy northward, moderating northwestern European climates."
+      },
+      {
+        "id": "ENG_RC_126_Q5",
+        "question": "As used in the passage, the word 'buoyant' describes a fluid or substance that:",
+        "options": {
+          "A": "Has low density, allowing it to float on top of denser fluid layers",
+          "B": "Exerts toxic corrosive effects on marine life",
+          "C": "Contains zero chemical hydrogen bonds",
+          "D": "Freezes instantly upon contact with air"
+        },
+        "correct_option": "A",
+        "rationale": "'Buoyant' in oceanography describes water of lower density that resists downwelling and remains on the surface."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_127",
+    "passage_title": "The Chicago School and the Concentric Zone Model of Urban Sociology",
+    "passage_text": "In the 1920s, sociologists Robert Park and Ernest Burgess at the University of Chicago pioneered urban ecology, applying biological concepts of competition, invasion, and succession to human settlements. Their theoretical foundation culminated in the Concentric Zone Model (Burgess Model), which depicted modern industrial cities as expanding outward in five concentric rings from a central core. Zone I, the Central Business District (CBD), serves as the economic nucleus dominated by commerce, finance, and transport hubs. Encircling the CBD is Zone II, the 'Zone in Transition'—an unstable area of decaying residential tenements infiltrated by light manufacturing and immigrant enclaves. Burgess identified Zone II as the primary locus of social disorganization, crime, and residential mobility. Zone III contains modest working-class tenements inhabited by second-generation immigrant families who escaped the inner transition zone. Zone IV consists of spacious single-family residential homes of the middle class, while Zone V represents the outermost 'Commuter Zone' populated by affluent suburbanites. While later scholars criticized the model for overlooking spatial distortions caused by geographical topographies and radial highway corridors, Burgess established the spatial layout of cities as a reflection of socio-economic stratification.",
+    "questions": [
+      {
+        "id": "ENG_RC_127_Q1",
+        "question": "What biological concepts did the Chicago School of Sociology adapt to analyze human urban growth?",
+        "options": {
+          "A": "Photosynthesis, pollination, and cellular meiosis",
+          "B": "Ecological competition, invasion, dominance, and succession",
+          "C": "Genetic drift and Mendelian allelic segregation",
+          "D": "Parasitic viral infection and organelle regeneration"
+        },
+        "correct_option": "B",
+        "rationale": "The text states that Park and Burgess applied 'biological concepts of competition, invasion, and succession to human settlements.'"
+      },
+      {
+        "id": "ENG_RC_127_Q2",
+        "question": "According to the Burgess model, which zone is characterized by residential instability, physical decay, and high crime rates?",
+        "options": {
+          "A": "Zone I (Central Business District)",
+          "B": "Zone II (Zone in Transition)",
+          "C": "Zone IV (Middle-Class Residential Zone)",
+          "D": "Zone V (Commuter Zone)"
+        },
+        "correct_option": "B",
+        "rationale": "The passage identifies Zone II (the Zone in Transition) as the area of decaying tenements, high mobility, and social disorganization."
+      },
+      {
+        "id": "ENG_RC_127_Q3",
+        "question": "Who primarily occupies Zone III in the concentric ring hierarchy?",
+        "options": {
+          "A": "Affluent corporate executives working in Zone I",
+          "B": "Working-class families who have moved out of the deteriorating transition zone",
+          "C": "Homeless populations residing in temporary shelters",
+          "D": "Rural farmers managing commercial orchards"
+        },
+        "correct_option": "B",
+        "rationale": "Zone III is described as containing modest homes of working-class laborers, including second-generation immigrants escaping Zone II."
+      },
+      {
+        "id": "ENG_RC_127_Q4",
+        "question": "What primary limitation of the Concentric Zone Model was raised by subsequent urban geographers?",
+        "options": {
+          "A": "It assumed that cities have no commercial business centers.",
+          "B": "It failed to account for physical topography, natural barriers, and radial transport corridors that warp concentric symmetry.",
+          "C": "It argued that cities never grow larger than a single square mile.",
+          "D": "It claimed that suburban commuters walk on foot to factory jobs."
+        },
+        "correct_option": "B",
+        "rationale": "Critics noted the model overlooked spatial distortions caused by geographical topographies, rivers, and radial highway arteries."
+      },
+      {
+        "id": "ENG_RC_127_Q5",
+        "question": "As used in the passage, the word 'stratification' refers to:",
+        "options": {
+          "A": "The hierarchical division of society into distinct socioeconomic classes",
+          "B": "The chemical breakdown of concrete under acid rain",
+          "C": "The paving of circular cobblestone avenues",
+          "D": "The seasonal flight patterns of migratory birds"
+        },
+        "correct_option": "A",
+        "rationale": "'Social stratification' describes the structured ranking or classification of individuals into socio-economic tiers and statuses."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_128",
+    "passage_title": "Mitochondrial Bioenergetics and the Serial Endosymbiotic Theory",
+    "passage_text": "Mitochondria are the primary bioenergetic organelles of eukaryotic cells, generating adenosine triphosphate (ATP) via oxidative phosphorylation. The inner mitochondrial membrane houses the electron transport chain (ETC), where electrons donated by NADH and FADH$_2$ cascade through protein complexes (I–IV), driving the active translocation of protons from the matrix into the intermembrane space. This electrochemical proton gradient generates a proton-motive force that drives ATP synthase to phosphorylate ADP into ATP. The evolutionary origin of this organelle was revolutionized by Lynn Margulis's Serial Endosymbiotic Theory (SET). Margulis postulated that mitochondria were not synthesized de novo by eukaryotic ancestral hosts; rather, they originated from an ancient alphaproteobacterium that was engulfed via phagocytosis by an anaerobic archaeal host cell approximately two billion years ago. Instead of being digested, the endosymbiont established a permanent mutualistic metabolic partnership, providing efficient aerobic ATP generation in exchange for cytosolic nutrients. Over evolutionary epochs, the majority of the endosymbiont's ancestral genes were transferred to the host cell nucleus via endosymbiotic gene transfer, though mitochondria retain their own circular, non-histone DNA genome (mtDNA) and bacterial-like 70S ribosomes.",
+    "questions": [
+      {
+        "id": "ENG_RC_128_Q1",
+        "question": "What is the primary cellular function of the electrochemical proton gradient across the inner mitochondrial membrane?",
+        "options": {
+          "A": "To synthesize structural lipids for the plasma membrane.",
+          "B": "To power ATP synthase in phosphorylating ADP into cellular ATP.",
+          "C": "To dissolve damaged nuclear chromatin during mitosis.",
+          "D": "To pump toxic nitrogenous wastes out of the cytoplasm."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that the proton-motive force generated across the inner membrane drives the catalytic engine of ATP synthase to generate ATP."
+      },
+      {
+        "id": "ENG_RC_128_Q2",
+        "question": "What does Lynn Margulis's Serial Endosymbiotic Theory propose regarding the origin of mitochondria?",
+        "options": {
+          "A": "They evolved from ancient photosynthetic cyanobacteria that lost their chlorophyll.",
+          "B": "They originated from an ancient aerobic alphaproteobacterium engulfed by an anaerobic host cell.",
+          "C": "They were formed by the spontaneous budding of the endoplasmic reticulum.",
+          "D": "They originated as viral parasites that altered animal nuclear DNA."
+        },
+        "correct_option": "B",
+        "rationale": "Margulis demonstrated that mitochondria descend from an engulfed aerobic alphaproteobacterial endosymbiont."
+      },
+      {
+        "id": "ENG_RC_128_Q3",
+        "question": "Which of the following biological features in modern mitochondria provides empirical proof of their bacterial ancestry?",
+        "options": {
+          "A": "A linear genome wrapped around histone octamers",
+          "B": "Independent circular DNA (mtDNA) and bacterial-like 70S ribosomes",
+          "C": "The presence of a cellulose-rich external cell wall",
+          "D": "The capacity to perform nuclear transcription without enzymes"
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence cites mitochondria retaining their own circular genome (mtDNA) and bacterial 70S ribosomes as vestigial evidence of bacterial lineage."
+      },
+      {
+        "id": "ENG_RC_128_Q4",
+        "question": "What happened to the vast majority of the original endosymbiont's ancestral genes over evolutionary time?",
+        "options": {
+          "A": "They were permanently eliminated during viral epidemics.",
+          "B": "They migrated to the host cell nucleus via endosymbiotic gene transfer.",
+          "C": "They transformed into non-coding structural lipids.",
+          "D": "They were converted into inorganic sulfur deposits."
+        },
+        "correct_option": "B",
+        "rationale": "The text notes that most endosymbiont genes underwent endosymbiotic gene transfer into the host cell's nucleus."
+      },
+      {
+        "id": "ENG_RC_128_Q5",
+        "question": "As used in the passage, the phrase 'de novo' means:",
+        "options": {
+          "A": "From the beginning; anew or from scratch",
+          "B": "Through genetic mutation of viruses",
+          "C": "In an aquatic high-pressure environment",
+          "D": "By artificial chemical synthesis in a laboratory"
+        },
+        "correct_option": "A",
+        "rationale": "'De novo' is a Latin phrase meaning 'anew', 'afresh', or 'from the beginning'."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_129",
+    "passage_title": "Game Theory and the Evolutionary Dynamics of the Iterated Prisoner's Dilemma",
+    "passage_text": "In game theory, the Prisoner's Dilemma models a non-zero-sum game illustrating why two rational actors might fail to cooperate even when mutual cooperation yields a superior aggregate payoff than mutual defection. In a single-round classic dilemma, defection is the strict dominant strategy for both players, yielding a suboptimal Nash equilibrium (mutual defection). However, in his landmark computer tournaments in the late 1970s, political scientist Robert Axelrod demonstrated that cooperative behavior emerges stably when the game is repeated indefinitely—a scenario termed the Iterated Prisoner's Dilemma (IPD). Because players anticipate future interactions ('the shadow of the future'), defection can be punished in subsequent rounds. The tournament's winning algorithm, designed by mathematical psychologist Anatol Rapoport, was 'Tit-for-Tat'. Tit-for-Tat begins by cooperating on the initial move and subsequently mimics whatever choice the opponent made on the preceding round. Axelrod identified four evolutionary virtues that made Tit-for-Tat unbeatable: it is **nice** (it never defects first), **retaliatory** (it punishes unprovoked defections immediately), **forgiving** (it returns to cooperation as soon as the opponent stops defecting), and **clear** (its predictable strategy prevents accidental miscalculations).",
+    "questions": [
+      {
+        "id": "ENG_RC_129_Q1",
+        "question": "What is the rational outcome (Nash equilibrium) in a single-round, non-iterated Prisoner's Dilemma game?",
+        "options": {
+          "A": "Both players choose unilateral cooperation.",
+          "B": "Both players choose to defect, resulting in a collectively suboptimal outcome.",
+          "C": "One player randomly flips a coin to decide their move.",
+          "D": "Both players agree to split the payout evenly through binding contracts."
+        },
+        "correct_option": "B",
+        "rationale": "In a one-shot game, defection is the dominant strategy for each self-interested player, leading to mutual defection."
+      },
+      {
+        "id": "ENG_RC_129_Q2",
+        "question": "What primary condition allows stable cooperation to evolve in the Iterated Prisoner's Dilemma (IPD)?",
+        "options": {
+          "A": "An absolute guarantee that the game will terminate after round one.",
+          "B": "Indefinite repetition with the anticipation of future interactions ('the shadow of the future').",
+          "C": "The complete removal of all communication between computers.",
+          "D": "A third-party judge who forcibly confiscates points from defectors."
+        },
+        "correct_option": "B",
+        "rationale": "Axelrod proved that ongoing rounds and the shadow of future encounters incentivize cooperation and allow retaliatory deterrence."
+      },
+      {
+        "id": "ENG_RC_129_Q3",
+        "question": "How does the 'Tit-for-Tat' algorithm operate in competitive play?",
+        "options": {
+          "A": "It defects constantly on every round regardless of opponent moves.",
+          "B": "It starts by cooperating and thereafter copies the opponent's previous move.",
+          "C": "It alternates between cooperation and defection in a fixed sequence.",
+          "D": "It defects on even-numbered rounds and cooperates on odd rounds."
+        },
+        "correct_option": "B",
+        "rationale": "Tit-for-Tat begins with a cooperative move, then directly mirrors whatever the opposing player did on the previous turn."
+      },
+      {
+        "id": "ENG_RC_129_Q4",
+        "question": "Which four behavioral characteristics explain the success of Tit-for-Tat in Axelrod's tournaments?",
+        "options": {
+          "A": "Aggressive, deceptive, unyielding, and chaotic",
+          "B": "Nice, retaliatory, forgiving, and clear",
+          "C": "Passive, silent, random, and slow",
+          "D": "Dominant, wealthy, suspicious, and inflexible"
+        },
+        "correct_option": "B",
+        "rationale": "The text highlights Axelrod's four identified properties: nice (never defects first), retaliatory (punishes defection), forgiving (restores cooperation), and clear (transparent)."
+      },
+      {
+        "id": "ENG_RC_129_Q5",
+        "question": "As used in the passage, the term 'dominant strategy' in game theory refers to:",
+        "options": {
+          "A": "A move that delivers the highest individual payoff regardless of the opponent's choice",
+          "B": "A tactic that intentionally causes both players to lose all points",
+          "C": "An illegal maneuver that violates tournament software rules",
+          "D": "A strategy that requires verbal negotiation before every move"
+        },
+        "correct_option": "A",
+        "rationale": "In game theory, a dominant strategy is an action that yields the best outcome for a player, irrespective of what the opposing player chooses."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_130",
+    "passage_title": "Historical Linguistics and the Kurgan Steppe Hypothesis",
+    "passage_text": "In 1786, philologist Sir William Jones presented his landmark address to the Asiatic Society in Calcutta, demonstrating structural and lexical affinities between Sanskrit, Greek, Latin, Gothic, and Celtic. Jones posited that these disparate tongues descended from a common, extinct ancestral language: Proto-Indo-European (PIE). For two centuries, historical linguists and archaeologists debated the geographical homeland (*Urheimat*) and expansion mechanism of PIE speakers. The debate was framed between two competing models: Colin Renfrew's Anatolian farming hypothesis, which linked PIE expansion to early agricultural dispersion from modern-day Turkey around 7000 BCE, and Marija Gimbutas's Kurgan Steppe hypothesis. Gimbutas argued that pastoral nomadic populations of the Pontic-Caspian steppe (dating to 4500–3000 BCE)—characterized by kurgan burial mounds, equine domestication, wheeled chariots, and metallurgy—expanded aggressively into Europe and South Asia in successive migratory waves. In the 2010s, ancient archaeogenetic sequencing of skeletal DNA confirmed massive demographic replacements across prehistoric Europe aligning with the pastoralist Yamnaya steppe culture, conclusively corroborating the Kurgan steppe hypothesis.",
+    "questions": [
+      {
+        "id": "ENG_RC_130_Q1",
+        "question": "What discovery did Sir William Jones present regarding Indo-European languages in 1786?",
+        "options": {
+          "A": "All modern world languages originated from ancient Egyptian hieroglyphics.",
+          "B": "Sanskrit, Greek, Latin, Gothic, and Celtic shared systematic affinities stemming from a common ancestral tongue (PIE).",
+          "C": "Languages do not evolve or change over centuries of isolation.",
+          "D": "Written grammar was invented exclusively by the Roman Empire."
+        },
+        "correct_option": "B",
+        "rationale": "Jones demonstrated common grammatical roots and lexical cognates across Sanskrit, Greek, Latin, and Celtic, postulating Proto-Indo-European."
+      },
+      {
+        "id": "ENG_RC_130_Q2",
+        "question": "What cultural markers defined the Pontic-Caspian steppe pastoralists in Marija Gimbutas's Kurgan hypothesis?",
+        "options": {
+          "A": "Sedentary rice farming and deep ocean navigation",
+          "B": "Kurgan tumulus burial mounds, horse domestication, wheeled vehicles, and metallurgy",
+          "C": "Monolithic pyramids and hieroglyphic parchment manuscripts",
+          "D": "The absence of metal tools and livestock herds"
+        },
+        "correct_option": "B",
+        "rationale": "Gimbutas identified Kurgan burial mounds, horse domestication, wheeled transport, and metal weapons as signature traits of steppe pastoralists."
+      },
+      {
+        "id": "ENG_RC_130_Q3",
+        "question": "What modern scientific breakthrough decisively validated the Kurgan Steppe hypothesis over the Anatolian farming model?",
+        "options": {
+          "A": "High-altitude satellite radar imaging of submerged Mediterranean cities",
+          "B": "Ancient archaeogenetic DNA sequencing revealing massive Yamnaya steppe migrations into Europe",
+          "C": "The discovery of bilingual clay tablets in central Anatolia",
+          "D": "Radiocarbon dating of Neolithic timber longhouses in France"
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that ancient DNA analysis confirmed massive genetic demographic turnover tied to Yamnaya steppe migrations, verifying the Kurgan model."
+      },
+      {
+        "id": "ENG_RC_130_Q4",
+        "question": "The linguistic term *Urheimat* refers specifically to:",
+        "options": {
+          "A": "The original geographic homeland of a proto-language and its ancestral speakers",
+          "B": "The grammatical case used to denote the indirect object of a sentence",
+          "C": "A poetic rhyming meter in ancient Germanic epic verses",
+          "D": "A ceremonial religious building where ancient scribes trained"
+        },
+        "correct_option": "A",
+        "rationale": "'Urheimat' (German for 'original homeland') in historical linguistics denotes the geographical origin point of a proto-language."
+      },
+      {
+        "id": "ENG_RC_130_Q5",
+        "question": "What was the central premise of Colin Renfrew's competing Anatolian hypothesis?",
+        "options": {
+          "A": "PIE spread peacefully alongside early agricultural expansion from Anatolia around 7000 BCE.",
+          "B": "Indo-European languages originated on isolated islands in the North Sea.",
+          "C": "PIE was invented by medieval monks in Byzantine scriptoriums.",
+          "D": "Indo-European tongues were carried by hunter-gatherers during the Ice Age."
+        },
+        "correct_option": "A",
+        "rationale": "Renfrew's hypothesis argued that early agriculturalists dispersing from Anatolia (Turkey) carried the ancestral tongue into Europe."
+      }
+    ]
+  }
+]

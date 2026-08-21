@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_3001",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUAIL**",
+    "options": {
+      "A": "Cower",
+      "B": "Face",
+      "C": "Confront",
+      "D": "Endure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quail' means to feel or show fear or apprehension. 'Cower', 'shrink', or 'flinch' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3002",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUAIL**",
+    "options": {
+      "A": "Cower",
+      "B": "Shrink",
+      "C": "Confront",
+      "D": "Flinch"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Quail' means to show fear. 'Confront', 'face', or 'endure' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3003",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUAINT**",
+    "options": {
+      "A": "Picturesque",
+      "B": "Ordinary",
+      "C": "Modern",
+      "D": "Common"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quaint' means attractively unusual or old-fashioned. 'Picturesque', 'charming', or 'old-fashioned' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3004",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUAINT**",
+    "options": {
+      "A": "Picturesque",
+      "B": "Charming",
+      "C": "Ordinary",
+      "D": "Old-fashioned"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Quaint' means attractively unusual. 'Ordinary', 'common', or 'modern' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3005",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUALM**",
+    "options": {
+      "A": "Misgiving",
+      "B": "Certainty",
+      "C": "Confidence",
+      "D": "Assurance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Qualm' refers to an uneasy feeling of doubt, worry, or fear, especially about one's own conduct. 'Misgiving', 'doubt', or 'apprehension' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3006",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUALM**",
+    "options": {
+      "A": "Misgiving",
+      "B": "Doubt",
+      "C": "Confidence",
+      "D": "Apprehension"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Qualm' is a feeling of doubt. 'Confidence', 'certainty', or 'assurance' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3007",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUANDARY**",
+    "options": {
+      "A": "Dilemma",
+      "B": "Solution",
+      "C": "Answer",
+      "D": "Resolution"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quandary' refers to a state of perplexity or uncertainty over what to do in a difficult situation. 'Dilemma', 'predicament', or 'plight' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3008",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUANDARY**",
+    "options": {
+      "A": "Dilemma",
+      "B": "Predicament",
+      "C": "Solution",
+      "D": "Plight"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Quandary' is a difficult situation. 'Solution', 'answer', or 'resolution' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3009",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUASH**",
+    "options": {
+      "A": "Suppress",
+      "B": "Support",
+      "C": "Encourage",
+      "D": "Promote"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quash' means to reject or void, especially by legal procedure; to put an end to. 'Suppress', 'crush', or 'quell' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3010",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUASH**",
+    "options": {
+      "A": "Suppress",
+      "B": "Crush",
+      "C": "Support",
+      "D": "Quell"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Quash' means to suppress. 'Support', 'encourage', or 'promote' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3011",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUERULOUS**",
+    "options": {
+      "A": "Complaining",
+      "B": "Cheerful",
+      "C": "Content",
+      "D": "Happy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Querulous' means complaining in a petulant or whining manner. 'Complaining', 'petulant', or 'peevish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3012",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUERULOUS**",
+    "options": {
+      "A": "Complaining",
+      "B": "Petulant",
+      "C": "Cheerful",
+      "D": "Peevish"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Querulous' means complaining. 'Cheerful', 'content', or 'happy' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3013",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUIESCENT**",
+    "options": {
+      "A": "Dormant",
+      "B": "Active",
+      "C": "Dynamic",
+      "D": "Vibrant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quiescent' means in a state or period of inactivity or dormancy. 'Dormant', 'inactive', or 'latent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3014",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUIESCENT**",
+    "options": {
+      "A": "Dormant",
+      "B": "Inactive",
+      "C": "Active",
+      "D": "Latent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Quiescent' means inactive. 'Active', 'dynamic', or 'vibrant' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3015",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUINTESSENTIAL**",
+    "options": {
+      "A": "Typical",
+      "B": "Atypical",
+      "C": "Rare",
+      "D": "Unusual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quintessential' means representing the most perfect or typical example of a quality or class. 'Typical', 'ideal', or 'archetypal' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3016",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUINTESSENTIAL**",
+    "options": {
+      "A": "Typical",
+      "B": "Ideal",
+      "C": "Atypical",
+      "D": "Archetypal"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Quintessential' means typical. 'Atypical', 'rare', or 'unusual' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3017",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUIRK**",
+    "options": {
+      "A": "Peculiarity",
+      "B": "Normality",
+      "C": "Regularity",
+      "D": "Uniformity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quirk' refers to a peculiar behavioral habit. 'Peculiarity', 'eccentricity', or 'idiosyncrasy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3018",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUIRK**",
+    "options": {
+      "A": "Peculiarity",
+      "B": "Eccentricity",
+      "C": "Normality",
+      "D": "Idiosyncrasy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Quirk' is a peculiarity. 'Normality', 'regularity', or 'uniformity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3019",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUIVER**",
+    "options": {
+      "A": "Tremble",
+      "B": "Steady",
+      "C": "Stall",
+      "D": "Remain still"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quiver' means to tremble or shake with a slight rapid motion. 'Tremble', 'shiver', or 'shake' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3020",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUIVER**",
+    "options": {
+      "A": "Tremble",
+      "B": "Shiver",
+      "C": "Steady",
+      "D": "Shake"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Quiver' means to tremble. 'Steady', 'remain still', or 'calm' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3021",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**QUIXOTIC**",
+    "options": {
+      "A": "Idealistic",
+      "B": "Practical",
+      "C": "Realistic",
+      "D": "Pragmatic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Quixotic' means exceedingly idealistic; unrealistic and impractical. 'Idealistic', 'visionary', or 'impractical' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3022",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**QUIXOTIC**",
+    "options": {
+      "A": "Idealistic",
+      "B": "Visionary",
+      "C": "Practical",
+      "D": "Impractical"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Quixotic' means unrealistic. 'Practical', 'realistic', or 'pragmatic' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3023",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RAMIFICATION**",
+    "options": {
+      "A": "Consequence",
+      "B": "Cause",
+      "C": "Source",
+      "D": "Origin"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ramification' refers to a consequence of an action or event, especially when complex or unwelcome. 'Consequence', 'outcome', or 'result' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3024",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RAMIFICATION**",
+    "options": {
+      "A": "Consequence",
+      "B": "Outcome",
+      "C": "Cause",
+      "D": "Result"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ramification' is a consequence. 'Cause', 'source', or 'origin' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3025",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RAMPANT**",
+    "options": {
+      "A": "Unchecked",
+      "B": "Controlled",
+      "C": "Restrained",
+      "D": "Limited"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rampant' means (especially of something unwelcome) flourishing or spreading unchecked. 'Unchecked', 'uncontrolled', or 'rife' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3026",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RAMPANT**",
+    "options": {
+      "A": "Unchecked",
+      "B": "Uncontrolled",
+      "C": "Controlled",
+      "D": "Rife"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rampant' means unchecked. 'Controlled', 'restrained', or 'limited' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3027",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RANCOR**",
+    "options": {
+      "A": "Bitterness",
+      "B": "Amity",
+      "C": "Friendship",
+      "D": "Goodwill"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rancor' refers to bitterness or resentfulness, especially when long-standing. 'Bitterness', 'resentment', or 'animosity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3028",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RANCOR**",
+    "options": {
+      "A": "Bitterness",
+      "B": "Resentment",
+      "C": "Amity",
+      "D": "Animosity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rancor' is bitterness. 'Amity', 'friendship', or 'goodwill' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3029",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RANT**",
+    "options": {
+      "A": "Tirade",
+      "B": "Whisper",
+      "C": "Mutter",
+      "D": "Praise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rant' refers to a spell of shouting or speaking in a noisy, passionate, or angry way. 'Tirade', 'harangue', or 'diatribe' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3030",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RANT**",
+    "options": {
+      "A": "Tirade",
+      "B": "Harangue",
+      "C": "Whisper",
+      "D": "Diatribe"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rant' is noisy speaking. 'Whisper', 'mutter', or 'praise' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3031",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RAPACIOUS**",
+    "options": {
+      "A": "Greedy",
+      "B": "Generous",
+      "C": "Charitable",
+      "D": "Benevolent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rapacious' means aggressively greedy or grasping. 'Greedy', 'voracious', or 'avaricious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3032",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RAPACIOUS**",
+    "options": {
+      "A": "Greedy",
+      "B": "Voracious",
+      "C": "Generous",
+      "D": "Avaricious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rapacious' means greedy. 'Generous', 'charitable', or 'benevolent' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3033",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RAPPORT**",
+    "options": {
+      "A": "Relationship",
+      "B": "Conflict",
+      "C": "Discord",
+      "D": "Hostility"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rapport' refers to a close and harmonious relationship in which the people or groups concerned understand each other's feelings or ideas. 'Relationship', 'bond', or 'affinity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3034",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RAPPORT**",
+    "options": {
+      "A": "Relationship",
+      "B": "Bond",
+      "C": "Conflict",
+      "D": "Affinity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rapport' is a harmonious relationship. 'Conflict', 'discord', or 'hostility' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3035",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RAREFIED**",
+    "options": {
+      "A": "Refined",
+      "B": "Common",
+      "C": "Ordinary",
+      "D": "Low"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rarefied' means (of air, especially at high altitudes) of lower pressure than usual; (of an atmosphere or idea) understood by and appealing to only a small, select group; esoteric. 'Refined', 'esoteric', or 'select' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3036",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RAREFIED**",
+    "options": {
+      "A": "Refined",
+      "B": "Esoteric",
+      "C": "Common",
+      "D": "Select"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rarefied' means select/refined. 'Common', 'ordinary', or 'low' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3037",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RATIOCINATE**",
+    "options": {
+      "A": "Reason",
+      "B": "Guess",
+      "C": "Assume",
+      "D": "Speculate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ratiocinate' means to form judgments by a process of logic; reason. 'Reason', 'think', or 'deduce' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3038",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RATIOCINATE**",
+    "options": {
+      "A": "Reason",
+      "B": "Think",
+      "C": "Guess",
+      "D": "Deduce"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ratiocinate' means to reason logically. 'Guess', 'assume', or 'speculate' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3039",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RAUCOUS**",
+    "options": {
+      "A": "Harsh",
+      "B": "Soft",
+      "C": "Gentle",
+      "D": "Melodious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Raucous' means making or constituting a disturbingly harsh and loud noise. 'Harsh', 'strident', or 'grating' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3040",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RAUCOUS**",
+    "options": {
+      "A": "Harsh",
+      "B": "Strident",
+      "C": "Soft",
+      "D": "Grating"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Raucous' means harsh and loud. 'Soft', 'gentle', or 'melodious' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3041",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RAVAGE**",
+    "options": {
+      "A": "Destroy",
+      "B": "Build",
+      "C": "Construct",
+      "D": "Improve"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ravage' means to cause severe and extensive damage to. 'Destroy', 'devastate', or 'ruin' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3042",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RAVAGE**",
+    "options": {
+      "A": "Destroy",
+      "B": "Devastate",
+      "C": "Build",
+      "D": "Ruin"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ravage' means to destroy. 'Build', 'construct', or 'improve' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3043",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RAVENOUS**",
+    "options": {
+      "A": "Starving",
+      "B": "Full",
+      "C": "Satisfied",
+      "D": "Satiated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ravenous' means extremely hungry. 'Starving', 'famished', or 'voracious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3044",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RAVENOUS**",
+    "options": {
+      "A": "Starving",
+      "B": "Famished",
+      "C": "Full",
+      "D": "Voracious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ravenous' means extremely hungry. 'Full', 'satisfied', or 'satiated' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3045",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RAZE**",
+    "options": {
+      "A": "Demolish",
+      "B": "Build",
+      "C": "Construct",
+      "D": "Raise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Raze' means to completely destroy (a building, town, or other site). 'Demolish', 'destroy', or 'level' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3046",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RAZE**",
+    "options": {
+      "A": "Demolish",
+      "B": "Destroy",
+      "C": "Build",
+      "D": "Level"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Raze' means to destroy. 'Build', 'construct', or 'raise' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3047",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REACTIONARY**",
+    "options": {
+      "A": "Conservative",
+      "B": "Progressive",
+      "C": "Liberal",
+      "D": "Radical"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Reactionary' refers to a person opposing political (or social) liberalization or reform. 'Conservative', 'right-wing', or 'traditionalist' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3048",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REACTIONARY**",
+    "options": {
+      "A": "Conservative",
+      "B": "Traditionalist",
+      "C": "Progressive",
+      "D": "Right-wing"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Reactionary' opposes reform. 'Progressive', 'liberal', or 'radical' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3049",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**REBUKE**",
+    "options": {
+      "A": "Reprimand",
+      "B": "Praise",
+      "C": "Commend",
+      "D": "Applaud"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rebuke' means to express sharp disapproval or criticism of (someone) because of their behavior or actions. 'Reprimand', 'scold', or 'admonish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3050",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**REBUKE**",
+    "options": {
+      "A": "Reprimand",
+      "B": "Admonish",
+      "C": "Praise",
+      "D": "Scold"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rebuke' means sharp criticism. 'Praise', 'commend', or 'applaud' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

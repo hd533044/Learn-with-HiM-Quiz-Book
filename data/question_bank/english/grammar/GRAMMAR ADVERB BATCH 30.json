@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_ADVB_1251",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The manager bade the staff to leave the office immediately.'",
+    "options": {
+      "A": "The manager bade",
+      "B": "the staff to leave",
+      "C": "the office immediately.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'bid' (when meaning to command or tell) takes a bare infinitive (without 'to') in the active voice. Correct: 'bade the staff leave...'.",
+    "tags": ["grammar", "advanced_verbs", "bare_infinitive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1252",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He caught the thief ___ over the garden wall.'",
+    "options": {
+      "A": "climb",
+      "B": "climbing",
+      "C": "to climb",
+      "D": "climbed"
+    },
+    "correct_option": "B",
+    "explanation": "Verbs of perception/action ('catch', 'find', 'leave') take a present participle (-ing form) to denote an action in progress when witnessed or intercepted.",
+    "tags": ["grammar", "advanced_verbs", "participles", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1253",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding subjunctive verbs:",
+    "options": {
+      "A": "The committee recommended that the report is revised immediately.",
+      "B": "The committee recommended that the report be revised immediately.",
+      "C": "The committee recommended that the report was revised immediately.",
+      "D": "The committee recommended the report to be revised immediately."
+    },
+    "correct_option": "B",
+    "explanation": "After verbs of demand, recommendation, or suggestion (demand, insist, propose, recommend), the subordinate clause uses the mandative subjunctive (base form 'be revised').",
+    "tags": ["grammar", "advanced_verbs", "mandative_subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1254",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He laid down on the sofa to rest after his exhausting shift.'",
+    "options": {
+      "A": "He laid down",
+      "B": "on the sofa to rest",
+      "C": "after his exhausting shift.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Confusing transitive and intransitive verb forms: 'lay' is transitive (requires an object), whereas 'lie' is intransitive (to recline). The past tense of the intransitive verb 'lie' is 'lay'. Correct: 'He lay down...'",
+    "tags": ["grammar", "advanced_verbs", "lie_vs_lay", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1255",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The sun has ___ on the horizon, painting the sky in shades of orange.'",
+    "options": {
+      "A": "rise",
+      "B": "rose",
+      "C": "risen",
+      "D": "arisen"
+    },
+    "correct_option": "C",
+    "explanation": "'Rise' is intransitive; its past participle is 'risen'. ('Raise' is transitive).",
+    "tags": ["grammar", "advanced_verbs", "rise_vs_raise", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1256",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'She insisted on ___ the entire bill herself.'",
+    "options": {
+      "A": "pay",
+      "B": "paying",
+      "C": "to pay",
+      "D": "have paid"
+    },
+    "correct_option": "B",
+    "explanation": "The preposition 'on' following 'insist' requires a gerund ('paying').",
+    "tags": ["grammar", "advanced_verbs", "prepositional_complements", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1257",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The heavy rain caused the river to overflow its banks and flood the valley.'",
+    "options": {
+      "A": "caused the river",
+      "B": "to overflow its banks",
+      "C": "and flood the valley.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Cause' takes an object + full infinitive ('to overflow'), coordinated with the bare infinitive 'flood'.",
+    "tags": ["grammar", "advanced_verbs", "infinitive_patterns", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1258",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Had I realized the gravity of the situation, I ___ differently.'",
+    "options": {
+      "A": "will act",
+      "B": "would have acted",
+      "C": "had acted",
+      "D": "acted"
+    },
+    "correct_option": "B",
+    "explanation": "Inverted third conditional structure requires 'would have + past participle' in the main clause.",
+    "tags": ["grammar", "advanced_verbs", "conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1259",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding verb complementation:",
+    "options": {
+      "A": "He forbade me to enter the laboratory.",
+      "B": "He forbade me from entering the laboratory.",
+      "C": "Both A and B are correct.",
+      "D": "He forbade me entering the laboratory."
+    },
+    "correct_option": "C",
+    "explanation": "While 'forbid + object + infinitive' (A) is traditional, 'forbid + object + from + gerund' (B) is widely accepted in modern idiom, making both standard options valid variants.",
+    "tags": ["grammar", "advanced_verbs", "complementation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1260",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Despite of working hard, he failed to secure the top rank.'",
+    "options": {
+      "A": "Despite of",
+      "B": "working hard,",
+      "C": "he failed to secure the top rank.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'Despite' does not take the preposition 'of' (unlike 'in spite of'). Correct: 'Despite working hard...'",
+    "tags": ["grammar", "advanced_verbs", "prepositional_errors", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1261",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It is vital that every candidate ___ present at the orientation session.'",
+    "options": {
+      "A": "is",
+      "B": "be",
+      "C": "was",
+      "D": "were"
+    },
+    "correct_option": "B",
+    "explanation": "Mandative subjunctive mood requires the base form of the verb ('be') in clauses following expressions of importance or necessity.",
+    "tags": ["grammar", "advanced_verbs", "mandative_subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1262",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The wood has ___ out in the sun for two days.'",
+    "options": {
+      "A": "lain",
+      "B": "laid",
+      "C": "lay",
+      "D": "lied"
+    },
+    "correct_option": "A",
+    "explanation": "The intransitive verb meaning to recline or rest horizontally is 'lie'; its past participle is 'lain'.",
+    "tags": ["grammar", "advanced_verbs", "lie_vs_lay", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1263",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She bade me goodbye and rushed out of the room.'",
+    "options": {
+      "A": "She bade me goodbye",
+      "B": "and rushed out",
+      "C": "of the room.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. 'Bade' is the correct past tense of 'bid' when expressing farewell.",
+    "tags": ["grammar", "advanced_verbs", "irregular_verbs", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1264",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The suspect was seen ___ the building through the back exit.'",
+    "options": {
+      "A": "leave",
+      "B": "leaving",
+      "C": "to leave",
+      "D": "Both B and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "In passive perception structures, both the bare/full infinitive ('to leave') and the participle ('leaving') can be used depending on whether the action was completed or observed mid-progress.",
+    "tags": ["grammar", "advanced_verbs", "perception_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1265",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He hanged the picture on the wall.",
+      "B": "He hung the picture on the wall.",
+      "C": "He hanged the criminal to death.",
+      "D": "Both B and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "'Hang' has two past forms: 'hanged' is strictly used for executions by hanging, whereas 'hung' is used for objects and pictures.",
+    "tags": ["grammar", "advanced_verbs", "hang_variants", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1266",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The prisoner was hung for treason in the courtyard.'",
+    "options": {
+      "A": "The prisoner was hung",
+      "B": "for treason",
+      "C": "in the courtyard.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "When referring to executions, the correct past participle is 'hanged', not 'hung'.",
+    "tags": ["grammar", "advanced_verbs", "hang_variants", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1267",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She prefers reading books ___ television.'",
+    "options": {
+      "A": "than watching",
+      "B": "to watching",
+      "C": "over watching",
+      "D": "rather than watch"
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'prefer' takes the preposition 'to' when comparing two gerunds/nouns ('prefer X to Y').",
+    "tags": ["grammar", "advanced_verbs", "prefer_to", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1268",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'The architect recommended that the pillars ___ reinforced.'",
+    "options": {
+      "A": "are",
+      "B": "be",
+      "C": "were",
+      "D": "will be"
+    },
+    "correct_option": "B",
+    "explanation": "Mandative subjunctive requires the base verb form 'be' after 'recommended that'.",
+    "tags": ["grammar", "advanced_verbs", "mandative_subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1269",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He denied to have stolen the confidential documents.'",
+    "options": {
+      "A": "He denied",
+      "B": "to have stolen",
+      "C": "the confidential documents.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'deny' takes a gerund object, not an infinitive. Correct: 'He denied having stolen...' or 'He denied that he stole...'.",
+    "tags": ["grammar", "advanced_verbs", "gerund_vs_infinitive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1270",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The company plans ___ its operations overseas next year.'",
+    "options": {
+      "A": "expanding",
+      "B": "to expand",
+      "C": "expand",
+      "D": "expanded"
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'plan' is followed by an infinitive ('to expand').",
+    "tags": ["grammar", "advanced_verbs", "infinitive_complements", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1271",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding causative verbs:",
+    "options": {
+      "A": "I got my car repair yesterday.",
+      "B": "I got my car repaired yesterday.",
+      "C": "I got my car repairing yesterday.",
+      "D": "I had repaired my car yesterday."
+    },
+    "correct_option": "B",
+    "explanation": "The causative structure 'get/have + object + past participle' denotes having an action performed on an object by someone else ('got my car repaired').",
+    "tags": ["grammar", "advanced_verbs", "causative_structures", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1272",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The police officer made the driver to step out of the vehicle.'",
+    "options": {
+      "A": "The police officer made",
+      "B": "the driver to step out",
+      "C": "of the vehicle.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Causative 'make' takes a bare infinitive in the active voice. Correct: 'made the driver step out...'",
+    "tags": ["grammar", "advanced_verbs", "bare_infinitive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1273",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is used ___ up early for her morning run.'",
+    "options": {
+      "A": "to wake",
+      "B": "to waking",
+      "C": "wake",
+      "D": "waking"
+    },
+    "correct_option": "B",
+    "explanation": "The expression 'be used to' (meaning accustomed to) functions with 'to' as a preposition, requiring a gerund ('waking').",
+    "tags": ["grammar", "advanced_verbs", "used_to_vs_be_used_to", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1274",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He used ___ in a small town before moving to the metropolis.'",
+    "options": {
+      "A": "to live",
+      "B": "to living",
+      "C": "living",
+      "D": "lived"
+    },
+    "correct_option": "A",
+    "explanation": "Modal auxiliary 'used to' expressing a past habit is followed directly by the bare/base infinitive ('to live').",
+    "tags": ["grammar", "advanced_verbs", "used_to_vs_be_used_to", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1275",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Scarcely had the announcement been made when the audience starts cheering.'",
+    "options": {
+      "A": "Scarcely had the announcement been made",
+      "B": "when the audience",
+      "C": "starts cheering.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Tense consistency mismatch: the main clause is in the past tense ('had been made'), so the subsequent verb must also be in the past tense ('started').",
+    "tags": ["grammar", "advanced_verbs", "tense_consistency", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1276",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The authorities demand that all illegal structures ___ demolished.'",
+    "options": {
+      "A": "are",
+      "B": "be",
+      "C": "were",
+      "D": "will be"
+    },
+    "correct_option": "B",
+    "explanation": "Mandative subjunctive requires the base verb 'be' after 'demand that'.",
+    "tags": ["grammar", "advanced_verbs", "mandative_subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1277",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "I would rather you stay at home today.",
+      "B": "I would rather you stayed at home today.",
+      "C": "I would rather you to stay at home today.",
+      "D": "I would rather you staying at home today."
+    },
+    "correct_option": "B",
+    "explanation": "When 'would rather' is followed by a different subject clause expressing a hypothetical present/future preference, the verb uses the past subjunctive ('stayed').",
+    "tags": ["grammar", "advanced_verbs", "would_rather_subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1278",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'It is high time the government takes strict action against corruption.'",
+    "options": {
+      "A": "It is high time",
+      "B": "the government takes",
+      "C": "strict action against corruption.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Following 'It is high time', the verb must be in the past subjunctive to denote an unreal or overdue action. Correct: 'the government took...'",
+    "tags": ["grammar", "advanced_verbs", "its_high_time", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1279",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He stopped ___ a cup of coffee on his way to work.'",
+    "options": {
+      "A": "to buy",
+      "B": "buying",
+      "C": "bought",
+      "D": "to buying"
+    },
+    "correct_option": "A",
+    "explanation": "'Stop + infinitive' indicates pausing an activity in order to perform another action ('stopped to buy coffee').",
+    "tags": ["grammar", "advanced_verbs", "stop_gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1280",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'I will never forget ___ the Grand Canyon for the first time.'",
+    "options": {
+      "A": "to see",
+      "B": "seeing",
+      "C": "to have seen",
+      "D": "see"
+    },
+    "correct_option": "B",
+    "explanation": "'Forget + gerund' refers to recalling a past memory or experience ('forget seeing'), whereas 'forget + infinitive' refers to failing to perform a future task.",
+    "tags": ["grammar", "advanced_verbs", "forget_gerund_vs_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1281",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The wounded soldier bled to death because medical help arrived late.'",
+    "options": {
+      "A": "The wounded soldier",
+      "B": "bled to death",
+      "C": "because medical help arrived late.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Bleed' is used correctly with its past form 'bled'.",
+    "tags": ["grammar", "advanced_verbs", "irregular_verbs", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1282",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She pretended ___ me when we passed each other in the corridor.'",
+    "options": {
+      "A": "not seeing",
+      "B": "not to see",
+      "C": "to not see",
+      "D": "neither seeing"
+    },
+    "correct_option": "B",
+    "explanation": "'Pretend' takes an infinitive, and the negative particle 'not' precedes the infinitive marker ('not to see').",
+    "tags": ["grammar", "advanced_verbs", "negative_infinitive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1283",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He advised me joining the coaching class.",
+      "B": "He advised me to join the coaching class.",
+      "C": "He advised joining to me.",
+      "D": "He advised to join the coaching class."
+    },
+    "correct_option": "B",
+    "explanation": "'Advise + object + infinitive' is the correct syntactic structure when an indirect object is specified.",
+    "tags": ["grammar", "advanced_verbs", "verb_complementation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1284",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is accustomed to work under immense pressure.'",
+    "options": {
+      "A": "He is accustomed",
+      "B": "to work",
+      "C": "under immense pressure.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The phrase 'accustomed to' takes 'to' as a preposition, requiring a gerund. Correct: 'accustomed to working...'",
+    "tags": ["grammar", "advanced_verbs", "prepositional_gerunds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1285",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Little ___ that his decision would spark a nationwide protest.'",
+    "options": {
+      "A": "he knew",
+      "B": "did he know",
+      "C": "knew he",
+      "D": "does he know"
+    },
+    "correct_option": "B",
+    "explanation": "Initial restrictive adverb 'Little' triggers subject-auxiliary inversion ('did he know').",
+    "tags": ["grammar", "advanced_verbs", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1286",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'She managed ___ the project ahead of the tight deadline.'",
+    "options": {
+      "A": "finishing",
+      "B": "to finish",
+      "C": "finish",
+      "D": "to finishing"
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'manage' is followed by an infinitive ('to finish').",
+    "tags": ["grammar", "advanced_verbs", "infinitive_complements", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1287",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The teacher prohibited us to use calculators during the exam.'",
+    "options": {
+      "A": "The teacher prohibited us",
+      "B": "to use calculators",
+      "C": "during the exam.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The verb 'prohibit' takes the preposition 'from' + gerund, unlike 'forbid' which takes an infinitive. Correct: 'prohibited us from using...'",
+    "tags": ["grammar", "advanced_verbs", "prohibit_vs_forbid", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1288",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The suspect confessed ___ the valuables from the locker.'",
+    "options": {
+      "A": "to steal",
+      "B": "to stealing",
+      "C": "stealing",
+      "D": "that steal"
+    },
+    "correct_option": "B",
+    "explanation": "The phrasal verb 'confess to' functions with 'to' as a preposition, requiring a gerund ('to stealing').",
+    "tags": ["grammar", "advanced_verbs", "prepositional_gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1289",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He prevented me from entering the auditorium.",
+      "B": "He prevented me to enter the auditorium.",
+      "C": "He prevented me entering the auditorium.",
+      "D": "Both A and C are accepted."
+    },
+    "correct_option": "A",
+    "explanation": "'Prevent + object + from + gerund' is the standard, strict grammatical structure.",
+    "tags": ["grammar", "advanced_verbs", "prevent_patterns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1290",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Not only he completed his thesis, but he also published three papers.'",
+    "options": {
+      "A": "Not only he completed",
+      "B": "his thesis, but he",
+      "C": "also published three papers.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Initial correlative 'Not only' requires subject-auxiliary inversion. Correct: 'Not only did he complete...'",
+    "tags": ["grammar", "advanced_verbs", "inversion", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1291",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is averse ___ risks in her financial investments.'",
+    "options": {
+      "A": "to take",
+      "B": "to taking",
+      "C": "from taking",
+      "D": "taking"
+    },
+    "correct_option": "B",
+    "explanation": "The adjective 'averse' takes the preposition 'to', followed by a gerund ('to taking').",
+    "tags": ["grammar", "advanced_verbs", "prepositional_adjectives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1292",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He aimed ___ the target and fired instantly.'",
+    "options": {
+      "A": "at hitting",
+      "B": "to hit",
+      "C": "hitting",
+      "D": "on hitting"
+    },
+    "correct_option": "B",
+    "explanation": "'Aim' when indicating intentional purpose takes an infinitive ('aimed to hit'), whereas 'aim at' takes a gerund. Both occur, but 'aimed to hit' or 'aimed at hitting' depend on nuance. In standard verb complementation, 'aim + infinitive' denotes goal setting.",
+    "tags": ["grammar", "advanced_verbs", "verb_complementation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1293",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'We had barely set off when the car engine began to sputter.'",
+    "options": {
+      "A": "We had barely set off",
+      "B": "when the car engine",
+      "C": "began to sputter.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Barely... when' is properly paired, and 'began' correctly takes the infinitive.",
+    "tags": ["grammar", "advanced_verbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1294",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The patient stood up and walked away without ___ a single word.'",
+    "options": {
+      "A": "say",
+      "B": "saying",
+      "C": "to say",
+      "D": "said"
+    },
+    "correct_option": "B",
+    "explanation": "Prepositions (such as 'without') must be followed by a gerund ('saying').",
+    "tags": ["grammar", "advanced_verbs", "prepositions_with_gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1295",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He objects to being treated like a child.",
+      "B": "He objects to treat like a child.",
+      "C": "He objects to be treated like a child.",
+      "D": "He objects treating like a child."
+    },
+    "correct_option": "A",
+    "explanation": "The phrasal verb 'object to' takes 'to' as a preposition, followed by the passive gerund 'being treated'.",
+    "tags": ["grammar", "advanced_verbs", "gerund_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1296",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He succeeded to win the prestigious fellowship after months of hard work.'",
+    "options": {
+      "A": "He succeeded to win",
+      "B": "the prestigious fellowship",
+      "C": "after months of hard work.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The verb 'succeed' takes the preposition 'in' + gerund, not 'to' + infinitive. Correct: 'succeeded in winning...'",
+    "tags": ["grammar", "advanced_verbs", "fixed_prepositions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1297",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It is essential that every precaution ___ taken before launching the experiment.'",
+    "options": {
+      "A": "is",
+      "B": "be",
+      "C": "was",
+      "D": "has been"
+    },
+    "correct_option": "B",
+    "explanation": "Mandative subjunctive requires the base verb 'be' in subordinate clauses after expressions of necessity ('It is essential that...').",
+    "tags": ["grammar", "advanced_verbs", "mandative_subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1298",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'She succeeded in ___ her objective despite numerous hurdles.'",
+    "options": {
+      "A": "achieve",
+      "B": "achieving",
+      "C": "to achieve",
+      "D": "achieved"
+    },
+    "correct_option": "B",
+    "explanation": "Preposition 'in' following 'succeeded' requires a gerund ('achieving').",
+    "tags": ["grammar", "advanced_verbs", "prepositional_gerunds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1299",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I would rather you didn't told anyone about this incident.'",
+    "options": {
+      "A": "I would rather",
+      "B": "you didn't told",
+      "C": "anyone about this incident.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Following past subjunctive structures with 'would rather', the auxiliary 'didn't' must be followed by a base/root verb, not a past form. Correct: 'you didn't tell...'",
+    "tags": ["grammar", "advanced_verbs", "would_rather_subjunctive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1300",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The board proposed that the policy ___ revised immediately.'",
+    "options": {
+      "A": "is",
+      "B": "be",
+      "C": "was",
+      "D": "will be"
+    },
+    "correct_option": "B",
+    "explanation": "Mandative subjunctive requires the base verb form ('be') in clauses following 'proposed that'.",
+    "tags": ["grammar", "advanced_verbs", "mandative_subjunctive", "rule_based"]
+  }
+]

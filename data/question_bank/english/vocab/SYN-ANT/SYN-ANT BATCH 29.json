@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_1401",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CHICANERY**",
+    "options": {
+      "A": "Deception",
+      "B": "Candor",
+      "C": "Honesty",
+      "D": "Uprightness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Chicanery' refers to the use of trickery to achieve a political, financial, or legal purpose. 'Deception', 'trickery', or 'guile' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1402",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CHICANERY**",
+    "options": {
+      "A": "Trickery",
+      "B": "Subterfuge",
+      "C": "Candor",
+      "D": "Duplicity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Chicanery' means deceitful trickery. 'Candor', 'honesty', or 'openness' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1403",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CHOLERIC**",
+    "options": {
+      "A": "Irascible",
+      "B": "Placid",
+      "C": "Serene",
+      "D": "Equable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Choleric' means bad-tempered or irritable. 'Irascible', 'cantankerous', or 'hot-headed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1404",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CHOLERIC**",
+    "options": {
+      "A": "Irascible",
+      "B": "Testy",
+      "C": "Placid",
+      "D": "Petulant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Choleric' means quick-tempered and irritable. 'Placid', 'calm', or 'even-tempered' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1405",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CHURLISH**",
+    "options": {
+      "A": "Boorish",
+      "B": "Urbane",
+      "C": "Refined",
+      "D": "Cultivated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Churlish' means rude in a mean-spirited and surly way. 'Boorish', 'uncouth', or 'rude' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1406",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CHURLISH**",
+    "options": {
+      "A": "Uncouth",
+      "B": "Crude",
+      "C": "Refined",
+      "D": "Surly"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Churlish' means ill-mannered or rude. 'Refined', 'polite', or 'urbane' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1407",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CIPHER**",
+    "options": {
+      "A": "Code",
+      "B": "Key",
+      "C": "Solution",
+      "D": "Answer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cipher' refers to a secret or disguised way of writing; a code. 'Code', 'cryptogram', or 'symbol' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1408",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CIRCUITOUS**",
+    "options": {
+      "A": "Indirect",
+      "B": "Direct",
+      "C": "Straight",
+      "D": "Linear"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Circuitous' means (of a route or journey) longer than the most direct way. 'Indirect', 'winding', or 'meandering' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1409",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CIRCUITOUS**",
+    "options": {
+      "A": "Winding",
+      "B": "Meandering",
+      "C": "Direct",
+      "D": "Indirect"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Circuitous' means indirect and roundabout. 'Direct', 'straight', or 'straightforward' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1410",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CIRCUMSPECT**",
+    "options": {
+      "A": "Cautious",
+      "B": "Reckless",
+      "C": "Rash",
+      "D": "Impulsive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Circumspect' means wary and unwilling to take risks. 'Cautious', 'wary', or 'chary' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1411",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CIRCUMSPECT**",
+    "options": {
+      "A": "Wary",
+      "B": "Chary",
+      "C": "Rash",
+      "D": "Guarded"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Circumspect' means cautious and prudent. 'Rash', 'reckless', or 'incautious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1412",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CLAMOROUS**",
+    "options": {
+      "A": "Noisy",
+      "B": "Silent",
+      "C": "Quiet",
+      "D": "Muted"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Clamorous' means making a loud and confused noise. 'Noisy', 'vociferous', or 'boisterous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1413",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CLAMOROUS**",
+    "options": {
+      "A": "Noisy",
+      "B": "Vociferous",
+      "C": "Boisterous",
+      "D": "Quiet"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Clamorous' means loud and shouting. 'Quiet', 'silent', or 'mute' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1414",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CLEMENCY**",
+    "options": {
+      "A": "Mercy",
+      "B": "Severity",
+      "C": "Harshness",
+      "D": "Rigidity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Clemency' refers to mercy or lenience. 'Mercy', 'lenience', or 'forgiveness' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1415",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CLEMENCY**",
+    "options": {
+      "A": "Mercy",
+      "B": "Lenience",
+      "C": "Severity",
+      "D": "Forgiveness"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Clemency' is mercy or leniency. 'Severity', 'harshness', or 'rigor' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1416",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CLOYING**",
+    "options": {
+      "A": "Excessive",
+      "B": "Unobtrusive",
+      "C": "Subtle",
+      "D": "Restrained"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cloying' means excessively sweet, rich, or sentimental, to a disgusting or sickening degree. 'Excessive', 'saccharine', or 'sickening' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1417",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CLOYING**",
+    "options": {
+      "A": "Excessive",
+      "B": "Saccharine",
+      "C": "Unobtrusive",
+      "D": "Sickening"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Cloying' means sickly sweet or excessive. 'Unobtrusive', 'restrained', or 'subtle' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1418",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COALESCE**",
+    "options": {
+      "A": "Merge",
+      "B": "Separate",
+      "C": "Divide",
+      "D": "Disintegrate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Coalesce' means to come together and form one mass or whole. 'Merge', 'unite', or 'amalgamate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1419",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COALESCE**",
+    "options": {
+      "A": "Merge",
+      "B": "Unite",
+      "C": "Separate",
+      "D": "Fuse"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Coalesce' means to combine or blend. 'Separate', 'divide', or 'dissect' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1420",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CODDLE**",
+    "options": {
+      "A": "Pamper",
+      "B": "Neglect",
+      "C": "Mistreat",
+      "D": "Abuse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Coddle' means to treat in an indulgent or overprotective way. 'Pamper', 'indulge', or 'baby' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1421",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CODDLE**",
+    "options": {
+      "A": "Pamper",
+      "B": "Indulge",
+      "C": "Neglect",
+      "D": "Baby"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Coddle' means to overprotect or indulge. 'Neglect', 'mistreat', or 'abuse' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1422",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COGENT**",
+    "options": {
+      "A": "Convincing",
+      "B": "Unpersuasive",
+      "C": "Weak",
+      "D": "Ineffective"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cogent' means (of an argument or case) clear, logical, and convincing. 'Convincing', 'compelling', or 'persuasive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1423",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COGENT**",
+    "options": {
+      "A": "Convincing",
+      "B": "Compelling",
+      "C": "Unpersuasive",
+      "D": "Logical"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Cogent' means strong and convincing. 'Unpersuasive', 'weak', or 'flimsy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1424",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COLLOQUIAL**",
+    "options": {
+      "A": "Informal",
+      "B": "Formal",
+      "C": "Literary",
+      "D": "Academic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Colloquial' refers to (of language) used in ordinary or familiar conversation; not formal or literary. 'Informal', 'conversational', or 'everyday' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1425",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COLLOQUIAL**",
+    "options": {
+      "A": "Informal",
+      "B": "Conversational",
+      "C": "Formal",
+      "D": "Everyday"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Colloquial' means casual or informal speech. 'Formal', 'literary', or 'academic' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1426",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COLLUSION**",
+    "options": {
+      "A": "Conspiracy",
+      "B": "Candor",
+      "C": "Honesty",
+      "D": "Openness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Collusion' refers to secret or illegal cooperation or conspiracy, especially in order to cheat or deceive others. 'Conspiracy', 'complicity', or 'intrigue' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1427",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COLLUSION**",
+    "options": {
+      "A": "Conspiracy",
+      "B": "Complicity",
+      "C": "Honesty",
+      "D": "Intrigue"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Collusion' is secret, dishonest cooperation. 'Honesty', 'openness', or 'candor' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1428",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COMMENSURATE**",
+    "options": {
+      "A": "Proportionate",
+      "B": "Disproportionate",
+      "C": "Unequal",
+      "D": "Inadequate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Commensurate' means corresponding in size or degree; in proportion. 'Proportionate', 'equivalent', or 'comparable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1429",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COMMENSURATE**",
+    "options": {
+      "A": "Proportionate",
+      "B": "Corresponding",
+      "C": "Disproportionate",
+      "D": "Equivalent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Commensurate' means equal or proportionate. 'Disproportionate', 'unequal', or 'inadequate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1430",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COMPLACENT**",
+    "options": {
+      "A": "Self-satisfied",
+      "B": "Dissatisfied",
+      "C": "Discontented",
+      "D": "Eager"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Complacent' means showing smug or uncritical satisfaction with oneself or one's achievements. 'Self-satisfied', 'smug', or 'contented' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1431",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COMPLACENT**",
+    "options": {
+      "A": "Self-satisfied",
+      "B": "Smug",
+      "C": "Dissatisfied",
+      "D": "Contented"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Complacent' means smugly satisfied. 'Dissatisfied', 'discontented', or 'eager' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1432",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COMPLIANT**",
+    "options": {
+      "A": "Obedient",
+      "B": "Obstinate",
+      "C": "Defiant",
+      "D": "Rebellious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Compliant' means inclined to agree with others or obey rules, especially to an excessive degree; acquiescent. 'Obedient', 'acquiescent', or 'amenable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1433",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COMPLIANT**",
+    "options": {
+      "A": "Obedient",
+      "B": "Acquiescent",
+      "C": "Defiant",
+      "D": "Amenable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Compliant' means willing to obey. 'Defiant', 'rebellious', or 'obstinate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1434",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONCILIATORY**",
+    "options": {
+      "A": "Appeasing",
+      "B": "Belligerent",
+      "C": "Hostile",
+      "D": "Aggressive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Conciliatory' means intended or likely to placate or pacify. 'Appeasing', 'placatory', or 'pacifying' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1435",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONCILIATORY**",
+    "options": {
+      "A": "Appeasing",
+      "B": "Pacifying",
+      "C": "Belligerent",
+      "D": "Placatory"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Conciliatory' means meant to pacify. 'Belligerent', 'hostile', or 'aggressive' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1436",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONDONE**",
+    "options": {
+      "A": "Forgive",
+      "B": "Condemn",
+      "C": "Denounce",
+      "D": "Censure"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Condone' means to accept and allow (behavior that is considered morally wrong or offensive) to continue. 'Forgive', 'excuse', or 'overlook' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1437",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONDONE**",
+    "options": {
+      "A": "Forgive",
+      "B": "Excuse",
+      "C": "Condemn",
+      "D": "Overlook"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Condone' means to overlook wrongdoing. 'Condemn', 'denounce', or 'censure' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1438",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONFLAGRATION**",
+    "options": {
+      "A": "Fire",
+      "B": "Flood",
+      "C": "Calm",
+      "D": "Peace"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Conflagration' refers to an extensive fire that destroys a great deal of land or property. 'Fire', 'inferno', or 'blaze' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1439",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONFOUND**",
+    "options": {
+      "A": "Perplex",
+      "B": "Clarify",
+      "C": "Elucidate",
+      "D": "Enlighten"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Confound' means to cause surprise or confusion in (someone), especially by acting against their expectations. 'Perplex', 'bewilder', or 'confuse' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1440",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONFOUND**",
+    "options": {
+      "A": "Perplex",
+      "B": "Bewilder",
+      "C": "Clarify",
+      "D": "Baffle"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Confound' means to confuse. 'Clarify', 'enlighten', or 'elucidate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1441",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONGENIAL**",
+    "options": {
+      "A": "Agreeable",
+      "B": "Disagreeable",
+      "C": "Hostile",
+      "D": "Unfriendly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Congenial' means (of a person) pleasant because of a personality, qualities, or interests that are similar to one's own. 'Agreeable', 'pleasant', or 'compatible' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1442",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONGENIAL**",
+    "options": {
+      "A": "Agreeable",
+      "B": "Compatible",
+      "C": "Disagreeable",
+      "D": "Pleasant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Congenial' means pleasant and agreeable. 'Disagreeable', 'hostile', or 'unfriendly' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1443",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONJECTURE**",
+    "options": {
+      "A": "Surmise",
+      "B": "Fact",
+      "C": "Certainty",
+      "D": "Proof"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Conjecture' refers to an opinion or conclusion formed on the basis of incomplete information. 'Surmise', 'speculation', or 'guess' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1444",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONJECTURE**",
+    "options": {
+      "A": "Surmise",
+      "B": "Speculation",
+      "C": "Certainty",
+      "D": "Guess"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Conjecture' is an unproven guess. 'Certainty', 'fact', or 'proof' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1445",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONNOISSEUR**",
+    "options": {
+      "A": "Expert",
+      "B": "Novice",
+      "C": "Tyro",
+      "D": "Amateur"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Connoisseur' refers to an authoritative judge in matters of taste. 'Expert', 'aficionado', or 'buff' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1446",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONNOISSEUR**",
+    "options": {
+      "A": "Expert",
+      "B": "Aficionado",
+      "C": "Novice",
+      "D": "Buff"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Connoisseur' is a highly skilled expert. 'Novice', 'tyro', or 'amateur' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1447",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONSENSUS**",
+    "options": {
+      "A": "Agreement",
+      "B": "Dissent",
+      "C": "Disagreement",
+      "D": "Conflict"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Consensus' refers to a general agreement. 'Agreement', 'accord', or 'unanimity' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1448",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONSENSUS**",
+    "options": {
+      "A": "Agreement",
+      "B": "Accord",
+      "C": "Dissent",
+      "D": "Unanimity"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Consensus' means agreement. 'Dissent', 'disagreement', or 'conflict' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1449",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONSONANT**",
+    "options": {
+      "A": "Consistent",
+      "B": "Inconsistent",
+      "C": "Discordant",
+      "D": "Incompatible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Consonant' means in agreement or harmony with. 'Consistent', 'compatible', or 'harmonious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1450",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONSONANT**",
+    "options": {
+      "A": "Consistent",
+      "B": "Harmonious",
+      "C": "Inconsistent",
+      "D": "Compatible"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Consonant' means in agreement. 'Inconsistent', 'discordant', or 'incompatible' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

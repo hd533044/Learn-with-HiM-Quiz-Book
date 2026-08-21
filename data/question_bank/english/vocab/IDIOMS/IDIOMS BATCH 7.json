@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0301",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cut to the chase**",
+    "options": {
+      "A": "To edit a movie scene quickly",
+      "B": "To get straight to the point without wasting time on preliminaries",
+      "C": "To chase a criminal down the street",
+      "D": "To finish running a marathon"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'cut to the chase' means to leave out unnecessary details and move straight to the main point.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0302",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cry over spilt milk**",
+    "options": {
+      "A": "To waste fresh dairy products",
+      "B": "To complain or grieve uselessly about something that cannot be undone",
+      "C": "To clean up a kitchen mess",
+      "D": "To express joy over a minor mistake"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Cry over spilt milk' means wasting energy lamenting past mistakes that cannot be reversed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0303",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Cut no ice**",
+    "options": {
+      "A": "To fail to make an impression, influence, or effect",
+      "B": "To freeze water in a refrigerator",
+      "C": "To skate smoothly on a frozen pond",
+      "D": "To break solid blocks of ice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. If an argument or excuse 'cuts no ice', it fails to influence or impress anyone.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0304",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dance to someone's tune**",
+    "options": {
+      "A": "To obey someone blindly and follow their instructions completely",
+      "B": "To perform professional choreography",
+      "C": "To listen to musical concerts",
+      "D": "To sing a song at a party"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'dance to someone's tune' means to comply fully with another person's wishes or orders.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0305",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dark horse**",
+    "options": {
+      "A": "A vehicle painted in dark colors",
+      "B": "A competitor of unknown capabilities who unexpectedly wins or succeeds",
+      "C": "An aggressive animal",
+      "D": "A dishonest politician"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'dark horse' is an unexpected contender who emerges victorious against expectations.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0306",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dead beat**",
+    "options": {
+      "A": "Extremely exhausted, tired, and fatigued",
+      "B": "A broken musical instrument",
+      "C": "A quiet and peaceful environment",
+      "D": "A rhythmic heartbeat sound"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'dead beat' means being completely worn out and drained of energy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0307",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dead duck**",
+    "options": {
+      "A": "A bird hunted on a lake",
+      "B": "A plan, project, or person that is doomed to failure or useless",
+      "C": "A stuffed toy animal",
+      "D": "A swimming waterfowl"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'dead duck' refers to a failing plan or a person who has no hope of success.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0308",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dead heat**",
+    "options": {
+      "A": "A contest or race ending in an exact tie",
+      "B": "A malfunctioning heating system",
+      "C": "A scorching summer day",
+      "D": "A cold winter morning"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'dead heat' is a race or competition where two or more contestants finish precisely equal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0309",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dead of night**",
+    "options": {
+      "A": "The quietest, darkest, and deepest part of the night",
+      "B": "An evening party celebration",
+      "C": "Early morning sunrise",
+      "D": "Late afternoon twilight"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'dead of night' refers to the middle of the night when it is darkest and stillest.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0310",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Devil's advocate**",
+    "options": {
+      "A": "A lawyer defending criminals",
+      "B": "Someone who pretends to argue against an idea just to spark debate or test validity",
+      "C": "An evil spiritual entity",
+      "D": "A malicious troublemaker"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'devil's advocate' argues a counter-position for the sake of thorough debate.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0311",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Die-hard**",
+    "options": {
+      "A": "A stubborn conservative who strongly resists change or innovation",
+      "B": "A fatal medical condition",
+      "C": "An action film stuntman",
+      "D": "A broken mechanical tool"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'die-hard' is an obstinate person who fiercely resists altering traditional views.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0312",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dig in your heels**",
+    "options": {
+      "A": "To wear high-heeled shoes",
+      "B": "To refuse stubbornly to change your opinion or course of action",
+      "C": "To plant garden flowers",
+      "D": "To stop running quickly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'dig in your heels' means to show absolute stubbornness and refuse to yield.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0313",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dilly-dally**",
+    "options": {
+      "A": "To waste time through aimless wandering or hesitation",
+      "B": "To dance quickly at a party",
+      "C": "To work with intense focus",
+      "D": "To organize documents neatly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'dilly-dally' means wasting time by being indecisive or slow.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0314",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**DIP into**",
+    "options": {
+      "A": "To read briefly or sample portions of a book or document",
+      "B": "To swim in a pool",
+      "C": "To store liquids in a jar",
+      "D": "To withdraw large sums of money"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'dip into' a book means to read parts of it casually without studying thoroughly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0315",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dog-eat-dog**",
+    "options": {
+      "A": "Fiercely competitive and ruthless where people stop at nothing to succeed",
+      "B": "A pet training school",
+      "C": "A friendly community event",
+      "D": "A peaceful animal sanctuary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'dog-eat-dog' environment is ruthlessly competitive.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0316",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dog's life**",
+    "options": {
+      "A": "A miserable, unhappy existence full of hardship",
+      "B": "A pampered pet's lifestyle",
+      "C": "An adventurous outdoor journey",
+      "D": "A relaxed retirement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Living a 'dog's life' means experiencing wretched unhappiness and hard toil.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0317",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dole out**",
+    "options": {
+      "A": "To distribute or dispense portions of food, money, or supplies sparingly",
+      "B": "To save money in a bank",
+      "C": "To throw away rubbish",
+      "D": "To collect taxes from citizens"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'dole out' means to distribute items in small shares or rations.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0318",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Don't count your chickens before they hatch**",
+    "options": {
+      "A": "Do not make plans dependent on something that hasn't happened yet",
+      "B": "Raise farm poultry carefully",
+      "C": "Count money before spending it",
+      "D": "Expect success in every business venture"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. This idiom warns against assuming success before it is fully secured.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0319",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Double Dutch**",
+    "options": {
+      "A": "Incomprehensible, confusing language or nonsense",
+      "B": "A traditional dance from the Netherlands",
+      "C": "Translating foreign documents",
+      "D": "Speaking fluent German"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Double Dutch' refers to language or speech that is impossible to understand.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0320",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Down and out**",
+    "options": {
+      "A": "Destitute, impoverished, and lacking funds or home",
+      "B": "A defeated sports team",
+      "C": "A tired office worker",
+      "D": "An electrical power outage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'down and out' means being destitute with no money or prospects.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0321",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Drag one's feet**",
+    "options": {
+      "A": "To walk slowly with exhaustion",
+      "B": "To act deliberately slow, reluctant, or hesitant to delay an action",
+      "C": "To trip and fall down",
+      "D": "To wear heavy footwear"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'drag your feet' means to procrastinate or show reluctance to proceed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0322",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Draw the line**",
+    "options": {
+      "A": "To sketch geometric lines",
+      "B": "To set a strict limit on what you are willing to accept or do",
+      "C": "To write boundaries on a map",
+      "D": "To finish reading a book"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'draw the line' means to establish a boundary beyond which you will not go.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0323",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dressed to kill**",
+    "options": {
+      "A": "Wearing extremely glamorous, striking, or formal clothes to impress",
+      "B": "Wearing military combat gear",
+      "C": "Dressed in warm winter coats",
+      "D": "Wearing old casual clothes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'dressed to kill' means wearing stylish, striking clothing to attract attention.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0324",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Drive a hard bargain**",
+    "options": {
+      "A": "To negotiate aggressively to secure favorable terms",
+      "B": "To sell goods at a loss",
+      "C": "To drive a car dangerously",
+      "D": "To shop at discount stores"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'drive a hard bargain' means negotiating stubbornly to get the best deal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0325",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Drop a hint**",
+    "options": {
+      "A": "To suggest something indirectly or subtly without stating it outright",
+      "B": "To drop heavy objects on the floor",
+      "C": "To speak in a loud voice",
+      "D": "To ask a direct question"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'drop a hint' means giving an indirect clue about your wishes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0326",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Duck soup**",
+    "options": {
+      "A": "Something extremely easy to do",
+      "B": "A poultry soup recipe",
+      "C": "A difficult culinary challenge",
+      "D": "A farm animal feed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Duck soup' is an informal expression for an effortless task.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0327",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dull thud**",
+    "options": {
+      "A": "A muffled, heavy dropping sound",
+      "B": "A sharp ringing bell",
+      "C": "A loud musical chime",
+      "D": "An exciting concert"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'dull thud' is a low, muffled impact sound.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0328",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dutch courage**",
+    "options": {
+      "A": "False bravery inspired by drinking alcohol before facing a trial",
+      "B": "True heroism in military battle",
+      "C": "Fear of foreign travelers",
+      "D": "Calmness during emergencies"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Dutch courage' refers to artificial bravery brought on by alcohol.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0329",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Dying wish**",
+    "options": {
+      "A": "The final request made by someone before passing away",
+      "B": "A medical recovery prayer",
+      "C": "A birthday cake candle blow",
+      "D": "A suicidal thought"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'dying wish' is a person's final request before death.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0330",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Eager beaver**",
+    "options": {
+      "A": "An overly enthusiastic, hardworking, and zealous person",
+      "B": "A slow and lazy worker",
+      "C": "An animal building a dam",
+      "D": "A nervous student"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. An 'eager beaver' is someone who works with excess enthusiasm and zeal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0331",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Ear to the ground**",
+    "options": {
+      "A": "Staying well-informed about current trends, rumors, and opinions",
+      "B": "Listening to earth tremors",
+      "C": "Gardening in the soil",
+      "D": "Resting after exhaustion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Having your 'ear to the ground' means staying alert to changing trends and news.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0332",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Easy come, easy go**",
+    "options": {
+      "A": "Money or possessions acquired effortlessly are lost or spent just as easily",
+      "B": "Travel plans that change frequently",
+      "C": "Traffic moving smoothly on highways",
+      "D": "A relaxed lifestyle in retirement"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Easy come, easy go' implies that windfall gains vanish quickly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0333",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Eat crow**",
+    "options": {
+      "A": "To admit a humiliating mistake and submit to humiliating correction",
+      "B": "To eat exotic wildlife dishes",
+      "C": "To starve during a famine",
+      "D": "To hunt birds in forests"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'eat crow' means to admit a glaring error humiliatingly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0334",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Egg on**",
+    "options": {
+      "A": "To urge, encourage, or goad someone on to do something reckless",
+      "B": "To cook breakfast meals",
+      "C": "To throw food at enemies",
+      "D": "To paint Easter eggs"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'egg someone on' means to urge them forward into foolish actions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0335",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Elephant in the room**",
+    "options": {
+      "A": "An obvious major problem or controversial issue that everyone avoids discussing",
+      "B": "A large animal kept inside a house",
+      "C": "A crowded party gathering",
+      "D": "A decorative statue in a living room"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'elephant in the room' is an obvious truth nobody wants to address.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0336",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**End of the line**",
+    "options": {
+      "A": "The point where further progress or operation is impossible; termination",
+      "B": "A railway ticket counter queue",
+      "C": "Fishing with a long rope line",
+      "D": "A telephone conversation disconnect"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. The 'end of the line' marks the absolute conclusion of a project or journey.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0337",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Escape by the skin of your teeth**",
+    "options": {
+      "A": "To barely manage to escape danger by a hair's breadth",
+      "B": "To undergo dental surgery safely",
+      "C": "To smile broadly during a crisis",
+      "D": "To bite food with difficulty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Escaping by the skin of your teeth means a very narrow escape from harm.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0338",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Even keel**",
+    "options": {
+      "A": "A balanced, steady, and calm state without violent fluctuations",
+      "B": "A flat sailing boat deck",
+      "C": "A level carpentry workbench",
+      "D": "Equal sports team scores"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Keeping an 'even keel' means remaining calm and steady through ups and downs.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0339",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Every cloud has a silver lining**",
+    "options": {
+      "A": "Every difficult or sad situation has some comforting or hopeful aspect",
+      "B": "Storm clouds bring precious metals",
+      "C": "Silver jewelry is found in mines",
+      "D": "Weather forecasts are unreliable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. This proverb means that every misfortune holds a ray of hope.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0340",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Eye for an eye**",
+    "options": {
+      "A": "Retaliatory justice equal in severity to the original offense",
+      "B": "An ophthalmology examination",
+      "C": "Staring contest games",
+      "D": "Wearing matching contact lenses"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. An 'eye for an eye' represents retributive justice of equal measure.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0341",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Eyewash**",
+    "options": {
+      "A": "Deceptive talk, nonsense, or propaganda meant to mislead",
+      "B": "A medicinal eye drop fluid",
+      "C": "Clear objective truth",
+      "D": "Facial washing soap"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Eyewash' refers to insincere humbug or deceptive talk.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0342",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Face the music**",
+    "options": {
+      "A": "To accept the unpleasant consequences of your actions",
+      "B": "To attend a symphony concert",
+      "C": "To dance at a celebration",
+      "D": "To hum a musical tune"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'face the music' means confronting reprimand or bad outcomes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0343",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fair crack of the whip**",
+    "options": {
+      "A": "A fair and equal opportunity or chance to do something",
+      "B": "A harsh punishment with a lash",
+      "C": "A horse riding competition",
+      "D": "A broken whip handle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'fair crack of the whip' gives a fair and equitable chance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0344",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fall by the wayside**",
+    "options": {
+      "A": "To be abandoned, neglected, or dropped along the way",
+      "B": "To trip while walking on a path",
+      "C": "To stop for a picnic rest",
+      "D": "To build roadside houses"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Something that falls 'by the wayside' is discarded or fails to continue.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0345",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fall flat**",
+    "options": {
+      "A": "To fail completely to produce the intended effect or response",
+      "B": "To trip on a flat floor",
+      "C": "To deflate a bicycle tire",
+      "D": "To lie down for sleep"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A joke or plan that falls 'flat' fails entirely to amuse or succeed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0346",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fall on deaf ears**",
+    "options": {
+      "A": "To be ignored, disregarded, or not listened to by an audience",
+      "B": "To suffer from sudden hearing loss",
+      "C": "To wear protective earplugs",
+      "D": "To listen with great attention"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Advice or pleas that fall on 'deaf ears' are completely ignored.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0347",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**False dawn**",
+    "options": {
+      "A": "A misleading appearance of improvement before a crisis",
+      "B": "An early morning alarm clock error",
+      "C": "A solar eclipse phenomenon",
+      "D": "Bright moonlight at night"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'false dawn' is an illusory sign of hope before things get worse.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0348",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fancy free**",
+    "options": {
+      "A": "Free from responsibilities, romantic commitments, and worries",
+      "B": "Having expensive luxury tastes",
+      "C": "Imaginative and artistic",
+      "D": "Indecisive in choices"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'fancy-free' means unburdened by romantic ties or duties.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0349",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Fast buck**",
+    "options": {
+      "A": "Money acquired quickly, often dishonestly or through speculation",
+      "B": "A swift male deer in the forest",
+      "C": "Hard-earned wages from labor",
+      "D": "Bank savings account interest"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Making a 'fast buck' means earning money rapidly with minimal effort.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0350",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Father figure**",
+    "options": {
+      "A": "An older man who commands respect and provides guidance like a father",
+      "B": "A biological male parent",
+      "C": "A statue in a museum",
+      "D": "A strict school headmaster"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'father figure' is an older mentor figure providing guidance and care.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

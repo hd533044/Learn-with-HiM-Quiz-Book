@@ -1,0 +1,713 @@
+[
+  {
+    "cloze_id": "ENG_CLOZE_SET_101",
+    "passage_title": "Urbanization and Wildlife Adaptation",
+    "passage_text": "Accelerated urban expansion is forcing wildlife populations to adjust their physiological and behavioral traits to anthropogenic environments. Recent ecological research indicates that city-dwelling birds often develop (1) _________ vocal frequencies to overcome low-frequency vehicular noise pollution. In addition, animals inhabiting metropolitan zones must navigate novel structural hazards, prompting a gradual (2) _________ in cognitive problem-solving flexibility. Rather than relying on seasonal natural foraging cycles, urban fauna increasingly utilize anthropogenic food waste as an abundant (3) _________ of sustenance. However, exposure to synthetic pollutants and processed dietary items can induce chronic physiological (4) _________ across generations. Evolutionary biologists emphasize that these phenotypic adaptations occur at an (5) _________ rapid pace compared to conventional evolutionary timescales.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_101_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "higher",
+          "B": "muffled",
+          "C": "sluggish",
+          "D": "inaudible"
+        },
+        "correct_option": "A",
+        "rationale": "'Higher' vocal frequencies allow bird songs to be heard over low-frequency background traffic noise."
+      },
+      {
+        "id": "ENG_CLOZE_101_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "deterioration",
+          "B": "enhancement",
+          "C": "cessation",
+          "D": "reluctance"
+        },
+        "correct_option": "B",
+        "rationale": "'Enhancement' fits the positive development of cognitive problem-solving required to handle complex urban challenges."
+      },
+      {
+        "id": "ENG_CLOZE_101_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "source",
+          "B": "scarcity",
+          "C": "barrier",
+          "D": "pretext"
+        },
+        "correct_option": "A",
+        "rationale": "'Source' of sustenance is the standard collocation for a supply of food or energy."
+      },
+      {
+        "id": "ENG_CLOZE_101_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "stress",
+          "B": "immunity",
+          "C": "leisure",
+          "D": "stability"
+        },
+        "correct_option": "A",
+        "rationale": "'Stress' correctly conveys the negative physiological strain caused by pollutants and unnatural diets."
+      },
+      {
+        "id": "ENG_CLOZE_101_Q5",
+        "blank_number": 5,
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "exceptionally",
+          "B": "imperceptibly",
+          "C": "reluctantly",
+          "D": "insignificantly"
+        },
+        "correct_option": "A",
+        "rationale": "'Exceptionally' modifies 'rapid' to indicate the unusually fast rate of contemporary urban adaptation."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_102",
+    "passage_title": "The Global Transition to Renewable Energy",
+    "passage_text": "The international community is striving to accelerate the transition from fossil fuels to sustainable energy sources to (1) _________ the severe consequences of global climate change. Photovoltaic solar arrays and offshore wind farms have witnessed exponential cost (2) _________ over the past decade, making clean power increasingly competitive with coal and natural gas. However, modernizing national electrical grids remains an essential prerequisite to manage the intermittent (3) _________ of weather-dependent generation. Advanced grid-scale battery storage and green hydrogen production are emerging as viable solutions to balance supply and demand (4) _________. Achieving carbon neutrality by mid-century will require sustained capital investment and international policy (5) _________ across developed and developing economies.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_102_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "mitigate",
+          "B": "aggravate",
+          "C": "simulate",
+          "D": "propagate"
+        },
+        "correct_option": "A",
+        "rationale": "'Mitigate' means to make less severe or alleviate, which matches the goal regarding climate change consequences."
+      },
+      {
+        "id": "ENG_CLOZE_102_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "reductions",
+          "B": "escalations",
+          "C": "prohibitions",
+          "D": "inflations"
+        },
+        "correct_option": "A",
+        "rationale": "'Reductions' in cost make clean energy commercially competitive against fossil fuels."
+      },
+      {
+        "id": "ENG_CLOZE_102_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "nature",
+          "B": "uniformity",
+          "C": "certainty",
+          "D": "stagnation"
+        },
+        "correct_option": "A",
+        "rationale": "'Nature' fits the phrase 'intermittent nature', describing the inherent unpredictability of renewable sources."
+      },
+      {
+        "id": "ENG_CLOZE_102_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "fluctuations",
+          "B": "permanence",
+          "C": "coincidences",
+          "D": "stipulations"
+        },
+        "correct_option": "A",
+        "rationale": "'Fluctuations' refers to irregular rises and falls in electrical supply and demand."
+      },
+      {
+        "id": "ENG_CLOZE_102_Q5",
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "alignment",
+          "B": "discord",
+          "C": "fragmentation",
+          "D": "evasion"
+        },
+        "correct_option": "A",
+        "rationale": "'Alignment' denotes harmonious cooperation and shared regulatory standards across nations."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_103",
+    "passage_title": "Artificial Intelligence in Modern Diagnostics",
+    "passage_text": "Deep learning architectures have revolutionized medical imaging by augmenting the diagnostic accuracy of radiologists and pathologists. Convolutional neural networks trained on millions of annotated radiological scans can detect subtle anatomical (1) _________ long before symptoms become clinically apparent. These algorithmic tools do not replace clinicians; rather, they serve as cognitive aids that (2) _________ diagnostic workflows and reduce human perceptual fatigue. Despite their remarkable efficacy, integrating artificial intelligence into clinical practice raises profound ethical (3) _________ regarding algorithmic bias and data privacy. Furthermore, the 'black box' opacity of complex neural networks makes it challenging to provide clear clinical (4) _________ for automated classifications. Regulatory agencies are establishing rigorous validation protocols to ensure patient safety and maintain physician (5) _________ in automated health solutions.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_103_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "abnormalities",
+          "B": "symmetries",
+          "C": "congruities",
+          "D": "resemblances"
+        },
+        "correct_option": "A",
+        "rationale": "'Abnormalities' refers to atypical or pathological tissue developments identified in radiological scans."
+      },
+      {
+        "id": "ENG_CLOZE_103_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "streamline",
+          "B": "impede",
+          "C": "confound",
+          "D": "obstruct"
+        },
+        "correct_option": "A",
+        "rationale": "'Streamline' means to improve efficiency and simplify a workflow or process."
+      },
+      {
+        "id": "ENG_CLOZE_103_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "concerns",
+          "B": "indifferences",
+          "C": "apathy",
+          "D": "complacencies"
+        },
+        "correct_option": "A",
+        "rationale": "'Ethical concerns' is the precise collocation denoting moral worries regarding privacy and bias."
+      },
+      {
+        "id": "ENG_CLOZE_103_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "justifications",
+          "B": "fabrications",
+          "C": "suppressions",
+          "D": "aberrations"
+        },
+        "correct_option": "A",
+        "rationale": "'Justifications' refers to transparent medical reasoning and explanations behind algorithmic decisions."
+      },
+      {
+        "id": "ENG_CLOZE_103_Q5",
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "trust",
+          "B": "cynicism",
+          "C": "dissent",
+          "D": "scorn"
+        },
+        "correct_option": "A",
+        "rationale": "'Trust' reflects professional confidence and reliance on validated diagnostic systems."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_104",
+    "passage_title": "The Evolution of Central Banking and Monetary Stability",
+    "passage_text": "Central banks occupy a pivotal position in modern macroeconomic governance, charged with maintaining price stability and fostering sustainable employment. During periods of economic overheating, monetary authorities raise policy benchmark rates to (1) _________ excessive inflationary pressure and cool speculative asset bubbles. Conversely, in the wake of deflationary shocks or financial crises, central banks inject liquidity by lowering interest rates and conducting quantitative easing to stimulate private (2) _________. Institutional autonomy from short-term political cycles is essential; empirical evidence demonstrates that independent central banks consistently deliver lower inflation without (3) _________ long-term economic growth. Nonetheless, prolonged periods of ultra-low interest rates can inadvertently encourage excessive corporate debt and exacerbate wealth (4) _________. Modern central bankers must therefore strike a delicate (5) _________ between immediate macroeconomic stabilization and structural financial resilience.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_104_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "curb",
+          "B": "fuel",
+          "C": "ignite",
+          "D": "incite"
+        },
+        "correct_option": "A",
+        "rationale": "'Curb' means to restrain or keep in check, which aligns with controlling inflation."
+      },
+      {
+        "id": "ENG_CLOZE_104_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "borrowing",
+          "B": "default",
+          "C": "forfeiture",
+          "D": "confiscation"
+        },
+        "correct_option": "A",
+        "rationale": "Lowering interest rates encourages commercial and private 'borrowing' and investment."
+      },
+      {
+        "id": "ENG_CLOZE_104_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "compromising",
+          "B": "bolstering",
+          "C": "accelerating",
+          "D": "fostering"
+        },
+        "correct_option": "A",
+        "rationale": "'Compromising' means undermining or putting at risk, showing that low inflation does not hurt long-term growth."
+      },
+      {
+        "id": "ENG_CLOZE_104_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "inequality",
+          "B": "parity",
+          "C": "uniformity",
+          "D": "equilibrium"
+        },
+        "correct_option": "A",
+        "rationale": "'Wealth inequality' is the standard economic term for the widening gap between rich and poor."
+      },
+      {
+        "id": "ENG_CLOZE_104_Q5",
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "balance",
+          "B": "rupture",
+          "C": "impasse",
+          "D": "chasm"
+        },
+        "correct_option": "A",
+        "rationale": "'Strike a delicate balance' is an established idiomatic collocation meaning to harmonize competing demands."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_105",
+    "passage_title": "Marine Ecosystems and Coral Bleaching Dynamics",
+    "passage_text": "Coral reef ecosystems represent some of the most biodiverse marine habitats on Earth, supporting over a quarter of all marine species despite covering less than one percent of the ocean floor. The structural foundation of these reefs relies on an obligatory endosymbiotic (1) _________ between scleractinian corals and photosynthetic dinoflagellates known as zooxanthellae. In exchange for protective shelter and inorganic metabolic byproducts, the microalgae synthesize carbohydrates that fulfill the vast majority of the coral host's energetic (2) _________. However, elevated sea surface temperatures induced by climate change disrupt photosynthetic mechanisms, causing algal cells to produce toxic reactive oxygen species. In response, the coral polyps (3) _________ their endosymbionts, exposing the translucent white calcium carbonate skeleton in a process termed coral bleaching. Deprived of their primary nutrient supply, bleached colonies become vulnerable to starvation and infectious disease (4) _________. Without swift reductions in marine thermal anomalies, extensive mortality events will lead to the irreversible (5) _________ of coral framework structures.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_105_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "relationship",
+          "B": "rivalry",
+          "C": "alienation",
+          "D": "hostility"
+        },
+        "correct_option": "A",
+        "rationale": "'Relationship' (or partnership) accurately describes the mutualistic endosymbiosis between coral and zooxanthellae."
+      },
+      {
+        "id": "ENG_CLOZE_105_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "demands",
+          "B": "surpluses",
+          "C": "impediments",
+          "D": "luxuries"
+        },
+        "correct_option": "A",
+        "rationale": "'Energetic demands' refers to the metabolic energy requirements needed by the coral host to survive."
+      },
+      {
+        "id": "ENG_CLOZE_105_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "expel",
+          "B": "harbor",
+          "C": "nurture",
+          "D": "replicate"
+        },
+        "correct_option": "A",
+        "rationale": "'Expel' means to eject or cast out, describing how stressed corals physically discharge their zooxanthellae."
+      },
+      {
+        "id": "ENG_CLOZE_105_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "outbreaks",
+          "B": "remedies",
+          "C": "immunities",
+          "D": "extinctions"
+        },
+        "correct_option": "A",
+        "rationale": "'Disease outbreaks' is the natural phrase denoting sudden surges in microbial infections."
+      },
+      {
+        "id": "ENG_CLOZE_105_Q5",
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "degradation",
+          "B": "proliferation",
+          "C": "fortification",
+          "D": "resurgence"
+        },
+        "correct_option": "A",
+        "rationale": "'Degradation' signifies the physical collapse, decay, and erosion of dead reef skeletons."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_106",
+    "passage_title": "The Sociology of Digital Public Spheres",
+    "passage_text": "The emergence of social media networks initially fostered optimism regarding the democratization of political discourse, offering a decentralized platform where citizens could debate without traditional gatekeeper (1) _________. However, empirical analysis of digital communication indicates that commercial recommendation algorithms have fundamentally (2) _________ public deliberation. By prioritizing sensational and emotionally charged content to maximize user engagement, platforms inadvertently incentivize ideological tribalism. Users gravitate toward ideologically homogeneous digital clusters where dissenting perspectives are systematically (3) _________. This continuous reinforcement of shared biases creates epistemic echo chambers that distort objective reality and deepen societal (4) _________. Reinvigorating democratic civic life requires algorithmic transparency and digital media literacy programs that cultivate critical (5) _________ among citizens.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_106_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "censorship",
+          "B": "patronage",
+          "C": "subsidies",
+          "D": "solidarity"
+        },
+        "correct_option": "A",
+        "rationale": "'Censorship' (or editorial control) describes traditional media constraints that early digital platforms bypassed."
+      },
+      {
+        "id": "ENG_CLOZE_106_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "fragmented",
+          "B": "unified",
+          "C": "clarified",
+          "D": "purified"
+        },
+        "correct_option": "A",
+        "rationale": "'Fragmented' conveys how algorithms divided public discourse into isolated, competing factions."
+      },
+      {
+        "id": "ENG_CLOZE_106_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "excluded",
+          "B": "celebrated",
+          "C": "incorporated",
+          "D": "amplified"
+        },
+        "correct_option": "A",
+        "rationale": "'Excluded' describes how opposing opinions are filtered out and shut out from homogeneous clusters."
+      },
+      {
+        "id": "ENG_CLOZE_106_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "polarization",
+          "B": "harmony",
+          "C": "cohesion",
+          "D": "consensus"
+        },
+        "correct_option": "A",
+        "rationale": "'Societal polarization' is the standard sociological term for the division of society into opposing ideological camps."
+      },
+      {
+        "id": "ENG_CLOZE_106_Q5",
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "discernment",
+          "B": "credulity",
+          "C": "gullibility",
+          "D": "complacency"
+        },
+        "correct_option": "A",
+        "rationale": "'Critical discernment' denotes the ability to judge information rationally, accurately, and wisely."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_107",
+    "passage_title": "Agricultural Biotechnology and Food Security",
+    "passage_text": "Meeting the nutritional requirements of a global population projected to approach ten billion by 2050 represents a monumental agricultural challenge. Climate volatility, soil degradation, and water scarcity threaten to (1) _________ conventional crop yields across vulnerable farming regions. In response, plant geneticists are deploying advanced gene-editing tools, such as CRISPR-Cas9, to engineer crop cultivars with enhanced abiotic stress (2) _________. These bioengineered varieties exhibit enhanced resistance to drought, salinity, and pervasive fungal pathogens without requiring foreign transgenes. Concurrently, agronomic practices are incorporating precision farming technologies to optimize synthetic fertilizer application and minimize environmental (3) _________. Nevertheless, widespread adoption requires transparent regulatory frameworks to address consumer apprehension and guarantee biosafety (4) _________. Sustainable agricultural biotechnology must combine cutting-edge genetics with equitable technology access for smallholder farmers to bolster global food (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_107_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "diminish",
+          "B": "augment",
+          "C": "prolong",
+          "D": "elevate"
+        },
+        "correct_option": "A",
+        "rationale": "'Diminish' means to decrease or reduce, describing the threat climate volatility poses to crop yields."
+      },
+      {
+        "id": "ENG_CLOZE_107_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "tolerance",
+          "B": "vulnerability",
+          "C": "fragility",
+          "D": "susceptibility"
+        },
+        "correct_option": "A",
+        "rationale": "'Stress tolerance' is the technical biological term for an organism's capacity to withstand adverse environmental conditions."
+      },
+      {
+        "id": "ENG_CLOZE_107_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "runoff",
+          "B": "preservation",
+          "C": "enrichment",
+          "D": "sanitation"
+        },
+        "correct_option": "A",
+        "rationale": "'Environmental runoff' refers to agricultural chemicals washing into waterways and causing pollution."
+      },
+      {
+        "id": "ENG_CLOZE_107_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "compliance",
+          "B": "defiance",
+          "C": "negligence",
+          "D": "transgression"
+        },
+        "correct_option": "A",
+        "rationale": "'Compliance' indicates adhering strictly to mandatory safety regulations and legal standards."
+      },
+      {
+        "id": "ENG_CLOZE_107_Q5",
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "resilience",
+          "B": "peril",
+          "C": "deprivation",
+          "D": "famine"
+        },
+        "correct_option": "A",
+        "rationale": "'Food resilience' denotes the strength and capacity of food systems to endure shocks."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_108",
+    "passage_title": "The Architecture of Classical Diplomacy",
+    "passage_text": "Diplomatic statecraft historically relies on structured protocols and established norms of diplomatic immunity to facilitate communication between sovereign entities, even during periods of overt geopolitical (1) _________. The institution of resident embassies emerged during the Italian Renaissance, replacing ad-hoc emissaries with permanent diplomatic missions tasked with continuous intelligence gathering and bilateral negotiation. Treaties negotiated between states are predicated on the customary legal principle of *pacta sunt servanda*—the doctrine that solemn international agreements must be (2) _________ in good faith. However, when geopolitical power dynamics shift dramatically, states often re-evaluate their commitments, leading to the unilateral (3) _________ of existing treaties. Modern multilateral diplomacy, centered around international organizations, provides a structured forum to de-escalate crises before regional disputes (4) _________ into armed conflict. Effective diplomacy ultimately requires finding a pragmatic compromise that accommodates core national security interests while preserving international (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_108_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "hostility",
+          "B": "concord",
+          "C": "harmony",
+          "D": "amity"
+        },
+        "correct_option": "A",
+        "rationale": "'Hostility' refers to active conflict or opposition between nations, contrasting with peaceful communication."
+      },
+      {
+        "id": "ENG_CLOZE_108_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "honored",
+          "B": "violated",
+          "C": "repudiated",
+          "D": "discarded"
+        },
+        "correct_option": "A",
+        "rationale": "'Honored' in good faith is the direct meaning of the legal doctrine *pacta sunt servanda*."
+      },
+      {
+        "id": "ENG_CLOZE_108_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "renunciation",
+          "B": "ratification",
+          "C": "endorsement",
+          "D": "celebration"
+        },
+        "correct_option": "A",
+        "rationale": "'Renunciation' is the formal abandonment, rejection, or withdrawal from a legal agreement or treaty."
+      },
+      {
+        "id": "ENG_CLOZE_108_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "escalate",
+          "B": "diminish",
+          "C": "dwindle",
+          "D": "recede"
+        },
+        "correct_option": "A",
+        "rationale": "'Escalate' means to increase rapidly in intensity or extent into military confrontation."
+      },
+      {
+        "id": "ENG_CLOZE_108_Q5",
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "stability",
+          "B": "chaos",
+          "C": "anarchy",
+          "D": "turmoil"
+        },
+        "correct_option": "A",
+        "rationale": "'International stability' represents the enduring equilibrium and peace preserved through diplomacy."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_109",
+    "passage_title": "Cognitive Psychology and Memory Reconsolidation",
+    "passage_text": "For over a century, classical neuroscience maintained that once long-term memories were encoded in the brain, they existed as stable, permanent synaptic traces immune to (1) _________. However, contemporary cognitive experiments have disproven this static view by discovering the phenomenon of memory reconsolidation. Whenever a consolidated memory is retrieved into conscious awareness, its underlying neural representation enters a transient, chemically (2) _________ state. During this reactivation window, the memory becomes susceptible to modification, erasure, or updating before being re-stored in long-term storage. Researchers have demonstrated that administering pharmacological inhibitors during this critical window can selectively (3) _________ maladaptive fear associations without harming declarative factual recall. This discovery has major clinical implications for treating post-traumatic stress disorder and chronic anxiety (4) _________. Far from functioning as an indelible video recorder, human memory operates as a dynamic, reconstructive system continuously shaped by subsequent cognitive (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_109_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "alteration",
+          "B": "permanence",
+          "C": "preservation",
+          "D": "continuity"
+        },
+        "correct_option": "A",
+        "rationale": "'Alteration' fits the classical dogma that memories were fixed and could not be changed or modified."
+      },
+      {
+        "id": "ENG_CLOZE_109_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "labile",
+          "B": "immutable",
+          "C": "rigid",
+          "D": "invulnerable"
+        },
+        "correct_option": "A",
+        "rationale": "'Labile' is the scientific term meaning plastic, unstable, or easily altered."
+      },
+      {
+        "id": "ENG_CLOZE_109_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "disrupt",
+          "B": "reinforce",
+          "C": "fortify",
+          "D": "engrave"
+        },
+        "correct_option": "A",
+        "rationale": "'Disrupt' means to interrupt or break down the conditioned emotional fear associations."
+      },
+      {
+        "id": "ENG_CLOZE_109_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "pathologies",
+          "B": "panaceas",
+          "C": "triumphs",
+          "D": "immunities"
+        },
+        "correct_option": "A",
+        "rationale": "'Pathologies' refers to psychological or psychiatric disorders and illnesses like PTSD."
+      },
+      {
+        "id": "ENG_CLOZE_109_Q5",
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "experiences",
+          "B": "dormancies",
+          "C": "stagnations",
+          "D": "erasures"
+        },
+        "correct_option": "A",
+        "rationale": "'Cognitive experiences' represents the ongoing mental perceptions and events that reshape memory over time."
+      }
+    ]
+  },
+  {
+    "cloze_id": "ENG_CLOZE_SET_110",
+    "passage_title": "Quantum Computing and Modern Cryptography",
+    "passage_text": "Modern telecommunications and digital banking systems rely entirely on public-key cryptographic algorithms, such as RSA and Elliptic Curve Cryptography, to secure sensitive data transmissions across open networks. The mathematical security of these encryption schemes is rooted in the computational (1) _________ of solving specific mathematical problems—such as factoring large composite integers—using classical computers. However, the theoretical development of fault-tolerant quantum computers threatens to (2) _________ this cryptographic foundation. Peter Shor's quantum algorithm can solve prime factorizations in polynomial time, rendering existing public-key systems instantly (3) _________ to quantum decryption. In anticipation of this cryptographic vulnerability, cybersecurity agencies and standards bodies are standardizing Post-Quantum Cryptography (PQC) protocols based on mathematical lattices and multivariate equations that are (4) _________ to quantum attacks. Upgrading global digital infrastructure before quantum processors reach commercial maturity is essential to ensure long-term data (5) _________.",
+    "questions": [
+      {
+        "id": "ENG_CLOZE_110_Q1",
+        "blank_number": 1,
+        "question": "Select the most appropriate word for blank (1).",
+        "options": {
+          "A": "intractability",
+          "B": "simplicity",
+          "C": "triviality",
+          "D": "transparency"
+        },
+        "correct_option": "A",
+        "rationale": "'Intractability' refers to computational problems that are practically impossible for classical computers to solve in reasonable time."
+      },
+      {
+        "id": "ENG_CLOZE_110_Q2",
+        "blank_number": 2,
+        "question": "Select the most appropriate word for blank (2).",
+        "options": {
+          "A": "undermine",
+          "B": "fortify",
+          "C": "corroborate",
+          "D": "reaffirm"
+        },
+        "correct_option": "A",
+        "rationale": "'Undermine' means to weaken or ruin the structural security foundation."
+      },
+      {
+        "id": "ENG_CLOZE_110_Q3",
+        "blank_number": 3,
+        "question": "Select the most appropriate word for blank (3).",
+        "options": {
+          "A": "vulnerable",
+          "B": "impervious",
+          "C": "resilient",
+          "D": "immune"
+        },
+        "correct_option": "A",
+        "rationale": "'Vulnerable' describes public-key systems exposed to rapid decryption by quantum algorithms."
+      },
+      {
+        "id": "ENG_CLOZE_110_Q4",
+        "blank_number": 4,
+        "question": "Select the most appropriate word for blank (4).",
+        "options": {
+          "A": "resistant",
+          "B": "susceptible",
+          "C": "yielding",
+          "D": "subservient"
+        },
+        "correct_option": "A",
+        "rationale": "'Resistant' indicates mathematical structures that quantum computers cannot easily solve or break."
+      },
+      {
+        "id": "ENG_CLOZE_110_Q5",
+        "question": "Select the most appropriate word for blank (5).",
+        "options": {
+          "A": "confidentiality",
+          "B": "publicity",
+          "C": "exposure",
+          "D": "dissemination"
+        },
+        "correct_option": "A",
+        "rationale": "'Data confidentiality' is the core information security principle of keeping sensitive data private."
+      }
+    ]
+  }
+]

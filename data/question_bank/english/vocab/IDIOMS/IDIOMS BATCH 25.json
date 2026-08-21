@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_1201",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get one's act together**",
+    "options": {
+      "A": "To rehearse lines for a stage drama",
+      "B": "To organize oneself and one's affairs to operate efficiently",
+      "C": "To assemble a group of performers for an event",
+      "D": "To disguise one's true intentions behind an act"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'get one's act together' means to organize your life, work, or behavior properly so that you can deal with things effectively.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1202",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get out of hand**",
+    "options": {
+      "A": "To slip through someone's fingers physically",
+      "B": "To complete a manual chore successfully",
+      "C": "To become uncontrollable, chaotic, or difficult to manage",
+      "D": "To resign from a committee voluntarily"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. When a situation 'gets out of hand', it escapes control and becomes chaotic or unruly.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1203",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get the boot**",
+    "options": {
+      "A": "To be dismissed, sacked, or fired from a job",
+      "B": "To purchase high-end leather footwear",
+      "C": "To kick an adversary during an altercation",
+      "D": "To receive a promotion in military rank"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get the boot' is an informal expression meaning to be dismissed or discharged from employment.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1204",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get the hang of**",
+    "options": {
+      "A": "To suspend decorative portraits on walls",
+      "B": "To fail to comprehend instructions clearly",
+      "C": "To learn the technique, skill, or knack of doing something",
+      "D": "To execute a task mechanically without understanding"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'get the hang of' something means to master the technique or acquire the ability to do something through practice.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1205",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get the message**",
+    "options": {
+      "A": "To receive an official postal wire",
+      "B": "To read an electronic communication",
+      "C": "To listen to an audio dispatch",
+      "D": "To understand what is being indirectly implied or hinted at"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. To 'get the message' means understanding someone's indirect hint, warning, or implicit intention.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1206",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get the sack**",
+    "options": {
+      "A": "To carry heavy luggage on one's back",
+      "B": "To be dismissed or terminated from employment",
+      "C": "To go to bed early due to exhaustion",
+      "D": "To steal supplies from a storage warehouse"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'get the sack' means to lose one's job or be dismissed from a post.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1207",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get the upper hand**",
+    "options": {
+      "A": "To secure a dominant, prevailing advantage or control over an opponent",
+      "B": "To raise a hand to ask a question in class",
+      "C": "To receive an accidental upper limb injury",
+      "D": "To greet an acquaintance with high enthusiasm"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Gaining or getting the 'upper hand' means achieving a controlling or superior position over a rival.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1208",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Get wind of**",
+    "options": {
+      "A": "To hear rumors or learn about secret, confidential information indirectly",
+      "B": "To experience sudden respiratory breathlessness",
+      "C": "To feel a strong breeze during a coastal storm",
+      "D": "To predict weather variations using instruments"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'get wind of' something means to discover secret information or hear unconfirmed rumors regarding an impending event.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1209",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Gird up one's loins**",
+    "options": {
+      "A": "To loosen garments before lying down to sleep",
+      "B": "To fasten a belt tightly during a meal",
+      "C": "To recover from waist or spine fatigue",
+      "D": "To brace and prepare oneself firmly for difficult work or challenge"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. To 'gird up one's loins' means to prepare mentally or physically for strenuous action or hardship.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1210",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give a cold shoulder**",
+    "options": {
+      "A": "To treat someone with deliberate indifference, unfriendliness, or disdain",
+      "B": "To apply an ice compress to a physical joint sprain",
+      "C": "To shiver violently from winter low temperatures",
+      "D": "To nudge an associate aside in a crowded hallway"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Giving someone the 'cold shoulder' means deliberately ignoring, snubbing, or being unfriendly to them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1211",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give a wide berth**",
+    "options": {
+      "A": "To allocate large sleeping quarters aboard a ferry",
+      "B": "To moor a vessel alongside a dock platform",
+      "C": "To steer clear of, avoid, or keep a safe distance from someone or something",
+      "D": "To welcome newcomers with open hospitality"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'give a wide berth' means keeping a safe distance from a person or hazard to avoid danger or conflict.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1212",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give and take**",
+    "options": {
+      "A": "Mutual compromise, concession, and cooperation between parties",
+      "B": "An unfair exchange where one party loses everything",
+      "C": "A commercial trade transaction conducted in cash",
+      "D": "Stealing items and replacing them with counterfeits"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Give and take' refers to the practice of mutual compromise and accommodation in relationships or negotiations.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1213",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give currency to**",
+    "options": {
+      "A": "To disburse monetary cash to public charities",
+      "B": "To circulate, popularize, or cause a report or idea to spread widely",
+      "C": "To convert international banknotes at a foreign exchange",
+      "D": "To loan funds to business partners at low interest"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'give currency to' something means making an idea, story, or rumor widely known and accepted.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1214",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give in**",
+    "options": {
+      "A": "To yield, surrender, or cease resistance to pressure or demands",
+      "B": "To hand over written examination papers on time",
+      "C": "To enter an enclosed room quietly",
+      "D": "To donate old garments to an orphanage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'give in' means to capitulate, surrender, or submit to another's demands or arguments.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1215",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give one's right arm**",
+    "options": {
+      "A": "To undergo major orthopedic limb surgery",
+      "B": "To sacrifice an arm in a heroic battle",
+      "C": "To be willing to give up something of immense value to achieve a wish",
+      "D": "To salute a military commander with formality"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Saying you would 'give your right arm' for something means you desire it intensely and would sacrifice a great deal to get it.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1216",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give someone a run for their money**",
+    "options": {
+      "A": "To refund an unauthorized commercial transaction",
+      "B": "To provide stiff, fierce, and challenging competition to an opponent",
+      "C": "To chase a pickpocket down a crowded avenue",
+      "D": "To invest financial capital in an athletic marathon"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'give someone a run for their money' means challenging them strongly so that their victory is earned with great difficulty.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1217",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give someone enough rope to hang himself**",
+    "options": {
+      "A": "To allow someone the freedom of action to bring about their own downfall",
+      "B": "To provide mountaineering equipment for an expedition",
+      "C": "To execute a convicted felon through legal hanging",
+      "D": "To assist a friend in untangling complex nautical ropes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Giving someone 'enough rope' means letting them have sufficient leeway to make mistakes that will ruin them.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1218",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give someone the slip**",
+    "options": {
+      "A": "To hand over an official receipt for a purchased item",
+      "B": "To trip someone accidentally on a polished floor",
+      "C": "To escape from or evade someone pursuing or watching you",
+      "D": "To gift clothing items during a festive season"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'give someone the slip' means escaping or slipping away from someone tracking or accompanying you.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1219",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give the devil his due**",
+    "options": {
+      "A": "To acknowledge the merit or good points of an otherwise disagreeable or bad person",
+      "B": "To perform ritualistic incantations in an ancient ruin",
+      "C": "To punish an adversary without extending mercy",
+      "D": "To settle outstanding gambling debts immediately"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Give the devil his due' means giving credit to someone who deserves it, even if you dislike them or disapprove of their character.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1220",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give the game away**",
+    "options": {
+      "A": "To distribute board games to neighborhood children",
+      "B": "To forfeit a sports competition by failing to attend",
+      "C": "To reveal a secret, deception, or hidden plan unintentionally",
+      "D": "To play video games casually without competition"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'give the game away' means to inadvertently reveal a secret, intention, or trick.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1221",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Give vent to**",
+    "options": {
+      "A": "To express or release strong pent-up emotions, anger, or feelings openly",
+      "B": "To install ventilation ducts in an industrial factory",
+      "C": "To conceal one's true thoughts behind a polite smile",
+      "D": "To lower the room temperature using cooling fans"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'give vent to' means freely expressing strong feelings such as rage, frustration, or sorrow.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1222",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go about**",
+    "options": {
+      "A": "To set about doing, handle, or perform a particular task or routine",
+      "B": "To walk aimlessly around town streets",
+      "C": "To travel across multiple foreign continents",
+      "D": "To abandon an ongoing commercial project"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go about' something means starting to deal with it, conducting routine business, or approaching a task.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1223",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go bananas**",
+    "options": {
+      "A": "To cultivate tropical fruit plantations",
+      "B": "To adopt a strict vegetarian diet regimen",
+      "C": "To become extremely angry, excited, crazy, or irrational",
+      "D": "To purchase grocery provisions in bulk quantities"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'go bananas' is an informal idiom meaning to become wildly excited, furious, or insane.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1224",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go begging**",
+    "options": {
+      "A": "To ask for financial loans from banking institutions",
+      "B": "To be unwanted, unclaimed, or left unused when available",
+      "C": "To live as a mendicant on street corners",
+      "D": "To plead for mercy before a judicial magistrate"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. When an item, opportunity, or resource 'goes begging', it remains unclaimed or unused despite being readily available.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1225",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go by the board**",
+    "options": {
+      "A": "To be discarded, ruined, abandoned, or completely forgotten",
+      "B": "To be approved by a corporate board of directors",
+      "C": "To stand alongside a wooden ship deck",
+      "D": "To write notices on a public bulletin board"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. If plans, rules, or traditions 'go by the board', they are cast aside, ruined, or no longer practiced.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1226",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go down the drain**",
+    "options": {
+      "A": "To clear a clogged domestic plumbing pipe",
+      "B": "To be completely wasted, lost, or spoiled",
+      "C": "To wash household cutlery in kitchen sinks",
+      "D": "To channel rainwater into agricultural reservoirs"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'go down the drain' means to be completely wasted, destroyed, or lost with no beneficial result.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1227",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go Dutch**",
+    "options": {
+      "A": "To learn a European language while residing abroad",
+      "B": "To travel across the Netherlands during vacation",
+      "C": "To share the cost of a meal or outing equally among participants",
+      "D": "To treat a companion to an expensive banquet"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'go Dutch' means that each person in a group pays for their own share or meal.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1228",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go for a song**",
+    "options": {
+      "A": "To be sold or bought very cheaply; at an extremely low price",
+      "B": "To perform vocal solos at an audition contest",
+      "C": "To attend a classical orchestral opera concert",
+      "D": "To trade merchandise for musical sheet notes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. If an item 'goes for a song', it is sold for an exceptionally low price or a mere pittance.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1229",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go for broke**",
+    "options": {
+      "A": "To risk everything, committing all resources in an all-out effort to succeed",
+      "B": "To declare total commercial bankruptcy in court",
+      "C": "To repair a broken piece of household machinery",
+      "D": "To invest modest savings safely in government securities"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go for broke' means to stake everything on a single venture, risking all to achieve total success.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1230",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go great guns**",
+    "options": {
+      "A": "To discharge artillery ordnance during combat maneuvers",
+      "B": "To hunt wild game with high-caliber firearms",
+      "C": "To proceed, perform, or progress with great speed, energy, and success",
+      "D": "To engage in a loud, aggressive verbal quarrel"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Going great guns' means doing something extremely well, rapidly, and with vigorous success.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1231",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go hand in hand**",
+    "options": {
+      "A": "To be closely connected, associated, or occur together naturally",
+      "B": "To walk arm-in-arm through a recreational park",
+      "C": "To exchange manual hand tools during construction",
+      "D": "To greet foreign diplomats with formal handshakes"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. When two things 'go hand in hand', they are intimately linked, correlated, and happen simultaneously.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1232",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go off at a tangent**",
+    "options": {
+      "A": "To solve complex geometric trigonometry equations",
+      "B": "To suddenly diverge from the main topic to a completely unrelated subject",
+      "C": "To steer a motor vehicle along a curved mountain road",
+      "D": "To speak in a monotone voice during lectures"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'go off at a tangent' means to abruptly change from the central subject of discussion to an extraneous one.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1233",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go off the deep end**",
+    "options": {
+      "A": "To dive into the deep section of a swimming pool",
+      "B": "To explore the extreme depths of ocean trenches",
+      "C": "To act rashly, react with wild fury, or lose all emotional control",
+      "D": "To finish an endurance swimming race successfully"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'go off the deep end' means to act impulsively, lose emotional composure, or become extremely enraged.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1234",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go out of one's way**",
+    "options": {
+      "A": "To take an unintended detour and get lost in a city",
+      "B": "To avoid meeting acquaintances on public streets",
+      "C": "To make an extra, special, or troublesome effort to help someone",
+      "D": "To walk along a scenic pedestrian footpath"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'go out of one's way' means making a conscious, troublesome effort beyond what is strictly necessary to assist others.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1235",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go pear-shaped**",
+    "options": {
+      "A": "To harvest orchard fruits in early autumn",
+      "B": "To go completely wrong, fail, or turn into a mess",
+      "C": "To gain physical body weight around the hips",
+      "D": "To mold clay pottery into artistic round shapes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. If a plan or scheme 'goes pear-shaped', it goes disastrously wrong or fails to produce the intended outcome.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1236",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go places**",
+    "options": {
+      "A": "To be increasingly successful, talented, and destined for great achievements",
+      "B": "To travel extensively as a tourist to exotic international destinations",
+      "C": "To relocate frequently between rental housing apartments",
+      "D": "To commute to multiple workplaces across a city"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Someone who is 'going places' shows great promise and is certain to achieve high success in their career.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1237",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go scot-free**",
+    "options": {
+      "A": "To travel throughout Scotland without paying transport fares",
+      "B": "To receive free sample goods from a retail merchant",
+      "C": "To escape completely without suffering punishment, penalty, or harm",
+      "D": "To be acquitted of minor infractions after paying heavy fines"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Going 'scot-free' means getting off without receiving any punishment or penalty for a wrongdoing.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1238",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go the extra mile**",
+    "options": {
+      "A": "To walk additional distance during daily aerobic exercise",
+      "B": "To drive past your intended highway exit by mistake",
+      "C": "To make more effort than is expected or required to achieve success",
+      "D": "To complete the final lap of a long-distance track race"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'go the extra mile' means putting forth extra effort, dedication, or care beyond what is strictly mandated.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1239",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go the whole hog**",
+    "options": {
+      "A": "To do something completely, thoroughly, and without holding back",
+      "B": "To raise swine livestock on a commercial agricultural farm",
+      "C": "To waste financial resources on extravagant gourmet food",
+      "D": "To abandon an initiative midway due to fatigue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go the whole hog' means committing fully to an enterprise and doing it as thoroughly as possible.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1240",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go through fire and water**",
+    "options": {
+      "A": "To perform hazardous firefighter training simulations",
+      "B": "To endure any peril, difficulty, or hardship to achieve a noble goal",
+      "C": "To suffer natural catastrophes involving floods and wild blazes",
+      "D": "To travel across harsh desert and swamp terrain"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'go through fire and water' means facing any severe danger, risk, or trial for the sake of an objective or person.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1241",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go through the motions**",
+    "options": {
+      "A": "To execute gymnastic calisthenics with high precision",
+      "B": "To perform an action perfunctorily or insincerely without genuine interest",
+      "C": "To cast formal legislative ballots in a parliamentary session",
+      "D": "To follow nautical navigation compass bearings accurately"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'go through the motions' means doing something mechanically, half-heartedly, and with no real enthusiasm or dedication.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1242",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go to the dogs**",
+    "options": {
+      "A": "To volunteer at a domestic animal shelter",
+      "B": "To deteriorate, decline, or become completely ruined and degraded",
+      "C": "To attend greyhound racing entertainment venues",
+      "D": "To adopt multiple stray pets for domestic care"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. If a country, enterprise, or person 'goes to the dogs', it degenerates into a state of ruin, decay, or complete failure.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1243",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go to the wall**",
+    "options": {
+      "A": "To suffer defeat, financial bankruptcy, or complete ruin",
+      "B": "To paint masonry walls with defensive waterproof coatings",
+      "C": "To lean against a corridor partition while resting",
+      "D": "To construct perimeter brick fencing around a home"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go to the wall' means to be driven into ruin, destroyed, or forced into commercial insolvency.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1244",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go to rack and ruin**",
+    "options": {
+      "A": "To fall into a state of utter decay, dilapidation, and complete neglect",
+      "B": "To suffer a sudden structural collapse during an earthquake",
+      "C": "To misplace tools on a workshop storage rack",
+      "D": "To demolish condemned buildings under municipal orders"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'go to rack and ruin' means to become dilapidated, wrecked, and ruined through long neglect.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1245",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Go up in smoke**",
+    "options": {
+      "A": "To burn dry timber in a designated outdoor fire pit",
+      "B": "To trigger an industrial building smoke sensor alarm",
+      "C": "To come to nothing; be utterly destroyed, ruined, or wasted",
+      "D": "To consume tobacco cigarettes in an enclosed space"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. When plans, hopes, or efforts 'go up in smoke', they are completely destroyed, wasted, or yield zero results.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1246",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Golden handshake**",
+    "options": {
+      "A": "A lavish severance payment or financial compensation given on retirement or redundancy",
+      "B": "A warm greeting delivered by a high-ranking state official",
+      "C": "A valuable piece of gold jewelry given as a wedding token",
+      "D": "A lucrative commercial contract signed between business titans"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'golden handshake' is a substantial sum of money given to an executive or employee when they leave their job or retire.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1247",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Golden mean**",
+    "options": {
+      "A": "A stingy person who hoards gold and wealth",
+      "B": "The ideal moderate middle course between two extremes",
+      "C": "A mathematical average calculated in economic balance sheets",
+      "D": "An extremely profitable business enterprise strategy"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. The 'golden mean' is the desirable middle ground or balance between two extremes (excess and deficiency).",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1248",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Good Samaritan**",
+    "options": {
+      "A": "A generous, compassionate person who helps a stranger in distress selflessly",
+      "B": "A wealthy merchant who provides loans at low interest rates",
+      "C": "A religious pilgrim traveling between historic holy sites",
+      "D": "An elected government representative serving rural constituencies"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'Good Samaritan' is a charitable individual who steps forward voluntarily to aid someone in need without seeking a reward.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1249",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Good turn**",
+    "options": {
+      "A": "A sharp, accurate steering turn executed by a racing driver",
+      "B": "A helpful, kind, and beneficial action done for someone else",
+      "C": "A sudden positive reversal of financial fortune in trading",
+      "D": "A rhythmic rotation performed during a dance recital"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'good turn' is an act of kindness or helpful service rendered to another person.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1250",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Grace mark**",
+    "options": {
+      "A": "A decorative calligraphic symbol placed on certificates",
+      "B": "Extra concessionary score marks awarded to help a student pass an examination",
+      "C": "A penalty deducted for submitting academic work late",
+      "D": "A distinguished rating of excellence in athletic performance"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'grace mark' refers to extra marks granted leniently or by concession to allow an examinee to achieve a passing standard.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

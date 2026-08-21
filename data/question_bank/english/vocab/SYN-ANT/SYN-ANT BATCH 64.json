@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_3151",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RHETORIC**",
+    "options": {
+      "A": "Oratory",
+      "B": "Silence",
+      "C": "Quiet",
+      "D": "Inarticulacy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rhetoric' refers to the art of effective or persuasive speaking or writing. 'Oratory', 'eloquence', or 'expression' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3152",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RHETORIC**",
+    "options": {
+      "A": "Oratory",
+      "B": "Eloquence",
+      "C": "Silence",
+      "D": "Expression"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rhetoric' is persuasive speaking. 'Silence', 'quiet', or 'inarticulacy' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3153",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RIDICULE**",
+    "options": {
+      "A": "Derision",
+      "B": "Praise",
+      "C": "Approval",
+      "D": "Applause"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ridicule' means the subjection of someone or something to contemptuous and dismissive language or behavior. 'Derision', 'mockery', or 'taunt' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3154",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RIDICULE**",
+    "options": {
+      "A": "Derision",
+      "B": "Mockery",
+      "C": "Praise",
+      "D": "Taunt"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ridicule' means mockery. 'Praise', 'approval', or 'applause' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3155",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RIFE**",
+    "options": {
+      "A": "Widespread",
+      "B": "Scarce",
+      "C": "Rare",
+      "D": "Limited"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rife' means (especially of something undesirable or harmful) of common occurrence; widespread. 'Widespread', 'prevalent', or 'rampant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3156",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RIFE**",
+    "options": {
+      "A": "Widespread",
+      "B": "Prevalent",
+      "C": "Scarce",
+      "D": "Rampant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rife' means widespread. 'Scarce', 'rare', or 'limited' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3157",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RIGID**",
+    "options": {
+      "A": "Stiff",
+      "B": "Flexible",
+      "C": "Pliable",
+      "D": "Yielding"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rigid' means unable to bend or be forced out of shape; not flexible. 'Stiff', 'inflexible', or 'hard' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3158",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RIGID**",
+    "options": {
+      "A": "Stiff",
+      "B": "Inflexible",
+      "C": "Flexible",
+      "D": "Hard"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rigid' means stiff. 'Flexible', 'pliable', or 'yielding' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3159",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RIGOROUS**",
+    "options": {
+      "A": "Strict",
+      "B": "Lax",
+      "C": "Careless",
+      "D": "Slack"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rigorous' means extremely thorough, exhaustive, or accurate; strictly applied. 'Strict', 'stringent', or 'severe' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3160",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RIGOROUS**",
+    "options": {
+      "A": "Strict",
+      "B": "Stringent",
+      "C": "Lax",
+      "D": "Severe"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rigorous' means strict. 'Lax', 'careless', or 'slack' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3161",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ROBUST**",
+    "options": {
+      "A": "Strong",
+      "B": "Weak",
+      "C": "Frail",
+      "D": "Fragile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Robust' means strong and healthy; vigorous. 'Strong', 'sturdy', or 'vigorous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3162",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ROBUST**",
+    "options": {
+      "A": "Strong",
+      "B": "Sturdy",
+      "C": "Weak",
+      "D": "Vigorous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Robust' means strong. 'Weak', 'frail', or 'fragile' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3163",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**ROUTINE**",
+    "options": {
+      "A": "Customary",
+      "B": "Unusual",
+      "C": "Extraordinary",
+      "D": "Rare"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Routine' means a sequence of actions regularly followed. 'Customary', 'habitual', or 'standard' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3164",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**ROUTINE**",
+    "options": {
+      "A": "Customary",
+      "B": "Habitual",
+      "C": "Unusual",
+      "D": "Standard"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Routine' means habitual. 'Unusual', 'extraordinary', or 'rare' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3165",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RUDE**",
+    "options": {
+      "A": "Impolite",
+      "B": "Polite",
+      "C": "Courteous",
+      "D": "Civil"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rude' means offensively polite-lacking; discourteous. 'Impolite', 'insolent', or 'discourteous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3166",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RUDE**",
+    "options": {
+      "A": "Impolite",
+      "B": "Insolent",
+      "C": "Polite",
+      "D": "Discourteous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rude' means impolite. 'Polite', 'courteous', or 'civil' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3167",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RUDIMENTARY**",
+    "options": {
+      "A": "Basic",
+      "B": "Advanced",
+      "C": "Complex",
+      "D": "Sophisticated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rudimentary' means involving or limited to basic principles. 'Basic', 'elementary', or 'fundamental' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3168",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RUDIMENTARY**",
+    "options": {
+      "A": "Basic",
+      "B": "Elementary",
+      "C": "Advanced",
+      "D": "Fundamental"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rudimentary' means basic. 'Advanced', 'complex', or 'sophisticated' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3169",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RUE**",
+    "options": {
+      "A": "Regret",
+      "B": "Praise",
+      "C": "Celebrate",
+      "D": "Rejoice"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rue' means bitterly regret (an event or action). 'Regret', 'repent', or 'bemoan' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3170",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RUE**",
+    "options": {
+      "A": "Regret",
+      "B": "Repent",
+      "C": "Celebrate",
+      "D": "Bemoan"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rue' means to regret. 'Celebrate', 'rejoice', or 'welcome' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3171",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RUFFIAN**",
+    "options": {
+      "A": "Bully",
+      "B": "Gentleman",
+      "C": "Benefactor",
+      "D": "Saint"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ruffian' refers to a violent person, especially one involved in crime. 'Bully', 'thug', or 'gangster' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3172",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RUFFIAN**",
+    "options": {
+      "A": "Bully",
+      "B": "Thug",
+      "C": "Gentleman",
+      "D": "Gangster"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ruffian' is a violent person. 'Gentleman', 'benefactor', or 'saint' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3173",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RUMINATE**",
+    "options": {
+      "A": "Ponder",
+      "B": "Ignore",
+      "C": "Disregard",
+      "D": "Neglect"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Ruminate' means to think deeply about something. 'Ponder', 'meditate', or 'contemplate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3174",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RUMINATE**",
+    "options": {
+      "A": "Ponder",
+      "B": "Meditate",
+      "C": "Ignore",
+      "D": "Contemplate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Ruminate' means to think deeply. 'Ignore', 'disregard', or 'neglect' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3175",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**RURBAN**",
+    "options": {
+      "A": "Semi-urban",
+      "B": "Rural",
+      "C": "Urban",
+      "D": "Metropolitan"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rurban' refers to characteristics of both rural and urban areas. 'Semi-urban' or 'suburban' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3176",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**RURBAN**",
+    "options": {
+      "A": "Semi-urban",
+      "B": "Suburban",
+      "C": "Purely rural",
+      "D": "Mixed"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Rurban' mixes rural and urban traits. 'Purely rural' or 'exclusively urban' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3177",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SABOTAGE**",
+    "options": {
+      "A": "Vandalism",
+      "B": "Protection",
+      "C": "Safeguard",
+      "D": "Defense"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sabotage' refers to the deliberate destruction of something. 'Vandalism', 'destruction', or 'damage' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3178",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SABOTAGE**",
+    "options": {
+      "A": "Vandalism",
+      "B": "Destruction",
+      "C": "Protection",
+      "D": "Damage"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sabotage' is deliberate damage. 'Protection', 'safeguard', or 'defense' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3179",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SACCHARINE**",
+    "options": {
+      "A": "Cloying",
+      "B": "Bitter",
+      "C": "Sour",
+      "D": "Acidic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Saccharine' means excessively sweet or sentimental. 'Cloying', 'mawkish', or 'syrupy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3180",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SACCHARINE**",
+    "options": {
+      "A": "Cloying",
+      "B": "Mawkish",
+      "C": "Bitter",
+      "D": "Syrupy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Saccharine' means overly sweet. 'Bitter', 'sour', or 'acidic' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3181",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SACRIFICE**",
+    "options": {
+      "A": "Forgo",
+      "B": "Keep",
+      "C": "Retain",
+      "D": "Hold"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sacrifice' means to give up (something valued) for the sake of other considerations. 'Forgo', 'surrender', or 'yield' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3182",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SACRIFICE**",
+    "options": {
+      "A": "Forgo",
+      "B": "Surrender",
+      "C": "Keep",
+      "D": "Yield"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sacrifice' means to give up. 'Keep', 'retain', or 'hold' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3183",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SACRILEGE**",
+    "options": {
+      "A": "Desecration",
+      "B": "Reverence",
+      "C": "Worship",
+      "D": "Veneration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sacrilege' refers to violation or misuse of what is regarded as sacred. 'Desecration', 'profanity', or 'impiety' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3184",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SACRILEGE**",
+    "options": {
+      "A": "Desecration",
+      "B": "Profanity",
+      "C": "Reverence",
+      "D": "Impiety"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sacrilege' is disrespect to sacred things. 'Reverence', 'worship', or 'veneration' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3185",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SAGACIOUS**",
+    "options": {
+      "A": "Wise",
+      "B": "Foolish",
+      "C": "Stupid",
+      "D": "Silly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sagacious' means having or showing keen mental discernment and good judgment; wise. 'Wise', 'shrewd', or 'astute' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3186",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SAGACIOUS**",
+    "options": {
+      "A": "Wise",
+      "B": "Shrewd",
+      "C": "Foolish",
+      "D": "Astute"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sagacious' means wise. 'Foolish', 'stupid', or 'silly' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3187",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SALIENT**",
+    "options": {
+      "A": "Prominent",
+      "B": "Inconspicuous",
+      "C": "Hidden",
+      "D": "Unnoticeable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Salient' means most noticeable or important. 'Prominent', 'striking', or 'noticeable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3188",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SALIENT**",
+    "options": {
+      "A": "Prominent",
+      "B": "Striking",
+      "C": "Inconspicuous",
+      "D": "Noticeable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Salient' means prominent. 'Inconspicuous', 'hidden', or 'unnoticeable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3189",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SALUBRIOUS**",
+    "options": {
+      "A": "Healthy",
+      "B": "Unhealthy",
+      "C": "Noxious",
+      "D": "Harmful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Salubrious' means health-giving; healthy. 'Healthy', 'wholesome', or 'beneficial' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3190",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SALUBRIOUS**",
+    "options": {
+      "A": "Healthy",
+      "B": "Wholesome",
+      "C": "Unhealthy",
+      "D": "Beneficial"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Salubrious' means healthy. 'Unhealthy', 'noxious', or 'harmful' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3191",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SALUTARY**",
+    "options": {
+      "A": "Beneficial",
+      "B": "Harmful",
+      "C": "Deltarious",
+      "D": "Noxious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Salutary' means (especially of an unwelcome thing) producing good effects; beneficial. 'Beneficial', 'advantageous', or 'helpful' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3192",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SALUTARY**",
+    "options": {
+      "A": "Beneficial",
+      "B": "Advantageous",
+      "C": "Harmful",
+      "D": "Helpful"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Salutary' means beneficial. 'Harmful', 'deleterious', or 'noxious' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3193",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SANCTIMONIOUS**",
+    "options": {
+      "A": "Self-righteous",
+      "B": "Humble",
+      "C": "Modest",
+      "D": "Sincere"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sanctimonious' means making a show of being morally superior to other people. 'Self-righteous', 'hypocritical', or 'pietistic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3194",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SANCTIMONIOUS**",
+    "options": {
+      "A": "Self-righteous",
+      "B": "Hypocritical",
+      "C": "Humble",
+      "D": "Pietistic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sanctimonious' means self-righteous. 'Humble', 'modest', or 'sincere' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3195",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SANCTION**",
+    "options": {
+      "A": "Approval",
+      "B": "Prohibition",
+      "C": "Ban",
+      "D": "Veto"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sanction' refers to official permission or approval for an action. 'Approval', 'authorization', or 'endorsement' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3196",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SANCTION**",
+    "options": {
+      "A": "Approval",
+      "B": "Authorization",
+      "C": "Prohibition",
+      "D": "Endorsement"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sanction' means approval. 'Prohibition', 'ban', or 'veto' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3197",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SANGUINE**",
+    "options": {
+      "A": "Optimistic",
+      "B": "Pessimistic",
+      "C": "Gloomy",
+      "D": "Hopeless"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sanguine' means optimistic or positive, especially in an apparently bad or difficult situation. 'Optimistic', 'hopeful', or 'confident' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3198",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SANGUINE**",
+    "options": {
+      "A": "Optimistic",
+      "B": "Hopeful",
+      "C": "Pessimistic",
+      "D": "Confident"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sanguine' means optimistic. 'Pessimistic', 'gloomy', or 'hopeless' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3199",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SARDONIC**",
+    "options": {
+      "A": "Mocking",
+      "B": "Sincere",
+      "C": "Earnest",
+      "D": "Genuine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sardonic' means grimly mocking or cynical. 'Mocking', 'satirical', or 'ironic' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3200",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SARDONIC**",
+    "options": {
+      "A": "Mocking",
+      "B": "Satirical",
+      "C": "Sincere",
+      "D": "Ironic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sardonic' means mocking. 'Sincere', 'earnest', or 'genuine' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

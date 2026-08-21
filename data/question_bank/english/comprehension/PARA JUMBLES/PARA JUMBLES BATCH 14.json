@@ -1,0 +1,174 @@
+[
+  {
+    "id": "ENG_PJ_652",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1911, Dutch physicist Heike Kamerlingh Onnes liquefied helium for the first time in history.",
+    "jumbled_sentences": {
+      "P": "Reaching temperatures near absolute zero, he began investigating the electrical properties of metals at cryogenic levels.",
+      "Q": "He discovered that the electrical resistance of solid mercury dropped abruptly to zero at 4.2 Kelvin.",
+      "R": "This sudden transition marked the experimental discovery of superconductivity.",
+      "S": "Subsequent research showed that superconducting materials could expel magnetic fields entirely, a phenomenon known as the Meissner effect."
+    },
+    "fixed_end": "6: Kamerlingh Onnes received the Nobel Prize in Physics in 1913 for his pioneering low-temperature investigations.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces liquid helium. Sentence P describes reaching near absolute zero and investigating metals. Sentence Q notes resistance dropping to zero in mercury. Sentence R names this phenomenon superconductivity. Sentence S mentions the Meissner effect, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_653",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, pediatricians advocate for routine vitamin supplementation in vulnerable infant populations.",
+      "B": "Vitamin D deficiency impairs intestinal calcium absorption, leading to defective bone mineralization.",
+      "C": "In growing children, inadequate bone mineralization manifests as the skeletal deformity known as rickets.",
+      "D": "Exclusively breastfed infants with minimal sunlight exposure face the highest risk of developing nutritional rickets."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "D-B-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "B",
+    "rationale": "Let's check logical order: D introduces breastfed infants with minimal sunlight facing rickets risk. B explains Vitamin D deficiency impairing calcium absorption. C notes bone mineralization failure manifests as rickets. A provides the pediatrician vitamin supplementation policy ('Consequently...'). Thus D-B-C-A is correct."
+  },
+  {
+    "id": "ENG_PJ_654",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1964, physicists Murray Gell-Mann and George Zweig independently proposed the quark model of hadron structure.",
+    "jumbled_sentences": {
+      "P": "They hypothesized that strongly interacting particles like protons and neutrons were composed of smaller fractional-charge constituents.",
+      "Q": "Gell-Mann famously named these theoretical subatomic entities 'quarks' inspired by a line in James Joyce's *Finnegans Wake*.",
+      "R": "Initial skepticism prevailed because isolated quarks could never be observed directly due to color confinement.",
+      "S": "Later deep inelastic scattering experiments at particle accelerators triumphantly confirmed the physical reality of quarks."
+    },
+    "fixed_end": "6: The quark model became an essential pillar of the Standard Model of particle physics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Gell-Mann and Zweig. Sentence P proposes fractional-charge constituents of protons/neutrons. Sentence Q notes naming them quarks. Sentence R mentions initial skepticism due to color confinement. Sentence S highlights later experimental confirmation, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_655",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This thermal regulation prevents extreme temperature volatility across marine coastal ecosystems.",
+      "B": "Liquid water exhibits an exceptionally high specific heat capacity compared to terrestrial stone and soil.",
+      "C": "During summer, large bodies of water absorb massive amounts of solar radiation with minimal surface heating.",
+      "D": "Throughout winter months, oceans slowly radiate this stored thermal energy back into the atmosphere."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces water's high specific heat capacity. Sentence C describes summer solar absorption. Sentence D details winter heat release. Sentence A concludes with the coastal ecosystem thermal regulation benefit."
+  },
+  {
+    "id": "ENG_PJ_656",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1928, British physicist Paul Dirac combined quantum mechanics and special relativity into a unified wave equation.",
+    "jumbled_sentences": {
+      "P": "The Dirac equation successfully described relativistic electrons while naturally incorporating intrinsic quantum spin.",
+      "Q": "However, the mathematical formula yielded troubling negative-energy solutions that puzzled researchers.",
+      "R": "Dirac boldly interpreted these solutions as predicting the existence of undiscovered antimatter counterparts.",
+      "S": "Carl Anderson's subsequent detection of positrons in cosmic rays verified Dirac's theoretical antimatter prediction."
+    },
+    "fixed_end": "6: Dirac's relativistic quantum mechanics reshaped modern physics, predicting the fundamental symmetry of matter and antimatter.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Dirac's wave equation. Sentence P describes its success with relativistic electrons and spin. Sentence Q notes the negative-energy puzzle. Sentence R interprets them as antimatter. Sentence S mentions Anderson's positron verification, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_657",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, epidemiologists recommend annual influenza vaccination campaigns to prevent regional outbreaks.",
+      "B": "Influenza viruses undergo continuous antigenic drift via minor point mutations in surface hemagglutinin proteins.",
+      "C": "These structural surface mutations allow emerging viral strains to evade preexisting human immune system memory.",
+      "D": "Annual population immunity wanes, leaving vulnerable demographic cohorts susceptible to severe respiratory infection."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces antigenic drift via hemagglutinin mutations. Sentence C explains mutations evading immune memory. Sentence D notes waning population immunity leaving people vulnerable. Sentence A provides the epidemiological vaccination recommendation ('Consequently...')."
+  },
+  {
+    "id": "ENG_PJ_658",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1896, Dutch physicist Pieter Zeeman discovered that spectral lines split when light sources are placed in a magnetic field.",
+    "jumbled_sentences": {
+      "P": "He observed that exposing sodium vapor flames to an intense electromagnet caused single spectral lines to fracture.",
+      "Q": "This phenomenon, known as the Zeeman effect, provided direct evidence of the magnetic moments of electrons.",
+      "R": "Hendrik Lorentz provided the theoretical explanation, showing how orbital electrons interact with magnetic fields.",
+      "S": "Their combined theoretical and experimental work earned them the 1902 Nobel Prize in Physics."
+    },
+    "fixed_end": "6: The Zeeman effect remains a vital diagnostic tool for measuring magnetic fields in stellar atmospheres and sunspots.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Zeeman's discovery. Sentence P describes exposing sodium flames to an electromagnet. Sentence Q introduces the Zeeman effect and electron magnetic moments. Sentence R notes Lorentz's theoretical explanation. Sentence S mentions their Nobel Prize, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_659",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This efficient cellular transport maximizes nutrient absorption across the small intestinal brush border.",
+      "B": "Ingested complex proteins undergo extensive enzymatic breakdown into free amino acids and dipeptides.",
+      "C": "Gastric pepsin and pancreatic trypsin systematically cleave internal peptide bonds within protein chains.",
+      "D": "Specific apical membrane transport symporters actively pump these free amino acids into enterocytes."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Let's check logical order: B introduces protein breakdown into amino acids. C specifies gastric pepsin and pancreatic trypsin cleaving peptide bonds. D describes membrane symporters pumping amino acids into enterocytes. A highlights the nutrient absorption benefit ('This efficient cellular transport...'). Thus B-C-D-A is correct."
+  },
+  {
+    "id": "ENG_PJ_660",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1911, Ernest Rutherford supervised the gold foil experiment conducted by Geiger and Marsden.",
+    "jumbled_sentences": {
+      "P": "They directed high-velocity alpha particles at an incredibly thin sheet of pure gold foil.",
+      "Q": "Unexpectedly, a tiny fraction of particles deflected at large angles or bounced directly backward.",
+      "R": "Rutherford concluded that the atomic mass must be concentrated in a minuscule, positively charged center.",
+      "S": "This finding demolished the prevailing 'plum pudding' model of the atom as a diffuse cloud of charge."
+    },
+    "fixed_end": "6: Rutherford's nuclear model set the stage for Bohr's quantum model of atomic structure.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces the experiment. Sentence P describes the setup (alpha particles and gold). Sentence Q notes the surprising large-angle deflections. Sentence R explains Rutherford's conclusion of a central nucleus. Sentence S describes the refutation of the 'plum pudding' model, leading to Statement 6."
+  }
+]

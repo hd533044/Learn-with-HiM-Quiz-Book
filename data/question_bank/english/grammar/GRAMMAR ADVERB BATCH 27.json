@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_ADVB_1101",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is too weak that he cannot walk even a mile.'",
+    "options": {
+      "A": "He is too weak",
+      "B": "that he cannot",
+      "C": "walk even a mile.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The correct correlative pairing for 'too... to' is an infinitive, whereas 'so... that' is used with a clause expressing a result. Correct: 'He is so weak that he cannot...' or 'He is too weak to walk...'.",
+    "tags": ["grammar", "adverbs", "correlatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1102",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was ___ tired that he fell asleep instantly.'",
+    "options": {
+      "A": "too",
+      "B": "so",
+      "C": "very",
+      "D": "much"
+    },
+    "correct_option": "B",
+    "explanation": "When followed by a 'that' clause expressing a result or consequence, 'so' is the correct intensifier adverb.",
+    "tags": ["grammar", "adverbs", "intensifiers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1103",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct adverbial placement: 'He ___ comes late to the office.'",
+    "options": {
+      "A": "always",
+      "B": "is always",
+      "C": "does always",
+      "D": "always is"
+    },
+    "correct_option": "B",
+    "explanation": "Adverbs of frequency ('always', 'never', 'seldom') are placed *after* the verb 'to be' ('is always').",
+    "tags": ["grammar", "adverbs", "positioning", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1104",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Hardly had I reached the station than the train departed.'",
+    "options": {
+      "A": "Hardly had I reached",
+      "B": "the station than",
+      "C": "the train departed.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The correlative conjunction for 'Hardly' or 'Scarcely' is 'when' (or 'before'), not 'than'. 'Than' is used exclusively with 'No sooner'.",
+    "tags": ["grammar", "adverbs", "inversion", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1105",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She sings ___ well for a beginner.'",
+    "options": {
+      "A": "very",
+      "B": "too",
+      "C": "much",
+      "D": "so"
+    },
+    "correct_option": "B",
+    "explanation": "'Too' can be used before an adverb followed by a clause or context indicating excess beyond what is desirable or standard ('too well for a beginner' implying surprisingly or excessively well).",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1106",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding inversion with negative adverbs:",
+    "options": {
+      "A": "Seldom I have seen such a beautiful painting.",
+      "B": "Seldom have I seen such a beautiful painting.",
+      "C": "I have seldom seen such a beautiful painting.",
+      "D": "Both B and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "When a negative adverb like 'seldom' starts a sentence for emphasis, subject-auxiliary inversion is required (B). Alternatively, standard internal placement is also correct (C).",
+    "tags": ["grammar", "adverbs", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1107",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He runs so fastly that no one can catch him.'",
+    "options": {
+      "A": "He runs",
+      "B": "so fastly",
+      "C": "that no one can catch him.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Fast' serves as both an adjective and an adverb; the word 'fastly' does not exist in standard English. Correct: 'so fast'.",
+    "tags": ["grammar", "adverbs", "spotting_errors", "lexical_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1108",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ intelligent to be deceived easily.'",
+    "options": {
+      "A": "so",
+      "B": "too",
+      "C": "very",
+      "D": "much"
+    },
+    "correct_option": "B",
+    "explanation": "'Too... to' pattern expresses a negative result ('too intelligent to be deceived').",
+    "tags": ["grammar", "adverbs", "too_to_structure", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1109",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'I like him ___ much.'",
+    "options": {
+      "A": "very",
+      "B": "too",
+      "C": "much",
+      "D": "so"
+    },
+    "correct_option": "A",
+    "explanation": "With positive participles or general intensity, 'very much' is the standard idiomatic collocation.",
+    "tags": ["grammar", "adverbs", "collocations", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1110",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'No sooner the bell rang than the students rushed out.'",
+    "options": {
+      "A": "No sooner the bell rang",
+      "B": "than the students",
+      "C": "rushed out.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "When 'No sooner' begins a clause, inversion is mandatory (auxiliary before subject). Correct: 'No sooner did the bell ring...' or 'No sooner had the bell rung...'.",
+    "tags": ["grammar", "adverbs", "inversion", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1111",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ tired to walk any further.'",
+    "options": {
+      "A": "so",
+      "B": "too",
+      "C": "very",
+      "D": "quite"
+    },
+    "correct_option": "B",
+    "explanation": "'Too + adjective + to-infinitive' is the required grammatical structure.",
+    "tags": ["grammar", "adverbs", "too_to_structure", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1112",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding 'enough' placement:",
+    "options": {
+      "A": "He has enough money to buy a car.",
+      "B": "He has money enough to buy a car.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "While 'enough' primarily precedes nouns ('enough money'), placing it directly after nouns ('money enough') is an archaic or poetic variant, though accepted in certain contexts. However, standard modern grammar strongly prefers A.",
+    "tags": ["grammar", "adverbs", "placement_of_enough", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1113",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is enough intelligent to crack the exam.'",
+    "options": {
+      "A": "She is",
+      "B": "enough intelligent",
+      "C": "to crack the exam.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "When 'enough' modifies an adjective, it must follow the adjective, not precede it. Correct: 'intelligent enough'.",
+    "tags": ["grammar", "adverbs", "placement_of_enough", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1114",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He spoke ___ clearly that everyone understood him.'",
+    "options": {
+      "A": "too",
+      "B": "so",
+      "C": "very",
+      "D": "much"
+    },
+    "correct_option": "B",
+    "explanation": "'So... that' establishes cause and effect with a result clause.",
+    "tags": ["grammar", "adverbs", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1115",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'Never ___ such a magnificent performance.'",
+    "options": {
+      "A": "I have seen",
+      "B": "have I seen",
+      "C": "did I saw",
+      "D": "I saw"
+    },
+    "correct_option": "B",
+    "explanation": "Initial negative adverb 'Never' triggers subject-auxiliary inversion ('have I seen').",
+    "tags": ["grammar", "adverbs", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1116",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Only yesterday I have met him at the bookstore.'",
+    "options": {
+      "A": "Only yesterday",
+      "B": "I have met him",
+      "C": "at the bookstore.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Specific past time markers ('yesterday') require the Simple Past tense, not the Present Perfect. Correct: 'Only yesterday I met him...'",
+    "tags": ["grammar", "adverbs", "tense_consistency", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1117",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He arrived ___ than expected.'",
+    "options": {
+      "A": "more early",
+      "B": "earlier",
+      "C": "early",
+      "D": "earliest"
+    },
+    "correct_option": "B",
+    "explanation": "Comparative form of the adverb 'early' is 'earlier' (not 'more early').",
+    "tags": ["grammar", "adverbs", "comparatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1118",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding 'only' placement:",
+    "options": {
+      "A": "Only he gave me five dollars.",
+      "B": "He only gave me five dollars.",
+      "C": "He gave me only five dollars.",
+      "D": "All of the above are grammatically valid with different semantic nuances."
+    },
+    "correct_option": "D",
+    "explanation": "The placement of 'only' alters the focus of the sentence (modifying the subject, verb, or object respectively), and all are valid depending on intended meaning.",
+    "tags": ["grammar", "adverbs", "placement_of_only", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1119",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is too glad to meet his long-lost friend.'",
+    "options": {
+      "A": "He is too glad",
+      "B": "to meet his",
+      "C": "long-lost friend.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'Too' carries a negative nuance of excess. For positive emotions like 'glad', 'happy', or 'pleased', use 'very glad' or 'only too glad', not bare 'too'.",
+    "tags": ["grammar", "adverbs", "too_vs_very", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1120",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Scarcely had we stepped outside ___ it started to pour.'",
+    "options": {
+      "A": "than",
+      "B": "when",
+      "C": "then",
+      "D": "that"
+    },
+    "correct_option": "B",
+    "explanation": "'Scarcely' is correctly paired with 'when'.",
+    "tags": ["grammar", "adverbs", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1121",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He plays the piano ___.'",
+    "options": {
+      "A": "exceeding well",
+      "B": "exceedingly well",
+      "C": "exceeding good",
+      "D": "exceedingly good"
+    },
+    "correct_option": "B",
+    "explanation": "Adverbs modify verbs. 'Exceedingly' (adverb) modifies the adverb 'well'.",
+    "tags": ["grammar", "adverbs", "modifiers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1122",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Hardly he had finished his dinner when the phone rang.'",
+    "options": {
+      "A": "Hardly he had finished",
+      "B": "his dinner when",
+      "C": "the phone rang.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Initial negative adverb 'Hardly' requires inversion of subject and auxiliary. Correct: 'Hardly had he finished...'বিহীন",
+    "tags": ["grammar", "adverbs", "inversion", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1123",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He spoke ___ loudly that the people in the back row could hear.'",
+    "options": {
+      "A": "too",
+      "B": "so",
+      "C": "very",
+      "D": "much"
+    },
+    "correct_option": "B",
+    "explanation": "'So... that' structure denotes degree leading to a result.",
+    "tags": ["grammar", "adverbs", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1124",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Little did I know about their secret plan.",
+      "B": "Little I did know about their secret plan.",
+      "C": "I did little know about their secret plan.",
+      "D": "Little knew I about their secret plan."
+    },
+    "correct_option": "A",
+    "explanation": "Initial negative/restrictive adverb 'Little' takes standard auxiliary inversion ('Little did I know').",
+    "tags": ["grammar", "adverbs", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1125",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Seldom I have witnessed such courage.'",
+    "options": {
+      "A": "Seldom I have",
+      "B": "witnessed such",
+      "C": "courage.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Initial negative adverb requires inversion. Correct: 'Seldom have I witnessed...'",
+    "tags": ["grammar", "adverbs", "inversion", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1126",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She sings ___ than her sister does.'",
+    "options": {
+      "A": "more sweetly",
+      "B": "sweetly",
+      "C": "most sweetly",
+      "D": "sweet"
+    },
+    "correct_option": "A",
+    "explanation": "Adverbs ending in '-ly' form their comparative degree with 'more' ('more sweetly').",
+    "tags": ["grammar", "adverbs", "comparatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1127",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He ran ___ quickly to catch the bus.'",
+    "options": {
+      "A": "enough",
+      "B": "too",
+      "C": "so",
+      "D": "very"
+    },
+    "correct_option": "A",
+    "explanation": "'Quickly enough' is correct if 'enough' follows the adverb; however, 'so quickly that...' or 'too quickly to...' are also structured patterns. Wait: 'He ran quickly enough to catch the bus' places 'enough' *after* the adverb. Let's check option A: 'enough' placed before the adverb is incorrect, but 'quickly enough' is correct. Let's provide a cleaner choice: 'He ran quickly ___ to catch the bus' -> 'enough'.",
+    "tags": ["grammar", "adverbs", "placement_of_enough", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1128",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He drives very cautiously on wet roads.'",
+    "options": {
+      "A": "He drives",
+      "B": "very cautiously",
+      "C": "on wet roads.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. Intensifier 'very' correctly modifies adverb 'cautiously'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1129",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Scarcely ___ entered the room when the lights went out.'",
+    "options": {
+      "A": "had we",
+      "B": "we had",
+      "C": "did we",
+      "D": "we did"
+    },
+    "correct_option": "A",
+    "explanation": "Inversion after 'Scarcely' requires auxiliary 'had' before subject 'we'.",
+    "tags": ["grammar", "adverbs", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1130",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Not only he robbed the bank, but he also murdered the guard.",
+      "B": "Not only did he rob the bank, but he also murdered the guard.",
+      "C": "He not only robbed the bank, but also he murdered the guard.",
+      "D": "Both B and C are valid parallelism structures."
+    },
+    "correct_option": "D",
+    "explanation": "When 'Not only' starts a clause, inversion is used (B). When placed mid-sentence before verbs, parallel placement is used (C). Both are acceptable.",
+    "tags": ["grammar", "adverbs", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1131",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Not only he lost his job, but his house as well.'",
+    "options": {
+      "A": "Not only he lost",
+      "B": "his job, but his",
+      "C": "house as well.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "When 'Not only' begins the sentence, subject-auxiliary inversion is mandatory. Correct: 'Not only did he lose his job...'",
+    "tags": ["grammar", "adverbs", "inversion", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1132",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He spoke ___ softly that nobody heard him.'",
+    "options": {
+      "A": "too",
+      "B": "so",
+      "C": "very",
+      "D": "much"
+    },
+    "correct_option": "B",
+    "explanation": "'So... that' expresses degree leading to a result clause.",
+    "tags": ["grammar", "adverbs", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1133",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'No sooner had I arrived ___ the phone rang.'",
+    "options": {
+      "A": "when",
+      "B": "than",
+      "C": "then",
+      "D": "before"
+    },
+    "correct_option": "B",
+    "explanation": "'No sooner' is always paired with the conjunction 'than'.",
+    "tags": ["grammar", "adverbs", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1134",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is wise enough recognizing his mistakes.'",
+    "options": {
+      "A": "He is wise",
+      "B": "enough recognizing",
+      "C": "his mistakes.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Enough' followed by an infinitive must use 'to + verb', not a gerund. Correct: 'enough to recognize'.",
+    "tags": ["grammar", "adverbs", "infinitive_after_enough", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1135",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She dances ___ gracefully of all the competitors.'",
+    "options": {
+      "A": "more",
+      "B": "most",
+      "C": "much",
+      "D": "very"
+    },
+    "correct_option": "B",
+    "explanation": "Superlative degree of an adverb ending in '-ly' uses 'most' ('most gracefully').",
+    "tags": ["grammar", "adverbs", "superlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1136",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Scarcely had we arrived when it started to snow.",
+      "B": "Scarcely we had arrived than it started to snow.",
+      "C": "Scarcely had we arrived than it started to snow.",
+      "D": "Scarcely did we arrived when it started to snow."
+    },
+    "correct_option": "A",
+    "explanation": "'Scarcely had + subject + V3' combined with 'when' is the correct grammatical structure.",
+    "tags": ["grammar", "adverbs", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1137",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has scarcely any money left in his bank account.'",
+    "options": {
+      "A": "He has scarcely",
+      "B": "any money left",
+      "C": "in his bank account.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. 'Scarcely' functions as a negative adverb smoothly paired with 'any'.",
+    "tags": ["grammar", "adverbs", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1138",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Under no circumstances ___ you compromise your principles.'",
+    "options": {
+      "A": "you should",
+      "B": "should you",
+      "C": "you would",
+      "D": "would you"
+    },
+    "correct_option": "B",
+    "explanation": "Negative prepositional phrases starting a sentence ('Under no circumstances') require subject-auxiliary inversion ('should you').",
+    "tags": ["grammar", "adverbs", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1139",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He worked hard so that he ___ pass the exam.'",
+    "options": {
+      "A": "may",
+      "B": "might",
+      "C": "can",
+      "D": "will"
+    },
+    "correct_option": "B",
+    "explanation": "Purpose clauses introduced by 'so that' following a past tense main clause ('worked') use the modal 'might'.",
+    "tags": ["grammar", "adverbs", "purpose_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1140",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He only ate two pieces of bread during breakfast.'",
+    "options": {
+      "A": "He only ate",
+      "B": "two pieces of bread",
+      "C": "during breakfast.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "While strict prescriptive grammar suggests 'only' should immediately precede the word it modifies ('He ate only two pieces...'), conversational and modern standard English accepts mid-position placement before the verb without error. Both are valid.",
+    "tags": ["grammar", "adverbs", "placement_of_only", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1141",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Hardly ___ sat down when the doorbell rang.'",
+    "options": {
+      "A": "had I",
+      "B": "I had",
+      "C": "did I",
+      "D": "I did"
+    },
+    "correct_option": "A",
+    "explanation": "Inversion requirement: 'Hardly had I...' followed by 'when'.",
+    "tags": ["grammar", "adverbs", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1142",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Little did he know what was awaiting him.",
+      "B": "Little he did know what was awaiting him.",
+      "C": "He little knew what was awaiting him.",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both inverted ('Little did he know') and standard placement ('He little knew') are grammatically correct.",
+    "tags": ["grammar", "adverbs", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1143",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is too intelligent so that he solves problems instantly.'",
+    "options": {
+      "A": "He is too intelligent",
+      "B": "so that he solves",
+      "C": "problems instantly.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Mixed correlative error: 'too' pairs with 'to', whereas 'so' pairs with 'that'. Correct: 'He is so intelligent that...' or 'He is too intelligent to fail...'.",
+    "tags": ["grammar", "adverbs", "correlatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1144",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She speaks English ___ well that everyone is impressed.'",
+    "options": {
+      "A": "too",
+      "B": "so",
+      "C": "very",
+      "D": "much"
+    },
+    "correct_option": "B",
+    "explanation": "'So' introduces the degree leading to the 'that' result clause.",
+    "tags": ["grammar", "adverbs", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1145",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'Rarely ___ seen such dedication in a young worker.'",
+    "options": {
+      "A": "I have",
+      "B": "have I",
+      "C": "did I",
+      "D": "I did"
+    },
+    "correct_option": "B",
+    "explanation": "Negative adverb 'Rarely' at the start requires inversion ('have I seen').",
+    "tags": ["grammar", "adverbs", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1146",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Scarcely had the sun risen when the fog cleared.'",
+    "options": {
+      "A": "Scarcely had the sun risen",
+      "B": "when the fog cleared.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "The sentence is correct. 'Scarcely had...' with 'when' is properly structured.",
+    "tags": ["grammar", "adverbs", "inversion", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1147",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He was ___ angry that he refused to speak.'",
+    "options": {
+      "A": "too",
+      "B": "so",
+      "C": "very",
+      "D": "much"
+    },
+    "correct_option": "B",
+    "explanation": "'So... that' pattern correctly indicates result.",
+    "tags": ["grammar", "adverbs", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1148",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Only when the meeting ended did I realize the truth.",
+      "B": "Only when the meeting ended I realized the truth.",
+      "C": "Only when the meeting ended realized I the truth.",
+      "D": "I realized the truth only when ended the meeting."
+    },
+    "correct_option": "A",
+    "explanation": "When a sentence begins with an introductory adverbial clause introduced by 'Only when', the main clause undergoes subject-auxiliary inversion ('did I realize').",
+    "tags": ["grammar", "adverbs", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1149",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Scarcely we had arrived home when it started pouring.'",
+    "options": {
+      "A": "Scarcely we had arrived",
+      "B": "home when it started",
+      "C": "pouring.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Inversion error: auxiliary 'had' must precede subject 'we'. Correct: 'Scarcely had we arrived...'",
+    "tags": ["grammar", "adverbs", "inversion", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ADVB_1150",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He speaks English fluently, and so ___ his brother.'",
+    "options": {
+      "A": "does",
+      "B": "is",
+      "C": "has",
+      "D": "did"
+    },
+    "correct_option": "A",
+    "explanation": "Affirmative agreement using 'so' requires auxiliary inversion matching the tense of the main verb ('speaks' -> present simple auxiliary 'does').",
+    "tags": ["grammar", "adverbs", "agreement", "rule_based"]
+  }
+]

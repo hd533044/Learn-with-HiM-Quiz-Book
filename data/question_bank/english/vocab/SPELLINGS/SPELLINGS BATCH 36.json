@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_1751",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Idiosyncratic",
+      "B": "Idiosyncratik",
+      "C": "Ideosyncratic",
+      "D": "Idiosyncritick"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Idiosyncratic' - relating to idiosyncrasy; peculiar or individual; 'i-d-i-o-s-y-n-c-r-a-t-i-c'). Options B, C, and D alter vowel values or suffix endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1752",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Ignorance",
+      "B": "Illumination",
+      "C": "Imagination",
+      "D": "Immitate"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Imitate' (single 'm' - copy or mimic). Other options are correct: Ignorance (lack of knowledge), Illumination (lighting or clarification), Imagination (faculty of forming mental images).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1753",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Immaterial",
+      "B": "Imaterial",
+      "C": "Immateriall",
+      "D": "Immatherial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Immaterial' - unimportant under the circumstances; double 'm', double 'l'). Options B, C, and D drop a consonant or alter the prefix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1754",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Immobilize",
+      "B": "Immunize",
+      "C": "Impairment",
+      "D": "Impetuouss"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Impetuous' (ends in single 's' - acting quickly without thought). Other options are correct: Immobilize (prevent from moving), Immunize (make immune to infection), Impairment (weakening or damage).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1755",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Implacable",
+      "B": "Implacible",
+      "C": "Implecable",
+      "D": "Implacabtle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Implacable' - unable to be placated or appeased; ends in '-able'). Options B, C, and D alter the suffix vowel or insert extra letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1756",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Implication",
+      "B": "Importunate",
+      "C": "Imprecation",
+      "D": "Impredicament"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Predicament' (without the 'im-' prefix unless formulating a specific derivative context, making 'Predicament' the standard single term). Other options are correct: Implication (conclusion that can be drawn), Importunate (persistently demanding), Imprecation (a spoken curse).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1757",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Impregnable",
+      "B": "Impregnible",
+      "C": "Impregnabel",
+      "D": "Impregnabull"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Impregnable' - unable to be captured or broken into; ends in '-able'). Options B, C, and D alter suffix vowels or endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1758",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Impressive",
+      "B": "Improvisation",
+      "C": "Impunity",
+      "D": "Inadequte"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Inadequate' (spelled with '-ate', not '-ute' - lacking the quality or quantity required). Other options are correct: Impressive (evoking admiration), Improvisation (creating something without preparation), Impunity (exemption from punishment).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1759",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Inadvertence",
+      "B": "Inadvertance",
+      "C": "Inadvertense",
+      "D": "Inadvertencee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Inadvertence' - an inadvertent error or oversight; ends in '-ence'). Options B, C, and D alter suffix vowels or add letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1760",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Inalienable",
+      "B": "Inauguration",
+      "C": "Incalculable",
+      "D": "Incandesent"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Incandescent' (contains '-scent' - emitting light). Other options are correct: Inalienable (unable to be taken away), Inauguration (marking the beginning of office), Incalculable (too great to be calculated).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1761",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Incantation",
+      "B": "Incantasion",
+      "C": "Incantacion",
+      "D": "Incanterion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Incantation' - a series of words said as a magic spell; 'i-n-c-a-n-t-a-t-i-o-n'). Options B, C, and D alter suffix letters or internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1762",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Incapacitate",
+      "B": "Incarcerate",
+      "C": "Incantation",
+      "D": "Incenst"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Incense' (spelled 'i-n-c-e-n-s-e' - a gum producing a sweet smell when burned, or to make angry). Other options are correct: Incapacitate (deprive of strength or power), Incarcerate (imprison), Incantation (a magic spell).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1763",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Incentive",
+      "B": "Insentive",
+      "C": "Inzentive",
+      "D": "Incentiv"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Incentive' - a thing that motivates or encourages one to do something; 'i-n-c-e-n-t-i-v-e'). Options B, C, and D alter 'c' to 's' or 'z', or drop silent 'e'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1764",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Inception",
+      "B": "Incessant",
+      "C": "Inchiquin",
+      "D": "Inchoat"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Inchoate' (ends with 'e' - just begun and so not fully formed). Other options are correct: Inception (establishment or starting point), Incessant (continuing without pause), Inchiquin (proper noun/historical term).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1765",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Incompatible",
+      "B": "Incompatable",
+      "C": "Incompatibel",
+      "D": "Incompatibull"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Incompatible' - not able to exist or occur together harmoniously; ends in '-ible'). Options B, C, and D alter the suffix or ending.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1766",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Incompetent",
+      "B": "Incomprehensible",
+      "C": "Inconsequential",
+      "D": "Incorrigable"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Incorrigible' (spelled with '-igi-', not '-aga-' - not able to be changed or reformed). Other options are correct: Incompetent (not having necessary skills), Incomprehensible (not able to be understood), Inconsequential (insignificant).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1767",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Incredulous",
+      "B": "Incredulos",
+      "C": "Incredipulous",
+      "D": "Incredulouss"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Incredulous' - unwilling or unable to believe something; 'i-n-c-r-e-d-u-l-o-u-s'). Options B, C, and D drop vowels or alter the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1768",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Increment",
+      "B": "Incriminate",
+      "C": "Inculcate",
+      "D": "Incombent"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Incumbent' (spelled with '-be-', not '-bo-' - necessary as a duty or responsibility / current office holder). Other options are correct: Increment (regular increase), Incriminate (make someone appear guilty), Inculcate (instill an idea).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1769",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Incursion",
+      "B": "Incurshion",
+      "C": "Incursiun",
+      "D": "Incursian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Incursion' - an invasion or attack, especially a sudden or brief one; ends in '-sion'). Options B, C, and D alter suffix consonants or vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1770",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Indefatigable",
+      "B": "Indemnify",
+      "C": "Indentured",
+      "D": "Independant"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Independent' (ends in '-ent', not '-ant' - free from outside control). Other options are correct: Indefatigable (tireless), Indemnify (compensate for harm), Indentured (bound by contract).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1771",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Indicate",
+      "B": "Indickate",
+      "C": "Indicat",
+      "D": "Indycate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Indicate' - point out or show; 'i-n-d-i-c-a-t-e'). Options B, C, and D use phonetic or obsolete spelling forms.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1772",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Indifference",
+      "B": "Indigenous",
+      "C": "Indigent",
+      "D": "Indispensablee"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Indispensable' (ends in single 'e' - absolutely necessary). Other options are correct: Indifference (lack of interest), Indigenous (native), Indigent (poor/needy).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1773",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Indomitable",
+      "B": "Indometable",
+      "C": "Indomitible",
+      "D": "Indomatable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Indomitable' - impossible to subdue or defeat; ends in '-able'). Options B, C, and D alter internal vowels or the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1774",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Induce",
+      "B": "Indulgent",
+      "C": "Industrious",
+      "D": "Inertiaa"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Inertia' (ends in single 'a' - a tendency to do nothing or remain unchanged). Other options are correct: Induce (bring about or persuade), Indulgent (overly generous or lenient), Industrious (diligent and hard-working).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1775",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Infallible",
+      "B": "Infalleble",
+      "C": "Infallable",
+      "D": "Infalible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Infallible' - incapable of making mistakes or being wrong; double 'l', ends in '-ible'). Options B, C, and D alter the suffix or drop a 'l'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1776",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Infectious",
+      "B": "Inferior",
+      "C": "Infernal",
+      "D": "Infinitie"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Infinite' (ends in '-ite', not '-ie' - limitless or endless). Other options are correct: Infectious (likely to spread infection), Inferior (lower in rank or quality), Infernal (relating to the underworld).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1777",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Inflammable",
+      "B": "Inflamable",
+      "C": "Inflammabel",
+      "D": "Inflambl"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Inflammable' - easily set on fire; double 'm', ends in '-able'). Options B, C, and D drop 'm' or alter the suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1778",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Inflexibility",
+      "B": "Infliction",
+      "C": "Influential",
+      "D": "Infrinshment"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Infringement' (spelled with '-gen-', not '-nsh-' - the action of breaking the terms of a law/agreement). Other options are correct: Inflexibility (inability to bend or be changed), Infliction (causing of suffering), Influential (having great influence).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1779",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Infructuous",
+      "B": "Infructuouse",
+      "C": "Infructuous",
+      "D": "Infructuouss"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Infructuous' - unproductive or unsuccessful; 'i-n-f-r-u-c-t-u-o-u-s'). Options B, C, and D add extra letters or alter vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1780",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Ingenious",
+      "B": "Ingenuous",
+      "C": "Ingratiate",
+      "D": "Ingreediant"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ingredient' (spelled with '-die-', not '-eed-' - component part of a mixture). Other options are correct: Ingenious (clever and inventive), Ingenuous (innocent and unsuspecting), Ingratiate (bring oneself into favor with someone).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1781",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Inimical",
+      "B": "Inimicle",
+      "C": "Inimecal",
+      "D": "Inimicall"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Inimical' - tending to obstruct or harm; unfriendly; ends in '-ical'). Options B, C, and D alter the suffix or vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1782",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Inimitable",
+      "B": "Iniquitous",
+      "C": "Initiative",
+      "D": "Injuction"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Injunction' (contains 'c', 'i-n-j-u-n-c-t-i-o-n' - an authoritative warning or judicial order). Other options are correct: Inimitable (so good as to be impossible to copy), Iniquitous (grossly unfair), Initiative (the ability to assess and initiate things independently).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1783",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Inoculation",
+      "B": "Inocculation",
+      "C": "Innoculation",
+      "D": "Inoculasion"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Inoculation' - treatment to produce immunity; single 'n', single 'c'). Options B, C, and D improperly double 'n' or 'c'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1784",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Inordinate",
+      "B": "Inquest",
+      "C": "Inquisitive",
+      "D": "Insanioty"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Insanity' (ends in '-ity', not '-oty' - state of being mentally ill). Other options are correct: Inordinate (unusually or disproportionately large), Inquest (judicial inquiry to ascertain cause of death), Inquisitive (curious).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1785",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Insoluble",
+      "B": "Insolubile",
+      "C": "Insolubul",
+      "D": "Insolubal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Insoluble' - impossible to solve or dissolve; ends in '-uble'). Options B, C, and D alter the suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1786",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Insomnia",
+      "B": "Inspection",
+      "C": "Inspiration",
+      "D": "Instalation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Installation' (double 'l' - the action of installing something). Other options are correct: Insomnia (habitual sleeplessness), Inspection (careful examination), Inspiration (the process of being mentally stimulated).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1787",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Instigate",
+      "B": "Instigatt",
+      "C": "Instigatee",
+      "D": "Instigyte"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Instigate' - bring about or initiate an action/event; 'i-n-s-t-i-g-a-t-e'). Options B, C, and D alter terminal letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1788",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Institute",
+      "B": "Instrumental",
+      "C": "Insubordinate",
+      "D": "Insuficient"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Insufficient' (double 'f' - not enough). Other options are correct: Institute (set up or found an organization), Instrumental (serving as an instrument or means), Insubordinate (defiant of authority).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1789",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Insurgence",
+      "B": "Insurgance",
+      "C": "Insurganse",
+      "D": "Insurgencee"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Insurgence' - an uprising or revolt; ends in '-gence'). Options B, C, and D alter suffix vowels or add extra letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1790",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Insurmountable",
+      "B": "Insurrection",
+      "C": "Integrity",
+      "D": "Intelegence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Intelligence' (spelled with '-ige-', not '-ele-' - the ability to acquire and apply knowledge). Other options are correct: Insurmountable (too great to be overcome), Insurrection (a violent uprising), Integrity (the quality of being honest and morally upright).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1791",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Intelligentsia",
+      "B": "Inteligentsia",
+      "C": "Intelligentsia",
+      "D": "Intelligentsiah"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Intelligentsia' - intellectuals as a class; double 'l', double 'g', '-tsia'). Options B, C, and D drop consonants or alter endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1792",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Intemperate",
+      "B": "Intercession",
+      "C": "Interchangeable",
+      "D": "Interfereance"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Interference' (ends in '-ence', not '-ance' - the action of interfering). Other options are correct: Intemperate (having or showing a lack of self-control), Intercession (the action of intervening on behalf of another), Interchangeable (able to be interchanged).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1793",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Intermittent",
+      "B": "Intermitent",
+      "C": "Intermittent",
+      "D": "Intermittant"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Intermittent' - occurring at irregular intervals; double 't' twice, ends in '-ent'). Options B, C, and D drop 't' or change the suffix to '-ant'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1794",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Internal",
+      "B": "Interpose",
+      "C": "Interpretive",
+      "D": "Interogate"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Interrogate' (double 'r' - ask questions closely). Other options are correct: Internal (situated on the inside), Interpose (place between things), Interpretive (intended to provide an interpretation).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1795",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Interregnum",
+      "B": "Interegnum",
+      "C": "Interragnum",
+      "D": "Interregnom"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Interregnum' - a period when normal government is suspended; double 'r', 'i-n-t-e-r-r-e-g-n-u-m'). Options B, C, and D drop 'r' or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1796",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Intervention",
+      "B": "Interview",
+      "C": "Intestinal",
+      "D": "Intimidationn"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Intimidation' (ends in single 'n' - action of intimidating). Other options are correct: Intervention (action of intervening), Interview (a meeting for a consultation), Intestinal (relating to the intestine).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1797",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Intractable",
+      "B": "Intractible",
+      "C": "Intractabel",
+      "D": "Intractabull"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Intractable' - hard to control or deal with; ends in '-able'). Options B, C, and D alter suffix vowels or endings.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1798",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Intrepid",
+      "B": "Intricate",
+      "C": "Intrinsic",
+      "D": "Introduccion"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Introduction' (spelled with '-tion', not '-ccion' - bringing something into use). Other options are correct: Intrepid (fearless), Intricate (very complicated), Intrinsic (belonging naturally).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1799",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Intuition",
+      "B": "Intuision",
+      "C": "Intucion",
+      "D": "Intuitian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Intuition' - the ability to understand something instinctively; ends in '-ition'). Options B, C, and D alter the suffix consonants or vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_1800",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Inundate",
+      "B": "Inure",
+      "C": "Invaded",
+      "D": "Invalidite"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Invalidate' (ends in '-date', not '-dite' - make an argument or contract unsound or null). Other options are correct: Inundate (flood or overwhelm), Inure (accustom someone to something unpleasant), Invaded (entered forcefully).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

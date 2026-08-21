@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_MOD_351",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal verb: 'You ___ obey your parents.'",
+    "options": {
+      "A": "must",
+      "B": "can",
+      "C": "may",
+      "D": "might"
+    },
+    "correct_option": "A",
+    "explanation": "'Must' is used to express moral obligation or strong compulsion.",
+    "tags": ["grammar", "modals", "obligation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_352",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He can be able to finish the task on time.'",
+    "options": {
+      "A": "He can",
+      "B": "be able to",
+      "C": "finish the task",
+      "D": "on time."
+    },
+    "correct_option": "A",
+    "explanation": "Double ability error. 'Can' and 'be able to' mean the same thing. Either say 'He can finish' or 'He is able to finish'.",
+    "tags": ["grammar", "modals", "ability", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_353",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ I come in, sir?'",
+    "options": {
+      "A": "Can",
+      "B": "May",
+      "C": "Must",
+      "D": "Will"
+    },
+    "correct_option": "B",
+    "explanation": "'May' is the formal modal for requesting permission.",
+    "tags": ["grammar", "modals", "permission", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_354",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal for past ability: 'When I was young, I ___ run fast.'",
+    "options": {
+      "A": "can",
+      "B": "could",
+      "C": "may",
+      "D": "might"
+    },
+    "correct_option": "B",
+    "explanation": "'Could' is the past form of 'can' used to express past ability.",
+    "tags": ["grammar", "modals", "past_ability", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_355",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You should have gone to the doctor yesterday; you might avoid this infection.'",
+    "options": {
+      "A": "You should have gone",
+      "B": "to the doctor yesterday;",
+      "C": "you might avoid",
+      "D": "this infection."
+    },
+    "correct_option": "C",
+    "explanation": "When referring to a missed possibility in the past, use 'might have + past participle'. It should be 'might have avoided'.",
+    "tags": ["grammar", "modals", "past_possibility", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_356",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It is cloudy; it ___ rain today.'",
+    "options": {
+      "A": "must",
+      "B": "might",
+      "C": "would",
+      "D": "shall"
+    },
+    "correct_option": "B",
+    "explanation": "'Might' is used to express a remote or uncertain possibility.",
+    "tags": ["grammar", "modals", "possibility", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_357",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal for advice: 'You ___ exercise regularly to stay fit.'",
+    "options": {
+      "A": "must",
+      "B": "should",
+      "C": "could",
+      "D": "might"
+    },
+    "correct_option": "B",
+    "explanation": "'Should' is typically used to offer advice or a recommendation.",
+    "tags": ["grammar", "modals", "advice", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_358",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'We must to respect our national flag.'",
+    "options": {
+      "A": "We must",
+      "B": "to respect",
+      "C": "our national flag.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Modal verbs (must, can, should) are followed by the bare infinitive (no 'to').",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_359",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'You ___ pay your debts on time.'",
+    "options": {
+      "A": "shall",
+      "B": "ought to",
+      "C": "might",
+      "D": "can"
+    },
+    "correct_option": "B",
+    "explanation": "'Ought to' expresses moral obligation, especially regarding duty.",
+    "tags": ["grammar", "modals", "obligation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_360",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'I ___ swim when I was six.'",
+    "options": {
+      "A": "could",
+      "B": "was able to",
+      "C": "Both A and B",
+      "D": "can"
+    },
+    "correct_option": "C",
+    "explanation": "Both 'could' and 'was able to' correctly express past ability. 'Was able to' is often preferred for specific successful achievements in the past.",
+    "tags": ["grammar", "modals", "past_ability", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_361",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Would you mind to open the window?'",
+    "options": {
+      "A": "Would you mind",
+      "B": "to open",
+      "C": "the window?",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Would you mind' requires the gerund form: 'opening'.",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_362",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ you live long!'",
+    "options": {
+      "A": "Can",
+      "B": "May",
+      "C": "Must",
+      "D": "Might"
+    },
+    "correct_option": "B",
+    "explanation": "'May' is used to express wishes, prayers, or blessings.",
+    "tags": ["grammar", "modals", "wish", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_363",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal for prohibition: 'You ___ park your car here; it is a no-parking zone.'",
+    "options": {
+      "A": "don't have to",
+      "B": "must not",
+      "C": "might not",
+      "D": "could not"
+    },
+    "correct_option": "B",
+    "explanation": "'Must not' expresses strong prohibition.",
+    "tags": ["grammar", "modals", "prohibition", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_364",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You don't have to worry; I shall take care of everything.'",
+    "options": {
+      "A": "You don't have to",
+      "B": "worry;",
+      "C": "I shall take care",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Don't have to' correctly indicates lack of necessity.",
+    "tags": ["grammar", "modals", "necessity", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_365",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It ___ be true, but I doubt it.'",
+    "options": {
+      "A": "must",
+      "B": "can",
+      "C": "could",
+      "D": "shall"
+    },
+    "correct_option": "C",
+    "explanation": "'Could' indicates a possibility.",
+    "tags": ["grammar", "modals", "possibility", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_366",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'I ___ have reached on time if the train had not been delayed.'",
+    "options": {
+      "A": "would",
+      "B": "would have",
+      "C": "will",
+      "D": "should"
+    },
+    "correct_option": "B",
+    "explanation": "'Would have + past participle' expresses a counterfactual result in the past.",
+    "tags": ["grammar", "modals", "conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_367",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You might not to waste your time in useless activities.'",
+    "options": {
+      "A": "You might not",
+      "B": "to waste",
+      "C": "your time in",
+      "D": "useless activities."
+    },
+    "correct_option": "B",
+    "explanation": "Modals (like 'might') take the bare infinitive. It should be 'might not waste'.",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_368",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'You ___ finish the work before you leave.'",
+    "options": {
+      "A": "shall",
+      "B": "must",
+      "C": "can",
+      "D": "would"
+    },
+    "correct_option": "B",
+    "explanation": "'Must' conveys strong necessity or requirement.",
+    "tags": ["grammar", "modals", "necessity", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_369",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal for probability: 'They ___ be at home by now.'",
+    "options": {
+      "A": "must",
+      "B": "can",
+      "C": "shall",
+      "D": "dare"
+    },
+    "correct_option": "A",
+    "explanation": "'Must' is used here to indicate a logical conclusion based on evidence.",
+    "tags": ["grammar", "modals", "probability", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_370",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I used to playing cricket when I was a student.'",
+    "options": {
+      "A": "I used to",
+      "B": "playing",
+      "C": "cricket when",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Used to' expresses a past habit and is followed by the bare infinitive ('play').",
+    "tags": ["grammar", "modals", "past_habit", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_371",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ you please close the door?'",
+    "options": {
+      "A": "Might",
+      "B": "Would",
+      "C": "Must",
+      "D": "Shall"
+    },
+    "correct_option": "B",
+    "explanation": "'Would' or 'Could' are polite ways to make requests.",
+    "tags": ["grammar", "modals", "politeness", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_372",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'You ___ not worry about the results.'",
+    "options": {
+      "A": "need",
+      "B": "dare",
+      "C": "need to",
+      "D": "must to"
+    },
+    "correct_option": "A",
+    "explanation": "'Need' as a modal auxiliary takes 'not' directly ('need not worry').",
+    "tags": ["grammar", "modals", "necessity", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_373",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He dare not to speak to me like that.'",
+    "options": {
+      "A": "He dare not",
+      "B": "to speak",
+      "C": "to me",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Dare' as a modal auxiliary does not take 'to' ('dare not speak').",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_374",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'You ___ better see a doctor.'",
+    "options": {
+      "A": "would",
+      "B": "had",
+      "C": "should",
+      "D": "might"
+    },
+    "correct_option": "B",
+    "explanation": "The correct phrase is 'had better' followed by the bare infinitive.",
+    "tags": ["grammar", "modals", "idiomatic_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_375",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'We ___ have arrived earlier if we had started on time.'",
+    "options": {
+      "A": "could",
+      "B": "would",
+      "C": "must",
+      "D": "Both A and B"
+    },
+    "correct_option": "D",
+    "explanation": "Both 'could have' and 'would have' work to express past possibility/hypothetical result.",
+    "tags": ["grammar", "modals", "conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_376",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I shall rather die than to beg.'",
+    "options": {
+      "A": "I shall rather",
+      "B": "die",
+      "C": "than to beg.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Rather' is followed by the bare infinitive in both segments ('die than beg').",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_377",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She ___ speak five languages fluently.'",
+    "options": {
+      "A": "might",
+      "B": "can",
+      "C": "must",
+      "D": "should"
+    },
+    "correct_option": "B",
+    "explanation": "'Can' expresses present ability.",
+    "tags": ["grammar", "modals", "ability", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_378",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'The guests ___ be here by now.'",
+    "options": {
+      "A": "should",
+      "B": "might",
+      "C": "would",
+      "D": "could"
+    },
+    "correct_option": "A",
+    "explanation": "'Should' is used to express an expectation or probability.",
+    "tags": ["grammar", "modals", "probability", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_379",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I need not to worry about his reaction.'",
+    "options": {
+      "A": "I need not",
+      "B": "to worry",
+      "C": "about his reaction.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Need not' is a modal construction and takes the bare infinitive ('need not worry').",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_380",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ you like some tea?'",
+    "options": {
+      "A": "Will",
+      "B": "Would",
+      "C": "Shall",
+      "D": "Should"
+    },
+    "correct_option": "B",
+    "explanation": "'Would you like' is the standard polite form for offers.",
+    "tags": ["grammar", "modals", "politeness", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_381",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'You ___ take an umbrella; it might rain.'",
+    "options": {
+      "A": "must",
+      "B": "should",
+      "C": "can",
+      "D": "might"
+    },
+    "correct_option": "B",
+    "explanation": "'Should' provides a reasonable suggestion or advice.",
+    "tags": ["grammar", "modals", "advice", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_382",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He need not come here tomorrow.'",
+    "options": {
+      "A": "He need not",
+      "B": "come",
+      "C": "here tomorrow.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Correct usage: Modal 'need' does not take 's' and is followed by the bare infinitive.",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_383",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'They ___ to have finished by now.'",
+    "options": {
+      "A": "must",
+      "B": "ought",
+      "C": "should",
+      "D": "can"
+    },
+    "correct_option": "B",
+    "explanation": "'Ought' is the only modal here followed by 'to have'.",
+    "tags": ["grammar", "modals", "obligation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_384",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'I ___ rather work than sit idle.'",
+    "options": {
+      "A": "would",
+      "B": "had",
+      "C": "should",
+      "D": "shall"
+    },
+    "correct_option": "A",
+    "explanation": "'Would rather' is the standard fixed expression.",
+    "tags": ["grammar", "modals", "idiomatic_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_385",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He shall be punished for his misdeeds.'",
+    "options": {
+      "A": "He shall",
+      "B": "be punished",
+      "C": "for his misdeeds.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Shall' can be used for emphasis or legal/official compulsion in third-person.",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_386",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She ___ solve the riddle easily.'",
+    "options": {
+      "A": "could",
+      "B": "might",
+      "C": "must",
+      "D": "shall"
+    },
+    "correct_option": "A",
+    "explanation": "'Could' indicates general capability.",
+    "tags": ["grammar", "modals", "ability", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_387",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: '___ you like to join us for dinner?'",
+    "options": {
+      "A": "Will",
+      "B": "Would",
+      "C": "Shall",
+      "D": "Can"
+    },
+    "correct_option": "B",
+    "explanation": "'Would you like' is the polite invitation form.",
+    "tags": ["grammar", "modals", "politeness", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_388",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You must to hurry or you'll be late.'",
+    "options": {
+      "A": "You must to",
+      "B": "hurry or",
+      "C": "you'll be late.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'Must' is followed by the bare infinitive ('hurry').",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_389",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It ___ be him; he is out of town.'",
+    "options": {
+      "A": "must not",
+      "B": "cannot",
+      "C": "shall not",
+      "D": "will not"
+    },
+    "correct_option": "B",
+    "explanation": "'Cannot' expresses logical impossibility.",
+    "tags": ["grammar", "modals", "probability", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_390",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'You ___ leave now if you wish.'",
+    "options": {
+      "A": "must",
+      "B": "may",
+      "C": "shall",
+      "D": "will"
+    },
+    "correct_option": "B",
+    "explanation": "'May' is the correct modal for granting permission.",
+    "tags": ["grammar", "modals", "permission", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_391",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He needs not to go there.'",
+    "options": {
+      "A": "He needs not",
+      "B": "to go",
+      "C": "there.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "As a modal, 'need' does not take 's' and 'to'. Should be 'He need not go'.",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_392",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ that I were a bird!'",
+    "options": {
+      "A": "Would",
+      "B": "Should",
+      "C": "Could",
+      "D": "Might"
+    },
+    "correct_option": "A",
+    "explanation": "'Would that' is a formal structure for expressing a strong wish.",
+    "tags": ["grammar", "modals", "wish", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_393",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'We ___ follow the rules.'",
+    "options": {
+      "A": "shall",
+      "B": "ought to",
+      "C": "can",
+      "D": "might"
+    },
+    "correct_option": "B",
+    "explanation": "'Ought to' expresses moral obligation.",
+    "tags": ["grammar", "modals", "obligation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_394",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You might have helped him when he was in need.'",
+    "options": {
+      "A": "You might have helped",
+      "B": "him when he",
+      "C": "was in need.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Correct: 'might have helped' expresses past possibility or lost opportunity.",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_395",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She ___ have forgotten about the meeting.'",
+    "options": {
+      "A": "must",
+      "B": "must have",
+      "C": "must to",
+      "D": "must be"
+    },
+    "correct_option": "B",
+    "explanation": "'Must have + past participle' denotes a logical deduction about the past.",
+    "tags": ["grammar", "modals", "probability", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_396",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'I ___ rather you didn't smoke here.'",
+    "options": {
+      "A": "would",
+      "B": "had",
+      "C": "should",
+      "D": "will"
+    },
+    "correct_option": "A",
+    "explanation": "'Would rather' followed by a subject requires the past subjunctive form 'didn't'.",
+    "tags": ["grammar", "modals", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_397",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He may to win the race.'",
+    "options": {
+      "A": "He may to",
+      "B": "win the race.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "A",
+    "explanation": "'May' is followed by the bare infinitive ('may win').",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_398",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ you like some coffee?'",
+    "options": {
+      "A": "Shall",
+      "B": "Would",
+      "C": "Must",
+      "D": "Might"
+    },
+    "correct_option": "B",
+    "explanation": "'Would you like' is the standard offer form.",
+    "tags": ["grammar", "modals", "politeness", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_399",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct modal: 'They ___ have arrived by now.'",
+    "options": {
+      "A": "must",
+      "B": "would",
+      "C": "could",
+      "D": "Both A and C"
+    },
+    "correct_option": "D",
+    "explanation": "Both express possibilities/deductions regarding the past or present completion.",
+    "tags": ["grammar", "modals", "probability", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_MOD_400",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You need not to worry about it.'",
+    "options": {
+      "A": "You need not",
+      "B": "to worry",
+      "C": "about it.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Modal 'need' takes the bare infinitive ('need not worry').",
+    "tags": ["grammar", "modals", "usage", "spotting_errors"]
+  }
+]

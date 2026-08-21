@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_1051",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At the drop of a hat**",
+    "options": {
+      "A": "Catching a falling object before it touches the ground",
+      "B": "Instantly, immediately, and without the slightest hesitation",
+      "C": "Purchasing clothing accessories during a clearance sale",
+      "D": "Making a formal apology after an accidental slip"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'At the drop of a hat' means doing something immediately, promptly, or without any hesitation or pre-planning.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1052",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**At the eleventh hour**",
+    "options": {
+      "A": "During late-night shifts in a 24-hour manufacturing facility",
+      "B": "Precisely when an event is scheduled to start",
+      "C": "At the very last possible moment before it is too late",
+      "D": "Early in the morning before business hours begin"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'At the eleventh hour' refers to an action occurring at the last possible minute or near a decisive deadline.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1053",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Back to the drawing board**",
+    "options": {
+      "A": "Returning to a blueprint studio for formal training",
+      "B": "Scrapping a failed effort to start a plan or idea all over from scratch",
+      "C": "Designing complex mechanical machinery for mass production",
+      "D": "Displaying completed artwork in an exhibition gallery"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Back to the drawing board' means starting planning anew from the beginning because a previous attempt failed completely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1054",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bad blood**",
+    "options": {
+      "A": "Feelings of mutual hatred, ill will, hostility, or longstanding bitterness",
+      "B": "A severe medical infection requiring specialized clinical care",
+      "C": "A dispute over inheritance rights within a wealthy family",
+      "D": "Contaminated laboratory test samples discarded safely"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bad blood' refers to longstanding enmity, malice, or bitter antagonism between people or families.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1055",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bark is worse than one's bite**",
+    "options": {
+      "A": "A domestic guard dog that makes excessive noise",
+      "B": "A fierce predator capable of inflicting serious harm",
+      "C": "Someone who sounds threatening and aggressive but is actually harmless",
+      "D": "A person who acts violently without giving any verbal warning"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. This idiom describes an individual whose harsh, angry words make them seem intimidating when they are actually gentle or harmless.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1056",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Be all ears**",
+    "options": {
+      "A": "Listening eagerly, attentively, and with full concentration",
+      "B": "Wearing protective earmuffs in a noisy environment",
+      "C": "Experiencing acoustic disorientation in crowded spaces",
+      "D": "Eavesdropping on a confidential discussion unlawfully"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being 'all ears' means giving undivided attention and listening eagerly to what is being said.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1057",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Be glad to see the back of**",
+    "options": {
+      "A": "Welcoming an old acquaintance warmly after a long trip",
+      "B": "Admiring the architecture of a historic estate building",
+      "C": "Being pleased or relieved when an annoying person or situation departs",
+      "D": "Helping a friend carry heavy travel luggage from behind"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'be glad to see the back of' someone or something means feeling happy that an unpleasant person or burden is gone.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1058",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Be in the same boat**",
+    "options": {
+      "A": "Participating jointly in a high-stakes rowing championship",
+      "B": "Working for the exact same maritime freight company",
+      "C": "Commuting via public water ferry on a daily basis",
+      "D": "Sharing the same difficult, risky, or unpleasant predicament as others"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. Being 'in the same boat' means facing the identical hardships or challenging circumstances as fellow companions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1059",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Be on cloud nine**",
+    "options": {
+      "A": "Flying at a high cruise altitude during international travel",
+      "B": "Being in an extreme state of profound joy, bliss, or happiness",
+      "C": "Losing clear mental focus and daydreaming constantly",
+      "D": "Predicting meteorological storm fronts using satellite data"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'on cloud nine' describes experiencing intense elation, happiness, or delight.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1060",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Be over the moon**",
+    "options": {
+      "A": "Suffering from chronic nighttime restlessness and insomnia",
+      "B": "Exceeding planned budget projections in commercial enterprise",
+      "C": "Extremely delighted, thrilled, and enthusiastic about something",
+      "D": "Embarking on advanced astronomical research into lunar topography"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Over the moon' is an expression of immense joy and excitement regarding a positive outcome.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1061",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Be up in arms**",
+    "options": {
+      "A": "Reaching upward during physical conditioning gymnastics",
+      "B": "Fiercely angry, outraged, and actively protesting against something",
+      "C": "Surrendering weapon supplies unconditionally to a rival force",
+      "D": "Embracing long-lost family relatives warmly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'up in arms' means being extremely indignant, outraged, and militant in opposing something.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1062",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Beat a retreat**",
+    "options": {
+      "A": "Withdrawing or fleeing hurriedly from a dangerous, difficult, or embarrassing spot",
+      "B": "Marching rhythmically to military snare drums in a formal parade",
+      "C": "Establishing an outdoor camping refuge in a mountain valley",
+      "D": "Attacking an adversary repeatedly until they surrender"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'beat a retreat' means to pull back, depart rapidly, or withdraw when facing defeat or danger.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1063",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Beat about the bush**",
+    "options": {
+      "A": "Clearing dense undergrowth to construct a rural trail",
+      "B": "Approaching a matter in an indirect, evasive, and roundabout manner",
+      "C": "Hunting small woodland wildlife using tracking hounds",
+      "D": "Speaking bluntly and directly without regard for feelings"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'beat about the bush' means avoiding the main topic or speaking evasively without coming to the point.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1064",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Beat the clock**",
+    "options": {
+      "A": "Destroying an antique pendulum timepiece with force",
+      "B": "Finishing a task or reaching a goal before a critical deadline expires",
+      "C": "Resetting mechanical watches across different geographical zones",
+      "D": "Arriving considerably late for an official business convention"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'beat the clock' means to succeed in completing something before the allotted time limit runs out.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1065",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Behind someone's back**",
+    "options": {
+      "A": "Standing directly in line behind a colleague at an office",
+      "B": "Protecting a partner from an unexpected physical collision",
+      "C": "Doing something deceitfully or maliciously without the person's knowledge",
+      "D": "Supporting an associate openly during public debates"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Doing something 'behind someone's back' means acting without their knowledge or consent, often disloyally.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1066",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bend over backwards**",
+    "options": {
+      "A": "Demonstrating flexible athletic poses in acrobatic gymnastics",
+      "B": "Falling backward due to sudden physical dizziness",
+      "C": "Making an extraordinary and supreme effort to assist or please someone",
+      "D": "Refusing to cooperate with team members on a shared task"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'bend over backwards' means going to extreme lengths or taking great pains to be helpful or accommodating.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1067",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Beside oneself**",
+    "options": {
+      "A": "Standing right next to a close companion in a hall",
+      "B": "Overcome by intense and uncontrollable emotion like grief, fury, or panic",
+      "C": "Possessing a dual personality with contradictory traits",
+      "D": "Remaining completely calm and detached under pressure"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'beside oneself' means being driven almost out of one's mind with grief, rage, worry, or joy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1068",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Best of both worlds**",
+    "options": {
+      "A": "A situation where you enjoy the advantages of two contrasting options at once",
+      "B": "Traveling between modern urban hubs and rural heritage towns",
+      "C": "Possessing dual citizenship in two developed global superpowers",
+      "D": "Achieving balance between intellectual work and athletic sports"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'The best of both worlds' refers to an ideal scenario where one benefits simultaneously from two different opportunities.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1069",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Better late than never**",
+    "options": {
+      "A": "Arriving late for an appointment is preferable to not showing up at all",
+      "B": "Delaying work indefinitely yields superior craftsmanship quality",
+      "C": "Postponing critical decisions prevents costly errors",
+      "D": "Punctuality is the single most essential virtue in business"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Better late than never' means that completing a task or arriving after the expected time is still better than failing to do so altogether.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1070",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Between Scylla and Charybdis**",
+    "options": {
+      "A": "Navigating a calm narrow water channel safely into a harbor",
+      "B": "Caught between two equally hazardous, catastrophic, or difficult perils",
+      "C": "Trading goods between two prosperous ancient maritime cities",
+      "D": "Settling a long boundary feud between two regional factions"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Between Scylla and Charybdis' means caught between two equally formidable dangers where avoiding one leads into the other.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1071",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Between the devil and the deep blue sea**",
+    "options": {
+      "A": "Facing a harsh dilemma where both available choices are equally dangerous",
+      "B": "Swimming in deep marine waters alongside marine predators",
+      "C": "Performing spiritual purification ceremonies to ward off bad luck",
+      "D": "Escaping completely from a perilous trap into a safe sanctuary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. This idiom denotes being trapped between two equally unpleasant or hazardous options with no easy escape.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1072",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bite off more than one can chew**",
+    "options": {
+      "A": "Consuming a large culinary meal in a single sitting",
+      "B": "Taking on a responsibility or task that is far too difficult to manage",
+      "C": "Chewing food hurriedly during an office lunch break",
+      "D": "Demanding higher compensation than one's work merits"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'bite off more than you can chew' means undertaking a commitment beyond your actual capacity or resources.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1073",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bite the bullet**",
+    "options": {
+      "A": "Discharging military firearm weaponry carelessly during practice",
+      "B": "Forcing oneself to face an inevitable painful ordeal with courage and resolve",
+      "C": "Suffering a serious dental fracture caused by foreign objects",
+      "D": "Escaping from an armed skirmish without sustaining injury"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'bite the bullet' means facing a painful, unpleasant, or unavoidable situation bravely and without flinching.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1074",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bite the dust**",
+    "options": {
+      "A": "Falling in battle, dying, or experiencing total and humiliating failure",
+      "B": "Cleaning old masonry surfaces using vacuum suction gear",
+      "C": "Cultivating dry agricultural land during a summer drought",
+      "D": "Suffering from severe respiratory allergies in windy conditions"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'bite the dust' means to be killed, fall in battle, or suffer complete ruin or failure.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1075",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bite your tongue**",
+    "options": {
+      "A": "Tasting spicy culinary recipes inadvertently",
+      "B": "Inflicting an accidental oral injury while chewing food",
+      "C": "Stopping yourself from speaking or expressing an opinion to avoid trouble",
+      "D": "Speaking out forcefully against corporate injustice"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'bite your tongue' means making a deliberate effort to remain silent and not say what you are thinking.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1076",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Black sheep**",
+    "options": {
+      "A": "A prized livestock animal in an agricultural breeding show",
+      "B": "An odd, disreputable, or disgraced member of a family or group",
+      "C": "A hardworking laborer working in difficult underground mines",
+      "D": "A person who prefers wearing monochrome dark garments"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'black sheep' is an outcast or disreputable member who brings disgrace to an otherwise respectable family or community.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1077",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Blessing in disguise**",
+    "options": {
+      "A": "An apparent misfortune or bad event that ultimately brings unexpected good results",
+      "B": "A covert religious benediction granted by a priest",
+      "C": "A deceitful compliment offered by an undercover adversary",
+      "D": "A secret gift delivered anonymously to a charitable shelter"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'blessing in disguise' is an apparent setback or unlucky occurrence that eventually produces very positive outcomes.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1078",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Blow one's own trumpet**",
+    "options": {
+      "A": "Practicing orchestral brass music in a solo concert hall",
+      "B": "Sounding an alarm siren to warn citizens of danger",
+      "C": "Boasting loudly and excessively about one's own talents and achievements",
+      "D": "Leading a musical marching parade down city avenues"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'blow one's own trumpet' (or horn) means praising yourself boastfully and showing off your accomplishments.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1079",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Blow over**",
+    "options": {
+      "A": "To pass by, subside, or be forgotten without causing lasting harm or trouble",
+      "B": "A heavy gust of wind knocking over outdoor garden furniture",
+      "C": "Extinguishing a campfire using specialized carbon blankets",
+      "D": "To erupt suddenly into violent public unrest and street rioting"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. When trouble or controversy 'blows over', it fades away, cools down, and is eventually forgotten.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1080",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Blow someone's cover**",
+    "options": {
+      "A": "Removing warm winter blankets from a resting patient",
+      "B": "Revealing the true identity or secret activities of an undercover person",
+      "C": "Damaging the protective roofing tiles of a residential building",
+      "D": "Publishing an unauthorized review of a newly printed book"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'blow someone's cover' means to expose their hidden identity, secret operation, or disguised status.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1081",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Blue blood**",
+    "options": {
+      "A": "Belonging to an aristocratic, noble, or high-ranking royal lineage",
+      "B": "A rare hematological disease diagnosed in clinical tests",
+      "C": "Working as an industrial manual factory laborer",
+      "D": "Showing deep loyalty to naval military forces"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Blue blood' refers to someone born into nobility, royalty, or the highest aristocracy.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1082",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bolt from the blue**",
+    "options": {
+      "A": "A sudden, totally unexpected, and shocking occurrence or news",
+      "B": "A bright flash of high-altitude summer lightning in cloudless skies",
+      "C": "An electrical equipment short-circuit occurring during repairs",
+      "D": "An official emergency warning sent by postal wire"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'bolt from the blue' is an entirely unexpected, dramatic shock or disaster occurring out of nowhere.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1083",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bone of contention**",
+    "options": {
+      "A": "A delicious meat meal shared between hungry companions",
+      "B": "An acute orthopedic fracture in joint cartilage",
+      "C": "The main subject, issue, or core point over which there is continuing dispute",
+      "D": "A trophy awarded to the champion of a debate contest"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. A 'bone of contention' refers to the primary topic, property, or argument causing ongoing disagreement.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1084",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Born with a silver spoon in one's mouth**",
+    "options": {
+      "A": "Born with an unusual pediatric feeding disorder",
+      "B": "Born into an exceptionally wealthy, affluent, and privileged family",
+      "C": "Inheriting antique silverware cutlery from ancestors",
+      "D": "Working hard from young childhood to attain financial freedom"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Being 'born with a silver spoon in one's mouth' means being born into great wealth, luxury, and high social standing.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1085",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Break a leg**",
+    "options": {
+      "A": "An emergency medical orthopedic fracture during athletics",
+      "B": "A traditional theatrical superstition used to wish performers good luck",
+      "C": "A malicious curse spoken to wish misfortune on a competitor",
+      "D": "Stumbling awkwardly while walking across a theater stage"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Break a leg' is a colloquial idiom used in the performing arts to wish actors, dancers, or musicians good luck before a show.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1086",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Break fresh ground**",
+    "options": {
+      "A": "To pioneer, innovate, or discover new approaches and methods in an area",
+      "B": "Tilling rocky soil on an agricultural farm for the first time",
+      "C": "Digging deep foundation trenches for skyscraper construction",
+      "D": "Establishing a new hiking trail in a mountain valley"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'break fresh ground' (or break new ground) means doing something innovative, novel, or pioneering.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1087",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Break the ice**",
+    "options": {
+      "A": "Smashing frozen water surfaces on winter ponds for fishing",
+      "B": "Relieving initial awkwardness, tension, or formality in a social setting",
+      "C": "Ending an old friendship abruptly due to a bitter dispute",
+      "D": "Solving an intricate scientific formula after long study"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'break the ice' means initiating friendly conversation to ease social stiffness or tension among strangers.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1088",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bring home the bacon**",
+    "options": {
+      "A": "Purchasing cured meat from a grocery market",
+      "B": "Cooking hearty breakfast meals for family members",
+      "C": "Earning a livelihood or achieving lucrative success for one's family",
+      "D": "Winning livestock breeding competitions on a ranch"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. To 'bring home the bacon' means to earn money to support a family or to achieve a major material success.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1089",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bring to book**",
+    "options": {
+      "A": "Publishing an educational textbook in a university press",
+      "B": "To punish, reprimand, or hold someone accountable for their wrongdoing",
+      "C": "Returning borrowed volumes to a public library on time",
+      "D": "Auditing corporate accounting ledgers thoroughly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'bring someone to book' means holding them responsible for an offense and making them face justice or punishment.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1090",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bring to light**",
+    "options": {
+      "A": "Illuminating a dark exhibition hall using electric floodlights",
+      "B": "To reveal, uncover, or make previously hidden information known",
+      "C": "Taking photographs under natural bright morning sunlight",
+      "D": "Painting artwork using pale and soft pastel colors"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'bring to light' means to disclose, expose, or reveal secrets or facts that were previously obscure or concealed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1091",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Brown study**",
+    "options": {
+      "A": "A library room decorated with dark mahogany timber walls",
+      "B": "An academic textbook covering classical literature history",
+      "C": "A state of deep, absorbed thought or daydreaming reverie",
+      "D": "Failing a competitive college examination due to lack of study"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. A 'brown study' is a mood or condition of deep contemplation, abstraction, or daydreaming.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1092",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Build castles in the air**",
+    "options": {
+      "A": "Designing futuristic architectural blueprints for skyscrapers",
+      "B": "Constructing penthouse suites on high-rise residential towers",
+      "C": "Indulging in unrealistic daydreams, fantasies, and impractical plans",
+      "D": "Flying gliders high into atmospheric cloud banks"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. Building 'castles in the air' means dreaming of visionary schemes or impractical hopes that have no foundation in reality.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1093",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Burn one's bridges**",
+    "options": {
+      "A": "Demolishing an infrastructure river crossing during military warfare",
+      "B": "To act in a way that makes returning to a previous situation impossible",
+      "C": "Commuting across long suspension bridges during rush hours",
+      "D": "Terminating commercial engineering contracts without notice"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'burn one's bridges' (or boats) means to take an irreversible step that cuts off any chance of retreat or reconciliation.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1094",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Burn the candle at both ends**",
+    "options": {
+      "A": "Lighting multiple candles in an unlit ceremonial sanctuary",
+      "B": "Exhausting oneself by working excessively hard and getting very little rest",
+      "C": "Wasting household wax resources through careless neglect",
+      "D": "Celebrating festive gatherings late into the early morning"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'burn the candle at both ends' means overtaxing one's physical energy by working early and late without sufficient sleep.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1095",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Burn the midnight oil**",
+    "options": {
+      "A": "To work or study late into the night with great diligence",
+      "B": "Spilling petroleum fuel in industrial factories during night shifts",
+      "C": "Burning oil lamps during a temporary electrical blackout",
+      "D": "Staying awake due to severe insomnia and restlessness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Burning the midnight oil' means working, studying, or reading late into the night hours.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1096",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bury one's head in the sand**",
+    "options": {
+      "A": "Sunbathing on a sandy coastal beach during summer",
+      "B": "Refusing to confront, acknowledge, or face an unpleasant reality or problem",
+      "C": "Observing ostrich behavior in wildlife nature sanctuaries",
+      "D": "Searching for lost valuables along desert dunes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'bury one's head in the sand' means willfully ignoring an obvious danger or problem in the hope it will vanish.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1097",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Bury the hatchet**",
+    "options": {
+      "A": "Hiding woodcutting tools safely in a workshop storage chest",
+      "B": "To make peace, forgive past grievances, and settle a longstanding dispute",
+      "C": "Concealing weapons underground in preparation for an ambush",
+      "D": "Digging planting holes in garden soil using hand tools"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'bury the hatchet' means to end a feud or conflict and restore friendly relations.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1098",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Butter someone up**",
+    "options": {
+      "A": "Spreading dairy products generously over toasted bread",
+      "B": "Flattering, praising, or being excessively nice to someone to gain a favor",
+      "C": "Preparing gourmet pastries in a commercial confectionery",
+      "D": "Criticizing an associate's errors politely in a team meeting"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'butter someone up' means using excessive flattery and pleasing behavior to secure an advantage.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1099",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**By fits and starts**",
+    "options": {
+      "A": "Moving or progressing erratically, irregularly, and in short bursts",
+      "B": "Working steadily and continuously with unwavering rhythm",
+      "C": "Starting a mechanical vehicle engine after long maintenance",
+      "D": "Running at lightning speed throughout an entire marathon"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Doing something 'by fits and starts' means proceeding inconsistently and with frequent interruptions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_1100",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**By hook or by crook**",
+    "options": {
+      "A": "Using fishing equipment along turbulent river rapids",
+      "B": "Using any means necessary, whether fair, honorable, or dishonest, to succeed",
+      "C": "Adhering strictly to judicial regulations and statutes",
+      "D": "Navigating winding mountain pathways on foot"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'By hook or by crook' means achieving a goal by whatever method is required, regardless of whether it is fair or foul.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

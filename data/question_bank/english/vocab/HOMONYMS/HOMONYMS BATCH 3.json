@@ -1,0 +1,602 @@
+[
+  {
+    "id": "ENG_VOCAB_HOM_2401",
+    "question": "Choose the correct homonym to fill in the blank: 'The sudden loud noise caused the herd of cattle to _____.'",
+    "options": {
+      "A": "stampede",
+      "B": "stagnate",
+      "C": "stature",
+      "D": "statute"
+    },
+    "correct_option": "A",
+    "explanation": "'Stampede' refers to a sudden panicked rush of a herd of animals, whereas 'statute' is a written law."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2402",
+    "question": "Fill in the blank: 'The local government passed a strict new _____ on environmental protection.'",
+    "options": {
+      "A": "stature",
+      "B": "statute",
+      "C": "statue",
+      "D": "status"
+    },
+    "correct_option": "B",
+    "explanation": "'Statute' means a formal written law enacted by a legislative body."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2403",
+    "question": "Spot the error: 'The bronze statue of the national hero was erected in the central square.'",
+    "options": {
+      "A": "The bronze statue",
+      "B": "of the national hero",
+      "C": "was erected in the central square.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Statue' refers to a sculpted or cast figure of a person or animal. The usage is correct."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2404",
+    "question": "Fill in the blank: 'Despite his young age, he has achieved considerable professional _____.'",
+    "options": {
+      "A": "stature",
+      "B": "statute",
+      "C": "statue",
+      "D": "stagnation"
+    },
+    "correct_option": "A",
+    "explanation": "'Stature' refers to a person's natural height or, metaphorically, their level of respect and achievement."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2405",
+    "question": "Choose the correct word: 'The stagnant water in the pond began to _____.'",
+    "options": {
+      "A": "stagnate",
+      "B": "stampede",
+      "C": "stature",
+      "D": "stimulate"
+    },
+    "correct_option": "A",
+    "explanation": "'Stagnate' means to cease flowing or moving, or to develop foulness from standing still."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2406",
+    "question": "Fill in the blank: 'The detective found a hidden _____ containing stolen jewelry.'",
+    "options": {
+      "A": "cache",
+      "B": "cash",
+      "C": "catch",
+      "D": "couch"
+    },
+    "correct_option": "A",
+    "explanation": "'Cache' is a collection of items of the same type stored in a hidden or inaccessible place."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2407",
+    "question": "Spot the error: 'He withdrew a large amount of cache from the ATM.'",
+    "options": {
+      "A": "He withdrew a large amount",
+      "B": "of cache from",
+      "C": "the ATM.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Physical money in currency form is 'cash', not 'cache' (a hidden store). Correct: 'amount of cash'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2408",
+    "question": "Fill in the blank: 'The sailor adjusted the ship's _____ to alter direction.'",
+    "options": {
+      "A": "rudder",
+      "B": "rubber",
+      "C": "radar",
+      "D": "route"
+    },
+    "correct_option": "A",
+    "explanation": "'Rudder' is a flat piece of wood or metal hinged at the stern of a boat or ship for steering."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2409",
+    "question": "Fill in the blank: 'Please erase the pencil marks using a soft _____.'",
+    "options": {
+      "A": "rudder",
+      "B": "rubber",
+      "C": "radar",
+      "D": "roller"
+    },
+    "correct_option": "B",
+    "explanation": "'Rubber' refers to an eraser in British English usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2410",
+    "question": "Spot the error: 'The airplane appeared on the air traffic control radar screen.'",
+    "options": {
+      "A": "The airplane appeared",
+      "B": "on the air traffic control",
+      "C": "radar screen.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Radar' is correctly used for radio detection and ranging systems. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2411",
+    "question": "Fill in the blank: 'The monarch sat on a majestic gold _____.'",
+    "options": {
+      "A": "throne",
+      "B": "thrown",
+      "C": "tone",
+      "D": "zone"
+    },
+    "correct_option": "A",
+    "explanation": "'Throne' is the ceremonial chair for a sovereign."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2412",
+    "question": "Fill in the blank: 'The quarterback had _____ the ball before being tackled.'",
+    "options": {
+      "A": "throne",
+      "B": "thrown",
+      "C": "towed",
+      "D": "toned"
+    },
+    "correct_option": "B",
+    "explanation": "'Thrown' is the past participle of the verb 'throw'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2413",
+    "question": "Spot the error: 'The broken-down car was towed away by a truck.'",
+    "options": {
+      "A": "The broken-down car",
+      "B": "was towed away",
+      "C": "by a truck.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Towed' means pulled along behind another vehicle. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2414",
+    "question": "Fill in the blank: 'The musician played a soothing melody on the violin's lowest _____.'",
+    "options": {
+      "A": "chord",
+      "B": "cord",
+      "C": "card",
+      "D": "board"
+    },
+    "correct_option": "A",
+    "explanation": "A 'chord' refers to a group of musical notes sounded together, while 'cord' is a thin flexible string or rope."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2415",
+    "question": "Fill in the blank: 'Make sure to plug the power _____ securely into the wall outlet.'",
+    "options": {
+      "A": "chord",
+      "B": "cord",
+      "C": "card",
+      "D": "board"
+    },
+    "correct_option": "B",
+    "explanation": "'Cord' is an insulated electrical wire."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2416",
+    "question": "Spot the error: 'He struck a discordant chord during his piano performance.'",
+    "options": {
+      "A": "He struck a discordant chord",
+      "B": "during his piano performance.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "A musical combination of notes is spelled 'chord'. The usage is correct. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2417",
+    "question": "Fill in the blank: 'The royal decree was proclaimed throughout the _____.'",
+    "options": {
+      "A": "realm",
+      "B": "reign",
+      "C": "rein",
+      "D": "rain"
+    },
+    "correct_option": "A",
+    "explanation": "'Realm' means a kingdom or a field/domain of activity."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2418",
+    "question": "Fill in the blank: 'During the queen's _____, the country experienced great prosperity.'",
+    "options": {
+      "A": "realm",
+      "B": "reign",
+      "C": "rein",
+      "D": "rain"
+    },
+    "correct_option": "B",
+    "explanation": "'Reign' refers to the period of rule of a monarch."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2419",
+    "question": "Spot the error: 'The rider pulled hard on the horse's reins to slow it down.'",
+    "options": {
+      "A": "The rider pulled hard",
+      "B": "on the horse's reins",
+      "C": "to slow it down.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Straps attached to a bridle for steering a horse are spelled 'reins'. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2420",
+    "question": "Fill in the blank: 'The hiker sought shelter from the pouring _____.'",
+    "options": {
+      "A": "realm",
+      "B": "reign",
+      "C": "rein",
+      "D": "rain"
+    },
+    "correct_option": "D",
+    "explanation": "'Rain' is moisture falling in drops from clouds."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2421",
+    "question": "Fill in the blank: 'The detective examined the bloody _____ left at the crime scene.'",
+    "options": {
+      "A": "footprint",
+      "B": "stationary",
+      "C": "stationary",
+      "D": "footmark"
+    },
+    "correct_option": "A",
+    "explanation": "'Footprint' is an impression left by a foot or shoe."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2422",
+    "question": "Fill in the blank: 'The recipe called for a cup of grated cheese and a _____ of butter.'",
+    "options": {
+      "A": "pat",
+      "B": "pan",
+      "C": "pet",
+      "D": "pot"
+    },
+    "correct_option": "A",
+    "explanation": "A 'pat' of butter refers to a small, flat block of butter."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2423",
+    "question": "Spot the error: 'He patted the dog gently on its head.'",
+    "options": {
+      "A": "He patted the dog",
+      "B": "gently on its head.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Patted' is the correct past tense verb for striking lightly with the palm. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2424",
+    "question": "Fill in the blank: 'The scientist studied the microscopic structure of the plant _____.'",
+    "options": {
+      "A": "tissue",
+      "B": "issue",
+      "C": "toss",
+      "D": "tense"
+    },
+    "correct_option": "A",
+    "explanation": "'Tissue' refers to any of the distinct types of material of which animals or plants are made."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2425",
+    "question": "Fill in the blank: 'The board of directors discussed the pressing _____ of budget allocation.'",
+    "options": {
+      "A": "tissue",
+      "B": "issue",
+      "C": "asset",
+      "D": "access"
+    },
+    "correct_option": "B",
+    "explanation": "'Issue' refers to an important topic or problem for debate or discussion."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2426",
+    "question": "Spot the error: 'She wiped her tears with a paper tissue.'",
+    "options": {
+      "A": "She wiped her tears",
+      "B": "with a paper tissue.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Disposable absorbent paper is correctly termed a 'tissue'. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2427",
+    "question": "Fill in the blank: 'The medieval castle was surrounded by a deep water-filled _____.'",
+    "options": {
+      "A": "moat",
+      "B": "mote",
+      "C": "mot",
+      "D": "boat"
+    },
+    "correct_option": "A",
+    "explanation": "'Moat' is a deep, wide ditch filled with water around a castle."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2428",
+    "question": "Fill in the blank: 'There was a tiny _____ of dust in his eye.'",
+    "options": {
+      "A": "moat",
+      "B": "mote",
+      "C": "mot",
+      "D": "note"
+    },
+    "correct_option": "B",
+    "explanation": "'Mote' refers to a single piece of a substance, especially a speck of dust."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2429",
+    "question": "Spot the error: 'He made a clever witty mot during the dinner conversation.'",
+    "options": {
+      "A": "He made a clever",
+      "B": "witty mot during",
+      "C": "the dinner conversation.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "A 'mot' (from French 'mot d'esprit') is a witty remark or clever saying. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2430",
+    "question": "Fill in the blank: 'The ship's captain stood proudly at the _____.'",
+    "options": {
+      "A": "helm",
+      "B": "help",
+      "C": "halt",
+      "D": "heel"
+    },
+    "correct_option": "A",
+    "explanation": "'Helm' is a tiller or wheel for steering a ship."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2431",
+    "question": "Fill in the blank: 'The wounded soldier suffered a painful injury to his _____.'",
+    "options": {
+      "A": "heal",
+      "B": "heel",
+      "C": "hall",
+      "D": "hail"
+    },
+    "correct_option": "B",
+    "explanation": "'Heel' is the back part of the human foot below the ankle."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2432",
+    "question": "Fill in the blank: 'With proper rest, the broken bone will eventually _____.'",
+    "options": {
+      "A": "heal",
+      "B": "heel",
+      "C": "hail",
+      "D": "hale"
+    },
+    "correct_option": "A",
+    "explanation": "'Heal' means to cause or allow to become healthy and whole again."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2433",
+    "question": "Spot the error: 'The storm brought heavy showers of ice hail.'",
+    "options": {
+      "A": "The storm brought",
+      "B": "heavy showers",
+      "C": "of ice hail.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Hail' already means pellets of frozen rain; 'ice hail' is redundant. Correct: 'heavy showers of hail'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2434",
+    "question": "Fill in the blank: 'The old man remained hale and _____ despite his advanced age.'",
+    "options": {
+      "A": "hearty",
+      "B": "hardy",
+      "C": "haughty",
+      "D": "hungry"
+    },
+    "correct_option": "A",
+    "explanation": "The idiomatic phrase is 'hale and hearty', meaning strong and healthy."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2435",
+    "question": "Fill in the blank: 'Cacti are remarkably _____ plants that can survive severe drought.'",
+    "options": {
+      "A": "hale",
+      "B": "hardy",
+      "C": "hearty",
+      "D": "haughty"
+    },
+    "correct_option": "B",
+    "explanation": "'Hardy' describes plants or animals robust enough to endure difficult conditions."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2436",
+    "question": "Spot the error: 'His haughty demeanor alienated many of his colleagues.'",
+    "options": {
+      "A": "His haughty demeanor",
+      "B": "alienated many",
+      "C": "of his colleagues.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Haughty' means arrogantly superior and disdainful. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2437",
+    "question": "Fill in the blank: 'The knight drew his gleaming _____ from its scabbard.'",
+    "options": {
+      "A": "sword",
+      "B": "sward",
+      "C": "swared",
+      "D": "shard"
+    },
+    "correct_option": "A",
+    "explanation": "'Sword' is a weapon with a long metal blade."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2438",
+    "question": "Fill in the blank: 'The sheep grazed peacefully on the green grassy _____.'",
+    "options": {
+      "A": "sword",
+      "B": "sward",
+      "C": "shard",
+      "D": "swamp"
+    },
+    "correct_option": "B",
+    "explanation": "'Sward' is an expanse of short grass turf."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2439",
+    "question": "Spot the error: 'He stepped barefoot on a sharp glass shard.'",
+    "options": {
+      "A": "He stepped barefoot",
+      "B": "on a sharp glass shard.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "A broken piece of glass or pottery is correctly termed a 'shard'. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2440",
+    "question": "Fill in the blank: 'The miner used a pickaxe to break through the rock _____.'",
+    "options": {
+      "A": "strata",
+      "B": "strait",
+      "C": "straight",
+      "D": "stature"
+    },
+    "correct_option": "A",
+    "explanation": "'Strata' refers to layers or levels of rock or societal structure (singular: stratum)."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2441",
+    "question": "Fill in the blank: 'The cargo ship navigated carefully through the narrow _____ of Malacca.'",
+    "options": {
+      "A": "strata",
+      "B": "strait",
+      "C": "straight",
+      "D": "street"
+    },
+    "correct_option": "B",
+    "explanation": "'Strait' is a narrow passage of water connecting two seas or two large areas of water."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2442",
+    "question": "Spot the error: 'Draw a straight line connecting points A and B.'",
+    "options": {
+      "A": "Draw a straight line",
+      "B": "connecting points",
+      "C": "A and B.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Straight' means extending in a continuous direction without bends. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2443",
+    "question": "Fill in the blank: 'The shepherd watched his flock of sheep graze in the mountain _____.'",
+    "options": {
+      "A": "vale",
+      "B": "veil",
+      "C": "vail",
+      "D": "vial"
+    },
+    "correct_option": "A",
+    "explanation": "'Vale' is a poetic word for a valley."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2444",
+    "question": "Fill in the blank: 'The bride wore a delicate white lace _____ over her face.'",
+    "options": {
+      "A": "vale",
+      "B": "veil",
+      "C": "vial",
+      "D": "valance"
+    },
+    "correct_option": "B",
+    "explanation": "'Veil' is a piece of fine material worn by women to protect or hide the face."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2445",
+    "question": "Spot the error: 'The chemist filled a small glass vial with the liquid sample.'",
+    "options": {
+      "A": "The chemist filled",
+      "B": "a small glass vial",
+      "C": "with the liquid sample.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "A small cylindrical glass container for medicines or samples is a 'vial'. Correct usage."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2446",
+    "question": "Fill in the blank: 'The knight's shining armor deflected the enemy's spear _____.'",
+    "options": {
+      "A": "thrust",
+      "B": "trust",
+      "C": "thrash",
+      "D": "thread"
+    },
+    "correct_option": "A",
+    "explanation": "'Thrust' is a sudden or violent push or stab."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2447",
+    "question": "Fill in the blank: 'Building a successful partnership requires mutual _____ and respect.'",
+    "options": {
+      "A": "thrust",
+      "B": "trust",
+      "C": "truth",
+      "D": "trend"
+    },
+    "correct_option": "B",
+    "explanation": "'Trust' is firm belief in the reliability, truth, or ability of someone."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2448",
+    "question": "Spot the error: 'She threaded the needle carefully to sew the button.'",
+    "options": {
+      "A": "She threaded",
+      "B": "the needle carefully",
+      "C": "to sew the button.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Threaded' is correctly used for passing thread through the eye of a needle. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2449",
+    "question": "Fill in the blank: 'The sudden economic downturn caused a sharp decline in market _____.'",
+    "options": {
+      "A": "value",
+      "B": "valiance",
+      "C": "valence",
+      "D": "variance"
+    },
+    "correct_option": "A",
+    "explanation": "'Value' refers to the material or monetary worth of something."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2450",
+    "question": "What is the key linguistic distinction between homophones and homographs?",
+    "options": {
+      "A": "Homophones sound identical regardless of spelling, whereas homographs share identical spelling regardless of sound.",
+      "B": "Homophones are verbs while homographs are nouns.",
+      "C": "Homophones have opposite meanings.",
+      "D": "Homographs cannot be pronounced aloud."
+    },
+    "correct_option": "A",
+    "explanation": "Homophones share pronunciation (sound), while homographs share written form (spelling)."
+  }
+]

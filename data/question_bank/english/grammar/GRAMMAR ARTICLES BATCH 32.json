@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_ART_1351",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The Ganga is a sacred river that flows through India.'",
+    "options": {
+      "A": "The Ganga is",
+      "B": "a sacred river",
+      "C": "that flows through India.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Names of major rivers correctly take the definite article 'the'. The sentence is correct.",
+    "tags": ["grammar", "articles", "geographical_names", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1352",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ honest man who always speaks the truth.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "'Honest' begins with a silent 'h' (/ɒ/), so it requires the article 'an'.",
+    "tags": ["grammar", "articles", "phonetic_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1353",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'She plays ___ violin every evening.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "Names of musical instruments in the context of playing them take the definite article 'the'.",
+    "tags": ["grammar", "articles", "musical_instruments", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1354",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Gold is a precious metal, but the gold in my ring is 24-carat.'",
+    "options": {
+      "A": "Gold is a precious metal,",
+      "B": "but the gold",
+      "C": "in my ring is 24-carat.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "General material nouns do not take an article, but when specified or restricted ('the gold in my ring'), the definite article 'the' is required. The sentence is correct.",
+    "tags": ["grammar", "articles", "uncountable_nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1355",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ Himalayas are located in the north of India.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "Names of mountain ranges take the definite article 'the'.",
+    "tags": ["grammar", "articles", "geographical_names", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1356",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: '___ union of workers held a meeting.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "A",
+    "explanation": "'Union' begins with a consonant sound (/j/), so it takes 'a'.",
+    "tags": ["grammar", "articles", "phonetic_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1357",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is an university professor with vast experience.'",
+    "options": {
+      "A": "He is an university",
+      "B": "professor with",
+      "C": "vast experience.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'University' starts with a consonant sound (/j/), so use 'a university'.",
+    "tags": ["grammar", "articles", "phonetic_sounds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1358",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ Bible is the holy book of Christians.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "Names of religious texts and holy books take the definite article 'the'.",
+    "tags": ["grammar", "articles", "holy_books", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1359",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'She has ___ umbrella in her bag.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "'Umbrella' starts with a vowel sound, so it takes 'an'.",
+    "tags": ["grammar", "articles", "vowel_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1360",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Man is mortal, so we must live wisely.'",
+    "options": {
+      "A": "Man is mortal,",
+      "B": "so we must",
+      "C": "live wisely.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "When 'man' represents the human race, no article is used. The sentence is correct.",
+    "tags": ["grammar", "articles", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1361",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ M.Sc. in Physics.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "'M.Sc.' is pronounced /ɛm/, which begins with a vowel sound, requiring 'an'.",
+    "tags": ["grammar", "articles", "abbreviations", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1362",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: '___ rich should help the poor.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "When an adjective is used as a class noun for people ('the rich'), 'the' is required.",
+    "tags": ["grammar", "articles", "adjectives_as_nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1363",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The Pacific is largest ocean in the world.'",
+    "options": {
+      "A": "The Pacific",
+      "B": "is largest ocean",
+      "C": "in the world.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Superlatives ('largest') must be preceded by 'the'. Correct: 'is the largest ocean'.",
+    "tags": ["grammar", "articles", "superlatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1364",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He arrived after ___ hour.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "'Hour' begins with a silent 'h', requiring 'an'.",
+    "tags": ["grammar", "articles", "silent_letters", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1365",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: '___ sun shines brightly.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "Unique heavenly bodies take 'the'.",
+    "tags": ["grammar", "articles", "heavenly_bodies", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1366",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She goes to hospital to see her sick friend.'",
+    "options": {
+      "A": "She goes",
+      "B": "to hospital",
+      "C": "to see her sick friend.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "When visiting for a non-primary purpose (not as a patient), an institution takes an article ('to the hospital').",
+    "tags": ["grammar", "articles", "institutional_nouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1367",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ honest person is respected by all.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "B",
+    "explanation": "'Honest' begins with a vowel sound, requiring 'an'.",
+    "tags": ["grammar", "articles", "vowel_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1368",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'She has ___ good knowledge of English.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "A",
+    "explanation": "When abstract nouns are modified by an adjective, the indefinite article ('a') is used.",
+    "tags": ["grammar", "articles", "modified_abstract_nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1369",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The Taj Mahal is an unique monument.'",
+    "options": {
+      "A": "The Taj Mahal",
+      "B": "is an unique",
+      "C": "monument.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Unique' begins with a consonant sound (/j/), so use 'a unique'.",
+    "tags": ["grammar", "articles", "phonetic_sounds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1370",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ more you practice, ___ better you get.'",
+    "options": {
+      "A": "The, the",
+      "B": "A, a",
+      "C": "An, an",
+      "D": "No article, no article"
+    },
+    "correct_option": "A",
+    "explanation": "Parallel correlative comparatives use 'the'.",
+    "tags": ["grammar", "articles", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1371",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'He is ___ one-eyed man.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "A",
+    "explanation": "'One' begins with a consonant sound (/w/), so it takes 'a'.",
+    "tags": ["grammar", "articles", "phonetic_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1372",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'This is the better of the two books.'",
+    "options": {
+      "A": "This is",
+      "B": "the better",
+      "C": "of the two books.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "When comparing two, use 'the + comparative'. The sentence is correct.",
+    "tags": ["grammar", "articles", "comparatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1373",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ European visitor arrived yesterday.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "A",
+    "explanation": "'European' begins with a consonant sound (/j/), so use 'a'.",
+    "tags": ["grammar", "articles", "phonetic_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1374",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'She is ___ best friend I have.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "Superlatives take 'the'.",
+    "tags": ["grammar", "articles", "superlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1375",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has an headache after working all day.'",
+    "options": {
+      "A": "He has",
+      "B": "an headache",
+      "C": "after working all day.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Use 'a headache' (headache begins with a consonant sound).",
+    "tags": ["grammar", "articles", "vowel_sounds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1376",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ elephant is a large animal.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "B",
+    "explanation": "Singular countable nouns starting with vowel sounds take 'an'.",
+    "tags": ["grammar", "articles", "vowel_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1377",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'I visited ___ United Kingdom last year.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "Country names with 'Kingdom' or plural nouns take 'the'.",
+    "tags": ["grammar", "articles", "geographical_names", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1378",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is in a trouble today.'",
+    "options": {
+      "A": "He is in",
+      "B": "a trouble",
+      "C": "today.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Abstract nouns in fixed phrases ('in trouble') do not take an article.",
+    "tags": ["grammar", "articles", "idioms", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1379",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ apple a day keeps the doctor away.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "B",
+    "explanation": "'Apple' starts with a vowel sound, requiring 'an'.",
+    "tags": ["grammar", "articles", "vowel_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1380",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'She has ___ umbrella in her car.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "'Umbrella' starts with a vowel sound, requiring 'an'.",
+    "tags": ["grammar", "articles", "vowel_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1381",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is the tallest of the two boys.'",
+    "options": {
+      "A": "He is",
+      "B": "the tallest",
+      "C": "of the two boys.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "When comparing two, use comparative 'the taller'.",
+    "tags": ["grammar", "articles", "comparatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1382",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ University of Delhi is famous.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "Proper nouns of universities with 'of' take 'the'.",
+    "tags": ["grammar", "articles", "proper_nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1383",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'He is ___ MLA.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "'MLA' is pronounced /ɛm/, beginning with a vowel sound.",
+    "tags": ["grammar", "articles", "abbreviations", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1384",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I saw an one-eyed beggar.'",
+    "options": {
+      "A": "I saw",
+      "B": "an one-eyed",
+      "C": "beggar.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'One' begins with a consonant sound (/w/), so use 'a one-eyed'.",
+    "tags": ["grammar", "articles", "phonetic_sounds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1385",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ earth revolves around the sun.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "Unique heavenly bodies take 'the'.",
+    "tags": ["grammar", "articles", "heavenly_bodies", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1386",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: '___ honest person always speaks the truth.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "B",
+    "explanation": "'Honest' has a silent 'h', so use 'an'.",
+    "tags": ["grammar", "articles", "silent_letters", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1387",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is an European citizen.'",
+    "options": {
+      "A": "She is",
+      "B": "an European",
+      "C": "citizen.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'European' has a consonant sound (/j/), so use 'a European'.",
+    "tags": ["grammar", "articles", "phonetic_sounds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1388",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ Ganges is a holy river.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "Names of rivers take 'the'.",
+    "tags": ["grammar", "articles", "geographical_names", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1389",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: '___ rich people are usually kind.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "D",
+    "explanation": "Generalizations about a group (rich people) do not take an article, whereas 'The rich' as a class noun does.",
+    "tags": ["grammar", "articles", "adjectives_as_nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1390",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has an ear infection.'",
+    "options": {
+      "A": "He has",
+      "B": "an ear infection.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Sentence is correct.",
+    "tags": ["grammar", "articles", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1391",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ knowledge is a dangerous thing.'",
+    "options": {
+      "A": "A little",
+      "B": "Little",
+      "C": "The little",
+      "D": "No article"
+    },
+    "correct_option": "A",
+    "explanation": "Proverbial usage of 'A little knowledge'.",
+    "tags": ["grammar", "articles", "idiomatic_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1392",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: '___ French is a sweet language.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "D",
+    "explanation": "Languages used in general do not take an article.",
+    "tags": ["grammar", "articles", "languages", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1393",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She is a most beautiful girl.'",
+    "options": {
+      "A": "She is",
+      "B": "a most beautiful",
+      "C": "girl.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'A most beautiful' means 'a very beautiful' (not necessarily superlative), so this is correct.",
+    "tags": ["grammar", "articles", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1394",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ Bible is read by all Christians.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "Holy books take 'the'.",
+    "tags": ["grammar", "articles", "holy_books", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1395",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'He is ___ honest man.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "Silent 'h' in 'honest'.",
+    "tags": ["grammar", "articles", "silent_letters", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1396",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has an headache.'",
+    "options": {
+      "A": "He has",
+      "B": "an headache.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Headache starts with a consonant sound, so use 'a headache'.",
+    "tags": ["grammar", "articles", "vowel_sounds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1397",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ sun rises in the east.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "Heavenly bodies take 'the'.",
+    "tags": ["grammar", "articles", "heavenly_bodies", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1398",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: '___ Himalayan range is in Asia.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "Mountain ranges take 'the'.",
+    "tags": ["grammar", "articles", "geographical_names", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1399",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is an useful person.'",
+    "options": {
+      "A": "He is",
+      "B": "an useful",
+      "C": "person.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Useful' starts with a consonant sound, so use 'a useful'.",
+    "tags": ["grammar", "articles", "phonetic_sounds", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_1400",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ hero of this story.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "Specific reference to a hero ('the hero') takes 'the'.",
+    "tags": ["grammar", "articles", "usage", "rule_based"]
+  }
+]

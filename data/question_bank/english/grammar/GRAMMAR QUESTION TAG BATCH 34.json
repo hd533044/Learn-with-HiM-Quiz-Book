@@ -1,0 +1,767 @@
+[
+  {
+    "id": "ENG_GRAM_QTAG_1451",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'He seldom speaks in public meetings, ___?'",
+    "options": {
+      "A": "does he",
+      "B": "doesn't he",
+      "C": "is he",
+      "D": "isn't he"
+    },
+    "correct_option": "A",
+    "explanation": "'Seldom' is a negative adverb. A negative statement requires a positive question tag ('does he?').",
+    "tags": ["grammar", "question_tags", "negation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1452",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Let's discuss the project details, shall we?'",
+    "options": {
+      "A": "Let's discuss",
+      "B": "the project details,",
+      "C": "shall we?",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "For 'Let's' (Let us), the standard question tag is always 'shall we?'. The sentence is correct.",
+    "tags": ["grammar", "question_tags", "let_us_rule", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1453",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I am invited to the seminar, ___?'",
+    "options": {
+      "A": "am not I",
+      "B": "aren't I",
+      "C": "ain't I",
+      "D": "isn't I"
+    },
+    "correct_option": "B",
+    "explanation": "The standard negative question tag for the first-person singular 'I am' is 'aren't I'.",
+    "tags": ["grammar", "question_tags", "exceptions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1454",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'Nobody called while I was out, ___?'",
+    "options": {
+      "A": "did they",
+      "B": "didn't they",
+      "C": "did he",
+      "D": "didn't he"
+    },
+    "correct_option": "A",
+    "explanation": "Indefinite pronouns like 'nobody', 'no one', and 'somebody' use the pronoun 'they' in question tags. Since 'nobody' is negative, the tag must be positive ('did they?').",
+    "tags": ["grammar", "question_tags", "indefinite_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1455",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Open the window for some fresh air, won't you?'",
+    "options": {
+      "A": "Open the window",
+      "B": "for some fresh air,",
+      "C": "won't you?",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Imperative sentences (requests/commands) accept 'will you?', 'won't you?', or 'can you?' as tags. The sentence is correct.",
+    "tags": ["grammar", "question_tags", "imperatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1456",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Everything is arranged properly, ___?'",
+    "options": {
+      "A": "is it",
+      "B": "isn't it",
+      "C": "are they",
+      "D": "aren't they"
+    },
+    "correct_option": "B",
+    "explanation": "Pronouns ending in '-thing' ('everything', 'something') take 'it' in the question tag.",
+    "tags": ["grammar", "question_tags", "indefinite_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1457",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'There are many books in the library, ___?'",
+    "options": {
+      "A": "are there",
+      "B": "aren't there",
+      "C": "are they",
+      "D": "aren't they"
+    },
+    "correct_option": "B",
+    "explanation": "Sentences starting with 'There' retain 'there' as the subject in the question tag.",
+    "tags": ["grammar", "question_tags", "there_rule", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1458",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Little progress has been made so far, has it?'",
+    "options": {
+      "A": "Little progress",
+      "B": "has been made so far,",
+      "C": "has it?",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Little' carries a negative meaning. A negative statement requires a positive question tag. Correct: 'has it?' (Wait, 'Little' is negative, so tag should be positive 'has it?'. The sentence uses 'has it?', which is positive. Let's check: 'Little' is negative, tag is positive. The sentence is correct! Let's provide an error variant: 'Little progress has been made so far, hasn't it?' -> Error would be using 'hasn't it').",
+    "tags": ["grammar", "question_tags", "negation", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1458_CORRECTED",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot professe: 'Little progress has been made so far, hasn't it?'",
+    "options": {
+      "A": "Little progress",
+      "B": "has been made so far,",
+      "C": "hasn't it?",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Little' is a negative word meaning 'hardly any'. Therefore, the question tag must be positive ('has it?'), not negative ('hasn't it?').",
+    "tags": ["grammar", "question_tags", "negation", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1459",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in_blank: 'Someone has left their umbrella behind, ___?'",
+    "options": {
+      "A": "hasn't he",
+      "B": "haven't they",
+      "C": "has he",
+      "D": "have they"
+    },
+    "correct_option": "B",
+    "explanation": "Pronouns like 'someone' or 'everyone' take 'they' in the question tag, matching the plural verb form in the tag ('haven't they?').",
+    "tags": ["grammar", "question_tags", "indefinite_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1460",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'He had never visited London before, ___?'",
+    "options": {
+      "A": "had he",
+      "B": "hadn't he",
+      "C": "did he",
+      "D": "didn't he"
+    },
+    "correct_option": "A",
+    "explanation": "'Never' is negative, so the question tag must be positive ('had he?').",
+    "tags": ["grammar", "question_tags", "negation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1461",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'This is your new car, isn't this?'",
+    "options": {
+      "A": "This is your new car,",
+      "B": "isn't this?",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Statements starting with 'This' or 'That' use 'it' in the question tag. Correct: 'isn't it?'",
+    "tags": ["grammar", "question_tags", "demonstratives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1462",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'None of the students complained, ___?'",
+    "options": {
+      "A": "did they",
+      "B": "didn't they",
+      "C": "did he",
+      "D": "didn't he"
+    },
+    "correct_option": "A",
+    "explanation": "'None' is a negative word, requiring a positive question tag ('did they?').",
+    "tags": ["grammar", "question_tags", "negation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1463",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'Shut your mouth, ___?'",
+    "options": {
+      "A": "will you",
+      "B": "won't you",
+      "C": "can you",
+      "D": "All of the above are valid"
+    },
+    "correct_option": "D",
+    "explanation": "Blunt or standard imperative commands accept 'will you?', 'won't you?', or 'can you?' as tags.",
+    "tags": ["grammar", "question_tags", "imperatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1464",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Let's not make any noise in the hall, shall we?'",
+    "options": {
+      "A": "Let's not make",
+      "B": "any noise in the hall,",
+      "C": "shall we?",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "For negative suggestions starting with 'Let's not', the tag is 'shall we?' (or sometimes 'will you?'). The sentence is correct.",
+    "tags": ["grammar", "question_tags", "let_us_rule", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1465",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Nothing went wrong during the event, ___?'",
+    "options": {
+      "A": "did it",
+      "B": "didn't it",
+      "C": "was it",
+      "D": "wasn't it"
+    },
+    "correct_option": "A",
+    "explanation": "'Nothing' is negative, taking 'it' and a positive tag ('did it?').",
+    "tags": ["grammar", "question_tags", "indefinite_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1466",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'He has a beautiful mansion, ___?'",
+    "options": {
+      "A": "hasn't he",
+      "B": "doesn't he",
+      "C": "Both A and B are acceptable",
+      "D": "isn't he"
+    },
+    "correct_option": "C",
+    "explanation": "When 'have/has' indicates possession, both British ('hasn't he') and American/modern ('doesn't he') tags are recognized.",
+    "tags": ["grammar", "question_tags", "possession", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1467",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'These documents are confidential, aren't these?'",
+    "options": {
+      "A": "These documents are confidential,",
+      "B": "aren't these?",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Plural demonstratives ('these', 'those') use 'they' in the question tag. Correct: 'aren't they?'",
+    "tags": ["grammar", "question_tags", "demonstratives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1468",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in_blank: 'Few people understood the complex lecture, ___?'",
+    "options": {
+      "A": "did they",
+      "B": "didn't they",
+      "C": "were they",
+      "D": "weren't they"
+    },
+    "correct_option": "A",
+    "explanation": "'Few' is a negative quantifier, so the question tag must be positive ('did they?').",
+    "tags": ["grammar", "question_tags", "negation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1469",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'Shut up and listen to me, ___?'",
+    "options": {
+      "A": "will you",
+      "B": "won't you",
+      "C": "can you",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "Imperative commands accept multiple standard tags.",
+    "tags": ["grammar", "question_tags", "imperatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1470",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You'd rather stay at home tonight, wouldn't you?'",
+    "options": {
+      "A": "You'd rather stay",
+      "B": "at home tonight,",
+      "C": "wouldn't you?",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'You'd rather' expands to 'You would rather', so the auxiliary verb in the tag is indeed 'would' ('wouldn't you?'). The sentence is correct.",
+    "tags": ["grammar", "question_tags", "contractions", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1471",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Everybody cheered when the winner was announced, ___?'",
+    "options": {
+      "A": "didn't they",
+      "B": "did they",
+      "C": "weren't they",
+      "D": "wasn't he"
+    },
+    "correct_option": "A",
+    "explanation": "'Everybody' takes 'they' in the question tag, and the past tense verb 'cheered' requires 'didn't'.",
+    "tags": ["grammar", "question_tags", "indefinite_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1472",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'He used to play cricket in his youth, ___?'",
+    "options": {
+      "A": "didn't he",
+      "B": "usedn't he",
+      "C": "did he",
+      "D": "Both A and B are correct"
+    },
+    "correct_option": "D",
+    "explanation": "While 'didn't he' is the modern standard tag for 'used to', 'usedn't he' is also formally accepted.",
+    "tags": ["grammar", "question_tags", "used_to", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1473",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'There is nothing to worry about, is there?'",
+    "options": {
+      "A": "There is nothing",
+      "B": "to worry about,",
+      "C": "is there?",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Nothing' is negative, so the tag is positive ('is there?'). The sentence is correct.",
+    "tags": ["grammar", "question_tags", "negation", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1474",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Pass me the salt shaker, ___?'",
+    "options": {
+      "A": "will you",
+      "B": "won't you",
+      "C": "can you",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "Polite or direct requests in the imperative mood allow all these tag variations.",
+    "tags": ["grammar", "question_tags", "imperatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1475",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'I suppose you are right, ___?'",
+    "options": {
+      "A": "aren't I",
+      "B": "aren't you",
+      "C": "don't I",
+      "D": "do I"
+    },
+    "correct_option": "B",
+    "explanation": "In complex sentences like 'I suppose / I think + clause', the question tag attaches to the main clause of the subordinate statement ('you are right', so 'aren't you?').",
+    "tags": ["grammar", "question_tags", "complex_sentences", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1476",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Somebody broke into the office last night, didn't they?'",
+    "options": {
+      "A": "Somebody broke into",
+      "B": "the office last night,",
+      "C": "didn't they?",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Somebody' uses 'they' in the question tag, and the past tense 'broke' requires 'didn't'. The sentence is correct.",
+    "tags": ["grammar", "question_tags", "indefinite_pronouns", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1477",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He hardly ever makes a mistake, ___?'",
+    "options": {
+      "A": "does he",
+      "B": "doesn't he",
+      "C": "is he",
+      "D": "isn't he"
+    },
+    "correct_option": "A",
+    "explanation": "'Hardly' makes the statement negative, requiring a positive question tag ('does he?').",
+    "tags": ["grammar", "question_tags", "negation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1478",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'Let's have a cup of coffee, ___?'",
+    "options": {
+      "A": "shall we",
+      "B": "will you",
+      "C": "do we",
+      "D": "let us"
+    },
+    "correct_option": "A",
+    "explanation": "Standard question tag for 'Let's' is 'shall we?'.",
+    "tags": ["grammar", "question_tags", "let_us_rule", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1479",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'None of the answers were correct, were they?'",
+    "options": {
+      "A": "None of the answers",
+      "B": "were correct,",
+      "C": "were they?",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'None' is negative, and the tag is positive ('were they?'). The sentence is correct.",
+    "tags": ["grammar", "question_tags", "negation", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1480",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'You'd better consult a doctor, ___?'",
+    "options": {
+      "A": "hadn't you",
+      "B": "wouldn't you",
+      "C": "didn't you",
+      "D": "haven't you"
+    },
+    "correct_option": "A",
+    "explanation": "'You'd better' is short for 'You had better', taking the auxiliary 'hadn't' in the tag.",
+    "tags": ["grammar", "question_tags", "contractions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1481",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'That was a brilliant movie, ___?'",
+    "options": {
+      "A": "was it",
+      "B": "wasn't it",
+      "C": "is it",
+      "D": "isn't it"
+    },
+    "correct_option": "B",
+    "explanation": "Demonstrative 'That' becomes 'it' in the tag, matching the past tense 'was' ('wasn't it?').",
+    "tags": ["grammar", "question_tags", "demonstratives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1482",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Don't touch that wire, will you?'",
+    "options": {
+      "A": "Don't touch",
+      "B": "that wire,",
+      "C": "will you?",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Negative imperatives ('Don't...') always take 'will you?' as their question tag. The sentence is correct.",
+    "tags": ["grammar", "question_tags", "imperatives", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1483",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Something smells delicious in the kitchen, ___?'",
+    "options": {
+      "A": "doesn't it",
+      "B": "do they",
+      "C": "is it",
+      "D": "isn't it"
+    },
+    "correct_option": "A",
+    "explanation": "'Something' takes 'it' and the present simple auxiliary 'doesn't'.",
+    "tags": ["grammar", "question_tags", "indefinite_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1484",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'He dares not speak against the policy, ___?'",
+    "options": {
+      "A": "does he",
+      "B": "dare he",
+      "C": "doesn't he",
+      "D": "dared he"
+    },
+    "correct_option": "A",
+    "explanation": "When 'dare' functions as a lexical verb with 'not' ('dares not'), the tag uses 'does he'.",
+    "tags": ["grammar", "question_tags", "modals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1485",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Neither of the cars was working properly, were they?'",
+    "options": {
+      "A": "Neither of the cars",
+      "B": "was working properly,",
+      "C": "were they?",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Neither' is negative, taking a positive tag. When the subject is 'Neither of...' referring to objects, the tag uses 'they' ('were they?'). The sentence is correct. Wait, 'Neither of the cars' refers to things, so it can take 'they' or 'it'. Usually 'they' is accepted for plural referents in tags. Let's make sure it's correct. Yes, 'were they?' is standard.",
+    "tags": ["grammar", "question_tags", "indefinite_pronouns", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1486",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I'm right about this solution, ___?'",
+    "options": {
+      "A": "am I not",
+      "B": "aren't I",
+      "C": "Both A and B",
+      "D": "ain't I"
+    },
+    "correct_option": "C",
+    "explanation": "Both 'aren't I' and 'am I not' are correct tags for 'I am'.",
+    "tags": ["grammar", "question_tags", "exceptions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1487",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'Close the back door quietly, ___?'",
+    "options": {
+      "A": "will you",
+      "B": "won't you",
+      "C": "can you",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "Imperative requests accept all these standard variations.",
+    "tags": ["grammar", "question_tags", "imperatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1488",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Little did he know about the surprise party, did he?'",
+    "options": {
+      "A": "Little did he know",
+      "B": "about the surprise party,",
+      "C": "did he?",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Little' is negative, requiring a positive tag ('did he?'). The sentence is correct.",
+    "tags": ["grammar", "question_tags", "negation", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1489",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Pass me that wrench, ___?'",
+    "options": {
+      "A": "will you",
+      "B": "won't you",
+      "C": "can you",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "Imperative sentence tag rules apply across these options.",
+    "tags": ["grammar", "question_tags", "imperatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1490",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'Everyone arrived on time for the meeting, ___?'",
+    "options": {
+      "A": "didn't they",
+      "B": "did they",
+      "C": "wasn't he",
+      "D": "weren't they"
+    },
+    "correct_option": "A",
+    "explanation": "'Everyone' uses 'they' in the tag, and the past tense verb 'arrived' uses 'didn't'.",
+    "tags": ["grammar", "question_tags", "indefinite_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1491",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'You seldom watch television, do you?'",
+    "options": {
+      "A": "You seldom watch television,",
+      "B": "do you?",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "'Seldom' is negative, so the tag is positive ('do you?'). The sentence is correct.",
+    "tags": ["grammar", "question_tags", "negation", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1492",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'There won't be any delays, ___?'",
+    "options": {
+      "A": "will there",
+      "B": "won't there",
+      "C": "is there",
+      "D": "isn't there"
+    },
+    "correct_option": "A",
+    "explanation": "Negative statement ('won't be') takes a positive tag ('will there?').",
+    "tags": ["grammar", "question_tags", "there_rule", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1493",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'Let us plan a weekend getaway, ___?'",
+    "options": {
+      "A": "shall we",
+      "B": "will you",
+      "C": "do we",
+      "D": "can we"
+    },
+    "correct_option": "A",
+    "explanation": "'Let us' (Let's) always takes 'shall we?'.",
+    "tags": ["grammar", "question_tags", "let_us_rule", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1494",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Nothing could have saved the ship, could it?'",
+    "options": {
+      "A": "Nothing could have saved",
+      "B": "the ship,",
+      "C": "could it?",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Nothing' is negative, taking 'it' and a positive tag ('could it?'). The sentence is correct.",
+    "tags": ["grammar", "question_tags", "indefinite_pronouns", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1495",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He hardly ever complains about his workload, ___?'",
+    "options": {
+      "A": "does he",
+      "B": "doesn't he",
+      "C": "is he",
+      "D": "isn't he"
+    },
+    "correct_option": "A",
+    "explanation": "'Hardly' makes the statement negative, requiring a positive tag ('does he?').",
+    "tags": ["grammar", "question_tags", "negation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1496",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'Shut the back gate, ___?'",
+    "options": {
+      "A": "will you",
+      "B": "won't you",
+      "C": "can you",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "Imperative commands accept multiple standard tags.",
+    "tags": ["grammar", "question_tags", "imperatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1497",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am your best friend, aren't I?'",
+    "options": {
+      "A": "I am your best friend,",
+      "B": "aren't I?",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "The sentence is grammatically correct. 'Aren't I?' is the standard tag for 'I am'.",
+    "tags": ["grammar", "question_tags", "exceptions", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1498",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Someone left the back door open, ___?'",
+    "options": {
+      "A": "didn't they",
+      "B": "did they",
+      "C": "wasn't he",
+      "D": "weren't they"
+    },
+    "correct_option": "A",
+    "explanation": "'Someone' takes 'they', and past tense 'left' takes 'didn't'.",
+    "tags": ["grammar", "question_tags", "indefinite_pronouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1499",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct question tag: 'You won't tell anyone about this, ___?'",
+    "options": {
+      "A": "will you",
+      "B": "won't you",
+      "C": "do you",
+      "D": "don't you"
+    },
+    "correct_option": "A",
+    "explanation": "Negative statement ('won't') takes a positive tag ('will you?').",
+    "tags": ["grammar", "question_tags", "negation", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_QTAG_1500",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Let's take a short break from work, shall we?'",
+    "options": {
+      "A": "Let's take a short",
+      "B": "break from work,",
+      "C": "shall we?",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. 'Let's' takes the tag 'shall we?'.",
+    "tags": ["grammar", "question_tags", "let_us_rule", "usage"]
+  }
+]

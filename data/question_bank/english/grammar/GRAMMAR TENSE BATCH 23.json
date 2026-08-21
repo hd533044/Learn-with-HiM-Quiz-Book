@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_TENS_901",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct tense form: 'By this time next year, he ___ his degree.'",
+    "options": {
+      "A": "will complete",
+      "B": "will have completed",
+      "C": "completes",
+      "D": "is completing"
+    },
+    "correct_option": "B",
+    "explanation": "The time marker 'By this time next year' indicates an action that will be finished before a specific point in the future, requiring the Future Perfect tense ('will have completed').",
+    "tags": ["grammar", "tenses", "future_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_902",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am knowing her for the last five years.'",
+    "options": {
+      "A": "I am knowing",
+      "B": "her for",
+      "C": "the last five years.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Stative verbs (such as 'know', 'belong', 'want') are not typically used in continuous tenses. When combined with a time duration ('for the last five years'), the Present Perfect tense should be used instead ('I have known').",
+    "tags": ["grammar", "tenses", "stative_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_903",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It is high time you ___ your job seriously.'",
+    "options": {
+      "A": "take",
+      "B": "took",
+      "C": "have taken",
+      "D": "will take"
+    },
+    "correct_option": "B",
+    "explanation": "After expressions like 'It is time', 'It is high time', or 'It is about time', the verb following the subject must be in the Simple Past tense to express an unreal or delayed action.",
+    "tags": ["grammar", "tenses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_904",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb form: 'She ___ television when the doorbell rang.'",
+    "options": {
+      "A": "watches",
+      "B": "is watching",
+      "C": "was watching",
+      "D": "watched"
+    },
+    "correct_option": "C",
+    "explanation": "An ongoing action in the past ('was watching') interrupted by a sudden, completed past action ('rang') requires the Past Continuous tense.",
+    "tags": ["grammar", "tenses", "past_continuous", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_905",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He did not went to the office yesterday because he was ill.'",
+    "options": {
+      "A": "He did not went",
+      "B": "to the office yesterday",
+      "C": "because he was ill.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "In negative sentences using the past auxiliary 'did', the main verb must be in its base/root form. It should be 'did not go', not 'did not went'.",
+    "tags": ["grammar", "tenses", "simple_past", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_906",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Water ___ at 100 degrees Celsius under normal atmospheric pressure.'",
+    "options": {
+      "A": "boils",
+      "B": "is boiling",
+      "C": "boiled",
+      "D": "has boiled"
+    },
+    "correct_option": "A",
+    "explanation": "Universal truths, scientific facts, and general laws are always expressed in the Simple Present tense.",
+    "tags": ["grammar", "tenses", "universal_truths", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_907",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding sequence of tenses:",
+    "options": {
+      "A": "He said that he will come tomorrow.",
+      "B": "He said that he would come the next day.",
+      "C": "He says that he would come tomorrow.",
+      "D": "He said that he comes yesterday."
+    },
+    "correct_option": "B",
+    "explanation": "When the main clause verb is in the past tense ('said'), the subordinate clause must backshift accordingly ('will' becomes 'would', and 'tomorrow' changes contextually). Option B follows correct sequence rules.",
+    "tags": ["grammar", "tenses", "sequence_of_tenses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_908",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'As soon as the manager will arrive, we will start the meeting.'",
+    "options": {
+      "A": "As soon as",
+      "B": "the manager will arrive,",
+      "C": "we will start the meeting.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "In time clauses introduced by 'as soon as', 'when', 'before', or 'if', the future tense is not used; the Simple Present tense is used instead to denote future time ('As soon as the manager arrives').",
+    "tags": ["grammar", "tenses", "time_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_909",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The train ___ before we reached the platform.'",
+    "options": {
+      "A": "left",
+      "B": "had left",
+      "C": "has left",
+      "D": "was leaving"
+    },
+    "correct_option": "B",
+    "explanation": "When two actions happened in the past, the earlier completed action requires the Past Perfect tense ('had left'), while the subsequent action uses the Simple Past ('reached').",
+    "tags": ["grammar", "tenses", "past_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_910",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'Look! The children ___ in the rain.'",
+    "options": {
+      "A": "dance",
+      "B": "danced",
+      "C": "are dancing",
+      "D": "have danced"
+    },
+    "correct_option": "C",
+    "explanation": "Interjections or attention-grabbers like 'Look!', 'Listen!', or 'Behold!' usually signal an action happening right at the moment of speech, requiring the Present Continuous tense.",
+    "tags": ["grammar", "tenses", "present_continuous", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_911",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I live in this city since 2010.'",
+    "options": {
+      "A": "I live",
+      "B": "in this city",
+      "C": "since 2010.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "When a sentence contains a point of time marker with 'since' or a duration with 'for' continuing into the present, use the Present Perfect Continuous tense ('I have been living').",
+    "tags": ["grammar", "tenses", "present_perfect_continuous", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_912",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He usually ___ up early in the morning, but today he ___ late.'",
+    "options": {
+      "A": "gets / is sleeping",
+      "B": "is getting / sleeps",
+      "C": "got / slept",
+      "D": "has got / has slept"
+    },
+    "correct_option": "A",
+    "explanation": "Habitual actions use the Simple Present ('gets'), whereas temporary conditions or occurrences happening right now or 'today' use the Present Continuous ('is sleeping').",
+    "tags": ["grammar", "tenses", "habitual_vs_temporary", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_913",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'She acted as if she ___ everything.'",
+    "options": {
+      "A": "knows",
+      "B": "knew",
+      "C": "had known",
+      "D": "has known"
+    },
+    "correct_option": "C",
+    "explanation": "After 'as if' or 'as though' denoting an unfulfilled condition in the past relative to the main verb, the Past Perfect tense is used ('had known').",
+    "tags": ["grammar", "tenses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_914",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Scarcely had we stepped out when it started raining heavily.'",
+    "options": {
+      "A": "Scarcely had we stepped out",
+      "B": "when it started",
+      "C": "raining heavily.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. 'Scarcely had + subject + V3' is properly paired with the correlative conjunction 'when' and Simple Past ('started').",
+    "tags": ["grammar", "tenses", "inversion", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_915",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'By the time you return, I ___ the report.'",
+    "options": {
+      "A": "will finish",
+      "B": "will have finished",
+      "C": "finish",
+      "D": "have finished"
+    },
+    "correct_option": "B",
+    "explanation": "An action projected to be completed before a specified future moment ('By the time you return') requires the Future Perfect tense.",
+    "tags": ["grammar", "tenses", "future_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_916",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He has returned from London last week.",
+      "B": "He returned from London last week.",
+      "C": "He had returned from London last week.",
+      "D": "He was returning from London last week."
+    },
+    "correct_option": "B",
+    "explanation": "A specific past time indicator ('last week') requires the Simple Past tense, not the Present Perfect ('has returned').",
+    "tags": ["grammar", "tenses", "simple_past", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_917",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'No sooner did the bell ring than the students rushed out of their classes.'",
+    "options": {
+      "A": "No sooner did the bell ring",
+      "B": "than the students",
+      "C": "rushed out of their classes.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. 'No sooner did... ring' is appropriately paired with 'than' and the Simple Past 'rushed'.",
+    "tags": ["grammar", "tenses", "correlatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_918",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She ___ her project for the last two weeks and hasn't finished yet.'",
+    "options": {
+      "A": "is writing",
+      "B": "has been writing",
+      "C": "wrote",
+      "D": "had written"
+    },
+    "correct_option": "B",
+    "explanation": "An action that started in the past and is still continuing into the present uses the Present Perfect Continuous tense ('has been writing').",
+    "tags": ["grammar", "tenses", "present_perfect_continuous", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_919",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb form: 'If you heat ice, it ___.'",
+    "options": {
+      "A": "melted",
+      "B": "melts",
+      "C": "will melt",
+      "D": "would melt"
+    },
+    "correct_option": "B",
+    "explanation": "Zero conditionals expressing natural laws or general facts use the Simple Present tense in both clauses.",
+    "tags": ["grammar", "tenses", "zero_conditional", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_920",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I wish I was a bird so that I could fly across the oceans.'",
+    "options": {
+      "A": "I wish",
+      "B": "I was a bird",
+      "C": "so that I could fly across the oceans.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "After 'I wish' expressing a hypothetical or unreal present desire, the verb 'to be' must be 'were' for all subjects, not 'was'.",
+    "tags": ["grammar", "tenses", "subjunctive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_921",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He ___ English for five years before he moved to London.'",
+    "options": {
+      "A": "has studied",
+      "B": "had studied",
+      "C": "studied",
+      "D": "was studying"
+    },
+    "correct_option": "B",
+    "explanation": "An action that continued up to a specific point in the past requires the Past Perfect tense ('had studied').",
+    "tags": ["grammar", "tenses", "past_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_922",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'She ___ the piano every evening after dinner.'",
+    "options": {
+      "A": "is playing",
+      "B": "plays",
+      "C": "played",
+      "D": "has played"
+    },
+    "correct_option": "B",
+    "explanation": "Habitual or routine actions indicated by frequency phrases like 'every evening' take the Simple Present tense.",
+    "tags": ["grammar", "tenses", "simple_present", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_923",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'When I reached the station, the train already departed.'",
+    "options": {
+      "A": "When I reached the station,",
+      "B": "the train",
+      "C": "already departed.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Between two past events, the earlier one must be in the Past Perfect tense ('had already departed').",
+    "tags": ["grammar", "tenses", "past_perfect", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_924",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Look at those dark clouds! It ___ rain soon.'",
+    "options": {
+      "A": "will",
+      "B": "is going to",
+      "C": "shall",
+      "D": "must"
+    },
+    "correct_option": "B",
+    "explanation": "When there is immediate present evidence or visible indicators pointing to a future outcome, 'is going to' is the preferred construction.",
+    "tags": ["grammar", "tenses", "future_intentions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_925",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He speaks as though he ___ everything about the business.'",
+    "options": {
+      "A": "knows",
+      "B": "knew",
+      "C": "had known",
+      "D": "has known"
+    },
+    "correct_option": "B",
+    "explanation": "Following 'as though' or 'as if' to indicate an unreal present comparison, the Simple Past tense ('knew') is used.",
+    "tags": ["grammar", "tenses", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_926",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I am not seeing him for several days.'",
+    "options": {
+      "A": "I am not seeing",
+      "B": "him for",
+      "C": "several days.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Stative use of 'see' (meaning to perceive or having relationship/contact over a duration with 'for several days') requires Present Perfect: 'I have not seen him'.",
+    "tags": ["grammar", "tenses", "stative_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_927",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'By next month, we ___ in this house for ten years.'",
+    "options": {
+      "A": "will live",
+      "B": "will have lived",
+      "C": "have lived",
+      "D": "will be living"
+    },
+    "correct_option": "B",
+    "explanation": "A duration extending up to a point in the future uses the Future Perfect tense ('will have lived').",
+    "tags": ["grammar", "tenses", "future_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_928",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "She is owning a luxury car.",
+      "B": "She owns a luxury car.",
+      "C": "She has owned a luxury car since yesterday.",
+      "D": "Both B and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "'Own' is a stative verb. It cannot be used in continuous tense (making A incorrect), but can be used in Simple Present (B) or Present Perfect with duration (C). Thus D is correct.",
+    "tags": ["grammar", "tenses", "stative_verbs", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_929",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Unless you will work hard, you cannot pass the examination.'",
+    "options": {
+      "A": "Unless you will work hard,",
+      "B": "you cannot pass",
+      "C": "the examination.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "In conditional clauses with 'unless', avoid using 'will'. Use Simple Present ('Unless you work hard').",
+    "tags": ["grammar", "tenses", "conditionals", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_930",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'While I ___ down the street, I met an old school friend.'",
+    "options": {
+      "A": "walked",
+      "B": "was walking",
+      "C": "had walked",
+      "D": "have walked"
+    },
+    "correct_option": "B",
+    "explanation": "An ongoing background action interrupted or occurring simultaneously with another past event takes the Past Continuous tense ('was walking').",
+    "tags": ["grammar", "tenses", "past_continuous", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_931",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He ___ to the temple every Tuesday when he was young.'",
+    "options": {
+      "A": "goes",
+      "B": "is going",
+      "C": "used to go",
+      "D": "has gone"
+    },
+    "correct_option": "C",
+    "explanation": "Past habitual actions over a period in the past are appropriately expressed using 'used to go' or Simple Past.",
+    "tags": ["grammar", "tenses", "past_habits", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_932",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is having a large fan following across the country.'",
+    "options": {
+      "A": "He is having",
+      "B": "a large fan following",
+      "C": "across the country.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "When 'have' indicates possession or state, it is a stative verb and cannot be used in the continuous form. It should be 'He has a large fan following.'",
+    "tags": ["grammar", "tenses", "stative_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_933",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Hardly had I stepped outside ___ the storm broke.'",
+    "options": {
+      "A": "than",
+      "B": "when",
+      "C": "then",
+      "D": "that"
+    },
+    "correct_option": "B",
+    "explanation": "The correlative conjunction matching 'Hardly' or 'Scarcely' in inverted past perfect constructions is 'when'.",
+    "tags": ["grammar", "tenses", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_934",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct form: 'She ___ her keys, so she cannot open the door now.'",
+    "options": {
+      "A": "lost",
+      "B": "has lost",
+      "C": "had lost",
+      "D": "loses"
+    },
+    "correct_option": "B",
+    "explanation": "An action that occurred in the past with a direct consequence or relevance in the present takes the Present Perfect tense ('has lost').",
+    "tags": ["grammar", "tenses", "present_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_935",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The police arrested the thief who stole the car last night.'",
+    "options": {
+      "A": "The police arrested",
+      "B": "the thief who",
+      "C": "stole the car last night.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is correct. Simple past tense is appropriately used with the specific past time marker 'last night'.",
+    "tags": ["grammar", "tenses", "simple_past", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_936",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'By the end of this month, she ___ for this firm for three years.'",
+    "options": {
+      "A": "will work",
+      "B": "will have been working",
+      "C": "has worked",
+      "D": "is working"
+    },
+    "correct_option": "B",
+    "explanation": "A continuous duration leading up to a specific time in the future requires the Future Perfect Continuous tense ('will have been working').",
+    "tags": ["grammar", "tenses", "future_perfect_continuous", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_937",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'If I ___ about the traffic jam, I would have taken another route.'",
+    "options": {
+      "A": "knew",
+      "B": "had known",
+      "C": "have known",
+      "D": "would know"
+    },
+    "correct_option": "B",
+    "explanation": "Third conditional structures require the Past Perfect tense ('had known') in the 'if' clause.",
+    "tags": ["grammar", "tenses", "conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_938",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is reading novels since morning.'",
+    "options": {
+      "A": "He is reading",
+      "B": "novels",
+      "C": "since morning.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Presence of 'since morning' indicates an ongoing action from past to present, requiring Present Perfect Continuous ('He has been reading').",
+    "tags": ["grammar", "tenses", "present_perfect_continuous", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_939",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It ___ heavily when we stepped outside.'",
+    "options": {
+      "A": "rained",
+      "B": "was raining",
+      "C": "had rained",
+      "D": "has rained"
+    },
+    "correct_option": "B",
+    "explanation": "An ongoing background action when another event happened uses the Past Continuous tense ('was raining').",
+    "tags": ["grammar", "tenses", "past_continuous", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_940",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct verb form: 'I ___ my dinner before they arrived.'",
+    "options": {
+      "A": "finished",
+      "B": "have finished",
+      "C": "had finished",
+      "D": "was finishing"
+    },
+    "correct_option": "C",
+    "explanation": "Between two past actions, the earlier completed action takes the Past Perfect tense ('had finished').",
+    "tags": ["grammar", "tenses", "past_perfect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_941",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She told me that she has finished her work an hour ago.'",
+    "options": {
+      "A": "She told me that",
+      "B": "she has finished",
+      "C": "her work an hour ago.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "The past time marker 'an hour ago' combined with a past reporting verb requires the Past Perfect tense ('had finished'). Present Perfect is incompatible here.",
+    "tags": ["grammar", "tenses", "sequence_of_tenses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_942",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He usually ___ coffee, but today he ___ tea.'",
+    "options": {
+      "A": "drinks / is drinking",
+      "B": "is drinking / drinks",
+      "C": "drank / was drinking",
+      "D": "has drunk / drinks"
+    },
+    "correct_option": "A",
+    "explanation": "Habitual state uses Simple Present ('drinks'), while a temporary deviation uses Present Continuous ('is drinking').",
+    "tags": ["grammar", "tenses", "habitual_vs_temporary", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_943",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "The sun sets in the west.",
+      "B": "The sun is setting in the west.",
+      "C": "The sun has set in the west.",
+      "D": "The sun was setting in the west."
+    },
+    "correct_option": "A",
+    "explanation": "Permanent universal facts use the Simple Present tense.",
+    "tags": ["grammar", "tenses", "universal_truths", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_944",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I wish I knew the answer to this difficult question yesterday.'",
+    "options": {
+      "A": "I wish",
+      "B": "I knew",
+      "C": "the answer to this difficult question yesterday.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "When expressing an unfulfilled regret about the past using 'I wish', the Past Perfect tense must be used ('I wish I had known'), not the Simple Past ('knew').",
+    "tags": ["grammar", "tenses", "subjunctive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_945",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'By next week, the repair work ___.'",
+    "options": {
+      "A": "will finish",
+      "B": "will have been finished",
+      "C": "has finished",
+      "D": "is finished"
+    },
+    "correct_option": "B",
+    "explanation": "Future perfect passive structure ('will have been finished') is required for an action completed by a future deadline.",
+    "tags": ["grammar", "tenses", "future_perfect_passive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_946",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'Each of the participants ___ given a certificate yesterday.'",
+    "options": {
+      "A": "was",
+      "B": "were",
+      "C": "is",
+      "D": "are"
+    },
+    "correct_option": "A",
+    "explanation": "'Each of' takes a singular verb, and the past time marker 'yesterday' requires the past tense 'was'.",
+    "tags": ["grammar", "tenses", "subject_verb_agreement", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_947",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'If she will invite me, I will definitely attend the party.'",
+    "options": {
+      "A": "If she will invite me,",
+      "B": "I will definitely attend",
+      "C": "the party.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "In conditional clauses ('if'), do not use 'future tense' ('will invite'). Use Simple Present ('If she invites me').",
+    "tags": ["grammar", "tenses", "conditionals", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_948",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She ___ a novel for two hours before she took a break.'",
+    "options": {
+      "A": "has been reading",
+      "B": "had been reading",
+      "C": "was reading",
+      "D": "read"
+    },
+    "correct_option": "B",
+    "explanation": "An ongoing duration leading up to a point in the past requires the Past Perfect Continuous tense ('had been reading').",
+    "tags": ["grammar", "tenses", "past_perfect_continuous", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_949",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He is one of those men who always helps others.",
+      "B": "He is one of those men who always help others.",
+      "C": "He is one of those men whom always help others.",
+      "D": "He is one of those men who always helping others."
+    },
+    "correct_option": "B",
+    "explanation": "In the relative clause 'who always help others', the antecedent of 'who' is 'men' (plural), so the verb must be plural ('help').",
+    "tags": ["grammar", "tenses", "relative_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_TENS_950",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He behaves as though he knows everything about the matter.'",
+    "options": {
+      "A": "He behaves",
+      "B": "as though he knows",
+      "C": "everything about the matter.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "After 'as though' or 'as if' denoting an unreal present comparison, the subjunctive past tense should be used ('knew'), not the present tense ('knows').",
+    "tags": ["grammar", "tenses", "subjunctive", "spotting_errors"]
+  }
+]

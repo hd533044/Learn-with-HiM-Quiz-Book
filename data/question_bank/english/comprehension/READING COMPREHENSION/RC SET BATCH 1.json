@@ -1,0 +1,136 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_101",
+    "passage_title": "The Evolutionary Legacy of Tool Use in Non-Human Primates",
+    "passage_text": "For decades, anthropology and comparative primatology operated under the anthropocentric assumption that tool fabrication and sustained technological transmission were uniquely human hallmarks. However, longitudinal field observations across diverse ecosystems have dismantled this evolutionary dichotomy. In Guinea's Bossou forest, wild chimpanzees (*Pan troglodytes verus*) routinely deploy paired lithic implements—a mobile hammer stone and a stationary anvil—to fracture hard coula nuts. This foraging behavior requires precise sensorimotor coordination, spatial assessment of force, and long-term memory retrieval regarding anvil stability. Crucially, juvenile chimpanzees do not master this technique spontaneously through trial and error; rather, they undergo an extensive observational apprenticeship spanning three to five years, mirroring rudimentary forms of social cultural scaffolding. Simultaneously, long-tailed macaques (*Macaca fascicularis*) along the coastlines of Thailand exhibit habitual lithic percussion to crack open intertidal shellfish, altering implement selection dynamically based on prey shell thickness. These non-human technological repertoires demonstrate that tool modification and behavioral traditions are phylogenetically deep-rooted adaptations driven by resource pressures and ecological niches rather than sudden cognitive leaps unique to the genus *Homo*.",
+    "questions": [
+      {
+        "id": "ENG_RC_101_Q1",
+        "question": "What primary traditional assumption does the author argue has been refuted by modern primatological research?",
+        "options": {
+          "A": "The belief that wild chimpanzees exclusively inhabit equatorial rainforests.",
+          "B": "The conviction that tool manufacturing and cultural transmission are exclusively human domains.",
+          "C": "The assumption that tool choice is strictly governed by trial-and-error instincts.",
+          "D": "The hypothesis that coastal macaques possess superior cognitive dexterity to apes."
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence directly highlights the 'anthropocentric assumption that tool fabrication and sustained technological transmission were uniquely human hallmarks' and notes it was dismantled by empirical field studies."
+      },
+      {
+        "id": "ENG_RC_101_Q2",
+        "question": "Based on the passage, the nut-cracking behavior of juvenile chimpanzees in Bossou illustrates which evolutionary phenomenon?",
+        "options": {
+          "A": "Spontaneous phenotypic mutation without parental proximity.",
+          "B": "Instinctive biological reflexes triggered by nutritional starvation.",
+          "C": "Social learning and cultural transmission via long-term observational apprenticeship.",
+          "D": "Interspecies behavioral competition between primates and coastal macaques."
+        },
+        "correct_option": "C",
+        "rationale": "The author notes that juveniles do not learn spontaneously through trial and error, but rather 'undergo an extensive observational apprenticeship spanning three to five years, mirroring rudimentary forms of social cultural scaffolding.'"
+      },
+      {
+        "id": "ENG_RC_101_Q3",
+        "question": "Which detail regarding Thai long-tailed macaques supports the passage's broader thesis?",
+        "options": {
+          "A": "Their preference for stationary wooden anvils over lithic stones.",
+          "B": "Their capacity to alter implement selection dynamically relative to prey morphology.",
+          "C": "Their reliance on hunting terrestrial mammals during low-tide intervals.",
+          "D": "Their inability to transmit percussive techniques across family groups."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that macaques 'altering implement selection dynamically based on prey shell thickness' demonstrates sophisticated technological adaptation driven by ecological demands."
+      },
+      {
+        "id": "ENG_RC_101_Q4",
+        "question": "What is the primary tone of the passage?",
+        "options": {
+          "A": "Dismissive and skeptical",
+          "B": "Analytical and academic",
+          "C": "Sentimental and nostalgic",
+          "D": "Polemically aggressive"
+        },
+        "correct_option": "B",
+        "rationale": "The text utilizes precise scientific terminology, comparative empirical examples, and structured evolutionary argumentation, creating an objective academic tone."
+      },
+      {
+        "id": "ENG_RC_101_Q5",
+        "question": "As used in the passage, the word 'dichotomy' most closely means:",
+        "options": {
+          "A": "A rigid division or contrast between two things.",
+          "B": "A harmonious biological symbiosis.",
+          "C": "An unbroken chronological timeline.",
+          "D": "A superficial physical resemblance."
+        },
+        "correct_option": "A",
+        "rationale": "'Dichotomy' refers to a strict division between two mutually exclusive entities—here, the historical division drawn between humans and non-human animals regarding technology."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_102",
+    "passage_title": "Algorithmic Epistemology and the Echo Chamber Effect",
+    "passage_text": "The democratization of global information networks initially promised an unprecedented era of epistemic enlightenment, wherein decentralized connectivity would neutralize centralized institutional biases. Instead, the architectural integration of algorithmic curation and behavioral telemetry has catalyzed epistemic bubbles and self-reinforcing echo chambers. Modern content distribution platforms leverage complex predictive models calibrated primarily to maximize dwell time and interaction velocity rather than empirical accuracy. Because human cognitive architecture exhibits intrinsic confirmation bias, affective polarization, and a tendency to reward ingroup loyalty, algorithms inadvertently optimize for contentious and sensationalized discourse. Users are progressively insulated from dissonant viewpoints, mistaking their personalized algorithmic feed for a representative sample of objective consensus. This cognitive narrowing degrades deliberative democracy by fragmenting the shared informational baseline required for public policy compromise. When empirical reality itself becomes tribalized, democratic discourse shifts from debates over policy implementation to intractable conflicts over foundational facts.",
+    "questions": [
+      {
+        "id": "ENG_RC_102_Q1",
+        "question": "According to the passage, what optimization metric drives algorithmic curation platforms toward sensationalism?",
+        "options": {
+          "A": "Maximizing academic rigor and factual transparency.",
+          "B": "Maximizing interaction velocity and user dwell time.",
+          "C": "Minimizing cognitive dissonance among minority groups.",
+          "D": "Expanding the diversity of political perspectives in users' feeds."
+        },
+        "correct_option": "B",
+        "rationale": "The author explicitly points out that algorithms are 'calibrated primarily to maximize dwell time and interaction velocity rather than empirical accuracy.'"
+      },
+      {
+        "id": "ENG_RC_102_Q2",
+        "question": "How does algorithmic insulation primarily threaten deliberative democracy?",
+        "options": {
+          "A": "By eliminating access to digital telecommunication channels.",
+          "B": "By causing users to abandon participation in national elections.",
+          "C": "By eroding the shared informational foundation needed to negotiate policy compromises.",
+          "D": "By requiring mandatory government identification to browse forums."
+        },
+        "correct_option": "C",
+        "rationale": "The passage highlights that algorithmic narrowing 'degrades deliberative democracy by fragmenting the shared informational baseline required for public policy compromise.'"
+      },
+      {
+        "id": "ENG_RC_102_Q3",
+        "question": "The author attributes the proliferation of echo chambers to the intersection of which two factors?",
+        "options": {
+          "A": "State-sponsored censorship and computational hardware limitations.",
+          "B": "Behavioral prediction algorithms and intrinsic human cognitive biases.",
+          "C": "Financial inflation and international telecom regulations.",
+          "D": "Academic consensus models and open-source software libraries."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that modern platform architecture combines 'predictive models' with 'human cognitive architecture' (confirmation bias, affective polarization) to generate self-reinforcing bubbles."
+      },
+      {
+        "id": "ENG_RC_102_Q4",
+        "question": "Which of the following best captures the central premise of the passage?",
+        "options": {
+          "A": "Internet democratization has failed entirely because computer literacy has declined globally.",
+          "B": "Algorithmic curation exploits psychological vulnerabilities, undermining shared factual reality and democratic debate.",
+          "C": "Social media platforms have successfully neutralized centralized institutional biases worldwide.",
+          "D": "Deliberative democracy flourishes when users are exposed exclusively to like-minded viewpoints."
+        },
+        "correct_option": "B",
+        "rationale": "The text synthesizes algorithmic maximization of engagement, exploitation of cognitive biases, and the ensuing decay of democratic discourse over factual reality."
+      },
+      {
+        "id": "ENG_RC_102_Q5",
+        "question": "The word 'epistemic' as used throughout the passage relates specifically to:",
+        "options": {
+          "A": "Economic systems and monetary liquidity.",
+          "B": "Knowledge, belief systems, and validation of truth.",
+          "C": "Hardware telecommunications protocols.",
+          "D": "Electoral voting procedures."
+        },
+        "correct_option": "B",
+        "rationale": "'Epistemic' denotes relating to knowledge or to the degree of its validation and cognitive acquisition."
+      }
+    ]
+  }
+]

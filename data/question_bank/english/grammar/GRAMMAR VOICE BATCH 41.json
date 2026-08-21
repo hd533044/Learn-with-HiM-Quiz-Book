@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_VOIC_1751",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They believe that the CEO is resigning next week.'",
+    "options": {
+      "A": "The CEO is believed to be resigning next week.",
+      "B": "It is believed that the CEO is resigning next week.",
+      "C": "Both A and B are correct.",
+      "D": "The CEO is believed that he is resigning next week."
+    },
+    "correct_option": "C",
+    "explanation": "Reporting verbs with 'that' clauses can be converted into passive voice using either subject-raising ('The CEO is believed to be...') or impersonal passive ('It is believed that...'). Both are fully correct.",
+    "tags": ["grammar", "high_level_voice", "reporting_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1752",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error in advanced passive conversion: 'Active: He made everyone laugh. Passive: Everyone was made laughing by him.'",
+    "options": {
+      "A": "He made everyone laugh.",
+      "B": "Everyone was made",
+      "C": "laughing by him.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "In active causative structures, 'make' takes a bare infinitive, but when converted to the passive voice, it must take the full infinitive ('to laugh'). 'laughing' is grammatically incorrect.",
+    "tags": ["grammar", "high_level_voice", "causative_passive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1753",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'People allege that the minister accepted bribes.'",
+    "options": {
+      "A": "The minister is alleged to have accepted bribes.",
+      "B": "It is alleged that the minister accepted bribes.",
+      "C": "Both A and B are correct.",
+      "D": "The minister was alleged to accept bribes."
+    },
+    "correct_option": "C",
+    "explanation": "When the subordinate clause refers to a prior action ('accepted'), the subject-raising passive uses a perfect infinitive ('to have accepted'), alongside the standard impersonal passive ('It is alleged that...'). Both A and B are correct options.",
+    "tags": ["grammar", "high_level_voice", "perfect_infinitive_passive", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1754",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'It is time to wind up the meeting.'",
+    "options": {
+      "A": "It is time for the meeting to be wound up.",
+      "B": "The meeting is time to be wound up.",
+      "C": "It is time the meeting was wound up.",
+      "D": "It is time for to be wound up the meeting."
+    },
+    "correct_option": "A",
+    "explanation": "When an active sentence starts with 'It is time to + infinitive + object', the standard passive conversion requires 'It is time for + object + to be + V3' ('It is time for the meeting to be wound up').",
+    "tags": ["grammar", "high_level_voice", "infinitives_in_passive", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1755",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They saw him cross the street. Passive: He was seen to cross the street.'",
+    "options": {
+      "A": "He was seen",
+      "B": "to cross",
+      "C": "the street.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Verbs of perception take a bare infinitive in the active voice ('saw him cross'), but the full infinitive ('to cross') must be restored when converted to the passive voice. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "perception_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1756",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They proposed to build a new flyover.'",
+    "options": {
+      "A": "It was proposed to build a new flyover.",
+      "B": "It was proposed that a new flyover should be built.",
+      "C": "Both A and B are correct.",
+      "D": "A new flyover was proposed to build."
+    },
+    "correct_option": "C",
+    "explanation": "Sentences of intent taking an infinitive can convert via impersonal passive ('It was proposed to build...') or via a mandative clause structure ('It was proposed that... should be built'). Both A and B are correct.",
+    "tags": ["grammar", "high_level_voice", "complex_conversions", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1757",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into active voice: 'The bridge is reported to have been severely damaged by the earthquake.'",
+    "options": {
+      "A": "They report that the earthquake severely damaged the bridge.",
+      "B": "The earthquake reports that it damaged the bridge.",
+      "C": "People reported that the bridge was damaged by the earthquake.",
+      "D": "It is reported that the earthquake damaged the bridge."
+    },
+    "correct_option": "A",
+    "explanation": "Reversing subject-raising passive with a perfect infinitive ('is reported to have been damaged') back to active voice yields 'They report that [subject] [past action].'",
+    "tags": ["grammar", "high_level_voice", "passive_to_active", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1758",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: He let the cat out of the bag. Passive: The cat was let out of the bag by him.'",
+    "options": {
+      "A": "The cat was let",
+      "B": "out of the bag",
+      "C": "by him.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Idiomatic phrasal verbs with 'let' convert correctly in passive contexts. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "idiomatic_phrasal_verbs", "usage"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1759",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'Nothing ventured, nothing gained.'",
+    "options": {
+      "A": "If nothing is ventured, nothing is gained.",
+      "B": "Nothing is gained unless nothing is ventured.",
+      "C": "Both A and B capture the implied passive sense.",
+      "D": "This idiom cannot be converted into passive."
+    },
+    "correct_option": "A",
+    "explanation": "Proverbs with elliptical structures ('Nothing ventured, nothing gained') explicitly expand into conditional passive clauses: 'If nothing is ventured, nothing is gained.'",
+    "tags": ["grammar", "high_level_voice", "elliptical_clauses", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1760",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They expect him to deliver the keynote address.'",
+    "options": {
+      "A": "He is expected to deliver the keynote address.",
+      "B": "It is expected that he will deliver the keynote address.",
+      "C": "Both A and B are correct.",
+      "D": "The keynote address is expected to deliver by him."
+    },
+    "correct_option": "C",
+    "explanation": "Expectation structures with infinitive complements convert cleanly into both subject-raising (A) and impersonal clause formats (B).",
+    "tags": ["grammar", "high_level_voice", "expectation_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1761",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They had him arrested. Passive: He had been arrested by them.'",
+    "options": {
+      "A": "He had been arrested",
+      "B": "by them.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Causative active 'had + object + past participle' denotes arranging for an action, and its direct passive equivalent is 'object + had been + V3'. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "causative_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1762",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They consider that the plan is unfeasible.'",
+    "options": {
+      "A": "The plan is considered to be unfeasible.",
+      "B": "It is considered that the plan is unfeasible.",
+      "C": "Both A and B are correct.",
+      "D": "The plan was considered unfeasible by them."
+    },
+    "correct_option": "C",
+    "explanation": "Both A and B correctly apply subject-raising and impersonal clause passive conversions for present tense reporting clauses.",
+    "tags": ["grammar", "high_level_voice", "reporting_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1763",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'We must take into account all the constraints.'",
+    "options": {
+      "A": "All the constraints must take into account.",
+      "B": "All the constraints must be taken into account.",
+      "C": "Account must be taken of all the constraints by us.",
+      "D": "Both B and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Phrasal verbs and idiomatic nominalizations ('take into account' vs 'take account of') allow multiple valid passive transformations (B and C).",
+    "tags": ["grammar", "high_level_voice", "phrasal_verbs_passive", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1764",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: She bade me leave the room. Passive: I was bade to leave the room by her.'",
+    "options": {
+      "A": "I was bade",
+      "B": "to leave the room",
+      "C": "by her.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The past form of 'bid' (command) is 'bade', but its correct past participle used in the passive voice is 'bidden'. Correct: 'I was bidden to leave...'",
+    "tags": ["grammar", "high_level_voice", "irregular_past_participles", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1765",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They understand that the treaty has been signed.'",
+    "options": {
+      "A": "The treaty is understood to have been signed.",
+      "B": "It is understood that the treaty has been signed.",
+      "C": "Both A and B are correct.",
+      "D": "The treaty was understood to sign."
+    },
+    "correct_option": "C",
+    "explanation": "Subordinate clause features perfect passive ('has been signed'), which converts using perfect infinitive raising (A) or impersonal passive (B). Both are correct.",
+    "tags": ["grammar", "high_level_voice", "perfect_passive_embedding", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1766",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'It is your duty to submit the files.'",
+    "options": {
+      "A": "You are supposed to submit the files.",
+      "B": "The files are to be submitted by you.",
+      "C": "Both A and B express equivalent passive obligations.",
+      "D": "The files have a duty to submit by you."
+    },
+    "correct_option": "C",
+    "explanation": "Expressing institutional duty or obligations in passive contexts can be handled via 'are supposed to' or 'are to be submitted'. Both A and B are valid formulations.",
+    "tags": ["grammar", "high_level_voice", "obligation_conversions", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1767",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They found the lock broken. Passive: The lock was found broken by them.'",
+    "options": {
+      "A": "The lock was found",
+      "B": "broken by them.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Sentences containing object complements ('broken') retain the complement correctly after the passive verb. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "object_complements", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1768",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They suppose him to be a genius.'",
+    "options": {
+      "A": "He is supposed to be a genius.",
+      "B": "It is supposed that he is a genius.",
+      "C": "Both A and B are correct.",
+      "D": "A genius is supposed him to be."
+    },
+    "correct_option": "C",
+    "explanation": "Standard subjective-raising and impersonal transformations apply seamlessly to 'suppose' constructions.",
+    "tags": ["grammar", "high_level_voice", "mental_state_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1769",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'People know that he is a philanthropist.'",
+    "options": {
+      "A": "He is known to be a philanthropist.",
+      "B": "It is known that he is a philanthropist.",
+      "C": "Both A and B are correct.",
+      "D": "A philanthropist is known by people to be him."
+    },
+    "correct_option": "C",
+    "explanation": "Both subject raising ('He is known to be...') and impersonal passive ('It is known that...') are correct.",
+    "tags": ["grammar", "high_level_voice", "reporting_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1770",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: Someone gave her a promotion. Passive: A promotion was given to her.'",
+    "options": {
+      "A": "A promotion was given",
+      "B": "to her.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Converting the direct object of a double-object verb into the passive subject while retaining 'to' for the indirect object is grammatically sound. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "double_objects", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1771",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They report that the economy is recovering.'",
+    "options": {
+      "A": "The economy is reported to be recovering.",
+      "B": "It is reported that the economy is recovering.",
+      "C": "Both A and B are correct.",
+      "D": "The economy was reported recovering."
+    },
+    "correct_option": "C",
+    "explanation": "Continuous aspect in the subordinate clause converts using continuous infinitive raising ('to be recovering') alongside the impersonal passive.",
+    "tags": ["grammar", "high_level_voice", "continuous_infinitive_passive", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1772",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'We require you to submit all receipts.'",
+    "options": {
+      "A": "You are required to submit all receipts.",
+      "B": "All receipts are required to be submitted by you.",
+      "C": "Both A and B are correct.",
+      "D": "All receipts require to submit by you."
+    },
+    "correct_option": "C",
+    "explanation": "Depending on whether the personal object ('you') or direct object ('receipts') is promoted to subject, both subject-raising variations (A and B) are grammatically acceptable.",
+    "tags": ["grammar", "high_level_voice", "double_raising", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1773",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They proved him wrong. Passive: He was proved wrong by them.'",
+    "options": {
+      "A": "He was proved wrong",
+      "B": "by them.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Retaining the adjective complement ('wrong') after the passive verb 'proved' is grammatically correct. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "object_complements", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1774",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They suppose the book to have been published in 1920.'",
+    "options": {
+      "A": "The book is supposed to have been published in 1920.",
+      "B": "It is supposed that the book was published in 1920.",
+      "C": "Both A and B are correct.",
+      "D": "The book was supposed publishing in 1920."
+    },
+    "correct_option": "C",
+    "explanation": "Complex passive embedding involving past perfect state and 'suppose' accommodates both subject raising with perfect infinitive and impersonal constructions.",
+    "tags": ["grammar", "high_level_voice", "perfect_infinitive_raising", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1775",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'People consider that he solved the mystery single-handedly.'",
+    "options": {
+      "A": "He is considered to have solved the mystery single-handedly.",
+      "B": "It is considered that he solved the mystery single-handedly.",
+      "C": "Both A and B are correct.",
+      "D": "The mystery is considered to solve by him single-handedly."
+    },
+    "correct_option": "C",
+    "explanation": "Past action in the subordinate clause converts into the perfect infinitive ('to have solved') under subject raising, or standard impersonal passive.",
+    "tags": ["grammar", "high_level_voice", "reporting_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1776",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They appointed her chairperson. Passive: She was appointed chairperson by them.'",
+    "options": {
+      "A": "She was appointed",
+      "B": "chairperson by them.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Factitive title complements ('chairperson') remain intact after passive conversion. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "factitive_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1777",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They believe him to be hiding in the mountains.'",
+    "options": {
+      "A": "He is believed to be hiding in the mountains.",
+      "B": "It is believed that he is hiding in the mountains.",
+      "C": "Both A and B are correct.",
+      "D": "In the mountains he is believed hiding."
+    },
+    "correct_option": "C",
+    "explanation": "Continuous infinitive complements ('to be hiding') convert cleanly into both subject-raising and impersonal passive clauses.",
+    "tags": ["grammar", "high_level_voice", "continuous_infinitive_passive", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1778",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'We must bear in mind all potential risks.'",
+    "options": {
+      "A": "All potential risks must bear in mind.",
+      "B": "All potential risks must be borne in mind.",
+      "C": "Mind must be borne of all potential risks.",
+      "D": "Both B and C are valid."
+    },
+    "correct_option": "B",
+    "explanation": "The idiomatic phrasal verb 'bear in mind' converts correctly with the past participle of bear ('borne') in the passive phrase 'must be borne in mind.'",
+    "tags": ["grammar", "high_level_voice", "idiomatic_phrasal_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1779",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They saw the thief run away. Passive: The thief was seen run away.'",
+    "options": {
+      "A": "The thief was seen",
+      "B": "run away.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Bare infinitives in active perception structures must switch to full infinitives in the passive. Correct: 'The thief was seen to run away.'",
+    "tags": ["grammar", "high_level_voice", "perception_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1780",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They expect that the inflation rate will drop.'",
+    "options": {
+      "A": "It is expected that the inflation rate will drop.",
+      "B": "The inflation rate is expected to drop.",
+      "C": "Both A and B are correct.",
+      "D": "The inflation rate will be expected dropping."
+    },
+    "correct_option": "C",
+    "explanation": "Both impersonal passive ('It is expected that...') and subject-raising ('The inflation rate is expected to drop') are correct transformations.",
+    "tags": ["grammar", "high_level_voice", "expectation_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1781",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They acknowledge that he made significant contributions.'",
+    "options": {
+      "A": "He is acknowledged to have made significant contributions.",
+      "B": "It is acknowledged that he made significant contributions.",
+      "C": "Both A and B are correct.",
+      "D": "Significant contributions are acknowledged to make by him."
+    },
+    "correct_option": "C",
+    "explanation": "Past tense subordinate action converts with a perfect infinitive under raising (A), or via impersonal passive (B). Both are correct.",
+    "tags": ["grammar", "high_level_voice", "reporting_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1782",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They let the prisoners go. Passive: The prisoners were let go by them.'",
+    "options": {
+      "A": "The prisoners were let go",
+      "B": "by them.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Causative 'let' passive formulations retain the bare lexical item 'let' and particle 'go' correctly in standard usage. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "causative_passive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1783",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'People think that she has resigned from the board.'",
+    "options": {
+      "A": "She is thought to have resigned from the board.",
+      "B": "It is thought that she has resigned from the board.",
+      "C": "Both A and B are correct.",
+      "D": "The board is thought to resign by her."
+    },
+    "correct_option": "C",
+    "explanation": "Present perfect subordinate clause converts cleanly using perfect infinitive subject-raising (A) or impersonal passive (B).",
+    "tags": ["grammar", "high_level_voice", "reporting_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1784",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They advise us to book our flights early.'",
+    "options": {
+      "A": "We are advised to book our flights early.",
+      "B": "Our flights are advised to be booked early.",
+      "C": "Both A and B are accepted variants.",
+      "D": "Booking our flights early is advised us."
+    },
+    "correct_option": "C",
+    "explanation": "Depending on whether the indirect object ('we') or direct object ('flights') is promoted, both subject-raising structures (A and B) can be formulated.",
+    "tags": ["grammar", "high_level_voice", "double_raising", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1785",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They painted the house red. Passive: The house was painted red by them.'",
+    "options": {
+      "A": "The house was painted",
+      "B": "red by them.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Object color complements ('red') are retained seamlessly after the passive verb. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "object_complements", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1786",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They claim that the new device saves 50% energy.'",
+    "options": {
+      "A": "The new device is claimed to save 50% energy.",
+      "B": "It is claimed that the new device saves 50% energy.",
+      "C": "Both A and B are correct.",
+      "D": "50% energy is claimed to save by the new device."
+    },
+    "correct_option": "C",
+    "explanation": "Present state verbs in reporting clauses allow both subject-raising and impersonal passive transformations.",
+    "tags": ["grammar", "high_level_voice", "reporting_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1787",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'It is your responsibility to clear the dues.'",
+    "options": {
+      "A": "The dues are to be cleared by you.",
+      "B": "You are responsible for clearing the dues.",
+      "C": "Both A and B capture the active-to-passive equivalence.",
+      "D": "Clearing the dues has a responsibility by you."
+    },
+    "correct_option": "C",
+    "explanation": "Responsibility statements translate into standard passive obligations (A) or prepositional passive adjectives (B). Both function correctly.",
+    "tags": ["grammar", "high_level_voice", "obligation_conversions", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1788",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They heard her sing an opera song. Passive: She was heard to sing an opera song.'",
+    "options": {
+      "A": "She was heard",
+      "B": "to sing an opera song.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Perception verbs take a full infinitive in the passive voice. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "perception_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1789",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They estimate that the project will cost two million dollars.'",
+    "options": {
+      "A": "The project is estimated to cost two million dollars.",
+      "B": "It is estimated that the project will cost two million dollars.",
+      "C": "Both A and B are correct.",
+      "D": "Two million dollars are estimated to cost by the project."
+    },
+    "correct_option": "C",
+    "explanation": "Future projection reporting verbs convert cleanly under both subject-raising and impersonal constructions.",
+    "tags": ["grammar", "high_level_voice", "reporting_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1790",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They urge citizens to follow safety guidelines.'",
+    "options": {
+      "A": "Citizens are urged to follow safety guidelines.",
+      "B": "Safety guidelines are urged to be followed by citizens.",
+      "C": "Both A and B are valid.",
+      "D": "Following safety guidelines is urged citizens."
+    },
+    "correct_option": "A",
+    "explanation": "Promoting the direct object of the infinitive as the primary target in personal object raising yields 'Citizens are urged to follow...'",
+    "tags": ["grammar", "high_level_voice", "raising_structures", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1791",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: Someone named him John. Passive: He was named John by someone.'",
+    "options": {
+      "A": "He was named",
+      "B": "John by someone.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Naming title complements ('John') remain intact after passive conversion. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "object_complements", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1792",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They anticipate that market conditions will improve shortly.'",
+    "options": {
+      "A": "Market conditions are anticipated to improve shortly.",
+      "B": "It is anticipated that market conditions will improve shortly.",
+      "C": "Both A and B are correct.",
+      "D": "Short-term improvement is anticipated by market conditions."
+    },
+    "correct_option": "C",
+    "explanation": "Anticipation reporting verbs handle both subject raising and impersonal clause passive transformations accurately.",
+    "tags": ["grammar", "high_level_voice", "reporting_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1793",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'We challenge you to prove your allegations.'",
+    "options": {
+      "A": "You are challenged to prove your allegations.",
+      "B": "Your allegations are challenged to be proved.",
+      "C": "Both A and B are accepted.",
+      "D": "Proving your allegations is challenged by you."
+    },
+    "correct_option": "A",
+    "explanation": "Promoting the personal object ('you') in challenge structures yields the standard subject-raising passive 'You are challenged to prove...'",
+    "tags": ["grammar", "high_level_voice", "raising_structures", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1794",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They thought him a coward. Passive: He was thought a coward by them.'",
+    "options": {
+      "A": "He was thought",
+      "B": "a coward by them.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Factitive noun complements ('a coward') are retained in the passive conversion. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "factitive_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1795",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They assume that the fugitive has fled the country.'",
+    "options": {
+      "A": "The fugitive is assumed to have fled the country.",
+      "B": "It is assumed that the fugitive has fled the country.",
+      "C": "Both A and B are correct.",
+      "D": "The country was assumed fled by the fugitive."
+    },
+    "correct_option": "C",
+    "explanation": "Perfect infinitive raising (A) and impersonal passive (B) are both grammatically valid for present tense assumption verbs with past subordinate actions.",
+    "tags": ["grammar", "high_level_voice", "perfect_infinitive_raising", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1796",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'It is your duty to lock all office doors.'",
+    "options": {
+      "A": "All office doors are to be locked by you.",
+      "B": "You are supposed to lock all office doors.",
+      "C": "Both A and B are valid passive renderings.",
+      "D": "Locking all office doors has a duty by you."
+    },
+    "correct_option": "C",
+    "explanation": "Expressing duty via passive constructions maps cleanly into 'are to be locked' or 'are supposed to lock'. Both A and B are correct.",
+    "tags": ["grammar", "high_level_voice", "obligation_conversions", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1797",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They watched the sun set. Passive: The sun was watched to set.'",
+    "options": {
+      "A": "The sun was watched",
+      "B": "to set.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Perception verb 'watch' takes a full infinitive in the passive voice. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "perception_verbs", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1798",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into passive voice: 'They calculate that the damage exceeds five million.'",
+    "options": {
+      "A": "The damage is calculated to exceed five million.",
+      "B": "It is calculated that the damage exceeds five million.",
+      "C": "Both A and B are correct.",
+      "D": "Five million are calculated to exceed by the damage."
+    },
+    "correct_option": "C",
+    "explanation": "Calculation reporting verbs permit both subject-raising and impersonal passive transformations.",
+    "tags": ["grammar", "high_level_voice", "reporting_verbs", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1799",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert:: 'We order you to evacuate the building immediately.'",
+    "options": {
+      "A": "You are ordered to evacuate the building immediately.",
+      "B": "The building is ordered to be evacuated immediately.",
+      "C": "Both A and B are acceptable variants.",
+      "D": "Evacuating the building immediately is ordered us."
+    },
+    "correct_option": "C",
+    "explanation": "Command structures with personal objects allow promoting either the person ('You are ordered...') or the direct object clause context ('The building is ordered to be evacuated...'). Both are valid.",
+    "tags": ["grammar", "high_level_voice", "raising_structures", "advanced_syntax"]
+  },
+  {
+    "id": "ENG_GRAM_VOIC_1800",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Active: They crowned him king. Passive: He was crowned king by them.'",
+    "options": {
+      "A": "He was crowned",
+      "B": "king by them.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "Factitive title complements ('king') remain correctly preserved after passive conversion. The sentence is correct.",
+    "tags": ["grammar", "high_level_voice", "factitive_verbs", "spotting_errors"]
+  }
+]

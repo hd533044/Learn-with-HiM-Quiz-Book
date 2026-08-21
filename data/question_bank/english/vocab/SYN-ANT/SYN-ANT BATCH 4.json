@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_0151",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BANAL**",
+    "options": {
+      "A": "Original",
+      "B": "Hackneyed",
+      "C": "Novel",
+      "D": "Profound"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Banal' means lacking in originality as to be obvious and boring. 'Hackneyed', 'trite', or 'clichéd' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0152",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BANAL**",
+    "options": {
+      "A": "Trite",
+      "B": "Platitudinous",
+      "C": "Original",
+      "D": "Pedestrian"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Banal' means common or overused. 'Original', 'fresh', or 'innovative' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0153",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BALEFUL**",
+    "options": {
+      "A": "Sinister",
+      "B": "Beneficial",
+      "C": "Auspicious",
+      "D": "Innocuous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Baleful' means threatening harm; menacing or harmful. 'Sinister', 'malignant', or 'menacing' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0154",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BALEFUL**",
+    "options": {
+      "A": "Malign",
+      "B": "Ominous",
+      "C": "Benign",
+      "D": "Pernicious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Baleful' means deadly or threatening. 'Benign', 'harmless', or 'auspicious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0155",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BAUBLE**",
+    "options": {
+      "A": "Trinket",
+      "B": "Gemstone",
+      "C": "Treasure",
+      "D": "Valuable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bauble' refers to a small, showy trinket or decoration of little value. 'Trinket' or 'knickknack' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0156",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BEATIFIC**",
+    "options": {
+      "A": "Blissful",
+      "B": "Miserable",
+      "C": "Seraphic",
+      "D": "Ecstatic"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Beatific' means blissfully happy or imparting holy bliss. 'Miserable', 'gloomy', or 'wretched' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0157",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BEDLAM**",
+    "options": {
+      "A": "Tranquility",
+      "B": "Pandemonium",
+      "C": "Serenity",
+      "D": "Orderliness"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Bedlam' denotes a scene of uproar and confusion. 'Pandemonium', 'chaos', or 'turmoil' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0158",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BEDLAM**",
+    "options": {
+      "A": "Clamor",
+      "B": "Havoc",
+      "C": "Tranquility",
+      "D": "Tumult"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bedlam' means uproar and wild chaos. 'Tranquility', 'calm', or 'order' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0159",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BEGUILE**",
+    "options": {
+      "A": "Deceive",
+      "B": "Enlighten",
+      "C": "Repulse",
+      "D": "Disabuse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Beguile' means to charm or enchant someone, often in a deceptive or manipulative way. 'Deceive', 'delude', or 'captivate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0160",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BEGUILE**",
+    "options": {
+      "A": "Mislead",
+      "B": "Hoodwink",
+      "C": "Disabuse",
+      "D": "Entice"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Beguile' means to deceive or trick. 'Disabuse' (to free someone from a misconception) is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0161",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BEHEMOTH**",
+    "options": {
+      "A": "Pygmy",
+      "B": "Monster",
+      "C": "Mite",
+      "D": "Miniature"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Behemoth' refers to a huge or monstrous creature or an enormous organization. 'Monster', 'giant', or 'colossus' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0162",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BEHEMOTH**",
+    "options": {
+      "A": "Colossus",
+      "B": "Leviathan",
+      "C": "Diminutive",
+      "D": "Titan"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Behemoth' means an entity of gigantic size. 'Diminutive', 'midget', or 'pygmy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0163",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BELIE**",
+    "options": {
+      "A": "Contradict",
+      "B": "Confirm",
+      "C": "Validate",
+      "D": "Corroborate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Belie' means to fail to give a true notion or impression of; disguise or contradict. 'Contradict' or 'misrepresent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0164",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BELIE**",
+    "options": {
+      "A": "Disprove",
+      "B": "Affirm",
+      "C": "Misstate",
+      "D": "Gainsay"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Belie' means to contradict or disguise. 'Affirm', 'reveal', or 'confirm' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0165",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BELLICOSE**",
+    "options": {
+      "A": "Pacific",
+      "B": "Pugnacious",
+      "C": "Conciliatory",
+      "D": "Dove-like"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Bellicose' means demonstrating aggression and willingness to fight. 'Pugnacious', 'belligerent', or 'quarrelsome' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0166",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BELLICOSE**",
+    "options": {
+      "A": "Combative",
+      "B": "Truculent",
+      "C": "Peaceable",
+      "D": "Antagonistic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bellicose' means warlike or combative. 'Peaceable', 'pacific', or 'amicable' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0167",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BELLIGERENT**",
+    "options": {
+      "A": "Aggressive",
+      "B": "Complaisant",
+      "C": "Docile",
+      "D": "Amiable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Belligerent' means hostile and aggressive; ready to fight. 'Aggressive', 'contentious', or 'hostile' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0168",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BELLIGERENT**",
+    "options": {
+      "A": "Hostile",
+      "B": "Friendly",
+      "C": "Antagonistic",
+      "D": "Contentious"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Belligerent' means aggressive and hostile. 'Friendly', 'peaceful', or 'genial' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0169",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BENEFACTOR**",
+    "options": {
+      "A": "Patron",
+      "B": "Oppressor",
+      "C": "Antagonist",
+      "D": "Adversary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Benefactor' refers to a person who gives money or other help to a person or cause. 'Patron', 'sponsor', or 'supporter' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0170",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BENEVOLENT**",
+    "options": {
+      "A": "Altruistic",
+      "B": "Malevolent",
+      "C": "Charitable",
+      "D": "Magnanimous"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Benevolent' means well-meaning and kindly. 'Malevolent', 'spiteful', or 'malicious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0171",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BENIGN**",
+    "options": {
+      "A": "Gentle",
+      "B": "Malignant",
+      "C": "Inimical",
+      "D": "Harsh"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Benign' means gentle and kindly, or not harmful in effect. 'Gentle', 'clement', or 'favorable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0172",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BENIGN**",
+    "options": {
+      "A": "Innocuous",
+      "B": "Malignant",
+      "C": "Mild",
+      "D": "Amiable"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Benign' means harmless or kind. 'Malignant', 'harmful', or 'pernicious' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0173",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BERATE**",
+    "options": {
+      "A": "Scold",
+      "B": "Praise",
+      "C": "Laud",
+      "D": "Extol"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Berate' means to scold or criticize someone angrily. 'Scold', 'rebuke', or 'castigate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0174",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BERATE**",
+    "options": {
+      "A": "Chide",
+      "B": "Upbraid",
+      "C": "Reprimand",
+      "D": "Compliment"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Berate' means to severely criticize or reprimand. 'Compliment', 'praise', or 'laud' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0175",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BEREFT**",
+    "options": {
+      "A": "Deprived",
+      "B": "Abundant",
+      "C": "Replete",
+      "D": "Endowed"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bereft' means deprived of or lacking something. 'Deprived', 'destitute', or 'divested' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0176",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BEREFT**",
+    "options": {
+      "A": "Lacking",
+      "B": "Stripped",
+      "C": "Replete",
+      "D": "Devoid"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bereft' means lacking or empty. 'Replete', 'endowed', or 'supplied' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0177",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BESEECH**",
+    "options": {
+      "A": "Implore",
+      "B": "Command",
+      "C": "Direct",
+      "D": "Order"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Beseech' means to ask someone urgently and fervently to do something. 'Implore', 'entreat', or 'supplicate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0178",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BESMIRCH**",
+    "options": {
+      "A": "Tarnish",
+      "B": "Defame",
+      "C": "Honor",
+      "D": "Sully"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Besmirch' means to damage the reputation of someone or stain something. 'Honor', 'purify', or 'exalt' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0179",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BICKER**",
+    "options": {
+      "A": "Squabble",
+      "B": "Agree",
+      "C": "Concur",
+      "D": "Harmonize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bicker' means to argue about petty and trivial matters. 'Squabble', 'quarrel', or 'wrangle' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0180",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BICKER**",
+    "options": {
+      "A": "Wrangle",
+      "B": "Cavil",
+      "C": "Concur",
+      "D": "Spar"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bicker' means to petty quarrel. 'Concur', 'agree', or 'harmonize' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0181",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BIGOTED**",
+    "options": {
+      "A": "Prejudiced",
+      "B": "Tolerant",
+      "C": "Open-minded",
+      "D": "Impartial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bigoted' means obstinately or unreasonably attached to a belief, opinion, or faction. 'Prejudiced', 'intolerant', or 'biased' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0182",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BIGOTED**",
+    "options": {
+      "A": "Dogmatic",
+      "B": "Sectarian",
+      "C": "Broad-minded",
+      "D": "Chauvinistic"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bigoted' means narrow-minded and intolerant. 'Broad-minded', 'tolerant', or 'unbiased' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0183",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BLANDISHMENT**",
+    "options": {
+      "A": "Flattery",
+      "B": "Criticism",
+      "C": "Reproach",
+      "D": "Insult"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Blandishment' refers to a flattering or pleasing statement or action used to persuade someone. 'Flattery', 'cajolery', or 'coaxing' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0184",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BLANDISHMENT**",
+    "options": {
+      "A": "Cajolery",
+      "B": "Wheedling",
+      "C": "Adulation",
+      "D": "Reproof"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Blandishment' is persuasive flattery. 'Reproof', 'censure', or 'rebuke' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0185",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BLASPHEMOUS**",
+    "options": {
+      "A": "Sacrilegious",
+      "B": "Pious",
+      "C": "Devout",
+      "D": "Reverent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Blasphemous' means sacrilegious against God or sacred things; profane. 'Sacrilegious', 'profane', or 'irreverent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0186",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BLASPHEMOUS**",
+    "options": {
+      "A": "Profane",
+      "B": "Impious",
+      "C": "Reverent",
+      "D": "Desecrating"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Blasphemous' means expressing disrespect for religion. 'Reverent', 'pious', or 'devout' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0187",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BLATANT**",
+    "options": {
+      "A": "Flagrant",
+      "B": "Subtle",
+      "C": "Inconspicuous",
+      "D": "Covert"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Blatant' means done openly and unashamedly; completely obvious. 'Flagrant', 'glaring', or 'brazen' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0188",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BLATANT**",
+    "options": {
+      "A": "Brazen",
+      "B": "Conspicuous",
+      "C": "Inconspicuous",
+      "D": "Audacious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Blatant' means shamelessly obvious. 'Inconspicuous', 'subtle', or 'unobtrusive' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0189",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BLEAK**",
+    "options": {
+      "A": "Dismal",
+      "B": "Promising",
+      "C": "Bright",
+      "D": "Cheerful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bleak' means lacking vegetation and exposed to the elements; charmless and inhospitable; depressing. 'Dismal', 'grim', or 'desolate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0190",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BLEAK**",
+    "options": {
+      "A": "Dreary",
+      "B": "Grim",
+      "C": "Cheerful",
+      "D": "Desolate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Bleak' means gloomy and hopeless. 'Cheerful', 'promising', or 'bright' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0191",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BLITHE**",
+    "options": {
+      "A": "Carefree",
+      "B": "Morose",
+      "C": "Sullen",
+      "D": "Despondent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Blithe' means showing a casual and cheerful indifference considered to be callous or improper; joyous. 'Carefree', 'cheerful', or 'lighthearted' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0192",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BLITHE**",
+    "options": {
+      "A": "Buoyant",
+      "B": "Morose",
+      "C": "Jaunty",
+      "D": "Sprightly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Blithe' means joyful and carefree. 'Morose', 'sorrowful', or 'gloomy' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0193",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BOISTEROUS**",
+    "options": {
+      "A": "Rowdy",
+      "B": "Placid",
+      "C": "Quiet",
+      "D": "Serene"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Boisterous' means noisy, energetic, and cheerful; rowdy. 'Rowdy', 'unruly', or 'clamorous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0194",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BOISTEROUS**",
+    "options": {
+      "A": "Clamorous",
+      "B": "Obstinate",
+      "C": "Placid",
+      "D": "Turbulent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Boisterous' means noisy and rough. 'Placid', 'tranquil', or 'quiet' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0195",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BOLSTER**",
+    "options": {
+      "A": "Reinforce",
+      "B": "Undermine",
+      "C": "Weaken",
+      "D": "Subvert"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bolster' means to support, strengthen, or prop up. 'Reinforce', 'fortify', or 'boost' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0196",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BOLSTER**",
+    "options": {
+      "A": "Buttress",
+      "B": "Undermine",
+      "C": "Sustain",
+      "D": "Strengthen"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Bolster' means to prop up or strengthen. 'Undermine', 'weaken', or 'debilitate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0197",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BOMBASTIC**",
+    "options": {
+      "A": "Pompous",
+      "B": "Restrained",
+      "C": "Understated",
+      "D": "Succinct"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Bombastic' means high-sounding but with little meaning; inflated. 'Pompous', 'grandiloquent', or 'turgid' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0198",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BOMBASTIC**",
+    "options": {
+      "A": "Grandiloquent",
+      "B": "Turgid",
+      "C": "Magniloquent",
+      "D": "Understated"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Bombastic' means grandiloquent and pompous. 'Understated', 'concise', or 'unpretentious' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0199",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**BOORISH**",
+    "options": {
+      "A": "Churlish",
+      "B": "Refined",
+      "C": "Suave",
+      "D": "Urbane"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Boorish' means rough and bad-mannered; coarse. 'Churlish', 'uncouth', or 'loutish' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_0200",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**BOORISH**",
+    "options": {
+      "A": "Loutish",
+      "B": "Uncouth",
+      "C": "Crass",
+      "D": "Urbane"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Boorish' means crude and ill-mannered. 'Urbane', 'sophisticated', 'cultivated', or 'refined' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SP_3151",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Consequential",
+      "B": "Consequensial",
+      "C": "Consequenshel",
+      "D": "Consequenteal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Consequential' - important or resulting as an effect; ends in '-tial'). Options B, C, and D alter suffix consonants and vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3152",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Conservatism",
+      "B": "Consignment",
+      "C": "Consolidation",
+      "D": "Consonence"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Consonance' (ends in '-ance', not '-ence' - agreement or compatibility). Other options are correct: Conservatism (traditional values), Consignment (batch of goods), Consolidation (combining into a single whole).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3153",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Conspicuous",
+      "B": "Conspicuos",
+      "C": "Conspicious",
+      "D": "Conspicuus"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Conspicuous' - clearly visible; attracting attention; 'c-o-n-s-p-i-c-u-o-u-s'). Options B, C, and D alter the Latin-derived suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3154",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Constellation",
+      "B": "Constituency",
+      "C": "Constitution",
+      "D": "Constrainte"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Constraint' (no terminal 'e' - a limitation or restriction). Other options are correct: Constellation (star pattern), Constituency (body of voters), Constitution (fundamental political principles).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3155",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Contemporaneous",
+      "B": "Contemporanious",
+      "C": "Contemporaneus",
+      "D": "Contemporenious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Contemporaneous' - existing at the same time period; 'c-o-n-t-e-m-p-o-r-a-n-e-o-u-s'). Options B, C, and D alter the connecting vowel digraph.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3156",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Contemptible",
+      "B": "Contemptuous",
+      "C": "Contiguity",
+      "D": "Continualy"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Continually' (double 'l' in '-ally' - constantly or frequently). Other options are correct: Contemptible (deserving contempt), Contemptuous (scornful), Contiguity (state of bordering).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3157",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Contravention",
+      "B": "Contravension",
+      "C": "Contravenshun",
+      "D": "Contrevention"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Contravention' - an action breaking a law or ruling; 'c-o-n-t-r-a-v-e-n-t-i-o-n'). Options B, C, and D alter prefix vowels or suffix consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3158",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Controvertible",
+      "B": "Contumelious",
+      "C": "Convalescence",
+      "D": "Conventianal"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Conventional' (spelled with '-tion-', not '-tian-' - based on what is generally done). Other options are correct: Controvertible (open to dispute), Contumelious (insolent), Convalescence (recovering from illness).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3159",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Conversant",
+      "B": "Conversent",
+      "C": "Convarsant",
+      "D": "Conversante"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Conversant' - familiar with or knowledgeable about; ends in '-ant'). Options B, C, and D alter internal vowels or suffix letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3160",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Convulsion",
+      "B": "Cooperation",
+      "C": "Coparcenary",
+      "D": "Coroberation"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Corroboration' (double 'r' - confirming evidence). Other options are correct: Convulsion (sudden movement), Cooperation (working together), Coparcenary (joint inheritance).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3161",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Corrigendum",
+      "B": "Coregendum",
+      "C": "Corrigendem",
+      "D": "Corregendum"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Corrigendum' - a printing error to be corrected; double 'r', 'c-o-r-r-i-g-e-n-d-u-m'). Options B, C, and D drop 'r' or alter internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3162",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Corroborative",
+      "B": "Corrosiveness",
+      "C": "Corrugation",
+      "D": "Cosmopolitenn"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Cosmopolitan' (ends in '-tan', not '-tenn' - globally cultured). Other options are correct: Corroborative (confirming), Corrosiveness (corrosive property), Corrugation (series of ridges).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3163",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Coterie",
+      "B": "Cotterie",
+      "C": "Coteri",
+      "D": "Coterrie"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Coterie' - an exclusive group of people with shared interests; single 't', single 'r', 'c-o-t-e-r-i-e'). Options B, C, and D improperly double consonants or drop silent letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3164",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Counterbalance",
+      "B": "Counterespionage",
+      "C": "Counterinsurgency",
+      "D": "Courtesey"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Courtesy' (spelled 'c-o-u-r-t-e-s-y', no 'e' between 's' and 'y' - politeness). Other options are correct: Counterbalance (equal weight), Counterespionage (counter-spying activities), Counterinsurgency (actions against guerrillas).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3165",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Clandestinely",
+      "B": "Clandistinly",
+      "C": "Clandestinly",
+      "D": "Clandestenely"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Clandestinely' - secretly; 'c-l-a-n-d-e-s-t-i-n-e-l-y'). Options B, C, and D alter connecting vowels or drop silent letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3166",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Coalescent",
+      "B": "Cacophony",
+      "C": "Chauvenism",
+      "D": "Chivalric"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Chauvinism' (spelled with '-vi-', not '-ve-' - aggressive patriotism). Other options are correct: Coalescent (uniting), Cacophony (harsh sound), Chivalric (relating to knighthood).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3167",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Coelacanth",
+      "B": "Celacanth",
+      "C": "Coelocanth",
+      "D": "Coelacenth"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Coelacanth' - an ancient lobe-finned fish; starts with 'Coe-', contains '-canth'). Options B, C, and D alter the initial diphthong or internal vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3168",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Collapsible",
+      "B": "Comestible",
+      "C": "Conoisseur",
+      "D": "Contemptuous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Connoisseur' (double 'n', double 's' - expert judge of taste). Other options are correct: Collapsible (foldable), Comestible (edible item), Contemptuous (scornful).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3169",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Desiccation",
+      "B": "Dessication",
+      "C": "Desiccatian",
+      "D": "Dessiccaton"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Desiccation' - complete drying out; single 's', double 'c'). Options B, C, and D improperly double 's' or alter suffix vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3170",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Dilatory",
+      "B": "Dilettanti",
+      "C": "Discomfiture",
+      "D": "Diarhorea"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Diarrhoea' (UK) or 'Diarrhea' (US). Other options are correct: Dilatory (slow to act), Dilettanti (amateurs in art), Discomfiture (embarrassment).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3171",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Diaphanous",
+      "B": "Diaphanus",
+      "C": "Diaphonous",
+      "D": "Diafenous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Diaphanous' - light, delicate, and translucent; 'd-i-a-p-h-a-n-o-u-s'). Options B, C, and D alter the vowel positions or replace 'ph' with 'f'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3172",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Disparateness",
+      "B": "Dissimilitude",
+      "C": "Dissuasion",
+      "D": "Dispepsia"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Dyspepsia' (spelled with 'Dy-', not 'Dis-' - indigestion or irritable temper). Other options are correct: Disparateness (the quality of being fundamentally distinct), Dissimilitude (diversity or difference), Dissuasion (persuading against a course of action).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3173",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Effervescence",
+      "B": "Effervescense",
+      "C": "Efervescence",
+      "D": "Effervasence"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Effervescence' - bubbles in a liquid / enthusiasm; double 'f', '-scence'). Options B, C, and D drop consonants or alter suffix letters.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3174",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Egregious",
+      "B": "Eleemosynary",
+      "C": "Emancipator",
+      "D": "Embarasment"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Embarrassment' (double 'r', double 's' - a feeling of self-consciousness or shame). Other options are correct: Egregious (outstandingly bad), Eleemosynary (relating to charity), Emancipator (a person who frees others).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3175",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Emissary",
+      "B": "Emmissary",
+      "C": "Emisary",
+      "D": "Emmisary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Emissary' - a person sent on a special diplomatic mission; single 'm', double 's', ends in '-ary'). Options B, C, and D misallocate consonant doubling.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3176",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Empirical",
+      "B": "Enamor",
+      "C": "Encomium",
+      "D": "Ephemeralite"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Ephemerality' (transience; the quality of lasting for a short time). Other options are correct: Empirical (based on observation), Enamor (to be filled with love), Encomium (a speech of high praise).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3177",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Equanimous",
+      "B": "Equanemous",
+      "C": "Equanimus",
+      "D": "Equanomous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Equanimous' - calm and composed; 'e-q-u-a-n-i-m-o-u-s'). Options B, C, and D alter the connecting vowels or suffix.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3178",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Equilibrium",
+      "B": "Equinoctial",
+      "C": "Exasparate",
+      "D": "Excoriation"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Exasperate' (spelled with '-pe-', not '-pa-' - irritate intensely). Other options are correct: Equilibrium (balanced state), Equinoctial (near the equinox), Excoriation (abrasion of skin).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3179",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Exhilarating",
+      "B": "Exilerating",
+      "C": "Exhilerating",
+      "D": "Exhelerating"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Exhilarating' - making one feel happy/animated; contains silent 'h', spelled '-la-'). Options B, C, and D drop 'h' or substitute '-le-'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3180",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Exorbitant",
+      "B": "Expatriate",
+      "C": "Expeditious",
+      "D": "Fastidous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Fastidious' (spelled with '-io-', not '-o-' - very attentive to detail). Other options are correct: Exorbitant (unreasonably high price), Expatriate (living outside native country), Expeditious (done with speed and efficiency).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3181",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Flabbergasted",
+      "B": "Flabergasted",
+      "C": "Flabberguested",
+      "D": "Flaburgasted"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Flabbergasted' - astonished; double 'b', 'f-l-a-b-b-e-r-g-a-s-t-e-d'). Options B, C, and D drop consonants or distort root vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3182",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Flaccid",
+      "B": "Flammability",
+      "C": "Florecent",
+      "D": "Formidable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Fluorescent' (spelled 'f-l-u-o-r-e-s-c-e-n-t' - emitting light). Other options are correct: Flaccid (soft and hanging loosely), Flammability (ability of a substance to burn), Formidable (inspiring respect through power).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3183",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Fortuitous",
+      "B": "Fortutious",
+      "C": "Fortuityous",
+      "D": "Fortuetous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Fortuitous' - happening by chance; 'f-o-r-t-u-i-t-o-u-s'). Options B, C, and D alter the vowel ordering.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3184",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Fractious",
+      "B": "Frivolity",
+      "C": "Fulmination",
+      "D": "Garulous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Garrulous' (double 'r' - excessively talkative). Other options are correct: Fractious (irritable), Frivolity (lack of seriousness), Fulmination (vehement protest).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3185",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Gerrymandering",
+      "B": "Jerrymandering",
+      "C": "Garrymandering",
+      "D": "Gerrymendering"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Gerrymandering' - manipulating electoral boundaries; starts with 'G-e-r-r-y-'). Options B, C, and D alter consonants or vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3186",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Glomerular",
+      "B": "Grandeur",
+      "C": "Grievous",
+      "D": "Greivance"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Grievance' ('ie' before 'v', ends in '-ance' - complaint). Other options are correct: Glomerular (relating to kidney capillaries), Grandeur (splendor), Grievous (severe).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3187",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Hallucinogenic",
+      "B": "Halucinogenic",
+      "C": "Hallucinajenic",
+      "D": "Hallusinogenic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Hallucinogenic' - causing hallucinations; double 'l', 'c-i-n-o-g-e-n-i-c'). Options B, C, and D drop 'l' or substitute consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3188",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Harassment",
+      "B": "Haughtiness",
+      "C": "Hedonism",
+      "D": "Hienous"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Heinous' (spelled 'e-i', not 'i-e' - wicked). Other options are correct: Harassment (intimidation), Haughtiness (arrogant superiority), Hedonism (pursuit of pleasure).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3189",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Heterogeneity",
+      "B": "Heterogeniety",
+      "C": "Heterogenity",
+      "D": "Hetrogeneity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Heterogeneity' - diverse character or content; 'h-e-t-e-r-o-g-e-n-e-i-t-y'). Options B, C, and D alter the vowel positions.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3190",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Hierarchical",
+      "B": "Honorarium",
+      "C": "Hippopotomus",
+      "D": "Homogeneous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Hippopotamus' (ends in '-amus', not '-omus' - large semiaquatic mammal). Other options are correct: Hierarchical (arranged by rank), Honorarium (payment for professional services), Homogeneous (alike).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3191",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Idiosyncrasy",
+      "B": "Idiosyncracy",
+      "C": "Ideosyncrasy",
+      "D": "Idiosyncrisy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Idiosyncrasy' - behavior peculiar to an individual; ends in '-sy', not '-cy'). Options B, C, and D alter the suffix or root vowels.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3192",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Ignominy",
+      "B": "Illegitimate",
+      "C": "Imaculate",
+      "D": "Impecunious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Immaculate' (double 'm' - perfectly clean). Other options are correct: Ignominy (public shame), Illegitimate (unauthorized), Impecunious (lacking money).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3193",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Imbroglio",
+      "B": "Embroglio",
+      "C": "Imbroleo",
+      "D": "Imbrollio"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Imbroglio' - complicated/embarrassing situation; 'i-m-b-r-o-g-l-i-o'). Options B, C, and D corrupt the vowels or drop the silent 'g'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3194",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Impediment",
+      "B": "Imperceptible",
+      "C": "Impromptu",
+      "D": "Inadvertant"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Inadvertent' (ends in '-ent', not '-ant' - not deliberate). Other options are correct: Impediment (hindrance), Imperceptible (hard to perceive), Impromptu (unplanned).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3195",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Incandescent",
+      "B": "Incandescant",
+      "C": "Incandecent",
+      "D": "Incandessent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Incandescent' - emitting light by heat; '-scent'). Options B, C, and D alter the suffix vowel or drop 'c'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3196",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Incongruous",
+      "B": "Incorrigible",
+      "C": "Indefatiguable",
+      "D": "Indigenous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Indefatigable' (spelled with '-ig-', no extra 'u' - persisting tirelessly). Other options are correct: Incongruous (not in harmony), Incorrigible (unable to be reformed), Indigenous (native).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3197",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Indispensable",
+      "B": "Indispensible",
+      "C": "Indespensable",
+      "D": "Indispencable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Indispensable' - absolutely necessary; ends in '-able'). Options B, C, and D alter the suffix vowel, modify prefix, or change 's' to 'c'.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3198",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Indubitable",
+      "B": "Ineffable",
+      "C": "Inexorable",
+      "D": "Infinitessimal"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is incorrectly spelt; the correct spelling is 'Infinitesimal' (single 's' - extremely small). Other options are correct: Indubitable (unquestionable), Ineffable (too extreme to express), Inexorable (unstoppable).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3199",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **CORRECTLY** spelt word.",
+    "options": {
+      "A": "Ingenuousness",
+      "B": "Ingenuosness",
+      "C": "Ingenuousnes",
+      "D": "Ingeneousness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correctly spelt ('Ingenuousness' - innocence/sincerity; 'i-n-g-e-n-u-o-u-s-n-e-s-s'). Options B, C, and D alter internal vowels or drop consonants.",
+    "tags": ["vocab", "spelling", "correctly_spelt", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_SP_3200",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the **INCORRECTLY** spelt word.",
+    "options": {
+      "A": "Innuendo",
+      "B": "Inscrutable",
+      "C": "Insiduous",
+      "D": "Insouciance"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is incorrectly spelt; the correct spelling is 'Insidious' (spelled with '-io-', not '-uo-' - gradually harmful). Other options are correct: Innuendo (an oblique remark), Inscrutable (impossible to interpret), Insouciance (casual lack of concern).",
+    "tags": ["vocab", "spelling", "incorrectly_spelt", "pyq_ssc"]
+  }
+]

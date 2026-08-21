@@ -1,0 +1,602 @@
+[
+  {
+    "id": "ENG_VOCAB_HOM_2701",
+    "question": "Choose the correct homonym to fill in the blank: 'The attorney advised the company to _____ all claims to the disputed patent.'",
+    "options": {
+      "A": "waive",
+      "B": "wave",
+      "C": "weave",
+      "D": "waft"
+    },
+    "correct_option": "A",
+    "explanation": "'Waive' means to voluntarily relinquish or surrender a right, claim, or privilege. 'Wave' refers to moving one's hand or an undulating water crest."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2702",
+    "question": "Fill in the blank: 'The sailor watched a massive _____ crash against the sea wall.'",
+    "options": {
+      "A": "waive",
+      "B": "wave",
+      "C": "weave",
+      "D": "wharf"
+    },
+    "correct_option": "B",
+    "explanation": "'Wave' refers to a ridge or swell of water moving on the surface of the sea."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2703",
+    "question": "Spot the error: 'The bank agreed to wave the late payment penalty fee.'",
+    "options": {
+      "A": "The bank agreed",
+      "B": "to wave the late",
+      "C": "payment penalty fee.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "To forgo or refrain from enforcing a fee is spelled 'waive', not 'wave'. Correct: 'to waive the late'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2704",
+    "question": "Fill in the blank: 'The artisan used an ancient loom to _____ elaborate silk tapestries.'",
+    "options": {
+      "A": "waive",
+      "B": "wave",
+      "C": "weave",
+      "D": "wean"
+    },
+    "correct_option": "C",
+    "explanation": "'Weave' means to form fabric by interlacing long threads on a loom."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2705",
+    "question": "Fill in the blank: 'The gentle evening breeze carried the sweet _____ of blooming jasmine.'",
+    "options": {
+      "A": "waft",
+      "B": "raft",
+      "C": "rift",
+      "D": "warp"
+    },
+    "correct_option": "A",
+    "explanation": "'Waft' refers to a gentle breeze or a scent carried lightly through the air."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2706",
+    "question": "Choose the correct word: 'The company decided to _____ the new branch manager with wide executive powers.'",
+    "options": {
+      "A": "invest",
+      "B": "infest",
+      "C": "ingest",
+      "D": "incest"
+    },
+    "correct_option": "A",
+    "explanation": "'Invest' (when used with 'with') means to endow or confer power, right, or authority upon someone."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2707",
+    "question": "Fill in the blank: 'Termites began to _____ the damp timber beams in the cellar.'",
+    "options": {
+      "A": "invest",
+      "B": "infest",
+      "C": "ingest",
+      "D": "inflate"
+    },
+    "correct_option": "B",
+    "explanation": "'Infest' means (of insects or animals) to be present in large numbers, causing damage or disease."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2708",
+    "question": "Spot the error: 'He accidentally ingested a toxic cleaning chemical.'",
+    "options": {
+      "A": "He accidentally",
+      "B": "ingested a toxic",
+      "C": "cleaning chemical.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "'Ingested' correctly denotes swallowing or absorbing food or liquid into the body. No error."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2709",
+    "question": "Fill in the blank: 'The blacksmith placed the iron bar on the _____ to shape it.'",
+    "options": {
+      "A": "anvil",
+      "B": "anvil",
+      "C": "angle",
+      "D": "ankle"
+    },
+    "correct_option": "A",
+    "explanation": "'Anvil' is a heavy iron block on which heated metals are hammered and shaped."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2710",
+    "question": "Fill in the blank: 'The runner twisted his _____ during the cross-country sprint.'",
+    "options": {
+      "A": "ankle",
+      "B": "angle",
+      "C": "anvil",
+      "D": "anchor"
+    },
+    "correct_option": "A",
+    "explanation": "'Ankle' is the joint connecting the foot with the leg."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2711",
+    "question": "Spot the error: 'The geometry teacher drew a right ankle on the blackboard.'",
+    "options": {
+      "A": "The geometry teacher",
+      "B": "drew a right ankle",
+      "C": "on the blackboard.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A geometric figure formed by two intersecting lines is an 'angle', not an 'ankle' (joint). Correct: 'a right angle'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2712",
+    "question": "Fill in the blank: 'The fortress walls were built to withstand a prolonged enemy _____.'",
+    "options": {
+      "A": "siege",
+      "B": "seize",
+      "C": "size",
+      "D": "cease"
+    },
+    "correct_option": "A",
+    "explanation": "'Siege' refers to a military operation in which enemy forces surround a town or building to force surrender."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2713",
+    "question": "Fill in the blank: 'Customs border agents were authorized to _____ the illegal contraband.'",
+    "options": {
+      "A": "siege",
+      "B": "seize",
+      "C": "cease",
+      "D": "size"
+    },
+    "correct_option": "B",
+    "explanation": "'Seize' means to take eager, sudden, or legal possession of something by force or authority."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2714",
+    "question": "Spot the error: 'Hostilities between the two warring factions did not siege.'",
+    "options": {
+      "A": "Hostilities between",
+      "B": "the two warring factions",
+      "C": "did not siege.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "To stop or come to an end is 'cease', not 'siege' (a blockade). Correct: 'did not cease'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2715",
+    "question": "Fill in the blank: 'The company will _____ manufacturing the defective model immediately.'",
+    "options": {
+      "A": "cease",
+      "B": "seize",
+      "C": "siege",
+      "D": "size"
+    },
+    "correct_option": "A",
+    "explanation": "'Cease' means to come to an end or bring to an end; stop."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2716",
+    "question": "Fill in the blank: 'The hunter loaded a round of _____ into the shotgun.'",
+    "options": {
+      "A": "lead",
+      "B": "led",
+      "C": "leed",
+      "D": "lid"
+    },
+    "correct_option": "A",
+    "explanation": "'Lead' (pronounced /lɛd/) is a heavy, soft, malleable bluish-gray metallic element."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2717",
+    "question": "Fill in the blank: 'The experienced mountaineer _____ the expedition up the snowy slope.'",
+    "options": {
+      "A": "lead",
+      "B": "led",
+      "C": "lead",
+      "D": "load"
+    },
+    "correct_option": "B",
+    "explanation": "'Led' is the correct past tense and past participle of the verb 'lead'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2718",
+    "question": "Spot the error: 'She has lead the research department for over seven years.'",
+    "options": {
+      "A": "She has lead",
+      "B": "the research department",
+      "C": "for over seven years.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "The past participle of the verb 'lead' is 'led'. 'Lead' in the past tense is a common misspelling. Correct: 'She has led'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2719",
+    "question": "Fill in the blank: 'The bride walked gracefully down the central church _____.'",
+    "options": {
+      "A": "aisle",
+      "B": "isle",
+      "C": "I'll",
+      "D": "oil"
+    },
+    "correct_option": "A",
+    "explanation": "'Aisle' refers to a passage between rows of seats in a building such as a church, theater, or airplane."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2720",
+    "question": "Fill in the blank: 'The shipwreck survivors washed ashore on a secluded tropical _____.'",
+    "options": {
+      "A": "aisle",
+      "B": "isle",
+      "C": "I'll",
+      "D": "idle"
+    },
+    "correct_option": "B",
+    "explanation": "'Isle' is an island, especially a small one."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2721",
+    "question": "Spot the error: 'Please keep the center isle clear of luggage during the flight.'",
+    "options": {
+      "A": "Please keep the",
+      "B": "center isle clear",
+      "C": "of luggage during the flight.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A passage between rows of seats in an aircraft is an 'aisle', not an 'isle' (island). Correct: 'center aisle clear'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2722",
+    "question": "Fill in the blank: 'The engine was left to _____ while waiting at the traffic signal.'",
+    "options": {
+      "A": "idle",
+      "B": "idol",
+      "C": "idyl",
+      "D": "isle"
+    },
+    "correct_option": "A",
+    "explanation": "'Idle' means inactive or (of an engine) running slowly while out of gear."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2723",
+    "question": "Fill in the blank: 'The ancient tribe carved a stone _____ to represent their fertility deity.'",
+    "options": {
+      "A": "idle",
+      "B": "idol",
+      "C": "idyll",
+      "D": "ideal"
+    },
+    "correct_option": "B",
+    "explanation": "'Idol' is an image or representation of a god used as an object of worship."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2724",
+    "question": "Spot the error: 'The poet described a peaceful pastoral idol in the countryside.'",
+    "options": {
+      "A": "The poet described",
+      "B": "a peaceful pastoral idol",
+      "C": "in the countryside.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A short description of an idyllic or picturesque country scene is an 'idyll' (or 'idyl'), not an 'idol' (an image for worship). Correct: 'pastoral idyll'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2725",
+    "question": "Fill in the blank: 'The weather forecast is _____ for the outdoor music festival.'",
+    "options": {
+      "A": "ideal",
+      "B": "idle",
+      "C": "idol",
+      "D": "idyll"
+    },
+    "correct_option": "A",
+    "explanation": "'Ideal' means satisfying one's conception of what is perfect; most suitable."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2726",
+    "question": "Fill in the blank: 'The judge released the defendant on cash _____ pending trial.'",
+    "options": {
+      "A": "bail",
+      "B": "bale",
+      "C": "ball",
+      "D": "bole"
+    },
+    "correct_option": "A",
+    "explanation": "'Bail' is the temporary release of an accused person awaiting trial, sometimes on condition that a sum of money is lodged."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2727",
+    "question": "Fill in the blank: 'The tractor compressed the dry hay into a compact square _____.'",
+    "options": {
+      "A": "bail",
+      "B": "bale",
+      "C": "bole",
+      "D": "boil"
+    },
+    "correct_option": "B",
+    "explanation": "'Bale' is a bundle of paper, hay, or cotton tightly wrapped and bound with cord or wire."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2728",
+    "question": "Spot the error: 'The crew had to bale water out of the leaking rowboat.'",
+    "options": {
+      "A": "The crew had",
+      "B": "to bale water out",
+      "C": "of the leaking rowboat.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "To scoop water out of a vessel is spelled 'bail' (or 'bail out'). Correct: 'to bail water out'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2729",
+    "question": "Fill in the blank: 'The thick tree _____ supported the massive canopy of oak branches.'",
+    "options": {
+      "A": "bole",
+      "B": "bowl",
+      "C": "ball",
+      "D": "bale"
+    },
+    "correct_option": "A",
+    "explanation": "'Bole' is the trunk of a tree."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2730",
+    "question": "Fill in the blank: 'The chef served hot vegetable soup in a ceramic _____.'",
+    "options": {
+      "A": "bowl",
+      "B": "bole",
+      "C": "bale",
+      "D": "boil"
+    },
+    "correct_option": "A",
+    "explanation": "'Bowl' is a round, deep dish or basin used for food or liquid."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2731",
+    "question": "Fill in the blank: 'The king issued a royal decree to _____ the rebellious duke.'",
+    "options": {
+      "A": "banish",
+      "B": "burnish",
+      "C": "brandish",
+      "D": "blemish"
+    },
+    "correct_option": "A",
+    "explanation": "'Banish' means to send someone away from a country or place as an official punishment; exile."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2732",
+    "question": "Fill in the blank: 'The jeweler used a soft cloth to _____ the tarnished silverware.'",
+    "options": {
+      "A": "burnish",
+      "B": "banish",
+      "C": "brandish",
+      "D": "blemish"
+    },
+    "correct_option": "A",
+    "explanation": "'Burnish' means to polish something (especially metal) by rubbing."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2733",
+    "question": "Spot the error: 'The warrior began to blemish his sword menacingly.'",
+    "options": {
+      "A": "The warrior began",
+      "B": "to blemish his sword",
+      "C": "menacingly.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "To wave or flourish a weapon as a threat is 'brandish', not 'blemish' (which means to spoil or stain). Correct: 'to brandish his sword'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2734",
+    "question": "Fill in the blank: 'A single scratch will _____ the pristine finish of the antique car.'",
+    "options": {
+      "A": "blemish",
+      "B": "burnish",
+      "C": "banish",
+      "D": "brandish"
+    },
+    "correct_option": "A",
+    "explanation": "'Blemish' means to spoil the appearance or quality of something."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2735",
+    "question": "Fill in the blank: 'The carpenter drove a sharp _____ into the wooden frame.'",
+    "options": {
+      "A": "wedge",
+      "B": "wage",
+      "C": "wager",
+      "D": "wave"
+    },
+    "correct_option": "A",
+    "explanation": "'Wedge' is a piece of wood or metal with a thick end that tapers to a thin edge, used to secure or force apart."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2736",
+    "question": "Fill in the blank: 'Employees demanded an increase in their minimum monthly _____.'",
+    "options": {
+      "A": "wage",
+      "B": "wedge",
+      "C": "wager",
+      "D": "waive"
+    },
+    "correct_option": "A",
+    "explanation": "'Wage' is a fixed regular payment earned for work or services."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2737",
+    "question": "Spot the error: 'He decided to place a high wedge on the outcome of the football match.'",
+    "options": {
+      "A": "He decided to place",
+      "B": "a high wedge on",
+      "C": "the outcome of the match.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A bet or gamble is a 'wager', not a 'wedge' (a triangular tool). Correct: 'a high wager on'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2738",
+    "question": "Fill in the blank: 'The ship made a brief stop at the commercial _____ to unload cargo.'",
+    "options": {
+      "A": "quay",
+      "B": "key",
+      "C": "cue",
+      "D": "queue"
+    },
+    "correct_option": "A",
+    "explanation": "'Quay' (pronounced /kiː/) is a stone or metal platform lying alongside or projecting into water for loading/unloading ships."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2739",
+    "question": "Fill in the blank: 'She turned the brass _____ to unlock the front door.'",
+    "options": {
+      "A": "key",
+      "B": "quay",
+      "C": "cay",
+      "D": "cue"
+    },
+    "correct_option": "A",
+    "explanation": "'Key' is a small piece of shaped metal with incisions cut to fit the wards of a lock."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2740",
+    "question": "Spot the error: 'The tourists walked along the harbor key enjoying the sea breeze.'",
+    "options": {
+      "A": "The tourists walked",
+      "B": "along the harbor key",
+      "C": "enjoying the sea breeze.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "A wharf or stone landing stage is spelled 'quay'. Correct: 'along the harbor quay'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2741",
+    "question": "Fill in the blank: 'The coral _____ in the Caribbean is a popular diving destination.'",
+    "options": {
+      "A": "cay",
+      "B": "quay",
+      "C": "cue",
+      "D": "key"
+    },
+    "correct_option": "A",
+    "explanation": "'Cay' (or key) is a low bank or reef of coral, rock, or sand."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2742",
+    "question": "Fill in the blank: 'The politician was accused of taking an illicit _____ in exchange for contracts.'",
+    "options": {
+      "A": "bribe",
+      "B": "bride",
+      "C": "brine",
+      "D": "bridle"
+    },
+    "correct_option": "A",
+    "explanation": "'Bribe' is money or a favor given or promised to influence the judgment or conduct of a person in a position of trust."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2743",
+    "question": "Fill in the blank: 'The groom smiled warmly at his radiant _____ during the ceremony.'",
+    "options": {
+      "A": "bride",
+      "B": "bribe",
+      "C": "bridle",
+      "D": "brine"
+    },
+    "correct_option": "A",
+    "explanation": "'Bride' is a woman on her wedding day or just before/after the event."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2744",
+    "question": "Spot the error: 'The equestrian fitted the leather bride onto the horse.'",
+    "options": {
+      "A": "The equestrian fitted",
+      "B": "the leather bride",
+      "C": "onto the horse.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Headgear used to control a horse is a 'bridle', not a 'bride' (a newly married woman). Correct: 'the leather bridle'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2745",
+    "question": "Fill in the blank: 'The pickles were preserved in a salty jar of _____.'",
+    "options": {
+      "A": "brine",
+      "B": "bride",
+      "C": "bribe",
+      "D": "breeze"
+    },
+    "correct_option": "A",
+    "explanation": "'Brine' is high-concentration saltwater used for pickling and preservation."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2746",
+    "question": "Fill in the blank: 'The old philosopher shared a wise _____ with his students.'",
+    "options": {
+      "A": "maxim",
+      "B": "maximum",
+      "C": "matrix",
+      "D": "magma"
+    },
+    "correct_option": "A",
+    "explanation": "'Maxim' is a short, pithy statement expressing a general truth or rule of conduct."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2747",
+    "question": "Fill in the blank: 'The elevator has a _____ capacity of twelve passengers.'",
+    "options": {
+      "A": "maximum",
+      "B": "maxim",
+      "C": "matrix",
+      "D": "minimal"
+    },
+    "correct_option": "A",
+    "explanation": "'Maximum' represents the greatest or highest amount, value, or degree attainable."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2748",
+    "question": "Spot the error: 'The geologists analyzed the hot matrix erupting from the active volcano.'",
+    "options": {
+      "A": "The geologists analyzed",
+      "B": "the hot matrix erupting",
+      "C": "from the active volcano.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Molten rock beneath or erupted from the Earth's crust is 'magma' (or 'lava'), not 'matrix'. Correct: 'the hot magma erupting'."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2749",
+    "question": "Fill in the blank: 'The mathematical equation was represented in a two-dimensional _____.'",
+    "options": {
+      "A": "matrix",
+      "B": "maxim",
+      "C": "magma",
+      "D": "marrow"
+    },
+    "correct_option": "A",
+    "explanation": "'Matrix' is a rectangular array of numbers, symbols, or expressions arranged in rows and columns."
+  },
+  {
+    "id": "ENG_VOCAB_HOM_2750",
+    "question": "What is the primary linguistic characteristic of 'heteronyms'?",
+    "options": {
+      "A": "Words that share identical spelling but have different pronunciations and distinct meanings (e.g., 'lead' metal vs 'lead' guide).",
+      "B": "Words that sound identical but have completely different spellings.",
+      "C": "Words that have identical meanings and identical origins.",
+      "D": "Words derived exclusively from ancient Latin prefixes."
+    },
+    "correct_option": "A",
+    "explanation": "Heteronyms are words that are spelled identically but pronounced differently and have distinct meanings (e.g., 'tear' /tɪər/ vs 'tear' /tɛər/, 'bass' fish vs 'bass' guitar)."
+  }
+]

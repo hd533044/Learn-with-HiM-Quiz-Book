@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_2001",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONSONANT**",
+    "options": {
+      "A": "Consistent",
+      "B": "Inconsistent",
+      "C": "Discordant",
+      "D": "Incompatible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Consonant' means in agreement or harmony with. 'Consistent', 'compatible', or 'harmonious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2002",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONSONANT**",
+    "options": {
+      "A": "Consistent",
+      "B": "Harmonious",
+      "C": "Inconsistent",
+      "D": "Compatible"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Consonant' means in agreement. 'Inconsistent', 'discordant', or 'incompatible' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2003",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONSPICUOUS**",
+    "options": {
+      "A": "Prominent",
+      "B": "Obscure",
+      "C": "Hidden",
+      "D": "Inconspicuous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Conspicuous' means clearly visible. 'Prominent', 'noticeable', or 'striking' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2004",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONSPICUOUS**",
+    "options": {
+      "A": "Prominent",
+      "B": "Noticeable",
+      "C": "Inconspicuous",
+      "D": "Striking"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Conspicuous' means highly visible. 'Inconspicuous', 'hidden', or 'obscure' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2005",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONSTRAIN**",
+    "options": {
+      "A": "Restrict",
+      "B": "Liberate",
+      "C": "Release",
+      "D": "Free"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Constrain' means to restrict the scope of. 'Restrict', 'restrain', or 'compel' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2006",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONSTRAIN**",
+    "options": {
+      "A": "Restrict",
+      "B": "Restrain",
+      "C": "Liberate",
+      "D": "Compel"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Constrain' means to limit. 'Liberate', 'free', or 'release' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2007",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONSTRUE**",
+    "options": {
+      "A": "Interpret",
+      "B": "Misunderstand",
+      "C": "Obscure",
+      "D": "Confuse"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Construe' means to interpret in a particular way. 'Interpret', 'explain', or 'analyze' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2008",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONSTRUE**",
+    "options": {
+      "A": "Interpret",
+      "B": "Explain",
+      "C": "Misinterpret",
+      "D": "Analyze"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Construe' means to make sense of correctly. 'Misinterpret', 'confuse', or 'misunderstand' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2009",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONSUMMATE**",
+    "options": {
+      "A": "Complete",
+      "B": "Incomplete",
+      "C": "Unfinished",
+      "D": "Partial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Consummate' means complete or perfect. 'Complete', 'perfect', or 'flawless' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2010",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONSUMMATE**",
+    "options": {
+      "A": "Perfect",
+      "B": "Flawless",
+      "C": "Incomplete",
+      "D": "Complete"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Consummate' means perfect. 'Incomplete', 'unfinished', or 'imperfect' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2011",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONTEMPTUOUS**",
+    "options": {
+      "A": "Scornful",
+      "B": "Respectful",
+      "C": "Admiring",
+      "D": "Deferential"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Contemptuous' means showing scorn. 'Scornful', 'disdainful', or 'haughty' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2012",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONTEMPTUOUS**",
+    "options": {
+      "A": "Scornful",
+      "B": "Disdainful",
+      "C": "Respectful",
+      "D": "Haughty"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Contemptuous' means scornful. 'Respectful', 'admiring', or 'deferential' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2013",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONTIGUOUS**",
+    "options": {
+      "A": "Adjacent",
+      "B": "Distant",
+      "C": "Remote",
+      "D": "Separate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Contiguous' means touching or adjoining. 'Adjacent', 'neighboring', or 'adjoining' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2014",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONTIGUOUS**",
+    "options": {
+      "A": "Adjacent",
+      "B": "Adjoining",
+      "C": "Distant",
+      "D": "Neighboring"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Contiguous' means touching or next to. 'Distant', 'remote', or 'separated' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2015",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONTINENT**",
+    "options": {
+      "A": "Abstemious",
+      "B": "Self-indulgent",
+      "C": "Licentious",
+      "D": "Debauched"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Continent' means exercising self-restraint. 'Abstemious', 'self-restrained', or 'temperate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2016",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONTINENT**",
+    "options": {
+      "A": "Abstemious",
+      "B": "Temperate",
+      "C": "Self-indulgent",
+      "D": "Restrained"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Continent' means self-restrained. 'Self-indulgent', 'licentious', or 'debauched' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2017",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONTORT**",
+    "options": {
+      "A": "Twist",
+      "B": "Straighten",
+      "C": "Smooth",
+      "D": "Unbend"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Contort' means to twist abnormally. 'Twist', 'distort', or 'warp' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2018",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONTORT**",
+    "options": {
+      "A": "Twist",
+      "B": "Distort",
+      "C": "Straighten",
+      "D": "Warp"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Contort' means to twist out of shape. 'Straighten', 'smooth', or 'unbend' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2019",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONTRAVENE**",
+    "options": {
+      "A": "Violate",
+      "B": "Obey",
+      "C": "Comply",
+      "D": "Observe"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Contravene' means to violate a law or rule. 'Violate', 'infringe', or 'breach' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2020",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONTRAVENE**",
+    "options": {
+      "A": "Violate",
+      "B": "Infringe",
+      "C": "Comply",
+      "D": "Breach"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Contravene' means to violate. 'Comply', 'observe', or 'obey' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2021",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONTRITE**",
+    "options": {
+      "A": "Remorseful",
+      "B": "Unrepentant",
+      "C": "Obdurate",
+      "D": "Stubborn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Contrite' means feeling remorse. 'Remorseful', 'penitent', or 'repentant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2022",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONTRITE**",
+    "options": {
+      "A": "Remorseful",
+      "B": "Penitent",
+      "C": "Unrepentant",
+      "D": "Repentant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Contrite' means feeling remorse. 'Unrepentant', 'obdurate', or 'remorseless' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2023",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONTUMACIOUS**",
+    "options": {
+      "A": "Insubordinate",
+      "B": "Obedient",
+      "C": "Compliant",
+      "D": "Docile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Contumacious' means stubbornly disobedient. 'Insubordinate', 'defiant', or 'rebellious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2024",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONTUMACIOUS**",
+    "options": {
+      "A": "Insubordinate",
+      "B": "Defiant",
+      "C": "Compliant",
+      "D": "Rebellious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Contumacious' means stubbornly disobedient. 'Compliant', 'obedient', or 'docile' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2025",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONUNDRUM**",
+    "options": {
+      "A": "Riddle",
+      "B": "Solution",
+      "C": "Answer",
+      "D": "Clarification"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Conundrum' refers to a difficult problem or riddle. 'Riddle', 'enigma', or 'puzzle' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2026",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONUNDRUM**",
+    "options": {
+      "A": "Riddle",
+      "B": "Enigma",
+      "C": "Solution",
+      "D": "Puzzle"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Conundrum' is a difficult puzzle. 'Solution', 'answer', or 'explanation' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2027",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONVENTIONAL**",
+    "options": {
+      "A": "Traditional",
+      "B": "Unorthodox",
+      "C": "Radical",
+      "D": "Novel"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Conventional' means based on established custom. 'Traditional', 'orthodox', or 'customary' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2028",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONVENTIONAL**",
+    "options": {
+      "A": "Traditional",
+      "B": "Customary",
+      "C": "Unorthodox",
+      "D": "Orthodox"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Conventional' means customary. 'Unorthodox', 'radical', or 'novel' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2029",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONVERGENCE**",
+    "options": {
+      "A": "Meeting",
+      "B": "Divergence",
+      "C": "Separation",
+      "D": "Dispersal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Convergence' refers to coming together. 'Meeting', 'confluence', or 'junction' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2030",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONVERGENCE**",
+    "options": {
+      "A": "Meeting",
+      "B": "Confluence",
+      "C": "Divergence",
+      "D": "Junction"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Convergence' means coming together. 'Divergence', 'separation', or 'dispersal' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2031",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONVIVIAL**",
+    "options": {
+      "A": "Sociable",
+      "B": "Unsociable",
+      "C": "Solitary",
+      "D": "Reclusive"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Convivial' means friendly and lively. 'Sociable', 'gregarious', or 'jovial' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2032",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONVIVIAL**",
+    "options": {
+      "A": "Sociable",
+      "B": "Gregarious",
+      "C": "Unsociable",
+      "D": "Jovial"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Convivial' means friendly and lively. 'Unsociable', 'solitary', or 'reclusive' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2033",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CONVOLUTED**",
+    "options": {
+      "A": "Complex",
+      "B": "Simple",
+      "C": "Straight",
+      "D": "Direct"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Convoluted' means extremely complex. 'Complex', 'intricate', or 'tortuous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2034",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CONVOLUTED**",
+    "options": {
+      "A": "Complex",
+      "B": "Intricate",
+      "C": "Simple",
+      "D": "Tortuous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Convoluted' means twisting and complex. 'Simple', 'straightforward', or 'direct' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2035",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COPIOUS**",
+    "options": {
+      "A": "Abundant",
+      "B": "Meager",
+      "C": "Sparse",
+      "D": "Scanty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Copious' means abundant in quantity. 'Abundant', 'plentiful', or 'ample' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2036",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COPIOUS**",
+    "options": {
+      "A": "Abundant",
+      "B": "Plentiful",
+      "C": "Meager",
+      "D": "Ample"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Copious' means plentiful. 'Meager', 'scanty', or 'sparse' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2037",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CORDIAL**",
+    "options": {
+      "A": "Warm",
+      "B": "Hostile",
+      "C": "Cold",
+      "D": "Unfriendly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cordial' means warm and friendly. 'Warm', 'amiable', or 'hospitable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2038",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CORDIAL**",
+    "options": {
+      "A": "Warm",
+      "B": "Amiable",
+      "C": "Hostile",
+      "D": "Hospitable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Cordial' means friendly and warm. 'Hostile', 'cold', or 'unfriendly' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2039",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CORROBORATE**",
+    "options": {
+      "A": "Confirm",
+      "B": "Refute",
+      "C": "Contradict",
+      "D": "Deny"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Corroborate' means to confirm. 'Confirm', 'verify', or 'validate' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2040",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CORROBORATE**",
+    "options": {
+      "A": "Confirm",
+      "B": "Verify",
+      "C": "Refute",
+      "D": "Validate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Corroborate' means to confirm. 'Refute', 'contradict', or 'disprove' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2041",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**CORROSIVE**",
+    "options": {
+      "A": "Caustic",
+      "B": "Soothing",
+      "C": "Mild",
+      "D": "Gentle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Corrosive' means able to destroy. 'Caustic', 'acidic', or 'biting' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2042",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**CORROSIVE**",
+    "options": {
+      "A": "Caustic",
+      "B": "Acidic",
+      "C": "Soothing",
+      "D": "Destructive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Corrosive' means harsh and destructive. 'Soothing', 'mild', or 'gentle' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2043",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COSMOPOLITAN**",
+    "options": {
+      "A": "Global",
+      "B": "Insular",
+      "C": "Narrow-minded",
+      "D": "Provincial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Cosmopolitan' refers to familiar with many cultures. 'Global', 'worldly', or 'universal' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2044",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COSMOPOLITAN**",
+    "options": {
+      "A": "Global",
+      "B": "Worldly",
+      "C": "Insular",
+      "D": "Universal"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Cosmopolitan' means worldly. 'Insular', 'provincial', or 'narrow-minded' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2045",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COTERIE**",
+    "options": {
+      "A": "Clique",
+      "B": "Masses",
+      "C": "Public",
+      "D": "Society"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Coterie' refers to a small, exclusive group. 'Clique', 'cabal', or 'group' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2046",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COTERIE**",
+    "options": {
+      "A": "Clique",
+      "B": "Cabal",
+      "C": "Public",
+      "D": "Group"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Coterie' is a small, exclusive group. 'Public', 'masses', or 'everyone' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2047",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COUP**",
+    "options": {
+      "A": "Triumph",
+      "B": "Failure",
+      "C": "Defeat",
+      "D": "Disaster"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Coup' refers to a successful stroke or act. 'Triumph', 'masterstroke', or 'success' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2048",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COUP**",
+    "options": {
+      "A": "Triumph",
+      "B": "Masterstroke",
+      "C": "Failure",
+      "D": "Success"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Coup' is a successful act. 'Failure', 'defeat', or 'fiasco' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2049",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**COVENANT**",
+    "options": {
+      "A": "Contract",
+      "B": "Breach",
+      "C": "Violation",
+      "D": "Break"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Covenant' refers to a binding agreement. 'Contract', 'pact', or 'compact' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_2050",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**COVENANT**",
+    "options": {
+      "A": "Contract",
+      "B": "Pact",
+      "C": "Breach",
+      "D": "Compact"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Covenant' is a formal agreement. 'Breach', 'violation', or 'break' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

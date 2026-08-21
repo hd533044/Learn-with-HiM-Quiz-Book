@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_1001",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SALUBRIOUS**",
+    "options": {
+      "A": "Wholesome",
+      "B": "Deleterious",
+      "C": "Inimical",
+      "D": "Noxious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Salubrious' means health-giving, beneficial, or wholesome. 'Deleterious' and 'noxious' are antonyms.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1002",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SALUBRIOUS**",
+    "options": {
+      "A": "Hygienic",
+      "B": "Insalubrious",
+      "C": "Beneficial",
+      "D": "Invigorating"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Salubrious' means promoting health, whereas 'Insalubrious' (or unwholesome, harmful) is its direct opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1003",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SANCTIMONIOUS**",
+    "options": {
+      "A": "Hypocritical",
+      "B": "Pious",
+      "C": "Humble",
+      "D": "Genuine"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sanctimonious' means making a show of being morally superior; holier-than-thou or hypocritically pious.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1004",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SANCTIMONIOUS**",
+    "options": {
+      "A": "Pharisaical",
+      "B": "Self-righteous",
+      "C": "Canting",
+      "D": "Sincere"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Sanctimonious' refers to hypocritical righteousness. 'Sincere' or 'unpretentious' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1005",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SANGUINE**",
+    "options": {
+      "A": "Optimistic",
+      "B": "Morose",
+      "C": "Pessimistic",
+      "D": "Despondent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sanguine' means optimistic or positive, especially in an apparently bad or difficult situation. 'Buoyant' and 'hopeful' are synonyms.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1006",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SANGUINE**",
+    "options": {
+      "A": "Cheerful",
+      "B": "Pessimistic",
+      "C": "Confident",
+      "D": "Buoyant"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Sanguine' denotes a hopeful or positive outlook, making 'Pessimistic' or 'gloomy' the direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1007",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SARDONIC**",
+    "options": {
+      "A": "Genial",
+      "B": "Mocking",
+      "C": "Affable",
+      "D": "Earnest"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Sardonic' means grimly mocking or cynical. 'Derisive' and 'scornful' are direct synonyms.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1008",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SARDONIC**",
+    "options": {
+      "A": "Caustic",
+      "B": "Scornful",
+      "C": "Genial",
+      "D": "Derisive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sardonic' refers to bitter, biting irony or scorn. 'Genial', 'kindly', or 'playful' serves as its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1009",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SATIATE**",
+    "options": {
+      "A": "Surfeit",
+      "B": "Starve",
+      "C": "Deprive",
+      "D": "Drain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Satiate' means to satisfy a desire or appetite fully or to excess. 'Surfeit', 'gorge', or 'cloy' is synonymous.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1010",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SATIATE**",
+    "options": {
+      "A": "Glut",
+      "B": "Starve",
+      "C": "Gorge",
+      "D": "Suffice"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Satiate' means to fill completely to satisfaction. 'Starve' or 'deprive' is the direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1011",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SATURNINE**",
+    "options": {
+      "A": "Gloomy",
+      "B": "Jovial",
+      "C": "Radiant",
+      "D": "Vivacious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Saturnine' means slow, gloomy, and sullen in temperament. 'Morose' and 'melancholy' are exact synonyms.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1012",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SATURNINE**",
+    "options": {
+      "A": "Somber",
+      "B": "Sullen",
+      "C": "Cheerful",
+      "D": "Morose"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Saturnine' refers to a dark and gloomy disposition. 'Cheerful', 'jovial', or 'sanguine' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1013",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SCINTILLATING**",
+    "options": {
+      "A": "Sparkling",
+      "B": "Dull",
+      "C": "Drab",
+      "D": "Pedestrian"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Scintillating' means sparkling, shining brightly, or brilliantly clever and entertaining.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1014",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SCINTILLATING**",
+    "options": {
+      "A": "Coruscating",
+      "B": "Brilliant",
+      "C": "Dull",
+      "D": "Glittering"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Scintillating' means lively, flashing, and witty. 'Dull', 'vapid', or 'boring' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1015",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SCRUPULOUS**",
+    "options": {
+      "A": "Punctilious",
+      "B": "Careless",
+      "C": "Unprincipled",
+      "D": "Negligent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Scrupulous' means diligent, thorough, and extremely attentive to details; moral integrity. 'Punctilious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1016",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SCRUPULOUS**",
+    "options": {
+      "A": "Meticulous",
+      "B": "Fastidious",
+      "C": "Unprincipled",
+      "D": "Upright"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Scrupulous' implies strict moral and ethical adherence or precision. 'Unprincipled' or 'lax' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1017",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SEDULOUS**",
+    "options": {
+      "A": "Diligent",
+      "B": "Slothful",
+      "C": "Indolent",
+      "D": "Apathetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sedulous' means showing dedication and diligence. 'Assiduous', 'industrious', and 'diligent' are synonyms.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1018",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SEDULOUS**",
+    "options": {
+      "A": "Assiduous",
+      "B": "Indolent",
+      "C": "Meticulous",
+      "D": "Persevering"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Sedulous' represents relentless hard work. 'Indolent', 'lazy', or 'slothful' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1019",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SERENDIPITY**",
+    "options": {
+      "A": "Fluke",
+      "B": "Misfortune",
+      "C": "Catastrophe",
+      "D": "Calculated"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Serendipity' is the occurrence of events by chance in a happy or beneficial way. 'Fluke' or 'chance' is synonymous.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1020",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SERENE**",
+    "options": {
+      "A": "Tranquil",
+      "B": "Placid",
+      "C": "Turbulent",
+      "D": "Halcyon"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Serene' means calm, peaceful, and untroubled. 'Turbulent', 'agitated', or 'stormy' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1021",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SLOTH**",
+    "options": {
+      "A": "Inaction",
+      "B": "Agility",
+      "C": "Alacrity",
+      "D": "Zeal"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sloth' refers to reluctance to work or exert oneself; laziness or inaction.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1022",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SLOTH**",
+    "options": {
+      "A": "Torpor",
+      "B": "Indolence",
+      "C": "Industry",
+      "D": "Lethargy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sloth' means habitual laziness. 'Industry', 'diligence', or 'activity' is its opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1023",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SOLICITOUS**",
+    "options": {
+      "A": "Attentive",
+      "B": "Heedless",
+      "C": "Unconcerned",
+      "D": "Apathetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Solicitous' means characterized by showing interest, care, or concern. 'Attentive' and 'caring' are synonyms.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1024",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SOLICITOUS**",
+    "options": {
+      "A": "Apprehensive",
+      "B": "Unconcerned",
+      "C": "Considerate",
+      "D": "Anxious"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Solicitous' means full of concern. 'Unconcerned', 'heedless', or 'indifferent' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1025",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SOMNOLENT**",
+    "options": {
+      "A": "Drowsy",
+      "B": "Alert",
+      "C": "Hyperactive",
+      "D": "Insomniac"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Somnolent' means sleepy, drowsy, or causing sleepiness. 'Drowsy' or 'soporific' is synonymous.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1026",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SOMNOLENT**",
+    "options": {
+      "A": "Lethargic",
+      "B": "Dozing",
+      "C": "Slumberous",
+      "D": "Alert"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Somnolent' means half-asleep or drowsy. 'Alert', 'vigilant', or 'awake' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1027",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SONOROUS**",
+    "options": {
+      "A": "Resonant",
+      "B": "Muffled",
+      "C": "Faint",
+      "D": "Shrill"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sonorous' means (of a person's voice or sound) imposingly deep and full. 'Resonant' or 'rich' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1028",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SONOROUS**",
+    "options": {
+      "A": "Ringing",
+      "B": "Orotund",
+      "C": "Faint",
+      "D": "Resonant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sonorous' describes a deep, booming, resonant sound. 'Faint', 'thin', or 'muffled' serves as the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1029",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SOPORIFIC**",
+    "options": {
+      "A": "Sedative",
+      "B": "Stimulant",
+      "C": "Excitant",
+      "D": "Energizer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Soporific' describes a drug or thing that tends to induce drowsiness or sleep. 'Sedative' or 'tranquilizing' is synonymous.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1030",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SOPORIFIC**",
+    "options": {
+      "A": "Hypnotic",
+      "B": "Opiate",
+      "C": "Stimulant",
+      "D": "Somniferous"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Soporific' induces sleepiness, whereas a 'Stimulant' (or energizer) creates wakefulness and arousal.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1031",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPECIOUS**",
+    "options": {
+      "A": "Fallacious",
+      "B": "Valid",
+      "C": "Sound",
+      "D": "Veritable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Specious' means superficially plausible, but actually wrong. 'Fallacious', 'deceptive', or 'spurious' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1032",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPECIOUS**",
+    "options": {
+      "A": "Deceptive",
+      "B": "Plausible",
+      "C": "Sound",
+      "D": "Fallacious"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Specious' means seemingly true but logically deceptive. 'Sound', 'valid', or 'genuine' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1033",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPENDTHRIFT**",
+    "options": {
+      "A": "Prodigal",
+      "B": "Miser",
+      "C": "Economizer",
+      "D": "Scrooge"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'spendthrift' is a person who spends money in an extravagant, irresponsible way. 'Prodigal' or 'profligate' is synonymous.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1034",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPENDTHRIFT**",
+    "options": {
+      "A": "Wastrel",
+      "B": "Profligate",
+      "C": "Miser",
+      "D": "Squanderer"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Spendthrift' denotes one who wastes funds recklessly. 'Miser' or 'skinflint' represents one who hoards resources rigidly.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1035",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SPURIOUS**",
+    "options": {
+      "A": "Bogus",
+      "B": "Authentic",
+      "C": "Genuine",
+      "D": "Legitimate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Spurious' means not being what it purports to be; false or fake. 'Bogus', 'counterfeit', or 'sham' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1036",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SPURIOUS**",
+    "options": {
+      "A": "Counterfeit",
+      "B": "Apocryphal",
+      "C": "Authentic",
+      "D": "Sham"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Spurious' means illegitimate or fake. 'Authentic', 'genuine', or 'real' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1037",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SQUALID**",
+    "options": {
+      "A": "Sordid",
+      "B": "Immaculate",
+      "C": "Pristine",
+      "D": "Splendid"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Squalid' means extremely dirty and unpleasant, especially as a result of poverty or neglect. 'Sordid' or 'wretched' is synonymous.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1038",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SQUALID**",
+    "options": {
+      "A": "Filthy",
+      "B": "Foul",
+      "C": "Sordid",
+      "D": "Pristine"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Squalid' means filthy and run-down. 'Pristine', 'clean', or 'immaculate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1039",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STEADFAST**",
+    "options": {
+      "A": "Resolute",
+      "B": "Capricious",
+      "C": "Fickle",
+      "D": "Vacillating"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Steadfast' means resolutely or dutifully firm and unwavering. 'Resolute', 'staunch', or 'unfaltering' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1040",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STEADFAST**",
+    "options": {
+      "A": "Staunch",
+      "B": "Unwavering",
+      "C": "Capricious",
+      "D": "Loyal"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Steadfast' means fixed and resolute. 'Capricious', 'wavering', or 'fickle' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1041",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STOLID**",
+    "options": {
+      "A": "Impassive",
+      "B": "Demonstrative",
+      "C": "Fervent",
+      "D": "Excitable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Stolid' means calm, dependable, and showing little emotion or animation. 'Impassive', 'phlegmatic', or 'unemotional' is synonymous.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1042",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STOLID**",
+    "options": {
+      "A": "Phlegmatic",
+      "B": "Excitable",
+      "C": "Apathetic",
+      "D": "Unmoved"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Stolid' means showing negligible emotion. 'Excitable', 'sensitive', or 'emotional' is the direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1043",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**STRIDENT**",
+    "options": {
+      "A": "Raucous",
+      "B": "Mellifluous",
+      "C": "Dulcet",
+      "D": "Euphonious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Strident' means loud and harsh; grating. 'Raucous', 'shrill', or 'clamorous' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1044",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**STRIDENT**",
+    "options": {
+      "A": "Harsh",
+      "B": "Raucous",
+      "C": "Mellifluous",
+      "D": "Grating"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Strident' describes a gratingly harsh sound. 'Mellifluous', 'sweet', or 'dulcet' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1045",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUBJUGATE**",
+    "options": {
+      "A": "Vanquish",
+      "B": "Liberate",
+      "C": "Emancipate",
+      "D": "Enfranchise"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Subjugate' means bring under domination or control, especially by conquest. 'Vanquish', 'conquer', or 'subdue' is synonymous.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1046",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUBJUGATE**",
+    "options": {
+      "A": "Overcome",
+      "B": "Enslave",
+      "C": "Liberate",
+      "D": "Dominate"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Subjugate' means to force into submission. 'Liberate', 'free', or 'emancipate' is its antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1047",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUBTERFUGE**",
+    "options": {
+      "A": "Artifice",
+      "B": "Candor",
+      "C": "Honesty",
+      "D": "Frankness"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Subterfuge' means deceit used in order to achieve one's goal. 'Artifice', 'trickery', or 'chicanery' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1048",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUBTERFUGE**",
+    "options": {
+      "A": "Guile",
+      "B": "Ruse",
+      "C": "Stratagem",
+      "D": "Candor"
+    },
+    "correct_option": "D",
+    "explanation": "Option D is correct. 'Subterfuge' refers to covert deception or trickery. 'Candor', 'openness', or 'straightforwardness' is the opposite.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1049",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUCCINCT**",
+    "options": {
+      "A": "Concise",
+      "B": "Verbose",
+      "C": "Prolix",
+      "D": "Circumlocutory"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Succinct' means (especially of something written or spoken) briefly and clearly expressed. 'Concise', 'terse', or 'pithy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_1050",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUCCINCT**",
+    "options": {
+      "A": "Terse",
+      "B": "Pithy",
+      "C": "Verbose",
+      "D": "Compact"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Succinct' means brief and compact. 'Verbose', 'wordy', or 'prolix' is its direct antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

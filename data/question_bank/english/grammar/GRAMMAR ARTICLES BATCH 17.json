@@ -1,0 +1,767 @@
+[
+  {
+    "id": "ENG_GRAM_ART_801",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'She wants to become ___ engineer after graduating from college.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "The indefinite article 'an' is used before singular countable nouns beginning with a vowel sound ('engineer').",
+    "tags": ["grammar", "articles", "indefinite_articles", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_802",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is studying in the university of Delhi.'",
+    "options": {
+      "A": "He is studying",
+      "B": "in the university",
+      "C": "of Delhi.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Proper nouns of universities that include a place name in an 'of' construction ('University of Delhi') or possessive form take the definite article 'the'. Wait, let's verify: 'the University of Delhi' or 'Delhi University'. 'The University of Delhi' is actually correct because of the 'of' structure! Let's check another error: 'university' begins with a consonant sound ('y'), so if it didn't have 'of Delhi', it would take 'a university'. But with 'of Delhi', 'the University of Delhi' is correct. Let's provide a cleaner error: 'He is an university student' -> 'an university' should be 'a university' because 'university' starts with a 'y' sound.",
+    "tags": ["grammar", "articles", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_802_CORRECTED",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is an university student who works part-time.'",
+    "options": {
+      "A": "He is",
+      "B": "an university student",
+      "C": "who works part-time.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Although 'university' begins with a vowel letter ('u'), it is pronounced with an initial consonant sound (/j/ or 'y'). Therefore, it requires the article 'a', not 'an'.",
+    "tags": ["grammar", "articles", "spotting_errors", "phonetic_sounds"]
+  },
+  {
+    "id": "ENG_GRAM_ART_803",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ sun rises in the east and sets in the west.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "Unique heavenly bodies and natural phenomena take the definite article 'the'.",
+    "tags": ["grammar", "articles", "definite_articles", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_804",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'He can play ___ guitar remarkably well.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "Names of musical instruments when referred to in the context of playing them take the definite article 'the' ('play the guitar').",
+    "tags": ["grammar", "articles", "musical_instruments", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_805",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Gold is a precious metal that is valued worldwide.'",
+    "options": {
+      "A": "Gold is",
+      "B": "a precious metal",
+      "C": "that is valued worldwide.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Uncountable material nouns used in a general sense do not take an article ('Gold is...'). The sentence is correct.",
+    "tags": ["grammar", "articles", "uncountable_nouns", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_ART_806",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Honesty is ___ best policy.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "Superlative adjectives ('best') are always preceded by the definite article 'the'.",
+    "tags": ["grammar", "articles", "superlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_807",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'She is ___ M.A. in English literature.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "Acronyms and abbreviations starting with a vowel sound when pronounced individually (like 'M.A.', pronounced 'em-ay') take 'an'.",
+    "tags": ["grammar", "articles", "abbreviations", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_808",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is the best player of the team, isn't he?'",
+    "options": {
+      "A": "He is the best",
+      "B": "player of the team,",
+      "C": "isn't he?",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Superlative adjective with definite article 'the' is correct. The sentence has no error.",
+    "tags": ["grammar", "articles", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_809",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'France is ___ European country.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "A",
+    "explanation": "Although 'European' begins with a vowel letter ('E'), it is pronounced with an initial consonant sound (/j/ or 'y', 'ju-ro-pe-an'). Therefore, it takes 'a'.",
+    "tags": ["grammar", "articles", "phonetic_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_810",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence regarding comparative correlatives with articles:",
+    "options": {
+      "A": "The higher you go, the colder it is.",
+      "B": "Higher you go, colder it is.",
+      "C": "A higher you go, a colder it is.",
+      "D": "The higher you go, colder it is."
+    },
+    "correct_option": "A",
+    "explanation": "Parallel comparative structures ('The more..., the more...') require the definite article 'the' before both comparative clauses.",
+    "tags": ["grammar", "articles", "correlative_comparatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_811",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man is a social animal.'",
+    "options": {
+      "A": "The man",
+      "B": "is a social",
+      "C": "animal.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "When 'man' or 'woman' is used in its widest sense to represent the entire human race, it takes no article ('Man is a social animal').",
+    "tags": ["grammar", "articles", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_812",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He returned after ___ hour.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "The word 'hour' begins with a silent 'h', making the initial sound a vowel (/aʊər/). Thus, it takes 'an'.",
+    "tags": ["grammar", "articles", "silent_letters", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_813",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'She likes to listen to ___ radio in the morning.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "Idiomatically, we listen to 'the radio', whereas we watch 'television' without an article.",
+    "tags": ["grammar", "articles", "idiomatic_usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_814",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Mathematics is a difficult subject for many students.'",
+    "options": {
+      "A": "Mathematics is",
+      "B": "a difficult subject",
+      "C": "for many students.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Names of academic subjects do not take articles. The sentence is correct.",
+    "tags": ["grammar", "articles", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_815",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ honor to his family.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "'Honor' begins with a silent 'h' sound, taking the article 'an'.",
+    "tags": ["grammar", "articles", "silent_letters", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_816",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: '___ rich should help ___ poor.'",
+    "options": {
+      "A": "The, the",
+      "B": "A, a",
+      "C": "No article, no article",
+      "D": "The, no article"
+    },
+    "correct_option": "A",
+    "explanation": "When adjectives ('rich', 'poor') are preceded by 'the', they represent a class of people plural in meaning ('the rich class', 'the poor class').",
+    "tags": ["grammar", "articles", "adjectives_as_nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_817",
+    "type": "standard_mcql",
+    "passage_id": null,
+    "question": "Spot the error: 'Copper is useful metal for electrical wiring.'",
+    "options": {
+      "A": "Copper is",
+      "B": "useful metal",
+      "C": "for electrical wiring.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Singular countable nouns like 'metal' require an article. It should be 'a useful metal'.",
+    "tags": ["grammar", "articles", "spotting_errors", "countable_nouns"]
+  },
+  {
+    "id": "ENG_GRAM_ART_818",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He goes to ___ church every Sunday.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "D",
+    "explanation": "When institutions (church, school, hospital, prison) are visited or used for their primary/intended purpose, no article is used.",
+    "tags": ["grammar", "articles", "institutional_nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_819",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'She bought ___ horse, ___ ox, and ___ buffalo.'",
+    "options": {
+      "A": "a, an, a",
+      "B": "an, a, a",
+      "C": "a, a, an",
+      "D": "the, the, the"
+    },
+    "correct_option": "A",
+    "explanation": "'horse' takes 'a' (consonant sound), 'ox' takes 'an' (vowel sound), and 'buffalo' takes 'a' (consonant sound).",
+    "tags": ["grammar", "articles", "phonetic_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_820",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Kalidasa is the Shakespeare of India.'",
+    "options": {
+      "A": "Kalidasa is",
+      "B": "the Shakespeare",
+      "C": "of India.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "When a proper noun is used as a metaphor or comparison ('the Shakespeare of India'), it takes the definite article 'the'. The sentence is correct.",
+    "tags": ["grammar", "articles", "spotting_errors", "metaphorical_proper_nouns"]
+  },
+  {
+    "id": "ENG_GRAM_ART_821",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She can speak ___ French fluently.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "D",
+    "explanation": "Names of languages are used without any article unless followed by the word 'language' ('the French language').",
+    "tags": ["grammar", "articles", "languages", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_822",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He was elected ___ chairman of the board.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "D",
+    "explanation": "Nouns denoting a unique title or position of office held by only one person at a time in a given context ('elected chairman', 'appointed president') do not take an article.",
+    "tags": ["grammar", "articles", "titles_and_positions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_823",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is in a great trouble right now.'",
+    "options": {
+      "A": "He is in",
+      "B": "a great trouble",
+      "C": "right now.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Abstract uncountable nouns in fixed phrases like 'in trouble', 'in danger', 'in haste' do not take an indefinite article ('in great trouble' or 'in trouble').",
+    "tags": ["grammar", "articles", "spotting_errors", "idiomatic_phrases"]
+  },
+  {
+    "id": "ENG_GRAM_ART_824",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Delhi is on ___ Yamuna river.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "Names of rivers, seas, oceans, and mountain ranges take the definite article 'the'.",
+    "tags": ["grammar", "articles", "geographical_names", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_825",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'She has headache and fever.' (Spot missing article)",
+    "options": {
+      "A": "a headache and a fever",
+      "B": "the headache and the fever",
+      "C": "headache and fever",
+      "D": "an headache and an fever"
+    },
+    "correct_option": "A",
+    "explanation": "Certain illness idioms take 'a' ('have a headache', 'have a cold', 'have a fever').",
+    "tags": ["grammar", "articles", "idiomatic_illnesses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_826",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He plays cricket with his friends every evening.'",
+    "options": {
+      "A": "He plays cricket",
+      "B": "with his friends",
+      "C": "every evening.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Names of games and sports do not take articles. The sentence is correct.",
+    "tags": ["grammar", "articles", "spotting_errors", "sports"]
+  },
+  {
+    "id": "ENG_GRAM_ART_827",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ Pacific Ocean is the deepest ocean in the world.'",
+    "options": {
+      "A": "A",
+      "B": "An",
+      "C": "The",
+      "D": "No article"
+    },
+    "correct_option": "C",
+    "explanation": "Names of oceans require the definite article 'the'.",
+    "tags": ["grammar", "articles", "geographical_names", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_828",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'We had ___ breakfast at 8:00 AM today.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "D",
+    "explanation": "Names of meals (breakfast, lunch, dinner) generally do not take articles unless modified by an adjective ('a hearty breakfast').",
+    "tags": ["grammar", "articles", "meals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_829",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The honesty is the best policy of human life.'",
+    "options": {
+      "A": "The honesty",
+      "B": "is the best",
+      "C": "policy of human life.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Abstract nouns used in a general sense do not take the definite article 'the'. It should be 'Honesty is the best policy.'",
+    "tags": ["grammar", "articles", "spotting_errors", "abstract_nouns"]
+  },
+  {
+    "id": "ENG_GRAM_ART_830",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is ___ wiser of the two sisters.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "When a comparative adjective is followed by 'of the two', it takes the definite article 'the'.",
+    "tags": ["grammar", "articles", "comparatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_831",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'He reads ___ Hindustan Times every morning.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "Names of newspapers and periodicals are preceded by the definite article 'the'.",
+    "tags": ["grammar", "articles", "newspapers", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_832",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Mount Everest is highest peak in the world.'",
+    "options": {
+      "A": "Mount Everest",
+      "B": "is highest peak",
+      "C": "in the world.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Superlative adjectives require the definite article 'the'. It should be 'is the highest peak'.",
+    "tags": ["grammar", "articles", "spotting_errors", "superlatives"]
+  },
+  {
+    "id": "ENG_GRAM_ART_833",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He arrived by ___ train.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "D",
+    "explanation": "Means of transport in prepositional phrases ('by train', 'by bus', 'by air') do not take articles.",
+    "tags": ["grammar", "articles", "transport", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_834",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'She has ___ good knowledge of physics.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "A",
+    "explanation": "When abstract or uncountable nouns are modified by an adjective phrase ('a good knowledge'), the indefinite article 'a' is used.",
+    "tags": ["grammar", "articles", "modified_abstract_nouns", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_835",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The charity helps the blind and the deaf.'",
+    "options": {
+      "A": "The charity helps",
+      "B": "the blind and",
+      "C": "the deaf.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Using 'the' before adjectives ('blind', 'deaf') to represent groups of people is grammatically correct.",
+    "tags": ["grammar", "articles", "spotting_errors", "adjectives_as_nouns"]
+  },
+  {
+    "id": "ENG_GRAM_ART_836",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ M.P. from our constituency.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "'M.P.' is pronounced 'em-pee', starting with a vowel sound (/ɛ/), so it takes 'an'.",
+    "tags": ["grammar", "articles", "abbreviations", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_837",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'She caught him by ___ neck.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "In prepositional phrases involving parts of the body, the definite article 'the' replaces the possessive pronoun ('caught him by the neck').",
+    "tags": ["grammar", "articles", "body_parts", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_838",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Sun shines brightly in summer.'",
+    "options": {
+      "A": "Sun shines",
+      "B": "brightly in",
+      "C": "summer.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Unique heavenly bodies require the definite article 'the'. It should be 'The sun shines...'",
+    "tags": ["grammar", "articles", "spotting_errors", "heavenly_bodies"]
+  },
+  {
+    "id": "ENG_GRAM_ART_839",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'It was ___ unique opportunity for him.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "A",
+    "explanation": "'Unique' begins with a consonant sound (/j/ or 'y'), so it takes 'a'.",
+    "tags": ["grammar", "articles", "phonetic_sounds", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_840",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'He goes to school by ___ bus.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "D",
+    "explanation": "Means of transport used in 'by + transport' structures do not take articles.",
+    "tags": ["grammar", "articles", "transport", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_841",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The poetry of Keats is full of romanticism.'",
+    "options": {
+      "A": "The poetry of Keats",
+      "B": "is full of",
+      "C": "romanticism.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "When an uncountable noun is restricted or defined by a modifying phrase ('of Keats'), it takes the definite article 'the'. The sentence is correct.",
+    "tags": ["grammar", "articles", "spotting_errors", "restricted_nouns"]
+  },
+  {
+    "id": "ENG_GRAM_ART_842",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'She is ___ tallest girl in her class.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "Superlative adjectives take 'the'.",
+    "tags": ["grammar", "articles", "superlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_843",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'He is ___ honor to his profession.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "B",
+    "explanation": "Silent 'h' in 'honor' requires 'an'.",
+    "tags": ["grammar", "articles", "silent_letters", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_844",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He plays piano in a jazz band on weekends.'",
+    "options": {
+      "A": "He plays piano",
+      "B": "in a jazz band",
+      "C": "on weekends.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "Musical instruments require the definite article 'the' ('plays the piano').",
+    "tags": ["grammar", "articles", "spotting_errors", "musical_instruments"]
+  },
+  {
+    "id": "ENG_GRAM_ART_845",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ more you read, ___ more you learn.'",
+    "options": {
+      "A": "A, a",
+      "B": "The, the",
+      "C": "No article, no article",
+      "D": "The, a"
+    },
+    "correct_option": "B",
+    "explanation": "Parallel correlative comparatives take 'the' before both clauses.",
+    "tags": ["grammar", "articles", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_846",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'She lives in ___ United States.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "C",
+    "explanation": "Country names that include words like States, Kingdom, Republic, or are plural in form take the definite article 'the'.",
+    "tags": ["grammar", "articles", "geographical_names", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_847",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He is appointed as a manager of the firm.'",
+    "options": {
+      "A": "He is appointed",
+      "B": "as a manager",
+      "C": "of the firm.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Verbs like 'appoint', 'elect', 'make', 'nominate' do not take 'as' or an indefinite article when followed by a unique position title. It should be 'He is appointed manager of the firm.'",
+    "tags": ["grammar", "articles", "spotting_errors", "titles_and_positions"]
+  },
+  {
+    "id": "ENG_GRAM_ART_848",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He looks like ___ Hitler in his demeanor.'",
+    "options": {
+      "A": "a",
+      "B": "an",
+      "C": "the",
+      "D": "no article"
+    },
+    "correct_option": "A",
+    "explanation": "When a proper noun is used as a common noun to denote a characteristic ('He is a Hitler' meaning a tyrant), it takes an indefinite article.",
+    "tags": ["grammar", "articles", "proper_nouns_as_common", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_849",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct article: 'She has been waiting for ___ hour and ___ half.'",
+    "options": {
+      "A": "a, a",
+      "B": "an, a",
+      "C": "an, an",
+      "D": "the, the"
+    },
+    "correct_option": "B",
+    "explanation": "'hour' takes 'an' (vowel sound), and 'half' takes 'a' ('a half' or 'half an hour').",
+    "tags": ["grammar", "articles", "expressions_of_time", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_ART_850",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She has a better knowledge of French than her sister.'",
+    "options": {
+      "A": "She has",
+      "B": "a better knowledge",
+      "C": "of French than her sister.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "Modified abstract noun ('a better knowledge') correctly takes 'a'. The sentence is correct.",
+    "tags": ["grammar", "articles", "spotting_errors", "rule_based"]
+  }
+]

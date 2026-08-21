@@ -1,0 +1,572 @@
+[
+  {
+    "id": "ENG_PJ_451",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid hydrothermal cooling precipitates massive sulfide deposits along the ocean floor.",
+      "B": "Tectonic spreading centers allow cold seawater to percolate deep into oceanic crustal fractures.",
+      "C": "Subsurface magma chambers superheat this trapped water, dissolving metallic minerals from surrounding basalt.",
+      "D": "Buoyant hydrothermal fluids surge upward through the crust, discharging mineral-laden plumes into the ocean."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces seawater percolating into crustal fractures at spreading centers. Sentence C explains subsurface magma superheating the water and dissolving minerals. Sentence D describes the buoyant fluids discharging upward. Sentence A concludes with the resulting precipitation of sulfide deposits."
+  },
+  {
+    "id": "ENG_PJ_452",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1915, Alfred Wegener published *The Origin of Continents and Oceans*, introducing continental drift.",
+    "jumbled_sentences": {
+      "P": "He argued that all major landmasses were once united into a single supercontinent known as Pangaea.",
+      "Q": "Wegener cited matching fossilized remains and identical rock strata found across separated ocean basins.",
+      "R": "Mainstream geologists rejected his hypothesis because he could not explain the physical forces moving continents.",
+      "S": "Decades later, the discovery of paleomagnetism and seafloor spreading finally provided the mechanism for drift."
+    },
+    "fixed_end": "6: Wegener's radical concept was ultimately vindicated, forming the cornerstone of modern plate tectonics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Wegener's book. Sentence P describes Pangaea. Sentence Q lists supporting fossil and rock evidence. Sentence R notes initial rejection due to lack of a mechanism. Sentence S introduces seafloor spreading as the mechanism, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_453",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health departments implement targeted mosquito eradication programs during warm seasons.",
+      "B": "Female mosquitoes vector blood-borne pathogens such as malaria and the West Nile virus.",
+      "C": "Rising global temperatures expand the tropical and subtropical breeding ranges of these vector insects.",
+      "D": "An expanded vector range significantly increases viral transmission rates among human populations."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces mosquitoes vectoring pathogens. Sentence C describes how rising temperatures expand vector ranges. Sentence D explains the consequence (increased transmission). Sentence A provides the public health response ('Consequently...')."
+  },
+  {
+    "id": "ENG_PJ_454",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1898, Martinus Beijerinck demonstrated that the infectious agent of tobacco mosaic disease was not a bacterium.",
+    "jumbled_sentences": {
+      "P": "He passed sap from infected plants through ultra-fine porcelain filters designed to trap all known bacteria.",
+      "Q": "The filtered fluid remained fully infectious, proving the pathogen was significantly smaller than bacterial cells.",
+      "R": "Beijerinck coined the term *contagium vivum fluidum*, or contagious living fluid, to describe the novel entity.",
+      "S": "Later isolation of tobacco mosaic virus crystals confirmed that these infectious agents were non-cellular pathogens."
+    },
+    "fixed_end": "6: This discovery inaugurated the field of virology, expanding microbiology beyond the cellular world.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Beijerinck's work. Sentence P describes filtering sap through porcelain. Sentence Q notes the filtered fluid remained infectious. Sentence R introduces his terminology. Sentence S mentions the later isolation of TMV crystals, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_455",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This thermal inertia protects coastal ecosystems from extreme diurnal temperature swings.",
+      "B": "Water possesses a remarkably high specific heat capacity compared to terrestrial rock and soil.",
+      "C": "Oceans absorb vast quantities of solar radiation during summer months with minimal temperature change.",
+      "D": "During winter, oceans gradually release this stored thermal energy back into the atmosphere."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces water's high specific heat capacity. Sentence C describes summer solar radiation absorption. Sentence D details winter heat release. Sentence A concludes with the ecological benefit ('This thermal inertia...')."
+  },
+  {
+    "id": "ENG_PJ_456",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1938, Otto Hahn and Fritz Strassmann bombarded uranium with neutrons, unexpectedly producing barium isotopes.",
+    "jumbled_sentences": {
+      "P": "Lise Meitner and Otto Frisch correctly interpreted this chemical result as nuclear fission.",
+      "Q": "They calculated that splitting the uranium nucleus released an immense amount of binding energy.",
+      "R": "This discovery quickly alerted military and scientific leaders to the possibility of atomic chain reactions.",
+      "S": "The Manhattan Project was subsequently launched to harness this fission energy for weaponry."
+    },
+    "fixed_end": "6: Nuclear fission forever altered global geopolitics, ushering in both the nuclear age and commercial atomic power.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Hahn and Strassmann's experiment. Sentence P introduces Meitner and Frisch interpreting it as fission. Sentence Q notes the massive energy release calculation. Sentence R mentions the realization of chain reactions. Sentence S notes the launch of the Manhattan Project, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_457",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, central banks maintain inflation targeting frameworks to anchor long-term price expectations.",
+      "B": "Unanticipated demand shocks can cause price levels to spiral out of control during economic booms.",
+      "C": "Rapid inflation erodes real household savings and distorts optimal capital allocation decisions.",
+      "D": "Unchecked price volatility ultimately undermines confidence in the national currency."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces demand shocks causing price spirals. Sentence C describes inflation eroding savings. Sentence D notes the loss of currency confidence. Sentence A provides the central bank solution ('Consequently...')."
+  },
+  {
+    "id": "ENG_PJ_458",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1827, Scottish botanist Robert Brown observed microscopic pollen grains suspended in water through a microscope.",
+    "jumbled_sentences": {
+      "P": "He noticed that tiny particles within the pollen grains executed continuous, erratic, jittery movements.",
+      "Q": "Although initially baffled, Brown verified that this phenomenon occurred with non-living dust particles as well.",
+      "R": "Decades later, Albert Einstein published a mathematical model explaining this motion as thermal molecular bombardment.",
+      "S": "Einstein demonstrated that random collisions between water molecules and suspended particles caused the visible jitter."
+    },
+    "fixed_end": "6: Brownian motion provided the first definitive empirical proof of the physical existence of atoms and molecules.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Brown's observation. Sentence P describes the erratic particle movement. Sentence Q notes it also happens with dust. Sentence R introduces Einstein's mathematical model. Sentence S explains the molecular collisions, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_459",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This structural simplification enhances cellular absorption efficiency across mucosal membranes.",
+      "B": "Complex dietary carbohydrates must be broken down into simple monosaccharides by digestive enzymes.",
+      "C": "Disaccharidases lining the intestinal brush border cleave complex sugars into glucose, fructose, and galactose.",
+      "D": "Specific transport proteins subsequently facilitate the uptake of these monosaccharides into the bloodstream."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces carbohydrate breakdown. Sentence C specifies disaccharidases cleaving sugars. Sentence D describes transport protein absorption. Sentence A concludes with the structural simplification benefit."
+  },
+  {
+    "id": "ENG_PJ_460",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1937, Hans Krebs elucidated the cyclic biochemical pathway responsible for cellular respiration in mitochondria.",
+    "jumbled_sentences": {
+      "P": "The citric acid cycle oxidizes acetyl-CoA derived from carbohydrates, fats, and proteins into carbon dioxide.",
+      "Q": "This cyclic pathway generates high-energy electron carriers, specifically NADH and $FADH_2$.",
+      "R": "These carrier molecules donate electrons to the mitochondrial electron transport chain.",
+      "S": "The resulting proton gradient across the inner membrane drives ATP synthesis via oxidative phosphorylation."
+    },
+    "fixed_end": "6: Understanding the Krebs cycle provided vital insights into cellular bioenergetics and metabolic disorders.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Krebs and his cycle. Sentence P describes the oxidation of acetyl-CoA. Sentence Q notes the generation of NADH and $FADH_2$. Sentence R details electron donation to the transport chain. Sentence S explains ATP synthesis, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_461",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, marine biologists monitor coral bleaching events triggered by prolonged ocean warming.",
+      "B": "Elevated sea surface temperatures induce thermal stress in symbiotic zooxanthellae residing within coral tissues.",
+      "C": "Stressed zooxanthellae begin producing toxic reactive oxygen species, forcing corals to expel them.",
+      "D": "Deprived of their primary photosynthetic energy source, coral colonies starve and turn completely white."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces elevated temperatures causing thermal stress. Sentence C describes zooxanthellae expulsion due to toxins. Sentence D notes the starvation and whitening (bleaching). Sentence A provides the monitoring response ('Consequently...')."
+  },
+  {
+    "id": "ENG_PJ_462",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1913, Danish physicist Niels Bohr proposed his quantized model of the hydrogen atom.",
+    "jumbled_sentences": {
+      "P": "He postulated that electrons orbit the nucleus only in discrete, non-radiating circular orbits of fixed energy.",
+      "Q": "An electron can jump between these allowed orbits by absorbing or emitting a photon of precise frequency.",
+      "R": "This radical departure successfully explained the observed spectral emission lines of atomic hydrogen.",
+      "S": "Bohr's model served as a crucial stepping stone toward full quantum mechanics."
+    },
+    "fixed_end": "6: By merging classical mechanics with early quantum ideas, Bohr bridged the gap between old and new physics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Bohr's model. Sentence P describes discrete non-radiating orbits. Sentence Q explains quantum jumps via photon absorption/emission. Sentence R notes the explanation of spectral lines. Sentence S highlights its role as a stepping stone, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_463",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Explosive subduction volcanism propels siliceous magma rapidly through narrow conduits.",
+      "C": "Sudden pressure drops cause dissolved water and carbon dioxide to exsolve violently into gas bubbles.",
+      "D": "The expanding gas shatters the viscous melt into airborne shards of volcanic glass and ash."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces explosive subduction volcanism. Sentence C describes pressure drops and gas exsolution. Sentence D explains the shattering of the melt. Sentence A concludes with the pumice formation."
+  },
+  {
+    "id": "ENG_PJ_464",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1865, Gregor Mendel published his foundational laws of inheritance based on pea plant hybridization experiments.",
+    "jumbled_sentences": {
+      "P": "He tracked discrete phenotypic traits across multiple generations, noting mathematical ratios in offspring.",
+      "Q": "Mendel formulated the law of segregation, stating that allele pairs separate during gamete formation.",
+      "R": "He also established the law of independent assortment, showing that traits are inherited independently.",
+      "S": "The scientific community largely ignored his mathematical insights until their rediscovery at the turn of the century."
+    },
+    "fixed_end": "6: Mendel's pea plant experiments established genetics as an empirical, quantitative science.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Mendel's 1865 publication. Sentence P describes tracking traits and ratios. Sentence Q details the law of segregation. Sentence R details independent assortment. Sentence S notes initial neglect followed by rediscovery, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_465",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, atmospheric scientists monitor industrial methane leakage using satellite infrared spectroscopy.",
+      "B": "Methane is a potent greenhouse gas with a global warming potential far exceeding carbon dioxide over short timescales.",
+      "C": "Unmitigated fugitive gas leaks from natural gas extraction infrastructure accelerate near-term climate warming.",
+      "D": "Detecting and sealing these pipeline emission sources represents a critical priority for climate mitigation."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces methane's high greenhouse potency. Sentence C describes fugitive leaks accelerating warming. Sentence D notes the priority of sealing leaks. Sentence A provides the satellite monitoring response ('Consequently...')."
+  },
+  {
+    "id": "ENG_PJ_466",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1928, British physicist Paul Dirac combined quantum mechanics and special relativity into a single equation.",
+    "jumbled_sentences": {
+      "P": "The resulting Dirac equation successfully described the behavior of relativistic electrons with intrinsic spin.",
+      "Q": "However, the equation yielded negative-energy solutions that initially perplexed theoretical physicists.",
+      "R": "Dirac interpreted these mathematical anomalies as predicting the existence of antimatter particles.",
+      "S": "Carl Anderson's subsequent discovery of the positron confirmed Dirac's theoretical prediction."
+    },
+    "fixed_end": "6: The Dirac equation unified quantum theory with relativity, marking a triumph of theoretical physics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Dirac's equation. Sentence P describes the success with relativistic electrons. Sentence Q notes the negative-energy puzzle. Sentence R explains interpreting them as antimatter. Sentence S mentions experimental confirmation by Anderson, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_467",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Shield volcanoes formed over oceanic hotspots effuse low-viscosity basaltic lava flows.",
+      "C": "The low silica content allows dissolved gases to escape smoothly without building explosive pressure.",
+      "D": "Effusive fountain eruptions build broad, gently sloping volcanic cones over extensive areas."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces shield volcanoes and basaltic lava. Sentence C explains the low silica and smooth gas escape. Sentence D describes effusive fountain eruptions building broad cones. Sentence A concludes with pumice formation."
+  },
+  {
+    "id": "ENG_PJ_468",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1896, French physicist Henri Becquerel discovered radioactivity quite by accident while studying uranium salts.",
+    "jumbled_sentences": {
+      "P": "He wrapped photographic plates in black paper and placed fluorescent uranium crystals on top of them.",
+      "Q": "Expecting sunlight to trigger X-ray emission, he stored the samples in a dark drawer during an overcast spell.",
+      "R": "To his astonishment, developing the unexposed plates revealed clear silhouettes of the crystals anyway.",
+      "S": "He realized that uranium salts spontaneously emitted a penetrating radiation entirely independent of external sunlight."
+    },
+    "fixed_end": "6: Becquerel's accidental discovery opened the door to nuclear physics, earning him a share of the 1903 Nobel Prize.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Becquerel's discovery. Sentence P describes wrapping plates and placing crystals. Sentence Q notes storing them in a dark drawer. Sentence R describes developing the plates to find clear silhouettes. Sentence S states the realization of spontaneous radiation, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_469",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, marine conservationists establish acoustic buffer zones around cetacean migration corridors.",
+      "B": "Naval sonar and commercial seismic airguns generate intense low-frequency underwater noise pollution.",
+      "C": "This high-intensity acoustic interference disrupts marine mammal echolocation and navigation systems.",
+      "D": "Disoriented whales frequently experience fatal mass strandings along shallow continental coastlines."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces underwater noise from sonar and airguns. Sentence C describes the interference with echolocation. Sentence D notes the consequence (fatal strandings). Sentence A states the conservation policy response ('Consequently...')."
+  },
+  {
+    "id": "ENG_PJ_470",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1913, Henry Moseley restructured the periodic table using X-ray spectroscopy.",
+    "jumbled_sentences": {
+      "P": "He measured the frequency of X-rays emitted by various chemical elements under cathode-ray bombardment.",
+      "Q": "Moseley discovered a systematic mathematical relationship between X-ray frequency and atomic number.",
+      "R": "This proved that the fundamental property defining an element is its nuclear charge, not its atomic weight.",
+      "S": "His ordering resolved historical inconsistencies where elements had been misplaced based strictly on mass."
+    },
+    "fixed_end": "6: Moseley's breakthrough provided the modern physical basis for the periodic law before his tragic death in World War I.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Moseley's work. Sentence P describes measuring X-ray frequencies. Sentence Q notes the relationship with atomic number. Sentence R proves nuclear charge is fundamental. Sentence S notes resolving historical inconsistencies, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_471",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Continental rifting thinned the crust, allowing basaltic magmas to pool beneath continental shields.",
+      "C": "Fractional crystallization of basalt melts produced evolved, silica-rich granitic magmas.",
+      "D": "Volatile-rich rhyolite chambers exploded catastrophically, blanketing the region in welded tuffs."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces continental rifting and basalt pooling. Sentence C describes fractional crystallization into granitic/rhyolitic melts. Sentence D details rhyolite explosions. Sentence A concludes with pumice formation."
+  },
+  {
+    "id": "ENG_PJ_472",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1935, Arthur Eddington proposed an experiment to test general relativity during a solar eclipse.",
+    "jumbled_sentences": {
+      "P": "He organized expeditions to Principe Island and Brazil to photograph stars positioned near the Sun.",
+      "Q": "General relativity predicted that massive gravitational fields would bend light passing close to stars.",
+      "R": "Comparing eclipse photographs with nighttime charts confirmed that starlight was deflected exactly as Einstein calculated.",
+      "S": "Headlines around the world celebrated Einstein as a scientific icon, cementing general relativity's status."
+    },
+    "fixed_end": "6: Eddington's empirical confirmation transformed Einstein from an obscure theoretician into a global celebrity.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "B",
+    "rationale": "Note: Let's check chronological order. Q introduces the prediction of gravitational bending. P describes organizing expeditions to photograph stars. R compares eclipse photos confirming deflection. S notes global headlines, leading to Statement 6. Thus Q-P-R-S is correct."
+  },
+  {
+    "id": "ENG_PJ_473",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health officials promote micronutrient fortification programs to combat nutritional deficiencies.",
+      "B": "Staple grain diets heavily reliant on polished rice often lack essential trace minerals like iron and zinc.",
+      "C": "Micronutrient malnutrition impairs cognitive development in children and suppresses immune system resilience.",
+      "D": "Chronic nutritional deprivation stunts physical growth and perpetuates generational cycles of poverty."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces staple grain diets lacking minerals. Sentence C describes cognitive and immune impairment. Sentence D details physical stunting and poverty cycles. Sentence A states the public health fortification policy ('Consequently...')."
+  },
+  {
+    "id": "ENG_PJ_474",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1900, Max Planck introduced the radical concept of energy quanta to solve the blackbody radiation problem.",
+    "jumbled_sentences": {
+      "P": "Classical physics failed because it predicted infinite ultraviolet energy emission from hot bodies.",
+      "Q": "Planck proposed that electromagnetic energy is emitted only in discrete packets, or quanta, proportional to frequency.",
+      "R": "He introduced a fundamental constant, now known as Planck's constant ($h$), to govern these energy exchanges.",
+      "S": "Although initially viewed as a mathematical trick, his quantum hypothesis laid the groundwork for modern quantum mechanics."
+    },
+    "fixed_end": "6: Planck's quantum hypothesis dismantled classical physics, ushering in the twentieth-century atomic revolution.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Planck's quanta. Sentence P explains classical physics failure (ultraviolet catastrophe). Sentence Q proposes energy emitted in discrete quanta. Sentence R introduces Planck's constant. Sentence S notes initial skepticism and foundational impact, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_475",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Subglacial volcanism melts thick ice sheets, generating immense volumes of pressurized meltwater.",
+      "C": "Cataclysmic subglacial explosions fracture overlying ice, mixing ash, tephra, and meltwater into surging lahars.",
+      "D": "Destructive mudflows race down river valleys, overwhelming downstream infrastructure."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces subglacial melting. Sentence C describes subglacial explosions mixing ash and water into lahars. Sentence D details the destructive mudflows. Sentence A concludes with pumice formation."
+  },
+  {
+    "id": "ENG_PJ_476",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1897, J.J. Thomson discovered the electron, altering humanity's understanding of atomic structure.",
+    "jumbled_sentences": {
+      "P": "He utilized cathode ray tubes to demonstrate that rays could be deflected by electric and magnetic fields.",
+      "Q": "He calculated the mass-to-charge ratio of these particles, proving they were much lighter than hydrogen atoms.",
+      "R": "Thomson proposed the 'plum pudding' model, picturing atoms as positive spheres embedded with negative electrons.",
+      "S": "Subsequent nuclear experiments eventually proved his atomic model incorrect, but his discovery of subatomic particles remained."
+    },
+    "fixed_end": "6: Thomson's cathode ray experiments established the existence of subatomic particles, founding modern atomic physics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Thomson's discovery. Sentence P describes cathode ray tube experiments. Sentence Q notes calculating mass-to-charge ratio. Sentence R introduces the plum pudding model. Sentence S mentions its later supersession while retaining subatomic significance, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_477",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, municipal planners mandate permeable pavement regulations to mitigate urban stormwater runoff.",
+      "B": "Rapid urban expansion replaces natural soil absorption layers with impermeable concrete structures.",
+      "C": "Heavy rainfall events overwhelm conventional storm drains, triggering flash floods in low-lying neighborhoods.",
+      "D": "Standing urban stormwater pools become breeding incubators for disease-carrying mosquitoes."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces urban expansion and impermeable concrete. Sentence C describes rainfall overwhelming drains and causing floods. Sentence D notes standing water breeding mosquitoes. Sentence A states the municipal planning response ('Consequently...')."
+  },
+  {
+    "id": "ENG_PJ_478",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1859, Charles Darwin published *On the Origin of Species*, revolutionizing biology with natural selection.",
+    "jumbled_sentences": {
+      "P": "He argued that populations produce more offspring than environmental resources can support, triggering competition.",
+      "Q": "Individuals possessing advantageous variations survive and reproduce at higher rates than others.",
+      "R": "Over immense geological timeframes, this differential survival rate drives gradual adaptation and speciation.",
+      "S": "Although Darwin lacked a mechanism for heredity, Mendelian genetics later provided the missing foundation."
+    },
+    "fixed_end": "6: Darwin's theory unified all biological sciences, providing the conceptual framework for modern evolutionary biology.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Darwin's book. Sentence P describes overproduction and competition. Sentence Q details differential survival of advantageous variations. Sentence R explains long-term adaptation. Sentence S notes the later addition of Mendelian genetics, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_479",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Effusive continental basalt eruptions produce fluid lava flows that spread across ancient plateaus.",
+      "C": "Low volatile content prevents violent explosions, favoring quiet, passive lava extrusions.",
+      "D": "Successive basalt layers accumulate over millions of years, building immense volcanic tablelands."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces continental basalt eruptions. Sentence C explains low volatile content favoring passive extrusion. Sentence D describes basalt layers building tablelands. Sentence A describes pumice formation."
+  },
+  {
+    "id": "ENG_PJ_480",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1912, Alfred Wegener presented his hypothesis of continental drift to the German Geological Society.",
+    "jumbled_sentences": {
+      "P": "He pointed out the striking jigsaw-fit of continental coastlines across the Atlantic Ocean.",
+      "Q": "Wegener matched identical fossilized fern species and reptile remains across distant southern continents.",
+      "R": "Geologists dismissed his ideas because centrifugal and tidal forces were far too weak to move continents.",
+      "S": "Decades later, sonar mapping of oceanic trenches and mid-ocean ridges provided the mechanism of plate tectonics."
+    },
+    "fixed_end": "6: Wegener's visionary hypothesis transformed Earth sciences, turning continental drift into accepted global dogma.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Wegener's presentation. Sentence P notes coastline jigsaw-fits. Sentence Q details fossil matches. Sentence R explains why geologists dismissed him. Sentence S introduces sonar mapping and plate tectonics, leading to Statement 6."
+  }
+]

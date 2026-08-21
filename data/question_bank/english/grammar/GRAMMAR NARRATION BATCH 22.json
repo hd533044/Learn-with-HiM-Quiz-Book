@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_NARR_851",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I have been working here for six months.\"'",
+    "options": {
+      "A": "He said that he had been working there for six months.",
+      "B": "He said that he has been working here for six months.",
+      "C": "He said that he was working there for six months.",
+      "D": "He said that he had been working here for six months."
+    },
+    "correct_option": "A",
+    "explanation": "Present perfect continuous ('have been working') backshifts to past perfect continuous ('had been working') after a past reporting verb ('said'), and 'here' shifts to 'there'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_852",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man asked me that why I was standing there.'",
+    "options": {
+      "A": "The man asked me",
+      "B": "that why",
+      "C": "I was standing there.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "In indirect WH-questions, 'that' is redundant and incorrect. Correct: 'The man asked me why I was standing there.'",
+    "tags": ["grammar", "narration", "spotting_errors", "interrogative"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_853",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'The supervisor said, \"Finish this work immediately!\"'",
+    "options": {
+      "A": "The supervisor ordered them to finish that work immediately.",
+      "B": "The supervisor requested that they finish this work immediately.",
+      "C": "The supervisor said that they should finish this work immediately.",
+      "D": "The supervisor told to finish that work immediately."
+    },
+    "correct_option": "A",
+    "explanation": "Imperative commands convert using 'ordered/commanded' + object + full infinitive ('to finish'), with 'this' changing to 'that'.",
+    "tags": ["grammar", "narration", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_854",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Alas! My father is no more.\"'",
+    "options": {
+      "A": "He exclaimed with sorrow that his father was no more.",
+      "B": "He said that alas his father is no more.",
+      "C": "He cried with joy that his father was no more.",
+      "D": "He exclaimed that his father had been no more."
+    },
+    "correct_option": "A",
+    "explanation": "Exclamations of grief ('Alas!') use 'exclaimed with sorrow' and backshift 'is' to 'was'.",
+    "tags": ["grammar", "narration", "exclamatory", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_855",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He told that he is waiting for his friend since morning.'",
+    "options": {
+      "A": "He told that",
+      "B": "he is waiting",
+      "C": "for his friend since morning.",
+      "D": "No error"
+    },
+    "correct_option": "A",
+    "explanation": "'Tell' requires an indirect object (e.g., 'He told me that...'). Also, 'said' is safer if no object is provided. The tense 'is waiting' must backshift to 'was waiting' or 'had been waiting'.",
+    "tags": ["grammar", "narration", "spotting_errors", "tense_consistency"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_856",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Can you speak French?\"'",
+    "options": {
+      "A": "He asked me if I could speak French.",
+      "B": "He asked me if I can speak French.",
+      "C": "He asked whether I could speak French.",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both 'if' and 'whether' are correct conjunctions for yes/no questions in reported speech, and 'can' backshifts to 'could'.",
+    "tags": ["grammar", "narration", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_857",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"I have just come back.\"'",
+    "options": {
+      "A": "She said that she had just come back.",
+      "B": "She said that she has just come back.",
+      "C": "She said that she just came back.",
+      "D": "She said that she would have just come back."
+    },
+    "correct_option": "A",
+    "explanation": "Present perfect ('have come') backshifts to past perfect ('had come').",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_858",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked me where did I live last year.'",
+    "options": {
+      "A": "He asked me",
+      "B": "where did I live",
+      "C": "last year.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Indirect questions require declarative word order ('where I lived'), not interrogative ('where did I live').",
+    "tags": ["grammar", "narration", "spotting_errors", "interrogative"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_859",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Good morning, everyone!\"'",
+    "options": {
+      "A": "He wished everyone good morning.",
+      "B": "He told everyone good morning.",
+      "C": "He said good morning to everyone.",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both 'wished' and 'said' are valid reporting verbs for greetings.",
+    "tags": ["grammar", "narration", "salutations", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_860",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Must you go?\"'",
+    "options": {
+      "A": "He asked if I had to go.",
+      "B": "He asked if I must go.",
+      "C": "He asked did I have to go.",
+      "D": "He inquired whether I must go."
+    },
+    "correct_option": "A",
+    "explanation": "When 'must' denotes necessity, 'had to' is the preferred backshifted form.",
+    "tags": ["grammar", "narration", "modals_in_narration", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_861",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Water freezes at 0 degrees.\"'",
+    "options": {
+      "A": "He said that water froze at 0 degrees.",
+      "B": "He said that water freezes at 0 degrees.",
+      "C": "He told that water freezes at 0 degrees.",
+      "D": "He asked if water freezes at 0 degrees."
+    },
+    "correct_option": "B",
+    "explanation": "Scientific facts/universal truths remain in the present tense even if the reporting verb is past.",
+    "tags": ["grammar", "narration", "universal_truths", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_862",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'She said that she will submit her essay tomorrow.'",
+    "options": {
+      "A": "She said that",
+      "B": "she will submit",
+      "C": "her essay tomorrow.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Past reporting verb ('said') requires backshift of 'will' to 'would'.",
+    "tags": ["grammar", "narration", "spotting_errors", "sequence_of_tenses"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_863",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"Bravo! You've done great.\"'",
+    "options": {
+      "A": "She applauded him, saying he had done great.",
+      "B": "She exclaimed that he had done great.",
+      "C": "She told him bravo for doing great.",
+      "D": "She said that he has done great."
+    },
+    "correct_option": "A",
+    "explanation": "Bravo requires specific reporting expressions like 'applauded him' + reporting clause.",
+    "tags": ["grammar", "narration", "exclamatory", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_864",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Let's eat.\"'",
+    "options": {
+      "A": "He proposed that they should eat.",
+      "B": "He suggested eating.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both gerund and 'should' clause structures are valid for suggestions.",
+    "tags": ["grammar", "narration", "suggestions", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_865",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The teacher told to the students to study hard.'",
+    "options": {
+      "A": "The teacher told to",
+      "B": "the students to study hard.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "A",
+    "explanation": "'Tell' requires an indirect object without the preposition 'to'. Correct: 'The teacher told the students...'",
+    "tags": ["grammar", "narration", "spotting_errors", "transitive_verbs"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_866",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I'll see you there.\"'",
+    "options": {
+      "A": "He said that he would see me there.",
+      "B": "He said that he will see me there.",
+      "C": "He said that he would see me here.",
+      "D": "He told that he would see me there."
+    },
+    "correct_option": "A",
+    "explanation": "'Will' -> 'would'. The location 'there' is usually kept if the report is at the same location as original, but contextually 'there' refers back.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_867",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"Are you coming?\"'",
+    "options": {
+      "A": "She asked if I was coming.",
+      "B": "She asked was I coming.",
+      "C": "She asked if I am coming.",
+      "D": "She told me if I was coming."
+    },
+    "correct_option": "A",
+    "explanation": "Yes/no question 'if', declarative order 'I was', backshift 'are' -> 'was'.",
+    "tags": ["grammar", "narration", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_868",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked me where I was living.'",
+    "options": {
+      "A": "He asked me",
+      "B": "where I was living.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "C",
+    "explanation": "The sentence is grammatically correct.",
+    "tags": ["grammar", "narration", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_869",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I've been here for hours.\"'",
+    "options": {
+      "A": "He said that he had been there for hours.",
+      "B": "He said that he has been there for hours.",
+      "C": "He said that he was there for hours.",
+      "D": "He said that he had been here for hours."
+    },
+    "correct_option": "A",
+    "explanation": "'Have been' -> 'had been', 'here' -> 'there'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_870",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"Please pass the salt.\"'",
+    "options": {
+      "A": "She requested me to pass her the salt.",
+      "B": "She told me to pass her the salt.",
+      "C": "She asked me to pass her the salt.",
+      "D": "All of the above are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Reporting verbs like 'requested', 'told', and 'asked' can all be used for polite imperative requests.",
+    "tags": ["grammar", "narration", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_871",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I might visit them.\"'",
+    "options": {
+      "A": "He said that he might visit them.",
+      "B": "He said that he may visit them.",
+      "C": "He said that he would visit them.",
+      "D": "He said that he had to visit them."
+    },
+    "correct_option": "A",
+    "explanation": "'Might' is already past-like/conditional and usually remains unchanged.",
+    "tags": ["grammar", "narration", "modals_in_narration", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_872",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked that if I could help him.'",
+    "options": {
+      "A": "He asked me",
+      "B": "that if I could",
+      "C": "help him.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Don't use 'that' before 'if'. Correct: 'He asked if I could help him.'",
+    "tags": ["grammar", "narration", "spotting_errors", "interrogative"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_873",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"It's raining.\"'",
+    "options": {
+      "A": "She said that it was raining.",
+      "B": "She said that it is raining.",
+      "C": "She said it had been raining.",
+      "D": "She told that it was raining."
+    },
+    "correct_option": "A",
+    "explanation": "Backshift 'is' to 'was'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_874",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I was working.\"'",
+    "options": {
+      "A": "He said that he had been working.",
+      "B": "He said that he was working.",
+      "C": "He said that he has been working.",
+      "D": "He said that he worked."
+    },
+    "correct_option": "A",
+    "explanation": "Past continuous 'was working' backshifts to past perfect continuous 'had been working'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_875",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He told that he is sick.'",
+    "options": {
+      "A": "He told that",
+      "B": "he is sick.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "A",
+    "explanation": "'Tell' requires an object (e.g., 'He told me...').",
+    "tags": ["grammar", "narration", "spotting_errors", "transitive_verbs"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_876",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I wrote it.\"'",
+    "options": {
+      "A": "He said that he had written it.",
+      "B": "He said that he wrote it.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Simple past can either be backshifted to past perfect or remain simple past.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_877",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"Don't go there.\"'",
+    "options": {
+      "A": "She ordered me not to go there.",
+      "B": "She requested me to not go there.",
+      "C": "She said to not go there.",
+      "D": "She told to not go there."
+    },
+    "correct_option": "A",
+    "explanation": "Imperative negative: 'not to go'.",
+    "tags": ["grammar", "narration", "imperative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_878",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked me that if I am coming.'",
+    "options": {
+      "A": "He asked me",
+      "B": "that if I am coming.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Don't use 'that' before 'if', and 'am' must be 'was'.",
+    "tags": ["grammar", "narration", "spotting_errors", "interrogative"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_879",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I may come.\"'",
+    "options": {
+      "A": "He said that he might come.",
+      "B": "He said that he may come.",
+      "C": "He said that he could come.",
+      "D": "He said that he would come."
+    },
+    "correct_option": "A",
+    "explanation": "'May' shifts to 'might'.",
+    "tags": ["grammar", "narration", "modals_in_narration", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_880",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"I don't like tea.\"'",
+    "options": {
+      "A": "She said that she didn't like tea.",
+      "B": "She said that she doesn't like tea.",
+      "C": "She said that she wouldn't like tea.",
+      "D": "She said that she hadn't liked tea."
+    },
+    "correct_option": "A",
+    "explanation": "Simple present 'don't' shifts to simple past 'didn't'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_881",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Where is the library?\"'",
+    "options": {
+      "A": "He asked where the library was.",
+      "B": "He asked where was the library.",
+      "C": "He asked me where the library is.",
+      "D": "He asked where the library is."
+    },
+    "correct_option": "A",
+    "explanation": "WH-question indirect: declarative order ('library was').",
+    "tags": ["grammar", "narration", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_882",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He said that he can do this work.'",
+    "options": {
+      "A": "He said that",
+      "B": "he can do",
+      "C": "this work.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Past reporting verb requires modal backshift ('can' -> 'could').",
+    "tags": ["grammar", "narration", "spotting_errors", "modals_in_narration"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_883",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"I'll be there.\"'",
+    "options": {
+      "A": "She said that she would be there.",
+      "B": "She said that she will be there.",
+      "C": "She said that she would be here.",
+      "D": "She said that she should be there."
+    },
+    "correct_option": "A",
+    "explanation": "'Will' -> 'would'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_884",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"Did you eat?\"'",
+    "options": {
+      "A": "He asked if I had eaten.",
+      "B": "He asked if I ate.",
+      "C": "He asked did I eat.",
+      "D": "He asked that if I had eaten."
+    },
+    "correct_option": "A",
+    "explanation": "Simple past interrogative -> past perfect ('if I had eaten').",
+    "tags": ["grammar", "narration", "interrogative", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_885",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked me that why was I angry.'",
+    "options": {
+      "A": "He asked me",
+      "B": "that why",
+      "C": "was I angry.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Don't use 'that' before 'why', and order must be 'I was angry'.",
+    "tags": ["grammar", "narration", "spotting_errors", "interrogative"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_886",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"I'm tired.\"'",
+    "options": {
+      "A": "She said that she was tired.",
+      "B": "She said that she is tired.",
+      "C": "She said she was tired.",
+      "D": "Both A and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both are correct.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_887",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I have finished.\"'",
+    "options": {
+      "A": "He said that he had finished.",
+      "B": "He said that he has finished.",
+      "C": "He said that he finished.",
+      "D": "He said that he would finish."
+    },
+    "correct_option": "A",
+    "explanation": "Present perfect shifts to past perfect.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_888",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He said that he will go.'",
+    "options": {
+      "A": "He said that",
+      "B": "he will go.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Past reporting verb requires tense backshift.",
+    "tags": ["grammar", "narration", "spotting_errors", "tense_consistency"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_889",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"I am happy.\"'",
+    "options": {
+      "A": "She said that she was happy.",
+      "B": "She said that she is happy.",
+      "C": "She told that she was happy.",
+      "D": "She said that she has been happy."
+    },
+    "correct_option": "A",
+    "explanation": "Present simple shifts to past simple.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_890",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I was here.\"'",
+    "options": {
+      "A": "He said that he had been there.",
+      "B": "He said that he was there.",
+      "C": "He said that he has been there.",
+      "D": "He said that he was here."
+    },
+    "correct_option": "A",
+    "explanation": "Simple past shifts to past perfect, 'here' shifts to 'there'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_891",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I have just come back.\"'",
+    "options": {
+      "A": "He said that he had just come back.",
+      "B": "He said that he has just come back.",
+      "C": "He said that he just came back.",
+      "D": "He said that he would just come back."
+    },
+    "correct_option": "A",
+    "explanation": "Present perfect ('have just come') shifts to past perfect ('had just come').",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_892",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked me where I am going.'",
+    "options": {
+      "A": "He asked me",
+      "B": "where I am going.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Reporting verb 'asked' requires past tense.",
+    "tags": ["grammar", "narration", "spotting_errors", "sequence_of_tenses"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_893",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I'll be there.\"'",
+    "options": {
+      "A": "He said that he would be there.",
+      "B": "He said that he will be there.",
+      "C": "He said that he would be here.",
+      "D": "He told that he would be there."
+    },
+    "correct_option": "A",
+    "explanation": "'Will' -> 'would'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_894",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"It's raining.\"'",
+    "options": {
+      "A": "She said that it was raining.",
+      "B": "She said that it is raining.",
+      "C": "She said it had been raining.",
+      "D": "She told that it was raining."
+    },
+    "correct_option": "A",
+    "explanation": "Backshift 'is' to 'was'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_895",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked that if I could help.'",
+    "options": {
+      "A": "He asked me",
+      "B": "that if I could",
+      "C": "help.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "Don't use 'that' before 'if'.",
+    "tags": ["grammar", "narration", "spotting_errors", "interrogative"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_896",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I'm tired.\"'",
+    "options": {
+      "A": "He said that he was tired.",
+      "B": "He said that he is tired.",
+      "C": "He told that he was tired.",
+      "D": "He said that he had been tired."
+    },
+    "correct_option": "A",
+    "explanation": "Present simple 'am' shifts to past simple 'was'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_897",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"I wrote it.\"'",
+    "options": {
+      "A": "She said that she had written it.",
+      "B": "She said that she wrote it.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Simple past can backshift to past perfect or remain simple past.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_898",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He told that he will go.'",
+    "options": {
+      "A": "He told that",
+      "B": "he will go.",
+      "C": "No error",
+      "D": "None"
+    },
+    "correct_option": "B",
+    "explanation": "Past reporting verb requires 'would' backshift.",
+    "tags": ["grammar", "narration", "spotting_errors", "tense_consistency"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_899",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'He said, \"I like tea.\"'",
+    "options": {
+      "A": "He said that he liked tea.",
+      "B": "He said that he likes tea.",
+      "C": "He told that he liked tea.",
+      "D": "He asked if he liked tea."
+    },
+    "correct_option": "A",
+    "explanation": "Simple present 'like' shifts to past simple 'liked'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_NARR_900",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Convert into indirect speech: 'She said, \"I was here.\"'",
+    "options": {
+      "A": "She said that she had been there.",
+      "B": "She said that she was there.",
+      "C": "She said that she had been here.",
+      "D": "She said that she was here."
+    },
+    "correct_option": "A",
+    "explanation": "Simple past shifts to past perfect, 'here' shifts to 'there'.",
+    "tags": ["grammar", "narration", "direct_indirect", "rule_based"]
+  }
+]

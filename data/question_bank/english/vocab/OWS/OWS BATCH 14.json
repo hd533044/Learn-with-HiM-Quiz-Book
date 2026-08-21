@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0651",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA resting place, den, or secret dwelling of a wild animal",
+    "options": {
+      "A": "Lair",
+      "B": "Burrow",
+      "C": "Hutch",
+      "D": "Byre"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Lair) is correct. A 'Lair' (or den) is the habitat or wild shelter of predatory animals. 'Burrow' is an underground hole dug by small creatures, and 'Hutch' is an artificial box for rabbits.",
+    "tags": ["vocab", "ows", "animals", "places", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0652",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nDeserving of high praise, honor, and commendation",
+    "options": {
+      "A": "Laudable",
+      "B": "Appalling",
+      "C": "Disgraceful",
+      "D": "Culpable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Laudable) is correct. 'Laudable' means worthy of praise and admiration. 'Appalling' means shocking, and 'Disgraceful' brings shame.",
+    "tags": ["vocab", "ows", "adjectives", "praise", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0653",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA commercial establishment or room where clothes and linens are washed and ironed",
+    "options": {
+      "A": "Laundry",
+      "B": "Scullery",
+      "C": "Pantry",
+      "D": "Boutique"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Laundry) is correct. A 'Laundry' is a place where garments are washed and pressed. 'Scullery' is a room for washing dishes.",
+    "tags": ["vocab", "ows", "places", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0654",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA medicine or substance that facilitates evacuation of the bowels; purgative",
+    "options": {
+      "A": "Laxative",
+      "B": "Emetic",
+      "C": "Sedative",
+      "D": "Antidote"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Laxative) is correct. A 'Laxative' stimulates or facilitates bowel movements. 'Emetic' induces vomiting, and 'Sedative' induces sleep or calm.",
+    "tags": ["vocab", "ows", "medical", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0655",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nUnwilling to work or use energy; slothful and idle",
+    "options": {
+      "A": "Lazy",
+      "B": "Industrious",
+      "C": "Diligent",
+      "D": "Conscientious"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Lazy) is correct. 'Lazy' (or indolent) means disinclined to exert energy or work. 'Industrious' and 'Diligent' mean hardworking.",
+    "tags": ["vocab", "ows", "personality", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0656",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA legal contract conveying the use of property, buildings, or land for a specified term in exchange for rent",
+    "options": {
+      "A": "Lease",
+      "B": "Mortgage",
+      "C": "Collateral",
+      "D": "Inheritance"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Lease) is correct. A 'Lease' is a contractual rental agreement granting occupancy. 'Mortgage' is a legal agreement using property as security for a debt.",
+    "tags": ["vocab", "ows", "law", "property", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0657",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sly, unpleasant, and lustful or malicious look",
+    "options": {
+      "A": "Leer",
+      "B": "Glance",
+      "C": "Glimpse",
+      "D": "Glower"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Leer) is correct. 'Leer' is a suggestive, lascivious, or malicious sideways look. 'Glower' is an angry, sullen stare.",
+    "tags": ["vocab", "ows", "actions", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0658",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who compiles, edits, or writes dictionaries",
+    "options": {
+      "A": "Lexicographer",
+      "B": "Cartographer",
+      "C": "Calligrapher",
+      "D": "Bibliographer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Lexicographer) is correct. A 'Lexicographer' writes, compiles, and edits dictionaries. 'Cartographer' makes maps, and 'Bibliographer' lists books.",
+    "tags": ["vocab", "ows", "professions", "books", "pyq_ssc", "repeated_6_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0659",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe complete vocabulary of a language or an alphabetical dictionary of terms",
+    "options": {
+      "A": "Lexicon",
+      "B": "Manuscript",
+      "C": "Directory",
+      "D": "Catalogue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Lexicon) is correct. A 'Lexicon' is a comprehensive dictionary of words in a language or branch of knowledge. 'Manuscript' is an author's unpublished text.",
+    "tags": ["vocab", "ows", "books", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0660",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nLegally responsible, answerable, or obligated by statutory law",
+    "options": {
+      "A": "Liable",
+      "B": "Exonerated",
+      "C": "Immune",
+      "D": "Insolvent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Liable) is correct. 'Liable' means legally bound, responsible, or exposed to a risk. 'Immune' means exempt or protected from obligation/penalty.",
+    "tags": ["vocab", "ows", "law", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0661",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who advocates complete civil liberty and freedom of thought and action",
+    "options": {
+      "A": "Libertarian",
+      "B": "Autocrat",
+      "C": "Dictator",
+      "D": "Bigot"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Libertarian) is correct. A 'Libertarian' upholds the principles of absolute individual liberty and autonomy. 'Autocrat' demands unlimited obedience.",
+    "tags": ["vocab", "ows", "politics", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0662",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA tough band of fibrous tissue that connects two bones or holds organs in place",
+    "options": {
+      "A": "Ligament",
+      "B": "Tendon",
+      "C": "Artery",
+      "D": "Muscle"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ligament) is correct. A 'Ligament' connects bones or supports cartilage. 'Tendon' connects muscles to bones.",
+    "tags": ["vocab", "ows", "anatomy", "medical", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0663",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFeeding on, consuming, or ingesting mud or sediment",
+    "options": {
+      "A": "Limivorous",
+      "B": "Carnivorous",
+      "C": "Herbivorous",
+      "D": "Piscivorous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Limivorous) is correct. 'Limivorous' describes organisms that feed on mud or soil. 'Piscivorous' means feeding on fish, and 'Carnivorous' on flesh.",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0664",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person skilled in multiple foreign languages or specialized in linguistics",
+    "options": {
+      "A": "Linguist",
+      "B": "Polyandrist",
+      "C": "Calligrapher",
+      "D": "Philatelist"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Linguist) is correct. A 'Linguist' is an expert in languages or skilled in multiple tongues. 'Philatelist' collects stamps.",
+    "tags": ["vocab", "ows", "language", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0665",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTending to talk a great deal; extremely talkative or garrulous",
+    "options": {
+      "A": "Loquacious",
+      "B": "Reticent",
+      "C": "Taciturn",
+      "D": "Laconic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Loquacious) is correct. 'Loquacious' means talkative and wordy. 'Reticent', 'Taciturn', and 'Laconic' describe persons who speak very little.",
+    "tags": ["vocab", "ows", "personality", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0666",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA quiet, gentle, and rhythmic song sung to soothe a child to sleep",
+    "options": {
+      "A": "Lullaby",
+      "B": "Dirge",
+      "C": "Elegy",
+      "D": "Hymn"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Lullaby) is correct. A 'Lullaby' is a gentle cradle song putting babies to sleep. 'Dirge' is a funeral lament, and 'Hymn' is a sacred praise song.",
+    "tags": ["vocab", "ows", "music", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0667",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOf, relating to, determined by, or resembling the moon",
+    "options": {
+      "A": "Lunar",
+      "B": "Solar",
+      "C": "Sidereal",
+      "D": "Astral"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Lunar) is correct. 'Lunar' pertains specifically to the moon. 'Solar' pertains to the sun, and 'Sidereal' to distant stars.",
+    "tags": ["vocab", "ows", "astronomy", "science", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0668",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn unmarried girl or young woman",
+    "options": {
+      "A": "Maiden",
+      "B": "Matron",
+      "C": "Spinster",
+      "D": "Brunette"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Maiden) is correct. A 'Maiden' is a young unmarried woman. 'Matron' is a mature married woman, and 'Spinster' is an older unmarried female.",
+    "tags": ["vocab", "ows", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0669",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe first public speech or address delivered by a person, especially in an assembly",
+    "options": {
+      "A": "Maiden speech",
+      "B": "Extempore",
+      "C": "Harangue",
+      "D": "Soliloquy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Maiden speech) is correct. 'Maiden speech' is a newcomer's first formal speech. 'Extempore' is speech made without preparation.",
+    "tags": ["vocab", "ows", "speeches", "communication", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0670",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe ludicrous misuse of an incorrect word that sounds similar to the intended word",
+    "options": {
+      "A": "Malapropism",
+      "B": "Solecism",
+      "C": "Tautology",
+      "D": "Euphemism"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Malapropism) is correct. 'Malapropism' is the mistaken use of an incorrect, similar-sounding word. 'Solecism' is a grammatical error.",
+    "tags": ["vocab", "ows", "language", "errors", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0671",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nCapable of being hammered, rolled, pressed, or bent permanently out of shape without breaking",
+    "options": {
+      "A": "Malleable",
+      "B": "Brittle",
+      "C": "Rigid",
+      "D": "Fragile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Malleable) is correct. 'Malleable' refers to materials easily beaten into sheets without cracking. 'Brittle' and 'Fragile' shatter under stress.",
+    "tags": ["vocab", "ows", "materials", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0672",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA physical condition caused by lack of proper and sufficient nutrition or balanced food",
+    "options": {
+      "A": "Malnutrition",
+      "B": "Gingivitis",
+      "C": "Anorexia",
+      "D": "Asphyxia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Malnutrition) is correct. 'Malnutrition' is the state of dietary deficiency. 'Gingivitis' is gum inflammation, and 'Anorexia' is an eating disorder.",
+    "tags": ["vocab", "ows", "medical", "health", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0673",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nWarm-blooded vertebrate animals that nourish their young with milk produced by mammary glands",
+    "options": {
+      "A": "Mammals",
+      "B": "Amphibians",
+      "C": "Reptiles",
+      "D": "Invertebrates"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mammals) is correct. 'Mammals' are vertebrates that nurse their young with milk. 'Amphibians' live both on land and in water.",
+    "tags": ["vocab", "ows", "animals", "biology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0674",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nIn a way that is clear, plain, and obvious to the eye or understanding",
+    "options": {
+      "A": "Manifestly",
+      "B": "Obscurely",
+      "C": "Ambiguously",
+      "D": "Surreptitiously"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Manifestly) is correct. 'Manifestly' means undeniably, clearly, and openly. 'Surreptitiously' means secretly or stealthily.",
+    "tags": ["vocab", "ows", "adverbs", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0675",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA public declaration of policies, intentions, and aims issued before an election by a political party",
+    "options": {
+      "A": "Manifesto",
+      "B": "Creed",
+      "C": "Protocol",
+      "D": "Statute"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Manifesto) is correct. A 'Manifesto' is an official published declaration of political platform intentions. 'Creed' is a religious statement of faith.",
+    "tags": ["vocab", "ows", "politics", "documents", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0676",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA carefully planned strategy or underhand movement designed to secure an advantage",
+    "options": {
+      "A": "Manoeuvre",
+      "B": "Bungle",
+      "C": "Blunder",
+      "D": "Flounder"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Manoeuvre) is correct. 'Manoeuvre' is a tactical or deceptive move made skillfully to gain an end. 'Bungle' is to botch a task clumsily.",
+    "tags": ["vocab", "ows", "actions", "military", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0677",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn instrument used for measuring the physical pressure of gases and liquids",
+    "options": {
+      "A": "Manometer",
+      "B": "Barometer",
+      "C": "Chronometer",
+      "D": "Thermometer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Manometer) is correct. A 'Manometer' measures gas or fluid pressure in closed systems. 'Barometer' measures open atmospheric pressure.",
+    "tags": ["vocab", "ows", "instruments", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0678",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA very large, stately, and impressive residential house",
+    "options": {
+      "A": "Mansion",
+      "B": "Hovel",
+      "C": "Shanty",
+      "D": "Igloo"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mansion) is correct. A 'Mansion' is an imposing, expansive residence. 'Hovel' and 'Shanty' are crude, impoverished huts.",
+    "tags": ["vocab", "ows", "places", "housing", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0679",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA text, book, or piece of music written by hand or typed before printing",
+    "options": {
+      "A": "Manuscript",
+      "B": "Inscription",
+      "C": "Catalogue",
+      "D": "Anthology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Manuscript) is correct. A 'Manuscript' is an original handwritten or typed authorial draft. 'Inscription' refers to words engraved on stone or metal.",
+    "tags": ["vocab", "ows", "books", "publishing", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0680",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who suffers death or endures supreme sacrifice for the sake of a principle, religion, or country",
+    "options": {
+      "A": "Martyr",
+      "B": "Traitor",
+      "C": "Renegade",
+      "D": "Mercenary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Martyr) is correct. A 'Martyr' voluntarily sacrifices life for a sacred cause. 'Traitor' betrays their country, and 'Renegade' deserts their cause.",
+    "tags": ["vocab", "ows", "people", "sacrifice", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0681",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who derives gratification or sexual pleasure from experiencing pain or humiliation",
+    "options": {
+      "A": "Masochist",
+      "B": "Sadist",
+      "C": "Hedonist",
+      "D": "Ascetic"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Masochist) is correct. A 'Masochist' gains pleasure from pain inflicted on themselves. A 'Sadist' enjoys inflicting pain on others.",
+    "tags": ["vocab", "ows", "psychology", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0682",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nExcessively concerned with physical comforts, worldly wealth, and goods rather than spiritual values",
+    "options": {
+      "A": "Materialistic",
+      "B": "Ascetic",
+      "C": "Altruistic",
+      "D": "Spiritual"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Materialistic) is correct. 'Materialistic' describes an attitude valuing worldly wealth above moral or spiritual ideals. 'Ascetic' practices severe spiritual self-denial.",
+    "tags": ["vocab", "ows", "personality", "philosophy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0683",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA dramatic, musical, or cinema performance held in the afternoon",
+    "options": {
+      "A": "Matinee",
+      "B": "Vespers",
+      "C": "Nocturne",
+      "D": "Premiere"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Matinee) is correct. 'Matinee' refers to an afternoon theatrical, musical, or movie show. 'Vespers' refers to evening church prayers.",
+    "tags": ["vocab", "ows", "theatre", "entertainment", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0684",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe criminal act of killing one's own mother",
+    "options": {
+      "A": "Matricide",
+      "B": "Patricide",
+      "C": "Fratricide",
+      "D": "Sororicide"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Matricide) is correct. 'Matricide' is the murder of a mother. 'Patricide' is killing one's father, and 'Fratricide' is killing one's brother.",
+    "tags": ["vocab", "ows", "killing", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0685",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA stately, impressive, and large monumental tomb structure",
+    "options": {
+      "A": "Mausoleum",
+      "B": "Cenotaph",
+      "C": "Epitaph",
+      "D": "Sanctuary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mausoleum) is correct. A 'Mausoleum' is an imposing monumental tomb building. 'Cenotaph' is an empty tomb or monument honoring people buried elsewhere.",
+    "tags": ["vocab", "ows", "architecture", "death", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0686",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA short, pithy statement expressing a general truth or practical rule of conduct",
+    "options": {
+      "A": "Maxim",
+      "B": "Diatribe",
+      "C": "Harangue",
+      "D": "Balderdash"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Maxim) is correct. A 'Maxim' is a concise moral axiom, proverb, or rule of conduct. 'Balderdash' is nonsensical talk.",
+    "tags": ["vocab", "ows", "philosophy", "literature", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0687",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA tract of open, low-lying grassland used primarily for pasture and grazing animals",
+    "options": {
+      "A": "Meadow",
+      "B": "Orchard",
+      "C": "Fallow",
+      "D": "Dyke"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Meadow) is correct. A 'Meadow' is a field of habitat grass utilized for grazing or hay. 'Orchard' is fruit tree land.",
+    "tags": ["vocab", "ows", "nature", "geography", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0688",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo intervene between opposing parties in a dispute in order to bring about an agreement",
+    "options": {
+      "A": "Mediate",
+      "B": "Arbitrate",
+      "C": "Aggravate",
+      "D": "Provoke"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mediate) is correct. 'Mediate' is to act as a peacemaking intermediary between disputing groups. 'Aggravate' means to worsen a problem.",
+    "tags": ["vocab", "ows", "verbs", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0689",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nOf only average, moderate, or ordinary quality; not very good",
+    "options": {
+      "A": "Mediocre",
+      "B": "Superlative",
+      "C": "Consummate",
+      "D": "Exemplary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mediocre) is correct. 'Mediocre' describes something unexceptional and of ordinary or second-rate standard. 'Superlative' means of highest excellence.",
+    "tags": ["vocab", "ows", "adjectives", "quality", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0690",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFeeling, expressing, or characterized by pensive, deep sadness and gloom",
+    "options": {
+      "A": "Melancholic",
+      "B": "Vivacious",
+      "C": "Sanguine",
+      "D": "Jaunty"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Melancholic) is correct. 'Melancholic' means depressed, sorrowful, or dejected in mood. 'Sanguine' means cheerfully optimistic.",
+    "tags": ["vocab", "ows", "emotions", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0691",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nHaving a pleasant, sweet, and musical tune or sound",
+    "options": {
+      "A": "Melodious",
+      "B": "Cacophonous",
+      "C": "Clamorous",
+      "D": "Galling"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Melodious) is correct. 'Melodious' means pleasing and musical to the ear. 'Cacophonous' describes harsh and jarring sounds.",
+    "tags": ["vocab", "ows", "music", "sound", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0692",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn object kept as a reminder, souvenir, or token of a person, place, or event",
+    "options": {
+      "A": "Memento",
+      "B": "Prototype",
+      "C": "Facsimile",
+      "D": "Plague"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Memento) is correct. A 'Memento' (or souvenir) serves as a tangible keepsake of past memories. 'Prototype' is an original model.",
+    "tags": ["vocab", "ows", "objects", "memory", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0693",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person or thing that is likely to cause harm, injury, or danger; a serious threat",
+    "options": {
+      "A": "Menace",
+      "B": "Benefactor",
+      "C": "Harbinger",
+      "D": "Samaritan"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Menace) is correct. A 'Menace' is a direct peril or looming threat. 'Benefactor' is a charitable supporter, and 'Samaritan' is a helpful person.",
+    "tags": ["vocab", "ows", "general", "danger", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0694",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA soldier who fights for any foreign army or group purely for financial reward and payment",
+    "options": {
+      "A": "Mercenary",
+      "B": "Patriot",
+      "C": "Volunteer",
+      "D": "Veteran"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Mercenary) is correct. A 'Mercenary' is a professional soldier hired by a foreign power solely for financial gain. 'Patriot' fights out of love for country.",
+    "tags": ["vocab", "ows", "military", "people", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0695",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe scientific study and practical processing of metals and their chemical alloys",
+    "options": {
+      "A": "Metallurgy",
+      "B": "Cytology",
+      "C": "Speleology",
+      "D": "Numismatics"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Metallurgy) is correct. 'Metallurgy' is the domain of science handling metal extraction and refinement. 'Speleology' is the study of caves.",
+    "tags": ["vocab", "ows", "science", "materials", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0696",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nShowing great, rigorous attention to minute details; thorough and precise",
+    "options": {
+      "A": "Meticulous",
+      "B": "Improvident",
+      "C": "Careless",
+      "D": "Negligent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Meticulous) is correct. 'Meticulous' means fastidiously careful and attentive to every detail. 'Negligent' means careless and slack.",
+    "tags": ["vocab", "ows", "adjectives", "personality", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0697",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abnormal, irrational fear of small things or microorganisms",
+    "options": {
+      "A": "Microphobia",
+      "B": "Acrophobia",
+      "C": "Claustrophobia",
+      "D": "Algophobia"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Microphobia) is correct. 'Microphobia' is extreme fear of minute objects or germs. 'Acrophobia' is fear of heights.",
+    "tags": ["vocab", "ows", "phobia", "psychology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0698",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn optical instrument containing magnifying lenses used for viewing tiny microscopic objects",
+    "options": {
+      "A": "Microscope",
+      "B": "Telescope",
+      "C": "Barometer",
+      "D": "Chronometer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Microscope) is correct. A 'Microscope' magnifies microscopic specimens. A 'Telescope' views distant celestial objects in space.",
+    "tags": ["vocab", "ows", "instruments", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0699",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe seasonal movement of animals, birds, or people from one region or habitat to another",
+    "options": {
+      "A": "Migration",
+      "B": "Exodus",
+      "C": "Emigration",
+      "D": "Immigration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Migration) is correct. 'Migration' is the cyclical movement of species or human populations between geographical regions. 'Exodus' is a mass departure.",
+    "tags": ["vocab", "ows", "travel", "nature", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0700",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA span or duration of one thousand consecutive years",
+    "options": {
+      "A": "Millennium",
+      "B": "Centennial",
+      "C": "Decade",
+      "D": "Bicentennial"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Millennium) is correct. A 'Millennium' is a span of 1,000 years. 'Centennial' is 100 years, and 'Decade' is 10 years.",
+    "tags": ["vocab", "ows", "time", "pyq_ssc"]
+  }
+]

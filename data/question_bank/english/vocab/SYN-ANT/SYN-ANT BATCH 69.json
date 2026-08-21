@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_SA_3401",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUPERFICIAL**",
+    "options": {
+      "A": "Shallow",
+      "B": "Deep",
+      "C": "Profound",
+      "D": "Insightful"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Superficial' means existing or occurring at or on the surface; lacking depth. 'Shallow', 'cursory', or 'surface-level' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3402",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUPERFICIAL**",
+    "options": {
+      "A": "Shallow",
+      "B": "Cursory",
+      "C": "Profound",
+      "D": "Surface-level"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Superficial' means lacking depth. 'Profound', 'deep', or 'insightful' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3403",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUPERFLUOUS**",
+    "options": {
+      "A": "Excessive",
+      "B": "Necessary",
+      "C": "Essential",
+      "D": "Vital"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Superfluous' means unnecessary, especially through being more than enough. 'Excessive', 'surplus', or 'redundant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3404",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUPERFLUOUS**",
+    "options": {
+      "A": "Excessive",
+      "B": "Surplus",
+      "C": "Necessary",
+      "D": "Redundant"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Superfluous' means unnecessary. 'Necessary', 'essential', or 'vital' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3405",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUPERCILIOUS**",
+    "options": {
+      "A": "Arrogant",
+      "B": "Humble",
+      "C": "Modest",
+      "D": "Meek"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Supercilious' means behaving as though one thinks one is superior to others. 'Arrogant', 'haughty', or 'conceited' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3406",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUPERCILIOUS**",
+    "options": {
+      "A": "Arrogant",
+      "B": "Haughty",
+      "C": "Humble",
+      "D": "Conceited"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Supercilious' means arrogant. 'Humble', 'modest', or 'meek' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3407",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUPINE**",
+    "options": {
+      "A": "Passive",
+      "B": "Active",
+      "C": "Energetic",
+      "D": "Vigorous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Supine' means (of a person) lying face upward; failing to act or protest as a result of moral weakness or indolence. 'Passive', 'lethargic', or 'inert' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3408",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUPINE**",
+    "options": {
+      "A": "Passive",
+      "B": "Lethargic",
+      "C": "Active",
+      "D": "Inert"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Supine' means passive/inactive. 'Active', 'energetic', or 'vigorous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3409",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUPPLANT**",
+    "options": {
+      "A": "Replace",
+      "B": "Keep",
+      "C": "Retain",
+      "D": "Maintain"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Supplant' means to supersede and replace. 'Replace', 'displace', or 'supersede' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3410",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUPPLANT**",
+    "options": {
+      "A": "Replace",
+      "B": "Displace",
+      "C": "Keep",
+      "D": "Supersede"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Supplant' means to replace. 'Keep', 'retain', or 'maintain' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3411",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUPPLE**",
+    "options": {
+      "A": "Flexible",
+      "B": "Rigid",
+      "C": "Stiff",
+      "D": "Inflexible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Supple' means bending and moving easily and gracefully; flexible. 'Flexible', 'pliant', or 'limber' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3412",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUPPLE**",
+    "options": {
+      "A": "Flexible",
+      "B": "Pliant",
+      "C": "Rigid",
+      "D": "Limber"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Supple' means flexible. 'Rigid', 'stiff', or 'inflexible' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3413",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUPPLICATE**",
+    "options": {
+      "A": "Beg",
+      "B": "Demand",
+      "C": "Command",
+      "D": "Order"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Supplicate' means to ask or beg for something earnestly or humbly. 'Beg', 'entreat', or 'beseech' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3414",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUPPLICATE**",
+    "options": {
+      "A": "Beg",
+      "B": "Entreat",
+      "C": "Demand",
+      "D": "Beseech"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Supplicate' means to beg. 'Demand', 'command', or 'order' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3415",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SURFEIT**",
+    "options": {
+      "A": "Excess",
+      "B": "Lack",
+      "C": "Deficiency",
+      "D": "Shortage"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Surfeit' refers to an excessive amount of something. 'Excess', 'abundance', or 'glut' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3416",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SURFEIT**",
+    "options": {
+      "A": "Excess",
+      "B": "Abundance",
+      "C": "Lack",
+      "D": "Glut"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Surfeit' means an excess. 'Lack', 'deficiency', or 'shortage' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3417",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SURGE**",
+    "options": {
+      "A": "Rush",
+      "B": "Stagnate",
+      "C": "Cease",
+      "D": "Halt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Surge' refers to a sudden powerful forward or upward movement. 'Rush', 'gush', or 'swell' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3418",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SURGE**",
+    "options": {
+      "A": "Rush",
+      "B": "Gush",
+      "C": "Stagnate",
+      "D": "Swell"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Surge' means a sudden movement. 'Stagnate', 'cease', or 'halt' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3419",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SURMOUNT**",
+    "options": {
+      "A": "Overcome",
+      "B": "Succumb",
+      "C": "Submit",
+      "D": "Yield"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Surmount' means to overcome (a difficulty or obstacle). 'Overcome', 'conquer', or 'master' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3420",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SURMOUNT**",
+    "options": {
+      "A": "Overcome",
+      "B": "Conquer",
+      "C": "Succumb",
+      "D": "Master"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Surmount' means to overcome. 'Succumb', 'submit', or 'yield' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3421",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SURREPTITIOUS**",
+    "options": {
+      "A": "Secretive",
+      "B": "Open",
+      "C": "Public",
+      "D": "Overt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Surreptitious' means kept secret, especially because it would not be approved of. 'Secretive', 'furtive', or 'stealthy' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3422",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SURREPTITIOUS**",
+    "options": {
+      "A": "Secretive",
+      "B": "Furtive",
+      "C": "Open",
+      "D": "Stealthy"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Surreptitious' means secretive. 'Open', 'public', or 'overt' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3423",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SUSCEPTIBLE**",
+    "options": {
+      "A": "Vulnerable",
+      "B": "Resistant",
+      "C": "Immune",
+      "D": "Invulnerable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Susceptible' means likely or liable to be influenced or harmed by a particular thing. 'Vulnerable', 'prone', or 'exposed' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3424",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SUSCEPTIBLE**",
+    "options": {
+      "A": "Vulnerable",
+      "B": "Prone",
+      "C": "Resistant",
+      "D": "Exposed"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Susceptible' means vulnerable. 'Resistant', 'immune', or 'invulnerable' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3425",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SWARTHY**",
+    "options": {
+      "A": "Dark-skinned",
+      "B": "Fair",
+      "C": "Pale",
+      "D": "Light"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Swarthy' means (of a person or their complexion) dark. 'Dark-skinned', 'dusky', or 'brown' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3426",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SWARTHY**",
+    "options": {
+      "A": "Dark-skinned",
+      "B": "Dusky",
+      "C": "Fair",
+      "D": "Brown"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Swarthy' means dark-skinned. 'Fair', 'pale', or 'light' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3427",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SWELTERING**",
+    "options": {
+      "A": "Hot",
+      "B": "Cold",
+      "C": "Cool",
+      "D": "Freezing"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sweltering' means uncomfortably hot. 'Hot', 'sultry', or 'scorching' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3428",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SWELTERING**",
+    "options": {
+      "A": "Hot",
+      "B": "Sultry",
+      "C": "Cool",
+      "D": "Scorching"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sweltering' means uncomfortably hot. 'Cool', 'cold', or 'freezing' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3429",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SWERVE**",
+    "options": {
+      "A": "Veer",
+      "B": "Stay",
+      "C": "Maintain",
+      "D": "Keep"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Swerve' means to change or cause to change direction abruptly. 'Veer', 'deviate', or 'turn' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3430",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SWERVE**",
+    "options": {
+      "A": "Veer",
+      "B": "Deviate",
+      "C": "Stay",
+      "D": "Turn"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Swerve' means to change direction. 'Stay', 'maintain', or 'keep' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3431",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SYCOPHANT**",
+    "options": {
+      "A": "Flatterer",
+      "B": "Leader",
+      "C": "Master",
+      "D": "Boss"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Sycophant' refers to a person who acts obsequiously toward someone important in order to gain advantage. 'Flatterer', 'toady', or 'sycophant' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3432",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SYCOPHANT**",
+    "options": {
+      "A": "Flatterer",
+      "B": "Toady",
+      "C": "Leader",
+      "D": "Bootlicker"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Sycophant' is a flatterer. 'Leader', 'master', or 'boss' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3433",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SYLLOGISM**",
+    "options": {
+      "A": "Deduction",
+      "B": "Illogic",
+      "C": "Fallacy",
+      "D": "Absurdity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Syllogism' refers to an instance of a form of reasoning in which a conclusion is drawn from two given or assumed propositions. 'Deduction', 'logic', or 'reasoning' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3434",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SYLLOGISM**",
+    "options": {
+      "A": "Deduction",
+      "B": "Logic",
+      "C": "Fallacy",
+      "D": "Reasoning"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Syllogism' is a form of logical reasoning. 'Fallacy', 'illogic', or 'absurdity' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3435",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SYMPTOMATIC**",
+    "options": {
+      "A": "Indicative",
+      "B": "Unrelated",
+      "C": "Irrelevant",
+      "D": "Unconnected"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Symptomatic' means serving as a symptom or sign, especially of something undesirable. 'Indicative', 'characteristic', or 'suggestive' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3436",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SYMPTOMATIC**",
+    "options": {
+      "A": "Indicative",
+      "B": "Characteristic",
+      "C": "Unrelated",
+      "D": "Suggestive"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Symptomatic' means indicative. 'Unrelated', 'irrelevant', or 'unconnected' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3437",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SYNCHRONOUS**",
+    "options": {
+      "A": "Simultaneous",
+      "B": "Asynchronous",
+      "C": "Sequential",
+      "D": "Disordered"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Synchronous' means existing or occurring at the same time. 'Simultaneous', 'concurrent', or 'coincident' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3438",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SYNCHRONOUS**",
+    "options": {
+      "A": "Simultaneous",
+      "B": "Concurrent",
+      "C": "Asynchronous",
+      "D": "Coincident"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Synchronous' means simultaneous. 'Asynchronous', 'sequential', or 'disordered' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3439",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**SYNTHETIC**",
+    "options": {
+      "A": "Artificial",
+      "B": "Natural",
+      "C": "Genuine",
+      "D": "Real"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Synthetic' means (of a substance) made by chemical synthesis, especially to imitate a natural product. 'Artificial', 'fake', or 'manufactured' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3440",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**SYNTHETIC**",
+    "options": {
+      "A": "Artificial",
+      "B": "Fake",
+      "C": "Natural",
+      "D": "Manufactured"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Synthetic' means artificial. 'Natural', 'genuine', or 'real' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3441",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TACIT**",
+    "options": {
+      "A": "Implicit",
+      "B": "Explicit",
+      "C": "Stated",
+      "D": "Clear"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tacit' means understood or implied without being stated. 'Implicit', 'implied', or 'unspoken' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3442",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TACIT**",
+    "options": {
+      "A": "Implicit",
+      "B": "Implied",
+      "C": "Explicit",
+      "D": "Unspoken"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tacit' means implicit/unspoken. 'Explicit', 'stated', or 'clear' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3443",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TACITURN**",
+    "options": {
+      "A": "Reserved",
+      "B": "Talkative",
+      "C": "Loquacious",
+      "D": "Garrulous"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Taciturn' means (of a person) reserved or uncommunicative in speech; saying little. 'Reserved', 'reticent', or 'silent' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3444",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TACITURN**",
+    "options": {
+      "A": "Reserved",
+      "B": "Reticent",
+      "C": "Talkative",
+      "D": "Silent"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Taciturn' means reserved. 'Talkative', 'loquacious', or 'garrulous' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3445",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TACTILE**",
+    "options": {
+      "A": "Tangible",
+      "B": "Intangible",
+      "C": "Invisible",
+      "D": "Imperceptible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Tactile' means of or connected with the sense of touch. 'Tangible', 'touchable', or 'palpable' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3446",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TACTILE**",
+    "options": {
+      "A": "Tangible",
+      "B": "Touchable",
+      "C": "Intangible",
+      "D": "Palpable"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Tactile' means tangible/touchable. 'Intangible', 'invisible', or 'imperceptible' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3447",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TAINT**",
+    "options": {
+      "A": "Contaminate",
+      "B": "Purify",
+      "C": "Cleanse",
+      "D": "Sanitize"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Taint' means to contaminate or pollute (something). 'Contaminate', 'stain', or 'spoil' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3448",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TAINT**",
+    "options": {
+      "A": "Contaminate",
+      "B": "Stain",
+      "C": "Purify",
+      "D": "Spoil"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Taint' means to contaminate. 'Purify', 'cleanse', or 'sanitize' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3449",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **SYNONYM** of the given word:\n\n**TALISMAN**",
+    "options": {
+      "A": "Charm",
+      "B": "Threat",
+      "C": "Danger",
+      "D": "Menace"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Talisman' refers to an object, typically an inscribed ring or stone, that is thought to have magic powers and to bring good luck. 'Charm', 'amulet', or 'mascot' is the synonym.",
+    "tags": ["vocab", "synonyms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_SA_3450",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the most appropriate **ANTONYM** of the given word:\n\n**TALISMAN**",
+    "options": {
+      "A": "Charm",
+      "B": "Amulet",
+      "C": "Threat",
+      "D": "Mascot"
+    },
+    "correct_option": "C",
+    "explanation": "Option C is correct. 'Talisman' is a charm for luck. 'Threat', 'danger', or 'menace' is the antonym.",
+    "tags": ["vocab", "antonyms", "pyq_ssc", "shuffled_options"]
+  }
+]

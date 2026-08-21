@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_GRAM_CONJ_251",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The reason why he failed is because he did not study hard enough.'",
+    "options": {
+      "A": "The reason why he failed",
+      "B": "is because",
+      "C": "he did not study",
+      "D": "hard enough."
+    },
+    "correct_option": "B",
+    "explanation": "'The reason why...' should be followed by 'that', not 'because'. The structure 'The reason... is because' is redundant.",
+    "tags": ["grammar", "conjunctions", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_252",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He had hardly finished his breakfast ___ the doorbell rang.'",
+    "options": {
+      "A": "than",
+      "B": "then",
+      "C": "when",
+      "D": "that"
+    },
+    "correct_option": "C",
+    "explanation": "'Hardly' and 'Scarcely' must be followed by the correlative conjunction 'when'.",
+    "tags": ["grammar", "conjunctions", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_253",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Though he is hardworking, but he failed to pass the exam.'",
+    "options": {
+      "A": "Though he is",
+      "B": "hardworking,",
+      "C": "but he failed",
+      "D": "to pass the exam."
+    },
+    "correct_option": "C",
+    "explanation": "'Though' or 'Although' is followed by 'yet' or a comma, not 'but'. Using 'though' and 'but' together is a redundant error.",
+    "tags": ["grammar", "conjunctions", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_254",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'No sooner had I reached the station ___ the train departed.'",
+    "options": {
+      "A": "when",
+      "B": "than",
+      "C": "then",
+      "D": "as"
+    },
+    "correct_option": "B",
+    "explanation": "'No sooner' must be followed by the correlative conjunction 'than'.",
+    "tags": ["grammar", "conjunctions", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_255",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Both Ravi as well as Rohan are present.",
+      "B": "Both Ravi and Rohan are present.",
+      "C": "Both Ravi or Rohan are present.",
+      "D": "Both Ravi with Rohan are present."
+    },
+    "correct_option": "B",
+    "explanation": "The correlative conjunction 'both' must be followed by 'and'.",
+    "tags": ["grammar", "conjunctions", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_256",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Lest you should not work hard, you will fail.'",
+    "options": {
+      "A": "Lest",
+      "B": "you should not work hard,",
+      "C": "you will fail.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Lest' carries a negative sense, so 'not' is redundant. Also, 'Lest' is followed by 'should'. The sentence should be 'Lest you should work hard...' (Wait, 'Lest' means 'so that... not'. It should be 'Lest you should fail' or 'Lest you should not work hard' is wrong).",
+    "tags": ["grammar", "conjunctions", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_257",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'Walk carefully ___ you should trip and fall.'",
+    "options": {
+      "A": "otherwise",
+      "B": "lest",
+      "C": "unless",
+      "D": "so that"
+    },
+    "correct_option": "B",
+    "explanation": "'Lest' is the appropriate conjunction to introduce a negative purpose or fear, followed by 'should'.",
+    "tags": ["grammar", "conjunctions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_258",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He asked me why was I late for the meeting.'",
+    "options": {
+      "A": "He asked me",
+      "B": "why was I",
+      "C": "late for the meeting.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "In indirect questions, the order of subject and verb must be declarative. It should be 'why I was late'.",
+    "tags": ["grammar", "conjunctions", "indirect_questions", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_259",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ it was raining, he went out without an umbrella.'",
+    "options": {
+      "A": "Despite",
+      "B": "Although",
+      "C": "However",
+      "D": "Nevertheless"
+    },
+    "correct_option": "B",
+    "explanation": "'Although' is a subordinating conjunction used to introduce a concessive clause.",
+    "tags": ["grammar", "conjunctions", "concessive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_260",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He neither likes coffee nor tea.",
+      "B": "He likes neither coffee nor tea.",
+      "C": "He likes neither coffee or tea.",
+      "D": "He doesn't like neither coffee nor tea."
+    },
+    "correct_option": "B",
+    "explanation": "'Neither... nor' should be placed correctly to parallel the elements being contrasted. 'Likes neither A nor B' is the standard structure.",
+    "tags": ["grammar", "conjunctions", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_261",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Not only he lost his money but also his luggage.'",
+    "options": {
+      "A": "Not only he",
+      "B": "lost his money",
+      "C": "but also",
+      "D": "his luggage."
+    },
+    "correct_option": "A",
+    "explanation": "The structure for 'not only... but also' must be parallel. It should be 'He not only lost his money but also his luggage.'",
+    "tags": ["grammar", "conjunctions", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_262",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ you study regularly, you cannot pass.'",
+    "options": {
+      "A": "If",
+      "B": "Unless",
+      "C": "Until",
+      "D": "Provided"
+    },
+    "correct_option": "B",
+    "explanation": "'Unless' means 'if not', fitting the context of a condition required for a result.",
+    "tags": ["grammar", "conjunctions", "conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_263",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'This book is ___ informative ___ interesting.'",
+    "options": {
+      "A": "not only... but also",
+      "B": "either... or",
+      "C": "neither... nor",
+      "D": "both... or"
+    },
+    "correct_option": "A",
+    "explanation": "'Not only... but also' is the correct correlative for combining two attributes.",
+    "tags": ["grammar", "conjunctions", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_264",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Do it until I return.'",
+    "options": {
+      "A": "Do it",
+      "B": "until",
+      "C": "I return.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Until' is the appropriate conjunction indicating time duration for the action.",
+    "tags": ["grammar", "conjunctions", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_265",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He behaves ___ he were the owner.'",
+    "options": {
+      "A": "as if",
+      "B": "as like",
+      "C": "as though like",
+      "D": "as for"
+    },
+    "correct_option": "A",
+    "explanation": "'As if' is the correct subordinating conjunction for hypothetical situations.",
+    "tags": ["grammar", "conjunctions", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_266",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Scarcely had he left the room when the lights went out.",
+      "B": "Scarcely had he left the room than the lights went out.",
+      "C": "Scarcely he had left the room when the lights went out.",
+      "D": "Scarcely had he left the room as the lights went out."
+    },
+    "correct_option": "A",
+    "explanation": "'Scarcely' requires subject-auxiliary inversion ('had he left') and the conjunction 'when'.",
+    "tags": ["grammar", "conjunctions", "inversion", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_267",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Because he was ill, therefore he could not attend the function.'",
+    "options": {
+      "A": "Because he was ill,",
+      "B": "therefore",
+      "C": "he could not attend",
+      "D": "the function."
+    },
+    "correct_option": "B",
+    "explanation": "One should not use 'because' and 'therefore' in the same sentence structure; they are redundant. Use one or the other.",
+    "tags": ["grammar", "conjunctions", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_268",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ you work hard, you will fail.'",
+    "options": {
+      "A": "Unless",
+      "B": "Until",
+      "C": "If",
+      "D": "Since"
+    },
+    "correct_option": "A",
+    "explanation": "'Unless' is used to define the condition under which the negative result (failing) will occur.",
+    "tags": ["grammar", "conjunctions", "conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_269",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: 'It is so cold ___ I cannot go out.'",
+    "options": {
+      "A": "that",
+      "B": "than",
+      "C": "as",
+      "D": "so"
+    },
+    "correct_option": "A",
+    "explanation": "'So ... that' is the correct correlative structure indicating result/consequence.",
+    "tags": ["grammar", "conjunctions", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_270",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I will return your book when I will finish reading it.'",
+    "options": {
+      "A": "I will return",
+      "B": "your book when",
+      "C": "I will finish",
+      "D": "reading it."
+    },
+    "correct_option": "C",
+    "explanation": "Future tense ('will') is not used in time clauses introduced by 'when'. The Simple Present ('when I finish') is used.",
+    "tags": ["grammar", "conjunctions", "time_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_271",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'He is ___ a teacher ___ a poet.'",
+    "options": {
+      "A": "not only... but also",
+      "B": "either... or",
+      "C": "both... and",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "All these correlative conjunctions can grammatically fit depending on the intended meaning of the sentence.",
+    "tags": ["grammar", "conjunctions", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_272",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The reason he called me is because he needs help.'",
+    "options": {
+      "A": "The reason",
+      "B": "he called me",
+      "C": "is because",
+      "D": "he needs help."
+    },
+    "correct_option": "C",
+    "explanation": "Replace 'because' with 'that'. The reason... is that...",
+    "tags": ["grammar", "conjunctions", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_273",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "He is so weak that he cannot walk.",
+      "B": "He is too weak to walk.",
+      "C": "Both A and B are correct.",
+      "D": "Neither is correct."
+    },
+    "correct_option": "C",
+    "explanation": "Both structures are grammatically identical in meaning and correct usage.",
+    "tags": ["grammar", "conjunctions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_274",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Seldom I have seen such a beautiful sight.'",
+    "options": {
+      "A": "Seldom",
+      "B": "I have seen",
+      "C": "such a beautiful",
+      "D": "sight."
+    },
+    "correct_option": "B",
+    "explanation": "Negative adverbs like 'Seldom' require inversion. It should be 'Seldom have I seen...'",
+    "tags": ["grammar", "conjunctions", "inversion", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_275",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ you are right, I still cannot agree with you.'",
+    "options": {
+      "A": "Even if",
+      "B": "Even",
+      "C": "Although",
+      "D": "Only"
+    },
+    "correct_option": "A",
+    "explanation": "'Even if' is the correct conjunction for a concessive condition.",
+    "tags": ["grammar", "conjunctions", "concessive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_276",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Wait here until I will not return.'",
+    "options": {
+      "A": "Wait here",
+      "B": "until",
+      "C": "I will not return.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'Until' is already negative in implication in many contexts. 'I will not return' is redundant and incorrect; it should be 'until I return'.",
+    "tags": ["grammar", "conjunctions", "time_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_277",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'The question is ___ to be or not to be.'",
+    "options": {
+      "A": "as",
+      "B": "whether",
+      "C": "that",
+      "D": "if"
+    },
+    "correct_option": "B",
+    "explanation": "'Whether' is the correct conjunction when presenting alternatives.",
+    "tags": ["grammar", "conjunctions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_278",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Hardly had he entered the building than the alarm rang.'",
+    "options": {
+      "A": "Hardly had he",
+      "B": "entered the building",
+      "C": "than",
+      "D": "the alarm rang."
+    },
+    "correct_option": "C",
+    "explanation": "'Hardly' must be paired with 'when', not 'than'.",
+    "tags": ["grammar", "conjunctions", "correlatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_279",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Ravi is as talented if not more talented than his brother.",
+      "B": "Ravi is as talented, if not more talented than, his brother.",
+      "C": "Ravi is as talented if not more talented, his brother.",
+      "D": "Ravi is as talented, if not more talented, his brother."
+    },
+    "correct_option": "A",
+    "explanation": "Correct structure: [As + Adj + As] if not [Comparative Adj + Than].",
+    "tags": ["grammar", "conjunctions", "comparisons", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_280",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The meeting will start as soon as he will arrive.'",
+    "options": {
+      "A": "The meeting will start",
+      "B": "as soon as",
+      "C": "he will arrive.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "In future time clauses ('as soon as'), the verb is in the Simple Present ('arrives').",
+    "tags": ["grammar", "conjunctions", "time_clauses", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_281",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ he is poor, he is honest.'",
+    "options": {
+      "A": "Although",
+      "B": "Since",
+      "C": "Because",
+      "D": "As"
+    },
+    "correct_option": "A",
+    "explanation": "'Although' shows contrast.",
+    "tags": ["grammar", "conjunctions", "concessive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_282",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He has no other ambition but to succeed.'",
+    "options": {
+      "A": "He has no other",
+      "B": "ambition",
+      "C": "but to succeed.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "'No other' is paired with 'than', not 'but'.",
+    "tags": ["grammar", "conjunctions", "correlatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_283",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'You can have ___ tea ___ coffee.'",
+    "options": {
+      "A": "neither... nor",
+      "B": "either... or",
+      "C": "both... or",
+      "D": "not only... nor"
+    },
+    "correct_option": "B",
+    "explanation": "'Either... or' provides a choice between two alternatives.",
+    "tags": ["grammar", "conjunctions", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_284",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Unless you do not hurry, you will miss the bus.",
+      "B": "Unless you hurry, you will miss the bus.",
+      "C": "Until you hurry, you will miss the bus.",
+      "D": "If you do not hurry, you will miss the bus."
+    },
+    "correct_option": "B",
+    "explanation": "'Unless' is already negative; using 'do not' with it is a double negative error. Option D is also correct, but B demonstrates 'Unless' correctly.",
+    "tags": ["grammar", "conjunctions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_285",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Hardly had he gone than I called him.'",
+    "options": {
+      "A": "Hardly had he gone",
+      "B": "than",
+      "C": "I called him.",
+      "D": "No error"
+    },
+    "correct_option": "B",
+    "explanation": "'Hardly' must be paired with 'when'.",
+    "tags": ["grammar", "conjunctions", "correlatives", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_286",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ it was raining, the game continued.'",
+    "options": {
+      "A": "Even though",
+      "B": "So",
+      "C": "Therefore",
+      "D": "Because"
+    },
+    "correct_option": "A",
+    "explanation": "'Even though' correctly introduces the concessive clause.",
+    "tags": ["grammar", "conjunctions", "concessive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_287",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: '___ you are here, help me.'",
+    "options": {
+      "A": "Since",
+      "B": "Because",
+      "C": "As",
+      "D": "All of the above"
+    },
+    "correct_option": "D",
+    "explanation": "All these can function as subordinating conjunctions expressing reason.",
+    "tags": ["grammar", "conjunctions", "reason", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_288",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Ravi is both intelligent and hard-working.'",
+    "options": {
+      "A": "Ravi is both",
+      "B": "intelligent",
+      "C": "and hard-working.",
+      "D": "No error"
+    },
+    "correct_option": "D",
+    "explanation": "The sentence is grammatically correct. 'Both' correctly pairs with 'and'.",
+    "tags": ["grammar", "conjunctions", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_289",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: 'I wonder ___ he will come or not.'",
+    "options": {
+      "A": "if",
+      "B": "whether",
+      "C": "that",
+      "D": "as"
+    },
+    "correct_option": "B",
+    "explanation": "'Whether' is preferred when 'or not' follows, though 'if' is sometimes used informally.",
+    "tags": ["grammar", "conjunctions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_290",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "No sooner did the bell ring than the students left.",
+      "B": "No sooner the bell rung than the students left.",
+      "C": "No sooner did the bell ring when the students left.",
+      "D": "No sooner the bell ring than the students left."
+    },
+    "correct_option": "A",
+    "explanation": "'No sooner' requires subject-auxiliary inversion ('did the bell ring') and the conjunction 'than'.",
+    "tags": ["grammar", "conjunctions", "correlatives", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_291",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'Not only he was a teacher but also a musician.'",
+    "options": {
+      "A": "Not only he was",
+      "B": "a teacher",
+      "C": "but also",
+      "D": "a musician."
+    },
+    "correct_option": "A",
+    "explanation": "Parallelism error. It should be 'He was not only a teacher but also a musician.'",
+    "tags": ["grammar", "conjunctions", "spotting_errors", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_292",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ he arrives, we will start.'",
+    "options": {
+      "A": "Until",
+      "B": "As soon as",
+      "C": "Unless",
+      "D": "While"
+    },
+    "correct_option": "B",
+    "explanation": "'As soon as' defines the immediate timing condition.",
+    "tags": ["grammar", "conjunctions", "time_clauses", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_293",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct option: '___ it may seem, it is true.'",
+    "options": {
+      "A": "Strange as",
+      "B": "Strange although",
+      "C": "Strange since",
+      "D": "Strange because"
+    },
+    "correct_option": "A",
+    "explanation": "'Strange as it may seem' is an established idiomatic concessive structure.",
+    "tags": ["grammar", "conjunctions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_294",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'The man was so weak that he cannot stand.'",
+    "options": {
+      "A": "The man was",
+      "B": "so weak that",
+      "C": "he cannot",
+      "D": "stand."
+    },
+    "correct_option": "C",
+    "explanation": "Sequence of tenses: The main clause is past ('was'), so the subordinate clause must also be past ('could not').",
+    "tags": ["grammar", "conjunctions", "tense_consistency", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_295",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ you have the money, buy it.'",
+    "options": {
+      "A": "Since",
+      "B": "While",
+      "C": "Whereas",
+      "D": "Unless"
+    },
+    "correct_option": "A",
+    "explanation": "'Since' here provides the reason/ground for the action.",
+    "tags": ["grammar", "conjunctions", "reason", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_296",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "I'd rather you leave now.",
+      "B": "I'd rather you left now.",
+      "C": "I'd rather you will leave now.",
+      "D": "I'd rather you to leave now."
+    },
+    "correct_option": "B",
+    "explanation": "'I'd rather' followed by a subject requires the subjunctive past ('left').",
+    "tags": ["grammar", "conjunctions", "subjunctive", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_297",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'He treated me as if I was his servant.'",
+    "options": {
+      "A": "He treated me",
+      "B": "as if",
+      "C": "I was",
+      "D": "his servant."
+    },
+    "correct_option": "C",
+    "explanation": "Hypothetical condition after 'as if' requires 'were' instead of 'was'.",
+    "tags": ["grammar", "conjunctions", "subjunctive", "spotting_errors"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_298",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Fill in the blank: '___ he works hard, he will succeed.'",
+    "options": {
+      "A": "Provided",
+      "B": "Unless",
+      "C": "Lest",
+      "D": "Whereas"
+    },
+    "correct_option": "A",
+    "explanation": "'Provided' functions as a conditional conjunction meaning 'on the condition that'.",
+    "tags": ["grammar", "conjunctions", "conditionals", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_299",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct sentence:",
+    "options": {
+      "A": "Although he is poor, but he is honest.",
+      "B": "He is poor, yet he is honest.",
+      "C": "Although he is poor, he is honest.",
+      "D": "Both B and C are correct."
+    },
+    "correct_option": "D",
+    "explanation": "Both B and C are correct ways to express concession.",
+    "tags": ["grammar", "conjunctions", "usage", "rule_based"]
+  },
+  {
+    "id": "ENG_GRAM_CONJ_299_2",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Spot the error: 'I will be late, unless you won't help me.'",
+    "options": {
+      "A": "I will be late,",
+      "B": "unless",
+      "C": "you won't help me.",
+      "D": "No error"
+    },
+    "correct_option": "C",
+    "explanation": "Double negative error. 'Unless' already means 'if not'. It should be 'unless you help me'.",
+    "tags": ["grammar", "conjunctions", "spotting_errors", "rule_based"]
+  }
+]

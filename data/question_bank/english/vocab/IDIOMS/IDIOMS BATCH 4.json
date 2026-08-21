@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_IDM_0151",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Right-hand man**",
+    "options": {
+      "A": "A medical doctor specializing in limbs",
+      "B": "An indispensable, trusted chief assistant or helper",
+      "C": "A person who is left-handed",
+      "D": "A political opponent in debate"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'right-hand man' is a primary assistant or most trusted colleague.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0152",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rise to the occasion**",
+    "options": {
+      "A": "To stand up during a musical anthem",
+      "B": "To show courage, ability, and effectiveness in dealing with a sudden difficult situation",
+      "C": "To arrive late for a formal party",
+      "D": "To celebrate a promotion at work"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'rise to the occasion' means to perform exceptionally well when faced with a challenge.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0153",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Rough and ready**",
+    "options": {
+      "A": "Crude, unpolished, and improvised, but effective for immediate use",
+      "B": "A difficult physical exercise routine",
+      "C": "Polished, elegant, and sophisticated manners",
+      "D": "Harsh weather in winter"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. 'Rough and ready' describes something basic and unrefined yet serviceable.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0154",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Run riot**",
+    "options": {
+      "A": "To participate in a peaceful street march",
+      "B": "To act in an uncontrolled, wild, or excessively exuberant manner",
+      "C": "To police a city neighborhood",
+      "D": "To stop a public protest"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'run riot' means to behave without restraint or grow uncontrolled.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0155",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Salt of the earth**",
+    "options": {
+      "A": "A miner working underground",
+      "B": "A very kind, reliable, honest, and good-natured person",
+      "C": "Chemical minerals found in soil",
+      "D": "A greedy individual"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. The 'salt of the earth' refers to exceptionally worthy, dependable people.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0156",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Save one's skin**",
+    "options": {
+      "A": "To protect oneself from injury, danger, or punishment, often selfishly",
+      "B": "To apply sunscreen at the beach",
+      "C": "To undergo cosmetic dermatology",
+      "D": "To rescue a drowning victim"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'save one's skin' means to escape harm or blame personally.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0157",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Scrape through**",
+    "options": {
+      "A": "To clean a dirty windowpane",
+      "B": "To succeed in an exam or endeavor by a very narrow margin",
+      "C": "To fail a test miserably",
+      "D": "To break a glass door"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'scrape through' means barely managing to pass or succeed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0158",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sea change**",
+    "options": {
+      "A": "A profound, radical, and complete transformation",
+      "B": "Tidal movements at the beach",
+      "C": "A voyage across the ocean",
+      "D": "Coastal erosion over time"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'sea change' signifies a major transformation or shift.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0159",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**See eye to eye**",
+    "options": {
+      "A": "To stare angrily into someone's gaze",
+      "B": "To share the same opinion, agree fully, or have mutual understanding",
+      "C": "To wear matching eyeglasses",
+      "D": "To undergo an eye examination"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'see eye to eye' means to be in full agreement.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0160",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Serpent in your bosom**",
+    "options": {
+      "A": "A reptile pet kept at home",
+      "B": "An unfaithful, treacherous friend who betrays trust",
+      "C": "A dangerous garden wildlife threat",
+      "D": "A medical skin condition"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'serpent in your bosom' refers to a traitorous person harbored closely.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0161",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Set teeth on edge**",
+    "options": {
+      "A": "To sharpen metal blades",
+      "B": "To cause a feeling of intense irritation, nervousness, or discomfort",
+      "C": "To brush teeth vigorously",
+      "D": "To experience toothache pain"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Something that 'sets your teeth on edge' causes severe annoyance or physical discomfort.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0162",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Set the Thames on fire**",
+    "options": {
+      "A": "To commit arson in London",
+      "B": "To achieve something remarkable or sensational (usually used negatively as 'not...')",
+      "C": "To extinguish a bridge fire",
+      "D": "To watch boat races on the river"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'set the Thames on fire' means to accomplish an astonishing feat (often stated as 'he won't set the Thames on fire').",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0163",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Shake in your shoes**",
+    "options": {
+      "A": "To dance energetically",
+      "B": "To tremble with fear, nervousness, or apprehension",
+      "C": "To clean mud off footwear",
+      "D": "To buy new walking shoes"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'shake in your shoes' means to tremble from fear or anxiety.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0164",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Show a clean pair of heels**",
+    "options": {
+      "A": "To polish leather shoes",
+      "B": "To run away swiftly in flight; escape",
+      "C": "To dance on stage",
+      "D": "To stand at attention"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'show a clean pair of heels' means to run away fast from pursuit.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0165",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Show your hand**",
+    "options": {
+      "A": "To reveal your secret intentions, plans, or resources",
+      "B": "To participate in a card game",
+      "C": "To wash your hands before eating",
+      "D": "To greet someone politely"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'show your hand' means to make your intentions or plans clear to others.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0166",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Show white feather**",
+    "options": {
+      "A": "To display cowardice or show signs of fear",
+      "B": "To wave a white peace flag",
+      "C": "To decorate a hat with bird feathers",
+      "D": "To sign a treaty document"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'show the white feather' means showing cowardice.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0167",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Shut your eyes to**",
+    "options": {
+      "A": "To fall asleep during a lecture",
+      "B": "To ignore, overlook, or pretend not to notice something wrong",
+      "C": "To wear dark sunglasses",
+      "D": "To undergo eye surgery"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'shut your eyes to' something means willfully ignoring a problem or wrongdoing.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0168",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sick and tired**",
+    "options": {
+      "A": "Suffering from a viral flu",
+      "B": "Annoyed, exasperated, and fed up with something due to repetition",
+      "C": "Physically exhausted from exercise",
+      "D": "Recovering in a hospital"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To be 'sick and tired' means to be thoroughly bored and exasperated by someone or something.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0169",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Silver bullet**",
+    "options": {
+      "A": "A weapon used in hunting wolves",
+      "B": "A simple, magical, and immediate solution to a complex problem",
+      "C": "A metallic coin currency",
+      "D": "An expensive racing car"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'silver bullet' is an instant, effortless remedy for a difficult dilemma.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0170",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sitting duck**",
+    "options": {
+      "A": "A decoy bird used in hunting",
+      "B": "An easy, vulnerable target open to attack or attack without defense",
+      "C": "A calm animal resting on a lake",
+      "D": "A secure, guarded fortress"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'sitting duck' is someone or something highly vulnerable to attack.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0171",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sleep on it**",
+    "options": {
+      "A": "To delay making a decision until the next day after thinking",
+      "B": "To take a daytime nap on a couch",
+      "C": "To suffer from chronic insomnia",
+      "D": "To dream about business deals"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'sleep on it' means to postpone a decision until the following day.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0172",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Slip of the tongue**",
+    "options": {
+      "A": "An accidental speech error where you say something you didn't mean to",
+      "B": "A medical throat infection",
+      "C": "A tasting mistake while cooking",
+      "D": "A foreign language accent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'slip of the tongue' is an inadvertent verbal mistake.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0173",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Small talk**",
+    "options": {
+      "A": "Quiet whispering in libraries",
+      "B": "Polite, casual conversation about trivial matters",
+      "C": "Important business negotiations",
+      "D": "Secret discussions among spies"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. 'Small talk' refers to polite, social pleasantries and casual chats.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0174",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Snake in the grass**",
+    "options": {
+      "A": "A harmless garden garden snake",
+      "B": "A secret, treacherous, and deceitful enemy pretending to be a friend",
+      "C": "A poisonous viper in the jungle",
+      "D": "A gardener cutting lawn grass"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'snake in the grass' is a hidden traitor or deceitful person.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0175",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Soft option**",
+    "options": {
+      "A": "An easy choice requiring minimal effort",
+      "B": "A comfortable cushioned chair",
+      "C": "A difficult challenge",
+      "D": "A flexible company policy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'soft option' is an easy alternative or task with little hardship.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0176",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Spill the beans**",
+    "options": {
+      "A": "To drop grocery bags on the floor",
+      "B": "To reveal a secret unintentionally or prematurely",
+      "C": "To cook a traditional dinner meal",
+      "D": "To sort grains by size"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'spill the beans' means to disclose confidential information.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0177",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**SpIT fire**",
+    "options": {
+      "A": "To speak or act with extreme anger, rage, or fierceness",
+      "B": "To work as a circus fire breather",
+      "C": "To put out flames with water",
+      "D": "To burn paper documents"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'spit fire' means to show extreme fury and speak aggressively.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0178",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Split hairs**",
+    "options": {
+      "A": "To argue over petty, insignificant details and distinctions",
+      "B": "To cut hair short at a salon",
+      "C": "To style hair with gel",
+      "D": "To groom pets carefully"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'split hairs' means making overly fine, unimportant distinctions in argument.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0179",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Spread like wildfire**",
+    "options": {
+      "A": "To extinguish forest fires quickly",
+      "B": "To spread or circulate extremely fast among people",
+      "C": "To plant trees in dry soil",
+      "D": "To camp outdoors in summer"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. Information or news that spreads 'like wildfire' circulates with immense speed.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0180",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Square deal**",
+    "options": {
+      "A": "A fair, honest, and equitable business transaction or bargain",
+      "B": "A card game played in a circle",
+      "C": "A dishonest financial fraud",
+      "D": "A geometric mathematical shape"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. A 'square deal' represents a fair and honest business agreement.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0181",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Stand your ground**",
+    "options": {
+      "A": "To maintain your position and refuse to yield or retreat under pressure",
+      "B": "To stand still on a lawn",
+      "C": "To purchase land for farming",
+      "D": "To surrender to an opponent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'stand your ground' means maintaining your stance resolutely without retreating.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0182",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Steal a march**",
+    "options": {
+      "A": "To participate in a military parade",
+      "B": "To gain an advantage over someone secretly, cleverly, or ahead of time",
+      "C": "To march in a protest rally",
+      "D": "To steal musical instruments"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'steal a march' means to gain a covert advantage by acting before others.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0183",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Stick to your guns**",
+    "options": {
+      "A": "To refuse to change your opinions or course of action despite opposition",
+      "B": "To clean firearms regularly",
+      "C": "To hunt animals in the forest",
+      "D": "To surrender weapons to police"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'stick to your guns' means remaining resolute in your convictions.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0184",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Storm in a teacup**",
+    "options": {
+      "A": "A violent sea storm damaging ships",
+      "B": "A major commotion or fuss over a trivial, unimportant matter",
+      "C": "A hot beverage spill in a kitchen",
+      "D": "A weather forecasting error"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'storm in a teacup' refers to exaggerated outrage or worry about a minor issue.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0185",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Straight from the shoulder**",
+    "options": {
+      "A": "Speaking in a direct, honest, and unreserved manner",
+      "B": "Suffering from shoulder joint pain",
+      "C": "Carrying heavy backpacks",
+      "D": "Throwing objects with force"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Speaking 'straight from the shoulder' means speaking with direct honesty.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0186",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Strain every nerve**",
+    "options": {
+      "A": "To experience a medical panic attack",
+      "B": "To make utmost efforts, striving as hard as possible to achieve a goal",
+      "C": "To relax in a spa",
+      "D": "To injure physical muscles"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'strain every nerve' means deploying maximum effort.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0187",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Straw in the wind**",
+    "options": {
+      "A": "A flying piece of straw during a storm",
+      "B": "A slight sign, hint, or indication of a future trend or development",
+      "C": "A farming weather tool",
+      "D": "An autumn breeze"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'straw in the wind' is a subtle clue indicating upcoming change.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0188",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Stumbling block**",
+    "options": {
+      "A": "A paving stone on a walkway",
+      "B": "An obstacle, hindrance, or difficulty that prevents progress",
+      "C": "A heavy gym weight",
+      "D": "A foundation stone for a building"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'stumbling block' is an obstacle obstructing progress.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0189",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Swan song**",
+    "options": {
+      "A": "A musical melody played by birds",
+      "B": "A final performance, speech, or work before retirement or death",
+      "C": "A joyful morning greeting song",
+      "D": "A traditional folk tune"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'swan song' represents an artist's final final masterpiece before quitting or dying.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0190",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Sweep under the rug**",
+    "options": {
+      "A": "To clean a dusty carpet floor",
+      "B": "To conceal, ignore, or hush up a scandal or problem rather than deal with it",
+      "C": "To hide money beneath furniture",
+      "D": "To redecorate a room"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'sweep under the rug' means attempting to conceal an unpleasant problem.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0191",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take a leaf out of someone's book**",
+    "options": {
+      "A": "To steal library books",
+      "B": "To imitate, copy, or follow someone's good example or behavior",
+      "C": "To read a novel chapter",
+      "D": "To tear pages from a notebook"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'take a leaf out of someone's book' means to emulate their actions or conduct.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0192",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take by storm**",
+    "options": {
+      "A": "To capture a fortress during a hurricane",
+      "B": "To captivate, impress, or win over an audience rapidly and overwhelmingly",
+      "C": "To experience bad weather while traveling",
+      "D": "To launch a military surprise raid"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'take by storm' means to conquer or overwhelm with sudden success and charm.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0193",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take heart**",
+    "options": {
+      "A": "To undergo cardiac surgery",
+      "B": "To gain courage, hope, or confidence in a difficult situation",
+      "C": "To fall in love deeply",
+      "D": "To feel depressed and hopeless"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'take heart' means to feel encouraged and regain courage.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0194",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Take the bull by the horns**",
+    "options": {
+      "A": "To wrestle cattle on a farm",
+      "B": "To confront a difficult or dangerous problem boldly and directly",
+      "C": "To provoke an aggressive animal",
+      "D": "To escape from a threatening beast"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'take the bull by the horns' means to face a crisis head-on with courage.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0195",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tall story**",
+    "options": {
+      "A": "An architecture textbook",
+      "B": "An exaggerated, unbelievable, and far-fetched tale",
+      "C": "A novel about skyscrapers",
+      "D": "A true historical record"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. A 'tall story' is an implausible, exaggerated account that is hard to believe.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0196",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Tether's end**",
+    "options": {
+      "A": "The end of a rope tied to an animal",
+      "B": "Having exhausted all your patience, endurance, or resources; at your limit",
+      "C": "Finishing a long journey",
+      "D": "Tying knots securely"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To be at the 'end of your tether' means having no patience or strength left to cope.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0197",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Through thick and thin**",
+    "options": {
+      "A": "Under all conditions, regardless of difficulties, trials, or hardships",
+      "B": "Walking through dense forests",
+      "C": "Dressed in varying clothing thickness",
+      "D": "Only during prosperous times"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. Being loyal 'through thick and thin' means staying supportive through good and bad times.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0198",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Throw cold water on**",
+    "options": {
+      "A": "To put out a campfire",
+      "B": "To discourage, dampen enthusiasm, or deter someone's plans with criticism",
+      "C": "To swim in cold swimming pools",
+      "D": "To refresh yourself on a hot day"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'throw cold water on' an idea means to discourage it with negative feedback.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0199",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Throw in the towel**",
+    "options": {
+      "A": "To surrender, admit defeat, or give up on a struggle",
+      "B": "To dry your hands after bathing",
+      "C": "To throw laundry into a washing machine",
+      "D": "To start a boxing match"
+    },
+    "correct_option": "A",
+    "explanation": "Option A is correct. To 'throw in the towel' means to acknowledge defeat and stop fighting.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  },
+  {
+    "id": "ENG_VOC_IDM_0200",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Choose the correct meaning of the given idiom:\n\n**Turn over a new leaf**",
+    "options": {
+      "A": "To plant autumn foliage in soil",
+      "B": "To start fresh, reform, and make a fresh start with better behavior",
+      "C": "To turn pages in a textbook",
+      "D": "To change a career abruptly"
+    },
+    "correct_option": "B",
+    "explanation": "Option B is correct. To 'turn over a new leaf' means to resolve to behave better and start afresh.",
+    "tags": ["vocab", "idioms", "pyq_ssc", "shuffled_options"]
+  }
+]

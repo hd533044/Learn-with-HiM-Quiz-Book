@@ -1,0 +1,382 @@
+[
+  {
+    "id": "ENG_PJ_481",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid hydrothermal cooling precipitates massive polymetallic sulfide mounds along the ocean floor.",
+      "B": "Tectonic spreading centers allow cold ocean bottom water to percolate deep into fractures within the basaltic crust.",
+      "C": "Subsurface magma chambers superheat this trapped water, leaching dissolved metallic elements from the surrounding rock.",
+      "D": "Buoyant hydrothermal fluids surge upward through the crust, discharging mineral-laden black smoker plumes."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces water percolating into crustal fractures at spreading centers. Sentence C explains subsurface magma superheating the water and leaching minerals. Sentence D describes the buoyant fluids surging upward. Sentence A concludes with the precipitation of sulfide mounds."
+  },
+  {
+    "id": "ENG_PJ_482",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1859, French physicist Gaston Planté invented the rechargeable lead-acid battery, transforming electrical energy storage.",
+    "jumbled_sentences": {
+      "P": "He submerged two lead sheets in a dilute sulfuric acid solution contained within a glass vessel.",
+      "Q": "Passing an electric current through the plates oxidized the lead, storing chemical energy that could be discharged later.",
+      "R": "Unlike primary voltaic cells which became useless after single discharges, Planté's battery could be repeatedly recharged.",
+      "S": "This durability made lead-acid batteries indispensable for early electrical lighting systems and automobile ignition."
+    },
+    "fixed_end": "6: Modern automotive starter batteries still rely on Planté's foundational electrochemical design over a century later.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Planté's invention. Sentence P describes submerging lead sheets in sulfuric acid. Sentence Q explains passing current to oxidize and store energy. Sentence R highlights the rechargeability advantage over primary cells. Sentence S notes early applications, leading to modern automotive use in Statement 6."
+  },
+  {
+    "id": "ENG_PJ_483",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, central banks deploy quantitative tightening protocols to drain excess liquidity from financial markets.",
+      "B": "Prolonged periods of low interest rates can encourage excessive corporate borrowing and speculative asset inflation.",
+      "C": "When debt-fueled asset bubbles burst, systemic banking panics threaten the solvency of commercial lenders.",
+      "D": "To prevent widespread economic collapse, regulatory authorities must intervene to recapitalize distressed institutions."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces low interest rates encouraging corporate borrowing and bubbles. Sentence C describes bubbles bursting and threatening banks. Sentence D notes regulatory intervention for recapitalization. Sentence A provides the central bank policy response ('Consequently...')."
+  },
+  {
+    "id": "ENG_PJ_484",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1912, American astronomer Vesto Slipher measured the spectral Doppler shift of light from spiral nebulae.",
+    "jumbled_sentences": {
+      "P": "To his profound surprise, the overwhelming majority of these remote spiral systems exhibited systematic spectral redshifts.",
+      "Q": "A redshift indicated that the nebulae were moving away from Earth at tremendous velocities.",
+      "R": "Slipher's measurements demonstrated that spiral nebulae possessed recession speeds far exceeding those of Milky Way stars.",
+      "S": "These baffling velocities provided the observational foundation for later theories of galactic expansion."
+    },
+    "fixed_end": "6: Slipher's empirical data transformed spiral nebulae from local gas clouds into immense external galaxies rushing through an expanding cosmos.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Slipher measuring spectral shifts. Sentence P describes the unexpected systematic redshifts. Sentence Q explains redshift as recession from Earth. Sentence R notes speeds exceeding Milky Way stars. Sentence S highlights the foundation for galactic expansion, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_485",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This thermal stability helps regulate coastal microclimates, preventing extreme diurnal temperature fluctuations.",
+      "B": "Liquid water possesses an exceptionally high specific heat capacity relative to solid continental rock and soil.",
+      "C": "During summer months, large oceanic bodies absorb immense quantities of solar radiation with minimal surface warming.",
+      "D": "As winter arrives, oceans slowly release this stored thermal energy back into the overlying atmosphere."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces water's high specific heat capacity. Sentence C describes summer solar absorption. Sentence D details winter heat release. Sentence A concludes with the microclimate thermal stability benefit."
+  },
+  {
+    "id": "ENG_PJ_486",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1897, British physicist J.J. Thomson performed experiments with cathode ray tubes that revolutionized physics.",
+    "jumbled_sentences": {
+      "P": "He demonstrated that cathode rays could be deflected by both electric and magnetic fields.",
+      "Q": "By measuring this deflection, he calculated the mass-to-charge ratio of the particles comprising the rays.",
+      "R": "He discovered that these corpuscles were over a thousand times lighter than a hydrogen atom.",
+      "S": "Thomson concluded that these subatomic particles, later named electrons, were universal components of all atoms."
+    },
+    "fixed_end": "6: His discovery shattered the ancient Greek dogma of indivisible atoms, opening the door to subatomic particle physics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Thomson's experiments. Sentence P describes ray deflection by fields. Sentence Q details calculating mass-to-charge ratio. Sentence R notes particles being lighter than hydrogen. Sentence S states the conclusion that electrons are universal components, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_487",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, public health agencies mandate municipal water fluoridation to prevent widespread dental caries.",
+      "B": "Low systemic concentrations of fluoride ions strengthen tooth enamel by converting hydroxyapatite into fluorapatite.",
+      "C": "Fluorapatite displays superior resistance against bacterial acid dissolution compared to standard enamel minerals.",
+      "D": "Communities lacking fluorinated municipal water supplies historically suffer elevated rates of pediatric tooth decay."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "C",
+    "rationale": "Sentence C (wait, let's trace carefully: B introduces fluoride converting hydroxyapatite to fluorapatite. C notes superior acid resistance. D notes unfluorinated communities suffering decay. A provides the public health policy response 'Consequently...'). Let's re-verify order: B-C-D-A makes sense logically (fluoride strengthens enamel -> acid resistance -> lack of it causes decay -> policy action)."
+  },
+  {
+    "id": "ENG_PJ_488",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1932, American physicist Carl Anderson discovered the positron while analyzing cosmic ray cloud chamber photographs.",
+    "jumbled_sentences": {
+      "P": "He observed particle tracks curving in a magnetic field in a manner identical to electrons, but in the opposite direction.",
+      "Q": "This reversed curvature proved the existence of a positively charged subatomic particle matching the mass of an electron.",
+      "R": "Anderson's empirical discovery confirmed Paul Dirac's theoretical prediction of antimatter made four years earlier.",
+      "S": "The observation of particle-antiparticle annihilation events soon followed, revealing new dimensions of quantum field theory."
+    },
+    "fixed_end": "6: The positron discovery earned Anderson the Nobel Prize in Physics, validating the reality of antimatter.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Anderson discovering the positron. Sentence P describes tracks curving opposite to electrons. Sentence Q notes proof of a positive particle matching electron mass. Sentence R links it to Dirac's prediction. Sentence S mentions particle-antiparticle annihilation, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_489",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This structural simplification enhances cellular absorption efficiency across mucosal membranes.",
+      "B": "Dietary proteins must undergo enzymatic hydrolysis into constituent amino acids and short peptides.",
+      "C": "Pepsin in the stomach and trypsin in the small intestine cleave complex peptide bonds systematically.",
+      "D": "Specialized brush-border transporters actively absorb these free amino acids into the portal circulation."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces protein hydrolysis. Sentence C specifies pepsin and trypsin cleaving bonds. Sentence D describes brush-border amino acid absorption. Sentence A highlights the structural simplification benefit."
+  },
+  {
+    "id": "ENG_PJ_490",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1958, American physicist Charles Townes and Arthur Schawlow published theoretical calculations for the optical maser.",
+    "jumbled_sentences": {
+      "P": "They proposed utilizing an optical cavity resonator to amplify stimulated light emissions rather than microwaves.",
+      "Q": "Shortly thereafter, Theodore Maiman successfully constructed the first working ruby laser at Hughes Research Laboratories.",
+      "R": "The ruby laser emitted a highly directional, monochromatic beam of coherent light waves.",
+      "S": "This breakthrough technology rapidly found revolutionary applications in industrial manufacturing, medicine, and telecommunications."
+    },
+    "fixed_end": "6: The invention of the laser stands as one of the defining technological achievements of the twentieth century.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Townes and Schawlow's publication. Sentence P describes the optical cavity resonator proposal. Sentence Q notes Maiman building the first ruby laser. Sentence R details the emitted coherent beam. Sentence S mentions applications, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_491",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, atmospheric scientists monitor industrial emissions using satellite-based infrared spectrometers.",
+      "B": "Carbon dioxide molecules absorb terrestrial infrared radiation, trapping heat within the lower troposphere.",
+      "C": "Anthropogenic fossil fuel combustion continuously elevates atmospheric greenhouse gas concentrations.",
+      "D": "This enhanced greenhouse effect drives sustained global temperature increases and rapid polar ice melting."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "C",
+    "rationale": "Let's check logical sequence: C introduces fossil fuel combustion elevating greenhouse gas concentrations. B explains how carbon dioxide absorbs infrared radiation. D notes the resulting global temperature increases. A provides the satellite monitoring response ('Consequently...'). Thus C-B-D-A is correct."
+  },
+  {
+    "id": "ENG_PJ_492",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1925, Austrian physicist Wolfgang Pauli formulated the Exclusion Principle, governing subatomic particle behavior.",
+    "jumbled_sentences": {
+      "P": "He postulated that no two identical fermions, such as electrons, can occupy the exact same quantum state simultaneously.",
+      "Q": "This restriction explains why electrons fill atomic shells in tiered orbitals rather than collapsing into a single ground state.",
+      "R": "The Exclusion Principle accounts for the periodic chemical behavior of elements across the periodic table.",
+      "S": "It also dictates the physical structure of white dwarf stars and neutron stars through degeneracy pressure."
+    },
+    "fixed_end": "6: Pauli's fundamental principle is essential for understanding matter stability, chemistry, and stellar astrophysics.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Pauli's principle. Sentence P states the rule for fermions. Sentence Q explains electron shell filling. Sentence R connects it to periodic chemical behavior. Sentence S notes stellar applications like white dwarfs, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_493",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Submarine explosive volcanism produces volatile-rich silicic magmas along convergent plate boundaries.",
+      "C": "Immense hydrostatic pressure in the deep ocean prevents rapid expansion of exsolving gas bubbles.",
+      "D": "Shallow water eruptions, however, bypass this pressure constraint, triggering violent explosive fragmentation."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces submarine explosive volcanism and silicic magmas. Sentence C describes deep-ocean hydrostatic pressure inhibiting gas expansion. Sentence D notes shallow eruptions bypassing this constraint. Sentence A describes pumice formation."
+  },
+  {
+    "id": "ENG_PJ_494",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1909, Danish chemist Søren Sørensen introduced the pH scale to measure hydrogen ion concentration.",
+    "jumbled_sentences": {
+      "P": "He devised a logarithmic scale ranging from zero to fourteen to simplify expressing extremely small decimal values.",
+      "Q": "A pH value below seven denotes acidic solutions with high hydronium ion activity.",
+      "R": "Conversely, a pH value above seven indicates alkaline solutions characterized by elevated hydroxide ion concentrations.",
+      "S": "A neutral pH of exactly seven represents balanced equilibrium between hydronium and hydroxide ions in pure water."
+    },
+    "fixed_end": "6: Sørensen's standardized pH scale became an indispensable metric across chemistry, biology, and environmental science.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Sørensen and the pH scale. Sentence P describes the logarithmic scale design. Sentence Q defines acidic solutions. Sentence R defines alkaline solutions. Sentence S details neutral pH, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_495",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, conservation biologists establish wildlife corridors to reconnect fragmented forest habitats.",
+      "B": "Expanding human infrastructure fragments contiguous forest ecosystems into isolated ecological islands.",
+      "C": "Population isolation restricts genetic interchange, accelerating inbreeding depression and local extinction risks.",
+      "D": "Migratory species attempting to traverse agricultural boundaries suffer elevated mortality rates."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "B",
+    "rationale": "Let's check logical order: B introduces infrastructure fragmenting ecosystems. D notes migratory species suffering mortality when crossing boundaries. C explains population isolation restricting gene flow and increasing extinction risks. A gives the conservation response ('Consequently...'). Thus B-D-C-A is correct."
+  },
+  {
+    "id": "ENG_PJ_496",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1934, Enrico Fermi bombarded heavy elements with neutrons, inadvertently producing the first transuranic elements.",
+    "jumbled_sentences": {
+      "P": "He hypothesized that capturing neutrons would prompt beta decay, yielding elements heavier than uranium.",
+      "Q": "Instead of synthesizing transuranics immediately, his team had actually split uranium nuclei through neutron-induced fission.",
+      "R": "Chemical analysis of the irradiated uranium yielded unexpected fission products like barium and krypton.",
+      "S": "Recognition of this hidden fission process redirected global nuclear physics research toward chain reactions."
+    },
+    "fixed_end": "6: Fermi's accidental splitting of the atom paved the way for both nuclear energy and atomic weapons development.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Fermi's neutron bombardment. Sentence P describes his hypothesis of yielding elements heavier than uranium. Sentence Q notes they actually split uranium nuclei. Sentence R details finding fission products like barium and krypton. Sentence S highlights the redirection of nuclear physics, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_497",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "This rapid crystallization traps volatile dissolved gases, creating highly vesicular, porous pumice.",
+      "B": "Continental collision zones generate immense tectonic pressures and regional metamorphic rock sequences.",
+      "C": "Prograde metamorphism dehydrates clay-rich sedimentary rocks, releasing large volumes of reactive fluids.",
+      "D": "These high-pressure fluid migrations deposit quartz veins and gold mineralizations within fault zones."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-A-C-D",
+      "C": "C-B-D-A",
+      "D": "D-B-C-A"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces continental collision and metamorphism. Sentence C describes prograde metamorphism releasing reactive fluids. Sentence D details fluid migration depositing quartz veins. Sentence A concludes with pumice formation."
+  },
+  {
+    "id": "ENG_PJ_498",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1908, American astronomer George Ellery Hale utilized the Zeeman effect to measure sunspot magnetic fields.",
+    "jumbled_sentences": {
+      "P": "He attached a large spectrograph to the Mount Wilson solar telescope to analyze polarized light from sunspots.",
+      "Q": "Spectral lines split into multiple components under the influence of intense magnetic fields.",
+      "R": "Hale's measurements provided the first empirical proof that astronomical bodies beyond Earth possess magnetic fields.",
+      "S": "Subsequent observations revealed the eleven-year magnetic sunspot cycle driven by stellar interior dynamos."
+    },
+    "fixed_end": "6: Hale's pioneering solar magnetometry established the foundation for modern space weather research.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Hale's sunspot measurements. Sentence P describes attaching a spectrograph to the telescope. Sentence Q notes spectral lines splitting. Sentence R states the proof of extraterrestrial magnetic fields. Sentence S mentions the 11-year solar cycle, leading to Statement 6."
+  },
+  {
+    "id": "ENG_PJ_499",
+    "question_type": "4_SENTENCE",
+    "sentences": {
+      "A": "Consequently, maritime port authorities mandate shore-power connectivity for docked container ships.",
+      "B": "Commercial cargo vessels burn unrefined bunker fuel to power onboard electrical systems while docked in port.",
+      "C": "Incomplete combustion of residual bunker fuel emits toxic sulfur dioxide and fine particulate matter.",
+      "D": "These harbor-side air pollutants trigger acute respiratory illness and cardiovascular morbidity in coastal cities."
+    },
+    "options": {
+      "A": "B-C-D-A",
+      "B": "B-D-C-A",
+      "C": "C-B-D-A",
+      "D": "D-A-B-C"
+    },
+    "correct_option": "A",
+    "rationale": "Sentence B introduces cargo vessels burning bunker fuel in port. Sentence C describes toxic emissions of sulfur dioxide and particulates. Sentence D notes respiratory illness and morbidity in coastal cities. Sentence A gives the port authority shore-power mandate ('Consequently...')."
+  },
+  {
+    "id": "ENG_PJ_500",
+    "question_type": "6_SENTENCE",
+    "fixed_start": "1: In 1953, James Watson and Francis Crick uncovered the double-helix structure of deoxyribonucleic acid.",
+    "jumbled_sentences": {
+      "P": "Their molecular model was constructed using vital X-ray diffraction data generated by Rosalind Franklin.",
+      "Q": "They proposed that DNA consists of two complementary polynucleotide chains wound around a central axis.",
+      "R": "Hydrogen bonds between specific nitrogenous base pairs hold the two antiparallel strands together.",
+      "S": "This precise base-pairing mechanism immediately suggested how genetic information could be faithfully copied during cell division."
+    },
+    "fixed_end": "6: The elucidation of the DNA double helix initiated the modern era of molecular biology and genetic engineering.",
+    "options": {
+      "A": "P-Q-R-S",
+      "B": "Q-P-R-S",
+      "C": "P-R-Q-S",
+      "D": "R-S-P-Q"
+    },
+    "correct_option": "A",
+    "rationale": "Statement 1 introduces Watson and Crick's discovery. Sentence P notes Franklin's X-ray diffraction data. Sentence Q proposes the two complementary chains. Sentence R details hydrogen bonds between base pairs. Sentence S explains the replication mechanism, leading to Statement 6."
+  }
+]

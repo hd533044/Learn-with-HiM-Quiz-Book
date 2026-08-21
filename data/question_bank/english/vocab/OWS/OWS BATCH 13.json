@@ -1,0 +1,752 @@
+[
+  {
+    "id": "ENG_VOC_OWS_0601",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo combine two or more things to form a complete whole",
+    "options": {
+      "A": "Integrate",
+      "B": "Disintegrate",
+      "C": "Segregate",
+      "D": "Isolate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Integrate) is correct[cite: 5]. 'Integrate' means to combine parts into a unified whole[cite: 5]. 'Disintegrate' means to break into small parts[cite: 5], and 'Segregate' means to separate from others.",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0602",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe quality of being honest and having strong moral principles",
+    "options": {
+      "A": "Integrity",
+      "B": "Perfidy",
+      "C": "Duplicity",
+      "D": "Iniquity"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Integrity) is correct[cite: 5]. 'Integrity' refers to moral uprightness and adherence to ethical principles[cite: 5]. 'Perfidy' and 'Duplicity' mean deceitfulness and treachery.",
+    "tags": ["vocab", "ows", "morality", "personality", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0603",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA short pause, interval, or temporary performance between two parts of an event or play",
+    "options": {
+      "A": "Interlude",
+      "B": "Interregnum",
+      "C": "Prologue",
+      "D": "Epilogue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Interlude) is correct[cite: 5]. An 'Interlude' is a period of time or brief entertainment coming between two events or acts[cite: 5]. 'Interregnum' is a pause in continuous government between two reigns[cite: 5].",
+    "tags": ["vocab", "ows", "theatre", "time", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0604",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who acts as a mediator or link between two or more conflicting parties to settle differences",
+    "options": {
+      "A": "Intermediary",
+      "B": "Antagonist",
+      "C": "Transgressor",
+      "D": "Instigator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Intermediary) is correct[cite: 5]. An 'Intermediary' acts as a go-between to reconcile disputes[cite: 5]. 'Antagonist' is an active opponent or adversary.",
+    "tags": ["vocab", "ows", "law", "people", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0605",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe act of burying a deceased person in a grave or tomb",
+    "options": {
+      "A": "Interment",
+      "B": "Internment",
+      "C": "Disinterment",
+      "D": "Exhumation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Interment) is correct[cite: 5]. 'Interment' is burial of a corpse[cite: 5]. 'Internment' is the confinement of people, especially during war[cite: 5], and 'Exhumation' is digging up a buried corpse.",
+    "tags": ["vocab", "ows", "death", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0606",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nEndless; continuing for an unpleasantly long duration of time",
+    "options": {
+      "A": "Interminable",
+      "B": "Ephemeral",
+      "C": "Transient",
+      "D": "Evanescent"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Interminable) is correct[cite: 5]. 'Interminable' means seemingly endless and tiresome[cite: 5]. 'Transient' and 'Ephemeral' mean lasting only for a very short time[cite: 5].",
+    "tags": ["vocab", "ows", "time", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0607",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe act of confining or detaining someone in a prison or camp without trial, especially for political reasons",
+    "options": {
+      "A": "Internment",
+      "B": "Interment",
+      "C": "Emancipation",
+      "D": "Exoneration"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Internment) is correct[cite: 5]. 'Internment' is state detention of persons without trial[cite: 5]. 'Emancipation' is setting free from bondage[cite: 5].",
+    "tags": ["vocab", "ows", "law", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0608",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo insert new or extraneous words into a text or calculate intermediate values in mathematics",
+    "options": {
+      "A": "Interpolate",
+      "B": "Extrapolate",
+      "C": "Expurgate",
+      "D": "Obliterate"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Interpolate) is correct[cite: 5]. 'Interpolate' means to insert material into a text or compute intermediate data points[cite: 5]. 'Expurgate' means to remove offensive passages[cite: 5].",
+    "tags": ["vocab", "ows", "science", "mathematics", "language", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0609",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo place or insert oneself or something between two things or persons",
+    "options": {
+      "A": "Interpose",
+      "B": "Efface",
+      "C": "Sever",
+      "D": "Dislodge"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Interpose) is correct[cite: 5]. 'Interpose' means to place between or intervene with a remark[cite: 5]. 'Sever' means to divide or cut off completely[cite: 5].",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0610",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA period or interval of temporary cessation of normal government between two successive reigns or regimes",
+    "options": {
+      "A": "Interregnum",
+      "B": "Regicide",
+      "C": "Autocracy",
+      "D": "Oligarchy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Interregnum) is correct[cite: 5]. 'Interregnum' is a gap in continuity between successive rulers or governments[cite: 5]. 'Regicide' is the killing of a monarch[cite: 5].",
+    "tags": ["vocab", "ows", "politics", "history", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0611",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who dies without having made a legal and valid will",
+    "options": {
+      "A": "Intestate",
+      "B": "Testator",
+      "C": "Beneficiary",
+      "D": "Executor"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Intestate) is correct[cite: 5]. 'Intestate' refers to dying without leaving a valid will[cite: 5]. 'Testator' is one who has executed a legal will.",
+    "tags": ["vocab", "ows", "law", "death", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0612",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe examination and observation of one's own mental processes and internal thoughts",
+    "options": {
+      "A": "Introspection",
+      "B": "Retrospection",
+      "C": "Circumspection",
+      "D": "Inspection"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Introspection) is correct[cite: 5]. 'Introspection' is looking inward to examine one's own thoughts and feelings[cite: 5]. 'Retrospection' is looking back at past occurrences[cite: 5].",
+    "tags": ["vocab", "ows", "mind", "psychology", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0613",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA quiet, shy person who is more interested in their own thoughts and feelings than in social interaction",
+    "options": {
+      "A": "Introvert",
+      "B": "Extrovert",
+      "C": "Ambivert",
+      "D": "Philanderer"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Introvert) is correct[cite: 5]. An 'Introvert' is inward-looking and prefers solitude[cite: 5]. An 'Extrovert' is outgoing and sociable[cite: 5], and an 'Ambivert' displays a balance of both traits.",
+    "tags": ["vocab", "ows", "personality", "psychology", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0614",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who enters a place illegally or without permission, invitation, or right",
+    "options": {
+      "A": "Intruder",
+      "B": "Emigrant",
+      "C": "Refugee",
+      "D": "Invader"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Intruder) is correct[cite: 5]. An 'Intruder' (or trespasser) enters private premises without welcome or authorization[cite: 5].",
+    "tags": ["vocab", "ows", "crime", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0615",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person who is disabled, infirm, or made weak by prolonged illness or injury",
+    "options": {
+      "A": "Invalid",
+      "B": "Convalescent",
+      "C": "Amputee",
+      "D": "Hypochondriac"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Invalid) is correct[cite: 5]. An 'Invalid' is a chronically sick or incapacitated individual[cite: 5]. 'Convalescent' describes someone actively recovering from an illness[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "people", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0616",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA complete and detailed list of items, goods, or property located in a place",
+    "options": {
+      "A": "Inventory",
+      "B": "Glossary",
+      "C": "Directory",
+      "D": "Anthology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Inventory) is correct[cite: 5]. An 'Inventory' is an itemized record of materials, stock, or assets on hand[cite: 5]. 'Glossary' is a specialized term list[cite: 5].",
+    "tags": ["vocab", "ows", "business", "documents", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0617",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAnimals lacking a vertebral column or backbone",
+    "options": {
+      "A": "Invertebrates",
+      "B": "Vertebrates",
+      "C": "Mammals",
+      "D": "Amphibians"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Invertebrates) is correct[cite: 5]. 'Invertebrates' are animals that have no spinal column (e.g., insects, worms)[cite: 5]. 'Vertebrates' possess backbones.",
+    "tags": ["vocab", "ows", "animals", "science", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0618",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA formal and systematic inquiry or examination into facts, crimes, or incidents",
+    "options": {
+      "A": "Investigation",
+      "B": "Interpolation",
+      "C": "Introspection",
+      "D": "Deliberation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Investigation) is correct[cite: 5]. An 'Investigation' is an official inquiry searching for truth and facts[cite: 5]. 'Introspection' is analyzing one's own thoughts[cite: 5].",
+    "tags": ["vocab", "ows", "law", "police", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0619",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo give strength, life, energy, and freshness to; revive",
+    "options": {
+      "A": "Invigorate",
+      "B": "Etiolate",
+      "C": "Slacken",
+      "D": "Wilt"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Invigorate) is correct[cite: 5]. 'Invigorate' means to animate, fill with vitality, or refresh[cite: 5]. 'Wilt' means to become limp and droop[cite: 5].",
+    "tags": ["vocab", "ows", "verbs", "energy", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0620",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nToo powerful, formidable, or strong to be defeated or overcome; unconquerable",
+    "options": {
+      "A": "Invincible",
+      "B": "Vulnerable",
+      "C": "Defensible",
+      "D": "Fallible"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Invincible) is correct[cite: 5]. 'Invincible' means incapable of being conquered or subdued[cite: 5]. 'Fallible' means liable to err[cite: 5].",
+    "tags": ["vocab", "ows", "military", "adjectives", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0621",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn appeal or prayer calling upon God or a higher power for aid, protection, or inspiration",
+    "options": {
+      "A": "Invocation",
+      "B": "Evocation",
+      "C": "Revocation",
+      "D": "Convocation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Invocation) is correct[cite: 5]. An 'Invocation' is an earnest supplication or prayer invoking divine assistance[cite: 5]. 'Convocation' is a large assembly.",
+    "tags": ["vocab", "ows", "religion", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0622",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nImpossible to disprove, deny, or contradict; indisputable",
+    "options": {
+      "A": "Irrefutable",
+      "B": "Ambiguous",
+      "C": "Dubious",
+      "D": "Questionable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Irrefutable) is correct[cite: 5]. 'Irrefutable' means undeniable and supported by solid proof[cite: 5]. 'Ambiguous' means open to more than one interpretation[cite: 5].",
+    "tags": ["vocab", "ows", "logic", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0623",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nShowing a disrespectful attitude toward people, traditions, or holy things that are normally venerated",
+    "options": {
+      "A": "Irreverent",
+      "B": "Reverent",
+      "C": "Pious",
+      "D": "Devout"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Irreverent) is correct[cite: 5]. 'Irreverent' describes a lack of respect for serious or sacred topics[cite: 5]. 'Pious' and 'Devout' denote deep religious devotion.",
+    "tags": ["vocab", "ows", "behaviour", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0624",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nNot able to be changed, reversed, or recalled; final and unalterable",
+    "options": {
+      "A": "Irrevocable",
+      "B": "Revocable",
+      "C": "Pliable",
+      "D": "Malleable"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Irrevocable) is correct[cite: 5]. 'Irrevocable' refers to an action, law, or decision that cannot be repealed or reversed[cite: 5].",
+    "tags": ["vocab", "ows", "law", "adjectives", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0625",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo supply water to land or crops by artificial canals, pipes, or sprinklers",
+    "options": {
+      "A": "Irrigate",
+      "B": "Inundate",
+      "C": "Desiccate",
+      "D": "Deliquesce"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Irrigate) is correct[cite: 5]. 'Irrigate' is to supply dry fields with water artificially[cite: 5]. 'Inundate' is to flood completely, and 'Desiccate' is to dry out thoroughly.",
+    "tags": ["vocab", "ows", "agriculture", "water", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0626",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nFar away from other places, buildings, or human contact; remote",
+    "options": {
+      "A": "Isolated",
+      "B": "Contiguous",
+      "C": "Adjacent",
+      "D": "Urban"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Isolated) is correct[cite: 5]. 'Isolated' means detached, secluded, or far away from others[cite: 5]. 'Contiguous' means touching along borders[cite: 5].",
+    "tags": ["vocab", "ows", "geography", "adjectives", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0627",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA narrow strip of land with water on each side, connecting two larger land masses",
+    "options": {
+      "A": "Isthmus",
+      "B": "Strait",
+      "C": "Peninsula",
+      "D": "Archipelago"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Isthmus) is correct[cite: 5]. An 'Isthmus' is a narrow neck of land connecting two larger continents or land areas[cite: 5]. 'Strait' is a narrow water channel connecting two seas.",
+    "tags": ["vocab", "ows", "geography", "landforms", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0628",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTravelling from place to place, especially on a circuit in order to perform work",
+    "options": {
+      "A": "Itinerant",
+      "B": "Sedentary",
+      "C": "Immobile",
+      "D": "Stationary"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Itinerant) is correct[cite: 5]. 'Itinerant' describes someone who wanders or travels from place to place for work[cite: 5]. 'Sedentary' means remaining mostly in one place.",
+    "tags": ["vocab", "ows", "travel", "work", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0629",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA planned route or detailed record of a journey, including places to be visited",
+    "options": {
+      "A": "Itinerary",
+      "B": "Inventory",
+      "C": "Manuscript",
+      "D": "Catalogue"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Itinerary) is correct[cite: 5]. An 'Itinerary' is a detailed travel itinerary or travel schedule[cite: 5]. 'Inventory' is a list of stored goods[cite: 5].",
+    "tags": ["vocab", "ows", "travel", "documents", "pyq_ssc", "repeated_5_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0630",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA caretaker or custodian employed to look after, clean, and maintain a large building",
+    "options": {
+      "A": "Janitor",
+      "B": "Stevedore",
+      "C": "Ostler",
+      "D": "Curator"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Janitor) is correct[cite: 5]. A 'Janitor' maintains building cleanliness and security[cite: 5]. 'Ostler' looks after horses at an inn[cite: 5].",
+    "tags": ["vocab", "ows", "professions", "work", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0631",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA short excursion or brief pleasure trip",
+    "options": {
+      "A": "Jaunt",
+      "B": "Voyage",
+      "C": "Exodus",
+      "D": "Odyssey"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Jaunt) is correct[cite: 5]. A 'Jaunt' is a brief journey taken for recreation[cite: 5]. 'Odyssey' is a long, eventful wandering journey.",
+    "tags": ["vocab", "ows", "travel", "leisure", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0632",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nIn a lively, cheerful, buoyant, and self-confident manner",
+    "options": {
+      "A": "Jauntily",
+      "B": "Ghastly",
+      "C": "Morosely",
+      "D": "Sullenly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Jauntily) is correct[cite: 5]. 'Jauntily' means behaving with buoyant, sprightly confidence[cite: 5]. 'Morosely' means in a gloomy, sullen way.",
+    "tags": ["vocab", "ows", "adverbs", "behaviour", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0633",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo cross a city street carelessly or illegally without paying attention to traffic rules",
+    "options": {
+      "A": "Jaywalk",
+      "B": "Traverse",
+      "C": "Prowl",
+      "D": "Stroll"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Jaywalk) is correct[cite: 5]. 'Jaywalk' means to cross streets recklessly disregardful of crosswalks or pedestrian signals[cite: 5].",
+    "tags": ["vocab", "ows", "actions", "traffic", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0634",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA person, charm, or object believed to bring bad luck or misfortune",
+    "options": {
+      "A": "Jinx",
+      "B": "Mascot",
+      "C": "Talisman",
+      "D": "Amulet"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Jinx) is correct[cite: 5]. A 'Jinx' is someone or something thought to cast bad luck[cite: 5]. 'Mascot' and 'Talisman' bring good luck.",
+    "tags": ["vocab", "ows", "superstition", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0635",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA professional rider who rides horses in competitive horse races",
+    "options": {
+      "A": "Jockey",
+      "B": "Chauffeur",
+      "C": "Stevedore",
+      "D": "Ostler"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Jockey) is correct[cite: 5]. A 'Jockey' rides thoroughbreds in professional racing competitions[cite: 5]. 'Chauffeur' drives private cars[cite: 5].",
+    "tags": ["vocab", "ows", "sports", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0636",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe profession or activity of collecting, verifying, and reporting news for newspapers, broadcast, or television",
+    "options": {
+      "A": "Journalism",
+      "B": "Typography",
+      "C": "Calligraphy",
+      "D": "Cerography"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Journalism) is correct[cite: 5]. 'Journalism' is the field of reporting and producing media news[cite: 5].",
+    "tags": ["vocab", "ows", "media", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0637",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA professional writer or reporter who writes news articles for journals and publications",
+    "options": {
+      "A": "Journalist",
+      "B": "Compositor",
+      "C": "Lexicographer",
+      "D": "Bibliophile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Journalist) is correct[cite: 5]. A 'Journalist' is a reporter who investigates and publishes news[cite: 5]. 'Compositor' sets printing type[cite: 5].",
+    "tags": ["vocab", "ows", "professions", "media", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0638",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe act of travelling or migrating from one destination to another",
+    "options": {
+      "A": "Journey",
+      "B": "Interlude",
+      "C": "Sojourn",
+      "D": "Habitation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Journey) is correct[cite: 5]. A 'Journey' is travel from one geographic place to another[cite: 5]. 'Sojourn' is a brief temporary stay[cite: 5].",
+    "tags": ["vocab", "ows", "travel", "general", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0639",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA public judicial official appointed to preside over court proceedings and administer justice",
+    "options": {
+      "A": "Judge",
+      "B": "Prosecutor",
+      "C": "Arbitrator",
+      "D": "Plaintiff"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Judge) is correct[cite: 5]. A 'Judge' hears legal arguments and applies the law in a court[cite: 5]. 'Plaintiff' is the party suing in court[cite: 5].",
+    "tags": ["vocab", "ows", "law", "professions", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0640",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe judicial branch of a country's government responsible for the administration and interpretation of laws",
+    "options": {
+      "A": "Judiciary",
+      "B": "Legislature",
+      "C": "Executive",
+      "D": "Bureaucracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Judiciary) is correct[cite: 5]. The 'Judiciary' is the court system of judges administering law[cite: 5]. 'Legislature' makes laws, and 'Executive' enforces them.",
+    "tags": ["vocab", "ows", "politics", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0641",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA military or political faction that rules a country after violently seizing power by force",
+    "options": {
+      "A": "Junta",
+      "B": "Democracy",
+      "C": "Aristocracy",
+      "D": "Plutocracy"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Junta) is correct[cite: 5]. A 'Junta' is a military cabal governing a country following a coup d'état[cite: 5].",
+    "tags": ["vocab", "ows", "military", "politics", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0642",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe theoretical science, philosophy, and knowledge of legal principles and law",
+    "options": {
+      "A": "Jurisprudence",
+      "B": "Theology",
+      "C": "Ethics",
+      "D": "Sociology"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Jurisprudence) is correct[cite: 5]. 'Jurisprudence' is the philosophy or theoretical science of human law[cite: 5]. 'Theology' is the study of religion and God[cite: 5].",
+    "tags": ["vocab", "ows", "law", "philosophy", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0643",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA sworn body of citizens convened to render an impartial verdict in a judicial trial",
+    "options": {
+      "A": "Jury",
+      "B": "Bench",
+      "C": "Electorate",
+      "D": "Congregation"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Jury) is correct[cite: 5]. A 'Jury' is a panel of citizens sworn to give a verdict based on evidence in court[cite: 5]. 'Bench' refers to the sitting judges collectively.",
+    "tags": ["vocab", "ows", "law", "collective_nouns", "pyq_ssc", "repeated_2_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0644",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nConnected with or relating to young persons who are not yet legal adults; immature",
+    "options": {
+      "A": "Juvenile",
+      "B": "Centenarian",
+      "C": "Veteran",
+      "D": "Senile"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Juvenile) is correct[cite: 5]. 'Juvenile' relates to youth or adolescents who are not yet of age[cite: 5]. 'Senile' relates to the mental decline of extreme old age.",
+    "tags": ["vocab", "ows", "age", "law", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0645",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nTo place two different things side by side in order to highlight their comparison or contrast",
+    "options": {
+      "A": "Juxtapose",
+      "B": "Disintegrate",
+      "C": "Isolate",
+      "D": "Sever"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Juxtapose) is correct[cite: 5]. 'Juxtapose' means to place contrasting objects close together to emphasize their differences[cite: 5].",
+    "tags": ["vocab", "ows", "verbs", "actions", "pyq_ssc", "repeated_3_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0646",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nAn abnormal, uncontrollable, and recurrent psychological compulsion to steal",
+    "options": {
+      "A": "Kleptomania",
+      "B": "Bibliomania",
+      "C": "Dipsomania",
+      "D": "Pyromania"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Kleptomania) is correct[cite: 5]. 'Kleptomania' is an obsessive psychiatric urge to steal items without economic need[cite: 5]. 'Dipsomania' is craving for alcohol[cite: 5].",
+    "tags": ["vocab", "ows", "mania", "psychology", "pyq_ssc", "repeated_4_times"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0647",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA special natural talent, faculty, or intuitive skill at doing something easily",
+    "options": {
+      "A": "Knack",
+      "B": "Ineptness",
+      "C": "Gawkiness",
+      "D": "Folly"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Knack) is correct[cite: 5]. A 'Knack' is an acquired or innate clever knack or skill[cite: 5]. 'Ineptness' is clumsiness or lack of ability[cite: 5].",
+    "tags": ["vocab", "ows", "skill", "mind", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0648",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nThe solemn, mournful sound of a church bell rung slowly for a death or funeral",
+    "options": {
+      "A": "Knell",
+      "B": "Dirge",
+      "C": "Elegy",
+      "D": "Screech"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Knell) is correct[cite: 5]. 'Knell' is the ringing of a funeral bell[cite: 5]. 'Dirge' is a funeral song[cite: 5], and 'Elegy' is a mourning poem[cite: 5].",
+    "tags": ["vocab", "ows", "sounds", "death", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0649",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA deep, jagged cut or torn wound in the flesh or skin",
+    "options": {
+      "A": "Laceration",
+      "B": "Fracture",
+      "C": "Spasm",
+      "D": "Chafe"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Laceration) is correct[cite: 5]. A 'Laceration' is a rough, jagged tear or wound in tissue[cite: 5]. 'Spasm' is an involuntary muscle contraction[cite: 5].",
+    "tags": ["vocab", "ows", "medical", "injury", "pyq_ssc"]
+  },
+  {
+    "id": "ENG_VOC_OWS_0650",
+    "type": "standard_mcq",
+    "passage_id": null,
+    "question": "Select the word which means the same as the group of words given:\n\nA climbing apparatus of two long pieces of wood, metal, or rope connected by rungs",
+    "options": {
+      "A": "Ladder",
+      "B": "Staircase",
+      "C": "Shaft",
+      "D": "Walkway"
+    },
+    "correct_option": "A",
+    "explanation": "Option A (Ladder) is correct[cite: 5]. A 'Ladder' consists of side rails with horizontal crosspieces (rungs) for ascent and descent[cite: 5]. 'Shaft' is a vertical mining passage[cite: 5].",
+    "tags": ["vocab", "ows", "objects", "tools", "pyq_ssc", "repeated_2_times"]
+  }
+]

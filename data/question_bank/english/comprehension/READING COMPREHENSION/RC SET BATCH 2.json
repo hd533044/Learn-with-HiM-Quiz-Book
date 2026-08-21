@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_101",
+    "passage_title": "The Evolutionary Mechanisms of Epigenetics",
+    "passage_text": "Classical Mendelian genetics posited that phenotypic variation arises almost exclusively from stochastic mutations within the invariant nucleotide sequence of DNA. However, modern molecular biology has revealed a far more dynamic layer of genomic regulation known as epigenetics. Epigenetic mechanisms—primarily DNA methylation, histone modification, and non-coding RNA interference—alter chromatin architecture and modulate gene transcription without altering the underlying nucleotide base pairs. Environmental stressors such as famine, xenobiotic exposure, and chronic physiological distress can induce persistent epigenetic alterations that dictate cellular fate and metabolic homeostasis. Crucially, evidence indicates that certain epigenetic marks escape post-fertilization epigenetic reprogramming, allowing transgenerational transmission of acquired environmental adaptations. This revelation bridges the long-standing conceptual chasm between Darwinian natural selection and Lamarckian environmental responsiveness, fundamentally revising evolutionary biology.",
+    "questions": [
+      {
+        "id": "ENG_RC_101_Q1",
+        "question": "What is the fundamental distinction between classical Mendelian genetics and epigenetics according to the passage?",
+        "options": {
+          "A": "Mendelian genetics relies on histone modification, whereas epigenetics depends solely on non-coding RNA.",
+          "B": "Mendelian genetics focuses on nucleotide sequence changes, whereas epigenetics alters gene expression without modifying DNA sequences.",
+          "C": "Epigenetics rejects natural selection entirely in favor of strict Lamarckian mechanics.",
+          "D": "Mendelian genetics deals only with plant biology, while epigenetics applies exclusively to vertebrates."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that Mendelian genetics attributed variation to mutations in the nucleotide sequence, whereas epigenetics modulates gene transcription without altering underlying base pairs."
+      },
+      {
+        "id": "ENG_RC_101_Q2",
+        "question": "Which of the following is NOT mentioned in the text as a primary epigenetic mechanism?",
+        "options": {
+          "A": "Histone modification",
+          "B": "DNA methylation",
+          "C": "Non-coding RNA interference",
+          "D": "Point mutation insertions"
+        },
+        "correct_option": "D",
+        "rationale": "Point mutations belong to sequence-level DNA alterations; the passage explicitly lists DNA methylation, histone modification, and non-coding RNA interference as epigenetic mechanisms."
+      },
+      {
+        "id": "ENG_RC_101_Q3",
+        "question": "The term 'transgenerational transmission' in the passage refers to:",
+        "options": {
+          "A": "The irreversible extinction of maladapted organisms.",
+          "B": "The inheritance of acquired epigenetic modifications across subsequent generations.",
+          "C": "The transfer of synthetic genetic material in clinical laboratory environments.",
+          "D": "The spontaneous eradication of environmental toxins by cellular mitochondria."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that epigenetic marks can escape reprogramming, allowing the inheritance of acquired environmental adaptations down generational lines."
+      },
+      {
+        "id": "ENG_RC_101_Q4",
+        "question": "As used in the passage, the word 'stochastic' most closely means:",
+        "options": {
+          "A": "Random or probabilistic",
+          "B": "Deliberate and planned",
+          "C": "Harmful and pathological",
+          "D": "Gradual and predictable"
+        },
+        "correct_option": "A",
+        "rationale": "'Stochastic' denotes having a random probability distribution or pattern."
+      },
+      {
+        "id": "ENG_RC_101_Q5",
+        "question": "What is the primary evolutionary implication emphasized in the final sentence?",
+        "options": {
+          "A": "Darwin's theories have been entirely discredited by modern cellular assays.",
+          "B": "Epigenetics integrates environmental responsiveness with evolutionary theory, bridging historical paradigms.",
+          "C": "Organisms can intentionally modify their genetic code in response to predators.",
+          "D": "Genomic reprogramming eliminates all epigenetic memory during embryonic development."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence highlights how epigenetics bridges Darwinian natural selection and Lamarckian environmental adaptation, enriching evolutionary biology."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_102",
+    "passage_title": "The Architecture of Classical Political Economy",
+    "passage_text": "The transition from mercantilism to classical political economy in the eighteenth century marked a conceptual revolution in how societies conceptualized wealth. Mercantilist doctrine viewed global trade as a zero-sum contest where national prosperity was quantified solely by the accumulation of bullion within state treasuries. This prompted aggressive protectionist tariffs, colonial monopolies, and state-sanctioned merchant cartels. Adam Smith challenged this paradigm by asserting that national wealth is measured not by hoarded specie, but by the productive output of labor and the reciprocal division of specialized tasks. In an unhindered market, self-interested individual actions inadvertently advance societal welfare through the coordinating mechanism of the price system. Subsequent theorists, such as David Ricardo, refined this framework by formulating the law of comparative advantage, demonstrating that free multilateral trade yields mutual gains even when one nation possesses absolute productive superiority across all economic sectors.",
+    "questions": [
+      {
+        "id": "ENG_RC_102_Q1",
+        "question": "According to mercantilist theory, how was the wealth of a nation fundamentally measured?",
+        "options": {
+          "A": "By the per capita consumption of domestic agricultural goods.",
+          "B": "By the volume of precious metals accumulated in state reserves.",
+          "C": "By the technological productivity of industrial laborers.",
+          "D": "By the extent of multilateral trade liberalization agreements."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that mercantilism measured wealth 'solely by the accumulation of bullion [specie] within state treasuries.'"
+      },
+      {
+        "id": "ENG_RC_102_Q2",
+        "question": "How did Adam Smith redefine national prosperity in contrast to mercantilism?",
+        "options": {
+          "A": "As the total sovereign debt issued by financial institutions.",
+          "B": "As the aggregate productive output of labor facilitated by specialization.",
+          "C": "As the strict enforcement of protectionist trade tariffs.",
+          "D": "As the total gold reserves secured within national borders."
+        },
+        "correct_option": "B",
+        "rationale": "Smith asserted that wealth is derived from 'the productive output of labor and the reciprocal division of specialized tasks.'"
+      },
+      {
+        "id": "ENG_RC_102_Q3",
+        "question": "David Ricardo's law of comparative advantage established that:",
+        "options": {
+          "A": "Trade benefits only nations that hold an absolute advantage in manufacturing.",
+          "B": "Trade is inherently a zero-sum game favoring colonial empires.",
+          "C": "Free trade is mutually beneficial even when one trading partner holds absolute productive superiority.",
+          "D": "State intervention is necessary to balance currency fluctuations."
+        },
+        "correct_option": "C",
+        "rationale": "The passage specifies that comparative advantage demonstrates mutual gains 'even when one nation possesses absolute productive superiority across all economic sectors.'"
+      },
+      {
+        "id": "ENG_RC_102_Q4",
+        "question": "The phrase 'specie' in the passage refers to:",
+        "options": {
+          "A": "Agricultural commodities",
+          "B": "Coined money or precious metallic currency",
+          "C": "Government regulatory documents",
+          "D": "Industrial factory equipment"
+        },
+        "correct_option": "B",
+        "rationale": "'Specie' is money in the form of coins or precious bullion rather than paper notes."
+      },
+      {
+        "id": "ENG_RC_102_Q5",
+        "question": "What is the primary rhetorical objective of the passage?",
+        "options": {
+          "A": "To critique the moral shortcomings of industrial capitalism.",
+          "B": "To delineate the theoretical evolution from mercantilist protectionism to classical trade theory.",
+          "C": "To advocate for the immediate restoration of bullion-backed currency reserves.",
+          "D": "To explain the mechanics of international exchange rate fluctuations."
+        },
+        "correct_option": "B",
+        "rationale": "The passage outlines the shift from zero-sum mercantilism to the classical theories of Smith and Ricardo."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_103",
+    "passage_title": "Deep Sea Hydrothermal Vents and the Origin of Life",
+    "passage_text": "Before the discovery of hydrothermal vent ecosystems along the oceanic Galápagos Rift, biological orthodoxy maintained that solar radiation was the indispensable prerequisite for sustaining complex trophic webs. Deep sea vent fields, however, thrive in total aphotic isolation under crushing hydrostatic pressures. These biocenoses are powered entirely by chemosynthesis. Chemolithoautotrophic archaea and bacteria oxidize hydrogen sulfide, methane, and ferrous iron discharging from porous mineral chimneys (black and white smokers) to synthesize organic carbon. Highly specialized metazoans, such as giant tube worms (*Riftia pachyptila*), lack digestive tracts and rely entirely on endosymbiotic sulfur-oxidizing bacteria housed within a specialized organ called the trophosome. The geochemical gradients, abundance of catalytic transition metal sulfides, and continuous proton-motive force across porous mineral membranes have led many astrobiologists to hypothesize that alkaline hydrothermal vents served as the thermodynamic cradles for abiogenesis on the early Hadean Earth.",
+    "questions": [
+      {
+        "id": "ENG_RC_103_Q1",
+        "question": "Which scientific presupposition was overturned by the discovery of deep-sea hydrothermal vents?",
+        "options": {
+          "A": "The theory that archaea are phylogenetically distinct from bacteria.",
+          "B": "The belief that sunlight is strictly mandatory for sustaining complex biological ecosystems.",
+          "C": "The assumption that metazoans require oxygen for cellular respiration.",
+          "D": "The hypothesis that water is necessary for biological enzyme function."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that prior orthodoxy held 'solar radiation was the indispensable prerequisite for sustaining complex trophic webs,' which vents disproved through chemosynthesis."
+      },
+      {
+        "id": "ENG_RC_103_Q2",
+        "question": "How do giant tube worms (*Riftia pachyptila*) acquire metabolic sustenance in the vent ecosystem?",
+        "options": {
+          "A": "By actively hunting smaller benthic invertebrates with predatory appendages.",
+          "B": "By filter-feeding photosynthetic phytoplankton sinking from the epipelagic zone.",
+          "C": "Via endosymbiotic sulfur-oxidizing bacteria harbored in their trophosome.",
+          "D": "Through direct epidermal absorption of hydrothermal steam."
+        },
+        "correct_option": "C",
+        "rationale": "The text states that *Riftia pachyptila* lack digestive tracts and rely on 'endosymbiotic sulfur-oxidizing bacteria housed within a specialized organ called the trophosome.'"
+      },
+      {
+        "id": "ENG_RC_103_Q3",
+        "question": "What role do chemolithoautotrophs serve in hydrothermal vent ecosystems?",
+        "options": {
+          "A": "Apex predators that regulate metazoan population density.",
+          "B": "Decomposers that break down sinking pelagic detritus.",
+          "C": "Primary producers that synthesize organic carbon by oxidizing inorganic compounds.",
+          "D": "Parasitic vectors that suppress volcanic eruptions."
+        },
+        "correct_option": "C",
+        "rationale": "Chemolithoautotrophs oxidize inorganic chemicals (like hydrogen sulfide) to fix inorganic carbon into organic compounds, forming the base of the food web."
+      },
+      {
+        "id": "ENG_RC_103_Q4",
+        "question": "As used in the passage, the word 'aphotic' refers to an environment that is:",
+        "options": {
+          "A": "Devoid of natural sunlight",
+          "B": "Extremely high in temperature",
+          "C": "Heavily polluted by heavy metals",
+          "D": "Deficient in dissolved oxygen"
+        },
+        "correct_option": "A",
+        "rationale": "'Aphotic' originates from Greek ('without light'), denoting oceanic zones where light does not penetrate."
+      },
+      {
+        "id": "ENG_RC_103_Q5",
+        "question": "Why do astrobiologists consider alkaline hydrothermal vents strong candidates for abiogenesis?",
+        "options": {
+          "A": "They protect organisms from hydrostatic pressure using quartz shields.",
+          "B": "They provide continuous proton gradients, catalytic minerals, and geothermal energy in prebiotic conditions.",
+          "C": "They contain abundant fossilized multicellular skeletons from the Hadean era.",
+          "D": "They eliminate all acidic compounds from oceanic water columns."
+        },
+        "correct_option": "B",
+        "rationale": "The passage emphasizes geochemical gradients, catalytic transition metal sulfides, and proton-motive forces across mineral pores as conditions favorable for abiogenesis."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_104",
+    "passage_title": "The Structural Evolution of Gothic Architecture",
+    "passage_text": "The emergence of Gothic architecture in twelfth-century Île-de-France represented an engineering triumph over the structural limitations of the Romanesque style. Romanesque sanctuaries were characterized by ponderous barrel vaults supported by massive, continuous masonry walls with minimal fenestration, resulting in dark, fortress-like interiors. The fundamental structural dilemma stemmed from outward lateral thrust generated by semi-circular arches. Gothic master builders solved this through a tripartite engineering synthesis: the pointed arch, the ribbed groin vault, and the external flying buttress. The pointed arch distributed vertical downward load more efficiently than rounded arches, while intersecting stone ribs channeled roof weights toward specific skeletal points rather than entire wall lengths. By transferring remaining outward horizontal thrust across open exterior arches down into exterior counterweight piers, flying buttresses liberated the curtain walls from load-bearing duties. Consequently, master masons were able to dissolve solid walls into towering expanses of stained-glass clerestories, realizing the theological aesthetic of *lux nova* (new spiritual light).",
+    "questions": [
+      {
+        "id": "ENG_RC_104_Q1",
+        "question": "What primary engineering problem constrained Romanesque architectural design?",
+        "options": {
+          "A": "The rapid structural degradation of stained glass under thermal stress.",
+          "B": "The heavy outward lateral thrust exerted by rounded barrel vaults.",
+          "C": "The absence of lime mortar in medieval quarrying techniques.",
+          "D": "The inability of pointed arches to channel vertical kinetic forces."
+        },
+        "correct_option": "B",
+        "rationale": "The passage specifies that Romanesque structures were constrained by the 'outward lateral thrust generated by semi-circular arches' which demanded thick, solid masonry walls."
+      },
+      {
+        "id": "ENG_RC_104_Q2",
+        "question": "Which trio of engineering innovations formed the core of Gothic structural design?",
+        "options": {
+          "A": "Barrel vaults, wooden trusses, and low clerestories.",
+          "B": "Pointed arches, ribbed groin vaults, and flying buttresses.",
+          "C": "Corbelled arches, concrete domes, and cantilevered beams.",
+          "D": "Semicircular arches, solid curtain walls, and central columns."
+        },
+        "correct_option": "B",
+        "rationale": "The text explicitly names the 'tripartite engineering synthesis: the pointed arch, the ribbed groin vault, and the external flying buttress.'"
+      },
+      {
+        "id": "ENG_RC_104_Q3",
+        "question": "How did the invention of the flying buttress transform church interiors?",
+        "options": {
+          "A": "It enabled walls to be relieved of load-bearing burdens, allowing for expansive stained glass.",
+          "B": "It required churches to be built entirely underground for thermal insulation.",
+          "C": "It replaced stone vaulting with lightweight timber ceilings.",
+          "D": "It eliminated the need for external masonry piers and foundations."
+        },
+        "correct_option": "A",
+        "rationale": "By transferring horizontal thrust outward to exterior piers, walls were freed from load-bearing duties, allowing them to be replaced by large stained-glass windows."
+      },
+      {
+        "id": "ENG_RC_104_Q4",
+        "question": "As used in the passage, the word 'fenestration' refers to:",
+        "options": {
+          "A": "The artistic composition of religious statues",
+          "B": "The design and arrangement of windows and openings",
+          "C": "The mortar mix used in foundation stonework",
+          "D": "The acoustic balance of choral sanctuaries"
+        },
+        "correct_option": "B",
+        "rationale": "'Fenestration' refers to the arrangement, proportioning, and design of windows and doors in a building."
+      },
+      {
+        "id": "ENG_RC_104_Q5",
+        "question": "The concept of 'lux nova' reflects what underlying aspect of Gothic design?",
+        "options": {
+          "A": "The financial cost of maintaining tallow candles inside stone crypts.",
+          "B": "The theological aspiration to illuminate sacred spaces with divine, colored light.",
+          "C": "The requirement to protect interior paintings from sunlight exposure.",
+          "D": "The military need to monitor approaching armies from cathedral spires."
+        },
+        "correct_option": "B",
+        "rationale": "The passage connects large clerestory stained-glass windows to realizing the theological aesthetic of '*lux nova*' (new spiritual light)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_105",
+    "passage_title": "Neuroplasticity and the Mechanisms of Synaptic Pruning",
+    "passage_text": "Early twentieth-century neuroscience maintained that the adult mammalian brain was structurally immutable following the conclusion of critical developmental windows in early childhood. This dogma was overturned by contemporary neuroimaging and electrophysiological research establishing neuroplasticity—the nervous system's capacity to dynamically reorganize its structural connectivity and functional mapping in response to experience, learning, or traumatic injury. At the micro-anatomical level, synaptic plasticity operates via two complementary mechanisms: Long-Term Potentiation (LTP) and synaptic pruning. While LTP strengthens frequently co-activated synaptic pathways via NMDA-receptor mediated dendritic spine growth, synaptic pruning selectively eliminates redundant or underutilized connections. Pruning is mediated largely by microglial cells, the resident immune macrophages of the central nervous system. Microglia recognize complement proteins deposited on inactive synapses, phagocytosing these vestigial junctions to optimize signal-to-noise ratios in neural circuits. Aberrant synaptic pruning is increasingly implicated in psychiatric conditions: excessive microglial engulfment during late adolescence correlates with schizophrenia, whereas inadequate early pruning is observed in autism spectrum disorders.",
+    "questions": [
+      {
+        "id": "ENG_RC_105_Q1",
+        "question": "What early dogma regarding the adult brain was disproven by modern neuroscience?",
+        "options": {
+          "A": "The belief that neurons communicate via electrochemical action potentials.",
+          "B": "The belief that the adult brain is structurally static and incapable of structural reorganization.",
+          "C": "The assumption that microglia serve an immunological role in the central nervous system.",
+          "D": "The theory that sensory input is processed by the cerebral cortex."
+        },
+        "correct_option": "B",
+        "rationale": "The text opens by pointing out that early neuroscience considered the adult mammalian brain 'structurally immutable following the conclusion of critical developmental windows.'"
+      },
+      {
+        "id": "ENG_RC_105_Q2",
+        "question": "What role do microglial cells play in the maintenance of neural circuits?",
+        "options": {
+          "A": "They generate action potentials during high-frequency stimulation.",
+          "B": "They phagocytose underutilized synapses tagged by complement proteins to optimize signal processing.",
+          "C": "They synthesize myelin sheaths around peripheral axon terminals.",
+          "D": "They inhibit long-term potentiation to prevent memory retention."
+        },
+        "correct_option": "B",
+        "rationale": "The passage describes microglia as macrophages that recognize complement proteins on inactive synapses, engulfing them to improve circuit efficiency."
+      },
+      {
+        "id": "ENG_RC_105_Q3",
+        "question": "According to the passage, how is excessive microglial pruning in late adolescence pathologically linked?",
+        "options": {
+          "A": "It correlates directly with the onset of schizophrenia.",
+          "B": "It results in severe cerebellar motor paralysis.",
+          "C": "It causes immediate sensory blindness in the visual cortex.",
+          "D": "It prevents dendritic spine growth in peripheral nerves."
+        },
+        "correct_option": "A",
+        "rationale": "The final sentence states that 'excessive microglial engulfment during late adolescence correlates with schizophrenia.'"
+      },
+      {
+        "id": "ENG_RC_105_Q4",
+        "question": "As used in the passage, the word 'phagocytosing' most nearly means:",
+        "options": {
+          "A": "Engulfing and breaking down cellular debris",
+          "B": "Stimulating electrical current across a gap",
+          "C": "Multiplying through mitotic cellular division",
+          "D": "Repairing broken axon microtubules"
+        },
+        "correct_option": "A",
+        "rationale": "'Phagocytosis' is the cellular process by which a cell engulfs and digests cellular debris, pathogens, or unnecessary structures."
+      },
+      {
+        "id": "ENG_RC_105_Q5",
+        "question": "What is the primary function of Long-Term Potentiation (LTP)?",
+        "options": {
+          "A": "To eliminate vestigial junctions from the spinal cord.",
+          "B": "To fortify frequently co-activated synaptic pathways via receptor-mediated growth.",
+          "C": "To prevent the deposit of complement proteins on active neural fibers.",
+          "D": "To induce microglial dormancy during brain trauma."
+        },
+        "correct_option": "B",
+        "rationale": "The text states that LTP 'strengthens frequently co-activated synaptic pathways via NMDA-receptor mediated dendritic spine growth.'"
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_106",
+    "passage_title": "The Decipherment of the Maya Hieroglyphic Script",
+    "passage_text": "For over a century, Mesoamerican epigraphy was dominated by the dogma of Sir J. Eric S. Thompson, who asserted that Classic Maya glyphs were non-linguistic ideograms conveying esoteric astronomical and numerological mysticism rather than spoken language. This paradigm relegated Maya civilization to an ahistorical vacuum, presumed to lack accounts of dynastic warfare or political history. The breakthrough came through the linguistic insights of Soviet linguist Yuri Knorozov in 1952. Knorozov observed that the sixteenth-century phonetic 'alphabet' compiled by Bishop Diego de Landa was actually a syllabary. Maya scribes utilized a logosyllabic writing system comprising hundreds of logograms (representing whole words) alongside phonetic syllables combining consonant-vowel (CV) units. By demonstrating that a single word could be written purely logographically, phonetically, or as a logogram with phonetic complements, Knorozov unlocked the phonetic key. Subsequent epigraphers, including Tatiana Proskouriakoff and Linda Schele, applied these phonetic readings to decipher monumental stelae, revealing detailed royal autobiographies, conquests, and complex state alliances.",
+    "questions": [
+      {
+        "id": "ENG_RC_106_Q1",
+        "question": "What was the central premise of Eric Thompson's perspective on Maya hieroglyphs?",
+        "options": {
+          "A": "They were an alphabetic script based on Spanish orthography.",
+          "B": "They were non-linguistic ideograms dealing exclusively with mystical and astronomical cycles.",
+          "C": "They recorded literal dynastic lineages of historical Maya kings.",
+          "D": "They were phonetic transcriptions of ancient Egyptian hieratic text."
+        },
+        "correct_option": "B",
+        "rationale": "Thompson argued that glyphs were purely symbolic and esoteric ideograms, denying that they represented a phonetic, spoken language."
+      },
+      {
+        "id": "ENG_RC_106_Q2",
+        "question": "What critical realization enabled Yuri Knorozov to decipher the Maya script?",
+        "options": {
+          "A": "The discovery of a bilingual Spanish-Maya Rosetta Stone in Yucatán.",
+          "B": "The realization that Diego de Landa's glyphic record represented a CV syllabary rather than a Western alphabet.",
+          "C": "The complete rejection of phonetic spelling in favor of pure ideographic interpretation.",
+          "D": "The carbon-dating of monumental stelae at Palenque and Tikal."
+        },
+        "correct_option": "B",
+        "rationale": "Knorozov realized that Diego de Landa had recorded syllabic consonant-vowel signs rather than discrete alphabetic letters."
+      },
+      {
+        "id": "ENG_RC_106_Q3",
+        "question": "What does the term 'logosyllabic' describe in the context of Maya writing?",
+        "options": {
+          "A": "A system incorporating both whole-word logograms and phonetic syllable signs.",
+          "B": "A purely numerical script used only on stone calendars.",
+          "C": "An unwritten oral tradition preserved in sacred songs.",
+          "D": "An exclusively consonantal script lacking vowel sounds."
+        },
+        "correct_option": "A",
+        "rationale": "The passage explains that Maya writing combined logograms (word signs) with phonetic syllables."
+      },
+      {
+        "id": "ENG_RC_106_Q4",
+        "question": "How did Tatiana Proskouriakoff contribute to the verification of Maya decipherment?",
+        "options": {
+          "A": "By inventing a new classification system for astronomical codices.",
+          "B": "By showing that inscriptions on stelae recorded genuine historical dynasties and royal biographies.",
+          "C": "By translating Spanish missionary records into Classical Latin.",
+          "D": "By demonstrating that Maya scribes wrote from right to left only."
+        },
+        "correct_option": "B",
+        "rationale": "The text notes that epigraphers like Proskouriakoff applied phonetic decipherment to reveal historical dynastic records and royal achievements."
+      },
+      {
+        "id": "ENG_RC_106_Q5",
+        "question": "As used in the passage, the word 'esoteric' most closely means:",
+        "options": {
+          "A": "Widely known and universally accessible",
+          "B": "Obscure and intended for a specialized elite",
+          "C": "Mathematically flawed and contradictory",
+          "D": "Militarily aggressive and confrontational"
+        },
+        "correct_option": "B",
+        "rationale": "'Esoteric' describes knowledge intended for or understood by only a small, specialized circle of initiates."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_107",
+    "passage_title": "Quantum Decoherence and the Measurement Problem",
+    "passage_text": "In the standard Copenhagen formulation of quantum mechanics, a microscopic physical system remains in an indeterminate linear superposition of all possible eigenstates until an act of 'observation' or measurement forces a discontinuous 'collapse' of the wave function into a single definite value. This formulation introduces a profound philosophical conundrum known as the measurement problem: it fails to demarcate where the quantum realm ends and classical macroscopic reality begins. Modern theoretical physics addresses this paradox through the framework of quantum decoherence. Decoherence posits that wave function collapse is not a physical intervention triggered by conscious observers; rather, it is the inevitable consequence of a quantum system interacting with its vast, unmonitored macroscopic environment. Constant entanglement with ambient thermal photons, air molecules, and radiation rapidly disperses the relative phases of the system's quantum states into the wider environment. This irreversible environmental entanglement suppresses quantum interference effects within fractions of a microsecond, making the system appear to obey classical probability laws without requiring an ad-hoc collapse mechanism.",
+    "questions": [
+      {
+        "id": "ENG_RC_107_Q1",
+        "question": "What is the core dilemma posed by the 'measurement problem' in standard Copenhagen quantum mechanics?",
+        "options": {
+          "A": "The inability to calculate the mass of subatomic quarks.",
+          "B": "The lack of a rigorous, non-arbitrary boundary separating quantum superposition from classical macroscopic reality.",
+          "C": "The mathematical incompatibility of thermal photons with the law of conservation of energy.",
+          "D": "The failure of laboratory sensors to record quantum state transitions in vacuum tubes."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that the Copenhagen model fails to demarcate where the quantum realm ends and classical macroscopic reality begins."
+      },
+      {
+        "id": "ENG_RC_107_Q2",
+        "question": "According to the theory of quantum decoherence, what eliminates quantum superpositions in macroscopic systems?",
+        "options": {
+          "A": "The presence of a conscious human observer.",
+          "B": "Irreversible entanglement with the unmonitored thermal environment.",
+          "C": "The complete cessation of atomic motion at absolute zero.",
+          "D": "The spontaneous annihilation of anti-matter particles."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that decoherence occurs due to 'constant entanglement with ambient thermal photons, air molecules, and radiation,' which disperses quantum phases."
+      },
+      {
+        "id": "ENG_RC_107_Q3",
+        "question": "How does quantum decoherence explain the appearance of classical physics in everyday life?",
+        "options": {
+          "A": "By completely eliminating the existence of atomic particles.",
+          "B": "By suppressing quantum interference effects rapidly through environmental interactions.",
+          "C": "By proving that wave functions are permanent and unchangeable.",
+          "D": "By requiring continuous human measurements to sustain physical reality."
+        },
+        "correct_option": "B",
+        "rationale": "Environmental entanglement disperses quantum phases on microsecond timescales, suppressing interference and making systems behave according to classical probability laws."
+      },
+      {
+        "id": "ENG_RC_107_Q4",
+        "question": "As used in the passage, the word 'eigenstates' refers to:",
+        "options": {
+          "A": "Distinct measurable quantum states corresponding to specific observable values",
+          "B": "Political boundaries recognized by international legal bodies",
+          "C": "Solid crystalline structures observed inside molten minerals",
+          "D": "The gravitational forces exerted by black holes"
+        },
+        "correct_option": "A",
+        "rationale": "In quantum mechanics, an eigenstate is a state in which a system has a definite, measurable value for a given observable property."
+      },
+      {
+        "id": "ENG_RC_107_Q5",
+        "question": "What is the author's primary attitude toward the decoherence framework?",
+        "options": {
+          "A": "Skeptical and dismissive of its theoretical validity",
+          "B": "Analytical and explanatory of its capacity to resolve a historical paradox",
+          "C": "Hostile toward its mathematical complexity",
+          "D": "Nostalgic for classical Newtonian mechanics"
+        },
+        "correct_option": "B",
+        "rationale": "The passage presents an objective, rigorous explanation of how decoherence addresses the measurement problem without relying on mysterious collapse mechanisms."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_108",
+    "passage_title": "The Agrarian Roots of the Industrial Revolution",
+    "passage_text": "While popular historical narratives attribute Britain's nineteenth-century industrial ascendancy primarily to the steam engine and coal metallurgy, economic historians emphasize that mechanization was preceded by an agrarian revolution. Throughout the eighteenth century, the enclosure movement converted fragmented communal open-field systems into consolidated, privately owned farms. Concurrently, agricultural pioneers introduced the Norfolk four-course crop rotation—alternating wheat, turnips, barley, and clover. This eliminated the traditional fallow year while clover biologically replenished depleted soil nitrogen and turnips provided winter livestock fodder. The resulting surge in crop yields and livestock weights had profound macroeconomic ramifications. Rising agricultural productivity reduced food costs, enabling rapid demographic expansion. Crucially, farm consolidation displaced millions of peasant laborers who could no longer survive on subsistence farming. Dispossessed of common grazing rights, this agrarian surplus labor force migrated into urban centers, supplying the workforce for northern industrial factories.",
+    "questions": [
+      {
+        "id": "ENG_RC_108_Q1",
+        "question": "What is the primary thesis of the passage regarding Britain's industrialization?",
+        "options": {
+          "A": "Industrial growth was entirely caused by the discovery of coal deposits in Wales.",
+          "B": "Technological mechanization was underpinned and enabled by prior agricultural transformations.",
+          "C": "The open-field system was superior in productivity to the enclosure movement.",
+          "D": "Urban factory workers returned to rural communities after the development of steam engines."
+        },
+        "correct_option": "B",
+        "rationale": "The author argues that Britain's industrial ascendancy was preceded and made possible by structural transformations in agricultural productivity and labor supply."
+      },
+      {
+        "id": "ENG_RC_108_Q2",
+        "question": "How did the Norfolk four-course rotation system improve farm productivity?",
+        "options": {
+          "A": "By leaving half of all arable acreage fallow every alternating season.",
+          "B": "By utilizing clover for biological nitrogen fixation and turnips for winter fodder, eliminating the fallow year.",
+          "C": "By prohibiting the cultivation of cereal grains like wheat and barley.",
+          "D": "By relying exclusively on synthetic chemical fertilizers imported from overseas."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that clover fixed nitrogen and turnips fed livestock in winter, allowing continuous cultivation without a fallow year."
+      },
+      {
+        "id": "ENG_RC_108_Q3",
+        "question": "What demographic consequence resulted from the enclosure movement?",
+        "options": {
+          "A": "An immediate return of urban populations to rural farming villages.",
+          "B": "The displacement of peasant laborers who migrated to cities, forming an industrial workforce.",
+          "C": "The complete eradication of international maritime trade networks.",
+          "D": "A catastrophic decline in aggregate British food consumption."
+        },
+        "correct_option": "B",
+        "rationale": "Enclosures removed common rights, forcing surplus peasant laborers to migrate into expanding industrial factory towns."
+      },
+      {
+        "id": "ENG_RC_108_Q4",
+        "question": "As used in the passage, the word 'fallow' refers to land that is:",
+        "options": {
+          "A": "Left unplanted for a season to restore soil fertility",
+          "B": "Permanently contaminated by industrial effluent",
+          "C": "Reserved exclusively for royal hunting expeditions",
+          "D": "Submerged beneath seasonal irrigation canals"
+        },
+        "correct_option": "A",
+        "rationale": "'Fallow' refers to plowed and harrowed farmland left unseeded for a period to recover natural moisture and soil nutrients."
+      },
+      {
+        "id": "ENG_RC_108_Q5",
+        "question": "Which factor directly enabled Britain's demographic expansion during this period?",
+        "options": {
+          "A": "Subsidized grain imports from the Americas",
+          "B": "Increased agricultural yields and reduced food production costs",
+          "C": "The elimination of all factory labor regulations",
+          "D": "Mandatory military service in continental Europe"
+        },
+        "correct_option": "B",
+        "rationale": "The text states that higher agricultural productivity and lower food costs supported rapid demographic growth."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_109",
+    "passage_title": "The Linguistic Architecture of Pidgins and Creoles",
+    "passage_text": "Sociolinguistics distinguishes sharply between pidgins and creoles in the trajectory of language genesis. A pidgin is a contact language that emerges opportunistically in multilingual trade environments or plantations where disparate linguistic groups must establish rudimentary communication. Pidgins are characterized by severely reduced lexicons, simplified morphological structures, an absence of grammatical inflection, and variable syntax. Crucially, a pidgin has no native speakers. The transition to a creole occurs when a pidgin is acquired as a primary mother tongue by a generation of children within that linguistic community. Through a process termed nativization or creolization, child learners spontaneously expand the structural complexity of the language. They regularize syntactic rules, develop complex tense-mood-aspect (TMA) verbal systems, and generate rich derivational morphology. Linguist Derek Bickerton's Language Bioprogram Hypothesis asserts that this rapid transformation reflects an innate, biologically determined cognitive grammar that allows the human brain to construct functional syntax even from impoverished linguistic input.",
+    "questions": [
+      {
+        "id": "ENG_RC_109_Q1",
+        "question": "What is the defining socio-linguistic difference between a pidgin and a creole?",
+        "options": {
+          "A": "Pidgins possess native speakers, whereas creoles are used only by foreign merchants.",
+          "B": "A pidgin has no native speakers, while a creole is acquired as a mother tongue by children.",
+          "C": "Creoles lack verbal aspect and tense markers entirely.",
+          "D": "Pidgins are recognized as official state languages in European courts."
+        },
+        "correct_option": "B",
+        "rationale": "The passage clearly states that a pidgin has no native speakers, while a creole emerges when children acquire the contact system as their primary native language."
+      },
+      {
+        "id": "ENG_RC_109_Q2",
+        "question": "What structural changes occur during the process of creolization?",
+        "options": {
+          "A": "Complete abandonment of spoken syntax in favor of manual gestures.",
+          "B": "Regularization of syntax, development of tense-mood-aspect systems, and morphological expansion.",
+          "C": "The elimination of all vowels in favor of consonant clusters.",
+          "D": "The reduction of vocabulary to fewer than one hundred words."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that children regularize grammar, build complex TMA systems, and expand morphology during nativization."
+      },
+      {
+        "id": "ENG_RC_109_Q3",
+        "question": "According to Derek Bickerton's Language Bioprogram Hypothesis, creolization illustrates:",
+        "options": {
+          "A": "The biological capacity of the human brain to generate complex grammar from impoverished input.",
+          "B": "The necessity of formal institutional schooling for syntactic mastery.",
+          "C": "The absolute failure of human cognition in multilingual trading ports.",
+          "D": "The genetic inheritance of specific regional dialects."
+        },
+        "correct_option": "A",
+        "rationale": "Bickerton posited that rapid structural regularization reflects an innate, biological cognitive grammar capable of building syntax from impoverished contact systems."
+      },
+      {
+        "id": "ENG_RC_109_Q4",
+        "question": "As used in the passage, the word 'impoverished' describes language input that is:",
+        "options": {
+          "A": "Economically disadvantaged",
+          "B": "Structurally simplified, incomplete, or fragmented",
+          "C": "Archaic and poetic",
+          "D": "Aggressive and hostile"
+        },
+        "correct_option": "B",
+        "rationale": "In linguistics, 'impoverished input' refers to fragmented or structurally limited language data from which children nevertheless extract full grammatical rules."
+      },
+      {
+        "id": "ENG_RC_109_Q5",
+        "question": "Which of the following environments is explicitly cited as a setting where pidgins typically originate?",
+        "options": {
+          "A": "Monolingual mountain villages",
+          "B": "Multilingual trade hubs or plantations",
+          "C": "Academic research universities",
+          "D": "Isolated monastic scriptoriums"
+        },
+        "correct_option": "B",
+        "rationale": "The passage identifies 'multilingual trade environments or plantations' where distinct groups must establish contact."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_110",
+    "passage_title": "The Mechanics of Stellar Nucleosynthesis",
+    "passage_text": "During the primordial Big Bang, cosmological nucleosynthesis generated only hydrogen, helium, and trace quantities of lithium. All heavier chemical elements that constitute planets and biological organisms were synthesized through stellar nucleosynthesis. Throughout the stable main-sequence lifespan of a star, gravitational collapse is held in hydrostatic equilibrium by outward thermal radiation pressure generated by the proton-proton chain or the CNO (carbon-nitrogen-oxygen) cycle, which fuses hydrogen into helium in the stellar core. When core hydrogen fuel is exhausted, the core contracts under gravity while outer envelopes expand, entering the red giant phase where the triple-alpha process fuses helium into carbon and oxygen. In massive stars exceeding eight solar masses, successive onion-like shells initiate advanced fusion stages, producing neon, magnesium, silicon, and ultimately iron-56. Because iron has the highest nuclear binding energy per nucleon, fusion of iron is endothermic—consuming rather than releasing energy. This starves the star of outward thermal pressure, triggering immediate core collapse and an explosive Type II supernova that disseminates synthesized elements across the interstellar medium.",
+    "questions": [
+      {
+        "id": "ENG_RC_110_Q1",
+        "question": "According to the passage, which elements were formed during primordial Big Bang nucleosynthesis?",
+        "options": {
+          "A": "Carbon, nitrogen, and oxygen",
+          "B": "Hydrogen, helium, and trace amounts of lithium",
+          "C": "Silicon, magnesium, and iron-56",
+          "D": "Uranium, gold, and platinum"
+        },
+        "correct_option": "B",
+        "rationale": "The opening sentence specifies that the Big Bang generated 'only hydrogen, helium, and trace quantities of lithium.'"
+      },
+      {
+        "id": "ENG_RC_110_Q2",
+        "question": "What maintains hydrostatic equilibrium in a main-sequence star?",
+        "options": {
+          "A": "Inward nuclear magnetic repulsion balancing cosmic radiation.",
+          "B": "Outward thermal radiation pressure from core fusion counterbalancing inward gravitational collapse.",
+          "C": "The endothermic absorption of energy during iron fusion.",
+          "D": "The expulsion of outer gaseous envelopes into surrounding space."
+        },
+        "correct_option": "B",
+        "rationale": "Hydrostatic equilibrium is sustained when outward radiation pressure from fusion balances the inward pull of gravity."
+      },
+      {
+        "id": "ENG_RC_110_Q3",
+        "question": "Why does the fusion of iron-56 cause the collapse of a massive star's core?",
+        "options": {
+          "A": "Iron fusion is endothermic and drains the energy required to support the star against gravity.",
+          "B": "Iron-56 expands the core volume too rapidly for surrounding shells to contain.",
+          "C": "Iron produces excessive outward radioactive pressure that ruptures the outer envelope.",
+          "D": "Iron instantly converts all surrounding matter into pure hydrogen gas."
+        },
+        "correct_option": "A",
+        "rationale": "Iron fusion consumes energy rather than releasing it (endothermic), removing the thermal radiation pressure needed to resist gravitational collapse."
+      },
+      {
+        "id": "ENG_RC_110_Q4",
+        "question": "As used in the passage, the word 'endothermic' describes a process that:",
+        "options": {
+          "A": "Emits vast amounts of light and heat",
+          "B": "Consumes or absorbs thermal energy from its surroundings",
+          "C": "Occurs exclusively in high-vacuum environments",
+          "D": "Operates at speeds exceeding that of light"
+        },
+        "correct_option": "B",
+        "rationale": "In thermodynamics and nuclear physics, an 'endothermic' reaction requires or absorbs net energy to proceed."
+      },
+      {
+        "id": "ENG_RC_110_Q5",
+        "question": "What astronomical event disseminates heavy elements into the interstellar medium?",
+        "options": {
+          "A": "The formation of a planetary nebula around a red dwarf",
+          "B": "A Type II core-collapse supernova",
+          "C": "The steady cooling of an isolated white dwarf",
+          "D": "Cosmic microwave background cooling"
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence notes that core collapse triggers 'an explosive Type II supernova that disseminates synthesized elements across the interstellar medium.'"
+      }
+    ]
+  }
+]

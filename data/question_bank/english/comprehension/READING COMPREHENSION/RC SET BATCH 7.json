@@ -1,0 +1,672 @@
+[
+  {
+    "passage_id": "ENG_RC_SET_161",
+    "passage_title": "The Thermodynamics of Black Hole Evaporation and Hawking Radiation",
+    "passage_text": "Classical general relativity dictates that a black hole is an absolute gravitational sink from which neither matter nor electromagnetic radiation can escape once past the event horizon. In 1974, theoretical physicist Stephen Hawking overturned this classical paradigm by applying quantum field theory in curved spacetime, demonstrating that black holes emit blackbody thermal radiation due to quantum vacuum effects near the horizon. According to quantum mechanics, the vacuum is not empty space but a dynamic realm of spontaneous vacuum fluctuations where virtual particle-antiparticle pairs continuously materialize and annihilate on sub-atomic timescales. Near the steep gravitational gradient of an event horizon, tidal forces can separate a virtual pair before annihilation occurs. One particle with negative energy relative to spatial infinity falls across the event horizon, while its partner with positive energy escapes into asymptotic space as real Hawking radiation. Because the black hole absorbs net negative energy, its mass diminishes over time ($dM/dt \\propto -1/M^2$). Consequently, smaller black holes possess higher Hawking temperatures ($T_H = \\hbar c^3 / 8\\pi G M k_B$) and evaporate at an accelerating rate, culminating in an explosive burst of gamma-ray radiation. This process introduced the Black Hole Information Paradox, challenging whether quantum information swallowed by a black hole is permanently destroyed upon evaporation.",
+    "questions": [
+      {
+        "id": "ENG_RC_161_Q1",
+        "question": "What quantum mechanical process drives the emission of Hawking radiation from a black hole?",
+        "options": {
+          "A": "The fusion of hydrogen nuclei into helium along the outer accretion disk.",
+          "B": "Tidal separation of virtual particle-antiparticle pairs near the event horizon, where one particle escapes and the other falls in.",
+          "C": "The reflection of external starlight off the singularity core.",
+          "D": "Electromagnetic repulsion between positively charged protons inside the horizon."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that gravitational tidal forces near the event horizon separate spontaneously generated virtual particle pairs before annihilation, allowing one particle to escape as radiation while the negative-energy partner falls inward."
+      },
+      {
+        "id": "ENG_RC_161_Q2",
+        "question": "What is the relationship between a black hole's mass and its Hawking temperature according to the text?",
+        "options": {
+          "A": "Temperature is directly proportional to mass, so larger black holes are hotter.",
+          "B": "Temperature is inversely proportional to mass, meaning smaller black holes radiate at higher temperatures.",
+          "C": "Temperature remains constant regardless of black hole mass variations.",
+          "D": "Temperature fluctuates randomly depending on the spin of surrounding galaxies."
+        },
+        "correct_option": "B",
+        "rationale": "The formula and accompanying explanation indicate that smaller black holes possess higher Hawking temperatures ($T_H \\propto 1/M$) and radiate more intensely."
+      },
+      {
+        "id": "ENG_RC_161_Q3",
+        "question": "Why does the absorption of a virtual particle cause a black hole's total mass to decrease?",
+        "options": {
+          "A": "The infalling particle carries negative energy relative to an observer at spatial infinity.",
+          "B": "The infalling particle converts the black hole's gravity into electrical current.",
+          "C": "The event horizon physically contracts to expel solid matter into deep space.",
+          "D": "The virtual particle chemically dissolves the black hole's singularity."
+        },
+        "correct_option": "A",
+        "rationale": "The text explicitly states that the particle falling across the event horizon carries negative energy relative to spatial infinity, reducing the net mass of the black hole."
+      },
+      {
+        "id": "ENG_RC_161_Q4",
+        "question": "What fundamental theoretical dilemma arose as a direct consequence of Hawking's discovery?",
+        "options": {
+          "A": "The breakdown of Newton's third law of planetary motion.",
+          "B": "The Black Hole Information Paradox regarding the potential destruction of quantum information.",
+          "C": "The complete invalidation of Einstein's special theory of relativity.",
+          "D": "The impossibility of detecting cosmic microwave background radiation."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence highlights the Black Hole Information Paradox, which questions whether quantum information is permanently erased when a black hole completely evaporates."
+      },
+      {
+        "id": "ENG_RC_161_Q5",
+        "question": "As used in the passage, the word 'asymptotic' describes a spatial region that is:",
+        "options": {
+          "A": "Infinitely hot and compressed into a geometric point",
+          "B": "Far removed from gravitational disturbances, approaching flat spacetime",
+          "C": "Completely filled with dense, crystallized iron atoms",
+          "D": "Moving at speeds exceeding the cosmic speed of light"
+        },
+        "correct_option": "B",
+        "rationale": "In theoretical physics and general relativity, 'asymptotic space' (or spatial infinity) refers to the distant region far from a gravitational mass where spacetime approaches a flat, uncurved metric."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_162",
+    "passage_title": "The Structural Functionalism of Robert K. Merton: Manifest and Latent Functions",
+    "passage_text": "In his influential mid-twentieth-century work *Social Theory and Social Structure*, American sociologist Robert K. Merton refined classical functionalist theory by dismantling its rigid assumption that all social institutions are universally functional and indispensable. To provide an empirical, nuanced analytical framework, Merton formulated the foundational distinction between **manifest functions** and **latent functions**. Manifest functions are the objective, intended, and consciously recognized consequences of a social pattern or institutional practice by participants in the system (for example, the Hopi rain dance undertaken with the conscious intention of producing meteorological rainfall). In contrast, latent functions are the unrecognized, unintended, and covert consequences of that same practice. In the Hopi rain dance example, while the ritual may fail its manifest meteorological objective, it fulfills the vital latent function of reinforcing social solidarity, collective identity, and communal cohesion during periods of ecological stress. Furthermore, Merton introduced the concept of **social dysfunctions**—institutional consequences that undermine systemic adaptation and stability (such as entrenched bureaucratic ritualism leading to administrative paralysis). By insisting that social practices can be functional for some groups while dysfunctional for others, Merton transformed structural functionalism from an inherently conservative defense of the status quo into a dynamic tool for critical institutional analysis.",
+    "questions": [
+      {
+        "id": "ENG_RC_162_Q1",
+        "question": "What is the primary difference between manifest functions and latent functions in Merton's sociological framework?",
+        "options": {
+          "A": "Manifest functions operate exclusively in pre-industrial tribes, while latent functions exist only in modern democracies.",
+          "B": "Manifest functions are conscious and intended consequences, whereas latent functions are unintended and unrecognized outcomes.",
+          "C": "Manifest functions are always harmful, while latent functions are universally beneficial.",
+          "D": "Manifest functions are created by statutory law, while latent functions are biological instincts."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines manifest functions as 'objective, intended, and consciously recognized consequences', whereas latent functions are 'unrecognized, unintended, and covert consequences.'"
+      },
+      {
+        "id": "ENG_RC_162_Q2",
+        "question": "In Merton's analysis of the Hopi rain dance, what served as the primary latent function of the ceremony?",
+        "options": {
+          "A": "The immediate precipitation of atmospheric rainfall over arid crops.",
+          "B": "The reinforcement of communal cohesion, social solidarity, and collective identity.",
+          "C": "The commercial sale of ceremonial pottery to neighboring settlements.",
+          "D": "The permanent migration of the tribe to coastal river valleys."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that while the ritual may not generate rain, its latent function is reinforcing group solidarity and communal cohesion during times of environmental stress."
+      },
+      {
+        "id": "ENG_RC_162_Q3",
+        "question": "How did Merton define a 'social dysfunction'?",
+        "options": {
+          "A": "An institutional consequence that impedes the adaptation, stability, or integration of a social system.",
+          "B": "A legal statute passed without a parliamentary majority.",
+          "C": "A genetic disease inherited across biological families.",
+          "D": "A complete cessation of industrial economic manufacturing."
+        },
+        "correct_option": "A",
+        "rationale": "The passage defines social dysfunctions as institutional consequences that 'undermine systemic adaptation and stability.'"
+      },
+      {
+        "id": "ENG_RC_162_Q4",
+        "question": "How did Merton's conceptual refinements alter the philosophical orientation of structural functionalism?",
+        "options": {
+          "A": "They converted functionalism into a dogmatic religious doctrine.",
+          "B": "They transformed it from a conservative justification of the status quo into a critical analytical tool capable of assessing structural flaws.",
+          "C": "They forced sociologists to abandon all empirical field research.",
+          "D": "They proved that human societies never experience cultural changes."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that Merton transformed functionalism 'from an inherently conservative defense of the status quo into a dynamic tool for critical institutional analysis.'"
+      },
+      {
+        "id": "ENG_RC_162_Q5",
+        "question": "As used in the passage, the word 'indispensable' most closely means:",
+        "options": {
+          "A": "Completely useless and redundant",
+          "B": "Absolutely necessary and essential",
+          "C": "Easily replaced by commercial substitutes",
+          "D": "Harmful to political governance"
+        },
+        "correct_option": "B",
+        "rationale": "'Indispensable' describes something that is absolutely necessary, essential, or vital."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_163",
+    "passage_title": "The Biogeochemistry of Anaerobic Ammonium Oxidation (Anammox)",
+    "passage_text": "For over a century, the biological nitrogen cycle was conceptualized as a triad of processes: nitrogen fixation, aerobic nitrification, and heterotrophic denitrification. In the 1990s, environmental microbiologists identified an entirely novel metabolic pathway that resolved major oceanic nitrogen imbalances: Anaerobic Ammonium Oxidation (Anammox). Executed exclusively by specialized planctomycetes bacteria (such as *Scalindua* and *Kuenenia*), the anammox process couples the oxidation of ammonium ($NH_4^+$) with the reduction of nitrite ($NO_2^-$) under strictly anoxic conditions to produce inert dinitrogen gas ($N_2$). This reaction takes place within a unique, dedicated intracellular organelle termed the **anammoxosome**. To prevent the escape of toxic, highly reactive metabolic intermediates—specifically hydrazine ($N_2H_4$, rocket propellant fuel) and hydroxylamine ($NH_2OH$)—the anammoxosome membrane is packed with unique 'ladderane' lipids. Ladderane lipids consist of concatenated cyclobutane rings linearly fused together, forming an exceptionally dense, rigid hydrocarbon barrier with minimal membrane permeability. Oceanographic surveys demonstrate that anammox accounts for thirty to fifty percent of all nitrogen loss in marine Oxygen Minimum Zones (OMZs), making it a major planetary sink for fixed bioavailable nitrogen.",
+    "questions": [
+      {
+        "id": "ENG_RC_163_Q1",
+        "question": "What fundamental chemical conversion defines the Anammox metabolic pathway?",
+        "options": {
+          "A": "The oxidation of sulfur into sulfuric acid using dissolved atmospheric oxygen.",
+          "B": "The anaerobic coupling of ammonium oxidation with nitrite reduction to generate dinitrogen gas.",
+          "C": "The synthesis of complex glucose sugars from sunlight and carbon dioxide.",
+          "D": "The breakdown of atmospheric nitrogen into inorganic nitrate salts."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that anammox couples 'the oxidation of ammonium ($NH_4^+$) with the reduction of nitrite ($NO_2^-$) under strictly anoxic conditions to produce inert dinitrogen gas ($N_2$).'"
+      },
+      {
+        "id": "ENG_RC_163_Q2",
+        "question": "What structural role is served by 'ladderane' lipids within the anammoxosome membrane?",
+        "options": {
+          "A": "They actively pump glucose out into surrounding marine sediments.",
+          "B": "They form an exceptionally dense, impermeable barrier that prevents toxic hydrazine intermediates from leaking into the cytoplasm.",
+          "C": "They absorb ambient sunlight to power photosynthetic enzyme cascades.",
+          "D": "They dissolve the bacterial cell wall during mitotic division."
+        },
+        "correct_option": "B",
+        "rationale": "The passage details that ladderane lipids' dense fused cyclobutane rings create an impermeable barrier preventing cytotoxic hydrazine ($N_2H_4$) from leaking."
+      },
+      {
+        "id": "ENG_RC_163_Q3",
+        "question": "Which cytotoxic intermediate chemical generated during anammox metabolism is cited in the passage?",
+        "options": {
+          "A": "Hydrazine ($N_2H_4$)",
+          "B": "Hydrochloric acid ($HCl$)",
+          "C": "Sodium chloride ($NaCl$)",
+          "D": "Ferrous oxide ($Fe_2O_3$)"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly names hydrazine ($N_2H_4$) and hydroxylamine as toxic, highly reactive intermediate metabolites."
+      },
+      {
+        "id": "ENG_RC_163_Q4",
+        "question": "What is the broader ecological significance of the anammox process in global oceans?",
+        "options": {
+          "A": "It converts global ocean waters into acidic solutions.",
+          "B": "It accounts for up to 50% of total nitrogen loss in marine Oxygen Minimum Zones (OMZs).",
+          "C": "It prevents polar ice caps from melting during summer months.",
+          "D": "It serves as the sole source of oxygen production in deep benthic trenches."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that anammox accounts for 30% to 50% of all fixed nitrogen loss in marine Oxygen Minimum Zones."
+      },
+      {
+        "id": "ENG_RC_163_Q5",
+        "question": "As used in the passage, the word 'anoxic' refers to an environment that is:",
+        "options": {
+          "A": "Completely devoid of dissolved molecular oxygen",
+          "B": "Extremely high in atmospheric air pressure",
+          "C": "Contaminated by synthetic chemical pesticides",
+          "D": "Heated to boiling volcanic temperatures"
+        },
+        "correct_option": "A",
+        "rationale": "'Anoxic' in biology and ecology denotes an environment or condition completely lacking dissolved oxygen ($O_2$)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_164",
+    "passage_title": "The Epistemology of Thomas Kuhn and Scientific Paradigm Shifts",
+    "passage_text": "In his landmark 1962 philosophical treatise *The Structure of Scientific Revolutions*, Thomas S. Kuhn challenged the positivist depiction of scientific progress as a steady, cumulative accretion of objective facts. Kuhn posited that the development of mature sciences is punctuated by periodic revolutionary disruptions. Under ordinary conditions, scientific communities engage in **normal science**, operating within a prevailing **paradigm**—a shared matrix of theoretical commitments, epistemological standards, instrumentation, and exemplary problem-solutions (exemplars). During normal science, researchers do not attempt to test or falsify the overarching paradigm; rather, they engage in cumulative 'puzzle-solving', extending the scope and precision of the paradigm to match experimental observations. Over time, however, anomalous empirical findings inevitably emerge that resist incorporation into the theoretical framework. When anomalies accumulate and resist ad-hoc modifications, the scientific discipline enters a state of crisis. This intellectual instability precipitates a scientific revolution: the established paradigm is overthrown and supplanted by a new, radically incompatible paradigm (such as the transition from Ptolemaic geocentrism to Copernican heliocentrism, or from Newtonian mechanics to Einsteinian relativity). Crucially, Kuhn asserted that competing paradigms are **incommensurable**—because they employ different perceptual frameworks, evaluative standards, and conceptual vocabularies, there exists no neutral, objective observational language to evaluate them without bias.",
+    "questions": [
+      {
+        "id": "ENG_RC_164_Q1",
+        "question": "How did Thomas Kuhn's view of scientific progress contradict classical positivist models?",
+        "options": {
+          "A": "He argued that science never changes and is completely static across millennia.",
+          "B": "He showed that science advances through episodic paradigm shifts and revolutions rather than smooth, cumulative accretion.",
+          "C": "He claimed that scientific experiments are deliberately fabricated by political leaders.",
+          "D": "He asserted that empirical observations must be completely replaced by theological faith."
+        },
+        "correct_option": "B",
+        "rationale": "Kuhn rejected the cumulative accretion model, demonstrating that science evolves through periods of normal science punctuated by revolutionary paradigm shifts."
+      },
+      {
+        "id": "ENG_RC_164_Q2",
+        "question": "What primary activity occupies scientists during periods of 'normal science' in Kuhn's model?",
+        "options": {
+          "A": "Constantly attempting to falsify and destroy the core paradigm.",
+          "B": "Engaging in 'puzzle-solving' to extend the scope and precision of the reigning paradigm.",
+          "C": "Writing philosophical manifestos condemning scientific technology.",
+          "D": "Conducting public political protests against academic institutions."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that during normal science, researchers engage in 'puzzle-solving' within the established paradigm rather than questioning its underlying premises."
+      },
+      {
+        "id": "ENG_RC_164_Q3",
+        "question": "What condition precipitates a state of crisis leading to a scientific revolution?",
+        "options": {
+          "A": "A sudden reduction in governmental research funding.",
+          "B": "The persistent accumulation of anomalies that resist resolution within the prevailing paradigm.",
+          "C": "The complete destruction of all university laboratory facilities.",
+          "D": "The universal agreement of all scientists on every theoretical question."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that crisis occurs when anomalous empirical findings accumulate and resist resolution or ad-hoc incorporation into the existing framework."
+      },
+      {
+        "id": "ENG_RC_164_Q4",
+        "question": "What does Kuhn mean by asserting that competing paradigms are 'incommensurable'?",
+        "options": {
+          "A": "They cannot be measured with metric laboratory rulers.",
+          "B": "They lack a shared, neutral observational language and evaluative standard to compare them objectively.",
+          "C": "They are identical in their mathematical formulas and vocabulary.",
+          "D": "They both agree completely on experimental findings."
+        },
+        "correct_option": "B",
+        "rationale": "Kuhn defined incommensurability as the absence of a neutral, objective, theory-independent standard to evaluate competing paradigms directly."
+      },
+      {
+        "id": "ENG_RC_164_Q5",
+        "question": "As used in the passage, the word 'supplanted' most nearly means:",
+        "options": {
+          "A": "Supported and strengthened with evidence",
+          "B": "Replaced or superseded by something else",
+          "C": "Buried in underground agricultural soil",
+          "D": "Translated into ancient languages"
+        },
+        "correct_option": "B",
+        "rationale": "'Supplant' means to supersede, replace, or take the place of an established entity or concept."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_165",
+    "passage_title": "The Evolutionary Dynamics of the Red Queen Hypothesis",
+    "passage_text": "In 1973, evolutionary biologist Leigh Van Valen formulated the Red Queen Hypothesis, drawing inspiration from Lewis Carroll's *Through the Looking-Glass*, wherein the Red Queen informs Alice: 'Now, here, you see, it takes all the running you can do, to keep in the same place.' Van Valen analyzed paleontological fossil data across taxonomic families, discovering that the probability of extinction within any given evolutionary clade remains essentially constant over geological epochs, regardless of how long the lineage has previously survived. In classical Darwinian models, species were expected to become progressively better adapted over time, exhibiting declining extinction vulnerability. Van Valen resolved this contradiction by demonstrating that an organism's adaptive landscape is not static; it is composed of co-evolving antagonistic competitors, predators, and pathogens. Any evolutionary advance achieved by one species (e.g., faster prey evasion) immediately exerts selective pressure on its competitors and predators to evolve counter-adaptations (e.g., enhanced predatory stealth), resulting in an unending co-evolutionary arms race. Consequently, a species must continuously adapt and evolve merely to maintain its relative fitness and avoid extinction. Furthermore, William D. Hamilton applied the Red Queen dynamic to explain the evolution of sexual reproduction: despite the two-fold cost of sex, genetic recombination constantly generates novel multi-locus genotypes that prevent short-generation micro-parasites from deciphering host immune defenses.",
+    "questions": [
+      {
+        "id": "ENG_RC_165_Q1",
+        "question": "What empirical paleontological observation motivated Leigh Van Valen to formulate the Red Queen Hypothesis?",
+        "options": {
+          "A": "The sudden mass extinction of marine trilobites during the Cambrian.",
+          "B": "The finding that extinction probabilities for species lineages remain constant over geological time rather than decreasing with lineage age.",
+          "C": "The complete absence of predatory metazoans in the fossil record.",
+          "D": "The discovery that asexual cloning organisms live longer than sexual organisms."
+        },
+        "correct_option": "B",
+        "rationale": "Van Valen discovered that the probability of extinction within any evolutionary clade remains constant over time, disproving the expectation that older lineages become invulnerable."
+      },
+      {
+        "id": "ENG_RC_165_Q2",
+        "question": "According to the Red Queen Hypothesis, why must organisms evolve continuously?",
+        "options": {
+          "A": "To increase their physical body size until reaching fossilization.",
+          "B": "To maintain relative fitness in an ever-shifting environment driven by co-evolving competitors, predators, and parasites.",
+          "C": "To eliminate the need for cellular mitochondrial respiration.",
+          "D": "To escape the pull of planetary gravitational forces."
+        },
+        "correct_option": "B",
+        "rationale": "Because co-evolving antagonistic species continually adapt, a species must continuously evolve just to maintain its relative ecological standing and avoid extinction."
+      },
+      {
+        "id": "ENG_RC_165_Q3",
+        "question": "How does W.D. Hamilton's application of the Red Queen hypothesis explain the evolutionary persistence of sexual reproduction?",
+        "options": {
+          "A": "Sexual reproduction completely eliminates all genetic mutations from offspring.",
+          "B": "Meiotic recombination creates novel genotypes, preventing rapidly evolving parasites from cracking host immune defenses.",
+          "C": "Asexual cloning requires excessive chemical energy compared to mating.",
+          "D": "Sexual reproduction allows organisms to reproduce without consuming food."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that genetic recombination continually shuffles alleles into novel genotypes, preventing specialized micro-parasites from adapting to host defenses."
+      },
+      {
+        "id": "ENG_RC_165_Q4",
+        "question": "What is the 'two-fold cost of sex' referenced in the passage?",
+        "options": {
+          "A": "The financial cost of purchasing marriage licenses in legal courts.",
+          "B": "The evolutionary disadvantage of producing non-reproducing males and passing on only half of maternal genes per offspring.",
+          "C": "The requirement to maintain two distinct cellular nuclei in every cell.",
+          "D": "The double expenditure of glucose during winter hibernation."
+        },
+        "correct_option": "B",
+        "rationale": "In evolutionary biology, the two-fold cost of sex refers to producing males (who do not produce eggs directly) and diluting maternal genetic contribution to 50% compared to asexual cloning."
+      },
+      {
+        "id": "ENG_RC_165_Q5",
+        "question": "As used in the passage, the word 'antagonistic' most closely describes interactions that are:",
+        "options": {
+          "A": "Harmoniously cooperative and mutualistic",
+          "B": "Opposing, competitive, or mutually hostile",
+          "C": "Artificially fabricated in laboratory tests",
+          "D": "Completely harmless to both organisms"
+        },
+        "correct_option": "B",
+        "rationale": "'Antagonistic' describes opposing, hostile, or competing interactions (such as predator-prey or host-parasite dynamics)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_166",
+    "passage_title": "The Macroeconomics of the Taylor Rule and Monetary Reaction Functions",
+    "passage_text": "In 1993, American economist John B. Taylor formulated the **Taylor Rule**, an empirical and normative monetary policy reaction function that prescribes how a central bank should adjust its nominal short-term policy interest rate in response to shifting macroeconomic conditions. Prior to Taylor's formulation, central banking was often viewed as discretionary and unpredictable. The classic Taylor Rule specifies: $i_t = r^* + \\pi_t + 0.5(\\pi_t - \\pi^*) + 0.5(y_t - y^*)$, where $i_t$ is the nominal policy interest rate, $r^*$ is the equilibrium real interest rate, $\\pi_t$ is the current rate of inflation, $\\pi^*$ is the central bank's inflation target (typically 2%), and $(y_t - y^*)$ represents the output gap (the percentage deviation of real GDP from potential GDP). The structural genius of the equation lies in the **Taylor Principle**: the coefficient on inflation exceeds unity ($1 + 0.5 = 1.5$). Consequently, when inflation rises by one percentage point above target, the central bank is prescribed to raise the nominal policy rate by 1.5 percentage points. This ensures that the *real* interest rate ($r = i - \\pi$) increases, which raises borrowing costs, dampens aggregate consumer spending and corporate investment, and cools inflationary overheating. Deviations from the Taylor Principle—such as failing to raise nominal rates aggressively during the 1970s—yielded negative real interest rates that fueled stagflation.",
+    "questions": [
+      {
+        "id": "ENG_RC_166_Q1",
+        "question": "What two primary macroeconomic variables dictate interest rate adjustments in the Taylor Rule?",
+        "options": {
+          "A": "The sovereign gold reserves and foreign exchange exchange rates.",
+          "B": "The inflation gap (deviation from target) and the output gap (deviation from potential GDP).",
+          "C": "The annual stock market index and national trade deficits.",
+          "D": "The minimum wage rate and commercial real estate prices."
+        },
+        "correct_option": "B",
+        "rationale": "The formula and passage clearly establish that nominal rates adjust based on inflation deviations from target ($\pi_t - \pi^*$) and output deviations from potential GDP ($y_t - y^*$)."
+      },
+      {
+        "id": "ENG_RC_166_Q2",
+        "question": "What is the central requirement of the 'Taylor Principle'?",
+        "options": {
+          "A": "The central bank must keep nominal interest rates at exactly zero percent permanently.",
+          "B": "When inflation rises, the nominal interest rate must be increased by more than one-for-one to raise the real interest rate.",
+          "C": "The government must eliminate all income taxes during economic recessions.",
+          "D": "Commercial banks must be prohibited from lending money to consumers."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains the Taylor Principle mandates raising the nominal rate by more than 1% for every 1% rise in inflation (a coefficient of 1.5), ensuring the real interest rate rises to curb inflation."
+      },
+      {
+        "id": "ENG_RC_166_Q3",
+        "question": "What economic consequence occurred during the 1970s when central banks failed to adhere to the Taylor Principle?",
+        "options": {
+          "A": "Severe deflation and currency appreciation across Europe.",
+          "B": "Negative real interest rates that exacerbated inflationary spirals and stagflation.",
+          "C": "The complete collapse of international maritime trade.",
+          "D": "The immediate liquidation of all central banking institutions."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence notes that failing to raise rates aggressively in the 1970s caused negative real interest rates that fueled persistent stagflation."
+      },
+      {
+        "id": "ENG_RC_166_Q4",
+        "question": "In macroeconomic accounting, what does the 'output gap' ($(y_t - y^*)$) represent?",
+        "options": {
+          "A": "The total physical volume of gold imported from abroad.",
+          "B": "The percentage deviation of actual real GDP from the economy's potential productive capacity.",
+          "C": "The difference between total government taxes and public spending.",
+          "D": "The number of unemployed workers who refuse to seek employment."
+        },
+        "correct_option": "B",
+        "rationale": "The passage defines the output gap as 'the percentage deviation of real GDP from potential GDP.'"
+      },
+      {
+        "id": "ENG_RC_166_Q5",
+        "question": "As used in the passage, the word 'dampens' most nearly means:",
+        "options": {
+          "A": "Saturates with liquid water",
+          "B": "Restrains, diminishes, or reduces the intensity of",
+          "C": "Accelerates rapidly into panic",
+          "D": "Legally prohibits by executive decree"
+        },
+        "correct_option": "B",
+        "rationale": "'Dampens' in economics means to suppress, reduce, restrain, or moderate activity (such as spending or demand)."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_167",
+    "passage_title": "The Architectural Geopolitics of Haussmannization in Nineteenth-Century Paris",
+    "passage_text": "Commissioned by Emperor Napoleon III in 1853 and executed by the Prefect of the Seine, Georges-Eugène Haussmann, the transformation of Paris—known as **Haussmannization**—demolished the crowded, medieval urban fabric to construct a monumental capitalist metropolis. Haussmann carved wide, straight neoclassical boulevards connecting major railway termini, engineered an advanced subterranean sewer network under Eugène Belgrand, created expansive public parks (Bois de Boulogne), and mandated uniform six-story ashlar stone apartment facades. Beyond official narratives celebrating hygienic modernization, aesthetic grandeur, and vehicular traffic circulation, historical materialists (such as Walter Benjamin and David Harvey) underscore the underlying sociopolitical and military objectives of the project. The medieval urban topography of labyrinthine, narrow cobblestone streets had repeatedly enabled radical working-class insurrections, facilitating barricade construction during the revolutions of 1789, 1830, and 1848. Haussmann's expansive boulevards prevented barricading and provided straight, unobstructed corridors for rapid cavalry charges and artillery lines of fire. Furthermore, the expropriation and destruction of central working-class tenements displaced over three hundred thousand impoverished proletarians to peripheral suburban ring settlements (*banlieues*), inaugurating modern socio-spatial class segregation.",
+    "questions": [
+      {
+        "id": "ENG_RC_167_Q1",
+        "question": "What primary infrastructural and architectural transformations characterized Haussmannization?",
+        "options": {
+          "A": "The construction of medieval stone moats and feudal drawbridges around the city.",
+          "B": "The carving of wide neoclassical boulevards, installation of subterranean sewers, and standardization of residential facades.",
+          "C": "The complete demolition of all railway stations in favor of horse carriages.",
+          "D": "The conversion of the city center into agricultural farmland."
+        },
+        "correct_option": "B",
+        "rationale": "The text lists wide boulevards connecting train stations, advanced sewers, public parks, and uniform stone facades as key features."
+      },
+      {
+        "id": "ENG_RC_167_Q2",
+        "question": "According to historical materialists like David Harvey, what military rationale motivated the construction of wide, straight boulevards?",
+        "options": {
+          "A": "To allow space for foreign military parades during peacetime.",
+          "B": "To prevent civilian barricade construction and facilitate rapid troop movements and artillery deployment during insurrections.",
+          "C": "To create landing runways for early military aviation prototypes.",
+          "D": "To camouflage the city from high-altitude naval reconnaissance."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explains that wide boulevards prevented barricades (frequent in 1789/1830/1848) and provided straight corridors for cavalry and artillery."
+      },
+      {
+        "id": "ENG_RC_167_Q3",
+        "question": "What demographic consequence resulted from the mass demolition of central Paris tenements?",
+        "options": {
+          "A": "The complete eradication of economic inequality across France.",
+          "B": "The displacement of hundreds of thousands of working-class citizens to peripheral suburban *banlieues*, establishing spatial class segregation.",
+          "C": "The voluntary migration of all Parisian citizens to rural agricultural provinces.",
+          "D": "An immediate doubling of the urban aristocratic population."
+        },
+        "correct_option": "B",
+        "rationale": "The text details that demolitions displaced over 300,000 working-class citizens to peripheral suburbs (*banlieues*), inaugurating modern residential class segregation."
+      },
+      {
+        "id": "ENG_RC_167_Q4",
+        "question": "Which engineer collaborated with Haussmann to construct the subterranean sewer and aqueduct system?",
+        "options": {
+          "A": "Eugène Belgrand",
+          "B": "Walter Benjamin",
+          "C": "David Harvey",
+          "D": "Napoleon Bonaparte"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly names Eugène Belgrand as the engineer who designed the subterranean sewer and aqueduct network."
+      },
+      {
+        "id": "ENG_RC_167_Q5",
+        "question": "As used in the passage, the word 'expropriation' refers to:",
+        "options": {
+          "A": "The state's compulsory seizure of private property for public use",
+          "B": "The voluntary donation of personal wealth to religious charities",
+          "C": "The scientific excavation of ancient dinosaur skeletons",
+          "D": "The illegal smuggling of luxury goods across international borders"
+        },
+        "correct_option": "A",
+        "rationale": "'Expropriation' is the legal or state action of dispossessing a property owner or seizing private land/property for public redevelopment."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_168",
+    "passage_title": "The Neurobiology of Cerebellar Long-Term Depression (LTD)",
+    "passage_text": "In cellular neuroscience, while Long-Term Potentiation (LTP) strengthens synaptic efficacy, **Long-Term Depression (LTD)** provides the essential bidirectional counterpart: the activity-dependent reduction in the efficacy of neuronal synapses. In the cerebellar cortex, LTD at parallel fiber–Purkinje cell synapses represents the foundational cellular mechanism underlying motor learning, motor adaptation, and classical eyeblink conditioning. Purkinje neurons—the sole output cells of the cerebellar cortex—receive two distinct, convergent excitatory inputs: thousands of parallel fibers (originating from granule cells) and a single, powerful climbing fiber (originating from the inferior olive). Cerebellar LTD is triggered only when parallel fibers and the climbing fiber are co-activated in close temporal contiguity. Parallel fiber stimulation releases glutamate, activating postsynaptic AMPA receptors and metabotropic glutamate receptors ($mGluR1$). Concurrently, climbing fiber depolarizations activate voltage-gated calcium channels, causing a massive intracellular calcium ($Ca^{2+}$) influx. The synergistic convergence of $mGluR1$-mediated diacylglycerol ($DAG$) production and $Ca^{2+}$ elevation activates Protein Kinase C ($PKC$). Activated PKC phosphorylates the GluA2 subunits of postsynaptic AMPA receptors, triggering clathrin-mediated endocytosis that internalizes AMPA receptors from the postsynaptic density into intracellular vesicles. With fewer AMPA receptors available on the dendritic membrane, the Purkinje cell exhibits depressed electrical sensitivity to subsequent parallel fiber inputs, fine-tuning motor error-correction.",
+    "questions": [
+      {
+        "id": "ENG_RC_168_Q1",
+        "question": "What is the primary behavioral function supported by Long-Term Depression (LTD) in the cerebellum?",
+        "options": {
+          "A": "Long-term episodic memory storage of spoken childhood vocabulary.",
+          "B": "Motor learning, fine-tuned motor adaptation, and classical conditioning.",
+          "C": "Visual color discrimination in the primary occipital cortex.",
+          "D": "Regulating circadian hormonal release in the pineal gland."
+        },
+        "correct_option": "B",
+        "rationale": "The passage notes that cerebellar LTD is 'the foundational cellular mechanism underlying motor learning, motor adaptation, and classical eyeblink conditioning.'"
+      },
+      {
+        "id": "ENG_RC_168_Q2",
+        "question": "What unique dual-input condition is mandatory to trigger LTD in cerebellar Purkinje cells?",
+        "options": {
+          "A": "Simultaneous co-activation of parallel fibers and the climbing fiber in close temporal contiguity.",
+          "B": "Complete absence of all calcium ions in the synaptic cleft.",
+          "C": "Isolated stimulation of peripheral sensory skin pain receptors.",
+          "D": "Simultaneous inhibition of all neurotransmitter receptors."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that LTD occurs only when parallel fibers (granule cells) and the climbing fiber (inferior olive) are activated simultaneously."
+      },
+      {
+        "id": "ENG_RC_168_Q3",
+        "question": "What biochemical event directly reduces the electrical sensitivity of Purkinje cells during LTD?",
+        "options": {
+          "A": "The complete destruction of the cell's nuclear DNA chromosomes.",
+          "B": "Clathrin-mediated endocytosis and internalization of phosphorylated AMPA receptors from the postsynaptic membrane.",
+          "C": "The conversion of the Purkinje cell into a glial astrocyte.",
+          "D": "The permanent crystallization of all intracellular calcium."
+        },
+        "correct_option": "B",
+        "rationale": "The passage states that PKC phosphorylates GluA2 subunits, triggering clathrin-mediated endocytosis that removes AMPA receptors from the postsynaptic density."
+      },
+      {
+        "id": "ENG_RC_168_Q4",
+        "question": "Where does the single, powerful climbing fiber input to a Purkinje cell originate anatomically?",
+        "options": {
+          "A": "The inferior olive in the medulla oblongata",
+          "B": "The visual retina in the eye",
+          "C": "The olfactory bulb in the nasal cavity",
+          "D": "The dorsal root ganglion of the lumbar spine"
+        },
+        "correct_option": "A",
+        "rationale": "The passage explicitly mentions 'a single, powerful climbing fiber (originating from the inferior olive).'"
+      },
+      {
+        "id": "ENG_RC_168_Q5",
+        "question": "As used in the passage, the term 'endocytosis' refers to:",
+        "options": {
+          "A": "The cellular process of engulfing and internalizing membrane proteins into vesicles",
+          "B": "The outward expulsion of electrical currents across an axon",
+          "C": "The sudden rupture and bursting of a cellular wall",
+          "D": "The replication of mitochondrial chromosomes during mitosis"
+        },
+        "correct_option": "A",
+        "rationale": "In cell biology, 'endocytosis' is the transport process by which cells take in substances or internalize cell surface receptors via membrane-bound vesicles."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_169",
+    "passage_title": "The Jurisprudence of H.L.A. Hart and the 'Open Texture' of Law",
+    "passage_text": "In his landmark 1961 jurisprudential masterwork *The Concept of Law*, British legal philosopher H.L.A. Hart addressed the inherent indeterminacy of legal language by articulating the doctrine of the **open texture** of law. Hart rejected both extreme formalism (which assumes legal rules provide mechanically deduced, unambiguous answers for every case) and extreme legal realism (which claims law is merely whatever a judge decides on a whim). Hart argued that because human language relies on general classifications and legislators cannot foresee all future factual permutations, legal rules invariably exhibit an open texture. Every statutory rule possesses a **core of settled meaning**—where factual applications are clear and indisputable—surrounded by a **penumbra of uncertainty**, where borderline cases arise. Hart illustrated this with his famous hypothetical ordinance: 'No vehicles may be taken into the park.' At the settled core, the rule clearly excludes ordinary automobiles, buses, and motorcycles. In the penumbral zone, however, difficult borderline questions emerge: does the prohibition encompass bicycles, motorized wheelchairs, battery-operated toy cars, or an immobilized military tank mounted as a war memorial? Hart asserted that when adjudicating penumbral cases, judges cannot simply find pre-existing law; instead, they must exercise bounded judicial discretion, acting as interstitial legislators by balancing moral purposes, social policies, and statutory aims.",
+    "questions": [
+      {
+        "id": "ENG_RC_169_Q1",
+        "question": "What did H.L.A. Hart mean by the 'open texture' of statutory law?",
+        "options": {
+          "A": "Laws must be printed on coarse, unpolished parchment paper.",
+          "B": "Legal language possesses a core of settled meaning surrounded by a penumbra of borderline ambiguity due to linguistic generality.",
+          "C": "All legal statutes should be completely abolished every ten years.",
+          "D": "Judges are strictly forbidden from interpreting written legislation."
+        },
+        "correct_option": "B",
+        "rationale": "Hart defined open texture as the reality that general legal rules have a clear core of settled meaning but also a penumbral boundary of uncertainty in borderline cases."
+      },
+      {
+        "id": "ENG_RC_169_Q2",
+        "question": "How does Hart distinguish the 'core of settled meaning' from the 'penumbra of uncertainty'?",
+        "options": {
+          "A": "The core applies to criminal law, while the penumbra applies only to maritime admiralty law.",
+          "B": "The core covers clear, indisputable applications, while the penumbra involves ambiguous borderline cases.",
+          "C": "The core is written in Latin, while the penumbra is written in modern English.",
+          "D": "The core is enforced by police, while the penumbra is enforced by religious clergy."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that the core contains indisputable applications (like cars in the park), while the penumbra contains debatable borderline cases (like toy cars or war memorial tanks)."
+      },
+      {
+        "id": "ENG_RC_169_Q3",
+        "question": "According to Hart, what must judges do when adjudicating cases in the 'penumbra of uncertainty'?",
+        "options": {
+          "A": "Dismiss the case immediately without issuing a ruling.",
+          "B": "Exercise bounded judicial discretion by weighing social policies and legislative aims to resolve the ambiguity.",
+          "C": "Consult foreign religious texts to find universal commands.",
+          "D": "Flip a coin to ensure mathematical neutrality."
+        },
+        "correct_option": "B",
+        "rationale": "The author states that in penumbral cases, judges must exercise bounded judicial discretion, acting as interstitial legislators to balance statutory aims and social policy."
+      },
+      {
+        "id": "ENG_RC_169_Q4",
+        "question": "Which famous hypothetical example did Hart utilize to illustrate legal indeterminacy?",
+        "options": {
+          "A": "A tax levied on imported tea leaves.",
+          "B": "A municipal ordinance stating 'No vehicles may be taken into the park.'",
+          "C": "A contract for the sale of agricultural livestock.",
+          "D": "A maritime fishing quota in international waters."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explicitly references Hart's classic hypothetical: 'No vehicles may be taken into the park.'"
+      },
+      {
+        "id": "ENG_RC_169_Q5",
+        "question": "As used in the passage, the word 'interstitial' describes actions that take place:",
+        "options": {
+          "A": "In the intermediate spaces, gaps, or crevices between established rules",
+          "B": "Exclusively inside high-security correctional facilities",
+          "C": "Across international outer space boundaries",
+          "D": "During violent wartime rebellions"
+        },
+        "correct_option": "A",
+        "rationale": "'Interstitial' means situated within or occupying small, narrow spaces or gaps—in jurisprudence, filling statutory gaps between codified rules."
+      }
+    ]
+  },
+  {
+    "passage_id": "ENG_RC_SET_170",
+    "passage_title": "The Quantum Mechanics of the Integer Quantum Hall Effect",
+    "passage_text": "Discovered in 1980 by German physicist Klaus von Klitzing, the **Integer Quantum Hall Effect (IQHE)** is a macroscopic quantum phenomenon observed in two-dimensional electron gases (2DEGs)—such as those formed at high-mobility semiconductor heterojunctions—subjected to cryogenic temperatures and intense perpendicular magnetic fields. In classical electrodynamics, the transverse Hall resistance ($R_{xy}$) increases linearly and continuously with magnetic field strength ($B$). In the quantum regime, however, the Hall resistance displays astonishing flat, step-like plateaus quantized precisely as: $R_{xy} = h / (\\nu e^2)$, where $h$ is Planck's constant, $e$ is the elementary electron charge, and $\\nu$ is an exact integer known as the filling factor. Simultaneously, along these Hall plateaus, the longitudinal resistance ($R_{xx}$) drops to absolute zero, indicating dissipationless electrical transport. The microscopic mechanism arises from **Landau quantization**: the strong magnetic field forces continuous electron kinetic energy states into discrete, highly degenerate harmonic levels (Landau levels). While electrons in the bulk of the 2D plane become localized by atomic impurities, topological boundary conditions enforce the formation of chiral one-dimensional **edge states**. These edge electrons propagate unidirectionally along the physical perimeter of the sample and are topologically protected against backscattering. Because the quantized resistance depends strictly on fundamental physical constants ($h/e^2 \\approx 25,812.807 \\ \\Omega$, the von Klitzing constant) and is completely independent of sample geometry or material impurities, the IQHE now serves as the international metrological standard for electrical resistance (the ohm).",
+    "questions": [
+      {
+        "id": "ENG_RC_170_Q1",
+        "question": "How does the Integer Quantum Hall Effect (IQHE) contradict classical electromagnetic predictions?",
+        "options": {
+          "A": "Classical theory predicts Hall resistance increases linearly with magnetic fields, whereas IQHE exhibits discrete, quantized resistance plateaus.",
+          "B": "Classical physics predicts infinite resistance at low temperatures.",
+          "C": "Classical electrodynamics asserts that electrons carry a positive charge.",
+          "D": "Classical theory states that magnetic fields have no influence on electrical conductors."
+        },
+        "correct_option": "A",
+        "rationale": "The text explains that while classical physics predicts linear increases in Hall resistance with magnetic field strength, IQHE reveals discrete, flat plateaus quantized at exact integer values."
+      },
+      {
+        "id": "ENG_RC_170_Q2",
+        "question": "What occurs to the longitudinal resistance ($R_{xx}$) of the sample along the quantized Hall plateaus?",
+        "options": {
+          "A": "It escalates to infinity, blocking all electrical conduction.",
+          "B": "It drops to absolute zero, indicating dissipationless transport without resistance.",
+          "C": "It fluctuates wildly due to thermal noise in the wires.",
+          "D": "It equals the speed of light in a vacuum."
+        },
+        "correct_option": "B",
+        "rationale": "The passage explicitly notes that 'along these Hall plateaus, the longitudinal resistance ($R_{xx}$) simultaneously drops to absolute zero, indicating dissipationless electrical transport.'"
+      },
+      {
+        "id": "ENG_RC_170_Q3",
+        "question": "Why are chiral 1D edge states in the Quantum Hall regime protected against backscattering from impurities?",
+        "options": {
+          "A": "They move so slowly that they never encounter crystalline defects.",
+          "B": "They propagate strictly unidirectionally along the sample perimeter, meaning there are no available counter-propagating states on the same edge to scatter into.",
+          "C": "They are composed of neutral neutrons rather than charged electrons.",
+          "D": "They dissolve the physical edges of the semiconductor chip."
+        },
+        "correct_option": "B",
+        "rationale": "The text explains that topological chiral edge states propagate unidirectionally along the perimeter, making them topologically protected against backscattering."
+      },
+      {
+        "id": "ENG_RC_170_Q4",
+        "question": "What practical application in international metrology resulted from the discovery of the von Klitzing constant ($h/e^2$)?",
+        "options": {
+          "A": "It was used to calculate the exact mass of the Moon.",
+          "B": "It was adopted as the international standard of electrical resistance (the ohm).",
+          "C": "It replaced the metric kilogram with a bar of platinum in Paris.",
+          "D": "It established the global calendar leap year formula."
+        },
+        "correct_option": "B",
+        "rationale": "The final sentence states that the von Klitzing constant ($h/e^2$) 'now defines the international SI standard of electrical resistance (the ohm).'"
+      },
+      {
+        "id": "ENG_RC_170_Q5",
+        "question": "As used in the passage, the word 'quantized' refers to physical quantities that:",
+        "options": {
+          "A": "Vary continuously across an unbroken mathematical spectrum",
+          "B": "Exist only in discrete, specific, indivisible step-like numerical values",
+          "C": "Cannot be detected by modern electronic sensors",
+          "D": "Are generated exclusively through nuclear chemical fission"
+        },
+        "correct_option": "B",
+        "rationale": "In physics, 'quantized' describes values that are restricted to discrete, specific step-like levels rather than continuous gradations."
+      }
+    ]
+  }
+]

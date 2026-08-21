@@ -15,7 +15,7 @@ from telegram import (
     ChatMember, ChatMemberUpdated
 )
 from telegram.ext import (
-    Application, CommandHandler, CallbackQueryHandler, 
+    Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
     MessageHandler, ChatMemberHandler, filters, ContextTypes, ConversationHandler
 )
 from psycopg2.extras import RealDictCursor
@@ -38,9 +38,8 @@ from app.database import (
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 
-# Removed handle_poll_answer import here to fix the deployment error
 from app.quiz_engine import (
-    launch_quiz_setup,
+    launch_quiz_setup, handle_poll_answer,
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback,
     quiz_extended_router
 )
@@ -494,8 +493,8 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "✅ **DP HCM** — 1×\n"
         "✅ **DDA JSA** — 1×\n\n"
         "🌟 **COMMUNITY PROOF & ENGAGEMENT:**\n"
-        f"• 👥 **Registered Aspirants:** `{total_users}` Students[cite: 3]\n"
-        f"• ❤️ **Total Community Likes:** `{total_likes}` Likes[cite: 3]\n\n"
+        f"• 👥 **Registered Aspirants:** `{total_users}` Students\n"
+        f"• ❤️ **Total Community Likes:** `{total_likes}` Likes\n\n"
         "📲 **Join Our Community:**\n"
         "🔹 **Telegram:** https://t.me/learnwithhim\n"
         "🔹 **Instagram:** https://instagram.com/learnwithhimm\n"
@@ -587,7 +586,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"
         f"⏳ **Overall Pass Expiry:** `{expiry}`\n"
         f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
-        f"🌟 **Platform Proof:** `{total_users}` Scholars[cite: 3] | `{total_likes}` Likes ❤️[cite: 3]\n"
+        f"🌟 **Platform Proof:** `{total_users}` Scholars | `{total_likes}` Likes ❤️\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         f"{plans_text}"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -650,7 +649,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🎉 **Limited-Time Discount Active!** All VIP packs are currently discounted by **{pct}%**.\n"
             f"⏰ **Hurry, offer ends in:** `{hrs_left}h {mins_left}m`!\n"
-            f"👥 **Trusted by:** `{total_users}` Aspirants[cite: 3] • ❤️ `{total_likes}` Likes[cite: 3]\n"
+            f"👥 **Trusted by:** `{total_users}` Aspirants • ❤️ `{total_likes}` Likes\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Select a pack below to pay securely and instantly unlock daily question limits:"
         )
@@ -658,8 +657,8 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         msg = (
             f"👑 **QUIZ WITH HIM — VIP MEMBERSHIP PACKS** 👑\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👥 **Join `{total_users}` Scholars** Practicing Everyday![cite: 3]\n"
-            f"❤️ **Platform Rating:** `{total_likes}` Community Likes[cite: 3]\n"
+            f"👥 **Join `{total_users}` Scholars** Practicing Everyday!\n"
+            f"❤️ **Platform Rating:** `{total_likes}` Community Likes\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Select a pack below to pay securely and instantly unlock daily question limits:"
         )
@@ -2486,7 +2485,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qflow_|qmock|qsect|qtop_|qsubj_|qmode_|qtopic_|qlang_|qcount_|qtimer_|qengsec_|rctimer_|quiz_ans_)"))
+    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qflow_|qmock|qsect|qtop_|qsubj_|qmode_|qtopic_|qlang_|qcount_|qtimer_|qengsec_|rctimer_)"))
     
     app.add_handler(CallbackQueryHandler(pdf_step_handler, pattern="^(pdfsubj_|pdftype_|pdftime_)"))
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))
@@ -2500,7 +2499,7 @@ def build_application() -> Application:
     app.add_handler(ChatMemberHandler(track_chat_member_updates, ChatMemberHandler.MY_CHAT_MEMBER))
 
     app.add_handler(MessageHandler(filters.ALL & ~filters.COMMAND, handle_text_messages))
-    # PollAnswerHandler successfully removed
+    app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_error_handler(global_error_handler)
 
     return app

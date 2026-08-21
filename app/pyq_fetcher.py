@@ -9,114 +9,43 @@ from app.database import get_db, release_db, reset_user_seen_questions_for_ids
 
 logger = logging.getLogger(__name__)
 
-# Clean Display Topic Names for Computer
 COMPUTER_TOPIC_METADATA = {
-    "Computer_Hardware_Architecture": {
-        "en": "🖥️ Computer Basics & Architecture",
-        "hi": "🖥️ कंप्यूटर की मूल बातें और आर्किटेक्चर"
-    },
-    "Memory_Storage": {
-        "en": "💾 Memory & Storage Devices",
-        "hi": "💾 मेमोरी और स्टोरेज डिवाइस"
-    },
-    "Operating_Systems_CLI": {
-        "en": "⚙️ Operating Systems & CLI",
-        "hi": "⚙️ ऑपरेटिंग सिस्टम और CLI"
-    },
-    "MS_Word": {
-        "en": "📝 Microsoft Word",
-        "hi": "📝 माइक्रोसॉफ्ट वर्ड"
-    },
-    "MS_Excel": {
-        "en": "📊 Microsoft Excel",
-        "hi": "📊 माइक्रोसॉफ्ट एक्सेल"
-    },
-    "MS_PowerPoint_365": {
-        "en": "📽️ PowerPoint & OneNote",
-        "hi": "📽️ पावरपॉइंट और वननोट"
-    },
-    "Networking_Internet": {
-        "en": "🌐 Networking & Internet",
-        "hi": "🌐 नेटवर्किंग और इंटरनेट"
-    },
-    "Cybersecurity_Malware": {
-        "en": "🛡️ Cybersecurity & Malware",
-        "hi": "🛡️ साइबर सुरक्षा और मैलवेयर"
-    },
-    "Number_Systems": {
-        "en": "🔢 Number Systems & Codes",
-        "hi": "🔢 संख्या प्रणाली और कंप्यूटर कोड्स"
-    },
-    "General_Computer_Awareness": {
-        "en": "💡 General Computer Awareness",
-        "hi": "💡 सामान्य कंप्यूटर जागरूकता"
-    },
-    "SHORTCUTS": {
-        "en": "⌨️ Computer Shortcut Keys",
-        "hi": "⌨️ कंप्यूटर शॉर्टकट कुंजियाँ"
-    }
+    "Computer_Hardware_Architecture": {"en": "🖥️ Computer Basics & Architecture", "hi": "🖥️ कंप्यूटर की मूल बातें और आर्किटेक्चर"},
+    "Memory_Storage": {"en": "💾 Memory & Storage Devices", "hi": "💾 मेमोरी और स्टोरेज डिवाइस"},
+    "Operating_Systems_CLI": {"en": "⚙️ Operating Systems & CLI", "hi": "⚙️ ऑपरेटिंग सिस्टम और CLI"},
+    "MS_Word": {"en": "📝 Microsoft Word", "hi": "📝 माइक्रोसॉफ्ट वर्ड"},
+    "MS_Excel": {"en": "📊 Microsoft Excel", "hi": "📊 माइक्रोसॉफ्ट एक्सेल"},
+    "MS_PowerPoint_365": {"en": "📽️ PowerPoint & OneNote", "hi": "📽️ पावरपॉइंट और वननोट"},
+    "Networking_Internet": {"en": "🌐 Networking & Internet", "hi": "🌐 नेटवर्किंग और इंटरनेट"},
+    "Cybersecurity_Malware": {"en": "🛡️ Cybersecurity & Malware", "hi": "🛡️ साइबर सुरक्षा और मैलवेयर"},
+    "Number_Systems": {"en": "🔢 Number Systems & Codes", "hi": "🔢 संख्या प्रणाली और कंप्यूटर कोड्स"},
+    "General_Computer_Awareness": {"en": "💡 General Computer Awareness", "hi": "💡 सामान्य कंप्यूटर जागरूकता"},
+    "SHORTCUTS": {"en": "⌨️ Computer Shortcut Keys", "hi": "⌨️ कंप्यूटर शॉर्टकट कुंजियाँ"}
 }
 
-# Clean Display Topic Names for General Knowledge (GK)
 GK_TOPIC_METADATA = {
-    "Indian History - Ancient & Medieval": {
-        "en": "🏛️ Indian History - Ancient & Medieval",
-        "hi": "🏛️ भारतीय इतिहास - प्राचीन एवं मध्यकालीन"
-    },
-    "Indian History - Modern & Freedom Struggle": {
-        "en": "⚔️ Indian History - Modern & Freedom Struggle",
-        "hi": "⚔️ भारतीय इतिहास - आधुनिक एवं स्वतंत्रता संग्राम"
-    },
-    "Indian Polity & Constitution": {
-        "en": "⚖️ Indian Polity & Constitution",
-        "hi": "⚖️ भारतीय राजव्यवस्था एवं संविधान"
-    },
-    "Indian & World Geography": {
-        "en": "🌍 Indian & World Geography",
-        "hi": "🌍 भारतीय एवं विश्व भूगोल"
-    },
-    "Indian Economy & General Awareness": {
-        "en": "📈 Indian Economy & General Awareness",
-        "hi": "📈 भारतीय अर्थव्यवस्था एवं सामान्य जागरूकता"
-    },
-    "General Science - Physics & Chemistry": {
-        "en": "🧪 General Science - Physics & Chemistry",
-        "hi": "🧪 सामान्य विज्ञान - भौतिकी एवं रसायन"
-    },
-    "General Science - Biology & Environment": {
-        "en": "🌿 General Science - Biology & Environment",
-        "hi": "🌿 सामान्य विज्ञान - जीव विज्ञान एवं पर्यावरण"
-    },
-    "Static GK - Art, Culture & Heritage": {
-        "en": "🎨 Static GK - Art, Culture & Heritage",
-        "hi": "🎨 स्टैटिक जीके - कला, संस्कृति एवं धरोवर"
-    },
-    "Static GK - Festivals, Fairs & Temples": {
-        "en": "🛕 Static GK - Festivals, Fairs & Temples",
-        "hi": "🛕 स्टैटिक जीके - त्यौहार, मेले एवं मंदिर"
-    },
-    "Static GK - Sports & Awards": {
-        "en": "🏆 Static GK - Sports & Awards",
-        "hi": "🏆 स्टैटिक जीके - खेल एवं पुरस्कार"
-    }
+    "Indian History - Ancient & Medieval": {"en": "🏛️ Indian History - Ancient & Medieval", "hi": "🏛️ भारतीय इतिहास - प्राचीन एवं मध्यकालीन"},
+    "Indian History - Modern & Freedom Struggle": {"en": "⚔️ Indian History - Modern & Freedom Struggle", "hi": "⚔️ भारतीय इतिहास - आधुनिक एवं स्वतंत्रता संग्राम"},
+    "Indian Polity & Constitution": {"en": "⚖️ Indian Polity & Constitution", "hi": "⚖️ भारतीय राजव्यवस्था एवं संविधान"},
+    "Indian & World Geography": {"en": "🌍 Indian & World Geography", "hi": "🌍 भारतीय एवं विश्व भूगोल"},
+    "Indian Economy & General Awareness": {"en": "📈 Indian Economy & General Awareness", "hi": "📈 भारतीय अर्थव्यवस्था एवं सामान्य जागरूकता"},
+    "General Science - Physics & Chemistry": {"en": "🧪 General Science - Physics & Chemistry", "hi": "🧪 सामान्य विज्ञान - भौतिकी एवं रसायन"},
+    "General Science - Biology & Environment": {"en": "🌿 General Science - Biology & Environment", "hi": "🌿 सामान्य विज्ञान - जीव विज्ञान एवं पर्यावरण"},
+    "Static GK - Art, Culture & Heritage": {"en": "🎨 Static GK - Art, Culture & Heritage", "hi": "🎨 स्टैटिक जीके - कला, संस्कृति एवं धरोवर"},
+    "Static GK - Festivals, Fairs & Temples": {"en": "🛕 Static GK - Festivals, Fairs & Temples", "hi": "🛕 स्टैटिक जीके - त्यौहार, मेले एवं मंदिर"},
+    "Static GK - Sports & Awards": {"en": "🏆 Static GK - Sports & Awards", "hi": "🏆 स्टैटिक जीके - खेल एवं पुरस्कार"}
 }
 
-# Comprehensive English Topics Metadata
 ENGLISH_TOPIC_METADATA = {
-    # Comprehension Section
     "eng_comp_cloze_test": {"en": "📖 Cloze Test", "section": "comprehension"},
     "eng_comp_para_jumbles": {"en": "🔀 Para Jumbles / Sentence Rearrangement", "section": "comprehension"},
     "eng_comp_rc": {"en": "📑 Reading Comprehension (RC)", "section": "comprehension"},
-    
-    # Vocab Section
     "eng_vocab_homonyms": {"en": "🔡 Homonyms", "section": "vocab"},
     "eng_vocab_idioms": {"en": "💬 Idioms & Phrases", "section": "vocab"},
     "eng_vocab_ows": {"en": "💡 One Word Substitution (OWS)", "section": "vocab"},
     "eng_vocab_phrasal_verbs": {"en": "🎯 Phrasal Verbs", "section": "vocab"},
     "eng_vocab_spellings": {"en": "✍️ Correct Spellings", "section": "vocab"},
     "eng_vocab_syn_ant": {"en": "🔠 Synonyms & Antonyms", "section": "vocab"},
-    
-    # Grammar Section
     "eng_gram_adjective": {"en": "📌 Adjectives", "section": "grammar"},
     "eng_gram_adverb": {"en": "📌 Adverbs", "section": "grammar"},
     "eng_gram_articles": {"en": "📌 Articles (A, An, The)", "section": "grammar"},
@@ -137,7 +66,6 @@ ENGLISH_TOPIC_METADATA = {
 
 
 def get_available_topics(subject: str = "computer", language: str = "en") -> list:
-    """Returns list of tuples (topic_key, clean_display_name)."""
     lang_key = "hi" if language == "hi" else "en"
     if subject == "gk":
         metadata = GK_TOPIC_METADATA
@@ -158,100 +86,19 @@ def clean_option_prefix(opt_text: str) -> str:
     return re.sub(r'^[A-Da-d1-4][\.\)\:\-]\s*', '', str(opt_text)).strip()
 
 
-def relabel_option_references(option_text: str, old_to_new_letter_map: dict) -> str:
-    """Dynamically replaces old letter references (e.g. 'Both A and B') with new shuffled letters."""
-    def replace_letter_match(match):
-        prefix = match.group(1)
-        letter1 = match.group(2).upper()
-        connector = match.group(3)
-        letter2 = match.group(4).upper()
-        suffix = match.group(5) or ""
-
-        new1 = old_to_new_letter_map.get(letter1, letter1)
-        new2 = old_to_new_letter_map.get(letter2, letter2)
-        first, second = sorted([new1, new2])
-        return f"{prefix} {first} {connector} {second}{suffix}"
-
-    pattern = r'\b(Both|both|Only|only|Either|either|Neither|neither)\s+([A-Da-d])\s+(and|&|or|nor)\s+([A-Da-d])(\s+are\s+correct|\s+is\s+correct|\s+correct)?\b'
-    return re.sub(pattern, replace_letter_match, str(option_text))
-
-
-def randomize_question_options(q: dict) -> dict:
-    """
-    Shuffles options while preserving referential and positional accuracy:
-    - If positional phrases ('All of the above', 'None of the above', 'उपरोक्त सभी') exist, skips shuffling.
-    - If letter references (e.g., 'Both A and B are correct') exist, dynamically updates referenced letters.
-    """
-    opts = list(q.get("options", []))
-    correct_idx = q.get("correct_option", 0)
-    if not opts or correct_idx >= len(opts) or correct_idx < 0:
-        return q
-
-    clean_options = [clean_option_prefix(opt) for opt in opts]
-
-    # 1. Skip shuffling if options contain absolute positional phrases
-    lower_opts = [o.lower() for o in clean_options]
-    if any("of the above" in o or "the above" in o or "of these" in o or "उपरोक्त" in o or "उपर्युक्त" in o or "इनमें से कोई" in o for o in lower_opts):
-        new_q = dict(q)
-        new_q["options"] = clean_options
-        new_q["correct_option"] = correct_idx
-        return new_q
-
-    # 2. Track original positions
-    letters = ["A", "B", "C", "D"][:len(clean_options)]
-    indexed_options = list(enumerate(clean_options))
-    correct_original_tuple = indexed_options[correct_idx]
-
-    # 3. Shuffle options
-    shuffled_indexed = list(indexed_options)
-    random.shuffle(shuffled_indexed)
-
-    # 4. Build old-to-new letter mapping
-    old_to_new_map = {}
-    for new_idx, (old_idx, _) in enumerate(shuffled_indexed):
-        old_letter = letters[old_idx]
-        new_letter = letters[new_idx]
-        old_to_new_map[old_letter] = new_letter
-
-    # 5. Dynamically relabel any relative 'Both X and Y' option texts
-    final_shuffled_opts = []
-    for _, opt_text in shuffled_indexed:
-        updated_text = relabel_option_references(opt_text, old_to_new_map)
-        final_shuffled_opts.append(updated_text)
-
-    new_correct_idx = shuffled_indexed.index(correct_original_tuple)
-
-    new_q = dict(q)
-    new_q["options"] = final_shuffled_opts
-    new_q["correct_option"] = new_correct_idx
-    return new_q
-
-
 def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
     if not isinstance(q, dict):
         return None
 
-    # Handle various question and passage keys across JSON files
     passage = q.get("passage") or q.get("passage_text") or q.get("context") or q.get("para") or ""
     q_text = q.get("question") or q.get("question_text") or q.get("q_text") or q.get("q") or q.get("title") or ""
     
-    # Handle Para Jumble format where sentences are itemized in list or dict
     if not q_text and ("sentences" in q or "jumble" in q or "statements" in q):
         sentences = q.get("sentences") or q.get("jumble") or q.get("statements")
         if isinstance(sentences, list):
             labels = ["P", "Q", "R", "S", "T", "U"]
             rendered_jumble = "\n".join([f"{labels[i]}. {s}" for i, s in enumerate(sentences) if i < len(labels)])
             q_text = f"Rearrange the following parts to form a meaningful sentence/paragraph:\n\n{rendered_jumble}"
-        elif isinstance(sentences, dict):
-            rendered_jumble = "\n".join([f"{k}. {v}" for k, v in sentences.items()])
-            q_text = f"Rearrange the following parts:\n\n{rendered_jumble}"
-
-    # If question has a reading passage attached, prepend passage snippet/full text
-    if passage and passage.strip():
-        if q_text:
-            q_text = f"📖 [Reading Passage]\n{passage.strip()}\n\n❓ Question: {q_text}"
-        else:
-            q_text = passage.strip()
 
     raw_opts = q.get("options") or q.get("choices") or q.get("answers") or q.get("opts")
     raw_correct = (
@@ -272,7 +119,6 @@ def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
     if isinstance(raw_opts, dict):
         sorted_keys = sorted(raw_opts.keys())
         clean_opts = [str(raw_opts[k]).strip() for k in sorted_keys]
-        
         if isinstance(raw_correct, str) and raw_correct.upper() in sorted_keys:
             correct_idx = sorted_keys.index(raw_correct.upper())
         elif isinstance(raw_correct, int) and 0 <= raw_correct < len(clean_opts):
@@ -305,6 +151,7 @@ def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
     return {
         "id": unique_id,
         "question": str(q_text).strip(),
+        "passage": str(passage).strip() if passage else "",
         "options": clean_opts,
         "correct_option": correct_idx,
         "explanation": str(expl).strip(),
@@ -316,7 +163,6 @@ def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
 def get_user_seen_identifiers(user_id: int) -> set:
     if not user_id:
         return set()
-
     seen_ids = set()
     conn = get_db()
     cursor = conn.cursor()
@@ -329,7 +175,6 @@ def get_user_seen_identifiers(user_id: int) -> set:
     finally:
         cursor.close()
         release_db(conn)
-
     return seen_ids
 
 
@@ -346,10 +191,8 @@ def get_english_base_dir() -> str:
 
 
 def load_english_questions(topic_key: str = "MIXED") -> list:
-    """Loads English questions robustly from batch JSON files, expanding RC/Passage sets."""
     base_eng = get_english_base_dir()
     if not os.path.exists(base_eng):
-        logger.warning(f"English question bank path not found: {base_eng}")
         return []
 
     target_files = []
@@ -367,15 +210,12 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
                             out.append(os.path.join(root, f))
         return out
 
-    # COMPREHENSION
     if topic_key == "eng_comp_cloze_test":
         target_files = scan_dir(os.path.join(base_eng, "comprehension", "CLOZE TEST"))
     elif topic_key == "eng_comp_para_jumbles":
         target_files = scan_dir(os.path.join(base_eng, "comprehension", "PARA JUMBLES"))
     elif topic_key == "eng_comp_rc":
         target_files = scan_dir(os.path.join(base_eng, "comprehension", "READING COMPREHENSION"))
-
-    # VOCAB
     elif topic_key == "eng_vocab_homonyms":
         target_files = scan_dir(os.path.join(base_eng, "vocab", "HOMONYMS"))
     elif topic_key == "eng_vocab_idioms":
@@ -388,15 +228,12 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
         target_files = scan_dir(os.path.join(base_eng, "vocab", "SPELLINGS"))
     elif topic_key == "eng_vocab_syn_ant":
         target_files = scan_dir(os.path.join(base_eng, "vocab", "SYN-ANT"))
-
-    # GRAMMAR
     elif topic_key.startswith("eng_gram_"):
         gram_sub = topic_key.replace("eng_gram_", "").upper()
         gram_dir = os.path.join(base_eng, "grammar")
         target_files = scan_dir(gram_dir, prefix_filter=f"GRAMMAR {gram_sub}")
         if not target_files:
             target_files = scan_dir(os.path.join(gram_dir, gram_sub))
-
     elif topic_key == "MIXED":
         target_files = scan_dir(base_eng)
 
@@ -407,11 +244,9 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
                 data = json.load(f)
                 category_name = os.path.splitext(os.path.basename(fp))[0]
                 
-                # Expand nested passage/question structures
                 if isinstance(data, list):
                     for item in data:
                         if isinstance(item, dict):
-                            # Check if item contains sub-questions
                             sub_qs = item.get("questions") or item.get("data") or item.get("items")
                             passage_text = item.get("passage") or item.get("passage_text") or item.get("context") or ""
                             if isinstance(sub_qs, list):
@@ -424,7 +259,6 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
                             else:
                                 item.setdefault("category", category_name)
                                 all_loaded.append(item)
-
                 elif isinstance(data, dict):
                     passage_text = data.get("passage") or data.get("passage_text") or data.get("context") or ""
                     sub_qs = data.get("questions") or data.get("data") or data.get("items")
@@ -445,17 +279,13 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
 
 
 def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: str = "en", user_id: int = None, topic: str = "MIXED", subject: str = "computer") -> list:
-    """STRICT SUBJECT, LANGUAGE & TOPIC ISOLATION ENGINE WITH FULL ENGLISH INTEGRATION."""
     all_raw_questions = []
     lang_sub = "hi" if language == "hi" else "en"
     loaded_from_specific_file = False
 
-    # 1. ENGLISH SUBJECT
     if subject == "english":
         all_raw_questions = load_english_questions(topic)
         loaded_from_specific_file = True
-
-    # 2. GENERAL KNOWLEDGE (GK) MODE
     elif subject == "gk":
         gk_file_name = f"gk_questions_{lang_sub}.json"
         potential_gk_paths = [
@@ -463,7 +293,6 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
             os.path.join(DATA_DIR, "question_bank", "gk", gk_file_name),
             os.path.join(BASE_DIR, "data", "question_bank", "gk", gk_file_name)
         ]
-
         for p in potential_gk_paths:
             if os.path.exists(p):
                 try:
@@ -472,10 +301,8 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                         if isinstance(data, list):
                             all_raw_questions.extend(data)
                             break
-                except Exception as e:
-                    logger.error(f"Error reading GK file {p}: {e}")
-
-    # 3. SHORTCUT KEYS MODE (COMPUTER)
+                except Exception:
+                    pass
     elif topic == "SHORTCUTS":
         shortcut_file_name = f"shortcut_{lang_sub}.json"
         potential_shortcut_paths = [
@@ -483,7 +310,6 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
             os.path.join(DATA_DIR, "question_bank", "computer", "shortcut_keys", shortcut_file_name),
             os.path.join(BASE_DIR, "data", "question_bank", "computer", "shortcut_keys", shortcut_file_name)
         ]
-
         for p in potential_shortcut_paths:
             if os.path.exists(p):
                 try:
@@ -493,10 +319,8 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                             all_raw_questions.extend(data)
                             loaded_from_specific_file = True
                             break
-                except Exception as e:
-                    logger.error(f"Error reading shortcut keys file {p}: {e}")
-
-    # 4. TOPIC-WISE MODE (COMPUTER)
+                except Exception:
+                    pass
     elif topic and topic != "MIXED" and subject == "computer":
         topic_filename = f"{topic}_{lang_sub}.json"
         potential_topic_paths = [
@@ -504,7 +328,6 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
             os.path.join(DATA_DIR, "topics", "computer", lang_sub, topic_filename),
             os.path.join(BASE_DIR, "data", "topics", "computer", lang_sub, topic_filename)
         ]
-        
         for p in potential_topic_paths:
             if os.path.exists(p):
                 try:
@@ -514,10 +337,9 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                             all_raw_questions.extend(data)
                             loaded_from_specific_file = True
                             break
-                except Exception as e:
-                    logger.error(f"Error loading topic file {p}: {e}")
+                except Exception:
+                    pass
 
-    # 5. MIXED PRACTICE MODE & MASTER BANK FALLBACK (COMPUTER)
     if subject == "computer" and not loaded_from_specific_file:
         master_file_name = "all_questions_hindi.json" if language == "hi" else "all_questions_english.json"
         master_candidates = [
@@ -525,7 +347,6 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
             os.path.join(DATA_DIR, "question_bank", "computer", master_file_name),
             os.path.join(BASE_DIR, "data", "question_bank", "computer", master_file_name)
         ]
-
         for m_path in master_candidates:
             if os.path.exists(m_path):
                 try:
@@ -534,10 +355,9 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
                         if isinstance(data, list) and len(data) > 0:
                             all_raw_questions.extend(data)
                             break
-                except Exception as e:
-                    logger.error(f"Error loading master file {m_path}: {e}")
+                except Exception:
+                    pass
 
-    # 6. STRICT VERIFICATION & PARSING
     verified_bank = []
     seen_unique_texts = set()
 
@@ -558,10 +378,8 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
             verified_bank.append(verified_q)
 
     if not verified_bank:
-        logger.warning(f"No questions verified for subject={subject}, topic={topic}, lang={language}")
         return []
 
-    # 7. EXHAUSTION CYCLING & RESHUFFLING
     user_seen_ids = get_user_seen_identifiers(user_id)
     if seen_ids:
         user_seen_ids.update({str(sid) for sid in seen_ids})
@@ -573,42 +391,35 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
     for q in verified_bank:
         qid_str = str(q.get("id"))
         all_current_qids.append(qid_str)
-
         if qid_str not in user_seen_ids:
             unseen_pool.append(q)
         else:
             seen_pool.append(q)
 
     selected_questions = []
-
     if len(unseen_pool) >= needed_count:
         random.shuffle(unseen_pool)
         selected_questions = unseen_pool[:needed_count]
     elif 0 < len(unseen_pool) < needed_count:
         selected_questions.extend(unseen_pool)
         deficit = needed_count - len(selected_questions)
-
         random.shuffle(seen_pool)
         selected_questions.extend(seen_pool[:deficit])
-
         if user_id:
             reset_user_seen_questions_for_ids(user_id, all_current_qids)
     else:
         if user_id:
             reset_user_seen_questions_for_ids(user_id, all_current_qids)
-
         random.shuffle(verified_bank)
         selected_questions = verified_bank[:needed_count]
 
     random.shuffle(selected_questions)
-    return [randomize_question_options(q) for q in selected_questions]
+    return selected_questions
 
 
 def fetch_multi_topic_questions(needed_count: int, topic_keys: list, subject: str = "computer", language: str = "en", user_id: int = None) -> list:
-    """Fetches unique, evenly distributed questions across 2 to 5 selected topics."""
     if not topic_keys:
         return []
-
     num_topics = len(topic_keys)
     base_per_topic = needed_count // num_topics
     remainder = needed_count % num_topics
@@ -634,51 +445,33 @@ def fetch_multi_topic_questions(needed_count: int, topic_keys: list, subject: st
         combined_questions.extend(extra_qs)
 
     random.shuffle(combined_questions)
-    return [randomize_question_options(q) for q in combined_questions[:needed_count]]
+    return combined_questions[:needed_count]
 
 
 def fetch_english_full_mock_25(language: str = "en", user_id: int = None) -> list:
-    """
-    Constructs an authentic 25-Question English Competitive Exam Mock:
-    - 5 RC or Cloze Test (only one per mock, all questions from single passage batch)
-    - 2-3 Para Jumbles
-    - 2-3 Homonyms
-    - 2-3 Phrasal Verbs
-    - 5-7 Mixed Vocab (2 OWS, 2 Idioms, 2-3 Syn-Ant)
-    - Remaining questions (approx. 5-7) from Grammar
-    """
     mock_qs = []
     seen_ids = get_user_seen_identifiers(user_id)
 
-    # 1. 5 Questions: RC or Cloze Test (choose one randomly)
     comp_topic = random.choice(["eng_comp_rc", "eng_comp_cloze_test"])
     comp_qs = fetch_pyqs_for_quiz(needed_count=5, seen_ids=seen_ids, language=language, user_id=user_id, topic=comp_topic, subject="english")
-    for q in comp_qs:
-        seen_ids.add(str(q.get("id")))
+    for q in comp_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(comp_qs[:5])
 
-    # 2. 2-3 Questions: Para Jumbles
     pj_count = random.choice([2, 3])
     pj_qs = fetch_pyqs_for_quiz(needed_count=pj_count, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_comp_para_jumbles", subject="english")
-    for q in pj_qs:
-        seen_ids.add(str(q.get("id")))
+    for q in pj_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(pj_qs[:pj_count])
 
-    # 3. 2-3 Questions: Homonyms
     homo_count = random.choice([2, 3])
     homo_qs = fetch_pyqs_for_quiz(needed_count=homo_count, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_homonyms", subject="english")
-    for q in homo_qs:
-        seen_ids.add(str(q.get("id")))
+    for q in homo_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(homo_qs[:homo_count])
 
-    # 4. 2-3 Questions: Phrasal Verbs
     pv_count = random.choice([2, 3])
     pv_qs = fetch_pyqs_for_quiz(needed_count=pv_count, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_phrasal_verbs", subject="english")
-    for q in pv_qs:
-        seen_ids.add(str(q.get("id")))
+    for q in pv_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(pv_qs[:pv_count])
 
-    # 5. Mixed Vocab: 2 OWS, 2 Idioms, 2-3 Syn-Ant
     ows_qs = fetch_pyqs_for_quiz(needed_count=2, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_ows", subject="english")
     for q in ows_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(ows_qs[:2])
@@ -692,7 +485,6 @@ def fetch_english_full_mock_25(language: str = "en", user_id: int = None) -> lis
     for q in syn_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(syn_qs[:syn_count])
 
-    # 6. Rest of Questions from Grammar to complete exactly 25
     remaining_needed = max(0, 25 - len(mock_qs))
     if remaining_needed > 0:
         grammar_keys = [k for k in ENGLISH_TOPIC_METADATA.keys() if k.startswith("eng_gram_")]
@@ -700,29 +492,19 @@ def fetch_english_full_mock_25(language: str = "en", user_id: int = None) -> lis
         gram_qs = fetch_multi_topic_questions(needed_count=remaining_needed, topic_keys=grammar_keys[:5], subject="english", language=language, user_id=user_id)
         mock_qs.extend(gram_qs[:remaining_needed])
 
-    # Fallback to general english if bank has fewer questions
-    if len(mock_qs) < 25:
-        deficit = 25 - len(mock_qs)
-        extra = fetch_pyqs_for_quiz(needed_count=deficit, seen_ids=seen_ids, language=language, user_id=user_id, topic="MIXED", subject="english")
-        mock_qs.extend(extra[:deficit])
-
     random.shuffle(mock_qs)
-    return [randomize_question_options(q) for q in mock_qs[:25]]
+    return mock_qs[:25]
 
 
 def fetch_full_mock_questions(needed_count: int = 20, language: str = "en", user_id: int = None) -> list:
-    """Generates balanced questions split between Computer Awareness and General Knowledge."""
     comp_count = needed_count // 2
     gk_count = needed_count - comp_count
 
     seen_ids = get_user_seen_identifiers(user_id)
     comp_qs = fetch_pyqs_for_quiz(needed_count=comp_count, seen_ids=seen_ids, language=language, user_id=user_id, topic="MIXED", subject="computer")
-    
-    for q in comp_qs:
-        seen_ids.add(str(q.get("id")))
-
+    for q in comp_qs: seen_ids.add(str(q.get("id")))
     gk_qs = fetch_pyqs_for_quiz(needed_count=gk_count, seen_ids=seen_ids, language=language, user_id=user_id, topic="MIXED", subject="gk")
 
     mock_pool = comp_qs + gk_qs
     random.shuffle(mock_pool)
-    return [randomize_question_options(q) for q in mock_pool]
+    return mock_pool

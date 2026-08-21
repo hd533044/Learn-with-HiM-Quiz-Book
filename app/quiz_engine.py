@@ -16,7 +16,7 @@ from app.database import (
 from app.pyq_fetcher import (
     fetch_pyqs_for_quiz, get_available_topics, COMPUTER_TOPIC_METADATA, GK_TOPIC_METADATA,
     ENGLISH_TOPIC_METADATA, fetch_full_mock_questions, fetch_multi_topic_questions,
-    fetch_english_full_mock_25
+    fetch_english_full_mock_25, fetch_rc_or_cloze_passage_questions
 )
 from app.stats import calculate_user_percentile, calculate_user_rank, get_quiz_performance_trend
 
@@ -634,7 +634,10 @@ async def rc_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     topic = setup.get("topic", "eng_comp_rc")
     topic_name = setup.get("topic_name", "Reading Comprehension")
     
-    questions = await asyncio.to_thread(fetch_pyqs_for_quiz, 5, None, "en", user_id, topic, "english")
+    questions = await asyncio.to_thread(fetch_rc_or_cloze_passage_questions, topic)
+    if not questions:
+        questions = await asyncio.to_thread(fetch_pyqs_for_quiz, 5, None, "en", user_id, topic, "english")
+
     await start_quiz_session(
         query, context, user_id, questions, 
         timer_sec=30, quiz_mode="RC_PRACTICE", 

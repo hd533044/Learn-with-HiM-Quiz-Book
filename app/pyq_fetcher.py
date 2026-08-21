@@ -190,6 +190,50 @@ def get_english_base_dir() -> str:
     return candidates[0]
 
 
+def fetch_rc_or_cloze_passage_questions(topic_key: str) -> list:
+    """Loads one complete passage (RC or Cloze Test) with its exact set of questions."""
+    base_eng = get_english_base_dir()
+    subfolder = "READING COMPREHENSION" if topic_key == "eng_comp_rc" else "CLOZE TEST"
+    folder_path = os.path.join(base_eng, "comprehension", subfolder)
+    
+    files = []
+    if os.path.exists(folder_path):
+        for root, _, filenames in os.walk(folder_path):
+            for f in filenames:
+                if f.endswith(".json"):
+                    files.append(os.path.join(root, f))
+    
+    if not files:
+        return []
+    
+    chosen_file = random.choice(files)
+    try:
+        with open(chosen_file, "r", encoding="utf-8") as f:
+            content = json.load(f)
+            passages = content if isinstance(content, list) else [content]
+            valid_passages = [p for p in passages if isinstance(p, dict) and (p.get("questions") or p.get("data") or p.get("items"))]
+            if not valid_passages:
+                return []
+            
+            chosen_passage_obj = random.choice(valid_passages)
+            passage_text = chosen_passage_obj.get("passage") or chosen_passage_obj.get("passage_text") or chosen_passage_obj.get("context") or ""
+            sub_qs = chosen_passage_obj.get("questions") or chosen_passage_obj.get("data") or chosen_passage_obj.get("items")
+            
+            verified_qs = []
+            for sub in sub_qs:
+                if isinstance(sub, dict):
+                    if passage_text and not sub.get("passage"):
+                        sub["passage"] = passage_text
+                    sub.setdefault("category", os.path.splitext(os.path.basename(chosen_file))[0])
+                    verified_q = verify_and_correct_question(sub)
+                    if verified_q:
+                        verified_qs.append(verified_q)
+            return verified_qs
+    except Exception as e:
+        logger.error(f"Error loading passage file {chosen_file}: {e}")
+        return []
+
+
 def load_english_questions(topic_key: str = "MIXED") -> list:
     base_eng = get_english_base_dir()
     if not os.path.exists(base_eng):
@@ -210,12 +254,8 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
                             out.append(os.path.join(root, f))
         return out
 
-    if topic_key == "eng_comp_cloze_test":
-        target_files = scan_dir(os.path.join(base_eng, "comprehension", "CLOZE TEST"))
-    elif topic_key == "eng_comp_para_jumbles":
+    if topic_key == "eng_comp_para_jumbles":
         target_files = scan_dir(os.path.join(base_eng, "comprehension", "PARA JUMBLES"))
-    elif topic_key == "eng_comp_rc":
-        target_files = scan_dir(os.path.join(base_eng, "comprehension", "READING COMPREHENSION"))
     elif topic_key == "eng_vocab_homonyms":
         target_files = scan_dir(os.path.join(base_eng, "vocab", "HOMONYMS"))
     elif topic_key == "eng_vocab_idioms":
@@ -243,7 +283,6 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
             with open(fp, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 category_name = os.path.splitext(os.path.basename(fp))[0]
-                
                 if isinstance(data, list):
                     for item in data:
                         if isinstance(item, dict):
@@ -272,9 +311,8 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
                     else:
                         data.setdefault("category", category_name)
                         all_loaded.append(data)
-        except Exception as e:
-            logger.error(f"Error loading English JSON file {fp}: {e}")
-
+        except Exception:
+            pass
     return all_loaded
 
 
@@ -452,8 +490,9 @@ def fetch_english_full_mock_25(language: str = "en", user_id: int = None) -> lis
     mock_qs = []
     seen_ids = get_user_seen_identifiers(user_id)
 
-    comp_topic = random.choice(["eng_comp_rc", "eng_comp_cloze_test"])
-    comp_qs = fetch_pyqs_for_quiz(needed_count=5, seen_ids=seen_ids, language=language, user_id=user_id, topic=comp_topic, subject="english")
+    comp_qs = fetch_rc_or_cloze_passage_questions("eng_comp_rc")
+    if not comp_qs:
+        comp_qs = fetch_rc_or_cloze_passage_questions("eng_comp_cloze_test")
     for q in comp_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(comp_qs[:5])
 

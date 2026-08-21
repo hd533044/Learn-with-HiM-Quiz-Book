@@ -3,7 +3,7 @@ import logging
 import time
 import os
 import json
-from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import DAILY_QUESTION_LIMIT, PRIMARY_ADMIN_ID
 from app.database import (
@@ -647,7 +647,7 @@ async def show_language_selection(query, user_id: int):
     subj = current_cache.get("subject", "computer")
     
     lang_keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("🌐 English", callback_data="qlang_en"), InlineKeyboardButton("🇮🇳 हिंदी (Hindi)", callback_data="qlang_hi")],
+        [InlineKeyboardButton("🌐 English", callback_data="qlang_en"), InlineKeyboardButton("🇮🇳 हिंदी (Hindi", callback_data="qlang_hi")],
         [InlineKeyboardButton("🔙 Back", callback_data=f"qsubj_{subj}")]
     ])
     msg_text = (
@@ -827,7 +827,7 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
     ACTIVE_SESSIONS[user_id] = session
 
     lang_str = "🌐 English" if language == "en" else "🇮🇳 हिंदी"
-    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode in ["MOCK", "SECTIONAL", "MULTI_TOPIC_PRACTICE", "ENGLISH_FULL_MOCK"] else topic_name
+    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode != "PRACTICE" else topic_name
 
     await query.edit_message_text(
         f"🚀 **QUIZ SESSION STARTED!** 🚀\n"
@@ -876,11 +876,12 @@ async def send_next_inline_question(chat_id: int, user_id: int, context: Context
     quiz_mode = session.get("quiz_mode", "PRACTICE")
     title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
     
+    # Send using plain text (parse_mode=None) to prevent any Markdown parsing crashes on special exam characters
     card_text = (
-        f"📖 **[{title}] — ({current_num}/{total_num}){global_time_str}**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-        f"❓ **{q['question']}**\n\n"
-        f"👉 *Tap your correct option below:*"
+        f"📖 [{title}] — ({current_num}/{total_num}){global_time_str}\n"
+        f"----------------------------------------\n\n"
+        f"❓ {q['question']}\n\n"
+        f"👉 Tap your correct option below:"
     )
 
     letters = ["A", "B", "C", "D"]
@@ -900,7 +901,7 @@ async def send_next_inline_question(chat_id: int, user_id: int, context: Context
             chat_id=chat_id,
             text=card_text,
             reply_markup=InlineKeyboardMarkup(keyboard),
-            parse_mode="Markdown"
+            parse_mode=None
         )
         session["active_message_id"] = msg.message_id
 
@@ -943,7 +944,7 @@ async def auto_skip_inline_task(chat_id: int, user_id: int, expected_idx: int, t
             try:
                 await context.bot.edit_message_text(
                     chat_id=chat_id, message_id=session["active_message_id"],
-                    text=f"⏭ **Question {expected_idx + 1}: Skipped / Timeout**",
+                    text=f"⏭ Question {expected_idx + 1}: Skipped / Timeout",
                     reply_markup=None
                 )
             except Exception:
@@ -1012,10 +1013,10 @@ async def handle_inline_quiz_answer(update: Update, context: ContextTypes.DEFAUL
     try:
         await query.edit_message_text(
             f"📖 Question {q_idx + 1} Answered\n"
-            f"• **Your Choice:** `{selected_ans_text}` — {status_icon}\n"
-            f"• **Correct Answer:** `{c_ans_text}`",
+            f"• Your Choice: {selected_ans_text} — {status_icon}\n"
+            f"• Correct Answer: {c_ans_text}",
             reply_markup=None,
-            parse_mode="Markdown"
+            parse_mode=None
         )
     except Exception:
         pass

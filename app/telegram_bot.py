@@ -493,8 +493,8 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "✅ **DP HCM** — 1×\n"
         "✅ **DDA JSA** — 1×\n\n"
         "🌟 **COMMUNITY PROOF & ENGAGEMENT:**\n"
-        f"• 👥 **Registered Aspirants:** `{total_users}` Students[cite: 3]\n"
-        f"• ❤️ **Total Community Likes:** `{total_likes}` Likes[cite: 3]\n\n"
+        f"• 👥 **Registered Aspirants:** `{total_users}` Students\n"
+        f"• ❤️ **Total Community Likes:** `{total_likes}` Likes\n\n"
         "📲 **Join Our Community:**\n"
         "🔹 **Telegram:** https://t.me/learnwithhim\n"
         "🔹 **Instagram:** https://instagram.com/learnwithhimm\n"
@@ -586,7 +586,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"
         f"⏳ **Overall Pass Expiry:** `{expiry}`\n"
         f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
-        f"🌟 **Platform Proof:** `{total_users}` Scholars[cite: 3] | `{total_likes}` Likes ❤️[cite: 3]\n"
+        f"🌟 **Platform Proof:** `{total_users}` Scholars | `{total_likes}` Likes ❤️\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         f"{plans_text}"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -649,7 +649,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🎉 **Limited-Time Discount Active!** All VIP packs are currently discounted by **{pct}%**.\n"
             f"⏰ **Hurry, offer ends in:** `{hrs_left}h {mins_left}m`!\n"
-            f"👥 **Trusted by:** `{total_users}` Aspirants[cite: 3] • ❤️ `{total_likes}` Likes[cite: 3]\n"
+            f"👥 **Trusted by:** `{total_users}` Aspirants • ❤️ `{total_likes}` Likes\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Select a pack below to pay securely and instantly unlock daily question limits:"
         )
@@ -657,8 +657,8 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         msg = (
             f"👑 **QUIZ WITH HIM — VIP MEMBERSHIP PACKS** 👑\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👥 **Join `{total_users}` Scholars** Practicing Everyday![cite: 3]\n"
-            f"❤️ **Platform Rating:** `{total_likes}` Community Likes[cite: 3]\n"
+            f"👥 **Join `{total_users}` Scholars** Practicing Everyday!\n"
+            f"❤️ **Platform Rating:** `{total_likes}` Community Likes\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Select a pack below to pay securely and instantly unlock daily question limits:"
         )
@@ -1061,7 +1061,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"🤖 **QUIZ WITH HIM — COMMAND DIRECTORY** 🤖\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👥 **{total_users}+ Registered Scholars**[cite: 3] • ❤️ **{total_likes} Community Likes**[cite: 3]\n"
+        f"👥 **{total_users}+ Registered Scholars** • ❤️ **{total_likes} Community Likes**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **/quiz** — 🚀 Launch Quiz (English/Computer/GK)\n"
         f"• **/myplan** — 💵 Subscription Status & Packs Breakdown\n"
@@ -1188,8 +1188,8 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"• **Location:** `{profile.get('state', 'N/A')}, India` 📍\n"
         f"• **Phone:** `{profile['phone_number']}` 📱 *(Private)*\n\n"
         f"🌟 **COMMUNITY IMPACT & SCALE:**\n"
-        f"• **Platform Registered Students:** `{total_users}` Scholars[cite: 3] 👥\n"
-        f"• **Total Platform Likes:** `{total_likes}` ❤️[cite: 3]\n\n"
+        f"• **Platform Registered Students:** `{total_users}` Scholars 👥\n"
+        f"• **Total Platform Likes:** `{total_likes}` ❤️\n\n"
         f"📊 **DAILY QUOTA & SUBSCRIPTION:**\n"
         f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs 🖥\n"
         f"• **Remaining Today:** `{remaining}` Qs ⚡\n"
@@ -1232,8 +1232,8 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
         f"📍 **Location:** `{profile.get('state', 'N/A')}, India` 🇮🇳\n\n"
         f"🌟 **COMMUNITY CONTEXT:**\n"
-        f"• **Active Competitors:** `{total_users}` Scholars[cite: 3] 👥\n"
-        f"• **Platform Likes:** `{total_likes}` ❤️[cite: 3]\n\n"
+        f"• **Active Competitors:** `{total_users}` Scholars 👥\n"
+        f"• **Platform Likes:** `{total_likes}` ❤️\n\n"
         f"📈 **PERFORMANCE METRICS:**\n"
         f"• **Tests Completed:** `{perf.get('total_tests', 0)}` 📚\n"
         f"• **Questions Attempted:** `{perf.get('total_qs', 0)}` 🖥\n"
@@ -1271,7 +1271,7 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"🏆 **GLOBAL SCHOLAR LEADERBOARD** 🏆\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👥 **{total_users} Scholars** competing across India[cite: 3] • ❤️ **{total_likes} Likes**[cite: 3]\n"
+        f"👥 **{total_users} Scholars** competing across India • ❤️ **{total_likes} Likes**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" + "\n".join(lines)
     )
     buttons = [[InlineKeyboardButton("🚀 Attempt Quiz", callback_data="cmd_quiz")]]
@@ -1365,9 +1365,9 @@ async def render_community_page(update: Update, context: ContextTypes.DEFAULT_TY
     header = (
         f"🌐 **QUIZ WITH HIM — STUDENT COMMUNITY FEED** 🌐\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👥 **Total Registered Scholars:** `{total_users}` Students[cite: 3]\n"
-        f"❤️ **Platform Community Likes:** `{total_likes}`[cite: 3]\n"
-        f"💬 **Total Community Posts:** `{total_count}`[cite: 3]\n"
+        f"👥 **Total Registered Scholars:** `{total_users}` Students\n"
+        f"❤️ **Platform Community Likes:** `{total_likes}`\n"
+        f"💬 **Total Community Posts:** `{total_count}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
     )
 
@@ -1407,7 +1407,7 @@ async def render_community_page(update: Update, context: ContextTypes.DEFAULT_TY
 
     keyboard.append([
         InlineKeyboardButton("✍️ Post a Comment", callback_data="comm_add_prompt"),
-        InlineKeyboardButton(f"❤️ Likes ({total_likes})", callback_data="cmd_like_info")[cite: 3]
+        InlineKeyboardButton(f"❤️ Likes ({total_likes})", callback_data="cmd_like_info")
     ])
     keyboard.append([
         InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")
@@ -1573,12 +1573,10 @@ async def track_chat_member_updates(update: Update, context: ContextTypes.DEFAUL
     was_member = result.old_chat_member.status in [ChatMember.MEMBER, ChatMember.ADMINISTRATOR, ChatMember.RESTRICTED]
     is_member = result.new_chat_member.status in [ChatMember.MEMBER, ChatMember.ADMINISTRATOR]
 
-    # User blocked or stopped the bot
     if was_member and not is_member:
         user_id = result.chat.id
         logger.info(f"[USER BLOCKED BOT] Real-time event detected for user ID: {user_id}")
         
-        # Retrieve user profile before wiping
         u_profile = await fetch_user_profile_fast(user_id) or {}
         st_name = u_profile.get("full_name", result.from_user.full_name or "Student")
         st_id = u_profile.get("student_id", f"USER_{user_id}")
@@ -1588,7 +1586,6 @@ async def track_chat_member_updates(update: Update, context: ContextTypes.DEFAUL
         PROFILE_CACHE.pop(user_id, None)
         await asyncio.to_thread(archive_and_wipe_user, user_id)
 
-        # Notify Admin in real-time
         now_str = datetime.now(pytz.timezone("Asia/Kolkata")).strftime("%d %b %Y, %I:%M %p IST")
         admin_alert = (
             f"🛑 **STUDENT BLOCKED BOT & AUTO-ARCHIVED** 🛑\n"
@@ -2499,7 +2496,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qflow_|qmock|qsect|qtop_|qsubj_|qmode_|qtopic_|qlang_|qcount_|qtimer_)"))
+    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qflow_|qmock|qsect|qtop_|qsubj_|qmode_|qtopic_|qlang_|qcount_|qtimer_|qengsec_)"))
     
     app.add_handler(CallbackQueryHandler(pdf_step_handler, pattern="^(pdfsubj_|pdftype_|pdftime_)"))
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))

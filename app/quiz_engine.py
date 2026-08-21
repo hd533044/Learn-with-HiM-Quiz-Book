@@ -3,7 +3,7 @@ import logging
 import time
 import os
 import json
-from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import DAILY_QUESTION_LIMIT, PRIMARY_ADMIN_ID
 from app.database import (
@@ -827,7 +827,7 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
     ACTIVE_SESSIONS[user_id] = session
 
     lang_str = "🌐 English" if language == "en" else "🇮🇳 हिंदी"
-    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode != "PRACTICE" else topic_name
+    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode in ["MOCK", "SECTIONAL", "MULTI_TOPIC_PRACTICE", "ENGLISH_FULL_MOCK"] else topic_name
 
     await query.edit_message_text(
         f"🚀 **QUIZ SESSION STARTED!** 🚀\n"
@@ -1022,6 +1022,31 @@ async def handle_inline_quiz_answer(update: Update, context: ContextTypes.DEFAUL
 
     session["current_index"] += 1
     await send_next_inline_question(chat_id, user_id, context)
+
+
+async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    user_id = query.from_user.id
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 5))
+    session = ACTIVE_SESSIONS.get(user_id)
+    
+    if not session or "current_question" not in session:
+        await query.answer("⚠️ No active question found to save!", show_alert=True)
+        return
+    
+    q = session["current_question"]
+    success = await asyncio.to_thread(
+        save_question_to_db,
+        user_id,
+        q["question"],
+        q["options"],
+        q["correct_option"],
+        q.get("explanation", "")
+    )
+    if success:
+        await query.answer("💾 Question bookmarked successfully!", show_alert=True)
+    else:
+        await query.answer("ℹ️ Question already bookmarked!", show_alert=True)
 
 
 async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):

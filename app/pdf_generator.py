@@ -15,6 +15,7 @@ from app.stats import calculate_user_rank, calculate_user_percentile
 
 logger = logging.getLogger(__name__)
 
+# Attempt WeasyPrint Import for Native Unicode Shaping & Perfect Hindi Rendering
 HAS_WEASYPRINT = False
 try:
     import weasyprint

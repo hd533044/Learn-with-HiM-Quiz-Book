@@ -158,22 +158,6 @@ def clean_option_prefix(opt_text: str) -> str:
     return re.sub(r'^[A-Da-d1-4][\.\)\:\-]\s*', '', str(opt_text)).strip()
 
 
-REFERENTIAL_PATTERNS = [
-    r'\bboth\s+[a-d1-4]\s+(?:and|&)\s+[a-d1-4]\b',
-    r'\bonly\s+[a-d1-4]\s+(?:and|&)\s+[a-d1-4]\b',
-    r'\ball\s+of\s+the\s+above\b',
-    r'\bnone\s+of\s+the\s+above\b',
-    r'\ball\s+the\s+above\b',
-    r'\bnone\s+of\s+these\b',
-    r'\bneither\s+[a-d1-4]\s+nor\s+[a-d1-4]\b',
-    r'\bउपरोक्त\s+सभी\b',
-    r'\bउपर्युक्त\s+सभी\b',
-    r'\bइनमें\s+से\s+कोई\s+नहीं\b',
-    r'\bउपर्युक्त\s+दोनों\b',
-    r'\bदोनों\s+[A-Da-d1-4]\s+और\s+[A-Da-d1-4]\b'
-]
-
-
 def relabel_option_references(option_text: str, old_to_new_letter_map: dict) -> str:
     """Dynamically replaces old letter references (e.g. 'Both A and B') with new shuffled letters."""
     def replace_letter_match(match):
@@ -189,7 +173,7 @@ def relabel_option_references(option_text: str, old_to_new_letter_map: dict) -> 
         return f"{prefix} {first} {connector} {second}{suffix}"
 
     pattern = r'\b(Both|both|Only|only|Either|either|Neither|neither)\s+([A-Da-d])\s+(and|&|or|nor)\s+([A-Da-d])(\s+are\s+correct|\s+is\s+correct|\s+correct)?\b'
-    return re.sub(pattern, replace_letter_match, option_text)
+    return re.sub(pattern, replace_letter_match, str(option_text))
 
 
 def randomize_question_options(q: dict) -> dict:
@@ -205,7 +189,7 @@ def randomize_question_options(q: dict) -> dict:
 
     clean_options = [clean_option_prefix(opt) for opt in opts]
 
-    # 1. Skip shuffling if options contain absolute positional phrases like 'All of the above'
+    # 1. Skip shuffling if options contain absolute positional phrases
     lower_opts = [o.lower() for o in clean_options]
     if any("of the above" in o or "the above" in o or "of these" in o or "उपरोक्त" in o or "उपर्युक्त" in o or "इनमें से कोई" in o for o in lower_opts):
         new_q = dict(q)
@@ -244,10 +228,39 @@ def randomize_question_options(q: dict) -> dict:
 
 
 def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
-    q_text = q.get("question") or q.get("question_text")
-    raw_opts = q.get("options")
-    raw_correct = q.get("correct_option") if q.get("correct_option") is not None else q.get("correct_answer")
-    expl = q.get("explanation", "")
+    if not isinstance(q, dict):
+        return None
+
+    # Handle various question and passage keys across JSON files
+    passage = q.get("passage") or q.get("passage_text") or q.get("context") or q.get("para") or ""
+    q_text = q.get("question") or q.get("question_text") or q.get("q_text") or q.get("q") or q.get("title") or ""
+    
+    # Handle Para Jumble format where sentences are itemized in list or dict
+    if not q_text and ("sentences" in q or "jumble" in q or "statements" in q):
+        sentences = q.get("sentences") or q.get("jumble") or q.get("statements")
+        if isinstance(sentences, list):
+            labels = ["P", "Q", "R", "S", "T", "U"]
+            rendered_jumble = "\n".join([f"{labels[i]}. {s}" for i, s in enumerate(sentences) if i < len(labels)])
+            q_text = f"Rearrange the following parts to form a meaningful sentence/paragraph:\n\n{rendered_jumble}"
+        elif isinstance(sentences, dict):
+            rendered_jumble = "\n".join([f"{k}. {v}" for k, v in sentences.items()])
+            q_text = f"Rearrange the following parts:\n\n{rendered_jumble}"
+
+    # If question has a reading passage attached, prepend passage snippet/full text
+    if passage and passage.strip():
+        if q_text:
+            q_text = f"📖 [Reading Passage]\n{passage.strip()}\n\n❓ Question: {q_text}"
+        else:
+            q_text = passage.strip()
+
+    raw_opts = q.get("options") or q.get("choices") or q.get("answers") or q.get("opts")
+    raw_correct = (
+        q.get("correct_option") if q.get("correct_option") is not None 
+        else q.get("correct_answer") if q.get("correct_answer") is not None
+        else q.get("answer") if q.get("answer") is not None
+        else q.get("ans")
+    )
+    expl = q.get("explanation") or q.get("exp") or ""
     category = q.get("category", "General")
 
     if not q_text or not raw_opts:
@@ -333,7 +346,7 @@ def get_english_base_dir() -> str:
 
 
 def load_english_questions(topic_key: str = "MIXED") -> list:
-    """Loads English questions from corresponding batch JSON files."""
+    """Loads English questions robustly from batch JSON files, expanding RC/Passage sets."""
     base_eng = get_english_base_dir()
     if not os.path.exists(base_eng):
         logger.warning(f"English question bank path not found: {base_eng}")
@@ -376,7 +389,7 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
     elif topic_key == "eng_vocab_syn_ant":
         target_files = scan_dir(os.path.join(base_eng, "vocab", "SYN-ANT"))
 
-    # GRAMMAR (Flat directory or prefix based)
+    # GRAMMAR
     elif topic_key.startswith("eng_gram_"):
         gram_sub = topic_key.replace("eng_gram_", "").upper()
         gram_dir = os.path.join(base_eng, "grammar")
@@ -393,17 +406,33 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
             with open(fp, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 category_name = os.path.splitext(os.path.basename(fp))[0]
+                
+                # Expand nested passage/question structures
                 if isinstance(data, list):
                     for item in data:
                         if isinstance(item, dict):
-                            item.setdefault("category", category_name)
-                            all_loaded.append(item)
+                            # Check if item contains sub-questions
+                            sub_qs = item.get("questions") or item.get("data") or item.get("items")
+                            passage_text = item.get("passage") or item.get("passage_text") or item.get("context") or ""
+                            if isinstance(sub_qs, list):
+                                for sub in sub_qs:
+                                    if isinstance(sub, dict):
+                                        if passage_text and not sub.get("passage"):
+                                            sub["passage"] = passage_text
+                                        sub.setdefault("category", category_name)
+                                        all_loaded.append(sub)
+                            else:
+                                item.setdefault("category", category_name)
+                                all_loaded.append(item)
+
                 elif isinstance(data, dict):
-                    # In case the json wraps questions under a key
-                    qs = data.get("questions") or data.get("data")
-                    if isinstance(qs, list):
-                        for item in qs:
+                    passage_text = data.get("passage") or data.get("passage_text") or data.get("context") or ""
+                    sub_qs = data.get("questions") or data.get("data") or data.get("items")
+                    if isinstance(sub_qs, list):
+                        for item in sub_qs:
                             if isinstance(item, dict):
+                                if passage_text and not item.get("passage"):
+                                    item["passage"] = passage_text
                                 item.setdefault("category", category_name)
                                 all_loaded.append(item)
                     else:
@@ -572,7 +601,6 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
         selected_questions = verified_bank[:needed_count]
 
     random.shuffle(selected_questions)
-    # Strictly randomize options for each question so answers are uniformly distributed
     return [randomize_question_options(q) for q in selected_questions]
 
 

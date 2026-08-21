@@ -52,7 +52,7 @@ from app.admin import (
     fast_concurrent_broadcast, clear_admin_user_data_states, DISCOUNT_OPTIONS
 )
 from app.admin_query_engine import parse_and_execute_admin_query, generate_admin_intelligence_pdf
-from app.pdf_generator import generate_student_pdf_report
+from app.pdf_generator import generate_student_pdf_report, generate_single_quiz_attempt_pdf
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 
 logger = logging.getLogger(__name__)
@@ -1624,6 +1624,26 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = query.data
     user = query.from_user
 
+    if data.startswith("dl_single_quiz_pdf_"):
+        await query.answer("⏳ Generating your Quiz Review PDF...", show_alert=False)
+        raw_aid = data.replace("dl_single_quiz_pdf_", "")
+        aid = int(raw_aid) if raw_aid.isdigit() else 0
+        
+        pdf_path = await asyncio.to_thread(generate_single_quiz_attempt_pdf, aid)
+
+        if pdf_path and os.path.exists(pdf_path) and not str(pdf_path).startswith("ERROR"):
+            with open(pdf_path, "rb") as doc:
+                await context.bot.send_document(
+                    chat_id=query.message.chat_id,
+                    document=doc,
+                    filename=os.path.basename(pdf_path),
+                    caption=f"📄 **OFFICIAL QUIZ REVIEW LEDGER (ATTEMPT #{aid})**\n• Complete solutions, options breakdown & explanations included!",
+                    parse_mode="Markdown"
+                )
+        else:
+            await query.message.reply_text(f"⚠️ Failed to compile PDF: {pdf_path}")
+        return
+
     if data.startswith("reviews_page_"):
         await query.answer()
         page_no = int(data.replace("reviews_page_", ""))
@@ -1643,7 +1663,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if is_new:
             await query.answer(f"❤️ Liked! Thank you for supporting Quiz with HiM! Total Likes: {total_likes}", show_alert=True)
             try:
-                # Update button text to reflect permanent status
                 current_markup = query.message.reply_markup
                 if current_markup and current_markup.inline_keyboard:
                     new_keyboard = []
@@ -2489,9 +2508,8 @@ def build_application() -> Application:
     
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_|adminkp_)"))
     
-    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^comm_|^trigger_start|^buy_plan_|^userkp_|^login_|^reviews_page_"))
+    app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^comm_|^trigger_start|^buy_plan_|^userkp_|^login_|^reviews_page_|^dl_single_quiz_pdf_"))
 
-    # Real-time event detection when a user blocks or stops the bot
     app.add_handler(ChatMemberHandler(track_chat_member_updates, ChatMemberHandler.MY_CHAT_MEMBER))
 
     app.add_handler(MessageHandler(filters.ALL & ~filters.COMMAND, handle_text_messages))

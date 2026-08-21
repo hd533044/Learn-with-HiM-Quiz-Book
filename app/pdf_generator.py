@@ -15,7 +15,6 @@ from app.stats import calculate_user_rank, calculate_user_percentile
 
 logger = logging.getLogger(__name__)
 
-# Attempt WeasyPrint Import for Native Unicode Shaping & Perfect Hindi Rendering
 HAS_WEASYPRINT = False
 try:
     import weasyprint
@@ -65,13 +64,14 @@ def clean_str(text) -> str:
 def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, rank: str, percentile: float, subject: str, report_type: str, timeframe: str) -> str:
     ist = pytz.timezone("Asia/Kolkata")
     now_date = datetime.now(ist)
-    now_date_str = now_date.strftime("%Y-%m-%d")
+    now_date_str = now_date.strftime("%d %b %Y, %I:%M %p IST")
 
     time_labels = {
-        "today": f"TODAY ({now_date_str})",
+        "today": f"TODAY ({now_date.strftime('%Y-%m-%d')})",
         "3days": "LAST 3 DAYS",
         "month": "LAST 1 MONTH",
-        "all": "ALL-TIME"
+        "all": "ALL-TIME",
+        "single_attempt": f"QUIZ REVIEW ({now_date.strftime('%d %b %Y')})"
     }
     
     subject_map = {
@@ -127,7 +127,6 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
     total_wrong = sum([a.get('wrong_answers', 0) or 0 for a in filtered_attempts])
     acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
 
-    # SVG Analytics Calculations
     try:
         pct_val = float(str(percentile).replace("%", ""))
     except Exception:
@@ -217,7 +216,8 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
         f"<td style='width: 15%; text-align: right;'>{right_logo_html}</td>"
         f"</tr></table>",
         "<br/>",
-        "<h2 style='text-align: center; color: #1E3A8A; font-family: \"Times New Roman\", serif; font-size: 20px; margin-bottom: 15px;'>OFFICIAL STUDENT INTRODUCTION & PROFILE REPORT</h2>",
+        "<h2 style='text-align: center; color: #1E3A8A; font-family: \"Times New Roman\", serif; font-size: 20px; margin-bottom: 5px;'>OFFICIAL STUDENT INTRODUCTION & PROFILE REPORT</h2>",
+        f"<div style='text-align: center; color: #64748B; font-size: 10px; margin-bottom: 15px;'>Generated on: <b>{now_date_str}</b></div>",
         
         "<table class='data-table prof-table' style='font-size: 12px;'>",
         f"<tr><td class='prof-label' style='padding: 7px;'>Student Name:</td><td style='padding: 7px;'>{full_name_clean}</td><td class='prof-label' style='padding: 7px;'>Student ID:</td><td style='padding: 7px;'>{sid_val}</td></tr>",
@@ -382,10 +382,10 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
                 res = [f"<h3>{title}</h3>", "<table class='data-table'>"]
                 res.append(
                     f"<thead><tr>"
-                    f"<th class='{header_class}' style='width: 7%; text-align:center;'>S.No.</th>"
-                    f"<th class='{header_class}' style='width: 48%;'>Question Text</th>"
-                    f"<th class='{header_class}' style='width: 25%;'>Correct Answer Text</th>"
-                    f"<th class='{header_class}' style='width: 20%;'>Attempt Timestamp</th>"
+                    f"<th class='{header_class}' style='width: 6%; text-align:center;'>S.No.</th>"
+                    f"<th class='{header_class}' style='width: 44%;'>Question Text & Explanation</th>"
+                    f"<th class='{header_class}' style='width: 25%;'>Options</th>"
+                    f"<th class='{header_class}' style='width: 25%;'>Correct Answer</th>"
                     f"</tr></thead><tbody>"
                 )
                 
@@ -394,23 +394,84 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
                     for q in q_list:
                         raw_q_text = q.get("question_text") or q.get("question")
                         raw_c_ans = q.get("correct_answer_text") or q.get("correct_answer")
+                        expl_text = q.get("explanation", "")
+                        options_list = q.get("options", [])
+                        
                         q_txt = clean_str(raw_q_text) if raw_q_text else f"Question #{q.get('question_id', 'N/A')}"
+                        if expl_text:
+                            q_txt += f"<br/><small style='color: #475569;'><b>💡 Exp:</b> {clean_str(expl_text)}</small>"
+                            
+                        opts_rendered = ""
+                        if options_list:
+                            opt_items = [f"• {clean_str(opt)}" for opt in options_list]
+                            opts_rendered = "<br/>".join(opt_items)
+                        else:
+                            opts_rendered = "N/A"
+
                         c_ans = clean_str(raw_c_ans) if raw_c_ans else "N/A"
-                        ts = q.get('attempt_timestamp', 'N/A')
-                        res.append(f"<tr><td style='text-align:center;'>{idx}</td><td>{q_txt}</td><td>{c_ans}</td><td>{ts}</td></tr>")
+                        res.append(f"<tr><td style='text-align:center;'>{idx}</td><td>{q_txt}</td><td>{opts_rendered}</td><td><b>{c_ans}</b></td></tr>")
                         idx += 1
                 else:
-                    res.append(f"<tr><td style='text-align:center;'>-</td><td>{empty_msg}</td><td>N/A</td><td>N/A</td></tr>")
+                    res.append(f"<tr><td style='text-align:center;'>-</td><td colspan='3'>{empty_msg}</td></tr>")
                 
                 res.append("</tbody></table>")
                 return "".join(res)
 
-            html_lines.append(build_html_q_table_with_sno("❌ WRONG QUESTIONS REPORT", wrong_q_list, "wrong-header", "Zero wrong questions in this timeframe! 🎉"))
-            html_lines.append(build_html_q_table_with_sno("⏭ UN-ATTEMPTED / SKIPPED QUESTIONS REPORT", skipped_q_list, "skipped-header", "Zero skipped questions in this timeframe!"))
-            html_lines.append(build_html_q_table_with_sno("✅ CORRECT QUESTIONS REPORT", correct_q_list, "correct-header", "No correct questions logged yet."))
+            html_lines.append(build_html_q_table_with_sno("❌ WRONG QUESTIONS REPORT", wrong_q_list, "wrong-header", "Zero wrong questions! Excellent accuracy! 🎉"))
+            html_lines.append(build_html_q_table_with_sno("⏭ UN-ATTEMPTED / SKIPPED QUESTIONS REPORT", skipped_q_list, "skipped-header", "Zero skipped questions!"))
+            html_lines.append(build_html_q_table_with_sno("✅ CORRECT QUESTIONS REPORT", correct_q_list, "correct-header", "No correct questions logged."))
 
     html_lines.append("</body></html>")
     return "\n".join(html_lines)
+
+
+def generate_single_quiz_attempt_pdf(attempt_id: int) -> str:
+    """Generates an official detailed review PDF for a single completed quiz attempt."""
+    conn = None
+    try:
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM quiz_attempts WHERE id = %s", (attempt_id,))
+        attempt = cursor.fetchone()
+        if not attempt:
+            cursor.close()
+            release_db(conn)
+            return "ERROR: Quiz attempt record not found."
+            
+        user_id = attempt["user_id"]
+        cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
+        u = cursor.fetchone()
+        cursor.close()
+        release_db(conn)
+
+        if not u:
+            return "ERROR: User profile not found."
+
+        rank = calculate_user_rank(user_id)
+        percentile = calculate_user_percentile(user_id)
+
+        username = u.get("username") or "user"
+        username_clean = "".join(filter(str.isalnum, str(username))).lower() or "user"
+        pdf_filename = f"{username_clean}_quiz_attempt_{attempt_id}_review.pdf"
+        pdf_path = os.path.join(USER_PROFILES_DIR, pdf_filename)
+
+        subj = attempt.get("subject") or "General"
+        html_content = generate_html_report(dict(u), [dict(attempt)], [], str(rank), percentile, subj, "full", "single_attempt")
+
+        if HAS_WEASYPRINT:
+            try:
+                weasyprint.HTML(string=html_content).write_pdf(pdf_path)
+                if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 500:
+                    return pdf_path
+            except Exception:
+                pass
+
+        return "ERROR: WeasyPrint compilation failed. Please verify that your system packages are properly built on your server."
+
+    except Exception:
+        if conn:
+            release_db(conn)
+        return f"ERROR_DETAILS:\n{traceback.format_exc()}"
 
 
 def generate_student_pdf_report(user_id: int, filter_mode: str = None, subject: str = "all", report_type: str = "full", timeframe: str = "all") -> str:
@@ -527,7 +588,8 @@ def generate_admin_query_dataset_pdf(title: str, columns: list, rows: list, kpis
     Dynamic PDF generator for administrative AI queries and data intelligence searches.
     Generates a full-featured table ledger with executive KPI summary and branding.
     """
-    now_dt = datetime.now()
+    ist = pytz.timezone("Asia/Kolkata")
+    now_dt = datetime.now(ist)
     now_str = now_dt.strftime("%d %b %Y, %I:%M %p IST")
     safe_title = "".join([c if c.isalnum() else "_" for c in title])[:30]
     filename = f"Admin_Query_{safe_title}_{int(now_dt.timestamp())}.pdf"

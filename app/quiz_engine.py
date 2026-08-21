@@ -3,7 +3,7 @@ import logging
 import time
 import os
 import json
-from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import DAILY_QUESTION_LIMIT, PRIMARY_ADMIN_ID
 from app.database import (
@@ -23,7 +23,6 @@ from app.stats import calculate_user_percentile, calculate_user_rank, get_quiz_p
 logger = logging.getLogger(__name__)
 
 ACTIVE_SESSIONS = {}
-POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
 
@@ -269,7 +268,8 @@ async def mock_lang_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
     paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
-    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else max(DAILY_QUESTION_LIMIT, paid_bal) + (profile.get("bonus_quota", 0) if profile else 0)
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
     remaining_quota = allowed_limit - attempted_today
 
     if count > remaining_quota:
@@ -594,9 +594,51 @@ async def quiz_topic_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     if subj == "english":
         current_cache["language"] = "en"
+        if topic_key in ["eng_comp_rc", "eng_comp_cloze_test"]:
+            await show_rc_timer_selection(query)
+            return
         await show_count_selection(query, user_id)
     else:
         await show_language_selection(query, user_id)
+
+
+async def show_rc_timer_selection(query):
+    timers = [
+        ("⏱ 5 Minutes (Passage + Qs)", 300),
+        ("⏱ 8 Minutes (Recommended)", 480),
+        ("⏱ 10 Minutes (Extended)", 600)
+    ]
+    keyboard = [[InlineKeyboardButton(label, callback_data=f"rctimer_{sec}")] for label, sec in timers]
+    keyboard.append([InlineKeyboardButton("🔙 Back", callback_data="qmode_topic")])
+
+    await query.edit_message_text(
+        "📖 **READING COMPREHENSION / CLOZE TEST SETUP**\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "Since reading passages require time before answering, please choose your passage solving timer:",
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode="Markdown"
+    )
+
+
+async def rc_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await check_quiz_maintenance(update): return
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    total_time_sec = int(query.data.replace("rctimer_", ""))
+    
+    setup = QUIZ_SETUP_CACHE.pop(user_id, {})
+    topic = setup.get("topic", "eng_comp_rc")
+    topic_name = setup.get("topic_name", "Reading Comprehension")
+    
+    questions = await asyncio.to_thread(fetch_pyqs_for_quiz, 5, None, "en", user_id, topic, "english")
+    await start_quiz_session(
+        query, context, user_id, questions, 
+        timer_sec=30, quiz_mode="RC_PRACTICE", 
+        mock_number=0, subject="english", 
+        topic=topic, topic_name=topic_name, 
+        language="en", total_time_mins=total_time_sec // 60
+    )
 
 
 async def show_language_selection(query, user_id: int):
@@ -779,50 +821,207 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
         "mock_number": mock_number,
         "selected_topics": selected_topics,
         "global_remaining_sec": (total_time_mins * 60) if total_time_mins else None,
-        "question_start_time": time.time()
+        "question_start_time": time.time(),
+        "active_message_id": None
     }
     ACTIVE_SESSIONS[user_id] = session
 
     lang_str = "🌐 English" if language == "en" else "🇮🇳 हिंदी"
-    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode in ["MOCK", "SECTIONAL", "MULTI_TOPIC_PRACTICE", "ENGLISH_FULL_MOCK"] else topic_name
+    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode != "PRACTICE" else topic_name
 
     await query.edit_message_text(
         f"🚀 **QUIZ SESSION STARTED!** 🚀\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🌐 **Language:** `{lang_str}`\n"
-        f"📖 **Subject / Mode:** `{quiz_mode.replace('_', ' ')}`\n"
+        f"📖 **Mode:** `{quiz_mode.replace('_', ' ')}`\n"
         f"📌 **Title:** `{title}`\n"
-        f"⏱ **Timer:** `{'10 Minutes Total Mock Time' if total_time_mins else str(timer_sec) + 's per question'}`\n"
-        f"🔒 *Exam Mode: Correct answers and explanations will be shown on your final scorecard and PDF report.*\n\n"
+        f"🔒 *Exam Mode: 100% Anonymous & Clean (No Poll Distribution Bars)*\n\n"
         f"⚡ Presenting Question 1...",
         parse_mode="Markdown"
     )
-    await send_next_question(chat_id, user_id, context)
+    await send_next_inline_question(chat_id, user_id, context)
 
 
-async def save_question_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    user_id = query.from_user.id
-    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 5))
-    session = ACTIVE_SESSIONS.get(user_id)
-    
-    if not session or "current_question" not in session:
-        await query.answer("⚠️ No active question found to save!", show_alert=True)
+async def send_next_inline_question(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
+    m_until = await asyncio.to_thread(get_maintenance_until)
+    if int(time.time()) < m_until:
+        await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**")
         return
+
+    session = ACTIVE_SESSIONS.get(user_id)
+    if not session or session.get("is_paused"):
+        return
+
+    if session["current_index"] >= len(session["questions"]):
+        await finish_quiz_and_send_report(chat_id, user_id, context)
+        return
+
+    q = session["questions"][session["current_index"]]
+    session["current_question"] = q
     
-    q = session["current_question"]
-    success = await asyncio.to_thread(
-        save_question_to_db,
-        user_id,
-        q["question"],
-        q["options"],
-        q["correct_option"],
-        q.get("explanation", "")
+    global_time_str = ""
+    if session.get("global_remaining_sec") is not None:
+        rem_sec = int(session["global_remaining_sec"])
+        if rem_sec <= 0:
+            await context.bot.send_message(chat_id=chat_id, text="⏰ **TIME'S UP!** Your quiz timer has expired.", parse_mode="Markdown")
+            await finish_quiz_and_send_report(chat_id, user_id, context)
+            return
+        m, s = divmod(rem_sec, 60)
+        global_time_str = f" | ⏳ {m:02d}:{s:02d} Left"
+
+    session["question_start_time"] = time.time()
+    current_num = session["current_index"] + 1
+    total_num = session["total"]
+    
+    quiz_mode = session.get("quiz_mode", "PRACTICE")
+    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
+    
+    card_text = (
+        f"📖 **[{title}] — ({current_num}/{total_num}){global_time_str}**\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+        f"❓ **{q['question']}**\n\n"
+        f"👉 *Tap your correct option below:*"
     )
-    if success:
-        await query.answer("💾 Question bookmarked successfully!", show_alert=True)
+
+    letters = ["A", "B", "C", "D"]
+    keyboard = []
+    for idx, opt in enumerate(q["options"]):
+        lbl = f"{letters[idx]}. {opt}"[:85]
+        keyboard.append([InlineKeyboardButton(lbl, callback_data=f"quiz_ans_{session['current_index']}_{idx}")])
+
+    keyboard.append([
+        InlineKeyboardButton("⏸ Pause", callback_data="cmd_pause_quiz"), 
+        InlineKeyboardButton("🛑 Stop", callback_data="cmd_stop_quiz")
+    ])
+    keyboard.append([InlineKeyboardButton("💾 Save Question", callback_data="cmd_save_question")])
+
+    try:
+        msg = await context.bot.send_message(
+            chat_id=chat_id,
+            text=card_text,
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode="Markdown"
+        )
+        session["active_message_id"] = msg.message_id
+
+        if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
+            TIMER_TASKS[user_id].cancel()
+
+        timer_dur = session["global_remaining_sec"] if session.get("global_remaining_sec") is not None else session["timer_sec"]
+        TIMER_TASKS[user_id] = asyncio.create_task(auto_skip_inline_task(chat_id, user_id, session["current_index"], timer_dur, context))
+    except Exception as e:
+        logger.error(f"Error sending inline question: {e}")
+        session["skipped"] += 1
+        session["current_index"] += 1
+        await send_next_inline_question(chat_id, user_id, context)
+
+
+async def auto_skip_inline_task(chat_id: int, user_id: int, expected_idx: int, timer_sec: int, context: ContextTypes.DEFAULT_TYPE):
+    await asyncio.sleep(min(timer_sec, 600) + 1)
+    session = ACTIVE_SESSIONS.get(user_id)
+    if session and not session.get("is_paused") and session["current_index"] == expected_idx:
+        q = session.get("current_question", {})
+        opts = q.get("options", [])
+        c_idx = q.get("correct_option", 0)
+        c_ans_text = opts[c_idx] if 0 <= c_idx < len(opts) else "N/A"
+
+        session.setdefault("detailed_logs", []).append({
+            "question_id": q.get("id"),
+            "question_text": q.get("question"),
+            "options": opts,
+            "explanation": q.get("explanation", ""),
+            "status": "SKIPPED_TIMEOUT",
+            "selected_option": None,
+            "correct_option": c_idx,
+            "correct_answer_text": c_ans_text,
+            "timestamp": get_ist_timestamp_str()
+        })
+        session["skipped"] += 1
+        session["current_index"] += 1
+
+        if session.get("active_message_id"):
+            try:
+                await context.bot.edit_message_text(
+                    chat_id=chat_id, message_id=session["active_message_id"],
+                    text=f"⏭ **Question {expected_idx + 1}: Skipped / Timeout**",
+                    reply_markup=None
+                )
+            except Exception:
+                pass
+
+        await send_next_inline_question(chat_id, user_id, context)
+
+
+async def handle_inline_quiz_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    data = query.data
+    if not data.startswith("quiz_ans_"):
+        return
+
+    await query.answer()
+    user_id = query.from_user.id
+    chat_id = query.message.chat_id
+    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 10))
+
+    if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
+        TIMER_TASKS[user_id].cancel()
+
+    session = ACTIVE_SESSIONS.get(user_id)
+    if not session or session.get("is_paused"):
+        return
+
+    parts = data.replace("quiz_ans_", "").split("_")
+    q_idx = int(parts[0])
+    selected = int(parts[1])
+
+    if session["current_index"] != q_idx:
+        return
+
+    if session.get("global_remaining_sec") is not None:
+        time_spent = time.time() - session.get("question_start_time", time.time())
+        session["global_remaining_sec"] -= time_spent
+
+    q = session.get("current_question", {})
+    opts = q.get("options", [])
+    correct_id = q.get("correct_option", 0)
+    c_ans_text = opts[correct_id] if 0 <= correct_id < len(opts) else "N/A"
+    selected_ans_text = opts[selected] if 0 <= selected < len(opts) else "N/A"
+
+    is_correct = (selected == correct_id)
+    if is_correct:
+        session["score"] += 1.0
+        session["correct"] += 1
+        status = "CORRECT"
     else:
-        await query.answer("ℹ️ Question already bookmarked!", show_alert=True)
+        session["wrong"] += 1
+        status = "WRONG"
+
+    session.setdefault("detailed_logs", []).append({
+        "question_id": q.get("id"),
+        "question_text": q.get("question"),
+        "options": opts,
+        "explanation": q.get("explanation", ""),
+        "status": status,
+        "selected_option": selected,
+        "correct_option": correct_id,
+        "correct_answer_text": c_ans_text,
+        "timestamp": get_ist_timestamp_str()
+    })
+
+    status_icon = "✅ Correct!" if is_correct else "❌ Incorrect!"
+    try:
+        await query.edit_message_text(
+            f"📖 Question {q_idx + 1} Answered\n"
+            f"• **Your Choice:** `{selected_ans_text}` — {status_icon}\n"
+            f"• **Correct Answer:** `{c_ans_text}`",
+            reply_markup=None,
+            parse_mode="Markdown"
+        )
+    except Exception:
+        pass
+
+    session["current_index"] += 1
+    await send_next_inline_question(chat_id, user_id, context)
 
 
 async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -928,38 +1127,16 @@ async def resume_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         "mock_number": paused.get("mock_number", 0),
         "selected_topics": paused.get("selected_topics"),
         "global_remaining_sec": paused.get("global_remaining_sec"),
-        "question_start_time": time.time()
+        "question_start_time": time.time(),
+        "active_message_id": None
     }
     ACTIVE_SESSIONS[user_id] = session
 
     if update.callback_query:
         await update.callback_query.answer()
 
-    countdown_msg = await context.bot.send_message(
-        chat_id=chat_id, 
-        text=f"▶️ **RESUMING QUIZ...** ▶️\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **3...** Get ready!",
-        parse_mode="Markdown"
-    )
-    await asyncio.sleep(1)
-
-    try:
-        await context.bot.edit_message_text(
-            chat_id=chat_id, message_id=countdown_msg.message_id,
-            text=f"▶️ **RESUMING QUIZ...** ▶️\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ **2...** Get ready!",
-            parse_mode="Markdown"
-        )
-        await asyncio.sleep(1)
-
-        await context.bot.edit_message_text(
-            chat_id=chat_id, message_id=countdown_msg.message_id,
-            text=f"▶️ **RESUMING QUIZ...** ▶️\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⚡ **1...** Launching Poll now!",
-            parse_mode="Markdown"
-        )
-        await asyncio.sleep(1)
-    except Exception:
-        pass
-
-    await send_next_question(chat_id, user_id, context)
+    await context.bot.send_message(chat_id=chat_id, text="▶️ **RESUMING QUIZ...** Let's go!", parse_mode="Markdown")
+    await send_next_inline_question(chat_id, user_id, context)
 
 
 async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1013,183 +1190,6 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await context.bot.send_message(chat_id=chat_id, text=msg, reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
     else:
         await update.message.reply_text(msg, reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
-
-
-async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
-    m_until = await asyncio.to_thread(get_maintenance_until)
-    if int(time.time()) < m_until:
-        await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**\nQuiz session paused!")
-        return
-
-    session = ACTIVE_SESSIONS.get(user_id)
-    if not session or session.get("is_paused"):
-        return
-
-    if session["current_index"] >= len(session["questions"]):
-        await finish_quiz_and_send_report(chat_id, user_id, context)
-        return
-
-    q = session["questions"][session["current_index"]]
-    session["current_question"] = q
-    
-    global_time_str = ""
-    if session.get("global_remaining_sec") is not None:
-        rem_sec = int(session["global_remaining_sec"])
-        if rem_sec <= 0:
-            await context.bot.send_message(chat_id=chat_id, text="⏰ **TIME'S UP!** Your 10-minute quiz timer has expired.", parse_mode="Markdown")
-            await finish_quiz_and_send_report(chat_id, user_id, context)
-            return
-        
-        m, s = divmod(rem_sec, 60)
-        global_time_str = f" | ⏳ {m:02d}:{s:02d} Left"
-        poll_timer_sec = min(rem_sec, 600)
-        poll_timer_sec = max(5, poll_timer_sec)
-    else:
-        poll_timer_sec = session["timer_sec"]
-
-    session["question_start_time"] = time.time()
-    current_num = session["current_index"] + 1
-    total_num = session["total"]
-    
-    quiz_mode = session.get("quiz_mode", "PRACTICE")
-    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
-    
-    base_header = f"📖 [{title}] — ({current_num}/{total_num}){global_time_str}\n\n"
-    avail_len = 300 - len(base_header)
-    q_text = q['question']
-    if len(q_text) > avail_len:
-        q_text = q_text[:max(0, avail_len-3)] + "..."
-    header_text = base_header + q_text
-
-    clean_opts = [str(opt)[:97] for opt in q["options"]]
-    correct_id = q.get("correct_option", 0)
-
-    try:
-        # Standard anonymous poll with natural question flow (no premature deletion)
-        poll_msg = await context.bot.send_poll(
-            chat_id=chat_id,
-            question=header_text,
-            options=clean_opts,
-            type=Poll.REGULAR,
-            allows_multiple_answers=False,
-            is_anonymous=True,
-            open_period=poll_timer_sec
-        )
-        
-        poll_id = poll_msg.poll.id
-        POLL_MAP[poll_id] = {
-            "user_id": user_id, 
-            "chat_id": chat_id, 
-            "poll_message_id": poll_msg.message_id,
-            "q_idx": session["current_index"], 
-            "correct_id": correct_id,
-            "q_data": q
-        }
-
-        await context.bot.send_message(
-            chat_id=chat_id,
-            text="⚡ ***Quiz Controls:***",
-            reply_markup=get_pause_resume_keyboard(),
-            parse_mode="Markdown"
-        )
-
-        if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
-            TIMER_TASKS[user_id].cancel()
-
-        TIMER_TASKS[user_id] = asyncio.create_task(auto_skip_task(chat_id, user_id, poll_id, session["current_index"], poll_timer_sec, context))
-    except Exception as e:
-        logger.error(f"Error sending poll: {e}")
-        session["skipped"] += 1
-        session["current_index"] += 1
-        await send_next_question(chat_id, user_id, context)
-
-
-async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx: int, timer_sec: int, context: ContextTypes.DEFAULT_TYPE):
-    await asyncio.sleep(timer_sec + 1)
-    if poll_id in POLL_MAP:
-        data = POLL_MAP.pop(poll_id, None)
-        session = ACTIVE_SESSIONS.get(user_id)
-        if session and not session.get("is_paused") and session["current_index"] == expected_idx:
-            if session.get("global_remaining_sec") is not None:
-                time_spent = time.time() - session.get("question_start_time", time.time())
-                session["global_remaining_sec"] -= time_spent
-
-            q = data.get("q_data", {})
-            opts = q.get("options", [])
-            c_idx = data.get("correct_id", 0)
-            c_ans_text = opts[c_idx] if 0 <= c_idx < len(opts) else "N/A"
-
-            session.setdefault("detailed_logs", []).append({
-                "question_id": q.get("id"),
-                "question_text": q.get("question"),
-                "options": opts,
-                "explanation": q.get("explanation", ""),
-                "status": "SKIPPED_TIMEOUT",
-                "selected_option": None,
-                "correct_option": c_idx,
-                "correct_answer_text": c_ans_text,
-                "timestamp": get_ist_timestamp_str()
-            })
-            session["skipped"] += 1
-            session["current_index"] += 1
-            await send_next_question(chat_id, user_id, context)
-
-
-async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    answer = update.poll_answer
-    poll_id = answer.poll_id
-    if poll_id not in POLL_MAP:
-        return
-
-    data = POLL_MAP.pop(poll_id)
-    user_id = data["user_id"]
-    chat_id = data["chat_id"]
-    asyncio.create_task(asyncio.to_thread(log_user_activity_time, user_id, 10))
-
-    if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
-        TIMER_TASKS[user_id].cancel()
-
-    m_until = await asyncio.to_thread(get_maintenance_until)
-    if int(time.time()) < m_until:
-        await context.bot.send_message(chat_id=chat_id, text="🛠 **ADMIN HAS PAUSED THE SERVICE CURRENTLY**")
-        return
-
-    session = ACTIVE_SESSIONS.get(user_id)
-    if session and not session.get("is_paused") and session["current_index"] == data["q_idx"]:
-        if session.get("global_remaining_sec") is not None:
-            time_spent = time.time() - session.get("question_start_time", time.time())
-            session["global_remaining_sec"] -= time_spent
-
-        selected = answer.option_ids[0] if answer.option_ids else -1
-        correct_id = data["correct_id"]
-        q = data.get("q_data", {})
-        opts = q.get("options", [])
-
-        c_ans_text = opts[correct_id] if 0 <= correct_id < len(opts) else "N/A"
-
-        is_correct = (selected == correct_id)
-        if is_correct:
-            session["score"] += 1.0
-            session["correct"] += 1
-            status = "CORRECT"
-        else:
-            session["wrong"] += 1
-            status = "WRONG"
-
-        session.setdefault("detailed_logs", []).append({
-            "question_id": q.get("id"),
-            "question_text": q.get("question"),
-            "options": opts,
-            "explanation": q.get("explanation", ""),
-            "status": status,
-            "selected_option": selected,
-            "correct_option": correct_id,
-            "correct_answer_text": c_ans_text,
-            "timestamp": get_ist_timestamp_str()
-        })
-
-        session["current_index"] += 1
-        await send_next_question(chat_id, user_id, context)
 
 
 async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
@@ -1307,6 +1307,8 @@ async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYP
         await mock_lang_callback(update, context)
     elif data.startswith("qmocktimer_"):
         await mock_timer_callback(update, context)
+    elif data.startswith("rctimer_"):
+        await rc_timer_callback(update, context)
     elif data.startswith("qsectsubj_"):
         await sect_subj_callback(update, context)
     elif data.startswith("qtop_toggle_"):
@@ -1333,3 +1335,5 @@ async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYP
         await quiz_timer_callback(update, context)
     elif data.startswith("qengsec_"):
         await english_section_callback(update, context)
+    elif data.startswith("quiz_ans_"):
+        await handle_inline_quiz_answer(update, context)

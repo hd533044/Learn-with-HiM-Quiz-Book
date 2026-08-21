@@ -15,7 +15,7 @@ from telegram import (
     ChatMember, ChatMemberUpdated
 )
 from telegram.ext import (
-    Application, CommandHandler, CallbackQueryHandler, PollAnswerHandler, 
+    Application, CommandHandler, CallbackQueryHandler, 
     MessageHandler, ChatMemberHandler, filters, ContextTypes, ConversationHandler
 )
 from psycopg2.extras import RealDictCursor
@@ -38,8 +38,9 @@ from app.database import (
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 
+# Removed handle_poll_answer import here to fix the deployment error
 from app.quiz_engine import (
-    launch_quiz_setup, handle_poll_answer,
+    launch_quiz_setup,
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback,
     quiz_extended_router
 )
@@ -493,8 +494,8 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "✅ **DP HCM** — 1×\n"
         "✅ **DDA JSA** — 1×\n\n"
         "🌟 **COMMUNITY PROOF & ENGAGEMENT:**\n"
-        f"• 👥 **Registered Aspirants:** `{total_users}` Students\n"
-        f"• ❤️ **Total Community Likes:** `{total_likes}` Likes\n\n"
+        f"• 👥 **Registered Aspirants:** `{total_users}` Students[cite: 3]\n"
+        f"• ❤️ **Total Community Likes:** `{total_likes}` Likes[cite: 3]\n\n"
         "📲 **Join Our Community:**\n"
         "🔹 **Telegram:** https://t.me/learnwithhim\n"
         "🔹 **Instagram:** https://instagram.com/learnwithhimm\n"
@@ -586,7 +587,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"
         f"⏳ **Overall Pass Expiry:** `{expiry}`\n"
         f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
-        f"🌟 **Platform Proof:** `{total_users}` Scholars | `{total_likes}` Likes ❤️\n"
+        f"🌟 **Platform Proof:** `{total_users}` Scholars[cite: 3] | `{total_likes}` Likes ❤️[cite: 3]\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         f"{plans_text}"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -649,7 +650,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🎉 **Limited-Time Discount Active!** All VIP packs are currently discounted by **{pct}%**.\n"
             f"⏰ **Hurry, offer ends in:** `{hrs_left}h {mins_left}m`!\n"
-            f"👥 **Trusted by:** `{total_users}` Aspirants • ❤️ `{total_likes}` Likes\n"
+            f"👥 **Trusted by:** `{total_users}` Aspirants[cite: 3] • ❤️ `{total_likes}` Likes[cite: 3]\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Select a pack below to pay securely and instantly unlock daily question limits:"
         )
@@ -657,8 +658,8 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         msg = (
             f"👑 **QUIZ WITH HIM — VIP MEMBERSHIP PACKS** 👑\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👥 **Join `{total_users}` Scholars** Practicing Everyday!\n"
-            f"❤️ **Platform Rating:** `{total_likes}` Community Likes\n"
+            f"👥 **Join `{total_users}` Scholars** Practicing Everyday![cite: 3]\n"
+            f"❤️ **Platform Rating:** `{total_likes}` Community Likes[cite: 3]\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Select a pack below to pay securely and instantly unlock daily question limits:"
         )
@@ -1561,11 +1562,6 @@ async def cancel_admin_action(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 
 async def track_chat_member_updates(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """
-    Automatically tracks when a user blocks/stops or leaves the bot in real-time,
-    archives their profile to `deleted_blocked_users`, permanently wipes them
-    from the active database, decreases registered users count, and alerts the Admin.
-    """
     result = update.my_chat_member
     if not result:
         return
@@ -2069,7 +2065,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(f"❌ **Failed to deliver warning message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
-    # Direct Message From Admin (Supports Voice / Video / Audio / PDF / GIF / Photo / Text)
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_direct_msg_uid"):
         target_student_id = context.user_data.pop("awaiting_admin_direct_msg_uid")
         outbound_text = text or caption or ""
@@ -2102,7 +2097,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(f"❌ **Failed to deliver direct message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
-    # Admin Secret Reply to Query (Supports Voice / Video / Audio / PDF / GIF / Photo / Text)
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_reply_qid"):
         qid = context.user_data.pop("awaiting_admin_reply_qid")
         ist = pytz.timezone("Asia/Kolkata")
@@ -2153,11 +2147,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 await update.message.reply_text(f"⚠️ Reply saved, but failed sending message to user: {e}", reply_markup=get_admin_nav_buttons(student_uid), parse_mode="Markdown")
         return
 
-    # Community Comment Submission
     if context.user_data.get("awaiting_community_comment"):
         context.user_data["awaiting_community_comment"] = False
         
-        # Moderation check
         lower_input = text.lower()
         if any(bad in lower_input for bad in PROFANE_WORDS):
             await update.message.reply_text(
@@ -2185,7 +2177,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         )
         return
 
-    # Student Sending Query (Supports Voice Notes / Photos / Videos / Audio / Documents / Text)
     if context.user_data.get("awaiting_user_query"):
         context.user_data["awaiting_user_query"] = False
         ist = pytz.timezone("Asia/Kolkata")
@@ -2222,7 +2213,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 f"📩 **NEW STUDENT ENQUIRY RECEIVED!**\n"
                 f"👤 **Student:** {name} (`{user.id}`)\n"
                 f"❓ **Query:** *\"{query_text_val}\"*\n\n"
-                f"Type /him or tap Student Support Threads to inspect and reply."
+                f"Type /him or tap Support Threads to inspect and reply."
             )
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("📩 Inspect Support Threads", callback_data="admin_view_student_threads_0")]])
             
@@ -2294,7 +2285,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await update.message.reply_text(f"🎉 **Feedback Received!** Thank you *{name}*:\n\n💬 *\"{text}\"*", reply_markup=ReplyKeyboardRemove(), parse_mode="Markdown")
         return
 
-    # Broadcast Execution Engine (Supports All Media Types)
     if context.user_data.get("awaiting_broadcast"):
         context.user_data["awaiting_broadcast"] = False
         bc_type = context.user_data.get("broadcast_target", "all")
@@ -2496,7 +2486,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qflow_|qmock|qsect|qtop_|qsubj_|qmode_|qtopic_|qlang_|qcount_|qtimer_|qengsec_)"))
+    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qflow_|qmock|qsect|qtop_|qsubj_|qmode_|qtopic_|qlang_|qcount_|qtimer_|qengsec_|rctimer_|quiz_ans_)"))
     
     app.add_handler(CallbackQueryHandler(pdf_step_handler, pattern="^(pdfsubj_|pdftype_|pdftime_)"))
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))
@@ -2510,7 +2500,7 @@ def build_application() -> Application:
     app.add_handler(ChatMemberHandler(track_chat_member_updates, ChatMemberHandler.MY_CHAT_MEMBER))
 
     app.add_handler(MessageHandler(filters.ALL & ~filters.COMMAND, handle_text_messages))
-    app.add_handler(PollAnswerHandler(handle_poll_answer))
+    # PollAnswerHandler successfully removed
     app.add_error_handler(global_error_handler)
 
     return app

@@ -3,7 +3,7 @@ import logging
 import time
 import os
 import json
-from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import DAILY_QUESTION_LIMIT, PRIMARY_ADMIN_ID
 from app.database import (

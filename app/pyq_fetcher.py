@@ -158,25 +158,87 @@ def clean_option_prefix(opt_text: str) -> str:
     return re.sub(r'^[A-Da-d1-4][\.\)\:\-]\s*', '', str(opt_text)).strip()
 
 
+REFERENTIAL_PATTERNS = [
+    r'\bboth\s+[a-d1-4]\s+(?:and|&)\s+[a-d1-4]\b',
+    r'\bonly\s+[a-d1-4]\s+(?:and|&)\s+[a-d1-4]\b',
+    r'\ball\s+of\s+the\s+above\b',
+    r'\bnone\s+of\s+the\s+above\b',
+    r'\ball\s+the\s+above\b',
+    r'\bnone\s+of\s+these\b',
+    r'\bneither\s+[a-d1-4]\s+nor\s+[a-d1-4]\b',
+    r'\bउपरोक्त\s+सभी\b',
+    r'\bउपर्युक्त\s+सभी\b',
+    r'\bइनमें\s+से\s+कोई\s+नहीं\b',
+    r'\bउपर्युक्त\s+दोनों\b',
+    r'\bदोनों\s+[A-Da-d1-4]\s+और\s+[A-Da-d1-4]\b'
+]
+
+
+def relabel_option_references(option_text: str, old_to_new_letter_map: dict) -> str:
+    """Dynamically replaces old letter references (e.g. 'Both A and B') with new shuffled letters."""
+    def replace_letter_match(match):
+        prefix = match.group(1)
+        letter1 = match.group(2).upper()
+        connector = match.group(3)
+        letter2 = match.group(4).upper()
+        suffix = match.group(5) or ""
+
+        new1 = old_to_new_letter_map.get(letter1, letter1)
+        new2 = old_to_new_letter_map.get(letter2, letter2)
+        first, second = sorted([new1, new2])
+        return f"{prefix} {first} {connector} {second}{suffix}"
+
+    pattern = r'\b(Both|both|Only|only|Either|either|Neither|neither)\s+([A-Da-d])\s+(and|&|or|nor)\s+([A-Da-d])(\s+are\s+correct|\s+is\s+correct|\s+correct)?\b'
+    return re.sub(pattern, replace_letter_match, option_text)
+
+
 def randomize_question_options(q: dict) -> dict:
+    """
+    Shuffles options while preserving referential and positional accuracy:
+    - If positional phrases ('All of the above', 'None of the above', 'उपरोक्त सभी') exist, skips shuffling.
+    - If letter references (e.g., 'Both A and B are correct') exist, dynamically updates referenced letters.
+    """
     opts = list(q.get("options", []))
     correct_idx = q.get("correct_option", 0)
     if not opts or correct_idx >= len(opts) or correct_idx < 0:
         return q
 
     clean_options = [clean_option_prefix(opt) for opt in opts]
-    correct_answer_value = clean_options[correct_idx]
 
-    shuffled_opts = list(clean_options)
-    random.shuffle(shuffled_opts)
+    # 1. Skip shuffling if options contain absolute positional phrases like 'All of the above'
+    lower_opts = [o.lower() for o in clean_options]
+    if any("of the above" in o or "the above" in o or "of these" in o or "उपरोक्त" in o or "उपर्युक्त" in o or "इनमें से कोई" in o for o in lower_opts):
+        new_q = dict(q)
+        new_q["options"] = clean_options
+        new_q["correct_option"] = correct_idx
+        return new_q
 
-    try:
-        new_correct_idx = shuffled_opts.index(correct_answer_value)
-    except ValueError:
-        new_correct_idx = 0
+    # 2. Track original positions
+    letters = ["A", "B", "C", "D"][:len(clean_options)]
+    indexed_options = list(enumerate(clean_options))
+    correct_original_tuple = indexed_options[correct_idx]
+
+    # 3. Shuffle options
+    shuffled_indexed = list(indexed_options)
+    random.shuffle(shuffled_indexed)
+
+    # 4. Build old-to-new letter mapping
+    old_to_new_map = {}
+    for new_idx, (old_idx, _) in enumerate(shuffled_indexed):
+        old_letter = letters[old_idx]
+        new_letter = letters[new_idx]
+        old_to_new_map[old_letter] = new_letter
+
+    # 5. Dynamically relabel any relative 'Both X and Y' option texts
+    final_shuffled_opts = []
+    for _, opt_text in shuffled_indexed:
+        updated_text = relabel_option_references(opt_text, old_to_new_map)
+        final_shuffled_opts.append(updated_text)
+
+    new_correct_idx = shuffled_indexed.index(correct_original_tuple)
 
     new_q = dict(q)
-    new_q["options"] = shuffled_opts
+    new_q["options"] = final_shuffled_opts
     new_q["correct_option"] = new_correct_idx
     return new_q
 

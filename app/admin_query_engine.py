@@ -148,7 +148,6 @@ def call_grok_sql_synthesizer(query_text: str, schema_context: str) -> str:
             body = json.loads(resp.read().decode("utf-8"))
             content = body["choices"][0]["message"]["content"].strip()
             
-            # Extract JSON block
             json_match = re.search(r"\{.*\}", content, re.DOTALL)
             if json_match:
                 parsed = json.loads(json_match.group(0))
@@ -179,9 +178,129 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
 
     try:
         # =========================================================================
-        # 1. ADMIN MASTER PIN / PASSWORD QUERY
+        # 1. ADMIN IDENTITY, CREATOR INFO & OWNER DETAILS
         # =========================================================================
-        if any(k in q_lower for k in ["admin password", "admin pin", "master pin", "master password", "admin pass", "himanshu pin"]):
+        if any(k in q_lower for k in [
+            "who is admin", "who is the admin", "admin name", "creator", "owner", 
+            "who created", "who made", "admin info", "about admin", "about himanshu", 
+            "himanshu sir", "himanshu details", "admin bio"
+        ]):
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("SELECT password_hash, updated_at FROM admin_security WHERE id = 1")
+            sec_row = cursor.fetchone()
+            cursor.close()
+            release_db(conn)
+
+            admin_pin = sec_row["password_hash"] if sec_row and sec_row.get("password_hash") else "5330"
+            
+            tg_lines = [
+                "👑 **OMNISCIENT INTEL: MASTER ADMIN DOSSIER**",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "👤 **Platform Creator & Lead Educator:** Himanshu Sir",
+                "🏆 **Credentials:** AIR #65 | 96.7/100 Marks in BSF HCM",
+                "🎖 **Examinations Qualified:** SSC CGL (3x), SSC CHSL (3x), SSC CPO (3x), DP HCM",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "📲 **Official Community & Channels:**",
+                "• Telegram Channel: @LEARNWITHHIM",
+                "• YouTube Channel: https://youtube.com/@learnwithhim",
+                "• Instagram: @learnwithhimm",
+                "• Master Admin PIN: `" + str(admin_pin) + "`",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            ]
+
+            return {
+                "title": "Master Admin & Creator Dossier",
+                "total_records": 1,
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": ["Field", "Information"],
+                "rows": [
+                    ["Admin Name", "Himanshu Sir"],
+                    ["Designation", "Platform Creator & Lead Educator"],
+                    ["Rank / Record", "AIR #65 (96.7/100 Marks in BSF HCM)"],
+                    ["Exams Qualified", "SSC CGL (3x), CHSL (3x), CPO (3x), DP HCM"],
+                    ["Telegram", "@LEARNWITHHIM"],
+                    ["Master PIN", str(admin_pin)]
+                ],
+                "kpis": {"Lead Admin": "Himanshu Sir", "AIR Rank": "#65"}
+            }
+
+        # =========================================================================
+        # 2. PDF GENERATION LOGS & REPORTS TELEMETRY
+        # =========================================================================
+        if any(k in q_lower for k in [
+            "pdf report", "pdf reports", "pdf generation", "generated pdf", 
+            "downloaded pdf", "pdf log", "pdf logs", "pdf history"
+        ]):
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("""
+                SELECT p.id, p.user_id, p.pdf_type, p.generated_at,
+                       u.student_id, u.full_name, u.phone_number, u.target_exam
+                FROM pdf_generation_logs p
+                LEFT JOIN users u ON p.user_id = u.user_id
+                ORDER BY p.id DESC
+            """)
+            pdf_logs = cursor.fetchall()
+            cursor.close()
+            release_db(conn)
+
+            is_today = "today" in q_lower
+            is_yesterday = "yesterday" in q_lower
+
+            matched_logs = []
+            for l in pdf_logs:
+                g_str = str(l.get("generated_at", ""))
+                if is_today:
+                    if is_timestamp_matching_target(g_str, today_date):
+                        matched_logs.append(l)
+                elif is_yesterday:
+                    if is_timestamp_matching_target(g_str, yesterday_date):
+                        matched_logs.append(l)
+                else:
+                    matched_logs.append(l)
+
+            time_scope = "Today" if is_today else ("Yesterday" if is_yesterday else "All-Time")
+            title = f"PDF Reports Generation Telemetry ({time_scope})"
+            columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Report Type", "Generated At (IST)"]
+            pdf_rows = []
+
+            tg_lines = [
+                f"📄 **OMNISCIENT INTEL: PDF REPORT LOGS ({time_scope.upper()})**",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                f"📊 **Total PDF Reports Generated:** `{len(matched_logs)}`",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            ]
+
+            for idx, pl in enumerate(matched_logs, start=1):
+                uid = pl.get("user_id", "N/A")
+                sid = clean_text(pl.get("student_id") or f"USER_{uid}")
+                name = clean_text(pl.get("full_name") or "Student")
+                ptype = clean_text(str(pl.get("pdf_type", "")).replace("_", " ").title())
+                g_at = clean_text(pl.get("generated_at") or "N/A")
+
+                if idx <= 20:
+                    tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   📄 Type: `{ptype}`\n   ⏰ Generated At: `{g_at}`\n")
+                pdf_rows.append([str(idx), str(uid), str(sid), name, ptype, g_at])
+
+            if len(matched_logs) > 20:
+                tg_lines.append(f"*(+ {len(matched_logs) - 20} more PDF downloads in attached PDF ledger)*")
+            if not matched_logs:
+                tg_lines.append(f"ℹ️ *Zero PDF reports generated for {time_scope}.*")
+
+            return {
+                "title": title,
+                "total_records": len(matched_logs),
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": columns,
+                "rows": pdf_rows,
+                "kpis": {"Timeframe": time_scope, "PDF Downloads": str(len(matched_logs))}
+            }
+
+        # =========================================================================
+        # 3. ADMIN MASTER PIN / PASSWORD QUERY
+        # =========================================================================
+        if any(k in q_lower for k in ["admin password", "admin pin", "master pin", "master password", "admin pass"]):
             conn = get_db()
             cursor = conn.cursor(cursor_factory=RealDictCursor)
             cursor.execute("SELECT password_hash, updated_at FROM admin_security WHERE id = 1")
@@ -198,7 +317,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 f"👑 **Current Admin Master PIN:** `{admin_pin}`",
                 f"⏰ **Last Updated:** `{updated_at}`",
                 "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-                "⚠️ *Confidential Master Admin PIN.*"
+                "⚠️ *Confidential: Master Admin PIN.*"
             ]
 
             return {
@@ -211,7 +330,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 2. BLOCKED / INACTIVE USERS QUERY
+        # 4. BLOCKED / INACTIVE USERS QUERY
         # =========================================================================
         if "block" in q_lower or "blocked" in q_lower or "inactive user" in q_lower or "inactive student" in q_lower:
             conn = get_db()
@@ -276,7 +395,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 3. QUIZ ATTEMPTS & REPORTS (TODAY, YESTERDAY, DATE-SPECIFIC & OVERALL)
+        # 5. QUIZ ATTEMPTS & REPORTS (TODAY, YESTERDAY, DATE-SPECIFIC & OVERALL)
         # =========================================================================
         is_quiz_query = any(k in q_lower for k in ["quiz", "quizzes", "attempt", "attempts", "test report", "quiz report", "quiz summary"])
         is_today_quiz = "today" in q_lower and is_quiz_query
@@ -427,7 +546,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 4. SUMMARY OF DEMO & PAID USERS
+        # 6. SUMMARY OF DEMO & PAID USERS
         # =========================================================================
         if any(k in q_lower for k in ["summary of demo", "paid vs demo", "demo and paid", "demo & paid", "user summary", "plan breakdown", "users breakdown"]):
             conn = get_db()
@@ -492,7 +611,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 5. PAID USERS IN LAST X HOURS / DAYS (HOURLY / TIME-WINDOW QUERY)
+        # 7. PAID USERS IN LAST X HOURS / DAYS (HOURLY / TIME-WINDOW QUERY)
         # =========================================================================
         hour_match = re.search(r"(\d+)\s*(?:hour|hr)", q_lower)
         days_match = re.search(r"(\d+)\s*day", q_lower)
@@ -592,7 +711,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 6. PASS EXPIRATION, VALIDITY & DEMO ENDINGS
+        # 8. PASS EXPIRATION, VALIDITY & DEMO ENDINGS
         # =========================================================================
         has_expiry_intent = any(k in q_lower for k in ["expire", "expiring", "expiry", "expiration", "validity", "demo ending", "plan expired", "pass expiry"])
 
@@ -729,7 +848,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 7. FESTIVALS & SALE STRATEGY CALENDAR
+        # 9. FESTIVALS & SALE STRATEGY CALENDAR
         # =========================================================================
         if any(k in q_lower for k in ["festival", "festivals", "sale offer", "sale timing", "when sale", "right time for sale", "calendar", "promo offer"]):
             conn = get_db()
@@ -784,7 +903,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 8. FINANCIAL REVENUE & PAYMENT COLLECTIONS
+        # 10. FINANCIAL REVENUE & PAYMENT COLLECTIONS
         # =========================================================================
         if any(k in q_lower for k in ["revenue", "earning", "income", "collection", "money earned", "sales stats", "transactions", "payment history", "txns", "total sales"]):
             conn = get_db()
@@ -888,9 +1007,13 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 9. STUDENT REGISTRATIONS & USER LISTINGS
+        # 11. STUDENT REGISTRATIONS & USER LISTINGS
         # =========================================================================
-        is_registration_query = any(k in q_lower for k in ["register", "registered", "joined", "new user", "new student", "signup", "onboarded", "users list", "students list", "user list", "total registered", "new users"])
+        is_registration_query = any(k in q_lower for k in [
+            "register", "registered", "joined", "new user", "new users", 
+            "new student", "new students", "signup", "onboarded", "users list", 
+            "students list", "user list", "total registered"
+        ])
         is_today = "today" in q_lower
         is_yesterday = "yesterday" in q_lower
         is_this_week = "this week" in q_lower or "past week" in q_lower
@@ -979,7 +1102,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 10. TOTAL PAID VIP USERS DIRECTORY
+        # 12. TOTAL PAID VIP USERS DIRECTORY
         # =========================================================================
         if ("paid" in q_lower or "subscriber" in q_lower or "bought" in q_lower or "vip" in q_lower) and any(k in q_lower for k in ["total", "all", "list", "users", "students", "show", "give", "tell"]):
             conn = get_db()
@@ -1050,7 +1173,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 11. ONLINE PRACTICE PATTERNS & TELEMETRY
+        # 13. ONLINE PRACTICE PATTERNS & TELEMETRY
         # =========================================================================
         if any(k in q_lower for k in ["online", "active users", "time spent", "practice time", "when comes", "patterns", "habits", "telemetry"]):
             conn = get_db()
@@ -1104,7 +1227,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 12. STUDENT FEEDBACK & REVIEWS
+        # 14. STUDENT FEEDBACK & REVIEWS
         # =========================================================================
         if any(k in q_lower for k in ["feedback", "review", "ratings", "reviews given", "what reviews"]):
             conn = get_db()
@@ -1147,7 +1270,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 13. UNIVERSAL MULTI-DIMENSIONAL SEARCH & DIRECT STUDENT DOSSIERS
+        # 15. UNIVERSAL MULTI-DIMENSIONAL SEARCH & DIRECT STUDENT DOSSIERS
         # =========================================================================
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -1207,9 +1330,14 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             params.append(f"%{matched_plan}%")
 
         search_keywords = q_lower
-        for stopw in ["give", "me", "show", "tell", "details", "of", "list", "all", "the", "total", "users", "students", "who", "is", "about", "student", "user", "info", "find", "search", "pin", "password", "security", "registered", "yesterday", "today", "tomorrow", "phone", "number", "profile", "please", "can", "you"]:
+        for stopw in [
+            "give", "me", "show", "tell", "details", "of", "list", "all", "the", "total", 
+            "users", "students", "who", "is", "about", "student", "user", "info", "find", 
+            "search", "pin", "password", "security", "registered", "yesterday", "today", 
+            "tomorrow", "phone", "number", "profile", "please", "can", "you", "name"
+        ]:
             search_keywords = re.sub(r'\b' + stopw + r'\b', '', search_keywords)
-        search_keywords = search_keywords.strip()
+        search_keywords = search_keywords.strip().replace("?", "").replace("!", "")
 
         if len(search_keywords) >= 2 and not (matched_state or matched_exam or matched_plan or filter_paid_only is not None):
             conditions.append("(LOWER(u.full_name) LIKE %s OR LOWER(u.student_id) LIKE %s OR u.phone_number LIKE %s OR CAST(u.user_id AS TEXT) LIKE %s)")
@@ -1266,7 +1394,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                     f"   ⚡ Quota: `{quota}` | ⏳ Expiry: `{exp}` | 🔑 PIN: `{pin}`\n"
                     f"   🕒 Last Active: `{last_act}`\n"
                 )
-            pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), str(exam), str(quota), str(quizzes_done), str(exp), str(pin)])
+            pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), exam, quota, str(quizzes_done), exp, pin])
 
         if len(matched_users) > 20:
             tg_lines.append(f"*(+ {len(matched_users) - 20} more records in attached PDF report)*")

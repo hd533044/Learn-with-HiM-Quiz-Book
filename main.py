@@ -28,8 +28,13 @@ from app.database import (
     sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile,
     fetch_pending_announcements, update_announcement_status, get_all_users, record_broadcast_delivery,
     get_active_flash_sale, calculate_discounted_price, get_user_by_phone, infer_plan_key_from_amount,
-    auto_sync_uncredited_paid_users
+    auto_sync_uncredited_paid_users, record_quiz_result
 )
+from app.pyq_fetcher import (
+    fetch_pyqs_for_quiz, fetch_rc_or_cloze_passage_questions, fetch_english_full_mock_25
+)
+from app.stats import calculate_user_rank, calculate_user_percentile
+from app.pdf_generator import generate_single_quiz_attempt_pdf
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -237,6 +242,138 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             )
         except Exception as a_err:
             logging.error(f"[ADMIN PAYMENT ALERT ERROR] {a_err}")
+
+
+# ======================================================================
+# 🚀 CBT MINI APP WEB PORTAL & REST API ROUTE HANDLERS
+# ======================================================================
+
+async def handle_serve_webapp(request):
+    """Serves the interactive CBT Single Page Web Application."""
+    template_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", "webapp.html")
+    if os.path.exists(template_path):
+        with open(template_path, "r", encoding="utf-8") as f:
+            return web.Response(text=f.read(), content_type="text/html")
+    return web.Response(text="CBT Web App Template Not Found. Please ensure app/templates/webapp.html exists.", status=404)
+
+
+async def handle_api_start_quiz(request):
+    """Fetches verified and non-repeated questions for the Web App session."""
+    try:
+        data = await request.json()
+        user_id = data.get("user_id")
+        subject = data.get("subject", "english")
+        topic = data.get("topic", "MIXED")
+        count = int(data.get("count", 20))
+
+        if topic == "FULL_MOCK_25":
+            questions = await asyncio.to_thread(fetch_english_full_mock_25, "en", user_id)
+        elif topic in ["eng_comp_rc", "eng_comp_cloze_test"]:
+            questions = await asyncio.to_thread(fetch_rc_or_cloze_passage_questions, topic, user_id)
+        else:
+            questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, None, "en", user_id, topic, subject)
+
+        return web.json_response({"questions": questions})
+    except Exception as e:
+        logging.error(f"[WEBAPP START QUIZ API ERROR] {e}")
+        return web.json_response({"error": str(e)}, status=500)
+
+
+async def handle_api_submit_quiz(request):
+    """Evaluates answers, logs attempt in PostgreSQL, and generates rank/accuracy metrics."""
+    try:
+        data = await request.json()
+        user_id = int(data.get("user_id"))
+        questions = data.get("questions", [])
+        answers = data.get("answers", {})
+        subject = data.get("subject", "General")
+        quiz_mode = data.get("quiz_mode", "CBT_MOCK")
+
+        correct = 0
+        wrong = 0
+        skipped = 0
+        detailed_logs = []
+
+        for idx, q in enumerate(questions):
+            c_idx = q.get("correct_option", 0)
+            opts = q.get("options", [])
+            selected = answers.get(str(idx))
+
+            if selected is None:
+                skipped += 1
+                status = "SKIPPED_TIMEOUT"
+            elif int(selected) == c_idx:
+                correct += 1
+                status = "CORRECT"
+            else:
+                wrong += 1
+                status = "WRONG"
+
+            detailed_logs.append({
+                "question_id": q.get("id"),
+                "question_text": q.get("question"),
+                "options": opts,
+                "explanation": q.get("explanation", ""),
+                "status": status,
+                "selected_option": selected,
+                "correct_option": c_idx,
+                "correct_answer_text": opts[c_idx] if 0 <= c_idx < len(opts) else "N/A"
+            })
+
+        score = round(correct * 1.0 - wrong * 0.25, 2)
+        total = len(questions)
+
+        attempt_id = await asyncio.to_thread(
+            record_quiz_result,
+            user_id=user_id,
+            quiz_id=quiz_mode,
+            score=score,
+            total_questions=total,
+            correct_count=correct,
+            wrong_count=wrong,
+            skipped_count=skipped,
+            time_taken=0,
+            question_details=detailed_logs,
+            quiz_mode=quiz_mode,
+            mock_number=1,
+            subject=subject
+        )
+
+        rank = await asyncio.to_thread(calculate_user_rank, user_id)
+        percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
+        accuracy = round((correct / total) * 100.0, 2) if total > 0 else 0.0
+
+        return web.json_response({
+            "attempt_id": attempt_id,
+            "score": score,
+            "correct": correct,
+            "wrong": wrong,
+            "skipped": skipped,
+            "accuracy": accuracy,
+            "rank": rank,
+            "percentile": percentile
+        })
+    except Exception as e:
+        logging.error(f"[WEBAPP SUBMIT QUIZ API ERROR] {e}")
+        return web.json_response({"error": str(e)}, status=500)
+
+
+async def handle_api_download_pdf(request):
+    """Direct PDF download endpoint for completed test reviews."""
+    try:
+        aid = int(request.match_info.get("attempt_id", 0))
+        pdf_path = await asyncio.to_thread(generate_single_quiz_attempt_pdf, aid)
+        if pdf_path and os.path.exists(pdf_path):
+            with open(pdf_path, "rb") as f:
+                return web.Response(
+                    body=f.read(),
+                    content_type="application/pdf",
+                    headers={"Content-Disposition": f"attachment; filename={os.path.basename(pdf_path)}"}
+                )
+        return web.Response(text="PDF report not found", status=404)
+    except Exception as e:
+        logging.error(f"[WEBAPP DOWNLOAD PDF API ERROR] {e}")
+        return web.Response(text=str(e), status=500)
 
 
 async def scheduled_auto_payment_sync_worker():
@@ -700,8 +837,18 @@ async def handle_razorpay_webhook(request):
 
 async def start_web_server():
     app = web.Application()
-    app.router.add_get("/", handle_ping)
+    
+    # Root and /webapp serve the Mini App CBT Exam Portal
+    app.router.add_get("/", handle_serve_webapp)
+    app.router.add_get("/webapp", handle_serve_webapp)
     app.router.add_get("/ping", handle_ping)
+    
+    # Mini App REST Endpoints
+    app.router.add_post("/api/webapp/start-quiz", handle_api_start_quiz)
+    app.router.add_post("/api/webapp/submit-quiz", handle_api_submit_quiz)
+    app.router.add_get("/api/webapp/download-pdf/{attempt_id}", handle_api_download_pdf)
+    
+    # Razorpay Webhook & Callback Routes
     app.router.add_get("/razorpay-webhook", handle_razorpay_callback_get)
     app.router.add_post("/razorpay-webhook", handle_razorpay_webhook)
 

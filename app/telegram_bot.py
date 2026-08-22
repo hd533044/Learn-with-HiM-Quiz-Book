@@ -36,7 +36,7 @@ from app.database import (
     get_broadcast_deliveries, record_broadcast_delivery, create_instant_broadcast_record,
     get_active_flash_sale, calculate_discounted_price
 )
-from app.onboarding import get_onboarding_handler, start_onboarding
+from app.onboarding import get_onboarding_handler, start_onboarding, get_how_to_use_card_text
 
 from app.quiz_engine import (
     launch_quiz_setup, handle_poll_answer,
@@ -477,36 +477,20 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     total_likes = await asyncio.to_thread(get_total_platform_likes)
 
     msg = (
-        "👋 **Hello & Welcome, Guyzzz!** ❤️\n\n"
-        "🎯 **Welcome to Quiz with HiM** — created by **Himanshu Sir** with one mission: "
-        "smart revision through relevant questions in a fast & effective quiz format! 📚⚡\n\n"
-        "💡 During his own preparation, Himanshu Sir noticed how difficult it was to find relevant questions + quick revision material. "
-        "So, after lots of effort, he created this platform to make your preparation easier, faster & more exam-oriented! 🚀\n\n"
-        "🏆 **About Himanshu Sir:**\n"
-        "🇮🇳 Currently working as **BSF HCM**\n"
-        "🥇 **AIR #65 | 96.7/100 Marks** in BSF HCM\n"
-        "✅ **SSC CGL** — 3×\n"
-        "✅ **SSC CHSL** — 3×\n"
-        "✅ **SSC Steno C & D** — 3×\n"
-        "✅ **SSC Selection Phase** — 2×\n"
-        "✅ **SSC CPO** — 3×\n"
-        "✅ **DP HCM** — 1×\n"
-        "✅ **DDA JSA** — 1×\n\n"
-        "🌟 **COMMUNITY PROOF & ENGAGEMENT:**\n"
-        f"• 👥 **Registered Aspirants:** `{total_users}` Students\n"
-        f"• ❤️ **Total Community Likes:** `{total_likes}` Likes\n\n"
-        "📲 **Join Our Community:**\n"
-        "🔹 **Telegram:** https://t.me/learnwithhim\n"
-        "🔹 **Instagram:** https://instagram.com/learnwithhimm\n"
-        "🔹 **YouTube:** https://youtube.com/@learnwithhim\n"
-        "🔹 **WhatsApp Channel:** https://whatsapp.com/channel/0029Vb8KetR3LdQbsQTxrG3e\n\n"
-        "💬 **Have a query?**\n"
-        "👉 Click **/askadmin** to ask your question!\n\n"
-        "❤️ **Study Smart • Revise Fast • Score Better** 🚀"
+        "👋 **Welcome to Quiz with HiM!** ❤️\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "🎯 **Created by Himanshu Sir** (AIR #65 | 96.7/100 Marks in BSF HCM, Cleared SSC CGL 3x, CHSL 3x, CPO 3x, DP HCM).\n\n"
+        "💡 Designed for fast, exam-relevant daily practice and instant performance tracking.\n\n"
+        f"🌟 **Community:** `{total_users}` Scholars • ❤️ `{total_likes}` Platform Likes\n\n"
+        "📲 **Links:**\n"
+        "• Telegram: https://t.me/learnwithhim\n"
+        "• YouTube: https://youtube.com/@learnwithhim\n"
+        "• Instagram: https://instagram.com/learnwithhimm\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     )
 
     buttons = InlineKeyboardMarkup([
-        [InlineKeyboardButton("💬 Secret Message Admin (/askadmin)", callback_data="cmd_askadmin")],
+        [InlineKeyboardButton("💬 Message Admin (/askadmin)", callback_data="cmd_askadmin")],
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")]
     ])
 
@@ -555,7 +539,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     plans_text = ""
     if history_plans:
-        plans_text = "\n📦 **ACTIVE SUBSCRIBED PACKS BREAKDOWN:**\n"
+        plans_text = "\n📦 **ACTIVE PACKS BREAKDOWN:**\n"
         for idx, hp in enumerate(history_plans, start=1):
             p_exp = hp.get('expiry_at')
             if not p_exp or p_exp == 'Active':
@@ -575,26 +559,25 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 f"    ⏳ Expiry: `{p_exp}`\n"
             )
     else:
-        plans_text = f"\n📦 **ACTIVE SUBSCRIBED PACKS BREAKDOWN:**\n • `{active_plan_name}`\n"
+        plans_text = f"\n📦 **ACTIVE PACKS BREAKDOWN:**\n • `{active_plan_name}`\n"
 
     msg = (
-        f"💳 **YOUR CURRENT SUBSCRIPTION PLAN** 💳\n"
+        f"💳 **YOUR SUBSCRIPTION STATUS** 💳\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👑 **Primary Pass Status:** `{active_plan_name}`\n"
-        f"⚡ **Total Daily Limit:** `{allowed_limit} Questions / Day`\n"
+        f"👑 **Pass Status:** `{active_plan_name}`\n"
+        f"⚡ **Daily Limit:** `{allowed_limit} Questions / Day`\n"
         f"📊 **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
-        f"🟢 **Remaining Today:** `{remaining}` Qs Available\n"
-        f"⏳ **Overall Pass Expiry:** `{expiry}`\n"
+        f"🟢 **Available Today:** `{remaining}` Qs\n"
+        f"⏳ **Expiry Date:** `{expiry}`\n"
         f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
-        f"🌟 **Platform Proof:** `{total_users}` Scholars | `{total_likes}` Likes ❤️\n"
+        f"🌟 **Scholars:** `{total_users}` | Likes: `{total_likes}` ❤️\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         f"{plans_text}"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"💡 *Upgrade your daily limit anytime by choosing a VIP Pack below:*"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     )
 
     btn_list = [
-        [InlineKeyboardButton("💳 Upgrade / VIP Plans", callback_data="cmd_plans"), InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")],
+        [InlineKeyboardButton("💳 Upgrade Plans", callback_data="cmd_plans"), InlineKeyboardButton("💬 Message Admin", callback_data="cmd_askadmin")],
         [
             InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), 
             InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")
@@ -631,7 +614,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             btn_txt = f"📦 {k} (₹{p['price']} - {p['days']} Days - {p['daily_limit']} Qs/Day)"
         keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"buy_plan_{k}")])
 
-    keyboard.append([InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")])
+    keyboard.append([InlineKeyboardButton("💬 Message Admin", callback_data="cmd_askadmin")])
 
     if active_sale:
         now_dt = datetime.now(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
@@ -645,22 +628,18 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         clean_sale_name = str(active_sale['sale_name']).replace("*", "").replace("_", " ").replace("`", "").upper()
 
         msg = (
-            f"🔥 **SPECIAL SALE OFFER: {clean_sale_name} ({pct}% OFF)!** 🔥\n"
+            f"🔥 **OFFER ACTIVE: {clean_sale_name} ({pct}% OFF)!** 🔥\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🎉 **Limited-Time Discount Active!** All VIP packs are currently discounted by **{pct}%**.\n"
-            f"⏰ **Hurry, offer ends in:** `{hrs_left}h {mins_left}m`!\n"
-            f"👥 **Trusted by:** `{total_users}` Aspirants • ❤️ `{total_likes}` Likes\n"
+            f"All VIP packs are discounted by **{pct}%**.\n"
+            f"⏰ **Ends in:** `{hrs_left}h {mins_left}m`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Select a pack below to pay securely and instantly unlock daily question limits:"
+            f"Select a pack below to unlock higher daily question limits:"
         )
     else:
         msg = (
             f"👑 **QUIZ WITH HIM — VIP MEMBERSHIP PACKS** 👑\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👥 **Join `{total_users}` Scholars** Practicing Everyday!\n"
-            f"❤️ **Platform Rating:** `{total_likes}` Community Likes\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Select a pack below to pay securely and instantly unlock daily question limits:"
+            f"Select a pack below to unlock your daily question limit:"
         )
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
@@ -711,7 +690,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         keyboard = [
             [InlineKeyboardButton(f"💳 Pay ₹{charge_price} via Razorpay", url=payment_url)],
             [InlineKeyboardButton("🔙 Back to Plans", callback_data="cmd_plans")],
-            [InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")]
+            [InlineKeyboardButton("💬 Message Admin", callback_data="cmd_askadmin")]
         ]
 
         if active_sale:
@@ -729,12 +708,11 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
             f"{price_details}\n"
             f"📅 **Validity:** {plan_info['days']} Days\n"
             f"⚡ **Daily Limit:** {plan_info['daily_limit']} Questions/Day\n\n"
-            f"Tap the **💳 Pay Now** button below to complete payment via UPI, GPay, PhonePe, or Cards. "
-            f"Your VIP quota activates automatically upon payment!"
+            f"Tap **💳 Pay Now** below to complete payment via UPI, GPay, PhonePe, or Cards."
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
-        await query.message.reply_text("⚠️ Unable to generate payment link. Please verify Razorpay live keys in Render Environment Variables.")
+        await query.message.reply_text("⚠️ Unable to generate payment link. Please try again or message admin.")
 
 
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -757,8 +735,7 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"📄 **STUDENT PDF REPORT CENTER** 📄\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"✨ Welcome to the advanced report generation center.\n"
-        f"Please select the **Subject** for your report:"
+        f"Select the **Subject** for your report:"
     )
 
     if update.callback_query:
@@ -786,7 +763,7 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("📅 All Time", callback_data=f"pdftime_{subject}_saved_all")],
                 [InlineKeyboardButton("🔙 Back to Subjects", callback_data="cmd_pdfreport")]
             ]
-            msg = "💾 **SAVED QUESTIONS REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📅 Please select the timeframe:"
+            msg = "💾 **SAVED QUESTIONS REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📅 Select timeframe:"
         else:
             buttons = [
                 [InlineKeyboardButton("📋 Full Questions Report", callback_data=f"pdftype_{subject}_full")],
@@ -800,7 +777,7 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 "all": "All Subjects"
             }
             subj_name = subj_names.get(subject, subject.upper())
-            msg = f"📄 **{subj_name.upper()} REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📝 Select the report type:"
+            msg = f"📄 **{subj_name.upper()} REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSelect report type:"
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
         return
 
@@ -815,7 +792,7 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton("📅 All Time", callback_data=f"pdftime_{subject}_{rtype}_all")],
             [InlineKeyboardButton("🔙 Back", callback_data=f"pdfsubj_{subject}")]
         ]
-        await query.edit_message_text("📅 **SELECT TIMEFRAME**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSelect the time period for your report:", reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
+        await query.edit_message_text("📅 **SELECT TIMEFRAME**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSelect the timeframe for your report:", reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
         return
 
     elif data.startswith("pdftime_"):
@@ -825,7 +802,7 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         timeframe = parts[3]
         
         await query.answer()
-        await query.edit_message_text("⏳ **Generating Your Custom PDF Report Card...**\nFormatting telemetry, tables, and compiling layout...", parse_mode="Markdown")
+        await query.edit_message_text("⏳ **Generating PDF Report...**\nPlease wait a moment...", parse_mode="Markdown")
 
         asyncio.create_task(asyncio.to_thread(log_pdf_generation_event, user_id, f"{subject}_{rtype}_{timeframe}"))
 
@@ -845,14 +822,12 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.edit_message_text(f"⚠️ **PDF Generation Error:**\n\n`{pdf_file}`", reply_markup=nav, parse_mode="Markdown")
         elif pdf_file and os.path.exists(pdf_file):
             caption = (
-                f"📄 **OFFICIAL STUDENT PDF ACADEMIC REPORT**\n"
+                f"📄 **STUDENT PDF REPORT**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"👤 **Student:** {student_name}\n"
                 f"🪪 **Student ID:** `{sid}`\n"
                 f"📚 **Subject:** `{subject.upper()}`\n"
-                f"📊 **Type:** `{rtype.upper()}`\n"
-                f"📅 **Timeframe:** `{timeframe.upper()}`\n"
-                f"🏷 **Watermark:** `@LearnwithHiM`"
+                f"📅 **Timeframe:** `{timeframe.upper()}`"
             )
             with open(pdf_file, "rb") as doc:
                 await context.bot.send_document(
@@ -866,7 +841,7 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("📄 Export Another PDF", callback_data="cmd_pdfreport")],
                 [InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")]
             ])
-            await context.bot.send_message(chat_id=query.message.chat_id, text="👇 **Quick Navigation:**", reply_markup=nav, parse_mode="Markdown")
+            await context.bot.send_message(chat_id=query.message.chat_id, text="👇 **Navigation:**", reply_markup=nav, parse_mode="Markdown")
         else:
             nav = InlineKeyboardMarkup([[InlineKeyboardButton("📄 Back to PDF Center", callback_data="cmd_pdfreport")]])
             await query.edit_message_text("⚠️ **Failed to generate PDF file.**", reply_markup=nav, parse_mode="Markdown")
@@ -897,7 +872,7 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
     attempts = await asyncio.to_thread(fetch_today_attempts)
 
     lines = [
-        f"❌ **YOUR INCORRECT QUESTIONS LOG (TODAY: {today_str})** ❌",
+        f"❌ **INCORRECT QUESTIONS LOG (TODAY: {today_str})** ❌",
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
     ]
 
@@ -920,7 +895,7 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
             wrong_items = [q for q in details if isinstance(q, dict) and str(q.get("status", "")).upper() == "WRONG"]
             if wrong_items:
                 found_wrong = True
-                lines.append(f"📅 **Quiz Session at:** `{dt}`")
+                lines.append(f"📅 **Quiz at:** `{dt}`")
                 for q_item in wrong_items:
                     wrong_count += 1
                     q_text = q_item.get("question_text") or q_item.get("question") or "N/A"
@@ -933,7 +908,7 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
 
     msg = "\n".join(lines)
     if len(msg) > 4000:
-        msg = msg[:3950] + "\n\n*(Truncated due to Telegram message length limit)*"
+        msg = msg[:3950] + "\n\n*(Truncated)*"
 
     nav = InlineKeyboardMarkup([
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
@@ -966,7 +941,7 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
     attempts = await asyncio.to_thread(fetch_today_attempts)
 
     lines = [
-        f"🎯 **YOUR TODAY'S ATTEMPTED QUESTIONS LOG ({today_str})** 🎯",
+        f"🎯 **TODAY'S ATTEMPTED QUESTIONS ({today_str})** 🎯",
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
     ]
 
@@ -987,7 +962,7 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
 
         if isinstance(details, list) and details:
             found_any = True
-            lines.append(f"📅 **Quiz Session at:** `{dt}`")
+            lines.append(f"📅 **Quiz at:** `{dt}`")
             for q_item in details:
                 if isinstance(q_item, dict):
                     question_counter += 1
@@ -1000,11 +975,11 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
             lines.append("")
 
     if not found_any:
-        lines.append("*No question attempt logs found for today. Type /quiz to start practicing!*")
+        lines.append("*No question attempts logged for today. Type /quiz to start practicing!*")
 
     msg = "\n".join(lines)
     if len(msg) > 4000:
-        msg = msg[:3950] + "\n\n*(Truncated due to Telegram message length limit)*"
+        msg = msg[:3950] + "\n\n*(Truncated)*"
 
     nav = InlineKeyboardMarkup([
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile", callback_data="cmd_profile")]
@@ -1027,12 +1002,12 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
     remaining_count = max(0, total_bank - seen_count)
 
     msg = (
-        f"⏭️ **UNATTEMPTED QUESTIONS SUMMARY** ⏭️\n"
+        f"⏭️ **UNATTEMPTED QUESTIONS POOL** ⏭️\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📚 **Total Question Bank:** `{total_bank}` Qs\n"
-        f"✅ **Questions Attempted:** `{seen_count}` Qs\n"
-        f"⏭️ **Remaining Unattempted:** `{remaining_count}` Qs\n\n"
-        f"🚀 Tap **Launch Quiz** below to practice new unattempted questions!"
+        f"📚 **Total Bank:** `{total_bank}` Qs\n"
+        f"✅ **Solved:** `{seen_count}` Qs\n"
+        f"⏭️ **Remaining:** `{remaining_count}` Qs\n\n"
+        f"🚀 Tap **Launch Quiz** to attempt new questions!"
     )
     nav = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
     await send_response(update, msg, reply_markup=nav)
@@ -1055,49 +1030,29 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/help"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
-    total_users = await asyncio.to_thread(get_total_registered_users_count)
-    total_likes = await asyncio.to_thread(get_total_platform_likes)
-
+    how_to_use = get_how_to_use_card_text()
     msg = (
-        f"🤖 **QUIZ WITH HIM — COMMAND DIRECTORY** 🤖\n"
+        f"🤖 **COMMAND DIRECTORY & GUIDE** 🤖\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👥 **{total_users}+ Registered Scholars** • ❤️ **{total_likes} Community Likes**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"{how_to_use}\n\n"
         f"• **/quiz** — 🚀 Launch Quiz (English/Computer/GK)\n"
-        f"• **/myplan** — 💵 Subscription Status & Packs Breakdown\n"
-        f"• **/plans** — 💳 VIP Payment Plans & Pricing\n"
-        f"• **/askadmin** — 💬 Direct Communication with Himanshu Sir\n"
-        f"• **/admininfo** — 👨‍🏫 About Himanshu Sir & Community Links\n"
-        f"• **/pdfreport** — 📄 Export Custom Academic PDF Reports\n"
-        f"• **/wrongquestions** — ❌ View Today's Wrong Questions Log\n"
-        f"• **/attemptedquestions** — 🎯 View Today's Attempted Questions Log\n"
-        f"• **/unattemptedquestions** — ⏭️ View Unattempted Question Bank\n"
-        f"• **/savedquestions** — 💾 View Bookmarked Questions\n"
-        f"• **/myprofile** — 👤 View Personal Student Profile Card\n"
-        f"• **/editprofile** — ✏️ Edit Profile Details\n"
-        f"• **/mywholestate** — 📊 View Performance & Rank\n"
+        f"• **/myplan** — 💵 Subscription Status\n"
+        f"• **/plans** — 💳 VIP Payment Plans\n"
+        f"• **/askadmin** — 💬 Direct Message to Admin\n"
+        f"• **/admininfo** — 👨‍🏫 About Himanshu Sir & Links\n"
+        f"• **/pdfreport** — 📄 Export Custom Academic Reports\n"
+        f"• **/wrongquestions** — ❌ Today's Wrong Questions\n"
+        f"• **/savedquestions** — 💾 Bookmarked Questions\n"
+        f"• **/myprofile** — 👤 View Student Profile\n"
         f"• **/toppername** — 🏆 Global Leaderboard\n"
-        f"• **/community** — 💬 Student Discussion & Community Feed\n"
-        f"• **/feedback** — 💬 Submit Platform Review/Feedback\n"
-        f"• **/reviews** — 📖 View All Student Reviews\n"
-        f"• **/invite** — 🤝 Invite Friends (+10 Quota Boost)\n"
-        f"• **/pause** — ⏸️ Pause Current Running Quiz\n"
-        f"• **/resume** — ▶️ Resume Saved Paused Quiz\n"
-        f"• **/stop** — 🛑 Stop Quiz Completely\n"
-        f"• **/help** — 🤖 Show Command Directory\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Tap any interactive button below or use the blue **[≡ Menu]** button:\n"
+        f"• **/community** — 💬 Student Community Feed\n"
+        f"• **/pause** / **/resume** / **/stop** — ⏸️ Quiz Controls"
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz (/quiz)", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Current Plan (/myplan)", callback_data="cmd_myplan")],
-        [InlineKeyboardButton("💳 VIP Plans (/plans)", callback_data="cmd_plans"), InlineKeyboardButton("📄 PDF Reports (/pdfreport)", callback_data="cmd_pdfreport")],
-        [InlineKeyboardButton("💬 Community Feed (/community)", callback_data="cmd_community"), InlineKeyboardButton("💾 Bookmarks (/savedquestions)", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("❌ Wrong Qs (/wrongquestions)", callback_data="cmd_wrongquestions"), InlineKeyboardButton("🎯 Attempted Qs (/attemptedquestions)", callback_data="cmd_attemptedquestions")],
-        [InlineKeyboardButton("👤 My Profile (/myprofile)", callback_data="cmd_profile"), InlineKeyboardButton("👨‍🏫 About Himanshu Sir (/admininfo)", callback_data="cmd_admininfo")],
-        [InlineKeyboardButton("📊 My Rank (/mywholestate)", callback_data="cmd_wholestate"), InlineKeyboardButton("🏆 Leaderboard (/toppername)", callback_data="cmd_toppers")],
-        [InlineKeyboardButton("💬 Submit Feedback (/feedback)", callback_data="cmd_feedback"), InlineKeyboardButton("📖 Reviews (/reviews)", callback_data="cmd_viewfeedbacks")],
-        [InlineKeyboardButton("🤝 Invite Friends (/invite)", callback_data="cmd_referral"), InlineKeyboardButton("💬 Secret Message Admin (/askadmin)", callback_data="cmd_askadmin")]
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")],
+        [InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport"), InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions")],
+        [InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile"), InlineKeyboardButton("💬 Message Admin", callback_data="cmd_askadmin")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -1113,20 +1068,14 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
     saved = await asyncio.to_thread(get_saved_questions, user.id)
     
     if not saved:
-        msg = (
-            "📖 **SAVED QUESTIONS BOOKMARKS** 📖\n"
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-            "You haven't bookmarked any questions yet! Tap **💾 Save Question** during quizzes to save important questions here."
-        )
+        msg = "📖 **SAVED QUESTIONS**\n\nYou haven't bookmarked any questions yet. Tap **💾 Save Question** during quizzes to save questions here!"
         await send_response(update, msg, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]]))
         return
 
     total_count = len(saved)
     lines = [
-        f"📖 **SAVED QUESTIONS BOOKMARKS** 📖",
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-        f"📊 **Total Bookmarks:** `{total_count}`",
-        f"📌 *Showing most recent bookmarks first*\n"
+        f"📖 **SAVED QUESTIONS BOOKMARKS ({total_count})** 📖",
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
     ]
 
     for idx, sq in enumerate(saved[:15], start=1):
@@ -1135,19 +1084,14 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
         corr_ans = opts_list[corr_idx] if 0 <= corr_idx < len(opts_list) else 'N/A'
         
         lines.append(
-            f"**{idx}. Saved At:** `{sq['saved_at']}`\n"
-            f"❓ **Q:** {sq['question_text']}\n"
+            f"**{idx}.** ❓ `{sq['question_text']}`\n"
             f"✅ **Correct Answer:** `{corr_ans}`\n"
-            f"💡 **Explanation:** {sq['explanation']}\n"
             f"──────────────────────────────"
         )
 
-    if total_count > 15:
-        lines.append(f"\n*(Showing 15 of {total_count} saved questions)*")
-
     msg = "\n".join(lines)
     buttons = [
-        [InlineKeyboardButton("📄 Export Saved Qs to PDF", callback_data="pdfsubj_saved")],
+        [InlineKeyboardButton("📄 Export Saved to PDF", callback_data="pdfsubj_saved")],
         [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
     ]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -1173,36 +1117,24 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     student_id = profile.get("student_id", f"USER_{user.id}")
     expiry = profile.get("vip_pass_expiry") or "N/A"
     
-    total_users = await asyncio.to_thread(get_total_registered_users_count)
-    total_likes = await asyncio.to_thread(get_total_platform_likes)
-
     msg = (
         f"👤 **STUDENT PROFILE CARD** 👤\n"
-        f"📚 **QUIZ WITH HIM**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **Full Name:** {profile['full_name']}\n"
+        f"• **Name:** {profile['full_name']}\n"
         f"• **Student ID:** `{student_id}` 🪪\n"
-        f"• **Telegram ID:** `{profile['user_id']}` 🆔\n"
         f"• **Target Exam:** `{profile['target_exam']}` 🎯\n"
-        f"• **DOB / Gender:** `{profile.get('dob', 'N/A')}` / `{profile['gender']}` 🎂\n"
-        f"• **Location:** `{profile.get('state', 'N/A')}, India` 📍\n"
-        f"• **Phone:** `{profile['phone_number']}` 📱 *(Private)*\n\n"
-        f"🌟 **COMMUNITY IMPACT & SCALE:**\n"
-        f"• **Platform Registered Students:** `{total_users}` Scholars 👥\n"
-        f"• **Total Platform Likes:** `{total_likes}` ❤️\n\n"
-        f"📊 **DAILY QUOTA & SUBSCRIPTION:**\n"
-        f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs 🖥\n"
-        f"• **Remaining Today:** `{remaining}` Qs ⚡\n"
+        f"• **Location:** `{profile.get('state', 'N/A')}, India` 📍\n\n"
+        f"📊 **DAILY USAGE:**\n"
+        f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
+        f"• **Available:** `{remaining}` Qs Available\n"
         f"• **VIP Expiry:** `{expiry}`\n"
-        f"• **Referrals:** `{profile.get('referral_count', 0)}` / 4 friends 🤝\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Report Center", callback_data="cmd_pdfreport")],
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport")],
         [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("💬 Community Feed", callback_data="cmd_community")],
-        [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")],
-        [InlineKeyboardButton("🤝 Invite Friends", callback_data="cmd_referral"), InlineKeyboardButton("💬 Secret Message Admin", callback_data="cmd_askadmin")]
+        [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -1221,29 +1153,21 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     rank = await asyncio.to_thread(calculate_user_rank, user.id)
     percentile = await asyncio.to_thread(calculate_user_percentile, user.id)
     student_id = profile.get("student_id", f"USER_{user.id}")
-    total_users = await asyncio.to_thread(get_total_registered_users_count)
-    total_likes = await asyncio.to_thread(get_total_platform_likes)
 
     msg = (
-        f"🎓 **STUDENT ACADEMIC REPORT CARD** 🎓\n"
+        f"🎓 **ACADEMIC PERFORMANCE REPORT** 🎓\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👤 **Name:** {profile['full_name']}\n"
-        f"🪪 **Student ID:** `{student_id}`\n"
-        f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
-        f"📍 **Location:** `{profile.get('state', 'N/A')}, India` 🇮🇳\n\n"
-        f"🌟 **COMMUNITY CONTEXT:**\n"
-        f"• **Active Competitors:** `{total_users}` Scholars 👥\n"
-        f"• **Platform Likes:** `{total_likes}` ❤️\n\n"
-        f"📈 **PERFORMANCE METRICS:**\n"
-        f"• **Tests Completed:** `{perf.get('total_tests', 0)}` 📚\n"
-        f"• **Questions Attempted:** `{perf.get('total_qs', 0)}` 🖥\n"
+        f"👤 **Name:** {profile['full_name']} (`{student_id}`)\n"
+        f"🎯 **Target Exam:** `{profile['target_exam']}`\n\n"
+        f"📈 **METRICS:**\n"
+        f"• **Tests Taken:** `{perf.get('total_tests', 0)}`\n"
+        f"• **Questions Solved:** `{perf.get('total_qs', 0)}`\n"
         f"• **Global Rank:** `{rank}` 🥇\n"
-        f"• **Overall Percentile:** `{percentile}%` 📊 *(Calculated against all scholars)*"
+        f"• **Percentile:** `{percentile}%` 📊"
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Report Center", callback_data="cmd_pdfreport")],
-        [InlineKeyboardButton("🏆 Toppers Leaderboard", callback_data="cmd_toppers")]
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]
     ]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
@@ -1256,8 +1180,6 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/toppername"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     toppers = await asyncio.to_thread(get_overall_leaderboard, 10)
-    total_users = await asyncio.to_thread(get_total_registered_users_count)
-    total_likes = await asyncio.to_thread(get_total_platform_likes)
     
     if not toppers:
         await send_response(update, "🏆 No leaderboard records available yet. Be the first to attempt a quiz!")
@@ -1266,12 +1188,10 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lines = []
     for idx, t in enumerate(toppers, start=1):
         badge = " 🥇" if idx == 1 else " 🥈" if idx == 2 else " 🥉" if idx == 3 else " 🎖"
-        lines.append(f"{idx}. **{t['full_name']}**{badge} — Avg Score: `{round(t['avg_score'], 2)}` ⭐")
+        lines.append(f"{idx}. **{t['full_name']}**{badge} — Avg: `{round(t['avg_score'], 2)}%`")
 
     msg = (
-        f"🏆 **GLOBAL SCHOLAR LEADERBOARD** 🏆\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👥 **{total_users} Scholars** competing across India • ❤️ **{total_likes} Likes**\n"
+        f"🏆 **GLOBAL LEADERBOARD** 🏆\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" + "\n".join(lines)
     )
     buttons = [[InlineKeyboardButton("🚀 Attempt Quiz", callback_data="cmd_quiz")]]
@@ -1289,7 +1209,7 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton("🌟 10/10 Quality Quizzes!", callback_data="fb_p1")],
         [InlineKeyboardButton("✨ Best Exam Prep Portal", callback_data="fb_p2")],
-        [InlineKeyboardButton("🔥 Great Daily Limits & Routine!", callback_data="fb_p3")],
+        [InlineKeyboardButton("🔥 Great Daily Routine!", callback_data="fb_p3")],
         [InlineKeyboardButton("✍️ Write Custom Review", callback_data="fb_custom")],
         [InlineKeyboardButton("📖 View All Student Reviews", callback_data="cmd_viewfeedbacks")]
     ]
@@ -1297,8 +1217,7 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         "💬 **STUDENT FEEDBACK PORTAL** 💬\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Your feedback helps Himanshu Sir refine this platform for higher performance!\n"
-        "Tap a preset option below or write your own custom feedback:"
+        "Tap a preset option below or write custom feedback:"
     )
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
 
@@ -1306,7 +1225,7 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def render_reviews_page(update: Update, context: ContextTypes.DEFAULT_TYPE, page: int = 0):
     total_count = await asyncio.to_thread(get_student_feedbacks_count)
     if total_count == 0:
-        msg = "📖 **STUDENT REVIEWS & FEEDBACK BOARD** 📖\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nNo student reviews submitted yet. Be the first to leave feedback using /feedback!"
+        msg = "📖 **STUDENT REVIEWS**\n\nNo reviews yet. Be the first to leave feedback using /feedback!"
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Submit Feedback", callback_data="cmd_feedback")]])
         await send_response(update, msg, reply_markup=btn)
         return
@@ -1317,9 +1236,8 @@ async def render_reviews_page(update: Update, context: ContextTypes.DEFAULT_TYPE
     feedbacks = await asyncio.to_thread(get_paginated_student_feedbacks, page, FEEDBACKS_PER_PAGE)
 
     lines = [
-        f"📖 **STUDENT REVIEWS & FEEDBACK BOARD** 📖",
+        f"📖 **STUDENT REVIEWS BOARD** 📖",
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-        f"🌟 **Total Student Reviews:** `{total_count}`",
         f"📄 **Page:** `{page + 1}` of `{total_pages}`\n"
     ]
 
@@ -1363,16 +1281,14 @@ async def render_community_page(update: Update, context: ContextTypes.DEFAULT_TY
     total_likes = await asyncio.to_thread(get_total_platform_likes)
 
     header = (
-        f"🌐 **QUIZ WITH HIM — STUDENT COMMUNITY FEED** 🌐\n"
+        f"🌐 **STUDENT COMMUNITY FEED** 🌐\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"👥 **Total Registered Scholars:** `{total_users}` Students\n"
-        f"❤️ **Platform Community Likes:** `{total_likes}`\n"
-        f"💬 **Total Community Posts:** `{total_count}`\n"
+        f"👥 `{total_users}` Scholars • ❤️ `{total_likes}` Likes • 💬 `{total_count}` Posts\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
     )
 
     if total_count == 0:
-        msg = f"{header}\n*No community comments posted yet. Share your study tips, thoughts, and motivation with your fellow scholars below!*"
+        msg = f"{header}\n*No posts yet. Share your study tips below!*"
         btn = InlineKeyboardMarkup([
             [InlineKeyboardButton("✍️ Post a Comment", callback_data="comm_add_prompt")],
             [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
@@ -1439,9 +1355,9 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"🤝 **INVITE FRIENDS & UNLOCK +10 DAILY LIMIT** 🤝\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Share your personal invite link below with **4 friends**:\n"
+        f"Share your invite link with **4 friends**:\n"
         f"`{ref_link}`\n\n"
-        f"When 4 friends register using your link, you automatically receive +10 extra questions added to your daily quota!"
+        f"When 4 friends register, you get +10 extra questions added to your daily quota!"
     )
     await send_response(update, msg)
 
@@ -1592,7 +1508,7 @@ async def track_chat_member_updates(update: Update, context: ContextTypes.DEFAUL
             f"🎯 **Target Exam:** `{exam}`\n"
             f"⏰ **Time:** `{now_str}`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🧹 *Account wiped from active database. Total registered student count decreased by 1.*"
+            f"🧹 *Account wiped from active database.*"
         )
         admin_btn = InlineKeyboardMarkup([
             [InlineKeyboardButton("📂 View Archived Students", callback_data="admin_list_archived_users_0")],
@@ -1629,7 +1545,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     chat_id=query.message.chat_id,
                     document=doc,
                     filename=os.path.basename(pdf_path),
-                    caption=f"📄 **OFFICIAL QUIZ REVIEW LEDGER (ATTEMPT #{aid})**\n• Complete solutions, options breakdown & explanations included!",
+                    caption=f"📄 **QUIZ REVIEW LEDGER (ATTEMPT #{aid})**\n• Complete solutions and answers included!",
                     parse_mode="Markdown"
                 )
         else:
@@ -1653,7 +1569,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         aid = int(raw_aid) if raw_aid.isdigit() else 0
         is_new, total_likes = await asyncio.to_thread(record_quiz_like, user.id, aid)
         if is_new:
-            await query.answer(f"❤️ Liked! Thank you for supporting Quiz with HiM! Total Likes: {total_likes}", show_alert=True)
+            await query.answer(f"❤️ Liked! Total Likes: {total_likes}", show_alert=True)
             try:
                 current_markup = query.message.reply_markup
                 if current_markup and current_markup.inline_keyboard:
@@ -1675,7 +1591,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if data == "cmd_like_info":
         total_likes = await asyncio.to_thread(get_total_platform_likes)
-        await query.answer(f"❤️ Total Platform Likes: {total_likes} (Complete quizzes to earn more likes!)", show_alert=True)
+        await query.answer(f"❤️ Total Platform Likes: {total_likes}", show_alert=True)
         return
 
     if data == "comm_add_prompt":
@@ -1683,10 +1599,9 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data["awaiting_community_comment"] = True
         cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel", callback_data="cmd_community")]])
         await query.edit_message_text(
-            "💬 **WRITE COMMUNITY POST / COMMENT** 💬\n"
+            "💬 **WRITE COMMUNITY POST**\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            "Share your exam preparation tips, motivation, or thoughts with fellow students!\n\n"
-            "⚠️ *Note: Strict moderation enabled. Harsh, abusive, or offensive language is not allowed.*\n\n"
+            "Share your exam preparation tips with fellow students!\n\n"
             "👉 Please reply with your comment below:",
             reply_markup=cancel_btn,
             parse_mode="Markdown"
@@ -1722,10 +1637,9 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     [InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
                 ])
                 await query.edit_message_text(
-                    f"🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!** 🔓\n"
+                    f"🔓 **ACCOUNT UNLOCKED!**\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                    f"🎉 **Welcome back, {profile['full_name']}!** Your identity has been verified.\n\n"
-                    f"✨ Select an option below to continue practicing on **Quiz with HiM**:",
+                    f"Welcome back, **{profile['full_name']}**! Select an option below to continue practicing:",
                     reply_markup=unlocked_menu_btn,
                     parse_mode="Markdown"
                 )
@@ -1751,14 +1665,12 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == "login_forgot_pin":
         await query.answer()
         msg = (
-            "🔑 **FORGOT PIN / SECURITY RECOVERY** 🔑\n"
+            "🔑 **FORGOT PIN RECOVERY**\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            "If you forgot your 4-digit security PIN, please contact **Himanshu Sir** directly:\n\n"
-            "👉 Use **/askadmin** to send a secret recovery request to Admin.\n"
-            "Include your registered Name, Student ID, and Phone Number."
+            "If you forgot your PIN, use **/askadmin** to send a reset request directly to Admin."
         )
         markup = InlineKeyboardMarkup([
-            [InlineKeyboardButton("💬 Secret Message Admin (/askadmin)", callback_data="cmd_askadmin")]
+            [InlineKeyboardButton("💬 Message Admin (/askadmin)", callback_data="cmd_askadmin")]
         ])
         await query.edit_message_text(msg, reply_markup=markup, parse_mode="Markdown")
         return
@@ -1839,13 +1751,13 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         presets = {
             "fb_p1": "10/10 Quality Quizzes!",
             "fb_p2": "Best Exam Prep Portal!",
-            "fb_p3": "Great Daily Limits & Routine!"
+            "fb_p3": "Great Daily Routine!"
         }
         fb_text = presets.get(data, "Great educational bot!")
         profile = await fetch_user_profile_fast(user.id)
         name = profile.get("full_name") if profile else user.full_name
         asyncio.create_task(asyncio.to_thread(save_student_feedback, user.id, name, fb_text))
-        await query.edit_message_text(f"🎉 **Thank you, {name}!** Your review has been saved:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
+        await query.edit_message_text(f"🎉 **Thank you, {name}!** Review saved:\n\n💬 *\"{fb_text}\"*", parse_mode="Markdown")
 
     elif data == "fb_custom":
         context.user_data["awaiting_custom_feedback"] = True
@@ -1886,7 +1798,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         last_res = context.user_data.get("last_ai_query_result", {})
         last_title = last_res.get("title", "platform query")
 
-        status_msg = await update.message.reply_text("🧠 *Deep-thinking & re-querying database with your correction...*", parse_mode="Markdown")
+        status_msg = await update.message.reply_text("🧠 *Re-querying database with correction...*", parse_mode="Markdown")
         
         try:
             res = await asyncio.to_thread(parse_and_execute_admin_query, last_title, context_correction=correction_text)
@@ -1913,7 +1825,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         context.user_data["awaiting_admin_ai_query"] = False
         raw_query = text or caption
         
-        status_msg = await update.message.reply_text("🔍 *Searching Database & Crunching Analytics...*", parse_mode="Markdown")
+        status_msg = await update.message.reply_text("🔍 *Searching Database...*", parse_mode="Markdown")
         
         try:
             res = await asyncio.to_thread(parse_and_execute_admin_query, raw_query)
@@ -2028,7 +1940,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
         await asyncio.to_thread(update_announcement_content, annc_id, new_text, None, "text")
         nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Sent Logs", callback_data="admin_list_sent_annc_0")]])
-        await update.message.reply_text(f"✅ **LIVE EDIT COMPLETE! Successfully updated in {updated_count}/{len(deliveries)} users' chats.**", reply_markup=nav, parse_mode="Markdown")
+        await update.message.reply_text(f"✅ **LIVE EDIT COMPLETE! Updated in {updated_count}/{len(deliveries)} users' chats.**", reply_markup=nav, parse_mode="Markdown")
         return
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_warning_msg_uid"):
@@ -2037,10 +1949,10 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             f"⚠️ **OFFICIAL ADMINISTRATIVE WARNING** ⚠️\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Dear Student, an official warning has been issued to your account by Himanshu Sir.\n\n"
-            f"📝 **Message / Notice:**\n`{text or caption or '[Media Attached]'}`\n"
+            f"📝 **Notice:**\n`{text or caption or '[Media Attached]'}`\n"
             f"⏰ **Timestamp:** `{datetime.now(pytz.timezone('Asia/Kolkata')).strftime('%d %b %Y, %I:%M %p IST')}`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Please ensure full compliance with platform rules to prevent account suspension."
+            f"Please ensure compliance with platform rules to prevent suspension."
         )
         try:
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Return to Quiz Practice", callback_data="cmd_quiz")]])
@@ -2059,16 +1971,16 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             else:
                 await context.bot.send_message(chat_id=target_student_id, text=warning_notice, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
             
-            await update.message.reply_text(f"✅ **Official Administrative Warning issued to student (`{target_student_id}`)!**", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
+            await update.message.reply_text(f"✅ **Warning delivered to student (`{target_student_id}`)!**", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         except Exception as e:
-            await update.message.reply_text(f"❌ **Failed to deliver warning message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
+            await update.message.reply_text(f"❌ **Failed to deliver warning:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_direct_msg_uid"):
         target_student_id = context.user_data.pop("awaiting_admin_direct_msg_uid")
         outbound_text = text or caption or ""
         header_text = (
-            f"📩 **OFFICIAL MESSAGE FROM HIMANSHU SIR / ADMIN**\n"
+            f"📩 **MESSAGE FROM HIMANSHU SIR / ADMIN**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"{outbound_text}\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -2091,9 +2003,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             else:
                 await context.bot.send_message(chat_id=target_student_id, text=header_text, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
             
-            await update.message.reply_text(f"✅ **Direct Message successfully sent to Student (`{target_student_id}`)!**", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
+            await update.message.reply_text(f"✅ **Message sent to Student (`{target_student_id}`)!**", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         except Exception as e:
-            await update.message.reply_text(f"❌ **Failed to deliver direct message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
+            await update.message.reply_text(f"❌ **Failed to deliver message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_reply_qid"):
@@ -2117,12 +2029,11 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         if row:
             student_uid = row["user_id"]
             user_msg = (
-                f"💬 **SECRET RESPONSE FROM HIMANSHU SIR!** 💬\n"
+                f"💬 **RESPONSE FROM HIMANSHU SIR!**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"❓ **Your Question:**\n*\"{row['query_text'] or 'Media Query'}\"*\n\n"
-                f"👨‍🏫 **Himanshu Sir's Reply:**\n`{reply_content}`\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"🔒 *Confidential communication between you and Admin.*"
+                f"👨‍🏫 **Reply:**\n`{reply_content}`\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
             )
             try:
                 btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Reply Back to Admin", callback_data="cmd_askadmin")]])
@@ -2141,9 +2052,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 else:
                     await context.bot.send_message(chat_id=student_uid, text=user_msg, reply_markup=btn, parse_mode="Markdown", disable_notification=False)
                 
-                await update.message.reply_text(f"✅ **Reply sent secretly to query #{qid} (Student ID `{student_uid}`)!**", reply_markup=get_admin_nav_buttons(student_uid), parse_mode="Markdown")
+                await update.message.reply_text(f"✅ **Reply sent to query #{qid} (Student ID `{student_uid}`)!**", reply_markup=get_admin_nav_buttons(student_uid), parse_mode="Markdown")
             except Exception as e:
-                await update.message.reply_text(f"⚠️ Reply saved, but failed sending message to user: {e}", reply_markup=get_admin_nav_buttons(student_uid), parse_mode="Markdown")
+                await update.message.reply_text(f"⚠️ Reply saved, but error delivering to user: {e}", reply_markup=get_admin_nav_buttons(student_uid), parse_mode="Markdown")
         return
 
     if context.user_data.get("awaiting_community_comment"):
@@ -2152,9 +2063,8 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         lower_input = text.lower()
         if any(bad in lower_input for bad in PROFANE_WORDS):
             await update.message.reply_text(
-                "⚠️ **COMMENT REJECTED BY CONTENT FILTER!** ⚠️\n\n"
-                "Offensive, abusive, or harsh language is strictly prohibited in our community.\n"
-                "Please keep discussion respectful and educational.",
+                "⚠️ **COMMENT REJECTED!**\n\n"
+                "Inappropriate or offensive language is not permitted.",
                 reply_markup=ReplyKeyboardRemove()
             )
             return
@@ -2166,8 +2076,8 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         await asyncio.to_thread(save_community_comment, user.id, sid, st_name, text)
         
         await update.message.reply_text(
-            f"🎉 **COMMUNITY POST PUBLISHED!** 🎉\n\n"
-            f"Thank you, **{st_name}**! Your comment is now live for all students to see.",
+            f"🎉 **COMMENT PUBLISHED!**\n\n"
+            f"Thank you, **{st_name}**! Your comment is now visible in the community feed.",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🌐 View Community Feed", callback_data="cmd_community")],
                 [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
@@ -2209,10 +2119,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
         try:
             admin_notice = (
-                f"📩 **NEW STUDENT ENQUIRY RECEIVED!**\n"
+                f"📩 **NEW STUDENT QUERY!**\n"
                 f"👤 **Student:** {name} (`{user.id}`)\n"
-                f"❓ **Query:** *\"{query_text_val}\"*\n\n"
-                f"Type /him or tap Support Threads to inspect and reply."
+                f"❓ **Query:** *\"{query_text_val}\"*"
             )
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("📩 Inspect Support Threads", callback_data="admin_view_student_threads_0")]])
             
@@ -2232,8 +2141,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             pass
 
         await update.message.reply_text(
-            "✅ **QUERY SENT TO HIMANSHU SIR!**\n\n"
-            "Himanshu Sir has received your message/voice note in his Admin Dashboard and will reply to you shortly.",
+            "✅ **QUERY SENT!**\n\nHimanshu Sir has received your message and will reply shortly.",
             reply_markup=ReplyKeyboardRemove(),
             parse_mode="Markdown"
         )
@@ -2275,7 +2183,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         context.user_data["awaiting_custom_feedback"] = False
         
         if any(bad_word in text.lower() for bad_word in PROFANE_WORDS):
-            await update.message.reply_text("🙏 Thank you for your feedback! We are working hard to improve your learning experience.", reply_markup=ReplyKeyboardRemove())
+            await update.message.reply_text("🙏 Thank you for your feedback!", reply_markup=ReplyKeyboardRemove())
             return
 
         profile = await fetch_user_profile_fast(user.id)

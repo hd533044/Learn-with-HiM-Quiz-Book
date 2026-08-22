@@ -28,6 +28,18 @@ TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
 
 
+def get_how_to_use_card_text() -> str:
+    return (
+        "📖 **HOW TO USE QUIZ WITH HIM — QUICK GUIDE**\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "1. 🚀 **Choose Mode:** Normal Practice, 10-Min Full Mock, or Sectional.\n"
+        "2. ⏱ **Pick Timer:** Choose your custom duration per question or passage.\n"
+        "3. 🎯 **Instant Feedback:** Practice mode reveals answers immediately; Mock mode keeps answers hidden until submission.\n"
+        "4. 📥 **Download PDF:** Complete solutions & answer keys are generated after the quiz.\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    )
+
+
 def get_pause_resume_keyboard():
     return InlineKeyboardMarkup([
         [
@@ -81,6 +93,7 @@ async def check_quiz_maintenance(update: Update) -> bool:
 
 
 async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Step 1: Main Game Mode Selection Panel."""
     if not await check_quiz_maintenance(update): return
 
     user = update.effective_user
@@ -149,10 +162,12 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("📑 Mixed-Manual Multi-Topic (2-5 Topics)", callback_data="qflow_TOPSECT")]
     ])
 
+    how_to_use = get_how_to_use_card_text()
     msg_text = (
-        f"📚 **QUIZ WITH HIM — SELECT MODE** 📚\n"
+        f"📚 **QUIZ WITH HIM — SELECT PRACTICE MODE** 📚\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"Please select your Quiz Mode to begin:"
+        f"{how_to_use}\n\n"
+        f"Please select your Quiz Mode below to begin:"
     )
 
     if update.callback_query:
@@ -633,7 +648,7 @@ async def rc_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     topic = setup.get("topic", "eng_comp_rc")
     topic_name = setup.get("topic_name", "Reading Comprehension")
     
-    questions = await asyncio.to_thread(fetch_rc_or_cloze_passage_questions, topic)
+    questions = await asyncio.to_thread(fetch_rc_or_cloze_passage_questions, topic, user_id)
     if not questions:
         questions = await asyncio.to_thread(fetch_pyqs_for_quiz, 5, None, "en", user_id, topic, "english")
 

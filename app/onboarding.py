@@ -46,6 +46,17 @@ INDIAN_STATES_AND_UTS = [
     "Ladakh", "Lakshadweep", "Puducherry"
 ]
 
+def get_how_to_use_card_text() -> str:
+    return (
+        "📖 **HOW TO USE QUIZ WITH HIM — QUICK START GUIDE**\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "1. 🚀 **Tap /quiz** — Select Normal Mode, Full Mock, or Sectional Mode.\n"
+        "2. ⏱ **Choose Subject & Timer** — English, Computer, or General Knowledge (GK).\n"
+        "3. 🎯 **Attempt Instant Questions** — Right/Wrong results show instantly in Practice Mode.\n"
+        "4. 📥 **Download PDF Review** — Get full answer keys and solutions after each quiz.\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    )
+
 def build_state_keyboard():
     keyboard = []
     for i in range(0, len(INDIAN_STATES_AND_UTS), 2):
@@ -112,27 +123,20 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     context.user_data["awaiting_other_exam"] = False
 
-    total_users = get_total_registered_users_count()
-    total_likes = get_total_platform_likes()
-
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified") and not context.user_data.get("is_editing_profile"):
         student_id = profile.get("student_id", "N/A")
+        how_to_use = get_how_to_use_card_text()
+        
         await update.effective_message.reply_text(
             f"⚡ **Welcome back, {profile['full_name']}!** 👋\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🪪 **Student ID:** `{student_id}`\n"
-            f"🎯 **Target Exam:** `{profile['target_exam']}`\n"
-            f"📍 **Location:** `{profile.get('state', 'N/A')}, India` 🇮🇳\n\n"
-            f"🌟 **COMMUNITY SCALE & SOCIAL PROOF:**\n"
-            f"• 👥 **Practicing Scholars:** `{total_users}` Students\n"
-            f"• ❤️ **Platform Community Likes:** `{total_likes}`\n\n"
-            f"🚀 **Select an option below to start practicing:**",
+            f"🪪 **Student ID:** `{student_id}` | 🎯 **Target:** `{profile['target_exam']}`\n\n"
+            f"{how_to_use}\n\n"
+            f"🚀 **Select an option to begin:**",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")],
-                [InlineKeyboardButton("💬 Community Feed", callback_data="cmd_community"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")],
-                [InlineKeyboardButton("🥇 Toppers Leaderboard", callback_data="cmd_toppers"), InlineKeyboardButton("📊 My Analytics", callback_data="cmd_wholestate")],
-                [InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")]
+                [InlineKeyboardButton("💬 Community Feed", callback_data="cmd_community"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")],
+                [InlineKeyboardButton("🥇 Toppers Leaderboard", callback_data="cmd_toppers"), InlineKeyboardButton("📊 My Analytics", callback_data="cmd_wholestate")]
             ]),
             parse_mode="Markdown"
         )
@@ -140,13 +144,8 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.effective_message.reply_text(
         f"{WELCOME_CARD_TEXT}\n\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🌟 **COMMUNITY PROOF & SCALE:**\n"
-        f"👥 **{total_users}+ Registered Scholars Already Practicing**\n"
-        f"❤️ **{total_likes}+ Platform Community Likes**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📝 **STUDENT REGISTRATION (STEP 1/7)** 📝\n\n"
-        f"👤 Please reply with your **Full Name** (at least 4 alphabetic letters) to generate your Official Student ID:",
+        f"📝 **STUDENT REGISTRATION (STEP 1/7)**\n\n"
+        f"👤 Please reply with your **Full Name** (at least 4 letters) to generate your Official Student ID:",
         parse_mode="Markdown"
     )
     return NAME
@@ -157,8 +156,8 @@ async def name_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if len(clean_letters) < 4:
         await update.message.reply_text(
-            "⚠️ **NAME TOO SHORT!** ⚠️\n\n"
-            "Your full name must contain at least **4 alphabetic characters**.\n"
+            "⚠️ **NAME TOO SHORT!**\n\n"
+            "Your full name must contain at least **4 letters**.\n"
             "✍️ Please enter your complete **Full Name** again:",
             parse_mode="Markdown"
         )
@@ -177,8 +176,8 @@ async def name_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
         f"✨ Nice to meet you, *{context.user_data['full_name']}*! 👋\n\n"
-        f"🎯 **TARGET EXAM SELECTION (STEP 2/7)** 🎯\n\n"
-        f"Please tap your targeted examination from the interactive options below:",
+        f"🎯 **TARGET EXAM SELECTION (STEP 2/7)**\n\n"
+        f"Please tap your targeted examination from below:",
         reply_markup=InlineKeyboardMarkup(exams),
         parse_mode="Markdown"
     )
@@ -200,7 +199,7 @@ async def exam_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     await query.edit_message_text(
         f"🎯 **Selected Target Exam:** `{selected_exam}`\n\n"
-        f"📍 **INDIAN STATE / UT SELECTION (STEP 3/7)** 📍\n\n"
+        f"📍 **INDIAN STATE / UT SELECTION (STEP 3/7)**\n\n"
         f"Please choose your home State or Union Territory from the list below:",
         reply_markup=build_state_keyboard(),
         parse_mode="Markdown"
@@ -215,7 +214,7 @@ async def custom_exam_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         await update.message.reply_text(
             f"🎯 **Selected Target Exam:** `{context.user_data['target_exam']}`\n\n"
-            f"📍 **INDIAN STATE / UT SELECTION (STEP 3/7)** 📍\n\n"
+            f"📍 **INDIAN STATE / UT SELECTION (STEP 3/7)**\n\n"
             f"Please choose your home State or Union Territory from the list below:",
             reply_markup=build_state_keyboard(),
             parse_mode="Markdown"
@@ -251,8 +250,8 @@ async def state_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=query.message.chat_id,
         text=f"📍 **Selected Location:** `{selected_state}, India` 🇮🇳\n\n"
-             f"📱 **MOBILE VERIFICATION (STEP 4/7)** 📱\n\n"
-             f"Tap the **📱 Share Verified Mobile Number** button at the bottom of your screen to complete instant verification:",
+             f"📱 **MOBILE VERIFICATION (STEP 4/7)**\n\n"
+             f"Tap the **📱 Share Verified Mobile Number** button at the bottom of your screen:",
         reply_markup=markup,
         parse_mode="Markdown"
     )
@@ -263,8 +262,8 @@ async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE)
         contact_btn = KeyboardButton(text="📱 Share Verified Mobile Number", request_contact=True)
         markup = ReplyKeyboardMarkup([[contact_btn]], one_time_keyboard=True, resize_keyboard=True)
         await update.message.reply_text(
-            "⚠️ **VERIFICATION REQUIRED!** ⚠️\n\n"
-            "To keep account scores genuine, you MUST click the button at the bottom of your screen to share your verified Telegram mobile number:",
+            "⚠️ **VERIFICATION REQUIRED!**\n\n"
+            "Please click the button at the bottom of your screen to share your verified mobile number:",
             reply_markup=markup,
             parse_mode="Markdown"
         )
@@ -279,7 +278,7 @@ async def phone_contact_step(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     await update.message.reply_text(
         f"✅ **Verified Mobile:** `{phone_num}`\n\n"
-        f"👤 **SELECT GENDER (STEP 5/7)** 👤",
+        f"👤 **SELECT GENDER (STEP 5/7)**",
         reply_markup=gender_buttons,
         parse_mode="Markdown"
     )
@@ -294,8 +293,8 @@ async def gender_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await query.edit_message_text(
         f"👤 **Gender:** `{selected_gender}`\n\n"
-        f"🎂 **SELECT BIRTH YEAR (STEP 6/7)** 🎂\n\n"
-        f"Please select your Year of Birth from the options below:",
+        f"🎂 **SELECT BIRTH YEAR (STEP 6/7)**\n\n"
+        f"Please select your Year of Birth from below:",
         reply_markup=build_year_keyboard(),
         parse_mode="Markdown"
     )
@@ -310,7 +309,7 @@ async def dob_year_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await query.edit_message_text(
         f"📅 **Selected Birth Year:** `{selected_year}`\n\n"
-        f"🗓 **SELECT BIRTH MONTH** 🗓\n\n"
+        f"🗓 **SELECT BIRTH MONTH**\n\n"
         f"Please tap your Month of Birth below:",
         reply_markup=build_month_keyboard(),
         parse_mode="Markdown"
@@ -329,7 +328,7 @@ async def dob_month_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     await query.edit_message_text(
         f"📅 **Selected Period:** `{selected_month}/{selected_year}`\n\n"
-        f"🗓 **SELECT DAY OF BIRTH** 🗓\n\n"
+        f"🗓 **SELECT DAY OF BIRTH**\n\n"
         f"Please tap your exact Day of Birth from below:",
         reply_markup=build_day_keyboard(selected_year, selected_month_int),
         parse_mode="Markdown"
@@ -349,7 +348,7 @@ async def dob_day_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await query.edit_message_text(
         f"🎂 **Registered DOB:** `{dob_str}`\n\n"
-        f"🔑 **ACCOUNT SECURITY PIN SETUP (STEP 7/7)** 🔑\n\n"
+        f"🔑 **ACCOUNT SECURITY PIN SETUP (STEP 7/7)**\n\n"
         f"Please reply with a secret **4-Digit PIN** for your account (e.g., `4321`):",
         parse_mode="Markdown"
     )
@@ -368,8 +367,8 @@ async def pin_setup_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ])
 
     await update.message.reply_text(
-        f"🛡 **SELECT SECURITY RECOVERY QUESTION** 🛡\n\n"
-        f"Choose a recovery question to assist in resetting your PIN if forgotten:",
+        f"🛡 **SELECT SECURITY RECOVERY QUESTION**\n\n"
+        f"Choose a recovery question to reset your PIN if forgotten:",
         reply_markup=sec_buttons,
         parse_mode="Markdown"
     )
@@ -420,23 +419,13 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         referred_by=context.user_data.get("referred_by")
     )
 
-    total_users = get_total_registered_users_count()
-    total_likes = get_total_platform_likes()
-
+    how_to_use = get_how_to_use_card_text()
     demo_msg = (
         f"🎉 **STUDENT REGISTRATION COMPLETE!** 🎉\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🪪 **OFFICIAL STUDENT ID:** `{student_id}`\n"
-        f"🔑 **SECRET PIN:** `{context.user_data.get('pin')}`\n"
-        f"🎂 **REGISTERED DOB:** `{dob_str}`\n\n"
-        f"🌟 **COMMUNITY IMPACT & SCALE:**\n"
-        f"• **Active Scholars on Platform:** `{total_users}` Students 👥\n"
-        f"• **Platform Community Likes:** `{total_likes}` ❤️\n\n"
-        f"🎁 **FREE DEMO PLAN ACTIVATED BY DEFAULT!**\n"
-        f"• **Quota:** `20 Questions / Day`\n"
-        f"• **Validity:** `2 Days Access`\n"
-        f"• **Status:** Active & Ready\n\n"
-        f"💡 *Need higher daily question limits? Check out our VIP Membership Packs via /plans!*\n\n"
+        f"🪪 **STUDENT ID:** `{student_id}` | 🔑 **PIN:** `{context.user_data.get('pin')}`\n"
+        f"🎁 **FREE DEMO TRIAL ACTIVATED:** `20 Questions / Day (2 Days Access)`\n\n"
+        f"{how_to_use}\n\n"
         f"🚀 Tap **Launch Quiz** below to start practicing immediately!"
     )
 
@@ -447,7 +436,7 @@ async def sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await context.bot.send_message(
         chat_id=update.message.chat_id,
-        text="👇 **QUICK NAVIGATION** 👇",
+        text="👇 **QUICK ACTIONS** 👇",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("👤 Profile Card", callback_data="cmd_profile")],
             [InlineKeyboardButton("💬 Community Feed", callback_data="cmd_community"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")]
@@ -463,7 +452,7 @@ async def edit_profile_command(update: Update, context: ContextTypes.DEFAULT_TYP
     can_edit, days_left = can_user_edit_profile(user.id)
     
     if not can_edit:
-        msg = f"⏳ **PROFILE EDIT LOCKED!** ⏳\n\nProfile updates are permitted once every **30 days**.\nPlease try again in `{days_left} days`."
+        msg = f"⏳ **PROFILE EDIT LOCKED!**\n\nProfile updates are permitted once every **30 days**.\nPlease try again in `{days_left} days`."
         if update.callback_query:
             await update.callback_query.answer(msg, show_alert=True)
         else:
@@ -471,10 +460,10 @@ async def edit_profile_command(update: Update, context: ContextTypes.DEFAULT_TYP
         return ConversationHandler.END
 
     warn_msg = (
-        "⚠️ **PROFILE EDIT WARNING** ⚠️\n"
+        "⚠️ **PROFILE EDIT WARNING**\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Please note: Profile details can only be edited **ONCE EVERY 30 DAYS**.\n\n"
-        "Are you sure you wish to update your profile details now?"
+        "Profile details can only be edited **ONCE EVERY 30 DAYS**.\n\n"
+        "Proceed with editing now?"
     )
     warn_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton("✅ Yes, Proceed to Edit", callback_data="edit_confirm_yes")],
@@ -498,7 +487,7 @@ async def edit_warn_callback(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     context.user_data["is_editing_profile"] = True
     await query.edit_message_text(
-        "✏️ **EDIT PROFILE SESSION STARTED (STEP 1/7)** ✏️\n\n"
+        "✏️ **EDIT PROFILE SESSION (STEP 1/7)**\n\n"
         "Please reply with your updated **Full Name** (at least 4 letters):",
         parse_mode="Markdown"
     )
@@ -527,7 +516,7 @@ async def recovery_menu_callback(update: Update, context: ContextTypes.DEFAULT_T
     ])
 
     await query.edit_message_text(
-        f"🛡 **PIN & ACCOUNT RESET PORTAL** 🛡\n"
+        f"🛡 **PIN & ACCOUNT RESET PORTAL**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"Account: `{u['full_name']}` (`{u['student_id']}`)\n\n"
         f"Select an authentication method below to reset your secret 4-digit PIN:",
@@ -545,7 +534,7 @@ async def recovery_option_router(update: Update, context: ContextTypes.DEFAULT_T
     if data == "rec_opt_secq":
         sec_q = u.get("security_question", "Default Security Question")
         await query.edit_message_text(
-            f"🛡 **SECURITY QUESTION RECOVERY** 🛡\n"
+            f"🛡 **SECURITY QUESTION RECOVERY**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"❓ **Question:** *{sec_q}*\n\n"
             f"✍️ Please reply with your answer below:",
@@ -559,14 +548,14 @@ async def recovery_option_router(update: Update, context: ContextTypes.DEFAULT_T
         await query.delete_message()
         await context.bot.send_message(
             chat_id=query.message.chat_id,
-            text=f"📱 **PHONE NUMBER RECOVERY** 📱\n\nTap the button below to share your contact number for match:",
+            text=f"📱 **PHONE NUMBER RECOVERY**\n\nTap the button below to share your contact number for match:",
             reply_markup=markup
         )
         return REC_PHONE
 
     elif data == "rec_opt_namedob":
         await query.edit_message_text(
-            f"👤 **NAME & DOB RECOVERY** 👤\n"
+            f"👤 **NAME & DOB RECOVERY**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
             f"Please reply with your **Registered Full Name** (or DOB formatted as DD-MM-YYYY):",
             parse_mode="Markdown"
@@ -575,7 +564,7 @@ async def recovery_option_router(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data == "rec_opt_dob":
         await query.edit_message_text(
-            f"🎂 **DATE OF BIRTH RECOVERY** 🎂\n\nSelect your registered **Birth Year**:",
+            f"🎂 **DATE OF BIRTH RECOVERY**\n\nSelect your registered **Birth Year**:",
             reply_markup=build_year_keyboard(prefix="recdoby_"),
             parse_mode="Markdown"
         )
@@ -588,11 +577,11 @@ async def rec_sec_ans_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if ans_input != correct_ans:
         rec_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔑 Reset Options", callback_data="login_forgot_pin")]])
-        await update.message.reply_text("❌ **INCORRECT SECURITY ANSWER!** ❌\n\nPlease try again or tap below to pick another method:", reply_markup=rec_btn)
+        await update.message.reply_text("❌ **INCORRECT SECURITY ANSWER!**\n\nPlease try again or tap below to pick another method:", reply_markup=rec_btn)
         return REC_SEC_ANS
 
     await update.message.reply_text(
-        f"✅ **IDENTITY VERIFIED!** ✅\n\n"
+        f"✅ **IDENTITY VERIFIED!**\n\n"
         f"👤 **Student Name:** {u['full_name']}\n"
         f"🪪 **Student ID:** `{u['student_id']}`\n\n"
         f"🔑 Please reply with your **New Secret 4-Digit PIN** below:",
@@ -620,7 +609,7 @@ async def rec_phone_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return REC_PHONE
 
     await update.message.reply_text(
-        f"✅ **PHONE VERIFIED SUCCESSFULLY!** ✅\n\n"
+        f"✅ **PHONE VERIFIED SUCCESSFULLY!**\n\n"
         f"👤 **Student Name:** {u['full_name']}\n"
         f"🪪 **Student ID:** `{u['student_id']}`\n\n"
         f"🔑 Please reply with your **New Secret 4-Digit PIN** below:",
@@ -638,7 +627,7 @@ async def rec_name_dob_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if text_input in reg_name or text_input == reg_dob:
         await update.message.reply_text(
-            f"✅ **NAME / DOB VERIFIED!** ✅\n\n"
+            f"✅ **NAME / DOB VERIFIED!**\n\n"
             f"👤 **Student Name:** {u['full_name']}\n"
             f"🪪 **Student ID:** `{u['student_id']}`\n\n"
             f"🔑 Please reply with your **New Secret 4-Digit PIN** below:",
@@ -700,7 +689,7 @@ async def rec_dob_day_callback(update: Update, context: ContextTypes.DEFAULT_TYP
     await query.delete_message()
     await context.bot.send_message(
         chat_id=query.message.chat_id,
-        text=f"✅ **DOB VERIFIED!** ✅\n\n👤 **Student Name:** {u['full_name']}\n🪪 **Student ID:** `{u['student_id']}`\n\n🔑 Please reply with your **New Secret 4-Digit PIN** below:",
+        text=f"✅ **DOB VERIFIED!**\n\n👤 **Student Name:** {u['full_name']}\n🪪 **Student ID:** `{u['student_id']}`\n\n🔑 Please reply with your **New Secret 4-Digit PIN** below:",
         parse_mode="Markdown"
     )
     return RESET_PIN
@@ -726,12 +715,11 @@ async def reset_pin_step(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ])
 
     await update.message.reply_text(
-        f"🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!** 🔓\n"
+        f"🔓 **ACCOUNT UNLOCKED SUCCESSFULLY!**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"🎉 **Welcome back, {u['full_name']}!** Your identity has been verified.\n"
-        f"🪪 **Student ID:** `{u['student_id']}`\n"
-        f"🔑 **New Secret PIN:** `{new_pin}`\n\n"
-        f"✨ Select an option below to continue practicing on **Learn with HiM Quiz Book**:",
+        f"🪪 **Student ID:** `{u['student_id']}` | 🔑 **PIN:** `{new_pin}`\n\n"
+        f"✨ Select an option below to continue practicing:",
         reply_markup=unlocked_menu_btn,
         parse_mode="Markdown"
     )

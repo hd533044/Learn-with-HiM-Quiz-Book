@@ -2,6 +2,7 @@ import json
 import os
 import random
 import re
+import hashlib
 import logging
 from datetime import datetime
 from app.config import DATA_DIR, QUESTION_BANK_DIR, TOPICS_DIR, SHORTCUT_KEYS_DIR, BASE_DIR
@@ -86,6 +87,15 @@ def clean_option_prefix(opt_text: str) -> str:
     return re.sub(r'^[A-Da-d1-4][\.\)\:\-]\s*', '', str(opt_text)).strip()
 
 
+def generate_deterministic_qid(q_text: str, category: str = "General", raw_id=None) -> str:
+    """Generates an immutable deterministic ID that never changes across server restarts."""
+    if raw_id is not None and str(raw_id).strip() != "":
+        return f"{category}_{raw_id}"
+    norm = re.sub(r'\W+', '', str(q_text).lower().strip())
+    hash_str = hashlib.sha256(norm.encode('utf-8')).hexdigest()[:16]
+    return f"{category}_{hash_str}"
+
+
 def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
     if not isinstance(q, dict):
         return None
@@ -145,8 +155,7 @@ def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
     if force_lang:
         detected_lang = force_lang
 
-    q_id_val = q.get("id")
-    unique_id = f"{category}_{q_id_val}" if q_id_val is not None else str(hash(str(q_text)))
+    unique_id = generate_deterministic_qid(q_text, category, q.get("id"))
 
     return {
         "id": unique_id,
@@ -277,8 +286,8 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
     return all_loaded
 
 
-def fetch_rc_or_cloze_passage_questions(topic_key: str) -> list:
-    """Bulletproof loader for RC & Cloze Test passage question sets."""
+def fetch_rc_or_cloze_passage_questions(topic_key: str, user_id: int = None) -> list:
+    """Bulletproof loader for RC & Cloze Test passage sets, prioritizing unseen sets."""
     raw_items = load_english_questions(topic_key)
     if not raw_items:
         return []
@@ -289,29 +298,37 @@ def fetch_rc_or_cloze_passage_questions(topic_key: str) -> list:
         if v:
             verified.append(v)
 
-    if verified:
-        # Group by passage text if available to keep passage sets together, or take first 5
-        passages_map = {}
-        for q in verified:
-            p_text = q.get("passage") or "default"
-            passages_map.setdefault(p_text, []).append(q)
-        
-        # Pick one random passage group that has at least 3-5 questions
-        groups = [g for g in passages_map.values() if len(g) >= 3]
-        if not groups:
-            groups = list(passages_map.values())
-        
-        if groups:
-            chosen_group = random.choice(groups)
-            random.shuffle(chosen_group)
-            return chosen_group[:5]
+    if not verified:
+        return []
 
-    return []
+    user_seen_ids = get_user_seen_identifiers(user_id)
+
+    passages_map = {}
+    for q in verified:
+        p_text = q.get("passage") or q.get("question")[:40]
+        passages_map.setdefault(p_text, []).append(q)
+
+    groups = [g for g in passages_map.values() if len(g) >= 3]
+    if not groups:
+        groups = list(passages_map.values())
+
+    unseen_groups = []
+    for grp in groups:
+        grp_ids = {str(q["id"]) for q in grp}
+        if not grp_ids.intersection(user_seen_ids):
+            unseen_groups.append(grp)
+
+    if unseen_groups:
+        chosen_group = random.choice(unseen_groups)
+    else:
+        chosen_group = random.choice(groups)
+
+    return chosen_group[:5]
 
 
 def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: str = "en", user_id: int = None, topic: str = "MIXED", subject: str = "computer") -> list:
     if subject == "english" and topic in ["eng_comp_rc", "eng_comp_cloze_test"]:
-        passage_qs = fetch_rc_or_cloze_passage_questions(topic)
+        passage_qs = fetch_rc_or_cloze_passage_questions(topic, user_id=user_id)
         if passage_qs:
             return passage_qs
 
@@ -436,15 +453,13 @@ def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: 
     if len(unseen_pool) >= needed_count:
         random.shuffle(unseen_pool)
         selected_questions = unseen_pool[:needed_count]
-    elif 0 < len(unseen_pool) < needed_count:
+    elif len(unseen_pool) > 0:
         selected_questions.extend(unseen_pool)
         deficit = needed_count - len(selected_questions)
         random.shuffle(seen_pool)
         selected_questions.extend(seen_pool[:deficit])
-        if user_id:
-            reset_user_seen_questions_for_ids(user_id, all_current_qids)
     else:
-        if user_id:
+        if user_id and all_current_qids:
             reset_user_seen_questions_for_ids(user_id, all_current_qids)
         random.shuffle(verified_bank)
         selected_questions = verified_bank[:needed_count]
@@ -488,9 +503,9 @@ def fetch_english_full_mock_25(language: str = "en", user_id: int = None) -> lis
     mock_qs = []
     seen_ids = get_user_seen_identifiers(user_id)
 
-    comp_qs = fetch_rc_or_cloze_passage_questions("eng_comp_rc")
+    comp_qs = fetch_rc_or_cloze_passage_questions("eng_comp_rc", user_id=user_id)
     if not comp_qs:
-        comp_qs = fetch_rc_or_cloze_passage_questions("eng_comp_cloze_test")
+        comp_qs = fetch_rc_or_cloze_passage_questions("eng_comp_cloze_test", user_id=user_id)
     for q in comp_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(comp_qs[:5])
 

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Quiz with HiM — CBT Exam Portal</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              500: '#0284c7',
+              600: '#0369a1',
+              900: '#0c4a6e',
+            },
+            surface: {
+              dark: '#0f172a',
+              card: '#1e293b',
+              border: '#334155'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
+    .custom-scroll::-webkit-scrollbar { width: 4px; height: 4px; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+  </style>
+</head>
+<body class="bg-surface-dark text-slate-100 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white pb-safe">
+
+  <!-- Sticky Top Bar / Branding -->
+  <header class="sticky top-0 z-50 bg-surface-card/90 backdrop-blur-md border-b border-surface-border px-4 py-2.5 flex items-center justify-between">
+    <div class="flex items-center space-x-2.5">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-400 flex items-center justify-center font-bold text-white shadow-md shadow-brand-500/20 text-sm">
+        HiM
+      </div>
+      <div>
+        <h1 class="text-xs font-bold tracking-tight text-white leading-tight">Quiz with HiM</h1>
+        <p id="subHeader" class="text-[10px] text-sky-400 font-medium leading-none">CBT Exam Portal</p>
+      </div>
+    </div>
+    
+    <div id="quizTimerContainer" class="hidden items-center space-x-2 bg-slate-900/80 border border-slate-700 px-3 py-1 rounded-full">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span id="quizTimerDisplay" class="font-mono text-xs font-bold text-amber-400">10:00</span>
+    </div>
+
+    <button id="paletteToggleBtn" onclick="togglePaletteModal()" class="hidden md:hidden p-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 text-xs font-medium">
+      🔢 Grid
+    </button>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-6xl w-full mx-auto p-3 md:p-5 flex flex-col">
+
+    <!-- Screen 1: Dashboard & Mode Selector -->
+    <section id="screenDashboard" class="space-y-4 flex-1">
+      <div class="bg-gradient-to-r from-blue-900/40 to-cyan-900/30 border border-blue-800/50 rounded-2xl p-4 flex items-center justify-between">
+        <div>
+          <h2 class="text-base font-bold text-white">Hello, <span id="userName">Student</span> 👋</h2>
+          <p id="userStatsLine" class="text-xs text-slate-300 mt-0.5">Quota: 20 Qs/Day • Student ID: USER_001</p>
+        </div>
+        <button onclick="fetchLeaderboard()" class="text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-xl shadow">
+          🏆 Ranks
+        </button>
+      </div>
+
+      <!-- Mode Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <!-- English -->
+        <div class="bg-surface-card border border-surface-border rounded-2xl p-4 flex flex-col justify-between hover:border-brand-500 transition shadow-sm">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-sm mb-2.5">🔤</div>
+            <h3 class="font-bold text-sm text-white">English Language</h3>
+            <p class="text-xs text-slate-400 mt-1">Grammar, Vocabulary sets, Reading Comprehension & Full 25 Qs Mocks.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-2 mt-4">
+            <button onclick="startSession('english', 'FULL_MOCK_25', 25, 600)" class="w-full text-center py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold rounded-xl transition">25 Qs Mock</button>
+            <button onclick="startSession('english', 'eng_comp_rc', 5, 480)" class="w-full text-center py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 transition">Passage RC</button>
+          </div>
+        </div>
+
+        <!-- Computer -->
+        <div class="bg-surface-card border border-surface-border rounded-2xl p-4 flex flex-col justify-between hover:border-brand-500 transition shadow-sm">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm mb-2.5">🖥️</div>
+            <h3 class="font-bold text-sm text-white">Computer Awareness</h3>
+            <p class="text-xs text-slate-400 mt-1">MS Office, Hardware, Networking, Shortcuts & 20 Qs Sectional Tests.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-2 mt-4">
+            <button onclick="startSession('computer', 'MIXED', 20, 600)" class="w-full text-center py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-xl transition">20 Qs Mock</button>
+            <button onclick="startSession('computer', 'SHORTCUTS', 20, 300)" class="w-full text-center py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 transition">Shortcuts</button>
+          </div>
+        </div>
+
+        <!-- GK -->
+        <div class="bg-surface-card border border-surface-border rounded-2xl p-4 flex flex-col justify-between hover:border-brand-500 transition shadow-sm">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm mb-2.5">🌍</div>
+            <h3 class="font-bold text-sm text-white">General Knowledge</h3>
+            <p class="text-xs text-slate-400 mt-1">Polity, History, Static GK, Science, Awards & Combined Mocks.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-2 mt-4">
+            <button onclick="startSession('gk', 'MIXED', 20, 600)" class="w-full text-center py-2 bg-amber-600 hover:bg-amber-500 text-white text-xs font-semibold rounded-xl transition">20 Qs Mock</button>
+            <button onclick="startSession('Mixed', 'MOCK', 40, 600)" class="w-full text-center py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 transition">Combined</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 2: Real Computer-Based Test (CBT) Interface -->
+    <section id="screenExam" class="hidden flex-1 flex flex-col md:flex-row gap-4">
+      
+      <!-- Left Column: Question & Passage Window -->
+      <div class="flex-1 flex flex-col bg-surface-card border border-surface-border rounded-2xl p-4 overflow-hidden">
+        
+        <!-- Question Meta -->
+        <div class="flex items-center justify-between border-b border-surface-border pb-2.5 mb-3">
+          <div class="flex items-center space-x-2">
+            <span id="questionCounterBadge" class="bg-brand-500/20 text-brand-500 text-xs font-bold px-2.5 py-0.5 rounded-md border border-brand-500/30">Q. 1 / 25</span>
+            <span id="markSchemeBadge" class="text-[10px] text-slate-400 font-mono">+1.0 / -0.25</span>
+          </div>
+          <button onclick="saveBookmark()" class="text-xs text-slate-400 hover:text-amber-400 flex items-center space-x-1">
+            <span>💾</span> <span>Bookmark</span>
+          </button>
+        </div>
+
+        <!-- Scrollable Passage (If RC or Cloze Test) -->
+        <div id="passageContainer" class="hidden max-h-44 overflow-y-auto custom-scroll bg-slate-900/90 border border-slate-700/80 rounded-xl p-3 mb-3.5 text-xs text-slate-300 leading-relaxed">
+          <p class="font-bold text-sky-400 mb-1">📖 Reading Context / Passage:</p>
+          <div id="passageContent"></div>
+        </div>
+
+        <!-- Question Text -->
+        <div class="flex-1 overflow-y-auto custom-scroll">
+          <h2 id="questionText" class="text-sm md:text-base font-semibold text-white leading-relaxed mb-4">
+            Loading question...
+          </h2>
+
+          <!-- Options Grid -->
+          <div id="optionsList" class="space-y-2.5">
+            <!-- Dynamic Option Buttons -->
+          </div>
+        </div>
+
+        <!-- CBT Action Controls Bottom Bar -->
+        <div class="border-t border-surface-border pt-3 mt-3 flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center space-x-2">
+            <button onclick="markForReview()" class="px-3 py-2 bg-purple-900/40 hover:bg-purple-900/60 text-purple-300 border border-purple-700/50 rounded-xl text-xs font-semibold">
+              🟣 Mark Review
+            </button>
+            <button onclick="clearResponse()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-400 rounded-xl text-xs font-medium">
+              Clear
+            </button>
+          </div>
+
+          <div class="flex items-center space-x-2">
+            <button onclick="prevQuestion()" class="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-medium">
+              ◀ Prev
+            </button>
+            <button onclick="nextQuestion()" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-xs font-bold shadow-md shadow-brand-500/20">
+              Save & Next ▶
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column / Sidebar: Question Palette Grid (Desktop) -->
+      <div id="paletteSidebar" class="hidden md:flex w-72 bg-surface-card border border-surface-border rounded-2xl p-4 flex-col justify-between">
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Question Palette</h3>
+          
+          <div id="paletteGrid" class="grid grid-cols-5 gap-2 max-h-64 overflow-y-auto custom-scroll pr-1">
+            <!-- Dynamic 1..N Palette Buttons -->
+          </div>
+
+          <!-- Legend -->
+          <div class="grid grid-cols-2 gap-2 text-[10px] text-slate-400 mt-4 border-t border-surface-border pt-3">
+            <div class="flex items-center space-x-1.5"><span class="w-2.5 h-2.5 rounded bg-emerald-500"></span><span>Answered</span></div>
+            <div class="flex items-center space-x-1.5"><span class="w-2.5 h-2.5 rounded bg-rose-500"></span><span>Unanswered</span></div>
+            <div class="flex items-center space-x-1.5"><span class="w-2.5 h-2.5 rounded bg-purple-500"></span><span>Marked Review</span></div>
+            <div class="flex items-center space-x-1.5"><span class="w-2.5 h-2.5 rounded bg-slate-700"></span><span>Not Visited</span></div>
+          </div>
+        </div>
+
+        <button onclick="submitExamPrompt()" class="w-full py-2.5 mt-4 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl shadow-md transition">
+          🛑 Submit Exam
+        </button>
+      </div>
+    </section>
+
+    <!-- Screen 3: Scorecard & PDF Review View -->
+    <section id="screenScorecard" class="hidden space-y-4 max-w-xl mx-auto w-full">
+      <div class="bg-surface-card border border-surface-border rounded-2xl p-6 text-center shadow-lg">
+        <div class="w-14 h-14 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl font-bold mb-3">
+          🏆
+        </div>
+        <h2 class="text-lg font-bold text-white">Quiz Attempt Completed!</h2>
+        <p class="text-xs text-slate-400 mt-0.5" id="reportSubtitle">Official Performance Ledger</p>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-3 gap-2.5 my-5">
+          <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3">
+            <span class="text-[10px] text-slate-400 uppercase font-semibold">Score</span>
+            <p id="resScore" class="text-base font-bold text-white mt-0.5">0.0</p>
+          </div>
+          <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3">
+            <span class="text-[10px] text-slate-400 uppercase font-semibold">Accuracy</span>
+            <p id="resAccuracy" class="text-base font-bold text-emerald-400 mt-0.5">0%</p>
+          </div>
+          <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3">
+            <span class="text-[10px] text-slate-400 uppercase font-semibold">Rank</span>
+            <p id="resRank" class="text-base font-bold text-amber-400 mt-0.5">#1</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <button id="downloadPdfBtn" class="w-full py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold rounded-xl shadow transition">
+            📥 Download Verified PDF Report
+          </button>
+          <button onclick="returnHome()" class="w-full py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold rounded-xl border border-slate-700">
+            🔄 Return to Home
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Application Logic -->
+  <script>
+    const tg = window.Telegram ? window.Telegram.WebApp : null;
+    if (tg) { tg.expand(); tg.ready(); }
+
+    let sessionState = {
+      userId: tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user.id : 1091057353,
+      userName: tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user.first_name : 'Student',
+      questions: [],
+      currentIndex: 0,
+      answers: {}, // qIndex: optionId
+      status: {},  // qIndex: 'answered' | 'skipped' | 'review' | 'unvisited'
+      timerSec: 600,
+      timerInterval: null,
+      quizMode: 'MOCK',
+      subject: 'english'
+    };
+
+    document.getElementById('userName').innerText = sessionState.userName;
+
+    async function startSession(subject, topic, count, timerDuration) {
+      document.getElementById('screenDashboard').classList.add('hidden');
+      document.getElementById('screenExam').classList.remove('hidden');
+      document.getElementById('quizTimerContainer').classList.remove('hidden');
+      document.getElementById('quizTimerContainer').classList.add('flex');
+
+      sessionState.subject = subject;
+      sessionState.quizMode = topic;
+      sessionState.timerSec = timerDuration;
+      sessionState.currentIndex = 0;
+      sessionState.answers = {};
+      sessionState.status = {};
+
+      startTimer();
+
+      try {
+        const res = await fetch('/api/webapp/start-quiz', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            user_id: sessionState.userId,
+            subject: subject,
+            topic: topic,
+            count: count,
+            language: 'en'
+          })
+        });
+        const data = await res.json();
+        sessionState.questions = data.questions || [];
+        
+        for (let i = 0; i < sessionState.questions.length; i++) {
+          sessionState.status[i] = 'unvisited';
+        }
+        sessionState.status[0] = 'skipped';
+        renderQuestion(0);
+        buildPalette();
+      } catch (e) {
+        alert('Failed to load questions: ' + e);
+      }
+    }
+
+    function renderQuestion(idx) {
+      sessionState.currentIndex = idx;
+      const q = sessionState.questions[idx];
+      if (!q) return;
+
+      document.getElementById('questionCounterBadge').innerText = `Q. ${idx + 1} / ${sessionState.questions.length}`;
+      document.getElementById('questionText').innerText = q.question;
+
+      // Render Passage if available
+      const passageBox = document.getElementById('passageContainer');
+      if (q.passage && q.passage.trim() !== "") {
+        passageBox.classList.remove('hidden');
+        document.getElementById('passageContent').innerText = q.passage;
+      } else {
+        passageBox.classList.add('hidden');
+      }
+
+      // Render Options
+      const list = document.getElementById('optionsList');
+      list.innerHTML = '';
+      const letters = ['A', 'B', 'C', 'D'];
+
+      q.options.forEach((opt, optIdx) => {
+        const isSelected = sessionState.answers[idx] === optIdx;
+        const btn = document.createElement('button');
+        btn.className = `w-full text-left p-3 rounded-xl border text-xs font-medium transition flex items-center justify-between ${
+          isSelected 
+            ? 'bg-brand-500/20 border-brand-500 text-sky-200' 
+            : 'bg-slate-900/60 border-slate-800 text-slate-300 hover:bg-slate-800'
+        }`;
+        btn.onclick = () => selectOption(optIdx);
+        btn.innerHTML = `<span><b class="mr-2 text-slate-400">${letters[optIdx]}.</b> ${opt}</span>`;
+        list.appendChild(btn);
+      });
+
+      updatePaletteUI();
+    }
+
+    function selectOption(optIdx) {
+      const idx = sessionState.currentIndex;
+      sessionState.answers[idx] = optIdx;
+      sessionState.status[idx] = 'answered';
+      renderQuestion(idx);
+    }
+
+    function clearResponse() {
+      const idx = sessionState.currentIndex;
+      delete sessionState.answers[idx];
+      sessionState.status[idx] = 'skipped';
+      renderQuestion(idx);
+    }
+
+    function markForReview() {
+      const idx = sessionState.currentIndex;
+      sessionState.status[idx] = 'review';
+      nextQuestion();
+    }
+
+    function nextQuestion() {
+      if (sessionState.currentIndex < sessionState.questions.length - 1) {
+        const nextIdx = sessionState.currentIndex + 1;
+        if (sessionState.status[nextIdx] === 'unvisited') {
+          sessionState.status[nextIdx] = 'skipped';
+        }
+        renderQuestion(nextIdx);
+      }
+    }
+
+    function prevQuestion() {
+      if (sessionState.currentIndex > 0) {
+        renderQuestion(sessionState.currentIndex - 1);
+      }
+    }
+
+    function buildPalette() {
+      const grid = document.getElementById('paletteGrid');
+      grid.innerHTML = '';
+      sessionState.questions.forEach((_, i) => {
+        const b = document.createElement('button');
+        b.id = `palette_btn_${i}`;
+        b.className = 'h-8 rounded-lg text-xs font-bold flex items-center justify-center border transition bg-slate-800 text-slate-400 border-slate-700';
+        b.innerText = i + 1;
+        b.onclick = () => renderQuestion(i);
+        grid.appendChild(b);
+      });
+      updatePaletteUI();
+    }
+
+    function updatePaletteUI() {
+      sessionState.questions.forEach((_, i) => {
+        const btn = document.getElementById(`palette_btn_${i}`);
+        if (!btn) return;
+        const st = sessionState.status[i];
+        
+        btn.className = 'h-8 rounded-lg text-xs font-bold flex items-center justify-center border transition ';
+        if (st === 'answered') {
+          btn.className += 'bg-emerald-600 text-white border-emerald-500';
+        } else if (st === 'review') {
+          btn.className += 'bg-purple-600 text-white border-purple-500';
+        } else if (st === 'skipped') {
+          btn.className += 'bg-rose-600 text-white border-rose-500';
+        } else {
+          btn.className += 'bg-slate-800 text-slate-400 border-slate-700';
+        }
+
+        if (sessionState.currentIndex === i) {
+          btn.className += ' ring-2 ring-sky-400 ring-offset-2 ring-offset-slate-900';
+        }
+      });
+    }
+
+    function startTimer() {
+      clearInterval(sessionState.timerInterval);
+      sessionState.timerInterval = setInterval(() => {
+        sessionState.timerSec--;
+        const m = Math.floor(sessionState.timerSec / 60);
+        const s = sessionState.timerSec % 60;
+        document.getElementById('quizTimerDisplay').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        
+        if (sessionState.timerSec <= 0) {
+          clearInterval(sessionState.timerInterval);
+          submitExam();
+        }
+      }, 1000);
+    }
+
+    function submitExamPrompt() {
+      if (confirm("Are you sure you want to submit your test?")) {
+        submitExam();
+      }
+    }
+
+    async function submitExam() {
+      clearInterval(sessionState.timerInterval);
+      
+      const payload = {
+        user_id: sessionState.userId,
+        subject: sessionState.subject,
+        quiz_mode: sessionState.quizMode,
+        answers: sessionState.answers,
+        questions: sessionState.questions
+      };
+
+      try {
+        const res = await fetch('/api/webapp/submit-quiz', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const report = await res.json();
+        
+        document.getElementById('screenExam').classList.add('hidden');
+        document.getElementById('quizTimerContainer').classList.add('hidden');
+        document.getElementById('screenScorecard').classList.remove('hidden');
+
+        document.getElementById('resScore').innerText = report.score;
+        document.getElementById('resAccuracy').innerText = report.accuracy + '%';
+        document.getElementById('resRank').innerText = report.rank;
+        document.getElementById('downloadPdfBtn').onclick = () => {
+          window.open(`/api/webapp/download-pdf/${report.attempt_id}`, '_blank');
+        };
+      } catch (e) {
+        alert('Error submitting test: ' + e);
+      }
+    }
+
+    function returnHome() {
+      document.getElementById('screenScorecard').classList.add('hidden');
+      document.getElementById('screenDashboard').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

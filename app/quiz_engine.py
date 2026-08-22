@@ -570,7 +570,8 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
         "selected_topics": selected_topics,
         "global_remaining_sec": (total_time_mins * 60) if total_time_mins else None,
         "question_start_time": time.time(),
-        "last_poll_message_id": None
+        "last_poll_message_id": None,
+        "last_sent_passage": None
     }
     ACTIVE_SESSIONS[user_id] = session
 
@@ -590,17 +591,6 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
         reply_markup=early_submit_markup,
         parse_mode="Markdown"
     )
-
-    if (topic in ["eng_comp_rc", "eng_comp_cloze_test"] or quiz_mode == "PASSAGE_PRACTICE") and questions[0].get("passage"):
-        passage_content = questions[0].get("passage")
-        try:
-            await context.bot.send_message(
-                chat_id=chat_id,
-                text=f"📖 **READING PASSAGE / CONTEXT:**\n\n{passage_content}\n\n👇 *Read the passage carefully, then answer the questions below:*",
-                parse_mode=None
-            )
-        except Exception:
-            pass
 
     await send_next_question(chat_id, user_id, context)
 
@@ -622,6 +612,19 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     q = session["questions"][session["current_index"]]
     session["current_question"] = q
     
+    # Check if a new passage needs to be sent (e.g. starting questions 1-5 or switching to 6-10)
+    current_passage = q.get("passage")
+    if current_passage and current_passage != session.get("last_sent_passage"):
+        session["last_sent_passage"] = current_passage
+        try:
+            await context.bot.send_message(
+                chat_id=chat_id,
+                text=f"📖 **READING PASSAGE / CONTEXT:**\n\n{current_passage}\n\n👇 *Read the passage carefully, then answer the questions below:*",
+                parse_mode=None
+            )
+        except Exception:
+            pass
+
     global_time_str = ""
     if session.get("global_remaining_sec") is not None:
         rem_sec = int(session["global_remaining_sec"])

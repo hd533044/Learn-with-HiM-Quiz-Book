@@ -45,6 +45,7 @@ def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
         "broadcast_target",
         "awaiting_admin_direct_msg_uid",
         "awaiting_admin_reply_qid",
+        "active_reply_query_data",
         "awaiting_admin_warning_msg_uid",
         "awaiting_admin_search",
         "awaiting_admin_editname",
@@ -65,7 +66,7 @@ def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
 
 
 def get_admin_nav_buttons(target_uid: int = None):
-    row1 = [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+    row1 = [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
     if target_uid:
         row1.append(InlineKeyboardButton("🔙 Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}"))
     return InlineKeyboardMarkup([
@@ -292,7 +293,7 @@ def get_strict_paid_users():
             """
             SELECT DISTINCT u.* FROM users u
             INNER JOIN payment_transactions pt ON u.user_id = pt.user_id
-            WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0
+            WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0 AND u.is_banned != 2
             ORDER BY u.created_at DESC
             """
         )
@@ -314,7 +315,7 @@ def get_strict_demo_users():
         cursor.execute(
             """
             SELECT * FROM users 
-            WHERE demo_used = 1 AND (payment_id IS NULL OR payment_id = 'DEMO_PASS' OR payment_id = 'OFFICIAL_SUBSCRIBED')
+            WHERE demo_used = 1 AND is_banned != 2 AND (payment_id IS NULL OR payment_id = 'DEMO_PASS' OR payment_id = 'OFFICIAL_SUBSCRIBED')
             AND user_id NOT IN (
                 SELECT user_id FROM payment_transactions WHERE plan_key != 'FREE_DEMO' AND amount_paid > 0
             )
@@ -390,7 +391,7 @@ def get_currently_online_users(minutes: int = 15):
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute(
-            "SELECT user_id, full_name, student_id, last_active FROM users WHERE last_activity_epoch >= %s ORDER BY last_activity_epoch DESC",
+            "SELECT user_id, full_name, student_id, last_active FROM users WHERE last_activity_epoch >= %s AND is_banned != 2 ORDER BY last_activity_epoch DESC",
             (threshold_epoch,)
         )
         rows = cursor.fetchall()
@@ -489,11 +490,12 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         return
 
     users = get_all_users()
+    active_registered = [u for u in users if u.get("is_banned") != 2]
     total_likes = get_total_platform_likes()
     
     paid_count = 0
     demo_count = 0
-    for u in users:
+    for u in active_registered:
         is_paid = u.get("paid_question_balance", 0) > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
         if is_paid:
             paid_count += 1
@@ -513,8 +515,8 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
 
     keyboard = [
         [InlineKeyboardButton("📊 Intelligence & Analytics", callback_data="admin_menu_analytics")],
-        [InlineKeyboardButton(f"👥 Student Management ({pending_students_count} 📩)", callback_data="admin_menu_students")],
-        [InlineKeyboardButton("📢 Communications & Sales", callback_data="admin_menu_comms")],
+        [InlineKeyboardButton(f"👥 Student Support & Management ({pending_students_count} 📩)", callback_data="admin_menu_students")],
+        [InlineKeyboardButton("📢 Communications & Flash Sales", callback_data="admin_menu_comms")],
         [InlineKeyboardButton("⚙️ System & Security Controls", callback_data="admin_menu_system")],
         [InlineKeyboardButton("🔒 Lock Session Now", callback_data="admin_lock_session")]
     ]
@@ -522,7 +524,7 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
     msg = (
         f"👑 **MASTER ADMIN PORTAL — Himanshu Sir (/him)** 👑\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📊 **Total Registered Students:** `{len(users)}`\n"
+        f"📊 **Active Registered Students:** `{len(active_registered)}`\n"
         f"❤️ **Live Platform Likes:** `{total_likes}` Likes\n"
         f"🟢 **Paid VIP Users:** `{paid_count}`\n"
         f"🎁 **Free / Demo Users:** `{demo_count}`\n"
@@ -745,7 +747,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             [InlineKeyboardButton(f"📩 Student Support Threads ({pending_students_count} Unread)", callback_data="admin_view_student_threads_0")],
             [InlineKeyboardButton("🗂️ Advanced Student Segments", callback_data="admin_adv_segments_menu")],
             [InlineKeyboardButton("👥 Student Directory", callback_data="admin_users_page_0"), InlineKeyboardButton("🔍 Search Student", callback_data="admin_search_prompt")],
-            [InlineKeyboardButton("⚡ Online Users (15m)", callback_data="admin_live_users_menu"), InlineKeyboardButton("🛑 Blocked Users", callback_data="admin_list_blocked_users_0")],
+            [InlineKeyboardButton("⚡ Online Users (15m)", callback_data="admin_live_users_menu"), InlineKeyboardButton("🛑 Blocked / Inactive Users", callback_data="admin_list_blocked_users_0")],
             [InlineKeyboardButton("🔙 Back to Main Portal", callback_data="admin_home")]
         ]
         msg = "👥 **STUDENT MANAGEMENT MODULE**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSelect a user management action below:"
@@ -960,6 +962,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         count_demo_expired = 0
         
         for u in users:
+            if u.get("is_banned") == 2: continue
             exp_str = u.get("vip_pass_expiry")
             if not exp_str: continue
             try:
@@ -989,7 +992,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         ]
         
         msg = (
-            f"🗂️ **ADVANCED STUDENT SEGMENTS** 🗂️\n"
+            f"🪂 **ADVANCED STUDENT SEGMENTS** 🪂\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"Real-time categorization based on razorpay plans, active limits, and exact pass expiration dates.\n\n"
             f"Select a category below to inspect students:"
@@ -1009,6 +1012,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         
         matched_users = []
         for u in users:
+            if u.get("is_banned") == 2: continue
             exp_str = u.get("vip_pass_expiry")
             if not exp_str: continue
             try:
@@ -1069,179 +1073,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Total Students:** `{total_u}`\n"
             f"• **Page:** `{page + 1}` of `{total_pages}`\n\n"
             f"Tap any student below to inspect profile and subscription ledger:"
-        )
-        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-        return
-
-    # ==============================================================
-    # 🗑️ MASS WIPE BLOCKED USERS PROTOCOL
-    # ==============================================================
-    elif data == "admin_wipe_blocked_users_confirm":
-        await query.answer()
-        blocked = get_blocked_bot_users()
-        if not blocked:
-            await query.edit_message_text("🗑️ No blocked users found in the database to wipe.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Student Menu", callback_data="admin_menu_students")]]))
-            return
-
-        confirm_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("⚠️ Yes, Wipe & Archive All Blocked Users", callback_data="admin_wipe_blocked_users_execute")],
-            [InlineKeyboardButton("❌ Cancel", callback_data="admin_menu_students")]
-        ])
-        
-        msg = (
-            f"⚠️ **CONFIRM MASS WIPE** ⚠️\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"You are about to remove **{len(blocked)}** users who blocked the bot.\n\n"
-            f"• Their active registration will be completely cleared.\n"
-            f"• Their data will be stored safely in an archive table (`deleted_blocked_users`).\n"
-            f"• Their records remain safe on your Supabase remote DB.\n"
-            f"• They will be able to register fresh if they ever return.\n\n"
-            f"Proceed with mass deletion?"
-        )
-        await query.edit_message_text(msg, reply_markup=confirm_btn, parse_mode="Markdown")
-        return
-
-    elif data == "admin_wipe_blocked_users_execute":
-        await query.answer("⏳ Wiping and Archiving... This may take a few seconds.", show_alert=False)
-        blocked = get_blocked_bot_users()
-        
-        conn = get_db()
-        cursor = conn.cursor(cursor_factory=RealDictCursor)
-        
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS deleted_blocked_users (
-                user_id BIGINT PRIMARY KEY,
-                student_id TEXT,
-                full_name TEXT,
-                phone_number TEXT,
-                target_exam TEXT,
-                deleted_at TEXT
-            )
-        ''')
-        
-        now_str = datetime.now(pytz.timezone("Asia/Kolkata")).strftime("%Y-%m-%d %H:%M:%S IST")
-        deleted_count = 0
-        
-        for b in blocked:
-            uid = b['user_id']
-            cursor.execute("SELECT * FROM users WHERE user_id = %s", (uid,))
-            u = cursor.fetchone()
-            if u:
-                cursor.execute("""
-                    INSERT INTO deleted_blocked_users (user_id, student_id, full_name, phone_number, target_exam, deleted_at)
-                    VALUES (%s, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING
-                """, (u['user_id'], u['student_id'], u['full_name'], u['phone_number'], u['target_exam'], now_str))
-                
-                cursor.execute("DELETE FROM payment_transactions WHERE user_id = %s", (uid,))
-                cursor.execute("DELETE FROM quiz_attempts WHERE user_id = %s", (uid,))
-                cursor.execute("DELETE FROM users WHERE user_id = %s", (uid,))
-                deleted_count += 1
-                
-                sid = u.get("student_id") or f"USER_{uid}"
-                json_path = os.path.join(USER_PROFILES_DIR, f"{sid}.json")
-                if os.path.exists(json_path):
-                    try:
-                        os.remove(json_path)
-                    except:
-                        pass
-
-        cursor.execute("DELETE FROM blocked_bot_users")
-        conn.commit()
-        cursor.close()
-        release_db(conn)
-
-        msg = (
-            f"✅ **MASS WIPE & ARCHIVE COMPLETE!**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Successfully deleted and archived **{deleted_count}** blocked students.\n"
-            f"Active database is now clean. Their data remains secured in the archive tables and Supabase."
-        )
-        nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Student Menu", callback_data="admin_menu_students")]])
-        await query.edit_message_text(msg, reply_markup=nav, parse_mode="Markdown")
-        return
-
-    # ==============================================================
-    # 📂 ARCHIVED (DELETED) USERS PROTOCOL
-    # ==============================================================
-    elif data.startswith("admin_list_archived_users_"):
-        await query.answer()
-        page = int(data.replace("admin_list_archived_users_", ""))
-        
-        conn = get_db()
-        cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT * FROM deleted_blocked_users ORDER BY deleted_at DESC")
-        archived = cursor.fetchall()
-        cursor.close()
-        release_db(conn)
-
-        if not archived:
-            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Blocked Users", callback_data="admin_list_blocked_users_0")]])
-            await query.edit_message_text("📂 **ARCHIVED USERS AUDIT**\n\nNo archived/deleted users found in the database.", reply_markup=nav, parse_mode="Markdown")
-            return
-
-        total_a = len(archived)
-        total_pages = math.ceil(total_a / USERS_PER_PAGE)
-        page = max(0, min(page, total_pages - 1))
-        page_items = archived[page * USERS_PER_PAGE:(page + 1) * USERS_PER_PAGE]
-
-        keyboard = []
-        for a in page_items:
-            name = a.get('full_name') or f"User {a['user_id']}"
-            sid = a.get('student_id') or 'N/A'
-            d_time = a.get('deleted_at', 'N/A').split(" ")[0]
-            btn_txt = f"📂 {name} ({sid}) — {d_time}"
-            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_inspect_arch_u_{a['user_id']}")])
-
-        nav_row = []
-        if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_list_archived_users_{page - 1}"))
-        nav_row.append(InlineKeyboardButton(f"📄 Page {page + 1}/{total_pages}", callback_data="ignore"))
-        if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_list_archived_users_{page + 1}"))
-        keyboard.append(nav_row)
-        
-        keyboard.append([InlineKeyboardButton("🔙 Back to Blocked Users List", callback_data="admin_list_blocked_users_0")])
-
-        await query.edit_message_text(
-            f"📂 **ARCHIVED / DELETED USERS AUDIT ({total_a} Total)**\n"
-            f"These students were wiped from the active database. Tap any student to inspect their archived records:",
-            reply_markup=InlineKeyboardMarkup(keyboard),
-            parse_mode="Markdown"
-        )
-        return
-
-    elif data.startswith("admin_inspect_arch_u_"):
-        await query.answer()
-        target_uid = int(data.replace("admin_inspect_arch_u_", ""))
-        
-        conn = get_db()
-        cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT * FROM deleted_blocked_users WHERE user_id = %s", (target_uid,))
-        a = cursor.fetchone()
-        cursor.close()
-        release_db(conn)
-
-        if not a:
-            await query.edit_message_text("⚠️ Archived profile not found in database.", parse_mode="Markdown")
-            return
-
-        sid = a.get("student_id") or f"USER_{a.get('user_id')}"
-        
-        keyboard = [
-            [InlineKeyboardButton("🔙 Back to Archived List", callback_data="admin_list_archived_users_0")],
-            [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
-        ]
-
-        msg = (
-            f"🪪 **ARCHIVED STUDENT AUDIT PANEL** 🪪\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"• **Student Name:** {a.get('full_name', 'N/A')}\n"
-            f"• **Student ID:** `{sid}`\n"
-            f"• **Telegram ID:** `{a.get('user_id')}`\n"
-            f"• **Phone Number:** `{a.get('phone_number', 'N/A')}`\n"
-            f"• **Target Exam:** `{a.get('target_exam', 'N/A')}`\n"
-            f"• **Archived / Wiped At:** `{a.get('deleted_at', 'N/A')}`\n"
-            f"• **Account Status:** `REMOVED/DELETED 🛑`\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"⚠️ *This user's data was moved to the archive table when they blocked the bot. Their active database records, JSON files, and active limits were permanently wiped.*"
         )
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
         return
@@ -1389,7 +1220,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
 
-        cursor.execute("SELECT COUNT(*) as count FROM users")
+        cursor.execute("SELECT COUNT(*) as count FROM users WHERE is_banned != 2")
         reg_count = cursor.fetchone()['count']
 
         cursor.execute("SELECT COUNT(*) as count FROM platform_likes")
@@ -1489,11 +1320,11 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Quizzes Submitted Today:** `{quiz_today_stats['total_attempts_today']} Quizzes`\n"
             f"• **Total Questions Solved Today:** `{quiz_today_stats['total_qs_today']} Questions`\n\n"
             f"👥 **PLATFORM HEALTH METRICS:**\n"
-            f"• **Total Registered Students:** `{reg_count}`\n"
-            f"• **Platform Community Likes:** `{total_likes_count}` ❤️\n"
+            f"• **Total Active Students:** `{reg_count}`\n"
+            f"• **Platform Likes:** `{total_likes_count}` ❤️\n"
             f"• **Active in Last 15 Mins:** `{len(online_15m)} Students`\n"
             f"• **Unread Support Queries:** `{pending_queries}`\n"
-            f"• **Blocked Users:** `{blocked_count}`\n"
+            f"• **Blocked / Inactive Users:** `{blocked_count}`\n"
             f"• **All-Time Quizzes Attempted:** `{all_time_attempts}`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"👑 *Master Admin Telemetry — Learn with HiM*"
@@ -1678,7 +1509,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             )
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 View Discounted Plans", callback_data="cmd_plans"), InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
             
-            target_uids = [u['user_id'] for u in users if not u.get('is_banned')]
+            target_uids = [u['user_id'] for u in users if u.get('is_banned') != 2 and not u.get('is_banned')]
             sent_count = await fast_concurrent_broadcast(context.bot, target_uids, b_msg, reply_markup=btn)
             broadcast_status = f"✅ Broadcast delivered to `{sent_count}/{len(target_uids)}` students."
         else:
@@ -1756,7 +1587,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"🚀 Tap **/plans** below to upgrade your daily questions before the sale ends!"
         )
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 Grab Discounted Plan", callback_data="cmd_plans")]])
-        target_uids = [u['user_id'] for u in users if not u.get('is_banned')]
+        target_uids = [u['user_id'] for u in users if u.get('is_banned') != 2 and not u.get('is_banned')]
         
         await query.edit_message_text("⏳ **Re-broadcasting sale reminder to all students...**")
         sent_count = await fast_concurrent_broadcast(context.bot, target_uids, b_msg, reply_markup=btn)
@@ -1766,17 +1597,17 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         ])
         await query.edit_message_text(f"✅ **SALE REMINDER BROADCASTED!**\nDelivered to `{sent_count}/{len(target_uids)}` students.", reply_markup=nav, parse_mode="Markdown")
 
+    # ==============================================================
+    # 🛑 BLOCKED / INACTIVE USERS AUDIT (Point 5 - Data Preserved)
+    # ==============================================================
     elif data.startswith("admin_list_blocked_users_"):
         await query.answer()
-        page = int(data.replace("admin_list_blocked_users_", ""))
+        page = int(data.replace("admin_list_blocked_users_", "") or 0)
         blocked = get_blocked_bot_users()
 
         if not blocked:
-            nav = InlineKeyboardMarkup([
-                [InlineKeyboardButton("📂 View Archived (Deleted) Users", callback_data="admin_list_archived_users_0")],
-                [InlineKeyboardButton("🔙 Back to Student Menu", callback_data="admin_menu_students")]
-            ])
-            await query.edit_message_text("🛑 **BLOCKED USERS AUDIT**\n\n🎉 No active users have blocked the bot right now!", reply_markup=nav, parse_mode="Markdown")
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Student Menu", callback_data="admin_menu_students")]])
+            await query.edit_message_text("🛑 **BLOCKED / INACTIVE USERS AUDIT**\n\n🎉 No blocked users found in the database!", reply_markup=nav, parse_mode="Markdown")
             return
 
         total_b = len(blocked)
@@ -1796,15 +1627,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_list_blocked_users_{page - 1}"))
         nav_row.append(InlineKeyboardButton(f"📄 Page {page + 1}/{total_pages}", callback_data="ignore"))
         if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_list_blocked_users_{page + 1}"))
-        keyboard.append(nav_row)
+        if nav_row: keyboard.append(nav_row)
         
-        keyboard.append([InlineKeyboardButton("🗑️ Wipe All Blocked Users (Archive & Clean)", callback_data="admin_wipe_blocked_users_confirm")])
-        keyboard.append([InlineKeyboardButton("📂 View Archived (Deleted) Users", callback_data="admin_list_archived_users_0")])
         keyboard.append([InlineKeyboardButton("🔙 Back to Student Menu", callback_data="admin_menu_students")])
 
         await query.edit_message_text(
             f"🛑 **BLOCKED / INACTIVE USERS AUDIT ({total_b} Total)**\n"
-            f"These students blocked or deactivated the bot. Tap any student to inspect profile or send a direct message:",
+            f"All historical records and files are saved and accessible. Tap any student to inspect their dashboard:",
             reply_markup=InlineKeyboardMarkup(keyboard),
             parse_mode="Markdown"
         )
@@ -1812,7 +1641,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_list_pending_annc_"):
         await query.answer()
-        page = int(data.replace("admin_list_pending_annc_", ""))
+        page = int(data.replace("admin_list_pending_annc_", "") or 0)
         pending = get_pending_announcements_list()
         
         if not pending:
@@ -1839,7 +1668,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_list_pending_annc_{page - 1}"))
         nav_row.append(InlineKeyboardButton(f"📄 {page + 1}/{total_pages}", callback_data="ignore"))
         if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_list_pending_annc_{page + 1}"))
-        keyboard.append(nav_row)
+        if nav_row: keyboard.append(nav_row)
         keyboard.append([
             InlineKeyboardButton("➕ Schedule New Post", callback_data="admin_schedule_annc"),
             InlineKeyboardButton("🔙 Back to Comms Menu", callback_data="admin_menu_comms")
@@ -1909,7 +1738,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_list_sent_annc_"):
         await query.answer()
-        page = int(data.replace("admin_list_sent_annc_", ""))
+        page = int(data.replace("admin_list_sent_annc_", "") or 0)
         sent_posts = get_sent_announcements_list(30)
         
         if not sent_posts:
@@ -1933,7 +1762,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_list_sent_annc_{page - 1}"))
         nav_row.append(InlineKeyboardButton(f"📄 {page + 1}/{total_pages}", callback_data="ignore"))
         if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_list_sent_annc_{page + 1}"))
-        keyboard.append(nav_row)
+        if nav_row: keyboard.append(nav_row)
         keyboard.append([InlineKeyboardButton("🔙 Back to Comms Menu", callback_data="admin_menu_comms")])
 
         await query.edit_message_text(f"📢 **LIVE BROADCAST HISTORY ({total_p} Sent)**\nTap any broadcast to Live Edit in users' chats or Live Delete (Unsend):", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
@@ -1979,12 +1808,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.edit_message_text(f"⏳ **Live deleting message from {len(deliveries)} users' chats concurrently (~3s)...**")
         
         deleted_count = await fast_concurrent_delete(context.bot, deliveries)
-
         delete_scheduled_announcement(annc_id)
-        nav = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🔙 Back to Sent History", callback_data="admin_list_sent_annc_0")]
-        ])
-        await query.edit_message_text(f"🗑 **LIVE UNSEND COMPLETE!**\nSuccessfully deleted message from `{deleted_count}` out of `{len(deliveries)}` chats and removed from log.", reply_markup=nav, parse_mode="Markdown")
+        nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Sent History", callback_data="admin_list_sent_annc_0")]])
+        await query.edit_message_text(f"🗑 **LIVE UNSEND COMPLETE!**\nSuccessfully deleted message from `{deleted_count}` out of `{len(deliveries)}` chats.", reply_markup=nav, parse_mode="Markdown")
 
     elif data == "admin_live_users_menu":
         await query.answer()
@@ -2085,11 +1911,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             parse_mode="Markdown"
         )
 
-    elif data == "admin_lock_session":
-        await query.answer()
-        ADMIN_AUTH_SESSIONS.pop(user_id, None)
-        await render_admin_lock_screen(update, context)
-
     elif data == "admin_financial_stats":
         await query.answer()
         rev = calculate_financial_revenue()
@@ -2157,6 +1978,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Comms Menu", callback_data="admin_menu_comms")]])
         await query.edit_message_text(f"✅ **GIFTED +{amount} SAME-DAY QS TO ALL USERS!**\nBroadcasted to {sent} active students.", reply_markup=back_btn, parse_mode="Markdown")
 
+    # ==============================================================
+    # 📩 STUDENT SUPPORT THREADS & REPLY ROUTING (Points 10 & 11)
+    # ==============================================================
     elif data.startswith("admin_view_student_threads_"):
         await query.answer()
         raw_param = data.replace("admin_view_student_threads_", "")
@@ -2222,7 +2046,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_view_student_threads_{page - 1}{suffix}"))
         nav_row.append(InlineKeyboardButton(f"📄 Page {page + 1}/{total_pages}", callback_data="ignore"))
         if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_view_student_threads_{page + 1}{suffix}"))
-        keyboard.append(nav_row)
+        if nav_row: keyboard.append(nav_row)
 
         if not show_resolved:
             keyboard.append([InlineKeyboardButton("📂 View Resolved / Old Queries Archive", callback_data="admin_view_student_threads_0_resolved")])
@@ -2231,8 +2055,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         keyboard.append([InlineKeyboardButton("🔙 Back to Student Menu", callback_data="admin_menu_students")])
 
-        title_lbl = "UNREAD PENDING THREADS (Oldest First)" if not show_resolved else "RESOLVED / OLD QUERIES ARCHIVE"
-        await query.edit_message_text(f"📩 **STUDENT SUPPORT THREADS — {title_lbl} ({total_s} Students)**\nSelect a student to inspect their questions:", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        title_lbl = "UNREAD PENDING THREADS" if not show_resolved else "RESOLVED / OLD QUERIES ARCHIVE"
+        await query.edit_message_text(f"📩 **STUDENT SUPPORT THREADS — {title_lbl} ({total_s} Students)**\nSelect a student to inspect inquiry:", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
     elif data.startswith("admin_student_thread_"):
         await query.answer()
@@ -2302,6 +2126,47 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
+    elif data.startswith("admin_reply_prompt_"):
+        await query.answer()
+        qid = int(data.replace("admin_reply_prompt_", ""))
+        
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
+        query_row = cursor.fetchone()
+        cursor.close()
+        release_db(conn)
+
+        if not query_row:
+            await query.message.reply_text("⚠️ Query record not found.")
+            return
+
+        context.user_data["awaiting_admin_reply_qid"] = qid
+        context.user_data["active_reply_query_data"] = dict(query_row)
+
+        cancel_btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("❌ Cancel Reply & Return", callback_data=f"admin_student_thread_{query_row['user_id']}")]
+        ])
+
+        media_info = ""
+        if query_row.get("voice_file_id"): media_info = "\n🎙️ *Student attached a Voice Note.*"
+        elif query_row.get("photo_file_id"): media_info = "\n📷 *Student attached a Photo/Image.*"
+        elif query_row.get("video_file_id"): media_info = "\n🎬 *Student attached a Video.*"
+        elif query_row.get("doc_file_id"): media_info = "\n📄 *Student attached a Document/PDF.*"
+
+        prompt_msg = (
+            f"✍️ **REPLYING TO STUDENT QUERY #{qid}**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👤 **From:** {query_row['student_name']} (`{query_row['user_id']}`)\n"
+            f"📅 **Time:** `{query_row['created_at']}`\n\n"
+            f"❓ **Student's Question:**\n"
+            f"👉 *\"{query_row['query_text'] or 'Media Query'}\"*{media_info}\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Please reply with text, a **Voice Note**, **Image/Photo**, **Video**, **Audio**, **GIF**, or **PDF/Document** to answer:"
+        )
+
+        await query.edit_message_text(prompt_msg, reply_markup=cancel_btn, parse_mode="Markdown")
+
     elif data.startswith("admin_view_qvoice_"):
         await query.answer()
         qid = int(data.replace("admin_view_qvoice_", ""))
@@ -2323,7 +2188,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             )
         else:
             await query.message.reply_text("⚠️ Voice file not found in database.", parse_mode="Markdown")
-        return
 
     elif data.startswith("admin_view_qimg_"):
         await query.answer()
@@ -2346,7 +2210,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             )
         else:
             await query.message.reply_text("⚠️ Image not found in database.", parse_mode="Markdown")
-        return
 
     elif data.startswith("admin_view_qvideo_"):
         await query.answer()
@@ -2369,7 +2232,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             )
         else:
             await query.message.reply_text("⚠️ Video not found in database.", parse_mode="Markdown")
-        return
 
     elif data.startswith("admin_view_qaudio_"):
         await query.answer()
@@ -2392,7 +2254,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             )
         else:
             await query.message.reply_text("⚠️ Audio not found in database.", parse_mode="Markdown")
-        return
 
     elif data.startswith("admin_view_qdoc_"):
         await query.answer()
@@ -2415,7 +2276,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             )
         else:
             await query.message.reply_text("⚠️ Document not found in database.", parse_mode="Markdown")
-        return
 
     elif data.startswith("admin_ignore_query_"):
         parts = data.replace("admin_ignore_query_", "").split("_")
@@ -2424,12 +2284,12 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         conn = get_db()
         cursor = conn.cursor()
-        cursor.execute("UPDATE student_queries SET status = 'RESOLVED', admin_reply = '(Marked as Ignored/Read by Admin)' WHERE id = %s", (qid,))
+        cursor.execute("UPDATE student_queries SET status = 'RESOLVED', admin_reply = '(Marked as Read by Admin)' WHERE id = %s", (qid,))
         conn.commit()
         cursor.close()
         release_db(conn)
 
-        await query.answer("🙈 Query marked as Read/Ignored!", show_alert=True)
+        await query.answer("Query marked as Read!", show_alert=True)
         query.data = f"admin_student_thread_{target_uid}"
         await admin_callback_handler(update, context)
 
@@ -2445,18 +2305,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.close()
         release_db(conn)
 
-        await query.answer("🗑 Query permanently deleted!", show_alert=True)
+        await query.answer("Query deleted!", show_alert=True)
         query.data = f"admin_student_thread_{target_uid}"
         await admin_callback_handler(update, context)
-
-    elif data.startswith("admin_reply_prompt_"):
-        await query.answer()
-        qid = int(data.replace("admin_reply_prompt_", ""))
-        context.user_data["awaiting_admin_reply_qid"] = qid
-        cancel_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("❌ Cancel Reply & Return", callback_data="admin_view_student_threads_0")]
-        ])
-        await query.edit_message_text(f"✍️ **SECRET REPLY TO QUERY #{qid}**\n\nPlease reply with text, a **Voice Note**, an **Image/Photo**, **Video**, **Audio**, **GIF**, or **PDF/Document** to send to this student:", reply_markup=cancel_btn, parse_mode="Markdown")
 
     elif data.startswith("admin_direct_msg_"):
         await query.answer()
@@ -2491,7 +2342,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             parse_mode="Markdown"
         )
         
-        target_uids = [u['user_id'] for u in users]
+        target_uids = [u['user_id'] for u in users if u.get('is_banned') != 2]
         pause_txt = f"📢 **ADMIN NOTICE:** Bot services have been temporarily paused for {hours_label}."
         await fast_concurrent_broadcast(context.bot, target_uids, pause_txt)
 
@@ -2499,9 +2350,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer()
         set_maintenance_until(0)
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to System Menu", callback_data="admin_menu_system")]])
-        await query.edit_message_text("🟢 **Bot Service RESUMED Immediately.**\nBroadcasting service status to all users...", reply_markup=back_btn, parse_mode="Markdown")
+        await query.edit_message_text("🟢 **Bot Service RESUMED Immediately.**\nBroadcasting status to all users...", reply_markup=back_btn, parse_mode="Markdown")
         
-        target_uids = [u['user_id'] for u in users]
+        target_uids = [u['user_id'] for u in users if u.get('is_banned') != 2]
         resume_txt = "📢 **ADMIN HAS RESUMED SERVICES! YOU CAN ATTEMPT QUIZZES NOW!**"
         await fast_concurrent_broadcast(context.bot, target_uids, resume_txt)
 
@@ -2567,10 +2418,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             logger.error(f"Failed broadcasting bonus quota notice: {e}")
 
         await query.edit_message_text(
-            f"🎉 **Bonus Quota Granted & Broadcasted!** 🎉\n\nAdded +20 daily question quota to user `{target_uid}` and pushed notification to their chat.",
+            f"🎉 **Bonus Quota Granted & Broadcasted!** 🎉\n\nAdded +20 daily question quota to user `{target_uid}`.",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
-                [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+                [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
             ])
         )
 
@@ -2611,7 +2462,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                         chat_id=query.message.chat_id,
                         document=doc,
                         filename=zip_filename,
-                        caption=f"📦 **MASTER STUDENT PROFILES BACKUP**\n\nTotal Files Included: `{len(users)} JSON profiles`",
+                        caption=f"📦 **MASTER STUDENT PROFILES BACKUP**\n\nTotal Files: `{len(users)} JSON profiles`",
                         parse_mode="Markdown"
                     )
                 os.remove(zip_path)
@@ -2643,7 +2494,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             nav_buttons = InlineKeyboardMarkup([
                 [InlineKeyboardButton("📄 Export Another PDF Report", callback_data=f"audit_pdfmenu_{target_uid}")],
                 [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
-                [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+                [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
             ])
             await query.edit_message_text(
                 f"ℹ️ **NO QUIZ ATTEMPTS FOUND!**\n\n"
@@ -2654,7 +2505,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         elif pdf_file and pdf_file.startswith("ERROR_DETAILS:"):
             nav_buttons = InlineKeyboardMarkup([
                 [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
-                [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+                [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
             ])
             err_text = str(pdf_file[:3500])
             await query.edit_message_text(
@@ -2683,7 +2534,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             nav_buttons = InlineKeyboardMarkup([
                 [InlineKeyboardButton("📄 Export Another PDF Report", callback_data=f"audit_pdfmenu_{target_uid}")],
                 [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
-                [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+                [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
             ])
             await context.bot.send_message(
                 chat_id=query.message.chat_id,
@@ -2694,7 +2545,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         else:
             nav_buttons = InlineKeyboardMarkup([
                 [InlineKeyboardButton("🔙 Back to Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
-                [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
+                [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
             ])
             await query.edit_message_text(
                 "⚠️ **Failed to generate PDF file.**",
@@ -2705,7 +2556,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     elif data.startswith("admin_users_page_"):
         await query.answer()
         page = int(data.replace("admin_users_page_", ""))
-        total_users = len(users)
+        active_users = [u for u in users if u.get("is_banned") != 2]
+        total_users = len(active_users)
 
         if total_users == 0:
             await query.edit_message_text("📁 No registered students found in database.", parse_mode="Markdown")
@@ -2716,12 +2568,12 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         start_idx = page * USERS_PER_PAGE
         end_idx = start_idx + USERS_PER_PAGE
-        page_users = users[start_idx:end_idx]
+        page_users = active_users[start_idx:end_idx]
 
         keyboard = []
         for u in page_users:
             sid = u.get("student_id") or f"USER_{u['user_id']}"
-            ban_flag = " 🛑" if u.get("is_banned") else ""
+            ban_flag = " 🛑" if u.get("is_banned") == 1 else ""
             paid_flag = " 💳" if u.get("paid_question_balance", 0) > 0 else ""
             btn_text = f"👤 {u['full_name']}{paid_flag}{ban_flag} (ID: {sid})"
             keyboard.append([InlineKeyboardButton(btn_text, callback_data=f"admin_inspect_u_{u['user_id']}")])
@@ -2739,7 +2591,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         msg = (
             f"👥 **STUDENT DIRECTORY LEDGER**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"• **Total Students:** `{total_users}`\n"
+            f"• **Total Active Students:** `{total_users}`\n"
             f"• **Page:** `{page + 1}` of `{total_pages}`\n\n"
             f"Tap any student below to access their full inspection dashboard:"
         )
@@ -2756,8 +2608,16 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         sid = u.get("student_id") or f"USER_{u.get('user_id')}"
         is_banned = u.get("is_banned", 0)
-        ban_text = "🟢 ACTIVE" if not is_banned else "🔴 BANNED"
-        ban_btn_label = "🔴 Ban Student" if not is_banned else "🟢 Unban Student"
+        
+        if is_banned == 2:
+            ban_text = "🔴 BLOCKED / INACTIVE"
+            ban_btn_label = "🟢 Reactivate Student"
+        elif is_banned == 1:
+            ban_text = "🔴 BANNED"
+            ban_btn_label = "🟢 Unban Student"
+        else:
+            ban_text = "🟢 ACTIVE"
+            ban_btn_label = "🔴 Ban Student"
 
         paid_bal = u.get("paid_question_balance", 0)
         is_paid = paid_bal > 20 and u.get("payment_id") and u.get("payment_id") not in ('DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
@@ -2796,7 +2656,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer()
         target_uid = int(data.replace("admin_toggle_ban_", ""))
         new_ban = toggle_user_ban_status(target_uid)
-        status_msg = "🔴 Student Banned successfully!" if new_ban else "🟢 Student Unbanned successfully!"
+        status_msg = "🔴 Student Banned successfully!" if new_ban else "🟢 Student Active successfully!"
         await query.message.reply_text(status_msg)
         
         query.data = f"admin_inspect_u_{target_uid}"
@@ -2884,7 +2744,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             return
 
         sid = u.get("student_id") or f"USER_{u.get('user_id')}"
-        ban_status = "BANNED 🔴" if u.get("is_banned") else "ACTIVE 🟢"
+        is_b = u.get("is_banned", 0)
+        ban_status = "BLOCKED / INACTIVE 🔴" if is_b == 2 else ("BANNED 🔴" if is_b == 1 else "ACTIVE 🟢")
         
         edit_cnt = u.get("edit_count", 0)
         last_edit = u.get("last_profile_edit", "Never")

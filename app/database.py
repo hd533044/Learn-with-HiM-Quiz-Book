@@ -395,7 +395,6 @@ def init_db():
         )
     ''')
 
-    # Supports 1 like per unique quiz attempt/session per user; cannot be unliked
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS platform_likes (
             id SERIAL PRIMARY KEY,
@@ -403,17 +402,6 @@ def init_db():
             quiz_attempt_id BIGINT,
             liked_at TEXT,
             UNIQUE(user_id, quiz_attempt_id)
-        )
-    ''')
-
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS community_comments (
-            id SERIAL PRIMARY KEY,
-            user_id BIGINT NOT NULL,
-            student_id TEXT,
-            student_name TEXT,
-            comment_text TEXT NOT NULL,
-            created_at TEXT
         )
     ''')
 
@@ -464,29 +452,6 @@ def init_db():
             date_str TEXT,
             seconds_spent INTEGER DEFAULT 0,
             UNIQUE(user_id, date_str)
-        )
-    ''')
-
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS promo_codes (
-            id SERIAL PRIMARY KEY,
-            code VARCHAR(50) UNIQUE NOT NULL,
-            discount_type VARCHAR(10) NOT NULL,
-            discount_value NUMERIC(10, 2) NOT NULL,
-            valid_until TIMESTAMP NOT NULL,
-            is_active BOOLEAN DEFAULT TRUE,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            created_by BIGINT
-        )
-    ''')
-
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS promo_redemptions (
-            id SERIAL PRIMARY KEY,
-            promo_id INT REFERENCES promo_codes(id) ON DELETE CASCADE,
-            user_id BIGINT NOT NULL,
-            redeemed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            UNIQUE(promo_id, user_id)
         )
     ''')
 
@@ -543,7 +508,6 @@ def init_db():
 def record_quiz_like(user_id: int, quiz_attempt_id: int = 0) -> tuple[bool, int]:
     """
     Records 1 like per unique quiz attempt for a user.
-    Once given, it cannot be removed.
     Returns (is_newly_liked, total_likes_count).
     """
     conn = get_db()
@@ -589,61 +553,8 @@ def get_total_platform_likes() -> int:
         cursor.close()
         release_db(conn)
 
-def save_community_comment(user_id: int, student_id: str, student_name: str, comment_text: str) -> bool:
-    conn = get_db()
-    cursor = conn.cursor()
-    try:
-        now_str = get_ist_timestamp_str()
-        cursor.execute(
-            """
-            INSERT INTO community_comments (user_id, student_id, student_name, comment_text, created_at)
-            VALUES (%s, %s, %s, %s, %s)
-            """,
-            (user_id, student_id, student_name, comment_text, now_str)
-        )
-        conn.commit()
-        return True
-    except Exception as e:
-        conn.rollback()
-        logger.error(f"[SAVE COMMUNITY COMMENT ERROR] {e}")
-        return False
-    finally:
-        cursor.close()
-        release_db(conn)
-
-def get_community_comments_count() -> int:
-    conn = get_db()
-    cursor = conn.cursor()
-    try:
-        cursor.execute("SELECT COUNT(*) FROM community_comments")
-        res = cursor.fetchone()
-        return res[0] if res else 0
-    except Exception as e:
-        logger.error(f"[GET COMMUNITY COUNT ERROR] {e}")
-        return 0
-    finally:
-        cursor.close()
-        release_db(conn)
-
-def get_paginated_community_comments(page: int = 0, limit: int = 5) -> list:
-    conn = get_db()
-    cursor = conn.cursor(cursor_factory=RealDictCursor)
-    offset = max(0, page * limit)
-    try:
-        cursor.execute(
-            "SELECT student_name, student_id, comment_text, created_at FROM community_comments ORDER BY id DESC LIMIT %s OFFSET %s",
-            (limit, offset)
-        )
-        rows = cursor.fetchall()
-        return [dict(r) for r in rows] if rows else []
-    except Exception as e:
-        logger.error(f"[GET PAGINATED COMMUNITY COMMENTS ERROR] {e}")
-        return []
-    finally:
-        cursor.close()
-        release_db(conn)
-
 def get_total_registered_users_count() -> int:
+    """Returns count of active registered students, excluding banned and blocked users."""
     conn = get_db()
     cursor = conn.cursor()
     try:
@@ -813,47 +724,53 @@ def admin_update_user_name(user_id: int, new_name: str):
     release_db(conn)
     sync_user_json_profile(user_id)
 
-def archive_and_wipe_user(user_id: int) -> bool:
+def record_blocked_user(user_id: int):
     """
-    Moves user's record to deleted_blocked_users archive, wipes them from active DB
-    and local JSON profiles, which automatically decreases the registered users count.
+    Requirement 5: Keeps ALL user data intact (no deletion).
+    Changes status to blocked/inactive (is_banned = 2) and records timestamp in blocked_bot_users.
+    Removes user from the active registered count.
     """
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        now_str = get_ist_timestamp_str()
+        cursor.execute("UPDATE users SET is_banned = 2, last_active = %s WHERE user_id = %s", (now_str, user_id))
+        cursor.execute("""
+            INSERT INTO blocked_bot_users (user_id, blocked_at)
+            VALUES (%s, %s)
+            ON CONFLICT (user_id) DO UPDATE SET blocked_at = EXCLUDED.blocked_at;
+        """, (user_id, now_str))
+        conn.commit()
+        sync_user_json_profile(user_id)
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"[RECORD BLOCKED USER ERROR] {user_id}: {e}")
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def admin_delete_user_account(user_id: int):
+    """Permanent manual deletion by master admin."""
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
-        cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
+        cursor.execute("SELECT student_id FROM users WHERE user_id = %s", (user_id,))
         u = cursor.fetchone()
-        now_str = get_ist_timestamp_str()
+
+        cursor.execute("DELETE FROM payment_transactions WHERE user_id = %s", (user_id,))
+        cursor.execute("DELETE FROM quiz_attempts WHERE user_id = %s", (user_id,))
+        cursor.execute("DELETE FROM seen_questions WHERE user_id = %s", (user_id,))
+        cursor.execute("DELETE FROM saved_questions WHERE user_id = %s", (user_id,))
+        cursor.execute("DELETE FROM student_feedback WHERE user_id = %s", (user_id,))
+        cursor.execute("DELETE FROM platform_likes WHERE user_id = %s", (user_id,))
+        cursor.execute("DELETE FROM paused_quizzes WHERE user_id = %s", (user_id,))
+        cursor.execute("DELETE FROM user_activity_time WHERE user_id = %s", (user_id,))
+        cursor.execute("DELETE FROM student_queries WHERE user_id = %s", (user_id,))
+        cursor.execute("DELETE FROM blocked_bot_users WHERE user_id = %s", (user_id,))
+        cursor.execute("DELETE FROM users WHERE user_id = %s", (user_id,))
+        conn.commit()
 
         if u:
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS deleted_blocked_users (
-                    user_id BIGINT PRIMARY KEY,
-                    student_id TEXT,
-                    full_name TEXT,
-                    phone_number TEXT,
-                    target_exam TEXT,
-                    deleted_at TEXT
-                )
-            ''')
-            cursor.execute("""
-                INSERT INTO deleted_blocked_users (user_id, student_id, full_name, phone_number, target_exam, deleted_at)
-                VALUES (%s, %s, %s, %s, %s, %s)
-                ON CONFLICT (user_id) DO UPDATE SET deleted_at = EXCLUDED.deleted_at
-            """, (u['user_id'], u['student_id'], u['full_name'], u['phone_number'], u['target_exam'], now_str))
-
-            cursor.execute("DELETE FROM payment_transactions WHERE user_id = %s", (user_id,))
-            cursor.execute("DELETE FROM quiz_attempts WHERE user_id = %s", (user_id,))
-            cursor.execute("DELETE FROM seen_questions WHERE user_id = %s", (user_id,))
-            cursor.execute("DELETE FROM saved_questions WHERE user_id = %s", (user_id,))
-            cursor.execute("DELETE FROM student_feedback WHERE user_id = %s", (user_id,))
-            cursor.execute("DELETE FROM platform_likes WHERE user_id = %s", (user_id,))
-            cursor.execute("DELETE FROM community_comments WHERE user_id = %s", (user_id,))
-            cursor.execute("DELETE FROM paused_quizzes WHERE user_id = %s", (user_id,))
-            cursor.execute("DELETE FROM user_activity_time WHERE user_id = %s", (user_id,))
-            cursor.execute("DELETE FROM student_queries WHERE user_id = %s", (user_id,))
-            cursor.execute("DELETE FROM users WHERE user_id = %s", (user_id,))
-
             sid = u.get("student_id") or f"USER_{user_id}"
             json_path = os.path.join(USER_PROFILES_DIR, f"{sid}.json")
             if os.path.exists(json_path):
@@ -861,28 +778,17 @@ def archive_and_wipe_user(user_id: int) -> bool:
                     os.remove(json_path)
                 except Exception:
                     pass
-
-        cursor.execute("DELETE FROM blocked_bot_users WHERE user_id = %s", (user_id,))
-        conn.commit()
-        return True
     except Exception as e:
         conn.rollback()
-        logger.error(f"[AUTO ARCHIVE WIPE ERROR] {user_id}: {e}")
-        return False
+        logger.error(f"[ADMIN DELETE ACCOUNT ERROR] {user_id}: {e}")
     finally:
         cursor.close()
         release_db(conn)
 
-def record_blocked_user(user_id: int):
-    archive_and_wipe_user(user_id)
-
-def admin_delete_user_account(user_id: int):
-    archive_and_wipe_user(user_id)
-
 def get_paid_users():
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
-    cursor.execute("SELECT * FROM users WHERE paid_question_balance > 0 ORDER BY created_at DESC")
+    cursor.execute("SELECT * FROM users WHERE paid_question_balance > 0 AND is_banned != 2 ORDER BY created_at DESC")
     rows = cursor.fetchall()
     cursor.close()
     release_db(conn)
@@ -1050,6 +956,7 @@ def save_user_profile(user_id, full_name, username, phone, target_exam, dob, age
             last_profile_edit=EXCLUDED.last_profile_edit,
             last_active=EXCLUDED.last_active,
             last_activity_epoch=EXCLUDED.last_activity_epoch,
+            is_banned=0,
             is_verified=1
     ''', (user_id, student_id, full_name, username, phone, target_exam, dob, age, gender, pin, sec_q, sec_a, country, state, referred_by, demo_plan["daily_limit"], demo_expiry, now_str, now_str, now_epoch, now_str))
     
@@ -1396,73 +1303,6 @@ def stop_active_flash_sale() -> bool:
         conn.rollback()
         logger.error(f"Error stopping flash sale: {e}")
         return False
-    finally:
-        cursor.close()
-        release_db(conn)
-
-def create_promo_code(code: str, discount_type: str, discount_value: float, days_valid: int, created_by: int) -> dict:
-    conn = get_db()
-    cursor = conn.cursor(cursor_factory=RealDictCursor)
-    try:
-        clean_code = code.strip().upper()
-        valid_until = datetime.now(IST) + timedelta(days=days_valid)
-        cursor.execute("""
-            INSERT INTO promo_codes (code, discount_type, discount_value, valid_until, created_by)
-            VALUES (%s, %s, %s, %s, %s)
-            RETURNING *;
-        """, (clean_code, discount_type.upper(), discount_value, valid_until, created_by))
-        new_code = cursor.fetchone()
-        conn.commit()
-        return dict(new_code)
-    except Exception as e:
-        conn.rollback()
-        logger.error(f"Error creating promo code: {e}")
-        return {"error": str(e)}
-    finally:
-        cursor.close()
-        release_db(conn)
-
-def apply_promo_code(user_id: int, code: str, original_price: float) -> dict:
-    conn = get_db()
-    cursor = conn.cursor(cursor_factory=RealDictCursor)
-    try:
-        clean_code = code.strip().upper()
-        cursor.execute("SELECT * FROM promo_codes WHERE code = %s AND is_active = TRUE", (clean_code,))
-        promo = cursor.fetchone()
-        if not promo:
-            return {"success": False, "reason": "INVALID_CODE"}
-        if promo['valid_until'] < datetime.now(IST):
-            return {"success": False, "reason": "EXPIRED"}
-        cursor.execute("SELECT id FROM promo_redemptions WHERE promo_id = %s AND user_id = %s", (promo['id'], user_id))
-        if cursor.fetchone():
-            return {"success": False, "reason": "ALREADY_USED"}
-        disc_type = promo['discount_type']
-        disc_val = float(promo['discount_value'])
-        if disc_type == "PERCENT":
-            discount_amount = round((original_price * disc_val) / 100.0, 2)
-        else:
-            discount_amount = disc_val
-        final_price = max(0.0, round(original_price - discount_amount, 2))
-        return {
-            "success": True,
-            "promo_id": promo['id'],
-            "code": clean_code,
-            "discount_amount": discount_amount,
-            "final_price": final_price
-        }
-    finally:
-        cursor.close()
-        release_db(conn)
-
-def record_promo_redemption(promo_id: int, user_id: int):
-    conn = get_db()
-    cursor = conn.cursor()
-    try:
-        cursor.execute("""
-            INSERT INTO promo_redemptions (promo_id, user_id)
-            VALUES (%s, %s) ON CONFLICT DO NOTHING;
-        """, (promo_id, user_id))
-        conn.commit()
     finally:
         cursor.close()
         release_db(conn)

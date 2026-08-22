@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 import pytz
 from aiohttp import web
 from telegram import Update
-
+from psycopg2.extras import RealDictCursor
 warnings.filterwarnings("ignore")
 
 try:
@@ -163,9 +163,9 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             f"⏳ **VIP Pass Expiry:** `{expiry_date}`\n"
             f"🧾 **Reference ID:** `{payment_id}`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"💖 **Thanku for showing the faith in the Quiz with HiM. I'll give my best to keep your faith alive and of course, you have joined India's 1st dynamic Quiz platform for your preparation.**\n"
+            f"💖 **Thank you for showing faith in Quiz with HiM. I'll give my best to keep your preparation ahead with India's premier dynamic quiz platform.**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"✨ You can now attempt more practice questions every single day!\n"
+            f"✨ Practice more questions every single day!\n"
             f"🚀 Tap **/quiz** below to launch your session now!"
         )
     else:
@@ -182,7 +182,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             f"• **Payment Timestamp:** `{orig_payment_time}`\n"
             f"• **Added Validity:** `{plan_info.get('days')} Days Access`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"💖 **Thanku for showing the faith in the Quiz with HiM. I'll give my best to keep your faith alive and of course, you have joined India's 1st dynamic Quiz platform for your preparation.**\n"
+            f"💖 **Thank you for showing faith in Quiz with HiM. I'll give my best to keep your preparation ahead with India's premier dynamic quiz platform.**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"📊 Tap **/myplan** anytime to check your active quota breakdown.\n"
             f"🚀 Tap **/quiz** to launch your practice session now!"
@@ -204,6 +204,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
 
+    # Only update admin with invoice when a paid plan is purchased
     if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
         admin_motivation_alert = (
             f"💰 **NEW VIP PACK PURCHASE RECEIVED!** 💰\n"
@@ -220,12 +221,12 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             f"🧾 **Razorpay Txn ID:** `{payment_id}`\n"
             f"⏰ **Timestamp:** `{orig_payment_time}`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🚀 *Your platform is growing! Real-time revenue updated automatically.*"
+            f"🚀 *Real-time revenue updated automatically.*"
         )
         admin_nav = InlineKeyboardMarkup([
             [InlineKeyboardButton("👤 Inspect Student Profile", callback_data=f"admin_inspect_u_{user_id}")],
             [InlineKeyboardButton("💳 View Student Payments", callback_data=f"admin_view_payments_{user_id}")],
-            [InlineKeyboardButton("👑 Main Admin Portal (/him)", callback_data="admin_home")]
+            [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
         ])
         try:
             await bot_app_instance.bot.send_message(
@@ -240,6 +241,10 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
 
 
 async def scheduled_auto_payment_sync_worker():
+    """
+    Requirement 9: Runs silently in the background without spamming the admin.
+    Updates the admin solely with the invoice when a user completes a purchase.
+    """
     while True:
         await asyncio.sleep(30)
         if not bot_app_instance:
@@ -286,14 +291,13 @@ async def scheduled_auto_payment_sync_worker():
                                 if activated:
                                     await send_payment_invoice_telegram(uid, plan_key, p_id, amount_paid=amount_paid)
             except Exception as rzp_err:
-                logging.error(f"[30S RAZORPAY SYNC ERROR] {rzp_err}")
+                logging.error(f"[SILENT RAZORPAY SYNC ERROR] {rzp_err}")
 
         try:
             credited_list = await asyncio.to_thread(auto_sync_uncredited_paid_users)
             for c in credited_list:
                 uid = c["user_id"]
                 name = c.get("full_name", "Student")
-                sid = c.get("student_id", f"USER_{uid}")
                 quota = c.get("quota", 20)
                 exp = c.get("expiry_str", "Active")
                 rem_days = c.get("remaining_days", 0)
@@ -302,14 +306,14 @@ async def scheduled_auto_payment_sync_worker():
                 PROFILE_CACHE.pop(uid, None)
 
                 student_restore_msg = (
-                    f"🛡️ **PAID VIP SUBSCRIPTION AUTOMATICALLY RESTORED!** 🛡️\n"
+                    f"🛡️ **PAID VIP SUBSCRIPTION VERIFIED & RESTORED!** 🛡️\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                    f"Hello **{name}**, your genuine paid subscription has been verified and restored to your account!\n\n"
+                    f"Hello **{name}**, your genuine subscription has been synced and restored to your account!\n\n"
                     f"⚡ **Active Daily Limit:** `{quota} Questions / Day`\n"
                     f"⏳ **Remaining Validity:** `{rem_days} Days` (Expires: `{exp}`)\n"
                     f"🧾 **Reference Payment ID:** `{pid}`\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                    f"🚀 Tap **/quiz** below to start practicing immediately!"
+                    f"🚀 Tap **/quiz** below to continue practicing!"
                 )
                 from telegram import InlineKeyboardMarkup, InlineKeyboardButton
                 user_nav = InlineKeyboardMarkup([
@@ -326,35 +330,8 @@ async def scheduled_auto_payment_sync_worker():
                 except Exception as u_err:
                     logging.error(f"[STUDENT RESTORE NOTIFICATION ERROR] {u_err}")
 
-                admin_alert = (
-                    f"🔔 **30S AUTO-SYNC: PAID PLAN RESTORED FOR STUDENT!** 🔔\n"
-                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                    f"👤 **Student Name:** {name}\n"
-                    f"🪪 **Student ID:** `{sid}`\n"
-                    f"🆔 **Telegram ID:** `{uid}`\n\n"
-                    f"⚡ **Restored Quota:** `{quota} Questions / Day`\n"
-                    f"⏳ **Remaining Validity:** `{rem_days} Days` (Expires: `{exp}`)\n"
-                    f"🧾 **Reference Txn ID:** `{pid}`\n"
-                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                    f"🛡️ *Detected uncredited/revoked active purchase and automatically re-credited it for remaining validity days.*"
-                )
-                admin_nav = InlineKeyboardMarkup([
-                    [InlineKeyboardButton("👤 Inspect Student Profile", callback_data=f"admin_inspect_u_{uid}")],
-                    [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
-                ])
-                try:
-                    await bot_app_instance.bot.send_message(
-                        chat_id=PRIMARY_ADMIN_ID,
-                        text=admin_alert,
-                        reply_markup=admin_nav,
-                        parse_mode="Markdown",
-                        disable_notification=False
-                    )
-                except Exception as alert_err:
-                    logging.error(f"[ADMIN AUTO-CREDIT ALERT ERROR] {alert_err}")
-
         except Exception as e:
-            logging.error(f"[AUTO-CREDIT 30S WORKER EXCEPTION] {e}")
+            logging.error(f"[SILENT AUTO-CREDIT WORKER EXCEPTION] {e}")
 
 
 async def scheduled_expiry_reminder_check():
@@ -369,8 +346,8 @@ async def scheduled_expiry_reminder_check():
         conn = None
         try:
             conn = get_db()
-            cursor = conn.cursor()
-            cursor.execute("SELECT user_id, full_name, paid_question_balance, vip_pass_expiry, demo_used FROM users WHERE vip_pass_expiry IS NOT NULL AND is_banned = 0")
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("SELECT user_id, full_name, paid_question_balance, vip_pass_expiry, demo_used FROM users WHERE vip_pass_expiry IS NOT NULL AND is_banned != 2 AND is_banned != 1")
             users = cursor.fetchall()
             cursor.close()
             release_db(conn)
@@ -386,7 +363,8 @@ async def scheduled_expiry_reminder_check():
                     continue
 
                 try:
-                    exp_dt = datetime.strptime(exp_str, "%Y-%m-%d %H:%M:%S IST")
+                    clean_exp = exp_str.replace(" IST", "").strip()
+                    exp_dt = datetime.strptime(clean_exp, "%Y-%m-%d %H:%M:%S")
                     exp_dt = ist.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
                 except Exception:
                     continue
@@ -487,7 +465,7 @@ async def scheduled_daily_quiz_reminder():
                 try:
                     conn = get_db()
                     cursor = conn.cursor()
-                    cursor.execute("SELECT user_id FROM users WHERE is_banned = 0 AND is_verified = 1")
+                    cursor.execute("SELECT user_id FROM users WHERE is_banned != 2 AND is_banned != 1 AND is_verified = 1")
                     rows = cursor.fetchall()
                     cursor.close()
                     release_db(conn)
@@ -524,7 +502,7 @@ async def scheduled_announcement_broadcast_worker():
                 media_type = annc.get('media_type', 'text')
                 
                 users = await asyncio.to_thread(get_all_users)
-                user_ids = [u['user_id'] for u in users if not u.get('is_banned')]
+                user_ids = [u['user_id'] for u in users if u.get('is_banned') != 2 and u.get('is_banned') != 1]
                 
                 sent_count = await fast_concurrent_broadcast(
                     bot=bot_app_instance.bot,
@@ -541,7 +519,7 @@ async def scheduled_announcement_broadcast_worker():
                 )
                 
                 await asyncio.to_thread(update_announcement_status, annc_id, "SENT")
-                logging.info(f"[SCHEDULED ANNOUNCEMENT #{annc_id} DELIVERED] Broadcasted to {sent_count}/{len(user_ids)} users in ~3s.")
+                logging.info(f"[SCHEDULED ANNOUNCEMENT #{annc_id} DELIVERED] Broadcasted to {sent_count}/{len(user_ids)} users.")
                 
         except Exception as e:
             logging.error(f"[ANNOUNCEMENT WORKER EXCEPTION] {e}")
@@ -630,7 +608,7 @@ async def handle_razorpay_callback_get(request):
         <div class="card">
             <div class="icon">🎉</div>
             <h2>Payment Successful!</h2>
-            <p>Your VIP plan has been credited and an official invoice has been pushed to your Telegram chat.</p>
+            <p>Your VIP plan has been credited and your invoice has been delivered to your Telegram chat.</p>
             <div class="id-box">Payment ID: {razorpay_payment_id}</div>
             <a href="https://t.me/quizwithhimbot" class="btn">Return to Telegram Bot</a>
         </div>

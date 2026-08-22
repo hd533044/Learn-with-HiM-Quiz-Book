@@ -105,8 +105,342 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
 
     try:
         # =========================================================================
-        # PRIORITY 1: PASS EXPIRATION, VALIDITY & DEMO ENDINGS
-        # (Must be checked FIRST to avoid being hijacked by 'paid' or 'users')
+        # 1. ADMIN MASTER PIN / PASSWORD QUERY
+        # =========================================================================
+        if any(k in q_lower for k in ["admin password", "admin pin", "master pin", "master password", "admin pass"]):
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("SELECT password_hash, updated_at FROM admin_security WHERE id = 1")
+            row = cursor.fetchone()
+            cursor.close()
+            release_db(conn)
+
+            admin_pin = row["password_hash"] if row and row.get("password_hash") else "5330"
+            updated_at = row["updated_at"] if row and row.get("updated_at") else "Default"
+
+            tg_lines = [
+                "🔑 **ADMIN SECURITY INTELLIGENCE**",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                f"👑 **Current Admin Master PIN:** `{admin_pin}`",
+                f"⏰ **Last Updated:** `{updated_at}`",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "⚠️ *Confidential: Master Admin PIN.*"
+            ]
+
+            return {
+                "title": "Admin Master PIN Security Report",
+                "total_records": 1,
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": ["Key", "Value"],
+                "rows": [["Admin PIN", str(admin_pin)], ["Last Updated", str(updated_at)]],
+                "kpis": {"Master PIN": str(admin_pin)}
+            }
+
+        # =========================================================================
+        # 2. BLOCKED / INACTIVE USERS QUERY
+        # =========================================================================
+        if "block" in q_lower or "blocked" in q_lower or "inactive user" in q_lower or "inactive student" in q_lower:
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("""
+                SELECT u.user_id, u.student_id, u.full_name, u.phone_number, u.target_exam, u.state,
+                       b.blocked_at, u.paid_question_balance, u.created_at
+                FROM blocked_bot_users b
+                LEFT JOIN users u ON b.user_id = u.user_id
+                ORDER BY b.blocked_at DESC
+            """)
+            blocked_users = cursor.fetchall()
+            cursor.close()
+            release_db(conn)
+
+            is_today = "today" in q_lower
+            matched_blocked = []
+            for b in blocked_users:
+                b_time = str(b.get("blocked_at", ""))
+                if is_today:
+                    if today_date_str in b_time:
+                        matched_blocked.append(b)
+                else:
+                    matched_blocked.append(b)
+
+            time_scope = "Today" if is_today else "All-Time"
+            title = f"Blocked / Inactive Users Report ({time_scope})"
+            columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "State", "Blocked Timestamp"]
+            pdf_rows = []
+            tg_lines = [
+                f"🛑 **OMNISCIENT INTEL: BLOCKED USERS ({time_scope.upper()})**",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                f"📊 **Total Blocked Users Found:** `{len(matched_blocked)}`",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            ]
+
+            for idx, b in enumerate(matched_blocked, start=1):
+                uid = b.get("user_id", "N/A")
+                sid = clean_text(b.get("student_id") or f"USER_{uid}")
+                name = clean_text(b.get("full_name") or "User")
+                phone = clean_text(b.get("phone_number") or "N/A")
+                exam = clean_text(b.get("target_exam") or "N/A")
+                state = clean_text(b.get("state") or "N/A")
+                b_at = clean_text(b.get("blocked_at") or "N/A")
+
+                if idx <= 20:
+                    tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   📱 Phone: `{phone}` | 🎯 Exam: `{exam}`\n   ⏰ Blocked At: `{b_at}`\n")
+                pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), str(exam), str(state), str(b_at)])
+
+            if len(matched_blocked) > 20:
+                tg_lines.append(f"*(+ {len(matched_blocked) - 20} more records in attached PDF report)*")
+            if not matched_blocked:
+                tg_lines.append(f"🎉 *Zero blocked users recorded for {time_scope}.*")
+
+            return {
+                "title": title,
+                "total_records": len(matched_blocked),
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": columns,
+                "rows": pdf_rows,
+                "kpis": {"Scope": time_scope, "Blocked Users": str(len(matched_blocked))}
+            }
+
+        # =========================================================================
+        # 3. TOTAL QUIZZES ATTEMPTED ON BOT (OVERALL / DATE-WISE BREAKDOWN)
+        # =========================================================================
+        if any(k in q_lower for k in ["total quiz", "total quizzes", "quiz attempts", "quizzes attempted", "how many quizzes", "tests completed"]):
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("""
+                SELECT attempt_date, COUNT(*) as total_quizzes, 
+                       COUNT(DISTINCT user_id) as unique_students,
+                       COALESCE(SUM(questions_attempted), 0) as total_qs,
+                       COALESCE(SUM(correct_answers), 0) as total_correct
+                FROM quiz_attempts
+                GROUP BY attempt_date
+                ORDER BY attempt_date DESC
+            """)
+            date_summary = cursor.fetchall()
+
+            cursor.execute("""
+                SELECT COUNT(*) as total_all_quizzes,
+                       COUNT(DISTINCT user_id) as total_students,
+                       COALESCE(SUM(questions_attempted), 0) as total_qs_all,
+                       COALESCE(SUM(correct_answers), 0) as total_correct_all
+                FROM quiz_attempts
+            """)
+            overall = cursor.fetchone()
+            cursor.close()
+            release_db(conn)
+
+            tot_q = overall["total_all_quizzes"] or 0
+            tot_st = overall["total_students"] or 0
+            tot_qs = overall["total_qs_all"] or 0
+            tot_corr = overall["total_correct_all"] or 0
+            acc = round((tot_corr / tot_qs) * 100.0, 2) if tot_qs > 0 else 0.0
+
+            title = "All-Time Quiz Attempts & Date-wise Breakdown"
+            columns = ["S.No.", "Date (IST)", "Quizzes Solved", "Unique Students", "Questions Attempted", "Correct Answers"]
+            pdf_rows = []
+            tg_lines = [
+                "📊 **OMNISCIENT INTEL: TOTAL QUIZ ATTEMPTS TELEMETRY**",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                f"📚 **All-Time Quizzes Completed:** `{tot_q}` Quizzes",
+                f"👥 **Unique Participating Students:** `{tot_st}` Students",
+                f"🖥 **Total Questions Solved:** `{tot_qs}` Questions",
+                f"⭐ **Global Accuracy:** `{acc}%`",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "📅 **DATE-WISE QUIZ BREAKDOWN (Recent):**\n"
+            ]
+
+            for idx, d in enumerate(date_summary, start=1):
+                dt = d.get("attempt_date", "N/A")
+                quizzes = d.get("total_quizzes", 0)
+                students = d.get("unique_students", 0)
+                qs = d.get("total_qs", 0)
+                corr = d.get("total_correct", 0)
+
+                if idx <= 15:
+                    tg_lines.append(f"🗓 **{dt}:** `{quizzes}` Quizzes | `{students}` Students | `{qs}` Questions")
+                pdf_rows.append([str(idx), str(dt), str(quizzes), str(students), str(qs), str(corr)])
+
+            if len(date_summary) > 15:
+                tg_lines.append(f"\n*(+ {len(date_summary) - 15} more dates in attached PDF report)*")
+
+            return {
+                "title": title,
+                "total_records": tot_q,
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": columns,
+                "rows": pdf_rows,
+                "kpis": {"Total Quizzes": str(tot_q), "Total Students": str(tot_st), "Total Questions": str(tot_qs)}
+            }
+
+        # =========================================================================
+        # 4. SUMMARY OF DEMO & PAID USERS
+        # =========================================================================
+        if any(k in q_lower for k in ["summary of demo", "paid vs demo", "demo and paid", "demo & paid", "user summary", "plan breakdown", "users breakdown"]):
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("SELECT user_id, paid_question_balance, payment_id, is_banned FROM users WHERE is_banned != 2")
+            all_users = cursor.fetchall()
+
+            cursor.execute("""
+                SELECT plan_name, COUNT(*) as count, SUM(amount_paid) as revenue 
+                FROM payment_transactions 
+                WHERE plan_key != 'FREE_DEMO' AND amount_paid > 0
+                GROUP BY plan_name 
+                ORDER BY revenue DESC
+            """)
+            plan_breakdown = cursor.fetchall()
+            cursor.close()
+            release_db(conn)
+
+            paid_count = 0
+            demo_count = 0
+            for u in all_users:
+                if (u.get("paid_question_balance", 0) > 20) or (u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')):
+                    paid_count += 1
+                else:
+                    demo_count += 1
+
+            total_active = len(all_users)
+            paid_pct = round((paid_count / total_active) * 100.0, 1) if total_active > 0 else 0.0
+            demo_pct = round((demo_count / total_active) * 100.0, 1) if total_active > 0 else 0.0
+
+            title = "Summary of Demo vs Paid VIP Users"
+            columns = ["S.No.", "Category", "Student Count", "Percentage", "Revenue Generated"]
+            pdf_rows = [
+                ["1", "Active Paid VIP Users", str(paid_count), f"{paid_pct}%", "Refer to Plans"],
+                ["2", "Free Demo Users", str(demo_count), f"{demo_pct}%", "Rs. 0"]
+            ]
+
+            tg_lines = [
+                "📊 **OMNISCIENT INTEL: DEMO VS PAID USERS SUMMARY**",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                f"👥 **Total Active Registered:** `{total_active}` Students",
+                f"🟢 **Paid VIP Subscribers:** `{paid_count}` ({paid_pct}%)",
+                f"🎁 **Free Demo Users:** `{demo_count}` ({demo_pct}%)",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "📦 **PAID PLAN TIERS BREAKDOWN:**\n"
+            ]
+
+            for idx, pb in enumerate(plan_breakdown, start=1):
+                p_name = pb.get("plan_name", "Pack")
+                cnt = pb.get("count", 0)
+                rev = pb.get("revenue", 0)
+                tg_lines.append(f"• **{p_name}:** `{cnt}` purchases (₹{rev} INR)")
+                pdf_rows.append([str(idx + 2), str(p_name), str(cnt), "-", f"Rs. {rev}"])
+
+            return {
+                "title": title,
+                "total_records": total_active,
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": columns,
+                "rows": pdf_rows,
+                "kpis": {"Total Users": str(total_active), "Paid VIP": str(paid_count), "Free Demo": str(demo_count)}
+            }
+
+        # =========================================================================
+        # 5. PAID USERS IN LAST X HOURS / DAYS (HOURLY / TIME-WINDOW QUERY)
+        # =========================================================================
+        hour_match = re.search(r"(\d+)\s*(?:hour|hr)", q_lower)
+        days_match = re.search(r"(\d+)\s*day", q_lower)
+
+        if ("paid" in q_lower or "txn" in q_lower or "bought" in q_lower or "purchase" in q_lower) and (hour_match or days_match or "today" in q_lower or "yesterday" in q_lower):
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("""
+                SELECT pt.payment_id, pt.plan_name, pt.amount_paid, pt.daily_quota, pt.created_at,
+                       u.user_id, u.student_id, u.full_name, u.phone_number, u.target_exam, u.state
+                FROM payment_transactions pt
+                LEFT JOIN users u ON pt.user_id = u.user_id
+                WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0
+                ORDER BY pt.id DESC
+            """)
+            all_txns = cursor.fetchall()
+            cursor.close()
+            release_db(conn)
+
+            matched_txns = []
+            gross_window_rev = 0.0
+
+            if hour_match:
+                hours_val = int(hour_match.group(1))
+                time_cutoff = now_ist - timedelta(hours=hours_val)
+                time_label = f"Last {hours_val} Hours"
+                for t in all_txns:
+                    t_dt = parse_date_safely(t.get("created_at", ""))
+                    if t_dt and t_dt >= time_cutoff:
+                        matched_txns.append(t)
+                        gross_window_rev += float(t.get("amount_paid", 0) or 0)
+            elif days_match:
+                days_val = int(days_match.group(1))
+                time_cutoff = now_ist - timedelta(days=days_val)
+                time_label = f"Last {days_val} Days"
+                for t in all_txns:
+                    t_dt = parse_date_safely(t.get("created_at", ""))
+                    if t_dt and t_dt >= time_cutoff:
+                        matched_txns.append(t)
+                        gross_window_rev += float(t.get("amount_paid", 0) or 0)
+            elif "today" in q_lower:
+                time_label = f"Today ({today_date_str})"
+                for t in all_txns:
+                    c_str = str(t.get("created_at", ""))
+                    t_dt = parse_date_safely(c_str)
+                    if (today_date_str in c_str) or (t_dt and t_dt >= today_start):
+                        matched_txns.append(t)
+                        gross_window_rev += float(t.get("amount_paid", 0) or 0)
+            elif "yesterday" in q_lower:
+                time_label = f"Yesterday ({yesterday_date_str})"
+                for t in all_txns:
+                    c_str = str(t.get("created_at", ""))
+                    t_dt = parse_date_safely(c_str)
+                    if (yesterday_date_str in c_str) or (t_dt and yesterday_start <= t_dt < today_start):
+                        matched_txns.append(t)
+                        gross_window_rev += float(t.get("amount_paid", 0) or 0)
+
+            title = f"Paid VIP Purchases ({time_label})"
+            columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "Plan Name", "Amount (INR)", "Txn ID", "Paid Date"]
+            pdf_rows = []
+            tg_lines = [
+                f"💳 **OMNISCIENT INTEL: PAID VIP PURCHASES ({time_label.upper()})**",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                f"💵 **Revenue in Window:** `₹{gross_window_rev} INR`",
+                f"📦 **Verified Purchases:** `{len(matched_txns)}`",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            ]
+
+            for idx, t in enumerate(matched_txns, start=1):
+                uid = t.get("user_id", "N/A")
+                sid = clean_text(t.get("student_id") or f"USER_{uid}")
+                name = clean_text(t.get("full_name") or "Student")
+                phone = clean_text(t.get("phone_number") or "N/A")
+                plan = clean_text(t.get("plan_name") or "VIP Plan")
+                amt = t.get("amount_paid", 0)
+                pid = clean_text(t.get("payment_id") or "N/A")
+                pdate = clean_text(t.get("created_at") or "N/A")
+
+                if idx <= 20:
+                    tg_lines.append(
+                        f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
+                        f"   💰 `{plan}` (₹{amt}) | 📱 `{phone}`\n"
+                        f"   🧾 Txn: `{pid}` | 📅 `{pdate}`\n"
+                    )
+                pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), clean_text(t.get("target_exam")), plan, f"Rs. {amt}", str(pid), str(pdate)])
+
+            if len(matched_txns) > 20:
+                tg_lines.append(f"*(+ {len(matched_txns) - 20} more transactions in attached PDF report)*")
+            if not matched_txns:
+                tg_lines.append(f"ℹ️ *No paid plan purchases recorded in {time_label}.*")
+
+            return {
+                "title": title,
+                "total_records": len(matched_txns),
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": columns,
+                "rows": pdf_rows,
+                "kpis": {"Window": time_label, "Revenue": f"₹{gross_window_rev} INR", "Purchases": str(len(matched_txns))}
+            }
+
+        # =========================================================================
+        # 6. PASS EXPIRATION, VALIDITY & DEMO ENDINGS
         # =========================================================================
         has_expiry_intent = any(k in q_lower for k in ["expire", "expiring", "expiry", "expiration", "validity", "demo ending", "plan expired", "pass expiry"])
 
@@ -124,23 +458,22 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                     WHERE plan_key != 'FREE_DEMO' AND amount_paid > 0
                     ORDER BY user_id, id DESC
                 ) pt ON u.user_id = pt.user_id
-                WHERE u.vip_pass_expiry IS NOT NULL AND u.is_banned = 0
+                WHERE u.vip_pass_expiry IS NOT NULL AND u.is_banned != 2
                 ORDER BY u.vip_pass_expiry ASC
             """)
             raw_users = cursor.fetchall()
             cursor.close()
             release_db(conn)
 
-            # Determine Target Time Window
-            days_match = re.search(r"(\d+)\s*day", q_lower)
+            days_match_exp = re.search(r"(\d+)\s*day", q_lower)
             is_today = "today" in q_lower
             is_tomorrow = "tomorrow" in q_lower
             is_this_week = "week" in q_lower or "7 day" in q_lower
             is_this_month = "month" in q_lower
             is_already_expired = "already" in q_lower or "expired users" in q_lower or "past" in q_lower
 
-            if days_match:
-                days_window = int(days_match.group(1))
+            if days_match_exp:
+                days_window = int(days_match_exp.group(1))
                 target_cutoff = now_ist + timedelta(days=days_window)
                 time_label = f"Next {days_window} Days"
             elif is_today:
@@ -159,7 +492,6 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 target_cutoff = now_ist + timedelta(days=7)
                 time_label = "Upcoming (Next 7 Days)"
 
-            # Filter for Paid vs Demo if specified
             only_paid = "paid" in q_lower or "vip" in q_lower
             only_demo = "demo" in q_lower or "free" in q_lower
 
@@ -169,7 +501,6 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 if not exp_dt:
                     continue
 
-                # Filter Paid vs Demo
                 is_user_paid = (u.get("paid_question_balance", 0) > 20) or (u.get("amount_paid") and float(u.get("amount_paid", 0)) > 0)
                 if only_paid and not is_user_paid:
                     continue
@@ -236,8 +567,6 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             if not matched_expirations:
                 tg_lines.append(f"🎉 *Zero {type_label.lower()} accounts found expiring in {time_label}.*")
 
-            tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete expiration audit as PDF below:*")
-
             return {
                 "title": title,
                 "total_records": len(matched_expirations),
@@ -248,7 +577,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # PRIORITY 2: FESTIVALS & SALE STRATEGY CALENDAR
+        # 7. FESTIVALS & SALE STRATEGY CALENDAR
         # =========================================================================
         if any(k in q_lower for k in ["festival", "festivals", "sale offer", "sale timing", "when sale", "right time for sale", "calendar", "promo offer"]):
             conn = get_db()
@@ -293,8 +622,6 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 tg_lines.append(f"**{idx}. {uf['name']}** (`{uf['date']}` — In `{uf['days_left']} Days`)\n   👉 *Strategy:* `{uf['suggested_sale']}`\n")
                 pdf_rows.append([str(idx), str(uf['name']), str(uf['date']), f"{uf['days_left']} Days Left", str(uf['suggested_sale'])])
 
-            tg_lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete festival promotion calendar as PDF below:*")
-
             return {
                 "title": title,
                 "total_records": len(upcoming_festivals),
@@ -305,9 +632,9 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # PRIORITY 3: FINANCIAL REVENUE & PAYMENT COLLECTIONS
+        # 8. FINANCIAL REVENUE & PAYMENT COLLECTIONS
         # =========================================================================
-        if any(k in q_lower for k in ["revenue", "earning", "income", "collection", "money earned", "sales stats", "transactions", "payment history", "txns"]):
+        if any(k in q_lower for k in ["revenue", "earning", "income", "collection", "money earned", "sales stats", "transactions", "payment history", "txns", "total sales"]):
             conn = get_db()
             cursor = conn.cursor(cursor_factory=RealDictCursor)
             
@@ -399,8 +726,6 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             if not filtered_txns:
                 tg_lines.append(f"ℹ️ *No payment transactions recorded for {timeframe_label}.*")
 
-            tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download full revenue report as PDF below:*")
-
             return {
                 "title": title,
                 "total_records": len(filtered_txns),
@@ -411,18 +736,18 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # PRIORITY 4: DATE-SPECIFIC REGISTRATIONS (TODAY, YESTERDAY, THIS WEEK, ETC.)
+        # 9. DATE-SPECIFIC REGISTRATIONS (TODAY, YESTERDAY, THIS WEEK, ETC.)
         # =========================================================================
-        is_registration_query = any(k in q_lower for k in ["register", "registered", "joined", "new user", "new student", "signup", "onboarded", "users list", "students list", "user list"])
+        is_registration_query = any(k in q_lower for k in ["register", "registered", "joined", "new user", "new student", "signup", "onboarded", "users list", "students list", "user list", "total registered"])
         is_today = "today" in q_lower
         is_yesterday = "yesterday" in q_lower
         is_this_week = "this week" in q_lower or "past week" in q_lower
         is_this_month = "this month" in q_lower
 
-        if is_registration_query and (is_today or is_yesterday or is_this_week or is_this_month):
+        if is_registration_query:
             conn = get_db()
             cursor = conn.cursor(cursor_factory=RealDictCursor)
-            cursor.execute("SELECT * FROM users ORDER BY user_id DESC")
+            cursor.execute("SELECT * FROM users WHERE is_banned != 2 ORDER BY user_id DESC")
             all_users = cursor.fetchall()
             cursor.close()
             release_db(conn)
@@ -456,6 +781,9 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                     u_dt = parse_date_safely(u.get("created_at", ""))
                     if u_dt and u_dt >= month_start:
                         matched_date_users.append(u)
+            else:
+                date_label = "All Registered Students"
+                matched_date_users = all_users
 
             title = f"Student Registrations Report ({date_label})"
             columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "State", "PIN", "Registered At"]
@@ -463,7 +791,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             tg_lines = [
                 f"👥 **OMNISCIENT INTEL: STUDENT REGISTRATIONS ({date_label.upper()})**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"📊 **Total New Students Registered:** `{len(matched_date_users)}`\n"
+                f"📊 **Total Active Students:** `{len(matched_date_users)}`\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             ]
 
@@ -491,8 +819,6 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             if not matched_date_users:
                 tg_lines.append(f"ℹ️ *Zero student registrations recorded for {date_label}.*")
 
-            tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete registration report as PDF below:*")
-
             return {
                 "title": title,
                 "total_records": len(matched_date_users),
@@ -503,7 +829,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # PRIORITY 5: TOTAL PAID VIP USERS DIRECTORY
+        # 10. TOTAL PAID VIP USERS DIRECTORY
         # =========================================================================
         if ("paid" in q_lower or "subscriber" in q_lower or "bought" in q_lower or "vip" in q_lower) and any(k in q_lower for k in ["total", "all", "list", "users", "students", "show", "give", "tell"]):
             conn = get_db()
@@ -515,7 +841,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                        pt.plan_name, pt.amount_paid, pt.created_at as purchase_date
                 FROM users u
                 INNER JOIN payment_transactions pt ON u.user_id = pt.user_id
-                WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0
+                WHERE pt.plan_key != 'FREE_DEMO' AND pt.amount_paid > 0 AND u.is_banned != 2
                 ORDER BY u.user_id, pt.id DESC
             """)
             paid_students = cursor.fetchall()
@@ -564,8 +890,6 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             if not paid_students:
                 tg_lines.append("ℹ️ *No paid VIP subscribers found in the database.*")
 
-            tg_lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete paid subscriber ledger as PDF below:*")
-
             return {
                 "title": title,
                 "total_records": len(paid_students),
@@ -576,7 +900,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # PRIORITY 6: ONLINE PRACTICE PATTERNS & TELEMETRY
+        # 11. ONLINE PRACTICE PATTERNS & TELEMETRY
         # =========================================================================
         if any(k in q_lower for k in ["online", "active users", "time spent", "practice time", "when comes", "patterns", "habits", "telemetry"]):
             conn = get_db()
@@ -588,6 +912,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 FROM users u
                 LEFT JOIN user_activity_time uat ON u.user_id = uat.user_id
                 LEFT JOIN quiz_attempts qa ON u.user_id = qa.user_id
+                WHERE u.is_banned != 2
                 GROUP BY u.user_id, u.student_id, u.full_name, u.phone_number, u.last_active, u.target_exam, u.state
                 ORDER BY total_seconds DESC
                 LIMIT 50
@@ -619,8 +944,6 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                     tg_lines.append(f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n   ⏱ Practice Time: `{hrs} Hours` ({mins}m) | Quizzes: `{r['total_attempts']}`\n   🕒 Last Active: `{last_act}` | 📱 Phone: `{phone}`\n")
                 pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), clean_text(r.get('state')), str(last_act), f"{hrs} hrs ({mins}m)", str(r['total_attempts'])])
 
-            tg_lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete online analytics as PDF below:*")
-
             return {
                 "title": title,
                 "total_records": len(rows),
@@ -631,7 +954,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # PRIORITY 7: STUDENT FEEDBACK & REVIEWS
+        # 12. STUDENT FEEDBACK & REVIEWS
         # =========================================================================
         if any(k in q_lower for k in ["feedback", "review", "ratings", "reviews given", "what reviews"]):
             conn = get_db()
@@ -674,47 +997,42 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # PRIORITY 8: UNIVERSAL MULTI-DIMENSIONAL SEARCH & STUDENT DOSSIERS
+        # 13. UNIVERSAL MULTI-DIMENSIONAL SEARCH & DIRECT STUDENT DOSSIERS
         # =========================================================================
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         
-        # State Filter
         matched_state = None
         for st in INDIAN_STATES:
             if st in q_lower:
                 matched_state = st
                 break
 
-        # Exam Filter
         matched_exam = None
         for ek, ev in EXAM_KEYWORDS.items():
             if ek in q_lower:
                 matched_exam = ev
                 break
 
-        # Plan Filter
         matched_plan = None
         for pk, pv in PLAN_TIER_KEYWORDS.items():
             if pk in q_lower:
                 matched_plan = pv
                 break
 
-        # Status Filter
         filter_banned = None
-        if "banned" in q_lower or "blocked" in q_lower:
+        if "banned" in q_lower:
             filter_banned = 1
         elif "active" in q_lower or "unbanned" in q_lower:
             filter_banned = 0
 
-        # Paid vs Free
         filter_paid_only = None
         if any(k in q_lower for k in ["paid users", "vip users", "subscribers", "paid students", "who bought"]):
             filter_paid_only = True
         elif any(k in q_lower for k in ["free users", "demo users", "unpaid"]):
             filter_paid_only = False
 
-        conditions = ["1=1"]
+        conditions = ["u.is_banned != 2"]
         params = []
 
         if matched_state:
@@ -738,9 +1056,8 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             conditions.append("u.user_id IN (SELECT user_id FROM payment_transactions WHERE UPPER(plan_key) LIKE %s)")
             params.append(f"%{matched_plan}%")
 
-        # Specific Search Term (Names, Phones, IDs)
         search_keywords = q_lower
-        for stopw in ["give", "me", "show", "tell", "details", "of", "list", "all", "the", "total", "users", "students", "who", "is", "about", "student", "user", "info", "find", "search", "pin", "password", "security", "registered", "yesterday", "today", "tomorrow"]:
+        for stopw in ["give", "me", "show", "tell", "details", "of", "list", "all", "the", "total", "users", "students", "who", "is", "about", "student", "user", "info", "find", "search", "pin", "password", "security", "registered", "yesterday", "today", "tomorrow", "phone", "number", "profile", "please", "can", "you"]:
             search_keywords = re.sub(r'\b' + stopw + r'\b', '', search_keywords)
         search_keywords = search_keywords.strip()
 
@@ -753,8 +1070,12 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             SELECT DISTINCT ON (u.user_id)
                    u.user_id, u.student_id, u.full_name, u.phone_number, u.target_exam, u.state,
                    u.paid_question_balance, u.vip_pass_expiry, u.pin, u.security_question, u.security_answer,
-                   u.payment_id, u.created_at, u.last_active, u.is_banned
+                   u.payment_id, u.created_at, u.last_active, u.is_banned,
+                   COALESCE(qa.total_quizzes, 0) as total_quizzes_done
             FROM users u
+            LEFT JOIN (
+                SELECT user_id, COUNT(*) as total_quizzes FROM quiz_attempts GROUP BY user_id
+            ) qa ON u.user_id = qa.user_id
             WHERE {' AND '.join(conditions)}
             ORDER BY u.user_id DESC
             LIMIT 100
@@ -762,20 +1083,15 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
 
         cursor.execute(query_sql, tuple(params))
         matched_users = cursor.fetchall()
-
-        cursor.execute("SELECT SUM(amount_paid) as total_rev FROM payment_transactions WHERE plan_key != 'FREE_DEMO'")
-        rev_data = cursor.fetchone()
         cursor.close()
         release_db(conn)
 
-        total_rev = float(rev_data['total_rev'] or 0)
-        title = f"Omniscient Database Search Ledger ({len(matched_users)} Records)"
-        columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "State", "Daily Quota", "Pass Expiry", "PIN", "Sec Q", "Sec Ans", "Txn ID"]
+        title = f"Student Search Dossier ({len(matched_users)} Records)"
+        columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Phone", "Target Exam", "Daily Quota", "Total Quizzes Done", "Pass Expiry", "PIN"]
         pdf_rows = []
         
         tg_lines = [
-            "🔍 **OMNISCIENT INTEL: QUERY EXECUTION RESULTS**\n"
-            f"*(Matched: {len(matched_users)} Records)*\n"
+            f"🔍 **OMNISCIENT INTEL: QUERY RESULTS ({len(matched_users)} Records)**",
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         ]
 
@@ -787,32 +1103,26 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             exam = clean_text(u.get('target_exam') or "N/A")
             state = clean_text(u.get('state') or "N/A")
             quota = f"{u.get('paid_question_balance', 20)} Qs/D"
+            quizzes_done = u.get("total_quizzes_done", 0)
             exp = clean_text(u.get('vip_pass_expiry') or "Active")
             pin = clean_text(u.get('pin') or "N/A")
-            sec_q = clean_text(u.get('security_question') or "N/A")
-            sec_a = clean_text(u.get('security_answer') or "N/A")
-            pid = clean_text(u.get('payment_id') or "N/A")
             last_act = clean_text(u.get('last_active') or "N/A")
-            st_badge = "🔴 BANNED" if u.get('is_banned') else "🟢 ACTIVE"
 
             if idx <= 20:
                 tg_lines.append(
                     f"**{idx}. {name}** (`{sid}` | ID: `{uid}`)\n"
-                    f"   📱 Phone: `{phone}` | 🎯 Exam: `{exam}` | 📍 State: `{state}`\n"
-                    f"   ⚡ Quota: `{quota}` | ⏳ Expiry: `{exp}` | 🚦 Status: `{st_badge}`\n"
-                    f"   🔑 PIN: `{pin}` | 🕒 Last Active: `{last_act}`\n"
-                    f"   ❓ Sec Q: *\"{sec_q}\"* | Ans: `{sec_a}`\n"
-                    f"   🧾 Txn ID: `{pid}`\n"
+                    f"   📱 Phone: `{phone}` | 🎯 Exam: `{exam}` | 📍 `{state}`\n"
+                    f"   📚 Total Quizzes Attempted: `{quizzes_done}` Quizzes\n"
+                    f"   ⚡ Quota: `{quota}` | ⏳ Expiry: `{exp}` | 🔑 PIN: `{pin}`\n"
+                    f"   🕒 Last Active: `{last_act}`\n"
                 )
-            pdf_rows.append([str(idx), str(uid), str(sid), name, phone, exam, state, quota, exp, pin, sec_q, sec_a, pid])
+            pdf_rows.append([str(idx), str(uid), str(sid), name, phone, exam, quota, str(quizzes_done), exp, pin])
 
         if len(matched_users) > 20:
             tg_lines.append(f"*(+ {len(matched_users) - 20} more records in attached PDF report)*")
 
         if not matched_users:
-            tg_lines.append(f"ℹ️ *Zero matching records found in database for query: \"{clean_text(query_text)}\".*")
-
-        tg_lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📥 *Download complete database results as PDF below:*")
+            tg_lines.append(f"ℹ️ *Zero records found matching \"{clean_text(query_text)}\".*")
 
         return {
             "title": title,
@@ -820,15 +1130,15 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             "summary_markdown": "\n".join(tg_lines),
             "columns": columns,
             "rows": pdf_rows,
-            "kpis": {"Matched Records": str(len(matched_users)), "Gross Revenue": f"₹{total_rev} INR"}
+            "kpis": {"Matched Records": str(len(matched_users))}
         }
 
     except Exception as general_err:
         logger.error(f"[PARSE ADMIN QUERY EXCEPTION] {general_err}")
         return {
-            "title": "Query Error",
+            "title": "Query Result",
             "total_records": 0,
-            "summary_markdown": f"⚠️ **Error executing query:** `{clean_text(str(general_err))}`\nPlease try refining your search keywords.",
+            "summary_markdown": f"⚠️ **Query error:** `{clean_text(str(general_err))}`",
             "columns": ["Status"],
             "rows": [["Error"]],
             "kpis": {}

@@ -43,7 +43,10 @@ from app.quiz_engine import (
     quiz_extended_router
 )
 
-from app.stats import get_overall_leaderboard, calculate_user_percentile, calculate_user_rank, get_user_performance_summary
+from app.stats import (
+    get_overall_leaderboard, calculate_user_percentile, 
+    calculate_user_rank, get_user_performance_summary
+)
 from app.admin import (
     admin_portal_command, admin_callback_handler, get_admin_nav_buttons,
     admin_view_user_payments_callback, admin_grant_plan_menu_callback, admin_execute_grant_callback,
@@ -376,15 +379,20 @@ async def direct_admin_ask_command(update: Update, context: ContextTypes.DEFAULT
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             "Usage: `/ask <your query>`\n\n"
             "Examples:\n"
-            "• `/ask give me total paid users list`\n"
-            "• `/ask today's revenue and transactions`\n"
-            "• `/ask details of student Sagar G`\n"
-            "• `/ask upcoming festival sales`",
+            "• `/ask give all blocked users today list`\n"
+            "• `/ask give total paid users in last 6 hours`\n"
+            "• `/ask show Yogita profile`\n"
+            "• `/ask yogita phone number`\n"
+            "• `/ask admin password?`\n"
+            "• `/ask total registered users list`\n"
+            "• `/ask summary of demo & paid users`\n"
+            "• `/ask total quizzes attempted on bot`\n"
+            "• `/ask today's new users list`",
             parse_mode="Markdown"
         )
         return
 
-    status_msg = await update.message.reply_text("🔍 *Searching Database & Crunching Analytics...*", parse_mode="Markdown")
+    status_msg = await update.message.reply_text("🔍 *Searching Database & Crunching Intelligence...*", parse_mode="Markdown")
     
     try:
         res = await asyncio.to_thread(parse_and_execute_admin_query, raw_query)
@@ -392,7 +400,6 @@ async def direct_admin_ask_command(update: Update, context: ContextTypes.DEFAULT
 
         nav = [
             [InlineKeyboardButton("📥 Download Complete Report as PDF", callback_data="admin_ai_download_last_pdf")],
-            [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
             [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
             [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
         ]
@@ -1089,6 +1096,7 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 
+# Requirement 2: Added Total Attempted Quizzes metric on student profile card
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -1109,13 +1117,17 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     student_id = profile.get("student_id", f"USER_{user.id}")
     expiry = profile.get("vip_pass_expiry") or "N/A"
     
+    perf = await asyncio.to_thread(get_user_performance_summary, user.id)
+    total_quizzes_count = perf.get("total_tests", 0)
+
     msg = (
         f"👤 **STUDENT PROFILE CARD** 👤\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"• **Name:** {profile['full_name']}\n"
         f"• **Student ID:** `{student_id}` 🪪\n"
         f"• **Target Exam:** `{profile['target_exam']}` 🎯\n"
-        f"• **Location:** `{profile.get('state', 'N/A')}, India` 📍\n\n"
+        f"• **Location:** `{profile.get('state', 'N/A')}, India` 📍\n"
+        f"• **Total Attempted Quizzes:** `{total_quizzes_count}` Quizzes 📚\n\n"
         f"📊 **DAILY USAGE:**\n"
         f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
         f"• **Available:** `{remaining}` Qs Available\n"
@@ -1132,6 +1144,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 
+# Requirement 2: Added Total Attempted Quizzes metric on academic performance report
 async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -1152,8 +1165,8 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         f"👤 **Name:** {profile['full_name']} (`{student_id}`)\n"
         f"🎯 **Target Exam:** `{profile['target_exam']}`\n\n"
         f"📈 **METRICS:**\n"
-        f"• **Tests Taken:** `{perf.get('total_tests', 0)}`\n"
-        f"• **Questions Solved:** `{perf.get('total_qs', 0)}`\n"
+        f"• **Total Attempted Quizzes:** `{perf.get('total_tests', 0)}` Quizzes 📚\n"
+        f"• **Questions Solved:** `{perf.get('total_qs', 0)}` 🖥\n"
         f"• **Global Rank:** `{rank}` 🥇\n"
         f"• **Percentile:** `{percentile}%` 📊"
     )
@@ -1445,15 +1458,41 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.message.reply_text(f"⚠️ Failed to compile PDF: {pdf_path}")
         return
 
+    # Requirement 1: Interactive "Like the Quiz" router
+    if data.startswith("cmd_like_quiz_"):
+        raw_aid = data.replace("cmd_like_quiz_", "")
+        aid = int(raw_aid) if raw_aid.isdigit() else 0
+        is_new, total_likes = await asyncio.to_thread(record_quiz_like, user.id, aid)
+        if is_new:
+            await query.answer(f"❤️ Liked! Added your support (+1 Like). Total: {total_likes}", show_alert=True)
+            try:
+                current_markup = query.message.reply_markup
+                if current_markup and current_markup.inline_keyboard:
+                    new_keyboard = []
+                    for row in current_markup.inline_keyboard:
+                        new_row = []
+                        for btn in row:
+                            if btn.callback_data == data:
+                                new_row.append(InlineKeyboardButton("❤️ Liked the Quiz", callback_data=f"cmd_liked_done_{aid}"))
+                            else:
+                                new_row.append(btn)
+                        new_keyboard.append(new_row)
+                    await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(new_keyboard))
+            except Exception:
+                pass
+        else:
+            await query.answer("❤️ You already liked this quiz attempt!", show_alert=True)
+        return
+
+    if data.startswith("cmd_liked_done_"):
+        total_likes = await asyncio.to_thread(get_total_platform_likes)
+        await query.answer(f"❤️ You liked this quiz! Total Platform Likes: {total_likes}", show_alert=True)
+        return
+
     if data.startswith("reviews_page_"):
         await query.answer()
         page_no = int(data.replace("reviews_page_", ""))
         await render_reviews_page(update, context, page=page_no)
-        return
-
-    if data == "cmd_like_info":
-        total_likes = await asyncio.to_thread(get_total_platform_likes)
-        await query.answer(f"❤️ Total Platform Likes: {total_likes}", show_alert=True)
         return
 
     if data.startswith("userkp_"):
@@ -1637,40 +1676,12 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("❌ **Incorrect PIN!** Please try typing it again.", parse_mode="Markdown")
         return
 
-    if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_correction"):
-        context.user_data["awaiting_admin_ai_correction"] = False
-        correction_text = text or caption
-        last_res = context.user_data.get("last_ai_query_result", {})
-        last_title = last_res.get("title", "platform query")
-
-        status_msg = await update.message.reply_text("🧠 *Re-querying database with correction...*", parse_mode="Markdown")
-        
-        try:
-            res = await asyncio.to_thread(parse_and_execute_admin_query, last_title, context_correction=correction_text)
-            context.user_data["last_ai_query_result"] = res
-
-            nav = [
-                [InlineKeyboardButton("📥 Download Complete Report as PDF", callback_data="admin_ai_download_last_pdf")],
-                [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
-                [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
-                [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
-            ]
-            
-            try:
-                await context.bot.delete_message(chat_id=update.effective_chat.id, message_id=status_msg.message_id)
-            except Exception:
-                pass
-
-            await safe_send_admin_intelligence(context.bot, update.effective_chat.id, res["summary_markdown"], reply_markup=InlineKeyboardMarkup(nav))
-        except Exception as e:
-            await update.message.reply_text(f"⚠️ Error running correction: {e}")
-        return
-
+    # Direct Admin AI Query Parser (No feedback buttons)
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_query"):
         context.user_data["awaiting_admin_ai_query"] = False
         raw_query = text or caption
         
-        status_msg = await update.message.reply_text("🔍 *Searching Database...*", parse_mode="Markdown")
+        status_msg = await update.message.reply_text("🔍 *Searching Database & Crunching Intelligence...*", parse_mode="Markdown")
         
         try:
             res = await asyncio.to_thread(parse_and_execute_admin_query, raw_query)
@@ -1678,7 +1689,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
             nav = [
                 [InlineKeyboardButton("📥 Download Complete Report as PDF", callback_data="admin_ai_download_last_pdf")],
-                [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
                 [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
                 [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
             ]
@@ -1853,7 +1863,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(f"❌ **Failed to deliver message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
-    # Fix: Student Reply Handler with inquiry context retention
+    # Student Reply Handler with inquiry context retention
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_reply_qid"):
         qid = context.user_data.pop("awaiting_admin_reply_qid")
         context.user_data.pop("active_reply_query_data", None)

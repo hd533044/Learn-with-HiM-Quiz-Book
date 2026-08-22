@@ -18,7 +18,10 @@ from app.pyq_fetcher import (
     ENGLISH_TOPIC_METADATA, fetch_full_mock_questions, fetch_multi_topic_questions,
     fetch_english_full_mock_25, fetch_rc_or_cloze_passage_questions
 )
-from app.stats import calculate_user_percentile, calculate_user_rank, get_quiz_performance_trend
+from app.stats import (
+    calculate_user_percentile, calculate_user_rank, 
+    get_quiz_performance_trend, get_user_performance_summary
+)
 
 logger = logging.getLogger(__name__)
 
@@ -86,7 +89,7 @@ async def check_quiz_maintenance(update: Update) -> bool:
 
 
 async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Entry point for /quiz: Clean subject selection with Computer at top, English 2nd, GK 3rd."""
+    """Entry point for /quiz: Subject selection with Computer at top, English 2nd, GK 3rd."""
     if not await check_quiz_maintenance(update): return
 
     user = update.effective_user
@@ -881,14 +884,12 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         subject=session.get("subject", "english")
     )
 
-    # Award 1 like for completing a quiz attempt
-    await asyncio.to_thread(record_quiz_like, user_id, attempt_id)
-
     current_acc = round((correct / total) * 100.0, 2) if total > 0 else 0.0
     rank = await asyncio.to_thread(calculate_user_rank, user_id)
     percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
     trend_info = await asyncio.to_thread(get_quiz_performance_trend, user_id, current_acc)
-    total_likes = await asyncio.to_thread(get_total_platform_likes)
+    perf_summary = await asyncio.to_thread(get_user_performance_summary, user_id)
+    total_quizzes_done = perf_summary.get("total_tests", 1)
 
     lang_label = "🌐 English" if lang == "en" else "🇮🇳 हिंदी"
 
@@ -899,18 +900,19 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"📖 **Title:** `{title}`\n"
         f"🌐 **Language:** `{lang_label}`\n\n"
         f"📊 **PERFORMANCE SUMMARY:**\n"
+        f"• **Total Attempted Quizzes:** `{total_quizzes_done}` Quizzes\n"
         f"• **Questions Attempted:** `{total}` Qs\n"
         f"• **Correct:** `{correct}` ✅ | **Wrong:** `{wrong}` ❌ | **Skipped:** `{skipped}` ⏭\n"
         f"• **Accuracy:** `{current_acc}%` ⭐\n\n"
         f"🎖️ **GLOBAL STANDING:**\n"
         f"• **Global Rank:** `{rank}` 🥇 | **Percentile:** `{percentile}%` 📊\n"
-        f"• **Platform Likes Earned:** `+1 Like Added!` (❤️ Total: `{total_likes}`)\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"💖 *Tap **'❤️ Like the Quiz'** below to show your support!*"
     )
 
     end_quiz_buttons = [
         [InlineKeyboardButton("📥 Download Detailed PDF Review", callback_data=f"dl_single_quiz_pdf_{attempt_id}")],
-        [InlineKeyboardButton(f"❤️ Platform Likes ({total_likes})", callback_data="cmd_like_info")],
+        [InlineKeyboardButton("❤️ Like the Quiz", callback_data=f"cmd_like_quiz_{attempt_id}")],
         [InlineKeyboardButton("❌ Review Wrong Qs", callback_data="cmd_wrong_qs"), InlineKeyboardButton("🎯 Attempted Qs", callback_data="cmd_attempted_qs")],
         [InlineKeyboardButton("📄 PDF Reports Center", callback_data="cmd_pdfreport"), InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions")],
         [InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers"), InlineKeyboardButton("📊 Analytics", callback_data="cmd_wholestate")],

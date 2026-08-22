@@ -58,7 +58,6 @@ def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
         "awaiting_edit_live_broadcast",
         "awaiting_sale_name",
         "awaiting_admin_ai_query",
-        "awaiting_admin_ai_correction",
         "user_keypad_pin"
     ]
     for key in keys_to_clear:
@@ -863,33 +862,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         msg = (
             "✍️ **ASK OMNISCIENT ADMIN INTELLIGENCE**\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            "Type your query below (e.g. *\"Show details for student Sagar G\"*, *\"List paid users from Delhi\"*):"
+            "Type your query below (e.g. *\"Show details for student Sagar G\"*, *\"give total paid users in last 6 hours\"*, *\"admin password?\"*):"
         )
         await query.edit_message_text(msg, reply_markup=cancel_btn, parse_mode="Markdown")
-        return
-
-    elif data == "admin_ai_fb_correct":
-        await query.answer("✅ Thank you! Feedback recorded as correct.", show_alert=True)
-        try:
-            await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("✅ Feedback: Data Verified as Correct", callback_data="ignore")],
-                [InlineKeyboardButton("📥 Download PDF", callback_data="admin_ai_download_last_pdf")],
-                [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")]
-            ]))
-        except Exception:
-            pass
-        return
-
-    elif data == "admin_ai_fb_wrong":
-        await query.answer()
-        context.user_data["awaiting_admin_ai_correction"] = True
-        msg = (
-            "❌ **SELF-CORRECTION FEEDBACK MODE**\n"
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            "Please reply with what was incorrect or what you actually want (e.g., *\"No, I meant students who registered last week\"*). "
-            "Our engine will deep-think and re-query the database instantly:"
-        )
-        await query.message.reply_text(msg, parse_mode="Markdown")
         return
 
     elif data.startswith("admin_ai_exec_preset_"):
@@ -909,7 +884,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         nav = [
             [InlineKeyboardButton("📥 Download This Report as PDF", callback_data="admin_ai_download_last_pdf")],
-            [InlineKeyboardButton("✅ Data Correct", callback_data="admin_ai_fb_correct"), InlineKeyboardButton("❌ Incorrect / Refine", callback_data="admin_ai_fb_wrong")],
             [InlineKeyboardButton("🔄 Ask Another Query", callback_data="admin_ai_assistant_menu")],
             [InlineKeyboardButton("🔙 Back to Analytics Menu", callback_data="admin_menu_analytics")]
         ]
@@ -2623,6 +2597,14 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         is_paid = paid_bal > 20 and u.get("payment_id") and u.get("payment_id") not in ('DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
         paid_text = f"💳 PAID VIP ({paid_bal} Qs/Day)" if is_paid else "🆓 FREE DEMO / TIER"
 
+        # Requirement 2: Query total attempted quizzes for student profile
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM quiz_attempts WHERE user_id = %s", (target_uid,))
+        total_quizzes_count = cursor.fetchone()[0] or 0
+        cursor.close()
+        release_db(conn)
+
         keyboard = [
             [InlineKeyboardButton("📩 Direct Message Student", callback_data=f"admin_direct_msg_{target_uid}"), InlineKeyboardButton("⚠️ Issue Warning", callback_data=f"admin_issue_warning_prompt_{target_uid}")],
             [InlineKeyboardButton("💳 View Recent Payments", callback_data=f"admin_view_payments_{target_uid}"), InlineKeyboardButton("👑 Grant Paid Plan", callback_data=f"admin_grant_menu_{target_uid}")],
@@ -2644,6 +2626,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Student ID:** `{sid}`\n"
             f"• **Telegram ID:** `{u.get('user_id')}`\n"
             f"• **Target Exam:** `{u.get('target_exam')}`\n"
+            f"• **Total Attempted Quizzes:** `{total_quizzes_count}` Quizzes\n"
             f"• **Payment Status:** `{paid_text}`\n"
             f"• **VIP Expiry:** `{u.get('vip_pass_expiry') or 'N/A'}`\n"
             f"• **Account Status:** `{ban_text}`\n"
@@ -2755,6 +2738,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         is_paid = paid_bal > 20 and u.get("payment_id") and u.get("payment_id") not in ('DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
         paid_str = f"💳 YES ({paid_bal} Qs/Day)" if is_paid else "🆓 NO (Free Demo / Tier)"
 
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM quiz_attempts WHERE user_id = %s", (target_uid,))
+        total_quizzes_count = cursor.fetchone()[0] or 0
+        cursor.close()
+        release_db(conn)
+
         msg = (
             f"📋 **STUDENT PERSONAL DETAILS** 📋\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -2762,6 +2752,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Student ID:** `{sid}`\n"
             f"• **Telegram ID:** `{u.get('user_id')}`\n"
             f"• **Account Status:** `{ban_status}`\n"
+            f"• **Total Attempted Quizzes:** `{total_quizzes_count}` Quizzes\n"
             f"• **Paid VIP Subscriber:** `{paid_str}`\n"
             f"• **VIP Pass Expiry:** `{u.get('vip_pass_expiry') or 'N/A'}`\n"
             f"• **Username:** @{u.get('username') or 'N/A'}\n"
@@ -2841,7 +2832,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"📊 **STUDENT OVERALL PERFORMANCE** 📊\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)\n\n"
-            f"• **Tests Completed:** `{perf.get('total_tests', 0)}` 📚\n"
+            f"• **Total Attempted Quizzes:** `{perf.get('total_tests', 0)}` 📚\n"
             f"• **Questions Attempted:** `{total_qs}` 🖥\n"
             f"• **Correct Answers:** `{total_correct}` ✅\n"
             f"• **Wrong Answers:** `{perf.get('total_wrong', 0)}` ❌\n"
@@ -2857,6 +2848,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
+    # Requirement 2: Date-wise Quiz attempts breakdown strictly for Admin
     elif data.startswith("audit_datesummary_"):
         await query.answer()
         target_uid = int(data.replace("audit_datesummary_", ""))
@@ -2870,9 +2862,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         release_db(conn)
 
         lines = [
-            f"📅 **DATE-WISE QUIZ SUMMARY** 📅",
+            f"📅 **DATE-WISE QUIZ SUMMARY (ADMIN ONLY)** 📅",
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)\n"
+            f"👤 **Student:** {u.get('full_name')} (`{u.get('student_id')}`)",
+            f"📚 **Total Quizzes Attempted:** `{len(attempts)}` Quizzes\n"
         ]
 
         if attempts:
@@ -2890,8 +2883,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             for dt, stats in summary.items():
                 lines.append(
                     f"🗓 **Date:** `{dt}`\n"
-                    f" • Quizzes: `{stats['tests']}` | Questions: `{stats['qs']}`\n"
-                    f" • Correct: `{stats['correct']}` | Score: `{round(stats['score'], 2)}`\n"
+                    f" • **Quizzes Attempted:** `{stats['tests']}` Quizzes\n"
+                    f" • **Questions Solved:** `{stats['qs']}` | **Correct:** `{stats['correct']}`\n"
+                    f" • **Score:** `{round(stats['score'], 2)}`\n"
                 )
         else:
             lines.append("*No quiz attempts found for this student.*")

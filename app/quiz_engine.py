@@ -81,7 +81,6 @@ async def check_quiz_maintenance(update: Update) -> bool:
 
 
 async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Step 1: Main Game Mode Selection Panel."""
     if not await check_quiz_maintenance(update): return
 
     user = update.effective_user
@@ -907,9 +906,10 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     clean_opts = [str(opt)[:97] for opt in q["options"]]
     correct_id = q.get("correct_option", 0)
 
+    # is_anonymous MUST ALWAYS BE False for the bot to receive PollAnswer events!
     is_practice = (quiz_mode == "PRACTICE")
     poll_type = Poll.QUIZ if is_practice else Poll.REGULAR
-    is_anon = False if is_practice else True
+    is_anon = False
 
     try:
         poll_msg = await context.bot.send_poll(
@@ -986,6 +986,9 @@ async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx:
 
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     answer = update.poll_answer
+    if not answer:
+        return
+        
     poll_id = answer.poll_id
     if poll_id not in POLL_MAP:
         return
@@ -1335,7 +1338,6 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
 
 
 async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Central Router for all quiz modes."""
     data = update.callback_query.data
     if data.startswith("qflow_"):
         await quiz_flow_callback(update, context)

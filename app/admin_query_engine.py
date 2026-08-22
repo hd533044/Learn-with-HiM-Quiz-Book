@@ -12,6 +12,10 @@ from app.pdf_generator import generate_admin_query_dataset_pdf
 logger = logging.getLogger(__name__)
 IST = pytz.timezone("Asia/Kolkata")
 
+# Optional Grok / xAI API Integration
+XAI_API_KEY = os.getenv("XAI_API_KEY", os.getenv("GROK_API_KEY", "")).strip()
+XAI_API_URL = "https://api.x.ai/v1/chat/completions"
+
 INDIAN_STATES = [
     "andhra pradesh", "arunachal pradesh", "assam", "bihar", "chhattisgarh", "goa",
     "gujarat", "haryana", "himachal pradesh", "jharkhand", "karnataka", "kerala",
@@ -56,7 +60,7 @@ INDIAN_FESTIVALS_CALENDAR = [
 
 
 def clean_text(text) -> str:
-    """Escapes formatting characters to prevent Telegram parse errors."""
+    """Escapes markdown formatting characters to prevent Telegram parse errors."""
     if text is None:
         return "N/A"
     s = str(text)
@@ -74,6 +78,9 @@ def parse_date_safely(date_str: str) -> datetime:
         "%Y-%m-%d %H:%M:%S",
         "%Y-%m-%d",
         "%d %b %Y, %I:%M %p",
+        "%d %B %Y, %I:%M %p",
+        "%d %b %Y",
+        "%d %B %Y",
         "%d-%m-%Y %H:%M:%S",
         "%d-%m-%Y",
         "%d/%m/%Y %H:%M:%S",
@@ -88,26 +95,93 @@ def parse_date_safely(date_str: str) -> datetime:
     return None
 
 
+def is_timestamp_matching_target(raw_timestamp_str: str, target_date: datetime.date) -> bool:
+    """Robust date-matching helper that handles all string variations and date formats."""
+    if not raw_timestamp_str:
+        return False
+    clean_s = str(raw_timestamp_str).strip()
+    iso_date_str = target_date.strftime("%Y-%m-%d")
+    alt_date_str = target_date.strftime("%d %b %Y")
+    alt_date_str_full = target_date.strftime("%d %B %Y")
+    
+    if (iso_date_str in clean_s) or (alt_date_str in clean_s) or (alt_date_str_full in clean_s):
+        return True
+        
+    parsed_dt = parse_date_safely(clean_s)
+    if parsed_dt:
+        return parsed_dt.astimezone(IST).date() == target_date
+    return False
+
+
+def call_grok_sql_synthesizer(query_text: str, schema_context: str) -> str:
+    """Invokes Grok LLM to synthesize safe, read-only SQL queries from natural language."""
+    if not XAI_API_KEY:
+        return None
+
+    system_prompt = (
+        "You are an expert read-only PostgreSQL data analyst assistant for an education Telegram bot. "
+        "Given the database schema, convert the admin's natural question into a single, safe SELECT SQL query. "
+        "Rules: ONLY return a valid JSON object: {\"sql\": \"SELECT ...\", \"title\": \"...\"}. "
+        "Do NOT write any DROP, UPDATE, INSERT, or DELETE statements. All dates are Asia/Kolkata (IST)."
+    )
+
+    payload = {
+        "model": "grok-beta",
+        "messages": [
+            {"role": "system", "content": f"{system_prompt}\nSchema:\n{schema_context}"},
+            {"role": "user", "content": query_text}
+        ],
+        "temperature": 0.1
+    }
+
+    try:
+        req = urllib.request.Request(
+            XAI_API_URL,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {XAI_API_KEY}"
+            },
+            method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            body = json.loads(resp.read().decode("utf-8"))
+            content = body["choices"][0]["message"]["content"].strip()
+            
+            # Extract JSON block
+            json_match = re.search(r"\{.*\}", content, re.DOTALL)
+            if json_match:
+                parsed = json.loads(json_match.group(0))
+                sql = parsed.get("sql", "").strip()
+                if sql.upper().startswith("SELECT"):
+                    return sql
+    except Exception as e:
+        logger.warning(f"[GROK API SYNTHESIZER NOTE] {e}")
+    return None
+
+
 def parse_and_execute_admin_query(query_text: str, context_correction: str = None) -> dict:
     """
     OMNISCIENT MASTER ADMIN INTELLIGENCE ENGINE:
-    Strict Priority-Ordered Intent Parser and Real-Time Multi-Table Database Engine.
+    Two-Tier Intelligent Parser with Grok LLM Autolearning & Deterministic Deep-Thinking Engine.
     """
     q_lower = query_text.lower().strip()
     if context_correction:
         q_lower += f" {context_correction.lower().strip()}"
 
     now_ist = get_ist_now()
+    today_date = now_ist.date()
     today_date_str = get_ist_date_str()
     today_start = now_ist.replace(hour=0, minute=0, second=0, microsecond=0)
-    yesterday_date_str = (now_ist - timedelta(days=1)).strftime("%Y-%m-%d")
+    yesterday_date = (now_ist - timedelta(days=1)).date()
+    yesterday_date_str = yesterday_date.strftime("%Y-%m-%d")
     yesterday_start = today_start - timedelta(days=1)
 
     try:
         # =========================================================================
         # 1. ADMIN MASTER PIN / PASSWORD QUERY
         # =========================================================================
-        if any(k in q_lower for k in ["admin password", "admin pin", "master pin", "master password", "admin pass"]):
+        if any(k in q_lower for k in ["admin password", "admin pin", "master pin", "master password", "admin pass", "himanshu pin"]):
             conn = get_db()
             cursor = conn.cursor(cursor_factory=RealDictCursor)
             cursor.execute("SELECT password_hash, updated_at FROM admin_security WHERE id = 1")
@@ -124,7 +198,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 f"👑 **Current Admin Master PIN:** `{admin_pin}`",
                 f"⏰ **Last Updated:** `{updated_at}`",
                 "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-                "⚠️ *Confidential: Master Admin PIN.*"
+                "⚠️ *Confidential Master Admin PIN.*"
             ]
 
             return {
@@ -158,7 +232,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             for b in blocked_users:
                 b_time = str(b.get("blocked_at", ""))
                 if is_today:
-                    if today_date_str in b_time:
+                    if is_timestamp_matching_target(b_time, today_date):
                         matched_blocked.append(b)
                 else:
                     matched_blocked.append(b)
@@ -202,8 +276,88 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 3. TOTAL QUIZZES ATTEMPTED ON BOT (OVERALL / DATE-WISE BREAKDOWN)
+        # 3. QUIZ ATTEMPTS & REPORTS (TODAY, YESTERDAY, DATE-SPECIFIC & OVERALL)
         # =========================================================================
+        is_quiz_query = any(k in q_lower for k in ["quiz", "quizzes", "attempt", "attempts", "test report", "quiz report", "quiz summary"])
+        is_today_quiz = "today" in q_lower and is_quiz_query
+        is_yesterday_quiz = "yesterday" in q_lower and is_quiz_query
+
+        if is_today_quiz or is_yesterday_quiz:
+            target_scope_date = today_date if is_today_quiz else yesterday_date
+            scope_str = today_date_str if is_today_quiz else yesterday_date_str
+            scope_label = "Today" if is_today_quiz else "Yesterday"
+
+            conn = get_db()
+            cursor = conn.cursor(cursor_factory=RealDictCursor)
+            cursor.execute("""
+                SELECT qa.id, qa.user_id, qa.subject, qa.quiz_mode, qa.questions_attempted, 
+                       qa.correct_answers, qa.wrong_answers, qa.score, qa.attempt_timestamp, qa.attempt_date,
+                       u.student_id, u.full_name, u.phone_number, u.target_exam
+                FROM quiz_attempts qa
+                LEFT JOIN users u ON qa.user_id = u.user_id
+                ORDER BY qa.id DESC
+            """)
+            all_attempts = cursor.fetchall()
+            cursor.close()
+            release_db(conn)
+
+            matched_attempts = []
+            for a in all_attempts:
+                att_date_val = a.get("attempt_date") or ""
+                att_ts_val = a.get("attempt_timestamp") or ""
+                if (scope_str == att_date_val) or is_timestamp_matching_target(att_ts_val, target_scope_date):
+                    matched_attempts.append(a)
+
+            tot_attempts = len(matched_attempts)
+            unique_students = len({r['user_id'] for r in matched_attempts})
+            tot_qs = sum(r.get("questions_attempted", 0) for r in matched_attempts)
+            tot_corr = sum(r.get("correct_answers", 0) for r in matched_attempts)
+            avg_acc = round((tot_corr / tot_qs) * 100.0, 2) if tot_qs > 0 else 0.0
+
+            title = f"Quiz Attempts Telemetry Report ({scope_label} - {scope_str})"
+            columns = ["S.No.", "Telegram ID", "Student ID", "Full Name", "Subject", "Mode", "Questions", "Correct", "Score", "Attempted At"]
+            pdf_rows = []
+
+            tg_lines = [
+                f"🎯 **OMNISCIENT INTEL: {scope_label.upper()}'S QUIZ ATTEMPTS TELEMETRY**",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                f"📅 **Date:** `{scope_str}`",
+                f"📚 **Quizzes Submitted:** `{tot_attempts}` Quizzes",
+                f"👥 **Students Practicing:** `{unique_students}` Scholars",
+                f"🖥 **Total Questions Solved:** `{tot_qs}` Questions",
+                f"⭐ **Average Accuracy:** `{avg_acc}%`",
+                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            ]
+
+            for idx, a in enumerate(matched_attempts, start=1):
+                uid = a.get("user_id", "N/A")
+                sid = clean_text(a.get("student_id") or f"USER_{uid}")
+                name = clean_text(a.get("full_name") or "Student")
+                subj = clean_text(a.get("subject") or "Practice")
+                qs = a.get("questions_attempted", 0)
+                corr = a.get("correct_answers", 0)
+                score = round(a.get("score", 0.0), 2)
+                t_str = clean_text(a.get("attempt_timestamp") or "N/A")
+
+                if idx <= 20:
+                    tg_lines.append(f"**{idx}. {name}** (`{sid}`)\n   📖 Subject: `{subj}` | Solved: `{qs} Qs` (✅ {corr})\n   ⭐ Score: `{score}` | ⏰ Time: `{t_str}`\n")
+                pdf_rows.append([str(idx), str(uid), str(sid), name, subj, clean_text(a.get("quiz_mode")), str(qs), str(corr), str(score), str(t_str)])
+
+            if len(matched_attempts) > 20:
+                tg_lines.append(f"*(+ {len(matched_attempts) - 20} more quiz sessions in attached PDF report)*")
+            if not matched_attempts:
+                tg_lines.append(f"ℹ️ *Zero quiz attempts logged for {scope_label} ({scope_str}).*")
+
+            return {
+                "title": title,
+                "total_records": tot_attempts,
+                "summary_markdown": "\n".join(tg_lines),
+                "columns": columns,
+                "rows": pdf_rows,
+                "kpis": {"Date": scope_str, "Quizzes": str(tot_attempts), "Students": str(unique_students), "Questions": str(tot_qs)}
+            }
+
+        # Overall Quiz Volume
         if any(k in q_lower for k in ["total quiz", "total quizzes", "quiz attempts", "quizzes attempted", "how many quizzes", "tests completed"]):
             conn = get_db()
             cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -383,16 +537,14 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 time_label = f"Today ({today_date_str})"
                 for t in all_txns:
                     c_str = str(t.get("created_at", ""))
-                    t_dt = parse_date_safely(c_str)
-                    if (today_date_str in c_str) or (t_dt and t_dt >= today_start):
+                    if is_timestamp_matching_target(c_str, today_date):
                         matched_txns.append(t)
                         gross_window_rev += float(t.get("amount_paid", 0) or 0)
             elif "yesterday" in q_lower:
                 time_label = f"Yesterday ({yesterday_date_str})"
                 for t in all_txns:
                     c_str = str(t.get("created_at", ""))
-                    t_dt = parse_date_safely(c_str)
-                    if (yesterday_date_str in c_str) or (t_dt and yesterday_start <= t_dt < today_start):
+                    if is_timestamp_matching_target(c_str, yesterday_date):
                         matched_txns.append(t)
                         gross_window_rev += float(t.get("amount_paid", 0) or 0)
 
@@ -512,7 +664,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                         u["hours_left"] = "Expired"
                         matched_expirations.append(u)
                 elif is_today:
-                    if exp_dt.date() == now_ist.date() and exp_dt >= now_ist:
+                    if exp_dt.date() == today_date and exp_dt >= now_ist:
                         hours_left = max(0.0, round((exp_dt - now_ist).total_seconds() / 3600.0, 1))
                         u["hours_left"] = f"{hours_left}h left"
                         matched_expirations.append(u)
@@ -661,17 +813,17 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
 
             for t in all_txns:
                 amt = float(t.get("amount_paid", 0) or 0)
-                c_str = t.get("created_at", "")
+                c_str = str(t.get("created_at", ""))
                 t_dt = parse_date_safely(c_str)
 
                 if is_today:
                     timeframe_label = f"Today ({today_date_str})"
-                    if (today_date_str in c_str) or (t_dt and t_dt >= today_start):
+                    if is_timestamp_matching_target(c_str, today_date) or (t_dt and t_dt >= today_start):
                         filtered_txns.append(t)
                         gross_rev += amt
                 elif is_yesterday:
                     timeframe_label = f"Yesterday ({yesterday_date_str})"
-                    if (yesterday_date_str in c_str) or (t_dt and yesterday_start <= t_dt < today_start):
+                    if is_timestamp_matching_target(c_str, yesterday_date) or (t_dt and yesterday_start <= t_dt < today_start):
                         filtered_txns.append(t)
                         gross_rev += amt
                 elif is_week:
@@ -736,9 +888,9 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             }
 
         # =========================================================================
-        # 9. DATE-SPECIFIC REGISTRATIONS (TODAY, YESTERDAY, THIS WEEK, ETC.)
+        # 9. STUDENT REGISTRATIONS & USER LISTINGS
         # =========================================================================
-        is_registration_query = any(k in q_lower for k in ["register", "registered", "joined", "new user", "new student", "signup", "onboarded", "users list", "students list", "user list", "total registered"])
+        is_registration_query = any(k in q_lower for k in ["register", "registered", "joined", "new user", "new student", "signup", "onboarded", "users list", "students list", "user list", "total registered", "new users"])
         is_today = "today" in q_lower
         is_yesterday = "yesterday" in q_lower
         is_this_week = "this week" in q_lower or "past week" in q_lower
@@ -757,15 +909,13 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                 date_label = f"Today ({today_date_str})"
                 for u in all_users:
                     c_str = str(u.get("created_at", ""))
-                    u_dt = parse_date_safely(c_str)
-                    if (today_date_str in c_str) or (u_dt and u_dt >= today_start):
+                    if is_timestamp_matching_target(c_str, today_date):
                         matched_date_users.append(u)
             elif is_yesterday:
                 date_label = f"Yesterday ({yesterday_date_str})"
                 for u in all_users:
                     c_str = str(u.get("created_at", ""))
-                    u_dt = parse_date_safely(c_str)
-                    if (yesterday_date_str in c_str) or (u_dt and yesterday_start <= u_dt < today_start):
+                    if is_timestamp_matching_target(c_str, yesterday_date):
                         matched_date_users.append(u)
             elif is_this_week:
                 date_label = "This Week"
@@ -791,7 +941,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             tg_lines = [
                 f"👥 **OMNISCIENT INTEL: STUDENT REGISTRATIONS ({date_label.upper()})**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"📊 **Total Active Students:** `{len(matched_date_users)}`\n"
+                f"📊 **Total Matching Students:** `{len(matched_date_users)}`\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             ]
 
@@ -1116,7 +1266,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
                     f"   ⚡ Quota: `{quota}` | ⏳ Expiry: `{exp}` | 🔑 PIN: `{pin}`\n"
                     f"   🕒 Last Active: `{last_act}`\n"
                 )
-            pdf_rows.append([str(idx), str(uid), str(sid), name, phone, exam, quota, str(quizzes_done), exp, pin])
+            pdf_rows.append([str(idx), str(uid), str(sid), name, str(phone), str(exam), str(quota), str(quizzes_done), str(exp), str(pin)])
 
         if len(matched_users) > 20:
             tg_lines.append(f"*(+ {len(matched_users) - 20} more records in attached PDF report)*")

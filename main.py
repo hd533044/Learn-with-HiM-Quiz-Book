@@ -22,13 +22,13 @@ from app.telegram_bot import build_application, PROFILE_CACHE
 from app.admin import fast_concurrent_broadcast
 from app.config import (
     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET, 
-    PLAN_TIERS, PRIMARY_ADMIN_ID
+    PLAN_TIERS, PRIMARY_ADMIN_ID, BASE_DIR
 )
 from app.database import (
     sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile,
     fetch_pending_announcements, update_announcement_status, get_all_users, record_broadcast_delivery,
     get_active_flash_sale, calculate_discounted_price, get_user_by_phone, infer_plan_key_from_amount,
-    auto_sync_uncredited_paid_users, record_quiz_result
+    auto_sync_uncredited_paid_users, record_quiz_result, save_question_to_db
 )
 from app.pyq_fetcher import (
     fetch_pyqs_for_quiz, fetch_rc_or_cloze_passage_questions, fetch_english_full_mock_25
@@ -245,20 +245,20 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
 
 
 # ======================================================================
-# 🚀 CBT MINI APP WEB PORTAL & REST API ROUTE HANDLERS
+# 🚀 CBT MINI APP (WEB PORTAL) ROUTE HANDLERS
 # ======================================================================
 
 async def handle_serve_webapp(request):
-    """Serves the interactive CBT Single Page Web Application."""
+    """Serves the interactive CBT Single Page Application."""
     template_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", "webapp.html")
     if os.path.exists(template_path):
         with open(template_path, "r", encoding="utf-8") as f:
             return web.Response(text=f.read(), content_type="text/html")
-    return web.Response(text="CBT Web App Template Not Found. Please ensure app/templates/webapp.html exists.", status=404)
+    return web.Response(text="Web App Template Not Found. Please ensure app/templates/webapp.html exists.", status=404)
 
 
 async def handle_api_start_quiz(request):
-    """Fetches verified and non-repeated questions for the Web App session."""
+    """Fetches non-repeated question sets for the Web App session."""
     try:
         data = await request.json()
         user_id = data.get("user_id")
@@ -358,6 +358,27 @@ async def handle_api_submit_quiz(request):
         return web.json_response({"error": str(e)}, status=500)
 
 
+async def handle_api_bookmark_question(request):
+    """Saves a question to the student's personal bookmarks database."""
+    try:
+        data = await request.json()
+        user_id = int(data.get("user_id"))
+        q = data.get("question", {})
+        
+        q_text = q.get("question", "")
+        options = q.get("options", [])
+        correct_option = int(q.get("correct_option", 0))
+        explanation = q.get("explanation", "")
+        
+        success = await asyncio.to_thread(
+            save_question_to_db,
+            user_id, q_text, options, correct_option, explanation
+        )
+        return web.json_response({"success": success})
+    except Exception as e:
+        return web.json_response({"error": str(e)}, status=500)
+
+
 async def handle_api_download_pdf(request):
     """Direct PDF download endpoint for completed test reviews."""
     try:
@@ -374,6 +395,148 @@ async def handle_api_download_pdf(request):
     except Exception as e:
         logging.error(f"[WEBAPP DOWNLOAD PDF API ERROR] {e}")
         return web.Response(text=str(e), status=500)
+
+
+async def handle_ping(request):
+    return web.Response(text="Bot Engine & Payment Gateway Active")
+
+
+async def handle_razorpay_callback_get(request):
+    params = request.query
+    razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id")
+
+    if not razorpay_payment_id or not str(razorpay_payment_id).startswith("pay_"):
+        html_invalid = """
+        <!DOCTYPE html>
+        <html>
+        <head><title>Invalid Request</title><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+        <body style="font-family:sans-serif; background:#0f172a; color:#f8fafc; text-align:center; padding:50px;">
+            <h2>⚠️ Invalid Payment Verification Request</h2>
+            <p>No verified Razorpay payment transaction was found for this link.</p>
+            <a href="https://t.me/quizwithhimbot" style="color:#38bdf8; text-decoration:none; font-weight:bold;">Return to Quiz with HiM Bot</a>
+        </body>
+        </html>
+        """
+        return web.Response(text=html_invalid, content_type="text/html", status=400)
+
+    raw_user_id = params.get("user_id") or params.get("notes[user_id]")
+    plan_key = params.get("plan_key") or params.get("notes[plan_key]")
+    charged_amt = None
+    is_verified = False
+
+    if razorpay_client:
+        try:
+            p_data = await asyncio.to_thread(razorpay_client.payment.fetch, razorpay_payment_id)
+            if p_data and p_data.get("status") == "captured":
+                is_verified = True
+                charged_amt = float(p_data.get("amount", 0)) / 100.0
+                notes = p_data.get("notes", {}) or {}
+                if notes.get("user_id"): raw_user_id = notes.get("user_id")
+                if notes.get("plan_key"): plan_key = notes.get("plan_key")
+                if not raw_user_id and p_data.get("contact"):
+                    u_m = get_user_by_phone(p_data.get("contact"))
+                    if u_m: raw_user_id = u_m["user_id"]
+        except Exception as e:
+            logging.error(f"[CALLBACK REST VERIFY ERROR] {e}")
+
+    if (not plan_key or plan_key not in PLAN_TIERS) and charged_amt:
+        plan_key = infer_plan_key_from_amount(charged_amt)
+
+    if is_verified and raw_user_id and plan_key in PLAN_TIERS:
+        try:
+            uid = int(raw_user_id)
+            activated = await activate_user_subscription(uid, plan_key, razorpay_payment_id, amount_paid=charged_amt)
+            if activated:
+                await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id, amount_paid=charged_amt)
+        except Exception as e:
+            logging.error(f"[GET CALLBACK EXCEPTION] {e}")
+
+    html_content = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Payment Successful - Quiz with HiM</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {{ font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }}
+            .card {{ background: #1e293b; border-radius: 16px; padding: 32px; max-width: 420px; width: 100%; text-align: center; border: 1px solid #334155; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }}
+            .icon {{ font-size: 56px; margin-bottom: 16px; }}
+            h2 {{ color: #38bdf8; margin-bottom: 8px; }}
+            p {{ color: #94a3b8; font-size: 15px; line-height: 1.5; }}
+            .id-box {{ background: #0f172a; padding: 12px; border-radius: 8px; font-family: monospace; color: #38bdf8; margin: 16px 0; word-break: break-all; }}
+            .btn {{ display: inline-block; background: #2563eb; color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; margin-top: 16px; }}
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <div class="icon">🎉</div>
+            <h2>Payment Successful!</h2>
+            <p>Your VIP plan has been credited and an official invoice has been pushed to your Telegram chat.</p>
+            <div class="id-box">Payment ID: {razorpay_payment_id}</div>
+            <a href="https://t.me/quizwithhimbot" class="btn">Return to Telegram Bot</a>
+        </div>
+    </body>
+    </html>
+    """
+    return web.Response(text=html_content, content_type="text/html")
+
+
+async def handle_razorpay_webhook(request):
+    try:
+        body = await request.text()
+        signature = request.headers.get("X-Razorpay-Signature", "")
+
+        if RAZORPAY_WEBHOOK_SECRET and signature:
+            expected_signature = hmac.new(
+                RAZORPAY_WEBHOOK_SECRET.encode("utf-8"),
+                body.encode("utf-8"),
+                hashlib.sha256
+            ).hexdigest()
+            if not hmac.compare_digest(expected_signature, signature):
+                logging.warning("[WEBHOOK] Signature mismatch detected.")
+
+        data = json.loads(body)
+        event = data.get("event")
+        payload = data.get("payload", {})
+
+        payment_link_entity = payload.get("payment_link", {}).get("entity", {})
+        payment_entity = payload.get("payment", {}).get("entity", {})
+
+        notes = payment_link_entity.get("notes") or payment_entity.get("notes") or {}
+        
+        user_id = notes.get("user_id")
+        plan_key = notes.get("plan_key")
+        payment_id = payment_entity.get("id") or payment_link_entity.get("id")
+        
+        if not payment_id or not str(payment_id).startswith("pay_"):
+            return web.Response(status=400, text="Invalid Payment ID format")
+
+        raw_amount = payment_entity.get("amount") or payment_link_entity.get("amount")
+        amount_paid = (float(raw_amount) / 100.0) if raw_amount else None
+        if not amount_paid and notes.get("amount_paid"):
+            amount_paid = float(notes["amount_paid"])
+
+        if not user_id:
+            contact = payment_entity.get("contact") or payment_link_entity.get("customer", {}).get("contact")
+            if contact:
+                user_match = get_user_by_phone(contact)
+                if user_match:
+                    user_id = user_match["user_id"]
+
+        if not plan_key or plan_key not in PLAN_TIERS:
+            if amount_paid:
+                plan_key = infer_plan_key_from_amount(amount_paid)
+
+        if user_id and plan_key in PLAN_TIERS and event in ("payment_link.paid", "payment.captured"):
+            uid = int(user_id)
+            success = await activate_user_subscription(uid, plan_key, payment_id, amount_paid=amount_paid)
+            if success:
+                await send_payment_invoice_telegram(uid, plan_key, payment_id, amount_paid=amount_paid)
+
+        return web.Response(status=200, text="Webhook Processed")
+    except Exception as e:
+        logging.error(f"[WEBHOOK EXCEPTION] {e}")
+        return web.Response(status=500, text=str(e))
 
 
 async def scheduled_auto_payment_sync_worker():
@@ -838,17 +1001,23 @@ async def handle_razorpay_webhook(request):
 async def start_web_server():
     app = web.Application()
     
-    # Root and /webapp serve the Mini App CBT Exam Portal
+    # 1. Mount and serve Static Assets (Official Logo) from the /assets folder
+    assets_dir = os.path.join(BASE_DIR, "assets")
+    if os.path.exists(assets_dir):
+        app.router.add_static("/assets", assets_dir)
+
+    # 2. CBT Mini App Web Portal Routes
     app.router.add_get("/", handle_serve_webapp)
     app.router.add_get("/webapp", handle_serve_webapp)
     app.router.add_get("/ping", handle_ping)
     
-    # Mini App REST Endpoints
+    # 3. CBT Interactive REST Endpoints
     app.router.add_post("/api/webapp/start-quiz", handle_api_start_quiz)
     app.router.add_post("/api/webapp/submit-quiz", handle_api_submit_quiz)
+    app.router.add_post("/api/webapp/bookmark", handle_api_bookmark_question)
     app.router.add_get("/api/webapp/download-pdf/{attempt_id}", handle_api_download_pdf)
     
-    # Razorpay Webhook & Callback Routes
+    # 4. Razorpay Webhook & Callback Handlers
     app.router.add_get("/razorpay-webhook", handle_razorpay_callback_get)
     app.router.add_post("/razorpay-webhook", handle_razorpay_webhook)
 

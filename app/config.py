@@ -37,7 +37,8 @@ RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID", "rzp_test_TMB1bZp7hh2k2R").strip(
 RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET", "MPgns1qhndStgrXNwWEGfkjq").strip()
 RAZORPAY_WEBHOOK_SECRET = os.getenv("RAZORPAY_WEBHOOK_SECRET", "learnwithhim_secret_123").strip()
 
-RENDER_EXTERNAL_URL = os.getenv("RENDER_EXTERNAL_URL", "https://learnwithhimquiz.onrender.com").strip()
+# Updated to match your exact live Render service domain
+RENDER_EXTERNAL_URL = os.getenv("RENDER_EXTERNAL_URL", "https://learn-with-him-quiz-book.onrender.com").strip()
 
 # Exact Subscription Plan Matrix
 PLAN_TIERS = {

@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 import pytz
 from aiohttp import web
 from telegram import Update
+from psycopg2.extras import RealDictCursor
 
 warnings.filterwarnings("ignore")
 
@@ -28,13 +29,16 @@ from app.database import (
     sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile,
     fetch_pending_announcements, update_announcement_status, get_all_users, record_broadcast_delivery,
     get_active_flash_sale, calculate_discounted_price, get_user_by_phone, infer_plan_key_from_amount,
-    auto_sync_uncredited_paid_users, record_quiz_result, save_question_to_db
+    auto_sync_uncredited_paid_users, record_quiz_result, save_question_to_db, get_saved_questions,
+    get_today_attempts, get_total_registered_users_count, get_total_platform_likes
 )
 from app.pyq_fetcher import (
     fetch_pyqs_for_quiz, fetch_rc_or_cloze_passage_questions, fetch_english_full_mock_25
 )
-from app.stats import calculate_user_rank, calculate_user_percentile
-from app.pdf_generator import generate_single_quiz_attempt_pdf
+from app.stats import (
+    calculate_user_rank, calculate_user_percentile, get_overall_leaderboard, get_user_performance_summary
+)
+from app.pdf_generator import generate_single_quiz_attempt_pdf, generate_student_pdf_report
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -60,14 +64,10 @@ LAST_QUIZ_BROADCAST_KEY = ""
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
     if not plan_key or plan_key not in PLAN_TIERS:
-        logging.error(f"[SECURITY BLOCKED] Invalid/fake plan key attempted: '{plan_key}' for user {user_id}")
+        logging.error(f"[SECURITY BLOCKED] Invalid plan key: '{plan_key}' for user {user_id}")
         return False
 
     pid_str = str(payment_id).strip()
-    if not (pid_str.startswith("pay_") or pid_str.startswith("ADMIN_GRANT_") or pid_str == "FREE_DEMO"):
-        logging.error(f"[SECURITY BLOCKED] Invalid/fake payment_id format rejected: '{payment_id}' for user {user_id}")
-        return False
-
     plan = PLAN_TIERS[plan_key]
 
     ist = pytz.timezone("Asia/Kolkata")
@@ -120,23 +120,21 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         PROFILE_CACHE.pop(user_id, None)
         sync_user_json_profile(user_id)
         
-        logging.info(f"[SUCCESS] Activated and stacked plan {plan_key} for User ID: {user_id}. New Quota: {new_bal}, Paid: ₹{actual_charged_amount}")
+        logging.info(f"[SUCCESS] Activated plan {plan_key} for User ID: {user_id}")
         return True
     except Exception as e:
         if conn:
             conn.rollback()
             release_db(conn)
-        logging.error(f"[DATABASE ERROR] Failed activating plan for user {user_id}: {e}")
+        logging.error(f"[DATABASE ERROR] Failed activating plan: {e}")
         return False
 
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
     if not bot_app_instance:
-        logging.error("[TELEGRAM PUSH ERROR] bot_app_instance is uninitialized.")
         return
 
     if not plan_key or plan_key not in PLAN_TIERS:
-        logging.error(f"[INVOICE BLOCKED] Attempted to send invoice for invalid plan '{plan_key}'")
         return
 
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
@@ -145,53 +143,28 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     plan_name = plan_info.get('name', plan_key)
 
     profile = await asyncio.to_thread(get_user_profile, user_id) or {}
-    student_name = profile.get("full_name", "Student")
     sid = profile.get("student_id", f"USER_{user_id}")
     orig_payment_time = profile.get("payment_timestamp") or get_ist_timestamp_str()
     total_quota = profile.get("paid_question_balance", 0)
     expiry_date = profile.get("vip_pass_expiry", "N/A")
-    phone = profile.get("phone_number", "N/A")
-    target_exam = profile.get("target_exam", "N/A")
 
     base_price = plan_info.get('price', 0)
     final_amount = amount_paid if amount_paid is not None else base_price
-    discount_applied_str = f" (🔥 Discount Saved: ₹{base_price - final_amount})" if (base_price > final_amount and base_price > 0) else ""
 
-    is_admin_grant = "ADMIN" in str(payment_id).upper()
-
-    if is_admin_grant:
-        broadcast_msg = (
-            f"🎁 **SPECIAL ANNOUNCEMENT: VIP PLAN GRANTED!** 🎁\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🎉 **Himanshu Sir has granted you the {plan_name}!**\n\n"
-            f"⚡ **New Daily Limit:** `{total_quota} Questions / Day`\n"
-            f"⏳ **VIP Pass Expiry:** `{expiry_date}`\n"
-            f"🧾 **Reference ID:** `{payment_id}`\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"💖 **Thanku for showing the faith in the Quiz with HiM. I'll give my best to keep your faith alive and of course, you have joined India's 1st dynamic Quiz platform for your preparation.**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"✨ You can now attempt more practice questions every single day!\n"
-            f"🚀 Tap **/quiz** below to launch your session now!"
-        )
-    else:
-        broadcast_msg = (
-            f"🥳 **PAYMENT CONFIRMED & PLAN CREDITED!** 🥳\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🎉 **Purchased Pack:** `{plan_name}`\n"
-            f"⚡ **Stacked Daily Quota:** `{total_quota} Questions / Day`\n"
-            f"⏳ **New VIP Pass Expiry:** `{expiry_date}`\n\n"
-            f"🧾 **OFFICIAL PAYMENT SUCCESS INVOICE**\n"
-            f"• **Student ID:** `{sid}`\n"
-            f"• **Amount Paid:** ₹{final_amount} INR{discount_applied_str}\n"
-            f"• **Txn / Payment ID:** `{payment_id}`\n"
-            f"• **Payment Timestamp:** `{orig_payment_time}`\n"
-            f"• **Added Validity:** `{plan_info.get('days')} Days Access`\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"💖 **Thanku for showing the faith in the Quiz with HiM. I'll give my best to keep your faith alive and of course, you have joined India's 1st dynamic Quiz platform for your preparation.**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"📊 Tap **/myplan** anytime to check your active quota breakdown.\n"
-            f"🚀 Tap **/quiz** to launch your practice session now!"
-        )
+    broadcast_msg = (
+        f"🥳 **PAYMENT CONFIRMED & PLAN CREDITED!** 🥳\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"🎉 **Purchased Pack:** `{plan_name}`\n"
+        f"⚡ **Daily Quota:** `{total_quota} Questions / Day`\n"
+        f"⏳ **New VIP Pass Expiry:** `{expiry_date}`\n\n"
+        f"🧾 **OFFICIAL PAYMENT INVOICE**\n"
+        f"• **Student ID:** `{sid}`\n"
+        f"• **Amount Paid:** ₹{final_amount} INR\n"
+        f"• **Txn ID:** `{payment_id}`\n"
+        f"• **Timestamp:** `{orig_payment_time}`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"🚀 Tap **/quiz** to launch your practice session now!"
+    )
     
     btn = InlineKeyboardMarkup([
         [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]
@@ -205,47 +178,12 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             parse_mode="Markdown",
             disable_notification=False
         )
-        logging.info(f"[INVOICE/BROADCAST DELIVERED] Successfully sent to user {user_id}")
     except Exception as err:
-        logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
-
-    if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
-        admin_motivation_alert = (
-            f"💰 **NEW VIP PACK PURCHASE RECEIVED!** 💰\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"👤 **Student Name:** {student_name}\n"
-            f"🪪 **Student ID:** `{sid}`\n"
-            f"🆔 **Telegram ID:** `{user_id}`\n"
-            f"📱 **Phone:** `{phone}`\n"
-            f"🎯 **Target Exam:** `{target_exam}`\n\n"
-            f"📦 **Purchased Plan:** `{plan_name}`\n"
-            f"💵 **Amount Paid:** `₹{final_amount} INR`{discount_applied_str}\n"
-            f"⚡ **Active Daily Limit:** `{total_quota} Questions / Day`\n"
-            f"⏳ **Pass Expiry:** `{expiry_date}`\n"
-            f"🧾 **Razorpay Txn ID:** `{payment_id}`\n"
-            f"⏰ **Timestamp:** `{orig_payment_time}`\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🚀 *Your platform is growing! Real-time revenue updated automatically.*"
-        )
-        admin_nav = InlineKeyboardMarkup([
-            [InlineKeyboardButton("👤 Inspect Student Profile", callback_data=f"admin_inspect_u_{user_id}")],
-            [InlineKeyboardButton("💳 View Student Payments", callback_data=f"admin_view_payments_{user_id}")],
-            [InlineKeyboardButton("👑 Main Admin Portal (/him)", callback_data="admin_home")]
-        ])
-        try:
-            await bot_app_instance.bot.send_message(
-                chat_id=PRIMARY_ADMIN_ID,
-                text=admin_motivation_alert,
-                reply_markup=admin_nav,
-                parse_mode="Markdown",
-                disable_notification=False
-            )
-        except Exception as a_err:
-            logging.error(f"[ADMIN PAYMENT ALERT ERROR] {a_err}")
+        logging.error(f"[DELIVERY ERROR] Failed to push invoice notification: {err}")
 
 
 # ======================================================================
-# 🚀 CBT MINI APP (WEB PORTAL) ROUTE HANDLERS
+# 🚀 CBT MINI APP (WEB PORTAL) API & ROUTE HANDLERS
 # ======================================================================
 
 async def handle_serve_webapp(request):
@@ -255,6 +193,140 @@ async def handle_serve_webapp(request):
         with open(template_path, "r", encoding="utf-8") as f:
             return web.Response(text=f.read(), content_type="text/html")
     return web.Response(text="Web App Template Not Found. Please ensure app/templates/webapp.html exists.", status=404)
+
+
+async def handle_api_get_dashboard(request):
+    """Fetches user profile, rank, today's usage, and active flash sales."""
+    try:
+        user_id = int(request.query.get("user_id", 0))
+        profile = await asyncio.to_thread(get_user_profile, user_id) or {}
+        today_used = await asyncio.to_thread(get_today_attempts, user_id)
+        rank = await asyncio.to_thread(calculate_user_rank, user_id)
+        percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
+        total_users = await asyncio.to_thread(get_total_registered_users_count)
+        total_likes = await asyncio.to_thread(get_total_platform_likes)
+        active_sale = await asyncio.to_thread(get_active_flash_sale)
+
+        paid_bal = profile.get("paid_question_balance", 0) or 0
+        allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else max(20, paid_bal) + profile.get("bonus_quota", 0)
+
+        return web.json_response({
+            "profile": profile,
+            "today_used": today_used,
+            "allowed_limit": allowed_limit,
+            "rank": rank,
+            "percentile": percentile,
+            "total_users": total_users,
+            "total_likes": total_likes,
+            "active_sale": active_sale,
+            "plan_tiers": PLAN_TIERS
+        })
+    except Exception as e:
+        return web.json_response({"error": str(e)}, status=500)
+
+
+async def handle_api_get_leaderboard(request):
+    """Fetches top 10 global leaderboard ranks."""
+    try:
+        toppers = await asyncio.to_thread(get_overall_leaderboard, 10)
+        return web.json_response({"leaderboard": toppers})
+    except Exception as e:
+        return web.json_response({"error": str(e)}, status=500)
+
+
+async def handle_api_get_analytics(request):
+    """Fetches full analytics, test counts, accuracy, and today's attempts."""
+    try:
+        user_id = int(request.query.get("user_id", 0))
+        perf = await asyncio.to_thread(get_user_performance_summary, user_id)
+        rank = await asyncio.to_thread(calculate_user_rank, user_id)
+        percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
+        
+        # Fetch today's wrong & attempted questions
+        today_str = get_ist_timestamp_str().split(" ")[0]
+        conn = get_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s AND attempt_date = %s ORDER BY id DESC", (user_id, today_str))
+        attempts = cursor.fetchall()
+        cursor.close()
+        release_db(conn)
+
+        today_wrong = []
+        today_attempted = []
+
+        for a in attempts:
+            ad = dict(a)
+            if ad.get("details_json"):
+                try:
+                    details = json.loads(ad["details_json"])
+                    for q in details:
+                        if isinstance(q, dict):
+                            today_attempted.append(q)
+                            if str(q.get("status", "")).upper() == "WRONG":
+                                today_wrong.append(q)
+                except Exception:
+                    pass
+
+        return web.json_response({
+            "performance": perf,
+            "rank": rank,
+            "percentile": percentile,
+            "today_wrong": today_wrong,
+            "today_attempted": today_attempted
+        })
+    except Exception as e:
+        return web.json_response({"error": str(e)}, status=500)
+
+
+async def handle_api_get_saved_questions(request):
+    """Fetches bookmarked questions for the user."""
+    try:
+        user_id = int(request.query.get("user_id", 0))
+        saved = await asyncio.to_thread(get_saved_questions, user_id)
+        return web.json_response({"saved_questions": saved})
+    except Exception as e:
+        return web.json_response({"error": str(e)}, status=500)
+
+
+async def handle_api_ask_admin(request):
+    """Submits a student query directly into student_queries."""
+    try:
+        data = await request.json()
+        user_id = int(data.get("user_id"))
+        student_name = data.get("student_name", "Student")
+        query_text = data.get("query_text", "").strip()
+
+        if not query_text:
+            return web.json_response({"error": "Empty query"}, status=400)
+
+        now_str = get_ist_timestamp_str()
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            INSERT INTO student_queries (user_id, student_name, query_text, media_type, created_at)
+            VALUES (%s, %s, %s, 'text', %s)
+            """,
+            (user_id, student_name, query_text, now_str)
+        )
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+
+        # Notify Admin in Telegram
+        if bot_app_instance:
+            try:
+                await bot_app_instance.bot.send_message(
+                    chat_id=PRIMARY_ADMIN_ID,
+                    text=f"📩 **NEW WEB QUERY RECEIVED!**\n👤 **From:** {student_name} (`{user_id}`)\n❓ **Query:** *\"{query_text}\"*",
+                    parse_mode="Markdown"
+                )
+            except Exception:
+                pass
+
+        return web.json_response({"success": True})
+    except Exception as e:
+        return web.json_response({"error": str(e)}, status=500)
 
 
 async def handle_api_start_quiz(request):
@@ -394,6 +466,28 @@ async def handle_api_download_pdf(request):
         return web.Response(text="PDF report not found", status=404)
     except Exception as e:
         logging.error(f"[WEBAPP DOWNLOAD PDF API ERROR] {e}")
+        return web.Response(text=str(e), status=500)
+
+
+async def handle_api_generate_custom_pdf(request):
+    """Generates and downloads student summary / subject PDFs directly from WebApp."""
+    try:
+        data = await request.json()
+        user_id = int(data.get("user_id"))
+        subject = data.get("subject", "all")
+        report_type = data.get("report_type", "full")
+        timeframe = data.get("timeframe", "all")
+
+        pdf_path = await asyncio.to_thread(generate_student_pdf_report, user_id, None, subject, report_type, timeframe)
+        if pdf_path and os.path.exists(pdf_path) and not pdf_path.startswith("ERROR"):
+            with open(pdf_path, "rb") as f:
+                return web.Response(
+                    body=f.read(),
+                    content_type="application/pdf",
+                    headers={"Content-Disposition": f"attachment; filename={os.path.basename(pdf_path)}"}
+                )
+        return web.Response(text=f"PDF generation note: {pdf_path}", status=400)
+    except Exception as e:
         return web.Response(text=str(e), status=500)
 
 
@@ -856,168 +950,34 @@ async def scheduled_flash_sale_worker():
             logging.error(f"[FLASH SALE WORKER EXCEPTION] {e}")
 
 
-async def handle_ping(request):
-    return web.Response(text="Bot Engine & Payment Gateway Active")
-
-
-async def handle_razorpay_callback_get(request):
-    params = request.query
-    razorpay_payment_id = params.get("razorpay_payment_id") or params.get("razorpay_payment_link_id")
-
-    if not razorpay_payment_id or not str(razorpay_payment_id).startswith("pay_"):
-        html_invalid = """
-        <!DOCTYPE html>
-        <html>
-        <head><title>Invalid Request</title><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-        <body style="font-family:sans-serif; background:#0f172a; color:#f8fafc; text-align:center; padding:50px;">
-            <h2>⚠️ Invalid Payment Verification Request</h2>
-            <p>No verified Razorpay payment transaction was found for this link.</p>
-            <a href="https://t.me/quizwithhimbot" style="color:#38bdf8; text-decoration:none; font-weight:bold;">Return to Quiz with HiM Bot</a>
-        </body>
-        </html>
-        """
-        return web.Response(text=html_invalid, content_type="text/html", status=400)
-
-    raw_user_id = params.get("user_id") or params.get("notes[user_id]")
-    plan_key = params.get("plan_key") or params.get("notes[plan_key]")
-    charged_amt = None
-    is_verified = False
-
-    if razorpay_client:
-        try:
-            p_data = await asyncio.to_thread(razorpay_client.payment.fetch, razorpay_payment_id)
-            if p_data and p_data.get("status") == "captured":
-                is_verified = True
-                charged_amt = float(p_data.get("amount", 0)) / 100.0
-                notes = p_data.get("notes", {}) or {}
-                if notes.get("user_id"): raw_user_id = notes.get("user_id")
-                if notes.get("plan_key"): plan_key = notes.get("plan_key")
-                if not raw_user_id and p_data.get("contact"):
-                    u_m = get_user_by_phone(p_data.get("contact"))
-                    if u_m: raw_user_id = u_m["user_id"]
-        except Exception as e:
-            logging.error(f"[CALLBACK REST VERIFY ERROR] {e}")
-
-    if (not plan_key or plan_key not in PLAN_TIERS) and charged_amt:
-        plan_key = infer_plan_key_from_amount(charged_amt)
-
-    if is_verified and raw_user_id and plan_key in PLAN_TIERS:
-        try:
-            uid = int(raw_user_id)
-            activated = await activate_user_subscription(uid, plan_key, razorpay_payment_id, amount_paid=charged_amt)
-            if activated:
-                await send_payment_invoice_telegram(uid, plan_key, razorpay_payment_id, amount_paid=charged_amt)
-        except Exception as e:
-            logging.error(f"[GET CALLBACK EXCEPTION] {e}")
-
-    html_content = f"""
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Payment Successful - Quiz with HiM</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {{ font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }}
-            .card {{ background: #1e293b; border-radius: 16px; padding: 32px; max-width: 420px; width: 100%; text-align: center; border: 1px solid #334155; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }}
-            .icon {{ font-size: 56px; margin-bottom: 16px; }}
-            h2 {{ color: #38bdf8; margin-bottom: 8px; }}
-            p {{ color: #94a3b8; font-size: 15px; line-height: 1.5; }}
-            .id-box {{ background: #0f172a; padding: 12px; border-radius: 8px; font-family: monospace; color: #38bdf8; margin: 16px 0; word-break: break-all; }}
-            .btn {{ display: inline-block; background: #2563eb; color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; margin-top: 16px; }}
-        </style>
-    </head>
-    <body>
-        <div class="card">
-            <div class="icon">🎉</div>
-            <h2>Payment Successful!</h2>
-            <p>Your VIP plan has been credited and an official invoice has been pushed to your Telegram chat.</p>
-            <div class="id-box">Payment ID: {razorpay_payment_id}</div>
-            <a href="https://t.me/quizwithhimbot" class="btn">Return to Telegram Bot</a>
-        </div>
-    </body>
-    </html>
-    """
-    return web.Response(text=html_content, content_type="text/html")
-
-
-async def handle_razorpay_webhook(request):
-    try:
-        body = await request.text()
-        signature = request.headers.get("X-Razorpay-Signature", "")
-
-        if RAZORPAY_WEBHOOK_SECRET and signature:
-            expected_signature = hmac.new(
-                RAZORPAY_WEBHOOK_SECRET.encode("utf-8"),
-                body.encode("utf-8"),
-                hashlib.sha256
-            ).hexdigest()
-            if not hmac.compare_digest(expected_signature, signature):
-                logging.warning("[WEBHOOK] Signature mismatch detected.")
-
-        data = json.loads(body)
-        event = data.get("event")
-        payload = data.get("payload", {})
-
-        payment_link_entity = payload.get("payment_link", {}).get("entity", {})
-        payment_entity = payload.get("payment", {}).get("entity", {})
-
-        notes = payment_link_entity.get("notes") or payment_entity.get("notes") or {}
-        
-        user_id = notes.get("user_id")
-        plan_key = notes.get("plan_key")
-        payment_id = payment_entity.get("id") or payment_link_entity.get("id")
-        
-        if not payment_id or not str(payment_id).startswith("pay_"):
-            return web.Response(status=400, text="Invalid Payment ID format")
-
-        raw_amount = payment_entity.get("amount") or payment_link_entity.get("amount")
-        amount_paid = (float(raw_amount) / 100.0) if raw_amount else None
-        if not amount_paid and notes.get("amount_paid"):
-            amount_paid = float(notes["amount_paid"])
-
-        if not user_id:
-            contact = payment_entity.get("contact") or payment_link_entity.get("customer", {}).get("contact")
-            if contact:
-                user_match = get_user_by_phone(contact)
-                if user_match:
-                    user_id = user_match["user_id"]
-
-        if not plan_key or plan_key not in PLAN_TIERS:
-            if amount_paid:
-                plan_key = infer_plan_key_from_amount(amount_paid)
-
-        if user_id and plan_key in PLAN_TIERS and event in ("payment_link.paid", "payment.captured"):
-            uid = int(user_id)
-            success = await activate_user_subscription(uid, plan_key, payment_id, amount_paid=amount_paid)
-            if success:
-                await send_payment_invoice_telegram(uid, plan_key, payment_id, amount_paid=amount_paid)
-
-        return web.Response(status=200, text="Webhook Processed")
-    except Exception as e:
-        logging.error(f"[WEBHOOK EXCEPTION] {e}")
-        return web.Response(status=500, text=str(e))
-
-
 async def start_web_server():
     app = web.Application()
     
-    # 1. Mount and serve Static Assets (Official Logo) from the /assets folder
+    # 1. Mount Static Assets (Serves official logo.png and local assets)
     assets_dir = os.path.join(BASE_DIR, "assets")
     if os.path.exists(assets_dir):
         app.router.add_static("/assets", assets_dir)
 
-    # 2. CBT Mini App Web Portal Routes
+    # 2. Main CBT Web App Interface Routes
     app.router.add_get("/", handle_serve_webapp)
     app.router.add_get("/webapp", handle_serve_webapp)
     app.router.add_get("/ping", handle_ping)
     
-    # 3. CBT Interactive REST Endpoints
+    # 3. Categorized Mini App REST Endpoints
+    app.router.add_get("/api/webapp/dashboard", handle_api_get_dashboard)
+    app.router.add_get("/api/webapp/leaderboard", handle_api_get_leaderboard)
+    app.router.add_get("/api/webapp/analytics", handle_api_get_analytics)
+    app.router.add_get("/api/webapp/saved-questions", handle_api_get_saved_questions)
+    app.router.add_post("/api/webapp/ask-admin", handle_api_ask_admin)
+    app.router.add_post("/api/webapp/generate-custom-pdf", handle_api_generate_custom_pdf)
+    
+    # 4. CBT Exam Engine Endpoints
     app.router.add_post("/api/webapp/start-quiz", handle_api_start_quiz)
     app.router.add_post("/api/webapp/submit-quiz", handle_api_submit_quiz)
     app.router.add_post("/api/webapp/bookmark", handle_api_bookmark_question)
     app.router.add_get("/api/webapp/download-pdf/{attempt_id}", handle_api_download_pdf)
     
-    # 4. Razorpay Webhook & Callback Handlers
+    # 5. Razorpay Webhook & Payment Handlers
     app.router.add_get("/razorpay-webhook", handle_razorpay_callback_get)
     app.router.add_post("/razorpay-webhook", handle_razorpay_webhook)
 

@@ -1039,7 +1039,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"• **/myplan** — 💵 Subscription Status\n"
         f"• **/plans** — 💳 VIP Payment Plans\n"
         f"• **/askadmin** — 💬 Direct Message to Admin\n"
-        f"• **/admininfo** — 👨‍🏫 About Himanshu Sir & Links\n"
+        f"• **/admininfo** — 👨‍🏫 About Himanshu Sir & Channels\n"
         f"• **/pdfreport** — 📄 Export Custom Academic Reports\n"
         f"• **/wrongquestions** — ❌ Today's Wrong Questions\n"
         f"• **/savedquestions** — 💾 Bookmarked Questions\n"
@@ -1492,7 +1492,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data.startswith("reviews_page_"):
         await query.answer()
         page_no = int(data.replace("reviews_page_", ""))
-        await render_reviews_page(update, context, page=page_no)
+        await render_reviews_page(update, context, page=page_no)  # <--- Fixed variable name from page=no to page=page_no
         return
 
     if data.startswith("userkp_"):
@@ -2219,7 +2219,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_|qpass_)"))
+    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_|qpass_|qinterrupt_|cmd_prompt_submit_quiz|qfinal_submit_)"))
     
     app.add_handler(CallbackQueryHandler(pdf_step_handler, pattern="^(pdfsubj_|pdftype_|pdftime_)"))
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))

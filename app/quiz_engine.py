@@ -30,7 +30,6 @@ POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
 
-# Standard Question + Timer Presets (Seconds-based)
 COMBINED_PRESETS = [
     ("10 Qs + 15s", 10, 15),
     ("15 Qs + 20s", 15, 20),
@@ -40,13 +39,9 @@ COMBINED_PRESETS = [
     ("40 Qs + 30s", 40, 30)
 ]
 
-# Dedicated RC & Cloze Test Presets (Minutes-based for full passage reading)
 PASSAGE_PRESETS = [
-    ("5 Que + 5 Mins", 5, 5),
-    ("10 Que + 10 Mins", 10, 10),
-    ("15 Que + 15 Mins", 15, 15),
-    ("20 Que + 20 Mins", 20, 20),
-    ("25 Que + 25 Mins", 25, 25)
+    ("5 Que + 5 Min", 5, 5),
+    ("10 Que + 10 Min", 10, 10)
 ]
 
 
@@ -55,7 +50,7 @@ def get_pause_resume_keyboard():
         [
             InlineKeyboardButton("⏸ Pause", callback_data="cmd_pause_quiz"), 
             InlineKeyboardButton("▶️ Resume", callback_data="cmd_resume_quiz"),
-            InlineKeyboardButton("🛑 Stop", callback_data="cmd_stop_quiz")
+            InlineKeyboardButton("🏁 End / Submit", callback_data="cmd_prompt_submit_quiz")
         ],
         [
             InlineKeyboardButton("💾 Save Question", callback_data="cmd_save_question")
@@ -99,7 +94,7 @@ async def check_quiz_maintenance(update: Update) -> bool:
 
 
 async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Entry point for /quiz: Subject selection with Computer at top, English 2nd, GK 3rd."""
+    """Entry point for /quiz with ongoing/paused interruption prompt."""
     if not await check_quiz_maintenance(update): return
 
     user = update.effective_user
@@ -138,28 +133,39 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(exhausted_msg, reply_markup=keyboard, parse_mode="Markdown")
         return
 
-    paused = await asyncio.to_thread(get_paused_quiz_state, user_id)
-    if paused:
-        remaining_count = len(paused.get('questions', [])) - paused.get('current_index', 0)
-        topic_disp = paused.get('topic_name') or "Practice Session"
-        text = (
-            f"⏸ **PAUSED QUIZ IN PROGRESS** ⏸\n"
+    active_s = ACTIVE_SESSIONS.get(user_id)
+    paused_s = await asyncio.to_thread(get_paused_quiz_state, user_id)
+
+    if active_s or paused_s:
+        session_info = active_s if active_s else paused_s
+        remaining_count = len(session_info.get('questions', [])) - session_info.get('current_index', 0)
+        topic_disp = session_info.get('topic_name') or "Practice Session"
+        status_label = "Ongoing Running Quiz" if active_s else "Paused Quiz"
+
+        prompt_msg = (
+            f"⚠️ **{status_label.upper()} IN PROGRESS**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"📖 **Subject/Topic:** `{topic_disp}`\n"
-            f"📊 **Remaining:** `{remaining_count}` Questions\n"
-            f"⭐ **Current Score:** `{paused.get('score', 0.0)}`\n\n"
-            f"Would you like to resume your session?"
+            f"📖 **Title:** `{topic_disp}`\n"
+            f"📊 **Remaining Questions:** `{remaining_count}` Qs\n"
+            f"⭐ **Current Score:** `{session_info.get('score', 0.0)}`\n\n"
+            f"❓ **Do you want to close your current quiz to start a new quiz?**"
         )
-        keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("▶️ Resume Quiz", callback_data="cmd_resume_quiz")],
-            [InlineKeyboardButton("🔄 Start New Quiz", callback_data="cmd_start_fresh_quiz")]
+        interrupt_keyboard = InlineKeyboardMarkup([
+            [
+                InlineKeyboardButton("✅ Yes, Close & Start New", callback_data="qinterrupt_yes"),
+                InlineKeyboardButton("❌ No, Continue Current", callback_data="qinterrupt_no")
+            ]
         ])
         if update.callback_query:
-            await update.callback_query.edit_message_text(text, reply_markup=keyboard, parse_mode="Markdown")
+            await update.callback_query.edit_message_text(prompt_msg, reply_markup=interrupt_keyboard, parse_mode="Markdown")
         else:
-            await update.message.reply_text(text, reply_markup=keyboard, parse_mode="Markdown")
+            await update.message.reply_text(prompt_msg, reply_markup=interrupt_keyboard, parse_mode="Markdown")
         return
 
+    await render_clean_subject_selection(update)
+
+
+async def render_clean_subject_selection(update: Update):
     subject_keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("🖥️ 1. Computer Awareness", callback_data="qsubj_computer")],
         [InlineKeyboardButton("🔤 2. English Language", callback_data="qsubj_english")],
@@ -172,6 +178,29 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.callback_query.edit_message_text(msg_text, reply_markup=subject_keyboard, parse_mode="Markdown")
     else:
         await update.message.reply_text(msg_text, reply_markup=subject_keyboard, parse_mode="Markdown")
+
+
+async def quiz_interrupt_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    choice = query.data.replace("qinterrupt_", "")
+
+    if choice == "yes":
+        ACTIVE_SESSIONS.pop(user_id, None)
+        await asyncio.to_thread(clear_paused_quiz_state, user_id)
+        if user_id in TIMER_TASKS and not TIMER_TASKS[user_id].done():
+            TIMER_TASKS[user_id].cancel()
+        await render_clean_subject_selection(update)
+    else:
+        if user_id in ACTIVE_SESSIONS:
+            s = ACTIVE_SESSIONS[user_id]
+            if s.get("is_paused"):
+                s["is_paused"] = False
+            await query.edit_message_text("▶️ **Continuing your running quiz...**", parse_mode="Markdown")
+            await send_next_question(query.message.chat_id, user_id, context)
+        else:
+            await resume_quiz_command(update, context)
 
 
 async def quiz_subject_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -361,7 +390,6 @@ async def quiz_topic_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     if subj == "english":
         current_cache["language"] = "en"
-        # Reading Comprehension & Cloze Test routing for minutes-based passage timers
         if topic_key in ["eng_comp_rc", "eng_comp_cloze_test"]:
             await show_passage_timer_selection(query, user_id, topic_display)
             return
@@ -400,7 +428,7 @@ async def quiz_language_callback(update: Update, context: ContextTypes.DEFAULT_T
 
 
 async def show_passage_timer_selection(query, user_id: int, topic_display: str):
-    """Passage Presets for RC & Cloze Test: (5 Que + 5 Min) up to (25 Que + 25 Mins)."""
+    """Passage Presets: Exactly (5 Que + 5 Min) & (10 Que + 10 Min)."""
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
     paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
@@ -409,28 +437,21 @@ async def show_passage_timer_selection(query, user_id: int, topic_display: str):
     remaining_quota = max(1, allowed_limit - attempted_today)
 
     keyboard = []
-    row = []
     for label, q_num, mins in PASSAGE_PRESETS:
         if q_num <= remaining_quota:
-            row.append(InlineKeyboardButton(f"⚡ {label}", callback_data=f"qpass_{q_num}_{mins}"))
-        if len(row) == 2:
-            keyboard.append(row)
-            row = []
-    if row:
-        keyboard.append(row)
+            keyboard.append([InlineKeyboardButton(f"⚡ {label}", callback_data=f"qpass_{q_num}_{mins}")])
 
     if not keyboard:
-        fallback_q = min(5, remaining_quota)
-        keyboard.append([InlineKeyboardButton(f"⚡ {fallback_q} Que + {fallback_q} Mins", callback_data=f"qpass_{fallback_q}_{fallback_q}")])
+        keyboard.append([InlineKeyboardButton(f"⚡ 5 Que + 5 Min", callback_data=f"qpass_5_5")])
 
     keyboard.append([InlineKeyboardButton("🔙 Back", callback_data="qeng_cat_comprehension")])
 
     msg = (
-        f"📖 **PASSAGE PRACTICE SETUP — {topic_display.upper()}**\n"
+        f"📖 **PASSAGE PRACTICE — {topic_display.upper()}**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"📌 **Category:** Comprehension Reading\n"
+        f"📌 **Type:** Complete Passage Context\n"
         f"⚡ **Available Daily Quota:** `{remaining_quota}` Questions\n\n"
-        f"Select your question bundle & full passage reading timer:"
+        f"Select your passage reading timer:"
     )
     await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
@@ -448,14 +469,8 @@ async def passage_timer_callback(update: Update, context: ContextTypes.DEFAULT_T
     topic = setup.get("topic", "eng_comp_rc")
     topic_name = setup.get("topic_name", "Reading Comprehension")
 
-    if topic in ["eng_comp_rc", "eng_comp_cloze_test"]:
-        questions = await asyncio.to_thread(fetch_rc_or_cloze_passage_questions, topic, user_id)
-        if not questions or len(questions) < count:
-            extra_needed = count - (len(questions) if questions else 0)
-            extra_qs = await asyncio.to_thread(fetch_pyqs_for_quiz, count, None, "en", user_id, topic, "english")
-            questions = (questions or []) + [q for q in extra_qs if q not in (questions or [])]
-            questions = questions[:count]
-    else:
+    questions = await asyncio.to_thread(fetch_rc_or_cloze_passage_questions, topic, user_id, count)
+    if not questions:
         questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, None, "en", user_id, topic, "english")
 
     await start_quiz_session(
@@ -562,20 +577,15 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
     lang_str = "🌐 English" if language == "en" else "🇮🇳 हिंदी"
     title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE") else topic_name
 
-    early_submit_markup = None
-    if quiz_mode in ("ENGLISH_FULL_MOCK", "PASSAGE_PRACTICE"):
-        early_submit_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🏁 Submit Early", callback_data="cmd_stop_quiz")]])
-
-    mode_label = "Passage Practice Mode" if quiz_mode == "PASSAGE_PRACTICE" else ("Exam Mock Mode" if quiz_mode == "ENGLISH_FULL_MOCK" else "Practice Mode")
-    timer_display = f"`{total_time_mins} Minutes Overall`" if total_time_mins else f"`{timer_sec}s / Question`"
+    early_submit_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🏁 End / Submit Quiz", callback_data="cmd_prompt_submit_quiz")]])
+    timer_display = f"`{total_time_mins} Minutes Total`" if total_time_mins else f"`{timer_sec}s / Question`"
 
     await query.edit_message_text(
         f"🚀 **PRACTICE SESSION STARTED**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📖 **Title:** `{title}`\n"
         f"🌐 **Language:** `{lang_str}`\n"
-        f"⏱ **Session Timer:** {timer_display}\n"
-        f"🎮 **Mode:** `{mode_label}`\n\n"
+        f"⏱ **Timer:** {timer_display}\n\n"
         f"⚡ All questions will appear as interactive polls with instant Right/Wrong reviews.",
         reply_markup=early_submit_markup,
         parse_mode="Markdown"
@@ -606,7 +616,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         return
 
     if session["current_index"] >= len(session["questions"]):
-        await finish_quiz_and_send_report(chat_id, user_id, context)
+        await prompt_final_submission(chat_id, user_id, context, reason="all_done")
         return
 
     q = session["questions"][session["current_index"]]
@@ -684,6 +694,32 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
         session["skipped"] += 1
         session["current_index"] += 1
         await send_next_question(chat_id, user_id, context)
+
+
+async def prompt_final_submission(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE, reason: str = "user_click"):
+    """Prompts the user with Yes/No before final submit."""
+    session = ACTIVE_SESSIONS.get(user_id)
+    if not session:
+        return
+
+    score = session.get("score", 0.0)
+    total = session.get("total", 0)
+    attempted = session.get("current_index", 0)
+
+    msg = (
+        f"🏁 **CONFIRM FINAL SUBMISSION**\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📊 **Questions Attempted:** `{attempted}` / `{total}`\n"
+        f"⭐ **Current Score:** `{score}`\n\n"
+        f"❓ **Do you want to final submit?**"
+    )
+    confirm_markup = InlineKeyboardMarkup([
+        [
+            InlineKeyboardButton("✅ Yes, Final Submit", callback_data="qfinal_submit_yes"),
+            InlineKeyboardButton("❌ No, Stay in Quiz", callback_data="qfinal_submit_no")
+        ]
+    ])
+    await context.bot.send_message(chat_id=chat_id, text=msg, reply_markup=confirm_markup, parse_mode="Markdown")
 
 
 async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx: int, timer_sec: int, context: ContextTypes.DEFAULT_TYPE):
@@ -908,7 +944,7 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if update.callback_query:
             await update.callback_query.answer(msg, show_alert=True)
         else:
-            await update.message.reply_text(msg, reply_markup=get_quizbook_nav_keyboard(), parse_mode="Markdown")
+            await update.message.reply_text(msg)
         return
 
     asyncio.create_task(asyncio.to_thread(clear_paused_quiz_state, user_id))
@@ -1016,7 +1052,17 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
 
 async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = update.callback_query.data
-    if data.startswith("qsubj_"):
+    if data.startswith("qinterrupt_"):
+        await quiz_interrupt_callback(update, context)
+    elif data == "cmd_prompt_submit_quiz":
+        await prompt_final_submission(update.callback_query.message.chat_id, update.callback_query.from_user.id, context)
+    elif data == "qfinal_submit_yes":
+        await update.callback_query.answer("Submitting Quiz...")
+        await finish_quiz_and_send_report(update.callback_query.message.chat_id, update.callback_query.from_user.id, context)
+    elif data == "qfinal_submit_no":
+        await update.callback_query.answer("Continuing Quiz!")
+        await update.callback_query.edit_message_text("▶️ **Quiz in progress. Use controls to resume or pause anytime.**", parse_mode="Markdown")
+    elif data.startswith("qsubj_"):
         await quiz_subject_callback(update, context)
     elif data.startswith("qeng_cat_"):
         await english_category_callback(update, context)

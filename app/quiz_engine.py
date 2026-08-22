@@ -30,6 +30,7 @@ POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
 
+# Standard Question + Timer Presets (Seconds-based)
 COMBINED_PRESETS = [
     ("10 Qs + 15s", 10, 15),
     ("15 Qs + 20s", 15, 20),
@@ -37,6 +38,15 @@ COMBINED_PRESETS = [
     ("25 Qs + 25s", 25, 25),
     ("30 Qs + 25s", 30, 25),
     ("40 Qs + 30s", 40, 30)
+]
+
+# Dedicated RC & Cloze Test Presets (Minutes-based for full passage reading)
+PASSAGE_PRESETS = [
+    ("5 Que + 5 Mins", 5, 5),
+    ("10 Que + 10 Mins", 10, 10),
+    ("15 Que + 15 Mins", 15, 15),
+    ("20 Que + 20 Mins", 20, 20),
+    ("25 Que + 25 Mins", 25, 25)
 ]
 
 
@@ -150,7 +160,6 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(text, reply_markup=keyboard, parse_mode="Markdown")
         return
 
-    # Clean Subject Selection: Computer top, English 2nd, GK 3rd
     subject_keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("🖥️ 1. Computer Awareness", callback_data="qsubj_computer")],
         [InlineKeyboardButton("🔤 2. English Language", callback_data="qsubj_english")],
@@ -175,7 +184,6 @@ async def quiz_subject_callback(update: Update, context: ContextTypes.DEFAULT_TY
     QUIZ_SETUP_CACHE[user_id] = {"subject": subj}
 
     if subj == "english":
-        # Specific English Flow
         eng_keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton("📌 Grammar", callback_data="qeng_cat_grammar")],
             [InlineKeyboardButton("💡 Vocabulary", callback_data="qeng_cat_vocab")],
@@ -190,7 +198,6 @@ async def quiz_subject_callback(update: Update, context: ContextTypes.DEFAULT_TY
         )
         return
 
-    # Standard Subject Flow for Computer / GK: Chapter-wise vs Mixed
     subj_title = "Computer Awareness" if subj == "computer" else "General Knowledge (GK)"
     mode_keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("📂 Chapter-wise Practice", callback_data=f"qsubopt_chapter_{subj}")],
@@ -304,7 +311,10 @@ async def english_option_callback(update: Update, context: ContextTypes.DEFAULT_
     if opt_type == "mixed":
         QUIZ_SETUP_CACHE[user_id]["topic"] = "MIXED"
         QUIZ_SETUP_CACHE[user_id]["topic_name"] = f"{cat.capitalize()} Practice"
-        await show_combined_timer_selection(query, user_id)
+        if cat == "comprehension":
+            await show_passage_timer_selection(query, user_id, f"English {cat.capitalize()} Practice")
+        else:
+            await show_combined_timer_selection(query, user_id)
     elif opt_type == "chapter":
         all_eng_topics = get_available_topics(subject="english", language="en")
         filtered = []
@@ -351,6 +361,10 @@ async def quiz_topic_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     if subj == "english":
         current_cache["language"] = "en"
+        # Reading Comprehension & Cloze Test routing for minutes-based passage timers
+        if topic_key in ["eng_comp_rc", "eng_comp_cloze_test"]:
+            await show_passage_timer_selection(query, user_id, topic_display)
+            return
         await show_combined_timer_selection(query, user_id)
     else:
         await show_language_selection(query, user_id)
@@ -385,8 +399,76 @@ async def quiz_language_callback(update: Update, context: ContextTypes.DEFAULT_T
     await show_combined_timer_selection(query, user_id)
 
 
+async def show_passage_timer_selection(query, user_id: int, topic_display: str):
+    """Passage Presets for RC & Cloze Test: (5 Que + 5 Min) up to (25 Que + 25 Mins)."""
+    profile = await asyncio.to_thread(get_user_profile, user_id)
+    attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
+    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+    remaining_quota = max(1, allowed_limit - attempted_today)
+
+    keyboard = []
+    row = []
+    for label, q_num, mins in PASSAGE_PRESETS:
+        if q_num <= remaining_quota:
+            row.append(InlineKeyboardButton(f"⚡ {label}", callback_data=f"qpass_{q_num}_{mins}"))
+        if len(row) == 2:
+            keyboard.append(row)
+            row = []
+    if row:
+        keyboard.append(row)
+
+    if not keyboard:
+        fallback_q = min(5, remaining_quota)
+        keyboard.append([InlineKeyboardButton(f"⚡ {fallback_q} Que + {fallback_q} Mins", callback_data=f"qpass_{fallback_q}_{fallback_q}")])
+
+    keyboard.append([InlineKeyboardButton("🔙 Back", callback_data="qeng_cat_comprehension")])
+
+    msg = (
+        f"📖 **PASSAGE PRACTICE SETUP — {topic_display.upper()}**\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📌 **Category:** Comprehension Reading\n"
+        f"⚡ **Available Daily Quota:** `{remaining_quota}` Questions\n\n"
+        f"Select your question bundle & full passage reading timer:"
+    )
+    await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+
+async def passage_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await check_quiz_maintenance(update): return
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    parts = query.data.replace("qpass_", "").split("_")
+    count = int(parts[0])
+    total_mins = int(parts[1])
+
+    setup = QUIZ_SETUP_CACHE.pop(user_id, {})
+    topic = setup.get("topic", "eng_comp_rc")
+    topic_name = setup.get("topic_name", "Reading Comprehension")
+
+    if topic in ["eng_comp_rc", "eng_comp_cloze_test"]:
+        questions = await asyncio.to_thread(fetch_rc_or_cloze_passage_questions, topic, user_id)
+        if not questions or len(questions) < count:
+            extra_needed = count - (len(questions) if questions else 0)
+            extra_qs = await asyncio.to_thread(fetch_pyqs_for_quiz, count, None, "en", user_id, topic, "english")
+            questions = (questions or []) + [q for q in extra_qs if q not in (questions or [])]
+            questions = questions[:count]
+    else:
+        questions = await asyncio.to_thread(fetch_pyqs_for_quiz, count, None, "en", user_id, topic, "english")
+
+    await start_quiz_session(
+        query, context, user_id, questions,
+        timer_sec=60, quiz_mode="PASSAGE_PRACTICE",
+        mock_number=0, subject="english",
+        topic=topic, topic_name=topic_name,
+        language="en", total_time_mins=total_mins
+    )
+
+
 async def show_combined_timer_selection(query, user_id: int):
-    """Combined Question Number + Timer selection step."""
+    """Standard Question Number + Timer selection step."""
     current_cache = QUIZ_SETUP_CACHE.get(user_id, {})
     topic_name = current_cache.get("topic_name", "Practice Session")
     profile = await asyncio.to_thread(get_user_profile, user_id)
@@ -478,28 +560,33 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
     ACTIVE_SESSIONS[user_id] = session
 
     lang_str = "🌐 English" if language == "en" else "🇮🇳 हिंदी"
-    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode != "PRACTICE" else topic_name
+    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE") else topic_name
 
     early_submit_markup = None
-    if quiz_mode == "ENGLISH_FULL_MOCK":
-        early_submit_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🏁 Submit Mock Early", callback_data="cmd_stop_quiz")]])
+    if quiz_mode in ("ENGLISH_FULL_MOCK", "PASSAGE_PRACTICE"):
+        early_submit_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🏁 Submit Early", callback_data="cmd_stop_quiz")]])
+
+    mode_label = "Passage Practice Mode" if quiz_mode == "PASSAGE_PRACTICE" else ("Exam Mock Mode" if quiz_mode == "ENGLISH_FULL_MOCK" else "Practice Mode")
+    timer_display = f"`{total_time_mins} Minutes Overall`" if total_time_mins else f"`{timer_sec}s / Question`"
 
     await query.edit_message_text(
         f"🚀 **PRACTICE SESSION STARTED**\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"📖 **Title:** `{title}`\n"
         f"🌐 **Language:** `{lang_str}`\n"
-        f"⚡ All questions will appear as instant interactive polls.",
+        f"⏱ **Session Timer:** {timer_display}\n"
+        f"🎮 **Mode:** `{mode_label}`\n\n"
+        f"⚡ All questions will appear as interactive polls with instant Right/Wrong reviews.",
         reply_markup=early_submit_markup,
         parse_mode="Markdown"
     )
 
-    if topic in ["eng_comp_rc", "eng_comp_cloze_test"] and questions[0].get("passage"):
+    if (topic in ["eng_comp_rc", "eng_comp_cloze_test"] or quiz_mode == "PASSAGE_PRACTICE") and questions[0].get("passage"):
         passage_content = questions[0].get("passage")
         try:
             await context.bot.send_message(
                 chat_id=chat_id,
-                text=f"📖 **READING PASSAGE / CONTEXT:**\n\n{passage_content}",
+                text=f"📖 **READING PASSAGE / CONTEXT:**\n\n{passage_content}\n\n👇 *Read the passage carefully, then answer the questions below:*",
                 parse_mode=None
             )
         except Exception:
@@ -529,12 +616,12 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     if session.get("global_remaining_sec") is not None:
         rem_sec = int(session["global_remaining_sec"])
         if rem_sec <= 0:
-            await context.bot.send_message(chat_id=chat_id, text="⏰ **10-MINUTE TIMER EXPIRED!** Auto-submitting mock...", parse_mode="Markdown")
+            await context.bot.send_message(chat_id=chat_id, text="⏰ **SESSION TIMER EXPIRED!** Auto-submitting quiz...", parse_mode="Markdown")
             await finish_quiz_and_send_report(chat_id, user_id, context)
             return
         m, s = divmod(rem_sec, 60)
         global_time_str = f" | ⏳ {m:02d}:{s:02d} Left"
-        poll_timer_sec = min(rem_sec, session["timer_sec"])
+        poll_timer_sec = min(rem_sec, 600)
         poll_timer_sec = max(5, poll_timer_sec)
     else:
         poll_timer_sec = session["timer_sec"]
@@ -544,7 +631,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     total_num = session["total"]
     
     quiz_mode = session.get("quiz_mode", "PRACTICE")
-    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
+    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE") else session.get('topic_name', 'Quiz')
     
     base_header = f"📖 [{title}] — ({current_num}/{total_num}){global_time_str}\n\n"
     avail_len = 300 - len(base_header)
@@ -866,7 +953,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     detailed_logs = session.get("detailed_logs", [])
     lang = session.get("language", "en")
     quiz_mode = session.get("quiz_mode", "PRACTICE")
-    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode != "PRACTICE" else session.get('topic_name', 'Quiz')
+    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE") else session.get('topic_name', 'Quiz')
 
     attempt_id = await asyncio.to_thread(
         record_quiz_result,
@@ -943,5 +1030,7 @@ async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYP
         await quiz_topic_callback(update, context)
     elif data.startswith("qlang_"):
         await quiz_language_callback(update, context)
+    elif data.startswith("qpass_"):
+        await passage_timer_callback(update, context)
     elif data.startswith("qcombo_"):
         await combined_timer_callback(update, context)

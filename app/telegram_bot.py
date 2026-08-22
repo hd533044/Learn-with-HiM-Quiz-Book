@@ -2219,7 +2219,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_)"))
+    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_|qpass_)"))
     
     app.add_handler(CallbackQueryHandler(pdf_step_handler, pattern="^(pdfsubj_|pdftype_|pdftime_)"))
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))

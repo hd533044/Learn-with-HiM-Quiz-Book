@@ -204,7 +204,6 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     except Exception as err:
         logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
 
-    # Only update admin with invoice when a paid plan is purchased
     if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
         admin_motivation_alert = (
             f"💰 **NEW VIP PACK PURCHASE RECEIVED!** 💰\n"
@@ -241,10 +240,6 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
 
 
 async def scheduled_auto_payment_sync_worker():
-    """
-    Requirement 9: Runs silently in the background without spamming the admin.
-    Updates the admin solely with the invoice when a user completes a purchase.
-    """
     while True:
         await asyncio.sleep(30)
         if not bot_app_instance:

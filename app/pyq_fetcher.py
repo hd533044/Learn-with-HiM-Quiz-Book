@@ -287,8 +287,8 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
 
 def fetch_rc_or_cloze_passage_questions(topic_key: str, user_id: int = None, requested_count: int = 5) -> list:
     """
-    Passage grouping for RC & Cloze Test:
-    Ensures that questions belong to the SAME passage in exact sets of 5 questions per passage.
+    STRICT SINGLE-PASSAGE ENFORCEMENT:
+    Pulls strictly ONE passage and returns ONLY the questions belonging to that exact same passage.
     """
     raw_items = load_english_questions(topic_key)
     if not raw_items:
@@ -312,7 +312,6 @@ def fetch_rc_or_cloze_passage_questions(topic_key: str, user_id: int = None, req
             p_text = q.get("question")[:50]
         passages_map.setdefault(p_text, []).append(q)
 
-    # Valid passage groups with 5 questions
     valid_groups = [g for g in passages_map.values() if len(g) >= 5]
     if not valid_groups:
         valid_groups = list(passages_map.values())
@@ -324,13 +323,13 @@ def fetch_rc_or_cloze_passage_questions(topic_key: str, user_id: int = None, req
             unseen_groups.append(grp)
 
     pool_to_choose = unseen_groups if unseen_groups else valid_groups
-    chosen_passages = random.sample(pool_to_choose, min(len(pool_to_choose), max(1, requested_count // 5)))
+    if not pool_to_choose:
+        return []
 
-    final_questions = []
-    for p_group in chosen_passages:
-        final_questions.extend(p_group[:5])
-
-    return final_questions[:requested_count]
+    # Pick strictly ONE single passage group to keep context 100% unified[cite: 5]
+    chosen_group = random.choice(pool_to_choose)
+    
+    return chosen_group[:requested_count]
 
 
 def fetch_pyqs_for_quiz(needed_count: int = 20, seen_ids: set = None, language: str = "en", user_id: int = None, topic: str = "MIXED", subject: str = "computer") -> list:
@@ -509,19 +508,18 @@ def fetch_multi_topic_questions(needed_count: int, topic_keys: list, subject: st
 def fetch_english_full_mock_25(language: str = "en", user_id: int = None) -> list:
     """
     Exact Composition for English Full Mock (25 Questions):
-    - 1 Passage (Either RC or Cloze Test): Exactly 5 Questions
-    - 3 Para Jumbles
-    - 3 Idioms & Phrases
-    - 4 Synonyms & Antonyms
-    - 2 Homonyms
-    - 2 Phrasal Verbs
-    - 6 Grammar Questions
-    Total = 5 + 3 + 3 + 4 + 2 + 2 + 6 = 25 Questions
+    - 1 Passage (Either RC or Cloze Test): Exactly 5 Questions from the SAME passage[cite: 5]
+    - 3 Para Jumbles[cite: 5]
+    - 3 Idioms & Phrases[cite: 5]
+    - 4 Synonyms & Antonyms[cite: 5]
+    - 2 Homonyms[cite: 5]
+    - 2 Phrasal Verbs[cite: 5]
+    - 6 Grammar Questions[cite: 5]
+    Total = 5 + 3 + 3 + 4 + 2 + 2 + 6 = 25 Questions[cite: 5]
     """
     mock_qs = []
     seen_ids = get_user_seen_identifiers(user_id)
 
-    # 1. Choose either RC or Cloze Test (Exactly 1 Passage of 5 Questions)
     chosen_comp = random.choice(["eng_comp_rc", "eng_comp_cloze_test"])
     passage_qs = fetch_rc_or_cloze_passage_questions(chosen_comp, user_id=user_id, requested_count=5)
     if not passage_qs or len(passage_qs) < 5:
@@ -530,39 +528,32 @@ def fetch_english_full_mock_25(language: str = "en", user_id: int = None) -> lis
     for q in (passage_qs or []): seen_ids.add(str(q.get("id")))
     mock_qs.extend((passage_qs or [])[:5])
 
-    # 2. 3 Para Jumbles
     pj_qs = fetch_pyqs_for_quiz(needed_count=3, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_comp_para_jumbles", subject="english")
     for q in pj_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(pj_qs[:3])
 
-    # 3. 3 Idioms
     idiom_qs = fetch_pyqs_for_quiz(needed_count=3, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_idioms", subject="english")
     for q in idiom_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(idiom_qs[:3])
 
-    # 4. 4 Synonyms & Antonyms
     syn_qs = fetch_pyqs_for_quiz(needed_count=4, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_syn_ant", subject="english")
     for q in syn_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(syn_qs[:4])
 
-    # 5. 2 Homonyms
     homo_qs = fetch_pyqs_for_quiz(needed_count=2, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_homonyms", subject="english")
     for q in homo_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(homo_qs[:2])
 
-    # 6. 2 Phrasal Verbs
     pv_qs = fetch_pyqs_for_quiz(needed_count=2, seen_ids=seen_ids, language=language, user_id=user_id, topic="eng_vocab_phrasal_verbs", subject="english")
     for q in pv_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(pv_qs[:2])
 
-    # 7. 6 Grammar Questions (from across all Grammar chapters)
     grammar_keys = [k for k in ENGLISH_TOPIC_METADATA.keys() if k.startswith("eng_gram_")]
     random.shuffle(grammar_keys)
     gram_qs = fetch_multi_topic_questions(needed_count=6, topic_keys=grammar_keys[:6], subject="english", language=language, user_id=user_id)
     for q in gram_qs: seen_ids.add(str(q.get("id")))
     mock_qs.extend(gram_qs[:6])
 
-    # In case of any deficit, fill safely from English bank
     if len(mock_qs) < 25:
         deficit = 25 - len(mock_qs)
         extra = fetch_pyqs_for_quiz(needed_count=deficit, seen_ids=seen_ids, language=language, user_id=user_id, topic="MIXED", subject="english")

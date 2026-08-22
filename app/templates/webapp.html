@@ -41,7 +41,7 @@
   <!-- Permanent Top Header with Circular Logo -->
   <header class="sticky top-0 z-40 bg-surface-card/95 backdrop-blur-md border-b border-surface-border px-3.5 py-2 flex items-center justify-between shadow-md">
     <div class="flex items-center space-x-2.5">
-      <img src="/assets/logo.png" alt="Quiz with HiM" class="w-10 h-10 rounded-full border-2 border-sky-400 shadow-sm object-cover bg-slate-900" onerror="this.onerror=null; this.src='https://via.placeholder.com/40/0284c7/FFFFFF?text=HiM'"/>
+      <img src="/api/webapp/logo" alt="Quiz with HiM" class="w-10 h-10 rounded-full border-2 border-sky-400 shadow-sm object-cover bg-slate-900" onerror="this.onerror=null; this.src='/assets/logo.png'"/>
       <div>
         <h1 class="text-xs font-bold tracking-tight text-white leading-tight">Quiz with HiM</h1>
         <p id="subHeader" class="text-[10px] text-sky-400 font-medium leading-none">Official CBT Exam Portal</p>
@@ -797,6 +797,11 @@
       document.getElementById('legendUnanswered').innerText = `Unanswered: ${countUnans}`;
       document.getElementById('legendReview').innerText = `Review: ${countRev}`;
       document.getElementById('legendNotVisited').innerText = `Not Visited: ${countUnvis}`;
+
+      document.getElementById('mobLegendAnswered').innerText = `Answered: ${countAns}`;
+      document.getElementById('mobLegendUnanswered').innerText = `Unanswered: ${countUnans}`;
+      document.getElementById('mobLegendReview').innerText = `Review: ${countRev}`;
+      document.getElementById('mobLegendNotVisited').innerText = `Not Visited: ${countUnvis}`;
     }
 
     function togglePaletteModal() {

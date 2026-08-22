@@ -64,10 +64,14 @@ LAST_QUIZ_BROADCAST_KEY = ""
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
     if not plan_key or plan_key not in PLAN_TIERS:
-        logging.error(f"[SECURITY BLOCKED] Invalid plan key: '{plan_key}' for user {user_id}")
+        logging.error(f"[SECURITY BLOCKED] Invalid/fake plan key attempted: '{plan_key}' for user {user_id}")
         return False
 
     pid_str = str(payment_id).strip()
+    if not (pid_str.startswith("pay_") or pid_str.startswith("ADMIN_GRANT_") or pid_str == "FREE_DEMO"):
+        logging.error(f"[SECURITY BLOCKED] Invalid/fake payment_id format rejected: '{payment_id}' for user {user_id}")
+        return False
+
     plan = PLAN_TIERS[plan_key]
 
     ist = pytz.timezone("Asia/Kolkata")
@@ -120,21 +124,23 @@ async def activate_user_subscription(user_id: int, plan_key: str, payment_id: st
         PROFILE_CACHE.pop(user_id, None)
         sync_user_json_profile(user_id)
         
-        logging.info(f"[SUCCESS] Activated plan {plan_key} for User ID: {user_id}")
+        logging.info(f"[SUCCESS] Activated and stacked plan {plan_key} for User ID: {user_id}. New Quota: {new_bal}, Paid: ₹{actual_charged_amount}")
         return True
     except Exception as e:
         if conn:
             conn.rollback()
             release_db(conn)
-        logging.error(f"[DATABASE ERROR] Failed activating plan: {e}")
+        logging.error(f"[DATABASE ERROR] Failed activating plan for user {user_id}: {e}")
         return False
 
 
 async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
     if not bot_app_instance:
+        logging.error("[TELEGRAM PUSH ERROR] bot_app_instance is uninitialized.")
         return
 
     if not plan_key or plan_key not in PLAN_TIERS:
+        logging.error(f"[INVOICE BLOCKED] Attempted to send invoice for invalid plan '{plan_key}'")
         return
 
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
@@ -143,28 +149,53 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     plan_name = plan_info.get('name', plan_key)
 
     profile = await asyncio.to_thread(get_user_profile, user_id) or {}
+    student_name = profile.get("full_name", "Student")
     sid = profile.get("student_id", f"USER_{user_id}")
     orig_payment_time = profile.get("payment_timestamp") or get_ist_timestamp_str()
     total_quota = profile.get("paid_question_balance", 0)
     expiry_date = profile.get("vip_pass_expiry", "N/A")
+    phone = profile.get("phone_number", "N/A")
+    target_exam = profile.get("target_exam", "N/A")
 
     base_price = plan_info.get('price', 0)
     final_amount = amount_paid if amount_paid is not None else base_price
+    discount_applied_str = f" (🔥 Discount Saved: ₹{base_price - final_amount})" if (base_price > final_amount and base_price > 0) else ""
 
-    broadcast_msg = (
-        f"🥳 **PAYMENT CONFIRMED & PLAN CREDITED!** 🥳\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🎉 **Purchased Pack:** `{plan_name}`\n"
-        f"⚡ **Daily Quota:** `{total_quota} Questions / Day`\n"
-        f"⏳ **New VIP Pass Expiry:** `{expiry_date}`\n\n"
-        f"🧾 **OFFICIAL PAYMENT INVOICE**\n"
-        f"• **Student ID:** `{sid}`\n"
-        f"• **Amount Paid:** ₹{final_amount} INR\n"
-        f"• **Txn ID:** `{payment_id}`\n"
-        f"• **Timestamp:** `{orig_payment_time}`\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"🚀 Tap **/quiz** to launch your practice session now!"
-    )
+    is_admin_grant = "ADMIN" in str(payment_id).upper()
+
+    if is_admin_grant:
+        broadcast_msg = (
+            f"🎁 **SPECIAL ANNOUNCEMENT: VIP PLAN GRANTED!** 🎁\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🎉 **Himanshu Sir has granted you the {plan_name}!**\n\n"
+            f"⚡ **New Daily Limit:** `{total_quota} Questions / Day`\n"
+            f"⏳ **VIP Pass Expiry:** `{expiry_date}`\n"
+            f"🧾 **Reference ID:** `{payment_id}`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"💖 **Thanku for showing the faith in the Quiz with HiM. I'll give my best to keep your faith alive and of course, you have joined India's 1st dynamic Quiz platform for your preparation.**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"✨ You can now attempt more practice questions every single day!\n"
+            f"🚀 Tap **/quiz** below to launch your session now!"
+        )
+    else:
+        broadcast_msg = (
+            f"🥳 **PAYMENT CONFIRMED & PLAN CREDITED!** 🥳\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🎉 **Purchased Pack:** `{plan_name}`\n"
+            f"⚡ **Stacked Daily Quota:** `{total_quota} Questions / Day`\n"
+            f"⏳ **New VIP Pass Expiry:** `{expiry_date}`\n\n"
+            f"🧾 **OFFICIAL PAYMENT SUCCESS INVOICE**\n"
+            f"• **Student ID:** `{sid}`\n"
+            f"• **Amount Paid:** ₹{final_amount} INR{discount_applied_str}\n"
+            f"• **Txn / Payment ID:** `{payment_id}`\n"
+            f"• **Payment Timestamp:** `{orig_payment_time}`\n"
+            f"• **Added Validity:** `{plan_info.get('days')} Days Access`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"💖 **Thanku for showing the faith in the Quiz with HiM. I'll give my best to keep your faith alive and of course, you have joined India's 1st dynamic Quiz platform for your preparation.**\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"📊 Tap **/myplan** anytime to check your active quota breakdown.\n"
+            f"🚀 Tap **/quiz** to launch your practice session now!"
+        )
     
     btn = InlineKeyboardMarkup([
         [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]
@@ -178,21 +209,92 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             parse_mode="Markdown",
             disable_notification=False
         )
+        logging.info(f"[INVOICE/BROADCAST DELIVERED] Successfully sent to user {user_id}")
     except Exception as err:
-        logging.error(f"[DELIVERY ERROR] Failed to push invoice notification: {err}")
+        logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
+
+    if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
+        admin_motivation_alert = (
+            f"💰 **NEW VIP PACK PURCHASE RECEIVED!** 💰\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"👤 **Student Name:** {student_name}\n"
+            f"🪪 **Student ID:** `{sid}`\n"
+            f"🆔 **Telegram ID:** `{user_id}`\n"
+            f"📱 **Phone:** `{phone}`\n"
+            f"🎯 **Target Exam:** `{target_exam}`\n\n"
+            f"📦 **Purchased Plan:** `{plan_name}`\n"
+            f"💵 **Amount Paid:** `₹{final_amount} INR`{discount_applied_str}\n"
+            f"⚡ **Active Daily Limit:** `{total_quota} Questions / Day`\n"
+            f"⏳ **Pass Expiry:** `{expiry_date}`\n"
+            f"🧾 **Razorpay Txn ID:** `{payment_id}`\n"
+            f"⏰ **Timestamp:** `{orig_payment_time}`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🚀 *Your platform is growing! Real-time revenue updated automatically.*"
+        )
+        admin_nav = InlineKeyboardMarkup([
+            [InlineKeyboardButton("👤 Inspect Student Profile", callback_data=f"admin_inspect_u_{user_id}")],
+            [InlineKeyboardButton("💳 View Student Payments", callback_data=f"admin_view_payments_{user_id}")],
+            [InlineKeyboardButton("👑 Main Admin Portal (/him)", callback_data="admin_home")]
+        ])
+        try:
+            await bot_app_instance.bot.send_message(
+                chat_id=PRIMARY_ADMIN_ID,
+                text=admin_motivation_alert,
+                reply_markup=admin_nav,
+                parse_mode="Markdown",
+                disable_notification=False
+            )
+        except Exception as a_err:
+            logging.error(f"[ADMIN PAYMENT ALERT ERROR] {a_err}")
 
 
 # ======================================================================
 # 🚀 CBT MINI APP (WEB PORTAL) API & ROUTE HANDLERS
 # ======================================================================
 
+def resolve_template_file():
+    """Finds the webapp.html template across root or app/ directories."""
+    candidates = [
+        os.path.join(BASE_DIR, "templates", "webapp.html"),
+        os.path.join(BASE_DIR, "app", "templates", "webapp.html"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", "webapp.html"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "app", "templates", "webapp.html")
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return candidates[0]
+
+
 async def handle_serve_webapp(request):
-    """Serves the interactive CBT Single Page Application."""
-    template_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", "webapp.html")
+    """Serves the CBT Single Page Application with strict no-cache headers."""
+    template_path = resolve_template_file()
     if os.path.exists(template_path):
         with open(template_path, "r", encoding="utf-8") as f:
-            return web.Response(text=f.read(), content_type="text/html")
-    return web.Response(text="Web App Template Not Found. Please ensure app/templates/webapp.html exists.", status=404)
+            return web.Response(
+                text=f.read(),
+                content_type="text/html",
+                headers={
+                    "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+                    "Pragma": "no-cache",
+                    "Expires": "0"
+                }
+            )
+    return web.Response(text="Web App Template Not Found. Please verify templates/webapp.html exists.", status=404)
+
+
+async def handle_serve_logo(request):
+    """Reliably serves the official logo image from the assets directory."""
+    logo_candidates = [
+        os.path.join(BASE_DIR, "assets", "logo.png"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "logo.png"),
+        os.path.join(BASE_DIR, "app", "assets", "logo.png")
+    ]
+    for p in logo_candidates:
+        if os.path.exists(p):
+            with open(p, "rb") as f:
+                return web.Response(body=f.read(), content_type="image/png")
+    return web.Response(text="Logo not found", status=404)
 
 
 async def handle_api_get_dashboard(request):
@@ -242,7 +344,6 @@ async def handle_api_get_analytics(request):
         rank = await asyncio.to_thread(calculate_user_rank, user_id)
         percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
         
-        # Fetch today's wrong & attempted questions
         today_str = get_ist_timestamp_str().split(" ")[0]
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -313,7 +414,6 @@ async def handle_api_ask_admin(request):
         cursor.close()
         release_db(conn)
 
-        # Notify Admin in Telegram
         if bot_app_instance:
             try:
                 await bot_app_instance.bot.send_message(
@@ -953,17 +1053,20 @@ async def scheduled_flash_sale_worker():
 async def start_web_server():
     app = web.Application()
     
-    # 1. Mount Static Assets (Serves official logo.png and local assets)
+    # 1. Mount and serve Static Assets (Official Logo) from the /assets folder
     assets_dir = os.path.join(BASE_DIR, "assets")
     if os.path.exists(assets_dir):
         app.router.add_static("/assets", assets_dir)
 
-    # 2. Main CBT Web App Interface Routes
+    # 2. Logo API Route (guarantees logo rendering across all devices)
+    app.router.add_get("/api/webapp/logo", handle_serve_logo)
+
+    # 3. Main CBT Web App Interface Routes (Serves the WebApp on both '/' and '/webapp')
     app.router.add_get("/", handle_serve_webapp)
     app.router.add_get("/webapp", handle_serve_webapp)
     app.router.add_get("/ping", handle_ping)
     
-    # 3. Categorized Mini App REST Endpoints
+    # 4. Categorized Mini App REST Endpoints
     app.router.add_get("/api/webapp/dashboard", handle_api_get_dashboard)
     app.router.add_get("/api/webapp/leaderboard", handle_api_get_leaderboard)
     app.router.add_get("/api/webapp/analytics", handle_api_get_analytics)
@@ -971,13 +1074,13 @@ async def start_web_server():
     app.router.add_post("/api/webapp/ask-admin", handle_api_ask_admin)
     app.router.add_post("/api/webapp/generate-custom-pdf", handle_api_generate_custom_pdf)
     
-    # 4. CBT Exam Engine Endpoints
+    # 5. CBT Exam Engine Endpoints
     app.router.add_post("/api/webapp/start-quiz", handle_api_start_quiz)
     app.router.add_post("/api/webapp/submit-quiz", handle_api_submit_quiz)
     app.router.add_post("/api/webapp/bookmark", handle_api_bookmark_question)
     app.router.add_get("/api/webapp/download-pdf/{attempt_id}", handle_api_download_pdf)
     
-    # 5. Razorpay Webhook & Payment Handlers
+    # 6. Razorpay Webhook & Payment Handlers
     app.router.add_get("/razorpay-webhook", handle_razorpay_callback_get)
     app.router.add_post("/razorpay-webhook", handle_razorpay_webhook)
 

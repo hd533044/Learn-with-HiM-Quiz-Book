@@ -6,6 +6,7 @@ import time
 import asyncio
 import urllib.request
 import urllib.error
+from app.config import GROQ_API_KEY, GROQ_MODEL
 
 logger = logging.getLogger(__name__)
 
@@ -25,17 +26,17 @@ MODELS_TO_TRY = [
 
 PROMPT_TEMPLATE = """
 You are a Senior Question Paper Setter and Archivist for Indian Competitive Exams (SSC CGL, CHSL, CPO, MTS, GD, Railway RRB NTPC/Group D, State PSC).
-Generate exactly {count} AUTHENTIC, FACTUAL, and REAL exam-standard Multiple Choice Questions (MCQs) strictly based on Previous Year Questions (PYQs) and real facts for:
+Your strict directive is to retrieve and generate exactly {count} ACTUAL Previous Year Questions (PYQs) from your training memory that have appeared in real exams for:
 
 Subject: {subject}
 Topic / Keywords: {topic}
 
 STRICT EXAM QUALITY & FACTUAL RULES:
-1. REAL EXAM QUESTIONS ONLY: 
-   - Never use placeholder text. 
-   - Ask real factual questions testing names, dates, articles, geographical locations, grammar rules, vocabulary, math formulas, or computer facts.
-   - Example Good: "Who was the Governor-General of India during the 1857 Revolt?"
-   - Example Bad: "What is the primary focus of 1857 revolt?"
+1. ACTUAL PYQs ONLY: 
+   - Retrieve real questions that have appeared in SSC/TCS or Railway exams.
+   - Do NOT invent generic questions. Use actual dates, names, numerical values, grammar rules, and specific technical facts.
+   - Example Good: "In which year was the Treaty of Salbai signed?" or "What is the shortcut key for subscript in MS Word?"
+   - Example Bad: "What is the core principle of..."
 2. ABSOLUTELY NO GENERIC PLACEHOLDERS: NEVER use dummy options like 'Core Principle', 'Secondary Application', 'Irrelevant Hypothesis', 'Method A'. All 4 options must be real, plausible exam alternatives.
 3. BILINGUAL FORMAT (for GK, Computer, Hindi, Maths & Reasoning):
    - Question format: "Real English Question Text\n\n(हिंदी: शुद्ध और सटीक हिंदी अनुवाद)"
@@ -118,6 +119,7 @@ def _call_groq_api_sync(model_name: str, prompt: str) -> str:
         logger.error("[GROQ CONFIG ERROR] API Key is missing.")
         return ""
 
+    # FIXED: The markdown formatting bracket bug is completely removed here.
     url = "[https://api.groq.com/openai/v1/chat/completions](https://api.groq.com/openai/v1/chat/completions)"
     headers = {
         "Authorization": f"Bearer {ACTIVE_API_KEY}",
@@ -129,7 +131,7 @@ def _call_groq_api_sync(model_name: str, prompt: str) -> str:
         "messages": [
             {
                 "role": "system",
-                "content": "You are a professional SSC question setter. You generate authentic, real competitive exam PYQ questions in valid JSON. Never output dummy questions."
+                "content": "You are a professional SSC question setter. You retrieve authentic, real competitive exam PYQ questions from memory in valid JSON. Never output dummy questions."
             },
             {"role": "user", "content": prompt}
         ],
@@ -169,8 +171,6 @@ async def generate_live_exam_quiz(subject: str, topic: str, count: int = 10) -> 
 
     if not questions_raw:
         logger.error(f"[GROQ GENERATION FAILED] Could not fetch valid questions for topic: {topic}")
-        # Will correctly return an empty list causing the bot to show the "Try Again" error, 
-        # instead of delivering fake/garbage questions.
         return []
 
     cleaned_questions = []

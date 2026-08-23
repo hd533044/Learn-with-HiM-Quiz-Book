@@ -23,34 +23,42 @@ MODELS_TO_TRY = [
 ]
 
 PROMPT_TEMPLATE = """
-You are an expert exam question setter for Indian competitive exams (SSC CGL, CHSL, CPO, MTS, Railways RRB, State Exams).
-Generate exactly {count} high-quality, exam-standard Multiple Choice Questions (MCQs) for:
+You are a Senior Question Paper Setter and Archivist for Indian Competitive Exams (SSC CGL, CHSL, CPO, MTS, GD, Railway NTPC/Group D, CDS, State PSC).
+Generate exactly {count} authentic, specific, and real exam-standard Multiple Choice Questions (MCQs) that strictly follow Previous Year Questions (PYQs) and TCS pattern exam trends for:
 
 Subject: {subject}
 Topic / Keywords: {topic}
 
-Strict Requirements:
-1. Follow modern SSC TCS pattern PYQ trends.
-2. Bilingual Format (for GK, Computer, Hindi, Maths & Reasoning):
-   - Question format: "English Question Text\\n\\n(हिंदी: सटीक हिंदी अनुवाद)"
-   - Options format: "English Option (हिंदी अनुवाद)"
-   - Total question text MUST be under 280 characters.
-   - Each option MUST be under 95 characters.
-3. English Subject Format:
-   - If Subject is English Language, output question and options in pure English only (no Hindi).
-4. JSON Escaping Rule:
+STRICT EXAM QUALITY & PYQ MANDATES:
+1. AUTHENTIC EXAM QUESTIONS: Every question must be a real, factual, and syllabus-centric question (testing real historical dates, places, personalities, constitutional articles, grammar rules, word meanings, mathematical/reasoning concepts, or computer technical facts).
+2. NO GENERIC / PLACEHOLDER QUESTIONS: NEVER ask abstract meta-questions (e.g., DO NOT ask 'What is the primary focus of {topic}?' or use dummy options like 'Core Principle', 'Secondary Application', 'Irrelevant Hypothesis', 'Method A', 'Option 1').
+3. BILINGUAL SPECIFICATIONS (for GK, Computer, Hindi, Maths & Reasoning):
+   - Question format: "Real English Question Text\\n\\n(हिंदी: शुद्ध और सटीक हिंदी अनुवाद)"
+   - Options format: 4 authentic options: "English Option (हिंदी विकल्प)"
+   - Keep total question text under 280 characters.
+   - Keep each option under 95 characters.
+4. ENGLISH LANGUAGE SECTION:
+   - If Subject is English Language, output question, options, and explanation purely in English (no Hindi).
+5. JSON ESCAPING RULE:
    - NEVER use unescaped double quotes inside strings. Use single quotes ('like this') for words in quotes.
-5. Output format: You MUST return a single valid JSON object with a "questions" array.
+6. EXPLANATION:
+   - Provide a factual 1-2 line explanation (max 180 characters) stating the exact fact/rule behind the correct answer.
+7. Output format: You MUST return ONLY a single valid JSON object containing a "questions" array.
 
 Required JSON Structure:
 {{
   "questions": [
     {{
       "id": "AI_01",
-      "question": "Question text here...",
-      "options": ["Option A", "Option B", "Option C", "Option D"],
+      "question": "Question text here...\\n\\n(हिंदी: सटीक प्रश्न...)",
+      "options": [
+        "Option A (विकल्प A)",
+        "Option B (विकल्प B)",
+        "Option C (विकल्प C)",
+        "Option D (विकल्प D)"
+      ],
       "correct_option": 0,
-      "explanation": "Concise explanation under 180 characters."
+      "explanation": "Concise factual explanation under 180 characters."
     }}
   ]
 }}
@@ -120,15 +128,15 @@ async def _fetch_from_groq(model_name: str, prompt: str) -> str:
         "messages": [
             {
                 "role": "system",
-                "content": "You are a professional SSC exam creator. Always output a valid JSON object containing a 'questions' array. Never use raw unescaped double quotes inside text."
+                "content": "You are a professional SSC and Railway exam question paper setter. Always output a valid JSON object containing a 'questions' array with authentic, exam-standard PYQs. Never use raw unescaped double quotes inside text strings."
             },
             {"role": "user", "content": prompt}
         ],
-        "temperature": 0.2,
+        "temperature": 0.3,
         "response_format": {"type": "json_object"}
     }
 
-    async with httpx.AsyncClient(timeout=20.0) as client:
+    async with httpx.AsyncClient(timeout=25.0) as client:
         res = await client.post(url, headers=headers, json=payload)
         if res.status_code != 200:
             logger.error(f"[GROQ HTTP ERROR {res.status_code}] Model {model_name}: {res.text}")
@@ -145,7 +153,7 @@ async def generate_live_exam_quiz(subject: str, topic: str, count: int = 10) -> 
     raw_text = ""
     for model in MODELS_TO_TRY:
         try:
-            logger.info(f"[GROQ ATTEMPT] Requesting {count} Qs on '{topic}' using {model}...")
+            logger.info(f"[GROQ ATTEMPT] Requesting {count} PYQ-standard Qs on '{topic}' using {model}...")
             raw_text = await _fetch_from_groq(model, prompt)
             if raw_text:
                 break
@@ -174,46 +182,5 @@ async def generate_live_exam_quiz(subject: str, topic: str, count: int = 10) -> 
                 "language": "bilingual" if subject != "English" else "en",
                 "chapter": f"Custom AI: {topic[:25]}"
             })
-
-    if cleaned_questions:
-        return cleaned_questions[:count]
-
-    # Automatic Failover Bank: Guarantees questions generate even if API is temporarily unreachable
-    sample_bank = [
-        {
-            "question": f"Which of the following is most accurate regarding '{topic}'?\n\n(हिंदी: '{topic}' के संदर्भ में निम्नलिखित में से कौन सा कथन सही है?)",
-            "options": [
-                f"Core Principle of {topic} (मूल सिद्धांत)",
-                f"Secondary Application of {topic} (द्वितीयक अनुप्रयोग)",
-                f"Historical Exception in {topic} (ऐतिहासिक अपवाद)",
-                f"None of the above (उपरोक्त में से कोई नहीं)"
-            ],
-            "correct_option": 0,
-            "explanation": f"Official TCS SSC Pattern concept for {topic}."
-        },
-        {
-            "question": f"In competitive examinations, what is the primary focus of '{topic}'?\n\n(हिंदी: प्रतियोगी परीक्षाओं में '{topic}' का मुख्य केंद्र क्या है?)",
-            "options": [
-                "Fundamental Concepts & Rules (मूल अवधारणा और नियम)",
-                "Irrelevant Hypothesis (अप्रासंगिक परिकल्पना)",
-                "Outdated Method (पुरानी विधि)",
-                "None of these (इनमें से कोई नहीं)"
-            ],
-            "correct_option": 0,
-            "explanation": f"Important exam-centric rule related to {topic}."
-        }
-    ]
-
-    for idx, item in enumerate(sample_bank * ((count // 2) + 1), start=1):
-        cleaned_questions.append({
-            "id": f"ai_fb_{now_epoch}_{idx}",
-            "question": item["question"][:285],
-            "passage": "",
-            "options": [str(o)[:95] for o in item["options"]],
-            "correct_option": item["correct_option"],
-            "explanation": item["explanation"][:185],
-            "language": "bilingual" if subject != "English" else "en",
-            "chapter": f"Custom AI: {topic[:25]}"
-        })
 
     return cleaned_questions[:count]

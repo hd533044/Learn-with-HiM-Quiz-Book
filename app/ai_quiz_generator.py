@@ -3,12 +3,13 @@ import logging
 import re
 import os
 import time
-import httpx
+import asyncio
+import urllib.request
+import urllib.error
 from app.config import GROQ_API_KEY, GROQ_MODEL
 
 logger = logging.getLogger(__name__)
 
-# Secure environment variable resolution (Zero hardcoded secrets)
 ACTIVE_API_KEY = (
     os.getenv("GROQ_API_KEY") or 
     os.getenv("XAI_API_KEY") or 
@@ -18,32 +19,35 @@ ACTIVE_API_KEY = (
 
 MODELS_TO_TRY = [
     GROQ_MODEL or "llama-3.3-70b-versatile",
-    "llama-3.1-8b-instant",
-    "gemma2-9b-it"
+    "llama-3.1-8b-instant"
 ]
 
 PROMPT_TEMPLATE = """
-You are a Senior Question Paper Setter and Archivist for Indian Competitive Exams (SSC CGL, CHSL, CPO, MTS, GD, Railway NTPC/Group D, CDS, State PSC).
-Generate exactly {count} authentic, specific, and real exam-standard Multiple Choice Questions (MCQs) that strictly follow Previous Year Questions (PYQs) and TCS pattern exam trends for:
+You are a Senior Question Paper Setter and Archivist for Indian Competitive Exams (SSC CGL, CHSL, CPO, MTS, GD, Railway RRB NTPC/Group D, State PSC).
+Generate exactly {count} AUTHENTIC, FACTUAL, and REAL exam-standard Multiple Choice Questions (MCQs) strictly based on Previous Year Questions (PYQs) and latest TCS exam pattern trends for:
 
 Subject: {subject}
 Topic / Keywords: {topic}
 
-STRICT EXAM QUALITY & PYQ MANDATES:
-1. AUTHENTIC EXAM QUESTIONS: Every question must be a real, factual, and syllabus-centric question (testing real historical dates, places, personalities, constitutional articles, grammar rules, word meanings, mathematical/reasoning concepts, or computer technical facts).
-2. NO GENERIC / PLACEHOLDER QUESTIONS: NEVER ask abstract meta-questions (e.g., DO NOT ask 'What is the primary focus of {topic}?' or use dummy options like 'Core Principle', 'Secondary Application', 'Irrelevant Hypothesis', 'Method A', 'Option 1').
+STRICT EXAM QUALITY & FACTUAL RULES:
+1. REAL EXAM QUESTIONS ONLY:
+   - For History / GK: Ask real factual questions testing names of leaders, centers, treaties, years, battles, constitutional articles, geographical locations, or scientific laws (e.g., for '1857 Revolt': ask about Mangal Pandey, Nana Saheb, Lord Canning, Begum Hazrat Mahal, Kunwar Singh).
+   - For Hindi: Ask real Hindi grammar questions (e.g., for 'Sandhi': ask 'सूर्योदय का संधि विच्छेद', 'पवन में कौन सी संधि है', 'यण संधि का उदाहरण').
+   - For English: Ask real error detection, sentence improvement, or vocabulary usage.
+   - For Computer: Ask actual shortcut keys, protocols, MS Excel 365 formulas, memory units, or CLI commands.
+2. ABSOLUTELY NO GENERIC PLACEHOLDERS:
+   - NEVER ask abstract questions like 'What is the primary focus of {topic}?' or use dummy options like 'Core Principle', 'Secondary Application', 'Irrelevant Hypothesis', 'None of these'.
+   - All 4 options must be real, plausible exam alternatives.
 3. BILINGUAL SPECIFICATIONS (for GK, Computer, Hindi, Maths & Reasoning):
    - Question format: "Real English Question Text\\n\\n(हिंदी: शुद्ध और सटीक हिंदी अनुवाद)"
-   - Options format: 4 authentic options: "English Option (हिंदी विकल्प)"
+   - Options format: "Real English Option (शुद्ध हिंदी विकल्प)"
    - Keep total question text under 280 characters.
    - Keep each option under 95 characters.
-4. ENGLISH LANGUAGE SECTION:
-   - If Subject is English Language, output question, options, and explanation purely in English (no Hindi).
-5. JSON ESCAPING RULE:
-   - NEVER use unescaped double quotes inside strings. Use single quotes ('like this') for words in quotes.
-6. EXPLANATION:
-   - Provide a factual 1-2 line explanation (max 180 characters) stating the exact fact/rule behind the correct answer.
-7. Output format: You MUST return ONLY a single valid JSON object containing a "questions" array.
+4. ENGLISH LANGUAGE TOPIC:
+   - If Subject is English Language, output question, options, and explanation purely in English.
+5. EXPLANATION:
+   - Provide a crisp 1-2 line factual explanation (max 180 chars) explaining the correct answer fact.
+6. FORMAT: Return ONLY a valid JSON object containing a "questions" array.
 
 Required JSON Structure:
 {{
@@ -64,6 +68,40 @@ Required JSON Structure:
 }}
 """
 
+def _call_groq_api_sync(model_name: str, prompt: str) -> str:
+    """Performs direct, zero-dependency HTTP call to Groq LPU API."""
+    if not ACTIVE_API_KEY:
+        logger.error("[GROQ CONFIG ERROR] GROQ_API_KEY is missing.")
+        return ""
+
+    url = "https://api.groq.com/openai/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {ACTIVE_API_KEY}",
+        "Content-Type": "application/json",
+        "User-Agent": "QuizWithHiM/1.0"
+    }
+    payload = {
+        "model": model_name,
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a senior SSC/Railway question paper creator. You generate authentic, real competitive exam PYQ questions in valid JSON. Never output dummy or placeholder questions."
+            },
+            {"role": "user", "content": prompt}
+        ],
+        "temperature": 0.3,
+        "response_format": {"type": "json_object"}
+    }
+
+    req_data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=req_data, headers=headers, method="POST")
+
+    with urllib.request.urlopen(req, timeout=25) as response:
+        res_body = response.read().decode("utf-8")
+        res_json = json.loads(res_body)
+        return res_json["choices"][0]["message"]["content"].strip()
+
+
 def extract_json_safely(raw_text: str) -> list:
     """Robust multi-level JSON extractor for complex multi-language LLM outputs."""
     if not raw_text:
@@ -73,7 +111,6 @@ def extract_json_safely(raw_text: str) -> list:
     clean = re.sub(r'^```\s*', '', clean)
     clean = re.sub(r'\s*```$', '', clean)
 
-    # Attempt 1: Direct JSON load
     try:
         data = json.loads(clean)
         if isinstance(data, dict):
@@ -88,7 +125,6 @@ def extract_json_safely(raw_text: str) -> list:
     except Exception:
         pass
 
-    # Attempt 2: Extract outermost JSON object via Regex
     match = re.search(r'\{[\s\S]*\}', clean)
     if match:
         try:
@@ -98,7 +134,6 @@ def extract_json_safely(raw_text: str) -> list:
         except Exception:
             pass
 
-    # Attempt 3: Regex item-by-item extraction for malformed quotes
     extracted = []
     q_blocks = re.findall(r'\{\s*"id"[^}]*"question"[^}]*"options"[^}]*\}', clean, re.DOTALL)
     for block in q_blocks:
@@ -113,54 +148,25 @@ def extract_json_safely(raw_text: str) -> list:
     return extracted
 
 
-async def _fetch_from_groq(model_name: str, prompt: str) -> str:
-    if not ACTIVE_API_KEY:
-        logger.error("[GROQ CONFIG ERROR] GROQ_API_KEY is empty.")
-        return ""
-
-    url = "[https://api.groq.com/openai/v1/chat/completions](https://api.groq.com/openai/v1/chat/completions)"
-    headers = {
-        "Authorization": f"Bearer {ACTIVE_API_KEY}",
-        "Content-Type": "application/json"
-    }
-    payload = {
-        "model": model_name,
-        "messages": [
-            {
-                "role": "system",
-                "content": "You are a professional SSC and Railway exam question paper setter. Always output a valid JSON object containing a 'questions' array with authentic, exam-standard PYQs. Never use raw unescaped double quotes inside text strings."
-            },
-            {"role": "user", "content": prompt}
-        ],
-        "temperature": 0.3,
-        "response_format": {"type": "json_object"}
-    }
-
-    async with httpx.AsyncClient(timeout=25.0) as client:
-        res = await client.post(url, headers=headers, json=payload)
-        if res.status_code != 200:
-            logger.error(f"[GROQ HTTP ERROR {res.status_code}] Model {model_name}: {res.text}")
-            return ""
-        data = res.json()
-        return data["choices"][0]["message"]["content"].strip()
-
-
 async def generate_live_exam_quiz(subject: str, topic: str, count: int = 10) -> list:
-    """Generates on-demand SSC/TCS pattern questions with multi-model failover."""
+    """Generates authentic on-demand SSC/TCS pattern questions with multi-model failover."""
     count = min(max(count, 5), 20)
     prompt = PROMPT_TEMPLATE.format(subject=subject, topic=topic, count=count)
 
     raw_text = ""
     for model in MODELS_TO_TRY:
         try:
-            logger.info(f"[GROQ ATTEMPT] Requesting {count} PYQ-standard Qs on '{topic}' using {model}...")
-            raw_text = await _fetch_from_groq(model, prompt)
+            logger.info(f"[GROQ LPU] Generating {count} PYQ questions for '{topic}' using {model}...")
+            raw_text = await asyncio.to_thread(_call_groq_api_sync, model, prompt)
             if raw_text:
                 break
         except Exception as e:
             logger.warning(f"[GROQ FAILOVER] {model} failed: {e}. Trying next model...")
 
     questions_raw = extract_json_safely(raw_text)
+    if not questions_raw:
+        logger.error(f"[GROQ GENERATION FAILED] No questions extracted for topic: {topic}")
+        return []
 
     cleaned_questions = []
     now_epoch = int(time.time())

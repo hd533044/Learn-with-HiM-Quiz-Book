@@ -1045,31 +1045,6 @@ def get_today_attempts(user_id):
     release_db(conn)
     return row['total'] if row and row['total'] else 0
 
-def get_today_custom_ai_attempts_count(user_id: int) -> int:
-    """Returns the count of custom AI quizzes attempted today."""
-    conn = get_db()
-    cursor = conn.cursor(cursor_factory=RealDictCursor)
-    today_date = get_ist_date_str()
-    try:
-        cursor.execute(
-            """
-            SELECT COUNT(*) as count 
-            FROM quiz_attempts 
-            WHERE user_id = %s 
-              AND attempt_date = %s 
-              AND quiz_mode = 'CUSTOM_AI_PRACTICE'
-            """,
-            (user_id, today_date)
-        )
-        row = cursor.fetchone()
-        return row['count'] if row and row['count'] else 0
-    except Exception as e:
-        logger.error(f"[GET TODAY AI ATTEMPTS ERROR] {e}")
-        return 0
-    finally:
-        cursor.close()
-        release_db(conn)
-
 def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, total_questions=0, correct_count=0, wrong_count=0, skipped_count=0, time_taken=0, question_details=None, quiz_mode="PRACTICE", mock_number=0, subject=None, selected_topics=None) -> int:
     conn = get_db()
     cursor = conn.cursor()

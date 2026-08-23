@@ -11,7 +11,7 @@ from app.database import (
     get_ist_timestamp_str, get_user_profile, get_maintenance_until,
     save_paused_quiz_state, get_paused_quiz_state, clear_paused_quiz_state,
     save_question_to_db, log_user_activity_time, get_next_mock_number,
-    record_quiz_like, get_total_platform_likes
+    record_quiz_like, get_total_platform_likes, get_today_custom_ai_attempts_count
 )
 from app.pyq_fetcher import (
     fetch_pyqs_for_quiz, get_available_topics, COMPUTER_TOPIC_METADATA, GK_TOPIC_METADATA,
@@ -169,10 +169,11 @@ async def render_clean_subject_selection(update: Update):
     subject_keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("🖥️ 1. Computer Awareness", callback_data="qsubj_computer")],
         [InlineKeyboardButton("🔤 2. English Language", callback_data="qsubj_english")],
-        [InlineKeyboardButton("🌍 3. General Knowledge (GK)", callback_data="qsubj_gk")]
+        [InlineKeyboardButton("🌍 3. General Knowledge (GK)", callback_data="qsubj_gk")],
+        [InlineKeyboardButton("✨ 4. Create Custom AI Quiz (Live)", callback_data="qsubj_custom_ai")]
     ])
 
-    msg_text = "🎯 **SELECT YOUR SUBJECT FOR QUIZ:**"
+    msg_text = "🎯 **SELECT YOUR SUBJECT FOR QUIZ OR CREATE CUSTOM QUIZ:**"
 
     if update.callback_query:
         await update.callback_query.edit_message_text(msg_text, reply_markup=subject_keyboard, parse_mode="Markdown")
@@ -203,12 +204,119 @@ async def quiz_interrupt_callback(update: Update, context: ContextTypes.DEFAULT_
             await resume_quiz_command(update, context)
 
 
+async def custom_ai_quiz_subject_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Subject selection for custom AI quizzes with 2 attempts/day cap for Free Demo users."""
+    query = update.callback_query
+    user_id = query.from_user.id
+
+    profile = await asyncio.to_thread(get_user_profile, user_id)
+    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    is_paid_vip = (user_id == PRIMARY_ADMIN_ID) or (paid_bal > DAILY_QUESTION_LIMIT)
+
+    # 2 Quizzes / Day generation quota check for free demo users
+    if not is_paid_vip:
+        used_ai_today = await asyncio.to_thread(get_today_custom_ai_attempts_count, user_id)
+        if used_ai_today >= 2:
+            await query.answer("🛑 Free AI Custom Quiz limit reached for today!", show_alert=True)
+            msg = (
+                f"🛑 **FREE AI QUIZ LIMIT REACHED (2/2 USED TODAY)** 🛑\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"Free Demo students get **2 AI Custom Quizzes per day**.\n\n"
+                f"✨ **Want unlimited on-demand AI quizzes on any micro-topic?**\n"
+                f"Upgrade to any VIP Plan for seamless, unlimited live generations!"
+            )
+            nav = InlineKeyboardMarkup([
+                [InlineKeyboardButton("💳 Upgrade to VIP Plan (Unlimited AI)", callback_data="cmd_plans")],
+                [InlineKeyboardButton("🔙 Back to Main Quiz Menu", callback_data="cmd_quiz")]
+            ])
+            await query.edit_message_text(msg, reply_markup=nav, parse_mode="Markdown")
+            return
+
+    await query.answer()
+
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("🌍 1. General Knowledge (GK)", callback_data="ai_subj_GK")],
+        [InlineKeyboardButton("🔤 2. English Language", callback_data="ai_subj_English")],
+        [InlineKeyboardButton("🖥️ 3. Computer Awareness", callback_data="ai_subj_Computer")],
+        [InlineKeyboardButton("📐 4. Maths & Reasoning", callback_data="ai_subj_Maths & Reasoning")],
+        [InlineKeyboardButton("🇮🇳 5. Hindi Language", callback_data="ai_subj_Hindi")],
+        [InlineKeyboardButton("🔙 Back to Main Menu", callback_data="cmd_quiz")]
+    ])
+
+    user_tier_str = "👑 VIP Member (Unlimited Custom Quizzes)" if is_paid_vip else "🎁 Free Demo Tier (2 Custom Quizzes / Day)"
+
+    msg = (
+        "✨ **CREATE YOUR OWN CUSTOM EXAM QUIZ** ✨\n"
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"👤 **Access Level:** `{user_tier_str}`\n"
+        "🎯 **AI Exam Setter (Live SSC/TCS Standard)**\n\n"
+        "Select the core subject category below:"
+    )
+    await query.edit_message_text(msg, reply_markup=keyboard, parse_mode="Markdown")
+
+
+async def custom_ai_subject_choice(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    chosen_subj = query.data.replace("ai_subj_", "")
+
+    context.user_data["custom_ai_subject"] = chosen_subj
+
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("⚡ 5 Questions (Quick Drill)", callback_data="ai_qcount_5")],
+        [InlineKeyboardButton("🎯 10 Questions (Standard Mock)", callback_data="ai_qcount_10")],
+        [InlineKeyboardButton("🔥 20 Questions (Mega Test - Max)", callback_data="ai_qcount_20")],
+        [InlineKeyboardButton("🔙 Back", callback_data="qsubj_custom_ai")]
+    ])
+
+    msg = (
+        f"🎯 **SELECTED SUBJECT:** `{chosen_subj}`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"Select the number of questions to generate:"
+    )
+    await query.edit_message_text(msg, reply_markup=keyboard, parse_mode="Markdown")
+
+
+async def custom_ai_qcount_choice(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    q_count = int(query.data.replace("ai_qcount_", ""))
+    chosen_subj = context.user_data.get("custom_ai_subject", "GK")
+
+    context.user_data["custom_ai_count"] = q_count
+    context.user_data["awaiting_custom_ai_topic"] = True
+
+    examples_map = {
+        "GK": "• *Governor Generals & Viceroys 1857-1947*\n• *Indus Valley Sites & Discoveries*\n• *Panchayati Raj 73rd Amendment Articles*",
+        "English": "• *Prepositions with Fixed Cases*\n• *One Word Substitutions on Science & Art*\n• *Direct & Indirect Narration TCS Rules*",
+        "Computer": "• *MS Excel 365 Formulas & Pivot Tables*\n• *OSI 7 Layers & Network Protocols*\n• *Computer Shortcut Keys & CLI Commands*",
+        "Maths & Reasoning": "• *Profit & Loss Discount TCS Level*\n• *Syllogism Only A Few Cases*\n• *Time & Work Pipe Cisterns*",
+        "Hindi": "• *मुहावरे एवं लोकोक्तियाँ SSC GD*\n• *संधि एवं समास भेद*\n• *शुद्ध वर्तनी एवं वाक्य शुद्धि*"
+    }
+    examples_text = examples_map.get(chosen_subj, "• *Type your desired keywords or subtopic*")
+
+    msg = (
+        f"✨ **CUSTOM AI QUIZ BUILDER** ✨\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📚 **Subject:** `{chosen_subj}` | 🔢 **Count:** `{q_count} Questions`\n\n"
+        f"✍️ **Type your desired topic & keywords below:**\n\n"
+        f"**Examples:**\n"
+        f"{examples_text}\n\n"
+        f"⚡ *Our AI engine will synthesize real-time, exam-centric questions on the spot!*"
+    )
+    await query.edit_message_text(msg, parse_mode="Markdown")
+
+
 async def quiz_subject_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await check_quiz_maintenance(update): return
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
     subj = query.data.replace("qsubj_", "")
+
+    if subj == "custom_ai":
+        await custom_ai_quiz_subject_menu(update, context)
+        return
 
     QUIZ_SETUP_CACHE[user_id] = {"subject": subj}
 
@@ -575,8 +683,8 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
     }
     ACTIVE_SESSIONS[user_id] = session
 
-    lang_str = "🌐 English" if language == "en" else "🇮🇳 हिंदी"
-    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE") else topic_name
+    lang_str = "🌐 English" if language == "en" else "🇮🇳 हिंदी / Bilingual"
+    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE", "CUSTOM_AI_PRACTICE") else topic_name
 
     early_submit_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🏁 End / Submit Quiz", callback_data="cmd_prompt_submit_quiz")]])
     timer_display = f"`{total_time_mins} Minutes Total`" if total_time_mins else f"`{timer_sec}s / Question`"
@@ -612,7 +720,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     q = session["questions"][session["current_index"]]
     session["current_question"] = q
     
-    # Check if a new passage needs to be sent (e.g. starting questions 1-5 or switching to 6-10)
     current_passage = q.get("passage")
     if current_passage and current_passage != session.get("last_sent_passage"):
         session["last_sent_passage"] = current_passage
@@ -644,7 +751,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     total_num = session["total"]
     
     quiz_mode = session.get("quiz_mode", "PRACTICE")
-    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE") else session.get('topic_name', 'Quiz')
+    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE", "CUSTOM_AI_PRACTICE") else session.get('topic_name', 'Quiz')
     
     base_header = f"📖 [{title}] — ({current_num}/{total_num}){global_time_str}\n\n"
     avail_len = 300 - len(base_header)
@@ -992,7 +1099,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     detailed_logs = session.get("detailed_logs", [])
     lang = session.get("language", "en")
     quiz_mode = session.get("quiz_mode", "PRACTICE")
-    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE") else session.get('topic_name', 'Quiz')
+    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE", "CUSTOM_AI_PRACTICE") else session.get('topic_name', 'Quiz')
 
     attempt_id = await asyncio.to_thread(
         record_quiz_result,
@@ -1017,7 +1124,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     perf_summary = await asyncio.to_thread(get_user_performance_summary, user_id)
     total_quizzes_done = perf_summary.get("total_tests", 1)
 
-    lang_label = "🌐 English" if lang == "en" else "🇮🇳 हिंदी"
+    lang_label = "🌐 English" if lang == "en" else "🇮🇳 हिंदी / Bilingual"
 
     report_card = (
         f"🏆 **OFFICIAL QUIZ REPORT CARD** 🏆\n"
@@ -1057,6 +1164,10 @@ async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYP
     data = update.callback_query.data
     if data.startswith("qinterrupt_"):
         await quiz_interrupt_callback(update, context)
+    elif data.startswith("ai_subj_"):
+        await custom_ai_subject_choice(update, context)
+    elif data.startswith("ai_qcount_"):
+        await custom_ai_qcount_choice(update, context)
     elif data == "cmd_prompt_submit_quiz":
         await prompt_final_submission(update.callback_query.message.chat_id, update.callback_query.from_user.id, context)
     elif data == "qfinal_submit_yes":

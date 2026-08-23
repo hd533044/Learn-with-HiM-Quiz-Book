@@ -40,7 +40,7 @@ from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
     launch_quiz_setup, handle_poll_answer,
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback,
-    quiz_extended_router
+    quiz_extended_router, start_quiz_session
 )
 
 from app.stats import (
@@ -56,6 +56,7 @@ from app.admin import (
 from app.admin_query_engine import parse_and_execute_admin_query, generate_admin_intelligence_pdf
 from app.pdf_generator import generate_student_pdf_report, generate_single_quiz_attempt_pdf
 from app.pyq_fetcher import fetch_pyqs_for_quiz
+from app.ai_quiz_generator import generate_live_exam_quiz
 
 logger = logging.getLogger(__name__)
 
@@ -1035,10 +1036,10 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         f"🤖 **COMMAND DIRECTORY & GUIDE** 🤖\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"• **/quiz** — 🚀 Launch Quiz (Computer/English/GK)\n"
+        f"• **/quiz** — 🚀 Launch Quiz (Computer/English/GK/AI Custom)\n"
         f"• **/myplan** — 💵 Subscription Status\n"
         f"• **/plans** — 💳 VIP Payment Plans\n"
-        f"• **/askadmin** — 💬 Direct Message to Admin\n"
+        f"• **/askadmin** — 💬 Secret Communication with Admin\n"
         f"• **/admininfo** — 👨‍🏫 About Himanshu Sir & Channels\n"
         f"• **/pdfreport** — 📄 Export Custom Academic Reports\n"
         f"• **/wrongquestions** — ❌ Today's Wrong Questions\n"
@@ -1096,7 +1097,6 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 
-# Requirement 2: Added Total Attempted Quizzes metric on student profile card
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -1144,7 +1144,6 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 
-# Requirement 2: Added Total Attempted Quizzes metric on academic performance report
 async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await maintenance_guard(update, context): return
     if not await check_user_registration(update): return
@@ -1415,10 +1414,6 @@ async def cancel_admin_action(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 
 async def track_chat_member_updates(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """
-    Requirement 5: Quietly records blocked bot users without notifying admin
-    and without deleting profile or payment files.
-    """
     result = update.my_chat_member
     if not result:
         return
@@ -1458,7 +1453,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.message.reply_text(f"⚠️ Failed to compile PDF: {pdf_path}")
         return
 
-    # Requirement 1: Interactive "Like the Quiz" router
     if data.startswith("cmd_like_quiz_"):
         raw_aid = data.replace("cmd_like_quiz_", "")
         aid = int(raw_aid) if raw_aid.isdigit() else 0
@@ -1492,7 +1486,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data.startswith("reviews_page_"):
         await query.answer()
         page_no = int(data.replace("reviews_page_", ""))
-        await render_reviews_page(update, context, page=page_no)  # <--- Fixed variable name from page=no to page=page_no
+        await render_reviews_page(update, context, page=page_no)
         return
 
     if data.startswith("userkp_"):
@@ -1663,6 +1657,59 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     anim = msg_obj.animation if msg_obj.animation else None
     caption = msg_obj.caption.strip() if msg_obj.caption else ""
 
+    # Live Custom AI Quiz Topic Receiver & Runner
+    if context.user_data.get("awaiting_custom_ai_topic"):
+        context.user_data["awaiting_custom_ai_topic"] = False
+        topic_text = text or caption or "Important SSC Exam Questions"
+        chosen_subj = context.user_data.get("custom_ai_subject", "GK")
+        q_count = context.user_data.get("custom_ai_count", 10)
+
+        status_msg = await update.message.reply_text(
+            f"🧠 **Synthesizing SSC-standard {chosen_subj} quiz...**\n"
+            f"📌 **Keywords:** `{topic_text}`\n"
+            f"⏳ *Generating {q_count} verified bilingual MCQs on Groq LPU...*",
+            parse_mode="Markdown"
+        )
+
+        questions = await generate_live_exam_quiz(subject=chosen_subj, topic=topic_text, count=q_count)
+
+        try:
+            await context.bot.delete_message(chat_id=update.effective_chat.id, message_id=status_msg.message_id)
+        except Exception:
+            pass
+
+        if not questions:
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔄 Try Again", callback_data="qsubj_custom_ai")]])
+            await update.message.reply_text(
+                "⚠️ **Failed to generate questions for this topic.**\n\nPlease check your keywords and try again.",
+                reply_markup=nav,
+                parse_mode="Markdown"
+            )
+            return
+
+        class QueryAdapter:
+            def __init__(self, message):
+                self.message = message
+            async def edit_message_text(self, *args, **kwargs):
+                return await self.message.reply_text(*args, **kwargs)
+
+        adapter = QueryAdapter(update.message)
+
+        await start_quiz_session(
+            query=adapter,
+            context=context,
+            user_id=user.id,
+            questions=questions,
+            timer_sec=25,
+            quiz_mode="CUSTOM_AI_PRACTICE",
+            mock_number=0,
+            subject=chosen_subj.lower(),
+            topic=topic_text[:20],
+            topic_name=f"Custom AI: {topic_text[:25]}",
+            language="bilingual" if chosen_subj != "English" else "en"
+        )
+        return
+
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_password"):
         context.user_data["awaiting_admin_password"] = False
         stored_pass = get_stored_admin_password()
@@ -1676,7 +1723,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("❌ **Incorrect PIN!** Please try typing it again.", parse_mode="Markdown")
         return
 
-    # Direct Admin AI Query Parser (No feedback buttons)
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_query"):
         context.user_data["awaiting_admin_ai_query"] = False
         raw_query = text or caption
@@ -1863,7 +1909,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(f"❌ **Failed to deliver message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
-    # Student Reply Handler with inquiry context retention
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_reply_qid"):
         qid = context.user_data.pop("awaiting_admin_reply_qid")
         context.user_data.pop("active_reply_query_data", None)
@@ -2132,7 +2177,7 @@ async def post_init(application: Application):
         logging.warning(f"Note on command purge: {e}")
 
     allowed_commands = [
-        BotCommand("quiz", "🚀 Start Quiz (Computer/English/GK)"),
+        BotCommand("quiz", "🚀 Start Quiz (Computer/English/GK/AI Custom)"),
         BotCommand("myplan", "💵 Subscriptions"),
         BotCommand("plans", "💳 VIP Payment Plans"),
         BotCommand("askadmin", "💬 Secret Communication with Admin"),
@@ -2219,7 +2264,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_|qpass_|qinterrupt_|cmd_prompt_submit_quiz|qfinal_submit_)"))
+    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_|qpass_|qinterrupt_|ai_subj_|ai_qcount_|cmd_prompt_submit_quiz|qfinal_submit_)"))
     
     app.add_handler(CallbackQueryHandler(pdf_step_handler, pattern="^(pdfsubj_|pdftype_|pdftime_)"))
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))

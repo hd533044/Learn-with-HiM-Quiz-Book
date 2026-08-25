@@ -127,28 +127,49 @@ def verify_and_correct_question(q: dict, force_lang: str = None) -> dict:
 
     if isinstance(raw_opts, dict):
         sorted_keys = sorted(raw_opts.keys())
-        clean_opts = [str(raw_opts[k]).strip() for k in sorted_keys]
+        clean_opts = [clean_option_prefix(str(raw_opts[k])).strip() for k in sorted_keys]
         if isinstance(raw_correct, str) and raw_correct.upper() in sorted_keys:
             correct_idx = sorted_keys.index(raw_correct.upper())
-        elif isinstance(raw_correct, int) and 0 <= raw_correct < len(clean_opts):
-            correct_idx = raw_correct
-
+        elif str(raw_correct).isdigit():
+            c_num = int(raw_correct)
+            if 1 <= c_num <= len(clean_opts):
+                correct_idx = c_num - 1
+            elif 0 <= c_num < len(clean_opts):
+                correct_idx = c_num
     elif isinstance(raw_opts, list):
-        clean_opts = [str(opt).strip() for opt in raw_opts]
-        if isinstance(raw_correct, int) and 0 <= raw_correct < len(clean_opts):
-            correct_idx = raw_correct
-        elif isinstance(raw_correct, str) and raw_correct.upper() in ("A", "B", "C", "D"):
-            mapping = {"A": 0, "B": 1, "C": 2, "D": 3}
-            correct_idx = mapping.get(raw_correct.upper(), 0)
+        clean_opts = [clean_option_prefix(str(opt)).strip() for opt in raw_opts]
+        
+        # 1. Check if raw_correct is string digit (e.g. "1", "2", "3", "4" or 1, 2, 3, 4)
+        if isinstance(raw_correct, int) or (isinstance(raw_correct, str) and raw_correct.strip().isdigit()):
+            c_num = int(raw_correct)
+            # Detect 1-based indexing (1 to 4) vs 0-based indexing (0 to 3)
+            if "correct_option" in q and isinstance(q.get("correct_option"), int) and 0 <= c_num < len(clean_opts):
+                correct_idx = c_num
+            elif 1 <= c_num <= len(clean_opts) and c_num != 0:
+                correct_idx = c_num - 1
+            elif 0 <= c_num < len(clean_opts):
+                correct_idx = c_num
+                
+        # 2. Check letter options like "A", "B", "C", "D" or "(A)", "Option A"
         elif isinstance(raw_correct, str):
-            clean_ans = clean_option_prefix(raw_correct).lower()
-            for idx, opt in enumerate(clean_opts):
-                if clean_option_prefix(opt).lower() == clean_ans:
-                    correct_idx = idx
-                    break
+            clean_ans_raw = raw_correct.strip().upper()
+            letter_match = re.search(r'\b([A-D])\b', clean_ans_raw)
+            if letter_match and len(clean_ans_raw) <= 10:
+                mapping = {"A": 0, "B": 1, "C": 2, "D": 3}
+                correct_idx = mapping.get(letter_match.group(1), 0)
+            else:
+                # 3. Match answer text against cleaned option strings
+                clean_ans = clean_option_prefix(raw_correct).lower().strip()
+                for idx, opt in enumerate(clean_opts):
+                    if clean_option_prefix(opt).lower().strip() == clean_ans:
+                        correct_idx = idx
+                        break
 
     if len(clean_opts) < 2:
         return None
+
+    # Safety clamp
+    correct_idx = max(0, min(correct_idx, len(clean_opts) - 1))
 
     detected_lang = "hi" if is_hindi_text(str(q_text)) else "en"
     if force_lang:
@@ -231,7 +252,9 @@ def load_english_questions(topic_key: str = "MIXED") -> list:
     elif topic_key == "eng_vocab_ows":
         target_files = scan_dir(os.path.join(base_eng, "vocab", "OWS"))
     elif topic_key == "eng_vocab_phrasal_verbs":
-        target_files = scan_dir(os.path.join(base_eng, "vocab", "PHRASEL VERBS"))
+        target_files = scan_dir(os.path.join(base_eng, "vocab", "PHRASAL VERBS"))
+        if not target_files:
+            target_files = scan_dir(os.path.join(base_eng, "vocab", "PHRASEL VERBS"))
     elif topic_key == "eng_vocab_spellings":
         target_files = scan_dir(os.path.join(base_eng, "vocab", "SPELLINGS"))
     elif topic_key == "eng_vocab_syn_ant":
@@ -513,14 +536,14 @@ def fetch_multi_topic_questions(needed_count: int, topic_keys: list, subject: st
 def fetch_english_full_mock_25(language: str = "en", user_id: int = None) -> list:
     """
     Exact Composition for English Full Mock (25 Questions):
-    - 1 Passage (Either RC or Cloze Test): Exactly 5 Questions from the SAME passage[cite: 5]
-    - 3 Para Jumbles[cite: 5]
-    - 3 Idioms & Phrases[cite: 5]
-    - 4 Synonyms & Antonyms[cite: 5]
-    - 2 Homonyms[cite: 5]
-    - 2 Phrasal Verbs[cite: 5]
-    - 6 Grammar Questions[cite: 5]
-    Total = 5 + 3 + 3 + 4 + 2 + 2 + 6 = 25 Questions[cite: 5]
+    - 1 Passage (Either RC or Cloze Test): Exactly 5 Questions from the SAME passage
+    - 3 Para Jumbles
+    - 3 Idioms & Phrases
+    - 4 Synonyms & Antonyms
+    - 2 Homonyms
+    - 2 Phrasal Verbs
+    - 6 Grammar Questions
+    Total = 5 + 3 + 3 + 4 + 2 + 2 + 6 = 25 Questions
     """
     mock_qs = []
     seen_ids = get_user_seen_identifiers(user_id)

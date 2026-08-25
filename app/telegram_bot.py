@@ -1463,14 +1463,14 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     # Requirement 1: Interactive "Like the Quiz" router
-# Always-Active "Like the Quiz" router
+# Always-Active "Like the Quiz" Handler
     if data.startswith("cmd_like_quiz_"):
         raw_aid = data.replace("cmd_like_quiz_", "")
         aid = int(raw_aid) if raw_aid.isdigit() else 0
         success, total_likes = await asyncio.to_thread(record_quiz_like, user.id, aid)
         
         if success:
-            await query.answer(f"❤️ Thanks for your support! Total Platform Likes: {total_likes}", show_alert=True)
+            await query.answer(f"❤️ Liked! Total Platform Likes: {total_likes}", show_alert=True)
             try:
                 current_markup = query.message.reply_markup
                 if current_markup and current_markup.inline_keyboard:
@@ -1478,7 +1478,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     for row in current_markup.inline_keyboard:
                         new_row = []
                         for btn in row:
-                            if btn.callback_data == data:
+                            if btn.callback_data == data or btn.callback_data.startswith("cmd_liked_done_"):
                                 new_row.append(InlineKeyboardButton(f"❤️ Liked ({total_likes})", callback_data=data))
                             else:
                                 new_row.append(btn)

@@ -404,6 +404,7 @@ def init_db():
         );
     ''')
     cursor.execute("ALTER TABLE platform_likes ADD COLUMN IF NOT EXISTS quiz_attempt_id BIGINT;")
+    cursor.execute("ALTER TABLE platform_likes DROP CONSTRAINT IF EXISTS platform_likes_user_id_key;")
     cursor.execute("ALTER TABLE platform_likes DROP CONSTRAINT IF EXISTS platform_likes_user_id_quiz_attempt_id_key;")
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS student_queries (
@@ -507,8 +508,7 @@ def init_db():
 
 def record_quiz_like(user_id: int, quiz_attempt_id: int = 0) -> tuple[bool, int]:
     """
-    Uncapped like recorder: Always records a new like every time a user taps 'Like the Quiz'
-    after completing any quiz, incrementing the platform-wide total likes.
+    Inserts a new like on every quiz completion without capping or blocking.
     """
     conn = get_db()
     cursor = conn.cursor()

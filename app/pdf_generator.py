@@ -15,6 +15,10 @@ from app.stats import calculate_user_rank, calculate_user_percentile
 
 logger = logging.getLogger(__name__)
 
+# Suppress font rendering warnings in Render logs
+logging.getLogger("weasyprint").setLevel(logging.ERROR)
+logging.getLogger("fontTools").setLevel(logging.ERROR)
+
 # Attempt WeasyPrint Import for Native Unicode Shaping & Perfect Hindi Rendering
 HAS_WEASYPRINT = False
 try:
@@ -400,7 +404,7 @@ def generate_html_report(user_profile: dict, attempts: list, saved_qs: list, ran
                         
                         q_txt = clean_str(raw_q_text) if raw_q_text else f"Question #{q.get('question_id', 'N/A')}"
                         if expl_text:
-                            q_txt += f"<br/><small style='color: #475569;'><b>💡 Exp:</b> {clean_str(expl_text)}</small>"
+                            q_txt += f"<br/><small style='color: #475569;'><b>Exp:</b> {clean_str(expl_text)}</small>"
                             
                         opts_rendered = ""
                         if options_list:

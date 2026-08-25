@@ -404,6 +404,7 @@ def init_db():
             UNIQUE(user_id, quiz_attempt_id)
         )
     ''')
+    cursor.execute("ALTER TABLE platform_likes ADD COLUMN IF NOT EXISTS quiz_attempt_id BIGINT;")
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS student_queries (

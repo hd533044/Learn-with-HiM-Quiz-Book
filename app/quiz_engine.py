@@ -11,7 +11,7 @@ from app.database import (
     get_ist_timestamp_str, get_user_profile, get_maintenance_until,
     save_paused_quiz_state, get_paused_quiz_state, clear_paused_quiz_state,
     save_question_to_db, log_user_activity_time, get_next_mock_number,
-    record_quiz_like, get_total_platform_likes
+    record_quiz_like, get_total_platform_likes, get_total_quizzes_attempted_count
 )
 from app.pyq_fetcher import (
     fetch_pyqs_for_quiz, get_available_topics, COMPUTER_TOPIC_METADATA, GK_TOPIC_METADATA,
@@ -1013,9 +1013,12 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     current_acc = round((correct / total) * 100.0, 2) if total > 0 else 0.0
     rank = await asyncio.to_thread(calculate_user_rank, user_id)
     percentile = await asyncio.to_thread(calculate_user_percentile, user_id)
-    trend_info = await asyncio.to_thread(get_quiz_performance_trend, user_id, current_acc)
     perf_summary = await asyncio.to_thread(get_user_performance_summary, user_id)
     total_quizzes_done = perf_summary.get("total_tests", 1)
+    
+    # Marketing metric: Total quizzes conducted on the platform
+    platform_total_quizzes = await asyncio.to_thread(get_total_quizzes_attempted_count)
+    platform_total_likes = await asyncio.to_thread(get_total_platform_likes)
 
     lang_label = "🌐 English" if lang == "en" else "🇮🇳 हिंदी"
 
@@ -1026,14 +1029,17 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"📖 **Title:** `{title}`\n"
         f"🌐 **Language:** `{lang_label}`\n\n"
         f"📊 **PERFORMANCE SUMMARY:**\n"
-        f"• **Total Attempted Quizzes:** `{total_quizzes_done}` Quizzes\n"
+        f"• **Your Total Quizzes:** `{total_quizzes_done}` Quizzes\n"
         f"• **Questions Attempted:** `{total}` Qs\n"
         f"• **Correct:** `{correct}` ✅ | **Wrong:** `{wrong}` ❌ | **Skipped:** `{skipped}` ⏭\n"
         f"• **Accuracy:** `{current_acc}%` ⭐\n\n"
         f"🎖️ **GLOBAL STANDING:**\n"
-        f"• **Global Rank:** `{rank}` 🥇 | **Percentile:** `{percentile}%` 📊\n"
+        f"• **Global Rank:** `{rank}` 🥇 | **Percentile:** `{percentile}%` 📊\n\n"
+        f"🔥 **COMMUNITY TRUST:**\n"
+        f"• 📚 **All-Time Quizzes Attempted:** `{platform_total_quizzes}` Quizzes Conducted\n"
+        f"• ❤️ **Platform Likes:** `{platform_total_likes}`\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"💖 *Tap **'❤️ Like the Quiz'** below to show your support!*"
+        f"💖 *Tap **'❤️ Like the Quiz'** below to support the platform!*"
     )
 
     end_quiz_buttons = [

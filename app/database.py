@@ -405,7 +405,6 @@ def init_db():
     ''')
     cursor.execute("ALTER TABLE platform_likes ADD COLUMN IF NOT EXISTS quiz_attempt_id BIGINT;")
     cursor.execute("ALTER TABLE platform_likes DROP CONSTRAINT IF EXISTS platform_likes_user_id_quiz_attempt_id_key;")
-
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS student_queries (
             id SERIAL PRIMARY KEY,
@@ -508,8 +507,8 @@ def init_db():
 
 def record_quiz_like(user_id: int, quiz_attempt_id: int = 0) -> tuple[bool, int]:
     """
-    Records a like for every completed quiz attempt.
-    Always increments the platform like counter on every click.
+    Uncapped like recorder: Always records a new like every time a user taps 'Like the Quiz'
+    after completing any quiz, incrementing the platform-wide total likes.
     """
     conn = get_db()
     cursor = conn.cursor()
@@ -535,11 +534,27 @@ def record_quiz_like(user_id: int, quiz_attempt_id: int = 0) -> tuple[bool, int]
         cursor.close()
         release_db(conn)
 
-def get_total_platform_likes() -> int:
+def get_total_quizzes_attempted_count() -> int:
+    """Returns the total number of quizzes/mocks attempted on the platform across all users."""
     conn = get_db()
     cursor = conn.cursor()
     try:
-        cursor.execute("SELECT COUNT(*) FROM platform_likes")
+        cursor.execute("SELECT COUNT(*) FROM quiz_attempts;")
+        res = cursor.fetchone()
+        return res[0] if res else 0
+    except Exception as e:
+        logger.error(f"[GET TOTAL QUIZZES ATTEMPTED ERROR] {e}")
+        return 0
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_total_platform_likes() -> int:
+    """Returns the total platform likes count."""
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT COUNT(*) FROM platform_likes;")
         res = cursor.fetchone()
         return res[0] if res else 0
     except Exception as e:
@@ -550,15 +565,30 @@ def get_total_platform_likes() -> int:
         release_db(conn)
 
 def get_total_registered_users_count() -> int:
-    """Returns count of active registered students, excluding banned and blocked users."""
+    """Returns total count of registered students (excluding banned/blocked)."""
     conn = get_db()
     cursor = conn.cursor()
     try:
-        cursor.execute("SELECT COUNT(*) FROM users WHERE is_banned = 0 AND is_verified = 1")
+        cursor.execute("SELECT COUNT(*) FROM users WHERE is_banned = 0 AND is_verified = 1;")
         res = cursor.fetchone()
         return res[0] if res else 0
     except Exception as e:
         logger.error(f"[GET TOTAL REGISTERED USERS ERROR] {e}")
+        return 0
+    finally:
+        cursor.close()
+        release_db(conn)
+
+def get_total_quizzes_attempted_count() -> int:
+    """Returns total quizzes/mocks completed across all users on the platform."""
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT COUNT(*) FROM quiz_attempts;")
+        res = cursor.fetchone()
+        return res[0] if res else 0
+    except Exception as e:
+        logger.error(f"[GET TOTAL QUIZZES ATTEMPTED ERROR] {e}")
         return 0
     finally:
         cursor.close()

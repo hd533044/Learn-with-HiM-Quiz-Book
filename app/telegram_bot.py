@@ -33,7 +33,7 @@ from app.database import (
     get_seen_question_ids, admin_update_user_name, get_ist_date_str,
     schedule_announcement, update_announcement_content, update_announcement_time,
     get_broadcast_deliveries, record_broadcast_delivery, create_instant_broadcast_record,
-    get_active_flash_sale, calculate_discounted_price
+    get_active_flash_sale, calculate_discounted_price, get_total_quizzes_attempted_count
 )
 from app.onboarding import get_onboarding_handler, start_onboarding
 
@@ -479,14 +479,18 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     total_users = await asyncio.to_thread(get_total_registered_users_count)
     total_likes = await asyncio.to_thread(get_total_platform_likes)
+    total_quizzes = await asyncio.to_thread(get_total_quizzes_attempted_count)
 
     msg = (
         "👋 **Welcome to Quiz with HiM!** ❤️\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
         "🎯 **Created by Himanshu Sir** (AIR #65 | 96.7/100 Marks in BSF HCM, Cleared SSC CGL 3x, CHSL 3x, CPO 3x, DP HCM).\n\n"
         "💡 Designed for fast, exam-relevant daily practice and instant performance tracking.\n\n"
-        f"🌟 **Community:** `{total_users}` Scholars • ❤️ `{total_likes}` Platform Likes\n\n"
-        "📲 **Links:**\n"
+        f"🌟 **PLATFORM STATISTICS:**\n"
+        f"• 📚 **All-Time Quizzes Attempted:** `{total_quizzes}`\n"
+        f"• 👥 **Registered Scholars:** `{total_users}`\n"
+        f"• ❤️ **Community Likes:** `{total_likes}`\n\n"
+        "📲 **Official Links:**\n"
         "• Telegram: https://t.me/learnwithhim\n"
         "• YouTube: https://youtube.com/@learnwithhim\n"
         "• Instagram: https://instagram.com/learnwithhimm\n"
@@ -1459,14 +1463,14 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     # Requirement 1: Interactive "Like the Quiz" router
-# Interactive "Like the Quiz" router
+# Always-Active "Like the Quiz" router
     if data.startswith("cmd_like_quiz_"):
         raw_aid = data.replace("cmd_like_quiz_", "")
         aid = int(raw_aid) if raw_aid.isdigit() else 0
-        is_new, total_likes = await asyncio.to_thread(record_quiz_like, user.id, aid)
+        success, total_likes = await asyncio.to_thread(record_quiz_like, user.id, aid)
         
-        if is_new:
-            await query.answer(f"❤️ Liked! Added your support (+1 Like). Total: {total_likes}", show_alert=True)
+        if success:
+            await query.answer(f"❤️ Thanks for your support! Total Platform Likes: {total_likes}", show_alert=True)
             try:
                 current_markup = query.message.reply_markup
                 if current_markup and current_markup.inline_keyboard:
@@ -1475,7 +1479,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         new_row = []
                         for btn in row:
                             if btn.callback_data == data:
-                                new_row.append(InlineKeyboardButton("❤️ Liked the Quiz", callback_data=f"cmd_liked_done_{aid}"))
+                                new_row.append(InlineKeyboardButton(f"❤️ Liked ({total_likes})", callback_data=data))
                             else:
                                 new_row.append(btn)
                         new_keyboard.append(new_row)
@@ -1483,7 +1487,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             except Exception:
                 pass
         else:
-            await query.answer(f"❤️ Total Platform Likes: {total_likes}", show_alert=True)
+            await query.answer("❤️ Thanks for liking!", show_alert=True)
         return
 
     if data.startswith("cmd_liked_done_"):

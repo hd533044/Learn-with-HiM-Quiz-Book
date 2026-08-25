@@ -18,7 +18,8 @@ from app.config import WELCOME_CARD_TEXT, PRIMARY_ADMIN_ID
 from app.database import (
     save_user_profile, get_user_profile, can_user_edit_profile, 
     get_maintenance_until, generate_student_id, update_user_pin,
-    get_total_registered_users_count, get_total_platform_likes
+    get_total_registered_users_count, get_total_platform_likes,
+    get_total_quizzes_attempted_count
 )
 
 warnings.filterwarnings("ignore", category=PTBUserWarning)
@@ -123,6 +124,19 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     context.user_data["awaiting_other_exam"] = False
 
+    # Fetch real-time community trust metrics
+    total_students = get_total_registered_users_count()
+    total_quizzes = get_total_quizzes_attempted_count()
+    total_likes = get_total_platform_likes()
+
+    community_banner = (
+        f"🌟 **COMMUNITY IMPACT & STATS** 🌟\n"
+        f"• 📚 **Quizzes Completed:** `{total_quizzes}`\n"
+        f"• 👥 **Registered Students:** `{total_students}`\n"
+        f"• ❤️ **Platform Likes:** `{total_likes}`\n"
+        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    )
+
     profile = get_user_profile(user.id)
     if profile and profile.get("is_verified") and not context.user_data.get("is_editing_profile"):
         student_id = profile.get("student_id", "N/A")
@@ -131,6 +145,7 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.effective_message.reply_text(
             f"⚡ **Welcome back, {profile['full_name']}!** 👋\n"
             f"🪪 **Student ID:** `{student_id}` | 🎯 **Target:** `{profile['target_exam']}`\n\n"
+            f"{community_banner}\n\n"
             f"{how_to_use}\n\n"
             f"🚀 **Select an option to begin:**",
             reply_markup=InlineKeyboardMarkup([
@@ -142,8 +157,10 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return ConversationHandler.END
 
+    # Welcome Card for new student registration
     await update.effective_message.reply_text(
         f"{WELCOME_CARD_TEXT}\n\n"
+        f"{community_banner}\n\n"
         f"📝 **STUDENT REGISTRATION (STEP 1/7)**\n\n"
         f"👤 Please reply with your **Full Name** (at least 4 letters) to generate your Official Student ID:",
         parse_mode="Markdown"

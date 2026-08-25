@@ -30,6 +30,7 @@ from app.database import (
     get_active_flash_sale, calculate_discounted_price, get_user_by_phone, infer_plan_key_from_amount,
     auto_sync_uncredited_paid_users
 )
+from app.pdf_generator import generate_payment_invoice_pdf
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -200,9 +201,26 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             parse_mode="Markdown",
             disable_notification=False
         )
-        logging.info(f"[INVOICE/BROADCAST DELIVERED] Successfully sent to user {user_id}")
+
+        # Generate & Send Official PDF Invoice Slip
+        invoice_pdf_path = await asyncio.to_thread(generate_payment_invoice_pdf, user_id, plan_key, payment_id, final_amount)
+        if invoice_pdf_path and os.path.exists(invoice_pdf_path):
+            with open(invoice_pdf_path, "rb") as doc:
+                await bot_app_instance.bot.send_document(
+                    chat_id=user_id,
+                    document=doc,
+                    filename=os.path.basename(invoice_pdf_path),
+                    caption=f"🧾 **Official Payment Invoice Slip**\n• Plan: {plan_name}\n• Ref ID: `{payment_id}`",
+                    parse_mode="Markdown"
+                )
+            try:
+                os.remove(invoice_pdf_path)
+            except Exception:
+                pass
+
+        logging.info(f"[INVOICE/BROADCAST DELIVERED] Successfully sent text and PDF slip to user {user_id}")
     except Exception as err:
-        logging.error(f"[DELIVERY ERROR] Failed to push notification to user {user_id}: {err}")
+        logging.error(f"[DELIVERY ERROR] Failed to push notification/slip to user {user_id}: {err}")
 
     if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
         admin_motivation_alert = (

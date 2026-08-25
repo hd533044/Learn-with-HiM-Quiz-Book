@@ -684,3 +684,151 @@ def generate_admin_query_dataset_pdf(title: str, columns: list, rows: list, kpis
             logger.error(f"[ADMIN QUERY PDF ERROR] {e}")
 
     return ""
+
+
+def generate_payment_invoice_pdf(user_id: int, plan_key: str, payment_id: str, amount_paid: float = None) -> str:
+    """
+    Generates a professional, branded PDF payment invoice/receipt for a student.
+    """
+    try:
+        u = get_user_profile(user_id)
+        if not u:
+            return ""
+
+        from app.config import PLAN_TIERS
+        plan_info = PLAN_TIERS.get(plan_key, {"name": plan_key, "price": amount_paid or 0, "days": 30, "daily_limit": 20})
+        plan_name = plan_info.get("name", plan_key)
+
+        ist = pytz.timezone("Asia/Kolkata")
+        now_dt = datetime.now(ist)
+        payment_date_str = u.get("payment_timestamp") or now_dt.strftime("%d %b %Y, %I:%M %p IST")
+        expiry_date_str = u.get("vip_pass_expiry") or "N/A"
+
+        student_name = clean_str(u.get("full_name", "Student"))
+        student_id = clean_str(u.get("student_id") or f"USER_{user_id}")
+        phone_masked = mask_phone(u.get("phone_number", ""))
+        target_exam = clean_str(u.get("target_exam", "N/A"))
+
+        base_price = plan_info.get("price", 0)
+        final_amount = amount_paid if amount_paid is not None else base_price
+        discount_saved = max(0.0, float(base_price) - float(final_amount))
+
+        filename = f"Invoice_{student_id}_{payment_id}_{int(now_dt.timestamp())}.pdf"
+        pdf_path = os.path.join(USER_PROFILES_DIR, filename)
+
+        logo_left_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logo.png"))
+        logo_right_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logohim.png"))
+        target_link = "https://t.me/learnwithhim"
+
+        left_logo_html = f'<a href="{target_link}"><img src="file://{logo_left_path}" style="width: 55px; height: 55px; object-fit: contain;" /></a>' if os.path.exists(logo_left_path) else f'<a href="{target_link}"><b>Logo</b></a>'
+        right_logo_html = f'<a href="{target_link}"><img src="file://{logo_right_path}" style="width: 55px; height: 55px; object-fit: contain;" /></a>' if os.path.exists(logo_right_path) else f'<a href="{target_link}"><b>@LearnwithHiM</b></a>'
+
+        html_content = f"""
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset='utf-8'/>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+        @page {{ size: letter; margin: 18mm 14mm 18mm 14mm; @bottom-right {{ content: 'Invoice Copy'; font-size: 8.5px; font-family: 'Times New Roman', serif; color: #64748B; }} }}
+        body {{ font-family: 'Noto Sans Devanagari', 'Times New Roman', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #334155; font-size: 11px; line-height: 1.45; }}
+        .header-table {{ width: 100%; border-collapse: collapse; margin-bottom: 12px; }}
+        .header-title {{ text-align: center; color: #1E3A8A; font-size: 20px; font-weight: bold; font-family: 'Times New Roman', serif; }}
+        .sub-title {{ color: #16A34A; font-size: 11px; text-align: center; font-weight: bold; margin-top: 2px; font-family: 'Times New Roman', serif; }}
+        .data-table {{ width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 15px; font-size: 11px; }}
+        .data-table th, .data-table td {{ border: 0.5px solid #CBD5E1; padding: 7px 10px; text-align: left; vertical-align: middle; }}
+        .data-table th {{ background-color: #E0F2FE; color: #0F172A; font-weight: bold; font-family: 'Times New Roman', serif; }}
+        .label {{ font-weight: bold; color: #0F172A; width: 25%; background-color: #F8FAFC; }}
+        .watermark-container {{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1000; overflow: hidden; pointer-events: none; }}
+        .wm-text {{ position: absolute; font-family: 'Times New Roman', serif; font-weight: bold; font-size: 24px; color: #94A3B8; opacity: 0.12; transform: rotate(30deg); white-space: nowrap; }}
+        .status-badge {{ display: inline-block; background-color: #DCFCE7; color: #15803D; font-weight: bold; padding: 3px 8px; border-radius: 4px; border: 0.5px solid #86EFAC; }}
+        .pdf-footer {{ position: fixed; bottom: -12mm; left: 0; width: 100%; text-align: center; border-top: 0.5px solid #CBD5E1; padding-top: 5px; font-size: 8pt; font-family: 'Times New Roman', serif; color: #64748B; }}
+        </style>
+        </head>
+        <body>
+        <div class='watermark-container'>
+            <div class='wm-text' style='top: 15%; left: 15%;'>Learn with HiM</div>
+            <div class='wm-text' style='top: 20%; left: 65%;'>Official Tax Invoice</div>
+            <div class='wm-text' style='top: 50%; left: 20%;'>Quiz with HiM</div>
+            <div class='wm-text' style='top: 55%; left: 60%;'>Payment Confirmed</div>
+            <div class='wm-text' style='top: 85%; left: 15%;'>Learn with HiM</div>
+            <div class='wm-text' style='top: 88%; left: 65%;'>Quiz with HiM</div>
+        </div>
+
+        <table class='header-table'>
+            <tr>
+                <td style='width: 15%; text-align: left;'>{left_logo_html}</td>
+                <td class='header-title'>Quiz with HiM by Himanshu Sir<div class='sub-title'>Official Payment Receipt & Subscription Tax Invoice</div></td>
+                <td style='width: 15%; text-align: right;'>{right_logo_html}</td>
+            </tr>
+        </table>
+
+        <div style='margin-bottom: 12px; display: flex; justify-content: space-between;'>
+            <div><b>Receipt Ref:</b> {clean_str(payment_id)}</div>
+            <div style='float: right;'><b>Status:</b> <span class='status-badge'>PAID / ACTIVE</span></div>
+        </div>
+
+        <h3 style='font-size: 12px; color: #0F172A; text-transform: uppercase; margin: 10px 0 5px 0; font-family: \"Times New Roman\", serif;'>👤 STUDENT DETAILS</h3>
+        <table class='data-table'>
+            <tr><td class='label'>Student Name:</td><td><b>{student_name}</b></td><td class='label'>Student ID:</td><td><b>{student_id}</b></td></tr>
+            <tr><td class='label'>Target Exam:</td><td>{target_exam}</td><td class='label'>Registered Phone:</td><td>{phone_masked}</td></tr>
+        </table>
+
+        <h3 style='font-size: 12px; color: #0F172A; text-transform: uppercase; margin: 15px 0 5px 0; font-family: \"Times New Roman\", serif;'>📦 SUBSCRIPTION BREAKDOWN</h3>
+        <table class='data-table'>
+            <thead>
+                <tr>
+                    <th>Item Description</th>
+                    <th style='text-align: center;'>Validity</th>
+                    <th style='text-align: center;'>Daily Quota</th>
+                    <th style='text-align: right;'>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>{clean_str(plan_name)}</b><br/><small style='color: #64748B;'>Access to Exam-Relevant Mocks, Practice Tests & Solutions</small></td>
+                    <td style='text-align: center;'>{plan_info.get('days')} Days</td>
+                    <td style='text-align: center;'>+{plan_info.get('daily_limit')} Qs/Day</td>
+                    <td style='text-align: right;'>₹{base_price}</td>
+                </tr>
+                <tr>
+                    <td colspan='3' style='text-align: right; font-weight: bold;'>Discount Applied:</td>
+                    <td style='text-align: right; color: #16A34A;'>- ₹{discount_saved:.2f}</td>
+                </tr>
+                <tr style='background-color: #F8FAFC;'>
+                    <td colspan='3' style='text-align: right; font-weight: bold; font-size: 12px;'>Final Paid Amount:</td>
+                    <td style='text-align: right; font-weight: bold; font-size: 12px; color: #0284C7;'>₹{final_amount} INR</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style='font-size: 12px; color: #0F172A; text-transform: uppercase; margin: 15px 0 5px 0; font-family: \"Times New Roman\", serif;'>🧾 TRANSACTION DETAILS</h3>
+        <table class='data-table'>
+            <tr><td class='label'>Payment / Txn ID:</td><td><code>{clean_str(payment_id)}</code></td></tr>
+            <tr><td class='label'>Transaction Date:</td><td>{payment_date_str}</td></tr>
+            <tr><td class='label'>Pass Expiry Date:</td><td><b>{expiry_date_str}</b></td></tr>
+            <tr><td class='label'>Active Daily Balance:</td><td><b>{u.get('paid_question_balance', plan_info.get('daily_limit'))} Questions / Day</b></td></tr>
+        </table>
+
+        <div style='margin-top: 20px; text-align: center; font-size: 10px; color: #64748B; font-style: italic;'>
+            Thank you for showing faith in Quiz with HiM. This is a computer-generated receipt valid without physical signature.
+        </div>
+
+        <div class='pdf-footer'>
+            Learn with HiM Platform • Telegram: @learnwithhim • YouTube: @LearnwithHiM
+        </div>
+        </body>
+        </html>
+        """
+
+        if HAS_WEASYPRINT:
+            try:
+                weasyprint.HTML(string=html_content).write_pdf(pdf_path)
+                if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 400:
+                    return pdf_path
+            except Exception as err:
+                logger.error(f"[INVOICE PDF ERROR] {err}")
+        return ""
+    except Exception as e:
+        logger.error(f"[INVOICE GENERATION EXCEPTION] {e}")
+        return ""

@@ -400,11 +400,11 @@ def init_db():
             id SERIAL PRIMARY KEY,
             user_id BIGINT NOT NULL,
             quiz_attempt_id BIGINT,
-            liked_at TEXT,
-            UNIQUE(user_id, quiz_attempt_id)
-        )
+            liked_at TEXT
+        );
     ''')
     cursor.execute("ALTER TABLE platform_likes ADD COLUMN IF NOT EXISTS quiz_attempt_id BIGINT;")
+    cursor.execute("ALTER TABLE platform_likes DROP CONSTRAINT IF EXISTS platform_likes_user_id_quiz_attempt_id_key;")
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS student_queries (
@@ -508,8 +508,8 @@ def init_db():
 
 def record_quiz_like(user_id: int, quiz_attempt_id: int = 0) -> tuple[bool, int]:
     """
-    Records 1 like per unique quiz attempt for a user.
-    Returns (is_newly_liked, total_likes_count).
+    Records a like for every completed quiz attempt.
+    Always increments the platform like counter on every click.
     """
     conn = get_db()
     cursor = conn.cursor()
@@ -518,20 +518,15 @@ def record_quiz_like(user_id: int, quiz_attempt_id: int = 0) -> tuple[bool, int]
         cursor.execute(
             """
             INSERT INTO platform_likes (user_id, quiz_attempt_id, liked_at)
-            VALUES (%s, %s, %s)
-            ON CONFLICT (user_id, quiz_attempt_id) DO NOTHING
-            RETURNING id;
+            VALUES (%s, %s, %s);
             """,
             (user_id, quiz_attempt_id, now_str)
         )
-        row = cursor.fetchone()
         conn.commit()
-        
-        is_newly_liked = (row is not None)
 
-        cursor.execute("SELECT COUNT(*) FROM platform_likes")
+        cursor.execute("SELECT COUNT(*) FROM platform_likes;")
         total_likes = cursor.fetchone()[0]
-        return is_newly_liked, total_likes
+        return True, total_likes
     except Exception as e:
         conn.rollback()
         logger.error(f"[RECORD QUIZ LIKE ERROR] {e}")

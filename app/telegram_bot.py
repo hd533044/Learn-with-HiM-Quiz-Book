@@ -1459,10 +1459,12 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     # Requirement 1: Interactive "Like the Quiz" router
+# Interactive "Like the Quiz" router
     if data.startswith("cmd_like_quiz_"):
         raw_aid = data.replace("cmd_like_quiz_", "")
         aid = int(raw_aid) if raw_aid.isdigit() else 0
         is_new, total_likes = await asyncio.to_thread(record_quiz_like, user.id, aid)
+        
         if is_new:
             await query.answer(f"❤️ Liked! Added your support (+1 Like). Total: {total_likes}", show_alert=True)
             try:
@@ -1481,7 +1483,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             except Exception:
                 pass
         else:
-            await query.answer("❤️ You already liked this quiz attempt!", show_alert=True)
+            await query.answer(f"❤️ Total Platform Likes: {total_likes}", show_alert=True)
         return
 
     if data.startswith("cmd_liked_done_"):

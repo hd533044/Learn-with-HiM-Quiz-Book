@@ -50,12 +50,12 @@ INDIAN_STATES_AND_UTS = [
 def get_how_to_use_card_text() -> str:
     return (
         "📖 **HOW TO USE QUIZ WITH HIM — QUICK START GUIDE**\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "• • • ✧ • • •\n"
         "1. 🚀 **Tap /quiz** — Select Normal Mode, Full Mock, or Sectional Mode.\n"
         "2. ⏱ **Choose Subject & Timer** — English, Computer, or General Knowledge (GK).\n"
         "3. 🎯 **Attempt Instant Questions** — Right/Wrong results show instantly in Practice Mode.\n"
         "4. 📥 **Download PDF Review** — Get full answer keys and solutions after each quiz.\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        "• • • ✧ • • •"
     )
 
 def build_state_keyboard():
@@ -134,7 +134,7 @@ async def start_onboarding(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"• 📚 **Quizzes Completed:** `{total_quizzes}`\n"
         f"• 👥 **Registered Students:** `{total_students}`\n"
         f"• ❤️ **Platform Likes:** `{total_likes}`\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"• • • ✧ • • •"
     )
 
     profile = get_user_profile(user.id)

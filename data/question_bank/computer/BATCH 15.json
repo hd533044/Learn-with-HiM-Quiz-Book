@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1401,
+    "question": "Which of the following describes the function of the Memory Address Register (MAR) in a CPU?",
+    "options": [
+      "Stores the actual data being transferred to and from memory",
+      "Holds the memory address location from which data will be fetched or where data will be stored",
+      "Performs arithmetic logic addition and division",
+      "Contains the next program instruction awaiting decoding"
+    ],
+    "correct_option": 1,
+    "explanation": "MAR (Memory Address Register) holds the memory address of the data or instruction that needs to be accessed by the CPU[cite: 1]."
+  },
+  {
+    "id": 1402,
+    "question": "In the context of the CPU data processing cycle, what is the role of the Memory Buffer Register (MBR) / Memory Data Register (MDR)?",
+    "options": [
+      "Acts as a permanent database engine",
+      "Contains the data to be written into or read from the addressed memory location",
+      "Translates high-level source code into binary format",
+      "Controls the physical rotation speed of secondary storage drives"
+    ],
+    "correct_option": 1,
+    "explanation": "The Memory Buffer Register (MBR) or Memory Data Register (MDR) holds the contents of memory read from or to be written to memory[cite: 5]."
+  },
+  {
+    "id": 1403,
+    "question": "What type of primary memory uses Content Addressable Memory (CAM) principles to search data by content rather than by address?",
+    "options": [
+      "Associative Memory",
+      "Dynamic RAM",
+      "Virtual Memory",
+      "Magnetic Tape"
+    ],
+    "correct_option": 0,
+    "explanation": "In Information Technology, Associative Memory is also known as Content Addressable Memory (CAM) because items are accessed based on their data contents rather than addresses[cite: 1]."
+  },
+  {
+    "id": 1404,
+    "question": "Which of the following represents a major operational disadvantage of Dynamic RAM (DRAM)?",
+    "options": [
+      "It cannot store numeric data",
+      "It requires periodic refreshing thousands of times per second because capacitors lose their charge",
+      "It is an optical medium that is impossible to rewrite",
+      "It is slower than magnetic tape drives"
+    ],
+    "correct_option": 1,
+    "explanation": "DRAM uses capacitors that leak charge and thus requires continuous, periodic electrical refresh cycles[cite: 1, 5]."
+  },
+  {
+    "id": 1405,
+    "question": "What is the typical time limit before a dynamic RAM (DRAM) memory cell must undergo a refresh cycle?",
+    "options": [
+      "2 to 4 milliseconds (ms)",
+      "50 to 100 seconds",
+      "10 minutes",
+      "5 nanoseconds"
+    ],
+    "correct_option": 0,
+    "explanation": "DRAM cells must typically be refreshed every few milliseconds (commonly within 2 ms to 4 ms) to retain stored binary bits[cite: 5]."
+  },
+  {
+    "id": 1406,
+    "question": "What type of ROM is pre-programmed with permanent data during the fabrication process at the factory and cannot be altered afterward?",
+    "options": [
+      "EPROM",
+      "EEPROM",
+      "Mask ROM (MROM)",
+      "Flash ROM"
+    ],
+    "correct_option": 2,
+    "explanation": "Mask ROM (MROM) chips are hardwired with fixed data during manufacturing and cannot be reprogrammed or modified[cite: 5]."
+  },
+  {
+    "id": 1407,
+    "question": "Which software protocol or hardware routine is executed immediately to prepare the computer for operation when the power switch is turned on?",
+    "options": [
+      "Defragmenter",
+      "Bootstrap Loader",
+      "Spooling Process",
+      "Disk Compression"
+    ],
+    "correct_option": 1,
+    "explanation": "The Bootstrap Loader is an initial program stored in ROM that loads the operating system into main memory during system startup[cite: 5]."
+  },
+  {
+    "id": 1408,
+    "question": "In a CPU, what is the collection of interconnected flip-flops acting as a single storage unit called?",
+    "options": [
+      "Register",
+      "Capacitor Bank",
+      "Inductor",
+      "Transistor Array"
+    ],
+    "correct_option": 0,
+    "explanation": "A Register is an internal high-speed CPU memory circuit made up of a group of flip-flops capable of storing multi-bit binary words[cite: 5]."
+  },
+  {
+    "id": 1409,
+    "question": "Which of the following is considered a Sequential Access storage medium?",
+    "options": [
+      "Hard Disk",
+      "Magnetic Tape",
+      "CD-ROM",
+      "Flash Drive"
+    ],
+    "correct_option": 1,
+    "explanation": "Magnetic Tape is a sequential access medium because data must be read or written in linear order from beginning to end[cite: 1, 5]."
+  },
+  {
+    "id": 1410,
+    "question": "What does the abbreviation DASD stand for in IBM and IT storage architecture?",
+    "options": [
+      "Data Access System Domain",
+      "Direct Access Storage Device",
+      "Digital Automated System Drive",
+      "Direct Auxiliary Storage Disk"
+    ],
+    "correct_option": 1,
+    "explanation": "DASD stands for Direct Access Storage Device, referring to secondary storage where each record has a discrete address (like hard disks)[cite: 1]."
+  },
+  {
+    "id": 1411,
+    "question": "Which disk geometry term describes the collection of tracks across all platters located at the exact same radial distance from the spindle?",
+    "options": [
+      "Sector",
+      "Cluster",
+      "Cylinder",
+      "Head"
+    ],
+    "correct_option": 2,
+    "explanation": "A Cylinder is formed by the vertical stack of identical tracks across all magnetic platter surfaces in a multi-platter hard drive[cite: 5]."
+  },
+  {
+    "id": 1412,
+    "question": "What is the smallest addressable physical unit of data storage on a traditional hard disk platter?",
+    "options": [
+      "Sector (512 bytes)",
+      "Cylinder",
+      "Platter",
+      "Actuator"
+    ],
+    "correct_option": 0,
+    "explanation": "A Sector (typically 512 bytes on standard magnetic drives) is the smallest physical division of a track on a disk[cite: 5]."
+  },
+  {
+    "id": 1413,
+    "question": "What is the primary function of the Switched Mode Power Supply (SMPS) inside a desktop computer?",
+    "options": [
+      "Providing uncompressed audio output",
+      "Converting incoming high-voltage AC mains power into regulated, low-voltage DC power for internal components",
+      "Cooling the microprocessor chip",
+      "Storing the boot sector files"
+    ],
+    "correct_option": 1,
+    "explanation": "An SMPS efficiently converts incoming AC power into various low-voltage DC levels (+3.3V, +5V, +12V) required by motherboard components[cite: 1, 5]."
+  },
+  {
+    "id": 1414,
+    "question": "What color is standard on a desktop PC motherboard backplate to designate the 3.5mm analog Microphone Input port?",
+    "options": [
+      "Green",
+      "Pink",
+      "Blue",
+      "Orange"
+    ],
+    "correct_option": 1,
+    "explanation": "Under the PC 99 audio color coding standard, Pink represents the microphone input, Light Green is for line-out/headphones, and Light Blue is for line-in[cite: 5]."
+  },
+  {
+    "id": 1415,
+    "question": "What color is standard on a computer audio port for connecting stereo headphones / front speakers?",
+    "options": [
+      "Green",
+      "Pink",
+      "Black",
+      "Yellow"
+    ],
+    "correct_option": 0,
+    "explanation": "Light Green is the standardized color for analog audio line-out/stereo headphone jacks on personal computers[cite: 5]."
+  },
+  {
+    "id": 1416,
+    "question": "Which internal motherboard bridge controller directly handles communication between the CPU, RAM, and high-speed PCIe graphics cards?",
+    "options": [
+      "Southbridge",
+      "Northbridge",
+      "Super I/O",
+      "CMOS chip"
+    ],
+    "correct_option": 1,
+    "explanation": "The Northbridge (Memory Controller Hub) historically manages high-speed communication between the CPU, system RAM, and primary PCIe graphics buses[cite: 5]."
+  },
+  {
+    "id": 1417,
+    "question": "What is the primary role of the Southbridge chipset component on a computer motherboard?",
+    "options": [
+      "Managing lower-speed peripheral I/O interfaces like USB, SATA, BIOS ROM, and audio",
+      "Executing mathematical floating-point routines",
+      "Supplying high-voltage AC electrical power to fans",
+      "Directing CPU L1 cache transfers"
+    ],
+    "correct_option": 0,
+    "explanation": "The Southbridge (I/O Controller Hub) manages slower expansion buses and peripheral interfaces including USB, audio, SATA, and legacy PCI[cite: 5]."
+  },
+  {
+    "id": 1418,
+    "question": "What input device converts physical hand-drawn strokes into digital vector signals on a digitized drawing tablet?",
+    "options": [
+      "Stylus (Digitizer Pen)",
+      "Trackball",
+      "OMR Reader",
+      "Microphone"
+    ],
+    "correct_option": 0,
+    "explanation": "A Stylus or digitizing pen is used with graphics tablets and touchscreens to input precise digital drawings and gestures[cite: 5]."
+  },
+  {
+    "id": 1419,
+    "question": "What type of optical input technology scans human-made pencil or pen marks on pre-printed survey and examination sheets?",
+    "options": [
+      "OCR (Optical Character Recognition)",
+      "OMR (Optical Mark Recognition)",
+      "MICR",
+      "Barcode Reader"
+    ],
+    "correct_option": 1,
+    "explanation": "OMR (Optical Mark Recognition) detects marked shaded regions on questionnaires and objective examination answer sheets[cite: 5]."
+  },
+  {
+    "id": 1420,
+    "question": "In a 9-digit bank MICR code found on cheque leaves, what do the first 3 digits represent?",
+    "options": [
+      "Branch Code",
+      "Bank Code",
+      "City Code",
+      "Account Type"
+    ],
+    "correct_option": 2,
+    "explanation": "The 9-digit MICR code structure consists of: First 3 digits = City Code, Middle 3 digits = Bank Code, Last 3 digits = Branch Code[cite: 5]."
+  },
+  {
+    "id": 1421,
+    "question": "In a 9-digit bank MICR code, what do the middle 3 digits specify?",
+    "options": [
+      "Bank Code",
+      "City Code",
+      "Branch Code",
+      "Cheque Serial Number"
+    ],
+    "correct_option": 0,
+    "explanation": "The middle three digits of a MICR code uniquely identify the specific Bank[cite: 5]."
+  },
+  {
+    "id": 1422,
+    "question": "In a 9-digit bank MICR code, what do the final 3 digits indicate?",
+    "options": [
+      "Country Code",
+      "City Code",
+      "Specific Bank Branch Code",
+      "Transaction Amount"
+    ],
+    "correct_option": 2,
+    "explanation": "The last three digits of the MICR code pinpoint the individual Branch location of the bank[cite: 5]."
+  },
+  {
+    "id": 1423,
+    "question": "What type of two-dimensional (2D) matrix barcode was invented in 1994 by the Japanese company Denso Wave?",
+    "options": [
+      "UPC Barcode",
+      "QR Code (Quick Response Code)",
+      "EAN Code",
+      "Code 39"
+    ],
+    "correct_option": 1,
+    "explanation": "Denso Wave, a subsidiary of Toyota, invented the Quick Response (QR) Code in 1994 for tracking automotive parts[cite: 5]."
+  },
+  {
+    "id": 1424,
+    "question": "Which touchscreen technology uses an outer flexible layer pressed against a conductive glass substrate and is widely used in ATMs and POS kiosks?",
+    "options": [
+      "Capacitive Touchscreen",
+      "Resistive Touchscreen",
+      "Surface Acoustic Wave",
+      "Infrared Grid"
+    ],
+    "correct_option": 1,
+    "explanation": "Resistive touchscreens rely on physical pressure connecting two flexible conductive layers, making them durable for stylus and gloved use in ATMs[cite: 5]."
+  },
+  {
+    "id": 1425,
+    "question": "Which touchscreen technology measures changes in electrostatic capacitance caused by the conductive touch of a human finger (used in smartphones)?",
+    "options": [
+      "Resistive Touchscreen",
+      "Capacitive Touchscreen",
+      "Optical Imaging",
+      "Piezoelectric"
+    ],
+    "correct_option": 1,
+    "explanation": "Capacitive touchscreens use the electrical conductivity of human skin to distort an electrostatic field, enabling responsive multi-touch in smartphones[cite: 5]."
+  },
+  {
+    "id": 1426,
+    "question": "What is the process called when print jobs are sent to a temporary hard disk buffer so the CPU can continue processing other tasks?",
+    "options": [
+      "Paging",
+      "Spooling (Simultaneous Peripheral Operations On-Line)",
+      "Sniffing",
+      "Formatting"
+    ],
+    "correct_option": 1,
+    "explanation": "Spooling (Simultaneous Peripheral Operations On-Line) intercepts print documents and manages them in a print queue on disk to free up application resources[cite: 5]."
+  },
+  {
+    "id": 1427,
+    "question": "What is the term for restarting a computer that is already running by using warm-boot keystrokes without turning off main power?",
+    "options": [
+      "Cold Booting",
+      "Warm Booting (Soft Boot)",
+      "Hard Restart",
+      "POST Execution"
+    ],
+    "correct_option": 1,
+    "explanation": "Warm Booting (or soft rebooting) restarts the operating system while power remains applied to the motherboard[cite: 5]."
+  },
+  {
+    "id": 1428,
+    "question": "What is starting up a computer from a completely powered-off state called?",
+    "options": [
+      "Warm Booting",
+      "Cold Booting (Hard Boot)",
+      "Soft Start",
+      "Hibernate Recovery"
+    ],
+    "correct_option": 1,
+    "explanation": "Cold Booting occurs when electrical power is switched on to a cold machine, prompting full POST hardware checks and OS loading[cite: 5]."
+  },
+  {
+    "id": 1429,
+    "question": "What term describes a discontinued hardware or software system that remains in service because it performs essential legacy functions?",
+    "options": [
+      "Legacy System",
+      "Embedded System",
+      "Horizontal System",
+      "Open System"
+    ],
+    "correct_option": 0,
+    "explanation": "A Legacy System is an outdated computer system or application that continues to be used because it satisfies core business needs[cite: 5]."
+  },
+  {
+    "id": 1430,
+    "question": "What was the name of the first operational electronic computer developed in the US during WWII that utilized 18,000 vacuum tubes?",
+    "options": [
+      "UNIVAC I",
+      "ENIAC",
+      "EDSAC",
+      "Mark I"
+    ],
+    "correct_option": 1,
+    "explanation": "ENIAC contained approximately 18,000 vacuum tubes and became operational in late 1945[cite: 1, 5]."
+  },
+  {
+    "id": 1431,
+    "question": "Which of the following early computers was built by the U.S. National Bureau of Standards (NBS) in 1950?",
+    "options": [
+      "SEAC (Standards Eastern Automatic Computer)",
+      "Altair 8800",
+      "IBM 701",
+      "Apple I"
+    ],
+    "correct_option": 0,
+    "explanation": "SEAC (Standards Eastern Automatic Computer) was a first-generation electronic computer built in 1950 by the US National Bureau of Standards[cite: 1]."
+  },
+  {
+    "id": 1432,
+    "question": "Who created the first commercial portable laptop computer, the Osborne 1, in 1981?",
+    "options": [
+      "Bill Gates",
+      "Adam Osborne",
+      "Steve Jobs",
+      "Alan Kay"
+    ],
+    "correct_option": 1,
+    "explanation": "Adam Osborne released the Osborne 1 in 1981, widely considered the first commercially successful portable microcomputer[cite: 5]."
+  },
+  {
+    "id": 1433,
+    "question": "Who invented the optical compact disc (CD) in the late 1960s?",
+    "options": [
+      "James Russell",
+      "Dennis Ritchie",
+      "Tim Berners-Lee",
+      "Alan Shugart"
+    ],
+    "correct_option": 0,
+    "explanation": "James Russell is credited with inventing the optical recording technology that formed the foundation for Compact Discs (CDs)[cite: 5]."
+  },
+  {
+    "id": 1434,
+    "question": "Who led the IBM team that invented the 8-inch flexible magnetic floppy disk in 1971?",
+    "options": [
+      "Alan Shugart",
+      "Jack Kilby",
+      "Robert Noyce",
+      "Alan Turing"
+    ],
+    "correct_option": 0,
+    "explanation": "Alan Shugart at IBM developed the first commercial floppy disk drive in 1971[cite: 5]."
+  },
+  {
+    "id": 1435,
+    "question": "What 19th-century mechanical calculating machine built by Charles Babbage in 1822 was designed to compute polynomial tables?",
+    "options": [
+      "Analytical Engine",
+      "Difference Engine",
+      "Pascaline",
+      "Step Reckoner"
+    ],
+    "correct_option": 1,
+    "explanation": "Charles Babbage designed the Difference Engine in 1822 to automatically calculate and tabulate polynomial mathematical functions[cite: 5]."
+  },
+  {
+    "id": 1436,
+    "question": "What general-purpose mechanical computer designed by Charles Babbage in 1834 included a store (memory) and a mill (CPU)?",
+    "options": [
+      "Difference Engine",
+      "Analytical Engine",
+      "Abacus",
+      "Tabulating Machine"
+    ],
+    "correct_option": 1,
+    "explanation": "The Analytical Engine (1834) incorporated programmable logic, punch card input, working memory (the Store), and a processing core (the Mill)[cite: 1, 5]."
+  },
+  {
+    "id": 1437,
+    "question": "What ancient calculating tool consisting of a wooden frame with sliding beads on parallel rods is considered the earliest counting machine?",
+    "options": [
+      "Pascaline",
+      "Abacus",
+      "Slide Rule",
+      "Napier's Bones"
+    ],
+    "correct_option": 1,
+    "explanation": "The Abacus, developed in ancient civilizations, is one of the earliest mechanical calculating aids consisting of beads moved on rods[cite: 1, 5]."
+  },
+  {
+    "id": 1438,
+    "question": "What term describes the demographic and economic disparity between individuals with regular access to computers and the Internet and those without?",
+    "options": [
+      "Digital Divide",
+      "Internet Divide",
+      "Bandwidth Void",
+      "Cyber Inequality"
+    ],
+    "correct_option": 0,
+    "explanation": "The Digital Divide refers to the socioeconomic gap between populations that have access to modern information technologies and those that do not[cite: 5]."
+  },
+  {
+    "id": 1439,
+    "question": "What is an extra single bit appended to binary data streams to detect errors during data transmission called?",
+    "options": [
+      "Parity Bit",
+      "Stop Bit",
+      "Sign Bit",
+      "Control Bit"
+    ],
+    "correct_option": 0,
+    "explanation": "A Parity Bit is an error-checking bit appended to a binary block to ensure the total number of 1-bits is even or odd[cite: 5]."
+  },
+  {
+    "id": 1440,
+    "question": "What was the first microcomputer/personal computer kit built with the Intel 8080 CPU, released in 1975?",
+    "options": [
+      "Apple II",
+      "IBM PC 5150",
+      "Altair 8800",
+      "Commodore 64"
+    ],
+    "correct_option": 2,
+    "explanation": "The MITS Altair 8800, introduced in 1975, was the microcomputer that sparked the personal computer revolution[cite: 5]."
+  },
+  {
+    "id": 1441,
+    "question": "What was the name of the research organization Palo Alto Research Center (PARC) that developed Ethernet, the GUI, and laser printing?",
+    "options": [
+      "IBM PARC",
+      "Xerox PARC",
+      "Apple PARC",
+      "Bell PARC"
+    ],
+    "correct_option": 1,
+    "explanation": "Xerox PARC (Palo Alto Research Center) pioneered graphical user interfaces, bitmapped displays, Ethernet networking, and the computer mouse[cite: 5]."
+  },
+  {
+    "id": 1442,
+    "question": "Which impact printer incorporates a metal or plastic wheel with embossed characters on radial spokes, similar to a typewriter?",
+    "options": [
+      "Daisy Wheel Printer",
+      "Laser Printer",
+      "Thermal Printer",
+      "Inkjet Printer"
+    ],
+    "correct_option": 0,
+    "explanation": "A Daisy Wheel printer is an impact printer that uses a rotating disc with embossed characters to strike an inked ribbon against paper[cite: 5]."
+  },
+  {
+    "id": 1443,
+    "question": "Can a Daisy Wheel printer produce graphic illustrations or vector charts?",
+    "options": [
+      "Yes, with high resolution",
+      "No, it can only print pre-formed text characters on its petals",
+      "Yes, using specialized heat paper",
+      "Only in draft mode"
+    ],
+    "correct_option": 1,
+    "explanation": "Daisy Wheel printers cannot print graphics because they rely strictly on molded typewriter-style character heads[cite: 5]."
+  },
+  {
+    "id": 1444,
+    "question": "What is the speed measurement metric used for impact Dot Matrix and Daisy Wheel character printers?",
+    "options": [
+      "CPS (Characters Per Second)",
+      "PPM (Pages Per Minute)",
+      "LPM (Lines Per Minute)",
+      "DPI"
+    ],
+    "correct_option": 0,
+    "explanation": "Character printers print one symbol at a time and are rated in CPS (Characters Per Second)[cite: 5]."
+  },
+  {
+    "id": 1445,
+    "question": "What high-speed line impact printer metric is used to measure printing output rate?",
+    "options": [
+      "CPS",
+      "LPM (Lines Per Minute)",
+      "PPM",
+      "BPS"
+    ],
+    "correct_option": 1,
+    "explanation": "Line printers (such as drum or chain printers) print an entire line at once and are rated in LPM (Lines Per Minute)[cite: 5]."
+  },
+  {
+    "id": 1446,
+    "question": "What is the total number of Primary Partitions supported on a single Master Boot Record (MBR) hard disk drive?",
+    "options": [
+      "2 partitions",
+      "4 partitions",
+      "8 partitions",
+      "16 partitions"
+    ],
+    "correct_option": 1,
+    "explanation": "The legacy MBR partitioning scheme allocates partition table space for up to 4 primary partitions[cite: 5]."
+  },
+  {
+    "id": 1447,
+    "question": "Which drive letters were historically reserved for floppy disk drives in MS-DOS and Microsoft Windows?",
+    "options": [
+      "C: and D:",
+      "A: and B:",
+      "E: and F:",
+      "X: and Y:"
+    ],
+    "correct_option": 1,
+    "explanation": "Drive letters A: and B: were historically reserved for primary and secondary floppy disk drives, with C: assigned to the main hard drive[cite: 5]."
+  },
+  {
+    "id": 1448,
+    "question": "What is the total number of individual bits in a standard single-precision float or integer register on a 32-bit CPU?",
+    "options": [
+      "16 bits",
+      "32 bits",
+      "64 bits",
+      "128 bits"
+    ],
+    "correct_option": 1,
+    "explanation": "A 32-bit microprocessor register contains 32 individual binary bits (equal to 4 bytes)[cite: 5]."
+  },
+  {
+    "id": 1449,
+    "question": "What is an optical character reading device designed to convert printed or handwritten text images into editable digital text files?",
+    "options": [
+      "OCR (Optical Character Recognition)",
+      "OMR",
+      "MICR",
+      "Plotter"
+    ],
+    "correct_option": 0,
+    "explanation": "OCR (Optical Character Recognition) software inspects scanned images of text documents and translates them into machine-editable text files[cite: 5]."
+  },
+  {
+    "id": 1450,
+    "question": "What hardware device designed to assist visually impaired individuals translates screen text into raised mechanical Braille characters?",
+    "options": [
+      "Refreshable Braille Display",
+      "Plotter",
+      "Light Pen",
+      "Digitizer"
+    ],
+    "correct_option": 0,
+    "explanation": "A Refreshable Braille Display is an electro-mechanical terminal that raises dynamic pin patterns to allow blind users to read text[cite: 5]."
+  },
+  {
+    "id": 1451,
+    "question": "What is a 3D printing manufacturing technique that builds three-dimensional objects layer by layer using melted thermoplastic filament?",
+    "options": [
+      "Fused Deposition Modeling (FDM)",
+      "Photolithography",
+      "Electrostatic Transfer",
+      "Impact Matrix Molding"
+    ],
+    "correct_option": 0,
+    "explanation": "Fused Deposition Modeling (FDM) is an additive manufacturing process that extrudes heated thermoplastic filaments layer upon layer[cite: 5]."
+  },
+  {
+    "id": 1452,
+    "question": "What type of connector cable has an identical, reversible oval plug on both ends for data, video, and charging?",
+    "options": [
+      "USB Type-A",
+      "USB Type-B",
+      "USB Type-C",
+      "Mini-USB"
+    ],
+    "correct_option": 2,
+    "explanation": "USB Type-C features a reversible, symmetric 24-pin connector design that fits into ports in either orientation[cite: 5]."
+  },
+  {
+    "id": 1453,
+    "question": "What is the process of re-encoding and packaging data before transmitting it across a different network protocol layer called?",
+    "options": [
+      "Data Encapsulation / Repackaging",
+      "Defragmentation",
+      "Spooling",
+      "Partitioning"
+    ],
+    "correct_option": 0,
+    "explanation": "Encapsulation wraps data with protocol headers and trailers at each layer of the network stack before transmission[cite: 1]."
+  },
+  {
+    "id": 1454,
+    "question": "What network hardware device connects two or more networks running different protocols and serves as their entry/exit gateway?",
+    "options": [
+      "Hub",
+      "Repeater",
+      "Network Gateway",
+      "Bridge"
+    ],
+    "correct_option": 2,
+    "explanation": "A Gateway translates communication between networks utilizing different architectures, protocols, and data formatting structures[cite: 1]."
+  },
+  {
+    "id": 1455,
+    "question": "What type of malicious code remains dormant inside an operating system or software until specific logic conditions or dates are met?",
+    "options": [
+      "Trap Door",
+      "Logic Bomb",
+      "Spyware",
+      "Adware"
+    ],
+    "correct_option": 1,
+    "explanation": "A Logic Bomb is malicious code intentionally inserted into a software system that executes when predetermined conditions or dates occur[cite: 1, 5]."
+  },
+  {
+    "id": 1456,
+    "question": "What type of hacker conducts security vulnerability assessments with legal authorization to help organizations remediate flaws?",
+    "options": [
+      "Black Hat Hacker",
+      "White Hat Hacker (Ethical Hacker)",
+      "Cracker",
+      "Script Kiddie"
+    ],
+    "correct_option": 1,
+    "explanation": "White Hat (ethical) hackers use their cybersecurity skills with explicit authorization to identify and fix security vulnerabilities[cite: 1, 5]."
+  },
+  {
+    "id": 1457,
+    "question": "What term describes a cybercriminal who breaks into computer networks with malicious or illegal intent?",
+    "options": [
+      "White Hat Hacker",
+      "Cracker (Black Hat Hacker)",
+      "Security Auditor",
+      "Penetration Tester"
+    ],
+    "correct_option": 1,
+    "explanation": "A Cracker (or Black Hat hacker) breaks into systems without authorization for illegal personal gain, theft, or sabotage[cite: 1, 5]."
+  },
+  {
+    "id": 1458,
+    "question": "What type of malware restricts access to user files by encrypting them and demands payment for the decryption key?",
+    "options": [
+      "Ransomware",
+      "Adware",
+      "Spyware",
+      "Keylogger"
+    ],
+    "correct_option": 0,
+    "explanation": "Ransomware holds victim data hostage through strong cryptographic encryption until a ransom is paid[cite: 1, 5]."
+  },
+  {
+    "id": 1459,
+    "question": "What dedicated file storage hardware provides local area network (LAN) client devices with centralized disk storage over Ethernet?",
+    "options": [
+      "Network Attached Storage (NAS)",
+      "Storage Area Network (SAN)",
+      "USB Flash Stick",
+      "Internal Cache"
+    ],
+    "correct_option": 0,
+    "explanation": "Network Attached Storage (NAS) is a dedicated file-level data storage device connected directly to an Ethernet network[cite: 1]."
+  },
+  {
+    "id": 1460,
+    "question": "In decimal to hexadecimal radix conversion, what mathematical operation is repeatedly executed on the quotient?",
+    "options": [
+      "Multiplication by 16",
+      "Division by 16 and recording remainders",
+      "Addition of 8",
+      "Division by 2"
+    ],
+    "correct_option": 1,
+    "explanation": "Converting a decimal integer to hexadecimal requires successive division by 16 while noting the remainder at each step[cite: 1]."
+  },
+  {
+    "id": 1461,
+    "question": "In decimal to hexadecimal conversion, how are the recorded remainders read to form the final hexadecimal number?",
+    "options": [
+      "Top to bottom (first remainder is MSD)",
+      "Bottom to top in reverse order (last remainder is MSD)",
+      "Left to right arbitrarily",
+      "Added together arithmetically"
+    ],
+    "correct_option": 1,
+    "explanation": "The remainders from successive divisions are transcribed in reverse order (from bottom to top), where the final remainder is the Most Significant Digit[cite: 1]."
+  },
+  {
+    "id": 1462,
+    "question": "What base (radix) is utilized by the Hexadecimal numeral system?",
+    "options": [
+      "Base 2",
+      "Base 8",
+      "Base 10",
+      "Base 16"
+    ],
+    "correct_option": 3,
+    "explanation": "The Hexadecimal system uses Base 16, comprising 16 alphanumeric symbols: digits 0–9 and letters A–F[cite: 1]."
+  },
+  {
+    "id": 1463,
+    "question": "In hexadecimal numbering, what numerical decimal value is represented by the letter 'D'?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "correct_option": 3,
+    "explanation": "In hexadecimal: A=10, B=11, C=12, D=13, E=14, and F=15[cite: 5]."
+  },
+  {
+    "id": 1464,
+    "question": "What layer of the OSI reference model is often referred to as the 'Heart of the OSI Model'?",
+    "options": [
+      "Network Layer",
+      "Transport Layer",
+      "Data Link Layer",
+      "Session Layer"
+    ],
+    "correct_option": 1,
+    "explanation": "Layer 4 (Transport Layer) acts as the bridge connecting the lower hardware layers to the upper software layers, earning the title 'Heart of the OSI model'[cite: 1]."
+  },
+  {
+    "id": 1465,
+    "question": "Which layer of the OSI model is responsible for framing, physical MAC addressing, and node-to-node error control?",
+    "options": [
+      "Physical Layer",
+      "Data Link Layer",
+      "Network Layer",
+      "Transport Layer"
+    ],
+    "correct_option": 1,
+    "explanation": "The Data Link Layer (Layer 2) divides packets into physical frames and manages MAC addresses, access control, and error detection[cite: 1]."
+  },
+  {
+    "id": 1466,
+    "question": "What are the lower three layers of the OSI model (Physical, Data Link, and Network) collectively referred to as?",
+    "options": [
+      "Software Layers",
+      "Hardware / Network Layers",
+      "User Layers",
+      "Application Stack"
+    ],
+    "correct_option": 1,
+    "explanation": "Layers 1, 2, and 3 are known as the Hardware or Lower Media Layers, while Layers 5, 6, and 7 are Software/Host layers[cite: 1]."
+  },
+  {
+    "id": 1467,
+    "question": "What is the peak computational processing capacity of the PARAM Yuva II supercomputer developed by C-DAC in 2013?",
+    "options": [
+      "54 Teraflops",
+      "529 Teraflops",
+      "10.65 Teraflops",
+      "5 Petaflops"
+    ],
+    "correct_option": 1,
+    "explanation": "PARAM Yuva II, unveiled in 2013 by C-DAC, achieved a peak performance capacity of 529 Teraflops[cite: 1]."
+  },
+  {
+    "id": 1468,
+    "question": "What does the abbreviation HTML stand for in web publishing?",
+    "options": [
+      "Hyper Text Markup Language",
+      "Hyper Text Making Language",
+      "Hyper Transfer Machine Language",
+      "High Text Markup Link"
+    ],
+    "correct_option": 0,
+    "explanation": "HTML stands for HyperText Markup Language, the standard document formatting language of the Web[cite: 1, 5]."
+  },
+  {
+    "id": 1469,
+    "question": "What utility program in Microsoft Windows reorganizes fragmented files on a magnetic disk to contiguous storage locations?",
+    "options": [
+      "Disk Cleanup",
+      "Disk Defragmenter",
+      "Disk Management",
+      "System Restore"
+    ],
+    "correct_option": 1,
+    "explanation": "Disk Defragmenter consolidates fragmented file clusters on a hard drive to speed up file read and access times[cite: 1, 5]."
+  },
+  {
+    "id": 1470,
+    "question": "What is Microsoft 365 sold as compared to traditional perpetual retail Microsoft Office bundles?",
+    "options": [
+      "One-time perpetual purchase",
+      "Cloud-connected recurring Subscription model",
+      "Free public-domain software",
+      "Hardware-locked ROM package"
+    ],
+    "correct_option": 1,
+    "explanation": "Microsoft 365 is a recurring subscription service that provides ongoing cloud updates and storage alongside desktop apps[cite: 1]."
+  },
+  {
+    "id": 1471,
+    "question": "What is the digital notetaking and multi-user idea-sharing application included in the Microsoft Office suite?",
+    "options": [
+      "Microsoft Publisher",
+      "Microsoft Access",
+      "Microsoft OneNote",
+      "Microsoft WordPad"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft OneNote is a digital notebook application for capturing, organizing, and sharing notes, screen clippings, and sketches[cite: 1]."
+  },
+  {
+    "id": 1472,
+    "question": "What is the relational database management system (RDBMS) program included in professional editions of Microsoft Office?",
+    "options": [
+      "Microsoft Access",
+      "Microsoft Publisher",
+      "Microsoft Outlook",
+      "Microsoft Visio"
+    ],
+    "correct_option": 0,
+    "explanation": "Microsoft Access is an entry-level relational database management software tool combining a database engine with a graphical UI[cite: 1, 5]."
+  },
+  {
+    "id": 1473,
+    "question": "What is the desktop publishing application in Microsoft Office tailored for creating business cards, flyers, and brochures?",
+    "options": [
+      "Microsoft OneNote",
+      "Microsoft Access",
+      "Microsoft Publisher",
+      "Microsoft PowerPoint"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft Publisher is an office application designed for page layout and marketing publication designs[cite: 1]."
+  },
+  {
+    "id": 1474,
+    "question": "What mobile digital cellular access technology uses spread-spectrum techniques and orthogonal codes?",
+    "options": [
+      "CDMA (Code Division Multiple Access)",
+      "FDMA",
+      "TDMA",
+      "CSMA"
+    ],
+    "correct_option": 0,
+    "explanation": "CDMA (Code Division Multiple Access) is a digital wireless standard where multiple transmitters share the same frequency band using unique spread-spectrum codes[cite: 1]."
+  },
+  {
+    "id": 1475,
+    "question": "What is a 100 Mbps optical fiber local area network standard based on dual-token ring architecture called?",
+    "options": [
+      "FDDI (Fiber Distributed Data Interface)",
+      "Ethernet 10BASE-T",
+      "WLAN",
+      "ARPANET"
+    ],
+    "correct_option": 0,
+    "explanation": "FDDI (Fiber Distributed Data Interface) is an optical token ring standard providing 100 Mbps data transmission over fiber-optic lines[cite: 1]."
+  },
+  {
+    "id": 1476,
+    "question": "What is an interface called that allows users to issue text commands directly to the operating system via a command prompt?",
+    "options": [
+      "GUI (Graphical User Interface)",
+      "CLI (Command Line Interface / CUI)",
+      "VUI (Voice User Interface)",
+      "Touch Interface"
+    ],
+    "correct_option": 1,
+    "explanation": "A CLI (Command Line Interface) requires users to type text commands to interact with system utilities and processes[cite: 1]."
+  },
+  {
+    "id": 1477,
+    "question": "In public-key asymmetric cryptography, which key is used by a recipient to verify a sender's digital signature?",
+    "options": [
+      "Sender's Private Key",
+      "Sender's Public Key",
+      "Recipient's Private Key",
+      "Symmetric Shared Key"
+    ],
+    "correct_option": 1,
+    "explanation": "A digital signature is created using the sender's private key and verified by anyone using the sender's corresponding public key[cite: 1]."
+  },
+  {
+    "id": 1478,
+    "question": "Which Microsoft Excel chart type is ideal for displaying categorical proportional percentages that sum to 100%?",
+    "options": [
+      "Line Chart",
+      "Scatter Chart",
+      "Pie Chart",
+      "Area Chart"
+    ],
+    "correct_option": 2,
+    "explanation": "A Pie Chart illustrates proportion and percentage contributions of individual categories to a whole[cite: 1]."
+  },
+  {
+    "id": 1479,
+    "question": "Which professional social networking platform focuses on business networking, job recruiting, and corporate profiles?",
+    "options": [
+      "Instagram",
+      "LinkedIn",
+      "Snapchat",
+      "Pinterest"
+    ],
+    "correct_option": 1,
+    "explanation": "LinkedIn is a web and mobile service designed specifically for professional networking and career development[cite: 1, 5]."
+  },
+  {
+    "id": 1480,
+    "question": "Which XML-based default word processing file format was introduced starting with Microsoft Word 2007?",
+    "options": [
+      ".doc",
+      ".docx",
+      ".txt",
+      ".rtf"
+    ],
+    "correct_option": 1,
+    "explanation": ".docx is the default OpenXML compressed document format introduced in Office 2007 to reduce file size and enhance stability[cite: 1, 5]."
+  },
+  {
+    "id": 1481,
+    "question": "In Microsoft Word, what custom dictionary feature allows technical terms or acronyms to be excluded from grammar/spell checking?",
+    "options": [
+      "Exclusion Dictionary",
+      "Thesaurus",
+      "AutoCorrect List",
+      "Proofing Assistant"
+    ],
+    "correct_option": 0,
+    "explanation": "An Exclusion Dictionary specifies words that standard spelling check routines should flag or ignore based on customized organizational rules[cite: 1]."
+  },
+  {
+    "id": 1482,
+    "question": "What is the web portal launched by the Indian Department of Telecommunications for citizens to view mobile tower radiation (EMF) compliance?",
+    "options": [
+      "Tarang Sanchar",
+      "Sanchar Saathi",
+      "Digital Seva",
+      "Bharat Net"
+    ],
+    "correct_option": 0,
+    "explanation": "Tarang Sanchar is the Indian DoT portal that allows the public to view mobile tower locations and EMF emission compliance status[cite: 1]."
+  },
+  {
+    "id": 1483,
+    "question": "What is a plain text file format where individual data field values within a record are separated by commas?",
+    "options": [
+      "XLSX",
+      "CSV (Comma Separated Values)",
+      "DOCX",
+      "PDF"
+    ],
+    "correct_option": 1,
+    "explanation": "A CSV (Comma Separated Values) file stores tabular data as plain text, using commas to delimit individual data columns[cite: 1]."
+  },
+  {
+    "id": 1484,
+    "question": "Which top-level domain (TLD) extension is reserved exclusively for accredited educational institutions?",
+    "options": [
+      ".gov",
+      ".org",
+      ".edu",
+      ".mil"
+    ],
+    "correct_option": 2,
+    "explanation": "The .edu TLD is restricted to accredited colleges, universities, and educational institutions[cite: 1]."
+  },
+  {
+    "id": 1485,
+    "question": "Which top-level domain (TLD) extension is designated exclusively for official government entities and departments?",
+    "options": [
+      ".gov",
+      ".com",
+      ".net",
+      ".biz"
+    ],
+    "correct_option": 0,
+    "explanation": "The .gov TLD is reserved for official governmental agencies and departments[cite: 1]."
+  },
+  {
+    "id": 1486,
+    "question": "What does the abbreviation GPRS stand for in mobile cellular data communications?",
+    "options": [
+      "General Packet Radio Service",
+      "Global Protocol Radio System",
+      "General Packet Routing Standard",
+      "Group Packet Radio System"
+    ],
+    "correct_option": 0,
+    "explanation": "GPRS (General Packet Radio Service) is a packet-oriented mobile data standard used in 2G and 3G cellular systems[cite: 1]."
+  },
+  {
+    "id": 1487,
+    "question": "What does the abbreviation MPEG stand for in digital video and audio compression standards?",
+    "options": [
+      "Motion Pictures Expert Group",
+      "Moving Picture Experts Group",
+      "Modern Picture Encoding Group",
+      "Multi-Program Electronic Group"
+    ],
+    "correct_option": 1,
+    "explanation": "MPEG stands for Moving Picture Experts Group, the working group that develops international media compression standards[cite: 1]."
+  },
+  {
+    "id": 1488,
+    "question": "What does the acronym VR represent in computer graphics and simulated environments?",
+    "options": [
+      "Virtual Reality",
+      "Visual Range",
+      "Variable Resolution",
+      "Vector Rendering"
+    ],
+    "correct_option": 0,
+    "explanation": "Virtual Reality (VR) uses computer modeling to immerse users in a simulated 3D interactive environment[cite: 1]."
+  },
+  {
+    "id": 1489,
+    "question": "What does the network acronym FQDN stand for in internet host addressing?",
+    "options": [
+      "Fully Qualified Domain Name",
+      "File Qualified Directory Name",
+      "Fast Query Domain Network",
+      "Formatted Query Domain Node"
+    ],
+    "correct_option": 0,
+    "explanation": "FQDN (Fully Qualified Domain Name) is the complete domain name specifying the exact host and hierarchy location in the DNS tree[cite: 1]."
+  },
+  {
+    "id": 1490,
+    "question": "What does the acronym BIOS stand for in computer hardware architecture?",
+    "options": [
+      "Browser Input Operating System",
+      "Basic Input Output System",
+      "Boot Integrated Output Software",
+      "Binary Input Operating System"
+    ],
+    "correct_option": 1,
+    "explanation": "BIOS stands for Basic Input Output System, the firmware executed during boot-up to initialize hardware[cite: 1, 5]."
+  },
+  {
+    "id": 1491,
+    "question": "Which of the following early computers was built using vacuum tubes and belongs to the First Generation of computers?",
+    "options": [
+      "EDVAC",
+      "IBM 7094",
+      "DEC PDP-11",
+      "Apple Macintosh"
+    ],
+    "correct_option": 0,
+    "explanation": "EDVAC (Electronic Discrete Variable Automatic Computer) was a first-generation vacuum-tube computer[cite: 1, 5]."
+  },
+  {
+    "id": 1492,
+    "question": "What does the computer acronym ULSI stand for in microchip manufacturing?",
+    "options": [
+      "Ultra Large Scale Integration",
+      "Ultra Lower Silicon Integration",
+      "Universal Logic System Interface",
+      "Under Layer Semiconductor Integration"
+    ],
+    "correct_option": 0,
+    "explanation": "ULSI stands for Ultra Large Scale Integration, packing millions of transistors onto a single microchip[cite: 1, 5]."
+  },
+  {
+    "id": 1493,
+    "question": "What functional key is used in Microsoft Windows to enter edit mode for renaming a selected file or folder?",
+    "options": [
+      "F1",
+      "F2",
+      "F3",
+      "F4"
+    ],
+    "correct_option": 1,
+    "explanation": "F2 activates the in-place text renaming box for any selected file or folder in Windows[cite: 1, 3]."
+  },
+  {
+    "id": 1494,
+    "question": "What is the core computer software program that manages all system hardware resources, memory, and running applications?",
+    "options": [
+      "Operating System",
+      "Compiler",
+      "Database Engine",
+      "Firmware Driver"
+    ],
+    "correct_option": 0,
+    "explanation": "An Operating System (OS) is the primary system software that controls computer hardware and allocates resources to applications[cite: 1, 5]."
+  },
+  {
+    "id": 1495,
+    "question": "What is the state called when an operating system or software stops responding to keyboard and mouse inputs?",
+    "options": [
+      "Booting",
+      "System Hang (Freezing)",
+      "Spooling",
+      "Paging"
+    ],
+    "correct_option": 1,
+    "explanation": "A System Hang (or Freeze) occurs when an application or the OS encounters an unresponsive state and halts processing[cite: 1]."
+  },
+  {
+    "id": 1496,
+    "question": "What is the single-user, single-tasking command-line operating system developed by Microsoft in 1981 called?",
+    "options": [
+      "MS-DOS",
+      "Windows NT",
+      "UNIX",
+      "OS/2"
+    ],
+    "correct_option": 0,
+    "explanation": "MS-DOS (Microsoft Disk Operating System) is a non-graphical, single-tasking, single-user command-line operating system[cite: 1, 5]."
+  },
+  {
+    "id": 1497,
+    "question": "What is the small high-speed memory placed between the CPU core and main memory to accelerate data retrieval called?",
+    "options": [
+      "Virtual Memory",
+      "Cache Memory",
+      "Read Only Memory",
+      "Hard Disk Drive"
+    ],
+    "correct_option": 1,
+    "explanation": "Cache Memory is a high-speed SRAM buffer located between the CPU and RAM to store frequently accessed data[cite: 1, 5]."
+  },
+  {
+    "id": 1498,
+    "question": "What two core parts make up a machine-level computer instruction?",
+    "options": [
+      "Opcode and Operand",
+      "Header and Footer",
+      "Syntax and Variable",
+      "Address and Cache"
+    ],
+    "correct_option": 0,
+    "explanation": "A machine instruction consists of an Opcode (operation code specifying the task) and an Operand (specifying data or registers)[cite: 1]."
+  },
+  {
+    "id": 1499,
+    "question": "What component of the Central Processing Unit carries out all basic arithmetic addition, subtraction, and logical comparisons?",
+    "options": [
+      "Control Unit (CU)",
+      "Arithmetic Logic Unit (ALU)",
+      "Bus Interface",
+      "System Clock"
+    ],
+    "correct_option": 1,
+    "explanation": "The ALU (Arithmetic Logic Unit) executes all mathematical calculations and boolean logical operations[cite: 1, 5]."
+  },
+  {
+    "id": 1500,
+    "question": "What type of computer memory loses its stored data immediately when electrical power is switched off?",
+    "options": [
+      "ROM",
+      "Volatile Memory (RAM)",
+      "PROM",
+      "Hard Disk"
+    ],
+    "correct_option": 1,
+    "explanation": "Volatile memory (such as dynamic RAM and static RAM) requires continuous electrical current to maintain its stored information[cite: 1, 5]."
+  }
+]

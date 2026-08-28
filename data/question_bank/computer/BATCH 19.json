@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1801,
+    "question": "Consider the following statements regarding primary and secondary memory:\n1. Cache memory is faster than main RAM and is placed between the CPU and RAM.\n2. Magnetic tape is a direct access storage device (DASD) used for random record retrieval.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 0,
+    "explanation": "Statement 1 is correct. Statement 2 is incorrect because magnetic tape is a sequential access medium, not a direct access storage device (DASD)[cite: 1, 5]."
+  },
+  {
+    "id": 1802,
+    "question": "Which of the following statements about Microsoft Word features is/are correct?\n1. Format Painter allows you to copy formatting from one part of a document and apply it to another.\n2. The default page orientation for a new document is Landscape.\nSelect the correct answer:",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 0,
+    "explanation": "Statement 1 is correct. Statement 2 is incorrect because the default page orientation in Word is Portrait, not Landscape[cite: 1, 5]."
+  },
+  {
+    "id": 1803,
+    "question": "Consider the following statements regarding MS Excel formulas and functions:\n1. All Excel formulas must begin with an equal sign (=).\n2. The ampersand (&) symbol is used for text concatenation.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Excel formulas start with '=' and the '&' symbol concatenates text values[cite: 1, 5]."
+  },
+  {
+    "id": 1804,
+    "question": "Consider the following statements regarding the OSI network model:\n1. The Transport Layer (Layer 4) is responsible for end-to-end delivery and port addressing.\n2. The Network Layer (Layer 3) handles physical framing and MAC address filtering.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 0,
+    "explanation": "Statement 1 is correct (Transport layer handles end-to-end delivery). Statement 2 is incorrect because physical framing and MAC addresses belong to the Data Link Layer, not the Network Layer[cite: 1, 5]."
+  },
+  {
+    "id": 1805,
+    "question": "Which of the following statements about computer viruses and worms is/are correct?\n1. A computer worm is a standalone self-replicating program that spreads across networks without needing a host file.\n2. A Trojan Horse is designed to look like useful software while containing hidden malicious code.\nSelect the correct answer:",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Worms replicate independently across networks, and Trojans disguise themselves as legitimate apps[cite: 5]."
+  },
+  {
+    "id": 1806,
+    "question": "Consider the following statements regarding MS PowerPoint presentation views:\n1. Slide Sorter View displays thumbnails of all slides to easily rearrange their sequence.\n2. Slide Master changes apply globally across all dependent slides.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Slide Sorter organizes slide order via thumbnails, and Slide Master edits apply globally[cite: 5]."
+  },
+  {
+    "id": 1807,
+    "question": "Consider the following statements regarding computer buses:\n1. The Address Bus transfers memory locations from the CPU in a unidirectional manner.\n2. The Data Bus transfers actual data bidirectionally between the CPU and memory.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. The address bus is unidirectional, while the data bus is bidirectional[cite: 5]."
+  },
+  {
+    "id": 1808,
+    "question": "Which of the following statements about email protocols is/are correct?\n1. SMTP (Simple Mail Transfer Protocol) is used for sending outgoing mail on Port 25.\n2. POP3 allows multiple client devices to synchronize read and delete states on the server.\nSelect the correct answer:",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 0,
+    "explanation": "Statement 1 is correct. Statement 2 is incorrect because multi-device synchronization is a feature of IMAP, whereas POP3 downloads and removes mail from the server[cite: 5]."
+  },
+  {
+    "id": 1809,
+    "question": "Consider the following statements regarding database ACID properties:\n1. Atomicity ensures that all operations in a transaction execute successfully or none at all.\n2. Durability ensures that committed transaction changes survive system crashes.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Atomicity enforces the all-or-none rule, and durability guarantees persistence after commits[cite: 5]."
+  },
+  {
+    "id": 1810,
+    "question": "Consider the following statements regarding computer generations:\n1. First Generation computers utilized vacuum tubes as their core switching elements.\n2. Fourth Generation computers introduced microprocessors based on VLSI technology.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. First gen used vacuum tubes, and fourth gen utilized VLSI microprocessors[cite: 1, 5]."
+  },
+  {
+    "id": 1811,
+    "question": "What is the result of the MS Excel formula =SUM(5, 10, 15) / 3?",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "30"
+    ],
+    "correct_option": 1,
+    "explanation": "SUM(5, 10, 15) equals 30. Dividing by 3 yields 30 / 3 = 10[cite: 1]."
+  },
+  {
+    "id": 1812,
+    "question": "What is the value of the MS Excel expression =4^2 + 12 / 4 - 2?",
+    "options": [
+      "15",
+      "17",
+      "19",
+      "21"
+    ],
+    "correct_option": 1,
+    "explanation": "Following order of operations: 4^2 = 16, 12/4 = 3, then 16 + 3 - 2 = 17[cite: 1]."
+  },
+  {
+    "id": 1813,
+    "question": "Which of the following functions in MS Excel rounds a number DOWN to the nearest multiple of significance?",
+    "options": [
+      "CEILING",
+      "FLOOR",
+      "ROUNDUP",
+      "INT"
+    ],
+    "correct_option": 1,
+    "explanation": "The FLOOR function rounds a number down toward zero to the nearest specified multiple of significance[cite: 1]."
+  },
+  {
+    "id": 1814,
+    "question": "What does the COUNTBLANK function do in Microsoft Excel?",
+    "options": [
+      "Counts cells containing text",
+      "Counts the number of empty/blank cells within a specified range",
+      "Counts cells containing error values",
+      "Counts numerical entries only"
+    ],
+    "correct_option": 1,
+    "explanation": "COUNTBLANK counts all empty or blank cells within a given range[cite: 1]."
+  },
+  {
+    "id": 1815,
+    "question": "What will be the result of the MS Excel formula =PRODUCT(3, 4, 2)?",
+    "options": [
+      "9",
+      "12",
+      "24",
+      "18"
+    ],
+    "correct_option": 2,
+    "explanation": "PRODUCT multiplies all given numbers together: 3 * 4 * 2 = 24[cite: 1]."
+  },
+  {
+    "id": 1816,
+    "question": "What is the maximum number of columns in a single worksheet of Microsoft Excel 2010?",
+    "options": [
+      "256",
+      "1,024",
+      "16,384",
+      "32,768"
+    ],
+    "correct_option": 2,
+    "explanation": "Excel 2007, 2010, and later versions support 16,384 columns (ending at column XFD)[cite: 1, 5]."
+  },
+  {
+    "id": 1817,
+    "question": "In MS Excel, what is the default horizontal alignment for text entries?",
+    "options": [
+      "Right-aligned",
+      "Left-aligned",
+      "Center-aligned",
+      "Justified"
+    ],
+    "correct_option": 1,
+    "explanation": "Text strings align to the left side of cells by default in Excel, while numbers align to the right[cite: 1]."
+  },
+  {
+    "id": 1818,
+    "question": "Which function in Microsoft Excel returns the current system date and time?",
+    "options": [
+      "TODAY()",
+      "NOW()",
+      "DATE()",
+      "SYSTEMTIME()"
+    ],
+    "correct_option": 1,
+    "explanation": "The NOW() function returns the current date and time serial number[cite: 1, 5]."
+  },
+  {
+    "id": 1819,
+    "question": "Which MS Excel function is used to convert all letters in a text string to lowercase?",
+    "options": [
+      "UPPER",
+      "LOWER",
+      "PROPER",
+      "SMALL"
+    ],
+    "correct_option": 1,
+    "explanation": "The LOWER function converts all uppercase letters in a text string to lowercase[cite: 1]."
+  },
+  {
+    "id": 1820,
+    "question": "What is the purpose of the COUNTA function in Microsoft Excel?",
+    "options": [
+      "Counts only blank cells",
+      "Counts the number of cells that are not empty in a range",
+      "Counts cells containing errors only",
+      "Counts numerical values exclusively"
+    ],
+    "correct_option": 1,
+    "explanation": "COUNTA counts all cells containing any type of data (non-empty cells)[cite: 1, 5]."
+  },
+  {
+    "id": 1821,
+    "question": "In MS Word, what feature allows you to copy character formatting and apply it elsewhere?",
+    "options": [
+      "AutoText",
+      "Format Painter",
+      "Styles Pane",
+      "Template Manager"
+    ],
+    "correct_option": 1,
+    "explanation": "Format Painter copies formatting attributes from selected text and paints them onto other text blocks[cite: 1, 5]."
+  },
+  {
+    "id": 1822,
+    "question": "What is the maximum zoom percentage permitted in Microsoft Word?",
+    "options": [
+      "100%",
+      "200%",
+      "400%",
+      "500%"
+    ],
+    "correct_option": 3,
+    "explanation": "Microsoft Word supports a maximum zoom scaling of 500%[cite: 5]."
+  },
+  {
+    "id": 1823,
+    "question": "What is the maximum number of columns supported in an MS Word table?",
+    "options": [
+      "32",
+      "63",
+      "128",
+      "256"
+    ],
+    "correct_option": 1,
+    "explanation": "An MS Word table can contain up to 63 columns[cite: 1, 5]."
+  },
+  {
+    "id": 1824,
+    "question": "Which of the following is NOT a standard Change Case option in MS Word?",
+    "options": [
+      "Sentence case",
+      "UPPERCASE",
+      "Inverted case",
+      "tOGGLE cASE"
+    ],
+    "correct_option": 2,
+    "explanation": "Inverted case is not among the 5 standard Word casing options (Sentence case, lowercase, UPPERCASE, Capitalize Each Word, tOGGLE cASE)[cite: 1, 5]."
+  },
+  {
+    "id": 1825,
+    "question": "What type of paragraph indentation indents all lines except the first line?",
+    "options": [
+      "First Line Indent",
+      "Hanging Indent",
+      "Left Indent",
+      "Right Indent"
+    ],
+    "correct_option": 1,
+    "explanation": "A Hanging Indent leaves the first line at the margin while indenting all subsequent lines[cite: 3, 4]."
+  },
+  {
+    "id": 1826,
+    "question": "In MS Word, the margin space added to the binding edge of a document is called:",
+    "options": [
+      "Mirror Margin",
+      "Gutter Margin",
+      "Header Margin",
+      "Footer Margin"
+    ],
+    "correct_option": 1,
+    "explanation": "Gutter Margin adds extra space to the binding side of pages for book binding[cite: 5]."
+  },
+  {
+    "id": 1827,
+    "question": "Which Ribbon tab in MS Word contains proofing tools like Spelling & Grammar and Word Count?",
+    "options": [
+      "Home tab",
+      "References tab",
+      "Review tab",
+      "View tab"
+    ],
+    "correct_option": 2,
+    "explanation": "The Review tab houses proofing tools including Spelling & Grammar, Thesaurus, and Word Count[cite: 1, 5]."
+  },
+  {
+    "id": 1828,
+    "question": "Under which Ribbon tab in Microsoft Word are Page Setup options (Margins, Orientation, Size) located?",
+    "options": [
+      "Insert tab",
+      "Layout / Page Layout tab",
+      "View tab",
+      "References tab"
+    ],
+    "correct_option": 1,
+    "explanation": "Page setup tools are found under the Layout (or Page Layout) tab[cite: 1, 5]."
+  },
+  {
+    "id": 1829,
+    "question": "What is the executable command used to launch Microsoft Word from the Windows Run dialog?",
+    "options": [
+      "msword.exe",
+      "word.exe",
+      "winword.exe",
+      "word365.exe"
+    ],
+    "correct_option": 2,
+    "explanation": "The executable filename for Microsoft Word is 'winword.exe'[cite: 5]."
+  },
+  {
+    "id": 1830,
+    "question": "In MS Word, how many lines does a Drop Cap span by default?",
+    "options": [
+      "1 line",
+      "2 lines",
+      "3 lines",
+      "5 lines"
+    ],
+    "correct_option": 2,
+    "explanation": "A Drop Cap in MS Word spans 3 lines by default[cite: 5]."
+  },
+  {
+    "id": 1831,
+    "question": "In PowerPoint, what are the visual effects applied when moving from one slide to the next called?",
+    "options": [
+      "Slide Transitions",
+      "Custom Animations",
+      "Slide Layouts",
+      "Master Templates"
+    ],
+    "correct_option": 0,
+    "explanation": "Slide Transitions control how the presentation moves from one slide to another during a slide show[cite: 5]."
+  },
+  {
+    "id": 1832,
+    "question": "Which PowerPoint view displays miniature thumbnail tiles of all slides to easily rearrange their sequence?",
+    "options": [
+      "Slide Sorter View",
+      "Notes Page View",
+      "Outline View",
+      "Reading View"
+    ],
+    "correct_option": 0,
+    "explanation": "Slide Sorter View shows thumbnail previews of all slides for easy reordering[cite: 5]."
+  },
+  {
+    "id": 1833,
+    "question": "What is the top-level slide in PowerPoint that dictates global design themes, fonts, and background logos called?",
+    "options": [
+      "Slide Master",
+      "Handout Master",
+      "Notes Master",
+      "Title Placeholder"
+    ],
+    "correct_option": 0,
+    "explanation": "The Slide Master controls the overall design and layout properties for all slides in a presentation[cite: 5]."
+  },
+  {
+    "id": 1834,
+    "question": "What is the file extension for a PowerPoint Macro-Enabled Presentation?",
+    "options": [
+      ".pptx",
+      ".pptm",
+      ".ppsx",
+      ".potx"
+    ],
+    "correct_option": 1,
+    "explanation": ".pptm is the PowerPoint presentation format that supports embedded VBA macros[cite: 1, 5]."
+  },
+  {
+    "id": 1835,
+    "question": "What is the executable command used to launch Microsoft PowerPoint from the Windows Run prompt?",
+    "options": [
+      "powerpoint.exe",
+      "powerpnt.exe",
+      "msppt.exe",
+      "ppt.exe"
+    ],
+    "correct_option": 1,
+    "explanation": "PowerPoint is launched using the executable command 'powerpnt.exe'[cite: 5]."
+  },
+  {
+    "id": 1836,
+    "question": "Which transport protocol is connection-oriented and guarantees reliable packet delivery across networks?",
+    "options": [
+      "IP",
+      "TCP (Transmission Control Protocol)",
+      "UDP",
+      "ICMP"
+    ],
+    "correct_option": 1,
+    "explanation": "TCP establishes a connection and ensures reliable, ordered, and error-checked delivery of packet streams[cite: 1, 5]."
+  },
+  {
+    "id": 1837,
+    "question": "What standard TCP port number is assigned to secure HTTPS web traffic?",
+    "options": [
+      "Port 21",
+      "Port 25",
+      "Port 80",
+      "Port 443"
+    ],
+    "correct_option": 3,
+    "explanation": "HTTPS traffic encrypted with TLS/SSL operates on TCP port 443[cite: 5]."
+  },
+  {
+    "id": 1838,
+    "question": "Which protocol dynamically assigns IP addresses and network parameters to client devices automatically?",
+    "options": [
+      "DNS",
+      "DHCP (Dynamic Host Configuration Protocol)",
+      "ARP",
+      "SNMP"
+    ],
+    "correct_option": 1,
+    "explanation": "DHCP automatically leases IP addresses and network configurations to clients on a TCP/IP network[cite: 5]."
+  },
+  {
+    "id": 1839,
+    "question": "Which internet protocol resolves human-readable domain names into numerical IP addresses?",
+    "options": [
+      "DHCP",
+      "DNS (Domain Name System)",
+      "FTP",
+      "SMTP"
+    ],
+    "correct_option": 1,
+    "explanation": "DNS (Domain Name System) translates domain names into numerical IP addresses[cite: 5]."
+  },
+  {
+    "id": 1840,
+    "question": "What is the physical 48-bit hardware address assigned to a Network Interface Card (NIC) called?",
+    "options": [
+      "IP Address",
+      "MAC Address (Media Access Control)",
+      "Port Address",
+      "URL"
+    ],
+    "correct_option": 1,
+    "explanation": "A MAC address is a 48-bit physical hardware identifier burned into network interface cards[cite: 5]."
+  },
+  {
+    "id": 1841,
+    "question": "At which layer of the 7-layer OSI model do network Switches primarily operate?",
+    "options": [
+      "Physical Layer",
+      "Data Link Layer (Layer 2)",
+      "Network Layer",
+      "Transport Layer"
+    ],
+    "correct_option": 1,
+    "explanation": "Network switches operate at Layer 2 (Data Link Layer) using physical MAC addresses to forward frames[cite: 1, 5]."
+  },
+  {
+    "id": 1842,
+    "question": "At which layer of the OSI model do network Routers operate to forward packets across different networks?",
+    "options": [
+      "Data Link Layer",
+      "Network Layer (Layer 3)",
+      "Transport Layer",
+      "Physical Layer"
+    ],
+    "correct_option": 1,
+    "explanation": "Routers operate at Layer 3 (Network Layer) to route data packets between different networks using IP addresses[cite: 1, 5]."
+  },
+  {
+    "id": 1843,
+    "question": "Which network topology connects all nodes to a central hub or switch?",
+    "options": [
+      "Bus Topology",
+      "Ring Topology",
+      "Star Topology",
+      "Mesh Topology"
+    ],
+    "correct_option": 2,
+    "explanation": "In a Star topology, all devices are connected to a central hub or switch[cite: 5]."
+  },
+  {
+    "id": 1844,
+    "question": "What type of data communication allows transmission in only one fixed direction?",
+    "options": [
+      "Simplex",
+      "Half-Duplex",
+      "Full-Duplex",
+      "Multiplex"
+    ],
+    "correct_option": 0,
+    "explanation": "Simplex transmission is unidirectional, flowing in only one direction (e.g., keyboard to computer)[cite: 1, 5]."
+  },
+  {
+    "id": 1845,
+    "question": "What type of data communication allows transmission in both directions, but only one direction at a time?",
+    "options": [
+      "Simplex",
+      "Half-Duplex",
+      "Full-Duplex",
+      "Asynchronous"
+    ],
+    "correct_option": 1,
+    "explanation": "Half-Duplex mode allows two-way communication, but only one party can transmit at a time (e.g., walkie-talkie)[cite: 1, 5]."
+  },
+  {
+    "id": 1846,
+    "question": "What standard TCP port number is assigned to the Simple Mail Transfer Protocol (SMTP)?",
+    "options": [
+      "Port 21",
+      "Port 25",
+      "Port 53",
+      "Port 110"
+    ],
+    "correct_option": 1,
+    "explanation": "SMTP operates on standard TCP port 25 for sending outgoing emails[cite: 5]."
+  },
+  {
+    "id": 1847,
+    "question": "What standard TCP port number is assigned to the Post Office Protocol version 3 (POP3)?",
+    "options": [
+      "Port 25",
+      "Port 80",
+      "Port 110",
+      "Port 143"
+    ],
+    "correct_option": 2,
+    "explanation": "POP3 uses TCP port 110 to retrieve emails from a mail server[cite: 5]."
+  },
+  {
+    "id": 1848,
+    "question": "What is the default subnet mask for an IPv4 Class C network address?",
+    "options": [
+      "255.0.0.0",
+      "255.255.0.0",
+      "255.255.255.0",
+      "255.255.255.255"
+    ],
+    "correct_option": 2,
+    "explanation": "The default Class C subnet mask is 255.255.255.0[cite: 5]."
+  },
+  {
+    "id": 1849,
+    "question": "Which protocol resolves a known IP address to its corresponding physical MAC address on a local network?",
+    "options": [
+      "RARP",
+      "ARP (Address Resolution Protocol)",
+      "DNS",
+      "DHCP"
+    ],
+    "correct_option": 1,
+    "explanation": "ARP maps an IP address to a physical MAC address on a local subnet[cite: 5]."
+  },
+  {
+    "id": 1850,
+    "question": "What network diagnostic command uses ICMP Echo packets to verify host reachability?",
+    "options": [
+      "Telnet",
+      "FTP",
+      "Ping",
+      "Traceroute"
+    ],
+    "correct_option": 2,
+    "explanation": "Ping sends ICMP Echo Request packets to test whether a host is reachable across a network[cite: 5]."
+  },
+  {
+    "id": 1851,
+    "question": "What is the primary function of the Switched Mode Power Supply (SMPS) in a desktop PC?",
+    "options": [
+      "Converting incoming AC mains power into regulated low-voltage DC power",
+      "Cooling the microprocessor chip",
+      "Storing temporary boot files",
+      "Formatting the secondary storage partition"
+    ],
+    "correct_option": 0,
+    "explanation": "An SMPS converts high-voltage AC power into regulated DC voltages required by internal computer hardware[cite: 1, 5]."
+  },
+  {
+    "id": 1852,
+    "question": "What is the 9-digit code printed using magnetic ink on the bottom of a bank cheque called?",
+    "options": [
+      "IFSC Code",
+      "MICR (Magnetic Ink Character Recognition) Code",
+      "SWIFT Code",
+      "PAN Number"
+    ],
+    "correct_option": 1,
+    "explanation": "The 9-digit MICR code (City, Bank, and Branch) is printed in magnetic ink on cheques for automated processing[cite: 5]."
+  },
+  {
+    "id": 1853,
+    "question": "Which printer type uses toner powder and an electrostatic drum to produce high-speed printouts?",
+    "options": [
+      "Dot Matrix Printer",
+      "Daisy Wheel Printer",
+      "Laser Printer",
+      "Thermal Printer"
+    ],
+    "correct_option": 2,
+    "explanation": "Laser printers use electrostatic toner powder and a photo-conductive drum to print text and images[cite: 5]."
+  },
+  {
+    "id": 1854,
+    "question": "What is the output resolution of a computer printer measured in?",
+    "options": [
+      "PPM",
+      "DPI (Dots Per Inch)",
+      "CPS",
+      "Hertz"
+    ],
+    "correct_option": 1,
+    "explanation": "Printer resolution is measured in DPI (Dots Per Inch), indicating dot density[cite: 5]."
+  },
+  {
+    "id": 1855,
+    "question": "What is the standard data storage capacity of a single-layer Blu-ray Disc (BD)?",
+    "options": [
+      "700 MB",
+      "4.7 GB",
+      "25 GB",
+      "50 GB"
+    ],
+    "correct_option": 2,
+    "explanation": "A single-layer Blu-ray disc has a storage capacity of 25 GB[cite: 5]."
+  },
+  {
+    "id": 1856,
+    "question": "What is the process of dividing a magnetic disk platter into concentric tracks and sectors called?",
+    "options": [
+      "Defragmentation",
+      "Formatting",
+      "Spooling",
+      "Paging"
+    ],
+    "correct_option": 1,
+    "explanation": "Disk formatting creates the tracks and sectors on a disk platter to prepare it for data storage[cite: 5]."
+  },
+  {
+    "id": 1857,
+    "question": "What is the mechanical time delay required for a hard drive's read/write head to move to the requested track called?",
+    "options": [
+      "Seek Time",
+      "Latency Time",
+      "Access Time",
+      "Transfer Rate"
+    ],
+    "correct_option": 0,
+    "explanation": "Seek time is the time required for the actuator arm to move the read/write head over the target track[cite: 5]."
+  },
+  {
+    "id": 1858,
+    "question": "What was the name of India's first indigenous supercomputer, built by C-DAC in 1991 under Dr. Vijay Bhatkar?",
+    "options": [
+      "PARAM 8000",
+      "Pratyush",
+      "Mihir",
+      "PARAM Yuva"
+    ],
+    "correct_option": 0,
+    "explanation": "PARAM 8000 was developed in 1991 by C-DAC under Dr. Vijay Pandurang Bhatkar[cite: 5]."
+  },
+  {
+    "id": 1859,
+    "question": "What performance metric is used to evaluate the computational speed of supercomputers?",
+    "options": [
+      "MIPS",
+      "FLOPS (Floating-Point Operations Per Second)",
+      "Megahertz",
+      "DPI"
+    ],
+    "correct_option": 1,
+    "explanation": "Supercomputer processing capability is rated in FLOPS (Floating-Point Operations Per Second)[cite: 5]."
+  },
+  {
+    "id": 1860,
+    "question": "What port interface standard uses a 15-pin 3-row connector to transmit analog video signals to monitors?",
+    "options": [
+      "VGA (Video Graphics Array)",
+      "HDMI",
+      "DVI",
+      "DisplayPort"
+    ],
+    "correct_option": 0,
+    "explanation": "VGA uses a 15-pin D-sub connector to output analog video signals to a display monitor[cite: 5]."
+  },
+  {
+    "id": 1861,
+    "question": "Who created the C programming language at AT&T Bell Laboratories in 1972?",
+    "options": [
+      "Bjarne Stroustrup",
+      "Dennis Ritchie",
+      "James Gosling",
+      "Guido van Rossum"
+    ],
+    "correct_option": 1,
+    "explanation": "Dennis Ritchie created the C programming language at AT&T Bell Labs[cite: 5]."
+  },
+  {
+    "id": 1862,
+    "question": "What was the first high-level programming language developed in 1957 by John Backus at IBM for scientific computing?",
+    "options": [
+      "COBOL",
+      "FORTRAN",
+      "BASIC",
+      "PASCAL"
+    ],
+    "correct_option": 1,
+    "explanation": "FORTRAN was developed by John Backus at IBM as the first high-level programming language[cite: 5]."
+  },
+  {
+    "id": 1863,
+    "question": "Who created the Java programming language at Sun Microsystems in 1995?",
+    "options": [
+      "James Gosling",
+      "Bjarne Stroustrup",
+      "Dennis Ritchie",
+      "Guido van Rossum"
+    ],
+    "correct_option": 0,
+    "explanation": "James Gosling developed Java at Sun Microsystems[cite: 5]."
+  },
+  {
+    "id": 1864,
+    "question": "Which language translator processes entire high-level program source code into machine code all at once before execution?",
+    "options": [
+      "Interpreter",
+      "Compiler",
+      "Assembler",
+      "Linker"
+    ],
+    "correct_option": 1,
+    "explanation": "A Compiler translates the entire source code into machine code in one batch[cite: 5]."
+  },
+  {
+    "id": 1865,
+    "question": "What was the first commercial microprocessor chip in the world, released by Intel in 1971?",
+    "options": [
+      "Intel 8086",
+      "Intel 4004",
+      "Intel 8080",
+      "Intel 8008"
+    ],
+    "correct_option": 1,
+    "explanation": "The 4-bit Intel 4004 was the world's first commercial microprocessor[cite: 5]."
+  },
+  {
+    "id": 1866,
+    "question": "In relational database design, what is an attribute in one table that points to the primary key of another table called?",
+    "options": [
+      "Candidate Key",
+      "Foreign Key",
+      "Super Key",
+      "Composite Key"
+    ],
+    "correct_option": 1,
+    "explanation": "A Foreign Key references the primary key of another table to establish a relationship[cite: 5]."
+  },
+  {
+    "id": 1867,
+    "question": "In an Entity-Relationship (E-R) diagram, what geometric shape is used to represent an Attribute?",
+    "options": [
+      "Rectangle",
+      "Ellipse / Oval",
+      "Diamond",
+      "Double Rectangle"
+    ],
+    "correct_option": 1,
+    "explanation": "In E-R diagrams, attributes are represented by ellipses[cite: 5]."
+  },
+  {
+    "id": 1868,
+    "question": "Which category of SQL commands includes CREATE, ALTER, DROP, and TRUNCATE?",
+    "options": [
+      "DDL (Data Definition Language)",
+      "DML (Data Manipulation Language)",
+      "DCL (Data Control Language)",
+      "TCL (Transaction Control Language)"
+    ],
+    "correct_option": 0,
+    "explanation": "DDL commands are used to define and modify database structures and table schemas[cite: 1, 5]."
+  },
+  {
+    "id": 1869,
+    "question": "Which category of SQL commands includes SELECT, INSERT, UPDATE, and DELETE?",
+    "options": [
+      "DDL",
+      "DML (Data Manipulation Language)",
+      "DCL",
+      "TCL"
+    ],
+    "correct_option": 1,
+    "explanation": "DML commands handle querying and manipulating data records within database tables[cite: 5]."
+  },
+  {
+    "id": 1870,
+    "question": "What SQL command permanently saves transaction modifications to the database?",
+    "options": [
+      "ROLLBACK",
+      "COMMIT",
+      "SAVEPOINT",
+      "CHECKPOINT"
+    ],
+    "correct_option": 1,
+    "explanation": "COMMIT makes all transaction updates permanent in the database[cite: 5]."
+  },
+  {
+    "id": 1871,
+    "question": "What type of malware is disguised as useful or authentic software while secretly executing malicious actions?",
+    "options": [
+      "Worm",
+      "Trojan Horse",
+      "Adware",
+      "Rootkit"
+    ],
+    "correct_option": 1,
+    "explanation": "A Trojan Horse masquerades as legitimate software while carrying a malicious payload[cite: 5]."
+  },
+  {
+    "id": 1872,
+    "question": "What type of malware self-replicates across computer networks automatically without needing a host file or user action?",
+    "options": [
+      "Macro Virus",
+      "Computer Worm",
+      "Trojan Horse",
+      "Spyware"
+    ],
+    "correct_option": 1,
+    "explanation": "A Computer Worm is a standalone malware that self-replicates across networks[cite: 5]."
+  },
+  {
+    "id": 1873,
+    "question": "What is the social engineering attack called where attackers disguise themselves as trustworthy entities to steal passwords and credit card data?",
+    "options": [
+      "Phishing",
+      "Sniffing",
+      "Spooling",
+      "Defragmenting"
+    ],
+    "correct_option": 0,
+    "explanation": "Phishing uses deceptive communications to steal sensitive personal information[cite: 1, 5]."
+  },
+  {
+    "id": 1874,
+    "question": "What was the name of the first computer virus designed for IBM PCs, created in 1986 by two brothers in Pakistan?",
+    "options": [
+      "Creeper",
+      "Brain Virus",
+      "Morris Worm",
+      "ILOVEYOU"
+    ],
+    "correct_option": 1,
+    "explanation": "Brain was the first PC boot sector virus, created in 1986[cite: 5]."
+  },
+  {
+    "id": 1875,
+    "question": "What is the secret recording of keyboard key presses to harvest usernames and passwords called?",
+    "options": [
+      "Phishing",
+      "Keylogging",
+      "Spoofing",
+      "Sniffing"
+    ],
+    "correct_option": 1,
+    "explanation": "Keylogging records keystrokes to steal login credentials and sensitive information[cite: 1, 5]."
+  },
+  {
+    "id": 1876,
+    "question": "What is the central core of an operating system that directly controls memory, hardware devices, and process scheduling?",
+    "options": [
+      "Shell",
+      "Kernel",
+      "BIOS",
+      "Spooler"
+    ],
+    "correct_option": 1,
+    "explanation": "The Kernel is the core component of an operating system managing hardware resources[cite: 5]."
+  },
+  {
+    "id": 1877,
+    "question": "What power-saving state saves the active RAM session to the hard drive and completely powers down the PC with zero power consumption?",
+    "options": [
+      "Sleep Mode",
+      "Hibernate Mode",
+      "Standby Mode",
+      "Safe Mode"
+    ],
+    "correct_option": 1,
+    "explanation": "Hibernate mode saves RAM contents to storage and powers off the machine completely[cite: 5]."
+  },
+  {
+    "id": 1878,
+    "question": "What is the default primary file system used by modern Microsoft Windows operating systems?",
+    "options": [
+      "FAT32",
+      "NTFS (New Technology File System)",
+      "HFS+",
+      "ext4"
+    ],
+    "correct_option": 1,
+    "explanation": "NTFS is the standard default file system for modern Windows operating systems[cite: 5]."
+  },
+  {
+    "id": 1879,
+    "question": "What is the package file format extension used for installing software applications on the Android OS?",
+    "options": [
+      ".exe",
+      ".ipa",
+      ".apk",
+      ".dmg"
+    ],
+    "correct_option": 2,
+    "explanation": ".apk is the package file format used by Android for app distribution[cite: 5]."
+  },
+  {
+    "id": 1880,
+    "question": "Who invented network email in 1971 and chose the '@' symbol for email addressing?",
+    "options": [
+      "Tim Berners-Lee",
+      "Ray Tomlinson",
+      "Vint Cerf",
+      "Paul Buchheit"
+    ],
+    "correct_option": 1,
+    "explanation": "Ray Tomlinson invented network email and introduced the '@' symbol in 1971[cite: 5]."
+  },
+  {
+    "id": 1881,
+    "question": "Which email protocol uses Port 25 for sending and relaying messages between mail servers?",
+    "options": [
+      "POP3",
+      "IMAP",
+      "SMTP",
+      "HTTP"
+    ],
+    "correct_option": 2,
+    "explanation": "SMTP (Simple Mail Transfer Protocol) uses port 25 for sending outgoing emails[cite: 5]."
+  },
+  {
+    "id": 1882,
+    "question": "What is the standard port number assigned to the Post Office Protocol version 3 (POP3)?",
+    "options": [
+      "Port 25",
+      "Port 110",
+      "Port 143",
+      "Port 443"
+    ],
+    "correct_option": 1,
+    "explanation": "POP3 uses TCP port 110 for retrieving emails[cite: 5]."
+  },
+  {
+    "id": 1883,
+    "question": "What email protocol allows emails to remain on the server and provides multi-device mailbox synchronization?",
+    "options": [
+      "POP3",
+      "SMTP",
+      "IMAP (Internet Message Access Protocol)",
+      "SNMP"
+    ],
+    "correct_option": 2,
+    "explanation": "IMAP synchronizes email accounts across multiple client devices while keeping messages on the server[cite: 5]."
+  },
+  {
+    "id": 1884,
+    "question": "What protocol is required to send non-ASCII multimedia attachments (photos, videos, audio) via email?",
+    "options": [
+      "MIME (Multipurpose Internet Mail Extensions)",
+      "SMTP",
+      "SNMP",
+      "Telnet"
+    ],
+    "correct_option": 0,
+    "explanation": "MIME extends email capabilities to handle non-text binary attachments like images and audio[cite: 5]."
+  },
+  {
+    "id": 1885,
+    "question": "In an email header, what is the primary operational difference between CC and BCC fields?",
+    "options": [
+      "CC sends an encrypted copy, while BCC sends plain text",
+      "BCC addresses are concealed from all other recipients, whereas CC addresses are visible to everyone",
+      "CC allows replying, while BCC disables replies",
+      "BCC allows attachments, while CC does not"
+    ],
+    "correct_option": 1,
+    "explanation": "BCC hides recipient addresses from other recipients, whereas CC displays them openly[cite: 5]."
+  },
+  {
+    "id": 1886,
+    "question": "What was the name of the first web browser, developed in 1990 by Tim Berners-Lee (later renamed Nexus)?",
+    "options": [
+      "Mosaic",
+      "WorldWideWeb",
+      "Netscape Navigator",
+      "Lynx"
+    ],
+    "correct_option": 1,
+    "explanation": "WorldWideWeb was the first web browser, later renamed Nexus[cite: 5]."
+  },
+  {
+    "id": 1887,
+    "question": "What is the international standards organization responsible for maintaining World Wide Web specifications?",
+    "options": [
+      "ISO",
+      "W3C (World Wide Web Consortium)",
+      "IEEE",
+      "IANA"
+    ],
+    "correct_option": 1,
+    "explanation": "W3C develops open standards for the World Wide Web[cite: 5]."
+  },
+  {
+    "id": 1888,
+    "question": "What is the encrypted anonymity network that routes web traffic across layered volunteer relays to protect privacy?",
+    "options": [
+      "TOR (The Onion Router)",
+      "Telnet",
+      "USENET",
+      "ARPANET"
+    ],
+    "correct_option": 0,
+    "explanation": "TOR routes traffic through encrypted onion relays to maintain user anonymity[cite: 5]."
+  },
+  {
+    "id": 1889,
+    "question": "Who coined the phrase 'Internet of Things' (IoT) in 1999?",
+    "options": [
+      "Kevin Ashton",
+      "Tim Berners-Lee",
+      "Vint Cerf",
+      "Alan Turing"
+    ],
+    "correct_option": 0,
+    "explanation": "Kevin Ashton coined the term 'Internet of Things' in 1999[cite: 5]."
+  },
+  {
+    "id": 1890,
+    "question": "What was the name of India's first indigenous supercomputer, built by C-DAC in 1991?",
+    "options": [
+      "PARAM 8000",
+      "Pratyush",
+      "Mihir",
+      "PARAM Yuva"
+    ],
+    "correct_option": 0,
+    "explanation": "PARAM 8000 was India's first supercomputer, built by C-DAC[cite: 5]."
+  },
+  {
+    "id": 1891,
+    "question": "What performance metric is used to evaluate the computational processing speed of supercomputers?",
+    "options": [
+      "MIPS",
+      "FLOPS (Floating-Point Operations Per Second)",
+      "Megahertz",
+      "DPI"
+    ],
+    "correct_option": 1,
+    "explanation": "Supercomputer performance is measured in FLOPS[cite: 5]."
+  },
+  {
+    "id": 1892,
+    "question": "What port number is assigned to Domain Name System (DNS) query resolution?",
+    "options": [
+      "Port 21",
+      "Port 25",
+      "Port 53",
+      "Port 80"
+    ],
+    "correct_option": 2,
+    "explanation": "DNS name resolution uses Port 53[cite: 5]."
+  },
+  {
+    "id": 1893,
+    "question": "What is the standard bit length and format of a hardware MAC address?",
+    "options": [
+      "32 bits, Decimal format",
+      "48 bits (6 bytes), Hexadecimal format",
+      "64 bits, Binary format",
+      "128 bits, Hexadecimal format"
+    ],
+    "correct_option": 1,
+    "explanation": "A MAC address is 48 bits long and formatted in hexadecimal[cite: 5]."
+  },
+  {
+    "id": 1894,
+    "question": "What high-speed legacy port developed by Apple provided transfer speeds of 400 to 800 Mbps for camcorders?",
+    "options": [
+      "Firewire (IEEE 1394)",
+      "USB 1.1",
+      "Parallel Port",
+      "Serial Port"
+    ],
+    "correct_option": 0,
+    "explanation": "Firewire provided high-speed video transfers between 400 and 800 Mbps[cite: 1, 5]."
+  },
+  {
+    "id": 1895,
+    "question": "What was the first commercial mass-produced mainframe computer, delivered in 1951?",
+    "options": [
+      "ENIAC",
+      "UNIVAC I",
+      "EDSAC",
+      "IBM 701"
+    ],
+    "correct_option": 1,
+    "explanation": "UNIVAC I was the first commercially produced computer system[cite: 1, 5]."
+  },
+  {
+    "id": 1896,
+    "question": "What was the name of the first personal computer to feature a commercial graphical user interface and mouse in 1983?",
+    "options": [
+      "Apple Lisa",
+      "Apple I",
+      "IBM PC",
+      "Altair"
+    ],
+    "correct_option": 0,
+    "explanation": "The Apple Lisa introduced a commercial GUI and mouse in 1983[cite: 5]."
+  },
+  {
+    "id": 1897,
+    "question": "What ancient counting instrument composed of sliding beads on rods is recognized as the earliest mechanical calculator?",
+    "options": [
+      "Pascaline",
+      "Abacus",
+      "Slide Rule",
+      "Difference Engine"
+    ],
+    "correct_option": 1,
+    "explanation": "The Abacus is recognized as the earliest mechanical counting device[cite: 1, 5]."
+  },
+  {
+    "id": 1808,
+    "question": "What is the network diagnostic command that uses ICMP Echo packets to verify host reachability?",
+    "options": [
+      "Telnet",
+      "FTP",
+      "Ping",
+      "Traceroute"
+    ],
+    "correct_option": 2,
+    "explanation": "Ping uses ICMP Echo Request messages to check host reachability across a network[cite: 5]."
+  },
+  {
+    "id": 1909,
+    "question": "What is an internal private network accessible exclusively to authorized organizational employees called?",
+    "options": [
+      "Internet",
+      "Intranet",
+      "Extranet",
+      "Darknet"
+    ],
+    "correct_option": 1,
+    "explanation": "An Intranet is a private organizational network restricted to internal employees[cite: 1, 5]."
+  },
+  {
+    "id": 1900,
+    "question": "What is a private network that securely allows controlled access to authorized external business partners called?",
+    "options": [
+      "Intranet",
+      "Extranet",
+      "Internet",
+      "Local Area Network"
+    ],
+    "correct_option": 1,
+    "explanation": "An Extranet extends an intranet to allow controlled access for trusted external partners[cite: 1, 5]."
+  }
+]

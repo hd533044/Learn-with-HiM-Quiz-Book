@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1101,
+    "question": "What is the key combination to insert the dynamic Date field in Microsoft Word?",
+    "options": [
+      "Ctrl + ;",
+      "Alt + Shift + D",
+      "Ctrl + Shift + D",
+      "Alt + Ctrl + D"
+    ],
+    "correct_option": 1,
+    "explanation": "Alt + Shift + D inserts the dynamic Date field in MS Word, while Alt + Shift + T inserts the dynamic Time field[cite: 3, 5]."
+  },
+  {
+    "id": 1102,
+    "question": "Which shortcut key is used to apply double underline formatting to selected text in MS Word?",
+    "options": [
+      "Ctrl + U",
+      "Ctrl + Shift + U",
+      "Ctrl + Shift + D",
+      "Alt + Shift + D"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + Shift + D applies double underline formatting in Word. Ctrl + U applies a standard single underline[cite: 3, 4]."
+  },
+  {
+    "id": 1103,
+    "question": "Which shortcut key creates a Hanging Indent in a Microsoft Word paragraph?",
+    "options": [
+      "Ctrl + H",
+      "Ctrl + M",
+      "Ctrl + Shift + T",
+      "Ctrl + T"
+    ],
+    "correct_option": 3,
+    "explanation": "Ctrl + T applies a hanging indent to the paragraph, while Ctrl + Shift + T removes the hanging indent[cite: 3, 4]."
+  },
+  {
+    "id": 1104,
+    "question": "What is the shortcut key to toggle character casing between lowercase, UPPERCASE, and Sentence/Title case in MS Word?",
+    "options": [
+      "Shift + F3",
+      "Ctrl + F3",
+      "Alt + F3",
+      "Ctrl + Shift + C"
+    ],
+    "correct_option": 0,
+    "explanation": "Shift + F3 cycles through lowercase, UPPERCASE, and Sentence/Title casing for selected text[cite: 3, 5]."
+  },
+  {
+    "id": 1105,
+    "question": "Which shortcut key combination formats selected text as Subscript in Microsoft Word?",
+    "options": [
+      "Ctrl + Shift + =",
+      "Ctrl + =",
+      "Alt + =",
+      "Shift + Alt + ="
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + = applies Subscript (e.g., H₂O), whereas Ctrl + Shift + = applies Superscript (e.g., X²)[cite: 3, 5]."
+  },
+  {
+    "id": 1106,
+    "question": "What is the keyboard shortcut to insert a Footnote at the bottom of the page in Microsoft Word?",
+    "options": [
+      "Alt + Ctrl + D",
+      "Ctrl + Shift + F",
+      "Alt + Ctrl + F",
+      "Alt + Shift + F"
+    ],
+    "correct_option": 2,
+    "explanation": "Alt + Ctrl + F inserts a Footnote, while Alt + Ctrl + D inserts an Endnote at the end of the document[cite: 3, 4]."
+  },
+  {
+    "id": 1107,
+    "question": "Which shortcut key splits the active document window into two panes in MS Word?",
+    "options": [
+      "Ctrl + Alt + S",
+      "Ctrl + Shift + S",
+      "Alt + Shift + S",
+      "Ctrl + Enter"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + Alt + S splits the active document window into two horizontal panes or removes the split[cite: 3, 4]."
+  },
+  {
+    "id": 1108,
+    "question": "Which shortcut key combination applies the 'Heading 1' style to a paragraph in MS Word?",
+    "options": [
+      "Ctrl + 1",
+      "Alt + 1",
+      "Shift + Alt + 1",
+      "Ctrl + Alt + 1"
+    ],
+    "correct_option": 3,
+    "explanation": "Ctrl + Alt + 1 applies Heading 1, Ctrl + Alt + 2 applies Heading 2, and Ctrl + Alt + 3 applies Heading 3[cite: 3, 4]."
+  },
+  {
+    "id": 1109,
+    "question": "What happens when you press Ctrl + Shift + 8 (or Ctrl + *) in Microsoft Word?",
+    "options": [
+      "Applies double line spacing",
+      "Toggles non-printing formatting characters (Show/Hide ¶)",
+      "Inserts a formula field",
+      "Opens the Font dialog box"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Shift + 8 (Ctrl + *) toggles the display of hidden formatting marks such as paragraph symbols (¶), spaces, and tabs[cite: 3, 4]."
+  },
+  {
+    "id": 1110,
+    "question": "What shortcut key deletes one entire word to the left of the cursor in Microsoft Word?",
+    "options": [
+      "Ctrl + Delete",
+      "Shift + Backspace",
+      "Ctrl + Backspace",
+      "Alt + Backspace"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + Backspace deletes the word to the left of the cursor, while Ctrl + Delete deletes the word to the right[cite: 3, 4]."
+  },
+  {
+    "id": 1111,
+    "question": "Which shortcut key enters the active cell's Edit Mode in Microsoft Excel?",
+    "options": [
+      "F1",
+      "F2",
+      "F4",
+      "F7"
+    ],
+    "correct_option": 1,
+    "explanation": "Pressing F2 activates in-cell editing mode and places the insertion point at the end of the cell's contents[cite: 3, 5]."
+  },
+  {
+    "id": 1112,
+    "question": "What is the shortcut key to insert the current static Date into an active cell in MS Excel?",
+    "options": [
+      "Ctrl + ;",
+      "Ctrl + Shift + ;",
+      "Alt + Shift + D",
+      "Ctrl + D"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + ; inserts the current static date, while Ctrl + Shift + ; inserts the current static time[cite: 1, 3]."
+  },
+  {
+    "id": 1113,
+    "question": "Which shortcut key combination triggers the AutoSum formula in MS Excel?",
+    "options": [
+      "Ctrl + S",
+      "Shift + F3",
+      "Alt + =",
+      "Ctrl + Shift + T"
+    ],
+    "correct_option": 2,
+    "explanation": "Alt + = automatically inserts the =SUM() formula for the adjacent data range[cite: 1, 3]."
+  },
+  {
+    "id": 1114,
+    "question": "Which key cycles through cell reference types (Relative A1, Absolute $A$1, Mixed A$1, $A1) in the Excel formula bar?",
+    "options": [
+      "F2",
+      "F3",
+      "F9",
+      "F4"
+    ],
+    "correct_option": 3,
+    "explanation": "F4 cycles through absolute, mixed, and relative cell references when editing an Excel formula[cite: 1, 3]."
+  },
+  {
+    "id": 1115,
+    "question": "What is the shortcut key to invoke Flash Fill to automatically recognize data patterns in MS Excel?",
+    "options": [
+      "Ctrl + F",
+      "Ctrl + E",
+      "Ctrl + R",
+      "Ctrl + Shift + F"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + E triggers Flash Fill to automatically extract and populate data based on recognized patterns[cite: 3, 4]."
+  },
+  {
+    "id": 1116,
+    "question": "Which shortcut key toggles the display between evaluated values and raw formulas across an entire Excel worksheet?",
+    "options": [
+      "Ctrl + ` (Grave Accent)",
+      "Ctrl + Shift + ~",
+      "Alt + Shift + F",
+      "Ctrl + F9"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + ` (tilde/grave accent key) toggles between displaying calculated cell values and their underlying formulas[cite: 3, 4]."
+  },
+  {
+    "id": 1117,
+    "question": "What is the shortcut key to open the Format Cells dialog box in Microsoft Excel?",
+    "options": [
+      "Ctrl + Shift + F",
+      "Alt + 1",
+      "Ctrl + 1",
+      "Ctrl + F1"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + 1 directly opens the comprehensive Format Cells dialog box in MS Excel[cite: 3, 4]."
+  },
+  {
+    "id": 1118,
+    "question": "Which shortcut key combination inserts a new worksheet into the current Excel workbook?",
+    "options": [
+      "Shift + F11",
+      "Ctrl + F11",
+      "Alt + F11",
+      "Ctrl + N"
+    ],
+    "correct_option": 0,
+    "explanation": "Shift + F11 (or Alt + Shift + F1) inserts a new worksheet, while Alt + F11 opens the Visual Basic Editor[cite: 1, 3]."
+  },
+  {
+    "id": 1119,
+    "question": "Which shortcut key combination applies Currency formatting with two decimal places in MS Excel?",
+    "options": [
+      "Ctrl + Shift + %",
+      "Ctrl + Shift + $ (or 4)",
+      "Ctrl + Shift + #",
+      "Ctrl + Shift + @"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Shift + $ applies the standard Currency format with two decimal places[cite: 3, 4]."
+  },
+  {
+    "id": 1120,
+    "question": "Which shortcut key combination toggles AutoFilter on or off across dataset headers in MS Excel?",
+    "options": [
+      "Ctrl + F",
+      "Alt + F + L",
+      "Ctrl + Alt + A",
+      "Ctrl + Shift + L"
+    ],
+    "correct_option": 3,
+    "explanation": "Ctrl + Shift + L turns column header filtering arrows on or off[cite: 3, 4]."
+  },
+  {
+    "id": 1121,
+    "question": "What shortcut key converts a selected data range into an official Excel Table?",
+    "options": [
+      "Ctrl + T",
+      "Ctrl + Shift + T",
+      "Alt + T",
+      "Ctrl + M"
+    ],
+    "correct_option": 0,
+    "explanation": "Both Ctrl + T and Ctrl + L open the Create Table dialog to format the selected range as an official Excel Table[cite: 1, 3]."
+  },
+  {
+    "id": 1122,
+    "question": "Which shortcut key copies the content and formatting of the cell immediately above into the active cell (Fill Down)?",
+    "options": [
+      "Ctrl + U",
+      "Ctrl + D",
+      "Ctrl + R",
+      "Alt + D"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + D performs Fill Down (copies from above), while Ctrl + R performs Fill Right (copies from the left)[cite: 3, 4]."
+  },
+  {
+    "id": 1123,
+    "question": "What shortcut key inserts a line break inside a single Excel cell?",
+    "options": [
+      "Enter",
+      "Ctrl + Enter",
+      "Alt + Enter",
+      "Shift + Enter"
+    ],
+    "correct_option": 2,
+    "explanation": "Alt + Enter adds a soft carriage return/line break within an individual Excel cell[cite: 1, 3]."
+  },
+  {
+    "id": 1124,
+    "question": "Which shortcut key combination is used to enter a legacy Array Formula enclosed in curly braces { }?",
+    "options": [
+      "Ctrl + Enter",
+      "Alt + Enter",
+      "Shift + Enter",
+      "Ctrl + Shift + Enter"
+    ],
+    "correct_option": 3,
+    "explanation": "Ctrl + Shift + Enter (CSE) is the traditional key combination to execute legacy array formulas in Excel[cite: 1, 3]."
+  },
+  {
+    "id": 1125,
+    "question": "What is the shortcut key to navigate to the Next Worksheet to the right in an Excel workbook?",
+    "options": [
+      "Ctrl + Page Down",
+      "Ctrl + Page Up",
+      "Alt + Page Down",
+      "Shift + Tab"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + Page Down moves to the next worksheet on the right, and Ctrl + Page Up moves to the previous sheet on the left[cite: 1, 3]."
+  },
+  {
+    "id": 1126,
+    "question": "Which shortcut key starts a PowerPoint Slide Show from the first slide?",
+    "options": [
+      "Shift + F5",
+      "F5",
+      "Ctrl + F5",
+      "Alt + F5"
+    ],
+    "correct_option": 1,
+    "explanation": "F5 launches the slide show from Slide 1, while Shift + F5 starts it from the active slide[cite: 3, 5]."
+  },
+  {
+    "id": 1127,
+    "question": "What is the shortcut key to group multiple selected shapes or objects in Microsoft PowerPoint?",
+    "options": [
+      "Ctrl + Shift + G",
+      "Alt + G",
+      "Ctrl + G",
+      "Ctrl + Alt + G"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + G groups selected objects together, whereas Ctrl + Shift + G ungroups them[cite: 3, 4]."
+  },
+  {
+    "id": 1128,
+    "question": "Which shortcut key duplicates a selected shape, text box, or entire slide in PowerPoint?",
+    "options": [
+      "Ctrl + Shift + D",
+      "Alt + D",
+      "Ctrl + C + V",
+      "Ctrl + D"
+    ],
+    "correct_option": 3,
+    "explanation": "Ctrl + D creates an immediate duplicate copy of selected elements or slides in PowerPoint[cite: 3, 5]."
+  },
+  {
+    "id": 1129,
+    "question": "During a PowerPoint presentation, which shortcut key switches the mouse cursor to a Laser Pointer?",
+    "options": [
+      "Ctrl + L",
+      "Ctrl + P",
+      "Ctrl + I",
+      "Ctrl + E"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + L turns the mouse pointer into a laser pointer during a live slide show[cite: 3, 4]."
+  },
+  {
+    "id": 1130,
+    "question": "During a live PowerPoint presentation, which single key clears all pen ink drawings from the slide?",
+    "options": [
+      "Delete",
+      "E",
+      "Backspace",
+      "Ctrl + Z"
+    ],
+    "correct_option": 1,
+    "explanation": "Pressing the 'E' key during an ongoing slide show immediately erases all manual pen drawings[cite: 3, 4]."
+  },
+  {
+    "id": 1131,
+    "question": "Which shortcut key combination launches a slide show directly in Presenter View on a single screen?",
+    "options": [
+      "Shift + F5",
+      "Ctrl + F5",
+      "Alt + F5",
+      "Win + F5"
+    ],
+    "correct_option": 2,
+    "explanation": "Alt + F5 opens the presentation directly in Presenter View for speaker preview[cite: 3, 4]."
+  },
+  {
+    "id": 1132,
+    "question": "Which shortcut key toggles the alignment Gridlines on or off in Microsoft PowerPoint?",
+    "options": [
+      "Alt + F9",
+      "Ctrl + F9",
+      "F9",
+      "Shift + F9"
+    ],
+    "correct_option": 3,
+    "explanation": "Shift + F9 toggles alignment Gridlines, while Alt + F9 toggles the Drawing Guides[cite: 3, 4]."
+  },
+  {
+    "id": 1133,
+    "question": "Which Windows shortcut locks your PC workstation immediately?",
+    "options": [
+      "Win + L",
+      "Win + K",
+      "Ctrl + Alt + L",
+      "Win + Shift + L"
+    ],
+    "correct_option": 0,
+    "explanation": "Win + L immediately locks the computer and displays the lock screen[cite: 1, 3]."
+  },
+  {
+    "id": 1134,
+    "question": "Which Windows shortcut opens the multi-item Clipboard History panel?",
+    "options": [
+      "Win + C",
+      "Win + V",
+      "Ctrl + Shift + V",
+      "Alt + V"
+    ],
+    "correct_option": 1,
+    "explanation": "Win + V opens the Clipboard History overlay to view and paste previously copied items[cite: 3, 4]."
+  },
+  {
+    "id": 1135,
+    "question": "What is the shortcut key to open File Explorer in Windows?",
+    "options": [
+      "Win + F",
+      "Ctrl + E",
+      "Win + E",
+      "Win + X"
+    ],
+    "correct_option": 2,
+    "explanation": "Win + E launches Windows File Explorer (formerly My Computer)[cite: 1, 3]."
+  },
+  {
+    "id": 1136,
+    "question": "Which key combination directly opens the Windows Task Manager without intermediate prompts?",
+    "options": [
+      "Ctrl + Alt + Del",
+      "Win + Shift + Esc",
+      "Alt + Shift + Esc",
+      "Ctrl + Shift + Esc"
+    ],
+    "correct_option": 3,
+    "explanation": "Ctrl + Shift + Esc opens Task Manager directly, bypassing the security options screen[cite: 3, 4]."
+  },
+  {
+    "id": 1137,
+    "question": "Which shortcut key opens the Snipping Tool overlay to capture screenshots in Windows 10/11?",
+    "options": [
+      "Win + Shift + S",
+      "Win + PrtScn",
+      "Ctrl + Shift + S",
+      "Alt + PrtScn"
+    ],
+    "correct_option": 0,
+    "explanation": "Win + Shift + S activates the Snipping Tool overlay for rectangular, window, or full-screen captures[cite: 3, 4]."
+  },
+  {
+    "id": 1138,
+    "question": "What is the shortcut key to create a New Virtual Desktop in Windows 10/11?",
+    "options": [
+      "Win + D",
+      "Win + Ctrl + D",
+      "Win + Tab + N",
+      "Win + Shift + D"
+    ],
+    "correct_option": 1,
+    "explanation": "Win + Ctrl + D creates a new virtual desktop; Win + Ctrl + F4 closes the active virtual desktop[cite: 3, 4]."
+  },
+  {
+    "id": 1139,
+    "question": "Which shortcut key permanently deletes a selected file without sending it to the Recycle Bin?",
+    "options": [
+      "Ctrl + Delete",
+      "Alt + Delete",
+      "Shift + Delete",
+      "Win + Delete"
+    ],
+    "correct_option": 2,
+    "explanation": "Shift + Delete bypasses the Recycle Bin and deletes the file permanently[cite: 3, 5]."
+  },
+  {
+    "id": 1140,
+    "question": "What does pressing 'Win + I' open in Windows 10 and 11?",
+    "options": [
+      "Internet Explorer",
+      "Windows Device Manager",
+      "System Information",
+      "Windows Settings App"
+    ],
+    "correct_option": 3,
+    "explanation": "Win + I directly opens the main Windows Settings application[cite: 3, 4]."
+  },
+  {
+    "id": 1141,
+    "question": "Which shortcut key combination opens an Incognito window in Google Chrome?",
+    "options": [
+      "Ctrl + Shift + N",
+      "Ctrl + N",
+      "Ctrl + Shift + P",
+      "Alt + Shift + N"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + Shift + N opens a private Incognito window in Chrome[cite: 3, 5]."
+  },
+  {
+    "id": 1142,
+    "question": "What is the shortcut key to reopen the most recently closed tab in Google Chrome?",
+    "options": [
+      "Ctrl + T",
+      "Ctrl + Shift + T",
+      "Ctrl + Shift + W",
+      "Ctrl + Z"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Shift + T restores previously closed browser tabs in reverse order[cite: 3, 4]."
+  },
+  {
+    "id": 1143,
+    "question": "Which shortcut key combination launches Google Chrome's built-in Task Manager?",
+    "options": [
+      "Ctrl + Shift + Esc",
+      "Ctrl + Alt + Esc",
+      "Shift + Esc",
+      "Alt + Esc"
+    ],
+    "correct_option": 2,
+    "explanation": "Shift + Esc opens Chrome's internal Task Manager to view resource usage per tab and extension[cite: 1, 3]."
+  },
+  {
+    "id": 1144,
+    "question": "Which shortcut key combination opens the Downloads management tab in Google Chrome?",
+    "options": [
+      "Ctrl + D",
+      "Ctrl + Shift + J",
+      "Alt + J",
+      "Ctrl + J"
+    ],
+    "correct_option": 3,
+    "explanation": "Ctrl + J opens the Downloads management page in Chrome[cite: 3, 4]."
+  },
+  {
+    "id": 1145,
+    "question": "Which shortcut key forces a 'Hard Reload' (clearing cache) of the active webpage in Google Chrome?",
+    "options": [
+      "Ctrl + F5",
+      "Ctrl + R",
+      "F5",
+      "Alt + F5"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + F5 (or Ctrl + Shift + R) performs a hard reload, ignoring cached data[cite: 3, 4]."
+  },
+  {
+    "id": 1146,
+    "question": "What is the shortcut key to open the Clear Browsing Data dialog in Google Chrome?",
+    "options": [
+      "Ctrl + Alt + Delete",
+      "Ctrl + Shift + Delete",
+      "Shift + Delete",
+      "Ctrl + H + Delete"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Shift + Delete opens the Clear Browsing Data menu in Chrome[cite: 1, 3]."
+  },
+  {
+    "id": 1147,
+    "question": "Which shortcut key toggles the visibility of the Bookmarks Bar in Google Chrome?",
+    "options": [
+      "Ctrl + B",
+      "Alt + B",
+      "Ctrl + Shift + B",
+      "Ctrl + Alt + B"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + Shift + B shows or hides the horizontal Bookmarks bar[cite: 3, 4]."
+  },
+  {
+    "id": 1148,
+    "question": "Which shortcut key jumps directly to the last (rightmost) tab in Google Chrome?",
+    "options": [
+      "Ctrl + 0",
+      "Ctrl + Tab",
+      "Ctrl + End",
+      "Ctrl + 9"
+    ],
+    "correct_option": 3,
+    "explanation": "Ctrl + 9 switches focus to the last tab on the right, regardless of how many tabs are open[cite: 3, 4]."
+  },
+  {
+    "id": 1149,
+    "question": "What is the universal shortcut key to open the HTML Source Code of a webpage in modern browsers?",
+    "options": [
+      "Ctrl + U",
+      "Ctrl + S",
+      "Ctrl + Shift + U",
+      "Alt + U"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + U displays the underlying HTML source code of the active webpage in a new tab[cite: 1, 3]."
+  },
+  {
+    "id": 1150,
+    "question": "Which shortcut key resets the webpage zoom level to default 100% in Google Chrome?",
+    "options": [
+      "Ctrl + 1",
+      "Ctrl + 0",
+      "Ctrl + Shift + 0",
+      "Alt + 0"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + 0 resets the webpage zoom factor back to standard 100%[cite: 1, 3]."
+  },
+  {
+    "id": 1151,
+    "question": "Which functional key on a standard PC keyboard is used to open Help documentation?",
+    "options": [
+      "F2",
+      "F3",
+      "F1",
+      "F12"
+    ],
+    "correct_option": 2,
+    "explanation": "F1 is the universal function key to invoke Help menus across Windows applications[cite: 3, 5]."
+  },
+  {
+    "id": 1152,
+    "question": "Which shortcut key combination opens the Properties window of a selected file or folder in Windows?",
+    "options": [
+      "Ctrl + Shift + P",
+      "Win + Enter",
+      "Shift + Enter",
+      "Alt + Enter"
+    ],
+    "correct_option": 3,
+    "explanation": "Alt + Enter (or Alt + Double Click) opens the Properties dialog of the selected item[cite: 3, 4]."
+  },
+  {
+    "id": 1153,
+    "question": "Which shortcut key combination opens the Windows Start Menu without pressing the Windows logo key?",
+    "options": [
+      "Ctrl + Esc",
+      "Alt + Esc",
+      "Shift + Esc",
+      "Alt + Spacebar"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + Esc opens the Windows Start Menu[cite: 3, 4]."
+  },
+  {
+    "id": 1154,
+    "question": "Which shortcut key combination restarts and resets the GPU graphics driver in Windows during a screen freeze?",
+    "options": [
+      "Ctrl + Alt + Shift + G",
+      "Win + Ctrl + Shift + B",
+      "Win + Alt + Del",
+      "Win + Shift + D"
+    ],
+    "correct_option": 1,
+    "explanation": "Win + Ctrl + Shift + B issues an emergency driver reset for the display adapter[cite: 3, 4]."
+  },
+  {
+    "id": 1155,
+    "question": "What is the shortcut key to open the Quick Link / Power User menu (equivalent to right-clicking the Start button)?",
+    "options": [
+      "Win + P",
+      "Win + Z",
+      "Win + X",
+      "Ctrl + Win + X"
+    ],
+    "correct_option": 2,
+    "explanation": "Win + X opens the Power User menu providing access to Device Manager, Disk Management, and Terminal[cite: 3, 4]."
+  },
+  {
+    "id": 1156,
+    "question": "Which key combination selects text from the cursor position to the beginning of the line?",
+    "options": [
+      "Ctrl + Shift + Home",
+      "Alt + Home",
+      "Shift + Up Arrow",
+      "Shift + Home"
+    ],
+    "correct_option": 3,
+    "explanation": "Shift + Home selects text from the insertion point back to the beginning of the current line[cite: 3, 4]."
+  },
+  {
+    "id": 1157,
+    "question": "Which key combination selects text from the cursor position to the end of the line?",
+    "options": [
+      "Shift + End",
+      "Ctrl + Shift + End",
+      "Alt + End",
+      "Shift + Right Arrow"
+    ],
+    "correct_option": 0,
+    "explanation": "Shift + End selects text from the cursor position to the end of the line[cite: 3, 4]."
+  },
+  {
+    "id": 1158,
+    "question": "Which shortcut key combination selects all text from the current cursor position to the very end of the document?",
+    "options": [
+      "Shift + End",
+      "Ctrl + Shift + End",
+      "Ctrl + End",
+      "Alt + Shift + End"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Shift + End highlights everything from the insertion point to the end of the document[cite: 1, 3]."
+  },
+  {
+    "id": 1159,
+    "question": "What does the abbreviation GIGO stand for in computer data processing?",
+    "options": [
+      "General Input General Output",
+      "Garbage In Garbage Out",
+      "Global Input Global Output",
+      "Graphic Input Graphic Output"
+    ],
+    "correct_option": 1,
+    "explanation": "GIGO stands for Garbage In, Garbage Out, referring to computer accuracy depending on input quality[cite: 5]."
+  },
+  {
+    "id": 1160,
+    "question": "What is the full form of CAPTCHA used in online security authentication?",
+    "options": [
+      "Computer Automated Public Test to check Humans Apart",
+      "Completely Automated Public Turing test to tell Computers and Humans Apart",
+      "Controlled Automated Program for Turing Character Handling Authentication",
+      "Centralized Automated Public Test for Customer Human Authorization"
+    ],
+    "correct_option": 1,
+    "explanation": "CAPTCHA stands for Completely Automated Public Turing test to tell Computers and Humans Apart[cite: 5]."
+  },
+  {
+    "id": 1161,
+    "question": "Which was the first electronic computer developed in India (at TIFR)?",
+    "options": [
+      "PARAM 8000",
+      "TIFRAC",
+      "Siddharth",
+      "Micral"
+    ],
+    "correct_option": 1,
+    "explanation": "TIFRAC (Tata Institute of Fundamental Research Automatic Calculator) was the first indigenous electronic computer built in India[cite: 5]."
+  },
+  {
+    "id": 1162,
+    "question": "What was the first stored-program electronic computer to enter operational service (in 1949)?",
+    "options": [
+      "EDSAC",
+      "UNIVAC",
+      "ENIAC",
+      "EDVAC"
+    ],
+    "correct_option": 0,
+    "explanation": "EDSAC (Electronic Delay Storage Automatic Calculator) was the first practical stored-program computer[cite: 5]."
+  },
+  {
+    "id": 1163,
+    "question": "Who is widely acknowledged as the 'Father of Modern Computer Science'?",
+    "options": [
+      "Charles Babbage",
+      "Alan Turing",
+      "John von Neumann",
+      "Jack Kilby"
+    ],
+    "correct_option": 1,
+    "explanation": "Alan Turing is considered the father of modern computer science and artificial intelligence[cite: 5]."
+  },
+  {
+    "id": 1164,
+    "question": "What is the name of the electromechanical tabulating machine inventor who pioneered punched cards in 1890?",
+    "options": [
+      "Charles Babbage",
+      "Blaise Pascal",
+      "Herman Hollerith",
+      "John Napier"
+    ],
+    "correct_option": 2,
+    "explanation": "Herman Hollerith invented the tabulating machine using punched cards for the US census, leading to the founding of IBM[cite: 5]."
+  },
+  {
+    "id": 1165,
+    "question": "How many color phosphors/dots combine to form one single color pixel on a display monitor?",
+    "options": [
+      "2 dots",
+      "4 dots",
+      "8 dots",
+      "3 dots (Red, Green, Blue)"
+    ],
+    "correct_option": 3,
+    "explanation": "Each color pixel on a display is formed by 3 primary color subpixels: Red, Green, and Blue (RGB)[cite: 5]."
+  },
+  {
+    "id": 1166,
+    "question": "What is the process of writing/saving data onto an optical compact disc called?",
+    "options": [
+      "Burning",
+      "Ripping",
+      "Spooling",
+      "Formatting"
+    ],
+    "correct_option": 0,
+    "explanation": "Recording data onto an optical disc is called Burning, whereas extracting media from a disc is called Ripping[cite: 5]."
+  },
+  {
+    "id": 1167,
+    "question": "What is the standard data storage capacity of a conventional Compact Disc (CD)?",
+    "options": [
+      "500 MB",
+      "700 MB",
+      "1.44 MB",
+      "4.7 GB"
+    ],
+    "correct_option": 1,
+    "explanation": "Standard optical Compact Discs (CD-ROM/CD-R) have a storage capacity of approximately 700 MB[cite: 5]."
+  },
+  {
+    "id": 1168,
+    "question": "What is the standard data storage capacity of a standard single-layer Digital Versatile Disc (DVD)?",
+    "options": [
+      "700 MB",
+      "25 GB",
+      "4.7 GB",
+      "8.5 GB"
+    ],
+    "correct_option": 2,
+    "explanation": "A standard single-layer DVD has a storage capacity of 4.7 GB[cite: 5]."
+  },
+  {
+    "id": 1169,
+    "question": "What type of computer printer utilizes a mechanical hammer striking an inked ribbon against paper?",
+    "options": [
+      "Thermal Printer",
+      "Laser Printer",
+      "Inkjet Printer",
+      "Dot Matrix Printer"
+    ],
+    "correct_option": 3,
+    "explanation": "Dot Matrix printers are impact printers that physically strike pins against an inked ribbon onto paper[cite: 5]."
+  },
+  {
+    "id": 1170,
+    "question": "Which printer type uses toner powder and an electrostatic drum to produce high-speed printouts?",
+    "options": [
+      "Laser Printer",
+      "Dot Matrix Printer",
+      "Daisy Wheel Printer",
+      "Line Printer"
+    ],
+    "correct_option": 0,
+    "explanation": "Laser printers use toner powder cartridges and photoconductive drums (similar to photocopier technology)[cite: 5]."
+  },
+  {
+    "id": 1171,
+    "question": "In printer performance specifications, what does the abbreviation PPM stand for?",
+    "options": [
+      "Pixels Per Minute",
+      "Pages Per Minute",
+      "Pulses Per Minute",
+      "Points Per Mark"
+    ],
+    "correct_option": 1,
+    "explanation": "PPM stands for Pages Per Minute, the standard speed rating for page printers[cite: 5]."
+  },
+  {
+    "id": 1172,
+    "question": "Which of the following ports is commonly used for connecting monitors and video displays?",
+    "options": [
+      "RJ-45",
+      "PS/2",
+      "VGA / HDMI",
+      "SCSI"
+    ],
+    "correct_option": 2,
+    "explanation": "VGA (Video Graphics Array) and HDMI (High Definition Multimedia Interface) connect video displays and monitors[cite: 5]."
+  },
+  {
+    "id": 1173,
+    "question": "What type of storage interface connection replaced parallel ATA (PATA/IDE) inside modern PCs?",
+    "options": [
+      "SATA (Serial Advanced Technology Attachment)",
+      "VGA",
+      "Centronics",
+      "RS-232"
+    ],
+    "correct_option": 0,
+    "explanation": "SATA (Serial ATA) replaced ribbon-based PATA/IDE cables to connect internal hard drives and SSDs[cite: 5]."
+  },
+  {
+    "id": 1174,
+    "question": "What is the acronym for a redundant group of multiple physical hard disk drives operating as a single logical unit?",
+    "options": [
+      "SRAM",
+      "RAID (Redundant Array of Independent Disks)",
+      "DRAM",
+      "BIOS"
+    ],
+    "correct_option": 1,
+    "explanation": "RAID stands for Redundant Array of Independent (or Inexpensive) Disks, providing fault tolerance and performance[cite: 5]."
+  },
+  {
+    "id": 1175,
+    "question": "Which component of the Central Processing Unit (CPU) directs and coordinates operations across the entire computer system?",
+    "options": [
+      "ALU (Arithmetic Logic Unit)",
+      "Registers",
+      "Control Unit (CU)",
+      "Memory Buffer"
+    ],
+    "correct_option": 2,
+    "explanation": "The Control Unit (CU) fetches, decodes, and directs the execution of instructions across all hardware components[cite: 1, 5]."
+  },
+  {
+    "id": 1176,
+    "question": "What type of processor architecture uses a simplified instruction set with single clock-cycle execution?",
+    "options": [
+      "CISC",
+      "RISC (Reduced Instruction Set Computer)",
+      "VLIW",
+      "SIMD"
+    ],
+    "correct_option": 1,
+    "explanation": "RISC (Reduced Instruction Set Computer) utilizes smaller, optimized sets of instructions executing at high speed[cite: 5]."
+  },
+  {
+    "id": 1177,
+    "question": "What is the primary circuit board that houses the CPU, chipset, RAM slots, and expansion buses called?",
+    "options": [
+      "Daughterboard",
+      "Expansion Card",
+      "Motherboard (Printed Circuit Board)",
+      "Backplane"
+    ],
+    "correct_option": 2,
+    "explanation": "The Motherboard (or mainboard/PCB) is the central printed circuit board connecting all core computer subsystems[cite: 1, 5]."
+  },
+  {
+    "id": 1178,
+    "question": "Which motherboard system bus carries the memory address indicating where data must be read from or written to?",
+    "options": [
+      "Data Bus",
+      "Control Bus",
+      "Address Bus",
+      "System Power Bus"
+    ],
+    "correct_option": 2,
+    "explanation": "The Address Bus is unidirectional and transmits the physical memory address locations from the CPU to memory[cite: 5]."
+  },
+  {
+    "id": 1179,
+    "question": "Which of the following motherboard buses is bidirectional, transferring data between the CPU and memory components?",
+    "options": [
+      "Data Bus",
+      "Address Bus",
+      "Clock Bus",
+      "Power Bus"
+    ],
+    "correct_option": 0,
+    "explanation": "The Data Bus is bidirectional, carrying actual data to and from the CPU and system memory[cite: 5]."
+  },
+  {
+    "id": 1180,
+    "question": "What type of static volatile memory is built using flip-flop circuits and does not require periodic electrical refreshing?",
+    "options": [
+      "DRAM",
+      "SRAM (Static RAM)",
+      "SDRAM",
+      "ROM"
+    ],
+    "correct_option": 1,
+    "explanation": "SRAM uses transistors and flip-flops to retain data without needing periodic refreshing, making it fast (used for cache)[cite: 1, 5]."
+  },
+  {
+    "id": 1181,
+    "question": "Which type of random-access memory uses capacitors and must be refreshed dynamically thousands of times per second?",
+    "options": [
+      "SRAM",
+      "ROM",
+      "DRAM (Dynamic RAM)",
+      "PROM"
+    ],
+    "correct_option": 2,
+    "explanation": "DRAM stores data in capacitors that lose charge over time, requiring continuous refresh cycles[cite: 1, 5]."
+  },
+  {
+    "id": 1182,
+    "question": "What type of read-only memory can be erased by exposing the chip to strong Ultraviolet (UV) light?",
+    "options": [
+      "PROM",
+      "EEPROM",
+      "Flash Memory",
+      "EPROM (Erasable Programmable ROM)"
+    ],
+    "correct_option": 3,
+    "explanation": "EPROM chips feature a quartz window and are erased when exposed to intense ultraviolet (UV) light[cite: 5]."
+  },
+  {
+    "id": 1183,
+    "question": "What is the permanent software pre-installed onto hardware ROM chips by a manufacturer called?",
+    "options": [
+      "Firmware",
+      "Middleware",
+      "Shareware",
+      "Adware"
+    ],
+    "correct_option": 0,
+    "explanation": "Firmware refers to permanent, low-level software programmed directly into non-volatile hardware memory (such as BIOS)[cite: 1, 5]."
+  },
+  {
+    "id": 1184,
+    "question": "In the computer memory hierarchy, what is the correct sequence from fastest access speed to slowest?",
+    "options": [
+      "Hard Disk → RAM → Cache → Registers",
+      "Registers → Cache → RAM → Hard Disk",
+      "RAM → Registers → Cache → Optical Disc",
+      "Cache → Registers → RAM → Flash Memory"
+    ],
+    "correct_option": 1,
+    "explanation": "The memory hierarchy in descending order of speed is: CPU Registers > Cache Memory > Primary RAM > Secondary Storage (Hard Disk/SSD)[cite: 5]."
+  },
+  {
+    "id": 1185,
+    "question": "In cache memory architecture, what is it called when requested data is found immediately in the cache?",
+    "options": [
+      "Cache Miss",
+      "Cache Fault",
+      "Cache Hit",
+      "Cache Void"
+    ],
+    "correct_option": 2,
+    "explanation": "A Cache Hit occurs when the processor finds the requested instruction or data block already stored in cache memory[cite: 5]."
+  },
+  {
+    "id": 1186,
+    "question": "What is the ratio of cache hits to total memory access requests called?",
+    "options": [
+      "Access Ratio",
+      "Hit Ratio",
+      "Bandwidth Ratio",
+      "Latency Ratio"
+    ],
+    "correct_option": 1,
+    "explanation": "Hit Ratio measures cache efficiency, calculated as (Cache Hits / Total Access Requests)[cite: 5]."
+  },
+  {
+    "id": 1187,
+    "question": "What is a temporary storage area in RAM that holds data right before it is used to compensate for speed mismatches called?",
+    "options": [
+      "Virtual Disk",
+      "Buffer Memory",
+      "CMOS",
+      "Register"
+    ],
+    "correct_option": 1,
+    "explanation": "A Buffer is a designated region of memory used to temporarily hold data during transfer between two devices operating at different speeds[cite: 5]."
+  },
+  {
+    "id": 1188,
+    "question": "How many bits are in exactly one Nibble?",
+    "options": [
+      "2 bits",
+      "8 bits",
+      "4 bits",
+      "16 bits"
+    ],
+    "correct_option": 2,
+    "explanation": "One Nibble is a group of 4 bits (half of an 8-bit byte)[cite: 5]."
+  },
+  {
+    "id": 1189,
+    "question": "How many binary bytes are in exactly 1 Kibibyte (KiB)?",
+    "options": [
+      "1,000 bytes",
+      "1,024 bytes (2^10)",
+      "2,048 bytes",
+      "10^6 bytes"
+    ],
+    "correct_option": 1,
+    "explanation": "1 Kibibyte (KiB) is equal to 2^10 = 1,024 binary bytes[cite: 5]."
+  },
+  {
+    "id": 1190,
+    "question": "What is the decimal equivalent of 1 Megabyte (MB) in SI standard notation?",
+    "options": [
+      "10^3 bytes",
+      "10^9 bytes",
+      "10^6 bytes (1 Million bytes)",
+      "10^12 bytes"
+    ],
+    "correct_option": 2,
+    "explanation": "In decimal SI units, 1 Megabyte (MB) equals 10^6 bytes (1,000,000 bytes)[cite: 5]."
+  },
+  {
+    "id": 1191,
+    "question": "What is the initial bootstrap loader program executed when a PC starts up responsible for?",
+    "options": [
+      "Loading the operating system kernel from storage into RAM",
+      "Formatting the hard drive",
+      "Running antivirus diagnostics",
+      "Checking email connectivity"
+    ],
+    "correct_option": 0,
+    "explanation": "The Bootstrap Loader is the initial code executed from ROM that locates and loads the operating system into RAM during booting[cite: 5]."
+  },
+  {
+    "id": 1192,
+    "question": "What optical storage disc is designed with blue-violet laser technology to store high-definition video up to 50 GB?",
+    "options": [
+      "CD-ROM",
+      "Blu-ray Disc (BD)",
+      "DVD-R",
+      "Floppy Disk"
+    ],
+    "correct_option": 1,
+    "explanation": "Blu-ray Discs use a shorter wavelength blue-violet laser (405 nm) to achieve high data densities up to 25/50 GB[cite: 5]."
+  },
+  {
+    "id": 1193,
+    "question": "What is the rotational speed of standard commercial hard disk drives (HDDs) measured in?",
+    "options": [
+      "Hertz",
+      "DPI",
+      "RPM (Revolutions Per Minute)",
+      "MIPS"
+    ],
+    "correct_option": 2,
+    "explanation": "HDD spindle motor rotational speed is measured in RPM (e.g., 5400 RPM or 7200 RPM)[cite: 5]."
+  },
+  {
+    "id": 1194,
+    "question": "What type of storage device uses non-volatile flash memory chips with zero moving parts, providing faster access times than HDDs?",
+    "options": [
+      "Magnetic Tape",
+      "Compact Disc",
+      "Solid State Drive (SSD)",
+      "Floppy Disk"
+    ],
+    "correct_option": 2,
+    "explanation": "Solid State Drives (SSDs) use solid-state flash memory with no mechanical moving parts, offering superior read/write speeds[cite: 1, 5]."
+  },
+  {
+    "id": 1195,
+    "question": "What is a 4-bit computer code used to represent decimal digits 0 through 9 called?",
+    "options": [
+      "ASCII",
+      "EBCDIC",
+      "Unicode",
+      "BCD (Binary-Coded Decimal)"
+    ],
+    "correct_option": 3,
+    "explanation": "BCD (Binary-Coded Decimal) encodes each decimal digit using a 4-bit binary nibble[cite: 5]."
+  },
+  {
+    "id": 1196,
+    "question": "What 8-bit character encoding system was developed by IBM for use on its mainframe computers?",
+    "options": [
+      "EBCDIC",
+      "ASCII",
+      "Unicode",
+      "BCD"
+    ],
+    "correct_option": 0,
+    "explanation": "EBCDIC (Extended Binary Coded Decimal Interchange Code) is an 8-bit character encoding scheme created by IBM[cite: 5]."
+  },
+  {
+    "id": 1197,
+    "question": "What universal character encoding standard was created to represent text in all written world languages?",
+    "options": [
+      "ASCII-7",
+      "Unicode",
+      "EBCDIC",
+      "BCD"
+    ],
+    "correct_option": 1,
+    "explanation": "Unicode provides a unique numeric code point for every character across all modern and historical writing systems[cite: 5]."
+  },
+  {
+    "id": 1198,
+    "question": "In relational databases, what property states that no primary key value can be null or duplicate?",
+    "options": [
+      "Referential Integrity",
+      "Domain Integrity",
+      "Entity Integrity Constraint",
+      "Atomicity"
+    ],
+    "correct_option": 2,
+    "explanation": "The Entity Integrity constraint requires that every table must have a unique Primary Key and its value cannot be NULL[cite: 5]."
+  },
+  {
+    "id": 1199,
+    "question": "What type of database key is an attribute in one table that references the primary key of another table?",
+    "options": [
+      "Super Key",
+      "Candidate Key",
+      "Composite Key",
+      "Foreign Key"
+    ],
+    "correct_option": 3,
+    "explanation": "A Foreign Key establishes a relational link between two tables by pointing to the primary key of the parent relation[cite: 5]."
+  },
+  {
+    "id": 1200,
+    "question": "What is the binary subtraction result of (1010)₂ minus (0101)₂?",
+    "options": [
+      "(0101)₂",
+      "(0011)₂",
+      "(0110)₂",
+      "(0111)₂"
+    ],
+    "correct_option": 0,
+    "explanation": "1010 (decimal 10) minus 0101 (decimal 5) equals 5, which in binary is (0101)₂[cite: 5]."
+  }
+]

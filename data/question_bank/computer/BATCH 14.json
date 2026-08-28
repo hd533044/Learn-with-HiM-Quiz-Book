@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1301,
+    "question": "What is the primary function of the Control Unit (CU) within the central processor?",
+    "options": [
+      "Performing arithmetic additions and bitwise logic",
+      "Fetching, decoding, and directing instruction execution across computer components",
+      "Providing long-term non-volatile secondary disk storage",
+      "Rendering high-resolution vector 3D models"
+    ],
+    "correct_option": 1,
+    "explanation": "The Control Unit (CU) acts as the supervisor of the CPU, decoding program instructions and managing the flow of data and timing signals[cite: 1, 5]."
+  },
+  {
+    "id": 1302,
+    "question": "Which architecture classification describes a CPU designed with a compact, highly optimized instruction set that executes in single clock cycles?",
+    "options": [
+      "CISC (Complex Instruction Set Computer)",
+      "RISC (Reduced Instruction Set Computer)",
+      "VLIW (Very Long Instruction Word)",
+      "SIMD (Single Instruction Multiple Data)"
+    ],
+    "correct_option": 1,
+    "explanation": "RISC (Reduced Instruction Set Computer) utilizes simpler, smaller sets of instructions with fewer addressing modes to maximize execution speed[cite: 5]."
+  },
+  {
+    "id": 1303,
+    "question": "Which system motherboard bus is unidirectional and transmits memory addresses from the processor to memory chips?",
+    "options": [
+      "Data Bus",
+      "Control Bus",
+      "Address Bus",
+      "Power Bus"
+    ],
+    "correct_option": 2,
+    "explanation": "The Address Bus is unidirectional; it carries the physical memory address from the CPU to main memory and peripherals[cite: 5]."
+  },
+  {
+    "id": 1304,
+    "question": "Which type of primary memory uses flip-flops and transistors to retain data without needing periodic electrical refresh cycles?",
+    "options": [
+      "DRAM",
+      "SRAM (Static RAM)",
+      "SDRAM",
+      "PROM"
+    ],
+    "correct_option": 1,
+    "explanation": "Static RAM (SRAM) is constructed using transistors and flip-flop latches, making it faster and eliminating the need for periodic refreshing (used in CPU cache)[cite: 1, 5]."
+  },
+  {
+    "id": 1305,
+    "question": "Which type of read-only memory chip is erased by exposing its quartz window to intense ultraviolet (UV) light?",
+    "options": [
+      "PROM",
+      "EEPROM",
+      "EPROM (Erasable Programmable ROM)",
+      "Flash ROM"
+    ],
+    "correct_option": 2,
+    "explanation": "EPROM (Erasable Programmable Read-Only Memory) is erased by shining ultraviolet rays onto the transparent quartz window of the chip package[cite: 5]."
+  },
+  {
+    "id": 1306,
+    "question": "What is the permanent system program stored in ROM that runs the initial hardware self-test upon powering on a PC?",
+    "options": [
+      "Firmware (BIOS / POST)",
+      "Device Driver",
+      "Middleware",
+      "Operating System Kernel"
+    ],
+    "correct_option": 0,
+    "explanation": "BIOS firmware stored in ROM initiates the Power-On Self-Test (POST) to inspect core hardware components upon system startup[cite: 1, 5]."
+  },
+  {
+    "id": 1307,
+    "question": "In the computer memory hierarchy, which storage element delivers the fastest read/write access speed?",
+    "options": [
+      "L1 Cache Memory",
+      "Primary Dynamic RAM",
+      "Internal CPU Registers",
+      "Solid State Drive (SSD)"
+    ],
+    "correct_option": 2,
+    "explanation": "CPU internal registers provide the fastest access speed in the computer storage hierarchy, followed by cache memory, RAM, and secondary storage[cite: 1, 5]."
+  },
+  {
+    "id": 1308,
+    "question": "What term describes the event when requested data or an instruction is not found in the CPU cache memory, requiring a fetch from RAM?",
+    "options": [
+      "Cache Hit",
+      "Cache Miss",
+      "Cache Fault",
+      "Cache Void"
+    ],
+    "correct_option": 1,
+    "explanation": "A Cache Miss occurs when the required data cannot be found in cache memory, forcing the CPU to fetch it from slower main memory (RAM)[cite: 5]."
+  },
+  {
+    "id": 1309,
+    "question": "What is a reserved block of memory that holds data temporarily between devices to smooth out data transfer rate discrepancies?",
+    "options": [
+      "Virtual Memory",
+      "Buffer Memory",
+      "CMOS Memory",
+      "ROM"
+    ],
+    "correct_option": 1,
+    "explanation": "A Buffer is a designated temporary memory region in RAM that compensates for speed differences between sending and receiving devices[cite: 5]."
+  },
+  {
+    "id": 1310,
+    "question": "What is an optical recording disc designed to be written once by the user and read many times without modification?",
+    "options": [
+      "CD-RW",
+      "CD-R (or CD-WORM)",
+      "CD-ROM",
+      "DVD-RAM"
+    ],
+    "correct_option": 1,
+    "explanation": "CD-R follows the WORM (Write Once, Read Many) principle, meaning data can be burned to the disc only once and cannot be erased[cite: 5]."
+  },
+  {
+    "id": 1311,
+    "question": "Which laser-based impactless printer uses toner powder and an electrostatic drum to produce high-speed printouts?",
+    "options": [
+      "Thermal Printer",
+      "Inkjet Printer",
+      "Laser Printer",
+      "Daisy Wheel Printer"
+    ],
+    "correct_option": 2,
+    "explanation": "Laser printers use electrostatic toner cartridges and a photo-conductive drum to produce high-resolution, high-speed document output[cite: 5]."
+  },
+  {
+    "id": 1312,
+    "question": "What high-precision output hardware uses automated pens or markers to draw vector blueprints and CAD drawings on large paper sheets?",
+    "options": [
+      "Dot Matrix Printer",
+      "Plotter",
+      "Line Printer",
+      "Drum Scanner"
+    ],
+    "correct_option": 1,
+    "explanation": "Plotters are specialized output devices used by engineers and architects to draw high-precision vector graphics and blueprints[cite: 5]."
+  },
+  {
+    "id": 1313,
+    "question": "What type of printer relies on heat-sensitive thermochromic paper and is widely used in point-of-sale (POS) terminals and ATMs?",
+    "options": [
+      "Laser Printer",
+      "Dot Matrix Printer",
+      "Thermal Printer",
+      "Line Printer"
+    ],
+    "correct_option": 2,
+    "explanation": "Thermal printers generate text by applying localized heat to special thermochromic paper, requiring no ink or toner cartridges[cite: 5]."
+  },
+  {
+    "id": 1314,
+    "question": "What is the process of partitioning a magnetic hard disk platter into concentric tracks and sectors called?",
+    "options": [
+      "Defragmentation",
+      "Formatting",
+      "Spooling",
+      "Buffering"
+    ],
+    "correct_option": 1,
+    "explanation": "Disk formatting divides the physical surface of a disk into logical tracks and sectors to prepare it for file storage[cite: 5]."
+  },
+  {
+    "id": 1315,
+    "question": "What is the time required for a hard drive's read/write head to move mechanically to the requested track or cylinder called?",
+    "options": [
+      "Latency Time",
+      "Seek Time",
+      "Access Time",
+      "Transfer Rate"
+    ],
+    "correct_option": 1,
+    "explanation": "Seek time is the duration required for the actuator arm to position the read/write head over the specified track[cite: 5]."
+  },
+  {
+    "id": 1316,
+    "question": "What is the rotational delay for the requested sector on a spinning hard disk platter to rotate under the read/write head?",
+    "options": [
+      "Seek Time",
+      "Rotational Latency",
+      "Execution Time",
+      "Spooling Time"
+    ],
+    "correct_option": 1,
+    "explanation": "Rotational latency is the waiting time required for the target sector on the platter to spin directly under the drive head[cite: 5]."
+  },
+  {
+    "id": 1317,
+    "question": "What is a workstation terminal called that consists only of a display monitor and keyboard with zero onboard processing power?",
+    "options": [
+      "Smart Terminal",
+      "Dumb Terminal",
+      "Microcomputer",
+      "Client Node"
+    ],
+    "correct_option": 1,
+    "explanation": "A Dumb Terminal has no local CPU or storage capabilities and relies entirely on a centralized host mainframe computer[cite: 5]."
+  },
+  {
+    "id": 1318,
+    "question": "How many peripheral devices can be connected in a daisy-chain configuration to a single USB host controller?",
+    "options": [
+      "32 devices",
+      "64 devices",
+      "127 devices",
+      "256 devices"
+    ],
+    "correct_option": 2,
+    "explanation": "A single Universal Serial Bus (USB) host controller can address and support up to 127 individual peripheral devices[cite: 5]."
+  },
+  {
+    "id": 1319,
+    "question": "What is the process of copying and converting digital audio and video files from an optical CD onto a computer called?",
+    "options": [
+      "Burning",
+      "Ripping",
+      "Formatting",
+      "Spooling"
+    ],
+    "correct_option": 1,
+    "explanation": "Ripping refers to extracting digital audio or video tracks from an optical disc to a computer, whereas Burning writes data to a disc[cite: 5]."
+  },
+  {
+    "id": 1320,
+    "question": "What small battery on the motherboard powers the real-time clock and retains BIOS settings when the PC is disconnected from power?",
+    "options": [
+      "CMOS Battery",
+      "Lithium Power Pack",
+      "SRAM Cell",
+      "Capacitor Pack"
+    ],
+    "correct_option": 0,
+    "explanation": "The CMOS battery supplies continuous power to the CMOS memory chip to preserve system hardware configuration and real-time clock data[cite: 5]."
+  },
+  {
+    "id": 1321,
+    "question": "What is the standard formatted storage capacity of a traditional 3.5-inch High Density (HD) floppy diskette?",
+    "options": [
+      "720 KB",
+      "1.44 MB",
+      "2.88 MB",
+      "1.44 KB"
+    ],
+    "correct_option": 1,
+    "explanation": "A standard 3.5-inch High Density (HD) floppy diskette provides a storage capacity of 1.44 MB[cite: 5]."
+  },
+  {
+    "id": 1322,
+    "question": "What is the storage capacity of a standard single-layer Blu-ray Disc (BD)?",
+    "options": [
+      "4.7 GB",
+      "8.5 GB",
+      "25 GB",
+      "50 GB"
+    ],
+    "correct_option": 2,
+    "explanation": "A single-layer Blu-ray disc holds 25 GB of data, while a dual-layer Blu-ray disc stores up to 50 GB[cite: 5]."
+  },
+  {
+    "id": 1323,
+    "question": "What 8-pin modular connector is standard on unshielded twisted-pair (UTP) Ethernet network cables?",
+    "options": [
+      "RJ-11",
+      "RJ-45",
+      "BNC",
+      "DB-25"
+    ],
+    "correct_option": 1,
+    "explanation": "RJ-45 (Registered Jack 45) is the standard 8-pin modular connector used for Ethernet LAN cabling[cite: 5]."
+  },
+  {
+    "id": 1324,
+    "question": "What high-speed legacy serial port interface developed by Apple delivers transfer rates of 400 to 800 Mbps for video equipment?",
+    "options": [
+      "USB 1.1",
+      "Parallel Port",
+      "Firewire (IEEE 1394)",
+      "RS-232"
+    ],
+    "correct_option": 2,
+    "explanation": "Firewire (IEEE 1394) was developed by Apple to connect camcorders and high-speed external drives at 400 to 800 Mbps[cite: 1, 5]."
+  },
+  {
+    "id": 1325,
+    "question": "What legacy port interface utilized a 25-pin D-sub connector (DB-25) and was commonly known as the Centronics printer port?",
+    "options": [
+      "Serial Port",
+      "Parallel Port (LPT)",
+      "VGA Port",
+      "PS/2 Port"
+    ],
+    "correct_option": 1,
+    "explanation": "Parallel ports used a 25-pin DB-25 connector (Centronics standard) to transmit multiple data streams to printers[cite: 1, 5]."
+  },
+  {
+    "id": 1326,
+    "question": "Which of the following is a non-volatile solid-state storage device with zero mechanical moving parts?",
+    "options": [
+      "Hard Disk Drive",
+      "Magnetic Tape",
+      "Solid State Drive (SSD)",
+      "Floppy Disk"
+    ],
+    "correct_option": 2,
+    "explanation": "Solid State Drives (SSDs) use flash memory integrated circuits with no moving mechanical components, providing high shock resistance and speed[cite: 1, 5]."
+  },
+  {
+    "id": 1327,
+    "question": "What is the rotational speed of traditional desktop computer hard disk drives commonly measured in?",
+    "options": [
+      "Hertz (Hz)",
+      "DPI",
+      "RPM (Revolutions Per Minute)",
+      "MIPS"
+    ],
+    "correct_option": 2,
+    "explanation": "The rotational speed of magnetic hard disk platters is measured in Revolutions Per Minute (e.g., 5400 RPM, 7200 RPM)[cite: 5]."
+  },
+  {
+    "id": 1328,
+    "question": "What is a single 4-bit binary computer value called?",
+    "options": [
+      "Byte",
+      "Nibble",
+      "Word",
+      "Octet"
+    ],
+    "correct_option": 1,
+    "explanation": "A Nibble is a unit of digital information consisting of 4 bits (half of an 8-bit byte)[cite: 5]."
+  },
+  {
+    "id": 1329,
+    "question": "What 8-bit character encoding standard was developed by IBM for use on its mainframe computers?",
+    "options": [
+      "ASCII-7",
+      "EBCDIC",
+      "Unicode",
+      "BCD"
+    ],
+    "correct_option": 1,
+    "explanation": "EBCDIC (Extended Binary Coded Decimal Interchange Code) is an 8-bit character encoding system created by IBM[cite: 5]."
+  },
+  {
+    "id": 1330,
+    "question": "What character encoding standard provides unique code points for all world languages across computing platforms?",
+    "options": [
+      "ASCII",
+      "BCD",
+      "Unicode",
+      "EBCDIC"
+    ],
+    "correct_option": 2,
+    "explanation": "Unicode is a universal character encoding standard designed to support text written in all global languages[cite: 5]."
+  },
+  {
+    "id": 1331,
+    "question": "Who created the C programming language at AT&T Bell Laboratories in 1972?",
+    "options": [
+      "Bjarne Stroustrup",
+      "Dennis Ritchie",
+      "Ken Thompson",
+      "James Gosling"
+    ],
+    "correct_option": 1,
+    "explanation": "Dennis Ritchie developed the C programming language at Bell Labs between 1969 and 1973[cite: 5]."
+  },
+  {
+    "id": 1332,
+    "question": "Who developed C++ as an extension of C with classes at Bell Labs in the early 1980s?",
+    "options": [
+      "Dennis Ritchie",
+      "Bjarne Stroustrup",
+      "Guido van Rossum",
+      "Tim Berners-Lee"
+    ],
+    "correct_option": 1,
+    "explanation": "Bjarne Stroustrup created the C++ programming language at Bell Laboratories[cite: 1, 5]."
+  },
+  {
+    "id": 1333,
+    "question": "Who developed the Python programming language, releasing it in 1991?",
+    "options": [
+      "Guido van Rossum",
+      "Larry Wall",
+      "Brendan Eich",
+      "Rasmus Lerdorf"
+    ],
+    "correct_option": 0,
+    "explanation": "Guido van Rossum created Python at CWI in the Netherlands as a successor to the ABC language[cite: 5]."
+  },
+  {
+    "id": 1334,
+    "question": "What was the first high-level programming language developed in 1957 for scientific and mathematical calculations?",
+    "options": [
+      "COBOL",
+      "FORTRAN",
+      "BASIC",
+      "PASCAL"
+    ],
+    "correct_option": 1,
+    "explanation": "FORTRAN (Formula Translation), developed by John Backus at IBM, was the first commercial high-level language[cite: 5]."
+  },
+  {
+    "id": 1335,
+    "question": "Which programming language was developed under Grace Hopper's guidance specifically for business and financial applications?",
+    "options": [
+      "FORTRAN",
+      "COBOL",
+      "PASCAL",
+      "LISP"
+    ],
+    "correct_option": 1,
+    "explanation": "COBOL (Common Business-Oriented Language) was designed in 1959 for business and commercial record processing[cite: 5]."
+  },
+  {
+    "id": 1336,
+    "question": "Which programming language was created by John McCarthy in 1958 for Artificial Intelligence research?",
+    "options": [
+      "PROLOG",
+      "LISP",
+      "Smalltalk",
+      "Ada"
+    ],
+    "correct_option": 1,
+    "explanation": "LISP (List Processing), designed by John McCarthy, became the standard language for AI research[cite: 5]."
+  },
+  {
+    "id": 1337,
+    "question": "What was the core electronic component used for logic and memory in First Generation computers (1940–1956)?",
+    "options": [
+      "Transistors",
+      "Vacuum Tubes",
+      "Integrated Circuits",
+      "Microprocessors"
+    ],
+    "correct_option": 1,
+    "explanation": "First-generation computers relied on vacuum tubes (thermionic valves) as active electronic switching elements[cite: 1, 5]."
+  },
+  {
+    "id": 1338,
+    "question": "Which electronic component enabled the creation of Second Generation computers (1957–1963)?",
+    "options": [
+      "Vacuum Tubes",
+      "Transistors",
+      "Microprocessors",
+      "ULSI Chips"
+    ],
+    "correct_option": 1,
+    "explanation": "Transistors replaced vacuum tubes in second-generation computers, improving reliability and reducing power consumption[cite: 1, 5]."
+  },
+  {
+    "id": 1339,
+    "question": "Which generation of computers introduced integrated circuit (IC) technology?",
+    "options": [
+      "First Generation",
+      "Second Generation",
+      "Third Generation",
+      "Fourth Generation"
+    ],
+    "correct_option": 2,
+    "explanation": "Third-generation computers (1964–1971) were built using semiconductor Integrated Circuits (ICs)[cite: 1, 5]."
+  },
+  {
+    "id": 1340,
+    "question": "What fabrication technology enabled Fourth Generation computers through single-chip microprocessors?",
+    "options": [
+      "Vacuum Tubes",
+      "Magnetic Drums",
+      "VLSI (Very Large Scale Integration)",
+      "Transistors"
+    ],
+    "correct_option": 2,
+    "explanation": "Fourth-generation computers utilized Very Large Scale Integration (VLSI) to place entire processors on a single silicon chip[cite: 1, 5]."
+  },
+  {
+    "id": 1341,
+    "question": "What is the primary conceptual focus of Fifth Generation computing systems?",
+    "options": [
+      "Vacuum tube switching",
+      "Artificial Intelligence and Parallel Processing",
+      "Magnetic core memory",
+      "Batch punch-card execution"
+    ],
+    "correct_option": 1,
+    "explanation": "Fifth-generation computing focuses on Ultra Large Scale Integration (ULSI), artificial intelligence, and parallel hardware architectures[cite: 1, 5]."
+  },
+  {
+    "id": 1342,
+    "question": "What was the first commercial electronic general-purpose computer delivered to the US Census Bureau in 1951?",
+    "options": [
+      "ENIAC",
+      "UNIVAC I",
+      "EDSAC",
+      "EDVAC"
+    ],
+    "correct_option": 1,
+    "explanation": "UNIVAC I (Universal Automatic Computer) was the first commercial mass-produced computer[cite: 1, 5]."
+  },
+  {
+    "id": 1343,
+    "question": "What was the first fully electronic programmable general-purpose computer, built during WWII by Mauchly and Eckert?",
+    "options": [
+      "ENIAC",
+      "UNIVAC",
+      "Mark I",
+      "Analytical Engine"
+    ],
+    "correct_option": 0,
+    "explanation": "ENIAC (Electronic Numerical Integrator and Computer) was the first operational general-purpose electronic digital computer[cite: 1, 5]."
+  },
+  {
+    "id": 1344,
+    "question": "Who created the Analytical Engine and Difference Engine mechanical computing machines?",
+    "options": [
+      "Alan Turing",
+      "Charles Babbage",
+      "Blaise Pascal",
+      "Herman Hollerith"
+    ],
+    "correct_option": 1,
+    "explanation": "Charles Babbage designed the Difference Engine (1822) and Analytical Engine (1834)[cite: 1, 5]."
+  },
+  {
+    "id": 1345,
+    "question": "Who co-founded Microsoft Corporation alongside Bill Gates in 1975?",
+    "options": [
+      "Steve Jobs",
+      "Paul Allen",
+      "Steve Wozniak",
+      "Vinod Khosla"
+    ],
+    "correct_option": 1,
+    "explanation": "Bill Gates and Paul Allen founded Microsoft in Albuquerque, New Mexico in 1975[cite: 1, 5]."
+  },
+  {
+    "id": 1346,
+    "question": "Who co-founded Apple Computer Company in 1976 alongside Steve Jobs and Ronald Wayne?",
+    "options": [
+      "Steve Wozniak",
+      "Bill Gates",
+      "Paul Allen",
+      "Larry Page"
+    ],
+    "correct_option": 0,
+    "explanation": "Steve Jobs, Steve Wozniak, and Ronald Wayne founded Apple Computer Company in 1976[cite: 1, 5]."
+  },
+  {
+    "id": 1347,
+    "question": "Who are the two co-founders of Google, established in 1998?",
+    "options": [
+      "Steve Jobs and Steve Wozniak",
+      "Larry Page and Sergey Brin",
+      "Bill Gates and Paul Allen",
+      "Jerry Yang and David Filo"
+    ],
+    "correct_option": 1,
+    "explanation": "Larry Page and Sergey Brin created the Google search engine while PhD students at Stanford[cite: 1, 5]."
+  },
+  {
+    "id": 1348,
+    "question": "Who founded Yahoo! as a web directory in 1994?",
+    "options": [
+      "Larry Page and Sergey Brin",
+      "Sabeer Bhatia and Jack Smith",
+      "Jerry Yang and David Filo",
+      "Steve Case and Marc Seriff"
+    ],
+    "correct_option": 2,
+    "explanation": "Jerry Yang and David Filo created Yahoo! at Stanford University in 1994[cite: 1, 5]."
+  },
+  {
+    "id": 1349,
+    "question": "What Indian-American entrepreneur co-founded Sun Microsystems, which was later acquired by Oracle?",
+    "options": [
+      "Satya Nadella",
+      "Sundar Pichai",
+      "Vinod Khosla",
+      "Sabeer Bhatia"
+    ],
+    "correct_option": 2,
+    "explanation": "Vinod Khosla co-founded Sun Microsystems in 1982 alongside Scott McNealy, Andy Bechtolsheim, and Bill Joy[cite: 1, 5]."
+  },
+  {
+    "id": 1350,
+    "question": "Who is the Chairman and Chief Executive Officer (CEO) of IBM Corporation?",
+    "options": [
+      "Sundar Pichai",
+      "Arvind Krishna",
+      "Satya Nadella",
+      "Shantanu Narayen"
+    ],
+    "correct_option": 1,
+    "explanation": "Arvind Krishna serves as the Chairman and CEO of IBM Corporation[cite: 1, 5]."
+  },
+  {
+    "id": 1351,
+    "question": "What was the name of India's first supercomputer, designed by C-DAC in 1991?",
+    "options": [
+      "PARAM 8000",
+      "Pratyush",
+      "Mihir",
+      "PARAM Yuva"
+    ],
+    "correct_option": 0,
+    "explanation": "PARAM 8000 was India's first indigenous supercomputer, built by C-DAC under Dr. Vijay Bhatkar[cite: 5]."
+  },
+  {
+    "id": 1352,
+    "question": "What performance unit is used to measure the processing speed of supercomputers?",
+    "options": [
+      "MIPS",
+      "FLOPS (Floating-Point Operations Per Second)",
+      "Megahertz (MHz)",
+      "BPS"
+    ],
+    "correct_option": 1,
+    "explanation": "Supercomputer computational speed is measured in FLOPS (such as Teraflops, Petaflops, and Exaflops)[cite: 5]."
+  },
+  {
+    "id": 1353,
+    "question": "What is the standard port number assigned to Domain Name System (DNS) services?",
+    "options": [
+      "Port 21",
+      "Port 25",
+      "Port 53",
+      "Port 80"
+    ],
+    "correct_option": 2,
+    "explanation": "DNS name resolution operates on TCP and UDP Port 53[cite: 5]."
+  },
+  {
+    "id": 1354,
+    "question": "What port number is assigned to secure encrypted web communication via HTTPS?",
+    "options": [
+      "Port 80",
+      "Port 110",
+      "Port 143",
+      "Port 443"
+    ],
+    "correct_option": 3,
+    "explanation": "HTTPS runs over Transport Layer Security / SSL on TCP port 443[cite: 5]."
+  },
+  {
+    "id": 1355,
+    "question": "What is the standard bit length and format of a hardware MAC (Media Access Control) address?",
+    "options": [
+      "32 bits, Decimal format",
+      "48 bits (6 bytes), Hexadecimal format",
+      "64 bits, Binary format",
+      "128 bits, Hexadecimal format"
+    ],
+    "correct_option": 1,
+    "explanation": "A MAC address is a 48-bit (6-byte) physical hardware address formatted as 12 hexadecimal digits[cite: 5]."
+  },
+  {
+    "id": 1356,
+    "question": "What is the total bit length of an IPv4 address compared to an IPv6 address?",
+    "options": [
+      "32 bits and 64 bits",
+      "32 bits and 128 bits",
+      "48 bits and 128 bits",
+      "64 bits and 256 bits"
+    ],
+    "correct_option": 1,
+    "explanation": "IPv4 addresses are 32 bits long, whereas IPv6 addresses are 128 bits long[cite: 1, 5]."
+  },
+  {
+    "id": 1357,
+    "question": "How many hierarchical layers are defined in the ISO-OSI reference model?",
+    "options": [
+      "4 layers",
+      "5 layers",
+      "7 layers",
+      "9 layers"
+    ],
+    "correct_option": 2,
+    "explanation": "The OSI model consists of 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application[cite: 5]."
+  },
+  {
+    "id": 1358,
+    "question": "Which layer of the OSI model handles data encryption, decryption, compression, and translation?",
+    "options": [
+      "Application Layer",
+      "Session Layer",
+      "Presentation Layer",
+      "Transport Layer"
+    ],
+    "correct_option": 2,
+    "explanation": "Layer 6 (Presentation Layer) is responsible for syntax, compression, and data encryption/decryption[cite: 5]."
+  },
+  {
+    "id": 1359,
+    "question": "Which layer of the OSI model provides end-to-end reliability, flow control, and port-level addressing?",
+    "options": [
+      "Data Link Layer",
+      "Network Layer",
+      "Session Layer",
+      "Transport Layer"
+    ],
+    "correct_option": 3,
+    "explanation": "Layer 4 (Transport Layer), utilizing TCP and UDP, provides end-to-end delivery, segmentation, and port addressing[cite: 1, 5]."
+  },
+  {
+    "id": 1360,
+    "question": "What is the Protocol Data Unit (PDU) at the Network Layer called?",
+    "options": [
+      "Bits",
+      "Frames",
+      "Packets",
+      "Segments"
+    ],
+    "correct_option": 2,
+    "explanation": "Network Layer (Layer 3) data units are called Packets, Data Link units are Frames, and Transport units are Segments[cite: 1, 5]."
+  },
+  {
+    "id": 1361,
+    "question": "At which OSI model layer do network Routers primarily operate to route IP packets?",
+    "options": [
+      "Data Link Layer",
+      "Network Layer",
+      "Transport Layer",
+      "Physical Layer"
+    ],
+    "correct_option": 1,
+    "explanation": "Routers operate at Layer 3 (Network Layer) to route data packets between disparate networks using IP addressing[cite: 1, 5]."
+  },
+  {
+    "id": 1362,
+    "question": "Which network topology connects every computer to a single linear central backbone cable?",
+    "options": [
+      "Star Topology",
+      "Ring Topology",
+      "Bus Topology",
+      "Mesh Topology"
+    ],
+    "correct_option": 2,
+    "explanation": "In a Bus topology, all client nodes share a single central transmission line terminating at both ends[cite: 5]."
+  },
+  {
+    "id": 1363,
+    "question": "Which network topology connects devices in a circular loop where data travels using a specialized Token?",
+    "options": [
+      "Star Topology",
+      "Bus Topology",
+      "Ring Topology",
+      "Tree Topology"
+    ],
+    "correct_option": 2,
+    "explanation": "A Ring topology links nodes sequentially in a closed loop, using token passing to regulate data transmissions[cite: 5]."
+  },
+  {
+    "id": 1364,
+    "question": "What network communication mode allows data transmission in both directions, but only in one direction at a time (e.g., Walkie-Talkie)?",
+    "options": [
+      "Simplex",
+      "Half-Duplex",
+      "Full-Duplex",
+      "Multiplex"
+    ],
+    "correct_option": 1,
+    "explanation": "In Half-Duplex mode, data can travel in both directions, but devices must alternate sending and receiving[cite: 1, 5]."
+  },
+  {
+    "id": 1365,
+    "question": "What network transmission mode allows data to flow simultaneously in both directions at the same time (e.g., telephone conversation)?",
+    "options": [
+      "Simplex",
+      "Half-Duplex",
+      "Full-Duplex",
+      "Asynchronous"
+    ],
+    "correct_option": 2,
+    "explanation": "Full-Duplex communication allows bidirectional data transmission simultaneously between two connected nodes[cite: 1, 5]."
+  },
+  {
+    "id": 1366,
+    "question": "What is the standard port number assigned to the Simple Mail Transfer Protocol (SMTP)?",
+    "options": [
+      "Port 21",
+      "Port 25",
+      "Port 53",
+      "Port 110"
+    ],
+    "correct_option": 1,
+    "explanation": "SMTP uses TCP port 25 for sending and relaying outgoing electronic mail[cite: 5]."
+  },
+  {
+    "id": 1367,
+    "question": "What is the standard port number assigned to the Post Office Protocol version 3 (POP3)?",
+    "options": [
+      "Port 25",
+      "Port 80",
+      "Port 110",
+      "Port 143"
+    ],
+    "correct_option": 2,
+    "explanation": "POP3 listens on standard TCP port 110 to download email messages from a remote mail server[cite: 5]."
+  },
+  {
+    "id": 1368,
+    "question": "What is the standard port number assigned to the Internet Message Access Protocol (IMAP)?",
+    "options": [
+      "Port 110",
+      "Port 143",
+      "Port 443",
+      "Port 993"
+    ],
+    "correct_option": 1,
+    "explanation": "IMAP operates on standard TCP port 143 for managing remote mailboxes on the server[cite: 5]."
+  },
+  {
+    "id": 1369,
+    "question": "What is the default subnet mask for an IPv4 Class B network address?",
+    "options": [
+      "255.0.0.0",
+      "255.255.0.0",
+      "255.255.255.0",
+      "255.255.255.255"
+    ],
+    "correct_option": 1,
+    "explanation": "The default Classful subnet mask for Class B networks is 255.255.0.0 (/16)[cite: 5]."
+  },
+  {
+    "id": 1370,
+    "question": "What is the default subnet mask for an IPv4 Class C network address?",
+    "options": [
+      "255.0.0.0",
+      "255.255.0.0",
+      "255.255.255.0",
+      "255.255.255.255"
+    ],
+    "correct_option": 2,
+    "explanation": "The default Classful subnet mask for Class C networks is 255.255.255.0 (/24)[cite: 5]."
+  },
+  {
+    "id": 1371,
+    "question": "What is the numerical first-octet range for Class C IPv4 addresses?",
+    "options": [
+      "1.0.0.0 to 126.0.0.0",
+      "128.0.0.0 to 191.255.0.0",
+      "192.0.0.0 to 223.255.255.0",
+      "224.0.0.0 to 239.255.255.0"
+    ],
+    "correct_option": 2,
+    "explanation": "Class C IPv4 addresses span the numerical range 192.0.0.0 through 223.255.255.255[cite: 5]."
+  },
+  {
+    "id": 1372,
+    "question": "Which internet protocol resolves a known Layer 3 IP address to its corresponding physical Layer 2 MAC address?",
+    "options": [
+      "RARP",
+      "ARP (Address Resolution Protocol)",
+      "DNS",
+      "DHCP"
+    ],
+    "correct_option": 1,
+    "explanation": "ARP (Address Resolution Protocol) resolves logical IP addresses to physical MAC hardware addresses[cite: 5]."
+  },
+  {
+    "id": 1373,
+    "question": "Which internet protocol resolves a physical MAC address back to an assigned IP address?",
+    "options": [
+      "ARP",
+      "RARP (Reverse Address Resolution Protocol)",
+      "ICMP",
+      "IGMP"
+    ],
+    "correct_option": 1,
+    "explanation": "RARP (Reverse Address Resolution Protocol) enables diskless client workstations to discover their IP address given their MAC address[cite: 5]."
+  },
+  {
+    "id": 1374,
+    "question": "What physical hardware component must be installed at both ends of a linear Bus topology network to absorb electrical signals?",
+    "options": [
+      "Repeater",
+      "Hub",
+      "Terminator",
+      "Bridge"
+    ],
+    "correct_option": 2,
+    "explanation": "Terminators are placed at the cable endpoints of a bus network to prevent signal reflections and line noise[cite: 5]."
+  },
+  {
+    "id": 1375,
+    "question": "What diagnostic network utility sends ICMP Echo Request packets to test remote node reachability?",
+    "options": [
+      "Telnet",
+      "FTP",
+      "Traceroute",
+      "Ping"
+    ],
+    "correct_option": 3,
+    "explanation": "Ping utilizes the Internet Control Message Protocol (ICMP) to verify network connectivity and measure round-trip time[cite: 5]."
+  },
+  {
+    "id": 1376,
+    "question": "What is the IEEE standard number for Wireless Local Area Networks (WLAN / Wi-Fi)?",
+    "options": [
+      "IEEE 802.3",
+      "IEEE 802.5",
+      "IEEE 802.11",
+      "IEEE 802.15"
+    ],
+    "correct_option": 2,
+    "explanation": "IEEE 802.11 defines the specifications for Wireless LANs (Wi-Fi)[cite: 5]."
+  },
+  {
+    "id": 1377,
+    "question": "What is the IEEE standard number for wired Ethernet networks?",
+    "options": [
+      "IEEE 802.3",
+      "IEEE 802.5",
+      "IEEE 802.11",
+      "IEEE 802.16"
+    ],
+    "correct_option": 0,
+    "explanation": "IEEE 802.3 defines physical and data-link specifications for wired Ethernet local area networks[cite: 5]."
+  },
+  {
+    "id": 1378,
+    "question": "Which wireless security protocol uses the Device Provisioning Protocol (DPP) and robust 256-bit encryption?",
+    "options": [
+      "WEP",
+      "WPA",
+      "WPA2",
+      "WPA3"
+    ],
+    "correct_option": 3,
+    "explanation": "WPA3 is the latest, strongest Wi-Fi security standard, utilizing 256-bit encryption and Protected Management Frames[cite: 5]."
+  },
+  {
+    "id": 1379,
+    "question": "Which channel access method is utilized in IEEE 802.11 Wi-Fi networks to avoid transmission collisions?",
+    "options": [
+      "CSMA/CD",
+      "CSMA/CA (Collision Avoidance)",
+      "ALOHA",
+      "Token Passing"
+    ],
+    "correct_option": 1,
+    "explanation": "Wireless networks use CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance) because wireless nodes cannot detect collisions while transmitting[cite: 5]."
+  },
+  {
+    "id": 1380,
+    "question": "In relational databases, what is a minimal superkey that contains no redundant attributes called?",
+    "options": [
+      "Foreign Key",
+      "Candidate Key",
+      "Composite Key",
+      "Secondary Key"
+    ],
+    "correct_option": 1,
+    "explanation": "A Candidate Key is a minimal superkey capable of uniquely identifying any record in a table without redundant fields[cite: 5]."
+  },
+  {
+    "id": 1381,
+    "question": "In an Entity-Relationship (E-R) diagram, what geometric shape represents a Relationship between entities?",
+    "options": [
+      "Rectangle",
+      "Ellipse",
+      "Diamond",
+      "Double Rectangle"
+    ],
+    "correct_option": 2,
+    "explanation": "In an E-R diagram, Diamonds represent relationships, Rectangles represent entity sets, and Ellipses represent attributes[cite: 5]."
+  },
+  {
+    "id": 1382,
+    "question": "Which ACID property guarantees that database transactions are processed reliably in isolation without interference from concurrent transactions?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "correct_option": 2,
+    "explanation": "Isolation ensures that concurrent execution of transactions leaves the database in the same state as if the transactions were executed sequentially[cite: 5]."
+  },
+  {
+    "id": 1383,
+    "question": "Which category of SQL commands includes statements such as CREATE, ALTER, DROP, and TRUNCATE?",
+    "options": [
+      "DDL (Data Definition Language)",
+      "DML (Data Manipulation Language)",
+      "DCL (Data Control Language)",
+      "TCL (Transaction Control Language)"
+    ],
+    "correct_option": 0,
+    "explanation": "DDL (Data Definition Language) commands define, modify, and manage database structural schemas and objects[cite: 1, 5]."
+  },
+  {
+    "id": 1384,
+    "question": "Which SQL command is used to permanently remove all rows from a table while keeping the table structure intact?",
+    "options": [
+      "DELETE",
+      "TRUNCATE",
+      "DROP",
+      "REMOVE"
+    ],
+    "correct_option": 1,
+    "explanation": "TRUNCATE removes all data records from a table quickly while preserving the table schema and column structure[cite: 5]."
+  },
+  {
+    "id": 1385,
+    "question": "What is the binary representation of the decimal number (25)₁₀?",
+    "options": [
+      "(10101)₂",
+      "(11001)₂",
+      "(11010)₂",
+      "(11100)₂"
+    ],
+    "correct_option": 1,
+    "explanation": "25 = 16 + 8 + 1, which equals (11001)₂ in binary[cite: 5]."
+  },
+  {
+    "id": 1386,
+    "question": "What is the octal equivalent of the binary number (1010111100)₂?",
+    "options": [
+      "(1274)₈",
+      "(2534)₈",
+      "(1374)₈",
+      "(1264)₈"
+    ],
+    "correct_option": 0,
+    "explanation": "Grouping from right to left in 3-bit clusters: 001 = 1, 010 = 2, 111 = 7, 100 = 4, yielding (1274)₈[cite: 5]."
+  },
+  {
+    "id": 1387,
+    "question": "What is the hexadecimal representation of the binary string (1010101101001)₂?",
+    "options": [
+      "(1569)₁₆",
+      "(2AD1)₁₆",
+      "(1AB9)₁₆",
+      "(1659)₁₆"
+    ],
+    "correct_option": 0,
+    "explanation": "Grouping into 4-bit clusters from right: 0001 = 1, 0101 = 5, 0110 = 6, 1001 = 9, giving (1569)₁₆[cite: 5]."
+  },
+  {
+    "id": 1388,
+    "question": "What is the binary representation of the hexadecimal number (5AD)₁₆?",
+    "options": [
+      "(010110101101)₂",
+      "(101010111101)₂",
+      "(010110111100)₂",
+      "(011010101101)₂"
+    ],
+    "correct_option": 0,
+    "explanation": "Converting each hex digit to 4 bits: 5 = 0101, A (10) = 1010, D (13) = 1101, producing (010110101101)₂[cite: 5]."
+  },
+  {
+    "id": 1389,
+    "question": "What term describes the maximum amount of data a storage disk can hold?",
+    "options": [
+      "Volume Density",
+      "Access Rate",
+      "Storage Capacity",
+      "Bandwidth"
+    ],
+    "correct_option": 2,
+    "explanation": "Storage Capacity defines the total volume of data that can be recorded onto a storage medium[cite: 5]."
+  },
+  {
+    "id": 1390,
+    "question": "What bit is appended to a digital binary code to verify whether data was transmitted accurately without error?",
+    "options": [
+      "Check bit",
+      "Parity Bit",
+      "Sign bit",
+      "Stop bit"
+    ],
+    "correct_option": 1,
+    "explanation": "A Parity Bit is added to binary data blocks to detect single-bit errors during transmission[cite: 5]."
+  },
+  {
+    "id": 1391,
+    "question": "What is a light-sensitive optical input device that allows users to draw or point directly on a display screen?",
+    "options": [
+      "Touchpad",
+      "Light Pen",
+      "Stylus",
+      "Trackball"
+    ],
+    "correct_option": 1,
+    "explanation": "A Light Pen is a photosensitive wand that detects cathode-ray tube raster scans to point and draw directly on screen[cite: 5]."
+  },
+  {
+    "id": 1392,
+    "question": "What individual picture elements make up an image on a display monitor screen?",
+    "options": [
+      "Spots",
+      "Vectors",
+      "Pixels",
+      "Gradients"
+    ],
+    "correct_option": 2,
+    "explanation": "Pixels (Picture Elements) are the smallest individual illuminated dots that make up a bitmap image on a monitor[cite: 5]."
+  },
+  {
+    "id": 1393,
+    "question": "Which of the following is NOT a component found inside a Laser Printer?",
+    "options": [
+      "Print Head with Pins",
+      "Laser Beam",
+      "Photoconductive Drum",
+      "Toner Powder"
+    ],
+    "correct_option": 0,
+    "explanation": "Print heads with mechanical pins are found in Dot Matrix impact printers, not laser printers[cite: 5]."
+  },
+  {
+    "id": 1394,
+    "question": "What is the standard sector size on traditional magnetic hard disks?",
+    "options": [
+      "256 bytes",
+      "512 bytes",
+      "1024 bytes",
+      "4096 bytes"
+    ],
+    "correct_option": 1,
+    "explanation": "Traditional magnetic hard disk drives use 512-byte physical data sectors[cite: 5]."
+  },
+  {
+    "id": 1395,
+    "question": "Which universal text file format was created by Adobe to preserve document formatting across different platforms?",
+    "options": [
+      "DOCX",
+      "RTF",
+      "PDF (Portable Document Format)",
+      "HTML"
+    ],
+    "correct_option": 2,
+    "explanation": "Adobe developed the Portable Document Format (PDF) to display documents consistently regardless of software or hardware[cite: 1, 5]."
+  },
+  {
+    "id": 1396,
+    "question": "What is the maximum number of Primary Partitions that can be created on a single Master Boot Record (MBR) hard disk?",
+    "options": [
+      "2 Partitions",
+      "4 Partitions",
+      "8 Partitions",
+      "16 Partitions"
+    ],
+    "correct_option": 1,
+    "explanation": "MBR partition tables support a maximum of 4 primary partitions (or 3 primary partitions and 1 extended partition)[cite: 5]."
+  },
+  {
+    "id": 1397,
+    "question": "What is the graphic technique of simulating shades or smoothing digital color noise in computer graphics called?",
+    "options": [
+      "Rasterizing",
+      "Dithering",
+      "Rendering",
+      "Antialiasing"
+    ],
+    "correct_option": 1,
+    "explanation": "Dithering is the process of creating the illusion of new colors and smoothing digital noise by interleaving dots of available colors[cite: 5]."
+  },
+  {
+    "id": 1398,
+    "question": "What computer category do Personal Computers (PCs), desktop systems, and laptops belong to?",
+    "options": [
+      "Minicomputers",
+      "Microcomputers",
+      "Mainframe Computers",
+      "Supercomputers"
+    ],
+    "correct_option": 1,
+    "explanation": "Personal computers, laptops, and tablets are classified as Microcomputers because they are powered by single-chip microprocessors[cite: 5]."
+  },
+  {
+    "id": 1399,
+    "question": "What is the total elapsed time between submitting a computing job and receiving the complete output called?",
+    "options": [
+      "Seek Time",
+      "Latency Time",
+      "Turnaround Time",
+      "Response Time"
+    ],
+    "correct_option": 2,
+    "explanation": "Turnaround Time is the total interval from the time of submission of a process to the time of its completion[cite: 5]."
+  },
+  {
+    "id": 1400,
+    "question": "What is the social and economic disparity between individuals with access to modern digital technology and those without it called?",
+    "options": [
+      "Digital Divide",
+      "Internet Gap",
+      "Web Barrier",
+      "Information Void"
+    ],
+    "correct_option": 0,
+    "explanation": "The Digital Divide refers to the demographic gap between those who have ready access to computers and the Internet and those who do not[cite: 5]."
+  }
+]

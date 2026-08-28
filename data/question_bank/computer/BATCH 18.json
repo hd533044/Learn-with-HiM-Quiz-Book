@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1701,
+    "question": "What is the primary operational purpose of the CPU System Clock?",
+    "options": [
+      "Retaining date and time settings when power is disconnected",
+      "Generating periodic electrical timing pulses to synchronize all CPU instruction execution cycles",
+      "Controlling cooling fan speeds dynamically",
+      "Regulating secondary storage platter rotation"
+    ],
+    "correct_option": 1,
+    "explanation": "The System Clock produces continuous electronic square-wave pulses to synchronize the timing of all microchip operations across the system bus[cite: 5]."
+  },
+  {
+    "id": 1702,
+    "question": "Which of the following describes the function of the Accumulator register inside an Arithmetic Logic Unit (ALU)?",
+    "options": [
+      "Stores intermediate numerical results and operands generated during arithmetic and logic operations",
+      "Maintains the permanent boot firmware instructions",
+      "Holds memory addresses for page fault lookups",
+      "Controls optical laser burning calibration"
+    ],
+    "correct_option": 0,
+    "explanation": "The Accumulator is a core working register within the ALU that temporarily holds operands and calculation results during execution[cite: 5]."
+  },
+  {
+    "id": 1703,
+    "question": "What memory management technique divides physical RAM into fixed-size blocks matching virtual memory page sizes?",
+    "options": [
+      "Frames (Page Frames)",
+      "Clusters",
+      "Sectors",
+      "Cylinders"
+    ],
+    "correct_option": 0,
+    "explanation": "In virtual memory paging systems, physical main memory (RAM) is partitioned into fixed-length contiguous blocks known as Page Frames[cite: 5]."
+  },
+  {
+    "id": 1704,
+    "question": "Which CPU register stores the status flags (such as Carry, Zero, Overflow, and Sign flags) of the last executed operation?",
+    "options": [
+      "Memory Buffer Register (MBR)",
+      "Program Counter (PC)",
+      "Program Status Word (PSW / Flags Register)",
+      "Instruction Register (IR)"
+    ],
+    "correct_option": 2,
+    "explanation": "The Program Status Word (PSW) or Flags Register contains status bits indicating conditions like zero results, arithmetic carry, overflow, or parity[cite: 5]."
+  },
+  {
+    "id": 1705,
+    "question": "What is the primary benefit of deploying Level 2 (L2) and Level 3 (L3) Cache memory alongside L1 Cache?",
+    "options": [
+      "Preventing malware from entering system firmware",
+      "Bridging the speed and capacity gap between ultra-fast L1 cache and slower main RAM",
+      "Replacing the requirement for secondary storage drives",
+      "Formatting optical discs during burn sessions"
+    ],
+    "correct_option": 1,
+    "explanation": "Multi-level cache hierarchies (L1, L2, L3) provide progressively larger capacities with lower latency than primary DRAM to minimize processor wait states[cite: 1, 5]."
+  },
+  {
+    "id": 1706,
+    "question": "What is the hardware diagnostic program called that is executed by the BIOS immediately after the computer receives electrical power?",
+    "options": [
+      "POST (Power-On Self-Test)",
+      "Bootstrap Loader",
+      "Disk Defragmenter",
+      "Device Manager"
+    ],
+    "correct_option": 0,
+    "explanation": "POST (Power-On Self-Test) is the preliminary firmware diagnostic routine that checks critical hardware modules (RAM, CPU, keyboard) during boot-up[cite: 5]."
+  },
+  {
+    "id": 1707,
+    "question": "What is the binary addition result of (1110)₂ plus (1111)₂?",
+    "options": [
+      "(11101)₂",
+      "(11011)₂",
+      "(11110)₂",
+      "(10101)₂"
+    ],
+    "correct_option": 0,
+    "explanation": "1110 (14) + 1111 (15) = 29, which corresponds to binary (11101)₂[cite: 5]."
+  },
+  {
+    "id": 1708,
+    "question": "How many bits are contained in exactly one Byte?",
+    "options": [
+      "4 bits",
+      "8 bits",
+      "16 bits",
+      "32 bits"
+    ],
+    "correct_option": 1,
+    "explanation": "One standard byte consists of 8 contiguous binary bits[cite: 5]."
+  },
+  {
+    "id": 1709,
+    "question": "How many Nibbles are required to form exactly one Byte?",
+    "options": [
+      "1 Nibble",
+      "2 Nibbles",
+      "4 Nibbles",
+      "8 Nibbles"
+    ],
+    "correct_option": 1,
+    "explanation": "Since 1 Nibble equals 4 bits, 2 Nibbles combine to form 1 Byte (8 bits)[cite: 5]."
+  },
+  {
+    "id": 1710,
+    "question": "What is the decimal equivalent of the binary number (1101)₂?",
+    "options": [
+      "11",
+      "12",
+      "13",
+      "15"
+    ],
+    "correct_option": 2,
+    "explanation": "(1101)₂ = 8*1 + 4*1 + 2*0 + 1*1 = 8 + 4 + 0 + 1 = 13 in decimal[cite: 5]."
+  },
+  {
+    "id": 1711,
+    "question": "What is the decimal equivalent of the binary number (1001)₂?",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "correct_option": 2,
+    "explanation": "(1001)₂ = 8*1 + 4*0 + 2*0 + 1*1 = 8 + 0 + 0 + 1 = 9 in decimal[cite: 5]."
+  },
+  {
+    "id": 1712,
+    "question": "What is the binary representation of the decimal integer (7)₁₀?",
+    "options": [
+      "(0111)₂",
+      "(1011)₂",
+      "(0101)₂",
+      "(1110)₂"
+    ],
+    "correct_option": 0,
+    "explanation": "Decimal 7 in 4-bit binary format is (0111)₂ (4 + 2 + 1)[cite: 5]."
+  },
+  {
+    "id": 1713,
+    "question": "What is the binary subtraction result of (100)₂ minus (1)₂?",
+    "options": [
+      "(011)₂",
+      "(010)₂",
+      "(101)₂",
+      "(001)₂"
+    ],
+    "correct_option": 0,
+    "explanation": "100 (4) minus 1 (1) equals 3, which is represented in binary as (011)₂[cite: 5]."
+  },
+  {
+    "id": 1714,
+    "question": "What was the first commercial electronic spreadsheet application released for IBM PC systems in 1983?",
+    "options": [
+      "VisiCalc",
+      "Lotus 1-2-3",
+      "Microsoft Excel",
+      "Quattro Pro"
+    ],
+    "correct_option": 1,
+    "explanation": "Lotus 1-2-3, developed by Mitch Kapor in 1983, was the standard spreadsheet application that popularized the IBM PC in enterprise computing[cite: 5]."
+  },
+  {
+    "id": 1715,
+    "question": "Which company developed the WordPerfect word processing program in 1979?",
+    "options": [
+      "Microsoft",
+      "Corel Corporation (originally Satellite Software International)",
+      "Adobe",
+      "Apple"
+    ],
+    "correct_option": 1,
+    "explanation": "WordPerfect was developed by Satellite Software International and later acquired and maintained by Corel Corporation[cite: 5]."
+  },
+  {
+    "id": 1716,
+    "question": "What was the name of the early microcomputer word processing program created in 1976 by Michael Shrayer?",
+    "options": [
+      "Electric Pencil",
+      "WordStar",
+      "Pages",
+      "VisiCalc"
+    ],
+    "correct_option": 0,
+    "explanation": "Electric Pencil was the first word processing software program designed for microcomputers, released in 1976[cite: 5]."
+  },
+  {
+    "id": 1717,
+    "question": "What is the default initial page orientation applied in Microsoft Word documents?",
+    "options": [
+      "Landscape",
+      "Portrait",
+      "Tabloid",
+      "Gutter"
+    ],
+    "correct_option": 1,
+    "explanation": "Microsoft Word formats pages in Portrait orientation by default (vertical layout)[cite: 5]."
+  },
+  {
+    "id": 1718,
+    "question": "In Microsoft Word, what default font family and size were set for documents in Word 2007?",
+    "options": [
+      "Times New Roman, 12 pt",
+      "Calibri, 11 pt",
+      "Arial, 10 pt",
+      "Cambria, 12 pt"
+    ],
+    "correct_option": 1,
+    "explanation": "Microsoft Word 2007 established Calibri at 11 points as the default body font, replacing the earlier Times New Roman (12 pt) standard[cite: 5]."
+  },
+  {
+    "id": 1719,
+    "question": "What is the maximum file size limit for a plain text (.docx without media) document in Microsoft Word?",
+    "options": [
+      "32 MB",
+      "512 MB",
+      "2 GB",
+      "64 MB"
+    ],
+    "correct_option": 0,
+    "explanation": "Microsoft Word supports a maximum file size of 32 MB for total text content alone (up to 512 MB when embedded images/graphics are included)[cite: 5]."
+  },
+  {
+    "id": 1720,
+    "question": "What default page size is configured in Microsoft Word for standard Letter format documents?",
+    "options": [
+      "8.5 by 11.0 inches",
+      "8.27 by 11.69 inches (A4)",
+      "8.5 by 14.0 inches (Legal)",
+      "11.0 by 17.0 inches (Tabloid)"
+    ],
+    "correct_option": 0,
+    "explanation": "The standard default Letter paper size in Word is 8.5 inches wide by 11.0 inches high[cite: 5]."
+  },
+  {
+    "id": 1721,
+    "question": "In MS Word, how many default views are available under the Document Views section?",
+    "options": [
+      "3 views",
+      "5 views",
+      "7 views",
+      "8 views"
+    ],
+    "correct_option": 1,
+    "explanation": "Microsoft Word provides 5 primary document views: Print Layout, Full Screen/Read Mode, Web Layout, Outline View, and Draft View[cite: 5]."
+  },
+  {
+    "id": 1722,
+    "question": "What is the default number of lines configured when applying a Drop Cap in Microsoft Word?",
+    "options": [
+      "1 line",
+      "2 lines",
+      "3 lines",
+      "5 lines"
+    ],
+    "correct_option": 2,
+    "explanation": "When inserted, a Drop Cap in Word drops across 3 lines of text by default (configurable up to 10 lines)[cite: 5]."
+  },
+  {
+    "id": 1723,
+    "question": "What is the minimum number of lines required to create a Drop Cap in Microsoft Word?",
+    "options": [
+      "1 line",
+      "2 lines",
+      "3 lines",
+      "0 lines"
+    ],
+    "correct_option": 0,
+    "explanation": "The minimum line drop height allowable for a Drop Cap in MS Word is 1 line[cite: 5]."
+  },
+  {
+    "id": 1724,
+    "question": "In MS Word, how many primary tabs are displayed on the standard top ribbon interface?",
+    "options": [
+      "5 tabs",
+      "8 tabs",
+      "12 tabs",
+      "15 tabs"
+    ],
+    "correct_option": 1,
+    "explanation": "The core ribbon in MS Word contains 8 standard top-level tabs: File, Home, Insert, Page Layout/Layout, References, Mailings, Review, and View[cite: 5]."
+  },
+  {
+    "id": 1725,
+    "question": "What are the two essential file components required to execute a Mail Merge in Microsoft Word?",
+    "options": [
+      "Data Source (Recipient List) and Main Document (Template)",
+      "Macro Script and Header File",
+      "System Registry and Font File",
+      "Spooler Queue and Print Driver"
+    ],
+    "correct_option": 0,
+    "explanation": "Mail Merge operates by combining a Main Document (containing boilerplate text and merge fields) with a Data Source (database containing recipient records)[cite: 5]."
+  },
+  {
+    "id": 1726,
+    "question": "In Mail Merge, what is each individual column heading in the data source representing a category called?",
+    "options": [
+      "Record",
+      "Merge Field (Field Name)",
+      "Directory",
+      "Index Tag"
+    ],
+    "correct_option": 1,
+    "explanation": "Each column header in a mail merge data source is designated as a Field Name or Merge Field (e.g., First_Name, Address)[cite: 5]."
+  },
+  {
+    "id": 1727,
+    "question": "What is the final execution step in the Microsoft Word Mail Merge wizard?",
+    "options": [
+      "Select Recipients",
+      "Insert Merge Field",
+      "Preview Results",
+      "Finish & Merge"
+    ],
+    "correct_option": 3,
+    "explanation": "'Finish & Merge' is the concluding step that outputs merged documents to individual files, a printer, or email[cite: 5]."
+  },
+  {
+    "id": 1728,
+    "question": "What is the minimum number of rows and columns allowable in a Microsoft Word table?",
+    "options": [
+      "1 row and 1 column",
+      "2 rows and 2 columns",
+      "1 row and 2 columns",
+      "0 rows and 0 columns"
+    ],
+    "correct_option": 0,
+    "explanation": "A Microsoft Word table requires a minimum dimension of 1 row and 1 column[cite: 5]."
+  },
+  {
+    "id": 1729,
+    "question": "What default distance does the cursor advance in MS Word each time the Tab key is pressed?",
+    "options": [
+      "0.10 inch",
+      "0.25 inch",
+      "0.50 inch (half-inch)",
+      "1.00 inch"
+    ],
+    "correct_option": 2,
+    "explanation": "By default, Microsoft Word sets horizontal tab stops at intervals of 0.5 inches (half-inch)[cite: 5]."
+  },
+  {
+    "id": 1730,
+    "question": "What feature in word processors automatically advances text to the beginning of the next line when typing reaches the right margin?",
+    "options": [
+      "Word Wrap",
+      "AutoCorrect",
+      "Drop Cap",
+      "Track Changes"
+    ],
+    "correct_option": 0,
+    "explanation": "Word Wrap automatically forces text down to the following line without requiring a hard Enter carriage return[cite: 5]."
+  },
+  {
+    "id": 1731,
+    "question": "In Microsoft Word, what default file name is automatically assigned to a newly created blank document?",
+    "options": [
+      "Document1",
+      "Word1",
+      "Untitled1",
+      "Doc1"
+    ],
+    "correct_option": 0,
+    "explanation": "New unsaved documents created in MS Word are labeled 'Document1' on the title bar by default[cite: 5]."
+  },
+  {
+    "id": 1732,
+    "question": "What is the default file name assigned to a newly opened workbook in Microsoft Excel?",
+    "options": [
+      "Sheet1",
+      "Book1",
+      "Workbook1",
+      "Excel1"
+    ],
+    "correct_option": 1,
+    "explanation": "New workbooks generated in MS Excel are assigned the temporary title 'Book1'[cite: 5]."
+  },
+  {
+    "id": 1733,
+    "question": "What is the default horizontal alignment applied to numbers entered into an MS Excel cell?",
+    "options": [
+      "Left Aligned",
+      "Right Aligned",
+      "Center Aligned",
+      "Justified"
+    ],
+    "correct_option": 1,
+    "explanation": "In MS Excel, numerical values align to the right side of cells by default, whereas text values align to the left[cite: 1]."
+  },
+  {
+    "id": 1734,
+    "question": "What is the default horizontal alignment applied to standard text strings entered into an MS Excel cell?",
+    "options": [
+      "Left Aligned",
+      "Right Aligned",
+      "Center Aligned",
+      "Justified"
+    ],
+    "correct_option": 0,
+    "explanation": "Text entries in Excel cells align to the left border by default[cite: 1]."
+  },
+  {
+    "id": 1735,
+    "question": "In MS Excel, how many total rows and columns were present in a worksheet in Excel 2003?",
+    "options": [
+      "65,536 rows and 256 columns",
+      "1,048,576 rows and 16,384 columns",
+      "32,768 rows and 128 columns",
+      "50,000 rows and 500 columns"
+    ],
+    "correct_option": 0,
+    "explanation": "MS Excel 2003 (and earlier .xls files) had a maximum grid size of 65,536 rows and 256 columns[cite: 5]."
+  },
+  {
+    "id": 1736,
+    "question": "What symbol must be entered at the very beginning of every cell entry to indicate an Excel formula?",
+    "options": [
+      "+ (Plus)",
+      "@ (At sign)",
+      "= (Equal sign)",
+      "# (Hash)"
+    ],
+    "correct_option": 2,
+    "explanation": "All formulas and functions in Microsoft Excel must begin with an equal sign (=)[cite: 1, 5]."
+  },
+  {
+    "id": 1737,
+    "question": "What is the Excel operation called that converts row data into columns and column data into rows?",
+    "options": [
+      "Transpose",
+      "Concatenate",
+      "AutoFill",
+      "Filter"
+    ],
+    "correct_option": 0,
+    "explanation": "The Transpose feature rotates data orientation, swapping vertical columns into horizontal rows and vice-versa[cite: 5]."
+  },
+  {
+    "id": 1738,
+    "question": "What are the minimum, maximum, and default zoom percentages in Microsoft Excel?",
+    "options": [
+      "Min: 10%, Max: 400%, Default: 100%",
+      "Min: 10%, Max: 500%, Default: 100%",
+      "Min: 20%, Max: 200%, Default: 100%",
+      "Min: 5%, Max: 300%, Default: 75%"
+    ],
+    "correct_option": 0,
+    "explanation": "MS Excel allows zoom scaling from a minimum of 10% to a maximum of 400%, with a standard default of 100%[cite: 1, 5]."
+  },
+  {
+    "id": 1739,
+    "question": "What is the lightweight, browser-based version of Microsoft Excel provided free on the web called?",
+    "options": [
+      "Excel Lite",
+      "Excel for the Web (Office Online)",
+      "Google Sheets",
+      "LibreOffice Calc"
+    ],
+    "correct_option": 1,
+    "explanation": "Excel for the Web is the cloud-based, free browser application offered as part of Microsoft 365 on the web[cite: 5]."
+  },
+  {
+    "id": 1740,
+    "question": "What cell address represents the intersection of the tenth column (J) and eighth row (8) in an Excel worksheet?",
+    "options": [
+      "10H",
+      "8J",
+      "J8",
+      "H10"
+    ],
+    "correct_option": 2,
+    "explanation": "Column 10 corresponds to letter 'J' and row 8 corresponds to number '8', creating cell coordinate 'J8'[cite: 5]."
+  },
+  {
+    "id": 1741,
+    "question": "What cell address represents the intersection of the eighth column (H) and ninth row (9) in an Excel worksheet?",
+    "options": [
+      "H9",
+      "9H",
+      "I8",
+      "8I"
+    ],
+    "correct_option": 0,
+    "explanation": "Column 8 is 'H' and row 9 is '9', designating cell address 'H9'[cite: 5]."
+  },
+  {
+    "id": 1742,
+    "question": "What Excel feature allows users to lock specific header rows and columns so they remain visible while scrolling through large sheets?",
+    "options": [
+      "Freeze Panes",
+      "Split View",
+      "Cell Locking",
+      "Data Validation"
+    ],
+    "correct_option": 0,
+    "explanation": "Freeze Panes locks designated rows or columns on screen to keep header titles visible during scrolling[cite: 5]."
+  },
+  {
+    "id": 1743,
+    "question": "What Excel function evaluates whether a specified logical condition is TRUE or FALSE and returns different values accordingly?",
+    "options": [
+      "IF",
+      "COUNT",
+      "VLOOKUP",
+      "SUMIF"
+    ],
+    "correct_option": 0,
+    "explanation": "The IF function conducts logical tests, returning one value if condition is TRUE and another if FALSE[cite: 5]."
+  },
+  {
+    "id": 1744,
+    "question": "Which Excel function returns the current system date and time simultaneously, updating whenever the sheet recalculates?",
+    "options": [
+      "TODAY()",
+      "NOW()",
+      "TIME()",
+      "DATE()"
+    ],
+    "correct_option": 1,
+    "explanation": "The NOW() function returns both current date and time, whereas TODAY() returns only the date[cite: 1, 5]."
+  },
+  {
+    "id": 1745,
+    "question": "Which Excel function counts all non-empty cells within a specified range, including text, numbers, and error values?",
+    "options": [
+      "COUNT()",
+      "COUNTBLANK()",
+      "COUNTA()",
+      "COUNTIF()"
+    ],
+    "correct_option": 2,
+    "explanation": "The COUNTA() function counts every cell that contains data (is not blank), regardless of data type[cite: 1, 5]."
+  },
+  {
+    "id": 1746,
+    "question": "What are the two wildcard characters supported in Microsoft Excel searches and formula criteria?",
+    "options": [
+      "+ and -",
+      "* (Asterisk) and ? (Question Mark)",
+      "# and $",
+      "! and %"
+    ],
+    "correct_option": 1,
+    "explanation": "In Excel formulas and search tools, '?' matches any single character, and '*' matches any sequence of characters[cite: 5]."
+  },
+  {
+    "id": 1747,
+    "question": "In Microsoft Excel, what is a formula that has been embedded as an argument inside another function called?",
+    "options": [
+      "Nested Function",
+      "Sandwich Function",
+      "Compound Range",
+      "Array Macro"
+    ],
+    "correct_option": 0,
+    "explanation": "When an Excel function is placed inside another function's argument list, it is called a Nested Function[cite: 1]."
+  },
+  {
+    "id": 1748,
+    "question": "What does a cell display in Microsoft Excel when an entered number or date is too wide to fit within the current column width?",
+    "options": [
+      "#####",
+      "#VALUE!",
+      "#NUM!",
+      "#REF!"
+    ],
+    "correct_option": 0,
+    "explanation": "Excel displays a series of hash symbols (#####) when column width is insufficient to display formatted numerical or date data[cite: 1, 5]."
+  },
+  {
+    "id": 1749,
+    "question": "In MS Excel, which cell reference format represents an Absolute reference where both row and column remain fixed?",
+    "options": [
+      "A1",
+      "$A1",
+      "A$1",
+      "$A$1"
+    ],
+    "correct_option": 3,
+    "explanation": "Placing a dollar sign in front of both column and row coordinates ($A$1) creates an Absolute Reference that does not change when copied[cite: 1, 5]."
+  },
+  {
+    "id": 1750,
+    "question": "What is the single electronic page within a Microsoft PowerPoint presentation file called?",
+    "options": [
+      "Slide",
+      "Document",
+      "Worksheet",
+      "Canvas"
+    ],
+    "correct_option": 0,
+    "explanation": "An individual page within a PowerPoint presentation is termed a Slide[cite: 5]."
+  },
+  {
+    "id": 1751,
+    "question": "What are the dotted border rectangular containers on a PowerPoint slide layout that hold text, titles, or graphics called?",
+    "options": [
+      "Text Boxes",
+      "Placeholders",
+      "Frames",
+      "Panes"
+    ],
+    "correct_option": 1,
+    "explanation": "Placeholders are designated dotted-line bounding boxes on slide layouts built to hold titles, body text, tables, and media[cite: 5]."
+  },
+  {
+    "id": 1752,
+    "question": "On which side of the Microsoft PowerPoint window does the Animation Pane appear when opened?",
+    "options": [
+      "Top",
+      "Bottom",
+      "Left",
+      "Right"
+    ],
+    "correct_option": 3,
+    "explanation": "The Animation Pane opens as a vertical task sidebar on the right side of the PowerPoint application window[cite: 5]."
+  },
+  {
+    "id": 1753,
+    "question": "What is the default Zoom percentage setting in Microsoft PowerPoint?",
+    "options": [
+      "50%",
+      "75%",
+      "100%",
+      "Fit to Window"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft PowerPoint defaults to a 100% standard zoom view level[cite: 5]."
+  },
+  {
+    "id": 1754,
+    "question": "How many total default presentation views (excluding Master views) exist in Microsoft PowerPoint?",
+    "options": [
+      "3 views",
+      "5 views",
+      "7 views",
+      "8 views"
+    ],
+    "correct_option": 1,
+    "explanation": "PowerPoint includes 5 main presentation views: Normal View, Outline View, Slide Sorter View, Notes Page View, and Reading View[cite: 5]."
+  },
+  {
+    "id": 1755,
+    "question": "How many Master Views exist in Microsoft PowerPoint?",
+    "options": [
+      "2 views",
+      "3 views (Slide Master, Handout Master, Notes Master)",
+      "4 views",
+      "5 views"
+    ],
+    "correct_option": 1,
+    "explanation": "PowerPoint features 3 Master Views: Slide Master, Handout Master, and Notes Master[cite: 5]."
+  },
+  {
+    "id": 1756,
+    "question": "Which PowerPoint Master view is used to customize the layout, header, footer, and number of slides per printed handout sheet?",
+    "options": [
+      "Slide Master",
+      "Notes Master",
+      "Handout Master",
+      "Slide Sorter"
+    ],
+    "correct_option": 2,
+    "explanation": "Handout Master formats the layout, headers, footers, and grid arrangement of slides when printing audience handouts[cite: 5]."
+  },
+  {
+    "id": 1757,
+    "question": "Which PowerPoint view displays a large slide alongside a dedicated text area for speaker reference remarks?",
+    "options": [
+      "Slide Sorter View",
+      "Notes Page View",
+      "Reading View",
+      "Outline View"
+    ],
+    "correct_option": 1,
+    "explanation": "Notes Page View formats each slide above a dedicated notes pane for entering speaker annotations[cite: 5]."
+  },
+  {
+    "id": 1758,
+    "question": "What type of software consists of lines of source code instructions written to perform specific tasks?",
+    "options": [
+      "Hardware",
+      "Software",
+      "Firmware",
+      "Processor"
+    ],
+    "correct_option": 1,
+    "explanation": "Software is a collection of instructions, data, or computer programs executed to perform specific computing operations[cite: 5]."
+  },
+  {
+    "id": 1759,
+    "question": "What is the smallest independent functional building block or unit of a software program called?",
+    "options": [
+      "Module",
+      "Bit",
+      "Instruction",
+      "Packet"
+    ],
+    "correct_option": 0,
+    "explanation": "A Module is a discrete, independently executable unit or component within a software program architecture[cite: 5]."
+  },
+  {
+    "id": 1760,
+    "question": "What is the standard binary executable file extension on Microsoft Windows operating systems?",
+    "options": [
+      ".exe",
+      ".dll",
+      ".sys",
+      ".bat"
+    ],
+    "correct_option": 0,
+    "explanation": ".exe designates an Executable File format containing compiled machine code ready for execution in Windows[cite: 5]."
+  },
+  {
+    "id": 1761,
+    "question": "What category of software is designed for broad commercial use across multiple industries (e.g., MS Office, web browsers)?",
+    "options": [
+      "Horizontal Software",
+      "Vertical Software",
+      "Niche Software",
+      "Tailored Software"
+    ],
+    "correct_option": 0,
+    "explanation": "Horizontal Market Software (such as word processors or spreadsheet apps) meets general business needs across diverse industries[cite: 5]."
+  },
+  {
+    "id": 1762,
+    "question": "What category of software is customized specifically for a targeted industry niche (e.g., core banking or medical billing)?",
+    "options": [
+      "Horizontal Software",
+      "Vertical Software (Niche / Tailored)",
+      "Freeware",
+      "System Software"
+    ],
+    "correct_option": 1,
+    "explanation": "Vertical Software is engineered to serve the specific operational requirements of a specialized industry or domain[cite: 5]."
+  },
+  {
+    "id": 1763,
+    "question": "What type of computer virus infects Microsoft Office applications by embedding malicious VBA scripts inside templates?",
+    "options": [
+      "Boot Sector Virus",
+      "Macro Virus",
+      "Retrovirus",
+      "Polymorphic Virus"
+    ],
+    "correct_option": 1,
+    "explanation": "A Macro Virus is written in an application macro language (such as Visual Basic for Applications) and infects document templates[cite: 5]."
+  },
+  {
+    "id": 1764,
+    "question": "What automated bot program executes repetitive scripts or tasks over the Internet?",
+    "options": [
+      "Bot / Robot",
+      "Macro",
+      "Cookie",
+      "Applet"
+    ],
+    "correct_option": 0,
+    "explanation": "An Internet Bot (or web robot) is a software application programmed to execute automated repetitive tasks over network protocols[cite: 5]."
+  },
+  {
+    "id": 1765,
+    "question": "What wireless local area network security protocol introduced 128-bit AES encryption with CCMP in 2004?",
+    "options": [
+      "WEP",
+      "WPA",
+      "WPA2 (Wi-Fi Protected Access 2)",
+      "WPA3"
+    ],
+    "correct_option": 2,
+    "explanation": "WPA2 implemented the IEEE 802.11i standard, mandating 128-bit AES encryption via CCMP[cite: 5]."
+  },
+  {
+    "id": 1766,
+    "question": "In what year was the first major amendment made to the Indian Information Technology Act (IT Act 2000)?",
+    "options": [
+      "2002",
+      "2005",
+      "2008",
+      "2012"
+    ],
+    "correct_option": 2,
+    "explanation": "The Information Technology Act 2000 was amended by the Indian Parliament as the IT (Amendment) Act in 2008[cite: 5]."
+  },
+  {
+    "id": 1767,
+    "question": "What is the illegal digital practice of moving illicit funds electronically across multiple international accounts to disguise origins called?",
+    "options": [
+      "Cyber Laundering",
+      "Phishing",
+      "Card Skimming",
+      "Spoofing"
+    ],
+    "correct_option": 0,
+    "explanation": "Cyber Laundering involves using electronic financial transfers, online gaming, or cryptocurrencies to launder illegally obtained funds[cite: 5]."
+  },
+  {
+    "id": 1768,
+    "question": "What cybersecurity attack floods a network server from thousands of compromised distributed botnet machines simultaneously?",
+    "options": [
+      "SQL Injection",
+      "Distributed Denial of Service (DDoS)",
+      "Phishing",
+      "Man-in-the-Middle"
+    ],
+    "correct_option": 1,
+    "explanation": "A Distributed Denial of Service (DDoS) attack coordinates thousands of zombie devices worldwide to overwhelm a target server[cite: 5]."
+  },
+  {
+    "id": 1769,
+    "question": "What is the name of the Israeli cybersecurity firm that developed the Pegasus commercial mobile spyware?",
+    "options": [
+      "NSO Group",
+      "Kaspersky",
+      "Check Point",
+      "DARPA"
+    ],
+    "correct_option": 0,
+    "explanation": "Pegasus is zero-click spyware developed by the Israeli cyber intelligence corporation NSO Group[cite: 5]."
+  },
+  {
+    "id": 1770,
+    "question": "What was the first computer virus designed to infect personal computer floppy disk boot sectors in 1986?",
+    "options": [
+      "Creeper",
+      "Brain Virus",
+      "Morris",
+      "ILOVEYOU"
+    ],
+    "correct_option": 1,
+    "explanation": "Brain was created in 1986 by two brothers in Lahore, Pakistan, as the first IBM PC-compatible boot sector virus[cite: 5]."
+  },
+  {
+    "id": 1771,
+    "question": "What was the very first computer virus created on the ARPANET in 1971 by Bob Thomas?",
+    "options": [
+      "Brain",
+      "Creeper",
+      "Reaper",
+      "Code Red"
+    ],
+    "correct_option": 1,
+    "explanation": "Creeper was the first experimental self-replicating program, created by Bob Thomas in 1971[cite: 5]."
+  },
+  {
+    "id": 1772,
+    "question": "What antivirus program was written by Ray Tomlinson in 1972 specifically to remove the Creeper virus from ARPANET nodes?",
+    "options": [
+      "Norton",
+      "Reaper",
+      "Brain",
+      "McAfee"
+    ],
+    "correct_option": 1,
+    "explanation": "Reaper was the earliest anti-malware program, created by Ray Tomlinson to track down and delete Creeper[cite: 5]."
+  },
+  {
+    "id": 1773,
+    "question": "What operating system was designed by Bell Labs in 1969 using C and Assembly language?",
+    "options": [
+      "MS-DOS",
+      "UNIX",
+      "Windows NT",
+      "CP/M"
+    ],
+    "correct_option": 1,
+    "explanation": "UNIX was developed in 1969 at AT&T Bell Labs by Ken Thompson, Dennis Ritchie, and Douglas McIlroy[cite: 5]."
+  },
+  {
+    "id": 1774,
+    "question": "What was the first mobile operating system version created by Google under the Android sweet naming scheme?",
+    "options": [
+      "Donut",
+      "Cupcake (Android 1.5)",
+      "Eclair",
+      "Froyo"
+    ],
+    "correct_option": 1,
+    "explanation": "Android 1.5 'Cupcake' (released in 2009) established the tradition of naming Android releases alphabetically after confectioneries[cite: 5]."
+  },
+  {
+    "id": 1775,
+    "question": "Who created the open-source Linux kernel in 1991?",
+    "options": [
+      "Richard Stallman",
+      "Linus Torvalds",
+      "Ken Thompson",
+      "Dennis Ritchie"
+    ],
+    "correct_option": 1,
+    "explanation": "Linus Torvalds created and released the Linux kernel in 1991 as an open-source alternative to MINIX[cite: 5]."
+  },
+  {
+    "id": 1776,
+    "question": "What is the application package file extension used for installing apps on Apple's iOS platform?",
+    "options": [
+      ".apk",
+      ".ipa",
+      ".dmg",
+      ".app"
+    ],
+    "correct_option": 1,
+    "explanation": ".ipa (iOS App Store Package) is the archive file format used to distribute application binaries on iOS[cite: 5]."
+  },
+  {
+    "id": 1777,
+    "question": "What year was the original IBM PC Personal Computer (Model 5150) introduced to the market?",
+    "options": [
+      "1975",
+      "1981",
+      "1984",
+      "1989"
+    ],
+    "correct_option": 1,
+    "explanation": "The IBM Personal Computer (Model 5150) was released in August 1981, popularizing the MS-DOS platform[cite: 5]."
+  },
+  {
+    "id": 1778,
+    "question": "In what year was Microsoft Windows 1.0 officially released as a graphical interface shell running on MS-DOS?",
+    "options": [
+      "1981",
+      "1985",
+      "1990",
+      "1995"
+    ],
+    "correct_option": 1,
+    "explanation": "Microsoft released Windows 1.0 in November 1985 as a 16-bit graphical operating environment for MS-DOS[cite: 5]."
+  },
+  {
+    "id": 1779,
+    "question": "What is the standard webmail storage allocation provided for free per Google account (shared across Gmail, Drive, and Photos)?",
+    "options": [
+      "5 GB",
+      "10 GB",
+      "15 GB",
+      "25 GB"
+    ],
+    "correct_option": 2,
+    "explanation": "Google provides 15 GB of free shared cloud storage per account[cite: 5]."
+  },
+  {
+    "id": 1780,
+    "question": "What is the standard automatic deletion retention period for items stored in the Gmail Trash and Spam folders?",
+    "options": [
+      "7 days",
+      "14 days",
+      "30 days",
+      "60 days"
+    ],
+    "correct_option": 2,
+    "explanation": "Messages located in the Trash and Spam folders are automatically permanently deleted by Gmail after 30 days[cite: 5]."
+  },
+  {
+    "id": 1781,
+    "question": "What is the maximum number of individual email recipients allowable per single message sent via standard SMTP?",
+    "options": [
+      "50",
+      "100",
+      "500",
+      "1,000"
+    ],
+    "correct_option": 1,
+    "explanation": "Standard SMTP RFC specifications define an upper limit of 100 recipients per single mail transaction[cite: 5]."
+  },
+  {
+    "id": 1782,
+    "question": "In what year did the @ sign become the standard email addressing delimiter through Ray Tomlinson's work?",
+    "options": [
+      "1969",
+      "1971",
+      "1972",
+      "1983"
+    ],
+    "correct_option": 2,
+    "explanation": "Ray Tomlinson introduced and standardized the '@' symbol in network email addressing on ARPANET in 1972[cite: 5]."
+  },
+  {
+    "id": 1783,
+    "question": "What was the very first text string transmitted in the inaugural network email sent by Ray Tomlinson in 1971?",
+    "options": [
+      "HELLO WORLD",
+      "QWERTYUIOP",
+      "LOGIN",
+      "TEST EMAIL"
+    ],
+    "correct_option": 1,
+    "explanation": "Ray Tomlinson sent the first network test email containing the top keyboard row characters 'QWERTYUIOP' to himself between two PDP-10 machines[cite: 5]."
+  },
+  {
+    "id": 1784,
+    "question": "What year is formally celebrated as the official 'birthday' of the modern Internet when ARPANET adopted standard TCP/IP?",
+    "options": [
+      "January 1, 1983",
+      "August 6, 1991",
+      "October 29, 1969",
+      "August 15, 1995"
+    ],
+    "correct_option": 0,
+    "explanation": "January 1, 1983, is considered the official birthday of the Internet, when ARPANET transitioned entirely from NCP to the TCP/IP protocol suite[cite: 5]."
+  },
+  {
+    "id": 1785,
+    "question": "Who created the Spanning Tree Protocol (STP) in 1985 to prevent bridge loops in Ethernet networks, earning her the title 'Mother of the Internet'?",
+    "options": [
+      "Ada Lovelace",
+      "Radia Perlman",
+      "Grace Hopper",
+      "Hedy Lamarr"
+    ],
+    "correct_option": 1,
+    "explanation": "Radia Perlman invented the Spanning Tree Protocol (STP), fundamental for network bridging and routing[cite: 5]."
+  },
+  {
+    "id": 1786,
+    "question": "Which Hollywood actress and inventor co-patented spread-spectrum frequency-hopping technology in 1942, laying the groundwork for modern Wi-Fi and Bluetooth?",
+    "options": [
+      "Radia Perlman",
+      "Hedy Lamarr",
+      "Grace Hopper",
+      "Ada Lovelace"
+    ],
+    "correct_option": 1,
+    "explanation": "Hedy Lamarr co-patented secret communication frequency-hopping technology during WWII, which is foundational to modern wireless communications[cite: 5]."
+  },
+  {
+    "id": 1787,
+    "question": "Who is credited with inventing the modern computer compiler in 1952 and recording the first actual computer hardware bug (a moth trapped in a relay)?",
+    "options": [
+      "Grace Hopper",
+      "Ada Lovelace",
+      "Radia Perlman",
+      "Margaret Hamilton"
+    ],
+    "correct_option": 0,
+    "explanation": "Rear Admiral Grace Hopper developed the A-0 compiler and documented the first computer bug in the Harvard Mark II relay[cite: 5]."
+  },
+  {
+    "id": 1788,
+    "question": "What is an educational institution's primary top-level domain designation?",
+    "options": [
+      ".com",
+      ".org",
+      ".gov",
+      ".edu"
+    ],
+    "correct_option": 3,
+    "explanation": "The .edu top-level domain is assigned to accredited academic and educational institutions[cite: 1, 5]."
+  },
+  {
+    "id": 1789,
+    "question": "What top-level domain is assigned to non-profit organizations and open foundations?",
+    "options": [
+      ".gov",
+      ".edu",
+      ".org",
+      ".mil"
+    ],
+    "correct_option": 2,
+    "explanation": "The .org top-level domain was established for non-profit and non-governmental organizations[cite: 1]."
+  },
+  {
+    "id": 1790,
+    "question": "What top-level domain is reserved exclusively for the United States military?",
+    "options": [
+      ".mil",
+      ".gov",
+      ".net",
+      ".org"
+    ],
+    "correct_option": 0,
+    "explanation": "The .mil top-level domain is restricted exclusively to military branches and defense entities[cite: 1]."
+  },
+  {
+    "id": 1791,
+    "question": "What is the network architecture that uses both packet switching and telephone networks to establish dial-up connectivity called?",
+    "options": [
+      "Circuit Switching / PSTN",
+      "Packet Switching",
+      "Message Switching",
+      "Cell Relay"
+    ],
+    "correct_option": 0,
+    "explanation": "Traditional dial-up telephone connectivity relies on Circuit Switching across the Public Switched Telephone Network (PSTN)[cite: 5]."
+  },
+  {
+    "id": 1792,
+    "question": "What data transmission switching technique breaks information down into independent packets that travel over dynamic routes across the Internet?",
+    "options": [
+      "Circuit Switching",
+      "Packet Switching",
+      "Analog Frequency Switching",
+      "Physical Line Switching"
+    ],
+    "correct_option": 1,
+    "explanation": "The Internet is a Packet-Switched network, dividing digital streams into individual packets routed independently to their destination[cite: 5]."
+  },
+  {
+    "id": 1793,
+    "question": "What does the network protocol acronym IRC stand for in text messaging?",
+    "options": [
+      "Internet Resource Channel",
+      "Internet Relay Chat",
+      "Internal Routing Channel",
+      "Internet Rights Council"
+    ],
+    "correct_option": 1,
+    "explanation": "IRC stands for Internet Relay Chat, an application-layer protocol for real-time text messaging in group channels[cite: 5]."
+  },
+  {
+    "id": 1794,
+    "question": "What network term refers to a threaded, chronological sequence of linked messages in online discussions or forums?",
+    "options": [
+      "Thread",
+      "Packet",
+      "Frame",
+      "Spider"
+    ],
+    "correct_option": 0,
+    "explanation": "A Thread refers to a continuous chain of connected messages posted as replies to an original discussion topic[cite: 5]."
+  },
+  {
+    "id": 1795,
+    "question": "What is an internal private network accessible only by authorized employees within an organization called?",
+    "options": [
+      "Internet",
+      "Intranet",
+      "Extranet",
+      "Darknet"
+    ],
+    "correct_option": 1,
+    "explanation": "An Intranet is a private, secured network utilized exclusively within an organization for sharing internal information[cite: 1, 5]."
+  },
+  {
+    "id": 1796,
+    "question": "What is a private network that allows controlled access from authorized outside business partners or clients called?",
+    "options": [
+      "Intranet",
+      "Extranet",
+      "Internet",
+      "Local Area Network"
+    ],
+    "correct_option": 1,
+    "explanation": "An Extranet extends portions of an organization's private intranet to trusted external vendors, partners, or customers[cite: 1, 5]."
+  },
+  {
+    "id": 1797,
+    "question": "What does the abbreviation SAN stand for in enterprise data center architecture?",
+    "options": [
+      "System Area Node",
+      "Storage Area Network",
+      "Serial Access Network",
+      "Synchronized Application Node"
+    ],
+    "correct_option": 1,
+    "explanation": "A SAN (Storage Area Network) is a dedicated high-speed network that interconnects and provides block-level access to consolidated shared storage devices[cite: 1, 5]."
+  },
+  {
+    "id": 1798,
+    "question": "What is the network called that is dedicated to connecting computers across a single university or corporate business campus?",
+    "options": [
+      "PAN",
+      "CAN (Campus Area Network)",
+      "WAN",
+      "SAN"
+    ],
+    "correct_option": 1,
+    "explanation": "A Campus Area Network (CAN) spans multiple interconnected buildings within a contiguous geographic campus zone[cite: 5]."
+  },
+  {
+    "id": 1799,
+    "question": "What does the network acronym PAN stand for in personal computing?",
+    "options": [
+      "Personal Area Network",
+      "Private Access Network",
+      "Primary Application Node",
+      "Packet Array Network"
+    ],
+    "correct_option": 0,
+    "explanation": "A PAN (Personal Area Network) connects devices centered around an individual person within a short radius (e.g., Bluetooth devices)[cite: 1, 5]."
+  },
+  {
+    "id": 1800,
+    "question": "What type of network architecture connects devices across a single metropolitan city?",
+    "options": [
+      "LAN",
+      "MAN (Metropolitan Area Network)",
+      "PAN",
+      "SAN"
+    ],
+    "correct_option": 1,
+    "explanation": "A MAN (Metropolitan Area Network) spans a larger geographic area than a LAN, such as an entire municipality or city (e.g., cable TV networks)[cite: 1, 5]."
+  }
+]

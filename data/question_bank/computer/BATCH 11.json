@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1001,
+    "question": "What is the primary function of the Shift + F7 keyboard shortcut in Microsoft Word?",
+    "options": [
+      "Running spell-check and grammar check",
+      "Opening the Thesaurus for looking up synonyms",
+      "Inserting a soft line break",
+      "Activating Extend Selection mode"
+    ],
+    "correct_option": 1,
+    "explanation": "Shift + F7 opens the Thesaurus pane for synonym search in MS Word, while F7 alone launches the Spelling and Grammar check[cite: 5]."
+  },
+  {
+    "id": 1002,
+    "question": "Which shortcut key combination applies 1.5 line spacing to the selected paragraph in Microsoft Word?",
+    "options": [
+      "Ctrl + 1",
+      "Ctrl + 2",
+      "Ctrl + 5",
+      "Alt + 5"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + 5 sets 1.5 line spacing, whereas Ctrl + 1 sets single line spacing and Ctrl + 2 sets double line spacing[cite: 5]."
+  },
+  {
+    "id": 1003,
+    "question": "What happens when you press the F8 key three times consecutively in Microsoft Word?",
+    "options": [
+      "Selects the current word",
+      "Selects the current sentence",
+      "Selects the entire paragraph",
+      "Selects the whole document"
+    ],
+    "correct_option": 1,
+    "explanation": "Pressing F8 activates Extend Selection mode: 2 times selects a word, 3 times selects a sentence, 4 times selects a paragraph, and 5 times selects the entire document[cite: 5]."
+  },
+  {
+    "id": 1004,
+    "question": "Which shortcut key combination is used to remove all paragraph-level formatting in Microsoft Word?",
+    "options": [
+      "Ctrl + Spacebar",
+      "Ctrl + Shift + N",
+      "Ctrl + Q",
+      "Alt + Q"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + Q removes paragraph-level formatting (such as indents and line spacing), while Ctrl + Spacebar removes character-level formatting[cite: 5]."
+  },
+  {
+    "id": 1005,
+    "question": "What is the key combination to insert the Copyright symbol (©) in Microsoft Word?",
+    "options": [
+      "Ctrl + Alt + C",
+      "Alt + Shift + C",
+      "Ctrl + Shift + C",
+      "Win + C"
+    ],
+    "correct_option": 0,
+    "explanation": "Pressing Ctrl + Alt + C inserts the Copyright symbol (©) in Microsoft Word[cite: 5]."
+  },
+  {
+    "id": 1006,
+    "question": "Which shortcut key inserts a manual Page Break in Microsoft Word?",
+    "options": [
+      "Shift + Enter",
+      "Ctrl + Enter",
+      "Alt + Enter",
+      "Ctrl + Shift + Enter"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Enter forces a manual page break, whereas Shift + Enter creates a soft line break[cite: 5]."
+  },
+  {
+    "id": 1007,
+    "question": "What is the maximum number of columns that can be created in a Microsoft Word table?",
+    "options": [
+      "32 columns",
+      "63 columns",
+      "128 columns",
+      "256 columns"
+    ],
+    "correct_option": 1,
+    "explanation": "A Microsoft Word table supports a maximum limit of 63 columns, while the number of rows is virtually unlimited[cite: 5]."
+  },
+  {
+    "id": 1008,
+    "question": "What was the default font and size in Microsoft Word 2003 compared to Microsoft Word 2007 and later?",
+    "options": [
+      "Calibri 11 pt in 2003, and Times New Roman 12 pt in 2007",
+      "Times New Roman 12 pt in 2003, and Calibri 11 pt in 2007",
+      "Arial 10 pt in 2003, and Calibri 12 pt in 2007",
+      "Times New Roman 10 pt in 2003, and Arial 11 pt in 2007"
+    ],
+    "correct_option": 1,
+    "explanation": "MS Word 2003 used Times New Roman (12 pt) by default, whereas Word 2007 onwards changed the default font to Calibri (11 pt)[cite: 5]."
+  },
+  {
+    "id": 1009,
+    "question": "In MS Word, the extra margin added to the binding side of a page during printing is called:",
+    "options": [
+      "Mirror Margin",
+      "Gutter Margin",
+      "Top Margin",
+      "Header Margin"
+    ],
+    "correct_option": 1,
+    "explanation": "Gutter margin is additional space added to the binding edge of a document to prevent text from being hidden when bound[cite: 5]."
+  },
+  {
+    "id": 1010,
+    "question": "Which Microsoft Word feature allows you to send the same letter to multiple recipients using a database list?",
+    "options": [
+      "Macros",
+      "Track Changes",
+      "Mail Merge",
+      "AutoText"
+    ],
+    "correct_option": 2,
+    "explanation": "Mail Merge combines a main letter template with a data source to generate personalized bulk documents[cite: 5]."
+  },
+  {
+    "id": 1011,
+    "question": "Under which Ribbon tab is the Mail Merge feature located in modern versions of MS Word?",
+    "options": [
+      "Insert tab",
+      "Review tab",
+      "References tab",
+      "Mailings tab"
+    ],
+    "correct_option": 3,
+    "explanation": "All tools related to Mail Merge are housed under the Mailings tab on the Ribbon[cite: 5]."
+  },
+  {
+    "id": 1012,
+    "question": "What is the shortcut key to open the Word Count statistics dialog in Microsoft Word?",
+    "options": [
+      "Ctrl + Shift + G",
+      "Ctrl + Shift + W",
+      "Alt + Shift + C",
+      "Ctrl + W"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + Shift + G displays the Word Count dialog showing total words, characters, lines, and paragraphs[cite: 5]."
+  },
+  {
+    "id": 1013,
+    "question": "What are the default minimum and maximum zoom percentage limits in Microsoft Word?",
+    "options": [
+      "10% and 400%",
+      "10% and 500%",
+      "20% and 200%",
+      "5% and 500%"
+    ],
+    "correct_option": 1,
+    "explanation": "MS Word allows the zoom level to be adjusted from a minimum of 10% to a maximum of 500%[cite: 5]."
+  },
+  {
+    "id": 1014,
+    "question": "In MS Excel, what is the intersection of a row and a column called?",
+    "options": [
+      "Block",
+      "Grid",
+      "Cell",
+      "Box"
+    ],
+    "correct_option": 2,
+    "explanation": "A cell is the fundamental intersection point of a row and a column in an Excel worksheet[cite: 5]."
+  },
+  {
+    "id": 1015,
+    "question": "Which MS Excel component displays the alphanumeric cell address of the currently active cell?",
+    "options": [
+      "Formula Bar",
+      "Title Bar",
+      "Status Bar",
+      "Name Box"
+    ],
+    "correct_option": 3,
+    "explanation": "The Name Box, located to the left of the Formula Bar, shows the address of the selected active cell[cite: 5]."
+  },
+  {
+    "id": 1016,
+    "question": "What total number of rows and columns exist in an MS Excel 2007 (and newer) worksheet?",
+    "options": [
+      "65,536 rows and 256 columns",
+      "1,048,576 rows and 16,384 columns",
+      "1,000,000 rows and 10,000 columns",
+      "524,288 rows and 8,192 columns"
+    ],
+    "correct_option": 1,
+    "explanation": "Excel 2007 and newer versions feature 1,048,576 rows and 16,384 columns (labeled A through XFD)[cite: 5]."
+  },
+  {
+    "id": 1017,
+    "question": "Which shortcut key combination selects an entire column in an Excel worksheet?",
+    "options": [
+      "Shift + Spacebar",
+      "Ctrl + Shift + Spacebar",
+      "Ctrl + Spacebar",
+      "Alt + Spacebar"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + Spacebar selects the entire column, while Shift + Spacebar selects the entire row[cite: 5]."
+  },
+  {
+    "id": 1018,
+    "question": "What keyboard shortcut is used to hide the currently selected row(s) in MS Excel?",
+    "options": [
+      "Ctrl + 9",
+      "Ctrl + 0",
+      "Ctrl + H",
+      "Alt + 9"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + 9 hides selected rows, whereas Ctrl + 0 hides selected columns[cite: 5]."
+  },
+  {
+    "id": 1019,
+    "question": "Which shortcut key creates an instant embedded chart on the active worksheet in MS Excel?",
+    "options": [
+      "F11",
+      "Shift + F11",
+      "Alt + F1",
+      "Ctrl + F1"
+    ],
+    "correct_option": 2,
+    "explanation": "Alt + F1 generates an embedded chart within the current worksheet, while F11 creates a dedicated Chart Sheet[cite: 5]."
+  },
+  {
+    "id": 1020,
+    "question": "Which Excel function is used to count only the cells containing numbers within a range?",
+    "options": [
+      "COUNTA",
+      "COUNTIF",
+      "COUNTBLANK",
+      "COUNT"
+    ],
+    "correct_option": 3,
+    "explanation": "The COUNT function counts cells containing numerical values, while COUNTA counts all non-empty cells[cite: 5]."
+  },
+  {
+    "id": 1021,
+    "question": "What is the result of the MS Excel formula =MOD(11, 3)?",
+    "options": [
+      "3",
+      "2",
+      "1",
+      "0"
+    ],
+    "correct_option": 1,
+    "explanation": "The MOD function returns the remainder after division. 11 divided by 3 equals 3 with a remainder of 2[cite: 1, 5]."
+  },
+  {
+    "id": 1022,
+    "question": "What character is used as the concatenation operator to join two text strings in MS Excel?",
+    "options": [
+      "+ (Plus)",
+      "& (Ampersand)",
+      "# (Hash)",
+      ": (Colon)"
+    ],
+    "correct_option": 1,
+    "explanation": "The ampersand (&) operator concatenates multiple text strings into a single text value[cite: 5]."
+  },
+  {
+    "id": 1023,
+    "question": "What does the Excel function VLOOKUP stand for?",
+    "options": [
+      "Variable Lookup",
+      "Versatile Lookup",
+      "Vertical Lookup",
+      "Vector Lookup"
+    ],
+    "correct_option": 2,
+    "explanation": "VLOOKUP stands for Vertical Lookup, searching for a value in the leftmost column of a table[cite: 5]."
+  },
+  {
+    "id": 1024,
+    "question": "What formula error is returned in Excel when a formula attempts to divide a number by zero?",
+    "options": [
+      "#VALUE!",
+      "#DIV/0!",
+      "#NAME?",
+      "#REF!"
+    ],
+    "correct_option": 1,
+    "explanation": "Excel displays the #DIV/0! error when an expression attempts mathematical division by zero[cite: 5]."
+  },
+  {
+    "id": 1025,
+    "question": "What is the keyboard shortcut to insert a new slide into the current PowerPoint presentation?",
+    "options": [
+      "Ctrl + N",
+      "Ctrl + S",
+      "Ctrl + M",
+      "Alt + N"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + M inserts a new slide, while Ctrl + N creates an entirely new presentation file[cite: 5]."
+  },
+  {
+    "id": 1026,
+    "question": "Which shortcut key starts a PowerPoint slide show from the currently active slide?",
+    "options": [
+      "F5",
+      "Shift + F5",
+      "Ctrl + F5",
+      "Alt + F5"
+    ],
+    "correct_option": 1,
+    "explanation": "Shift + F5 runs the slide show from the current slide, whereas F5 starts it from the first slide[cite: 5]."
+  },
+  {
+    "id": 1027,
+    "question": "What single key is pressed during an active slide show to turn the screen completely white?",
+    "options": [
+      "B",
+      "E",
+      "W",
+      "S"
+    ],
+    "correct_option": 2,
+    "explanation": "Pressing 'W' turns the slide show screen white, while 'B' turns the screen black[cite: 5]."
+  },
+  {
+    "id": 1028,
+    "question": "Which PowerPoint view displays miniature thumbnails of all slides to easily reorder and arrange them?",
+    "options": [
+      "Slide Sorter View",
+      "Normal View",
+      "Outline View",
+      "Notes Page View"
+    ],
+    "correct_option": 0,
+    "explanation": "Slide Sorter View displays thumbnail tiles of all slides, making it ideal for organizing transitions and sequence[cite: 5]."
+  },
+  {
+    "id": 1029,
+    "question": "What are the special visual motion effects used to introduce a slide during a slide show called?",
+    "options": [
+      "Custom Animations",
+      "Motion Paths",
+      "Slide Transitions",
+      "Action Buttons"
+    ],
+    "correct_option": 2,
+    "explanation": "Transitions are the visual effects that occur when moving from one slide to the next during a presentation[cite: 5]."
+  },
+  {
+    "id": 1030,
+    "question": "What executable command opens Microsoft PowerPoint directly from the Windows Run dialog?",
+    "options": [
+      "powerpoint.exe",
+      "powerpnt.exe",
+      "msppt.exe",
+      "ppt.exe"
+    ],
+    "correct_option": 1,
+    "explanation": "The executable name used to launch PowerPoint is 'powerpnt.exe' (or simply 'powerpnt')[cite: 5]."
+  },
+  {
+    "id": 1031,
+    "question": "What is the file extension for a PowerPoint Show file that automatically launches in full-screen presentation mode?",
+    "options": [
+      ".pptx",
+      ".pptm",
+      ".potx",
+      ".ppsx"
+    ],
+    "correct_option": 3,
+    "explanation": ".ppsx (and older .pps) files open directly in Slide Show view rather than edit mode[cite: 5]."
+  },
+  {
+    "id": 1032,
+    "question": "During a PowerPoint presentation, which shortcut key switches the mouse cursor to a live Pen tool?",
+    "options": [
+      "Ctrl + P",
+      "Ctrl + A",
+      "Ctrl + E",
+      "Ctrl + L"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + P turns the pointer into a drawing pen; Ctrl + E selects the eraser, and Ctrl + A restores the arrow cursor[cite: 5]."
+  },
+  {
+    "id": 1033,
+    "question": "What is the function of the Slide Master in Microsoft PowerPoint?",
+    "options": [
+      "To display thumbnails of all slides on one screen",
+      "To control default formatting, themes, and global elements across all linked slides",
+      "To record slide show narrations",
+      "To calculate custom animation timings"
+    ],
+    "correct_option": 1,
+    "explanation": "The Slide Master is the top hierarchy slide that stores theme information, fonts, and layouts for the entire presentation[cite: 5]."
+  },
+  {
+    "id": 1034,
+    "question": "Which software is recognized as the world's very first electronic spreadsheet program, created in 1979?",
+    "options": [
+      "Lotus 1-2-3",
+      "VisiCalc",
+      "MS Excel",
+      "Quattro Pro"
+    ],
+    "correct_option": 1,
+    "explanation": "VisiCalc, developed by Dan Bricklin and Bob Frankston in 1979 for Apple II, was the first electronic spreadsheet[cite: 5]."
+  },
+  {
+    "id": 1035,
+    "question": "What is the name of Apple's proprietary word processing software in the iWork suite?",
+    "options": [
+      "Writer",
+      "WordPerfect",
+      "Pages",
+      "TextEdit"
+    ],
+    "correct_option": 2,
+    "explanation": "Pages is Apple's flagship word processor within the iWork productivity package[cite: 5]."
+  },
+  {
+    "id": 1036,
+    "question": "In the LibreOffice office suite, what is the word processor application called?",
+    "options": [
+      "Writer",
+      "Calc",
+      "Impress",
+      "Draw"
+    ],
+    "correct_option": 0,
+    "explanation": "LibreOffice Writer is the open-source word processing program in the LibreOffice suite[cite: 5]."
+  },
+  {
+    "id": 1037,
+    "question": "What category of software is designed to maintain, optimize, and protect computer systems (e.g., Antivirus, Disk Cleanup)?",
+    "options": [
+      "Application Software",
+      "System Software / Utility Software",
+      "Horizontal Software",
+      "Firmware"
+    ],
+    "correct_option": 1,
+    "explanation": "Utility programs are system software tools designed to optimize, configure, and maintain hardware performance[cite: 5]."
+  },
+  {
+    "id": 1038,
+    "question": "What is software called that is distributed free of charge on a trial basis, requiring payment after the trial period expires?",
+    "options": [
+      "Freeware",
+      "Public Domain Software",
+      "Shareware",
+      "Open Source Software"
+    ],
+    "correct_option": 2,
+    "explanation": "Shareware is commercial software provided free on a temporary trial basis[cite: 5]."
+  },
+  {
+    "id": 1039,
+    "question": "What is software called whose source code is made freely available for anyone to inspect, modify, and redistribute?",
+    "options": [
+      "Proprietary Software",
+      "Open Source Software (OSS)",
+      "Commercial Software",
+      "Firmware"
+    ],
+    "correct_option": 1,
+    "explanation": "Open Source Software (OSS) provides open access to its source code under licenses like GPL[cite: 5]."
+  },
+  {
+    "id": 1040,
+    "question": "Which language translator converts an entire high-level program into machine code all at once before execution?",
+    "options": [
+      "Interpreter",
+      "Assembler",
+      "Compiler",
+      "Linker"
+    ],
+    "correct_option": 2,
+    "explanation": "A Compiler translates the whole source code into object code in one single process, reporting all errors at once[cite: 5]."
+  },
+  {
+    "id": 1041,
+    "question": "Which programming language uses both a Compiler and an Interpreter during execution?",
+    "options": [
+      "C",
+      "C++",
+      "Java",
+      "Assembly"
+    ],
+    "correct_option": 2,
+    "explanation": "Java source code is first compiled into bytecode, which is then interpreted by the Java Virtual Machine (JVM)[cite: 5]."
+  },
+  {
+    "id": 1042,
+    "question": "What is an unexpected flaw or programming error in computer software called?",
+    "options": [
+      "Glitch",
+      "Bug",
+      "Patch",
+      "Interrupt"
+    ],
+    "correct_option": 1,
+    "explanation": "A bug is an error or flaw in software that produces an incorrect or unintended result[cite: 5]."
+  },
+  {
+    "id": 1043,
+    "question": "What is a free, quick software update released to fix a security loophole or bug in an existing program called?",
+    "options": [
+      "Upgrade",
+      "Driver",
+      "Patch",
+      "Utility"
+    ],
+    "correct_option": 2,
+    "explanation": "A patch is a piece of code distributed to fix vulnerabilities, bugs, or improve stability in released software[cite: 5]."
+  },
+  {
+    "id": 1044,
+    "question": "Who is universally celebrated as the world's first computer programmer?",
+    "options": [
+      "Charles Babbage",
+      "Ada Lovelace",
+      "Alan Turing",
+      "Grace Hopper"
+    ],
+    "correct_option": 1,
+    "explanation": "Ada Lovelace wrote the first algorithm intended to be executed by Babbage's Analytical Engine[cite: 5]."
+  },
+  {
+    "id": 1045,
+    "question": "What type of software translates mnemonic Assembly Language code into binary Machine Language?",
+    "options": [
+      "Compiler",
+      "Interpreter",
+      "Assembler",
+      "Operating System"
+    ],
+    "correct_option": 2,
+    "explanation": "An Assembler translates symbolic assembly language instructions into native machine code[cite: 5]."
+  },
+  {
+    "id": 1046,
+    "question": "What does the acronym VIRUS stand for in computer terminology?",
+    "options": [
+      "Vital Information Resource Under Search",
+      "Vital Information Resource Under Seize",
+      "Virtual Information Record Universal System",
+      "Very Important Resource User Serial"
+    ],
+    "correct_option": 1,
+    "explanation": "VIRUS stands for Vital Information Resource Under Seize[cite: 5]."
+  },
+  {
+    "id": 1047,
+    "question": "What type of malware is disguised as legitimate or useful software but executes hidden malicious payloads?",
+    "options": [
+      "Worm",
+      "Trojan Horse",
+      "Rootkit",
+      "Spyware"
+    ],
+    "correct_option": 1,
+    "explanation": "A Trojan Horse masquerades as authentic software to trick users into running harmful payload code[cite: 5]."
+  },
+  {
+    "id": 1048,
+    "question": "How does a computer Worm fundamentally differ from a computer Virus?",
+    "options": [
+      "A worm encrypts files, while a virus deletes them",
+      "A worm self-replicates across networks without needing a host program or human action",
+      "A worm is harmless hardware firmware",
+      "A worm only infects mobile phones"
+    ],
+    "correct_option": 1,
+    "explanation": "Worms are standalone self-replicating programs that propagate over network connections without requiring a host file[cite: 5]."
+  },
+  {
+    "id": 1049,
+    "question": "What is the fraudulent attempt to obtain sensitive credentials (passwords, credit card numbers) by mimicking trusted entities called?",
+    "options": [
+      "Phishing",
+      "Spooling",
+      "Sniffing",
+      "Defragmenting"
+    ],
+    "correct_option": 0,
+    "explanation": "Phishing is a social engineering attack that uses fraudulent emails or fake websites to steal user credentials[cite: 5]."
+  },
+  {
+    "id": 1050,
+    "question": "What is a cyber attack called that floods a target network or server with overwhelming traffic to take it offline?",
+    "options": [
+      "Phishing",
+      "SQL Injection",
+      "Denial of Service (DoS / DDoS)",
+      "Logic Bomb"
+    ],
+    "correct_option": 2,
+    "explanation": "A Denial of Service (DoS/DDoS) attack overwhelms target servers with excessive requests to disrupt legitimate service[cite: 5]."
+  },
+  {
+    "id": 1051,
+    "question": "What type of malware mutates its signature and binary code each time it infects a new file to evade antivirus detection?",
+    "options": [
+      "Resident Virus",
+      "Macro Virus",
+      "Polymorphic Virus",
+      "Boot Sector Virus"
+    ],
+    "correct_option": 2,
+    "explanation": "Polymorphic viruses dynamically alter their underlying code structure and encryption keys to defeat signature scanners[cite: 5]."
+  },
+  {
+    "id": 1052,
+    "question": "What is a hardware or software security barrier that monitors and filters incoming and outgoing network traffic based on security rules called?",
+    "options": [
+      "Firewall",
+      "Router",
+      "Repeater",
+      "Gateway"
+    ],
+    "correct_option": 0,
+    "explanation": "A Firewall acts as a network security perimeter that inspects and filters packet traffic against defined rules[cite: 5]."
+  },
+  {
+    "id": 1053,
+    "question": "What famous computer worm, released in 1988, was the first major worm distributed over the Internet?",
+    "options": [
+      "Creeper",
+      "ILOVEYOU",
+      "Morris Worm",
+      "Code Red"
+    ],
+    "correct_option": 2,
+    "explanation": "The Morris Worm, written by Robert Tappan Morris in November 1988, was the first prominent worm on the Internet[cite: 5]."
+  },
+  {
+    "id": 1054,
+    "question": "What type of virus is embedded inside macro-enabled documents and templates (like Word and Excel files)?",
+    "options": [
+      "Boot Sector Virus",
+      "Macro Virus",
+      "Multipartite Virus",
+      "File Infector"
+    ],
+    "correct_option": 1,
+    "explanation": "Macro viruses are written in application scripting languages (such as VBA) and spread via infected office documents[cite: 5]."
+  },
+  {
+    "id": 1055,
+    "question": "What is the technique of secretly recording every keystroke struck on a keyboard to capture passwords called?",
+    "options": [
+      "Phishing",
+      "Keylogging",
+      "Spoofing",
+      "Sniffing"
+    ],
+    "correct_option": 1,
+    "explanation": "Keylogging involves deploying hardware or software tools to secretly log keystrokes typed by a victim[cite: 5]."
+  },
+  {
+    "id": 1056,
+    "question": "What is an intentional hidden backdoor or loophole left in software by a programmer called?",
+    "options": [
+      "Bug",
+      "Trap Door",
+      "Logic Bomb",
+      "Time Bomb"
+    ],
+    "correct_option": 1,
+    "explanation": "A Trap Door (or backdoor) is a hidden entry point intentionally designed into software to bypass security controls[cite: 5]."
+  },
+  {
+    "id": 1057,
+    "question": "Who created the open-source Linux kernel in 1991?",
+    "options": [
+      "Dennis Ritchie",
+      "Linus Torvalds",
+      "Richard Stallman",
+      "Ken Thompson"
+    ],
+    "correct_option": 1,
+    "explanation": "Linus Torvalds developed and released the initial Linux OS kernel in September 1991[cite: 5]."
+  },
+  {
+    "id": 1058,
+    "question": "What command-line user interface (CUI) program in an operating system reads and interprets user typed commands?",
+    "options": [
+      "Kernel",
+      "BIOS",
+      "Shell",
+      "Device Driver"
+    ],
+    "correct_option": 2,
+    "explanation": "The Shell is the outer command interpreter interface that accepts typed instructions from users and relays them to the kernel[cite: 5]."
+  },
+  {
+    "id": 1059,
+    "question": "What was the first version of Microsoft Windows to introduce the 'Start' button, Taskbar, and 'My Computer' icon?",
+    "options": [
+      "Windows 3.1",
+      "Windows 95",
+      "Windows 98",
+      "Windows XP"
+    ],
+    "correct_option": 1,
+    "explanation": "Windows 95 revolutionized the Windows desktop by introducing the Start menu, Taskbar, and My Computer interface[cite: 5]."
+  },
+  {
+    "id": 1060,
+    "question": "Which version of Microsoft Windows famously removed the traditional visible Start button from its desktop interface?",
+    "options": [
+      "Windows Vista",
+      "Windows 7",
+      "Windows 8",
+      "Windows 10"
+    ],
+    "correct_option": 2,
+    "explanation": "Windows 8 replaced the standard desktop Start button with a full-screen tiled Start Screen interface[cite: 5]."
+  },
+  {
+    "id": 1061,
+    "question": "What is a program in active execution within an operating system called?",
+    "options": [
+      "Thread",
+      "Process",
+      "Instruction",
+      "Routine"
+    ],
+    "correct_option": 1,
+    "explanation": "In operating systems, an active instance of a program being executed by the CPU is termed a Process[cite: 5]."
+  },
+  {
+    "id": 1062,
+    "question": "What situation occurs when two or more computer processes are permanently blocked because each is waiting for a resource held by the other?",
+    "options": [
+      "Deadlock",
+      "Paging Fault",
+      "Interrupt",
+      "Context Switch"
+    ],
+    "correct_option": 0,
+    "explanation": "A Deadlock is a state in which competing processes are unable to proceed because each holds a resource required by another[cite: 1, 5]."
+  },
+  {
+    "id": 1063,
+    "question": "What is the notification area located on the right-hand side of the Windows Taskbar commonly called?",
+    "options": [
+      "Launch Pad",
+      "System Tray",
+      "Control Center",
+      "Status Bar"
+    ],
+    "correct_option": 1,
+    "explanation": "The System Tray (Notification Area) on the bottom-right of the taskbar houses background utility icons, clock, and network status[cite: 5]."
+  },
+  {
+    "id": 1064,
+    "question": "Which legacy file system format was primarily used by MS-DOS and Windows 95?",
+    "options": [
+      "NTFS",
+      "FAT16 / FAT32",
+      "ext3",
+      "HFS"
+    ],
+    "correct_option": 1,
+    "explanation": "MS-DOS and Windows 95 utilized the File Allocation Table (FAT16/FAT32) architecture[cite: 5]."
+  },
+  {
+    "id": 1065,
+    "question": "What is the maximum filename character length supported in the legacy MS-DOS operating system?",
+    "options": [
+      "8 characters (plus 3-character extension)",
+      "12 characters",
+      "16 characters",
+      "255 characters"
+    ],
+    "correct_option": 0,
+    "explanation": "MS-DOS enforces the 8.3 filename format (maximum 8 characters for the name and 3 characters for the file extension)[cite: 5]."
+  },
+  {
+    "id": 1066,
+    "question": "What modern email retrieval protocol allows bidirectional synchronization, enabling emails to remain on the server and sync across multiple devices?",
+    "options": [
+      "POP3",
+      "SMTP",
+      "IMAP (Internet Message Access Protocol)",
+      "SNMP"
+    ],
+    "correct_option": 2,
+    "explanation": "IMAP (port 143) manages emails directly on the remote mail server, synchronizing message states across multiple client devices[cite: 5]."
+  },
+  {
+    "id": 1067,
+    "question": "Who created Hotmail in 1996, which was later acquired by Microsoft and rebranded as Outlook.com?",
+    "options": [
+      "Vinod Khosla",
+      "Sabeer Bhatia and Jack Smith",
+      "Jerry Yang",
+      "Larry Page"
+    ],
+    "correct_option": 1,
+    "explanation": "Hotmail was founded in 1996 by Sabeer Bhatia and Jack Smith before being acquired by Microsoft[cite: 5]."
+  },
+  {
+    "id": 1068,
+    "question": "In what year was the World Wide Web officially invented by British scientist Tim Berners-Lee at CERN?",
+    "options": [
+      "1983",
+      "1989",
+      "1991",
+      "1995"
+    ],
+    "correct_option": 1,
+    "explanation": "Tim Berners-Lee submitted his proposal for the World Wide Web at CERN in March 1989[cite: 5]."
+  },
+  {
+    "id": 1069,
+    "question": "What was the first widely adopted graphical web browser capable of displaying inline images alongside text, released in 1993?",
+    "options": [
+      "WorldWideWeb",
+      "NCSA Mosaic",
+      "Netscape Navigator",
+      "Internet Explorer"
+    ],
+    "correct_option": 1,
+    "explanation": "NCSA Mosaic, developed by Marc Andreessen and Eric Bina, was the first browser to support inline graphics on web pages[cite: 1, 5]."
+  },
+  {
+    "id": 1070,
+    "question": "What small text file is saved locally on a user's web browser by a web server to track preferences and browsing sessions?",
+    "options": [
+      "Applet",
+      "Script",
+      "Cookie",
+      "Plug-in"
+    ],
+    "correct_option": 2,
+    "explanation": "A cookie is a small data block stored on the client machine by web browsers to track sessions and user preferences[cite: 5]."
+  },
+  {
+    "id": 1071,
+    "question": "In what year and on which historic date were public Internet services launched in India by VSNL?",
+    "options": [
+      "26 January 1950",
+      "15 August 1995",
+      "2 October 2000",
+      "1 January 1998"
+    ],
+    "correct_option": 1,
+    "explanation": "Videsh Sanchar Nigam Limited (VSNL) launched commercial Internet access in India on August 15, 1995[cite: 1, 5]."
+  },
+  {
+    "id": 1072,
+    "question": "What network protocol automatically assigns dynamic IP addresses and configuration parameters to client computers?",
+    "options": [
+      "DNS",
+      "HTTP",
+      "DHCP (Dynamic Host Configuration Protocol)",
+      "ARP"
+    ],
+    "correct_option": 2,
+    "explanation": "DHCP automatically distributes network configuration parameters such as IP addresses, subnet masks, and default gateways[cite: 5]."
+  },
+  {
+    "id": 1073,
+    "question": "What is the vast hidden portion of the World Wide Web that is not indexed by conventional search engines (e.g., private databases, paywalled content) called?",
+    "options": [
+      "Surface Web",
+      "Deep Web",
+      "Darknet",
+      "Haunted Web"
+    ],
+    "correct_option": 1,
+    "explanation": "The Deep Web represents non-indexed web content such as password-protected databases, medical records, and intranets[cite: 5]."
+  },
+  {
+    "id": 1074,
+    "question": "What is an open-source Content Management System (CMS) widely used for building and managing websites?",
+    "options": [
+      "WordPress",
+      "Dreamweaver",
+      "Apache",
+      "Photoshop"
+    ],
+    "correct_option": 0,
+    "explanation": "WordPress is an open-source Content Management System (CMS) powering millions of websites worldwide[cite: 5]."
+  },
+  {
+    "id": 1075,
+    "question": "What is the total bit length of an IPv4 address compared to an IPv6 address?",
+    "options": [
+      "16 bits and 32 bits",
+      "32 bits and 128 bits",
+      "48 bits and 64 bits",
+      "64 bits and 256 bits"
+    ],
+    "correct_option": 1,
+    "explanation": "IPv4 addresses are 32 bits (4 octets) long, whereas IPv6 addresses are 128 bits long[cite: 1, 5]."
+  },
+  {
+    "id": 1076,
+    "question": "How many hierarchical layers are defined in the standard ISO-OSI reference network model?",
+    "options": [
+      "4 layers",
+      "5 layers",
+      "7 layers",
+      "9 layers"
+    ],
+    "correct_option": 2,
+    "explanation": "The OSI model specifies 7 distinct layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application[cite: 5]."
+  },
+  {
+    "id": 1077,
+    "question": "Which layer of the OSI model is responsible for data encryption, decryption, compression, and code translation?",
+    "options": [
+      "Session Layer",
+      "Application Layer",
+      "Transport Layer",
+      "Presentation Layer"
+    ],
+    "correct_option": 3,
+    "explanation": "Layer 6 (Presentation Layer) handles formatting, data translation, encryption/decryption, and compression[cite: 5]."
+  },
+  {
+    "id": 1078,
+    "question": "What is the Protocol Data Unit (PDU) at the Transport Layer called?",
+    "options": [
+      "Bits",
+      "Frames",
+      "Packets",
+      "Segments"
+    ],
+    "correct_option": 3,
+    "explanation": "Data at Layer 4 (Transport) is formatted into Segments, at Layer 3 (Network) into Packets, and at Layer 2 (Data Link) into Frames[cite: 1, 5]."
+  },
+  {
+    "id": 1079,
+    "question": "At which OSI layer do network Switches and Bridges primarily operate?",
+    "options": [
+      "Physical Layer",
+      "Data Link Layer",
+      "Network Layer",
+      "Session Layer"
+    ],
+    "correct_option": 1,
+    "explanation": "Standard network switches and bridges filter traffic using MAC addresses at Layer 2 (Data Link Layer)[cite: 5]."
+  },
+  {
+    "id": 1080,
+    "question": "Which network topology connects every computer to a central hub or switch in a star-like pattern?",
+    "options": [
+      "Bus Topology",
+      "Ring Topology",
+      "Star Topology",
+      "Mesh Topology"
+    ],
+    "correct_option": 2,
+    "explanation": "In a Star topology, all network nodes are independently connected to a central networking device (Hub or Switch)[cite: 5]."
+  },
+  {
+    "id": 1081,
+    "question": "Which network topology provides the highest level of redundancy and fault tolerance by linking every node directly to every other node?",
+    "options": [
+      "Bus Topology",
+      "Mesh Topology",
+      "Star Topology",
+      "Ring Topology"
+    ],
+    "correct_option": 1,
+    "explanation": "In a Full Mesh topology, every device has a dedicated point-to-point link to every other device, providing maximum reliability[cite: 5]."
+  },
+  {
+    "id": 1082,
+    "question": "What data transmission mode allows communication in only one fixed direction (e.g., Keyboard to CPU, TV broadcast)?",
+    "options": [
+      "Simplex",
+      "Half-Duplex",
+      "Full-Duplex",
+      "Multiplex"
+    ],
+    "correct_option": 0,
+    "explanation": "Simplex communication is unidirectional, where data flows in only one predetermined direction[cite: 1, 5]."
+  },
+  {
+    "id": 1083,
+    "question": "What type of physical transmission cable uses light pulses traveling through glass or plastic cores to achieve high-speed broadband transmission?",
+    "options": [
+      "Coaxial Cable",
+      "Shielded Twisted Pair",
+      "Fiber Optic Cable",
+      "Unshielded Twisted Pair"
+    ],
+    "correct_option": 2,
+    "explanation": "Fiber optic cables transmit data as pulses of light over glass fibers, delivering high bandwidth and immunity to electromagnetic interference[cite: 5]."
+  },
+  {
+    "id": 1084,
+    "question": "What port number is assigned to the File Transfer Protocol (FTP) command control connection?",
+    "options": [
+      "Port 21",
+      "Port 23",
+      "Port 25",
+      "Port 80"
+    ],
+    "correct_option": 0,
+    "explanation": "FTP uses TCP port 21 for command control connection and port 20 for actual data transfer[cite: 5]."
+  },
+  {
+    "id": 1085,
+    "question": "What is the standard IPv4 Class B first-octet numerical range?",
+    "options": [
+      "1.0.0.0 to 126.0.0.0",
+      "128.0.0.0 to 191.255.0.0",
+      "192.0.0.0 to 223.255.255.0",
+      "224.0.0.0 to 239.255.255.0"
+    ],
+    "correct_option": 1,
+    "explanation": "Class B IPv4 addresses span from 128.0.0.0 to 191.255.255.255 (with default subnet mask 255.255.0.0)[cite: 5]."
+  },
+  {
+    "id": 1086,
+    "question": "What is the correct ascending order of units in the database Data Hierarchy?",
+    "options": [
+      "Bit → Byte → Record → Field → File → Database",
+      "Bit → Byte → Field → Record → File → Database",
+      "Byte → Bit → Field → Record → File → Database",
+      "Bit → Byte → File → Field → Record → Database"
+    ],
+    "correct_option": 1,
+    "explanation": "The proper hierarchy is Bit → Byte/Character → Field (Column) → Record (Row) → File (Table) → Database[cite: 5]."
+  },
+  {
+    "id": 1087,
+    "question": "Who introduced the Relational Database Model in 1970 while working at IBM?",
+    "options": [
+      "Peter Chen",
+      "Dr. Edgar F. Codd",
+      "Dennis Ritchie",
+      "Charles Bachman"
+    ],
+    "correct_option": 1,
+    "explanation": "Dr. E. F. Codd proposed the relational database model based on mathematical relations and set theory in 1970[cite: 5]."
+  },
+  {
+    "id": 1088,
+    "question": "What term refers to the total number of columns (attributes) in a relational database table?",
+    "options": [
+      "Cardinality",
+      "Degree",
+      "Tuple",
+      "Domain"
+    ],
+    "correct_option": 1,
+    "explanation": "The Degree of a table is the total number of columns/attributes, while Cardinality is the total number of rows/tuples[cite: 5]."
+  },
+  {
+    "id": 1089,
+    "question": "What is a primary key that consists of two or more combined attributes called?",
+    "options": [
+      "Foreign Key",
+      "Candidate Key",
+      "Composite Key",
+      "Super Key"
+    ],
+    "correct_option": 2,
+    "explanation": "A Composite Key is a candidate or primary key made up of two or more combined fields to ensure uniqueness[cite: 5]."
+  },
+  {
+    "id": 1090,
+    "question": "Which SQL command is used to permanently save transaction modifications to the database?",
+    "options": [
+      "ROLLBACK",
+      "SAVEPOINT",
+      "COMMIT",
+      "CHECKPOINT"
+    ],
+    "correct_option": 2,
+    "explanation": "The COMMIT command saves all modifications made during the active transaction permanently[cite: 5]."
+  },
+  {
+    "id": 1091,
+    "question": "Which generation of computers introduced Integrated Circuits (ICs) as their primary electronic component?",
+    "options": [
+      "First Generation",
+      "Second Generation",
+      "Third Generation",
+      "Fourth Generation"
+    ],
+    "correct_option": 2,
+    "explanation": "Third Generation computers (1964–1971) replaced discrete transistors with Integrated Circuits (ICs)[cite: 5]."
+  },
+  {
+    "id": 1092,
+    "question": "What material is primarily used in the fabrication of semiconductor Integrated Circuit (IC) chips?",
+    "options": [
+      "Copper",
+      "Silicon",
+      "Carbon",
+      "Aluminum"
+    ],
+    "correct_option": 1,
+    "explanation": "Semiconductor IC chips are primarily fabricated from high-purity silicon wafers[cite: 5]."
+  },
+  {
+    "id": 1093,
+    "question": "What input medium was used for entering data and programs into First Generation computers?",
+    "options": [
+      "Magnetic Tape",
+      "Punched Cards",
+      "Floppy Disk",
+      "Keyboard"
+    ],
+    "correct_option": 1,
+    "explanation": "First generation computers relied on punched cards (invented by Herman Hollerith) for data input and storage[cite: 5]."
+  },
+  {
+    "id": 1094,
+    "question": "Who developed the fundamental Stored-Program architecture utilized in almost all modern computers?",
+    "options": [
+      "John von Neumann",
+      "Charles Babbage",
+      "Alan Turing",
+      "Blaise Pascal"
+    ],
+    "correct_option": 0,
+    "explanation": "John von Neumann designed the Von Neumann architecture, introducing shared memory for both program instructions and data[cite: 5]."
+  },
+  {
+    "id": 1095,
+    "question": "What is the small high-speed memory unit built directly inside the CPU called?",
+    "options": [
+      "Virtual Memory",
+      "RAM",
+      "ROM",
+      "Register"
+    ],
+    "correct_option": 3,
+    "explanation": "Registers are small, extremely fast storage locations located directly within the CPU execution core[cite: 5]."
+  },
+  {
+    "id": 1096,
+    "question": "Which computer register holds the memory address of the next instruction to be fetched and executed?",
+    "options": [
+      "Accumulator",
+      "Program Counter (PC)",
+      "Memory Data Register (MDR)",
+      "Instruction Register (IR)"
+    ],
+    "correct_option": 1,
+    "explanation": "The Program Counter (PC) stores the memory location of the next sequence instruction to be executed[cite: 5]."
+  },
+  {
+    "id": 1097,
+    "question": "Who invented the computer mouse in 1964 at Stanford Research Institute?",
+    "options": [
+      "Douglas Engelbart",
+      "Christopher Latham Sholes",
+      "Alan Kay",
+      "James Russell"
+    ],
+    "correct_option": 0,
+    "explanation": "Dr. Douglas Engelbart invented the computer mouse in 1964[cite: 1, 5]."
+  },
+  {
+    "id": 1098,
+    "question": "What output device measurement unit is used to express the print resolution of a printer?",
+    "options": [
+      "PPM (Pages Per Minute)",
+      "DPI (Dots Per Inch)",
+      "LPM (Lines Per Minute)",
+      "Hertz (Hz)"
+    ],
+    "correct_option": 1,
+    "explanation": "DPI (Dots Per Inch) measures the resolution and sharpness of printer output[cite: 5]."
+  },
+  {
+    "id": 1099,
+    "question": "What is the standard Registered Jack connector type used on twisted-pair Ethernet network cables?",
+    "options": [
+      "RJ-11",
+      "RJ-45",
+      "VGA",
+      "BNC"
+    ],
+    "correct_option": 1,
+    "explanation": "RJ-45 (Registered Jack 45) is the 8-pin modular connector standard used for Ethernet networking[cite: 5]."
+  },
+  {
+    "id": 1100,
+    "question": "What is the optical disc format that can be written to once by a user and cannot be erased or overwritten called?",
+    "options": [
+      "CD-ROM",
+      "CD-RW",
+      "CD-R (or CD-WORM)",
+      "DVD-RAM"
+    ],
+    "correct_option": 2,
+    "explanation": "CD-R (Compact Disc-Recordable) follows the WORM (Write Once, Read Many) standard and cannot be modified after burning[cite: 5]."
+  }
+]

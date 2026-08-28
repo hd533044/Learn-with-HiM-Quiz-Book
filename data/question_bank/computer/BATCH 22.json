@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 2101,
+    "question": "Consider the following statements regarding secondary storage devices:\n1. Magnetic tape is a sequential access medium where data must be accessed in linear order.\n2. Hard disk drives are direct access storage devices (DASD) where each physical record has a discrete address.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Magnetic tape is a sequential medium, while hard disks are direct access storage devices (DASD)[cite: 1]."
+  },
+  {
+    "id": 2102,
+    "question": "Which of the following statements about cache replacement policies is/are correct?\n1. LRU (Least Recently Used) discards the items that have not been accessed for the longest time first.\n2. Cache Hit refers to the condition where requested data is found inside the cache memory.\nSelect the correct answer:",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. LRU replaces the least recently accessed cache block, and a Cache Hit indicates successful data retrieval from cache[cite: 1]."
+  },
+  {
+    "id": 2103,
+    "question": "Consider the following statements regarding the TCP/IP network model:\n1. The TCP/IP model consists of 7 hierarchical layers corresponding exactly to the OSI model.\n2. The Internet Protocol (IP) is a connectionless protocol responsible for logical addressing and packet routing.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 1,
+    "explanation": "Statement 1 is incorrect because the TCP/IP model has 5 layers (combining session/presentation into application). Statement 2 is correct because IP is a connectionless network layer protocol[cite: 1]."
+  },
+  {
+    "id": 2104,
+    "question": "Consider the following statements regarding database keys:\n1. A primary key can contain NULL values to represent missing data entries.\n2. A foreign key establishes a relationship by referencing the primary key of another table.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 1,
+    "explanation": "Statement 1 is incorrect because primary keys strictly enforce entity integrity and cannot contain NULL values. Statement 2 is correct[cite: 1]."
+  },
+  {
+    "id": 2105,
+    "question": "Which of the following statements about SQL commands is/are correct?\n1. DROP is a DDL command that completely deletes a table structure along with its data.\n2. COMMIT is a TCL command that makes database transaction changes permanent.\nSelect the correct answer:",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. DROP removes tables structurally (DDL), and COMMIT persists transactions permanently (TCL)[cite: 1]."
+  },
+  {
+    "id": 2106,
+    "question": "Consider the following statements regarding Microsoft Excel formulas:\n1. The SUM function calculates the total of a supplied list of numbers.\n2. The MOD function returns the remainder resulting from a division operation.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. SUM adds numbers together, and MOD calculates division remainders[cite: 1]."
+  },
+  {
+    "id": 2107,
+    "question": "Consider the following statements regarding computer hardware ports:\n1. A Parallel Port transmits multiple data streams simultaneously and was traditionally used for printers.\n2. A Serial Port transmits a single stream of data sequentially one bit at a time.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Parallel ports send multiple bits simultaneously, while serial ports transmit data as a single serial stream[cite: 1]."
+  },
+  {
+    "id": 2108,
+    "question": "Which of the following statements about web browsers and search engines is/are correct?\n1. NCSA Mosaic was the first popular graphical web browser to display inline images with text.\n2. Archie is recognized as the world's first search engine for indexing computer files.\nSelect the correct answer:",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Mosaic popularized inline images, and Archie was the earliest file search engine[cite: 1]."
+  },
+  {
+    "id": 2109,
+    "question": "Consider the following statements regarding computer generations and their switching technologies:\n1. Vacuum tubes were used in First Generation computers.\n2. Microprocessors based on VLSI technology characterize Fourth Generation computers.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. First gen used vacuum tubes, and fourth gen introduced VLSI microprocessors[cite: 1]."
+  },
+  {
+    "id": 2110,
+    "question": "Consider the following statements regarding computer security and malware:\n1. A Retrovirus is a specialized virus designed to attack and disable antivirus software.\n2. Ransomware encrypts user data files and demands financial payment to restore access.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Retroviruses target antivirus tools, and ransomware holds data hostage for ransom[cite: 1]."
+  },
+  {
+    "id": 2111,
+    "question": "What is the evaluated result of the MS Excel formula =SUM(10, 20, 30) / 2?",
+    "options": [
+      "20",
+      "30",
+      "60",
+      "15"
+    ],
+    "correct_option": 1,
+    "explanation": "SUM(10, 20, 30) equals 60. Dividing by 2 yields 60 / 2 = 30[cite: 1]."
+  },
+  {
+    "id": 2112,
+    "question": "What is the value of the MS Excel expression =PRODUCT(2, 3, 4)?",
+    "options": [
+      "9",
+      "12",
+      "24",
+      "14"
+    ],
+    "correct_option": 2,
+    "explanation": "The PRODUCT function multiplies all supplied numeric arguments together: 2 * 3 * 4 = 24[cite: 1]."
+  },
+  {
+    "id": 2113,
+    "question": "Which function in Microsoft Excel returns the largest value in a set of numeric values?",
+    "options": [
+      "MIN",
+      "MAX",
+      "LARGE",
+      "TOP"
+    ],
+    "correct_option": 1,
+    "explanation": "The MAX function evaluates a list of arguments and returns the highest numerical value[cite: 1]."
+  },
+  {
+    "id": 2114,
+    "question": "What does the UPPER function do when applied to text in Microsoft Excel?",
+    "options": [
+      "Capitalizes the first letter of each word",
+      "Converts all characters in a text string to uppercase",
+      "Converts all characters to lowercase",
+      "Removes trailing whitespace characters"
+    ],
+    "correct_option": 1,
+    "explanation": "The UPPER function converts all letters in a supplied text string to uppercase (capital letters)[cite: 1]."
+  },
+  {
+    "id": 2115,
+    "question": "What will be the result of the MS Excel formula =ROUND(125.678, 2)?",
+    "options": [
+      "125.67",
+      "125.68",
+      "126.00",
+      "130.00"
+    ],
+    "correct_option": 1,
+    "explanation": "The ROUND function rounds 125.678 to 2 decimal places, resulting in 125.68[cite: 1]."
+  },
+  {
+    "id": 2116,
+    "question": "What shortcut key combination opens the 'Format Cells' dialog box in Microsoft Excel?",
+    "options": [
+      "Ctrl + F",
+      "Ctrl + Shift + F",
+      "Ctrl + 1",
+      "Alt + 1"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + 1 directly opens the Format Cells dialog box in Excel."
+  },
+  {
+    "id": 2117,
+    "question": "Which shortcut key selects an entire row in an Excel worksheet?",
+    "options": [
+      "Ctrl + Spacebar",
+      "Shift + Spacebar",
+      "Alt + Spacebar",
+      "Ctrl + Shift + Spacebar"
+    ],
+    "correct_option": 1,
+    "explanation": "Shift + Spacebar selects the entire row, while Ctrl + Spacebar selects the entire column."
+  },
+  {
+    "id": 2118,
+    "question": "What is the shortcut key to open the Print Preview window in Microsoft Excel?",
+    "options": [
+      "Ctrl + F1",
+      "Ctrl + F2",
+      "Ctrl + F3",
+      "Ctrl + F4"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + F2 opens the print preview area on the Print tab in Excel[cite: 1]."
+  },
+  {
+    "id": 2119,
+    "question": "Which shortcut key combination applies the General number format in MS Excel?",
+    "options": [
+      "Ctrl + Shift + $",
+      "Ctrl + Shift + %",
+      "Ctrl + Shift + ~",
+      "Ctrl + Shift + #"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + Shift + ~ applies the General number format to selected cells."
+  },
+  {
+    "id": 2120,
+    "question": "What is the shortcut key to open the 'Find and Replace' dialog box with the Replace tab active in MS Word or Excel?",
+    "options": [
+      "Ctrl + F",
+      "Ctrl + H",
+      "Ctrl + R",
+      "Ctrl + G"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + H opens the Find and Replace dialog box directly on the Replace tab."
+  },
+  {
+    "id": 2121,
+    "question": "In Microsoft Word, what is the keyboard shortcut to apply Bold formatting to selected text?",
+    "options": [
+      "Ctrl + B",
+      "Ctrl + I",
+      "Ctrl + U",
+      "Ctrl + D"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + B applies Bold text formatting."
+  },
+  {
+    "id": 2122,
+    "question": "What is the shortcut key to apply Italic formatting to selected text in Microsoft Word?",
+    "options": [
+      "Ctrl + B",
+      "Ctrl + I",
+      "Ctrl + T",
+      "Ctrl + E"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + I applies Italic text formatting."
+  },
+  {
+    "id": 2123,
+    "question": "Which shortcut key aligns selected text to the Right margin in Microsoft Word?",
+    "options": [
+      "Ctrl + L",
+      "Ctrl + E",
+      "Ctrl + R",
+      "Ctrl + J"
+    ],
+    "correct_option": 2,
+    "explanation": "Ctrl + R aligns selected paragraphs to the right margin."
+  },
+  {
+    "id": 2124,
+    "question": "What is the shortcut key to Justify paragraph text in Microsoft Word?",
+    "options": [
+      "Ctrl + L",
+      "Ctrl + E",
+      "Ctrl + R",
+      "Ctrl + J"
+    ],
+    "correct_option": 3,
+    "explanation": "Ctrl + J justifies text evenly between both left and right margins."
+  },
+  {
+    "id": 2125,
+    "question": "Which shortcut key combination opens the 'Save As' dialog box in Microsoft Word?",
+    "options": [
+      "Ctrl + S",
+      "Shift + F12",
+      "F12",
+      "Alt + S"
+    ],
+    "correct_option": 2,
+    "explanation": "F12 directly opens the Save As dialog box in Microsoft Office applications."
+  },
+  {
+    "id": 2126,
+    "question": "What is the shortcut key to open an existing document in Microsoft Word?",
+    "options": [
+      "Ctrl + N",
+      "Ctrl + O",
+      "Ctrl + S",
+      "Ctrl + P"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + O opens an existing file dialog box."
+  },
+  {
+    "id": 2127,
+    "question": "Which shortcut key combination opens the Print dialog box in Microsoft Word?",
+    "options": [
+      "Ctrl + P",
+      "Ctrl + Shift + P",
+      "Alt + P",
+      "Ctrl + D"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + P opens the print dialog box to print the active document."
+  },
+  {
+    "id": 2128,
+    "question": "What is the shortcut key to undo the last action performed in Microsoft Word?",
+    "options": [
+      "Ctrl + Y",
+      "Ctrl + Z",
+      "Ctrl + X",
+      "Ctrl + U"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Z undoes the most recent action, while Ctrl + Y redoes it[cite: 1]."
+  },
+  {
+    "id": 2129,
+    "question": "Which shortcut key is used to repeat or redo the last undone action in Microsoft Word?",
+    "options": [
+      "Ctrl + Z",
+      "Ctrl + Y",
+      "Ctrl + R",
+      "F4"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Y redoes or repeats the last command or action[cite: 1]."
+  },
+  {
+    "id": 2130,
+    "question": "What is the shortcut key to select all content and text in a Microsoft Word document?",
+    "options": [
+      "Ctrl + A",
+      "Ctrl + S",
+      "Ctrl + F",
+      "Ctrl + D"
+    ],
+    "correct_option": 0,
+    "explanation": "Ctrl + A selects the entire text and contents of the active document[cite: 1]."
+  },
+  {
+    "id": 2131,
+    "question": "Which shortcut key starts a PowerPoint slide show from the first slide?",
+    "options": [
+      "Shift + F5",
+      "F5",
+      "Ctrl + F5",
+      "Alt + F5"
+    ],
+    "correct_option": 1,
+    "explanation": "F5 initiates the slide show from the very beginning (Slide 1)."
+  },
+  {
+    "id": 2132,
+    "question": "What is the shortcut key to insert a new slide in Microsoft PowerPoint?",
+    "options": [
+      "Ctrl + N",
+      "Ctrl + M",
+      "Ctrl + D",
+      "Alt + M"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + M inserts a new blank slide into the presentation."
+  },
+  {
+    "id": 2133,
+    "question": "Which shortcut key duplicates the currently selected slide or object in PowerPoint?",
+    "options": [
+      "Ctrl + C",
+      "Ctrl + D",
+      "Ctrl + Shift + D",
+      "Alt + D"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + D creates an immediate duplicate of selected slides or objects."
+  },
+  {
+    "id": 2134,
+    "question": "What single key is pressed during an active PowerPoint slide show to turn the screen completely black?",
+    "options": [
+      "B",
+      "W",
+      "E",
+      "Esc"
+    ],
+    "correct_option": 0,
+    "explanation": "Pressing 'B' turns the presentation screen black ('W' turns it white)."
+  },
+  {
+    "id": 2135,
+    "question": "What key is pressed to immediately terminate or exit an ongoing PowerPoint slide show?",
+    "options": [
+      "End",
+      "Esc",
+      "Ctrl + Q",
+      "Spacebar"
+    ],
+    "correct_option": 1,
+    "explanation": "Pressing the Escape (Esc) key ends the slide show and returns to editing view."
+  },
+  {
+    "id": 2136,
+    "question": "Which shortcut key combination opens the Windows 'Task Manager' directly?",
+    "options": [
+      "Ctrl + Alt + Del",
+      "Ctrl + Shift + Esc",
+      "Win + X",
+      "Alt + F4"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Shift + Esc launches the Windows Task Manager directly."
+  },
+  {
+    "id": 2137,
+    "question": "What is the shortcut key to open File Explorer in Windows?",
+    "options": [
+      "Win + F",
+      "Win + E",
+      "Ctrl + E",
+      "Win + X"
+    ],
+    "correct_option": 1,
+    "explanation": "Win + E opens Windows File Explorer[cite: 1]."
+  },
+  {
+    "id": 2138,
+    "question": "Which Windows shortcut key combination opens the 'Run' dialog box?",
+    "options": [
+      "Win + R",
+      "Ctrl + R",
+      "Alt + R",
+      "Win + Shift + R"
+    ],
+    "correct_option": 0,
+    "explanation": "Win + R opens the Run dialog box to execute system commands."
+  },
+  {
+    "id": 2139,
+    "question": "Which shortcut key combination opens the Snipping Tool overlay for taking screenshots in Windows?",
+    "options": [
+      "Win + PrtScn",
+      "Win + Shift + S",
+      "Ctrl + Shift + S",
+      "Alt + PrtScn"
+    ],
+    "correct_option": 1,
+    "explanation": "Win + Shift + S opens the Snipping Tool screen capture overlay."
+  },
+  {
+    "id": 2140,
+    "question": "Which shortcut key combination permanently deletes a selected file without moving it to the Recycle Bin?",
+    "options": [
+      "Ctrl + Delete",
+      "Shift + Delete",
+      "Alt + Delete",
+      "Win + Delete"
+    ],
+    "correct_option": 1,
+    "explanation": "Shift + Delete bypasses the Recycle Bin for permanent deletion."
+  },
+  {
+    "id": 2141,
+    "question": "Which shortcut key combination opens an Incognito window in Google Chrome?",
+    "options": [
+      "Ctrl + N",
+      "Ctrl + Shift + N",
+      "Ctrl + Shift + P",
+      "Alt + Shift + N"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Shift + N opens a private Incognito window in Google Chrome."
+  },
+  {
+    "id": 2142,
+    "question": "What is the shortcut key to reopen the most recently closed tab in Google Chrome?",
+    "options": [
+      "Ctrl + T",
+      "Ctrl + Shift + T",
+      "Ctrl + Shift + W",
+      "Ctrl + Z"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + Shift + T restores closed tabs in the sequence they were shut."
+  },
+  {
+    "id": 2143,
+    "question": "Which shortcut key combination opens the Downloads management page in Google Chrome?",
+    "options": [
+      "Ctrl + D",
+      "Ctrl + J",
+      "Ctrl + Shift + J",
+      "Alt + J"
+    ],
+    "correct_option": 1,
+    "explanation": "Ctrl + J opens the Downloads management tab in Chrome."
+  },
+  {
+    "id": 2144,
+    "question": "What is the shortcut key to open the 'Find in Page' search bar in Google Chrome?",
+    "options": [
+      "Ctrl + F",
+      "F3",
+      "Both A and B",
+      "Ctrl + H"
+    ],
+    "correct_option": 2,
+    "explanation": "Both Ctrl + F and F3 open the in-page text search box in Chrome."
+  },
+  {
+    "id": 2145,
+    "question": "Which shortcut key toggles Google Chrome into Full Screen mode?",
+    "options": [
+      "F11",
+      "Ctrl + F11",
+      "Alt + Enter",
+      "Shift + F11"
+    ],
+    "correct_option": 0,
+    "explanation": "F11 toggles Full Screen mode on or off in web browsers."
+  },
+  {
+    "id": 2146,
+    "question": "What is the primary function of a Router in computer networking?",
+    "options": [
+      "Filtering network traffic at Layer 2 using MAC addresses",
+      "Connecting multiple devices within a local area network (LAN)",
+      "Analyzing data packets and routing them across different networks at Layer 3",
+      "Providing dedicated local file storage"
+    ],
+    "correct_option": 2,
+    "explanation": "A Router operates at Layer 3 (Network Layer) to analyze packets and route them across different networks[cite: 1]."
+  },
+  {
+    "id": 2147,
+    "question": "What is the main role of a Gateway in networking?",
+    "options": [
+      "Amplifying weak electrical signals over long cables",
+      "Acting as an entry and exit point to connect networks with different protocols and architectures",
+      "Connecting computers within a single room",
+      "Assigning dynamic IP addresses to wireless clients"
+    ],
+    "correct_option": 1,
+    "explanation": "A Gateway serves as a translation node connecting disparate networks that use different protocols and services[cite: 1]."
+  },
+  {
+    "id": 2148,
+    "question": "What network hardware device operates at the physical layer to amplify or regenerate incoming attenuated signals?",
+    "options": [
+      "Router",
+      "Switch",
+      "Repeater",
+      "Gateway"
+    ],
+    "correct_option": 2,
+    "explanation": "A Repeater operates at Layer 1 (Physical Layer) to regenerate and boost weak signals over long cable runs[cite: 1]."
+  },
+  {
+    "id": 2149,
+    "question": "Which network device connects multiple devices on a LAN and filters traffic using physical MAC addresses?",
+    "options": [
+      "Hub",
+      "Switch",
+      "Repeater",
+      "Modem"
+    ],
+    "correct_option": 1,
+    "explanation": "A Switch is a Layer 2 networking device that filters and forwards traffic directly to target MAC addresses[cite: 1]."
+  },
+  {
+    "id": 2150,
+    "question": "What does the network abbreviation WAN stand for?",
+    "options": [
+      "Wireless Area Network",
+      "Wide Area Network",
+      "Wired Access Node",
+      "Web Application Network"
+    ],
+    "correct_option": 1,
+    "explanation": "WAN stands for Wide Area Network, covering large geographic areas such as countries or continents[cite: 1]."
+  },
+  {
+    "id": 2151,
+    "question": "What is the binary addition result of (101)₂ and (011)₂?",
+    "options": [
+      "(1000)₂",
+      "(1100)₂",
+      "(1001)₂",
+      "(0110)₂"
+    ],
+    "correct_option": 0,
+    "explanation": "101 (5) + 011 (3) = 8, which is represented in binary as (1000)₂."
+  },
+  {
+    "id": 2152,
+    "question": "What is the decimal equivalent of the binary number (10101)₂?",
+    "options": [
+      "19",
+      "21",
+      "23",
+      "25"
+    ],
+    "correct_option": 1,
+    "explanation": "(10101)₂ = 16*1 + 8*0 + 4*1 + 2*0 + 1*1 = 16 + 0 + 4 + 0 + 1 = 21 in decimal."
+  },
+  {
+    "id": 2153,
+    "question": "What is the binary representation of the decimal number (19)₁₀?",
+    "options": [
+      "(10011)₂",
+      "(10101)₂",
+      "(11001)₂",
+      "(11101)₂"
+    ],
+    "correct_option": 0,
+    "explanation": "Decimal 19 = 16 + 2 + 1, which translates to binary (10011)₂."
+  },
+  {
+    "id": 2154,
+    "question": "What is the 3-bit binary equivalent of the octal number (537)₈?",
+    "options": [
+      "(101011111)₂",
+      "(111011101)₂",
+      "(101110111)₂",
+      "(011101111)₂"
+    ],
+    "correct_option": 0,
+    "explanation": "Converting each octal digit: 5 = 101, 3 = 011, 7 = 111, giving (101011111)₂."
+  },
+  {
+    "id": 2155,
+    "question": "What base (radix) is utilized by the Octal numeral system?",
+    "options": [
+      "Base 2",
+      "Base 8",
+      "Base 10",
+      "Base 16"
+    ],
+    "correct_option": 1,
+    "explanation": "The Octal numeral system operates on Base 8, using digits 0 through 7[cite: 1]."
+  },
+  {
+    "id": 2156,
+    "question": "What is the first high-level programming language developed in 1957 by John Backus at IBM?",
+    "options": [
+      "COBOL",
+      "FORTRAN",
+      "BASIC",
+      "PASCAL"
+    ],
+    "correct_option": 1,
+    "explanation": "FORTRAN (Formula Translation) was developed by John Backus at IBM as the first commercial high-level programming language."
+  },
+  {
+    "id": 2157,
+    "question": "Who created the C programming language at AT&T Bell Laboratories in 1972?",
+    "options": [
+      "Bjarne Stroustrup",
+      "Dennis Ritchie",
+      "James Gosling",
+      "Guido van Rossum"
+    ],
+    "correct_option": 1,
+    "explanation": "Dennis Ritchie developed the C programming language at Bell Labs."
+  },
+  {
+    "id": 2158,
+    "question": "Who developed the Python programming language, releasing it in 1991?",
+    "options": [
+      "Guido van Rossum",
+      "Larry Wall",
+      "Brendan Eich",
+      "Rasmus Lerdorf"
+    ],
+    "correct_option": 0,
+    "explanation": "Guido van Rossum created and released Python in 1991."
+  },
+  {
+    "id": 2159,
+    "question": "What type of language translator converts mnemonic assembly code into machine binary code?",
+    "options": [
+      "Compiler",
+      "Interpreter",
+      "Assembler",
+      "Linker"
+    ],
+    "correct_option": 2,
+    "explanation": "An Assembler translates low-level assembly language mnemonics into executable machine binary code."
+  },
+  {
+    "id": 2160,
+    "question": "Which programming language is famous for its 'Write Once, Run Anywhere' capability using bytecode and a virtual machine?",
+    "options": [
+      "C++",
+      "Java",
+      "Assembly",
+      "FORTRAN"
+    ],
+    "correct_option": 1,
+    "explanation": "Java compiles code into platform-independent bytecode executed by the Java Virtual Machine (JVM)."
+  },
+  {
+    "id": 2161,
+    "question": "What component of the CPU carries out mathematical additions and logical evaluations?",
+    "options": [
+      "Control Unit",
+      "Arithmetic Logic Unit (ALU)",
+      "Register Bank",
+      "System Clock"
+    ],
+    "correct_option": 1,
+    "explanation": "The Arithmetic Logic Unit (ALU) performs all mathematical calculations and boolean logical comparisons[cite: 1]."
+  },
+  {
+    "id": 2162,
+    "question": "What is the permanent system program stored in ROM that runs the initial hardware self-test upon powering on a PC?",
+    "options": [
+      "Firmware (BIOS)",
+      "Device Driver",
+      "Middleware",
+      "Operating System Kernel"
+    ],
+    "correct_option": 0,
+    "explanation": "BIOS firmware stored in ROM initiates the hardware tests and loads the operating system during boot-up[cite: 1]."
+  },
+  {
+    "id": 2163,
+    "question": "What type of memory uses capacitors and must be refreshed dynamically thousands of times per second?",
+    "options": [
+      "SRAM",
+      "ROM",
+      "DRAM (Dynamic RAM)",
+      "PROM"
+    ],
+    "correct_option": 2,
+    "explanation": "DRAM stores bits in capacitors that leak charge, requiring continuous electrical refreshing[cite: 1]."
+  },
+  {
+    "id": 2164,
+    "question": "What type of read-only memory can be erased by exposing the chip to strong ultraviolet (UV) light?",
+    "options": [
+      "PROM",
+      "EEPROM",
+      "Flash Memory",
+      "EPROM (Erasable Programmable ROM)"
+    ],
+    "correct_option": 3,
+    "explanation": "EPROM chips have a quartz window allowing erasure via ultraviolet light exposure."
+  },
+  {
+    "id": 2165,
+    "question": "In the computer memory hierarchy, which storage element delivers the fastest read/write access speed?",
+    "options": [
+      "Cache Memory",
+      "Primary DRAM",
+      "Internal CPU Registers",
+      "Solid State Drive"
+    ],
+    "correct_option": 2,
+    "explanation": "CPU internal registers provide the fastest storage access speed in computer hardware[cite: 1]."
+  },
+  {
+    "id": 2166,
+    "question": "What is an optical recording disc designed to be written once by the user and read many times without modification?",
+    "options": [
+      "CD-RW",
+      "CD-R (or CD-WORM)",
+      "CD-ROM",
+      "DVD-RAM"
+    ],
+    "correct_option": 1,
+    "explanation": "CD-R follows the WORM (Write Once, Read Many) standard and cannot be modified after burning."
+  },
+  {
+    "id": 2167,
+    "question": "Which laser-based printer uses toner powder and an electrostatic drum to produce high-speed printouts?",
+    "options": [
+      "Thermal Printer",
+      "Inkjet Printer",
+      "Laser Printer",
+      "Daisy Wheel Printer"
+    ],
+    "correct_option": 2,
+    "explanation": "Laser printers use electrostatic toner powder and a photo-conductive drum for high-resolution document output."
+  },
+  {
+    "id": 2168,
+    "question": "What output device uses automated pens or markers to draw vector blueprints and CAD drawings on large paper sheets?",
+    "options": [
+      "Dot Matrix Printer",
+      "Plotter",
+      "Line Printer",
+      "Drum Scanner"
+    ],
+    "correct_option": 1,
+    "explanation": "Plotters are specialized output devices used for drawing high-precision vector graphics and architectural blueprints."
+  },
+  {
+    "id": 2169,
+    "question": "What type of printer relies on heat-sensitive thermochromic paper and is widely used in point-of-sale (POS) terminals and ATMs?",
+    "options": [
+      "Laser Printer",
+      "Dot Matrix Printer",
+      "Thermal Printer",
+      "Line Printer"
+    ],
+    "correct_option": 2,
+    "explanation": "Thermal printers generate text by applying heat to thermochromic paper without ink or toner."
+  },
+  {
+    "id": 2170,
+    "question": "What is the process of partitioning a magnetic hard disk platter into concentric tracks and sectors called?",
+    "options": [
+      "Defragmentation",
+      "Formatting",
+      "Spooling",
+      "Buffering"
+    ],
+    "correct_option": 1,
+    "explanation": "Disk formatting creates the logical track and sector framework on a disk platter to prepare it for file storage."
+  },
+  {
+    "id": 2171,
+    "question": "What is the time required for a hard drive's read/write head to move mechanically to the requested track called?",
+    "options": [
+      "Latency Time",
+      "Seek Time",
+      "Access Time",
+      "Transfer Rate"
+    ],
+    "correct_option": 1,
+    "explanation": "Seek time is the duration required for the actuator arm to position the read/write head over the specified track."
+  },
+  {
+    "id": 2172,
+    "question": "What is a workstation terminal called that consists only of a display monitor and keyboard with zero onboard processing power?",
+    "options": [
+      "Smart Terminal",
+      "Dumb Terminal",
+      "Microcomputer",
+      "Client Node"
+    ],
+    "correct_option": 1,
+    "explanation": "A Dumb Terminal has no local CPU or storage capabilities and relies entirely on a centralized host mainframe computer."
+  },
+  {
+    "id": 2173,
+    "question": "How many peripheral devices can be connected in a daisy-chain configuration to a single USB host controller?",
+    "options": [
+      "32 devices",
+      "64 devices",
+      "127 devices",
+      "256 devices"
+    ],
+    "correct_option": 2,
+    "explanation": "A single Universal Serial Bus (USB) host controller can address and support up to 127 individual peripheral devices."
+  },
+  {
+    "id": 2174,
+    "question": "What is the process of copying and converting digital audio and video files from an optical CD onto a computer called?",
+    "options": [
+      "Burning",
+      "Ripping",
+      "Formatting",
+      "Spooling"
+    ],
+    "correct_option": 1,
+    "explanation": "Ripping refers to extracting digital audio or video tracks from an optical disc to a computer, whereas Burning writes data to a disc."
+  },
+  {
+    "id": 2175,
+    "question": "What small battery on the motherboard powers the real-time clock and retains BIOS settings when the PC is disconnected from power?",
+    "options": [
+      "CMOS Battery",
+      "Lithium Power Pack",
+      "SRAM Cell",
+      "Capacitor Pack"
+    ],
+    "correct_option": 0,
+    "explanation": "The CMOS battery supplies continuous power to the CMOS memory chip to preserve system hardware configuration and real-time clock data."
+  },
+  {
+    "id": 2176,
+    "question": "What is the standard formatted storage capacity of a traditional 3.5-inch High Density (HD) floppy diskette?",
+    "options": [
+      "720 KB",
+      "1.44 MB",
+      "2.88 MB",
+      "1.44 KB"
+    ],
+    "correct_option": 1,
+    "explanation": "A standard 3.5-inch High Density (HD) floppy diskette provides a storage capacity of 1.44 MB."
+  },
+  {
+    "id": 2177,
+    "question": "What is the storage capacity of a standard single-layer Blu-ray Disc (BD)?",
+    "options": [
+      "4.7 GB",
+      "8.5 GB",
+      "25 GB",
+      "50 GB"
+    ],
+    "correct_option": 2,
+    "explanation": "A single-layer Blu-ray disc holds 25 GB of data, while a dual-layer Blu-ray disc stores up to 50 GB."
+  },
+  {
+    "id": 2178,
+    "question": "What 8-pin modular connector is standard on unshielded twisted-pair (UTP) Ethernet network cables?",
+    "options": [
+      "RJ-11",
+      "RJ-45",
+      "BNC",
+      "DB-25"
+    ],
+    "correct_option": 1,
+    "explanation": "RJ-45 (Registered Jack 45) is the standard 8-pin modular connector used for Ethernet LAN cabling."
+  },
+  {
+    "id": 2179,
+    "question": "What high-speed legacy serial port interface developed by Apple delivers transfer rates of 400 to 800 Mbps for video equipment?",
+    "options": [
+      "USB 1.1",
+      "Parallel Port",
+      "Firewire (IEEE 1394)",
+      "RS-232"
+    ],
+    "correct_option": 2,
+    "explanation": "Firewire (IEEE 1394) was developed by Apple to connect camcorders and high-speed external drives at 400 to 800 Mbps[cite: 1]."
+  },
+  {
+    "id": 2180,
+    "question": "What legacy port interface utilized a 25-pin D-sub connector (DB-25) and was commonly known as the Centronics printer port?",
+    "options": [
+      "Serial Port",
+      "Parallel Port (LPT)",
+      "VGA Port",
+      "PS/2 Port"
+    ],
+    "correct_option": 1,
+    "explanation": "Parallel ports used a 25-pin DB-25 connector (Centronics standard) to transmit multiple data streams to printers[cite: 1]."
+  },
+  {
+    "id": 2181,
+    "question": "Which of the following is a non-volatile solid-state storage device with zero mechanical moving parts?",
+    "options": [
+      "Hard Disk Drive",
+      "Magnetic Tape",
+      "Solid State Drive (SSD)",
+      "Floppy Disk"
+    ],
+    "correct_option": 2,
+    "explanation": "Solid State Drives (SSDs) use flash memory integrated circuits with no moving mechanical components, providing high shock resistance and speed[cite: 1]."
+  },
+  {
+    "id": 2182,
+    "question": "What is the rotational speed of traditional desktop computer hard disk drives commonly measured in?",
+    "options": [
+      "Hertz (Hz)",
+      "DPI",
+      "RPM (Revolutions Per Minute)",
+      "MIPS"
+    ],
+    "correct_option": 2,
+    "explanation": "The rotational speed of magnetic hard disk platters is measured in Revolutions Per Minute (e.g., 5400 RPM, 7200 RPM)."
+  },
+  {
+    "id": 2183,
+    "question": "What is a single 4-bit binary computer value called?",
+    "options": [
+      "Byte",
+      "Nibble",
+      "Word",
+      "Octet"
+    ],
+    "correct_option": 1,
+    "explanation": "A Nibble is a unit of digital information consisting of 4 bits (half of an 8-bit byte)."
+  },
+  {
+    "id": 2184,
+    "question": "What 8-bit character encoding standard was developed by IBM for use on its mainframe computers?",
+    "options": [
+      "ASCII-7",
+      "EBCDIC",
+      "Unicode",
+      "BCD"
+    ],
+    "correct_option": 1,
+    "explanation": "EBCDIC (Extended Binary Coded Decimal Interchange Code) is an 8-bit character encoding system created by IBM."
+  },
+  {
+    "id": 2185,
+    "question": "What character encoding standard provides unique code points for all world languages across computing platforms?",
+    "options": [
+      "ASCII",
+      "BCD",
+      "Unicode",
+      "EBCDIC"
+    ],
+    "correct_option": 2,
+    "explanation": "Unicode is a universal character encoding standard designed to support text written in all global languages."
+  },
+  {
+    "id": 2186,
+    "question": "What is the primary function of a Router in computer networking?",
+    "options": [
+      "Filtering network traffic at Layer 2 using MAC addresses",
+      "Connecting multiple devices within a local area network (LAN)",
+      "Analyzing data packets and routing them across different networks at Layer 3",
+      "Providing dedicated local file storage"
+    ],
+    "correct_option": 2,
+    "explanation": "A Router operates at Layer 3 (Network Layer) to analyze packets and route them across different networks[cite: 1]."
+  },
+  {
+    "id": 2187,
+    "question": "What is the main role of a Gateway in networking?",
+    "options": [
+      "Amplifying weak electrical signals over long cables",
+      "Acting as an entry and exit point to connect networks with different protocols and architectures",
+      "Connecting computers within a single room",
+      "Assigning dynamic IP addresses to wireless clients"
+    ],
+    "correct_option": 1,
+    "explanation": "A Gateway serves as a translation node connecting disparate networks that use different protocols and services[cite: 1]."
+  },
+  {
+    "id": 2188,
+    "question": "What network hardware device operates at the physical layer to amplify or regenerate incoming attenuated signals?",
+    "options": [
+      "Router",
+      "Switch",
+      "Repeater",
+      "Gateway"
+    ],
+    "correct_option": 2,
+    "explanation": "A Repeater operates at Layer 1 (Physical Layer) to regenerate and boost weak signals over long cable runs[cite: 1]."
+  },
+  {
+    "id": 2189,
+    "question": "Which network device connects multiple devices on a LAN and filters traffic using physical MAC addresses?",
+    "options": [
+      "Hub",
+      "Switch",
+      "Repeater",
+      "Modem"
+    ],
+    "correct_option": 1,
+    "explanation": "A Switch is a Layer 2 networking device that filters and forwards traffic directly to target MAC addresses[cite: 1]."
+  },
+  {
+    "id": 2190,
+    "question": "What does the network abbreviation WAN stand for?",
+    "options": [
+      "Wireless Area Network",
+      "Wide Area Network",
+      "Wired Access Node",
+      "Web Application Network"
+    ],
+    "correct_option": 1,
+    "explanation": "WAN stands for Wide Area Network, covering large geographic areas such as countries or continents[cite: 1]."
+  },
+  {
+    "id": 2191,
+    "question": "What is the primary function of the Program Counter (PC) register in a central processor?",
+    "options": [
+      "Holding the memory address of the next machine instruction to be fetched and executed",
+      "Accumulating running arithmetic sum totals",
+      "Storing persistent boot firmware files",
+      "Monitoring system fan speed and temperature"
+    ],
+    "correct_option": 0,
+    "explanation": "The Program Counter (PC) stores the memory address of the next sequential instruction awaiting retrieval and execution by the CPU."
+  },
+  {
+    "id": 2192,
+    "question": "Which of the following register types holds the current instruction fetched from memory while it is being decoded by the Control Unit?",
+    "options": [
+      "Memory Address Register (MAR)",
+      "Program Counter (PC)",
+      "Instruction Register (IR)",
+      "Accumulator"
+    ],
+    "correct_option": 2,
+    "explanation": "The Instruction Register (IR) holds the binary instruction currently being decoded and executed by the processor."
+  },
+  {
+    "id": 2193,
+    "question": "What type of computer architecture is characterized by having physically separate buses and memory spaces for program code instructions and data?",
+    "options": [
+      "Von Neumann Architecture",
+      "Harvard Architecture",
+      "Complex Array Architecture",
+      "Direct Memory Architecture"
+    ],
+    "correct_option": 1,
+    "explanation": "Harvard Architecture uses separate physical memory storage and buses for program code instructions and runtime data, unlike the unified memory in Von Neumann architecture."
+  },
+  {
+    "id": 2194,
+    "question": "What mechanism enables high-speed peripheral devices to transfer data directly to and from system RAM without continuously involving the CPU?",
+    "options": [
+      "Direct Memory Access (DMA)",
+      "Spooling",
+      "Demand Paging",
+      "Instruction Pipelining"
+    ],
+    "correct_option": 0,
+    "explanation": "Direct Memory Access (DMA) allows hardware subsystems (such as disk controllers or network cards) to access main system memory independently of the central processor."
+  },
+  {
+    "id": 2195,
+    "question": "In microprocessor execution design, what technique overlaps the fetching, decoding, and execution phases of multiple instructions simultaneously?",
+    "options": [
+      "Instruction Pipelining",
+      "Demand Paging",
+      "Microcode Compilation",
+      "Direct Swapping"
+    ],
+    "correct_option": 0,
+    "explanation": "Instruction Pipelining is a hardware implementation technique where multiple instruction execution stages (fetch, decode, execute, write-back) are processed in parallel across clock cycles."
+  },
+  {
+    "id": 2196,
+    "question": "What type of CPU cache level is built directly inside the processor core chip and runs at the fastest internal clock rate?",
+    "options": [
+      "L1 Cache",
+      "L2 Cache",
+      "L3 Cache",
+      "Disk Cache"
+    ],
+    "correct_option": 0,
+    "explanation": "Level 1 (L1) cache is the primary internal cache built closest to the CPU execution core, offering the lowest latency and highest access speed."
+  },
+  {
+    "id": 2197,
+    "question": "What happens during a Cache Write-Through policy operation in memory management?",
+    "options": [
+      "Data is written only to the cache and marked dirty",
+      "Data is written simultaneously to both the cache memory and the backing main memory (RAM)",
+      "Data is written exclusively to the secondary hard drive",
+      "Data is discarded from cache immediately upon creation"
+    ],
+    "correct_option": 1,
+    "explanation": "In a Write-Through caching policy, data updates are written to both the cache and main system memory at the same time to ensure constant consistency."
+  },
+  {
+    "id": 2198,
+    "question": "What is the cache memory update method where data is written only to the cache initially, updating main RAM only when the cache line is evicted?",
+    "options": [
+      "Write-Through",
+      "Write-Back (Copy-Back)",
+      "Direct Mapping",
+      "Associative Fetch"
+    ],
+    "correct_option": 1,
+    "explanation": "In a Write-Back (or copy-back) caching scheme, modifications are recorded only in cache and written to main RAM only when the cache block is replaced."
+  },
+  {
+    "id": 2199,
+    "question": "In operating systems, what is the scheduling mechanism called where the OS forcibly interrupts a running task to allocate CPU time to another process?",
+    "options": [
+      "Preemptive Multitasking",
+      "Cooperative Multitasking",
+      "Single-Task Execution",
+      "Batch Processing"
+    ],
+    "correct_option": 0,
+    "explanation": "Preemptive Multitasking allows the operating system kernel to forcibly preempt and switch CPU execution among active threads based on priority."
+  },
+  {
+    "id": 2200,
+    "question": "What is the situation called when an operating system spends significantly more time swapping virtual memory pages between RAM and disk than executing actual code?",
+    "options": [
+      "Thrashing",
+      "Deadlock",
+      "Spooling",
+      "Starvation"
+    ],
+    "correct_option": 0,
+    "explanation": "Thrashing occurs when high memory overcommitment causes continuous page faults, forcing the system to spend all its time swapping pages to and from the hard disk."
+  }
+]

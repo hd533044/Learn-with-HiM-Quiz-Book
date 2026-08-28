@@ -158,21 +158,21 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     if is_admin_grant:
         broadcast_msg = (
             f"🎁 **SPECIAL ANNOUNCEMENT: VIP PLAN GRANTED!** 🎁\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"🎉 **Himanshu Sir has granted you the {plan_name}!**\n\n"
             f"⚡ **New Daily Limit:** `{total_quota} Questions / Day`\n"
             f"⏳ **VIP Pass Expiry:** `{expiry_date}`\n"
             f"🧾 **Reference ID:** `{payment_id}`\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"💖 **Thank you for showing faith in Quiz with HiM. I'll give my best to keep your preparation ahead with India's premier dynamic quiz platform.**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"✨ Practice more questions every single day!\n"
             f"🚀 Tap **/quiz** below to launch your session now!"
         )
     else:
         broadcast_msg = (
             f"🥳 **PAYMENT CONFIRMED & PLAN CREDITED!** 🥳\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"🎉 **Purchased Pack:** `{plan_name}`\n"
             f"⚡ **Stacked Daily Quota:** `{total_quota} Questions / Day`\n"
             f"⏳ **New VIP Pass Expiry:** `{expiry_date}`\n\n"
@@ -182,9 +182,9 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             f"• **Txn / Payment ID:** `{payment_id}`\n"
             f"• **Payment Timestamp:** `{orig_payment_time}`\n"
             f"• **Added Validity:** `{plan_info.get('days')} Days Access`\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"💖 **Thank you for showing faith in Quiz with HiM. I'll give my best to keep your preparation ahead with India's premier dynamic quiz platform.**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"📊 Tap **/myplan** anytime to check your active quota breakdown.\n"
             f"🚀 Tap **/quiz** to launch your practice session now!"
         )
@@ -225,7 +225,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
     if not is_admin_grant and user_id != PRIMARY_ADMIN_ID:
         admin_motivation_alert = (
             f"💰 **NEW VIP PACK PURCHASE RECEIVED!** 💰\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"👤 **Student Name:** {student_name}\n"
             f"🪪 **Student ID:** `{sid}`\n"
             f"🆔 **Telegram ID:** `{user_id}`\n"
@@ -237,7 +237,7 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             f"⏳ **Pass Expiry:** `{expiry_date}`\n"
             f"🧾 **Razorpay Txn ID:** `{payment_id}`\n"
             f"⏰ **Timestamp:** `{orig_payment_time}`\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"🚀 *Real-time revenue updated automatically.*"
         )
         admin_nav = InlineKeyboardMarkup([
@@ -320,12 +320,12 @@ async def scheduled_auto_payment_sync_worker():
 
                 student_restore_msg = (
                     f"🛡️ **PAID VIP SUBSCRIPTION VERIFIED & RESTORED!** 🛡️\n"
-                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"• • • ✧ • • •\n"
                     f"Hello **{name}**, your genuine subscription has been synced and restored to your account!\n\n"
                     f"⚡ **Active Daily Limit:** `{quota} Questions / Day`\n"
                     f"⏳ **Remaining Validity:** `{rem_days} Days` (Expires: `{exp}`)\n"
                     f"🧾 **Reference Payment ID:** `{pid}`\n"
-                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"• • • ✧ • • •\n"
                     f"🚀 Tap **/quiz** below to continue practicing!"
                 )
                 from telegram import InlineKeyboardMarkup, InlineKeyboardButton
@@ -394,7 +394,7 @@ async def scheduled_expiry_reminder_check():
                         SENT_EXPIRY_REMINDERS.add(rem_key)
                         msg = (
                             f"⏰ **VIP PASS EXPIRING IN 24 HOURS (1 DAY)!** ⏰\n"
-                            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                            f"• • • ✧ • • •\n"
                             f"Hello **{name}**, your VIP Subscription Pass will expire in **24 Hours**.\n\n"
                             f"⏳ **Pass Expiry Date:** `{exp_str}`\n"
                             f"⚡ **Current Daily Quota:** `{u['paid_question_balance']} Qs/Day`\n\n"
@@ -412,7 +412,7 @@ async def scheduled_expiry_reminder_check():
                         SENT_EXPIRY_REMINDERS.add(rem_key)
                         msg = (
                             f"⏳ **VIP PASS EXPIRING IN 6 HOURS!** ⏳\n"
-                            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                            f"• • • ✧ • • •\n"
                             f"Hello **{name}**, your VIP Subscription Pass is expiring in **6 Hours**!\n\n"
                             f"⏳ **Exact Expiry:** `{exp_str}`\n"
                             f"⚡ **Current Quota:** `{u['paid_question_balance']} Qs/Day`\n\n"
@@ -430,7 +430,7 @@ async def scheduled_expiry_reminder_check():
                         SENT_EXPIRY_REMINDERS.add(rem_key)
                         msg = (
                             f"🚨 **FINAL NOTICE: VIP PASS EXPIRING IN 1 HOUR!** 🚨\n"
-                            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                            f"• • • ✧ • • •\n"
                             f"Attention **{name}**, your VIP Pass will expire in **less than 1 Hour**!\n\n"
                             f"⏳ **Pass Expiry:** `{exp_str}`\n\n"
                             f"⚡ **Recharge Immediately:** Tap below to keep your daily limit active!"
@@ -486,9 +486,9 @@ async def scheduled_daily_quiz_reminder():
                     user_ids = [r[0] if isinstance(r, (list, tuple)) else r['user_id'] for r in rows]
                     reminder_text = (
                         f"📢 **DAILY QUIZ PRACTICE REMINDER** 📢\n"
-                        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                        f"• • • ✧ • • •\n"
                         f"Guyzzz attempt the Quiz Now, because everyday quiz will take you to one step closer to your selection💯\n"
-                        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                        f"• • • ✧ • • •\n"
                         f"⚡ Tap the button below to start practicing now:"
                     )
                     btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])

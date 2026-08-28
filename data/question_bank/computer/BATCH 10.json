@@ -1,0 +1,242 @@
+[
+  {
+    "id": 901,
+    "question": "Which key replacement strategy in cache memory discards the least recently accessed items first when the cache is full?",
+    "options": [
+      "First In First Out (FIFO)",
+      "Least Frequently Used (LFU)",
+      "Least Recently Used (LRU)",
+      "Random Replacement (RR)"
+    ],
+    "correct_option": 2,
+    "explanation": "LRU stands for Least Recently Used. It discards the least recently accessed data first to make room for new items in the cache[cite: 5]."
+  },
+  {
+    "id": 902,
+    "question": "What is the typical memory size capacity range of CPU cache memory?",
+    "options": [
+      "8 KB to 64 KB",
+      "128 MB to 512 MB",
+      "1 GB to 4 GB",
+      "256 Bytes to 512 Bytes"
+    ],
+    "correct_option": 0,
+    "explanation": "Cache memory size is typically restricted to smaller, high-speed blocks such as 8 KB to 64 KB to maintain ultra-fast access times[cite: 5]."
+  },
+  {
+    "id": 903,
+    "question": "Which specific virtual memory mechanism loads a page into physical memory only when it is referenced during execution?",
+    "options": [
+      "Static Swapping",
+      "Segmentation",
+      "Fragmentation",
+      "Demand Paging"
+    ],
+    "correct_option": 3,
+    "explanation": "Demand Paging loads pages into main memory only when they are required by the executing process[cite: 5]."
+  },
+  {
+    "id": 904,
+    "question": "Who invented Flash Memory in 1980 while working at Toshiba?",
+    "options": [
+      "Robert Noyce",
+      "Dr. Fujio Masuoka",
+      "Dov Frohman",
+      "Dennis Ritchie"
+    ],
+    "correct_option": 1,
+    "explanation": "Dr. Fujio Masuoka invented Flash Memory (both NOR and NAND architectures) in 1980 at Toshiba[cite: 5]."
+  },
+  {
+    "id": 905,
+    "question": "What is the primary architectural difference between EEPROM and Flash Memory?",
+    "options": [
+      "EEPROM is volatile, whereas Flash memory is non-volatile",
+      "EEPROM is optical, whereas Flash memory is magnetic",
+      "EEPROM is byte-level erasable, whereas Flash memory is block-level erasable",
+      "Flash memory cannot be rewritten after initial production"
+    ],
+    "correct_option": 2,
+    "explanation": "EEPROM allows erasing data byte by byte, while Flash memory erases larger blocks of data at a time for faster throughput[cite: 5]."
+  },
+  {
+    "id": 906,
+    "question": "Who led the team at Intel that developed the Universal Serial Bus (USB) standard in 1996?",
+    "options": [
+      "Ajay V. Bhatt",
+      "Vinod Khosla",
+      "Sabeer Bhatia",
+      "Arvind Krishna"
+    ],
+    "correct_option": 0,
+    "explanation": "Ajay V. Bhatt is the computer architect credited with leading the development of the USB interface standard[cite: 5]."
+  },
+  {
+    "id": 907,
+    "question": "In binary data measurement, how many bytes constitute exactly 1 Gibibyte (GiB)?",
+    "options": [
+      "10^9 bytes",
+      "2^20 bytes",
+      "10^12 bytes",
+      "2^30 bytes"
+    ],
+    "correct_option": 3,
+    "explanation": "1 Gibibyte (GiB) is defined as 2^30 bytes (1,073,741,824 bytes), whereas a decimal Gigabyte (GB) equals 10^9 bytes[cite: 5]."
+  },
+  {
+    "id": 908,
+    "question": "What is the decimal byte equivalent of 1 Petabyte (PB)?",
+    "options": [
+      "10^12 bytes",
+      "10^15 bytes",
+      "10^18 bytes",
+      "10^21 bytes"
+    ],
+    "correct_option": 1,
+    "explanation": "In standard decimal units, 1 Petabyte (PB) equals 10^15 bytes (or 1,000 Terabytes)[cite: 5]."
+  },
+  {
+    "id": 909,
+    "question": "What is the maximum number of lines that can be dropped using the Drop Cap feature in Microsoft Word?",
+    "options": [
+      "3 lines",
+      "5 lines",
+      "10 lines",
+      "15 lines"
+    ],
+    "correct_option": 2,
+    "explanation": "In Microsoft Word, a Drop Cap can span up to a maximum of 10 lines (default is 3 lines)[cite: 5]."
+  },
+  {
+    "id": 910,
+    "question": "What executable command opens Microsoft Word from the Windows Run dialog box?",
+    "options": [
+      "msword.exe",
+      "word.exe",
+      "word365.exe",
+      "winword.exe"
+    ],
+    "correct_option": 3,
+    "explanation": "The executable file name used to launch Microsoft Word is 'winword.exe'[cite: 5]."
+  },
+  {
+    "id": 911,
+    "question": "In Microsoft Word, what do green, red, and blue wavy underlines indicate respectively?",
+    "options": [
+      "Grammatical error, Spelling error, Contextual spelling error",
+      "Spelling error, Grammatical error, Formatting error",
+      "Hyperlink, Macro error, Font mismatch",
+      "Deleted text, Inserted text, Comment"
+    ],
+    "correct_option": 0,
+    "explanation": "Word marks grammatical errors with green lines, spelling errors with red lines, and contextual spelling/grammar errors with blue lines[cite: 5]."
+  },
+  {
+    "id": 912,
+    "question": "What is the maximum font size that can be set for a character in Microsoft Word?",
+    "options": [
+      "72 pt",
+      "1638 pt",
+      "500 pt",
+      "4096 pt"
+    ],
+    "correct_option": 1,
+    "explanation": "Microsoft Word supports font point sizes from 1 pt up to a maximum of 1638 pt[cite: 5]."
+  },
+  {
+    "id": 913,
+    "question": "What was the default left margin size in MS Word 2003 compared to MS Word 2007 and newer?",
+    "options": [
+      "1.0 inch in Word 2003, and 1.25 inches in Word 2007",
+      "0.5 inches in Word 2003, and 1.0 inch in Word 2007",
+      "1.25 inches in Word 2003, and 1.0 inch in Word 2007",
+      "1.5 inches in both versions"
+    ],
+    "correct_option": 2,
+    "explanation": "The default left margin was 1.25 inches in Word 2003 and was modified to 1.0 inch in Word 2007 onward[cite: 5]."
+  },
+  {
+    "id": 914,
+    "question": "What is the maximum total number of characters that can be entered into a single cell in MS Excel?",
+    "options": [
+      "256 characters",
+      "1,024 characters",
+      "65,536 characters",
+      "32,767 characters"
+    ],
+    "correct_option": 3,
+    "explanation": "A single cell in Microsoft Excel can store up to 32,767 characters[cite: 5]."
+  },
+  {
+    "id": 915,
+    "question": "How many default worksheets are created when opening a new workbook in MS Excel 2016 and later versions?",
+    "options": [
+      "1 sheet",
+      "3 sheets",
+      "5 sheets",
+      "0 sheets"
+    ],
+    "correct_option": 0,
+    "explanation": "Excel 2016, 2019, 2021, and Microsoft 365 create 1 default worksheet per workbook (older versions opened with 3)[cite: 5]."
+  },
+  {
+    "id": 916,
+    "question": "What is the final column header name in an MS Excel 2003 worksheet?",
+    "options": [
+      "XFD",
+      "IV",
+      "ZZZ",
+      "AZ"
+    ],
+    "correct_option": 1,
+    "explanation": "Excel 2003 supported 256 columns, with the final column labeled 'IV' (Excel 2007+ extends to 16,384 columns ending at 'XFD')[cite: 5]."
+  },
+  {
+    "id": 917,
+    "question": "What does a small red triangle located in the upper-right corner of an Excel cell indicate?",
+    "options": [
+      "Formula calculation error",
+      "The cell is locked",
+      "A cell comment/note is attached",
+      "Conditional formatting highlight"
+    ],
+    "correct_option": 2,
+    "explanation": "A red triangle in the corner indicates an attached note or comment on that cell[cite: 5]."
+  },
+  {
+    "id": 918,
+    "question": "Which layout is applied by default to the very first slide of a new PowerPoint presentation?",
+    "options": [
+      "Blank Slide",
+      "Title and Content",
+      "Section Header",
+      "Title Slide"
+    ],
+    "correct_option": 3,
+    "explanation": "The default initial slide format in PowerPoint is the 'Title Slide' layout[cite: 5]."
+  },
+  {
+    "id": 919,
+    "question": "Where should a company logo be placed so that it appears automatically on every slide in PowerPoint?",
+    "options": [
+      "Slide Master",
+      "Handout Master",
+      "Notes Master",
+      "Outline View"
+    ],
+    "correct_option": 0,
+    "explanation": "Placing elements on the Slide Master replicates them across all slides linked to that master layout[cite: 5]."
+  },
+  {
+    "id": 920,
+    "question": "During a live PowerPoint presentation, which keystroke jumps directly back to the first slide?",
+    "options": [
+      "Shift + 1",
+      "1 + Enter",
+      "Ctrl + Home",
+      "Alt + 1"
+    ],
+    "correct_option": 1,
+    "explanation": "Typing '1' and pressing 'Enter' during an active slide show navigates directly back to Slide 1[cite: 5]."
+  }
+]

@@ -459,7 +459,7 @@ async def render_admin_lock_screen(update: Update, context: ContextTypes.DEFAULT
     context.user_data["awaiting_admin_password"] = True
     msg = (
         "🔒 **HIMANSHU'S MASTER ADMIN PORTAL IS LOCKED** 🔒\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "• • • ✧ • • •\n"
         "Session timed out or requires authentication.\n\n"
         "👉 *Please type your secret 4-digit Master PIN directly in the chat to unlock.*"
     )

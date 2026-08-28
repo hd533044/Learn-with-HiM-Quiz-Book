@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1601,
+    "question": "What is the primary function of the Program Counter (PC) register in a central processor?",
+    "options": [
+      "Holding the memory address of the next machine instruction to be fetched and executed",
+      "Accumulating running arithmetic sum totals",
+      "Storing persistent boot firmware files",
+      "Monitoring system fan speed and temperature"
+    ],
+    "correct_option": 0,
+    "explanation": "The Program Counter (PC) stores the memory address of the next sequential instruction awaiting retrieval and execution by the CPU[cite: 5]."
+  },
+  {
+    "id": 1602,
+    "question": "Which of the following register types holds the current instruction fetched from memory while it is being decoded by the Control Unit?",
+    "options": [
+      "Memory Address Register (MAR)",
+      "Program Counter (PC)",
+      "Instruction Register (IR)",
+      "Accumulator"
+    ],
+    "correct_option": 2,
+    "explanation": "The Instruction Register (IR) holds the binary instruction currently being decoded and executed by the processor[cite: 5]."
+  },
+  {
+    "id": 1603,
+    "question": "What type of computer architecture is characterized by having physically separate buses and memory spaces for program code instructions and data?",
+    "options": [
+      "Von Neumann Architecture",
+      "Harvard Architecture",
+      "Complex Array Architecture",
+      "Direct Memory Architecture"
+    ],
+    "correct_option": 1,
+    "explanation": "Harvard Architecture uses separate physical memory storage and buses for program code instructions and runtime data, unlike the unified memory in Von Neumann architecture[cite: 5]."
+  },
+  {
+    "id": 1604,
+    "question": "What mechanism enables high-speed peripheral devices to transfer data directly to and from system RAM without continuously involving the CPU?",
+    "options": [
+      "Direct Memory Access (DMA)",
+      "Spooling",
+      "Demand Paging",
+      "Instruction Pipelining"
+    ],
+    "correct_option": 0,
+    "explanation": "Direct Memory Access (DMA) allows hardware subsystems (such as disk controllers or network cards) to access main system memory independently of the central processor[cite: 5]."
+  },
+  {
+    "id": 1605,
+    "question": "In microprocessor execution design, what technique overlaps the fetching, decoding, and execution phases of multiple instructions simultaneously?",
+    "options": [
+      "Instruction Pipelining",
+      "Demand Paging",
+      "Microcode Compilation",
+      "Direct Swapping"
+    ],
+    "correct_option": 0,
+    "explanation": "Instruction Pipelining is a hardware implementation technique where multiple instruction execution stages (fetch, decode, execute, write-back) are processed in parallel across clock cycles[cite: 5]."
+  },
+  {
+    "id": 1606,
+    "question": "What type of CPU cache level is built directly inside the processor core chip and runs at the fastest internal clock rate?",
+    "options": [
+      "L1 Cache",
+      "L2 Cache",
+      "L3 Cache",
+      "Disk Cache"
+    ],
+    "correct_option": 0,
+    "explanation": "Level 1 (L1) cache is the primary internal cache built closest to the CPU execution core, offering the lowest latency and highest access speed[cite: 5]."
+  },
+  {
+    "id": 1607,
+    "question": "What happens during a Cache Write-Through policy operation in memory management?",
+    "options": [
+      "Data is written only to the cache and marked dirty",
+      "Data is written simultaneously to both the cache memory and the backing main memory (RAM)",
+      "Data is written exclusively to the secondary hard drive",
+      "Data is discarded from cache immediately upon creation"
+    ],
+    "correct_option": 1,
+    "explanation": "In a Write-Through caching policy, data updates are written to both the cache and main system memory at the same time to ensure constant consistency[cite: 5]."
+  },
+  {
+    "id": 1608,
+    "question": "What is the cache memory update method where data is written only to the cache initially, updating main RAM only when the cache line is evicted?",
+    "options": [
+      "Write-Through",
+      "Write-Back (Copy-Back)",
+      "Direct Mapping",
+      "Associative Fetch"
+    ],
+    "correct_option": 1,
+    "explanation": "In a Write-Back (or copy-back) caching scheme, modifications are recorded only in cache and written to main RAM only when the cache block is replaced[cite: 5]."
+  },
+  {
+    "id": 1609,
+    "question": "In operating systems, what is the scheduling mechanism called where the OS forcibly interrupts a running task to allocate CPU time to another process?",
+    "options": [
+      "Preemptive Multitasking",
+      "Cooperative Multitasking",
+      "Single-Task Execution",
+      "Batch Processing"
+    ],
+    "correct_option": 0,
+    "explanation": "Preemptive Multitasking allows the operating system kernel to forcibly preempt and switch CPU execution among active threads based on priority[cite: 5]."
+  },
+  {
+    "id": 1610,
+    "question": "What is the situation called when an operating system spends significantly more time swapping virtual memory pages between RAM and disk than executing actual code?",
+    "options": [
+      "Thrashing",
+      "Deadlock",
+      "Spooling",
+      "Starvation"
+    ],
+    "correct_option": 0,
+    "explanation": "Thrashing occurs when high memory overcommitment causes continuous page faults, forcing the system to spend all its time swapping pages to and from the hard disk[cite: 5]."
+  },
+  {
+    "id": 1611,
+    "question": "What is the primary purpose of a Translation Lookaside Buffer (TLB) in CPU memory management?",
+    "options": [
+      "Translating high-level programming language syntax",
+      "Caching virtual-to-physical memory page address translations to accelerate lookup times",
+      "Managing sound card output channels",
+      "Buffering printer print jobs"
+    ],
+    "correct_option": 1,
+    "explanation": "A Translation Lookaside Buffer (TLB) is a specialized hardware cache used by the Memory Management Unit (MMU) to store recent virtual-to-physical address mappings[cite: 5]."
+  },
+  {
+    "id": 1612,
+    "question": "In operating systems, which condition is NOT one of the four necessary Coffman conditions required for a Deadlock to occur?",
+    "options": [
+      "Mutual Exclusion",
+      "Hold and Wait",
+      "Preemption Allowed",
+      "Circular Wait"
+    ],
+    "correct_option": 2,
+    "explanation": "For a deadlock to occur, resources must be 'No Preemption' (cannot be forcibly confiscated). The four Coffman conditions are: Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait[cite: 1, 5]."
+  },
+  {
+    "id": 1613,
+    "question": "What is the data structure maintained by the operating system to store all operational information about a specific process called?",
+    "options": [
+      "Process Control Block (PCB)",
+      "File Allocation Table (FAT)",
+      "Master Boot Record (MBR)",
+      "Translation Lookaside Buffer (TLB)"
+    ],
+    "correct_option": 0,
+    "explanation": "A Process Control Block (PCB) is an OS data structure containing process identification, state, CPU registers, memory pointers, and I/O status[cite: 5]."
+  },
+  {
+    "id": 1614,
+    "question": "What type of operating system architecture runs core device drivers, file systems, and IPC services as user-space processes outside the kernel?",
+    "options": [
+      "Monolithic Kernel",
+      "Microkernel",
+      "Single-Task OS",
+      "Batch OS"
+    ],
+    "correct_option": 1,
+    "explanation": "A Microkernel keeps only the absolute minimum core mechanisms (IPC, basic scheduling) in kernel mode, running drivers and file systems in user space[cite: 5]."
+  },
+  {
+    "id": 1615,
+    "question": "What is the initial process spawned at system boot in Unix-like operating systems that serves as the parent of all other processes?",
+    "options": [
+      "Kernel Daemon",
+      "Init / systemd",
+      "Shell",
+      "Bootstrap Process"
+    ],
+    "correct_option": 1,
+    "explanation": "In Unix and Linux systems, 'init' (or systemd) is the first user-space process (PID 1) started by the kernel, spawning all other system services[cite: 5]."
+  },
+  {
+    "id": 1616,
+    "question": "What command is used in Linux/Unix operating systems to list all currently running active processes?",
+    "options": [
+      "ls",
+      "ps",
+      "dir",
+      "chmod"
+    ],
+    "correct_option": 1,
+    "explanation": "The 'ps' command (Process Status) in Unix/Linux displays a snapshot of current active processes and their PIDs[cite: 5]."
+  },
+  {
+    "id": 1617,
+    "question": "What command is used in Linux/Unix terminal environments to modify file and directory access permissions?",
+    "options": [
+      "chown",
+      "chmod",
+      "grep",
+      "mv"
+    ],
+    "correct_option": 1,
+    "explanation": "The 'chmod' (change mode) command changes file system access permissions (read, write, execute) for owners, groups, and others[cite: 5]."
+  },
+  {
+    "id": 1618,
+    "question": "What is the standard Linux directory path where system configuration files and administration scripts are stored?",
+    "options": [
+      "/bin",
+      "/dev",
+      "/etc",
+      "/home"
+    ],
+    "correct_option": 2,
+    "explanation": "The '/etc' directory in Unix/Linux file systems holds host-specific system-wide configuration files and initialization scripts[cite: 5]."
+  },
+  {
+    "id": 1619,
+    "question": "What type of primary data storage structure in FAT file systems maps the allocation clusters on a disk drive?",
+    "options": [
+      "File Allocation Table (FAT)",
+      "Master File Table (MFT)",
+      "Superblock",
+      "Inode Table"
+    ],
+    "correct_option": 0,
+    "explanation": "The File Allocation Table (FAT) is a static table index describing the cluster allocation status and chains across a disk volume[cite: 5]."
+  },
+  {
+    "id": 1620,
+    "question": "What is the core database structure in Microsoft's NTFS file system that stores metadata records for every file and folder on the volume?",
+    "options": [
+      "FAT32 Index",
+      "Master File Table (MFT)",
+      "Virtual File Table",
+      "Sector Allocation Chain"
+    ],
+    "correct_option": 1,
+    "explanation": "The Master File Table (MFT) is the central structural database in NTFS that records attributes and cluster locations for every file on the drive[cite: 5]."
+  },
+  {
+    "id": 1621,
+    "question": "What is the maximum single file size limit supported on a storage drive formatted with the FAT32 file system?",
+    "options": [
+      "2 GB",
+      "4 GB (minus 1 byte)",
+      "16 GB",
+      "2 TB"
+    ],
+    "correct_option": 1,
+    "explanation": "FAT32 supports a maximum individual file size of 4 GB (specifically 4,294,967,295 bytes), making it unable to store single files larger than 4 GB[cite: 5]."
+  },
+  {
+    "id": 1622,
+    "question": "What 64-bit file system was introduced by Microsoft to replace FAT32 for high-capacity removable flash drives, supporting files over 4 GB?",
+    "options": [
+      "exFAT (Extended File Allocation Table)",
+      "NTFS",
+      "ext2",
+      "HFS"
+    ],
+    "correct_option": 0,
+    "explanation": "exFAT (Extended FAT) was designed specifically for flash memory storage, eliminating the 4 GB file size limit of traditional FAT32[cite: 5]."
+  },
+  {
+    "id": 1623,
+    "question": "What is the unique cryptographic hash generated from a digital message to detect unauthorized modification called?",
+    "options": [
+      "Message Digest (Digital Hash)",
+      "Cipher Block",
+      "Public Key",
+      "Token String"
+    ],
+    "correct_option": 0,
+    "explanation": "A Message Digest (or cryptographic hash) is a fixed-size mathematical fingerprint of a file used to verify message integrity[cite: 1, 5]."
+  },
+  {
+    "id": 1624,
+    "question": "Which symmetric block cipher encryption standard uses 128-bit blocks and key sizes of 128, 192, or 256 bits (replacing DES)?",
+    "options": [
+      "AES (Advanced Encryption Standard)",
+      "RC4",
+      "RSA",
+      "MD5"
+    ],
+    "correct_option": 0,
+    "explanation": "AES (Advanced Encryption Standard), also known as Rijndael, is the worldwide symmetric encryption standard approved by NIST[cite: 5]."
+  },
+  {
+    "id": 1625,
+    "question": "Which asymmetric cryptographic algorithm is widely used for public-key encryption and digital signatures based on the factoring of large prime numbers?",
+    "options": [
+      "RSA Algorithm",
+      "AES",
+      "DES",
+      "Blowfish"
+    ],
+    "correct_option": 0,
+    "explanation": "RSA (invented by Rivest, Shamir, and Adleman) is a foundational asymmetric public-key cryptosystem based on the mathematical difficulty of prime factorization[cite: 5]."
+  },
+  {
+    "id": 1626,
+    "question": "What digital credential binds a public key to an individual or organization and is issued by a trusted Certificate Authority (CA)?",
+    "options": [
+      "Digital Certificate (X.509 Certificate)",
+      "Private Hash Key",
+      "Cookie Token",
+      "MAC Identifier"
+    ],
+    "correct_option": 0,
+    "explanation": "A Digital Certificate (X.509 standard) uses a Certificate Authority's digital signature to authenticate the ownership of a public cryptographic key[cite: 1]."
+  },
+  {
+    "id": 1627,
+    "question": "What is the cryptographic protocol that succeeded Secure Sockets Layer (SSL) to secure HTTP web communication as HTTPS?",
+    "options": [
+      "TLS (Transport Layer Security)",
+      "PGP",
+      "IPsec",
+      "SSH"
+    ],
+    "correct_option": 0,
+    "explanation": "TLS (Transport Layer Security) is the modern, secure successor to deprecated SSL protocols used for encrypting web and network sessions[cite: 5]."
+  },
+  {
+    "id": 1628,
+    "question": "What attack occurs when a malicious actor positions themselves between two communicating parties to secretly intercept and alter transmission data?",
+    "options": [
+      "Man-in-the-Middle (MitM) Attack",
+      "Denial of Service (DoS)",
+      "Logic Bomb",
+      "SQL Injection"
+    ],
+    "correct_option": 0,
+    "explanation": "A Man-in-the-Middle (MitM) attack occurs when an adversary secretly intercepts, relays, and possibly alters communications between two trusting endpoints[cite: 5]."
+  },
+  {
+    "id": 1629,
+    "question": "What attack involves manipulating DNS server records to redirect website visitors from a legitimate site to a fraudulent IP address?",
+    "options": [
+      "Pharming (DNS Poisoning / Spoofing)",
+      "Spooling",
+      "Keylogging",
+      "Defragmentation"
+    ],
+    "correct_option": 0,
+    "explanation": "Pharming (or DNS Cache Poisoning) alters domain name resolution tables to secretly redirect user traffic to a fake host server[cite: 5]."
+  },
+  {
+    "id": 1630,
+    "question": "What is a cyber attack called that targets a software vulnerability on the exact same day it is discovered, before developers have created a security patch?",
+    "options": [
+      "Zero-Day Exploit",
+      "Macro Payload",
+      "Trojan Attack",
+      "Pharming"
+    ],
+    "correct_option": 0,
+    "explanation": "A Zero-Day Exploit takes advantage of a security hole before the software vendor has developed and released a patch for the flaw[cite: 5]."
+  },
+  {
+    "id": 1631,
+    "question": "What type of malware quietly installs on a device to hijack computing power and harvest cryptocurrencies (like Monero or Bitcoin) without user consent?",
+    "options": [
+      "Cryptojacking",
+      "Ransomware",
+      "Rootkit",
+      "Adware"
+    ],
+    "correct_option": 0,
+    "explanation": "Cryptojacking is unauthorized malware that uses a victim's CPU and electricity resources to secretly mine cryptocurrencies[cite: 5]."
+  },
+  {
+    "id": 1632,
+    "question": "What security strategy uses decoy computer servers deliberately left vulnerable to lure attackers and analyze their exploitation methods?",
+    "options": [
+      "Honeypot",
+      "Firewall Buffer",
+      "Proxy Gateway",
+      "Demilitarized Zone (DMZ)"
+    ],
+    "correct_option": 0,
+    "explanation": "A Honeypot is an isolated decoy system set up as a trap to detect, deflect, or study unauthorized exploitation techniques by cyber attackers[cite: 5]."
+  },
+  {
+    "id": 1633,
+    "question": "What network perimeter subnet isolates an organization's public-facing external servers from the secure internal corporate network?",
+    "options": [
+      "Demilitarized Zone (DMZ)",
+      "Intranet Ring",
+      "Virtual LAN",
+      "Extranet Hub"
+    ],
+    "correct_option": 0,
+    "explanation": "A DMZ (Demilitarized Zone) is a physical or logical subnetwork that exposes an organization's external-facing services (web, mail) while shielding internal LAN nodes[cite: 1]."
+  },
+  {
+    "id": 1634,
+    "question": "What encrypted network connection creates a secure virtual tunnel over an untrusted public network (the Internet)?",
+    "options": [
+      "Virtual Private Network (VPN)",
+      "Broadband Subnet",
+      "Intranet Proxy",
+      "Dynamic Host Channel"
+    ],
+    "correct_option": 0,
+    "explanation": "A VPN (Virtual Private Network) encrypts internet traffic across an encrypted tunnel, safeguarding data confidentiality and masking client IP addresses[cite: 5]."
+  },
+  {
+    "id": 1635,
+    "question": "What network protocol is used by routers to dynamically forward Internet Control error messages and operational information across IP networks?",
+    "options": [
+      "ICMP (Internet Control Message Protocol)",
+      "IGMP",
+      "SNMP",
+      "SMTP"
+    ],
+    "correct_option": 0,
+    "explanation": "ICMP is a network-layer protocol used by network devices to send diagnostic messages (such as Destination Unreachable or Echo Ping)[cite: 5]."
+  },
+  {
+    "id": 1636,
+    "question": "What protocol allows network administrators to remotely monitor, manage, and configure managed network hardware devices?",
+    "options": [
+      "SNMP (Simple Network Management Protocol)",
+      "SMTP",
+      "POP3",
+      "NTP"
+    ],
+    "correct_option": 0,
+    "explanation": "SNMP (Simple Network Management Protocol) collects diagnostic metrics and configures routers, switches, and servers across IP networks[cite: 1]."
+  },
+  {
+    "id": 1637,
+    "question": "What standard networking protocol is used to synchronize the system clocks of connected computer hardware devices across an IP network?",
+    "options": [
+      "NTP (Network Time Protocol)",
+      "NNTP",
+      "SNMP",
+      "DHCP"
+    ],
+    "correct_option": 0,
+    "explanation": "NTP (Network Time Protocol) operates over UDP port 123 to synchronize computer clocks with atomic clock time sources[cite: 5]."
+  },
+  {
+    "id": 1638,
+    "question": "What is the maximum theoretical transmission speed of Fast Ethernet (IEEE 802.3u)?",
+    "options": [
+      "10 Mbps",
+      "100 Mbps",
+      "1 Gbps",
+      "10 Gbps"
+    ],
+    "correct_option": 1,
+    "explanation": "Fast Ethernet operates under the IEEE 802.3u standard, delivering data transfer speeds of up to 100 Mbps[cite: 5]."
+  },
+  {
+    "id": 1639,
+    "question": "What is the maximum theoretical data transmission speed of Gigabit Ethernet (IEEE 802.3ab)?",
+    "options": [
+      "100 Mbps",
+      "1,000 Mbps (1 Gbps)",
+      "10,000 Mbps (10 Gbps)",
+      "54 Mbps"
+    ],
+    "correct_option": 1,
+    "explanation": "Gigabit Ethernet provides network transmission bandwidth of 1,000 Mbps (1 Gbps) over copper twisted-pair and optical fiber cables[cite: 5]."
+  },
+  {
+    "id": 1640,
+    "question": "In structured networking cabling, what is the maximum recommended transmission distance for standard Category 5e/6 UTP Ethernet cables?",
+    "options": [
+      "10 meters",
+      "50 meters",
+      "100 meters (approx. 328 feet)",
+      "500 meters"
+    ],
+    "correct_option": 2,
+    "explanation": "The maximum certified cable segment length for unshielded twisted pair (UTP) Ethernet cabling without repeaters is 100 meters[cite: 5]."
+  },
+  {
+    "id": 1641,
+    "question": "What is the fundamental difference between standard UTP (Unshielded Twisted Pair) and STP (Shielded Twisted Pair) cables?",
+    "options": [
+      "STP cable incorporates foil/braided metallic shielding to protect against electromagnetic interference (EMI)",
+      "UTP cable uses optical glass fibers instead of copper",
+      "STP cable can only transmit analog telephone signals",
+      "UTP cable has a maximum distance of 5 meters"
+    ],
+    "correct_option": 0,
+    "explanation": "STP cables contain metallic foil shielding wrapped around wire pairs to minimize electromagnetic interference and cross-talk in industrial settings[cite: 5]."
+  },
+  {
+    "id": 1642,
+    "question": "What optical fiber core reflection principle allows light pulses to travel along curved optical fiber strands without escaping?",
+    "options": [
+      "Total Internal Reflection",
+      "Light Refraction",
+      "Optical Polarization",
+      "Photoelectric Dispersion"
+    ],
+    "correct_option": 0,
+    "explanation": "Fiber-optic lines work on Total Internal Reflection, where light rays reflect completely off the core-cladding boundary[cite: 5]."
+  },
+  {
+    "id": 1643,
+    "question": "Which of the following describes Single-Mode Optical Fiber compared to Multi-Mode Optical Fiber?",
+    "options": [
+      "Single-mode fiber has a thinner glass core (approx. 9 µm) and supports longer transmission distances with lower attenuation",
+      "Single-mode fiber is constructed from copper wires",
+      "Multi-mode fiber uses higher-power laser diodes exclusively",
+      "Single-mode fiber cannot carry digital data"
+    ],
+    "correct_option": 0,
+    "explanation": "Single-Mode Fiber features a narrow core carrying a single beam of laser light, making it suitable for long-distance telecommunication networks[cite: 5]."
+  },
+  {
+    "id": 1644,
+    "question": "In wireless Wi-Fi technology, what are the two standard radio frequency bands commonly deployed for consumer WLANs?",
+    "options": [
+      "900 MHz and 1.8 GHz",
+      "2.4 GHz and 5 GHz",
+      "10 GHz and 60 GHz",
+      "100 MHz and 200 MHz"
+    ],
+    "correct_option": 1,
+    "explanation": "Standard Wi-Fi networks broadcast on the 2.4 GHz (longer range) and 5 GHz (higher throughput) unlicensed radio frequency bands[cite: 5]."
+  },
+  {
+    "id": 1645,
+    "question": "What is the Wi-Fi generation name assigned to the high-throughput IEEE 802.11ax standard?",
+    "options": [
+      "Wi-Fi 4",
+      "Wi-Fi 5",
+      "Wi-Fi 6",
+      "Wi-Fi 3"
+    ],
+    "correct_option": 2,
+    "explanation": "The Wi-Fi Alliance designated IEEE 802.11ax as Wi-Fi 6 (802.11ac is Wi-Fi 5, and 802.11n is Wi-Fi 4)[cite: 5]."
+  },
+  {
+    "id": 1646,
+    "question": "What low-power wireless personal area network (WPAN) standard is governed by IEEE 802.15.4 for home automation and IoT sensor meshes?",
+    "options": [
+      "Zigbee",
+      "Wi-Fi",
+      "Ethernet",
+      "WiMAX"
+    ],
+    "correct_option": 0,
+    "explanation": "Zigbee is a low-power, low-data-rate wireless mesh network specification based on the IEEE 802.15.4 standard for IoT and sensor devices[cite: 5]."
+  },
+  {
+    "id": 1647,
+    "question": "What short-range wireless communication standard operating at 13.56 MHz enables contactless payments and smart card interactions within 4 cm?",
+    "options": [
+      "Bluetooth",
+      "NFC (Near Field Communication)",
+      "Zigbee",
+      "Wi-Fi Direct"
+    ],
+    "correct_option": 1,
+    "explanation": "NFC (Near Field Communication) is a high-frequency short-range wireless technology that enables contactless card reading and mobile payments[cite: 5]."
+  },
+  {
+    "id": 1648,
+    "question": "In relational database normalization, a table is in First Normal Form (1NF) if and only if:",
+    "options": [
+      "It contains no partial functional dependencies on a composite key",
+      "Every attribute column contains only atomic (indivisible) values with no repeating groups",
+      "It has no transitive dependencies",
+      "It contains multiple foreign keys in each row"
+    ],
+    "correct_option": 1,
+    "explanation": "First Normal Form (1NF) mandates that all column values must be atomic (single-valued) with no repeating arrays or composite fields[cite: 5]."
+  },
+  {
+    "id": 1649,
+    "question": "In relational database design, a table is in Second Normal Form (2NF) if it is in 1NF and:",
+    "options": [
+      "All non-key attributes are fully functionally dependent on the entire primary key (no partial dependencies)",
+      "It contains transitive functional dependencies",
+      "It has no primary key defined",
+      "All column values are strings"
+    ],
+    "correct_option": 0,
+    "explanation": "Second Normal Form (2NF) requires 1NF compliance and eliminates partial functional dependencies, ensuring non-prime attributes depend on the whole candidate key[cite: 5]."
+  },
+  {
+    "id": 1650,
+    "question": "In database normalization, a table is in Third Normal Form (3NF) if it is in 2NF and:",
+    "options": [
+      "It contains repeating multivalued groups",
+      "Every non-prime attribute is non-transitively dependent on the candidate key",
+      "Every attribute depends partially on a non-key column",
+      "The primary key consists of more than four attributes"
+    ],
+    "correct_option": 1,
+    "explanation": "Third Normal Form (3NF) requires 2NF compliance and removes transitive dependencies (where a non-key attribute depends on another non-key attribute)[cite: 5]."
+  },
+  {
+    "id": 1651,
+    "question": "What is Boyce-Codd Normal Form (BCNF) in relational database theory?",
+    "options": [
+      "A stricter version of 3NF where for every functional dependency X -> Y, X must be a superkey",
+      "A weaker form of 1NF that allows non-atomic tables",
+      "A format that permits duplicate rows in relations",
+      "An unnormalized flat file structure"
+    ],
+    "correct_option": 0,
+    "explanation": "BCNF (Boyce-Codd Normal Form) is an advanced version of 3NF where every determinant (left side of a functional dependency X -> Y) must be a superkey[cite: 5]."
+  },
+  {
+    "id": 1652,
+    "question": "What is a virtual database table whose contents are dynamically generated by a stored SELECT query called?",
+    "options": [
+      "Base Table",
+      "Database View",
+      "Foreign Index",
+      "Schema Log"
+    ],
+    "correct_option": 1,
+    "explanation": "A Database View is a virtual table representing the dynamic result-set of a pre-compiled SQL query on base tables[cite: 5]."
+  },
+  {
+    "id": 1653,
+    "question": "What database indexing mechanism is structured as a balanced search tree where all leaf nodes reside at the exact same depth?",
+    "options": [
+      "B-Tree / B+ Tree Index",
+      "Linear Array",
+      "Hash Bucket",
+      "Unordered Heap"
+    ],
+    "correct_option": 0,
+    "explanation": "B-Trees and B+ Trees are self-balancing search tree data structures widely used by database engines for rapid record lookups and range queries[cite: 5]."
+  },
+  {
+    "id": 1654,
+    "question": "In SQL, which aggregate function calculates and returns the arithmetic mean of all numeric values in a column?",
+    "options": [
+      "SUM()",
+      "AVG()",
+      "COUNT()",
+      "MEAN()"
+    ],
+    "correct_option": 1,
+    "explanation": "The SQL AVG() aggregate function returns the average (arithmetic mean) value of a specified numerical column[cite: 5]."
+  },
+  {
+    "id": 1655,
+    "question": "In an SQL SELECT statement, which clause is used to filter query results based on aggregate function calculations?",
+    "options": [
+      "WHERE clause",
+      "HAVING clause",
+      "GROUP BY clause",
+      "ORDER BY clause"
+    ],
+    "correct_option": 1,
+    "explanation": "The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions (like SUM or COUNT)[cite: 5]."
+  },
+  {
+    "id": 1656,
+    "question": "In SQL, what keyword is used to remove duplicate identical rows from a query result set?",
+    "options": [
+      "UNIQUE",
+      "DISTINCT",
+      "PRIMARY",
+      "GROUP"
+    ],
+    "correct_option": 1,
+    "explanation": "The DISTINCT keyword in a SELECT statement eliminates duplicate rows from the output display[cite: 5]."
+  },
+  {
+    "id": 1657,
+    "question": "Which SQL JOIN returns all records when there is a match in either the left table or the right table records?",
+    "options": [
+      "INNER JOIN",
+      "FULL OUTER JOIN",
+      "LEFT JOIN",
+      "CROSS JOIN"
+    ],
+    "correct_option": 1,
+    "explanation": "A FULL OUTER JOIN returns all rows from both tables, filling with NULLs where join conditions fail[cite: 5]."
+  },
+  {
+    "id": 1658,
+    "question": "What is a stored database procedure that automatically executes in response to specific table events (such as INSERT, UPDATE, or DELETE)?",
+    "options": [
+      "Database Trigger",
+      "Database Index",
+      "Schema Constraint",
+      "View Query"
+    ],
+    "correct_option": 0,
+    "explanation": "A Trigger is a procedural block of SQL code that runs automatically when a designated data modification event occurs on a table[cite: 5]."
+  },
+  {
+    "id": 1659,
+    "question": "In two's complement binary representation, what does a leading most significant bit (MSB) of '1' indicate?",
+    "options": [
+      "A positive number",
+      "A negative number",
+      "A fractional float value",
+      "An unassigned bit"
+    ],
+    "correct_option": 1,
+    "explanation": "In signed two's complement binary, an MSB of '0' represents a positive value, and an MSB of '1' represents a negative value[cite: 5]."
+  },
+  {
+    "id": 1660,
+    "question": "What is the two's complement binary representation of the decimal integer -5 in a 4-bit system?",
+    "options": [
+      "0101",
+      "1011",
+      "1010",
+      "1111"
+    ],
+    "correct_option": 1,
+    "explanation": "Decimal +5 in 4-bit binary is 0101. One's complement is 1010. Adding 1 yields the Two's Complement: 1011[cite: 5]."
+  },
+  {
+    "id": 1661,
+    "question": "What binary logic gate outputs a HIGH (1) signal if and only if its input bits are different from each other?",
+    "options": [
+      "AND Gate",
+      "OR Gate",
+      "XOR (Exclusive-OR) Gate",
+      "NAND Gate"
+    ],
+    "correct_option": 2,
+    "explanation": "An XOR (Exclusive-OR) gate outputs 1 when the inputs are unequal (e.g., 0 and 1, or 1 and 0), and outputs 0 when inputs are identical[cite: 5]."
+  },
+  {
+    "id": 1662,
+    "question": "Which of the following logic gate combinations are known as Universal Logic Gates because they can implement any Boolean function?",
+    "options": [
+      "AND and OR Gates",
+      "NAND and NOR Gates",
+      "NOT and XOR Gates",
+      "XOR and XNOR Gates"
+    ],
+    "correct_option": 1,
+    "explanation": "NAND and NOR gates are termed Universal Gates because combinations of either gate can recreate AND, OR, and NOT operations[cite: 5]."
+  },
+  {
+    "id": 1663,
+    "question": "What combinational digital circuit adds two single binary input bits and produces both a Sum and a Carry output bit?",
+    "options": [
+      "Half Adder",
+      "Full Adder",
+      "Multiplexer",
+      "Decoder"
+    ],
+    "correct_option": 0,
+    "explanation": "A Half Adder arithmetic circuit adds two 1-bit binary inputs, generating a Sum (via XOR) and a Carry (via AND)[cite: 5]."
+  },
+  {
+    "id": 1664,
+    "question": "What combinational circuit selects binary information from one of many input lines and directs it to a single output line?",
+    "options": [
+      "Multiplexer (MUX / Data Selector)",
+      "Demultiplexer",
+      "Encoder",
+      "Flip-Flop"
+    ],
+    "correct_option": 0,
+    "explanation": "A Multiplexer (MUX) acts as a multiple-input, single-output switch controlled by selection lines[cite: 5]."
+  },
+  {
+    "id": 1665,
+    "question": "What sequential digital logic circuit can store a single binary bit (0 or 1) indefinitely as long as power is applied?",
+    "options": [
+      "Flip-Flop (or Latch)",
+      "Half Adder",
+      "Demultiplexer",
+      "Bus Driver"
+    ],
+    "correct_option": 0,
+    "explanation": "A Flip-Flop is a bistable multivibrator circuit capable of serving as a one-bit state memory storage element[cite: 5]."
+  },
+  {
+    "id": 1666,
+    "question": "What is an optical scanner designed to decode printed parallel vertical lines of varying widths into character codes called?",
+    "options": [
+      "Barcode Reader (BCR)",
+      "OMR Reader",
+      "MICR Scanner",
+      "Graphic Plotter"
+    ],
+    "correct_option": 0,
+    "explanation": "A Barcode Reader uses laser light reflection to measure varying line widths and spaces representing encoded inventory data[cite: 5]."
+  },
+  {
+    "id": 1667,
+    "question": "What is an impact printer called that prints an entire horizontal line of text simultaneously using an embossed rotating chain or drum?",
+    "options": [
+      "Line Printer",
+      "Laser Printer",
+      "Thermal Printer",
+      "Inkjet Printer"
+    ],
+    "correct_option": 0,
+    "explanation": "Line Printers (e.g., drum or chain printers) print a complete row of characters at a time and are rated in Lines Per Minute (LPM)[cite: 5]."
+  },
+  {
+    "id": 1668,
+    "question": "Which display technology utilizes liquid crystals illuminated by cold cathode fluorescent lamps (CCFL) or Light Emitting Diodes (LED)?",
+    "options": [
+      "CRT (Cathode Ray Tube)",
+      "LCD (Liquid Crystal Display)",
+      "Plasma Display",
+      "OLED"
+    ],
+    "correct_option": 1,
+    "explanation": "LCDs (Liquid Crystal Displays) use liquid crystals that align under electrical fields to filter light emitted from a backlight[cite: 5]."
+  },
+  {
+    "id": 1669,
+    "question": "What display technology uses organic carbon-based semiconductor compounds that emit their own light per pixel without requiring a backlight?",
+    "options": [
+      "OLED (Organic Light Emitting Diode)",
+      "CCFL LCD",
+      "CRT",
+      "Passive Matrix LCD"
+    ],
+    "correct_option": 0,
+    "explanation": "OLED panels utilize emissive electroluminescent organic thin films that glow individually, producing deep blacks and wide viewing angles[cite: 5]."
+  },
+  {
+    "id": 1670,
+    "question": "In computer monitor specifications, what term describes the proportional relationship between display screen width and height (e.g., 16:9 or 4:3)?",
+    "options": [
+      "Aspect Ratio",
+      "Pixel Pitch",
+      "Refresh Rate",
+      "Contrast Ratio"
+    ],
+    "correct_option": 0,
+    "explanation": "Aspect Ratio describes the proportional mathematical ratio of image width to image height (such as standard widescreen 16:9)[cite: 5]."
+  },
+  {
+    "id": 1671,
+    "question": "What monitor metric indicates the number of times per second the display hardware redraws the image on screen (measured in Hertz)?",
+    "options": [
+      "Refresh Rate",
+      "Aspect Ratio",
+      "Resolution",
+      "Dot Pitch"
+    ],
+    "correct_option": 0,
+    "explanation": "The Refresh Rate (e.g., 60 Hz, 144 Hz) measures how many times per second the display refreshes its visual frame buffer[cite: 5]."
+  },
+  {
+    "id": 1672,
+    "question": "What computer port interface, developed by IBM in 1987, uses a 6-pin mini-DIN connector to connect keyboards and mice?",
+    "options": [
+      "PS/2 Port",
+      "Serial COM Port",
+      "Parallel LPT Port",
+      "USB Port"
+    ],
+    "correct_option": 0,
+    "explanation": "The PS/2 port (color-coded purple for keyboard and green for mouse) was introduced on the IBM Personal System/2[cite: 5]."
+  },
+  {
+    "id": 1673,
+    "question": "What digital video interface standard uses a white 24-pin or 29-pin connector to transmit uncompressed digital video to monitors?",
+    "options": [
+      "DVI (Digital Visual Interface)",
+      "VGA",
+      "S-Video",
+      "SCSI"
+    ],
+    "correct_option": 0,
+    "explanation": "DVI (Digital Visual Interface) was designed to transmit uncompressed high-speed digital video streams to flat-panel displays[cite: 5]."
+  },
+  {
+    "id": 1674,
+    "question": "What modern high-definition digital cable standard carries both uncompressed multichannel digital audio and HD video on a single cable?",
+    "options": [
+      "HDMI (High-Definition Multimedia Interface)",
+      "VGA",
+      "DVI-D",
+      "PS/2"
+    ],
+    "correct_option": 0,
+    "explanation": "HDMI transmits uncompressed digital video and digital multi-channel audio over a single unified cable[cite: 5]."
+  },
+  {
+    "id": 1675,
+    "question": "What legacy analog display port standard uses a 15-pin D-subminiature connector with three rows of pins (DE-15)?",
+    "options": [
+      "VGA (Video Graphics Array)",
+      "HDMI",
+      "DisplayPort",
+      "Thunderbolt"
+    ],
+    "correct_option": 0,
+    "explanation": "VGA (Video Graphics Array) uses a blue 15-pin 3-row connector to output analog RGB video signals to monitors[cite: 5]."
+  },
+  {
+    "id": 1676,
+    "question": "What hardware interface developed jointly by Apple and Intel combines PCI Express and DisplayPort into a single high-speed connection?",
+    "options": [
+      "Thunderbolt",
+      "Firewire",
+      "SCSI",
+      "IDE"
+    ],
+    "correct_option": 0,
+    "explanation": "Thunderbolt is a high-speed peripheral interface combining PCIe and DisplayPort data protocols with DC power delivery[cite: 5]."
+  },
+  {
+    "id": 1677,
+    "question": "What legacy physical interface standard on IBM PCs, designated as COM ports, transmitted data one bit at a time over 9-pin or 25-pin connectors?",
+    "options": [
+      "RS-232 / Serial Port",
+      "Centronics Parallel Port",
+      "USB 3.0",
+      "Firewire"
+    ],
+    "correct_option": 0,
+    "explanation": "RS-232 serial ports transmit data sequentially one bit at a time over DB-9 or DB-25 male physical connectors[cite: 1, 5]."
+  },
+  {
+    "id": 1678,
+    "question": "What hardware port standard is used to connect musical synthesizers, digital instruments, and sound cards to personal computers?",
+    "options": [
+      "MIDI (Musical Instrument Digital Interface)",
+      "SCSI",
+      "Parallel LPT",
+      "VGA"
+    ],
+    "correct_option": 0,
+    "explanation": "MIDI (Musical Instrument Digital Interface) allows electronic musical instruments, synthesizers, and computers to exchange performance data[cite: 5]."
+  },
+  {
+    "id": 1679,
+    "question": "In hard disk and storage management, what term refers to the smallest unit of disk space that an operating system can allocate to hold a file?",
+    "options": [
+      "Cluster (Allocation Unit)",
+      "Track",
+      "Platter",
+      "Cylinder"
+    ],
+    "correct_option": 0,
+    "explanation": "A Cluster (or Allocation Unit) consists of one or more physical sectors and represents the smallest logical disk allocation block managed by the file system[cite: 5]."
+  },
+  {
+    "id": 1680,
+    "question": "What happens to the remaining unused storage space within a fixed-size disk cluster when a file does not fill the entire cluster?",
+    "options": [
+      "It causes Internal Fragmentation (Slack Space)",
+      "It is automatically assigned to virtual memory",
+      "It causes a physical head crash",
+      "It is formatted into a new partition"
+    ],
+    "correct_option": 0,
+    "explanation": "Slack Space (Internal Fragmentation) occurs when a file's physical size is smaller than the allocated cluster size, leaving wasted space at the end of the cluster[cite: 5]."
+  },
+  {
+    "id": 1681,
+    "question": "In magnetic recording hard disk storage, what does the actuator arm do?",
+    "options": [
+      "Spins the magnetic platters at 7200 RPM",
+      "Mechanically positions the read/write electromagnetic heads over specific data tracks",
+      "Supplies DC power to the drive controller",
+      "Converts data to optical light pulses"
+    ],
+    "correct_option": 1,
+    "explanation": "The actuator arm swings across the spinning platter surfaces to position the read/write heads over specific concentric data tracks[cite: 5]."
+  },
+  {
+    "id": 1682,
+    "question": "What catastrophic hardware failure occurs in a hard drive when the read/write head touches the magnetic surface of a spinning platter?",
+    "options": [
+      "Head Crash",
+      "Buffer Overflow",
+      "Page Fault",
+      "Deadlock"
+    ],
+    "correct_option": 0,
+    "explanation": "A Head Crash occurs when the floating head touches the spinning magnetic surface, damaging the platter and destroying recorded data[cite: 5]."
+  },
+  {
+    "id": 1683,
+    "question": "What storage technology combines multiple physical hard disk drives into an array that stripes data without parity for speed only (no fault tolerance)?",
+    "options": [
+      "RAID 0 (Striping)",
+      "RAID 1 (Mirroring)",
+      "RAID 5 (Striping with Parity)",
+      "RAID 10"
+    ],
+    "correct_option": 0,
+    "explanation": "RAID 0 stripes data across two or more disks to maximize read/write performance, but provides zero data redundancy or fault tolerance[cite: 5]."
+  },
+  {
+    "id": 1684,
+    "question": "What storage technology creates an exact clone/mirror copy of identical data across two separate hard drives simultaneously?",
+    "options": [
+      "RAID 1 (Mirroring)",
+      "RAID 0",
+      "RAID 5",
+      "RAID 6"
+    ],
+    "correct_option": 0,
+    "explanation": "RAID 1 writes identical data duplicates to two or more drives (mirroring), providing 100% redundancy against disk failure[cite: 5]."
+  },
+  {
+    "id": 1685,
+    "question": "What storage technology stripes data across three or more disks and distributes parity blocks across all drives to survive a single disk failure?",
+    "options": [
+      "RAID 5",
+      "RAID 0",
+      "RAID 1",
+      "JBOD"
+    ],
+    "correct_option": 0,
+    "explanation": "RAID 5 requires at least 3 disks and distributes block-level data striping along with distributed parity to provide fault tolerance with efficient storage use[cite: 5]."
+  },
+  {
+    "id": 1686,
+    "question": "What diagnostic monitoring system is built into modern hard drives and SSDs to detect and report hardware health indicators?",
+    "options": [
+      "S.M.A.R.T. (Self-Monitoring, Analysis and Reporting Technology)",
+      "POST",
+      "SCSI Engine",
+      "RAID Manager"
+    ],
+    "correct_option": 0,
+    "explanation": "S.M.A.R.T. monitors reliability indicators (such as reallocated sectors and temperature) to anticipate imminent drive failures[cite: 5]."
+  },
+  {
+    "id": 1687,
+    "question": "What command-line storage utility in modern operating systems notifies an SSD which data blocks are no longer in use and can be wiped internally?",
+    "options": [
+      "TRIM Command",
+      "DEFRAG Command",
+      "CHKDSK Command",
+      "FORMAT Command"
+    ],
+    "correct_option": 0,
+    "explanation": "The TRIM command allows an operating system to inform an SSD which blocks of data are no longer considered in use, optimizing write performance and wear leveling[cite: 5]."
+  },
+  {
+    "id": 1688,
+    "question": "What is the specialized high-speed communication bus interface designed specifically for connecting non-volatile SSDs directly to PCIe lanes?",
+    "options": [
+      "NVMe (Non-Volatile Memory Express)",
+      "Legacy PATA",
+      "SATA I",
+      "Centronics"
+    ],
+    "correct_option": 0,
+    "explanation": "NVMe (Non-Volatile Memory Express) is an open host controller interface designed to run flash SSDs directly over high-speed PCI Express lanes[cite: 5]."
+  },
+  {
+    "id": 1689,
+    "question": "What is the compact internal expansion card form factor standard widely used for installing NVMe SSDs directly onto laptop and desktop motherboards?",
+    "options": [
+      "M.2 Form Factor",
+      "3.5-inch Bay",
+      "PCI 32-bit slot",
+      "ISA slot"
+    ],
+    "correct_option": 0,
+    "explanation": "The M.2 form factor is a small rectangular circuit board specification used for internally mounted SSD expansion cards and wireless modules[cite: 5]."
+  },
+  {
+    "id": 1690,
+    "question": "What type of computer keyboard features individual physical mechanical switches underneath every keycap instead of a single rubber membrane sheet?",
+    "options": [
+      "Mechanical Keyboard",
+      "Membrane Keyboard",
+      "Chiclet Keyboard",
+      "Capacitive Touchpad"
+    ],
+    "correct_option": 0,
+    "explanation": "Mechanical keyboards utilize standalone spring-loaded mechanical switches under every key for tactile actuation and durability[cite: 5]."
+  },
+  {
+    "id": 1691,
+    "question": "What type of computer mouse uses an optoelectronic sensor (LED or laser diode) to track movement by imaging the desk surface below?",
+    "options": [
+      "Optical Mouse",
+      "Mechanical Ball Mouse",
+      "Trackball",
+      "Stylus Puck"
+    ],
+    "correct_option": 0,
+    "explanation": "An Optical Mouse uses a light-emitting diode (LED) or infrared laser and an optical sensor chip to detect tracking movement across a surface[cite: 5]."
+  },
+  {
+    "id": 1692,
+    "question": "What metric is used to measure the sensitivity and tracking precision of an optical computer mouse?",
+    "options": [
+      "DPI (Dots Per Inch) / CPI (Counts Per Inch)",
+      "PPM",
+      "Hertz",
+      "FLOPS"
+    ],
+    "correct_option": 0,
+    "explanation": "DPI (Dots Per Inch) or CPI (Counts Per Inch) measures the physical sensitivity of a mouse sensor detecting motion across a distance[cite: 5]."
+  },
+  {
+    "id": 1693,
+    "question": "What type of computer display monitor uses electron guns that fire beams against a phosphorescent glass screen inside a large vacuum tube?",
+    "options": [
+      "CRT (Cathode Ray Tube)",
+      "LCD",
+      "LED",
+      "OLED"
+    ],
+    "correct_option": 0,
+    "explanation": "CRT (Cathode Ray Tube) monitors generate images by accelerating electron beams from a vacuum tube gun onto a phosphor-coated screen[cite: 5]."
+  },
+  {
+    "id": 1694,
+    "question": "What was the name of the earliest desktop IBM Personal Computer, model number 5150, released in August 1981?",
+    "options": [
+      "IBM PC 5150",
+      "Altair 8800",
+      "Apple II",
+      "Commodore 64"
+    ],
+    "correct_option": 0,
+    "explanation": "The IBM Personal Computer (Model 5150), powered by the Intel 8088 CPU and MS-DOS, established the global IBM-PC compatible standard[cite: 5]."
+  },
+  {
+    "id": 1695,
+    "question": "What was the name of the first personal computer to feature a built-in commercial graphical user interface and mouse, released by Apple in 1983?",
+    "options": [
+      "Apple Lisa",
+      "Apple I",
+      "IBM PC",
+      "Altair"
+    ],
+    "correct_option": 0,
+    "explanation": "The Apple Lisa (1983) was one of the first commercial personal computers equipped with a Graphical User Interface (GUI) and mouse[cite: 5]."
+  },
+  {
+    "id": 1696,
+    "question": "What was the first commercial electronic spreadsheet application developed for the IBM PC and MS-DOS in 1983?",
+    "options": [
+      "Lotus 1-2-3",
+      "VisiCalc",
+      "MS Excel",
+      "Quattro Pro"
+    ],
+    "correct_option": 0,
+    "explanation": "Lotus 1-2-3, developed by Mitch Kapor in 1983, was the dominant spreadsheet program that drove the enterprise success of the IBM PC[cite: 5]."
+  },
+  {
+    "id": 1697,
+    "question": "What is the file extension historically associated with spreadsheet files created by Lotus 1-2-3?",
+    "options": [
+      ".WK1 (or .123)",
+      ".XLS",
+      ".DOC",
+      ".CSV"
+    ],
+    "correct_option": 0,
+    "explanation": "Lotus 1-2-3 saved spreadsheet files using the .WK1, .WKS, and .123 proprietary file extensions[cite: 5]."
+  },
+  {
+    "id": 1698,
+    "question": "In relational database design, what normal form addresses multi-valued dependencies (MVD)?",
+    "options": [
+      "Fourth Normal Form (4NF)",
+      "First Normal Form (1NF)",
+      "Second Normal Form (2NF)",
+      "Third Normal Form (3NF)"
+    ],
+    "correct_option": 0,
+    "explanation": "Fourth Normal Form (4NF) ensures that a table is in BCNF and contains no non-trivial multi-valued dependencies[cite: 5]."
+  },
+  {
+    "id": 1699,
+    "question": "In relational database theory, what normal form eliminates join dependencies (lossless decomposition)?",
+    "options": [
+      "Fifth Normal Form (5NF / Project-Join Normal Form)",
+      "First Normal Form (1NF)",
+      "Second Normal Form (2NF)",
+      "Third Normal Form (3NF)"
+    ],
+    "correct_option": 0,
+    "explanation": "Fifth Normal Form (5NF), or Project-Join Normal Form (PJNF), ensures that tables cannot be broken into smaller tables without losing data relationships during joins[cite: 5]."
+  },
+  {
+    "id": 1700,
+    "question": "What database component enforces concurrency control and serializability during simultaneous multi-user database transactions?",
+    "options": [
+      "Lock Manager / Concurrency Control Subsystem",
+      "Data Dictionary",
+      "Query Optimizer",
+      "Storage Engine"
+    ],
+    "correct_option": 0,
+    "explanation": "The Concurrency Control Manager uses locking protocols (like Two-Phase Locking) and timestamping to prevent race conditions during concurrent transactions[cite: 5]."
+  }
+]

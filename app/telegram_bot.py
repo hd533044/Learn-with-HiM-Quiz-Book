@@ -483,7 +483,7 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         "👋 **Welcome to Quiz with HiM!** ❤️\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "• • • ✧ • • •\n"
         "🎯 **Created by Himanshu Sir** (AIR #65 | 96.7/100 Marks in BSF HCM, Cleared SSC CGL 3x, CHSL 3x, CPO 3x, DP HCM).\n\n"
         "💡 Designed for fast, exam-relevant daily practice and instant performance tracking.\n\n"
         f"🌟 **PLATFORM STATISTICS:**\n"
@@ -494,7 +494,7 @@ async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• Telegram: https://t.me/learnwithhim\n"
         "• YouTube: https://youtube.com/@learnwithhim\n"
         "• Instagram: https://instagram.com/learnwithhimm\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        "• • • ✧ • • •"
     )
 
     buttons = InlineKeyboardMarkup([
@@ -571,7 +571,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         f"💳 **YOUR SUBSCRIPTION STATUS** 💳\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"👑 **Pass Status:** `{active_plan_name}`\n"
         f"⚡ **Daily Limit:** `{allowed_limit} Questions / Day`\n"
         f"📊 **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
@@ -579,9 +579,9 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"⏳ **Expiry Date:** `{expiry}`\n"
         f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
         f"🌟 **Scholars:** `{total_users}` | Likes: `{total_likes}` ❤️\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"• • • ✧ • • •"
         f"{plans_text}"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"• • • ✧ • • •"
     )
 
     btn_list = [

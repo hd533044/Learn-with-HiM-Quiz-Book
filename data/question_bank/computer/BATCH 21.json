@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 2001,
+    "question": "Consider the following statements regarding the Central Processing Unit (CPU) architecture:\n1. The Arithmetic Logic Unit (ALU) performs fundamental arithmetic calculations and bitwise logic comparisons.\n2. The Control Unit (CU) interprets instructions and directs the flow of electrical control signals across all computer subsystems.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. The ALU handles all numerical calculations and logical choices, while the Control Unit decodes instructions and directs data flow[cite: 1, 5]."
+  },
+  {
+    "id": 2002,
+    "question": "Consider the following statements regarding Random Access Memory (RAM):\n1. Static RAM (SRAM) is constructed using flip-flop circuits and does not require periodic electrical refreshing.\n2. Dynamic RAM (DRAM) is built using microscopic capacitors that require continuous refreshing.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. SRAM uses transistors/flip-flops and retains data without refreshing, whereas DRAM uses capacitors that leak charge and require periodic refreshing[cite: 1, 5]."
+  },
+  {
+    "id": 2003,
+    "question": "Which of the following statements about computer Read-Only Memory (ROM) is/are correct?\n1. EPROM contents can be erased by exposing the chip's quartz window to strong ultraviolet (UV) light.\n2. Mask ROM (MROM) is hardwired with data during manufacturing and cannot be reprogrammed.\nSelect the correct answer:",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. EPROM chips are erased via ultraviolet rays, and Mask ROM is permanently etched during factory production[cite: 5]."
+  },
+  {
+    "id": 2004,
+    "question": "Consider the following statements regarding Flash Memory:\n1. Flash memory is a non-volatile, block-level erasable form of EEPROM.\n2. NAND Flash provides high storage density and is standard in Solid State Drives (SSDs) and USB thumb drives.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Flash memory erases data in larger blocks like EEPROM, and NAND flash is the core technology used in SSDs and memory cards[cite: 5]."
+  },
+  {
+    "id": 2005,
+    "question": "Consider the following statements regarding CPU cache memory:\n1. Level 1 (L1) cache is integrated directly inside the CPU core and offers the lowest latency.\n2. A Cache Hit occurs when requested data is absent in cache and must be retrieved from main RAM.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 0,
+    "explanation": "Statement 1 is correct. Statement 2 is incorrect because missing requested data in cache is termed a Cache Miss, whereas finding it is a Cache Hit[cite: 5]."
+  },
+  {
+    "id": 2006,
+    "question": "Consider the following statements regarding Virtual Memory:\n1. Virtual memory creates the illusion of expanded main memory by utilizing designated secondary storage space.\n2. Demand Paging loads memory pages into physical RAM only when referenced during execution.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Virtual memory maps disk space to simulate extra RAM, and Demand Paging loads pages on demand[cite: 5]."
+  },
+  {
+    "id": 2007,
+    "question": "Which of the following statements about computer bus architectures is/are correct?\n1. The Address Bus is unidirectional and transmits memory locations from the CPU.\n2. The Control Bus carries synchronization, status, and read/write command signals.\nSelect the correct answer:",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. The Address Bus sends memory addresses outward from the CPU, while the Control Bus transmits control and timing signals[cite: 5]."
+  },
+  {
+    "id": 2008,
+    "question": "Consider the following statements regarding the OSI reference model:\n1. Layer 4 (Transport Layer) provides end-to-end communication, segmentation, and port addressing.\n2. Layer 6 (Presentation Layer) handles data encryption, decryption, and data compression.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. The Transport Layer manages end-to-end reliability and ports, while the Presentation Layer manages syntax, compression, and encryption[cite: 1, 5]."
+  },
+  {
+    "id": 2009,
+    "question": "Consider the following statements regarding Protocol Data Units (PDUs) in networking:\n1. Data at the Transport Layer is packaged into Segments.\n2. Data at the Network Layer is packaged into Frames.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 0,
+    "explanation": "Statement 1 is correct. Statement 2 is incorrect because data at the Network Layer is packaged into Packets, whereas Frames belong to the Data Link Layer[cite: 1, 5]."
+  },
+  {
+    "id": 2010,
+    "question": "Which of the following statements about IP addressing is/are correct?\n1. An IPv4 address is 32 bits long and is expressed in dotted-decimal notation.\n2. An IPv6 address is 128 bits long and is expressed in hexadecimal notation.\nSelect the correct answer:",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. IPv4 uses 32 bits in decimal dotted notation, while IPv6 uses 128 bits in hexadecimal notation[cite: 1, 5]."
+  },
+  {
+    "id": 2011,
+    "question": "What is the evaluated result of the MS Excel formula =AVERAGE(10, 20, 30, 40, 50)?",
+    "options": [
+      "25",
+      "30",
+      "35",
+      "150"
+    ],
+    "correct_option": 1,
+    "explanation": "The AVERAGE function calculates the arithmetic mean: (10 + 20 + 30 + 40 + 50) / 5 = 150 / 5 = 30[cite: 1]."
+  },
+  {
+    "id": 2012,
+    "question": "What is the evaluated output of the MS Excel formula =3^2 * 4 / 2 + 5?",
+    "options": [
+      "23",
+      "29",
+      "31",
+      "41"
+    ],
+    "correct_option": 0,
+    "explanation": "Following operator precedence: 3^2 = 9, 9 * 4 = 36, 36 / 2 = 18, and 18 + 5 = 23[cite: 1]."
+  },
+  {
+    "id": 2013,
+    "question": "What is the result of the MS Excel formula =FLOOR(27, 6)?",
+    "options": [
+      "24",
+      "27",
+      "30",
+      "36"
+    ],
+    "correct_option": 0,
+    "explanation": "The FLOOR function rounds a number down to the nearest multiple of significance. The nearest multiple of 6 below 27 is 24[cite: 1]."
+  },
+  {
+    "id": 2014,
+    "question": "What is the evaluated result of the MS Excel formula =SUMSQ(1, 2, 3)?",
+    "options": [
+      "6",
+      "14",
+      "36",
+      "9"
+    ],
+    "correct_option": 1,
+    "explanation": "SUMSQ calculates the sum of squares of its arguments: 1^2 + 2^2 + 3^2 = 1 + 4 + 9 = 14[cite: 1]."
+  },
+  {
+    "id": 2015,
+    "question": "What will be the output of the MS Excel formula =MOD(25, 4)?",
+    "options": [
+      "1",
+      "6",
+      "0",
+      "4"
+    ],
+    "correct_option": 0,
+    "explanation": "The MOD function returns the remainder after division: 25 divided by 4 equals 6 with a remainder of 1[cite: 1, 5]."
+  },
+  {
+    "id": 2016,
+    "question": "Consider the following statements regarding Microsoft Excel formulas:\n1. A formula must always start with an equal sign (=).\n2. The ampersand (&) operator is used to concatenate text strings.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Excel formulas begin with '=' and the '&' symbol serves as the text concatenation operator[cite: 1, 5]."
+  },
+  {
+    "id": 2017,
+    "question": "Which of the following Excel functions returns the current date without including the time?",
+    "options": [
+      "NOW()",
+      "TODAY()",
+      "DATE()",
+      "TIME()"
+    ],
+    "correct_option": 1,
+    "explanation": "TODAY() returns the current system date alone, whereas NOW() returns both current date and time[cite: 1, 5]."
+  },
+  {
+    "id": 2018,
+    "question": "What does the COUNTA function count in a Microsoft Excel worksheet?",
+    "options": [
+      "Only cells containing numerical values",
+      "Only blank/empty cells",
+      "All non-empty cells regardless of data type",
+      "Only cells containing error codes"
+    ],
+    "correct_option": 2,
+    "explanation": "COUNTA counts all cells within a range that are not empty, including numbers, text, and logical values[cite: 1, 5]."
+  },
+  {
+    "id": 2019,
+    "question": "Which error code is displayed in Microsoft Excel when a formula refers to a cell that has been deleted or invalidated?",
+    "options": [
+      "#NULL!",
+      "#REF!",
+      "#VALUE!",
+      "#NAME?"
+    ],
+    "correct_option": 1,
+    "explanation": "The #REF! error is displayed when a cell reference in a formula becomes invalid or the referenced cell has been deleted[cite: 5]."
+  },
+  {
+    "id": 2020,
+    "question": "In MS Excel, what does the VLOOKUP function search for?",
+    "options": [
+      "Searches for a value in the topmost row of a table",
+      "Searches for a value in the leftmost column of a table and returns a value in the same row from a specified column",
+      "Counts the occurrences of the letter 'V' in text",
+      "Verifies if two cell formulas are identical"
+    ],
+    "correct_option": 1,
+    "explanation": "VLOOKUP (Vertical Lookup) searches the leftmost column of a table for a matching key and retrieves corresponding data from a specified column[cite: 5]."
+  },
+  {
+    "id": 2021,
+    "question": "Consider the following statements regarding Microsoft Word formatting:\n1. The default tab stop interval in MS Word is set to 0.5 inches.\n2. A Drop Cap can be configured to drop up to a maximum of 10 lines.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Default tab stops are set every half-inch (0.5\"), and a Drop Cap can span up to 10 lines[cite: 5]."
+  },
+  {
+    "id": 2022,
+    "question": "In Microsoft Word, what is the maximum number of columns supported in a single table?",
+    "options": [
+      "32",
+      "63",
+      "128",
+      "256"
+    ],
+    "correct_option": 1,
+    "explanation": "A table in Microsoft Word can contain up to a maximum of 63 columns[cite: 1, 5]."
+  },
+  {
+    "id": 2023,
+    "question": "What is the maximum font size that can be manually applied to text in Microsoft Word?",
+    "options": [
+      "72 pt",
+      "500 pt",
+      "1638 pt",
+      "4096 pt"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft Word supports font sizes from 1 point up to a maximum of 1638 points[cite: 5]."
+  },
+  {
+    "id": 2024,
+    "question": "Which of the following describes the Gutter Margin in Microsoft Word?",
+    "options": [
+      "Extra margin space added to the binding edge of a document during printing",
+      "The margin at the very bottom of the page",
+      "The space between adjacent columns on a page",
+      "The space between two lines of text"
+    ],
+    "correct_option": 0,
+    "explanation": "Gutter Margin adds extra space to the side or top margin to ensure text is not obscured when the document is bound[cite: 5]."
+  },
+  {
+    "id": 2025,
+    "question": "Consider the following statements regarding Mail Merge in Microsoft Word:\n1. Mail Merge requires two files: a Main Document template and a Data Source recipient list.\n2. Mail Merge tools are located under the 'References' tab on the Ribbon.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 0,
+    "explanation": "Statement 1 is correct. Statement 2 is incorrect because Mail Merge tools reside under the 'Mailings' tab, not the References tab[cite: 5]."
+  },
+  {
+    "id": 2026,
+    "question": "In Microsoft Word, what type of line break advances the insertion point to the next line without ending the current paragraph?",
+    "options": [
+      "Hard Return (Enter)",
+      "Soft Line Break (Shift + Enter)",
+      "Column Break",
+      "Page Break"
+    ],
+    "correct_option": 1,
+    "explanation": "A Soft Line Break (Shift + Enter) starts a new line while maintaining the same paragraph styling[cite: 3, 5]."
+  },
+  {
+    "id": 2027,
+    "question": "Under which Ribbon tab in MS Word 2016/365 are Page Setup controls (Margins, Orientation, Paper Size) located?",
+    "options": [
+      "Home tab",
+      "Insert tab",
+      "Layout / Page Layout tab",
+      "View tab"
+    ],
+    "correct_option": 2,
+    "explanation": "Page Setup tools (Margins, Orientation, Size, Columns) are located under the Layout (or Page Layout) tab[cite: 1, 5]."
+  },
+  {
+    "id": 2028,
+    "question": "What is the executable command used to open Microsoft Word from the Windows Run dialog box?",
+    "options": [
+      "msword.exe",
+      "word.exe",
+      "winword.exe",
+      "word365.exe"
+    ],
+    "correct_option": 2,
+    "explanation": "The executable file name for Microsoft Word is 'winword.exe'[cite: 5]."
+  },
+  {
+    "id": 2029,
+    "question": "In Microsoft Word, what do wavy red underlines beneath text indicate?",
+    "options": [
+      "Spelling errors",
+      "Grammatical errors",
+      "Contextual formatting inconsistencies",
+      "Active hyperlinks"
+    ],
+    "correct_option": 0,
+    "explanation": "Red wavy underlines indicate spelling errors, green underlines indicate grammatical errors, and blue underlines indicate contextual errors[cite: 5]."
+  },
+  {
+    "id": 2030,
+    "question": "What is the maximum zoom percentage allowable in Microsoft Word?",
+    "options": [
+      "200%",
+      "400%",
+      "500%",
+      "1000%"
+    ],
+    "correct_option": 2,
+    "explanation": "Microsoft Word supports zoom scaling up to a maximum of 500% (minimum 10%)[cite: 5]."
+  },
+  {
+    "id": 2031,
+    "question": "Consider the following statements regarding Microsoft PowerPoint:\n1. Transitions apply motion effects when moving from one slide to another during a slide show.\n2. Custom Animations apply motion effects to individual objects (text or shapes) on a single slide.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. Transitions animate the slide changeover, and Animations control entrance/exit effects of individual objects on a slide[cite: 5]."
+  },
+  {
+    "id": 2032,
+    "question": "Which PowerPoint view displays thumbnail tiles of all slides, making it ideal for rearranging slide order?",
+    "options": [
+      "Slide Sorter View",
+      "Notes Page View",
+      "Outline View",
+      "Reading View"
+    ],
+    "correct_option": 0,
+    "explanation": "Slide Sorter View displays all slides in a grid of thumbnail images for organizing and reordering[cite: 5]."
+  },
+  {
+    "id": 2033,
+    "question": "What is the top-level slide in PowerPoint hierarchy that defines global themes, headers, and footer logos called?",
+    "options": [
+      "Slide Master",
+      "Handout Master",
+      "Notes Master",
+      "Title Placeholder"
+    ],
+    "correct_option": 0,
+    "explanation": "The Slide Master controls the default design, fonts, background, and layouts across all linked presentation slides[cite: 5]."
+  },
+  {
+    "id": 2034,
+    "question": "What is the file extension used for a PowerPoint Show file that automatically launches in full-screen presentation mode?",
+    "options": [
+      ".pptx",
+      ".pptm",
+      ".ppsx",
+      ".potx"
+    ],
+    "correct_option": 2,
+    "explanation": ".ppsx files open directly in Slide Show presentation mode rather than normal editing view[cite: 5]."
+  },
+  {
+    "id": 2035,
+    "question": "What is the executable command used to launch Microsoft PowerPoint from the Windows Run prompt?",
+    "options": [
+      "powerpoint.exe",
+      "powerpnt.exe",
+      "msppt.exe",
+      "ppt.exe"
+    ],
+    "correct_option": 1,
+    "explanation": "The executable file name for launching PowerPoint is 'powerpnt.exe'[cite: 5]."
+  },
+  {
+    "id": 2036,
+    "question": "Consider the following statements regarding internet transport protocols:\n1. Transmission Control Protocol (TCP) is connection-oriented and guarantees reliable packet delivery.\n2. User Datagram Protocol (UDP) is connectionless and prioritizes transmission speed over reliability.\nWhich of the statements given above is/are correct?",
+    "options": [
+      "1 only",
+      "2 only",
+      "Both 1 and 2",
+      "Neither 1 nor 2"
+    ],
+    "correct_option": 2,
+    "explanation": "Both statements are correct. TCP provides reliable, acknowledged delivery, while UDP provides fast, best-effort delivery without error recovery[cite: 1, 5]."
+  },
+  {
+    "id": 2037,
+    "question": "What port number is assigned to secure encrypted web communication via HTTPS?",
+    "options": [
+      "Port 25",
+      "Port 80",
+      "Port 110",
+      "Port 443"
+    ],
+    "correct_option": 3,
+    "explanation": "HTTPS runs over TLS/SSL on TCP port 443, while standard unencrypted HTTP uses port 80[cite: 5]."
+  },
+  {
+    "id": 2038,
+    "question": "What protocol dynamically distributes IP addresses and network configuration settings automatically to client computers?",
+    "options": [
+      "DNS",
+      "DHCP (Dynamic Host Configuration Protocol)",
+      "ARP",
+      "SNMP"
+    ],
+    "correct_option": 1,
+    "explanation": "DHCP automatically assigns dynamic IP addresses, subnet masks, and default gateways to client nodes on a network[cite: 5]."
+  },
+  {
+    "id": 2039,
+    "question": "Which internet protocol resolves human-readable domain names (e.g., ssc.gov.in) into numerical IP addresses?",
+    "options": [
+      "DHCP",
+      "DNS (Domain Name System)",
+      "FTP",
+      "SMTP"
+    ],
+    "correct_option": 1,
+    "explanation": "DNS translates alphanumeric domain names into numerical IP addresses required for routing[cite: 5]."
+  },
+  {
+    "id": 2040,
+    "question": "What is the physical 48-bit (6-byte) hardware address permanently burned onto a Network Interface Card (NIC) called?",
+    "options": [
+      "IP Address",
+      "MAC Address (Media Access Control)",
+      "Port Address",
+      "URL"
+    ],
+    "correct_option": 1,
+    "explanation": "A MAC address is a 48-bit physical hardware identifier formatted as 12 hexadecimal digits[cite: 5]."
+  },
+  {
+    "id": 2041,
+    "question": "At which layer of the 7-layer ISO-OSI model do network Switches primarily operate?",
+    "options": [
+      "Physical Layer (Layer 1)",
+      "Data Link Layer (Layer 2)",
+      "Network Layer (Layer 3)",
+      "Transport Layer (Layer 4)"
+    ],
+    "correct_option": 1,
+    "explanation": "Standard network switches operate at Layer 2 (Data Link Layer), filtering and forwarding frames based on MAC addresses[cite: 1, 5]."
+  },
+  {
+    "id": 2042,
+    "question": "At which layer of the OSI model do network Routers operate to forward packets across different networks?",
+    "options": [
+      "Data Link Layer",
+      "Network Layer (Layer 3)",
+      "Transport Layer",
+      "Presentation Layer"
+    ],
+    "correct_option": 1,
+    "explanation": "Routers operate at Layer 3 (Network Layer) to route data packets between disparate networks based on logical IP addresses[cite: 1, 5]."
+  },
+  {
+    "id": 2043,
+    "question": "Which network topology connects all nodes to a central communication device (Hub or Switch)?",
+    "options": [
+      "Bus Topology",
+      "Ring Topology",
+      "Star Topology",
+      "Mesh Topology"
+    ],
+    "correct_option": 2,
+    "explanation": "In a Star topology, all network computers are connected individually to a central hub or switch[cite: 5]."
+  },
+  {
+    "id": 2044,
+    "question": "What type of data communication allows transmission in only one fixed direction (e.g., keyboard input to CPU)?",
+    "options": [
+      "Simplex",
+      "Half-Duplex",
+      "Full-Duplex",
+      "Multiplex"
+    ],
+    "correct_option": 0,
+    "explanation": "Simplex communication is unidirectional, where signals travel only in one predetermined direction[cite: 1, 5]."
+  },
+  {
+    "id": 2045,
+    "question": "What type of data communication allows bidirectional transmission, but only one direction at a time (e.g., Walkie-Talkie)?",
+    "options": [
+      "Simplex",
+      "Half-Duplex",
+      "Full-Duplex",
+      "Asynchronous"
+    ],
+    "correct_option": 1,
+    "explanation": "In Half-Duplex mode, data can flow in both directions, but only one party can transmit at any given instant[cite: 1, 5]."
+  },
+  {
+    "id": 2046,
+    "question": "What is the standard port number assigned to the Simple Mail Transfer Protocol (SMTP)?",
+    "options": [
+      "Port 21",
+      "Port 25",
+      "Port 53",
+      "Port 110"
+    ],
+    "correct_option": 1,
+    "explanation": "SMTP operates on TCP port 25 for sending and relaying outgoing electronic mail messages[cite: 5]."
+  },
+  {
+    "id": 2047,
+    "question": "What is the standard port number assigned to the Post Office Protocol version 3 (POP3)?",
+    "options": [
+      "Port 25",
+      "Port 80",
+      "Port 110",
+      "Port 143"
+    ],
+    "correct_option": 2,
+    "explanation": "POP3 uses TCP port 110 to download emails from a remote mail server[cite: 5]."
+  },
+  {
+    "id": 2048,
+    "question": "What is the default subnet mask for an IPv4 Class C network address?",
+    "options": [
+      "255.0.0.0",
+      "255.255.0.0",
+      "255.255.255.0",
+      "255.255.255.255"
+    ],
+    "correct_option": 2,
+    "explanation": "The default Classful subnet mask for Class C networks is 255.255.255.0 (/24)[cite: 5]."
+  },
+  {
+    "id": 2049,
+    "question": "Which protocol resolves a known IP address to its corresponding physical MAC address on a local network?",
+    "options": [
+      "RARP",
+      "ARP (Address Resolution Protocol)",
+      "DNS",
+      "DHCP"
+    ],
+    "correct_option": 1,
+    "explanation": "ARP maps Layer 3 IPv4 addresses to physical Layer 2 MAC addresses on a local subnet[cite: 5]."
+  },
+  {
+    "id": 2050,
+    "question": "What network diagnostic tool sends ICMP Echo Request packets to test remote node reachability?",
+    "options": [
+      "Telnet",
+      "FTP",
+      "Ping",
+      "Traceroute"
+    ],
+    "correct_option": 2,
+    "explanation": "Ping uses ICMP Echo Request and Echo Reply messages to verify network reachability and measure latency[cite: 5]."
+  },
+  {
+    "id": 2051,
+    "question": "What is the primary function of the Switched Mode Power Supply (SMPS) in a desktop PC?",
+    "options": [
+      "Converting incoming high-voltage AC mains power into regulated low-voltage DC power",
+      "Cooling the microprocessor chip",
+      "Storing temporary boot files",
+      "Formatting the secondary storage partition"
+    ],
+    "correct_option": 0,
+    "explanation": "An SMPS converts AC power into regulated DC voltages (+3.3V, +5V, +12V) required by internal computer hardware[cite: 1, 5]."
+  },
+  {
+    "id": 2052,
+    "question": "What is the 9-digit code printed using magnetic ink on the bottom of a bank cheque called?",
+    "options": [
+      "IFSC Code",
+      "MICR (Magnetic Ink Character Recognition) Code",
+      "SWIFT Code",
+      "PAN Number"
+    ],
+    "correct_option": 1,
+    "explanation": "The 9-digit MICR code (representing City, Bank, and Branch) is printed with magnetic ink on cheques for automated sorting[cite: 5]."
+  },
+  {
+    "id": 2053,
+    "question": "Which printer type uses toner powder and an electrostatic drum to produce high-speed printouts?",
+    "options": [
+      "Dot Matrix Printer",
+      "Daisy Wheel Printer",
+      "Laser Printer",
+      "Thermal Printer"
+    ],
+    "correct_option": 2,
+    "explanation": "Laser printers use electrostatic toner powder and a photoconductive drum to produce high-resolution text and graphics[cite: 5]."
+  },
+  {
+    "id": 2054,
+    "question": "What is the output resolution of a computer printer measured in?",
+    "options": [
+      "PPM (Pages Per Minute)",
+      "DPI (Dots Per Inch)",
+      "CPS (Characters Per Second)",
+      "Hertz"
+    ],
+    "correct_option": 1,
+    "explanation": "Printer resolution is measured in DPI (Dots Per Inch), indicating dot density and clarity[cite: 5]."
+  },
+  {
+    "id": 2055,
+    "question": "What is the standard data storage capacity of a single-layer Blu-ray Disc (BD)?",
+    "options": [
+      "700 MB",
+      "4.7 GB",
+      "25 GB",
+      "50 GB"
+    ],
+    "correct_option": 2,
+    "explanation": "A single-layer Blu-ray disc provides a storage capacity of 25 GB (dual-layer holds 50 GB)[cite: 5]."
+  },
+  {
+    "id": 2056,
+    "question": "What is the process of dividing a magnetic disk platter into concentric tracks and sectors called?",
+    "options": [
+      "Defragmentation",
+      "Formatting",
+      "Spooling",
+      "Paging"
+    ],
+    "correct_option": 1,
+    "explanation": "Disk formatting creates the logical track and sector framework on a disk platter to prepare it for file storage[cite: 5]."
+  },
+  {
+    "id": 2057,
+    "question": "What is the mechanical time delay required for a hard drive's read/write head to move to the requested track called?",
+    "options": [
+      "Seek Time",
+      "Latency Time",
+      "Access Time",
+      "Transfer Rate"
+    ],
+    "correct_option": 0,
+    "explanation": "Seek time is the time required for the actuator arm to physically move the read/write head over the target track[cite: 5]."
+  },
+  {
+    "id": 2058,
+    "question": "What was the name of India's first indigenous supercomputer, built by C-DAC in 1991 under Dr. Vijay Bhatkar?",
+    "options": [
+      "PARAM 8000",
+      "Pratyush",
+      "Mihir",
+      "PARAM Yuva"
+    ],
+    "correct_option": 0,
+    "explanation": "PARAM 8000 was developed in 1991 by C-DAC, led by Dr. Vijay Pandurang Bhatkar[cite: 5]."
+  },
+  {
+    "id": 2059,
+    "question": "What performance metric is used to evaluate the computational speed of supercomputers?",
+    "options": [
+      "MIPS",
+      "FLOPS (Floating-Point Operations Per Second)",
+      "Megahertz",
+      "DPI"
+    ],
+    "correct_option": 1,
+    "explanation": "Supercomputer processing capability is rated in FLOPS (such as Teraflops, Petaflops, and Exaflops)[cite: 5]."
+  },
+  {
+    "id": 2060,
+    "question": "What port interface standard uses a 15-pin 3-row connector (DE-15) to transmit analog video signals to monitors?",
+    "options": [
+      "VGA (Video Graphics Array)",
+      "HDMI",
+      "DVI",
+      "DisplayPort"
+    ],
+    "correct_option": 0,
+    "explanation": "VGA uses a blue 15-pin 3-row connector to output analog RGB video signals to display monitors[cite: 5]."
+  },
+  {
+    "id": 2061,
+    "question": "Who created the C programming language at AT&T Bell Laboratories in 1972?",
+    "options": [
+      "Bjarne Stroustrup",
+      "Dennis Ritchie",
+      "James Gosling",
+      "Guido van Rossum"
+    ],
+    "correct_option": 1,
+    "explanation": "Dennis Ritchie created the C programming language at Bell Labs between 1969 and 1973[cite: 5]."
+  },
+  {
+    "id": 2062,
+    "question": "What was the first high-level programming language developed in 1957 by John Backus at IBM for scientific computing?",
+    "options": [
+      "COBOL",
+      "FORTRAN",
+      "BASIC",
+      "PASCAL"
+    ],
+    "correct_option": 1,
+    "explanation": "FORTRAN (Formula Translation) was the earliest high-level language, designed for scientific and engineering calculations[cite: 5]."
+  },
+  {
+    "id": 2063,
+    "question": "Who created the Java programming language at Sun Microsystems in 1995?",
+    "options": [
+      "James Gosling",
+      "Bjarne Stroustrup",
+      "Dennis Ritchie",
+      "Guido van Rossum"
+    ],
+    "correct_option": 0,
+    "explanation": "Dr. James Gosling developed the Java programming language at Sun Microsystems[cite: 5]."
+  },
+  {
+    "id": 2064,
+    "question": "Which language translator processes entire high-level program source code into machine code all at once before execution?",
+    "options": [
+      "Interpreter",
+      "Compiler",
+      "Assembler",
+      "Linker"
+    ],
+    "correct_option": 1,
+    "explanation": "A Compiler translates the entire source code program into executable object code in a single batch[cite: 5]."
+  },
+  {
+    "id": 2065,
+    "question": "What was the first commercially produced single-chip microprocessor, released by Intel in 1971?",
+    "options": [
+      "Intel 8086",
+      "Intel 4004",
+      "Intel 8080",
+      "Intel 8008"
+    ],
+    "correct_option": 1,
+    "explanation": "The 4-bit Intel 4004 was the world's first single-chip commercial microprocessor[cite: 5]."
+  },
+  {
+    "id": 2066,
+    "question": "In relational databases, what is an attribute in one table that references the primary key of another table called?",
+    "options": [
+      "Candidate Key",
+      "Foreign Key",
+      "Super Key",
+      "Composite Key"
+    ],
+    "correct_option": 1,
+    "explanation": "A Foreign Key establishes relational integrity by referencing the primary key of a related parent table[cite: 5]."
+  },
+  {
+    "id": 2067,
+    "question": "In an Entity-Relationship (E-R) diagram, what geometric shape is used to represent an Attribute?",
+    "options": [
+      "Rectangle",
+      "Ellipse / Oval",
+      "Diamond",
+      "Double Rectangle"
+    ],
+    "correct_option": 1,
+    "explanation": "In E-R diagrams, Attributes are drawn as Ellipses, Entities as Rectangles, and Relationships as Diamonds[cite: 5]."
+  },
+  {
+    "id": 2068,
+    "question": "Which category of SQL commands includes CREATE, ALTER, DROP, and TRUNCATE?",
+    "options": [
+      "DDL (Data Definition Language)",
+      "DML (Data Manipulation Language)",
+      "DCL (Data Control Language)",
+      "TCL (Transaction Control Language)"
+    ],
+    "correct_option": 0,
+    "explanation": "DDL commands define, alter, and delete database structures and table schemas[cite: 1, 5]."
+  },
+  {
+    "id": 2069,
+    "question": "Which category of SQL commands includes SELECT, INSERT, UPDATE, and DELETE?",
+    "options": [
+      "DDL",
+      "DML (Data Manipulation Language)",
+      "DCL",
+      "TCL"
+    ],
+    "correct_option": 1,
+    "explanation": "DML commands handle querying, inserting, updating, and modifying data records within tables[cite: 5]."
+  },
+  {
+    "id": 2070,
+    "question": "What SQL command permanently saves transaction modifications to the database?",
+    "options": [
+      "ROLLBACK",
+      "COMMIT",
+      "SAVEPOINT",
+      "CHECKPOINT"
+    ],
+    "correct_option": 1,
+    "explanation": "The COMMIT command saves all modifications made during a transaction permanently to disk[cite: 5]."
+  },
+  {
+    "id": 2071,
+    "question": "What type of malware is disguised as useful or authentic software while secretly executing malicious actions?",
+    "options": [
+      "Worm",
+      "Trojan Horse",
+      "Adware",
+      "Rootkit"
+    ],
+    "correct_option": 1,
+    "explanation": "A Trojan Horse masquerades as authentic software to deceive users into running hidden malicious payloads[cite: 5]."
+  },
+  {
+    "id": 2072,
+    "question": "What type of malware self-replicates across computer networks automatically without needing a host file or user action?",
+    "options": [
+      "Macro Virus",
+      "Computer Worm",
+      "Trojan Horse",
+      "Spyware"
+    ],
+    "correct_option": 1,
+    "explanation": "Worms are standalone malicious programs that replicate automatically across network connections[cite: 5]."
+  },
+  {
+    "id": 2073,
+    "question": "What is the social engineering attack called where attackers disguise themselves as trustworthy entities to steal passwords and financial data?",
+    "options": [
+      "Phishing",
+      "Sniffing",
+      "Spooling",
+      "Defragmenting"
+    ],
+    "correct_option": 0,
+    "explanation": "Phishing uses deceptive emails and fake websites to manipulate victims into revealing confidential credentials[cite: 1, 5]."
+  },
+  {
+    "id": 2074,
+    "question": "What was the name of the first computer virus designed for IBM PCs, created in 1986 by the Alvi brothers?",
+    "options": [
+      "Creeper",
+      "Brain Virus",
+      "Morris Worm",
+      "ILOVEYOU"
+    ],
+    "correct_option": 1,
+    "explanation": "Brain was the first boot sector virus created for IBM PC compatibles, released in 1986 in Pakistan[cite: 5]."
+  },
+  {
+    "id": 2075,
+    "question": "What is the secret recording of keyboard key presses to harvest usernames and passwords called?",
+    "options": [
+      "Phishing",
+      "Keylogging",
+      "Spoofing",
+      "Sniffing"
+    ],
+    "correct_option": 1,
+    "explanation": "Keylogging captures keystrokes typed on a physical keyboard to steal confidential login credentials[cite: 1, 5]."
+  },
+  {
+    "id": 2076,
+    "question": "What is the central core of an operating system that directly controls memory, hardware devices, and process scheduling?",
+    "options": [
+      "Shell",
+      "Kernel",
+      "BIOS",
+      "Spooler"
+    ],
+    "correct_option": 1,
+    "explanation": "The Kernel is the essential foundational core of an OS managing CPU time, memory, and hardware communication[cite: 5]."
+  },
+  {
+    "id": 2077,
+    "question": "What power-saving state saves the active RAM session to the hard drive and completely powers down the PC with zero power consumption?",
+    "options": [
+      "Sleep Mode",
+      "Hibernate Mode",
+      "Standby Mode",
+      "Safe Mode"
+    ],
+    "correct_option": 1,
+    "explanation": "Hibernate mode copies memory contents to a disk file and shuts down power completely, allowing exact session resumption[cite: 5]."
+  },
+  {
+    "id": 2078,
+    "question": "What is the default primary file system used by modern Microsoft Windows operating systems?",
+    "options": [
+      "FAT32",
+      "NTFS (New Technology File System)",
+      "HFS+",
+      "ext4"
+    ],
+    "correct_option": 1,
+    "explanation": "NTFS is the secure, journaling default file system used across modern Windows operating systems[cite: 5]."
+  },
+  {
+    "id": 2079,
+    "question": "What is the package file format extension used for installing software applications on the Android OS?",
+    "options": [
+      ".exe",
+      ".ipa",
+      ".apk",
+      ".dmg"
+    ],
+    "correct_option": 2,
+    "explanation": ".apk stands for Android Package Kit, the standard application distribution format for Android[cite: 5]."
+  },
+  {
+    "id": 2080,
+    "question": "Who invented network email in 1971 and chose the '@' symbol for email addressing?",
+    "options": [
+      "Tim Berners-Lee",
+      "Ray Tomlinson",
+      "Vint Cerf",
+      "Paul Buchheit"
+    ],
+    "correct_option": 1,
+    "explanation": "Ray Tomlinson developed network email on ARPANET and established the user@host address format[cite: 5]."
+  },
+  {
+    "id": 2081,
+    "question": "Which email protocol uses Port 25 for sending and relaying messages between mail servers?",
+    "options": [
+      "POP3",
+      "IMAP",
+      "SMTP",
+      "HTTP"
+    ],
+    "correct_option": 2,
+    "explanation": "SMTP (Simple Mail Transfer Protocol) is the standard protocol for sending outgoing emails[cite: 5]."
+  },
+  {
+    "id": 2082,
+    "question": "What email protocol allows emails to remain on the server and provides multi-device mailbox synchronization?",
+    "options": [
+      "POP3",
+      "SMTP",
+      "IMAP (Internet Message Access Protocol)",
+      "SNMP"
+    ],
+    "correct_option": 2,
+    "explanation": "IMAP manages mail directly on the remote server, keeping messages synchronized across multiple client devices[cite: 5]."
+  },
+  {
+    "id": 2083,
+    "question": "What protocol is required to send non-ASCII multimedia attachments (photos, videos, audio) via email?",
+    "options": [
+      "MIME (Multipurpose Internet Mail Extensions)",
+      "SMTP",
+      "SNMP",
+      "Telnet"
+    ],
+    "correct_option": 0,
+    "explanation": "MIME extends the basic email format to support audio, video, graphics, and non-ASCII character sets[cite: 5]."
+  },
+  {
+    "id": 2084,
+    "question": "In an email header, what is the primary operational difference between CC and BCC fields?",
+    "options": [
+      "CC sends an encrypted copy, while BCC sends plain text",
+      "BCC addresses are concealed from all other recipients, whereas CC addresses are visible to everyone",
+      "CC allows replying, while BCC disables replies",
+      "BCC allows attachments, while CC does not"
+    ],
+    "correct_option": 1,
+    "explanation": "BCC (Blind Carbon Copy) hides recipient addresses from view, while CC (Carbon Copy) displays them publicly[cite: 5]."
+  },
+  {
+    "id": 2085,
+    "question": "What was the name of the first web browser, developed in 1990 by Tim Berners-Lee (later renamed Nexus)?",
+    "options": [
+      "Mosaic",
+      "WorldWideWeb",
+      "Netscape Navigator",
+      "Lynx"
+    ],
+    "correct_option": 1,
+    "explanation": "The first web browser was named WorldWideWeb, later renamed Nexus to distinguish it from the abstract WWW concept[cite: 5]."
+  },
+  {
+    "id": 2086,
+    "question": "What is the encrypted anonymity network that routes web traffic across layered volunteer relays to protect privacy?",
+    "options": [
+      "TOR (The Onion Router)",
+      "Telnet",
+      "USENET",
+      "ARPANET"
+    ],
+    "correct_option": 0,
+    "explanation": "TOR (The Onion Router) encapsulates web traffic in multiple encryption layers to prevent tracking[cite: 5]."
+  },
+  {
+    "id": 2087,
+    "question": "Who coined the phrase 'Internet of Things' (IoT) in 1999?",
+    "options": [
+      "Kevin Ashton",
+      "Tim Berners-Lee",
+      "Vint Cerf",
+      "Alan Turing"
+    ],
+    "correct_option": 0,
+    "explanation": "Kevin Ashton coined the term 'Internet of Things' in 1999 while working on RFID technology[cite: 5]."
+  },
+  {
+    "id": 2088,
+    "question": "What port number is assigned to Domain Name System (DNS) query resolution?",
+    "options": [
+      "Port 21",
+      "Port 25",
+      "Port 53",
+      "Port 80"
+    ],
+    "correct_option": 2,
+    "explanation": "DNS servers listen for name resolution queries on UDP and TCP Port 53[cite: 5]."
+  },
+  {
+    "id": 2089,
+    "question": "What was the first commercial mass-produced mainframe computer, delivered in 1951?",
+    "options": [
+      "ENIAC",
+      "UNIVAC I",
+      "EDSAC",
+      "IBM 701"
+    ],
+    "correct_option": 1,
+    "explanation": "UNIVAC I was the first mass-produced commercial computer system[cite: 1, 5]."
+  },
+  {
+    "id": 2090,
+    "question": "What ancient counting instrument composed of sliding beads on rods is recognized as the earliest mechanical calculator?",
+    "options": [
+      "Pascaline",
+      "Abacus",
+      "Slide Rule",
+      "Difference Engine"
+    ],
+    "correct_option": 1,
+    "explanation": "The Abacus is considered the earliest mechanical calculating apparatus[cite: 1, 5]."
+  },
+  {
+    "id": 2091,
+    "question": "What is an internal private network accessible exclusively to authorized organizational employees called?",
+    "options": [
+      "Internet",
+      "Intranet",
+      "Extranet",
+      "Darknet"
+    ],
+    "correct_option": 1,
+    "explanation": "An Intranet is a private, secured network used within an organization for internal information sharing[cite: 1, 5]."
+  },
+  {
+    "id": 2092,
+    "question": "What is a private network that securely allows controlled access to authorized external business partners called?",
+    "options": [
+      "Intranet",
+      "Extranet",
+      "Internet",
+      "Local Area Network"
+    ],
+    "correct_option": 1,
+    "explanation": "An Extranet extends parts of an organization's private intranet to trusted external partners or clients[cite: 1, 5]."
+  },
+  {
+    "id": 2093,
+    "question": "What is a dedicated high-speed network that provides block-level network access to consolidated data storage devices called?",
+    "options": [
+      "PAN",
+      "Storage Area Network (SAN)",
+      "LAN",
+      "MAN"
+    ],
+    "correct_option": 1,
+    "explanation": "A SAN (Storage Area Network) is a dedicated high-speed network linking shared storage pools to servers[cite: 1, 5]."
+  },
+  {
+    "id": 2094,
+    "question": "What type of computer network spans a single metropolitan city or municipality (e.g., cable TV networks)?",
+    "options": [
+      "LAN",
+      "MAN (Metropolitan Area Network)",
+      "PAN",
+      "CAN"
+    ],
+    "correct_option": 1,
+    "explanation": "A MAN (Metropolitan Area Network) covers a geographic region the size of a town or city[cite: 1, 5]."
+  },
+  {
+    "id": 2095,
+    "question": "What does the abbreviation GIGO stand for in computer data processing?",
+    "options": [
+      "General Input General Output",
+      "Garbage In Garbage Out",
+      "Global Input Global Output",
+      "Graphic Input Graphic Output"
+    ],
+    "correct_option": 1,
+    "explanation": "GIGO stands for Garbage In, Garbage Out, referring to computer accuracy depending on input quality[cite: 5]."
+  },
+  {
+    "id": 2096,
+    "question": "What was the first electronic computer developed in India (at TIFR)?",
+    "options": [
+      "PARAM 8000",
+      "TIFRAC",
+      "Siddharth",
+      "Micral"
+    ],
+    "correct_option": 1,
+    "explanation": "TIFRAC (Tata Institute of Fundamental Research Automatic Calculator) was the first indigenous electronic computer built in India[cite: 5]."
+  },
+  {
+    "id": 2097,
+    "question": "Who is widely acknowledged as the 'Father of Modern Computer Science'?",
+    "options": [
+      "Charles Babbage",
+      "Alan Turing",
+      "John von Neumann",
+      "Jack Kilby"
+    ],
+    "correct_option": 1,
+    "explanation": "Alan Turing is considered the father of modern computer science and artificial intelligence[cite: 5]."
+  },
+  {
+    "id": 2098,
+    "question": "How many color phosphors/dots combine to form one single color pixel on a display monitor?",
+    "options": [
+      "2 dots",
+      "4 dots",
+      "8 dots",
+      "3 dots (Red, Green, Blue)"
+    ],
+    "correct_option": 3,
+    "explanation": "Each color pixel on a display is formed by 3 primary color subpixels: Red, Green, and Blue (RGB)[cite: 5]."
+  },
+  {
+    "id": 2099,
+    "question": "What is the standard data storage capacity of a conventional Compact Disc (CD)?",
+    "options": [
+      "500 MB",
+      "700 MB",
+      "1.44 MB",
+      "4.7 GB"
+    ],
+    "correct_option": 1,
+    "explanation": "Standard optical Compact Discs (CD-ROM/CD-R) have a storage capacity of approximately 700 MB[cite: 5]."
+  },
+  {
+    "id": 2100,
+    "question": "What is the standard data storage capacity of a standard single-layer Digital Versatile Disc (DVD)?",
+    "options": [
+      "700 MB",
+      "25 GB",
+      "4.7 GB",
+      "8.5 GB"
+    ],
+    "correct_option": 2,
+    "explanation": "A standard single-layer DVD has a storage capacity of 4.7 GB[cite: 5]."
+  }
+]

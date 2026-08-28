@@ -196,17 +196,17 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             
             tg_lines = [
                 "👑 **OMNISCIENT INTEL: MASTER ADMIN DOSSIER**",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 "👤 **Platform Creator & Lead Educator:** Himanshu Sir",
                 "🏆 **Credentials:** AIR #65 | 96.7/100 Marks in BSF HCM",
                 "🎖 **Examinations Qualified:** SSC CGL (3x), SSC CHSL (3x), SSC CPO (3x), DP HCM",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 "📲 **Official Community & Channels:**",
                 "• Telegram Channel: @LEARNWITHHIM",
                 "• YouTube Channel: https://youtube.com/@learnwithhim",
                 "• Instagram: @learnwithhimm",
                 "• Master Admin PIN: `" + str(admin_pin) + "`",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                "• • • ✧ • • •"
             ]
 
             return {
@@ -267,9 +267,9 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
 
             tg_lines = [
                 f"📄 **OMNISCIENT INTEL: PDF REPORT LOGS ({time_scope.upper()})**",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 f"📊 **Total PDF Reports Generated:** `{len(matched_logs)}`",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "• • • ✧ • • •\n"
             ]
 
             for idx, pl in enumerate(matched_logs, start=1):
@@ -313,10 +313,10 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
 
             tg_lines = [
                 "🔑 **ADMIN SECURITY INTELLIGENCE**",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 f"👑 **Current Admin Master PIN:** `{admin_pin}`",
                 f"⏰ **Last Updated:** `{updated_at}`",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 "⚠️ *Confidential: Master Admin PIN.*"
             ]
 
@@ -362,9 +362,9 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pdf_rows = []
             tg_lines = [
                 f"🛑 **OMNISCIENT INTEL: BLOCKED USERS ({time_scope.upper()})**",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 f"📊 **Total Blocked Users Found:** `{len(matched_blocked)}`",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "• • • ✧ • • •\n"
             ]
 
             for idx, b in enumerate(matched_blocked, start=1):
@@ -439,13 +439,13 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
 
             tg_lines = [
                 f"🎯 **OMNISCIENT INTEL: {scope_label.upper()}'S QUIZ ATTEMPTS TELEMETRY**",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 f"📅 **Date:** `{scope_str}`",
                 f"📚 **Quizzes Submitted:** `{tot_attempts}` Quizzes",
                 f"👥 **Students Practicing:** `{unique_students}` Scholars",
                 f"🖥 **Total Questions Solved:** `{tot_qs}` Questions",
                 f"⭐ **Average Accuracy:** `{avg_acc}%`",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "• • • ✧ • • •\n"
             ]
 
             for idx, a in enumerate(matched_attempts, start=1):
@@ -513,12 +513,12 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pdf_rows = []
             tg_lines = [
                 "📊 **OMNISCIENT INTEL: TOTAL QUIZ ATTEMPTS TELEMETRY**",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 f"📚 **All-Time Quizzes Completed:** `{tot_q}` Quizzes",
                 f"👥 **Unique Participating Students:** `{tot_st}` Students",
                 f"🖥 **Total Questions Solved:** `{tot_qs}` Questions",
                 f"⭐ **Global Accuracy:** `{acc}%`",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 "📅 **DATE-WISE QUIZ BREAKDOWN (Recent):**\n"
             ]
 
@@ -586,11 +586,11 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
 
             tg_lines = [
                 "📊 **OMNISCIENT INTEL: DEMO VS PAID USERS SUMMARY**",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 f"👥 **Total Active Registered:** `{total_active}` Students",
                 f"🟢 **Paid VIP Subscribers:** `{paid_count}` ({paid_pct}%)",
                 f"🎁 **Free Demo Users:** `{demo_count}` ({demo_pct}%)",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 "📦 **PAID PLAN TIERS BREAKDOWN:**\n"
             ]
 
@@ -672,10 +672,10 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pdf_rows = []
             tg_lines = [
                 f"💳 **OMNISCIENT INTEL: PAID VIP PURCHASES ({time_label.upper()})**",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                "• • • ✧ • • •",
                 f"💵 **Revenue in Window:** `₹{gross_window_rev} INR`",
                 f"📦 **Verified Purchases:** `{len(matched_txns)}`",
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "• • • ✧ • • •\n"
             ]
 
             for idx, t in enumerate(matched_txns, start=1):
@@ -805,10 +805,10 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pdf_rows = []
             tg_lines = [
                 f"⏳ **OMNISCIENT INTEL: {type_label.upper()} EXPIRY TELEMETRY**\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"• • • ✧ • • •\n"
                 f"📅 **Filter Window:** `{time_label}`\n"
                 f"⚠️ **Total Expiring Students Found:** `{len(matched_expirations)}`\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"• • • ✧ • • •\n"
             ]
 
             for idx, u in enumerate(matched_expirations, start=1):
@@ -876,7 +876,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pdf_rows = []
             tg_lines = [
                 "🔥 **OMNISCIENT INTEL: SALES & FESTIVAL FORECASTER**\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "• • • ✧ • • •\n"
                 "📅 **RECENT BOT PROMOTIONS:**\n"
             ]
 
@@ -966,11 +966,11 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pdf_rows = []
             tg_lines = [
                 f"💰 **OMNISCIENT INTEL: FINANCIAL REVENUE & TRANSACTIONS**\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"• • • ✧ • • •\n"
                 f"📅 **Scope:** `{timeframe_label}`\n"
                 f"💵 **Total Revenue:** `₹{gross_rev} INR`\n"
                 f"🧾 **Total Verified Orders:** `{len(filtered_txns)}`\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"• • • ✧ • • •\n"
             ]
 
             for idx, t in enumerate(filtered_txns, start=1):
@@ -1063,9 +1063,9 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pdf_rows = []
             tg_lines = [
                 f"👥 **OMNISCIENT INTEL: STUDENT REGISTRATIONS ({date_label.upper()})**\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"• • • ✧ • • •\n"
                 f"📊 **Total Matching Students:** `{len(matched_date_users)}`\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"• • • ✧ • • •\n"
             ]
 
             for idx, u in enumerate(matched_date_users, start=1):
@@ -1130,10 +1130,10 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pdf_rows = []
             tg_lines = [
                 "💳 **OMNISCIENT INTEL: TOTAL PAID VIP SUBSCRIBERS**\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "• • • ✧ • • •\n"
                 f"👑 **Total Verified Paid Students:** `{len(paid_students)}`\n"
                 f"💰 **Total Gross Revenue Collected:** `₹{total_rev} INR`\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "• • • ✧ • • •\n"
             ]
 
             for idx, s in enumerate(paid_students, start=1):
@@ -1199,9 +1199,9 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pdf_rows = []
             tg_lines = [
                 "⏱ **OMNISCIENT INTEL: ONLINE PATTERNS & TIME TELEMETRY**\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "• • • ✧ • • •\n"
                 f"📊 **Scholars Analyzed:** `{len(rows)}`\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "• • • ✧ • • •\n"
             ]
 
             for idx, r in enumerate(rows, start=1):
@@ -1242,9 +1242,9 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
             pdf_rows = []
             tg_lines = [
                 "💬 **OMNISCIENT INTEL: STUDENT REVIEWS & FEEDBACK**\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "• • • ✧ • • •\n"
                 f"📊 **Total Reviews Logged:** `{len(feedbacks)}`\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                "• • • ✧ • • •\n"
             ]
 
             for idx, fb in enumerate(feedbacks, start=1):
@@ -1370,7 +1370,7 @@ def parse_and_execute_admin_query(query_text: str, context_correction: str = Non
         
         tg_lines = [
             f"🔍 **OMNISCIENT INTEL: QUERY RESULTS ({len(matched_users)} Records)**",
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "• • • ✧ • • •\n"
         ]
 
         for idx, u in enumerate(matched_users, start=1):

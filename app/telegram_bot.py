@@ -312,7 +312,7 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
         context.user_data["user_keypad_pin"] = ""
         msg = (
             f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"You were inactive for `{diff_sec // 60} mins`.\n\n"
             f"🔑 **PIN Status:** `[ _ _ _ _ ]`\n"
             f"👉 *Tap the visual keypad below to enter your secret 4-digit PIN:*"
@@ -360,7 +360,7 @@ async def safe_send_admin_intelligence(bot, chat_id: int, text: str, reply_marku
         await bot.send_message(chat_id=chat_id, text=text, reply_markup=reply_markup, parse_mode="Markdown")
     except Exception as md_err:
         logging.warning(f"[MARKDOWN PARSE ERROR] Falling back to plain text delivery: {md_err}")
-        clean_text = text.replace("**", "").replace("`", "").replace("*", "").replace("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "------------------------------")
+        clean_text = text.replace("**", "").replace("`", "").replace("*", "").replace("• • • ✧ • • •", "------------------------------")
         try:
             await bot.send_message(chat_id=chat_id, text=clean_text, reply_markup=reply_markup)
         except Exception as fallback_err:
@@ -376,7 +376,7 @@ async def direct_admin_ask_command(update: Update, context: ContextTypes.DEFAULT
     if not raw_query:
         await update.message.reply_text(
             "✍️ **ASK ADMIN INTELLIGENCE ENGINE**\n"
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "• • • ✧ • • •\n"
             "Usage: `/ask <your query>`\n\n"
             "Examples:\n"
             "• `/ask give all blocked users today list`\n"
@@ -458,7 +458,7 @@ async def askadmin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["awaiting_user_query"] = True
     msg = (
         "💬 **DIRECT COMMUNICATION WITH HIMANSHU SIR** 💬\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "• • • ✧ • • •\n"
         "Please send your question or query below:\n\n"
         "🎙️ **Record & Send a Voice Note**\n"
         "📝 **Text Message / Photo / Video / Audio / PDF**\n\n"
@@ -635,16 +635,16 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         msg = (
             f"🔥 **OFFER ACTIVE: {clean_sale_name} ({pct}% OFF)!** 🔥\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"All VIP packs are discounted by **{pct}%**.\n"
             f"⏰ **Ends in:** `{hrs_left}h {mins_left}m`\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"Select a pack below to unlock higher daily question limits:"
         )
     else:
         msg = (
             f"👑 **QUIZ WITH HIM — VIP MEMBERSHIP PACKS** 👑\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"Select a pack below to unlock your daily question limit:"
         )
 
@@ -710,7 +710,7 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
 
         msg = (
             f"🛒 **SELECTED PACK:** {plan_info['name']}\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"{price_details}\n"
             f"📅 **Validity:** {plan_info['days']} Days\n"
             f"⚡ **Daily Limit:** {plan_info['daily_limit']} Questions/Day\n\n"
@@ -740,7 +740,7 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         f"📄 **STUDENT PDF REPORT CENTER** 📄\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"Select the **Subject** for your report:"
     )
 
@@ -769,7 +769,7 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("📅 All Time", callback_data=f"pdftime_{subject}_saved_all")],
                 [InlineKeyboardButton("🔙 Back to Subjects", callback_data="cmd_pdfreport")]
             ]
-            msg = "💾 **SAVED QUESTIONS REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📅 Select timeframe:"
+            msg = "💾 **SAVED QUESTIONS REPORT**\n• • • ✧ • • •\n📅 Select timeframe:"
         else:
             buttons = [
                 [InlineKeyboardButton("📋 Full Questions Report", callback_data=f"pdftype_{subject}_full")],
@@ -783,7 +783,7 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 "all": "All Subjects"
             }
             subj_name = subj_names.get(subject, subject.upper())
-            msg = f"📄 **{subj_name.upper()} REPORT**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSelect report type:"
+            msg = f"📄 **{subj_name.upper()} REPORT**\n• • • ✧ • • •\nSelect report type:"
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
         return
 
@@ -798,7 +798,7 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton("📅 All Time", callback_data=f"pdftime_{subject}_{rtype}_all")],
             [InlineKeyboardButton("🔙 Back", callback_data=f"pdfsubj_{subject}")]
         ]
-        await query.edit_message_text("📅 **SELECT TIMEFRAME**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSelect the timeframe for your report:", reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
+        await query.edit_message_text("📅 **SELECT TIMEFRAME**\n• • • ✧ • • •\nSelect the timeframe for your report:", reply_markup=InlineKeyboardMarkup(buttons), parse_mode="Markdown")
         return
 
     elif data.startswith("pdftime_"):
@@ -829,7 +829,7 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         elif pdf_file and os.path.exists(pdf_file):
             caption = (
                 f"📄 **STUDENT PDF REPORT**\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"• • • ✧ • • •\n"
                 f"👤 **Student:** {student_name}\n"
                 f"🪪 **Student ID:** `{sid}`\n"
                 f"📚 **Subject:** `{subject.upper()}`\n"
@@ -879,7 +879,7 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
 
     lines = [
         f"❌ **INCORRECT QUESTIONS LOG (TODAY: {today_str})** ❌",
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
     ]
 
     found_wrong = False
@@ -948,7 +948,7 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
 
     lines = [
         f"🎯 **TODAY'S ATTEMPTED QUESTIONS ({today_str})** 🎯",
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
     ]
 
     found_any = False
@@ -1009,7 +1009,7 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
 
     msg = (
         f"⏭️ **UNATTEMPTED QUESTIONS POOL** ⏭️\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"📚 **Total Bank:** `{total_bank}` Qs\n"
         f"✅ **Solved:** `{seen_count}` Qs\n"
         f"⏭️ **Remaining:** `{remaining_count}` Qs\n\n"
@@ -1038,7 +1038,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         f"🤖 **COMMAND DIRECTORY & GUIDE** 🤖\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"• **/quiz** — 🚀 Launch Quiz (Computer/English/GK)\n"
         f"• **/myplan** — 💵 Subscription Status\n"
         f"• **/plans** — 💳 VIP Payment Plans\n"
@@ -1078,7 +1078,7 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
     total_count = len(saved)
     lines = [
         f"📖 **SAVED QUESTIONS BOOKMARKS ({total_count})** 📖",
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
     ]
 
     for idx, sq in enumerate(saved[:15], start=1):
@@ -1126,7 +1126,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         f"👤 **STUDENT PROFILE CARD** 👤\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"• **Name:** {profile['full_name']}\n"
         f"• **Student ID:** `{student_id}` 🪪\n"
         f"• **Target Exam:** `{profile['target_exam']}` 🎯\n"
@@ -1136,7 +1136,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"• **Used Today:** `{today_used}` / `{allowed_limit}` Qs\n"
         f"• **Available:** `{remaining}` Qs Available\n"
         f"• **VIP Expiry:** `{expiry}`\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        f"• • • ✧ • • •"
     )
 
     buttons = [
@@ -1165,7 +1165,7 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
     msg = (
         f"🎓 **ACADEMIC PERFORMANCE REPORT** 🎓\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"👤 **Name:** {profile['full_name']} (`{student_id}`)\n"
         f"🎯 **Target Exam:** `{profile['target_exam']}`\n\n"
         f"📈 **METRICS:**\n"
@@ -1201,7 +1201,7 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         f"🏆 **GLOBAL LEADERBOARD** 🏆\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" + "\n".join(lines)
+        f"• • • ✧ • • •\n\n" + "\n".join(lines)
     )
     buttons = [[InlineKeyboardButton("🚀 Attempt Quiz", callback_data="cmd_quiz")]]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -1225,7 +1225,7 @@ async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         "💬 **STUDENT FEEDBACK PORTAL** 💬\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        "• • • ✧ • • •\n"
         "Tap a preset option below or write custom feedback:"
     )
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
@@ -1246,7 +1246,7 @@ async def render_reviews_page(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     lines = [
         f"📖 **STUDENT REVIEWS BOARD** 📖",
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+        f"• • • ✧ • • •",
         f"📄 **Page:** `{page + 1}` of `{total_pages}`\n"
     ]
 
@@ -1296,7 +1296,7 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = (
         f"🤝 **INVITE FRIENDS & UNLOCK +10 DAILY LIMIT** 🤝\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"Share your invite link with **4 friends**:\n"
         f"`{ref_link}`\n\n"
         f"When 4 friends register, you get +10 extra questions added to your daily quota!"
@@ -1530,7 +1530,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 ])
                 await query.edit_message_text(
                     f"🔓 **ACCOUNT UNLOCKED!**\n"
-                    f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"• • • ✧ • • •\n"
                     f"Welcome back, **{profile['full_name']}**! Select an option below to continue practicing:",
                     reply_markup=unlocked_menu_btn,
                     parse_mode="Markdown"
@@ -1544,7 +1544,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         visible_display = " ".join([d for d in current_pin]) + " " + " ".join(["_" for _ in range(max(0, 4 - len(current_pin)))])
         msg = (
             f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"🔑 **PIN Status:** `[ {visible_display.strip()} ]`\n"
             f"👉 *Tap the visual keypad below to enter your secret 4-digit PIN:*"
         )
@@ -1558,7 +1558,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.answer()
         msg = (
             "🔑 **FORGOT PIN RECOVERY**\n"
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "• • • ✧ • • •\n"
             "If you forgot your PIN, use **/askadmin** to send a reset request directly to Admin."
         )
         markup = InlineKeyboardMarkup([
@@ -1728,7 +1728,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         msg = (
             f"🏷 **Selected Sale Title:** `{sale_name}`\n\n"
             f"💸 **STEP 2/4: CHOOSE DISCOUNT PERCENTAGE**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"Please tap the percentage discount you want to offer on all VIP packs:"
         )
         await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(pct_buttons), parse_mode="Markdown")
@@ -1808,11 +1808,11 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         target_student_id = context.user_data.pop("awaiting_admin_warning_msg_uid")
         warning_notice = (
             f"⚠️ **OFFICIAL ADMINISTRATIVE WARNING** ⚠️\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"Dear Student, an official warning has been issued to your account by Himanshu Sir.\n\n"
             f"📝 **Notice:**\n`{text or caption or '[Media Attached]'}`\n"
             f"⏰ **Timestamp:** `{datetime.now(pytz.timezone('Asia/Kolkata')).strftime('%d %b %Y, %I:%M %p IST')}`\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"Please ensure compliance with platform rules to prevent suspension."
         )
         try:
@@ -1842,9 +1842,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         outbound_text = text or caption or ""
         header_text = (
             f"📩 **MESSAGE FROM HIMANSHU SIR / ADMIN**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"{outbound_text}\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"💬 *Reply anytime via /askadmin if you have questions!*"
         )
         try:
@@ -1893,10 +1893,10 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             student_uid = row["user_id"]
             user_msg = (
                 f"💬 **RESPONSE FROM HIMANSHU SIR!**\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"• • • ✧ • • •\n"
                 f"❓ **Your Question:**\n*\"{row['query_text'] or 'Media Query'}\"*\n\n"
                 f"👨‍🏫 **Reply:**\n`{reply_content}`\n"
-                f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                f"• • • ✧ • • •"
             )
             try:
                 btn = InlineKeyboardMarkup([[InlineKeyboardButton("💬 Reply Back to Admin", callback_data="cmd_askadmin")]])
@@ -2071,9 +2071,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             
         b_msg = (
             f"📢 **ANNOUNCEMENT FROM HIMANSHU SIR** 📢\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"• • • ✧ • • •\n\n"
             f"{text or caption}\n\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"🚀 Tap **/quiz** to launch your daily session now!"
         )
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])

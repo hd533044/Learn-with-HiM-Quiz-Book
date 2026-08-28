@@ -118,7 +118,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if attempted_today >= allowed_limit:
         exhausted_msg = (
             f"🛑 **DAILY LIMIT REACHED!** 🛑\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"📊 **Used Today:** `{attempted_today}` / `{allowed_limit}` Questions\n\n"
             f"💳 Upgrade to a VIP Pack to unlock higher daily question limits!"
         )
@@ -144,7 +144,7 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         prompt_msg = (
             f"⚠️ **{status_label.upper()} IN PROGRESS**\n"
-            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• • • ✧ • • •\n"
             f"📖 **Title:** `{topic_disp}`\n"
             f"📊 **Remaining Questions:** `{remaining_count}` Qs\n"
             f"⭐ **Current Score:** `{session_info.get('score', 0.0)}`\n\n"
@@ -221,7 +221,7 @@ async def quiz_subject_callback(update: Update, context: ContextTypes.DEFAULT_TY
             [InlineKeyboardButton("🔙 Back to Subjects", callback_data="cmd_quiz")]
         ])
         await query.edit_message_text(
-            "🔤 **ENGLISH LANGUAGE**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSelect a practice category below:",
+            "🔤 **ENGLISH LANGUAGE**\n• • • ✧ • • •\nSelect a practice category below:",
             reply_markup=eng_keyboard,
             parse_mode="Markdown"
         )
@@ -234,7 +234,7 @@ async def quiz_subject_callback(update: Update, context: ContextTypes.DEFAULT_TY
         [InlineKeyboardButton("🔙 Back to Subjects", callback_data="cmd_quiz")]
     ])
     await query.edit_message_text(
-        f"📖 **{subj_title.upper()}**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nChoose practice type:",
+        f"📖 **{subj_title.upper()}**\n• • • ✧ • • •\nChoose practice type:",
         reply_markup=mode_keyboard,
         parse_mode="Markdown"
     )
@@ -257,7 +257,7 @@ async def english_category_callback(update: Update, context: ContextTypes.DEFAUL
         [InlineKeyboardButton("🔙 Back", callback_data="qsubj_english")]
     ])
     await query.edit_message_text(
-        f"🔤 **ENGLISH — {cat_titles.get(cat, cat).upper()}**\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nChoose practice type:",
+        f"🔤 **ENGLISH — {cat_titles.get(cat, cat).upper()}**\n• • • ✧ • • •\nChoose practice type:",
         reply_markup=mode_keyboard,
         parse_mode="Markdown"
     )
@@ -409,7 +409,7 @@ async def show_language_selection(query, user_id: int):
     ])
     msg_text = (
         f"🌐 **SELECT LANGUAGE**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"📌 **Topic:** `{topic_name}`\n\n"
         f"Choose question language:"
     )
@@ -448,7 +448,7 @@ async def show_passage_timer_selection(query, user_id: int, topic_display: str):
 
     msg = (
         f"📖 **PASSAGE PRACTICE — {topic_display.upper()}**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"📌 **Type:** Complete Passage Context\n"
         f"⚡ **Available Daily Quota:** `{remaining_quota}` Questions\n\n"
         f"Select your passage reading timer:"
@@ -511,7 +511,7 @@ async def show_combined_timer_selection(query, user_id: int):
 
     msg = (
         f"⏱ **SELECT QUESTIONS & TIMER**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"📌 **Target:** `{topic_name}`\n"
         f"⚡ **Available Limit:** `{remaining_quota}` Questions\n\n"
         f"Select your question bundle & timer below:"
@@ -583,7 +583,7 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
 
     await query.edit_message_text(
         f"🚀 **PRACTICE SESSION STARTED**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"📖 **Title:** `{title}`\n"
         f"🌐 **Language:** `{lang_str}`\n"
         f"⏱ **Timer:** {timer_display}\n\n"
@@ -711,7 +711,7 @@ async def prompt_final_submission(chat_id: int, user_id: int, context: ContextTy
 
     msg = (
         f"🏁 **CONFIRM FINAL SUBMISSION**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"📊 **Questions Attempted:** `{attempted}` / `{total}`\n"
         f"⭐ **Current Score:** `{score}`\n\n"
         f"❓ **Do you want to final submit?**"
@@ -875,7 +875,7 @@ async def pause_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     remaining_qs = session["total"] - session["current_index"]
     msg = (
         f"⏸ **QUIZ PAUSED & SAVED**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"📊 **Remaining:** `{remaining_qs}` Qs | ⭐ **Score:** `{session['score']}`\n\n"
         f"Tap **Resume** below or type `/resume` anytime to continue."
     )
@@ -1025,7 +1025,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     report_card = (
         f"🏆 **OFFICIAL QUIZ REPORT CARD** 🏆\n"
         f"📚 **Quiz with HiM by Himanshu Sir**\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"📖 **Title:** `{title}`\n"
         f"🌐 **Language:** `{lang_label}`\n\n"
         f"📊 **PERFORMANCE SUMMARY:**\n"
@@ -1038,7 +1038,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
         f"🔥 **COMMUNITY TRUST:**\n"
         f"• 📚 **All-Time Quizzes Attempted:** `{platform_total_quizzes}` Quizzes Conducted\n"
         f"• ❤️ **Platform Likes:** `{platform_total_likes}`\n"
-        f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+        f"• • • ✧ • • •\n"
         f"💖 *Tap **'❤️ Like the Quiz'** below to support the platform!*"
     )
 

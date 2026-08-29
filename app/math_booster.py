@@ -16,12 +16,13 @@ PYTHAGOREAN_TRIPLETS = [
     (65, 72, 97), (20, 99, 101), (60, 91, 109), (15, 112, 113), (44, 117, 125)
 ]
 
+# All difficulty modes have a fixed 6-second timer per step
 BOOSTER_SETTINGS = {
-    "easy": {"range": (10, 50), "timer": 8, "mult_max": 3, "add_max": 25},
+    "easy": {"range": (10, 50), "timer": 6, "mult_max": 3, "add_max": 25},
     "medium": {"range": (50, 200), "timer": 6, "mult_max": 5, "add_max": 50},
-    "hard": {"range": (100, 400), "timer": 4, "mult_max": 8, "add_max": 90},
-    "extreme_hard": {"range": (200, 800), "timer": 3, "mult_max": 10, "add_max": 150},
-    "topper": {"range": (400, 1500), "timer": 2, "mult_max": 12, "add_max": 250},
+    "hard": {"range": (100, 400), "timer": 6, "mult_max": 8, "add_max": 90},
+    "extreme_hard": {"range": (200, 800), "timer": 6, "mult_max": 10, "add_max": 150},
+    "topper": {"range": (400, 1500), "timer": 6, "mult_max": 12, "add_max": 250},
 }
 
 
@@ -36,6 +37,7 @@ def generate_mental_chain(steps: int, difficulty: str) -> dict:
     - Pure integer values at every step (no floats/decimals).
     - No direct repetitive operation back-to-back.
     - Positive non-zero numbers throughout.
+    - Exactly 6 seconds per step across all modes.
     """
     config = BOOSTER_SETTINGS.get(difficulty.lower(), BOOSTER_SETTINGS["medium"])
     current = random.randint(*config["range"])
@@ -49,7 +51,7 @@ def generate_mental_chain(steps: int, difficulty: str) -> dict:
         if divisors:
             available_ops.append("div")
 
-        # Avoid same operation type sequentially
+        # Avoid identical consecutive operations
         if prev_op in available_ops and len(available_ops) > 1:
             available_ops.remove(prev_op)
 
@@ -82,7 +84,7 @@ def generate_mental_chain(steps: int, difficulty: str) -> dict:
 
     return {
         "difficulty": difficulty,
-        "step_timer": config["timer"],
+        "step_timer": 6,
         "total_steps": steps,
         "steps": chain,
         "final_answer": current

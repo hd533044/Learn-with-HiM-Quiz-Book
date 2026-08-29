@@ -1705,18 +1705,23 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         booster_session = ACTIVE_MENTAL_BOOSTERS.pop(user.id, None)
         if booster_session:
             chain_data = booster_session["chain_data"]
-            correct_ans = chain_data["final_answer"]
+            cur_step = booster_session.get("current_step", len(chain_data["steps"]) - 1)
+            
+            # Answer calculated up to the step stopped or finished
+            target_step_info = chain_data["steps"][cur_step]
+            correct_ans = target_step_info["val"]
             user_input = text.strip()
             
             trail = [f"• Base: `{chain_data['steps'][0]['val']}`"]
-            for s in chain_data["steps"][1:]:
+            for s in chain_data["steps"][1:cur_step + 1]:
                 trail.append(f"• Step {s['step']}: `{s['instruction']}` ➔ `{s['val']}`")
             trail_str = "\n".join(trail)
 
-            if user_input.isdigit() and int(user_input) == correct_ans:
+            if user_input.lstrip('-').isdigit() and int(user_input) == correct_ans:
                 res_msg = (
                     f"🎉 **100% ACCURATE! BRILLIANT CALCULATION!** ✅\n"
                     f"• • • ✧ • • •\n"
+                    f"Target Step: `Step {cur_step}`\n"
                     f"Your Answer: `{user_input}` | Correct: `{correct_ans}`\n\n"
                     f"📋 **Step-by-Step Breakdown:**\n{trail_str}"
                 )
@@ -1724,6 +1729,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
                 res_msg = (
                     f"❌ **INCORRECT CALCULATION!**\n"
                     f"• • • ✧ • • •\n"
+                    f"Target Step: `Step {cur_step}`\n"
                     f"Your Answer: `{user_input}`\n"
                     f"Correct Final Value: `{correct_ans}`\n\n"
                     f"📋 **Step-by-Step Breakdown:**\n{trail_str}"

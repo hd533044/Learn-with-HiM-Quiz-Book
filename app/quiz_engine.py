@@ -211,7 +211,8 @@ async def launch_booster_menu(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 async def booster_steps_selector(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
-        [InlineKeyboardButton("🔟 10 Steps", callback_data="bstep_10"), InlineKeyboardButton("1️⃣5️⃣ 15 Steps", callback_data="bstep_15"), InlineKeyboardButton("2️⃣0️⃣ 20 Steps", callback_data="bstep_20")],
+        [InlineKeyboardButton("5️⃣ 5 Steps", callback_data="bstep_5"), InlineKeyboardButton("🔟 10 Steps", callback_data="bstep_10")],
+        [InlineKeyboardButton("1️⃣5️⃣ 15 Steps", callback_data="bstep_15"), InlineKeyboardButton("2️⃣0️⃣ 20 Steps", callback_data="bstep_20")],
         [InlineKeyboardButton("🔙 Back to Booster Hub", callback_data="cmd_calc_booster")]
     ]
     await update.callback_query.edit_message_text(
@@ -226,13 +227,13 @@ async def booster_mode_selector(update: Update, context: ContextTypes.DEFAULT_TY
     context.user_data["booster_steps"] = steps
 
     keyboard = [
-        [InlineKeyboardButton("🟢 Easy (8s/step)", callback_data="bmode_easy"), InlineKeyboardButton("🟡 Medium (6s/step)", callback_data="bmode_medium")],
-        [InlineKeyboardButton("🟠 Hard (4s/step)", callback_data="bmode_hard"), InlineKeyboardButton("🔴 Extreme Hard (3s/step)", callback_data="bmode_extreme_hard")],
-        [InlineKeyboardButton("👑 TOPPER LEVEL (2s/step)", callback_data="bmode_topper")],
+        [InlineKeyboardButton("🟢 Easy (6s/step)", callback_data="bmode_easy"), InlineKeyboardButton("🟡 Medium (6s/step)", callback_data="bmode_medium")],
+        [InlineKeyboardButton("🟠 Hard (6s/step)", callback_data="bmode_hard"), InlineKeyboardButton("🔴 Extreme Hard (6s/step)", callback_data="bmode_extreme_hard")],
+        [InlineKeyboardButton("👑 TOPPER LEVEL (6s/step)", callback_data="bmode_topper")],
         [InlineKeyboardButton("🔙 Back", callback_data="booster_mind_steps")]
     ]
     await update.callback_query.edit_message_text(
-        f"🎯 **SELECTED:** `{steps} Steps`\n\nSelect your difficulty speed mode:",
+        f"🎯 **SELECTED:** `{steps} Steps`\n\nSelect your difficulty speed mode (Fixed 6s Timer):",
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode="Markdown"
     )
@@ -244,55 +245,90 @@ async def start_mental_booster_chain(update: Update, context: ContextTypes.DEFAU
     user_id = query.from_user.id
     chat_id = query.message.chat_id
     mode = query.data.replace("bmode_", "")
-    steps = context.user_data.get("booster_steps", 10)
+    steps = context.user_data.get("booster_steps", 5)
 
     chain_data = generate_mental_chain(steps, mode)
-    timer = chain_data["step_timer"]
+    timer = 6
 
     ACTIVE_MENTAL_BOOSTERS[user_id] = {
         "chain_data": chain_data,
         "chat_id": chat_id,
-        "awaiting_answer": False
+        "awaiting_answer": False,
+        "stopped_early": False,
+        "current_step": 0
     }
 
     status_msg = await query.edit_message_text("⚡ **Initializing Mind Chain... Get Ready!**")
     await asyncio.sleep(1.5)
 
+    stop_button = InlineKeyboardMarkup([[InlineKeyboardButton("🛑 Stop & Calculate Now", callback_data="booster_mid_stop")]])
+
     # Step 0: Base initial number
     start_val = chain_data["steps"][0]["val"]
     for t in range(timer, 0, -1):
+        if ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
+            break
         await status_msg.edit_text(
             f"🧠 **MIND MEMORY BOOSTER ({mode.upper()})**\n"
             f"• • • ✧ • • •\n"
             f"🔢 **Base Number:** `{start_val}`\n\n"
             f"⏳ *Hold in memory:* `{t}s`",
+            reply_markup=stop_button,
             parse_mode="Markdown"
         )
         await asyncio.sleep(1)
 
     # Subsequent steps loop
     for s_idx in range(1, len(chain_data["steps"])):
+        if ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
+            break
+        
+        ACTIVE_MENTAL_BOOSTERS[user_id]["current_step"] = s_idx
         step_info = chain_data["steps"][s_idx]
+        
         for t in range(timer, 0, -1):
+            if ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
+                break
             await status_msg.edit_text(
                 f"🧠 **MIND MEMORY BOOSTER ({mode.upper()})**\n"
                 f"• • • ✧ • • •\n"
                 f"📍 **Step {s_idx} / {steps}**\n\n"
                 f"👉 **Operation:** `{step_info['instruction']}`\n\n"
                 f"⏳ *Time Remaining:* `{t}s`",
+                reply_markup=stop_button,
                 parse_mode="Markdown"
             )
             await asyncio.sleep(1)
 
-    ACTIVE_MENTAL_BOOSTERS[user_id]["awaiting_answer"] = True
-    context.user_data["awaiting_booster_user_ans"] = True
+    if not ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
+        ACTIVE_MENTAL_BOOSTERS[user_id]["awaiting_answer"] = True
+        context.user_data["awaiting_booster_user_ans"] = True
 
-    await status_msg.edit_text(
-        f"🏁 **ALL {steps} STEPS COMPLETED!**\n"
-        f"• • • ✧ • • •\n"
-        f"⏰ *Time is up! Reply with your final calculated integer in chat below:*",
-        parse_mode="Markdown"
-    )
+        await status_msg.edit_text(
+            f"🏁 **ALL {steps} STEPS COMPLETED!**\n"
+            f"• • • ✧ • • •\n"
+            f"⏰ *Time is up! Reply with your final calculated integer in chat below:*",
+            parse_mode="Markdown"
+        )
+
+
+async def booster_mid_stop_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer("🛑 Chain Stopped!", show_alert=True)
+    user_id = query.from_user.id
+
+    if user_id in ACTIVE_MENTAL_BOOSTERS:
+        ACTIVE_MENTAL_BOOSTERS[user_id]["stopped_early"] = True
+        ACTIVE_MENTAL_BOOSTERS[user_id]["awaiting_answer"] = True
+        context.user_data["awaiting_booster_user_ans"] = True
+
+        cur_step = ACTIVE_MENTAL_BOOSTERS[user_id]["current_step"]
+        await query.edit_message_text(
+            f"🛑 **CHAIN STOPPED AT STEP {cur_step}!**\n"
+            f"• • • ✧ • • •\n"
+            f"✍️ *Please enter the calculated value up to Step {cur_step} in the chat below:*",
+            parse_mode="Markdown"
+        )
 
 
 # ==============================================================
@@ -1191,6 +1227,8 @@ async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYP
         await launch_booster_menu(update, context)
     elif data == "booster_mind_steps":
         await booster_steps_selector(update, context)
+    elif data == "booster_mid_stop":
+        await booster_mid_stop_callback(update, context)
     elif data.startswith("bstep_"):
         await booster_mode_selector(update, context)
     elif data.startswith("bmode_"):

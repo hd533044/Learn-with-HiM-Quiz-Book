@@ -40,7 +40,7 @@ from app.onboarding import get_onboarding_handler, start_onboarding
 from app.quiz_engine import (
     launch_quiz_setup, handle_poll_answer,
     pause_quiz_command, resume_quiz_command, stop_quiz_command, save_question_callback,
-    quiz_extended_router
+    quiz_extended_router, launch_booster_menu, ACTIVE_MENTAL_BOOSTERS
 )
 
 from app.stats import (
@@ -450,8 +450,10 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
 
 
 async def askadmin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/askadmin"))
 
@@ -472,8 +474,10 @@ async def askadmin_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def admininfo_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/admininfo"))
 
@@ -518,8 +522,10 @@ async def send_response(update: Update, text: str, reply_markup=None):
 
 
 async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/myplan"))
@@ -596,8 +602,10 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/plans"))
@@ -722,8 +730,10 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
 
 
 async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/pdfreport"))
@@ -752,8 +762,10 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     query = update.callback_query
     user_id = query.from_user.id
@@ -854,8 +866,10 @@ async def pdf_step_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/wrongquestions"))
@@ -923,8 +937,10 @@ async def wrongquestions_command(update: Update, context: ContextTypes.DEFAULT_T
 
 
 async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/attemptedquestions"))
@@ -994,8 +1010,10 @@ async def attemptedquestions_command(update: Update, context: ContextTypes.DEFAU
 
 
 async def unattemptedquestions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/unattemptedquestions"))
@@ -1020,8 +1038,10 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
 
 
 async def editprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/editprofile"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
@@ -1029,8 +1049,10 @@ async def editprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
     
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/help"))
@@ -1040,9 +1062,10 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🤖 **COMMAND DIRECTORY & GUIDE** 🤖\n"
         f"• • • ✧ • • •\n"
         f"• **/quiz** — 🚀 Launch Quiz (Computer/English/GK)\n"
+        f"• **/booster** — ⚡ Calculation Booster & Mind Math\n"
         f"• **/myplan** — 💵 Subscription Status\n"
         f"• **/plans** — 💳 VIP Payment Plans\n"
-        f"• **/askadmin** — 💬 Direct Message to Admin\n"
+        f"• **/askadmin** — 💬 Secret Communication with Admin\n"
         f"• **/admininfo** — 👨‍🏫 About Himanshu Sir & Channels\n"
         f"• **/pdfreport** — 📄 Export Custom Academic Reports\n"
         f"• **/wrongquestions** — ❌ Today's Wrong Questions\n"
@@ -1053,17 +1076,20 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans")],
-        [InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport"), InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile"), InlineKeyboardButton("💬 Message Admin", callback_data="cmd_askadmin")]
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("⚡ Calc Booster", callback_data="cmd_calc_booster")],
+        [InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans"), InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport")],
+        [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
+        [InlineKeyboardButton("💬 Message Admin", callback_data="cmd_askadmin")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 
 async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/savedquestions"))
@@ -1100,10 +1126,11 @@ async def saved_questions_command(update: Update, context: ContextTypes.DEFAULT_
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 
-# Requirement 2: Added Total Attempted Quizzes metric on student profile card
 async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/myprofile"))
@@ -1148,10 +1175,11 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 
-# Requirement 2: Added Total Attempted Quizzes metric on academic performance report
 async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/mywholestate"))
@@ -1182,8 +1210,10 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
 
 async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/toppername"))
@@ -1208,8 +1238,10 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def feedback_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/feedback"))
@@ -1275,8 +1307,10 @@ async def render_reviews_page(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 
 async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/reviews"))
@@ -1285,8 +1319,10 @@ async def viewfeedbacks_command(update: Update, context: ContextTypes.DEFAULT_TY
 
 
 async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await maintenance_guard(update, context): return
-    if not await check_user_registration(update): return
+    if not await maintenance_guard(update, context): 
+        return
+    if not await check_user_registration(update): 
+        return
 
     user = update.effective_user
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/invite"))
@@ -1303,10 +1339,6 @@ async def referral_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await send_response(update, msg)
 
-
-# -------------------------------------------------------------
-# 📢 SCHEDULED ANNOUNCEMENT BOT HANDLERS
-# -------------------------------------------------------------
 
 async def start_announcement_schedule(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -1419,10 +1451,6 @@ async def cancel_admin_action(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 
 async def track_chat_member_updates(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """
-    Requirement 5: Quietly records blocked bot users without notifying admin
-    and without deleting profile or payment files.
-    """
     result = update.my_chat_member
     if not result:
         return
@@ -1462,8 +1490,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await query.message.reply_text(f"⚠️ Failed to compile PDF: {pdf_path}")
         return
 
-    # Requirement 1: Interactive "Like the Quiz" router
-# Always-Active "Like the Quiz" Handler
     if data.startswith("cmd_like_quiz_"):
         raw_aid = data.replace("cmd_like_quiz_", "")
         aid = int(raw_aid) if raw_aid.isdigit() else 0
@@ -1498,7 +1524,7 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data.startswith("reviews_page_"):
         await query.answer()
         page_no = int(data.replace("reviews_page_", ""))
-        await render_reviews_page(update, context, page=page_no)  # <--- Fixed variable name from page=no to page=page_no
+        await render_reviews_page(update, context, page=page_no)
         return
 
     if data.startswith("userkp_"):
@@ -1567,7 +1593,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text(msg, reply_markup=markup, parse_mode="Markdown")
         return
 
-    if not await maintenance_guard(update, context): return
+    if not await maintenance_guard(update, context): 
+        return
 
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 5))
 
@@ -1575,7 +1602,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await start_onboarding(update, context)
         return
 
-    if not await check_user_registration(update): return
+    if not await check_user_registration(update): 
+        return
 
     if data == "cmd_askadmin":
         await askadmin_command(update, context)
@@ -1594,6 +1622,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
             return
         
         await launch_quiz_setup(update, context)
+    elif data == "cmd_calc_booster":
+        await launch_booster_menu(update, context)
     elif data == "cmd_myplan":
         await myplan_command(update, context)
     elif data == "cmd_plans":
@@ -1669,6 +1699,44 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     anim = msg_obj.animation if msg_obj.animation else None
     caption = msg_obj.caption.strip() if msg_obj.caption else ""
 
+    # Mental math calculation answer capture
+    if context.user_data.get("awaiting_booster_user_ans"):
+        context.user_data["awaiting_booster_user_ans"] = False
+        booster_session = ACTIVE_MENTAL_BOOSTERS.pop(user.id, None)
+        if booster_session:
+            chain_data = booster_session["chain_data"]
+            correct_ans = chain_data["final_answer"]
+            user_input = text.strip()
+            
+            trail = [f"• Base: `{chain_data['steps'][0]['val']}`"]
+            for s in chain_data["steps"][1:]:
+                trail.append(f"• Step {s['step']}: `{s['instruction']}` ➔ `{s['val']}`")
+            trail_str = "\n".join(trail)
+
+            if user_input.isdigit() and int(user_input) == correct_ans:
+                res_msg = (
+                    f"🎉 **100% ACCURATE! BRILLIANT CALCULATION!** ✅\n"
+                    f"• • • ✧ • • •\n"
+                    f"Your Answer: `{user_input}` | Correct: `{correct_ans}`\n\n"
+                    f"📋 **Step-by-Step Breakdown:**\n{trail_str}"
+                )
+            else:
+                res_msg = (
+                    f"❌ **INCORRECT CALCULATION!**\n"
+                    f"• • • ✧ • • •\n"
+                    f"Your Answer: `{user_input}`\n"
+                    f"Correct Final Value: `{correct_ans}`\n\n"
+                    f"📋 **Step-by-Step Breakdown:**\n{trail_str}"
+                )
+
+            nav = InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔄 Try Another Chain", callback_data="booster_mind_steps")],
+                [InlineKeyboardButton("⚡ Booster Hub", callback_data="cmd_calc_booster")],
+                [InlineKeyboardButton("🚀 Subject Quizzes", callback_data="cmd_quiz")]
+            ])
+            await update.message.reply_text(res_msg, reply_markup=nav, parse_mode="Markdown")
+            return
+
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_password"):
         context.user_data["awaiting_admin_password"] = False
         stored_pass = get_stored_admin_password()
@@ -1682,7 +1750,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text("❌ **Incorrect PIN!** Please try typing it again.", parse_mode="Markdown")
         return
 
-    # Direct Admin AI Query Parser (No feedback buttons)
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_ai_query"):
         context.user_data["awaiting_admin_ai_query"] = False
         raw_query = text or caption
@@ -1869,7 +1936,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             await update.message.reply_text(f"❌ **Failed to deliver message:** {e}", reply_markup=get_admin_nav_buttons(target_student_id), parse_mode="Markdown")
         return
 
-    # Student Reply Handler with inquiry context retention
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_reply_qid"):
         qid = context.user_data.pop("awaiting_admin_reply_qid")
         context.user_data.pop("active_reply_query_data", None)
@@ -1981,7 +2047,8 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         )
         return
 
-    if not await maintenance_guard(update, context): return
+    if not await maintenance_guard(update, context): 
+        return
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_editname"):
@@ -2036,7 +2103,8 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
         
         target_uids = []
         for u in users:
-            if u.get('is_banned') == 2 or u.get('is_banned') == 1: continue
+            if u.get('is_banned') == 2 or u.get('is_banned') == 1: 
+                continue
             
             if bc_type == "all":
                 target_uids.append(u['user_id'])
@@ -2139,6 +2207,7 @@ async def post_init(application: Application):
 
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Quiz (Computer/English/GK)"),
+        BotCommand("booster", "⚡ Dynamic Math Calculation Booster"),
         BotCommand("myplan", "💵 Subscriptions"),
         BotCommand("plans", "💳 VIP Payment Plans"),
         BotCommand("askadmin", "💬 Secret Communication with Admin"),
@@ -2198,6 +2267,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("query", direct_admin_ask_command))
 
     app.add_handler(CommandHandler("quiz", strict_quiz_command_guard))
+    app.add_handler(CommandHandler("booster", launch_booster_menu))
     app.add_handler(CommandHandler("myplan", myplan_command))
     app.add_handler(CommandHandler("plans", plans_command))
     app.add_handler(CommandHandler("askadmin", askadmin_command))
@@ -2225,7 +2295,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_|qpass_|qinterrupt_|cmd_prompt_submit_quiz|qfinal_submit_)"))
+    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(cmd_calc_booster|booster_|bstep_|bmode_|qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_|qpass_|qinterrupt_|cmd_prompt_submit_quiz|qfinal_submit_)"))
     
     app.add_handler(CallbackQueryHandler(pdf_step_handler, pattern="^(pdfsubj_|pdftype_|pdftime_)"))
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))

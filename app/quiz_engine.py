@@ -3,6 +3,7 @@ import logging
 import time
 import os
 import json
+import random
 from telegram import Update, Poll, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from app.config import DAILY_QUESTION_LIMIT, PRIMARY_ADMIN_ID
@@ -22,6 +23,7 @@ from app.stats import (
     calculate_user_percentile, calculate_user_rank, 
     get_quiz_performance_trend, get_user_performance_summary
 )
+from app.math_booster import generate_mental_chain, generate_static_recall_questions
 
 logger = logging.getLogger(__name__)
 
@@ -29,6 +31,7 @@ ACTIVE_SESSIONS = {}
 POLL_MAP = {}
 TIMER_TASKS = {}
 QUIZ_SETUP_CACHE = {}
+ACTIVE_MENTAL_BOOSTERS = {}
 
 COMBINED_PRESETS = [
     ("10 Qs + 15s", 10, 15),
@@ -95,7 +98,8 @@ async def check_quiz_maintenance(update: Update) -> bool:
 
 async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Entry point for /quiz with ongoing/paused interruption prompt."""
-    if not await check_quiz_maintenance(update): return
+    if not await check_quiz_maintenance(update): 
+        return
 
     user = update.effective_user
     user_id = user.id
@@ -169,16 +173,131 @@ async def render_clean_subject_selection(update: Update):
     subject_keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("🖥️ 1. Computer Awareness", callback_data="qsubj_computer")],
         [InlineKeyboardButton("🔤 2. English Language", callback_data="qsubj_english")],
-        [InlineKeyboardButton("🌍 3. General Knowledge (GK)", callback_data="qsubj_gk")]
+        [InlineKeyboardButton("🌍 3. General Knowledge (GK)", callback_data="qsubj_gk")],
+        [InlineKeyboardButton("⚡ 4. Dynamic Calculation Booster 🧠", callback_data="cmd_calc_booster")]
     ])
 
-    msg_text = "🎯 **SELECT YOUR SUBJECT FOR QUIZ:**"
+    msg_text = "🎯 **SELECT YOUR SUBJECT / MODULE FOR QUIZ:**"
 
     if update.callback_query:
         await update.callback_query.edit_message_text(msg_text, reply_markup=subject_keyboard, parse_mode="Markdown")
     else:
         await update.message.reply_text(msg_text, reply_markup=subject_keyboard, parse_mode="Markdown")
 
+
+# ==============================================================
+# ⚡ DYNAMIC CALCULATION BOOSTER HANDLERS
+# ==============================================================
+
+async def launch_booster_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Hub for Calculation Booster & Mental Math."""
+    keyboard = [
+        [InlineKeyboardButton("🧠 Dynamic Mind Memory Chain", callback_data="booster_mind_steps")],
+        [InlineKeyboardButton("📐 Squares (Up to 50)", callback_data="booster_static_squares"), InlineKeyboardButton("📦 Cubes (Up to 30)", callback_data="booster_static_cubes")],
+        [InlineKeyboardButton("🔢 Tables (Up to 50)", callback_data="booster_static_tables"), InlineKeyboardButton("🔺 Pythagorean Triplets", callback_data="booster_static_triplets")],
+        [InlineKeyboardButton("📊 Percentage Fractions (1/2 to 1/16)", callback_data="booster_static_percentages")],
+        [InlineKeyboardButton("🔙 Back to Subjects", callback_data="cmd_quiz")]
+    ]
+    msg = (
+        "⚡ **CALCULATION BOOSTER & SPEED MATH HUB** ⚡\n"
+        "• • • ✧ • • •\n"
+        "Select your calculation training drill below:"
+    )
+    if update.callback_query:
+        await update.callback_query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+    else:
+        await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+
+async def booster_steps_selector(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    keyboard = [
+        [InlineKeyboardButton("🔟 10 Steps", callback_data="bstep_10"), InlineKeyboardButton("1️⃣5️⃣ 15 Steps", callback_data="bstep_15"), InlineKeyboardButton("2️⃣0️⃣ 20 Steps", callback_data="bstep_20")],
+        [InlineKeyboardButton("🔙 Back to Booster Hub", callback_data="cmd_calc_booster")]
+    ]
+    await update.callback_query.edit_message_text(
+        "🧠 **MIND MEMORY CHAIN — SELECT STEP COUNT**\n\nChoose how many calculation steps to chain mentally:",
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode="Markdown"
+    )
+
+
+async def booster_mode_selector(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    steps = int(update.callback_query.data.replace("bstep_", ""))
+    context.user_data["booster_steps"] = steps
+
+    keyboard = [
+        [InlineKeyboardButton("🟢 Easy (8s/step)", callback_data="bmode_easy"), InlineKeyboardButton("🟡 Medium (6s/step)", callback_data="bmode_medium")],
+        [InlineKeyboardButton("🟠 Hard (4s/step)", callback_data="bmode_hard"), InlineKeyboardButton("🔴 Extreme Hard (3s/step)", callback_data="bmode_extreme_hard")],
+        [InlineKeyboardButton("👑 TOPPER LEVEL (2s/step)", callback_data="bmode_topper")],
+        [InlineKeyboardButton("🔙 Back", callback_data="booster_mind_steps")]
+    ]
+    await update.callback_query.edit_message_text(
+        f"🎯 **SELECTED:** `{steps} Steps`\n\nSelect your difficulty speed mode:",
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode="Markdown"
+    )
+
+
+async def start_mental_booster_chain(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    user_id = query.from_user.id
+    chat_id = query.message.chat_id
+    mode = query.data.replace("bmode_", "")
+    steps = context.user_data.get("booster_steps", 10)
+
+    chain_data = generate_mental_chain(steps, mode)
+    timer = chain_data["step_timer"]
+
+    ACTIVE_MENTAL_BOOSTERS[user_id] = {
+        "chain_data": chain_data,
+        "chat_id": chat_id,
+        "awaiting_answer": False
+    }
+
+    status_msg = await query.edit_message_text("⚡ **Initializing Mind Chain... Get Ready!**")
+    await asyncio.sleep(1.5)
+
+    # Step 0: Base initial number
+    start_val = chain_data["steps"][0]["val"]
+    for t in range(timer, 0, -1):
+        await status_msg.edit_text(
+            f"🧠 **MIND MEMORY BOOSTER ({mode.upper()})**\n"
+            f"• • • ✧ • • •\n"
+            f"🔢 **Base Number:** `{start_val}`\n\n"
+            f"⏳ *Hold in memory:* `{t}s`",
+            parse_mode="Markdown"
+        )
+        await asyncio.sleep(1)
+
+    # Subsequent steps loop
+    for s_idx in range(1, len(chain_data["steps"])):
+        step_info = chain_data["steps"][s_idx]
+        for t in range(timer, 0, -1):
+            await status_msg.edit_text(
+                f"🧠 **MIND MEMORY BOOSTER ({mode.upper()})**\n"
+                f"• • • ✧ • • •\n"
+                f"📍 **Step {s_idx} / {steps}**\n\n"
+                f"👉 **Operation:** `{step_info['instruction']}`\n\n"
+                f"⏳ *Time Remaining:* `{t}s`",
+                parse_mode="Markdown"
+            )
+            await asyncio.sleep(1)
+
+    ACTIVE_MENTAL_BOOSTERS[user_id]["awaiting_answer"] = True
+    context.user_data["awaiting_booster_user_ans"] = True
+
+    await status_msg.edit_text(
+        f"🏁 **ALL {steps} STEPS COMPLETED!**\n"
+        f"• • • ✧ • • •\n"
+        f"⏰ *Time is up! Reply with your final calculated integer in chat below:*",
+        parse_mode="Markdown"
+    )
+
+
+# ==============================================================
+# SUBJECT ROUTING & HANDLERS
+# ==============================================================
 
 async def quiz_interrupt_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -204,7 +323,8 @@ async def quiz_interrupt_callback(update: Update, context: ContextTypes.DEFAULT_
 
 
 async def quiz_subject_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await check_quiz_maintenance(update): return
+    if not await check_quiz_maintenance(update): 
+        return
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
@@ -241,7 +361,8 @@ async def quiz_subject_callback(update: Update, context: ContextTypes.DEFAULT_TY
 
 
 async def english_category_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await check_quiz_maintenance(update): return
+    if not await check_quiz_maintenance(update): 
+        return
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
@@ -264,7 +385,8 @@ async def english_category_callback(update: Update, context: ContextTypes.DEFAUL
 
 
 async def english_full_mock_launch(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await check_quiz_maintenance(update): return
+    if not await check_quiz_maintenance(update): 
+        return
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
@@ -297,7 +419,8 @@ async def english_full_mock_launch(update: Update, context: ContextTypes.DEFAULT
 
 
 async def sub_option_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await check_quiz_maintenance(update): return
+    if not await check_quiz_maintenance(update): 
+        return
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
@@ -326,7 +449,8 @@ async def sub_option_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 
 async def english_option_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await check_quiz_maintenance(update): return
+    if not await check_quiz_maintenance(update): 
+        return
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
@@ -365,7 +489,8 @@ async def english_option_callback(update: Update, context: ContextTypes.DEFAULT_
 
 
 async def quiz_topic_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await check_quiz_maintenance(update): return
+    if not await check_quiz_maintenance(update): 
+        return
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
@@ -417,7 +542,8 @@ async def show_language_selection(query, user_id: int):
 
 
 async def quiz_language_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await check_quiz_maintenance(update): return
+    if not await check_quiz_maintenance(update): 
+        return
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
@@ -428,7 +554,6 @@ async def quiz_language_callback(update: Update, context: ContextTypes.DEFAULT_T
 
 
 async def show_passage_timer_selection(query, user_id: int, topic_display: str):
-    """Passage Presets: Exactly (5 Que + 5 Min) & (10 Que + 10 Min)."""
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
     paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
@@ -442,7 +567,7 @@ async def show_passage_timer_selection(query, user_id: int, topic_display: str):
             keyboard.append([InlineKeyboardButton(f"⚡ {label}", callback_data=f"qpass_{q_num}_{mins}")])
 
     if not keyboard:
-        keyboard.append([InlineKeyboardButton(f"⚡ 5 Que + 5 Min", callback_data=f"qpass_5_5")])
+        keyboard.append([InlineKeyboardButton(f"⚡ 5 Que + 5 Min", callback_data="qpass_5_5")])
 
     keyboard.append([InlineKeyboardButton("🔙 Back", callback_data="qeng_cat_comprehension")])
 
@@ -457,7 +582,8 @@ async def show_passage_timer_selection(query, user_id: int, topic_display: str):
 
 
 async def passage_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await check_quiz_maintenance(update): return
+    if not await check_quiz_maintenance(update): 
+        return
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
@@ -483,7 +609,6 @@ async def passage_timer_callback(update: Update, context: ContextTypes.DEFAULT_T
 
 
 async def show_combined_timer_selection(query, user_id: int):
-    """Standard Question Number + Timer selection step."""
     current_cache = QUIZ_SETUP_CACHE.get(user_id, {})
     topic_name = current_cache.get("topic_name", "Practice Session")
     profile = await asyncio.to_thread(get_user_profile, user_id)
@@ -520,7 +645,8 @@ async def show_combined_timer_selection(query, user_id: int):
 
 
 async def combined_timer_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not await check_quiz_maintenance(update): return
+    if not await check_quiz_maintenance(update): 
+        return
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
@@ -576,7 +702,7 @@ async def start_quiz_session(query, context, user_id, questions, timer_sec, quiz
     ACTIVE_SESSIONS[user_id] = session
 
     lang_str = "🌐 English" if language == "en" else "🇮🇳 हिंदी"
-    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE") else topic_name
+    title = f"{quiz_mode.replace('_', ' ').title()} #{mock_number}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE", "CALC_BOOSTER") else topic_name
 
     early_submit_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🏁 End / Submit Quiz", callback_data="cmd_prompt_submit_quiz")]])
     timer_display = f"`{total_time_mins} Minutes Total`" if total_time_mins else f"`{timer_sec}s / Question`"
@@ -612,7 +738,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     q = session["questions"][session["current_index"]]
     session["current_question"] = q
     
-    # Check if a new passage needs to be sent (e.g. starting questions 1-5 or switching to 6-10)
     current_passage = q.get("passage")
     if current_passage and current_passage != session.get("last_sent_passage"):
         session["last_sent_passage"] = current_passage
@@ -644,7 +769,7 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
     total_num = session["total"]
     
     quiz_mode = session.get("quiz_mode", "PRACTICE")
-    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE") else session.get('topic_name', 'Quiz')
+    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE", "CALC_BOOSTER") else session.get('topic_name', 'Quiz')
     
     base_header = f"📖 [{title}] — ({current_num}/{total_num}){global_time_str}\n\n"
     avail_len = 300 - len(base_header)
@@ -700,7 +825,6 @@ async def send_next_question(chat_id: int, user_id: int, context: ContextTypes.D
 
 
 async def prompt_final_submission(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE, reason: str = "user_click"):
-    """Prompts the user with Yes/No before final submit."""
     session = ACTIVE_SESSIONS.get(user_id)
     if not session:
         return
@@ -758,10 +882,12 @@ async def auto_skip_task(chat_id: int, user_id: int, poll_id: str, expected_idx:
 
 async def handle_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     answer = update.poll_answer
-    if not answer: return
+    if not answer: 
+        return
         
     poll_id = answer.poll_id
-    if poll_id not in POLL_MAP: return
+    if poll_id not in POLL_MAP: 
+        return
 
     data = POLL_MAP.pop(poll_id)
     user_id = data["user_id"]
@@ -982,7 +1108,8 @@ async def stop_quiz_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: ContextTypes.DEFAULT_TYPE):
     session = ACTIVE_SESSIONS.pop(user_id, None)
-    if not session: return
+    if not session: 
+        return
 
     total = session["total"]
     correct = session["correct"]
@@ -992,7 +1119,7 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     detailed_logs = session.get("detailed_logs", [])
     lang = session.get("language", "en")
     quiz_mode = session.get("quiz_mode", "PRACTICE")
-    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE") else session.get('topic_name', 'Quiz')
+    title = f"{quiz_mode.replace('_', ' ').title()} #{session.get('mock_number', 0)}" if quiz_mode not in ("PRACTICE", "PASSAGE_PRACTICE", "CALC_BOOSTER") else session.get('topic_name', 'Quiz')
 
     attempt_id = await asyncio.to_thread(
         record_quiz_result,
@@ -1016,7 +1143,6 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
     perf_summary = await asyncio.to_thread(get_user_performance_summary, user_id)
     total_quizzes_done = perf_summary.get("total_tests", 1)
     
-    # Marketing metric: Total quizzes conducted on the platform
     platform_total_quizzes = await asyncio.to_thread(get_total_quizzes_attempted_count)
     platform_total_likes = await asyncio.to_thread(get_total_platform_likes)
 
@@ -1061,7 +1187,23 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
 
 async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = update.callback_query.data
-    if data.startswith("qinterrupt_"):
+    if data == "cmd_calc_booster":
+        await launch_booster_menu(update, context)
+    elif data == "booster_mind_steps":
+        await booster_steps_selector(update, context)
+    elif data.startswith("bstep_"):
+        await booster_mode_selector(update, context)
+    elif data.startswith("bmode_"):
+        await start_mental_booster_chain(update, context)
+    elif data.startswith("booster_static_"):
+        cat = data.replace("booster_static_", "")
+        qs = generate_static_recall_questions(cat, count=10)
+        await start_quiz_session(
+            update.callback_query, context, update.callback_query.from_user.id,
+            qs, timer_sec=15, quiz_mode="CALC_BOOSTER", mock_number=0,
+            subject="math", topic=cat, topic_name=f"Math Recall ({cat.title()})", language="en"
+        )
+    elif data.startswith("qinterrupt_"):
         await quiz_interrupt_callback(update, context)
     elif data == "cmd_prompt_submit_quiz":
         await prompt_final_submission(update.callback_query.message.chat_id, update.callback_query.from_user.id, context)

@@ -28,7 +28,7 @@ from app.database import (
     sync_user_json_profile, get_ist_timestamp_str, get_db, release_db, get_user_profile,
     fetch_pending_announcements, update_announcement_status, get_all_users, record_broadcast_delivery,
     get_active_flash_sale, calculate_discounted_price, get_user_by_phone, infer_plan_key_from_amount,
-    auto_sync_uncredited_paid_users
+    auto_sync_uncredited_paid_users, clean_decimals
 )
 from app.pdf_generator import generate_payment_invoice_pdf
 
@@ -367,7 +367,8 @@ async def scheduled_expiry_reminder_check():
 
             now = datetime.now(ist)
 
-            for u in users:
+            for raw_u in users:
+                u = clean_decimals(dict(raw_u))
                 uid = u['user_id']
                 name = u['full_name'] or "Student"
                 exp_str = u['vip_pass_expiry']

@@ -2200,6 +2200,9 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
 
 
 async def global_error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
+    err_str = str(context.error)
+    if "Message is not modified" in err_str:
+        return
     logging.error(f"Exception caught in global error handler: {context.error}")
 
 

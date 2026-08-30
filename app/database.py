@@ -6,6 +6,7 @@ import pytz
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from psycopg2 import pool
+from decimal import Decimal
 from app.config import USER_PROFILES_DIR, PLAN_TIERS, DAILY_QUESTION_LIMIT
 
 logger = logging.getLogger(__name__)
@@ -42,6 +43,16 @@ def get_ist_date_str():
 
 def get_ist_timestamp_str():
     return get_ist_now().strftime("%Y-%m-%d %H:%M:%S IST")
+
+def clean_decimals(obj):
+    """Recursively converts Decimal objects to float for JSON/HTTP serialization."""
+    if isinstance(obj, list):
+        return [clean_decimals(i) for i in obj]
+    elif isinstance(obj, dict):
+        return {k: clean_decimals(v) for k, v in obj.items()}
+    elif isinstance(obj, Decimal):
+        return float(obj)
+    return obj
 
 def calculate_discounted_price(original_price, discount_percent) -> int:
     try:
@@ -818,7 +829,7 @@ def get_paid_users():
     rows = cursor.fetchall()
     cursor.close()
     release_db(conn)
-    return [dict(r) for r in rows]
+    return [clean_decimals(dict(r)) for r in rows]
 
 def sync_user_json_profile(user_id: int):
     conn = get_db()
@@ -831,7 +842,7 @@ def sync_user_json_profile(user_id: int):
         release_db(conn)
         return
 
-    user_dict = dict(user_row)
+    user_dict = clean_decimals(dict(user_row))
     student_id = user_dict.get("student_id") or f"USER_{user_id}"
 
     cursor.execute("SELECT * FROM quiz_attempts WHERE user_id = %s ORDER BY id DESC", (user_id,))
@@ -854,7 +865,7 @@ def sync_user_json_profile(user_id: int):
     mock_mode_counts = {}
 
     for a in attempts_rows:
-        ad = dict(a)
+        ad = clean_decimals(dict(a))
         if ad.get("details_json"):
             try:
                 ad["question_details"] = json.loads(ad["details_json"])
@@ -886,7 +897,7 @@ def sync_user_json_profile(user_id: int):
     formatted_saved_qs = []
     datewise_saved_summary = {}
     for s in saved_rows:
-        sd = dict(s)
+        sd = clean_decimals(dict(s))
         if sd.get("options_json"):
             try:
                 sd["options"] = json.loads(sd["options_json"])
@@ -931,7 +942,7 @@ def sync_user_json_profile(user_id: int):
             "datewise_saved_summary": datewise_saved_summary,
             "saved_questions": formatted_saved_qs
         },
-        "student_reviews_given": [dict(f) for f in feedback_rows],
+        "student_reviews_given": [clean_decimals(dict(f)) for f in feedback_rows],
         "subscription_ledger": {
             "status": sub_status,
             "paid_question_balance": paid_balance,
@@ -948,7 +959,7 @@ def sync_user_json_profile(user_id: int):
     filepath = os.path.join(USER_PROFILES_DIR, f"{student_id}.json")
     try:
         with open(filepath, "w", encoding="utf-8") as f:
-            json.dump(profile_data, f, indent=4, ensure_ascii=False)
+            json.dump(clean_decimals(profile_data), f, indent=4, ensure_ascii=False)
     except Exception as e:
         logger.error(f"Failed to sync JSON profile for student {student_id}: {e}")
 
@@ -1032,7 +1043,7 @@ def get_user_profile(user_id):
     if not row:
         return None
 
-    u_dict = dict(row)
+    u_dict = clean_decimals(dict(row))
 
     if u_dict.get("paid_question_balance", 0) <= DAILY_QUESTION_LIMIT or not u_dict.get("vip_pass_expiry"):
         restored = recalculate_and_restore_user_plans(user_id)
@@ -1044,7 +1055,7 @@ def get_user_profile(user_id):
             cursor.close()
             release_db(conn)
             if updated_row:
-                return dict(updated_row)
+                return clean_decimals(dict(updated_row))
 
     return u_dict
 
@@ -1055,7 +1066,7 @@ def get_all_users():
     rows = cursor.fetchall()
     cursor.close()
     release_db(conn)
-    return [dict(r) for r in rows]
+    return [clean_decimals(dict(r)) for r in rows]
 
 def get_today_attempts(user_id):
     conn = get_db()
@@ -1076,7 +1087,7 @@ def record_quiz_result(user_id, quiz_id="computer_awareness_mock", score=0.0, to
     cursor = conn.cursor()
     today_date = get_ist_date_str()
     timestamp_str = get_ist_timestamp_str()
-    details_str = json.dumps(question_details) if question_details else json.dumps([])
+    details_str = json.dumps(clean_decimals(question_details)) if question_details else json.dumps([])
     topics_str = json.dumps(selected_topics) if isinstance(selected_topics, list) else (str(selected_topics) if selected_topics else None)
     
     cursor.execute('''
@@ -1145,7 +1156,7 @@ def save_question_to_db(user_id: int, q_text: str, options: list, correct_option
         cursor.execute('''
             INSERT INTO saved_questions (user_id, question_text, options_json, correct_option, explanation, saved_at)
             VALUES (%s, %s, %s, %s, %s, %s)
-        ''', (user_id, q_text, json.dumps(options), correct_option, explanation, now_str))
+        ''', (user_id, q_text, json.dumps(clean_decimals(options)), correct_option, explanation, now_str))
         conn.commit()
         success = True
     except Exception:
@@ -1162,7 +1173,7 @@ def get_saved_questions(user_id: int):
     rows = cursor.fetchall()
     cursor.close()
     release_db(conn)
-    return [dict(r) for r in rows]
+    return [clean_decimals(dict(r)) for r in rows]
 
 def save_student_feedback(user_id: int, full_name: str, feedback_text: str):
     conn = get_db()
@@ -1184,7 +1195,7 @@ def get_all_student_feedbacks(limit: int = 15):
     rows = cursor.fetchall()
     cursor.close()
     release_db(conn)
-    return [dict(r) for r in rows]
+    return [clean_decimals(dict(r)) for r in rows]
 
 def get_student_feedbacks_count() -> int:
     conn = get_db()
@@ -1210,7 +1221,7 @@ def get_paginated_student_feedbacks(page: int = 0, limit: int = 5) -> list:
             (limit, offset)
         )
         rows = cursor.fetchall()
-        return [dict(r) for r in rows] if rows else []
+        return [clean_decimals(dict(r)) for r in rows] if rows else []
     except Exception as e:
         logger.error(f"[GET PAGINATED FEEDBACKS ERROR] {e}")
         return []
@@ -1245,7 +1256,7 @@ def save_paused_quiz_state(user_id: int, quiz_state: dict):
         ON CONFLICT(user_id) DO UPDATE SET
             quiz_state = EXCLUDED.quiz_state,
             saved_at = EXCLUDED.saved_at
-    ''', (user_id, json.dumps(quiz_state), now_str))
+    ''', (user_id, json.dumps(clean_decimals(quiz_state)), now_str))
     conn.commit()
     cursor.close()
     release_db(conn)
@@ -1280,7 +1291,7 @@ def create_flash_sale(sale_name: str, discount_percent: float, valid_until: date
         """, (sale_name.strip(), float(discount_percent), now_dt, valid_until, created_by))
         row = cursor.fetchone()
         conn.commit()
-        res = dict(row) if row else {}
+        res = clean_decimals(dict(row)) if row else {}
         if res.get("discount_percent") is not None:
             res["discount_percent"] = float(res["discount_percent"])
         return res
@@ -1307,7 +1318,7 @@ def get_active_flash_sale() -> dict:
             cursor.execute("UPDATE flash_sales SET is_active = FALSE WHERE is_active = TRUE AND valid_until <= %s;", (now_dt,))
             conn.commit()
             return None
-        res = dict(row)
+        res = clean_decimals(dict(row))
         if res.get("discount_percent") is not None:
             res["discount_percent"] = float(res["discount_percent"])
         return res
@@ -1344,7 +1355,7 @@ def schedule_announcement(message_text: str, media_file_id: str, media_type: str
         """, (message_text, media_file_id, media_type, scheduled_time, created_by))
         annc = cursor.fetchone()
         conn.commit()
-        return dict(annc)
+        return clean_decimals(dict(annc))
     except Exception as e:
         conn.rollback()
         logger.error(f"Error scheduling announcement: {e}")
@@ -1363,7 +1374,7 @@ def fetch_pending_announcements() -> list:
             WHERE status = 'PENDING' AND scheduled_time <= %s
             ORDER BY scheduled_time ASC;
         """, (now_ist_str,))
-        return [dict(r) for r in cursor.fetchall()]
+        return [clean_decimals(dict(r)) for r in cursor.fetchall()]
     except Exception as e:
         logger.error(f"Error fetching pending announcements: {e}")
         return []
@@ -1487,7 +1498,7 @@ def get_broadcast_deliveries(announcement_id: int) -> list:
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     try:
         cursor.execute("SELECT user_id, message_id FROM broadcast_deliveries WHERE announcement_id = %s", (announcement_id,))
-        return [dict(r) for r in cursor.fetchall()]
+        return [clean_decimals(dict(r)) for r in cursor.fetchall()]
     except Exception as e:
         logger.error(f"Error getting broadcast deliveries: {e}")
         return []
@@ -1504,7 +1515,7 @@ def get_pending_announcements_list() -> list:
             WHERE status = 'PENDING' 
             ORDER BY scheduled_time ASC;
         """)
-        return [dict(r) for r in cursor.fetchall()]
+        return [clean_decimals(dict(r)) for r in cursor.fetchall()]
     except Exception as e:
         logger.error(f"Error getting pending announcements: {e}")
         return []
@@ -1524,7 +1535,7 @@ def get_sent_announcements_list(limit: int = 20) -> list:
             GROUP BY a.id
             ORDER BY a.id DESC LIMIT %s;
         """, (limit,))
-        return [dict(r) for r in cursor.fetchall()]
+        return [clean_decimals(dict(r)) for r in cursor.fetchall()]
     except Exception as e:
         logger.error(f"Error getting sent announcements: {e}")
         return []
@@ -1538,7 +1549,7 @@ def get_announcement_by_id(announcement_id: int) -> dict:
     try:
         cursor.execute("SELECT * FROM scheduled_announcements WHERE id = %s", (announcement_id,))
         row = cursor.fetchone()
-        return dict(row) if row else None
+        return clean_decimals(dict(row)) if row else None
     except Exception as e:
         logger.error(f"Error getting announcement by ID: {e}")
         return None
@@ -1556,7 +1567,7 @@ def get_blocked_bot_users() -> list:
             LEFT JOIN users u ON b.user_id = u.user_id
             ORDER BY b.blocked_at DESC;
         """)
-        return [dict(r) for r in cursor.fetchall()]
+        return [clean_decimals(dict(r)) for r in cursor.fetchall()]
     except Exception as e:
         logger.error(f"Error fetching blocked bot users: {e}")
         return []

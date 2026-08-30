@@ -353,7 +353,7 @@ def calculate_financial_revenue():
         rev_all = 0
 
         for r in rows:
-            amt = r.get("amount_paid", 0) or 0
+            amt = float(r.get("amount_paid", 0) or 0)
             rev_all += amt
             dt_str = r.get("created_at", "")
             try:
@@ -409,7 +409,8 @@ def get_platform_usage_summary():
         conn = get_db()
         cursor = conn.cursor()
         cursor.execute("SELECT SUM(seconds_spent) FROM user_activity_time")
-        total_sec = cursor.fetchone()[0] or 0
+        res = cursor.fetchone()
+        total_sec = int(res[0]) if (res and res[0] is not None) else 0
         cursor.close()
         release_db(conn)
 
@@ -489,13 +490,14 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         return
 
     users = get_all_users()
-    active_registered = [u for u in users if u.get("is_banned") != 2]
+    active_registered = [u for u in users if int(u.get("is_banned") or 0) != 2]
     total_likes = get_total_platform_likes()
     
     paid_count = 0
     demo_count = 0
     for u in active_registered:
-        is_paid = u.get("paid_question_balance", 0) > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
+        bal = int(float(u.get("paid_question_balance") or 0))
+        is_paid = bal > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
         if is_paid:
             paid_count += 1
         else:
@@ -643,7 +645,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
     payment_id = f"ADMIN_GRANT_{int(time.time())}"
 
     profile = get_user_profile(target_uid) or {}
-    current_bal = profile.get("paid_question_balance", 0) or 0
+    current_bal = int(float(profile.get("paid_question_balance") or 0))
     new_bal = current_bal + plan["daily_limit"]
 
     conn = None
@@ -936,7 +938,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         count_demo_expired = 0
         
         for u in users:
-            if u.get("is_banned") == 2: continue
+            if int(u.get("is_banned") or 0) == 2: continue
             exp_str = u.get("vip_pass_expiry")
             if not exp_str: continue
             try:
@@ -945,7 +947,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 exp_dt = ist.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
             except Exception: continue
                 
-            is_paid_user = u.get("paid_question_balance", 0) > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
+            bal = int(float(u.get("paid_question_balance") or 0))
+            is_paid_user = bal > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
             
             if exp_dt > now_ist:
                 if is_paid_user:
@@ -986,7 +989,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         
         matched_users = []
         for u in users:
-            if u.get("is_banned") == 2: continue
+            if int(u.get("is_banned") or 0) == 2: continue
             exp_str = u.get("vip_pass_expiry")
             if not exp_str: continue
             try:
@@ -995,7 +998,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 exp_dt = ist.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
             except Exception: continue
                 
-            is_paid_user = u.get("paid_question_balance", 0) > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
+            bal = int(float(u.get("paid_question_balance") or 0))
+            is_paid_user = bal > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
             
             if seg_type == "paidactive" and exp_dt > now_ist and is_paid_user: matched_users.append(u)
             elif seg_type == "expiringsoon" and exp_dt > now_ist and exp_dt <= next_week and is_paid_user: matched_users.append(u)
@@ -1059,7 +1063,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         target_uid = int(data.replace("admin_revoke_menu_", ""))
         u = get_user_profile(target_uid) or {}
         st_name = u.get("full_name", "Student")
-        current_bal = u.get("paid_question_balance", 0)
+        current_bal = int(float(u.get("paid_question_balance") or 0))
 
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -1071,8 +1075,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.close()
         release_db(conn)
 
-        grant_sum = sum([g.get('daily_quota', 0) for g in admin_grants])
-        paid_sum = sum([p.get('daily_quota', 0) for p in paid_purchases])
+        grant_sum = sum([int(g.get('daily_quota') or 0) for g in admin_grants])
+        paid_sum = sum([int(p.get('daily_quota') or 0) for p in paid_purchases])
 
         msg = (
             f"🚫 **PLAN MANAGEMENT FOR {st_name.upper()}** 🚫\n"
@@ -1214,7 +1218,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         today_paid_students = []
 
         for r in all_txs:
-            amt = r.get("amount_paid", 0) or 0
+            amt = float(r.get("amount_paid", 0) or 0)
             rev_all += amt
             dt_str = r.get("created_at", "")
             try:
@@ -1483,7 +1487,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             )
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 View Discounted Plans", callback_data="cmd_plans"), InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
             
-            target_uids = [u['user_id'] for u in users if u.get('is_banned') != 2 and not u.get('is_banned')]
+            target_uids = [u['user_id'] for u in users if int(u.get('is_banned') or 0) != 2 and not u.get('is_banned')]
             sent_count = await fast_concurrent_broadcast(context.bot, target_uids, b_msg, reply_markup=btn)
             broadcast_status = f"✅ Broadcast delivered to `{sent_count}/{len(target_uids)}` students."
         else:
@@ -1561,7 +1565,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"🚀 Tap **/plans** below to upgrade your daily questions before the sale ends!"
         )
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 Grab Discounted Plan", callback_data="cmd_plans")]])
-        target_uids = [u['user_id'] for u in users if u.get('is_banned') != 2 and not u.get('is_banned')]
+        target_uids = [u['user_id'] for u in users if int(u.get('is_banned') or 0) != 2 and not u.get('is_banned')]
         
         await query.edit_message_text("⏳ **Re-broadcasting sale reminder to all students...**")
         sent_count = await fast_concurrent_broadcast(context.bot, target_uids, b_msg, reply_markup=btn)
@@ -2316,7 +2320,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             parse_mode="Markdown"
         )
         
-        target_uids = [u['user_id'] for u in users if u.get('is_banned') != 2]
+        target_uids = [u['user_id'] for u in users if int(u.get('is_banned') or 0) != 2]
         pause_txt = f"📢 **ADMIN NOTICE:** Bot services have been temporarily paused for {hours_label}."
         await fast_concurrent_broadcast(context.bot, target_uids, pause_txt)
 
@@ -2326,7 +2330,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to System Menu", callback_data="admin_menu_system")]])
         await query.edit_message_text("🟢 **Bot Service RESUMED Immediately.**\nBroadcasting status to all users...", reply_markup=back_btn, parse_mode="Markdown")
         
-        target_uids = [u['user_id'] for u in users if u.get('is_banned') != 2]
+        target_uids = [u['user_id'] for u in users if int(u.get('is_banned') or 0) != 2]
         resume_txt = "📢 **ADMIN HAS RESUMED SERVICES! YOU CAN ATTEMPT QUIZZES NOW!**"
         await fast_concurrent_broadcast(context.bot, target_uids, resume_txt)
 
@@ -2375,7 +2379,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         sync_user_json_profile(target_uid)
 
         profile = get_user_profile(target_uid) or {}
-        tot_quota = (profile.get("paid_question_balance", 0) or 20) + profile.get("bonus_quota", 0)
+        tot_quota = int(float(profile.get("paid_question_balance") or 20)) + int(profile.get("bonus_quota") or 0)
         user_announcement = (
             f"🎁 **SPECIAL ANNOUNCEMENT: BONUS QUOTA INCREASED!** 🎁\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -2530,7 +2534,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     elif data.startswith("admin_users_page_"):
         await query.answer()
         page = int(data.replace("admin_users_page_", ""))
-        active_users = [u for u in users if u.get("is_banned") != 2]
+        active_users = [u for u in users if int(u.get("is_banned") or 0) != 2]
         total_users = len(active_users)
 
         if total_users == 0:
@@ -2547,8 +2551,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         keyboard = []
         for u in page_users:
             sid = u.get("student_id") or f"USER_{u['user_id']}"
-            ban_flag = " 🛑" if u.get("is_banned") == 1 else ""
-            paid_flag = " 💳" if u.get("paid_question_balance", 0) > 0 else ""
+            ban_flag = " 🛑" if int(u.get("is_banned") or 0) == 1 else ""
+            paid_flag = " 💳" if int(float(u.get("paid_question_balance") or 0)) > 0 else ""
             btn_text = f"👤 {u['full_name']}{paid_flag}{ban_flag} (ID: {sid})"
             keyboard.append([InlineKeyboardButton(btn_text, callback_data=f"admin_inspect_u_{u['user_id']}")])
 
@@ -2581,7 +2585,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             return
 
         sid = u.get("student_id") or f"USER_{u.get('user_id')}"
-        is_banned = u.get("is_banned", 0)
+        is_banned = int(u.get("is_banned") or 0)
         
         if is_banned == 2:
             ban_text = "🔴 BLOCKED / INACTIVE"
@@ -2593,17 +2597,24 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             ban_text = "🟢 ACTIVE"
             ban_btn_label = "🔴 Ban Student"
 
-        paid_bal = u.get("paid_question_balance", 0)
+        paid_bal = int(float(u.get("paid_question_balance") or 0))
         is_paid = paid_bal > 20 and u.get("payment_id") and u.get("payment_id") not in ('DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
         paid_text = f"💳 PAID VIP ({paid_bal} Qs/Day)" if is_paid else "🆓 FREE DEMO / TIER"
 
-        # Requirement 2: Query total attempted quizzes for student profile
-        conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute("SELECT COUNT(*) FROM quiz_attempts WHERE user_id = %s", (target_uid,))
-        total_quizzes_count = cursor.fetchone()[0] or 0
-        cursor.close()
-        release_db(conn)
+        conn = None
+        total_quizzes_count = 0
+        try:
+            conn = get_db()
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) FROM quiz_attempts WHERE user_id = %s", (target_uid,))
+            res = cursor.fetchone()
+            total_quizzes_count = res[0] if res else 0
+            cursor.close()
+            release_db(conn)
+        except Exception as e:
+            if conn:
+                release_db(conn)
+            logger.error(f"[ADMIN INSPECT QUIZ COUNT ERROR] {e}")
 
         keyboard = [
             [InlineKeyboardButton("📩 Direct Message Student", callback_data=f"admin_direct_msg_{target_uid}"), InlineKeyboardButton("⚠️ Issue Warning", callback_data=f"admin_issue_warning_prompt_{target_uid}")],
@@ -2727,23 +2738,31 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             return
 
         sid = u.get("student_id") or f"USER_{u.get('user_id')}"
-        is_b = u.get("is_banned", 0)
+        is_b = int(u.get("is_banned") or 0)
         ban_status = "BLOCKED / INACTIVE 🔴" if is_b == 2 else ("BANNED 🔴" if is_b == 1 else "ACTIVE 🟢")
         
-        edit_cnt = u.get("edit_count", 0)
+        edit_cnt = int(u.get("edit_count") or 0)
         last_edit = u.get("last_profile_edit", "Never")
         remaining_edits = max(0, 3 - edit_cnt)
 
-        paid_bal = u.get("paid_question_balance", 0)
+        paid_bal = int(float(u.get("paid_question_balance") or 0))
         is_paid = paid_bal > 20 and u.get("payment_id") and u.get("payment_id") not in ('DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
         paid_str = f"💳 YES ({paid_bal} Qs/Day)" if is_paid else "🆓 NO (Free Demo / Tier)"
 
-        conn = get_db()
-        cursor = conn.cursor()
-        cursor.execute("SELECT COUNT(*) FROM quiz_attempts WHERE user_id = %s", (target_uid,))
-        total_quizzes_count = cursor.fetchone()[0] or 0
-        cursor.close()
-        release_db(conn)
+        conn = None
+        total_quizzes_count = 0
+        try:
+            conn = get_db()
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) FROM quiz_attempts WHERE user_id = %s", (target_uid,))
+            res = cursor.fetchone()
+            total_quizzes_count = res[0] if res else 0
+            cursor.close()
+            release_db(conn)
+        except Exception as e:
+            if conn:
+                release_db(conn)
+            logger.error(f"[ADMIN AUDIT PERSONAL QUIZ COUNT ERROR] {e}")
 
         msg = (
             f"📋 **STUDENT PERSONAL DETAILS** 📋\n"
@@ -2764,11 +2783,11 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Location:** `{u.get('state', 'N/A')}, {u.get('country', 'India')}`\n"
             f"• **Profile Edits Made:** `{edit_cnt} / 3 times` *(Last: {last_edit})*\n"
             f"• **Remaining Edits:** `{remaining_edits} left`\n"
-            f"• **Bonus Quota:** `{u.get('bonus_quota', 0)} Qs`\n"
+            f"• **Bonus Quota:** `{int(u.get('bonus_quota') or 0)} Qs`\n"
             f"• **Registered At:** `{u.get('created_at', 'N/A')}`\n"
             f"• **Last Active:** `{u.get('last_active', 'N/A')}`\n"
             f"• **Referred By ID:** `{u.get('referred_by') or 'None'}`\n"
-            f"• **Referral Count:** `{u.get('referral_count', 0)}` friends"
+            f"• **Referral Count:** `{int(u.get('referral_count') or 0)}` friends"
         )
         keyboard = [
             [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
@@ -2788,7 +2807,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.close()
         release_db(conn)
 
-        total_sec = sum([r['seconds_spent'] for r in rows]) if rows else 0
+        total_sec = sum([int(r['seconds_spent'] or 0) for r in rows]) if rows else 0
         total_hrs = round(total_sec / 3600.0, 2)
         total_mins = round(total_sec / 60.0, 1)
         
@@ -2803,9 +2822,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         if rows:
             for r in rows:
-                mins = round(r['seconds_spent'] / 60, 2)
-                hrs = round(r['seconds_spent'] / 3600.0, 2)
-                lines.append(f" • `{r['date_str']}`: {hrs} hrs ({mins} mins / {r['seconds_spent']}s)")
+                spent = int(r['seconds_spent'] or 0)
+                mins = round(spent / 60, 2)
+                hrs = round(spent / 3600.0, 2)
+                lines.append(f" • `{r['date_str']}`: {hrs} hrs ({mins} mins / {spent}s)")
         else:
             lines.append(" • *No activity time recorded yet.*")
 
@@ -2824,8 +2844,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         rank = calculate_user_rank(target_uid)
         percentile = calculate_user_percentile(target_uid)
 
-        total_qs = perf.get('total_qs', 0) or 0
-        total_correct = perf.get('total_correct', 0) or 0
+        total_qs = int(perf.get('total_qs', 0) or 0)
+        total_correct = int(perf.get('total_correct', 0) or 0)
         acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
 
         msg = (
@@ -2838,7 +2858,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Wrong Answers:** `{perf.get('total_wrong', 0)}` ❌\n"
             f"• **Skipped Questions:** `{perf.get('total_skipped', 0)}` ⏭\n"
             f"• **Accuracy Rating:** `{acc}%`\n"
-            f"• **Normalized Score:** `{round(perf.get('avg_score', 0.0) or 0.0, 2)}%`\n"
+            f"• **Normalized Score:** `{round(float(perf.get('avg_score', 0.0) or 0.0), 2)}%`\n"
             f"• **Global Rank:** `{rank}` 🥇\n"
             f"• **Overall Percentile:** `{percentile}%`"
         )
@@ -2876,9 +2896,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 if dt not in summary:
                     summary[dt] = {"tests": 0, "qs": 0, "correct": 0, "score": 0.0}
                 summary[dt]["tests"] += 1
-                summary[dt]["qs"] += ad.get("questions_attempted", 0) or 0
-                summary[dt]["correct"] += ad.get("correct_answers", 0) or 0
-                summary[dt]["score"] += ad.get("score", 0.0) or 0.0
+                summary[dt]["qs"] += int(ad.get("questions_attempted", 0) or 0)
+                summary[dt]["correct"] += int(ad.get("correct_answers", 0) or 0)
+                summary[dt]["score"] += float(ad.get("score", 0.0) or 0.0)
 
             for dt, stats in summary.items():
                 lines.append(
@@ -3016,7 +3036,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             for idx, sq in enumerate(saved, start=1):
                 sq_d = dict(sq)
                 opts_list = json.loads(sq_d['options_json']) if sq_d.get('options_json') else []
-                c_opt_idx = sq_d.get("correct_option", 0)
+                c_opt_idx = int(sq_d.get("correct_option") or 0)
                 ans_text = opts_list[c_opt_idx] if 0 <= c_opt_idx < len(opts_list) else "N/A"
                 s_at = sq_d.get("saved_at", "N/A")
                 lines.append(f"**{idx}. [{s_at}]** 📌 `{sq_d['question_text']}`\n    👉 **Correct Ans:** `{ans_text}`")

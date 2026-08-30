@@ -23,7 +23,9 @@ from app.stats import (
     calculate_user_percentile, calculate_user_rank, 
     get_quiz_performance_trend, get_user_performance_summary
 )
-from app.math_booster import generate_mental_chain, generate_static_recall_questions
+from app.math_booster import (
+    generate_mental_chain, generate_static_recall_questions, generate_operation_questions
+)
 
 logger = logging.getLogger(__name__)
 
@@ -193,9 +195,11 @@ async def launch_booster_menu(update: Update, context: ContextTypes.DEFAULT_TYPE
     """Hub for Calculation Booster & Mental Math."""
     keyboard = [
         [InlineKeyboardButton("🧠 Dynamic Mind Memory Chain", callback_data="booster_mind_steps")],
+        [InlineKeyboardButton("➕ Addition (+)", callback_data="bop_add"), InlineKeyboardButton("➖ Subtraction (−)", callback_data="bop_sub")],
+        [InlineKeyboardButton("✖️ Multiplication (×)", callback_data="bop_mult"), InlineKeyboardButton("➗ Division (÷)", callback_data="bop_div")],
         [InlineKeyboardButton("📐 Squares (Up to 50)", callback_data="booster_static_squares"), InlineKeyboardButton("📦 Cubes (Up to 30)", callback_data="booster_static_cubes")],
         [InlineKeyboardButton("🔢 Tables (Up to 50)", callback_data="booster_static_tables"), InlineKeyboardButton("🔺 Pythagorean Triplets", callback_data="booster_static_triplets")],
-        [InlineKeyboardButton("📊 Percentage Fractions (1/2 to 1/16)", callback_data="booster_static_percentages")],
+        [InlineKeyboardButton("📊 Percentage Fractions (1/2 to 1/25)", callback_data="booster_static_percentages")],
         [InlineKeyboardButton("🔙 Back to Subjects", callback_data="cmd_quiz")]
     ]
     msg = (
@@ -207,6 +211,26 @@ async def launch_booster_menu(update: Update, context: ContextTypes.DEFAULT_TYPE
         await update.callback_query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
     else:
         await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+
+async def booster_operation_difficulty_selector(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    op_type = query.data.replace("bop_", "")
+    context.user_data["bop_type"] = op_type
+
+    labels = {"add": "Addition (+)", "sub": "Subtraction (−)", "mult": "Multiplication (×)", "div": "Division (÷)"}
+    title = labels.get(op_type, "Arithmetic")
+
+    keyboard = [
+        [InlineKeyboardButton("🟢 Easy Mode", callback_data=f"bopdiff_{op_type}_easy"), InlineKeyboardButton("🟡 Medium Mode", callback_data=f"bopdiff_{op_type}_medium")],
+        [InlineKeyboardButton("🟠 Hard Mode", callback_data=f"bopdiff_{op_type}_hard"), InlineKeyboardButton("🔴 Extreme Mode", callback_data=f"bopdiff_{op_type}_extreme")],
+        [InlineKeyboardButton("🔙 Back to Booster Hub", callback_data="cmd_calc_booster")]
+    ]
+    await query.edit_message_text(
+        f"⚡ **{title.upper()} DRILL**\n• • • ✧ • • •\nChoose difficulty level:",
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode="Markdown"
+    )
 
 
 async def booster_steps_selector(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1223,8 +1247,26 @@ async def finish_quiz_and_send_report(chat_id: int, user_id: int, context: Conte
 
 async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = update.callback_query.data
+    user_id = update.callback_query.from_user.id
+
     if data == "cmd_calc_booster":
         await launch_booster_menu(update, context)
+    elif data.startswith("bop_"):
+        await booster_operation_difficulty_selector(update, context)
+    elif data.startswith("bopdiff_"):
+        parts = data.split("_")
+        op_type = parts[1]
+        difficulty = parts[2]
+        
+        labels = {"add": "Addition (+)", "sub": "Subtraction (−)", "mult": "Multiplication (×)", "div": "Division (÷)"}
+        title = f"{labels.get(op_type, 'Math')} ({difficulty.capitalize()})"
+        
+        qs = generate_operation_questions(op_type, difficulty, count=10)
+        await start_quiz_session(
+            update.callback_query, context, user_id,
+            qs, timer_sec=15, quiz_mode="CALC_BOOSTER", mock_number=0,
+            subject="math", topic=f"{op_type}_{difficulty}", topic_name=title, language="en"
+        )
     elif data == "booster_mind_steps":
         await booster_steps_selector(update, context)
     elif data == "booster_mid_stop":
@@ -1237,17 +1279,17 @@ async def quiz_extended_router(update: Update, context: ContextTypes.DEFAULT_TYP
         cat = data.replace("booster_static_", "")
         qs = generate_static_recall_questions(cat, count=10)
         await start_quiz_session(
-            update.callback_query, context, update.callback_query.from_user.id,
+            update.callback_query, context, user_id,
             qs, timer_sec=15, quiz_mode="CALC_BOOSTER", mock_number=0,
             subject="math", topic=cat, topic_name=f"Math Recall ({cat.title()})", language="en"
         )
     elif data.startswith("qinterrupt_"):
         await quiz_interrupt_callback(update, context)
     elif data == "cmd_prompt_submit_quiz":
-        await prompt_final_submission(update.callback_query.message.chat_id, update.callback_query.from_user.id, context)
+        await prompt_final_submission(update.callback_query.message.chat_id, user_id, context)
     elif data == "qfinal_submit_yes":
         await update.callback_query.answer("Submitting Quiz...")
-        await finish_quiz_and_send_report(update.callback_query.message.chat_id, update.callback_query.from_user.id, context)
+        await finish_quiz_and_send_report(update.callback_query.message.chat_id, user_id, context)
     elif data == "qfinal_submit_no":
         await update.callback_query.answer("Continuing Quiz!")
         await update.callback_query.edit_message_text("▶️ **Quiz in progress. Use controls to resume or pause anytime.**", parse_mode="Markdown")

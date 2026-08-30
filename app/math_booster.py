@@ -1,12 +1,24 @@
 import random
 
-# Static Rapid-Recall Banks
+# Fixed static lookup sets
 PERCENTAGE_FRACTIONS = [
-    ("1/2", "50%"), ("1/3", "33.33% / 33 1/3%"), ("1/4", "25%"),
-    ("1/5", "20%"), ("1/6", "16.66% / 16 2/3%"), ("1/7", "14.28% / 14 2/7%"),
-    ("1/8", "12.5% / 12 1/2%"), ("1/9", "11.11% / 11 1/9%"), ("1/10", "10%"),
-    ("1/11", "9.09% / 9 1/11%"), ("1/12", "8.33% / 8 1/3%"), ("1/13", "7.69% / 7 9/13%"),
-    ("1/14", "7.14% / 7 1/7%"), ("1/15", "6.66% / 6 2/3%"), ("1/16", "6.25% / 6 1/4%")
+    ("1/2", "50%"),
+    ("1/3", "33.33% / 33 1/3%"),
+    ("1/4", "25%"),
+    ("1/5", "20%"),
+    ("1/6", "16.66% / 16 2/3%"),
+    ("1/7", "14.28% / 14 2/7%"),
+    ("1/8", "12.5% / 12 1/2%"),
+    ("1/9", "11.11% / 11 1/9%"),
+    ("1/10", "10%"),
+    ("1/11", "9.09% / 9 1/11%"),
+    ("1/12", "8.33% / 8 1/3%"),
+    ("1/13", "7.69% / 7 9/13%"),
+    ("1/14", "7.14% / 7 1/7%"),
+    ("1/15", "6.66% / 6 2/3%"),
+    ("1/16", "6.25% / 6 1/4%"),
+    ("1/20", "5%"),
+    ("1/25", "4%")
 ]
 
 PYTHAGOREAN_TRIPLETS = [
@@ -16,7 +28,6 @@ PYTHAGOREAN_TRIPLETS = [
     (65, 72, 97), (20, 99, 101), (60, 91, 109), (15, 112, 113), (44, 117, 125)
 ]
 
-# All difficulty modes have a fixed 6-second timer per step
 BOOSTER_SETTINGS = {
     "easy": {"range": (10, 50), "timer": 6, "mult_max": 3, "add_max": 25},
     "medium": {"range": (50, 200), "timer": 6, "mult_max": 5, "add_max": 50},
@@ -34,10 +45,9 @@ def get_clean_divisors(n: int, max_limit: int = 12) -> list[int]:
 def generate_mental_chain(steps: int, difficulty: str) -> dict:
     """
     Generates dynamic step-by-step arithmetic chain guaranteeing:
-    - Pure integer values at every step (no floats/decimals).
+    - Pure integer values at every step.
     - No direct repetitive operation back-to-back.
     - Positive non-zero numbers throughout.
-    - Exactly 6 seconds per step across all modes.
     """
     config = BOOSTER_SETTINGS.get(difficulty.lower(), BOOSTER_SETTINGS["medium"])
     current = random.randint(*config["range"])
@@ -51,7 +61,6 @@ def generate_mental_chain(steps: int, difficulty: str) -> dict:
         if divisors:
             available_ops.append("div")
 
-        # Avoid identical consecutive operations
         if prev_op in available_ops and len(available_ops) > 1:
             available_ops.remove(prev_op)
 
@@ -91,21 +100,199 @@ def generate_mental_chain(steps: int, difficulty: str) -> dict:
     }
 
 
+def make_smart_numeric_options(ans: int, delta_bounds: tuple[int, int] = (1, 15)) -> list[str]:
+    """Generates 4 distinct, plausible integer options avoiding any duplicates."""
+    options = {ans}
+    
+    # Plausible offsets: +/- 10, unit digit slips, near misses
+    plausible_offsets = [10, -10, 1, -1, 2, -2, 5, -5, 20, -20]
+    random.shuffle(plausible_offsets)
+    
+    for offset in plausible_offsets:
+        candidate = ans + offset
+        if candidate > 0 and candidate != ans:
+            options.add(candidate)
+        if len(options) == 4:
+            break
+
+    low, high = delta_bounds
+    attempts = 0
+    while len(options) < 4 and attempts < 40:
+        attempts += 1
+        delta = random.randint(low, high) * random.choice([1, -1])
+        cand = ans + delta
+        if cand > 0:
+            options.add(cand)
+
+    # Fallback padding if strict bounds didn't fill
+    idx = 1
+    while len(options) < 4:
+        options.add(ans + idx)
+        idx += 1
+
+    opts_list = [str(x) for x in options]
+    random.shuffle(opts_list)
+    return opts_list
+
+
+def generate_operation_questions(op_type: str, difficulty: str = "medium", count: int = 10) -> list[dict]:
+    """
+    Generates strictly non-repeating dynamic arithmetic questions for:
+    addition, subtraction, multiplication, division, and custom table ranges.
+    """
+    questions = []
+    seen_pairs = set()
+
+    # Define operand generator boundaries based on difficulty
+    if op_type == "add":
+        if difficulty == "easy":
+            range_a, range_b = (10, 99), (10, 99)
+        elif difficulty == "medium":
+            range_a, range_b = (100, 999), (10, 99)
+        elif difficulty == "hard":
+            range_a, range_b = (100, 999), (100, 999)
+        else: # extreme
+            range_a, range_b = (1000, 9999), (100, 9999)
+
+        attempts = 0
+        while len(questions) < count and attempts < count * 40:
+            attempts += 1
+            a = random.randint(*range_a)
+            b = random.randint(*range_b)
+            pair_key = (min(a, b), max(a, b))
+            if pair_key in seen_pairs:
+                continue
+            seen_pairs.add(pair_key)
+            
+            ans = a + b
+            opts_list = make_smart_numeric_options(ans, (5, 25))
+            questions.append({
+                "id": f"add_{a}_{b}_{random.randint(100, 999)}",
+                "question": f"Calculate: {a} + {b} = ?",
+                "options": opts_list,
+                "correct_option": opts_list.index(str(ans)),
+                "explanation": f"{a} + {b} = {ans}"
+            })
+
+    elif op_type == "sub":
+        if difficulty == "easy":
+            range_a, range_b = (15, 99), (10, 90)
+        elif difficulty == "medium":
+            range_a, range_b = (100, 999), (20, 300)
+        elif difficulty == "hard":
+            range_a, range_b = (200, 999), (100, 999)
+        else: # extreme
+            range_a, range_b = (1000, 9999), (200, 5000)
+
+        attempts = 0
+        while len(questions) < count and attempts < count * 40:
+            attempts += 1
+            a = random.randint(*range_a)
+            b = random.randint(*range_b)
+            if a <= b:
+                a, b = b + random.randint(5, 50), b
+            
+            pair_key = (a, b)
+            if pair_key in seen_pairs:
+                continue
+            seen_pairs.add(pair_key)
+
+            ans = a - b
+            opts_list = make_smart_numeric_options(ans, (5, 25))
+            questions.append({
+                "id": f"sub_{a}_{b}_{random.randint(100, 999)}",
+                "question": f"Calculate: {a} − {b} = ?",
+                "options": opts_list,
+                "correct_option": opts_list.index(str(ans)),
+                "explanation": f"{a} − {b} = {ans}"
+            })
+
+    elif op_type == "mult":
+        if difficulty == "easy":
+            range_a, range_b = (11, 25), (2, 9)
+        elif difficulty == "medium":
+            range_a, range_b = (12, 50), (6, 19)
+        elif difficulty == "hard":
+            range_a, range_b = (21, 99), (12, 49)
+        else: # extreme
+            range_a, range_b = (101, 999), (11, 35)
+
+        attempts = 0
+        while len(questions) < count and attempts < count * 40:
+            attempts += 1
+            a = random.randint(*range_a)
+            b = random.randint(*range_b)
+            pair_key = (min(a, b), max(a, b))
+            if pair_key in seen_pairs:
+                continue
+            seen_pairs.add(pair_key)
+
+            ans = a * b
+            opts_list = make_smart_numeric_options(ans, (10, 50))
+            questions.append({
+                "id": f"mul_{a}_{b}_{random.randint(100, 999)}",
+                "question": f"Calculate: {a} × {b} = ?",
+                "options": opts_list,
+                "correct_option": opts_list.index(str(ans)),
+                "explanation": f"{a} × {b} = {ans}"
+            })
+
+    elif op_type == "div":
+        if difficulty == "easy":
+            divisors = list(range(2, 12))
+            quotient_range = (5, 30)
+        elif difficulty == "medium":
+            divisors = list(range(6, 25))
+            quotient_range = (10, 60)
+        elif difficulty == "hard":
+            divisors = list(range(12, 45))
+            quotient_range = (15, 100)
+        else: # extreme
+            divisors = list(range(20, 80))
+            quotient_range = (30, 250)
+
+        attempts = 0
+        while len(questions) < count and attempts < count * 40:
+            attempts += 1
+            divisor = random.choice(divisors)
+            quotient = random.randint(*quotient_range)
+            dividend = divisor * quotient
+
+            pair_key = (dividend, divisor)
+            if pair_key in seen_pairs:
+                continue
+            seen_pairs.add(pair_key)
+
+            opts_list = make_smart_numeric_options(quotient, (2, 10))
+            questions.append({
+                "id": f"div_{dividend}_{divisor}_{random.randint(100, 999)}",
+                "question": f"Calculate: {dividend} ÷ {divisor} = ?",
+                "options": opts_list,
+                "correct_option": opts_list.index(str(quotient)),
+                "explanation": f"{dividend} ÷ {divisor} = {quotient}"
+            })
+
+    return questions
+
+
 def generate_static_recall_questions(category: str, count: int = 10) -> list[dict]:
-    """Generates standard speed-math MCQ flashcards."""
+    """
+    Generates standard speed-math MCQ flashcards guaranteeing:
+    - Zero duplicate base numbers in a single test session.
+    - Zero duplicate or colluding options (clean distinct percentages and numbers).
+    """
     questions = []
     
     if category == "squares":
-        for _ in range(count):
-            n = random.randint(2, 50)
+        pool = list(range(2, 51))
+        random.shuffle(pool)
+        selected_bases = pool[:count]
+
+        for n in selected_bases:
             ans = n ** 2
-            opts = {ans, (n + 1)**2, (n - 1)**2, ans + 10}
-            while len(opts) < 4:
-                opts.add(ans + random.randint(-15, 15))
-            opts_list = [str(x) for x in opts]
-            random.shuffle(opts_list)
+            opts_list = make_smart_numeric_options(ans, (10, 40))
             questions.append({
-                "id": f"sq_{n}_{random.randint(100,999)}",
+                "id": f"sq_{n}_{random.randint(100, 999)}",
                 "question": f"What is the square of {n} ({n}²)?",
                 "options": opts_list,
                 "correct_option": opts_list.index(str(ans)),
@@ -113,16 +300,15 @@ def generate_static_recall_questions(category: str, count: int = 10) -> list[dic
             })
 
     elif category == "cubes":
-        for _ in range(count):
-            n = random.randint(2, 30)
+        pool = list(range(2, 31))
+        random.shuffle(pool)
+        selected_bases = pool[:count]
+
+        for n in selected_bases:
             ans = n ** 3
-            opts = {ans, (n + 1)**3, ans + 20, ans - 20}
-            while len(opts) < 4:
-                opts.add(ans + random.randint(-30, 30))
-            opts_list = [str(x) for x in opts]
-            random.shuffle(opts_list)
+            opts_list = make_smart_numeric_options(ans, (20, 80))
             questions.append({
-                "id": f"cb_{n}_{random.randint(100,999)}",
+                "id": f"cb_{n}_{random.randint(100, 999)}",
                 "question": f"What is the cube of {n} ({n}³)?",
                 "options": opts_list,
                 "correct_option": opts_list.index(str(ans)),
@@ -130,17 +316,20 @@ def generate_static_recall_questions(category: str, count: int = 10) -> list[dic
             })
 
     elif category == "tables":
-        for _ in range(count):
+        seen_combos = set()
+        attempts = 0
+        while len(questions) < count and attempts < count * 30:
+            attempts += 1
             t = random.randint(12, 50)
             m = random.randint(2, 20)
+            if (t, m) in seen_combos:
+                continue
+            seen_combos.add((t, m))
+
             ans = t * m
-            opts = {ans, ans + t, ans - t, ans + 10}
-            while len(opts) < 4:
-                opts.add(ans + random.randint(-20, 20))
-            opts_list = [str(x) for x in opts]
-            random.shuffle(opts_list)
+            opts_list = make_smart_numeric_options(ans, (t, t * 2))
             questions.append({
-                "id": f"tbl_{t}x{m}_{random.randint(100,999)}",
+                "id": f"tbl_{t}x{m}_{random.randint(100, 999)}",
                 "question": f"Calculate: {t} × {m} = ?",
                 "options": opts_list,
                 "correct_option": opts_list.index(str(ans)),
@@ -148,19 +337,19 @@ def generate_static_recall_questions(category: str, count: int = 10) -> list[dic
             })
 
     elif category == "triplets":
-        for _ in range(count):
-            trip = random.choice(PYTHAGOREAN_TRIPLETS)
+        available_triplets = list(PYTHAGOREAN_TRIPLETS)
+        random.shuffle(available_triplets)
+        selected_triplets = available_triplets[:count]
+
+        for trip in selected_triplets:
             missing_idx = random.randint(0, 2)
             ans = trip[missing_idx]
             disp = list(trip)
             disp[missing_idx] = "?"
-            opts = {ans, ans + 2, max(1, ans - 2), ans + 4}
-            while len(opts) < 4:
-                opts.add(ans + random.randint(1, 10))
-            opts_list = [str(x) for x in opts]
-            random.shuffle(opts_list)
+            
+            opts_list = make_smart_numeric_options(ans, (1, 10))
             questions.append({
-                "id": f"trip_{trip[0]}_{trip[1]}_{random.randint(100,999)}",
+                "id": f"trip_{trip[0]}_{trip[1]}_{random.randint(100, 999)}",
                 "question": f"Identify the missing Pythagorean Triplet side: ({disp[0]}, {disp[1]}, {disp[2]})",
                 "options": opts_list,
                 "correct_option": opts_list.index(str(ans)),
@@ -168,19 +357,24 @@ def generate_static_recall_questions(category: str, count: int = 10) -> list[dic
             })
 
     elif category == "percentages":
-        for _ in range(count):
-            frac, pct = random.choice(PERCENTAGE_FRACTIONS)
-            opts = {pct, "14.28%", "16.66%", "11.11%", "9.09%"}
-            opts_list = list(opts)[:4]
-            if pct not in opts_list:
-                opts_list[0] = pct
-            random.shuffle(opts_list)
+        available_fractions = list(PERCENTAGE_FRACTIONS)
+        random.shuffle(available_fractions)
+        selected_items = available_fractions[:count]
+
+        for frac, correct_pct in selected_items:
+            # Pick exactly 3 distractors strictly from OTHER fractions to guarantee distinct strings
+            distractor_pool = [pct for f, pct in PERCENTAGE_FRACTIONS if pct != correct_pct]
+            chosen_distractors = random.sample(distractor_pool, 3)
+            
+            options_set = [correct_pct] + chosen_distractors
+            random.shuffle(options_set)
+
             questions.append({
-                "id": f"pct_{frac.replace('/', '_')}_{random.randint(100,999)}",
+                "id": f"pct_{frac.replace('/', '_')}_{random.randint(100, 999)}",
                 "question": f"Convert fraction to percentage: {frac} = ?",
-                "options": opts_list,
-                "correct_option": opts_list.index(pct),
-                "explanation": f"Fraction {frac} = {pct}"
+                "options": options_set,
+                "correct_option": options_set.index(correct_pct),
+                "explanation": f"Fraction {frac} = {correct_pct}"
             })
 
     return questions

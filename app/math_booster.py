@@ -43,12 +43,6 @@ def get_clean_divisors(n: int, max_limit: int = 12) -> list[int]:
 
 
 def generate_mental_chain(steps: int, difficulty: str) -> dict:
-    """
-    Generates dynamic step-by-step arithmetic chain guaranteeing:
-    - Pure integer values at every step.
-    - No direct repetitive operation back-to-back.
-    - Positive non-zero numbers throughout.
-    """
     config = BOOSTER_SETTINGS.get(difficulty.lower(), BOOSTER_SETTINGS["medium"])
     current = random.randint(*config["range"])
     
@@ -101,49 +95,45 @@ def generate_mental_chain(steps: int, difficulty: str) -> dict:
 
 
 def make_smart_numeric_options(ans: int, delta_bounds: tuple[int, int] = (1, 15)) -> list[str]:
-    """Generates 4 distinct, plausible integer options avoiding any duplicates."""
+    """Generates 4 distinct, plausible integer options avoiding any duplicate values."""
     options = {ans}
     
-    # Plausible offsets: +/- 10, unit digit slips, near misses
-    plausible_offsets = [10, -10, 1, -1, 2, -2, 5, -5, 20, -20]
-    random.shuffle(plausible_offsets)
-    
-    for offset in plausible_offsets:
-        candidate = ans + offset
-        if candidate > 0 and candidate != ans:
-            options.add(candidate)
+    offsets = [10, -10, 2, -2, 5, -5, 20, -20, 1, -1]
+    random.shuffle(offsets)
+    for off in offsets:
+        cand = ans + off
+        if cand > 0 and cand not in options:
+            options.add(cand)
         if len(options) == 4:
             break
 
     low, high = delta_bounds
     attempts = 0
-    while len(options) < 4 and attempts < 40:
+    while len(options) < 4 and attempts < 50:
         attempts += 1
         delta = random.randint(low, high) * random.choice([1, -1])
         cand = ans + delta
         if cand > 0:
             options.add(cand)
 
-    # Fallback padding if strict bounds didn't fill
-    idx = 1
+    # Deterministic fallback
+    k = 1
     while len(options) < 4:
-        options.add(ans + idx)
-        idx += 1
+        if (ans + k) not in options:
+            options.add(ans + k)
+        elif (ans - k) > 0 and (ans - k) not in options:
+            options.add(ans - k)
+        k += 1
 
-    opts_list = [str(x) for x in options]
+    opts_list = [str(x) for x in list(options)[:4]]
     random.shuffle(opts_list)
     return opts_list
 
 
 def generate_operation_questions(op_type: str, difficulty: str = "medium", count: int = 10) -> list[dict]:
-    """
-    Generates strictly non-repeating dynamic arithmetic questions for:
-    addition, subtraction, multiplication, division, and custom table ranges.
-    """
     questions = []
     seen_pairs = set()
 
-    # Define operand generator boundaries based on difficulty
     if op_type == "add":
         if difficulty == "easy":
             range_a, range_b = (10, 99), (10, 99)
@@ -151,7 +141,7 @@ def generate_operation_questions(op_type: str, difficulty: str = "medium", count
             range_a, range_b = (100, 999), (10, 99)
         elif difficulty == "hard":
             range_a, range_b = (100, 999), (100, 999)
-        else: # extreme
+        else:
             range_a, range_b = (1000, 9999), (100, 9999)
 
         attempts = 0
@@ -181,7 +171,7 @@ def generate_operation_questions(op_type: str, difficulty: str = "medium", count
             range_a, range_b = (100, 999), (20, 300)
         elif difficulty == "hard":
             range_a, range_b = (200, 999), (100, 999)
-        else: # extreme
+        else:
             range_a, range_b = (1000, 9999), (200, 5000)
 
         attempts = 0
@@ -214,7 +204,7 @@ def generate_operation_questions(op_type: str, difficulty: str = "medium", count
             range_a, range_b = (12, 50), (6, 19)
         elif difficulty == "hard":
             range_a, range_b = (21, 99), (12, 49)
-        else: # extreme
+        else:
             range_a, range_b = (101, 999), (11, 35)
 
         attempts = 0
@@ -247,7 +237,7 @@ def generate_operation_questions(op_type: str, difficulty: str = "medium", count
         elif difficulty == "hard":
             divisors = list(range(12, 45))
             quotient_range = (15, 100)
-        else: # extreme
+        else:
             divisors = list(range(20, 80))
             quotient_range = (30, 250)
 
@@ -276,11 +266,6 @@ def generate_operation_questions(op_type: str, difficulty: str = "medium", count
 
 
 def generate_static_recall_questions(category: str, count: int = 10) -> list[dict]:
-    """
-    Generates standard speed-math MCQ flashcards guaranteeing:
-    - Zero duplicate base numbers in a single test session.
-    - Zero duplicate or colluding options (clean distinct percentages and numbers).
-    """
     questions = []
     
     if category == "squares":
@@ -362,7 +347,6 @@ def generate_static_recall_questions(category: str, count: int = 10) -> list[dic
         selected_items = available_fractions[:count]
 
         for frac, correct_pct in selected_items:
-            # Pick exactly 3 distractors strictly from OTHER fractions to guarantee distinct strings
             distractor_pool = [pct for f, pct in PERCENTAGE_FRACTIONS if pct != correct_pct]
             chosen_distractors = random.sample(distractor_pool, 3)
             

@@ -2312,6 +2312,8 @@ def build_application() -> Application:
     
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^userkp_|^login_|^reviews_page_|^dl_single_quiz_pdf_"))
 
+    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(cmd_calc_booster|booster_|bop_|bopdiff_|bstep_|bmode_|qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_|qpass_|qinterrupt_|cmd_prompt_submit_quiz|qfinal_submit_)"))
+
     app.add_handler(ChatMemberHandler(track_chat_member_updates, ChatMemberHandler.MY_CHAT_MEMBER))
 
     app.add_handler(MessageHandler(filters.ALL & ~filters.COMMAND, handle_text_messages))

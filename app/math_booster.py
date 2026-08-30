@@ -278,10 +278,10 @@ def generate_static_recall_questions(category: str, count: int = 10) -> list[dic
             opts_list = make_smart_numeric_options(ans, (10, 40))
             questions.append({
                 "id": f"sq_{n}_{random.randint(100, 999)}",
-                "question": f"What is the square of {n} ({n}²)?",
+                "question": f"What is the square of {n}?",
                 "options": opts_list,
                 "correct_option": opts_list.index(str(ans)),
-                "explanation": f"{n} × {n} = {ans}"
+                "explanation": f"{n}² = {n} × {n} = {ans}"
             })
 
     elif category == "cubes":
@@ -294,10 +294,10 @@ def generate_static_recall_questions(category: str, count: int = 10) -> list[dic
             opts_list = make_smart_numeric_options(ans, (20, 80))
             questions.append({
                 "id": f"cb_{n}_{random.randint(100, 999)}",
-                "question": f"What is the cube of {n} ({n}³)?",
+                "question": f"What is the cube of {n}?",
                 "options": opts_list,
                 "correct_option": opts_list.index(str(ans)),
-                "explanation": f"{n} × {n} × {n} = {ans}"
+                "explanation": f"{n}³ = {n} × {n} × {n} = {ans}"
             })
 
     elif category == "tables":

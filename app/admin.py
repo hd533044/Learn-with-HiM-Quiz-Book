@@ -242,6 +242,15 @@ def get_stored_admin_password() -> str:
             release_db(conn)
         return "5330"
 
+def escape_markdown(text: str) -> str:
+    if not text:
+        return ""
+    # Escape characters that break Telegram Markdown v1/v2
+    escape_chars = ['_', '*', '`', '[']
+    t = str(text)
+    for c in escape_chars:
+        t = t.replace(c, f"\\{c}")
+    return t
 
 def update_admin_password_db(new_pass: str) -> bool:
     conn = None
@@ -2731,12 +2740,12 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             await query.edit_message_text("⚠️ Error retrieving user profile.", parse_mode="Markdown")
             return
 
-        sid = u.get("student_id") or f"USER_{target_uid}"
+        sid = escape_markdown(u.get("student_id") or f"USER_{target_uid}")
         is_b = safe_int_uid(u.get("is_banned"))
         ban_status = "BLOCKED / INACTIVE 🔴" if is_b == 2 else ("BANNED 🔴" if is_b == 1 else "ACTIVE 🟢")
         
         edit_cnt = safe_int_uid(u.get("edit_count"))
-        last_edit = u.get("last_profile_edit", "Never")
+        last_edit = escape_markdown(u.get("last_profile_edit", "Never"))
         remaining_edits = max(0, 3 - edit_cnt)
 
         paid_bal = safe_int_uid(u.get("paid_question_balance"))
@@ -2761,25 +2770,25 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         msg = (
             f"📋 **STUDENT PERSONAL DETAILS** 📋\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"• **Full Name:** {u.get('full_name', 'N/A')}\n"
+            f"• **Full Name:** {escape_markdown(u.get('full_name', 'N/A'))}\n"
             f"• **Student ID:** `{sid}`\n"
             f"• **Telegram ID:** `{target_uid}`\n"
             f"• **Account Status:** `{ban_status}`\n"
             f"• **Total Attempted Quizzes:** `{total_quizzes_count}` Quizzes\n"
             f"• **Paid VIP Subscriber:** `{paid_str}`\n"
-            f"• **VIP Pass Expiry:** `{u.get('vip_pass_expiry') or 'N/A'}`\n"
-            f"• **Username:** @{u.get('username') or 'N/A'}\n"
-            f"• **Phone Number:** `{u.get('phone_number') or 'N/A'}`\n"
-            f"• **Target Exam:** `{u.get('target_exam', 'N/A')}`\n"
-            f"• **Date of Birth:** `{u.get('dob', 'N/A')}`\n"
-            f"• **Calculated Age:** `{u.get('age', 'N/A')} yrs`\n"
-            f"• **Gender:** `{u.get('gender', 'N/A')}`\n"
-            f"• **Location:** `{u.get('state', 'N/A')}, {u.get('country', 'India')}`\n"
+            f"• **VIP Pass Expiry:** `{escape_markdown(u.get('vip_pass_expiry') or 'N/A')}`\n"
+            f"• **Username:** @{escape_markdown(u.get('username') or 'N/A')}\n"
+            f"• **Phone Number:** `{escape_markdown(u.get('phone_number') or 'N/A')}`\n"
+            f"• **Target Exam:** `{escape_markdown(u.get('target_exam', 'N/A'))}`\n"
+            f"• **Date of Birth:** `{escape_markdown(u.get('dob', 'N/A'))}`\n"
+            f"• **Calculated Age:** `{escape_markdown(u.get('age', 'N/A'))} yrs`\n"
+            f"• **Gender:** `{escape_markdown(u.get('gender', 'N/A'))}`\n"
+            f"• **Location:** `{escape_markdown(u.get('state', 'N/A'))}, {escape_markdown(u.get('country', 'India'))}`\n"
             f"• **Profile Edits Made:** `{edit_cnt} / 3 times` *(Last: {last_edit})*\n"
             f"• **Remaining Edits:** `{remaining_edits} left`\n"
             f"• **Bonus Quota:** `{safe_int_uid(u.get('bonus_quota'))} Qs`\n"
-            f"• **Registered At:** `{u.get('created_at', 'N/A')}`\n"
-            f"• **Last Active:** `{u.get('last_active', 'N/A')}`\n"
+            f"• **Registered At:** `{escape_markdown(u.get('created_at', 'N/A'))}`\n"
+            f"• **Last Active:** `{escape_markdown(u.get('last_active', 'N/A'))}`\n"
             f"• **Referred By ID:** `{u.get('referred_by') or 'None'}`\n"
             f"• **Referral Count:** `{safe_int_uid(u.get('referral_count'))}` friends"
         )
@@ -2788,7 +2797,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             [InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]
         ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-
     elif data.startswith("audit_activity_"):
         await query.answer()
         target_uid = safe_int_uid(data.replace("audit_activity_", ""))

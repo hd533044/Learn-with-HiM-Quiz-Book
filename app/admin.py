@@ -39,6 +39,13 @@ DURATION_OPTIONS = [
 ]
 
 
+def safe_int_uid(val) -> int:
+    try:
+        return int(float(str(val).strip()))
+    except Exception:
+        return 0
+
+
 def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
     keys_to_clear = [
         "awaiting_broadcast",
@@ -67,7 +74,8 @@ def clear_admin_user_data_states(context: ContextTypes.DEFAULT_TYPE):
 def get_admin_nav_buttons(target_uid: int = None):
     row1 = [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
     if target_uid:
-        row1.append(InlineKeyboardButton("🔙 Student Dashboard", callback_data=f"admin_inspect_u_{target_uid}"))
+        clean_uid = safe_int_uid(target_uid)
+        row1.append(InlineKeyboardButton("🔙 Student Dashboard", callback_data=f"admin_inspect_u_{clean_uid}"))
     return InlineKeyboardMarkup([
         row1,
         [InlineKeyboardButton("📩 Student Support Threads", callback_data="admin_view_student_threads_0")]
@@ -83,10 +91,11 @@ async def fast_concurrent_broadcast(
 
     async def send_single(uid):
         try:
+            clean_uid = safe_int_uid(uid)
             m = None
             if media_type == "photo" and photo:
                 m = await bot.send_photo(
-                    chat_id=uid,
+                    chat_id=clean_uid,
                     photo=photo,
                     caption=text,
                     reply_markup=reply_markup,
@@ -95,7 +104,7 @@ async def fast_concurrent_broadcast(
                 )
             elif media_type == "video" and video:
                 m = await bot.send_video(
-                    chat_id=uid,
+                    chat_id=clean_uid,
                     video=video,
                     caption=text,
                     reply_markup=reply_markup,
@@ -104,7 +113,7 @@ async def fast_concurrent_broadcast(
                 )
             elif media_type == "voice" and voice:
                 m = await bot.send_voice(
-                    chat_id=uid,
+                    chat_id=clean_uid,
                     voice=voice,
                     caption=text,
                     reply_markup=reply_markup,
@@ -113,7 +122,7 @@ async def fast_concurrent_broadcast(
                 )
             elif media_type == "audio" and audio:
                 m = await bot.send_audio(
-                    chat_id=uid,
+                    chat_id=clean_uid,
                     audio=audio,
                     caption=text,
                     reply_markup=reply_markup,
@@ -122,7 +131,7 @@ async def fast_concurrent_broadcast(
                 )
             elif media_type == "document" and document:
                 m = await bot.send_document(
-                    chat_id=uid,
+                    chat_id=clean_uid,
                     document=document,
                     caption=text,
                     reply_markup=reply_markup,
@@ -131,7 +140,7 @@ async def fast_concurrent_broadcast(
                 )
             elif media_type == "animation" and animation:
                 m = await bot.send_animation(
-                    chat_id=uid,
+                    chat_id=clean_uid,
                     animation=animation,
                     caption=text,
                     reply_markup=reply_markup,
@@ -140,7 +149,7 @@ async def fast_concurrent_broadcast(
                 )
             else:
                 m = await bot.send_message(
-                    chat_id=uid,
+                    chat_id=clean_uid,
                     text=text,
                     reply_markup=reply_markup,
                     parse_mode=parse_mode,
@@ -148,12 +157,12 @@ async def fast_concurrent_broadcast(
                 )
             
             if annc_id and m:
-                asyncio.create_task(asyncio.to_thread(record_broadcast_delivery, annc_id, uid, m.message_id))
+                asyncio.create_task(asyncio.to_thread(record_broadcast_delivery, annc_id, clean_uid, m.message_id))
             return True
         except Exception as e:
             err_str = str(e).lower()
             if "forbidden" in err_str or "blocked" in err_str or "deactivated" in err_str or "chat not found" in err_str:
-                asyncio.create_task(asyncio.to_thread(record_blocked_user, uid))
+                asyncio.create_task(asyncio.to_thread(record_blocked_user, safe_int_uid(uid)))
             return False
 
     batch_size = 40
@@ -170,7 +179,7 @@ async def fast_concurrent_edit(bot, deliveries, new_text):
     async def edit_single(d):
         try:
             await bot.edit_message_text(
-                chat_id=d['user_id'],
+                chat_id=safe_int_uid(d['user_id']),
                 message_id=d['message_id'],
                 text=new_text,
                 parse_mode="Markdown"
@@ -179,7 +188,7 @@ async def fast_concurrent_edit(bot, deliveries, new_text):
         except Exception:
             try:
                 await bot.edit_message_caption(
-                    chat_id=d['user_id'],
+                    chat_id=safe_int_uid(d['user_id']),
                     message_id=d['message_id'],
                     caption=new_text,
                     parse_mode="Markdown"
@@ -201,7 +210,7 @@ async def fast_concurrent_edit(bot, deliveries, new_text):
 async def fast_concurrent_delete(bot, deliveries):
     async def delete_single(d):
         try:
-            await bot.delete_message(chat_id=d['user_id'], message_id=d['message_id'])
+            await bot.delete_message(chat_id=safe_int_uid(d['user_id']), message_id=d['message_id'])
             return True
         except Exception:
             return False
@@ -261,9 +270,9 @@ def update_admin_password_db(new_pass: str) -> bool:
 
 
 def is_admin_authenticated(user_id: int) -> bool:
-    if user_id != PRIMARY_ADMIN_ID:
+    if safe_int_uid(user_id) != PRIMARY_ADMIN_ID:
         return False
-    auth_time = ADMIN_AUTH_SESSIONS.get(user_id, 0)
+    auth_time = ADMIN_AUTH_SESSIONS.get(PRIMARY_ADMIN_ID, 0)
     return (time.time() - auth_time) < 1800
 
 
@@ -476,7 +485,7 @@ async def render_admin_lock_screen(update: Update, context: ContextTypes.DEFAULT
 
 async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     clear_admin_user_data_states(context)
-    user_id = update.effective_user.id
+    user_id = safe_int_uid(update.effective_user.id)
     if user_id != PRIMARY_ADMIN_ID:
         reject_msg = "I only listen to Himanshu Sir, sorry you're not Himanshu Sir 😎"
         if update.callback_query:
@@ -490,13 +499,13 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
         return
 
     users = get_all_users()
-    active_registered = [u for u in users if int(u.get("is_banned") or 0) != 2]
+    active_registered = [u for u in users if safe_int_uid(u.get("is_banned")) != 2]
     total_likes = get_total_platform_likes()
     
     paid_count = 0
     demo_count = 0
     for u in active_registered:
-        bal = int(float(u.get("paid_question_balance") or 0))
+        bal = safe_int_uid(u.get("paid_question_balance"))
         is_paid = bal > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
         if is_paid:
             paid_count += 1
@@ -549,9 +558,9 @@ async def admin_portal_command(update: Update, context: ContextTypes.DEFAULT_TYP
 
 async def admin_view_user_payments_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    if query.from_user.id != PRIMARY_ADMIN_ID: return
+    if safe_int_uid(query.from_user.id) != PRIMARY_ADMIN_ID: return
     await query.answer()
-    target_uid = int(query.data.replace("admin_view_payments_", ""))
+    target_uid = safe_int_uid(query.data.replace("admin_view_payments_", ""))
 
     conn = None
     try:
@@ -601,10 +610,10 @@ async def admin_view_user_payments_callback(update: Update, context: ContextType
 
 async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    if query.from_user.id != PRIMARY_ADMIN_ID: return
+    if safe_int_uid(query.from_user.id) != PRIMARY_ADMIN_ID: return
     await query.answer()
 
-    target_uid = int(query.data.replace("admin_grant_menu_", ""))
+    target_uid = safe_int_uid(query.data.replace("admin_grant_menu_", ""))
     profile = get_user_profile(target_uid) or {}
     name = profile.get("full_name", "Student")
 
@@ -627,11 +636,11 @@ async def admin_grant_plan_menu_callback(update: Update, context: ContextTypes.D
 
 async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    if query.from_user.id != PRIMARY_ADMIN_ID: return
+    if safe_int_uid(query.from_user.id) != PRIMARY_ADMIN_ID: return
     await query.answer()
 
     parts = query.data.replace("admin_exec_grant_", "").split("_", 1)
-    target_uid = int(parts[0])
+    target_uid = safe_int_uid(parts[0])
     plan_key = parts[1]
 
     plan = PLAN_TIERS.get(plan_key)
@@ -645,7 +654,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
     payment_id = f"ADMIN_GRANT_{int(time.time())}"
 
     profile = get_user_profile(target_uid) or {}
-    current_bal = int(float(profile.get("paid_question_balance") or 0))
+    current_bal = safe_int_uid(profile.get("paid_question_balance"))
     new_bal = current_bal + plan["daily_limit"]
 
     conn = None
@@ -700,7 +709,7 @@ async def admin_execute_grant_callback(update: Update, context: ContextTypes.DEF
 
 async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    user_id = query.from_user.id
+    user_id = safe_int_uid(query.from_user.id)
     data = query.data
 
     if data == "admin_forgot_pass_step1":
@@ -720,9 +729,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await render_admin_lock_screen(update, context)
         return
 
-    # ==============================================================
-    # 🗂️ MAIN MENU ROUTING
-    # ==============================================================
     if data == "admin_home":
         await query.answer()
         await admin_portal_command(update, context)
@@ -792,9 +798,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
         return
 
-    # ==============================================================
-    # 📢 TARGETED BROADCAST MENU
-    # ==============================================================
     elif data == "admin_broadcast_menu":
         await query.answer()
         keyboard = [
@@ -834,9 +837,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         )
         return
 
-    # ==============================================================
-    # 🧠 OMNISCIENT INTELLIGENCE ASSISTANT
-    # ==============================================================
     if data == "admin_ai_assistant_menu":
         await query.answer()
         keyboard = [
@@ -921,9 +921,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
     clear_admin_user_data_states(context)
     users = get_all_users()
 
-    # ==============================================================
-    # 🗂️ ADVANCED STUDENT SEGMENTS HANDLER
-    # ==============================================================
     if data == "admin_adv_segments_menu":
         await query.answer("📊 Calculating Live Segments...", show_alert=False)
         
@@ -938,7 +935,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         count_demo_expired = 0
         
         for u in users:
-            if int(u.get("is_banned") or 0) == 2: continue
+            if safe_int_uid(u.get("is_banned")) == 2: continue
             exp_str = u.get("vip_pass_expiry")
             if not exp_str: continue
             try:
@@ -947,7 +944,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 exp_dt = ist.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
             except Exception: continue
                 
-            bal = int(float(u.get("paid_question_balance") or 0))
+            bal = safe_int_uid(u.get("paid_question_balance"))
             is_paid_user = bal > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
             
             if exp_dt > now_ist:
@@ -981,7 +978,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer()
         parts = data.replace("admin_seg_", "").split("_")
         seg_type = parts[0]
-        page = int(parts[1])
+        page = safe_int_uid(parts[1])
         
         ist = pytz.timezone("Asia/Kolkata")
         now_ist = datetime.now(ist)
@@ -989,7 +986,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         
         matched_users = []
         for u in users:
-            if int(u.get("is_banned") or 0) == 2: continue
+            if safe_int_uid(u.get("is_banned")) == 2: continue
             exp_str = u.get("vip_pass_expiry")
             if not exp_str: continue
             try:
@@ -998,7 +995,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 exp_dt = ist.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
             except Exception: continue
                 
-            bal = int(float(u.get("paid_question_balance") or 0))
+            bal = safe_int_uid(u.get("paid_question_balance"))
             is_paid_user = bal > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
             
             if seg_type == "paidactive" and exp_dt > now_ist and is_paid_user: matched_users.append(u)
@@ -1019,7 +1016,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         keyboard = []
         for u in page_items:
-            sid = u.get("student_id") or f"USER_{u['user_id']}"
+            clean_u_id = safe_int_uid(u['user_id'])
+            sid = u.get("student_id") or f"USER_{clean_u_id}"
             name = u.get("full_name", "Student")
             exp_s = u.get("vip_pass_expiry", "").split(" ")[0]
             
@@ -1027,7 +1025,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             if "demo" in seg_type: icon = "🎁" if "active" in seg_type else "⚠️"
             
             btn_txt = f"{icon} {name} ({exp_s})"
-            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_inspect_u_{u['user_id']}")])
+            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_inspect_u_{clean_u_id}")])
 
         nav_row = []
         if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_seg_{seg_type}_{page - 1}"))
@@ -1055,15 +1053,12 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
         return
 
-    # ==============================================================
-    # PLAN REVOCATION HANDLER
-    # ==============================================================
     if data.startswith("admin_revoke_menu_"):
         await query.answer()
-        target_uid = int(data.replace("admin_revoke_menu_", ""))
+        target_uid = safe_int_uid(data.replace("admin_revoke_menu_", ""))
         u = get_user_profile(target_uid) or {}
         st_name = u.get("full_name", "Student")
-        current_bal = int(float(u.get("paid_question_balance") or 0))
+        current_bal = safe_int_uid(u.get("paid_question_balance"))
 
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -1075,8 +1070,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.close()
         release_db(conn)
 
-        grant_sum = sum([int(g.get('daily_quota') or 0) for g in admin_grants])
-        paid_sum = sum([int(p.get('daily_quota') or 0) for p in paid_purchases])
+        grant_sum = sum([safe_int_uid(g.get('daily_quota')) for g in admin_grants])
+        paid_sum = sum([safe_int_uid(p.get('daily_quota')) for p in paid_purchases])
 
         msg = (
             f"🚫 **PLAN MANAGEMENT FOR {st_name.upper()}** 🚫\n"
@@ -1098,7 +1093,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_revoke_admingrant_"):
         await query.answer()
-        target_uid = int(data.replace("admin_revoke_admingrant_", ""))
+        target_uid = safe_int_uid(data.replace("admin_revoke_admingrant_", ""))
         u = get_user_profile(target_uid) or {}
         st_name = u.get("full_name", "Student")
 
@@ -1134,7 +1129,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_revoke_allconfirm_"):
         await query.answer()
-        target_uid = int(data.replace("admin_revoke_allconfirm_", ""))
+        target_uid = safe_int_uid(data.replace("admin_revoke_allconfirm_", ""))
         u = get_user_profile(target_uid) or {}
         st_name = u.get("full_name", "Student")
 
@@ -1153,7 +1148,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_revoke_allexec_"):
         await query.answer()
-        target_uid = int(data.replace("admin_revoke_allexec_", ""))
+        target_uid = safe_int_uid(data.replace("admin_revoke_allexec_", ""))
         u = get_user_profile(target_uid) or {}
         st_name = u.get("full_name", "Student")
 
@@ -1227,7 +1222,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 if dt >= today_start:
                     rev_today += amt
                     today_paid_students.append({
-                        "name": r.get("full_name") or f"User {r.get('user_id')}",
+                        "name": r.get("full_name") or f"User {safe_int_uid(r.get('user_id'))}",
                         "sid": r.get("student_id") or "N/A",
                         "plan": r.get("plan_name") or "VIP Plan",
                         "amt": amt
@@ -1487,7 +1482,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             )
             btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 View Discounted Plans", callback_data="cmd_plans"), InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]])
             
-            target_uids = [u['user_id'] for u in users if int(u.get('is_banned') or 0) != 2 and not u.get('is_banned')]
+            target_uids = [safe_int_uid(u['user_id']) for u in users if safe_int_uid(u.get('is_banned')) != 2 and not u.get('is_banned')]
             sent_count = await fast_concurrent_broadcast(context.bot, target_uids, b_msg, reply_markup=btn)
             broadcast_status = f"✅ Broadcast delivered to `{sent_count}/{len(target_uids)}` students."
         else:
@@ -1565,7 +1560,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"🚀 Tap **/plans** below to upgrade your daily questions before the sale ends!"
         )
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("💳 Grab Discounted Plan", callback_data="cmd_plans")]])
-        target_uids = [u['user_id'] for u in users if int(u.get('is_banned') or 0) != 2 and not u.get('is_banned')]
+        target_uids = [safe_int_uid(u['user_id']) for u in users if safe_int_uid(u.get('is_banned')) != 2 and not u.get('is_banned')]
         
         await query.edit_message_text("⏳ **Re-broadcasting sale reminder to all students...**")
         sent_count = await fast_concurrent_broadcast(context.bot, target_uids, b_msg, reply_markup=btn)
@@ -1575,12 +1570,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         ])
         await query.edit_message_text(f"✅ **SALE REMINDER BROADCASTED!**\nDelivered to `{sent_count}/{len(target_uids)}` students.", reply_markup=nav, parse_mode="Markdown")
 
-    # ==============================================================
-    # 🛑 BLOCKED / INACTIVE USERS AUDIT (Point 5 - Data Preserved)
-    # ==============================================================
     elif data.startswith("admin_list_blocked_users_"):
         await query.answer()
-        page = int(data.replace("admin_list_blocked_users_", "") or 0)
+        page = safe_int_uid(data.replace("admin_list_blocked_users_", "") or 0)
         blocked = get_blocked_bot_users()
 
         if not blocked:
@@ -1595,11 +1587,12 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         keyboard = []
         for b in page_items:
-            name = b.get('full_name') or f"User {b['user_id']}"
+            clean_b_id = safe_int_uid(b['user_id'])
+            name = b.get('full_name') or f"User {clean_b_id}"
             sid = b.get('student_id') or 'N/A'
             b_time = b.get('blocked_at', 'N/A')
             btn_txt = f"🛑 {name} ({sid}) — {b_time}"
-            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_inspect_u_{b['user_id']}")])
+            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_inspect_u_{clean_b_id}")])
 
         nav_row = []
         if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_list_blocked_users_{page - 1}"))
@@ -1619,7 +1612,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_list_pending_annc_"):
         await query.answer()
-        page = int(data.replace("admin_list_pending_annc_", "") or 0)
+        page = safe_int_uid(data.replace("admin_list_pending_annc_", "") or 0)
         pending = get_pending_announcements_list()
         
         if not pending:
@@ -1656,7 +1649,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_view_pending_annc_"):
         await query.answer()
-        annc_id = int(data.replace("admin_view_pending_annc_", ""))
+        annc_id = safe_int_uid(data.replace("admin_view_pending_annc_", ""))
         a = get_announcement_by_id(annc_id)
         if not a:
             await query.edit_message_text("⚠️ Announcement record not found.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to List", callback_data="admin_list_pending_annc_0")]]))
@@ -1687,14 +1680,14 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_edit_annc_content_prompt_"):
         await query.answer()
-        annc_id = int(data.replace("admin_edit_annc_content_prompt_", ""))
+        annc_id = safe_int_uid(data.replace("admin_edit_annc_content_prompt_", ""))
         context.user_data["awaiting_edit_annc_content"] = annc_id
         cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Edit", callback_data=f"admin_view_pending_annc_{annc_id}")]])
         await query.edit_message_text(f"✍️ **EDIT POST CONTENT (ID #{annc_id})**\n\nPlease reply with the new Message text, Photo, Voice Note, Video, Audio, or PDF:", reply_markup=cancel_btn, parse_mode="Markdown")
 
     elif data.startswith("admin_edit_annc_time_prompt_"):
         await query.answer()
-        annc_id = int(data.replace("admin_edit_annc_time_prompt_", ""))
+        annc_id = safe_int_uid(data.replace("admin_edit_annc_time_prompt_", ""))
         context.user_data["awaiting_edit_annc_time"] = annc_id
         cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Edit", callback_data=f"admin_view_pending_annc_{annc_id}")]])
         await query.edit_message_text(
@@ -1707,7 +1700,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_del_pending_annc_"):
         await query.answer()
-        annc_id = int(data.replace("admin_del_pending_annc_", ""))
+        annc_id = safe_int_uid(data.replace("admin_del_pending_annc_", ""))
         delete_scheduled_announcement(annc_id)
         nav = InlineKeyboardMarkup([
             [InlineKeyboardButton("🔙 Back to Scheduled List", callback_data="admin_list_pending_annc_0")]
@@ -1716,7 +1709,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_list_sent_annc_"):
         await query.answer()
-        page = int(data.replace("admin_list_sent_annc_", "") or 0)
+        page = safe_int_uid(data.replace("admin_list_sent_annc_", "") or 0)
         sent_posts = get_sent_announcements_list(30)
         
         if not sent_posts:
@@ -1747,7 +1740,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_view_sent_annc_"):
         await query.answer()
-        annc_id = int(data.replace("admin_view_sent_annc_", ""))
+        annc_id = safe_int_uid(data.replace("admin_view_sent_annc_", ""))
         a = get_announcement_by_id(annc_id)
         deliveries = get_broadcast_deliveries(annc_id)
 
@@ -1773,14 +1766,14 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_edit_sent_broadcast_prompt_"):
         await query.answer()
-        annc_id = int(data.replace("admin_edit_sent_broadcast_prompt_", ""))
+        annc_id = safe_int_uid(data.replace("admin_edit_sent_broadcast_prompt_", ""))
         context.user_data["awaiting_edit_live_broadcast"] = annc_id
         cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel", callback_data=f"admin_view_sent_annc_{annc_id}")]])
         await query.edit_message_text(f"✍️ **LIVE EDIT BROADCAST #{annc_id}**\n\nPlease reply with the updated text to edit across all recipients' chats in realtime:", reply_markup=cancel_btn, parse_mode="Markdown")
 
     elif data.startswith("admin_delete_sent_broadcast_"):
         await query.answer()
-        annc_id = int(data.replace("admin_delete_sent_broadcast_", ""))
+        annc_id = safe_int_uid(data.replace("admin_delete_sent_broadcast_", ""))
         deliveries = get_broadcast_deliveries(annc_id)
         
         await query.edit_message_text(f"⏳ **Live deleting message from {len(deliveries)} users' chats concurrently (~3s)...**")
@@ -1815,7 +1808,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_show_online_"):
         await query.answer()
-        mins = int(data.replace("admin_show_online_", ""))
+        mins = safe_int_uid(data.replace("admin_show_online_", ""))
         online_list = get_currently_online_users(mins)
 
         lines = [
@@ -1825,7 +1818,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         if online_list:
             for idx, u in enumerate(online_list, start=1):
-                sid = u.get("student_id") or f"USER_{u['user_id']}"
+                clean_online_uid = safe_int_uid(u['user_id'])
+                sid = u.get("student_id") or f"USER_{clean_online_uid}"
                 lines.append(f"{idx}. **{u['full_name']}** (`{sid}`) — Last Active: `{u.get('last_active', 'Just now')}`")
         else:
             lines.append("ℹ️ *No active students in this time window.*")
@@ -1859,8 +1853,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         ]
         if logs:
             for idx, l in enumerate(logs, start=1):
-                name = l.get("full_name") or f"User {l['user_id']}"
-                sid = l.get("student_id") or f"USER_{l['user_id']}"
+                clean_l_uid = safe_int_uid(l['user_id'])
+                name = l.get("full_name") or f"User {clean_l_uid}"
+                sid = l.get("student_id") or f"USER_{clean_l_uid}"
                 ptype = str(l.get("pdf_type", "")).replace("_", " ").title()
                 lines.append(
                     f"**{idx}. {name}** (`{sid}`)\n"
@@ -1924,7 +1919,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_exec_mass_"):
         await query.answer()
-        amount = int(data.replace("admin_exec_mass_", ""))
+        amount = safe_int_uid(data.replace("admin_exec_mass_", ""))
         today_date = get_ist_date_str()
         
         conn = get_db()
@@ -1950,22 +1945,19 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         )
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
 
-        target_uids = [u['user_id'] for u in users if not u.get('is_banned')]
+        target_uids = [safe_int_uid(u['user_id']) for u in users if not u.get('is_banned')]
         sent = await fast_concurrent_broadcast(context.bot, target_uids, broadcast_msg, reply_markup=btn)
 
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Comms Menu", callback_data="admin_menu_comms")]])
         await query.edit_message_text(f"✅ **GIFTED +{amount} SAME-DAY QS TO ALL USERS!**\nBroadcasted to {sent} active students.", reply_markup=back_btn, parse_mode="Markdown")
 
-    # ==============================================================
-    # 📩 STUDENT SUPPORT THREADS & REPLY ROUTING (Points 10 & 11)
-    # ==============================================================
     elif data.startswith("admin_view_student_threads_"):
         await query.answer()
         raw_param = data.replace("admin_view_student_threads_", "")
         show_resolved = "resolved" in raw_param
         
         clean_page_str = raw_param.replace("_resolved", "").strip()
-        page = int(clean_page_str) if clean_page_str.isdigit() else 0
+        page = safe_int_uid(clean_page_str)
 
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -2015,9 +2007,10 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         keyboard = []
         for s in page_items:
+            clean_s_uid = safe_int_uid(s['user_id'])
             pend_badge = f"🔴 ({s['pending_count']} unread)" if s['pending_count'] > 0 else "🟢 (Resolved)"
             btn_txt = f"💬 {s['student_name']} — {pend_badge}"
-            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_student_thread_{s['user_id']}")])
+            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_student_thread_{clean_s_uid}")])
 
         nav_row = []
         suffix = "_resolved" if show_resolved else ""
@@ -2038,7 +2031,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_student_thread_"):
         await query.answer()
-        target_uid = int(data.replace("admin_student_thread_", ""))
+        target_uid = safe_int_uid(data.replace("admin_student_thread_", ""))
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM student_queries WHERE user_id = %s ORDER BY id ASC", (target_uid,))
@@ -2106,7 +2099,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_reply_prompt_"):
         await query.answer()
-        qid = int(data.replace("admin_reply_prompt_", ""))
+        qid = safe_int_uid(data.replace("admin_reply_prompt_", ""))
         
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -2123,7 +2116,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         context.user_data["active_reply_query_data"] = dict(query_row)
 
         cancel_btn = InlineKeyboardMarkup([
-            [InlineKeyboardButton("❌ Cancel Reply & Return", callback_data=f"admin_student_thread_{query_row['user_id']}")]
+            [InlineKeyboardButton("❌ Cancel Reply & Return", callback_data=f"admin_student_thread_{safe_int_uid(query_row['user_id'])}")]
         ])
 
         media_info = ""
@@ -2147,7 +2140,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_view_qvoice_"):
         await query.answer()
-        qid = int(data.replace("admin_view_qvoice_", ""))
+        qid = safe_int_uid(data.replace("admin_view_qvoice_", ""))
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
@@ -2156,7 +2149,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         release_db(conn)
 
         if q_data and q_data.get("voice_file_id"):
-            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{q_data['user_id']}")]])
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{safe_int_uid(q_data['user_id'])}")]])
             await context.bot.send_voice(
                 chat_id=query.message.chat_id,
                 voice=q_data["voice_file_id"],
@@ -2169,7 +2162,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_view_qimg_"):
         await query.answer()
-        qid = int(data.replace("admin_view_qimg_", ""))
+        qid = safe_int_uid(data.replace("admin_view_qimg_", ""))
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
@@ -2178,7 +2171,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         release_db(conn)
 
         if q_data and q_data.get("photo_file_id"):
-            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{q_data['user_id']}")]])
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{safe_int_uid(q_data['user_id'])}")]])
             await context.bot.send_photo(
                 chat_id=query.message.chat_id,
                 photo=q_data["photo_file_id"],
@@ -2191,7 +2184,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_view_qvideo_"):
         await query.answer()
-        qid = int(data.replace("admin_view_qvideo_", ""))
+        qid = safe_int_uid(data.replace("admin_view_qvideo_", ""))
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
@@ -2200,7 +2193,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         release_db(conn)
 
         if q_data and q_data.get("video_file_id"):
-            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{q_data['user_id']}")]])
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{safe_int_uid(q_data['user_id'])}")]])
             await context.bot.send_video(
                 chat_id=query.message.chat_id,
                 video=q_data["video_file_id"],
@@ -2213,7 +2206,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_view_qaudio_"):
         await query.answer()
-        qid = int(data.replace("admin_view_qaudio_", ""))
+        qid = safe_int_uid(data.replace("admin_view_qaudio_", ""))
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
@@ -2222,7 +2215,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         release_db(conn)
 
         if q_data and q_data.get("audio_file_id"):
-            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{q_data['user_id']}")]])
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{safe_int_uid(q_data['user_id'])}")]])
             await context.bot.send_audio(
                 chat_id=query.message.chat_id,
                 audio=q_data["audio_file_id"],
@@ -2235,7 +2228,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_view_qdoc_"):
         await query.answer()
-        qid = int(data.replace("admin_view_qdoc_", ""))
+        qid = safe_int_uid(data.replace("admin_view_qdoc_", ""))
         conn = get_db()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM student_queries WHERE id = %s", (qid,))
@@ -2244,7 +2237,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         release_db(conn)
 
         if q_data and q_data.get("doc_file_id"):
-            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{q_data['user_id']}")]])
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Thread", callback_data=f"admin_student_thread_{safe_int_uid(q_data['user_id'])}")]])
             await context.bot.send_document(
                 chat_id=query.message.chat_id,
                 document=q_data["doc_file_id"],
@@ -2257,8 +2250,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_ignore_query_"):
         parts = data.replace("admin_ignore_query_", "").split("_")
-        qid = int(parts[0])
-        target_uid = int(parts[1])
+        qid = safe_int_uid(parts[0])
+        target_uid = safe_int_uid(parts[1])
 
         conn = get_db()
         cursor = conn.cursor()
@@ -2273,8 +2266,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_delete_query_"):
         parts = data.replace("admin_delete_query_", "").split("_")
-        qid = int(parts[0])
-        target_uid = int(parts[1])
+        qid = safe_int_uid(parts[0])
+        target_uid = safe_int_uid(parts[1])
 
         conn = get_db()
         cursor = conn.cursor()
@@ -2289,7 +2282,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_direct_msg_"):
         await query.answer()
-        target_uid = int(data.replace("admin_direct_msg_", ""))
+        target_uid = safe_int_uid(data.replace("admin_direct_msg_", ""))
         context.user_data["awaiting_admin_direct_msg_uid"] = target_uid
         cancel_btn = InlineKeyboardMarkup([
             [InlineKeyboardButton("❌ Cancel Message & Return", callback_data=f"admin_inspect_u_{target_uid}")]
@@ -2304,7 +2297,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_pause_"):
         await query.answer()
-        mins = int(data.replace("admin_pause_", ""))
+        mins = safe_int_uid(data.replace("admin_pause_", ""))
         set_maintenance_until(int(time.time()) + (mins * 60))
         
         hours_label = f"{mins // 60} Hour(s)" if mins >= 60 else f"{mins} Minutes"
@@ -2320,7 +2313,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             parse_mode="Markdown"
         )
         
-        target_uids = [u['user_id'] for u in users if int(u.get('is_banned') or 0) != 2]
+        target_uids = [safe_int_uid(u['user_id']) for u in users if safe_int_uid(u.get('is_banned')) != 2]
         pause_txt = f"📢 **ADMIN NOTICE:** Bot services have been temporarily paused for {hours_label}."
         await fast_concurrent_broadcast(context.bot, target_uids, pause_txt)
 
@@ -2330,7 +2323,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to System Menu", callback_data="admin_menu_system")]])
         await query.edit_message_text("🟢 **Bot Service RESUMED Immediately.**\nBroadcasting status to all users...", reply_markup=back_btn, parse_mode="Markdown")
         
-        target_uids = [u['user_id'] for u in users if int(u.get('is_banned') or 0) != 2]
+        target_uids = [safe_int_uid(u['user_id']) for u in users if safe_int_uid(u.get('is_banned')) != 2]
         resume_txt = "📢 **ADMIN HAS RESUMED SERVICES! YOU CAN ATTEMPT QUIZZES NOW!**"
         await fast_concurrent_broadcast(context.bot, target_uids, resume_txt)
 
@@ -2366,7 +2359,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("audit_grant_"):
         await query.answer()
-        target_uid = int(data.replace("audit_grant_", ""))
+        target_uid = safe_int_uid(data.replace("audit_grant_", ""))
         conn = get_db()
         cursor = conn.cursor()
         cursor.execute("UPDATE users SET bonus_quota = bonus_quota + 20 WHERE user_id = %s", (target_uid,))
@@ -2379,7 +2372,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         sync_user_json_profile(target_uid)
 
         profile = get_user_profile(target_uid) or {}
-        tot_quota = int(float(profile.get("paid_question_balance") or 20)) + int(profile.get("bonus_quota") or 0)
+        tot_quota = safe_int_uid(profile.get("paid_question_balance") or 20) + safe_int_uid(profile.get("bonus_quota"))
         user_announcement = (
             f"🎁 **SPECIAL ANNOUNCEMENT: BONUS QUOTA INCREASED!** 🎁\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -2405,7 +2398,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_issue_warning_prompt_"):
         await query.answer()
-        target_uid = int(data.replace("admin_issue_warning_prompt_", ""))
+        target_uid = safe_int_uid(data.replace("admin_issue_warning_prompt_", ""))
         context.user_data["awaiting_admin_warning_msg_uid"] = target_uid
         cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Warning & Return", callback_data=f"admin_inspect_u_{target_uid}")]])
         msg = (
@@ -2421,7 +2414,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.edit_message_text("⏳ **Generating Bulk Zip Package...**\nZipping all student JSON ledgers...", parse_mode="Markdown")
         
         for u in users:
-            sync_user_json_profile(u['user_id'])
+            sync_user_json_profile(safe_int_uid(u['user_id']))
 
         zip_filename = "All_Student_Profiles_Export.zip"
         zip_path = os.path.join(USER_PROFILES_DIR, zip_filename)
@@ -2458,7 +2451,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.answer()
         raw = data.replace("genpdf_", "")
         parts = raw.split("_")
-        target_uid = int(parts[0])
+        target_uid = safe_int_uid(parts[0])
         filter_mode = "_".join(parts[1:])
 
         await query.edit_message_text("⏳ **Generating Custom PDF Report Card...**\nBuilding stats, formatting tables, and rendering PDF...", parse_mode="Markdown")
@@ -2533,8 +2526,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_users_page_"):
         await query.answer()
-        page = int(data.replace("admin_users_page_", ""))
-        active_users = [u for u in users if int(u.get("is_banned") or 0) != 2]
+        page = safe_int_uid(data.replace("admin_users_page_", ""))
+        active_users = [u for u in users if safe_int_uid(u.get("is_banned")) != 2]
         total_users = len(active_users)
 
         if total_users == 0:
@@ -2550,11 +2543,12 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         keyboard = []
         for u in page_users:
-            sid = u.get("student_id") or f"USER_{u['user_id']}"
-            ban_flag = " 🛑" if int(u.get("is_banned") or 0) == 1 else ""
-            paid_flag = " 💳" if int(float(u.get("paid_question_balance") or 0)) > 0 else ""
+            clean_u_id = safe_int_uid(u['user_id'])
+            sid = u.get("student_id") or f"USER_{clean_u_id}"
+            ban_flag = " 🛑" if safe_int_uid(u.get("is_banned")) == 1 else ""
+            paid_flag = " 💳" if safe_int_uid(u.get("paid_question_balance")) > 0 else ""
             btn_text = f"👤 {u['full_name']}{paid_flag}{ban_flag} (ID: {sid})"
-            keyboard.append([InlineKeyboardButton(btn_text, callback_data=f"admin_inspect_u_{u['user_id']}")])
+            keyboard.append([InlineKeyboardButton(btn_text, callback_data=f"admin_inspect_u_{clean_u_id}")])
 
         nav_row = []
         if page > 0:
@@ -2577,15 +2571,15 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_inspect_u_"):
         await query.answer()
-        target_uid = int(data.replace("admin_inspect_u_", ""))
+        target_uid = safe_int_uid(data.replace("admin_inspect_u_", ""))
         u = get_user_profile(target_uid)
 
         if not u:
             await query.edit_message_text("⚠️ Student profile not found.", parse_mode="Markdown")
             return
 
-        sid = u.get("student_id") or f"USER_{u.get('user_id')}"
-        is_banned = int(u.get("is_banned") or 0)
+        sid = u.get("student_id") or f"USER_{target_uid}"
+        is_banned = safe_int_uid(u.get("is_banned"))
         
         if is_banned == 2:
             ban_text = "🔴 BLOCKED / INACTIVE"
@@ -2597,7 +2591,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             ban_text = "🟢 ACTIVE"
             ban_btn_label = "🔴 Ban Student"
 
-        paid_bal = int(float(u.get("paid_question_balance") or 0))
+        paid_bal = safe_int_uid(u.get("paid_question_balance"))
         is_paid = paid_bal > 20 and u.get("payment_id") and u.get("payment_id") not in ('DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
         paid_text = f"💳 PAID VIP ({paid_bal} Qs/Day)" if is_paid else "🆓 FREE DEMO / TIER"
 
@@ -2635,7 +2629,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"• **Student Name:** {u.get('full_name')}\n"
             f"• **Student ID:** `{sid}`\n"
-            f"• **Telegram ID:** `{u.get('user_id')}`\n"
+            f"• **Telegram ID:** `{target_uid}`\n"
             f"• **Target Exam:** `{u.get('target_exam')}`\n"
             f"• **Total Attempted Quizzes:** `{total_quizzes_count}` Quizzes\n"
             f"• **Payment Status:** `{paid_text}`\n"
@@ -2648,7 +2642,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_toggle_ban_"):
         await query.answer()
-        target_uid = int(data.replace("admin_toggle_ban_", ""))
+        target_uid = safe_int_uid(data.replace("admin_toggle_ban_", ""))
         new_ban = toggle_user_ban_status(target_uid)
         status_msg = "🔴 Student Banned successfully!" if new_ban else "🟢 Student Active successfully!"
         await query.message.reply_text(status_msg)
@@ -2658,14 +2652,14 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_editname_prompt_"):
         await query.answer()
-        target_uid = int(data.replace("admin_editname_prompt_", ""))
+        target_uid = safe_int_uid(data.replace("admin_editname_prompt_", ""))
         context.user_data["awaiting_admin_editname"] = target_uid
         cancel_btn = InlineKeyboardMarkup([[InlineKeyboardButton("❌ Cancel Name Edit", callback_data=f"admin_inspect_u_{target_uid}")]])
         await query.edit_message_text(f"✏️ **EDIT STUDENT NAME**\n\nPlease reply with the new Full Name for user ID `{target_uid}`:", reply_markup=cancel_btn, parse_mode="Markdown")
 
     elif data.startswith("admin_deluser_confirm_"):
         await query.answer()
-        target_uid = int(data.replace("admin_deluser_confirm_", ""))
+        target_uid = safe_int_uid(data.replace("admin_deluser_confirm_", ""))
         u = get_user_profile(target_uid)
         
         confirm_btn = InlineKeyboardMarkup([
@@ -2683,13 +2677,13 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("admin_deluser_do_"):
         await query.answer()
-        target_uid = int(data.replace("admin_deluser_do_", ""))
+        target_uid = safe_int_uid(data.replace("admin_deluser_do_", ""))
         admin_delete_user_account(target_uid)
         await query.edit_message_text(f"🗑 **STUDENT ACCOUNT DELETED PERMANENTLY.**\nUser ID `{target_uid}` has been removed.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("👑 Himanshu Sir's Portal (/him)", callback_data="admin_home")]]), parse_mode="Markdown")
 
     elif data.startswith("audit_pinsec_"):
         await query.answer()
-        target_uid = int(data.replace("audit_pinsec_", ""))
+        target_uid = safe_int_uid(data.replace("audit_pinsec_", ""))
         u = get_user_profile(target_uid)
 
         msg = (
@@ -2709,7 +2703,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("audit_pdfmenu_"):
         await query.answer()
-        target_uid = int(data.replace("audit_pdfmenu_", ""))
+        target_uid = safe_int_uid(data.replace("audit_pdfmenu_", ""))
         
         pdf_buttons = InlineKeyboardMarkup([
             [InlineKeyboardButton("📋 1. Last 1 Month Full Data Report", callback_data=f"genpdf_{target_uid}_last_1_month_data")],
@@ -2730,22 +2724,22 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("audit_personal_"):
         await query.answer()
-        target_uid = int(data.replace("audit_personal_", ""))
+        target_uid = safe_int_uid(data.replace("audit_personal_", ""))
         u = get_user_profile(target_uid)
         
         if not u:
             await query.edit_message_text("⚠️ Error retrieving user profile.", parse_mode="Markdown")
             return
 
-        sid = u.get("student_id") or f"USER_{u.get('user_id')}"
-        is_b = int(u.get("is_banned") or 0)
+        sid = u.get("student_id") or f"USER_{target_uid}"
+        is_b = safe_int_uid(u.get("is_banned"))
         ban_status = "BLOCKED / INACTIVE 🔴" if is_b == 2 else ("BANNED 🔴" if is_b == 1 else "ACTIVE 🟢")
         
-        edit_cnt = int(u.get("edit_count") or 0)
+        edit_cnt = safe_int_uid(u.get("edit_count"))
         last_edit = u.get("last_profile_edit", "Never")
         remaining_edits = max(0, 3 - edit_cnt)
 
-        paid_bal = int(float(u.get("paid_question_balance") or 0))
+        paid_bal = safe_int_uid(u.get("paid_question_balance"))
         is_paid = paid_bal > 20 and u.get("payment_id") and u.get("payment_id") not in ('DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
         paid_str = f"💳 YES ({paid_bal} Qs/Day)" if is_paid else "🆓 NO (Free Demo / Tier)"
 
@@ -2769,7 +2763,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"• **Full Name:** {u.get('full_name', 'N/A')}\n"
             f"• **Student ID:** `{sid}`\n"
-            f"• **Telegram ID:** `{u.get('user_id')}`\n"
+            f"• **Telegram ID:** `{target_uid}`\n"
             f"• **Account Status:** `{ban_status}`\n"
             f"• **Total Attempted Quizzes:** `{total_quizzes_count}` Quizzes\n"
             f"• **Paid VIP Subscriber:** `{paid_str}`\n"
@@ -2783,11 +2777,11 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"• **Location:** `{u.get('state', 'N/A')}, {u.get('country', 'India')}`\n"
             f"• **Profile Edits Made:** `{edit_cnt} / 3 times` *(Last: {last_edit})*\n"
             f"• **Remaining Edits:** `{remaining_edits} left`\n"
-            f"• **Bonus Quota:** `{int(u.get('bonus_quota') or 0)} Qs`\n"
+            f"• **Bonus Quota:** `{safe_int_uid(u.get('bonus_quota'))} Qs`\n"
             f"• **Registered At:** `{u.get('created_at', 'N/A')}`\n"
             f"• **Last Active:** `{u.get('last_active', 'N/A')}`\n"
             f"• **Referred By ID:** `{u.get('referred_by') or 'None'}`\n"
-            f"• **Referral Count:** `{int(u.get('referral_count') or 0)}` friends"
+            f"• **Referral Count:** `{safe_int_uid(u.get('referral_count'))}` friends"
         )
         keyboard = [
             [InlineKeyboardButton("🔙 Back to Dashboard", callback_data=f"admin_inspect_u_{target_uid}")],
@@ -2797,7 +2791,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("audit_activity_"):
         await query.answer()
-        target_uid = int(data.replace("audit_activity_", ""))
+        target_uid = safe_int_uid(data.replace("audit_activity_", ""))
         u = get_user_profile(target_uid)
         
         conn = get_db()
@@ -2807,7 +2801,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor.close()
         release_db(conn)
 
-        total_sec = sum([int(r['seconds_spent'] or 0) for r in rows]) if rows else 0
+        total_sec = sum([safe_int_uid(r['seconds_spent']) for r in rows]) if rows else 0
         total_hrs = round(total_sec / 3600.0, 2)
         total_mins = round(total_sec / 60.0, 1)
         
@@ -2822,7 +2816,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
         if rows:
             for r in rows:
-                spent = int(r['seconds_spent'] or 0)
+                spent = safe_int_uid(r['seconds_spent'])
                 mins = round(spent / 60, 2)
                 hrs = round(spent / 3600.0, 2)
                 lines.append(f" • `{r['date_str']}`: {hrs} hrs ({mins} mins / {spent}s)")
@@ -2838,14 +2832,14 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("audit_perf_"):
         await query.answer()
-        target_uid = int(data.replace("audit_perf_", ""))
+        target_uid = safe_int_uid(data.replace("audit_perf_", ""))
         u = get_user_profile(target_uid)
         perf = get_user_performance_summary(target_uid)
         rank = calculate_user_rank(target_uid)
         percentile = calculate_user_percentile(target_uid)
 
-        total_qs = int(perf.get('total_qs', 0) or 0)
-        total_correct = int(perf.get('total_correct', 0) or 0)
+        total_qs = safe_int_uid(perf.get('total_qs', 0))
+        total_correct = safe_int_uid(perf.get('total_correct', 0))
         acc = round((total_correct / total_qs) * 100, 2) if total_qs > 0 else 0.0
 
         msg = (
@@ -2868,10 +2862,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         ]
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
-    # Requirement 2: Date-wise Quiz attempts breakdown strictly for Admin
     elif data.startswith("audit_datesummary_"):
         await query.answer()
-        target_uid = int(data.replace("audit_datesummary_", ""))
+        target_uid = safe_int_uid(data.replace("audit_datesummary_", ""))
         u = get_user_profile(target_uid)
 
         conn = get_db()
@@ -2896,8 +2889,8 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 if dt not in summary:
                     summary[dt] = {"tests": 0, "qs": 0, "correct": 0, "score": 0.0}
                 summary[dt]["tests"] += 1
-                summary[dt]["qs"] += int(ad.get("questions_attempted", 0) or 0)
-                summary[dt]["correct"] += int(ad.get("correct_answers", 0) or 0)
+                summary[dt]["qs"] += safe_int_uid(ad.get("questions_attempted"))
+                summary[dt]["correct"] += safe_int_uid(ad.get("correct_answers"))
                 summary[dt]["score"] += float(ad.get("score", 0.0) or 0.0)
 
             for dt, stats in summary.items():
@@ -2922,7 +2915,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("audit_attempted_"):
         await query.answer()
-        target_uid = int(data.replace("audit_attempted_", ""))
+        target_uid = safe_int_uid(data.replace("audit_attempted_", ""))
         u = get_user_profile(target_uid)
 
         conn = get_db()
@@ -2969,7 +2962,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("audit_wrong_"):
         await query.answer()
-        target_uid = int(data.replace("audit_wrong_", ""))
+        target_uid = safe_int_uid(data.replace("audit_wrong_", ""))
         u = get_user_profile(target_uid)
 
         conn = get_db()
@@ -3015,7 +3008,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("audit_saved_"):
         await query.answer()
-        target_uid = int(data.replace("audit_saved_", ""))
+        target_uid = safe_int_uid(data.replace("audit_saved_", ""))
         u = get_user_profile(target_uid)
 
         conn = get_db()
@@ -3036,7 +3029,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
             for idx, sq in enumerate(saved, start=1):
                 sq_d = dict(sq)
                 opts_list = json.loads(sq_d['options_json']) if sq_d.get('options_json') else []
-                c_opt_idx = int(sq_d.get("correct_option") or 0)
+                c_opt_idx = safe_int_uid(sq_d.get("correct_option"))
                 ans_text = opts_list[c_opt_idx] if 0 <= c_opt_idx < len(opts_list) else "N/A"
                 s_at = sq_d.get("saved_at", "N/A")
                 lines.append(f"**{idx}. [{s_at}]** 📌 `{sq_d['question_text']}`\n    👉 **Correct Ans:** `{ans_text}`")
@@ -3055,7 +3048,7 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("audit_feedback_"):
         await query.answer()
-        target_uid = int(data.replace("audit_feedback_", ""))
+        target_uid = safe_int_uid(data.replace("audit_feedback_", ""))
         u = get_user_profile(target_uid)
 
         conn = get_db()
@@ -3087,9 +3080,9 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
 
     elif data.startswith("audit_exportjson_"):
         await query.answer()
-        target_uid = int(data.replace("audit_exportjson_", ""))
+        target_uid = safe_int_uid(data.replace("audit_exportjson_", ""))
         u = get_user_profile(target_uid)
-        sid = u.get("student_id") or f"USER_{u.get('user_id')}"
+        sid = u.get("student_id") or f"USER_{target_uid}"
         
         sync_user_json_profile(target_uid)
         filepath = os.path.join(USER_PROFILES_DIR, f"{sid}.json")

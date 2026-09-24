@@ -51,7 +51,22 @@ if HAS_RAZORPAY and RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET:
 
 bot_app_instance = None
 SENT_EXPIRY_REMINDERS = set()
-LAST_QUIZ_BROADCAST_KEY = ""
+
+# In-memory short cache for flash sales to prevent repetitive database egress
+FLASH_SALE_CACHE = {"data": None, "cached_at": 0}
+
+
+def get_cached_flash_sale():
+    now_ts = asyncio.get_event_loop().time()
+    if now_ts - FLASH_SALE_CACHE["cached_at"] < 180:  # 3-minute memory cache
+        return FLASH_SALE_CACHE["data"]
+    try:
+        sale = get_active_flash_sale()
+        FLASH_SALE_CACHE["data"] = sale
+        FLASH_SALE_CACHE["cached_at"] = now_ts
+        return sale
+    except Exception:
+        return FLASH_SALE_CACHE["data"]
 
 
 async def activate_user_subscription(user_id: int, plan_key: str, payment_id: str = "OFFICIAL_SUBSCRIBED", amount_paid: float = None):
@@ -202,7 +217,6 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             disable_notification=False
         )
 
-        # Generate & Send Official PDF Invoice Slip
         invoice_pdf_path = await asyncio.to_thread(generate_payment_invoice_pdf, user_id, plan_key, payment_id, final_amount)
         if invoice_pdf_path and os.path.exists(invoice_pdf_path):
             with open(invoice_pdf_path, "rb") as doc:
@@ -257,52 +271,52 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             logging.error(f"[ADMIN PAYMENT ALERT ERROR] {a_err}")
 
 
+# Single-batch query lookup every 120s instead of 30 individual queries every 30s
 async def scheduled_auto_payment_sync_worker():
     while True:
-        await asyncio.sleep(30)
+        await asyncio.sleep(120)
         if not bot_app_instance:
             continue
 
         if razorpay_client:
             try:
-                p_res = await asyncio.to_thread(razorpay_client.payment.all, {"count": 30})
+                p_res = await asyncio.to_thread(razorpay_client.payment.all, {"count": 15})
                 items = p_res.get("items", []) if isinstance(p_res, dict) else []
-                for p in items:
-                    if p.get("status") != "captured":
-                        continue
-                    p_id = p.get("id")
-                    if not p_id or not str(p_id).startswith("pay_"):
-                        continue
+                valid_items = [p for p in items if p.get("status") == "captured" and str(p.get("id", "")).startswith("pay_")]
 
+                if valid_items:
+                    payment_ids = [p["id"] for p in valid_items]
                     conn = get_db()
                     cursor = conn.cursor()
-                    cursor.execute("SELECT 1 FROM payment_transactions WHERE payment_id = %s", (p_id,))
-                    exists = cursor.fetchone()
+                    cursor.execute("SELECT payment_id FROM payment_transactions WHERE payment_id = ANY(%s)", (payment_ids,))
+                    existing_ids = {r[0] for r in cursor.fetchall()}
                     cursor.close()
                     release_db(conn)
 
-                    if not exists:
-                        amount_paid = float(p.get("amount", 0)) / 100.0
-                        contact = p.get("contact", "")
-                        notes = p.get("notes", {}) or {}
-                        user_id = notes.get("user_id")
-                        plan_key = notes.get("plan_key")
+                    for p in valid_items:
+                        p_id = p["id"]
+                        if p_id not in existing_ids:
+                            amount_paid = float(p.get("amount", 0)) / 100.0
+                            contact = p.get("contact", "")
+                            notes = p.get("notes", {}) or {}
+                            user_id = notes.get("user_id")
+                            plan_key = notes.get("plan_key")
 
-                        uid = None
-                        if user_id and str(user_id).isdigit():
-                            uid = int(user_id)
-                        elif contact:
-                            u_match = get_user_by_phone(contact)
-                            if u_match:
-                                uid = u_match["user_id"]
+                            uid = None
+                            if user_id and str(user_id).isdigit():
+                                uid = int(user_id)
+                            elif contact:
+                                u_match = get_user_by_phone(contact)
+                                if u_match:
+                                    uid = u_match["user_id"]
 
-                        if uid:
-                            if not plan_key or plan_key not in PLAN_TIERS:
-                                plan_key = infer_plan_key_from_amount(amount_paid)
-                            if plan_key in PLAN_TIERS:
-                                activated = await activate_user_subscription(uid, plan_key, p_id, amount_paid=amount_paid)
-                                if activated:
-                                    await send_payment_invoice_telegram(uid, plan_key, p_id, amount_paid=amount_paid)
+                            if uid:
+                                if not plan_key or plan_key not in PLAN_TIERS:
+                                    plan_key = infer_plan_key_from_amount(amount_paid)
+                                if plan_key in PLAN_TIERS:
+                                    activated = await activate_user_subscription(uid, plan_key, p_id, amount_paid=amount_paid)
+                                    if activated:
+                                        await send_payment_invoice_telegram(uid, plan_key, p_id, amount_paid=amount_paid)
             except Exception as rzp_err:
                 logging.error(f"[SILENT RAZORPAY SYNC ERROR] {rzp_err}")
 
@@ -347,12 +361,13 @@ async def scheduled_auto_payment_sync_worker():
             logging.error(f"[SILENT AUTO-CREDIT WORKER EXCEPTION] {e}")
 
 
+# Checks every 15 minutes; queries only active expiring VIP users rather than table scanning
 async def scheduled_expiry_reminder_check():
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
     ist = pytz.timezone("Asia/Kolkata")
     
     while True:
-        await asyncio.sleep(120)
+        await asyncio.sleep(900)
         if not bot_app_instance:
             continue
 
@@ -360,7 +375,14 @@ async def scheduled_expiry_reminder_check():
         try:
             conn = get_db()
             cursor = conn.cursor(cursor_factory=RealDictCursor)
-            cursor.execute("SELECT user_id, full_name, paid_question_balance, vip_pass_expiry, demo_used FROM users WHERE vip_pass_expiry IS NOT NULL AND is_banned != 2 AND is_banned != 1")
+            cursor.execute("""
+                SELECT user_id, full_name, paid_question_balance, vip_pass_expiry 
+                FROM users 
+                WHERE vip_pass_expiry IS NOT NULL 
+                  AND is_banned NOT IN (1, 2)
+                  AND paid_question_balance > 20
+                LIMIT 200
+            """)
             users = cursor.fetchall()
             cursor.close()
             release_db(conn)
@@ -448,62 +470,10 @@ async def scheduled_expiry_reminder_check():
             logging.error(f"[SCHEDULED CHECK EXCEPTION] {err}")
 
 
-async def scheduled_daily_quiz_reminder():
-    global LAST_QUIZ_BROADCAST_KEY
-    from telegram import InlineKeyboardMarkup, InlineKeyboardButton
-    ist = pytz.timezone("Asia/Kolkata")
-
-    while True:
-        await asyncio.sleep(15)
-        if not bot_app_instance:
-            continue
-
-        now = datetime.now(ist)
-        today_date_str = now.strftime("%Y-%m-%d")
-        current_hour = now.hour
-        current_minute = now.minute
-
-        is_time_slot = (
-            (current_hour == 9 and current_minute == 0) or
-            (current_hour == 12 and current_minute == 0) or
-            (current_hour == 16 and current_minute == 0) or
-            (current_hour == 19 and current_minute == 0) or
-            (current_hour == 22 and current_minute == 0)
-        )
-
-        if is_time_slot:
-            broadcast_key = f"{today_date_str}_{current_hour}_{current_minute}"
-            if LAST_QUIZ_BROADCAST_KEY != broadcast_key:
-                LAST_QUIZ_BROADCAST_KEY = broadcast_key
-                conn = None
-                try:
-                    conn = get_db()
-                    cursor = conn.cursor()
-                    cursor.execute("SELECT user_id FROM users WHERE is_banned != 2 AND is_banned != 1 AND is_verified = 1")
-                    rows = cursor.fetchall()
-                    cursor.close()
-                    release_db(conn)
-
-                    user_ids = [r[0] if isinstance(r, (list, tuple)) else r['user_id'] for r in rows]
-                    reminder_text = (
-                        f"📢 **DAILY QUIZ PRACTICE REMINDER** 📢\n"
-                        f"• • • ✧ • • •\n"
-                        f"Guyzzz attempt the Quiz Now, because everyday quiz will take you to one step closer to your selection💯\n"
-                        f"• • • ✧ • • •\n"
-                        f"⚡ Tap the button below to start practicing now:"
-                    )
-                    btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz")]])
-
-                    await fast_concurrent_broadcast(bot_app_instance.bot, user_ids, reminder_text, reply_markup=btn, parse_mode="Markdown")
-                except Exception as err:
-                    if conn:
-                        release_db(conn)
-                    logging.error(f"[DAILY BROADCAST ERROR] {err}")
-
-
+# Announcement worker polled once every 60s
 async def scheduled_announcement_broadcast_worker():
     while True:
-        await asyncio.sleep(15)
+        await asyncio.sleep(60)
         if not bot_app_instance:
             continue
 
@@ -516,7 +486,7 @@ async def scheduled_announcement_broadcast_worker():
                 media_type = annc.get('media_type', 'text')
                 
                 users = await asyncio.to_thread(get_all_users)
-                user_ids = [u['user_id'] for u in users if u.get('is_banned') != 2 and u.get('is_banned') != 1]
+                user_ids = [u['user_id'] for u in users if u.get('is_banned') not in (1, 2)]
                 
                 sent_count = await fast_concurrent_broadcast(
                     bot=bot_app_instance.bot,
@@ -539,11 +509,14 @@ async def scheduled_announcement_broadcast_worker():
             logging.error(f"[ANNOUNCEMENT WORKER EXCEPTION] {e}")
 
 
+# Flash sale worker with 5-minute intervals and in-memory cache
 async def scheduled_flash_sale_worker():
     while True:
-        await asyncio.sleep(30)
+        await asyncio.sleep(300)
         try:
-            await asyncio.to_thread(get_active_flash_sale)
+            sale = await asyncio.to_thread(get_active_flash_sale)
+            FLASH_SALE_CACHE["data"] = sale
+            FLASH_SALE_CACHE["cached_at"] = asyncio.get_event_loop().time()
         except Exception as e:
             logging.error(f"[FLASH SALE WORKER EXCEPTION] {e}")
 
@@ -715,9 +688,9 @@ async def run_bot():
     await app.bot.delete_webhook(drop_pending_updates=True)
     await app.updater.start_polling(drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
 
+    # Core background tasks running with low database impact
     asyncio.create_task(scheduled_auto_payment_sync_worker())
     asyncio.create_task(scheduled_expiry_reminder_check())
-    asyncio.create_task(scheduled_daily_quiz_reminder())
     asyncio.create_task(scheduled_announcement_broadcast_worker())
     asyncio.create_task(scheduled_flash_sale_worker())
 

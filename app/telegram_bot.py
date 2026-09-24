@@ -67,7 +67,7 @@ PROFANE_WORDS = [
 ]
 
 PROFILE_CACHE = {}
-CACHE_TTL = 30 
+CACHE_TTL = 60  # Increased to 60s to prevent rapid repeat database queries
 FEEDBACKS_PER_PAGE = 5
 
 ANNC_CONTENT, ANNC_DATETIME = range(104, 106)
@@ -197,7 +197,8 @@ def generate_razorpay_link_sync(user_id: int, plan_key: str) -> str:
         logging.error("[PAYMENT ERROR] Razorpay API keys missing.")
         return None
 
-    active_sale = get_active_flash_sale()
+    from app.main import get_cached_flash_sale
+    active_sale = get_cached_flash_sale()
     final_price = calculate_discounted_price(plan["price"], active_sale["discount_percent"]) if active_sale else plan["price"]
 
     url = "https://api.razorpay.com/v1/payment_links"
@@ -381,8 +382,7 @@ async def direct_admin_ask_command(update: Update, context: ContextTypes.DEFAULT
             "Examples:\n"
             "• `/ask give all blocked users today list`\n"
             "• `/ask give total paid users in last 6 hours`\n"
-            "• `/ask show Yogita profile`\n"
-            "• `/ask yogita phone number`\n"
+            "• `/ask show student profile`\n"
             "• `/ask admin password?`\n"
             "• `/ask total registered users list`\n"
             "• `/ask summary of demo & paid users`\n"
@@ -612,7 +612,8 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = await fetch_user_profile_fast(user.id)
 
-    active_sale = await asyncio.to_thread(get_active_flash_sale)
+    from app.main import get_cached_flash_sale
+    active_sale = get_cached_flash_sale()
 
     keyboard = []
     if profile and not profile.get("demo_used"):
@@ -695,7 +696,8 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
         )
         return
 
-    active_sale = await asyncio.to_thread(get_active_flash_sale)
+    from app.main import get_cached_flash_sale
+    active_sale = get_cached_flash_sale()
     charge_price = calculate_discounted_price(plan_info["price"], active_sale["discount_percent"]) if active_sale else plan_info["price"]
 
     payment_url = generate_razorpay_link_sync(user_id, plan_key)
@@ -1699,7 +1701,7 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     anim = msg_obj.animation if msg_obj.animation else None
     caption = msg_obj.caption.strip() if msg_obj.caption else ""
 
-    # Mental math calculation answer capture
+    # Mental math booster answer capture
     if context.user_data.get("awaiting_booster_user_ans"):
         context.user_data["awaiting_booster_user_ans"] = False
         booster_session = ACTIVE_MENTAL_BOOSTERS.pop(user.id, None)
@@ -1707,7 +1709,6 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
             chain_data = booster_session["chain_data"]
             cur_step = booster_session.get("current_step", len(chain_data["steps"]) - 1)
             
-            # Answer calculated up to the step stopped or finished
             target_step_info = chain_data["steps"][cur_step]
             correct_ans = target_step_info["val"]
             user_input = text.strip()

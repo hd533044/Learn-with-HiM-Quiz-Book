@@ -1574,3 +1574,85 @@ def get_blocked_bot_users() -> list:
     finally:
         cursor.close()
         release_db(conn)
+def bulk_extend_segment_validity(segment_type: str, days_to_add: int) -> dict:
+    """
+    Extends validity for all users matching a specific segment.
+    Calculates new expiry based on current status (stacked if active, reset from now if expired).
+    """
+    import pytz
+    from datetime import datetime, timedelta
+    from app.database import get_db, release_db, get_all_users
+    from psycopg2.extras import RealDictCursor
+
+    ist = pytz.timezone("Asia/Kolkata")
+    now_ist = datetime.now(ist)
+    next_week = now_ist + timedelta(days=7)
+
+    users = get_all_users()
+    matched_target_users = []
+
+    for u in users:
+        # Ignore deleted/banned accounts
+        if int(u.get("is_banned") or 0) in (1, 2):
+            continue
+
+        exp_str = u.get("vip_pass_expiry")
+        if not exp_str:
+            continue
+
+        try:
+            clean_exp = exp_str.replace(" IST", "").strip()
+            exp_dt = datetime.strptime(clean_exp, "%Y-%m-%d %H:%M:%S")
+            exp_dt = ist.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
+        except Exception:
+            continue
+
+        bal = int(u.get("paid_question_balance") or 0)
+        is_paid_user = bal > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
+
+        if segment_type == "paidactive" and exp_dt > now_ist and is_paid_user:
+            matched_target_users.append((u, exp_dt))
+        elif segment_type == "expiringsoon" and exp_dt > now_ist and exp_dt <= next_week and is_paid_user:
+            matched_target_users.append((u, exp_dt))
+        elif segment_type == "paidexpired" and exp_dt <= now_ist and is_paid_user:
+            matched_target_users.append((u, exp_dt))
+        elif segment_type == "demoactive" and exp_dt > now_ist and not is_paid_user:
+            matched_target_users.append((u, exp_dt))
+        elif segment_type == "demoexpired" and exp_dt <= now_ist and not is_paid_user:
+            matched_target_users.append((u, exp_dt))
+
+    if not matched_target_users:
+        return {"success": False, "count": 0, "user_ids": []}
+
+    updated_uids = []
+    conn = get_db()
+    cursor = conn.cursor()
+    try:
+        for u, current_exp_dt in matched_target_users:
+            uid = int(u["user_id"])
+            
+            # If already active, add days from current expiry. If expired, add days from now.
+            base_dt = current_exp_dt if current_exp_dt > now_ist else now_ist
+            new_expiry_dt = base_dt + timedelta(days=days_to_add)
+            new_expiry_str = new_expiry_dt.strftime("%Y-%m-%d %H:%M:%S IST")
+
+            # Ensure minimum question balance of 20
+            curr_bal = int(u.get("paid_question_balance") or 20)
+            new_bal = max(20, curr_bal)
+
+            cursor.execute(
+                """
+                UPDATE users 
+                SET vip_pass_expiry = %s,
+                    paid_question_balance = %s
+                WHERE user_id = %s
+                """,
+                (new_expiry_str, new_bal, uid)
+            )
+            updated_uids.append(uid)
+
+        conn.commit()
+        return {"success": True, "count": len(updated_uids), "user_ids": updated_uids}
+    finally:
+        cursor.close()
+        release_db(conn)

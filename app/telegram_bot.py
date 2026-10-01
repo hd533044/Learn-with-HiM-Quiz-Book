@@ -2116,21 +2116,31 @@ async def handle_text_messages(update: Update, context: ContextTypes.DEFAULT_TYP
     if user.id == PRIMARY_ADMIN_ID and context.user_data.get("awaiting_admin_search"):
         context.user_data["awaiting_admin_search"] = False
         all_u = await asyncio.to_thread(get_all_users)
+        
+        search_query = text.strip().lower()
         matches = [
-            u for u in all_u if text.lower() in str(u.get("student_id", "")).lower() 
-            or text.lower() in str(u.get("phone_number", "")).lower() 
-            or text.lower() in str(u.get("full_name", "")).lower()
+            u for u in all_u if (
+                search_query in str(u.get("user_id", "")).strip().lower()
+                or search_query in str(u.get("student_id", "")).strip().lower() 
+                or search_query in str(u.get("phone_number", "")).strip().lower() 
+                or search_query in str(u.get("full_name", "")).strip().lower()
+                or search_query in str(u.get("username", "")).strip().lower()
+            )
         ]
 
         if not matches:
-            back_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔍 New Search", callback_data="admin_search_prompt")], [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]])
+            back_btn = InlineKeyboardMarkup([
+                [InlineKeyboardButton("🔍 New Search", callback_data="admin_search_prompt")], 
+                [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
+            ])
             await update.message.reply_text(f"⚠️ No student record found matching: `{text}`", reply_markup=back_btn, parse_mode="Markdown")
             return
 
         keyboard = []
         for m in matches[:10]:
-            sid = m.get("student_id") or f"USER_{m['user_id']}"
-            keyboard.append([InlineKeyboardButton(f"👤 {m['full_name']} (ID: {sid})", callback_data=f"admin_inspect_u_{m['user_id']}")])
+            clean_uid = m['user_id']
+            sid = m.get("student_id") or f"USER_{clean_uid}"
+            keyboard.append([InlineKeyboardButton(f"👤 {m['full_name']} (ID: {sid} | TG: {clean_uid})", callback_data=f"admin_inspect_u_{clean_uid}")])
         
         keyboard.append([InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")])
         await update.message.reply_text(f"🔍 **Search Results for '{text}':**", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")

@@ -756,6 +756,105 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
         return
 
+    elif data.startswith("admin_bulkext_menu_"):
+        await query.answer()
+        seg_type = data.replace("admin_bulkext_menu_", "")
+
+        titles = {
+            "paidactive": "ACTIVE PAID VIP STUDENTS",
+            "expiringsoon": "PAID VIP EXPIRING SOON",
+            "paidexpired": "EXPIRED PAID PASSES",
+            "demoactive": "ACTIVE FREE DEMO USERS",
+            "demoexpired": "EXPIRED FREE DEMO USERS"
+        }
+        title_str = titles.get(seg_type, "STUDENT SEGMENT")
+
+        keyboard = [
+            [InlineKeyboardButton("➕ 1 Day to ALL", callback_data=f"admin_bulkexec_{seg_type}_1"), InlineKeyboardButton("➕ 3 Days to ALL", callback_data=f"admin_bulkexec_{seg_type}_3")],
+            [InlineKeyboardButton("➕ 7 Days (1 Wk) to ALL", callback_data=f"admin_bulkexec_{seg_type}_7"), InlineKeyboardButton("➕ 15 Days to ALL", callback_data=f"admin_bulkexec_{seg_type}_15")],
+            [InlineKeyboardButton("➕ 20 Days to ALL", callback_data=f"admin_bulkexec_{seg_type}_20"), InlineKeyboardButton("➕ 30 Days (1 Mo) to ALL", callback_data=f"admin_bulkexec_{seg_type}_30")],
+            [InlineKeyboardButton("🔙 Cancel & Return", callback_data=f"admin_seg_{seg_type}_0")]
+        ]
+
+        msg = (
+            f"⚡ **BULK PASS EXTENSION: {title_str}** ⚡\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Choose how many days to grant to **EVERY candidate** in this segment.\n\n"
+            f"✨ *If an account is active, validity stacks on top of their remaining days.*\n"
+            f"✨ *If an account is expired, validity extends starting from today.*"
+        )
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        return
+
+    elif data.startswith("admin_bulkexec_"):
+        await query.answer("Applying bulk extension...", show_alert=False)
+        parts = data.replace("admin_bulkexec_", "").split("_")
+        seg_type = parts[0]
+        days = safe_int_uid(parts[1])
+
+        from app.database import bulk_extend_segment_validity, sync_user_json_profile
+        from app.telegram_bot import PROFILE_CACHE
+
+        await query.edit_message_text(f"⏳ **Updating database and extending pass validity by +{days} Days...**", parse_mode="Markdown")
+
+        res = bulk_extend_segment_validity(seg_type, days)
+
+        if not res.get("success") or res.get("count", 0) == 0:
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Segments", callback_data="admin_adv_segments_menu")]])
+            await query.edit_message_text("⚠️ No students were updated in this segment.", reply_markup=nav, parse_mode="Markdown")
+            return
+
+        updated_uids = res["user_ids"]
+        
+        # Clear profile caches so users see their new dates immediately
+        for uid in updated_uids:
+            PROFILE_CACHE.pop(uid, None)
+            asyncio.create_task(asyncio.to_thread(sync_user_json_profile, uid))
+
+        # Broadcast notification to all updated students
+        broadcast_text = (
+            f"🎁 **SPECIAL ANNOUNCEMENT: PASS EXTENDED!** 🎁\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🎉 **Himanshu Sir has extended your Practice Pass Validity by +{days} Days!**\n\n"
+            f"⚡ Your daily question practice quota has been credited and refreshed.\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🚀 Tap **/quiz** to launch your daily session now!"
+        )
+        btn = InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")]])
+
+        sent_count = await fast_concurrent_broadcast(
+            bot=context.bot,
+            user_ids=updated_uids,
+            text=broadcast_text,
+            reply_markup=btn
+        )
+
+        nav = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🗂️ Return to Student Segments", callback_data="admin_adv_segments_menu")],
+            [InlineKeyboardButton("👑 Master Admin Portal (/him)", callback_data="admin_home")]
+        ])
+
+        titles = {
+            "paidactive": "ACTIVE PAID VIP",
+            "expiringsoon": "EXPIRING SOON",
+            "paidexpired": "EXPIRED PAID",
+            "demoactive": "ACTIVE DEMO",
+            "demoexpired": "EXPIRED DEMO"
+        }
+
+        msg = (
+            f"✅ **BULK VALIDITY EXTENSION COMPLETE!** ✅\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• **Segment:** `{titles.get(seg_type, seg_type)}`\n"
+            f"• **Days Added:** `+{days} Days`\n"
+            f"• **Accounts Updated:** `{len(updated_uids)} Students`\n"
+            f"• **Notifications Sent:** `{sent_count}/{len(updated_uids)} Delivered`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"All databases and user profiles have been updated."
+        )
+        await query.edit_message_text(msg, reply_markup=nav, parse_mode="Markdown")
+        return
+
     elif data == "admin_menu_students":
         await query.answer()
         pending_students_count = get_unique_students_with_queries_count()
@@ -983,6 +1082,89 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
         return
 
+    elif data.startswith("admin_seg_"):
+        await query.answer()
+        parts = data.replace("admin_seg_", "").split("_")
+        seg_type = parts[0]
+        page = safe_int_uid(parts[1])
+        
+        ist = pytz.timezone("Asia/Kolkata")
+        now_ist = datetime.now(ist)
+        next_week = now_ist + timedelta(days=7)
+        
+        matched_users = []
+        for u in users:
+            if safe_int_uid(u.get("is_banned")) in (1, 2): continue
+            exp_str = u.get("vip_pass_expiry")
+            if not exp_str: continue
+            try:
+                clean_exp = exp_str.replace(" IST", "").strip()
+                exp_dt = datetime.strptime(clean_exp, "%Y-%m-%d %H:%M:%S")
+                exp_dt = ist.localize(exp_dt) if exp_dt.tzinfo is None else exp_dt
+            except Exception: continue
+                
+            bal = safe_int_uid(u.get("paid_question_balance"))
+            is_paid_user = bal > 20 or u.get("payment_id") not in (None, 'DEMO_PASS', 'OFFICIAL_SUBSCRIBED')
+            
+            if seg_type == "paidactive" and exp_dt > now_ist and is_paid_user: matched_users.append(u)
+            elif seg_type == "expiringsoon" and exp_dt > now_ist and exp_dt <= next_week and is_paid_user: matched_users.append(u)
+            elif seg_type == "paidexpired" and exp_dt <= now_ist and is_paid_user: matched_users.append(u)
+            elif seg_type == "demoactive" and exp_dt > now_ist and not is_paid_user: matched_users.append(u)
+            elif seg_type == "demoexpired" and exp_dt <= now_ist and not is_paid_user: matched_users.append(u)
+
+        total_u = len(matched_users)
+        if total_u == 0:
+            nav = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Segments", callback_data="admin_adv_segments_menu")]])
+            await query.edit_message_text("🗂️ **SEGMENT AUDIT**\n\nNo students found in this category.", reply_markup=nav, parse_mode="Markdown")
+            return
+
+        total_pages = math.ceil(total_u / USERS_PER_PAGE)
+        page = max(0, min(page, total_pages - 1))
+        page_items = matched_users[page * USERS_PER_PAGE:(page + 1) * USERS_PER_PAGE]
+
+        keyboard = []
+        
+        # --- BULK ACTION BUTTON AT TOP ---
+        keyboard.append([InlineKeyboardButton(f"⚡ BULK EXTEND ALL ({total_u} Users)", callback_data=f"admin_bulkext_menu_{seg_type}")])
+
+        for u in page_items:
+            clean_u_id = safe_int_uid(u['user_id'])
+            sid = u.get("student_id") or f"USER_{clean_u_id}"
+            name = u.get("full_name", "Student")
+            exp_s = u.get("vip_pass_expiry", "").split(" ")[0]
+            
+            icon = "🟢" if "active" in seg_type else ("🟡" if "soon" in seg_type else "🔴")
+            if "demo" in seg_type: icon = "🎁" if "active" in seg_type else "⚠️"
+            
+            btn_txt = f"{icon} {name} ({exp_s})"
+            keyboard.append([InlineKeyboardButton(btn_txt, callback_data=f"admin_inspect_u_{clean_u_id}")])
+
+        nav_row = []
+        if page > 0: nav_row.append(InlineKeyboardButton("◀️ Prev", callback_data=f"admin_seg_{seg_type}_{page - 1}"))
+        nav_row.append(InlineKeyboardButton(f"📄 Page {page + 1}/{total_pages}", callback_data="ignore"))
+        if page < total_pages - 1: nav_row.append(InlineKeyboardButton("Next ▶️", callback_data=f"admin_seg_{seg_type}_{page + 1}"))
+        
+        keyboard.append(nav_row)
+        keyboard.append([InlineKeyboardButton("🔙 Back to Segments", callback_data="admin_adv_segments_menu")])
+
+        titles = {
+            "paidactive": "🟢 ACTIVE PAID VIP STUDENTS",
+            "expiringsoon": "🟡 PAID VIP EXPIRING SOON (<7 DAYS)",
+            "paidexpired": "🔴 EXPIRED PAID PASSES",
+            "demoactive": "🎁 ACTIVE FREE DEMO USERS",
+            "demoexpired": "⚠️ EXPIRED FREE DEMO USERS"
+        }
+        
+        msg = (
+            f"{titles.get(seg_type, 'SEGMENT AUDIT')}\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"• **Total Students:** `{total_u}`\n"
+            f"• **Page:** `{page + 1}` of `{total_pages}`\n\n"
+            f"Tap **⚡ BULK EXTEND ALL** to add days to all students in this group, or tap an individual profile below:"
+        )
+        await query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+        return
+    
     elif data.startswith("admin_seg_"):
         await query.answer()
         parts = data.replace("admin_seg_", "").split("_")
@@ -3106,3 +3288,56 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
                 )
         else:
             await query.message.reply_text("⚠️ JSON file not found on disk.")
+def admin_extend_user_validity(user_id: int, days_to_add: int) -> dict:
+    """Extends or resets pass validity date by adding specified days."""
+    ist = pytz.timezone("Asia/Kolkata")
+    now_ist = datetime.now(ist)
+    
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    try:
+        cursor.execute("SELECT user_id, full_name, vip_pass_expiry, paid_question_balance FROM users WHERE user_id = %s", (user_id,))
+        user_row = cursor.fetchone()
+        if not user_row:
+            return {"success": False, "error": "USER_NOT_FOUND"}
+            
+        exp_str = user_row.get("vip_pass_expiry")
+        base_dt = now_ist
+        
+        if exp_str:
+            try:
+                clean_exp = exp_str.replace(" IST", "").strip()
+                parsed_dt = datetime.strptime(clean_exp, "%Y-%m-%d %H:%M:%S")
+                parsed_dt = ist.localize(parsed_dt) if parsed_dt.tzinfo is None else parsed_dt
+                # If currently active, extend from the current expiry date; otherwise extend from right now
+                if parsed_dt > now_ist:
+                    base_dt = parsed_dt
+            except Exception:
+                base_dt = now_ist
+                
+        new_expiry_dt = base_dt + timedelta(days=days_to_add)
+        new_expiry_str = new_expiry_dt.strftime("%Y-%m-%d %H:%M:%S IST")
+        
+        # Ensure user has at least baseline quota active if previously expired
+        current_bal = int(user_row.get("paid_question_balance") or 20)
+        new_bal = max(20, current_bal)
+        
+        cursor.execute(
+            """
+            UPDATE users 
+            SET vip_pass_expiry = %s,
+                paid_question_balance = %s
+            WHERE user_id = %s
+            """,
+            (new_expiry_str, new_bal, user_id)
+        )
+        conn.commit()
+        return {
+            "success": True, 
+            "new_expiry": new_expiry_str, 
+            "days_added": days_to_add,
+            "full_name": user_row.get("full_name", "Student")
+        }
+    finally:
+        cursor.close()
+        release_db(conn)

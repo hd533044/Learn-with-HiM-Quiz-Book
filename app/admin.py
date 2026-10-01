@@ -2117,6 +2117,25 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         cursor = conn.cursor()
         cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS temporary_bonus_quota INTEGER DEFAULT 0;")
         cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS gift_granted_date TEXT;")
+
+        # Update ALL active users (both Free and Paid VIP, avoiding banned users)
+        cursor.execute(
+            """
+            UPDATE users 
+            SET temporary_bonus_quota = %s, 
+                gift_granted_date = %s 
+            WHERE is_banned NOT IN (1, 2) 
+              AND is_verified = 1
+            """,
+            (amount, today_date)
+        )
+        conn.commit()
+        cursor.close()
+        release_db(conn)
+
+        # Clear in-memory profile cache so both Free and Paid users see the boost instantly
+        from app.telegram_bot import PROFILE_CACHE
+        PROFILE_CACHE.clear()
         
         cursor.execute(
             "UPDATE users SET temporary_bonus_quota = %s, gift_granted_date = %s WHERE is_banned = 0 AND is_verified = 1",

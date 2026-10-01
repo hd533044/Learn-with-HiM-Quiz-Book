@@ -440,11 +440,19 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
     PROFILE_CACHE.pop(user.id, None)
     profile = await fetch_user_profile_fast(user.id)
 
+    # Locate in strict_quiz_command_guard():
     attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0
-    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
+    today_str = get_ist_date_str()
 
+    paid_bal = int(profile.get("paid_question_balance") or 0)
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+    permanent_bonus = int(profile.get("bonus_quota") or 0)
+
+    temp_bonus = 0
+    if profile.get("gift_granted_date") == today_str:
+        temp_bonus = int(profile.get("temporary_bonus_quota") or 0)
+
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else (base_limit + permanent_bonus + temp_bonus)
     if attempted_today >= allowed_limit:
         limit_msg = (
             f"🛑 **Daily Limit Exhausted!** 🛑\n\n"
@@ -546,12 +554,20 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     PROFILE_CACHE.pop(user.id, None)
     profile = await fetch_user_profile_fast(user.id)
 
+    # Locate in myplan_command():
     today_used = await asyncio.to_thread(get_today_attempts, user.id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0
-    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
-    remaining = max(0, allowed_limit - today_used)
+    today_str = get_ist_date_str()
 
+    paid_bal = int(profile.get("paid_question_balance") or 0)
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+    permanent_bonus = int(profile.get("bonus_quota") or 0)
+
+    temp_bonus = 0
+    if profile.get("gift_granted_date") == today_str:
+        temp_bonus = int(profile.get("temporary_bonus_quota") or 0)
+
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else (base_limit + permanent_bonus + temp_bonus)
+    remaining = max(0, allowed_limit - today_used)
     total_users = await asyncio.to_thread(get_total_registered_users_count)
     total_likes = await asyncio.to_thread(get_total_platform_likes)
 
@@ -596,6 +612,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🟢 **Available Today:** `{remaining}` Qs\n"
         f"⏳ **Expiry Date:** `{expiry}`\n"
         f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
+        f"\n🎁 **Same-Day Gift Boost:** `+{temp_bonus} Qs (Today Only)`" if temp_bonus > 0 else ""
         f"🌟 **Scholars:** `{total_users}` | Likes: `{total_likes}` ❤️\n"
         f"• • • ✧ • • •"
         f"{plans_text}"
@@ -1190,11 +1207,20 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     PROFILE_CACHE.pop(user.id, None)
     profile = await fetch_user_profile_fast(user.id)
 
+    # Locate in myprofile_command():
     today_used = await asyncio.to_thread(get_today_attempts, user.id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0
-    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
+    today_str = get_ist_date_str()
 
+    paid_bal = int(profile.get("paid_question_balance") or 0)
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+    permanent_bonus = int(profile.get("bonus_quota") or 0)
+
+    temp_bonus = 0
+    if profile.get("gift_granted_date") == today_str:
+        temp_bonus = int(profile.get("temporary_bonus_quota") or 0)
+
+    allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else (base_limit + permanent_bonus + temp_bonus)
+    remaining = max(0, allowed_limit - today_used)
     remaining = max(0, allowed_limit - today_used)
     student_id = profile.get("student_id", f"USER_{user.id}")
     expiry = profile.get("vip_pass_expiry") or "N/A"

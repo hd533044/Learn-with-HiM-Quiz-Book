@@ -116,11 +116,28 @@ async def launch_quiz_setup(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(msg)
         return
 
-    attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0
-    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + profile.get("bonus_quota", 0)
+    from app.database import get_ist_date_str
 
+    attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
+    today_str = get_ist_date_str()
+
+    # 1. Base limit: Free base (20) or Paid VIP quota (e.g., 80, 100, 250, 500)
+    paid_bal = int(profile.get("paid_question_balance") or 0)
+    base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
+
+    # 2. Permanent referral/admin bonus
+    permanent_bonus = int(profile.get("bonus_quota") or 0)
+
+    # 3. Same-day gift quota (stacks for BOTH free and paid VIP users)
+    temp_bonus = 0
+    if profile.get("gift_granted_date") == today_str:
+        temp_bonus = int(profile.get("temporary_bonus_quota") or 0)
+
+    # Total stacked limit for today
+    if user_id == PRIMARY_ADMIN_ID:
+        allowed_limit = 10000
+    else:
+        allowed_limit = base_limit + permanent_bonus + temp_bonus
     if attempted_today >= allowed_limit:
         exhausted_msg = (
             f"🛑 **DAILY LIMIT REACHED!** 🛑\n"

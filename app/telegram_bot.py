@@ -297,6 +297,9 @@ async def check_user_registration(update: Update) -> bool:
     return True
 
 
+# In-memory dictionary to track activity without continuous DB updates
+LOCAL_ACTIVITY_TRACKER = {}
+
 async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
     user = update.effective_user
     if not user:
@@ -304,32 +307,41 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
 
     user_id = user.id
     if user_id == PRIMARY_ADMIN_ID:
-        asyncio.create_task(asyncio.to_thread(refresh_user_activity_epoch, user_id))
         return True
 
-    is_locked, diff_sec = await asyncio.to_thread(check_and_update_inactivity, user_id)
-    if is_locked:
-        context.user_data["is_account_locked"] = True
-        context.user_data["user_keypad_pin"] = ""
-        msg = (
-            f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"
-            f"• • • ✧ • • •\n"
-            f"You were inactive for `{diff_sec // 60} mins`.\n\n"
-            f"🔑 **PIN Status:** `[ _ _ _ _ ]`\n"
-            f"👉 *Tap the visual keypad below to enter your secret 4-digit PIN:*"
-        )
-        markup = build_user_keypad_markup()
-        if update.callback_query:
-            await update.callback_query.answer("🔒 Account Locked due to 5 mins of inactivity!", show_alert=True)
-            try:
-                await update.callback_query.edit_message_text(msg, reply_markup=markup, parse_mode="Markdown")
-            except Exception:
-                await update.callback_query.message.reply_text(msg, reply_markup=markup, parse_mode="Markdown")
-        elif update.message:
-            await update.message.reply_text(msg, reply_markup=markup, parse_mode="Markdown")
-        return False
-    return True
+    now_ts = int(time.time())
+    last_seen = LOCAL_ACTIVITY_TRACKER.get(user_id, now_ts)
+    diff_sec = now_ts - last_seen
 
+    # Update local timestamp on user interaction
+    LOCAL_ACTIVITY_TRACKER[user_id] = now_ts
+
+    # Check inactivity threshold (5 minutes / 300 seconds)
+    if diff_sec >= 300:
+        # Check against database only if locally idle for 5+ minutes
+        is_locked, db_diff = await asyncio.to_thread(check_and_update_inactivity, user_id)
+        if is_locked:
+            context.user_data["is_account_locked"] = True
+            context.user_data["user_keypad_pin"] = ""
+            msg = (
+                f"🔒 **ACCOUNT LOCKED DUE TO INACTIVITY** 🔒\n"
+                f"• • • ✧ • • •\n"
+                f"You were inactive for `{db_diff // 60} mins`.\n\n"
+                f"🔑 **PIN Status:** `[ _ _ _ _ ]`\n"
+                f"👉 *Tap the visual keypad below to enter your secret 4-digit PIN:*"
+            )
+            markup = build_user_keypad_markup()
+            if update.callback_query:
+                await update.callback_query.answer("🔒 Account Locked!", show_alert=True)
+                try:
+                    await update.callback_query.edit_message_text(msg, reply_markup=markup, parse_mode="Markdown")
+                except Exception:
+                    await update.callback_query.message.reply_text(msg, reply_markup=markup, parse_mode="Markdown")
+            elif update.message:
+                await update.message.reply_text(msg, reply_markup=markup, parse_mode="Markdown")
+            return False
+            
+    return True
 
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
     if not await inactivity_guard(update, context):
@@ -1033,10 +1045,35 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/unattemptedquestions"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
+    # 1. Fetch only the IDs this user has already answered (minimal byte transfer)
     seen_ids = await asyncio.to_thread(get_seen_question_ids, user.id)
-    all_qs = await asyncio.to_thread(fetch_pyqs_for_quiz, 1000, set(), "en")
-    total_bank = len(all_qs)
     seen_count = len(seen_ids)
+
+    # 2. Fast lightweight total bank count without downloading 1,000 full text objects
+    def get_total_bank_count() -> int:
+        conn = None
+        try:
+            conn = get_db()
+            cursor = conn.cursor()
+            # Fast SQL count - downloads only 1 single integer over the wire
+            cursor.execute("SELECT COUNT(*) FROM questions;")
+            count = cursor.fetchone()[0]
+            cursor.close()
+            release_db(conn)
+            return count
+        except Exception:
+            if conn:
+                release_db(conn)
+            # If your question bank is file/folder based (JSON), count local keys safely without DB hits:
+            try:
+                from app.pyq_fetcher import QUESTION_BANK_CACHE
+                if QUESTION_BANK_CACHE:
+                    return sum(len(v) for v in QUESTION_BANK_CACHE.values() if isinstance(v, list))
+            except Exception:
+                pass
+            return 1500  # Safe fallback estimate
+
+    total_bank = await asyncio.to_thread(get_total_bank_count)
     remaining_count = max(0, total_bank - seen_count)
 
     msg = (

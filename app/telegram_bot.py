@@ -612,17 +612,22 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     profile = await fetch_user_profile_fast(user.id)
 
-    from app.main import get_cached_flash_sale
-    active_sale = get_cached_flash_sale()
+    try:
+        from app.main import get_cached_flash_sale
+        active_sale = get_cached_flash_sale()
+    except Exception:
+        active_sale = await asyncio.to_thread(get_active_flash_sale)
 
     keyboard = []
     if profile and not profile.get("demo_used"):
         keyboard.append([InlineKeyboardButton("🎁 FREE DEMO TRIAL (2 Days - 20 Qs/Day)", callback_data="buy_plan_FREE_DEMO")])
 
+    is_sale_valid = bool(active_sale and isinstance(active_sale, dict) and active_sale.get("discount_percent"))
+
     for k, p in PLAN_TIERS.items():
         if k == "FREE_DEMO":
             continue
-        if active_sale:
+        if is_sale_valid:
             disc_price = calculate_discounted_price(p["price"], active_sale["discount_percent"])
             btn_txt = f"📦 {k} (₹{p['price']} -> ₹{disc_price} - {p['days']}D - {p['daily_limit']} Qs/D)"
         else:
@@ -631,25 +636,33 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard.append([InlineKeyboardButton("💬 Message Admin", callback_data="cmd_askadmin")])
 
-    if active_sale:
-        now_dt = datetime.now(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
-        valid_until = active_sale['valid_until']
-        if hasattr(valid_until, 'tzinfo') and valid_until.tzinfo is not None:
-            valid_until = valid_until.astimezone(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
-        diff_sec = max(0, int((valid_until - now_dt).total_seconds()))
-        hrs_left = diff_sec // 3600
-        mins_left = (diff_sec % 3600) // 60
-        pct = int(float(active_sale['discount_percent']))
-        clean_sale_name = str(active_sale['sale_name']).replace("*", "").replace("_", " ").replace("`", "").upper()
+    if is_sale_valid:
+        try:
+            now_dt = datetime.now(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
+            valid_until = active_sale['valid_until']
+            if hasattr(valid_until, 'tzinfo') and valid_until.tzinfo is not None:
+                valid_until = valid_until.astimezone(pytz.timezone("Asia/Kolkata")).replace(tzinfo=None)
+            diff_sec = max(0, int((valid_until - now_dt).total_seconds()))
+            hrs_left = diff_sec // 3600
+            mins_left = (diff_sec % 3600) // 60
+            pct = int(float(active_sale.get('discount_percent', 0)))
+            clean_sale_name = str(active_sale.get('sale_name', 'SPECIAL DISCOUNT')).replace("*", "").replace("_", " ").replace("`", "").upper()
 
-        msg = (
-            f"🔥 **OFFER ACTIVE: {clean_sale_name} ({pct}% OFF)!** 🔥\n"
-            f"• • • ✧ • • •\n"
-            f"All VIP packs are discounted by **{pct}%**.\n"
-            f"⏰ **Ends in:** `{hrs_left}h {mins_left}m`\n"
-            f"• • • ✧ • • •\n"
-            f"Select a pack below to unlock higher daily question limits:"
-        )
+            msg = (
+                f"🔥 **OFFER ACTIVE: {clean_sale_name} ({pct}% OFF)!** 🔥\n"
+                f"• • • ✧ • • •\n"
+                f"All VIP packs are discounted by **{pct}%**.\n"
+                f"⏰ **Ends in:** `{hrs_left}h {mins_left}m`\n"
+                f"• • • ✧ • • •\n"
+                f"Select a pack below to unlock higher daily question limits:"
+            )
+        except Exception as e:
+            logger.error(f"[PLANS SALE FORMAT ERROR] {e}")
+            msg = (
+                f"👑 **QUIZ WITH HIM — VIP MEMBERSHIP PACKS** 👑\n"
+                f"• • • ✧ • • •\n"
+                f"Select a pack below to unlock your daily question limit:"
+            )
     else:
         msg = (
             f"👑 **QUIZ WITH HIM — VIP MEMBERSHIP PACKS** 👑\n"
@@ -658,7 +671,6 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
-
 
 async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query

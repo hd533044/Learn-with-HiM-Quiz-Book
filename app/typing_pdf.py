@@ -5,13 +5,11 @@ import weasyprint
 from app.config import BASE_DIR
 
 def clean_typing_str(text) -> str:
-    """Normalizes Devanagari Unicode (NFC form) and escapes HTML special characters."""
     if not text:
         return ""
     val_str = str(text).strip()
     normalized_str = unicodedata.normalize('NFC', val_str)
-    cleaned_spacing = " ".join(normalized_str.split())
-    return saxutils.escape(cleaned_spacing)
+    return saxutils.escape(normalized_str)
 
 
 def build_typing_pdf(filepath: str, text: str, language: str, set_num: int, date_str: str, word_count: int):
@@ -24,8 +22,18 @@ def build_typing_pdf(filepath: str, text: str, language: str, set_num: int, date
     left_logo_html = f'<a href="{target_link}" target="_blank"><img src="file://{logo_left_path}" style="width: 58px; height: 58px; object-fit: contain; border: none;" /></a>' if os.path.exists(logo_left_path) else f'<a href="{target_link}"><b>Logo</b></a>'
     right_logo_html = f'<a href="{target_link}" target="_blank"><img src="file://{logo_right_path}" style="width: 58px; height: 58px; object-fit: contain; border: none;" /></a>' if os.path.exists(logo_right_path) else f'<a href="{target_link}"><b>@LearnwithHiM</b></a>'
 
-    cleaned_text = clean_typing_str(text)
     font_badge = "Times New Roman (12pt)" if language.lower() == "english" else "Mangal Inscript (12pt)"
+
+    # Format real paragraphs with standard exam TAB indent
+    raw_paras = text.split("\n\n")
+    rendered_paras = []
+    for p in raw_paras:
+        clean_p = clean_typing_str(p.replace("\t", "").strip())
+        if clean_p:
+            # &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; simulates a real 0.5 inch / 8-space tab indent
+            rendered_paras.append(f"<p class='passage-para'><span class='tab-indent'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{clean_p}</p>")
+            
+    body_html = "".join(rendered_paras)
 
     html_content = f"""
     <!DOCTYPE html>
@@ -80,7 +88,7 @@ def build_typing_pdf(filepath: str, text: str, language: str, set_num: int, date
     .header-table {{
         width: 100%;
         border-collapse: collapse;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
     }}
     .header-title {{
         text-align: center;
@@ -100,11 +108,11 @@ def build_typing_pdf(filepath: str, text: str, language: str, set_num: int, date
     .exam-bar {{
         background-color: #F1F5F9;
         border: 0.5px solid #CBD5E1;
-        padding: 6px 10px;
+        padding: 5px 10px;
         margin-top: 4px;
         margin-bottom: 12px;
         font-family: 'Times New Roman', serif;
-        font-size: 9pt;
+        font-size: 8.8pt;
         color: #334155;
     }}
     .exam-bar table {{
@@ -119,22 +127,28 @@ def build_typing_pdf(filepath: str, text: str, language: str, set_num: int, date
         color: #1E3A8A;
     }}
     .passage-body {{
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }}
+    .passage-para {{
         font-family: {font_family};
         font-size: 12pt;
         line-height: 1.5;
         text-align: justify;
         text-justify: inter-word;
-        margin-top: 10px;
-        margin-bottom: 20px;
+        margin: 0 0 12px 0;
         color: #0F172A;
+    }}
+    .tab-indent {{
+        display: inline;
     }}
     .eval-box {{
         border: 0.5px dashed #94A3B8;
         background-color: #F8FAFC;
-        padding: 8px 12px;
-        margin-top: 15px;
+        padding: 7px 12px;
+        margin-top: 12px;
         font-family: 'Times New Roman', serif;
-        font-size: 9pt;
+        font-size: 8.8pt;
         font-weight: bold;
         color: #1E293B;
     }}
@@ -223,7 +237,7 @@ def build_typing_pdf(filepath: str, text: str, language: str, set_num: int, date
     </div>
 
     <div class="passage-body">
-        {cleaned_text}
+        {body_html}
     </div>
 
     <div class="eval-box">

@@ -75,24 +75,28 @@ from telegram import InlineKeyboardMarkup, InlineKeyboardButton, Update
 from telegram.ext import ContextTypes, CommandHandler, CallbackQueryHandler
 from app.typing_engine import get_or_create_daily_materials
 
+from app.typing_engine import get_or_create_daily_materials, get_available_dates
+
 async def typing_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Entry point for /typing command."""
+    """Entry point for /typing command with language and history selector."""
     keyboard = [
         [InlineKeyboardButton("🇬🇧 English (Times New Roman 12pt)", callback_data="tmenu_lang_english")],
         [InlineKeyboardButton("🇮🇳 हिन्दी (Mangal Inscript 12pt)", callback_data="tmenu_lang_hindi")],
+        [InlineKeyboardButton("📅 Browse Previous Days Archive (15 Days)", callback_data="tmenu_date_picker")],
         [InlineKeyboardButton("ℹ️ Typing Exam Guidelines", callback_data="tmenu_guidelines")]
     ]
     msg = (
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "🏛 **CAPF & SSC DAILY PAPER-TO-SCREEN TYPING HUB** 🏛\n"
+        "🏛 **LEARN WITH HIM TYPING BOOK** 🏛\n"
+        "**Type Daily! Type Smartly! Daily Free Relevant Typing Material!**\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Official 10-minute assessment passages (600 words / 60 WPM benchmark).\n\n"
-        "Format Specifications:\n"
-        "▪ **English:** Times New Roman, 12pt, 1.5 Line Spacing\n"
-        "▪ **Hindi:** Mangal (Inscript), 12pt, 1.5 Line Spacing\n"
-        "▪ Deliverables: **PDF** (Print ready) & **DOCX** (Editable copy)\n"
+        "Official 10-Minute Assessment Sheets (~600 Words / 60 WPM Pace):\n\n"
+        "▪ **English:** Times New Roman, 12pt, 1.5 Spacing, Exam Tab Indent\n"
+        "▪ **Hindi:** Mangal (Inscript), 12pt, 1.5 Spacing, Exam Tab Indent\n"
+        "▪ Deliverables: **PDF** (Print Ready) & **DOCX** (Editable Copy)\n"
+        "▪ Fresh Sets Refreshed Every Midnight (00:00 IST)\n"
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Select your assessment language:"
+        "Choose an option to proceed:"
     )
     if update.callback_query:
         await update.callback_query.answer()
@@ -100,97 +104,164 @@ async def typing_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
+
 async def typing_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     data = query.data
     await query.answer()
 
-    if data.startswith("tmenu_lang_"):
+    # 1. 15-Day History Date Selector
+    if data == "tmenu_date_picker":
+        dates = get_available_dates(15)
+        keyboard = []
+        # Row pairs of dates
+        row = []
+        for idx, d_str in enumerate(dates):
+            label = f"📅 Today ({d_str})" if idx == 0 else f"🗓 {d_str}"
+            row.append(InlineKeyboardButton(label, callback_data=f"tmenu_setdate_{d_str}"))
+            if len(row) == 2:
+                keyboard.append(row)
+                row = []
+        if row:
+            keyboard.append(row)
+        keyboard.append([InlineKeyboardButton("🔙 Back to Main Typing Menu", callback_data="cmd_typing_menu")])
+
+        await query.edit_message_text(
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "📅 **15-DAY TYPING MATERIAL ARCHIVE**\n"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            "Select any date below to access its official 5 examination sets:",
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode="Markdown"
+        )
+        return
+
+    # 2. Date Selected
+    elif data.startswith("tmenu_setdate_"):
+        target_date = data.replace("tmenu_setdate_", "")
+        context.user_data["typing_target_date"] = target_date
+
+        keyboard = [
+            [InlineKeyboardButton("🇬🇧 English Sets", callback_data="tmenu_lang_english")],
+            [InlineKeyboardButton("🇮🇳 हिन्दी Sets", callback_data="tmenu_lang_hindi")],
+            [InlineKeyboardButton("🔙 Pick Another Date", callback_data="tmenu_date_picker")]
+        ]
+        await query.edit_message_text(
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"📅 **SELECTED ARCHIVE DATE:** `{target_date}`\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"Choose your exam language for this date:",
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode="Markdown"
+        )
+        return
+
+    # 3. Language Selected -> Show 5 Sets
+    elif data.startswith("tmenu_lang_"):
         lang = data.replace("tmenu_lang_", "")
         context.user_data["selected_typing_lang"] = lang
 
-        # Show 5 daily available sets
+        # Use chosen archive date, or default to today's date
+        target_date = context.user_data.get("typing_target_date")
+        if not target_date:
+            target_date = datetime.now(pytz.timezone("Asia/Kolkata")).strftime("%Y-%m-%d")
+            context.user_data["typing_target_date"] = target_date
+
         keyboard = [
-            [InlineKeyboardButton(f"📄 Assessment Set 01 (600 Words)", callback_data=f"tget_{lang}_1")],
-            [InlineKeyboardButton(f"📄 Assessment Set 02 (600 Words)", callback_data=f"tget_{lang}_2")],
-            [InlineKeyboardButton(f"📄 Assessment Set 03 (600 Words)", callback_data=f"tget_{lang}_3")],
-            [InlineKeyboardButton(f"📄 Assessment Set 04 (600 Words)", callback_data=f"tget_{lang}_4")],
-            [InlineKeyboardButton(f"📄 Assessment Set 05 (600 Words)", callback_data=f"tget_{lang}_5")],
-            [InlineKeyboardButton("🔙 Back to Language Selection", callback_data="cmd_typing_menu")]
+            [InlineKeyboardButton(f"📄 Set 01 (600 Words • Tab Indented)", callback_data=f"tget_{lang}_1_{target_date}")],
+            [InlineKeyboardButton(f"📄 Set 02 (600 Words • Tab Indented)", callback_data=f"tget_{lang}_2_{target_date}")],
+            [InlineKeyboardButton(f"📄 Set 03 (600 Words • Tab Indented)", callback_data=f"tget_{lang}_3_{target_date}")],
+            [InlineKeyboardButton(f"📄 Set 04 (600 Words • Tab Indented)", callback_data=f"tget_{lang}_4_{target_date}")],
+            [InlineKeyboardButton(f"📄 Set 05 (600 Words • Tab Indented)", callback_data=f"tget_{lang}_5_{target_date}")],
+            [InlineKeyboardButton("📅 Change Date", callback_data="tmenu_date_picker")],
+            [InlineKeyboardButton("🔙 Back to Main Menu", callback_data="cmd_typing_menu")]
         ]
         font_note = "Times New Roman (12pt)" if lang == "english" else "Mangal Inscript (12pt)"
         await query.edit_message_text(
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"📋 **DAILY {lang.upper()} TYPING MATERIAL (TODAY'S SETS)**\n"
+            f"📋 **{lang.upper()} TYPING MATERIAL — {target_date}**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"Standard Font: `{font_note}` | Benchmark: `600 Words / 10 Mins`\n\n"
+            f"• Standard Font: `{font_note}`\n"
+            f"• Structure: `4 Tab-Indented Paragraphs (~600 Words)`\n"
+            f"• Standard Benchmark: `10 Mins / 60 WPM Target`\n\n"
             f"Select a set to download both PDF and Word (.docx) formats:",
             reply_markup=InlineKeyboardMarkup(keyboard),
             parse_mode="Markdown"
         )
+        return
 
+    # 4. Deliver PDF & Word Files with Clear Dated Filenames
     elif data.startswith("tget_"):
         parts = data.split("_")
         lang = parts[1]
         set_num = int(parts[2])
+        target_date = parts[3]
 
-        await query.edit_message_text("⏳ **Generating official print-ready PDF and Word documents...**")
+        await query.edit_message_text(f"⏳ **Building official print-ready PDF and Word documents for {target_date} (Set #{set_num:02d})...**")
+
+        bundle = get_or_create_daily_materials(lang, set_num, target_date)
         
-        bundle = get_or_create_daily_materials(lang, set_num)
-        
+        pdf_display_name = f"Typing_{bundle['language']}_{target_date}_Set_{set_num:02d}.pdf"
+        docx_display_name = f"Typing_{bundle['language']}_{target_date}_Set_{set_num:02d}.docx"
+
         caption_text = (
             f"🏛 **OFFICIAL TYPING TEST MATERIAL — SET {set_num:02d}**\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"▪ **Language:** {bundle['language']}\n"
-            f"▪ **Length:** `{bundle['word_count']} Words` (~60 WPM / 10 Min Target)\n"
+            f"▪ **Date:** `{target_date}`\n"
+            f"▪ **Word Count:** `{bundle['word_count']} Words` (4 Exam Tab-Indented Paras)\n"
             f"▪ **Font:** {'Times New Roman (12pt)' if lang == 'english' else 'Mangal Inscript (12pt)'}\n"
-            f"▪ **Date:** `{bundle['date_str']}`\n\n"
-            f"🖨 **Instructions:** Take a printout of the PDF for paper-to-screen typing practice, or open the DOCX file for terminal copy-testing."
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🖨 **Instructions:** Take a printout of the PDF for paper-to-screen practice, or open the DOCX file for terminal copy-testing."
         )
 
         nav_buttons = InlineKeyboardMarkup([
             [InlineKeyboardButton("📋 View Other Sets", callback_data=f"tmenu_lang_{lang}")],
+            [InlineKeyboardButton("📅 Browse Archive", callback_data="tmenu_date_picker")],
             [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
         ])
 
-        # Dispatch Word file (.docx)
+        # Send Word Document (.docx)
         with open(bundle["docx_path"], "rb") as f_docx:
             await context.bot.send_document(
                 chat_id=query.message.chat_id,
                 document=f_docx,
-                filename=os.path.basename(bundle["docx_path"]),
-                caption="📝 **Editable Word Document (.docx)**",
+                filename=docx_display_name,
+                caption=f"📝 **Editable Word Document (.docx)**\n📁 `{docx_display_name}`",
                 parse_mode="Markdown"
             )
 
-        # Dispatch Print-Ready PDF
+        # Send Print-Ready PDF
         with open(bundle["pdf_path"], "rb") as f_pdf:
             await context.bot.send_document(
                 chat_id=query.message.chat_id,
                 document=f_pdf,
-                filename=os.path.basename(bundle["pdf_path"]),
+                filename=pdf_display_name,
                 caption=caption_text,
                 reply_markup=nav_buttons,
                 parse_mode="Markdown"
             )
+        return
 
     elif data == "tmenu_guidelines":
         guidelines_text = (
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            "📖 **CAPF HCM & ASI STENO TYPING RULES**\n"
+            "📖 **CAPF HCM & SSC PAPER-TO-SCREEN TYPING RULES**\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            "▪ **English Benchmark:** 35 WPM minimum (10500 KDPH) on computer terminal.\n"
-            "▪ **Hindi Benchmark:** 30 WPM minimum (9000 KDPH) on Mangal Inscript layout.\n"
-            "▪ **Testing Mode:** Paper-to-Screen. A printed page is placed beside the keyboard; candidates must type without looking at the screen.\n"
-            "▪ **Error Tolerance:** 5% maximum permissible error for qualifying benchmarks.\n"
-            "▪ **Target Standard:** Practicing with these 600-word sheets trains you for a 60 WPM ceiling, ensuring you pass 35/30 WPM tests under examination pressure.\n"
+            "▪ **English Qualifying Benchmark:** 35 WPM (10,500 KDPH).\n"
+            "▪ **Hindi Qualifying Benchmark:** 30 WPM (9,000 KDPH) on Mangal Inscript.\n"
+            "▪ **Exam Structure:** 4 distinct paragraphs with tab indents.\n"
+            "▪ **Paper-to-Screen:** Physical sheet placed beside the keyboard; typing without looking at the monitor.\n"
+            "▪ **Preparation Standard:** These 600-word daily sets build high endurance so you can comfortably qualify under exam hall pressure.\n"
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         )
         btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Typing Hub", callback_data="cmd_typing_menu")]])
         await query.edit_message_text(guidelines_text, reply_markup=btn, parse_mode="Markdown")
+        return
 
     elif data == "cmd_typing_menu":
         await typing_command(update, context)
+        return
 
 def build_user_keypad_markup() -> InlineKeyboardMarkup:
     keyboard = [

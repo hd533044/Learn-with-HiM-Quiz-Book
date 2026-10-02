@@ -8,7 +8,6 @@ from docx.oxml.ns import qn
 from app.config import BASE_DIR
 
 def set_cell_border(cell, **kwargs):
-    """Utility to clear or set borders on docx table cells."""
     tc = cell._tc
     tcPr = tc.get_or_add_tcPr()
     tcBorders = OxmlElement('w:tcBorders')
@@ -34,23 +33,20 @@ def set_cell_border(cell, **kwargs):
 def build_typing_docx(filepath: str, text: str, language: str, set_num: int, date_str: str, word_count: int):
     doc = Document()
 
-    # Standard A4 Page Setup with 0.8-inch margins
     for section in doc.sections:
         section.top_margin = Inches(0.8)
         section.bottom_margin = Inches(0.8)
         section.left_margin = Inches(0.8)
         section.right_margin = Inches(0.8)
 
-        # Header Watermark
         header = section.header
         h_para = header.paragraphs[0]
         h_para.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-        h_run = h_para.add_run("Learn with HiM • Typing with HiM • Official Typing Sheet")
+        h_run = h_para.add_run(f"Learn with HiM • Typing with HiM • {date_str} • Set #{set_num:02d}")
         h_run.font.name = "Times New Roman"
         h_run.font.size = Pt(8.5)
         h_run.font.color.rgb = RGBColor(148, 163, 184)
 
-        # Institutional Footer with Official Channels
         footer = section.footer
         f_para = footer.paragraphs[0]
         f_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -66,7 +62,6 @@ def build_typing_docx(filepath: str, text: str, language: str, set_num: int, dat
     logo_left_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logo.png"))
     logo_right_path = os.path.abspath(os.path.join(BASE_DIR, "assets", "logohim.png"))
 
-    # Header Table with Dual Logos
     header_table = doc.add_table(rows=1, cols=3)
     header_table.alignment = WD_TABLE_ALIGNMENT.CENTER
     header_table.autofit = False
@@ -78,14 +73,12 @@ def build_typing_docx(filepath: str, text: str, language: str, set_num: int, dat
             row.cells[idx].vertical_alignment = WD_ALIGN_VERTICAL.CENTER
             set_cell_border(row.cells[idx])
 
-    # Left Logo
     cell_left = header_table.cell(0, 0)
     p_left = cell_left.paragraphs[0]
     p_left.alignment = WD_ALIGN_PARAGRAPH.LEFT
     if os.path.exists(logo_left_path):
         p_left.add_run().add_picture(logo_left_path, width=Inches(0.8))
 
-    # Center Title & Subtitle
     cell_mid = header_table.cell(0, 1)
     p_mid = cell_mid.paragraphs[0]
     p_mid.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -101,7 +94,6 @@ def build_typing_docx(filepath: str, text: str, language: str, set_num: int, dat
     r_sub.font.bold = True
     r_sub.font.color.rgb = RGBColor(22, 163, 74)
 
-    # Right Logo
     cell_right = header_table.cell(0, 2)
     p_right = cell_right.paragraphs[0]
     p_right.alignment = WD_ALIGN_PARAGRAPH.RIGHT
@@ -110,7 +102,6 @@ def build_typing_docx(filepath: str, text: str, language: str, set_num: int, dat
 
     doc.add_paragraph().paragraph_format.space_after = Pt(2)
 
-    # Assessment Details Table Box
     info_table = doc.add_table(rows=2, cols=2)
     info_table.alignment = WD_TABLE_ALIGNMENT.CENTER
     info_widths = [Inches(3.8), Inches(3.0)]
@@ -156,18 +147,23 @@ def build_typing_docx(filepath: str, text: str, language: str, set_num: int, dat
 
     doc.add_paragraph().paragraph_format.space_after = Pt(6)
 
-    # Main Typing Text Body
-    p_body = doc.add_paragraph()
-    p_body.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
-    p_body.paragraph_format.line_spacing = 1.5
-    p_body.paragraph_format.space_after = Pt(16)
+    # Paragraph rendering with explicit First-Line Tab Indent
+    raw_paras = text.split("\n\n")
+    for p_content in raw_paras:
+        clean_p = p_content.replace("\t", "").strip()
+        if not clean_p:
+            continue
+        p_body = doc.add_paragraph()
+        p_body.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+        p_body.paragraph_format.first_line_indent = Inches(0.5)  # Exam standard tab indent
+        p_body.paragraph_format.line_spacing = 1.5
+        p_body.paragraph_format.space_after = Pt(10)
 
-    r_body = p_body.add_run(text)
-    r_body.font.name = font_name
-    r_body.font.size = Pt(12)
-    r_body.font.color.rgb = RGBColor(15, 23, 42)
+        r_body = p_body.add_run(clean_p)
+        r_body.font.name = font_name
+        r_body.font.size = Pt(12)
+        r_body.font.color.rgb = RGBColor(15, 23, 42)
 
-    # Candidate Performance Record Box
     eval_table = doc.add_table(rows=1, cols=1)
     eval_table.alignment = WD_TABLE_ALIGNMENT.CENTER
     c_eval = eval_table.cell(0, 0)

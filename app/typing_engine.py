@@ -160,7 +160,7 @@ def get_available_dates(days_back: int = 15) -> list:
 
 def get_or_create_daily_materials(language: str, set_num: int, target_date_str: str = None) -> dict:
     """Retrieves or builds cached PDF and DOCX files for any chosen date."""
-    from app.typing_docs import build_typing_docx
+    from app.typing_docx import build_typing_docx
     from app.typing_pdf import build_typing_pdf
 
     if not target_date_str:

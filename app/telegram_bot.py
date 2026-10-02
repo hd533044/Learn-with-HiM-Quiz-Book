@@ -503,12 +503,11 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     last_seen = LOCAL_ACTIVITY_TRACKER.get(user_id, now_ts)
     diff_sec = now_ts - last_seen
 
-    # Update local timestamp on user interaction
+    # Track in local RAM — 0 network egress to Neon
     LOCAL_ACTIVITY_TRACKER[user_id] = now_ts
 
-    # Check inactivity threshold (5 minutes / 300 seconds)
+    # Only ping the database if locally idle for 5+ minutes
     if diff_sec >= 300:
-        # Check against database only if locally idle for 5+ minutes
         is_locked, db_diff = await asyncio.to_thread(check_and_update_inactivity, user_id)
         if is_locked:
             context.user_data["is_account_locked"] = True
@@ -627,7 +626,7 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/quiz"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     
-    PROFILE_CACHE.pop(user.id, None)
+   
     profile = await fetch_user_profile_fast(user.id)
 
     # Locate in strict_quiz_command_guard():
@@ -741,7 +740,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/myplan"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     
-    PROFILE_CACHE.pop(user.id, None)
+    
     profile = await fetch_user_profile_fast(user.id)
 
     # Locate in myplan_command():
@@ -1394,7 +1393,7 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/myprofile"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     
-    PROFILE_CACHE.pop(user.id, None)
+    
     profile = await fetch_user_profile_fast(user.id)
 
     # Locate in myprofile_command():

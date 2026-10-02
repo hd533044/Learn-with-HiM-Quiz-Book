@@ -54,11 +54,17 @@ SENT_EXPIRY_REMINDERS = set()
 
 # In-memory short cache for flash sales to prevent repetitive database egress
 FLASH_SALE_CACHE = {"data": None, "cached_at": 0}
+NEXT_ANNOUNCEMENT_TIMESTAMP = 0  # In-memory epoch of the nearest scheduled post
+
+
+def update_next_announcement_cache(epoch_ts: int):
+    global NEXT_ANNOUNCEMENT_TIMESTAMP
+    NEXT_ANNOUNCEMENT_TIMESTAMP = epoch_ts
 
 
 def get_cached_flash_sale():
     now_ts = asyncio.get_event_loop().time()
-    if now_ts - FLASH_SALE_CACHE["cached_at"] < 180:  # 3-minute memory cache
+    if now_ts - FLASH_SALE_CACHE["cached_at"] < 300:  # 5-minute memory cache
         return FLASH_SALE_CACHE["data"]
     try:
         sale = get_active_flash_sale()
@@ -271,10 +277,17 @@ async def send_payment_invoice_telegram(user_id: int, plan_key: str, payment_id:
             logging.error(f"[ADMIN PAYMENT ALERT ERROR] {a_err}")
 
 
-# Single-batch query lookup every 120s instead of 30 individual queries every 30s
+# ==============================================================
+# OPTIMIZED BACKGROUND WORKERS (ZERO-DRAIN ARCHITECTURE)
+# ==============================================================
+
 async def scheduled_auto_payment_sync_worker():
+    """
+    Safety net worker: runs once every 2 HOURS (7200s) instead of every 120s.
+    Real-time payments are already handled immediately via Razorpay Webhook.
+    """
     while True:
-        await asyncio.sleep(120)
+        await asyncio.sleep(7200)
         if not bot_app_instance:
             continue
 
@@ -323,14 +336,15 @@ async def scheduled_auto_payment_sync_worker():
         try:
             credited_list = await asyncio.to_thread(auto_sync_uncredited_paid_users)
             for c in credited_list:
-                uid = c["user_id"]
+                uid = c.get("user_id")
+                if not uid:
+                    continue
+                PROFILE_CACHE.pop(uid, None)
                 name = c.get("full_name", "Student")
                 quota = c.get("quota", 20)
                 exp = c.get("expiry_str", "Active")
                 rem_days = c.get("remaining_days", 0)
                 pid = c.get("payment_id", "pay_verified")
-
-                PROFILE_CACHE.pop(uid, None)
 
                 student_restore_msg = (
                     f"🛡️ **PAID VIP SUBSCRIPTION VERIFIED & RESTORED!** 🛡️\n"
@@ -358,16 +372,73 @@ async def scheduled_auto_payment_sync_worker():
                     logging.error(f"[STUDENT RESTORE NOTIFICATION ERROR] {u_err}")
 
         except Exception as e:
-            logging.error(f"[SILENT AUTO-CREDIT WORKER EXCEPTION] {e}")
+            logging.error(f"[SILENT AUTO-CREDIT EXCEPTION] {e}")
 
 
-# Checks every 15 minutes; queries only active expiring VIP users rather than table scanning
+async def scheduled_announcement_broadcast_worker():
+    """
+    Intelligent scheduler: Only checks Neon when a post is pending or due,
+    otherwise sleeps and allows Neon to scale to zero.
+    """
+    global NEXT_ANNOUNCEMENT_TIMESTAMP
+    while True:
+        await asyncio.sleep(300)  # Check every 5 minutes
+        if not bot_app_instance:
+            continue
+
+        try:
+            now_ts = int(datetime.now(pytz.timezone("Asia/Kolkata")).timestamp())
+            
+            # If no post is scheduled or the scheduled post is still in the future, skip DB queries entirely
+            if NEXT_ANNOUNCEMENT_TIMESTAMP > now_ts:
+                continue
+
+            pending_list = await asyncio.to_thread(fetch_pending_announcements)
+            if not pending_list:
+                NEXT_ANNOUNCEMENT_TIMESTAMP = now_ts + 900
+                continue
+
+            for annc in pending_list:
+                annc_id = annc['id']
+                text = annc.get('message_text') or ""
+                media_id = annc.get('media_file_id')
+                media_type = annc.get('media_type', 'text')
+                
+                users = await asyncio.to_thread(get_all_users)
+                user_ids = [u['user_id'] for u in users if u.get('is_banned') not in (1, 2)]
+                
+                sent_count = await fast_concurrent_broadcast(
+                    bot=bot_app_instance.bot,
+                    user_ids=user_ids,
+                    text=text,
+                    photo=media_id if media_type == "photo" else None,
+                    video=media_id if media_type == "video" else None,
+                    voice=media_id if media_type == "voice" else None,
+                    audio=media_id if media_type == "audio" else None,
+                    document=media_id if media_type == "document" else None,
+                    animation=media_id if media_type == "animation" else None,
+                    media_type=media_type,
+                    annc_id=annc_id
+                )
+                
+                await asyncio.to_thread(update_announcement_status, annc_id, "SENT")
+                logging.info(f"[ANNOUNCEMENT #{annc_id} SENT] Broadcasted to {sent_count} users.")
+
+            NEXT_ANNOUNCEMENT_TIMESTAMP = now_ts + 900
+        except Exception as e:
+            logging.error(f"[ANNOUNCEMENT WORKER EXCEPTION] {e}")
+
+
 async def scheduled_expiry_reminder_check():
+    """
+    Checks pass expiry once every 6 hours (21600s) instead of every 15 minutes.
+    Expiring passes are multi-day windows; checking 4 times a day is completely sufficient.
+    """
     from telegram import InlineKeyboardMarkup, InlineKeyboardButton
     ist = pytz.timezone("Asia/Kolkata")
     
     while True:
-        await asyncio.sleep(900)
+        await asyncio.sleep(21600)  # 6 Hours
         if not bot_app_instance:
             continue
 
@@ -468,57 +539,6 @@ async def scheduled_expiry_reminder_check():
             if conn:
                 release_db(conn)
             logging.error(f"[SCHEDULED CHECK EXCEPTION] {err}")
-
-
-# Announcement worker polled once every 60s
-async def scheduled_announcement_broadcast_worker():
-    while True:
-        await asyncio.sleep(60)
-        if not bot_app_instance:
-            continue
-
-        try:
-            pending_list = await asyncio.to_thread(fetch_pending_announcements)
-            for annc in pending_list:
-                annc_id = annc['id']
-                text = annc.get('message_text') or ""
-                media_id = annc.get('media_file_id')
-                media_type = annc.get('media_type', 'text')
-                
-                users = await asyncio.to_thread(get_all_users)
-                user_ids = [u['user_id'] for u in users if u.get('is_banned') not in (1, 2)]
-                
-                sent_count = await fast_concurrent_broadcast(
-                    bot=bot_app_instance.bot,
-                    user_ids=user_ids,
-                    text=text,
-                    photo=media_id if media_type == "photo" else None,
-                    video=media_id if media_type == "video" else None,
-                    voice=media_id if media_type == "voice" else None,
-                    audio=media_id if media_type == "audio" else None,
-                    document=media_id if media_type == "document" else None,
-                    animation=media_id if media_type == "animation" else None,
-                    media_type=media_type,
-                    annc_id=annc_id
-                )
-                
-                await asyncio.to_thread(update_announcement_status, annc_id, "SENT")
-                logging.info(f"[SCHEDULED ANNOUNCEMENT #{annc_id} DELIVERED] Broadcasted to {sent_count}/{len(user_ids)} users.")
-                
-        except Exception as e:
-            logging.error(f"[ANNOUNCEMENT WORKER EXCEPTION] {e}")
-
-
-# Flash sale worker with 5-minute intervals and in-memory cache
-async def scheduled_flash_sale_worker():
-    while True:
-        await asyncio.sleep(300)
-        try:
-            sale = await asyncio.to_thread(get_active_flash_sale)
-            FLASH_SALE_CACHE["data"] = sale
-            FLASH_SALE_CACHE["cached_at"] = asyncio.get_event_loop().time()
-        except Exception as e:
-            logging.error(f"[FLASH SALE WORKER EXCEPTION] {e}")
 
 
 async def handle_ping(request):
@@ -692,7 +712,6 @@ async def run_bot():
     asyncio.create_task(scheduled_auto_payment_sync_worker())
     asyncio.create_task(scheduled_expiry_reminder_check())
     asyncio.create_task(scheduled_announcement_broadcast_worker())
-    asyncio.create_task(scheduled_flash_sale_worker())
 
     stop_event = asyncio.Event()
     try:

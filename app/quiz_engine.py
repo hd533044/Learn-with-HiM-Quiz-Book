@@ -280,6 +280,67 @@ async def booster_mode_selector(update: Update, context: ContextTypes.DEFAULT_TY
     )
 
 
+async def _run_mental_booster_chain_task(status_msg, user_id: int, steps: int, mode: str, timer: int, chain_data: dict, context: ContextTypes.DEFAULT_TYPE):
+    await asyncio.sleep(1.5)
+    stop_button = InlineKeyboardMarkup([[InlineKeyboardButton("🛑 Stop & Calculate Now", callback_data="booster_mid_stop")]])
+
+    # Step 0: Base initial number
+    start_val = chain_data["steps"][0]["val"]
+    for t in range(timer, 0, -1):
+        if ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
+            break
+        try:
+            await status_msg.edit_text(
+                f"🧠 **MIND MEMORY BOOSTER ({mode.upper()})**\n"
+                f"• • • ✧ • • •\n"
+                f"🔢 **Base Number:** `{start_val}`\n\n"
+                f"⏳ *Hold in memory:* `{t}s`",
+                reply_markup=stop_button,
+                parse_mode="Markdown"
+            )
+        except Exception:
+            pass
+        await asyncio.sleep(1)
+
+    # Subsequent steps loop
+    for s_idx in range(1, len(chain_data["steps"])):
+        if ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
+            break
+        
+        ACTIVE_MENTAL_BOOSTERS[user_id]["current_step"] = s_idx
+        step_info = chain_data["steps"][s_idx]
+        
+        for t in range(timer, 0, -1):
+            if ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
+                break
+            try:
+                await status_msg.edit_text(
+                    f"🧠 **MIND MEMORY BOOSTER ({mode.upper()})**\n"
+                    f"• • • ✧ • • •\n"
+                    f"📍 **Step {s_idx} / {steps}**\n\n"
+                    f"👉 **Operation:** `{step_info['instruction']}`\n\n"
+                    f"⏳ *Time Remaining:* `{t}s`",
+                    reply_markup=stop_button,
+                    parse_mode="Markdown"
+                )
+            except Exception:
+                pass
+            await asyncio.sleep(1)
+
+    if not ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
+        ACTIVE_MENTAL_BOOSTERS[user_id]["awaiting_answer"] = True
+        context.user_data["awaiting_booster_user_ans"] = True
+        try:
+            await status_msg.edit_text(
+                f"🏁 **ALL {steps} STEPS COMPLETED!**\n"
+                f"• • • ✧ • • •\n"
+                f"⏰ *Time is up! Reply with your final calculated integer in chat below:*",
+                parse_mode="Markdown"
+            )
+        except Exception:
+            pass
+
+
 async def start_mental_booster_chain(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -300,57 +361,7 @@ async def start_mental_booster_chain(update: Update, context: ContextTypes.DEFAU
     }
 
     status_msg = await query.edit_message_text("⚡ **Initializing Mind Chain... Get Ready!**")
-    await asyncio.sleep(1.5)
-
-    stop_button = InlineKeyboardMarkup([[InlineKeyboardButton("🛑 Stop & Calculate Now", callback_data="booster_mid_stop")]])
-
-    # Step 0: Base initial number
-    start_val = chain_data["steps"][0]["val"]
-    for t in range(timer, 0, -1):
-        if ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
-            break
-        await status_msg.edit_text(
-            f"🧠 **MIND MEMORY BOOSTER ({mode.upper()})**\n"
-            f"• • • ✧ • • •\n"
-            f"🔢 **Base Number:** `{start_val}`\n\n"
-            f"⏳ *Hold in memory:* `{t}s`",
-            reply_markup=stop_button,
-            parse_mode="Markdown"
-        )
-        await asyncio.sleep(1)
-
-    # Subsequent steps loop
-    for s_idx in range(1, len(chain_data["steps"])):
-        if ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
-            break
-        
-        ACTIVE_MENTAL_BOOSTERS[user_id]["current_step"] = s_idx
-        step_info = chain_data["steps"][s_idx]
-        
-        for t in range(timer, 0, -1):
-            if ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
-                break
-            await status_msg.edit_text(
-                f"🧠 **MIND MEMORY BOOSTER ({mode.upper()})**\n"
-                f"• • • ✧ • • •\n"
-                f"📍 **Step {s_idx} / {steps}**\n\n"
-                f"👉 **Operation:** `{step_info['instruction']}`\n\n"
-                f"⏳ *Time Remaining:* `{t}s`",
-                reply_markup=stop_button,
-                parse_mode="Markdown"
-            )
-            await asyncio.sleep(1)
-
-    if not ACTIVE_MENTAL_BOOSTERS.get(user_id, {}).get("stopped_early"):
-        ACTIVE_MENTAL_BOOSTERS[user_id]["awaiting_answer"] = True
-        context.user_data["awaiting_booster_user_ans"] = True
-
-        await status_msg.edit_text(
-            f"🏁 **ALL {steps} STEPS COMPLETED!**\n"
-            f"• • • ✧ • • •\n"
-            f"⏰ *Time is up! Reply with your final calculated integer in chat below:*",
-            parse_mode="Markdown"
-        )
+    asyncio.create_task(_run_mental_booster_chain_task(status_msg, user_id, steps, mode, timer, chain_data, context))
 
 
 async def booster_mid_stop_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -470,9 +481,13 @@ async def english_full_mock_launch(update: Update, context: ContextTypes.DEFAULT
 
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    from app.database import get_ist_date_str
+    today_str = get_ist_date_str()
+    paid_bal = int(profile.get("paid_question_balance") or 0) if profile else 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+    permanent_bonus = int(profile.get("bonus_quota") or 0) if profile else 0
+    temp_bonus = int(profile.get("temporary_bonus_quota") or 0) if (profile and profile.get("gift_granted_date") == today_str) else 0
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else (base_limit + permanent_bonus + temp_bonus)
     remaining_quota = allowed_limit - attempted_today
 
     if remaining_quota < 25:
@@ -633,9 +648,13 @@ async def quiz_language_callback(update: Update, context: ContextTypes.DEFAULT_T
 async def show_passage_timer_selection(query, user_id: int, topic_display: str):
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    from app.database import get_ist_date_str
+    today_str = get_ist_date_str()
+    paid_bal = int(profile.get("paid_question_balance") or 0) if profile else 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+    permanent_bonus = int(profile.get("bonus_quota") or 0) if profile else 0
+    temp_bonus = int(profile.get("temporary_bonus_quota") or 0) if (profile and profile.get("gift_granted_date") == today_str) else 0
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else (base_limit + permanent_bonus + temp_bonus)
     remaining_quota = max(1, allowed_limit - attempted_today)
 
     keyboard = []
@@ -690,9 +709,13 @@ async def show_combined_timer_selection(query, user_id: int):
     topic_name = current_cache.get("topic_name", "Practice Session")
     profile = await asyncio.to_thread(get_user_profile, user_id)
     attempted_today = await asyncio.to_thread(get_today_attempts, user_id)
-    paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+    from app.database import get_ist_date_str
+    today_str = get_ist_date_str()
+    paid_bal = int(profile.get("paid_question_balance") or 0) if profile else 0
     base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+    permanent_bonus = int(profile.get("bonus_quota") or 0) if profile else 0
+    temp_bonus = int(profile.get("temporary_bonus_quota") or 0) if (profile and profile.get("gift_granted_date") == today_str) else 0
+    allowed_limit = 10000 if user_id == PRIMARY_ADMIN_ID else (base_limit + permanent_bonus + temp_bonus)
     remaining_quota = max(1, allowed_limit - attempted_today)
 
     keyboard = []

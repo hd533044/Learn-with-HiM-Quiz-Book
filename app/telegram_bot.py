@@ -557,7 +557,7 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
         return True
 
     now_ts = int(time.time())
-    last_seen = LOCAL_ACTIVITY_TRACKER.get(user_id, now_ts)
+    last_seen = LOCAL_ACTIVITY_TRACKER.get(user_id, 0)
     diff_sec = now_ts - last_seen
 
     # Track in local RAM — 0 network egress to Neon
@@ -849,6 +849,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         plans_text = f"\n📦 **ACTIVE PACKS BREAKDOWN:**\n • `{active_plan_name}`\n"
 
+    gift_line = f"🎁 **Same-Day Gift Boost:** `+{temp_bonus} Qs (Today Only)`\n" if temp_bonus > 0 else ""
     msg = (
         f"💳 **YOUR SUBSCRIPTION STATUS** 💳\n"
         f"• • • ✧ • • •\n"
@@ -858,7 +859,7 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🟢 **Available Today:** `{remaining}` Qs\n"
         f"⏳ **Expiry Date:** `{expiry}`\n"
         f"🎁 **Bonus Quota:** `+{profile.get('bonus_quota', 0)} Qs`\n"
-        f"\n🎁 **Same-Day Gift Boost:** `+{temp_bonus} Qs (Today Only)`" if temp_bonus > 0 else ""
+        f"{gift_line}"
         f"🌟 **Scholars:** `{total_users}` | Likes: `{total_likes}` ❤️\n"
         f"• • • ✧ • • •"
         f"{plans_text}"
@@ -969,10 +970,9 @@ async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT
 
         try:
             from app.main import activate_user_subscription
-            await activate_user_subscription(user_id, plan_key)
-        except Exception:
-            from app.database import activate_user_subscription
-            await asyncio.to_thread(activate_user_subscription, user_id, plan_key)
+            await activate_user_subscription(user_id, plan_key, payment_id="FREE_DEMO", amount_paid=0)
+        except Exception as e:
+            logger.error(f"[FREE DEMO ACTIVATION ERROR] {e}")
 
         await query.edit_message_text(
             f"🎉 **FREE DEMO TRIAL ACTIVATED!** 🎉\n\n"
@@ -1326,6 +1326,10 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
             return count
         except Exception:
             if conn:
+                try:
+                    conn.rollback()
+                except Exception:
+                    pass
                 release_db(conn)
             # If your question bank is file/folder based (JSON), count local keys safely without DB hits:
             try:
@@ -1935,10 +1939,13 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "cmd_quiz":
         profile = await fetch_user_profile_fast(user.id)
         attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
+        today_str = get_ist_date_str()
         
-        paid_bal = profile.get("paid_question_balance", 0) or 0 if profile else 0
+        paid_bal = int(profile.get("paid_question_balance") or 0) if profile else 0
         base_limit = max(DAILY_QUESTION_LIMIT, paid_bal)
-        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else base_limit + (profile.get("bonus_quota", 0) if profile else 0)
+        permanent_bonus = int(profile.get("bonus_quota") or 0) if profile else 0
+        temp_bonus = int(profile.get("temporary_bonus_quota") or 0) if (profile and profile.get("gift_granted_date") == today_str) else 0
+        allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else (base_limit + permanent_bonus + temp_bonus)
 
         if attempted_today >= allowed_limit:
             await query.answer("🛑 Daily Limit Exhausted!", show_alert=True)
@@ -2589,7 +2596,13 @@ async def post_init(application: Application):
 
 def build_application() -> Application:
     init_db()
-    app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
+    app = (
+        Application.builder()
+        .token(BOT_TOKEN)
+        .post_init(post_init)
+        .concurrent_updates(True)
+        .build()
+    )
 
     app.add_handler(get_onboarding_handler())
 
@@ -2599,7 +2612,12 @@ def build_application() -> Application:
             ANNC_CONTENT: [MessageHandler(filters.ALL & ~filters.COMMAND, receive_announcement_content)],
             ANNC_DATETIME: [MessageHandler(filters.TEXT & ~filters.COMMAND, finalize_announcement_schedule)],
         },
-        fallbacks=[CommandHandler("cancel", cancel_admin_action)]
+        fallbacks=[
+            CommandHandler("cancel", cancel_admin_action),
+            CallbackQueryHandler(admin_callback_handler, pattern="^admin_")
+        ],
+        per_user=True,
+        per_chat=True
     )
 
     app.add_handler(annc_conv_handler)
@@ -2643,7 +2661,7 @@ def build_application() -> Application:
     app.add_handler(CommandHandler("admin", admin_portal_command))
     app.add_handler(CommandHandler("admit", admin_portal_command))
 
-    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(cmd_calc_booster|booster_|bstep_|bmode_|qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_|qpass_|qinterrupt_|cmd_prompt_submit_quiz|qfinal_submit_)"))
+    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(cmd_calc_booster|booster_|bop_|bopdiff_|bstep_|bmode_|qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_|qpass_|qinterrupt_|cmd_prompt_submit_quiz|qfinal_submit_)"))
     
     app.add_handler(CallbackQueryHandler(pdf_step_handler, pattern="^(pdfsubj_|pdftype_|pdftime_)"))
     app.add_handler(CallbackQueryHandler(admin_view_user_payments_callback, pattern="^admin_view_payments_"))

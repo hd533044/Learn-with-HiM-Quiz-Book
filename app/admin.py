@@ -2136,14 +2136,6 @@ async def admin_callback_handler(update: Update, context: ContextTypes.DEFAULT_T
         # Clear in-memory profile cache so both Free and Paid users see the boost instantly
         from app.telegram_bot import PROFILE_CACHE
         PROFILE_CACHE.clear()
-        
-        cursor.execute(
-            "UPDATE users SET temporary_bonus_quota = %s, gift_granted_date = %s WHERE is_banned = 0 AND is_verified = 1",
-            (amount, today_date)
-        )
-        conn.commit()
-        cursor.close()
-        release_db(conn)
 
         broadcast_msg = (
             f"🎁 **SPECIAL SAME-DAY GIFT FROM HIMANSHU SIR!** 🎁\n"

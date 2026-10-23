@@ -20,7 +20,15 @@ def init_pool():
     global db_pool
     if db_pool is None:
         try:
-            db_pool = psycopg2.pool.SimpleConnectionPool(1, 20, DATABASE_URL)
+            db_pool = psycopg2.pool.ThreadedConnectionPool(
+                minconn=1,
+                maxconn=30,
+                dsn=DATABASE_URL,
+                keepalives=1,
+                keepalives_idle=30,
+                keepalives_interval=10,
+                keepalives_count=5
+            )
         except Exception as e:
             logger.error(f"Failed to initialize database pool: {e}")
 
@@ -28,12 +36,46 @@ def get_db():
     global db_pool
     if db_pool is None:
         init_pool()
-    return db_pool.getconn()
+    conn = None
+    if db_pool:
+        try:
+            conn = db_pool.getconn()
+            if conn.closed != 0:
+                db_pool.putconn(conn, close=True)
+                conn = db_pool.getconn()
+            else:
+                with conn.cursor() as cur:
+                    cur.execute("SELECT 1;")
+        except Exception:
+            if conn is not None:
+                try:
+                    db_pool.putconn(conn, close=True)
+                except Exception:
+                    pass
+            conn = psycopg2.connect(DATABASE_URL)
+    else:
+        conn = psycopg2.connect(DATABASE_URL)
+    return conn
 
 def release_db(conn):
     global db_pool
-    if db_pool and conn:
-        db_pool.putconn(conn)
+    if not conn:
+        return
+    if db_pool:
+        try:
+            if conn.closed == 0:
+                conn.rollback()
+            db_pool.putconn(conn, close=(conn.closed != 0))
+        except Exception:
+            try:
+                conn.close()
+            except Exception:
+                pass
+    else:
+        try:
+            conn.close()
+        except Exception:
+            pass
 
 def get_ist_now():
     return datetime.now(IST)

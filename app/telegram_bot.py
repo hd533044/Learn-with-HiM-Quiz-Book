@@ -56,6 +56,8 @@ from app.admin import (
 from app.admin_query_engine import parse_and_execute_admin_query, generate_admin_intelligence_pdf
 from app.pdf_generator import generate_student_pdf_report, generate_single_quiz_attempt_pdf
 from app.pyq_fetcher import fetch_pyqs_for_quiz
+from app.typing_engine import get_or_create_daily_materials, get_available_dates
+from app.scorekeeper import scorekeeper_command, register_scorekeeper_handlers
 
 logger = logging.getLogger(__name__)
 
@@ -71,38 +73,6 @@ CACHE_TTL = 60  # Increased to 60s to prevent rapid repeat database queries
 FEEDBACKS_PER_PAGE = 5
 
 ANNC_CONTENT, ANNC_DATETIME = range(104, 106)
-from telegram import InlineKeyboardMarkup, InlineKeyboardButton, Update
-from telegram.ext import ContextTypes, CommandHandler, CallbackQueryHandler
-from app.typing_engine import get_or_create_daily_materials
-
-from app.typing_engine import get_or_create_daily_materials, get_available_dates
-
-async def typing_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Entry point for /typing command with language and history selector."""
-    keyboard = [
-        [InlineKeyboardButton("🇬🇧 English (Times New Roman 12pt)", callback_data="tmenu_lang_english")],
-        [InlineKeyboardButton("🇮🇳 हिन्दी (Mangal Inscript 12pt)", callback_data="tmenu_lang_hindi")],
-        [InlineKeyboardButton("📅 Browse Previous Days Archive (15 Days)", callback_data="tmenu_date_picker")],
-        [InlineKeyboardButton("ℹ️ Typing Exam Guidelines", callback_data="tmenu_guidelines")]
-    ]
-    msg = (
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "🏛 **LEARN WITH HIM TYPING BOOK** 🏛\n"
-        "**Type Daily! Type Smartly! Daily Free Relevant Typing Material!**\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Official 10-Minute Assessment Sheets (~600 Words / 60 WPM Pace):\n\n"
-        "▪ **English:** Times New Roman, 12pt, 1.5 Spacing, Exam Tab Indent\n"
-        "▪ **Hindi:** Mangal (Inscript), 12pt, 1.5 Spacing, Exam Tab Indent\n"
-        "▪ Deliverables: **PDF** (Print Ready) & **DOCX** (Editable Copy)\n"
-        "▪ Fresh Sets Refreshed Every Midnight (00:00 IST)\n"
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        "Choose an option to proceed:"
-    )
-    if update.callback_query:
-        await update.callback_query.answer()
-        await update.callback_query.edit_message_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
-    else:
-        await update.message.reply_text(msg, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
 
 
 async def typing_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -319,6 +289,7 @@ async def typing_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "cmd_typing_menu":
         await typing_command(update, context)
         return
+
 
 def build_user_keypad_markup() -> InlineKeyboardMarkup:
     keyboard = [
@@ -589,6 +560,7 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
             
     return True
 
+
 async def maintenance_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
     if not await inactivity_guard(update, context):
         return False
@@ -683,10 +655,8 @@ async def strict_quiz_command_guard(update: Update, context: ContextTypes.DEFAUL
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/quiz"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     
-   
     profile = await fetch_user_profile_fast(user.id)
 
-    # Locate in strict_quiz_command_guard():
     attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
     today_str = get_ist_date_str()
 
@@ -797,10 +767,8 @@ async def myplan_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/myplan"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     
-    
     profile = await fetch_user_profile_fast(user.id)
 
-    # Locate in myplan_command():
     today_used = await asyncio.to_thread(get_today_attempts, user.id)
     today_str = get_ist_date_str()
 
@@ -948,6 +916,7 @@ async def plans_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(keyboard))
 
+
 async def handle_buy_plan_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -1034,13 +1003,14 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("🌍 General Knowledge (GK)", callback_data="pdfsubj_gk")],
         [InlineKeyboardButton("📚 All Subjects", callback_data="pdfsubj_all")],
         [InlineKeyboardButton("💾 Saved / Bookmarked Questions", callback_data="pdfsubj_saved")],
+        [InlineKeyboardButton("📊 Scorekeeper PDF Report", callback_data="sk_download_pdf")],
         [InlineKeyboardButton("👤 Back to Profile", callback_data="cmd_profile")]
     ])
 
     msg = (
         f"📄 **STUDENT PDF REPORT CENTER** 📄\n"
         f"• • • ✧ • • •\n"
-        f"Select the **Subject** for your report:"
+        f"Select the **Subject** or module for your report:"
     )
 
     if update.callback_query:
@@ -1308,17 +1278,14 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/unattemptedquestions"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
 
-    # 1. Fetch only the IDs this user has already answered (minimal byte transfer)
     seen_ids = await asyncio.to_thread(get_seen_question_ids, user.id)
     seen_count = len(seen_ids)
 
-    # 2. Fast lightweight total bank count without downloading 1,000 full text objects
     def get_total_bank_count() -> int:
         conn = None
         try:
             conn = get_db()
             cursor = conn.cursor()
-            # Fast SQL count - downloads only 1 single integer over the wire
             cursor.execute("SELECT COUNT(*) FROM questions;")
             count = cursor.fetchone()[0]
             cursor.close()
@@ -1331,14 +1298,13 @@ async def unattemptedquestions_command(update: Update, context: ContextTypes.DEF
                 except Exception:
                     pass
                 release_db(conn)
-            # If your question bank is file/folder based (JSON), count local keys safely without DB hits:
             try:
                 from app.pyq_fetcher import QUESTION_BANK_CACHE
                 if QUESTION_BANK_CACHE:
                     return sum(len(v) for v in QUESTION_BANK_CACHE.values() if isinstance(v, list))
             except Exception:
                 pass
-            return 1500  # Safe fallback estimate
+            return 1500
 
     total_bank = await asyncio.to_thread(get_total_bank_count)
     remaining_count = max(0, total_bank - seen_count)
@@ -1380,6 +1346,9 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🤖 **COMMAND DIRECTORY & GUIDE** 🤖\n"
         f"• • • ✧ • • •\n"
         f"• **/quiz** — 🚀 Launch Quiz (Computer/English/GK)\n"
+        f"• **/scorekeeper** — 📊 Marks Keeper & AI Post Predictor\n"
+        f"• **/log** — ⚡ 1-Line Quick Mock Score Logger\n"
+        f"• **/typing** — ⌨️ Daily 600-Word Typing Material\n"
         f"• **/booster** — ⚡ Calculation Booster & Mind Math\n"
         f"• **/myplan** — 💵 Subscription Status\n"
         f"• **/plans** — 💳 VIP Payment Plans\n"
@@ -1394,10 +1363,10 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("⚡ Calc Booster", callback_data="cmd_calc_booster")],
-        [InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans"), InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport")],
-        [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
-        [InlineKeyboardButton("💬 Message Admin", callback_data="cmd_askadmin")]
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Scorekeeper", callback_data="cmd_scorekeeper")],
+        [InlineKeyboardButton("⚡ Calc Booster", callback_data="cmd_calc_booster"), InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport")],
+        [InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans"), InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions")],
+        [InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile"), InlineKeyboardButton("💬 Message Admin", callback_data="cmd_askadmin")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -1454,10 +1423,8 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     asyncio.create_task(asyncio.to_thread(log_command_usage, user.id, "/myprofile"))
     asyncio.create_task(asyncio.to_thread(log_user_activity_time, user.id, 10))
     
-    
     profile = await fetch_user_profile_fast(user.id)
 
-    # Locate in myprofile_command():
     today_used = await asyncio.to_thread(get_today_attempts, user.id)
     today_str = get_ist_date_str()
 
@@ -1470,7 +1437,6 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         temp_bonus = int(profile.get("temporary_bonus_quota") or 0)
 
     allowed_limit = 10000 if user.id == PRIMARY_ADMIN_ID else (base_limit + permanent_bonus + temp_bonus)
-    remaining = max(0, allowed_limit - today_used)
     remaining = max(0, allowed_limit - today_used)
     student_id = profile.get("student_id", f"USER_{user.id}")
     expiry = profile.get("vip_pass_expiry") or "N/A"
@@ -1494,9 +1460,9 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport")],
-        [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")]
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Scorekeeper", callback_data="cmd_scorekeeper")],
+        [InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")],
+        [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -1531,7 +1497,8 @@ async def wholestate_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Scorekeeper", callback_data="cmd_scorekeeper")],
+        [InlineKeyboardButton("🏆 Leaderboard", callback_data="cmd_toppers")]
     ]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
@@ -1560,7 +1527,7 @@ async def toppers_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🏆 **GLOBAL LEADERBOARD** 🏆\n"
         f"• • • ✧ • • •\n\n" + "\n".join(lines)
     )
-    buttons = [[InlineKeyboardButton("🚀 Attempt Quiz", callback_data="cmd_quiz")]]
+    buttons = [[InlineKeyboardButton("🚀 Attempt Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Scorekeeper", callback_data="cmd_scorekeeper")]]
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
 
 
@@ -1878,8 +1845,9 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await query.answer("🔓 Account Unlocked Successfully!", show_alert=True)
 
                 unlocked_menu_btn = InlineKeyboardMarkup([
-                    [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
-                    [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
+                    [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Scorekeeper", callback_data="cmd_scorekeeper")],
+                    [InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")],
+                    [InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
                 ])
                 await query.edit_message_text(
                     f"🔓 **ACCOUNT UNLOCKED!**\n"
@@ -1936,6 +1904,8 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await askadmin_command(update, context)
     elif data == "cmd_admininfo":
         await admininfo_command(update, context)
+    elif data == "cmd_scorekeeper":
+        await scorekeeper_command(update, context)
     elif data == "cmd_quiz":
         profile = await fetch_user_profile_fast(user.id)
         attempted_today = await asyncio.to_thread(get_today_attempts, user.id)
@@ -2555,6 +2525,8 @@ async def post_init(application: Application):
 
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Quiz (Computer/English/GK)"),
+        BotCommand("scorekeeper", "📊 SSC CGL Mains & Multi-Exam Scorekeeper + Predictor"),
+        BotCommand("log", "⚡ Quick-Log Mock Score in 1 Line"),
         BotCommand("typing", "⌨️ Daily 600-Word Paper-to-Screen Typing Material"),
         BotCommand("booster", "⚡ Dynamic Math Calculation Booster"),
         BotCommand("myplan", "💵 Subscriptions"),
@@ -2622,12 +2594,12 @@ def build_application() -> Application:
 
     app.add_handler(annc_conv_handler)
 
-    # In build_application():
-    
+    # Register /scorekeeper & /log handlers + DB tables
+    register_scorekeeper_handlers(app)
+
     app.add_handler(CommandHandler("typing", typing_command))
     app.add_handler(CallbackQueryHandler(typing_router, pattern="^(tmenu_|tget_|cmd_typing_menu)"))
 
-   
     app.add_handler(CommandHandler("ask", direct_admin_ask_command))
     app.add_handler(CommandHandler("ai", direct_admin_ask_command))
     app.add_handler(CommandHandler("query", direct_admin_ask_command))
@@ -2671,8 +2643,6 @@ def build_application() -> Application:
     app.add_handler(CallbackQueryHandler(admin_callback_handler, pattern="^(admin_|audit_|genpdf_|adminkp_)"))
     
     app.add_handler(CallbackQueryHandler(button_router, pattern="^cmd_|^fb_|^trigger_start|^buy_plan_|^userkp_|^login_|^reviews_page_|^dl_single_quiz_pdf_"))
-
-    app.add_handler(CallbackQueryHandler(quiz_extended_router, pattern="^(cmd_calc_booster|booster_|bop_|bopdiff_|bstep_|bmode_|qsubj_|qeng_|qsubopt_|qengopt_|qtopic_|qlang_|qcombo_|qpass_|qinterrupt_|cmd_prompt_submit_quiz|qfinal_submit_)"))
 
     app.add_handler(ChatMemberHandler(track_chat_member_updates, ChatMemberHandler.MY_CHAT_MEMBER))
 

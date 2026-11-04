@@ -170,12 +170,51 @@ def init_rank_calc_db():
 
 async def fetch_answer_key_html(url: str) -> str:
     """
-    Robust fetcher with full browser headers and automatic proxy failover
-    to bypass Cloudflare/datacenter IP blocking (HTTP 403).
+    Multi-tier resilient fetcher that bypasses Cloudflare/IIS 403 Forbidden blocks
+    by routing through headless browser reader networks and proxy decoders.
     """
-    headers = {
+    clean_target_url = url.strip()
+    encoded_url = urllib.parse.quote(clean_target_url, safe="")
+
+    # Tier 1: Jina AI Headless Chromium Engine (Bypasses Cloudflare & IIS WAF 403s)
+    jina_endpoint = f"https://r.jina.ai/{clean_target_url}"
+    jina_headers = {
+        "Accept": "text/html,application/xhtml+xml",
+        "X-Return-Format": "html",
+        "X-No-Cache": "true",
+        "X-Timeout": "18"
+    }
+    try:
+        connector = aiohttp.TCPConnector(ssl=False)
+        async with aiohttp.ClientSession(connector=connector) as session:
+            async with session.get(jina_endpoint, headers=jina_headers, timeout=aiohttp.ClientTimeout(total=20)) as resp:
+                if resp.status == 200:
+                    html_text = await resp.text()
+                    if len(html_text) > 800 and any(w in html_text for w in ("Roll", "Question", "Option", "table", "PART")):
+                        logger.info("[RANK CALC] Successfully bypassed 403 using Jina Engine.")
+                        return html_text
+    except Exception as e:
+        logger.warning(f"[JINA BYPASS NOTICE] {e}")
+
+    # Tier 2: AllOrigins Scraper JSON Gateway
+    allorigins_endpoint = f"https://api.allorigins.win/get?url={encoded_url}"
+    try:
+        connector = aiohttp.TCPConnector(ssl=False)
+        async with aiohttp.ClientSession(connector=connector) as session:
+            async with session.get(allorigins_endpoint, timeout=aiohttp.ClientTimeout(total=18)) as resp:
+                if resp.status == 200:
+                    payload = await resp.json()
+                    html_text = payload.get("contents", "")
+                    if len(html_text) > 800 and any(w in html_text for w in ("Roll", "Question", "Option", "table", "PART")):
+                        logger.info("[RANK CALC] Successfully fetched via AllOrigins Gateway.")
+                        return html_text
+    except Exception as e:
+        logger.warning(f"[ALLORIGINS NOTICE] {e}")
+
+    # Tier 3: Direct Browser Impersonation with ASP.NET Session Pre-warm
+    browser_headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
         "Referer": "https://sscexams.cbexams.com/",
         "Sec-Ch-Ua": '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
@@ -183,47 +222,32 @@ async def fetch_answer_key_html(url: str) -> str:
         "Sec-Ch-Ua-Platform": '"Windows"',
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Mode": "navigate",
-        "Sec-Fetch-Site": "none",
-        "Sec-Fetch-User": "?1",
+        "Sec-Fetch-Site": "cross-site",
         "Upgrade-Insecure-Requests": "1"
     }
-
-    # Attempt 1: Direct Fetch with complete browser impersonation & SSL bypass
     try:
+        cookie_jar = aiohttp.CookieJar()
         connector = aiohttp.TCPConnector(ssl=False)
-        async with aiohttp.ClientSession(connector=connector, headers=headers) as session:
-            async with session.get(url.strip(), timeout=aiohttp.ClientTimeout(total=12)) as resp:
+        async with aiohttp.ClientSession(connector=connector, cookie_jar=cookie_jar, headers=browser_headers) as session:
+            parsed_u = urllib.parse.urlparse(clean_target_url)
+            base_url = f"{parsed_u.scheme}://{parsed_u.netloc}/"
+            try:
+                await session.get(base_url, timeout=aiohttp.ClientTimeout(total=6))
+            except Exception:
+                pass
+
+            async with session.get(clean_target_url, timeout=aiohttp.ClientTimeout(total=14)) as resp:
                 if resp.status == 200:
-                    text = await resp.text()
-                    if len(text) > 500 and ("Roll" in text or "Question" in text or "Option" in text or "table" in text):
-                        return text
+                    html_text = await resp.text()
+                    if len(html_text) > 800:
+                        return html_text
     except Exception as e:
-        logger.warning(f"[DIRECT FETCH NOTICE] {e}")
-
-    # Attempt 2: Route through gateway proxy mirrors (bypasses Indian datacenter/geo-blocks)
-    encoded_url = urllib.parse.quote(url.strip())
-    proxy_endpoints = [
-        f"https://api.allorigins.win/raw?url={encoded_url}",
-        f"https://corsproxy.io/?{encoded_url}",
-        f"https://api.codetabs.com/v1/proxy?quest={encoded_url}"
-    ]
-
-    for p_url in proxy_endpoints:
-        try:
-            connector = aiohttp.TCPConnector(ssl=False)
-            async with aiohttp.ClientSession(connector=connector) as session:
-                async with session.get(p_url, timeout=aiohttp.ClientTimeout(total=14)) as resp:
-                    if resp.status == 200:
-                        text = await resp.text()
-                        if len(text) > 500 and ("Roll" in text or "Question" in text or "Option" in text or "table" in text):
-                            return text
-        except Exception:
-            continue
+        logger.warning(f"[DIRECT BROWSER FETCH NOTICE] {e}")
 
     raise Exception(
-        "HTTP 403 Forbidden: The SSC server is actively geo-blocking cloud IPs.\n\n"
-        "💡 **Instant Solution:** Open your link in Chrome, click `Share / Save as HTML`, "
-        "and send the `.html` file directly into this chat!"
+        "The SSC server is actively geo-blocking cloud IPs or this challenge key has expired.\n\n"
+        "💡 **Instant Fix:** Open the link on your phone or PC in Chrome, press `Ctrl + S` "
+        "(or tap 3 dots $\rightarrow$ Share $\rightarrow$ Download page), and send the downloaded `.html` file directly to this bot!"
     )
 
 
@@ -244,7 +268,6 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
             elif "Test Time" in lbl or "Exam Time" in lbl or "Shift" in lbl: candidate_meta["shift_time"] = val
             elif "Centre Name" in lbl or "Venue Name" in lbl: candidate_meta["venue_name"] = val
 
-    # Fallback to Text Regex if table was div-based
     full_text = soup.get_text()
     if not candidate_meta.get("roll_number"):
         m = re.search(r"Roll\s*No\.?\s*:\s*([A-Za-z0-9]+)", full_text, re.IGNORECASE)
@@ -259,7 +282,6 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
         m = re.search(r"(?:Test|Exam)\s*Time\s*(?:and\s*Shift)?\s*:\s*([^\n\r]+)", full_text, re.IGNORECASE)
         if m: candidate_meta["shift_time"] = m.group(1).split("Centre")[0].strip()
 
-    # Determine Exam Code
     full_check = (source_url + " " + candidate_meta.get("subject_raw", "") + " " + full_text[:1200]).upper()
     exam_code = "SSC_CGL_PRE"
     if "CGL" in full_check or "CGLE" in full_check:
@@ -744,7 +766,7 @@ def generate_sectional_answer_key_pdf(user_id: int, roll_no: str, target_sec_key
 # ==============================================================================
 async def process_and_reply_answer_key(html_content: str, source_identifier: str, update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
-    status_msg = await update.message.reply_text("⏳ **Evaluating Sectional Answer Key...**\nPlease wait 3-5 seconds...")
+    status_msg = await update.message.reply_text("⏳ **Evaluating Sectional Answer Key & Computing Rank...**\nPlease wait 3-5 seconds...")
 
     try:
         profile = get_user_profile(user_id) or {}

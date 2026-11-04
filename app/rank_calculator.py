@@ -4,6 +4,7 @@ import json
 import math
 import logging
 import asyncio
+import urllib.parse
 from datetime import datetime
 import pytz
 import aiohttp
@@ -168,15 +169,62 @@ def init_rank_calc_db():
 
 
 async def fetch_answer_key_html(url: str) -> str:
+    """
+    Robust fetcher with full browser headers and automatic proxy failover
+    to bypass Cloudflare/datacenter IP blocking (HTTP 403).
+    """
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+        "Referer": "https://sscexams.cbexams.com/",
+        "Sec-Ch-Ua": '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+        "Sec-Ch-Ua-Mobile": "?0",
+        "Sec-Ch-Ua-Platform": '"Windows"',
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1",
+        "Upgrade-Insecure-Requests": "1"
     }
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url.strip(), headers=headers, timeout=aiohttp.ClientTimeout(total=25)) as resp:
-            if resp.status == 200:
-                return await resp.text()
-            raise Exception(f"HTTP Error {resp.status} received from answer key server.")
+
+    # Attempt 1: Direct Fetch with complete browser impersonation & SSL bypass
+    try:
+        connector = aiohttp.TCPConnector(ssl=False)
+        async with aiohttp.ClientSession(connector=connector, headers=headers) as session:
+            async with session.get(url.strip(), timeout=aiohttp.ClientTimeout(total=12)) as resp:
+                if resp.status == 200:
+                    text = await resp.text()
+                    if len(text) > 500 and ("Roll" in text or "Question" in text or "Option" in text or "table" in text):
+                        return text
+    except Exception as e:
+        logger.warning(f"[DIRECT FETCH NOTICE] {e}")
+
+    # Attempt 2: Route through gateway proxy mirrors (bypasses Indian datacenter/geo-blocks)
+    encoded_url = urllib.parse.quote(url.strip())
+    proxy_endpoints = [
+        f"https://api.allorigins.win/raw?url={encoded_url}",
+        f"https://corsproxy.io/?{encoded_url}",
+        f"https://api.codetabs.com/v1/proxy?quest={encoded_url}"
+    ]
+
+    for p_url in proxy_endpoints:
+        try:
+            connector = aiohttp.TCPConnector(ssl=False)
+            async with aiohttp.ClientSession(connector=connector) as session:
+                async with session.get(p_url, timeout=aiohttp.ClientTimeout(total=14)) as resp:
+                    if resp.status == 200:
+                        text = await resp.text()
+                        if len(text) > 500 and ("Roll" in text or "Question" in text or "Option" in text or "table" in text):
+                            return text
+        except Exception:
+            continue
+
+    raise Exception(
+        "HTTP 403 Forbidden: The SSC server is actively geo-blocking cloud IPs.\n\n"
+        "💡 **Instant Solution:** Open your link in Chrome, click `Share / Save as HTML`, "
+        "and send the `.html` file directly into this chat!"
+    )
 
 
 def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> dict:
@@ -185,7 +233,6 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
 
     # 1. Candidate Info Table Parsing (Compatible with Ediquity & TCS iON)
     for row in soup.find_all("tr"):
-        row_txt = row.get_text()
         cells = row.find_all("td")
         if len(cells) >= 2:
             lbl = cells[0].get_text(strip=True).replace(":", "")
@@ -259,10 +306,7 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
         current_sec_label = "Reasoning"
         current_is_qual = False
 
-        # In Ediquity, sections are introduced via "PART-A", "PART-B", or section titles
-        # Split or iterate by question rows / challenge anchors
         q_elements = soup.find_all(text=re.compile(r"(?:Click Here to Challenge Question No\.?:?|Q\.No\s*:)\s*(\d+)", re.IGNORECASE))
-        
         seen_q_nums = set()
         question_counter = 0
 
@@ -279,19 +323,13 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
             seen_q_nums.add(q_num_str)
             question_counter += 1
 
-            # Detect Section Header above this element
             sec_header = parent_block.find_previous(text=re.compile(r"PART\s*[-–]\s*[A-D]|Module|Section", re.IGNORECASE))
             if sec_header:
                 current_sec_key, current_sec_label, current_is_qual = resolve_section(str(sec_header))
 
-            # Determine Question Status using Ediquity Legend:
-            # - "Correct Option selected" -> Candidate marked Right Option (CORRECT)
-            # - "Wrong Option selected" -> Candidate marked Wrong Option (WRONG)
-            # - "Correct Option Not Answered" or "Not Answered" -> UNATTEMPTED
             q_html = str(parent_block)
             is_answered_correct = ("Correct Option selected" in block_text) or ("Correct Option selected" in q_html)
             is_answered_wrong = ("Wrong Option selected" in block_text) or ("Wrong Option selected" in q_html)
-            is_unattempted = ("Not Answered" in block_text) or (not is_answered_correct and not is_answered_wrong)
 
             pos_m = cfg.get("comp_pos", 3.0) if current_is_qual else cfg["pos_mark"]
             neg_m = cfg.get("comp_neg", 1.0) if current_is_qual else cfg["neg_mark"]
@@ -328,7 +366,6 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
             elif q_status == "WRONG": sectional_data[current_sec_key]["wrong"] += 1
             else: sectional_data[current_sec_key]["unattempted"] += 1
 
-            # Extract Question Body Preview
             q_clean_txt = re.sub(r"Click Here to Challenge.*", "", block_text, flags=re.DOTALL).strip()
             lines = [l.strip() for l in q_clean_txt.splitlines() if l.strip() and "Q.No" not in l and "Option" not in l]
             body_preview = " ".join(lines[:3])[:220] or f"Question #{q_num_str}"
@@ -485,7 +522,6 @@ def save_and_calculate_rank_stats(user_id: int, eval_data: dict, sheet_url: str,
         ))
         conn.commit()
 
-        # Dynamic Normalization & Peer Ranking
         cursor.execute("""
             WITH ranked_pool AS (
                 SELECT 
@@ -509,7 +545,6 @@ def save_and_calculate_rank_stats(user_id: int, eval_data: dict, sheet_url: str,
         ranks = cursor.fetchone()
         res = dict(ranks) if ranks else {}
 
-        # SSC Standard Normalization Simulation
         raw_score = float(eval_data["merit_score"])
         shift_avg = float(res.get("shift_avg_score") or raw_score)
         global_avg = float(res.get("global_avg_score") or raw_score)
@@ -525,7 +560,7 @@ def save_and_calculate_rank_stats(user_id: int, eval_data: dict, sheet_url: str,
 
 
 # ==============================================================================
-# WEASYPRINT PDF DOSSIERS (SCORECARD & SECTIONAL ANSWER KEYS)
+# PDF GENERATORS
 # ==============================================================================
 def generate_rank_report_card_pdf(user_id: int, eval_data: dict, rank_data: dict) -> str:
     cand = eval_data["candidate"]
@@ -705,49 +740,18 @@ def generate_sectional_answer_key_pdf(user_id: int, roll_no: str, target_sec_key
 
 
 # ==============================================================================
-# TELEGRAM BOT HANDLERS & URL INTERCEPTION
+# PIPELINE EXECUTION HELPER
 # ==============================================================================
-async def rank_calculator_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    context.user_data["awaiting_rank_url"] = True
-    msg = (
-        "🎯 **SSC / RRB ANSWER KEY & REAL-TIME RANK CALCULATOR** 🎯\n"
-        "• • • ✧ • • •\n"
-        "Just paste your official **TCS iON (`digialm.com`)** or **Ediquity (`cbexams.com`)** response sheet link directly in this chat!\n\n"
-        "👉 **Supported SSC & Central Exams:**\n"
-        "• **SSC CGL 2026** (Tier-I Pre & Tier-II Mains with Computer Gate)\n"
-        "• **SSC CHSL** (Pre & Mains)\n"
-        "• **SSC CPO, MTS, GD Constable, Steno**\n"
-        "• **RRB NTPC, Group D, ALP**\n\n"
-        "⚡ *Paste your link below to get your Normalized Score, Shift Rank, and Download Section-Wise Answer Key PDFs:* "
-    )
-    if update.callback_query:
-        await update.callback_query.answer()
-        await update.callback_query.message.reply_text(msg, parse_mode="Markdown")
-    else:
-        await update.message.reply_text(msg, parse_mode="Markdown")
-
-
-async def handle_response_sheet_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    text = update.message.text.strip() if update.message.text else ""
-
-    # Check for valid examination response sheet domains
-    is_valid_url = any(domain in text.lower() for domain in (
-        "cbexams.com", "sscexams", "digialm.com", "ediquity", "assessmenthtml", "per/g01", "viewcandresponse"
-    ))
-    if not is_valid_url and not context.user_data.get("awaiting_rank_url"):
-        return  # Let standard message router continue
-
-    context.user_data["awaiting_rank_url"] = False
+async def process_and_reply_answer_key(html_content: str, source_identifier: str, update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
-    status_msg = await update.message.reply_text("⏳ **Fetching & Evaluating your Sectional Answer Key...**\nPlease wait 3-5 seconds...")
+    status_msg = await update.message.reply_text("⏳ **Evaluating Sectional Answer Key...**\nPlease wait 3-5 seconds...")
 
     try:
-        html = await fetch_answer_key_html(text)
         profile = get_user_profile(user_id) or {}
         category = profile.get("category", "UR")
 
-        eval_data = await asyncio.to_thread(parse_universal_ssc_answer_key, html, text)
-        rank_data = await asyncio.to_thread(save_and_calculate_rank_stats, user_id, eval_data, text, category)
+        eval_data = await asyncio.to_thread(parse_universal_ssc_answer_key, html_content, source_identifier)
+        rank_data = await asyncio.to_thread(save_and_calculate_rank_stats, user_id, eval_data, source_identifier, category)
 
         cand = eval_data["candidate"]
         roll_no = cand.get("roll_number", str(user_id))
@@ -809,7 +813,75 @@ async def handle_response_sheet_url(update: Update, context: ContextTypes.DEFAUL
                 )
     except Exception as e:
         logger.error(f"[RANK CALCULATOR ERROR] {e}")
-        await status_msg.edit_text(f"❌ **Error evaluating answer key:** {e}\n\nPlease ensure your link starts with `https://...` from `cbexams.com` or `digialm.com`.")
+        await status_msg.edit_text(f"❌ **Error evaluating answer key:** {e}")
+
+
+# ==============================================================================
+# TELEGRAM BOT HANDLERS & URL/FILE INTERCEPTION
+# ==============================================================================
+async def rank_calculator_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    msg = (
+        "🎯 **SSC / RRB ANSWER KEY & REAL-TIME RANK CALCULATOR** 🎯\n"
+        "• • • ✧ • • •\n"
+        "Send your official response sheet by **either method**:\n\n"
+        "1️⃣ **Paste Link:** Paste your official `cbexams.com` or `digialm.com` URL directly in this chat.\n"
+        "2️⃣ **Send Saved HTML:** If your server link is firewalled or expired, open it in Chrome, click `Share / Save as HTML`, and upload the `.html` file here!\n\n"
+        "👉 **Supported SSC & Central Exams:**\n"
+        "• **SSC CGL 2026** (Tier-I Pre & Tier-II Mains with Computer Gate)\n"
+        "• **SSC CHSL** (Pre & Mains)\n"
+        "• **SSC CPO, MTS, GD Constable, Steno**\n"
+        "• **RRB NTPC, Group D, ALP**\n\n"
+        "⚡ *Paste your link or send your .html file below:* "
+    )
+    if update.callback_query:
+        await update.callback_query.answer()
+        await update.callback_query.message.reply_text(msg, parse_mode="Markdown")
+    else:
+        await update.message.reply_text(msg, parse_mode="Markdown")
+
+
+async def handle_response_sheet_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text = update.message.text.strip() if update.message.text else ""
+    is_valid_url = any(domain in text.lower() for domain in (
+        "cbexams", "sscexams", "digialm", "ediquity", "assessmenthtml", "per/g01", "viewcandresponse"
+    ))
+    if not is_valid_url:
+        return
+
+    fetch_msg = await update.message.reply_text("⏳ **Connecting to examination server and fetching answer key...**")
+    try:
+        html = await fetch_answer_key_html(text)
+        await fetch_msg.delete()
+        await process_and_reply_answer_key(html, text, update, context)
+    except Exception as e:
+        logger.error(f"[FETCH ERROR] {e}")
+        await fetch_msg.edit_text(
+            f"❌ **{e}**\n\n"
+            f"📁 **Instant Fix:** Open your response sheet in Chrome, press `Ctrl + S` (or Mobile: 3 dots $\rightarrow$ Share $\rightarrow$ Download), "
+            f"and send the downloaded `.html` file directly to this bot!"
+        )
+
+
+async def handle_html_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handles saved .html / .htm answer key files uploaded directly by students."""
+    doc = update.message.document
+    if not doc or not doc.file_name:
+        return
+    
+    fname = doc.file_name.lower()
+    if not (fname.endswith(".html") or fname.endswith(".htm") or fname.endswith(".txt")):
+        return
+
+    wait_msg = await update.message.reply_text("📥 **Received HTML Response Sheet! Reading file...**")
+    try:
+        tg_file = await context.bot.get_file(doc.file_id)
+        file_bytes = await tg_file.download_as_bytearray()
+        html_content = file_bytes.decode("utf-8", errors="ignore")
+        await wait_msg.delete()
+        await process_and_reply_answer_key(html_content, doc.file_name, update, context)
+    except Exception as e:
+        logger.error(f"[HTML FILE READ ERROR] {e}")
+        await wait_msg.edit_text(f"❌ Failed to parse HTML file: {e}")
 
 
 async def rank_pdf_callback_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -900,8 +972,15 @@ def register_rank_calculator_handlers(app):
     app.add_handler(CommandHandler("anskey", rank_calculator_command))
     app.add_handler(CommandHandler("calculator", rank_calculator_command))
     app.add_handler(CallbackQueryHandler(rank_pdf_callback_router, pattern="^rankpdf_"))
-    # Intercept cbexams (Ediquity), digialm (TCS iON), or ViewCandResponse links
+    
+    # 1. URL Handler: Intercepts all SSC Ediquity, cbexams, and TCS iON links
     app.add_handler(MessageHandler(
         filters.TEXT & filters.Regex(r"(cbexams|sscexams|digialm|ediquity|assessmenthtml|per/g01|viewcandresponse)"),
         handle_response_sheet_url
+    ))
+    
+    # 2. Document Handler: Processes downloaded .html response sheets directly
+    app.add_handler(MessageHandler(
+        filters.Document.ALL & ~filters.COMMAND,
+        handle_html_document
     ))

@@ -26,7 +26,7 @@ try:
 except ImportError:
     HAS_WEASYPRINT = False
 
-# SSC & RRB Exam Schemes and Sectional Configurations
+# SSC & Central Exams Marking Schemes
 EXAM_CONFIGS = {
     "SSC_CGL_MAINS": {
         "title": "SSC CGL 2026 Mains (Tier-II)",
@@ -36,14 +36,14 @@ EXAM_CONFIGS = {
         "comp_neg": 1.0,
         "max_merit": 390.0,
         "sections": {
-            "math": ["Mathematical Abilities", "Quantitative Aptitude", "Mathematics", "Maths"],
-            "reas": ["Reasoning and General Intelligence", "General Intelligence", "Reasoning"],
-            "eng": ["English Language and Comprehension", "English Comprehension", "English"],
-            "ga": ["General Awareness", "General Knowledge", "GA", "GK"]
+            "math": ["Mathematical Abilities", "Quantitative Aptitude", "Mathematics", "Maths", "PART-A", "Section-I Module-I"],
+            "reas": ["Reasoning and General Intelligence", "General Intelligence", "Reasoning", "PART-B", "Section-I Module-II"],
+            "eng": ["English Language and Comprehension", "English Comprehension", "English", "PART-C", "Section-II Module-I"],
+            "ga": ["General Awareness", "General Knowledge", "GA", "GK", "PART-D", "Section-II Module-II"]
         },
         "qualifying": {
             "key": "comp",
-            "names": ["Computer Knowledge Test", "Computer Knowledge Module", "Computer Awareness"],
+            "names": ["Computer Knowledge Test", "Computer Knowledge Module", "Computer Awareness", "Module-I of Section-III"],
             "max": 60.0
         }
     },
@@ -53,10 +53,10 @@ EXAM_CONFIGS = {
         "neg_mark": 0.50,
         "max_merit": 200.0,
         "sections": {
-            "reas": ["General Intelligence and Reasoning", "General Intelligence", "Reasoning"],
-            "ga": ["General Awareness", "GA", "GK"],
-            "math": ["Quantitative Aptitude", "Mathematics", "Maths"],
-            "eng": ["English Comprehension", "English Language", "English"]
+            "reas": ["General Intelligence and Reasoning", "General Intelligence", "Reasoning", "PART-A"],
+            "ga": ["General Awareness", "GA", "GK", "PART-B"],
+            "math": ["Quantitative Aptitude", "Mathematics", "Maths", "PART-C"],
+            "eng": ["English Comprehension", "English Language", "English", "PART-D"]
         },
         "qualifying": None
     },
@@ -66,10 +66,10 @@ EXAM_CONFIGS = {
         "neg_mark": 1.0,
         "max_merit": 360.0,
         "sections": {
-            "math": ["Mathematical Abilities", "Mathematics", "Maths"],
-            "reas": ["Reasoning and General Intelligence", "Reasoning"],
-            "eng": ["English Language and Comprehension", "English"],
-            "ga": ["General Awareness", "GA", "GK"]
+            "math": ["Mathematical Abilities", "Mathematics", "Maths", "PART-A"],
+            "reas": ["Reasoning and General Intelligence", "Reasoning", "PART-B"],
+            "eng": ["English Language and Comprehension", "English", "PART-C"],
+            "ga": ["General Awareness", "GA", "GK", "PART-D"]
         },
         "qualifying": {
             "key": "comp",
@@ -83,10 +83,10 @@ EXAM_CONFIGS = {
         "neg_mark": 0.50,
         "max_merit": 200.0,
         "sections": {
-            "reas": ["General Intelligence", "Reasoning"],
-            "ga": ["General Awareness", "GA"],
-            "math": ["Quantitative Aptitude", "Maths"],
-            "eng": ["English Language", "English"]
+            "eng": ["English Language", "English", "PART-A"],
+            "reas": ["General Intelligence", "Reasoning", "PART-B"],
+            "math": ["Quantitative Aptitude", "Maths", "PART-C"],
+            "ga": ["General Awareness", "GA", "PART-D"]
         },
         "qualifying": None
     },
@@ -96,10 +96,10 @@ EXAM_CONFIGS = {
         "neg_mark": 0.25,
         "max_merit": 200.0,
         "sections": {
-            "reas": ["General Intelligence and Reasoning", "Reasoning"],
-            "ga": ["General Knowledge and General Awareness", "General Awareness", "GK"],
-            "math": ["Quantitative Aptitude", "Maths"],
-            "eng": ["English Comprehension", "English"]
+            "reas": ["General Intelligence and Reasoning", "Reasoning", "PART-A"],
+            "ga": ["General Knowledge and General Awareness", "General Awareness", "GK", "PART-B"],
+            "math": ["Quantitative Aptitude", "Maths", "PART-C"],
+            "eng": ["English Comprehension", "English", "PART-D"]
         },
         "qualifying": None
     },
@@ -109,10 +109,10 @@ EXAM_CONFIGS = {
         "neg_mark": 0.25,
         "max_merit": 160.0,
         "sections": {
-            "reas": ["General Intelligence and Reasoning", "Reasoning"],
-            "ga": ["General Knowledge and General Awareness", "GK"],
-            "math": ["Elementary Mathematics", "Maths"],
-            "eng": ["English", "Hindi", "Part-D"]
+            "reas": ["General Intelligence and Reasoning", "Reasoning", "PART-A"],
+            "ga": ["General Knowledge and General Awareness", "GK", "PART-B"],
+            "math": ["Elementary Mathematics", "Maths", "PART-C"],
+            "eng": ["English", "Hindi", "PART-D"]
         },
         "qualifying": None
     },
@@ -132,7 +132,6 @@ EXAM_CONFIGS = {
 
 
 def init_rank_calc_db():
-    """Initializes PostgreSQL table for real-time ranking and sectional caches."""
     conn = get_db()
     cursor = conn.cursor()
     try:
@@ -170,71 +169,77 @@ def init_rank_calc_db():
 
 async def fetch_answer_key_html(url: str) -> str:
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
     }
     async with aiohttp.ClientSession() as session:
         async with session.get(url.strip(), headers=headers, timeout=aiohttp.ClientTimeout(total=25)) as resp:
             if resp.status == 200:
                 return await resp.text()
-            raise Exception(f"HTTP Status {resp.status} received from examination server.")
+            raise Exception(f"HTTP Error {resp.status} received from answer key server.")
 
 
-def parse_ssc_response_sheet(html_content: str, default_exam="SSC_CGL_MAINS") -> dict:
+def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> dict:
     soup = BeautifulSoup(html_content, "html.parser")
     candidate_meta = {}
 
-    # 1. Parse Candidate Header Table (TCS iON & Ediquity patterns)
-    header_table = (
-        soup.find("table", border="1")
-        or soup.find("table", class_=re.compile(r"main_table|table-bordered|cand-info|candidate_details"))
-        or soup.find("table")
-    )
-    if header_table:
-        for tr in header_table.find_all("tr"):
-            tds = tr.find_all("td")
-            if len(tds) >= 2:
-                lbl = tds[0].get_text(strip=True).replace(":", "")
-                val = tds[1].get_text(strip=True)
-                if "Roll Number" in lbl: candidate_meta["roll_number"] = val
-                elif "Candidate Name" in lbl: candidate_meta["candidate_name"] = val
-                elif "Venue Name" in lbl or "Center Name" in lbl: candidate_meta["venue_name"] = val
-                elif "Exam Date" in lbl or "Test Date" in lbl: candidate_meta["exam_date"] = val
-                elif "Exam Time" in lbl or "Test Time" in lbl: candidate_meta["shift_time"] = val
-                elif "Subject" in lbl: candidate_meta["subject_raw"] = val
+    # 1. Candidate Info Table Parsing (Compatible with Ediquity & TCS iON)
+    for row in soup.find_all("tr"):
+        row_txt = row.get_text()
+        cells = row.find_all("td")
+        if len(cells) >= 2:
+            lbl = cells[0].get_text(strip=True).replace(":", "")
+            val = cells[1].get_text(strip=True)
+            if "Roll No" in lbl or "Roll Number" in lbl: candidate_meta["roll_number"] = val
+            elif "Candidate Name" in lbl: candidate_meta["candidate_name"] = val
+            elif "Exam Level" in lbl or "Subject" in lbl: candidate_meta["subject_raw"] = val
+            elif "Test Date" in lbl or "Exam Date" in lbl: candidate_meta["exam_date"] = val
+            elif "Test Time" in lbl or "Exam Time" in lbl or "Shift" in lbl: candidate_meta["shift_time"] = val
+            elif "Centre Name" in lbl or "Venue Name" in lbl: candidate_meta["venue_name"] = val
 
-    raw_subject = candidate_meta.get("subject_raw", "").upper()
-    exam_code = default_exam
-    if "CHSL" in raw_subject:
-        exam_code = "SSC_CHSL_MAINS" if any(w in raw_subject for w in ("TIER II", "TIER-II", "MAINS")) else "SSC_CHSL_PRE"
-    elif "CGL" in raw_subject:
-        exam_code = "SSC_CGL_MAINS" if any(w in raw_subject for w in ("TIER II", "TIER-II", "MAINS")) else "SSC_CGL_PRE"
-    elif "CPO" in raw_subject or "SUB-INSPECTOR" in raw_subject:
+    # Fallback to Text Regex if table was div-based
+    full_text = soup.get_text()
+    if not candidate_meta.get("roll_number"):
+        m = re.search(r"Roll\s*No\.?\s*:\s*([A-Za-z0-9]+)", full_text, re.IGNORECASE)
+        if m: candidate_meta["roll_number"] = m.group(1).strip()
+    if not candidate_meta.get("candidate_name"):
+        m = re.search(r"Candidate\s*Name\s*:\s*([A-Za-z\s]+)", full_text, re.IGNORECASE)
+        if m: candidate_meta["candidate_name"] = m.group(1).split("\n")[0].strip()
+    if not candidate_meta.get("exam_date"):
+        m = re.search(r"(?:Test|Exam)\s*Date\s*:\s*([0-9]{1,2}\s+[A-Za-z]+\s+[0-9]{4}|[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4})", full_text, re.IGNORECASE)
+        if m: candidate_meta["exam_date"] = m.group(1).strip()
+    if not candidate_meta.get("shift_time"):
+        m = re.search(r"(?:Test|Exam)\s*Time\s*(?:and\s*Shift)?\s*:\s*([^\n\r]+)", full_text, re.IGNORECASE)
+        if m: candidate_meta["shift_time"] = m.group(1).split("Centre")[0].strip()
+
+    # Determine Exam Code
+    full_check = (source_url + " " + candidate_meta.get("subject_raw", "") + " " + full_text[:1200]).upper()
+    exam_code = "SSC_CGL_PRE"
+    if "CGL" in full_check or "CGLE" in full_check:
+        exam_code = "SSC_CGL_MAINS" if any(w in full_check for w in ("MAINS", "TIER II", "TIER-II", "TIER 2")) else "SSC_CGL_PRE"
+    elif "CHSL" in full_check:
+        exam_code = "SSC_CHSL_MAINS" if any(w in full_check for w in ("MAINS", "TIER II", "TIER-II", "TIER 2")) else "SSC_CHSL_PRE"
+    elif "CPO" in full_check:
         exam_code = "SSC_CPO_PRE"
-    elif "GD" in raw_subject or "CONSTABLE" in raw_subject:
+    elif "GD" in full_check:
         exam_code = "SSC_GD"
-    elif "NTPC" in raw_subject or "RRB" in raw_subject:
+    elif "NTPC" in full_check or "RRB" in full_check:
         exam_code = "RRB_NTPC"
 
-    cfg = EXAM_CONFIGS.get(exam_code, EXAM_CONFIGS["SSC_CGL_MAINS"])
+    cfg = EXAM_CONFIGS.get(exam_code, EXAM_CONFIGS["SSC_CGL_PRE"])
 
-    def map_to_section_key(sec_title: str) -> tuple[str, str, bool]:
-        s_clean = sec_title.strip()
+    def resolve_section(sec_name_raw: str) -> tuple[str, str, bool]:
+        s = sec_name_raw.strip()
         if cfg.get("qualifying"):
             q_info = cfg["qualifying"]
-            if any(qn.lower() in s_clean.lower() for qn in q_info["names"]):
+            if any(qn.lower() in s.lower() for qn in q_info["names"]):
                 return q_info["key"], "Computer Knowledge", True
         for k, aliases in cfg["sections"].items():
             for alias in aliases:
-                if alias.lower() in s_clean.lower():
-                    clean_display = "Maths" if k == "math" else ("Reasoning" if k == "reas" else ("English" if k == "eng" else "General Awareness"))
-                    return k, clean_display, False
+                if alias.lower() in s.lower():
+                    disp = "Maths" if k == "math" else ("Reasoning" if k == "reas" else ("English" if k == "eng" else "General Awareness"))
+                    return k, disp, False
         return "ga", "General Awareness", False
-
-    # 2. Locate Question Panels (handles both TCS iON and Ediquity sectional blocks)
-    panels = soup.find_all("div", class_=re.compile(r"question-pnl|rw|menu-tbl|question-block"))
-    if not panels:
-        panels = soup.find_all("table", class_=re.compile(r"questionPnl|menu-tbl|question-table"))
 
     sectional_data = {}
     merit_score = 0.0
@@ -244,88 +249,184 @@ def parse_ssc_response_sheet(html_content: str, default_exam="SSC_CGL_MAINS") ->
     total_unattempted = 0
     parsed_questions = []
 
-    for idx, p in enumerate(panels, start=1):
-        p_text = p.get_text()
-        if "Question ID" not in p_text and "Option 1 ID" not in p_text and "Chosen Option" not in p_text and "Selected Option" not in p_text:
-            continue
+    # ==========================================================
+    # BRANCH A: SSC EDIQUITY PATTERN (cbexams.com / ViewCandResponse.aspx)
+    # ==========================================================
+    is_ediquity = ("cbexams" in source_url.lower()) or ("Correct Option selected" in full_text) or ("Click Here to Challenge" in full_text)
 
-        q_id = f"Q{idx}"
-        status = "Not Answered"
-        chosen_opt = None
+    if is_ediquity:
+        current_sec_key = "reas"
+        current_sec_label = "Reasoning"
+        current_is_qual = False
 
-        for row in p.find_all("tr"):
-            row_str = row.get_text(strip=True)
-            if "Question ID" in row_str:
-                cells = row.find_all("td")
-                if len(cells) >= 2: q_id = cells[1].get_text(strip=True)
-            elif "Status" in row_str:
-                cells = row.find_all("td")
-                if len(cells) >= 2: status = cells[1].get_text(strip=True)
-            elif "Chosen Option" in row_str or "Selected Option" in row_str or "Given Answer" in row_str:
-                cells = row.find_all("td")
-                if len(cells) >= 2: chosen_opt = cells[1].get_text(strip=True)
+        # In Ediquity, sections are introduced via "PART-A", "PART-B", or section titles
+        # Split or iterate by question rows / challenge anchors
+        q_elements = soup.find_all(text=re.compile(r"(?:Click Here to Challenge Question No\.?:?|Q\.No\s*:)\s*(\d+)", re.IGNORECASE))
+        
+        seen_q_nums = set()
+        question_counter = 0
 
-        # Detect Right Option Number (1, 2, 3, or 4)
-        right_opt = None
-        options_table = p.find("table")
-        if options_table:
-            for opt_idx, opt_row in enumerate(options_table.find_all("tr"), start=1):
-                if opt_row.find(class_=re.compile(r"rightAns|correct|tick|right_option")) or opt_row.find("img", src=re.compile(r"correct|right|tick")):
-                    right_opt = str(opt_idx)
-                    break
-        if not right_opt:
+        for q_el in q_elements:
+            parent_block = q_el.find_parent("table") or q_el.find_parent("div")
+            if not parent_block:
+                continue
+
+            block_text = parent_block.get_text()
+            m_num = re.search(r"(?:Question No\.?:?|Q\.No\s*:)\s*(\d+)", block_text, re.IGNORECASE)
+            q_num_str = m_num.group(1) if m_num else str(question_counter + 1)
+            if q_num_str in seen_q_nums:
+                continue
+            seen_q_nums.add(q_num_str)
+            question_counter += 1
+
+            # Detect Section Header above this element
+            sec_header = parent_block.find_previous(text=re.compile(r"PART\s*[-–]\s*[A-D]|Module|Section", re.IGNORECASE))
+            if sec_header:
+                current_sec_key, current_sec_label, current_is_qual = resolve_section(str(sec_header))
+
+            # Determine Question Status using Ediquity Legend:
+            # - "Correct Option selected" -> Candidate marked Right Option (CORRECT)
+            # - "Wrong Option selected" -> Candidate marked Wrong Option (WRONG)
+            # - "Correct Option Not Answered" or "Not Answered" -> UNATTEMPTED
+            q_html = str(parent_block)
+            is_answered_correct = ("Correct Option selected" in block_text) or ("Correct Option selected" in q_html)
+            is_answered_wrong = ("Wrong Option selected" in block_text) or ("Wrong Option selected" in q_html)
+            is_unattempted = ("Not Answered" in block_text) or (not is_answered_correct and not is_answered_wrong)
+
+            pos_m = cfg.get("comp_pos", 3.0) if current_is_qual else cfg["pos_mark"]
+            neg_m = cfg.get("comp_neg", 1.0) if current_is_qual else cfg["neg_mark"]
+
+            chosen_opt = "--"
             right_opt = "1"
+            delta = 0.0
 
-        # Determine Section header
-        sec_div = p.find_previous("div", class_=re.compile(r"section-lbl|section-cntnr|sectionName|section_heading|section-title"))
-        raw_sec_name = sec_div.get_text(strip=True).replace("Section :", "").strip() if sec_div else "General"
-        sec_key, sec_label, is_qual = map_to_section_key(raw_sec_name)
-
-        pos_m = cfg.get("comp_pos", 3.0) if is_qual else cfg["pos_mark"]
-        neg_m = cfg.get("comp_neg", 1.0) if is_qual else cfg["neg_mark"]
-
-        is_answered = (status == "Answered" and chosen_opt in ["1", "2", "3", "4"])
-        delta = 0.0
-
-        if is_answered:
-            if chosen_opt == right_opt:
+            if is_answered_correct and not is_answered_wrong:
                 q_status = "CORRECT"
                 delta = pos_m
                 total_correct += 1
-            else:
+                chosen_opt = "Correct"
+                right_opt = "Correct"
+            elif is_answered_wrong:
                 q_status = "WRONG"
                 delta = -neg_m
                 total_wrong += 1
-        else:
-            q_status = "UNATTEMPTED"
-            total_unattempted += 1
+                chosen_opt = "Wrong"
+                right_opt = "Key"
+            else:
+                q_status = "UNATTEMPTED"
+                total_unattempted += 1
 
-        if is_qual:
-            qual_score += delta
-        else:
-            merit_score += delta
+            if current_is_qual:
+                qual_score += delta
+            else:
+                merit_score += delta
 
-        if sec_key not in sectional_data:
-            sectional_data[sec_key] = {"label": sec_label, "score": 0.0, "correct": 0, "wrong": 0, "unattempted": 0, "is_qual": is_qual}
-        sectional_data[sec_key]["score"] = round(sectional_data[sec_key]["score"] + delta, 2)
-        if q_status == "CORRECT": sectional_data[sec_key]["correct"] += 1
-        elif q_status == "WRONG": sectional_data[sec_key]["wrong"] += 1
-        else: sectional_data[sec_key]["unattempted"] += 1
+            if current_sec_key not in sectional_data:
+                sectional_data[current_sec_key] = {"label": current_sec_label, "score": 0.0, "correct": 0, "wrong": 0, "unattempted": 0, "is_qual": current_is_qual}
+            sectional_data[current_sec_key]["score"] = round(sectional_data[current_sec_key]["score"] + delta, 2)
+            if q_status == "CORRECT": sectional_data[current_sec_key]["correct"] += 1
+            elif q_status == "WRONG": sectional_data[current_sec_key]["wrong"] += 1
+            else: sectional_data[current_sec_key]["unattempted"] += 1
 
-        q_text_el = p.find("td", class_=re.compile(r"bold|question|que_text"))
-        q_text_content = q_text_el.get_text(strip=True) if q_text_el else f"Question #{idx}"
+            # Extract Question Body Preview
+            q_clean_txt = re.sub(r"Click Here to Challenge.*", "", block_text, flags=re.DOTALL).strip()
+            lines = [l.strip() for l in q_clean_txt.splitlines() if l.strip() and "Q.No" not in l and "Option" not in l]
+            body_preview = " ".join(lines[:3])[:220] or f"Question #{q_num_str}"
 
-        parsed_questions.append({
-            "num": idx,
-            "q_id": q_id,
-            "sec_key": sec_key,
-            "sec_label": sec_label,
-            "text": q_text_content[:250],
-            "status": q_status,
-            "chosen": chosen_opt if is_answered else "--",
-            "right": right_opt,
-            "delta": delta
-        })
+            parsed_questions.append({
+                "num": int(q_num_str) if q_num_str.isdigit() else question_counter,
+                "q_id": f"Q{q_num_str}",
+                "sec_key": current_sec_key,
+                "sec_label": current_sec_label,
+                "text": body_preview,
+                "status": q_status,
+                "chosen": chosen_opt,
+                "right": right_opt,
+                "delta": delta
+            })
+
+    # ==========================================================
+    # BRANCH B: TCS iON PATTERN (digialm.com)
+    # ==========================================================
+    else:
+        panels = soup.find_all("div", class_=re.compile(r"question-pnl|rw|menu-tbl")) or soup.find_all("table", class_=re.compile(r"questionPnl|menu-tbl"))
+        for idx, p in enumerate(panels, start=1):
+            p_text = p.get_text()
+            if "Question ID" not in p_text and "Chosen Option" not in p_text and "Option 1 ID" not in p_text:
+                continue
+
+            q_id = f"Q{idx}"
+            status = "Not Answered"
+            chosen_opt = None
+
+            for row in p.find_all("tr"):
+                row_str = row.get_text(strip=True)
+                if "Question ID" in row_str:
+                    tds = row.find_all("td")
+                    if len(tds) >= 2: q_id = tds[1].get_text(strip=True)
+                elif "Status" in row_str:
+                    tds = row.find_all("td")
+                    if len(tds) >= 2: status = tds[1].get_text(strip=True)
+                elif "Chosen Option" in row_str:
+                    tds = row.find_all("td")
+                    if len(tds) >= 2: chosen_opt = tds[1].get_text(strip=True)
+
+            right_opt = "1"
+            opts_tbl = p.find("table")
+            if opts_tbl:
+                for opt_idx, opt_row in enumerate(opts_tbl.find_all("tr"), start=1):
+                    if opt_row.find(class_=re.compile(r"rightAns|correct|tick")) or opt_row.find("img", src=re.compile(r"correct|right")):
+                        right_opt = str(opt_idx)
+                        break
+
+            sec_div = p.find_previous("div", class_=re.compile(r"section-lbl|section-cntnr|sectionName"))
+            raw_sec = sec_div.get_text(strip=True).replace("Section :", "").strip() if sec_div else "General"
+            sec_key, sec_label, is_qual = resolve_section(raw_sec)
+
+            pos_m = cfg.get("comp_pos", 3.0) if is_qual else cfg["pos_mark"]
+            neg_m = cfg.get("comp_neg", 1.0) if is_qual else cfg["neg_mark"]
+            is_answered = (status == "Answered" and chosen_opt in ["1", "2", "3", "4"])
+            delta = 0.0
+
+            if is_answered:
+                if chosen_opt == right_opt:
+                    q_status = "CORRECT"
+                    delta = pos_m
+                    total_correct += 1
+                else:
+                    q_status = "WRONG"
+                    delta = -neg_m
+                    total_wrong += 1
+            else:
+                q_status = "UNATTEMPTED"
+                total_unattempted += 1
+
+            if is_qual:
+                qual_score += delta
+            else:
+                merit_score += delta
+
+            if sec_key not in sectional_data:
+                sectional_data[sec_key] = {"label": sec_label, "score": 0.0, "correct": 0, "wrong": 0, "unattempted": 0, "is_qual": is_qual}
+            sectional_data[sec_key]["score"] = round(sectional_data[sec_key]["score"] + delta, 2)
+            if q_status == "CORRECT": sectional_data[sec_key]["correct"] += 1
+            elif q_status == "WRONG": sectional_data[sec_key]["wrong"] += 1
+            else: sectional_data[sec_key]["unattempted"] += 1
+
+            q_el = p.find("td", class_=re.compile(r"bold|question"))
+            body_preview = q_el.get_text(strip=True)[:220] if q_el else f"Question #{idx}"
+
+            parsed_questions.append({
+                "num": idx,
+                "q_id": q_id,
+                "sec_key": sec_key,
+                "sec_label": sec_label,
+                "text": body_preview,
+                "status": q_status,
+                "chosen": chosen_opt if is_answered else "--",
+                "right": right_opt,
+                "delta": delta
+            })
 
     return {
         "candidate": candidate_meta,
@@ -384,7 +485,7 @@ def save_and_calculate_rank_stats(user_id: int, eval_data: dict, sheet_url: str,
         ))
         conn.commit()
 
-        # Compute Windowed Ranks across Peers
+        # Dynamic Normalization & Peer Ranking
         cursor.execute("""
             WITH ranked_pool AS (
                 SELECT 
@@ -408,7 +509,7 @@ def save_and_calculate_rank_stats(user_id: int, eval_data: dict, sheet_url: str,
         ranks = cursor.fetchone()
         res = dict(ranks) if ranks else {}
 
-        # 4. SSC Normalization Formula Simulation
+        # SSC Standard Normalization Simulation
         raw_score = float(eval_data["merit_score"])
         shift_avg = float(res.get("shift_avg_score") or raw_score)
         global_avg = float(res.get("global_avg_score") or raw_score)
@@ -424,7 +525,7 @@ def save_and_calculate_rank_stats(user_id: int, eval_data: dict, sheet_url: str,
 
 
 # ==============================================================================
-# PDF GENERATORS: SCORECARD & SECTION-WISE ANSWER KEYS
+# WEASYPRINT PDF DOSSIERS (SCORECARD & SECTIONAL ANSWER KEYS)
 # ==============================================================================
 def generate_rank_report_card_pdf(user_id: int, eval_data: dict, rank_data: dict) -> str:
     cand = eval_data["candidate"]
@@ -433,7 +534,7 @@ def generate_rank_report_card_pdf(user_id: int, eval_data: dict, rank_data: dict
 
     sec_rows = ""
     for k, s in eval_data["sectional"].items():
-        qual_badge = " *(Qualifying)*" if s.get("is_qual") else ""
+        qual_badge = " *(Qualifying Gate)*" if s.get("is_qual") else ""
         sec_rows += f"""
         <tr>
             <td><b>{s['label']}{qual_badge}</b></td>
@@ -487,7 +588,7 @@ def generate_rank_report_card_pdf(user_id: int, eval_data: dict, rank_data: dict
     </table>
 
     <div class="norm-box">
-        <b>📊 Shift Telemetry:</b> Shift Average: <b>{round(float(rank_data.get('shift_avg_score') or 0.0), 1)}</b> | Category Rank ({rank_data.get('category', 'UR')}): <b>#{rank_data.get('category_rank', 1)} / {rank_data.get('total_category_students', 1)}</b>.
+        <b>📊 Shift Performance:</b> Shift Average Score: <b>{round(float(rank_data.get('shift_avg_score') or 0.0), 1)}</b> | Category Rank: <b>#{rank_data.get('category_rank', 1)}</b>.
     </div>
 
     <h3>📊 SECTIONAL PERFORMANCE BREAKDOWN</h3>
@@ -582,9 +683,9 @@ def generate_sectional_answer_key_pdf(user_id: int, roll_no: str, target_sec_key
             <tr>
                 <th style="width:6%; text-align:center;">Q#</th>
                 <th style="width:58%;">Question Details</th>
-                <th style="width:12%; text-align:center;">Chosen Opt</th>
-                <th style="width:12%; text-align:center;">Correct Opt</th>
-                <th style="width:12%; text-align:center;">Status</th>
+                <th style="width:12%; text-align:center;">Candidate Choice</th>
+                <th style="width:12%; text-align:center;">Official Key</th>
+                <th style="width:12%; text-align:center;">Evaluation</th>
             </tr>
         </thead>
         <tbody>
@@ -604,13 +705,14 @@ def generate_sectional_answer_key_pdf(user_id: int, roll_no: str, target_sec_key
 
 
 # ==============================================================================
-# TELEGRAM BOT HANDLERS & USER INTERACTION
+# TELEGRAM BOT HANDLERS & URL INTERCEPTION
 # ==============================================================================
 async def rank_calculator_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    context.user_data["awaiting_rank_url"] = True
     msg = (
         "🎯 **SSC / RRB ANSWER KEY & REAL-TIME RANK CALCULATOR** 🎯\n"
         "• • • ✧ • • •\n"
-        "Just paste your official TCS iON / `digialm.com` or `ediquity` response sheet link directly in this chat!\n\n"
+        "Just paste your official **TCS iON (`digialm.com`)** or **Ediquity (`cbexams.com`)** response sheet link directly in this chat!\n\n"
         "👉 **Supported SSC & Central Exams:**\n"
         "• **SSC CGL 2026** (Tier-I Pre & Tier-II Mains with Computer Gate)\n"
         "• **SSC CHSL** (Pre & Mains)\n"
@@ -627,10 +729,15 @@ async def rank_calculator_command(update: Update, context: ContextTypes.DEFAULT_
 
 async def handle_response_sheet_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text.strip() if update.message.text else ""
-    # Filter for official TCS iON / Digialm / Ediquity answer key domains
-    if not any(domain in text for domain in ("digialm.com", "cdn.digialm.com", "ediquity", "AssessmentHTML", "per/g01")):
-        return  # Pass to regular message handler
 
+    # Check for valid examination response sheet domains
+    is_valid_url = any(domain in text.lower() for domain in (
+        "cbexams.com", "sscexams", "digialm.com", "ediquity", "assessmenthtml", "per/g01", "viewcandresponse"
+    ))
+    if not is_valid_url and not context.user_data.get("awaiting_rank_url"):
+        return  # Let standard message router continue
+
+    context.user_data["awaiting_rank_url"] = False
     user_id = update.effective_user.id
     status_msg = await update.message.reply_text("⏳ **Fetching & Evaluating your Sectional Answer Key...**\nPlease wait 3-5 seconds...")
 
@@ -639,7 +746,7 @@ async def handle_response_sheet_url(update: Update, context: ContextTypes.DEFAUL
         profile = get_user_profile(user_id) or {}
         category = profile.get("category", "UR")
 
-        eval_data = await asyncio.to_thread(parse_ssc_response_sheet, html)
+        eval_data = await asyncio.to_thread(parse_universal_ssc_answer_key, html, text)
         rank_data = await asyncio.to_thread(save_and_calculate_rank_stats, user_id, eval_data, text, category)
 
         cand = eval_data["candidate"]
@@ -648,10 +755,10 @@ async def handle_response_sheet_url(update: Update, context: ContextTypes.DEFAUL
 
         sec_lines = []
         for k, s in eval_data["sectional"].items():
-            qual_note = " *(Qualifying)*" if s.get("is_qual") else ""
+            qual_note = " *(Qualifying Gate)*" if s.get("is_qual") else ""
             sec_lines.append(f"• **{s['label']}{qual_note}:** `{s['score']}` (✅ {s['correct']} | ❌ {s['wrong']} | ⏭ {s['unattempted']})")
 
-        qual_info_line = f"🖥️ **Computer Score:** `{eval_data['qual_score']}`\n" if eval_data.get("qual_score") else ""
+        qual_info_line = f"🖥️ **Computer Gate Score:** `{eval_data['qual_score']}`\n" if eval_data.get("qual_score") else ""
 
         result_msg = (
             f"🎉 **EVALUATION COMPLETE — {eval_data['exam_title'].upper()}** 🎉\n"
@@ -660,7 +767,7 @@ async def handle_response_sheet_url(update: Update, context: ContextTypes.DEFAUL
             f"🪪 **Roll No:** `{roll_no}` | 🏷 **Category:** `{category}`\n"
             f"📅 **Date & Shift:** `{cand.get('exam_date', 'N/A')} ({cand.get('shift_time', 'N/A')})`\n"
             f"• • • ✧ • • •\n"
-            f"🎯 **TOTAL RAW SCORE:** `{eval_data['merit_score']} / {int(eval_data['max_merit'])}`\n"
+            f"🎯 **TOTAL RAW MERIT SCORE:** `{eval_data['merit_score']} / {int(eval_data['max_merit'])}`\n"
             f"🚀 **ESTIMATED NORMALIZED SCORE:** `{rank_data.get('normalized_score', eval_data['merit_score'])}`\n"
             f"{qual_info_line}"
             f"🏆 **Overall Rank:** `#{rank_data.get('overall_rank', 1)}` / `{rank_data.get('total_students', 1)}`\n"
@@ -668,7 +775,7 @@ async def handle_response_sheet_url(update: Update, context: ContextTypes.DEFAUL
             f"📊 **Shift Average:** `{round(float(rank_data.get('shift_avg_score') or 0.0), 1)}`\n"
             f"• • • ✧ • • •\n"
             f"📚 **SECTIONAL BREAKDOWN:**\n" + "\n".join(sec_lines) + "\n\n"
-            f"👇 *Download your Official Scorecard or Section-Wise Answer Keys below:*"
+            f"👇 *Download your Official Master Scorecard or Section-Wise Answer Keys below:*"
         )
 
         buttons = [
@@ -702,7 +809,7 @@ async def handle_response_sheet_url(update: Update, context: ContextTypes.DEFAUL
                 )
     except Exception as e:
         logger.error(f"[RANK CALCULATOR ERROR] {e}")
-        await status_msg.edit_text(f"❌ **Error evaluating answer key:** {e}\n\nPlease ensure your link is an official TCS iON / Digialm / Ediquity response sheet URL.")
+        await status_msg.edit_text(f"❌ **Error evaluating answer key:** {e}\n\nPlease ensure your link starts with `https://...` from `cbexams.com` or `digialm.com`.")
 
 
 async def rank_pdf_callback_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -793,4 +900,8 @@ def register_rank_calculator_handlers(app):
     app.add_handler(CommandHandler("anskey", rank_calculator_command))
     app.add_handler(CommandHandler("calculator", rank_calculator_command))
     app.add_handler(CallbackQueryHandler(rank_pdf_callback_router, pattern="^rankpdf_"))
-    app.add_handler(MessageHandler(filters.TEXT & filters.Regex(r"(digialm\.com|ediquity|AssessmentHTML|per/g01)"), handle_response_sheet_url))
+    # Intercept cbexams (Ediquity), digialm (TCS iON), or ViewCandResponse links
+    app.add_handler(MessageHandler(
+        filters.TEXT & filters.Regex(r"(cbexams|sscexams|digialm|ediquity|assessmenthtml|per/g01|viewcandresponse)"),
+        handle_response_sheet_url
+    ))

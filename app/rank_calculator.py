@@ -168,86 +168,86 @@ def init_rank_calc_db():
         release_db(conn)
 
 
+def build_translate_proxy_url(target_url: str) -> str:
+    """
+    Converts target URL to a Google Translate Proxy URL.
+    Routes requests through Google's edge network in India to bypass cloud IP blocks (HTTP 403).
+    Example: sscexams.cbexams.com -> sscexams-cbexams-com.translate.goog
+    """
+    clean_url = target_url.strip()
+    parsed = urllib.parse.urlparse(clean_url)
+    proxy_domain = parsed.netloc.replace(".", "-") + ".translate.goog"
+    
+    q_pairs = list(urllib.parse.parse_qsl(parsed.query))
+    q_pairs.extend([
+        ("_x_tr_sl", "auto"),
+        ("_x_tr_tl", "en"),
+        ("_x_tr_hl", "en"),
+        ("_x_tr_pto", "wapp")
+    ])
+    new_query = urllib.parse.urlencode(q_pairs)
+    return f"https://{proxy_domain}{parsed.path}?{new_query}"
+
+
 async def fetch_answer_key_html(url: str) -> str:
     """
-    Multi-tier resilient fetcher that bypasses Cloudflare/IIS 403 Forbidden blocks
-    by routing through headless browser reader networks and proxy decoders.
+    Fetches the answer key HTML with Google Translate Edge routing and proxy fallbacks.
     """
     clean_target_url = url.strip()
-    encoded_url = urllib.parse.quote(clean_target_url, safe="")
-
-    # Tier 1: Jina AI Headless Chromium Engine (Bypasses Cloudflare & IIS WAF 403s)
-    jina_endpoint = f"https://r.jina.ai/{clean_target_url}"
-    jina_headers = {
-        "Accept": "text/html,application/xhtml+xml",
-        "X-Return-Format": "html",
-        "X-No-Cache": "true",
-        "X-Timeout": "18"
-    }
-    try:
-        connector = aiohttp.TCPConnector(ssl=False)
-        async with aiohttp.ClientSession(connector=connector) as session:
-            async with session.get(jina_endpoint, headers=jina_headers, timeout=aiohttp.ClientTimeout(total=20)) as resp:
-                if resp.status == 200:
-                    html_text = await resp.text()
-                    if len(html_text) > 800 and any(w in html_text for w in ("Roll", "Question", "Option", "table", "PART")):
-                        logger.info("[RANK CALC] Successfully bypassed 403 using Jina Engine.")
-                        return html_text
-    except Exception as e:
-        logger.warning(f"[JINA BYPASS NOTICE] {e}")
-
-    # Tier 2: AllOrigins Scraper JSON Gateway
-    allorigins_endpoint = f"https://api.allorigins.win/get?url={encoded_url}"
-    try:
-        connector = aiohttp.TCPConnector(ssl=False)
-        async with aiohttp.ClientSession(connector=connector) as session:
-            async with session.get(allorigins_endpoint, timeout=aiohttp.ClientTimeout(total=18)) as resp:
-                if resp.status == 200:
-                    payload = await resp.json()
-                    html_text = payload.get("contents", "")
-                    if len(html_text) > 800 and any(w in html_text for w in ("Roll", "Question", "Option", "table", "PART")):
-                        logger.info("[RANK CALC] Successfully fetched via AllOrigins Gateway.")
-                        return html_text
-    except Exception as e:
-        logger.warning(f"[ALLORIGINS NOTICE] {e}")
-
-    # Tier 3: Direct Browser Impersonation with ASP.NET Session Pre-warm
     browser_headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
-        "Referer": "https://sscexams.cbexams.com/",
         "Sec-Ch-Ua": '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
         "Sec-Ch-Ua-Mobile": "?0",
         "Sec-Ch-Ua-Platform": '"Windows"',
-        "Sec-Fetch-Dest": "document",
-        "Sec-Fetch-Mode": "navigate",
-        "Sec-Fetch-Site": "cross-site",
         "Upgrade-Insecure-Requests": "1"
     }
-    try:
-        cookie_jar = aiohttp.CookieJar()
-        connector = aiohttp.TCPConnector(ssl=False)
-        async with aiohttp.ClientSession(connector=connector, cookie_jar=cookie_jar, headers=browser_headers) as session:
-            parsed_u = urllib.parse.urlparse(clean_target_url)
-            base_url = f"{parsed_u.scheme}://{parsed_u.netloc}/"
-            try:
-                await session.get(base_url, timeout=aiohttp.ClientTimeout(total=6))
-            except Exception:
-                pass
 
+    # Tier 1: Google Translate Proxy (Bypasses Indian geo-blocks on cbexams.com & digialm.com)
+    try:
+        translate_url = build_translate_proxy_url(clean_target_url)
+        connector = aiohttp.TCPConnector(ssl=False)
+        async with aiohttp.ClientSession(connector=connector, headers=browser_headers) as session:
+            async with session.get(translate_url, timeout=aiohttp.ClientTimeout(total=20), allow_redirects=True) as resp:
+                if resp.status == 200:
+                    html_text = await resp.text()
+                    if len(html_text) > 800 and any(w in html_text for w in ("Roll", "Question", "Option", "table", "PART")):
+                        logger.info("[RANK CALC] Successfully fetched via Google Edge Proxy.")
+                        return html_text
+    except Exception as e:
+        logger.warning(f"[TRANSLATE PROXY NOTICE] {e}")
+
+    # Tier 2: AllOrigins Raw Gateway
+    try:
+        encoded = urllib.parse.quote(clean_target_url)
+        allorigins_url = f"https://api.allorigins.win/raw?url={encoded}"
+        connector = aiohttp.TCPConnector(ssl=False)
+        async with aiohttp.ClientSession(connector=connector, headers=browser_headers) as session:
+            async with session.get(allorigins_url, timeout=aiohttp.ClientTimeout(total=18)) as resp:
+                if resp.status == 200:
+                    html_text = await resp.text()
+                    if len(html_text) > 800 and any(w in html_text for w in ("Roll", "Question", "Option", "table", "PART")):
+                        return html_text
+    except Exception as e:
+        logger.warning(f"[ALLORIGINS NOTICE] {e}")
+
+    # Tier 3: Direct Browser Impersonation
+    try:
+        connector = aiohttp.TCPConnector(ssl=False)
+        async with aiohttp.ClientSession(connector=connector, headers=browser_headers) as session:
             async with session.get(clean_target_url, timeout=aiohttp.ClientTimeout(total=14)) as resp:
                 if resp.status == 200:
                     html_text = await resp.text()
                     if len(html_text) > 800:
                         return html_text
     except Exception as e:
-        logger.warning(f"[DIRECT BROWSER FETCH NOTICE] {e}")
+        logger.warning(f"[DIRECT FETCH NOTICE] {e}")
 
     raise Exception(
-        "The SSC server is actively geo-blocking cloud IPs or this challenge key has expired.\n\n"
-        "💡 **Instant Fix:** Open the link on your phone or PC in Chrome, press `Ctrl + S` "
-        "(or tap 3 dots $\rightarrow$ Share $\rightarrow$ Download page), and send the downloaded `.html` file directly to this bot!"
+        "Could not load the answer key from the server.\n\n"
+        "💡 **Instant Fix:** Open the link in Chrome on your phone or PC, press `Ctrl + S` "
+        "(or tap 3 dots → Share → Download page), and send the downloaded `.html` file directly to this bot!"
     )
 
 
@@ -282,7 +282,7 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
         m = re.search(r"(?:Test|Exam)\s*Time\s*(?:and\s*Shift)?\s*:\s*([^\n\r]+)", full_text, re.IGNORECASE)
         if m: candidate_meta["shift_time"] = m.group(1).split("Centre")[0].strip()
 
-    full_check = (source_url + " " + candidate_meta.get("subject_raw", "") + " " + full_text[:1200]).upper()
+    full_check = (source_url + " " + candidate_meta.get("subject_raw", "") + " " + full_text[:1500]).upper()
     exam_code = "SSC_CGL_PRE"
     if "CGL" in full_check or "CGLE" in full_check:
         exam_code = "SSC_CGL_MAINS" if any(w in full_check for w in ("MAINS", "TIER II", "TIER-II", "TIER 2")) else "SSC_CGL_PRE"
@@ -321,14 +321,19 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
     # ==========================================================
     # BRANCH A: SSC EDIQUITY PATTERN (cbexams.com / ViewCandResponse.aspx)
     # ==========================================================
-    is_ediquity = ("cbexams" in source_url.lower()) or ("Correct Option selected" in full_text) or ("Click Here to Challenge" in full_text)
+    is_ediquity = (
+        ("cbexams" in source_url.lower())
+        or ("Correct Option selected" in full_text)
+        or ("Click Here to Challenge" in full_text)
+        or ("ViewCandResponse" in source_url)
+    )
 
     if is_ediquity:
         current_sec_key = "reas"
         current_sec_label = "Reasoning"
         current_is_qual = False
 
-        q_elements = soup.find_all(text=re.compile(r"(?:Click Here to Challenge Question No\.?:?|Q\.No\s*:)\s*(\d+)", re.IGNORECASE))
+        q_elements = soup.find_all(lambda el: el.name in ('a', 'span', 'b', 'td', 'div') and re.search(r'(?:Challenge\s+Question\s+No\.?|Question\s*No\.?|Q\.No\s*:)\s*(\d+)', el.get_text(), re.IGNORECASE))
         seen_q_nums = set()
         question_counter = 0
 
@@ -338,16 +343,30 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
                 continue
 
             block_text = parent_block.get_text()
-            m_num = re.search(r"(?:Question No\.?:?|Q\.No\s*:)\s*(\d+)", block_text, re.IGNORECASE)
+            m_num = re.search(r'(?:Question\s*No\.?|Q\.No\s*:)\s*(\d+)', block_text, re.IGNORECASE)
             q_num_str = m_num.group(1) if m_num else str(question_counter + 1)
             if q_num_str in seen_q_nums:
                 continue
             seen_q_nums.add(q_num_str)
             question_counter += 1
+            q_num_int = int(q_num_str) if q_num_str.isdigit() else question_counter
 
-            sec_header = parent_block.find_previous(text=re.compile(r"PART\s*[-–]\s*[A-D]|Module|Section", re.IGNORECASE))
+            # Section identification via header or question index fallback
+            sec_header = parent_block.find_previous(lambda el: el.name in ('table', 'div', 'tr', 'td', 'b', 'p', 'h3', 'h4', 'span') and re.search(r'PART\s*[-–]\s*[A-D]|Module|Section', el.get_text(), re.IGNORECASE))
             if sec_header:
-                current_sec_key, current_sec_label, current_is_qual = resolve_section(str(sec_header))
+                current_sec_key, current_sec_label, current_is_qual = resolve_section(str(sec_header.get_text()))
+            else:
+                if exam_code == "SSC_CGL_PRE":
+                    if q_num_int <= 25: current_sec_key, current_sec_label, current_is_qual = "reas", "Reasoning", False
+                    elif q_num_int <= 50: current_sec_key, current_sec_label, current_is_qual = "ga", "General Awareness", False
+                    elif q_num_int <= 75: current_sec_key, current_sec_label, current_is_qual = "math", "Maths", False
+                    else: current_sec_key, current_sec_label, current_is_qual = "eng", "English", False
+                elif exam_code == "SSC_CGL_MAINS":
+                    if q_num_int <= 30: current_sec_key, current_sec_label, current_is_qual = "math", "Maths", False
+                    elif q_num_int <= 60: current_sec_key, current_sec_label, current_is_qual = "reas", "Reasoning", False
+                    elif q_num_int <= 105: current_sec_key, current_sec_label, current_is_qual = "eng", "English", False
+                    elif q_num_int <= 130: current_sec_key, current_sec_label, current_is_qual = "ga", "General Awareness", False
+                    else: current_sec_key, current_sec_label, current_is_qual = "comp", "Computer Knowledge", True
 
             q_html = str(parent_block)
             is_answered_correct = ("Correct Option selected" in block_text) or ("Correct Option selected" in q_html)
@@ -360,18 +379,18 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
             right_opt = "1"
             delta = 0.0
 
-            if is_answered_correct and not is_answered_wrong:
-                q_status = "CORRECT"
-                delta = pos_m
-                total_correct += 1
-                chosen_opt = "Correct"
-                right_opt = "Correct"
-            elif is_answered_wrong:
+            if is_answered_wrong:
                 q_status = "WRONG"
                 delta = -neg_m
                 total_wrong += 1
                 chosen_opt = "Wrong"
                 right_opt = "Key"
+            elif is_answered_correct:
+                q_status = "CORRECT"
+                delta = pos_m
+                total_correct += 1
+                chosen_opt = "Correct"
+                right_opt = "Correct"
             else:
                 q_status = "UNATTEMPTED"
                 total_unattempted += 1
@@ -393,7 +412,7 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
             body_preview = " ".join(lines[:3])[:220] or f"Question #{q_num_str}"
 
             parsed_questions.append({
-                "num": int(q_num_str) if q_num_str.isdigit() else question_counter,
+                "num": q_num_int,
                 "q_id": f"Q{q_num_str}",
                 "sec_key": current_sec_key,
                 "sec_label": current_sec_label,
@@ -486,6 +505,14 @@ def parse_universal_ssc_answer_key(html_content: str, source_url: str = "") -> d
                 "right": right_opt,
                 "delta": delta
             })
+
+    # Question count auto-calibration: Switch between Pre and Mains if question volume dictates
+    if len(parsed_questions) > 110 and exam_code == "SSC_CGL_PRE":
+        cfg = EXAM_CONFIGS["SSC_CGL_MAINS"]
+        exam_code = "SSC_CGL_MAINS"
+    elif len(parsed_questions) <= 100 and exam_code == "SSC_CGL_MAINS":
+        cfg = EXAM_CONFIGS["SSC_CGL_PRE"]
+        exam_code = "SSC_CGL_PRE"
 
     return {
         "candidate": candidate_meta,
@@ -847,7 +874,7 @@ async def rank_calculator_command(update: Update, context: ContextTypes.DEFAULT_
         "• • • ✧ • • •\n"
         "Send your official response sheet by **either method**:\n\n"
         "1️⃣ **Paste Link:** Paste your official `cbexams.com` or `digialm.com` URL directly in this chat.\n"
-        "2️⃣ **Send Saved HTML:** If your server link is firewalled or expired, open it in Chrome, click `Share / Save as HTML`, and upload the `.html` file here!\n\n"
+        "2️⃣ **Send Saved HTML:** If your challenge link is firewalled or expired, open it in Chrome, click `Share / Save as HTML`, and upload the `.html` file here!\n\n"
         "👉 **Supported SSC & Central Exams:**\n"
         "• **SSC CGL 2026** (Tier-I Pre & Tier-II Mains with Computer Gate)\n"
         "• **SSC CHSL** (Pre & Mains)\n"
@@ -879,13 +906,12 @@ async def handle_response_sheet_url(update: Update, context: ContextTypes.DEFAUL
         logger.error(f"[FETCH ERROR] {e}")
         await fetch_msg.edit_text(
             f"❌ **{e}**\n\n"
-            f"📁 **Instant Fix:** Open your response sheet in Chrome, press `Ctrl + S` (or Mobile: 3 dots $\rightarrow$ Share $\rightarrow$ Download), "
+            f"📁 **Instant Fix:** Open your response sheet in Chrome, press `Ctrl + S` (or Mobile: 3 dots → Share → Download), "
             f"and send the downloaded `.html` file directly to this bot!"
         )
 
 
 async def handle_html_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handles saved .html / .htm answer key files uploaded directly by students."""
     doc = update.message.document
     if not doc or not doc.file_name:
         return
@@ -995,13 +1021,11 @@ def register_rank_calculator_handlers(app):
     app.add_handler(CommandHandler("calculator", rank_calculator_command))
     app.add_handler(CallbackQueryHandler(rank_pdf_callback_router, pattern="^rankpdf_"))
     
-    # 1. URL Handler: Intercepts all SSC Ediquity, cbexams, and TCS iON links
     app.add_handler(MessageHandler(
         filters.TEXT & filters.Regex(r"(cbexams|sscexams|digialm|ediquity|assessmenthtml|per/g01|viewcandresponse)"),
         handle_response_sheet_url
     ))
     
-    # 2. Document Handler: Processes downloaded .html response sheets directly
     app.add_handler(MessageHandler(
         filters.Document.ALL & ~filters.COMMAND,
         handle_html_document

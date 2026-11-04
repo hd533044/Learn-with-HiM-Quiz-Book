@@ -165,6 +165,14 @@ def init_rank_calc_db():
                 created_at TIMESTAMPTZ DEFAULT NOW(),
                 UNIQUE(exam_code, roll_number)
             );
+        """)
+        # Safe self-healing schema migrations for existing tables
+        cursor.execute("ALTER TABLE rank_calculator_entries ADD COLUMN IF NOT EXISTS overall_accuracy NUMERIC(5, 2) DEFAULT 0.0;")
+        cursor.execute("ALTER TABLE rank_calculator_entries ADD COLUMN IF NOT EXISTS qualifying_score NUMERIC(6, 2) DEFAULT 0.0;")
+        cursor.execute("ALTER TABLE rank_calculator_entries ADD COLUMN IF NOT EXISTS sectional_scores JSONB NOT NULL DEFAULT '{}'::jsonb;")
+        cursor.execute("ALTER TABLE rank_calculator_entries ADD COLUMN IF NOT EXISTS questions_cache JSONB NOT NULL DEFAULT '[]'::jsonb;")
+
+        cursor.execute("""
             CREATE INDEX IF NOT EXISTS idx_rank_calc_merit 
             ON rank_calculator_entries(exam_code, raw_merit_score DESC);
             CREATE INDEX IF NOT EXISTS idx_rank_calc_shift 
@@ -199,7 +207,7 @@ async def fetch_single_html_page(url: str) -> str:
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8"
     }
 
-    # 1. Google Translate Edge Gateway (Bypasses Indian geo-blocks on cbexams.com & digialm.com)
+    # 1. Google Translate Edge Gateway
     try:
         translate_url = build_translate_proxy_url(clean_target_url)
         connector = aiohttp.TCPConnector(ssl=False)
@@ -240,10 +248,6 @@ async def fetch_single_html_page(url: str) -> str:
 
 
 async def fetch_complete_ediquity_bundle(initial_url: str) -> list[tuple[str, str]]:
-    """
-    Auto-fetches all section sub-pages (ViewCandResponse.aspx, ViewCandResponse2.aspx,
-    ViewCandResponse3.aspx, ViewCandResponse4.aspx, and 5 for mains) from a single URL.
-    """
     clean_url = initial_url.strip()
     is_ediquity = ("cbexams" in clean_url.lower()) or ("viewcandresponse" in clean_url.lower())
     
@@ -253,9 +257,8 @@ async def fetch_complete_ediquity_bundle(initial_url: str) -> list[tuple[str, st
 
     bundle = [("PART-A", first_html)]
     if not is_ediquity:
-        return bundle  # TCS iON response sheets present all sections in a single HTML document
+        return bundle
 
-    # Construct Section 2, 3, 4, 5 URLs
     sub_page_urls = []
     for part_idx, part_label in [(2, "PART-B"), (3, "PART-C"), (4, "PART-D"), (5, "PART-E")]:
         sub_url = re.sub(r'ViewCandResponse\d*\.aspx', f'ViewCandResponse{part_idx}.aspx', clean_url, flags=re.IGNORECASE)
@@ -277,15 +280,10 @@ async def fetch_complete_ediquity_bundle(initial_url: str) -> list[tuple[str, st
 
 
 def parse_ediquity_single_part(soup: BeautifulSoup, cfg: dict, default_sec_key: str, default_sec_label: str, is_qual: bool) -> list[dict]:
-    """
-    Accurately extracts each question and its correct/wrong/unattempted status
-    from an Ediquity (cbexams) section sub-page.
-    """
     pos_m = cfg.get("comp_pos", 3.0) if is_qual else cfg["pos_mark"]
     neg_m = cfg.get("comp_neg", 1.0) if is_qual else cfg["neg_mark"]
 
     parsed = []
-    # Identify each question challenge anchor
     q_anchors = soup.find_all(lambda el: el.name in ('a', 'b', 'span', 'td', 'div') and re.search(r'(?:Challenge\s+Question\s+No\.?|Question\s*No\.?|Q\.No\s*:)\s*(\d+)', el.get_text(), re.IGNORECASE))
     
     seen_q_nums = set()
@@ -299,7 +297,6 @@ def parse_ediquity_single_part(soup: BeautifulSoup, cfg: dict, default_sec_key: 
             continue
         seen_q_nums.add(q_num)
 
-        # Locate question table
         q_table = anchor.find_parent("table") or anchor.find_parent("div")
         if not q_table:
             continue
@@ -307,7 +304,6 @@ def parse_ediquity_single_part(soup: BeautifulSoup, cfg: dict, default_sec_key: 
         raw_block_text = q_table.get_text()
         raw_block_html = str(q_table)
 
-        # Check for unanswered indicator
         is_not_answered = (
             bool(re.search(r'Q\.No\s*:\s*\d+\.?\s*Not\s*Answered', raw_block_text, re.IGNORECASE))
             or ("Correct Option Not Answered" in raw_block_text and "selected" not in raw_block_text)
@@ -343,7 +339,6 @@ def parse_ediquity_single_part(soup: BeautifulSoup, cfg: dict, default_sec_key: 
         else:
             status = "UNATTEMPTED"
 
-        # Body Preview
         clean_txt = re.sub(r'Click Here to Challenge.*', '', raw_block_text, flags=re.DOTALL).strip()
         lines = [l.strip() for l in clean_txt.splitlines() if l.strip() and "Q.No" not in l and "Option" not in l]
         preview = " ".join(lines[:3])[:200] or f"Question #{q_num}"
@@ -383,7 +378,7 @@ def parse_complete_bundle(html_bundle: list[tuple[str, str]], source_url: str) -
 
     full_text_sample = first_soup.get_text()[:1500].upper() + " " + source_url.upper()
     exam_code = "SSC_CGL_PRE"
-    if "CGL" in full_text_sample or "CGLE" in full_text_sample:
+    if "CGL" in full_text_sample or "CGLE" in full_check if (full_check := full_text_sample) else "":
         exam_code = "SSC_CGL_MAINS" if any(w in full_text_sample for w in ("MAINS", "TIER II", "TIER-II", "TIER 2")) else "SSC_CGL_PRE"
     elif "CHSL" in full_text_sample:
         exam_code = "SSC_CHSL_MAINS" if any(w in full_text_sample for w in ("MAINS", "TIER II", "TIER-II", "TIER 2")) else "SSC_CHSL_PRE"
@@ -397,7 +392,6 @@ def parse_complete_bundle(html_bundle: list[tuple[str, str]], source_url: str) -
     cfg = EXAM_CONFIGS.get(exam_code, EXAM_CONFIGS["SSC_CGL_PRE"])
     all_questions = []
 
-    # If Ediquity: Process each section sub-page independently
     if len(html_bundle) > 1 or ("cbexams" in source_url.lower()) or ("viewcandresponse" in source_url.lower()):
         part_keys = cfg["part_order"]
         sec_display_names = {
@@ -416,7 +410,6 @@ def parse_complete_bundle(html_bundle: list[tuple[str, str]], source_url: str) -
             parsed_part_qs = parse_ediquity_single_part(p_soup, cfg, s_key, s_label, is_q)
             all_questions.extend(parsed_part_qs)
     else:
-        # Standard Single-Page TCS iON format
         panels = first_soup.find_all("div", class_=re.compile(r"question-pnl|rw|menu-tbl")) or first_soup.find_all("table", class_=re.compile(r"questionPnl|menu-tbl"))
         for idx, p in enumerate(panels, start=1):
             if "Question ID" not in p.get_text() and "Chosen Option" not in p.get_text():
@@ -437,7 +430,6 @@ def parse_complete_bundle(html_bundle: list[tuple[str, str]], source_url: str) -
                         right_opt = str(opt_idx)
                         break
 
-            # Map section
             sec_div = p.find_previous("div", class_=re.compile(r"section-lbl|section-cntnr|sectionName"))
             raw_sec = sec_div.get_text(strip=True) if sec_div else "General"
             sec_key = "ga"
@@ -482,7 +474,6 @@ def parse_complete_bundle(html_bundle: list[tuple[str, str]], source_url: str) -
                 "is_qual": is_q
             })
 
-    # Group and aggregate section-wise results
     sectional_data = {}
     merit_score = 0.0
     qual_score = 0.0
@@ -524,7 +515,6 @@ def parse_complete_bundle(html_bundle: list[tuple[str, str]], source_url: str) -
         else:
             merit_score = round(merit_score + d, 2)
 
-    # Compute Sectional Accuracies
     for sk, s in sectional_data.items():
         att = s["correct"] + s["wrong"]
         s["accuracy"] = round((s["correct"] / att) * 100.0, 1) if att > 0 else 0.0
@@ -591,7 +581,6 @@ def save_and_calculate_rank_stats(user_id: int, eval_data: dict, sheet_url: str,
         ))
         conn.commit()
 
-        # Windowed Ranks across Peers
         cursor.execute("""
             WITH ranked_pool AS (
                 SELECT 
@@ -615,7 +604,6 @@ def save_and_calculate_rank_stats(user_id: int, eval_data: dict, sheet_url: str,
         ranks = cursor.fetchone()
         res = dict(ranks) if ranks else {}
 
-        # Percentile Calculation (Overall & Shift)
         tot_peers = res.get("total_students", 1) or 1
         ov_rank = res.get("overall_rank", 1) or 1
         res["overall_percentile"] = round(((tot_peers - ov_rank) / tot_peers) * 100.0, 1) if tot_peers > 1 else 99.9
@@ -624,7 +612,6 @@ def save_and_calculate_rank_stats(user_id: int, eval_data: dict, sheet_url: str,
         sh_rank = res.get("shift_rank", 1) or 1
         res["shift_percentile"] = round(((tot_shift - sh_rank) / tot_shift) * 100.0, 1) if tot_shift > 1 else 99.9
 
-        # Simulated SSC Normalization Score
         raw_score = float(eval_data["merit_score"])
         shift_avg = float(res.get("shift_avg_score") or raw_score)
         global_avg = float(res.get("global_avg_score") or raw_score)
@@ -634,7 +621,6 @@ def save_and_calculate_rank_stats(user_id: int, eval_data: dict, sheet_url: str,
         normalized_score = round(global_avg + (raw_score - shift_avg) * (global_std / shift_std), 2)
         res["normalized_score"] = max(0.0, min(eval_data["max_merit"] * 1.15, normalized_score))
 
-        # Calculate Sectional Percentiles
         sec_percentiles = {}
         cursor.execute("SELECT sectional_scores FROM rank_calculator_entries WHERE exam_code = %s", (exam_code,))
         all_sec_entries = cursor.fetchall()

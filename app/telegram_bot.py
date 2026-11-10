@@ -58,7 +58,6 @@ from app.pdf_generator import generate_student_pdf_report, generate_single_quiz_
 from app.pyq_fetcher import fetch_pyqs_for_quiz
 from app.typing_engine import get_or_create_daily_materials, get_available_dates
 from app.scorekeeper import scorekeeper_command, register_scorekeeper_handlers
-from app.rank_calculator import rank_calculator_command, register_rank_calculator_handlers
 
 logger = logging.getLogger(__name__)
 
@@ -118,6 +117,7 @@ async def typing_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     today_str = datetime.now(pytz.timezone("Asia/Kolkata")).strftime("%Y-%m-%d")
 
+    # Helper to send or edit response safely (documents cannot be edit_message_text'd)
     async def safe_reply(text: str, reply_markup=None):
         try:
             await query.edit_message_text(text, reply_markup=reply_markup, parse_mode="Markdown")
@@ -174,6 +174,7 @@ async def typing_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         parts = data.replace("tmenu_lang_", "").split("_")
         lang = parts[0]
 
+        # Use target_date from callback if present, or fallback to user_data / today
         if len(parts) > 1:
             target_date = parts[1]
         else:
@@ -238,6 +239,7 @@ async def typing_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz")]
             ])
 
+            # Send Word Document (.docx)
             with open(bundle["docx_path"], "rb") as f_docx:
                 await context.bot.send_document(
                     chat_id=query.message.chat_id,
@@ -247,6 +249,7 @@ async def typing_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     parse_mode="Markdown"
                 )
 
+            # Send Print-Ready PDF with interactive controls
             with open(bundle["pdf_path"], "rb") as f_pdf:
                 await context.bot.send_document(
                     chat_id=query.message.chat_id,
@@ -512,6 +515,7 @@ async def check_user_registration(update: Update) -> bool:
     return True
 
 
+# In-memory dictionary to track activity without continuous DB updates
 LOCAL_ACTIVITY_TRACKER = {}
 
 async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -> bool:
@@ -527,8 +531,10 @@ async def inactivity_guard(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     last_seen = LOCAL_ACTIVITY_TRACKER.get(user_id, 0)
     diff_sec = now_ts - last_seen
 
+    # Track in local RAM — 0 network egress to Neon
     LOCAL_ACTIVITY_TRACKER[user_id] = now_ts
 
+    # Only ping the database if locally idle for 5+ minutes
     if diff_sec >= 300:
         is_locked, db_diff = await asyncio.to_thread(check_and_update_inactivity, user_id)
         if is_locked:
@@ -998,7 +1004,6 @@ async def pdfreport_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("📚 All Subjects", callback_data="pdfsubj_all")],
         [InlineKeyboardButton("💾 Saved / Bookmarked Questions", callback_data="pdfsubj_saved")],
         [InlineKeyboardButton("📊 Scorekeeper PDF Report", callback_data="sk_download_pdf")],
-        [InlineKeyboardButton("🎯 Answer Key & Rank Calculator", callback_data="cmd_rank_calc")],
         [InlineKeyboardButton("👤 Back to Profile", callback_data="cmd_profile")]
     ])
 
@@ -1341,7 +1346,6 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🤖 **COMMAND DIRECTORY & GUIDE** 🤖\n"
         f"• • • ✧ • • •\n"
         f"• **/quiz** — 🚀 Launch Quiz (Computer/English/GK)\n"
-        f"• **/rank** — 🎯 SSC & RRB Answer Key & Rank Calculator\n"
         f"• **/scorekeeper** — 📊 Marks Keeper & AI Post Predictor\n"
         f"• **/log** — ⚡ 1-Line Quick Mock Score Logger\n"
         f"• **/typing** — ⌨️ Daily 600-Word Typing Material\n"
@@ -1359,11 +1363,10 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🎯 Rank Calculator", callback_data="cmd_rank_calc")],
-        [InlineKeyboardButton("📊 Scorekeeper", callback_data="cmd_scorekeeper"), InlineKeyboardButton("⚡ Calc Booster", callback_data="cmd_calc_booster")],
-        [InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans"), InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport")],
-        [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
-        [InlineKeyboardButton("💬 Message Admin", callback_data="cmd_askadmin")]
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Scorekeeper", callback_data="cmd_scorekeeper")],
+        [InlineKeyboardButton("⚡ Calc Booster", callback_data="cmd_calc_booster"), InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport")],
+        [InlineKeyboardButton("💳 VIP Plans", callback_data="cmd_plans"), InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions")],
+        [InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile"), InlineKeyboardButton("💬 Message Admin", callback_data="cmd_askadmin")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -1457,10 +1460,9 @@ async def myprofile_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     buttons = [
-        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("🎯 Rank Calculator", callback_data="cmd_rank_calc")],
-        [InlineKeyboardButton("📊 Scorekeeper", callback_data="cmd_scorekeeper"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")],
-        [InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport"), InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions")],
-        [InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")]
+        [InlineKeyboardButton("🚀 Launch Quiz", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Scorekeeper", callback_data="cmd_scorekeeper")],
+        [InlineKeyboardButton("📄 PDF Reports", callback_data="cmd_pdfreport"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")],
+        [InlineKeyboardButton("💾 Bookmarks", callback_data="cmd_savedquestions"), InlineKeyboardButton("✏️ Edit Profile", callback_data="cmd_editprofile")]
     ]
 
     await send_response(update, msg, reply_markup=InlineKeyboardMarkup(buttons))
@@ -1843,9 +1845,9 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await query.answer("🔓 Account Unlocked Successfully!", show_alert=True)
 
                 unlocked_menu_btn = InlineKeyboardMarkup([
-                    [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("🎯 Rank Calculator", callback_data="cmd_rank_calc")],
-                    [InlineKeyboardButton("📊 Scorekeeper", callback_data="cmd_scorekeeper"), InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile")],
-                    [InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan"), InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
+                    [InlineKeyboardButton("🚀 Launch Quiz Now", callback_data="cmd_quiz"), InlineKeyboardButton("📊 Scorekeeper", callback_data="cmd_scorekeeper")],
+                    [InlineKeyboardButton("👤 My Profile", callback_data="cmd_profile"), InlineKeyboardButton("💳 My Plan", callback_data="cmd_myplan")],
+                    [InlineKeyboardButton("❓ Help & Support", callback_data="cmd_help")]
                 ])
                 await query.edit_message_text(
                     f"🔓 **ACCOUNT UNLOCKED!**\n"
@@ -1902,8 +1904,6 @@ async def button_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await askadmin_command(update, context)
     elif data == "cmd_admininfo":
         await admininfo_command(update, context)
-    elif data == "cmd_rank_calc":
-        await rank_calculator_command(update, context)
     elif data == "cmd_scorekeeper":
         await scorekeeper_command(update, context)
     elif data == "cmd_quiz":
@@ -2525,7 +2525,6 @@ async def post_init(application: Application):
 
     allowed_commands = [
         BotCommand("quiz", "🚀 Start Quiz (Computer/English/GK)"),
-        BotCommand("rank", "🎯 SSC & RRB Answer Key & Rank Calculator"),
         BotCommand("scorekeeper", "📊 SSC CGL Mains & Multi-Exam Scorekeeper + Predictor"),
         BotCommand("log", "⚡ Quick-Log Mock Score in 1 Line"),
         BotCommand("typing", "⌨️ Daily 600-Word Paper-to-Screen Typing Material"),
@@ -2597,9 +2596,6 @@ def build_application() -> Application:
 
     # Register /scorekeeper & /log handlers + DB tables
     register_scorekeeper_handlers(app)
-
-    # Register SSC & RRB Answer Key / Rank Calculator + DB tables
-    register_rank_calculator_handlers(app)
 
     app.add_handler(CommandHandler("typing", typing_command))
     app.add_handler(CallbackQueryHandler(typing_router, pattern="^(tmenu_|tget_|cmd_typing_menu)"))

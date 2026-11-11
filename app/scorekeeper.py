@@ -35,6 +35,7 @@ except ImportError:
 # Conversation States
 (
     SK_SELECT_EXAM,
+    SK_SELECT_TEST_TYPE,
     SK_SELECT_SOURCE,
     SK_CUSTOM_SOURCE,
     SK_SELECT_DIFF,
@@ -43,7 +44,7 @@ except ImportError:
     SK_INPUT_MARKS,
     SK_INPUT_WRONG,
     SK_EDIT_TARGET_POST
-) = range(200, 209)
+) = range(200, 210)
 
 SCORES_PER_PAGE = 6
 CATEGORIES = ["UR", "OBC", "EWS", "SC", "ST", "ESM", "PwD"]
@@ -51,8 +52,195 @@ MOCK_SOURCES = ["Testbook", "Oliveboard", "RBE", "Pinnacle", "Official PYP", "Ot
 DIFFICULTIES = ["Easy", "Moderate", "Hard"]
 
 # ==============================================================================
-# 🎯 MULTI-EXAM TEMPLATES (NO TYPING / DEST DETAILS INCLUDED)
+# 🎯 OFFICIAL MAINS SCHEMES & MULTI-EXAM TEMPLATES
 # ==============================================================================
+# Prescribed Syllabus & Marking Pattern:
+# SSC CGL Mains (Tier-II):
+#  - Section I: Module-I (Maths 30Q = 90M), Module-II (Reasoning 30Q = 90M) -> Total: 60Q = 180M
+#  - Section II: Module-I (English 45Q = 135M), Module-II (GA 25Q = 75M) -> Total: 70Q = 210M
+#  - Full Merit: 390 Marks (130 Questions). Negative Marking: -1 mark per wrong answer (+3 / -1).
+#  - Section III Module-I: Computer Knowledge (20Q = 60M, Qualifying). Negative: -1 mark.
+#
+# SSC CHSL Mains (Tier-II):
+#  - Section I: Module-I (Maths 30Q = 90M), Module-II (Reasoning 30Q = 90M) -> Total: 60Q = 180M
+#  - Section II: Module-I (English 40Q = 120M), Module-II (GA 20Q = 60M) -> Total: 60Q = 180M
+#  - Full Merit: 360 Marks (120 Questions). Negative Marking: -1 mark per wrong answer (+3 / -1).
+#  - Section III Module-I: Computer Knowledge (15Q = 45M, Qualifying). Negative: -1 mark.
+# ==============================================================================
+
+MAINS_SUBTEST_DEFINITIONS = {
+    "SSC_CGL_MAINS": {
+        "FULL": {
+            "name": "Full Mock (Sec I + Sec II + Computer)",
+            "short": "Full Mock",
+            "max_marks": 390.0,
+            "total_qs": 130,
+            "neg_mark": 1.0,
+            "sections": [
+                ("math", "Maths (30Q)", 90.0),
+                ("reas", "Reasoning (30Q)", 90.0),
+                ("eng", "English (45Q)", 135.0),
+                ("ga", "GA (25Q)", 75.0)
+            ],
+            "qualifying": ("comp", "Computer Knowledge (20Q)", 60.0)
+        },
+        "SEC_1": {
+            "name": "Section-I (Maths 30Q + Reasoning 30Q)",
+            "short": "Section-I",
+            "max_marks": 180.0,
+            "total_qs": 60,
+            "neg_mark": 1.0,
+            "sections": [
+                ("math", "Maths (30Q)", 90.0),
+                ("reas", "Reasoning (30Q)", 90.0)
+            ],
+            "qualifying": None
+        },
+        "SEC_2": {
+            "name": "Section-II (English 45Q + GA 25Q)",
+            "short": "Section-II",
+            "max_marks": 210.0,
+            "total_qs": 70,
+            "neg_mark": 1.0,
+            "sections": [
+                ("eng", "English (45Q)", 135.0),
+                ("ga", "GA (25Q)", 75.0)
+            ],
+            "qualifying": None
+        },
+        "MOD_MATH": {
+            "name": "Module-I: Mathematical Abilities (30Q)",
+            "short": "Maths Module",
+            "max_marks": 90.0,
+            "total_qs": 30,
+            "neg_mark": 1.0,
+            "sections": [("math", "Maths (30Q)", 90.0)],
+            "qualifying": None
+        },
+        "MOD_REAS": {
+            "name": "Module-II: Reasoning & General Intelligence (30Q)",
+            "short": "Reasoning Module",
+            "max_marks": 90.0,
+            "total_qs": 30,
+            "neg_mark": 1.0,
+            "sections": [("reas", "Reasoning (30Q)", 90.0)],
+            "qualifying": None
+        },
+        "MOD_ENG": {
+            "name": "Module-III: English Language & Comprehension (45Q)",
+            "short": "English Module",
+            "max_marks": 135.0,
+            "total_qs": 45,
+            "neg_mark": 1.0,
+            "sections": [("eng", "English (45Q)", 135.0)],
+            "qualifying": None
+        },
+        "MOD_GA": {
+            "name": "Module-IV: General Awareness (25Q)",
+            "short": "GA Module",
+            "max_marks": 75.0,
+            "total_qs": 25,
+            "neg_mark": 1.0,
+            "sections": [("ga", "GA (25Q)", 75.0)],
+            "qualifying": None
+        },
+        "MOD_COMP": {
+            "name": "Module-V: Computer Knowledge Test (20Q)",
+            "short": "Computer Module",
+            "max_marks": 60.0,
+            "total_qs": 20,
+            "neg_mark": 1.0,
+            "sections": [("comp", "Computer Knowledge (20Q)", 60.0)],
+            "qualifying": ("comp", "Computer Knowledge (20Q)", 60.0)
+        }
+    },
+    "SSC_CHSL_MAINS": {
+        "FULL": {
+            "name": "Full Mock (Sec I + Sec II + Computer)",
+            "short": "Full Mock",
+            "max_marks": 360.0,
+            "total_qs": 120,
+            "neg_mark": 1.0,
+            "sections": [
+                ("math", "Maths (30Q)", 90.0),
+                ("reas", "Reasoning (30Q)", 90.0),
+                ("eng", "English (40Q)", 120.0),
+                ("ga", "GA (20Q)", 60.0)
+            ],
+            "qualifying": ("comp", "Computer Knowledge (15Q)", 45.0)
+        },
+        "SEC_1": {
+            "name": "Section-I (Maths 30Q + Reasoning 30Q)",
+            "short": "Section-I",
+            "max_marks": 180.0,
+            "total_qs": 60,
+            "neg_mark": 1.0,
+            "sections": [
+                ("math", "Maths (30Q)", 90.0),
+                ("reas", "Reasoning (30Q)", 90.0)
+            ],
+            "qualifying": None
+        },
+        "SEC_2": {
+            "name": "Section-II (English 40Q + GA 20Q)",
+            "short": "Section-II",
+            "max_marks": 180.0,
+            "total_qs": 60,
+            "neg_mark": 1.0,
+            "sections": [
+                ("eng", "English (40Q)", 120.0),
+                ("ga", "GA (20Q)", 60.0)
+            ],
+            "qualifying": None
+        },
+        "MOD_MATH": {
+            "name": "Module-I: Mathematical Abilities (30Q)",
+            "short": "Maths Module",
+            "max_marks": 90.0,
+            "total_qs": 30,
+            "neg_mark": 1.0,
+            "sections": [("math", "Maths (30Q)", 90.0)],
+            "qualifying": None
+        },
+        "MOD_REAS": {
+            "name": "Module-II: Reasoning & General Intelligence (30Q)",
+            "short": "Reasoning Module",
+            "max_marks": 90.0,
+            "total_qs": 30,
+            "neg_mark": 1.0,
+            "sections": [("reas", "Reasoning (30Q)", 90.0)],
+            "qualifying": None
+        },
+        "MOD_ENG": {
+            "name": "Module-III: English Language & Comprehension (40Q)",
+            "short": "English Module",
+            "max_marks": 120.0,
+            "total_qs": 40,
+            "neg_mark": 1.0,
+            "sections": [("eng", "English (40Q)", 120.0)],
+            "qualifying": None
+        },
+        "MOD_GA": {
+            "name": "Module-IV: General Awareness (20Q)",
+            "short": "GA Module",
+            "max_marks": 60.0,
+            "total_qs": 20,
+            "neg_mark": 1.0,
+            "sections": [("ga", "GA (20Q)", 60.0)],
+            "qualifying": None
+        },
+        "MOD_COMP": {
+            "name": "Module-V: Computer Knowledge Test (15Q)",
+            "short": "Computer Module",
+            "max_marks": 45.0,
+            "total_qs": 15,
+            "neg_mark": 1.0,
+            "sections": [("comp", "Computer Knowledge (15Q)", 45.0)],
+            "qualifying": ("comp", "Computer Knowledge (15Q)", 45.0)
+        }
+    }
+}
+
 EXAM_TEMPLATES = {
     "SSC_CGL_MAINS": {
         "name": "SSC CGL 2026 Mains (Tier-II)",
@@ -60,12 +248,12 @@ EXAM_TEMPLATES = {
         "max_marks": 390.0,
         "neg_mark": 1.0,
         "sections": [
-            ("math", "Maths", 90.0),
-            ("reas", "Reasoning", 90.0),
-            ("eng", "English", 135.0),
-            ("ga", "General Awareness", 75.0)
+            ("math", "Maths (30Q)", 90.0),
+            ("reas", "Reasoning (30Q)", 90.0),
+            ("eng", "English (45Q)", 135.0),
+            ("ga", "General Awareness (25Q)", 75.0)
         ],
-        "qualifying": ("comp", "Computer Knowledge", 60.0),
+        "qualifying": ("comp", "Computer Knowledge (20Q)", 60.0),
         "qual_cutoffs": {"UR": 18.0, "OBC": 15.0, "EWS": 15.0, "SC": 12.0, "ST": 12.0, "ESM": 12.0, "PwD": 12.0},
         "cpt_cutoffs": {"UR": 27.0, "OBC": 24.0, "EWS": 24.0, "SC": 21.0, "ST": 21.0, "ESM": 18.0, "PwD": 18.0},
         "cutoffs": {
@@ -98,12 +286,12 @@ EXAM_TEMPLATES = {
         "max_marks": 360.0,
         "neg_mark": 1.0,
         "sections": [
-            ("math", "Maths", 90.0),
-            ("reas", "Reasoning", 90.0),
-            ("eng", "English", 120.0),
-            ("ga", "General Awareness", 60.0)
+            ("math", "Maths (30Q)", 90.0),
+            ("reas", "Reasoning (30Q)", 90.0),
+            ("eng", "English (40Q)", 120.0),
+            ("ga", "General Awareness (20Q)", 60.0)
         ],
-        "qualifying": ("comp", "Computer Knowledge", 45.0),
+        "qualifying": ("comp", "Computer Knowledge (15Q)", 45.0),
         "qual_cutoffs": {"UR": 13.5, "OBC": 11.25, "EWS": 11.25, "SC": 9.0, "ST": 9.0, "ESM": 9.0, "PwD": 9.0},
         "cpt_cutoffs": {"UR": 21.0, "OBC": 18.0, "EWS": 18.0, "SC": 15.0, "ST": 15.0, "ESM": 15.0, "PwD": 15.0},
         "cutoffs": {"UR": 295.0, "OBC": 288.0, "EWS": 286.0, "SC": 268.0, "ST": 255.0, "ESM": 230.0, "PwD": 235.0}
@@ -225,6 +413,9 @@ def init_scorekeeper_db():
                 created_at TEXT
             )
         """)
+        # Backward-compatible migrations for test types
+        cursor.execute("ALTER TABLE scorekeeper_logs ADD COLUMN IF NOT EXISTS test_type TEXT DEFAULT 'FULL';")
+        cursor.execute("ALTER TABLE scorekeeper_logs ADD COLUMN IF NOT EXISTS test_scope_name TEXT DEFAULT 'Full Mock';")
         cursor.execute("""
             CREATE INDEX IF NOT EXISTS idx_sk_logs_user_exam
             ON scorekeeper_logs(user_id, exam_code, id DESC)
@@ -308,7 +499,8 @@ def insert_score_log(
     user_id: int, exam_code: str, exam_date: str, mock_source: str,
     difficulty: str, total_score: float, max_marks: float,
     wrong_qs: int, negative_lost: float, sectional_dict: dict,
-    qualifying_score: float, passed_qualifying: bool
+    qualifying_score: float, passed_qualifying: bool,
+    test_type: str = "FULL", test_scope_name: str = "Full Mock"
 ) -> int:
     tmpl = EXAM_TEMPLATES.get(exam_code, EXAM_TEMPLATES["SSC_CGL_MAINS"])
     now_str = get_ist_timestamp_str()
@@ -319,15 +511,17 @@ def insert_score_log(
             INSERT INTO scorekeeper_logs (
                 user_id, exam_code, exam_name, exam_date, mock_source,
                 difficulty, total_score, max_marks, wrong_qs, negative_lost,
-                sectional_json, qualifying_score, passed_qualifying, created_at
+                sectional_json, qualifying_score, passed_qualifying, created_at,
+                test_type, test_scope_name
             )
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             RETURNING id
         """, (
             user_id, exam_code, tmpl["name"], exam_date, mock_source,
             difficulty, round(total_score, 2), max_marks, wrong_qs, round(negative_lost, 2),
             json.dumps(sectional_dict), round(qualifying_score, 2),
-            1 if passed_qualifying else 0, now_str
+            1 if passed_qualifying else 0, now_str,
+            test_type, test_scope_name
         ))
         log_id = cursor.fetchone()[0]
         conn.commit()
@@ -363,6 +557,10 @@ def get_user_score_logs(user_id: int, exam_code: str = None, limit: int = 200) -
                 d["sectional"] = json.loads(d.get("sectional_json") or "{}")
             except Exception:
                 d["sectional"] = {}
+            if not d.get("test_type"):
+                d["test_type"] = "FULL"
+            if not d.get("test_scope_name"):
+                d["test_scope_name"] = "Full Mock"
             result.append(d)
         return result
     finally:
@@ -401,7 +599,7 @@ def calculate_exam_community_percentile(user_id: int, exam_code: str, user_ema_s
         cursor.execute("""
             SELECT user_id, AVG(total_score) as avg_s
             FROM scorekeeper_logs
-            WHERE exam_code = %s
+            WHERE exam_code = %s AND (test_type = 'FULL' OR test_type IS NULL)
             GROUP BY user_id
         """, (exam_code,))
         rows = cursor.fetchall()
@@ -464,20 +662,32 @@ def analyze_user_scores(user_id: int, exam_code: str = None) -> dict:
             "exam_name": tmpl["name"],
             "category": category,
             "target_post": sk_prof.get("target_post", "Inspector / ASO (4600 GP)"),
-            "max_marks": tmpl["max_marks"]
+            "max_marks": tmpl["max_marks"],
+            "full_mock_count": 0,
+            "sectional_count": 0,
+            "module_count": 0
         }
 
-    # Chronological order (oldest -> newest) for EMA & trajectory
+    # Chronological order (oldest -> newest)
     logs_asc = list(reversed(logs_desc))
-    scores = [float(l["total_score"]) for l in logs_asc]
-    n = len(scores)
-    max_marks = float(tmpl["max_marks"])
 
-    latest_score = scores[-1]
-    prev_score = scores[-2] if n >= 2 else latest_score
+    # Segment tests by Scope for optimized telemetry
+    full_logs = [l for l in logs_asc if l.get("test_type", "FULL") == "FULL"]
+    sec_logs = [l for l in logs_asc if str(l.get("test_type", "")).startswith("SEC")]
+    mod_logs = [l for l in logs_asc if str(l.get("test_type", "")).startswith("MOD")]
+
+    # Primary analysis focuses on full mocks for exam-day cutoffs; fallback to all if none
+    eval_pool = full_logs if full_logs else logs_asc
+    scores = [float(l["total_score"]) for l in eval_pool]
+    n = len(scores)
+    max_marks = float(eval_pool[-1]["max_marks"]) if eval_pool else float(tmpl["max_marks"])
+
+    latest_log = logs_desc[0]
+    latest_score = float(latest_log["total_score"])
+    prev_score = float(logs_desc[1]["total_score"]) if len(logs_desc) >= 2 else latest_score
     last_delta = round(latest_score - prev_score, 2)
-    best_score = max(scores)
-    lowest_score = min(scores)
+    best_score = max([float(l["total_score"]) for l in eval_pool])
+    lowest_score = min([float(l["total_score"]) for l in eval_pool])
     avg_score = round(sum(scores) / n, 2)
 
     # 1. Exponential Moving Average (EMA) Score Projection
@@ -489,16 +699,17 @@ def analyze_user_scores(user_id: int, exam_code: str = None) -> dict:
 
     # 2. Shift-Difficulty Normalization Adjustment
     norm_scores = []
-    for l in logs_asc[-5:]:
+    for l in eval_pool[-5:]:
         raw_s = float(l["total_score"])
+        cur_max = float(l.get("max_marks") or max_marks)
         diff = str(l.get("difficulty", "Moderate")).capitalize()
         if diff == "Hard":
-            boost = max_marks * 0.035
+            boost = cur_max * 0.035
         elif diff == "Moderate":
-            boost = max_marks * 0.012
+            boost = cur_max * 0.012
         else:
-            boost = -max_marks * 0.008
-        norm_scores.append(min(max_marks, raw_s + boost))
+            boost = -cur_max * 0.008
+        norm_scores.append(min(cur_max, raw_s + boost))
     predicted_final_score = round((ema_score * 0.45) + ((sum(norm_scores) / len(norm_scores)) * 0.55), 2)
     predicted_final_score = min(max_marks, max(0.0, predicted_final_score))
 
@@ -515,16 +726,28 @@ def analyze_user_scores(user_id: int, exam_code: str = None) -> dict:
         std_dev = 0.0
         stability_pct = 90.0
 
-    # 4. Negative Marking Bleed Analysis
-    avg_wrong = round(sum(int(l.get("wrong_qs") or 0) for l in logs_desc) / n, 1)
-    avg_neg_lost = round(sum(float(l.get("negative_lost") or 0.0) for l in logs_desc) / n, 2)
+    # 4. Negative Marking Bleed Analysis (aggregates all tests)
+    total_logs_count = len(logs_desc)
+    avg_wrong = round(sum(int(l.get("wrong_qs") or 0) for l in logs_desc) / total_logs_count, 1)
+    avg_neg_lost = round(sum(float(l.get("negative_lost") or 0.0) for l in logs_desc) / total_logs_count, 2)
     recoverable_marks = round(avg_neg_lost * 0.45, 2)
 
-    # 5. Sectional Efficiency & Weakest Link Detection
+    # 5. Sectional & Module Efficiency Aggregation Across All Logs
     sec_totals = {k: 0.0 for k, _, _ in tmpl["sections"]}
     sec_counts = {k: 0 for k, _, _ in tmpl["sections"]}
     for l in logs_desc:
         sec_map = l.get("sectional") or {}
+        # Also map single module scores if logged as standalone module
+        t_type = l.get("test_type", "")
+        if t_type == "MOD_MATH" and "math" not in sec_map:
+            sec_map["math"] = l["total_score"]
+        elif t_type == "MOD_REAS" and "reas" not in sec_map:
+            sec_map["reas"] = l["total_score"]
+        elif t_type == "MOD_ENG" and "eng" not in sec_map:
+            sec_map["eng"] = l["total_score"]
+        elif t_type == "MOD_GA" and "ga" not in sec_map:
+            sec_map["ga"] = l["total_score"]
+
         for k, _, _ in tmpl["sections"]:
             if k in sec_map and sec_map[k] is not None:
                 sec_totals[k] += float(sec_map[k])
@@ -544,7 +767,8 @@ def analyze_user_scores(user_id: int, exam_code: str = None) -> dict:
             "avg": s_avg,
             "max": s_max,
             "pct": s_pct,
-            "has_logs": cnt > 0
+            "has_logs": cnt > 0,
+            "count": cnt
         })
         if cnt > 0 and s_pct < lowest_sec_pct:
             lowest_sec_pct = s_pct
@@ -554,7 +778,14 @@ def analyze_user_scores(user_id: int, exam_code: str = None) -> dict:
     qual_info = None
     if tmpl.get("qualifying"):
         q_key, q_label, q_max = tmpl["qualifying"]
-        q_scores = [float(l.get("qualifying_score") or 0.0) for l in logs_desc if float(l.get("qualifying_score") or 0.0) > 0]
+        q_scores = []
+        for l in logs_desc:
+            sc = float(l.get("qualifying_score") or 0.0)
+            if sc > 0:
+                q_scores.append(sc)
+            elif l.get("test_type") == "MOD_COMP":
+                q_scores.append(float(l.get("total_score") or 0.0))
+
         q_avg = round(sum(q_scores) / len(q_scores), 1) if q_scores else 0.0
         min_cut = tmpl["qual_cutoffs"].get(category, 18.0)
         cpt_cut = tmpl["cpt_cutoffs"].get(category, 27.0)
@@ -572,41 +803,48 @@ def analyze_user_scores(user_id: int, exam_code: str = None) -> dict:
             "max": q_max,
             "min_cutoff": min_cut,
             "cpt_cutoff": cpt_cut,
-            "status": q_status
+            "status": q_status,
+            "attempts": len(q_scores)
         }
 
-    # 7. Category Cutoff & Post Allotment Prediction
+    # 7. Category Cutoff & Post Allotment Prediction (Calibrated to Full Mocks)
+    # If the user only has Sectional / Module tests, we project full equivalent score
+    projected_full_score = predicted_final_score
+    if not full_logs and max_marks < tmpl["max_marks"]:
+        # Extrapolate equivalent percentage to full exam scale
+        projected_full_score = round((predicted_final_score / max_marks) * tmpl["max_marks"], 1)
+
     if exam_code == "SSC_CGL_MAINS":
         c_map = tmpl["cutoffs"].get(category, tmpl["cutoffs"]["UR"])
-        if predicted_final_score >= c_map["top_aso"]:
+        if projected_full_score >= c_map["top_aso"]:
             post_zone = "🏆 TOP RANKER ZONE: ASO in MEA / CSS / Income Tax Inspector (4600 GP)"
-            next_goal_text = f"Maintain consistency! You are +{round(predicted_final_score - c_map['top_aso'], 1)} marks above Top ASO cutoff ({c_map['top_aso']})."
-        elif predicted_final_score >= c_map["gp_4600"]:
+            next_goal_text = f"Maintain consistency! You are +{round(projected_full_score - c_map['top_aso'], 1)} marks above Top ASO cutoff ({c_map['top_aso']})."
+        elif projected_full_score >= c_map["gp_4600"]:
             post_zone = "🎖️ 4600 GP INSPECTOR ZONE: GST Inspector / Preventive Officer / Examiner / ASO"
-            gap = round(c_map["top_aso"] - predicted_final_score, 1)
+            gap = round(c_map["top_aso"] - projected_full_score, 1)
             next_goal_text = f"Need +{gap} marks to enter Top-100 ASO (MEA/ITI) zone ({c_map['top_aso']})."
-        elif predicted_final_score >= c_map["gp_4200"]:
+        elif projected_full_score >= c_map["gp_4200"]:
             post_zone = "⭐ 4200 GP ZONE: Divisional Accountant (CAG) / Sub-Inspector (CBN/NIA)"
-            gap = round(c_map["gp_4600"] - predicted_final_score, 1)
+            gap = round(c_map["gp_4600"] - projected_full_score, 1)
             next_goal_text = f"Need +{gap} marks to unlock 4600 GP Inspector/ASO posts ({c_map['gp_4600']})."
-        elif predicted_final_score >= c_map["gp_2800"]:
+        elif projected_full_score >= c_map["gp_2800"]:
             post_zone = "✅ 2800 GP ZONE: Auditor (CAG/CGDA) / Junior Accountant"
-            gap = round(c_map["gp_4600"] - predicted_final_score, 1)
+            gap = round(c_map["gp_4600"] - projected_full_score, 1)
             next_goal_text = f"Need +{gap} marks to reach 4600 GP Inspector zone ({c_map['gp_4600']})."
-        elif predicted_final_score >= c_map["pa_sa"]:
+        elif projected_full_score >= c_map["pa_sa"]:
             post_zone = "🟢 2400 GP SELECTION ZONE: Tax Assistant (CBDT/CBIC) / PA/SA / UDC"
-            gap = round(c_map["gp_2800"] - predicted_final_score, 1)
-            next_goal_text = f"Need +{gap} marks for 2800 GP Auditor ({c_map['gp_2800']}) & +{round(c_map['gp_4600'] - predicted_final_score, 1)} for 4600 GP."
+            gap = round(c_map["gp_2800"] - projected_full_score, 1)
+            next_goal_text = f"Need +{gap} marks for 2800 GP Auditor ({c_map['gp_2800']}) & +{round(c_map['gp_4600'] - projected_full_score, 1)} for 4600 GP."
         else:
-            gap = round(c_map["pa_sa"] - predicted_final_score, 1)
+            gap = round(c_map["pa_sa"] - projected_full_score, 1)
             post_zone = f"⚠️ BELOW SAFE CUTOFF ({category} Safe Cutoff: {c_map['pa_sa']})"
-            next_goal_text = f"Need +{gap} marks to cross the minimum post selection line ({c_map['pa_sa']}) and +{round(c_map['gp_4600'] - predicted_final_score, 1)} for 4600 GP."
+            next_goal_text = f"Need +{gap} marks to cross the minimum post selection line ({c_map['pa_sa']}) and +{round(c_map['gp_4600'] - projected_full_score, 1)} for 4600 GP."
         base_cutoff = c_map["pa_sa"]
         dream_cutoff = c_map["gp_4600"]
     else:
         base_cutoff = float(tmpl["cutoffs"].get(category, 140.0))
-        dream_cutoff = round(min(max_marks, base_cutoff * 1.08), 1)
-        margin = round(predicted_final_score - base_cutoff, 1)
+        dream_cutoff = round(min(tmpl["max_marks"], base_cutoff * 1.08), 1)
+        margin = round(projected_full_score - base_cutoff, 1)
         if margin >= 12.0:
             post_zone = f"🏆 HIGH MERIT SAFE ZONE (+{margin} above {category} cutoff {base_cutoff})"
             next_goal_text = "Strong merit position! Focus on speed and eliminating silly negative errors."
@@ -626,15 +864,19 @@ def analyze_user_scores(user_id: int, exam_code: str = None) -> dict:
         "short_name": tmpl["short"],
         "category": category,
         "target_post": sk_prof.get("target_post", "Inspector / ASO (4600 GP)"),
-        "max_marks": max_marks,
-        "total_mocks": n,
+        "max_marks": tmpl["max_marks"],
+        "total_mocks": len(logs_desc),
+        "full_mock_count": len(full_logs),
+        "sectional_count": len(sec_logs),
+        "module_count": len(mod_logs),
         "latest_score": latest_score,
+        "latest_log": latest_log,
         "last_delta": last_delta,
         "best_score": best_score,
         "lowest_score": lowest_score,
         "avg_score": avg_score,
         "ema_score": ema_score,
-        "predicted_final_score": predicted_final_score,
+        "predicted_final_score": projected_full_score,
         "growth_per_mock": growth_per_mock,
         "std_dev": std_dev,
         "stability_pct": stability_pct,
@@ -683,7 +925,7 @@ def generate_scorekeeper_pdf(user_id: int, exam_code: str = None) -> str:
         left_logo_html = f'<a href="{target_link}"><img src="file://{logo_left_path}" style="width: 60px; height: 60px; object-fit: contain;" /></a>' if os.path.exists(logo_left_path) else "<b>Quiz with HiM</b>"
         right_logo_html = f'<a href="{target_link}"><img src="file://{logo_right_path}" style="width: 60px; height: 60px; object-fit: contain;" /></a>' if os.path.exists(logo_right_path) else "<b>@LearnwithHiM</b>"
 
-        # 1. Build SVG Score Trajectory Line Chart (Last 12 Mocks)
+        # 1. Build SVG Score Trajectory Line Chart (Last 12 tests)
         chart_logs = stats["logs_asc"][-12:]
         svg_w, svg_h = 460, 150
         pad_l, pad_r, pad_t, pad_b = 38, 20, 20, 28
@@ -696,9 +938,12 @@ def generate_scorekeeper_pdf(user_id: int, exam_code: str = None) -> str:
         n_pts = len(chart_logs)
 
         for idx, l in enumerate(chart_logs):
+            cur_max = float(l.get("max_marks") or max_marks)
             sc = float(l["total_score"])
+            # Normalized height against full scale
+            norm_pct = min(1.0, max(0.0, sc / cur_max)) if cur_max > 0 else 0.5
             x = pad_l + (int((idx / max(1, n_pts - 1)) * plot_w) if n_pts > 1 else plot_w // 2)
-            y = pad_t + plot_h - int((min(max_marks, max(0.0, sc)) / max_marks) * plot_h)
+            y = pad_t + plot_h - int(norm_pct * plot_h)
             points.append(f"{x},{y}")
             dt_short = str(l.get("exam_date", ""))[-5:]
             circles_svg.append(
@@ -745,7 +990,7 @@ def generate_scorekeeper_pdf(user_id: int, exam_code: str = None) -> str:
                 </tr>
             """)
 
-        # 3. Build Complete Chronological Score Ledger Rows
+        # 3. Build Complete Chronological Score Ledger Rows (with Scope badges)
         ledger_rows_html = []
         logs_desc = stats["logs_desc"]
         for i, l in enumerate(logs_desc):
@@ -760,10 +1005,12 @@ def generate_scorekeeper_pdf(user_id: int, exam_code: str = None) -> str:
                 sec_parts.append(f"C:{l['qualifying_score']}")
             sec_summary = " | ".join(sec_parts) if sec_parts else "Direct Total"
 
+            scope_name = l.get("test_scope_name") or ("Full Mock" if l.get("test_type") == "FULL" else l.get("test_type", "Test"))
+
             ledger_rows_html.append(f"""
                 <tr>
                     <td style='text-align:center;'>{len(logs_desc) - i}</td>
-                    <td><b>{clean_str_xml(l['exam_date'])}</b></td>
+                    <td><b>{clean_str_xml(l['exam_date'])}</b><br/><small style='color:#0284C7;'>{clean_str_xml(scope_name)}</small></td>
                     <td>{clean_str_xml(l['mock_source'])} ({clean_str_xml(l['difficulty'])})</td>
                     <td style='text-align:center; font-weight:bold; color:#1E3A8A;'>{l['total_score']} / {int(l['max_marks'])}</td>
                     <td style='text-align:center; font-weight:bold; color:{delta_col};'>{delta_str}</td>
@@ -806,7 +1053,7 @@ def generate_scorekeeper_pdf(user_id: int, exam_code: str = None) -> str:
         <table class='header-table'>
             <tr>
                 <td style='width:14%; text-align:left;'>{left_logo_html}</td>
-                <td class='header-title'>Quiz with HiM — Official Scorekeeper & AI Predictor<div class='sub-title'> Track Marks • Predict Post Allotment • Eliminate Negative Bleed • Generated: {now_str}</div></td>
+                <td class='header-title'>Quiz with HiM — Official Scorekeeper & AI Predictor<div class='sub-title'> Track Marks • Predict Post Allotment • Full / Sectional / Module Analytics • Generated: {now_str}</div></td>
                 <td style='width:14%; text-align:right;'>{right_logo_html}</td>
             </tr>
         </table>
@@ -822,9 +1069,9 @@ def generate_scorekeeper_pdf(user_id: int, exam_code: str = None) -> str:
 
         <table class='data-table'>
             <tr>
-                <td class='kpi-card'><div style='font-size:9px; color:#64748B;'>PREDICTED EXAM SCORE</div><div style='font-size:15px; font-weight:bold; color:#0284C7;'>{stats['predicted_final_score']} / {int(max_marks)}</div></td>
-                <td class='kpi-card'><div style='font-size:9px; color:#64748B;'>EMA CURRENT POTENTIAL</div><div style='font-size:15px; font-weight:bold; color:#1E3A8A;'>{stats['ema_score']} / {int(max_marks)}</div></td>
-                <td class='kpi-card'><div style='font-size:9px; color:#64748B;'>BEST / AVG SCORE ({stats['total_mocks']} Mocks)</div><div style='font-size:15px; font-weight:bold; color:#16A34A;'>{stats['best_score']} / {stats['avg_score']}</div></td>
+                <td class='kpi-card'><div style='font-size:9px; color:#64748B;'>PREDICTED FULL SCORE</div><div style='font-size:15px; font-weight:bold; color:#0284C7;'>{stats['predicted_final_score']} / {int(max_marks)}</div></td>
+                <td class='kpi-card'><div style='font-size:9px; color:#64748B;'>TEST COUNT BREAKDOWN</div><div style='font-size:12px; font-weight:bold; color:#1E3A8A;'>Full: {stats['full_mock_count']} | Sec: {stats['sectional_count']} | Mod: {stats['module_count']}</div></td>
+                <td class='kpi-card'><div style='font-size:9px; color:#64748B;'>BEST / AVG ({stats['total_mocks']} Tests)</div><div style='font-size:15px; font-weight:bold; color:#16A34A;'>{stats['best_score']} / {stats['avg_score']}</div></td>
                 <td class='kpi-card'><div style='font-size:9px; color:#64748B;'>STABILITY & PERCENTILE</div><div style='font-size:15px; font-weight:bold; color:#0F172A;'>{stats['stability_pct']}% | {stats['comm_percentile']}%ile</div></td>
             </tr>
         </table>
@@ -833,7 +1080,7 @@ def generate_scorekeeper_pdf(user_id: int, exam_code: str = None) -> str:
             <div style='font-size:12px; font-weight:bold; color:#0369A1; margin-bottom:4px;'>🔮 AI POST ALLOTMENT & SELECTION PREDICTION</div>
             <div><b>Projected Zone:</b> {clean_str_xml(stats['post_zone'])}</div>
             <div><b>Next Milestone:</b> {clean_str_xml(stats['next_goal_text'])}</div>
-            <div><b>Negative Bleed Recovery:</b> Avg Marks Lost to Wrong Qs: <b>-{stats['avg_neg_lost']} marks/mock</b>. Curbing wild guesses recovers <b>+{stats['recoverable_marks']} marks</b> immediately.</div>
+            <div><b>Negative Bleed Recovery:</b> Avg Marks Lost to Wrong Qs: <b>-{stats['avg_neg_lost']} marks/test</b>. Eliminating wild guesses recovers <b>+{stats['recoverable_marks']} marks</b>.</div>
         </div>
 
         <h3>📈 SCORE TRAJECTORY vs. CATEGORY CUTOFF ({category})</h3>
@@ -841,11 +1088,11 @@ def generate_scorekeeper_pdf(user_id: int, exam_code: str = None) -> str:
             {trajectory_svg}
         </div>
 
-        <h3>📊 SECTIONAL EFFICIENCY & QUALIFYING BREAKDOWN</h3>
+        <h3>📊 SECTIONAL & MODULE EFFICIENCY BREAKDOWN</h3>
         <table class='data-table'>
             <thead>
                 <tr>
-                    <th style='width:32%;'>Subject / Section</th>
+                    <th style='width:32%;'>Subject / Module</th>
                     <th style='width:20%; text-align:center;'>Avg Score</th>
                     <th style='width:15%; text-align:center;'>Efficiency %</th>
                     <th style='width:33%;'>Visual Meter</th>
@@ -856,14 +1103,14 @@ def generate_scorekeeper_pdf(user_id: int, exam_code: str = None) -> str:
             </tbody>
         </table>
 
-        <h3>📋 COMPLETE CHRONOLOGICAL MOCK SCORE LEDGER ({stats['total_mocks']} Mocks)</h3>
+        <h3>📋 CHRONOLOGICAL TEST LEDGER ({stats['total_mocks']} Tests Logged)</h3>
         <table class='data-table'>
             <thead>
                 <tr>
                     <th style='width:6%; text-align:center;'>#</th>
-                    <th style='width:14%;'>Exam Date</th>
-                    <th style='width:22%;'>Source & Shift</th>
-                    <th style='width:15%; text-align:center;'>Merit Score</th>
+                    <th style='width:16%;'>Date & Scope</th>
+                    <th style='width:20%;'>Source & Shift</th>
+                    <th style='width:15%; text-align:center;'>Score</th>
                     <th style='width:9%; text-align:center;'>Change</th>
                     <th style='width:22%;'>Sectional Split</th>
                     <th style='width:12%; text-align:center;'>Neg Bleed</th>
@@ -924,17 +1171,23 @@ def build_scorekeeper_dashboard_Valid(user_id: int) -> tuple[str, InlineKeyboard
             f"📊 **QUIZ WITH HIM — SCOREKEEPER & AI PREDICTOR** 📊\n"
             f"• • • ✧ • • •\n"
             f"👤 **Candidate:** {name} | 🏷 **Category:** `{cat}`\n"
-            f"🎯 **Active Exam:** `{stats['exam_name']}`\n"
+            f"🎯 **Active Exam Track:** `{stats['exam_name']}`\n"
             f"🎖️ **Target Post:** `{target_post}`\n"
             f"• • • ✧ • • •\n"
             f"ℹ️ *No mock scores logged for `{stats['exam_name']}` yet!*\n\n"
-            f"👉 Tap **➕ Log New Mock Score** below (or type `/log 80 85 115 42 38 Testbook`) to log your first score and unlock your AI Rank & Post Allotment Prediction!"
+            f"👉 Tap **➕ Log Score** below to record:\n"
+            f" • **Full Mocks** (Full Exam Pattern)\n"
+            f" • **Sectional Tests** (Section-I / Section-II)\n"
+            f" • **Module Tests** (Maths / Reasoning / English / GA / Computer)"
         )
     else:
         delta_icon = "📈" if stats["last_delta"] >= 0 else "📉"
         delta_sign = f"+{stats['last_delta']}" if stats["last_delta"] > 0 else f"{stats['last_delta']}"
         qual_line = f"🖥️ **Computer Gate:** `{stats['qual_info']['status']}`\n" if stats.get("qual_info") else ""
         weak_line = f"⚠️ **Focus Area:** `{stats['weakest_sec']['label']} ({stats['weakest_sec']['pct']}%)`\n" if stats.get("weakest_sec") else ""
+
+        latest_scope = stats["latest_log"].get("test_scope_name", "Full Mock")
+        test_mix_line = f"📊 **Tests Mix:** Full: `{stats['full_mock_count']}` | Sec: `{stats['sectional_count']}` | Mod: `{stats['module_count']}`\n"
 
         msg = (
             f"📊 **QUIZ WITH HIM — SCOREKEEPER & AI PREDICTOR** 📊\n"
@@ -943,10 +1196,11 @@ def build_scorekeeper_dashboard_Valid(user_id: int) -> tuple[str, InlineKeyboard
             f"🎯 **Active Track:** `{stats['exam_name']}`\n"
             f"🎖️ **Dream Post:** `{target_post}`\n"
             f"• • • ✧ • • •\n"
-            f"📌 **Latest Score:** `{stats['latest_score']} / {int(stats['max_marks'])}` ({delta_sign} {delta_icon})\n"
-            f"📈 **EMA True Potential:** `{stats['ema_score']} / {int(stats['max_marks'])}`\n"
-            f"🔮 **Predicted Final Score:** `{stats['predicted_final_score']} / {int(stats['max_marks'])}`\n"
-            f"🏆 **Best:** `{stats['best_score']}` | 📊 **Avg ({stats['total_mocks']} Mocks):** `{stats['avg_score']}`\n"
+            f"📌 **Latest Score:** `{stats['latest_score']} / {int(stats['latest_log'].get('max_marks', stats['max_marks']))}` ({latest_scope})\n"
+            f"📈 **Recent Trend:** `{delta_sign} marks {delta_icon}`\n"
+            f"{test_mix_line}"
+            f"🔮 **Projected Full Exam Score:** `{stats['predicted_final_score']} / {int(stats['max_marks'])}`\n"
+            f"🏆 **Best Full:** `{stats['best_score']}` | 📊 **EMA Potential:** `{stats['ema_score']}`\n"
             f"⚖️ **Consistency:** `{stats['stability_pct']}%` | 👥 **Percentile:** `{stats['comm_percentile']}%ile`\n"
             f"{qual_line}"
             f"{weak_line}"
@@ -957,12 +1211,12 @@ def build_scorekeeper_dashboard_Valid(user_id: int) -> tuple[str, InlineKeyboard
 
     keyboard = [
         [
-            InlineKeyboardButton("➕ Log New Mock Score", callback_data="sk_start_log"),
-            InlineKeyboardButton("📋 View All Scores (1-Tap)", callback_data="sk_view_all_0")
+            InlineKeyboardButton("➕ Log Score (Full/Sec/Mod)", callback_data="sk_start_log"),
+            InlineKeyboardButton("📋 View Score Vault", callback_data="sk_view_all_0")
         ],
         [
             InlineKeyboardButton("🔮 Detailed AI Prediction", callback_data="sk_detailed_pred"),
-            InlineKeyboardButton("📄 Download PDF Report", callback_data="sk_download_pdf")
+            InlineKeyboardButton("📄 Download PDF Dossier", callback_data="sk_download_pdf")
         ],
         [
             InlineKeyboardButton("🔄 Switch Exam Track", callback_data="sk_switch_exam_menu"),
@@ -1011,15 +1265,15 @@ async def quick_log_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     tmpl = EXAM_TEMPLATES.get(exam_code, EXAM_TEMPLATES["SSC_CGL_MAINS"])
 
     if not args:
-        sec_names = " ".join([f"<{s[1]}>" for s in tmpl["sections"]])
-        qual_str = f" <{tmpl['qualifying'][1]}>" if tmpl.get("qualifying") else ""
+        sec_names = " ".join([f"<{s[1].split('(')[0].strip()}>" for s in tmpl["sections"]])
+        qual_str = f" <{tmpl['qualifying'][1].split('(')[0].strip()}>" if tmpl.get("qualifying") else ""
         await update.message.reply_text(
             f"⚡ **1-LINE QUICK SCORE LOGGER**\n"
             f"• • • ✧ • • •\n"
             f"Active Exam: `{tmpl['name']}`\n"
             f"Usage: `/log {sec_names}{qual_str} [Platform]`\n\n"
             f"Example:\n`/log 82 85 118 42 38 Testbook`\n\n"
-            f"Or use **/scorekeeper** for the step-by-step interactive wizard!",
+            f"Or use **/scorekeeper** for the interactive Full/Sectional/Module logger!",
             parse_mode="Markdown"
         )
         return
@@ -1064,7 +1318,8 @@ async def quick_log_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         insert_score_log,
         user_id, exam_code, today_str, source, "Moderate",
         total_score, tmpl["max_marks"], 0, 0.0,
-        sectional_dict, qual_score, passed_qual
+        sectional_dict, qual_score, passed_qual,
+        test_type="FULL", test_scope_name="Full Mock"
     )
 
     msg, markup = await asyncio.to_thread(build_scorekeeper_dashboard_Valid, user_id)
@@ -1076,7 +1331,7 @@ async def quick_log_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 # ==============================================================================
-# ➕ GUIDED CONVERSATION WIZARD FOR LOGGING SCORES
+# ➕ GUIDED CONVERSATION WIZARD (FULL / SECTIONAL / MODULE OPTIMIZED)
 # ==============================================================================
 async def sk_start_log_wizard(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -1089,7 +1344,7 @@ async def sk_start_log_wizard(update: Update, context: ContextTypes.DEFAULT_TYPE
     row = []
     for code, info in EXAM_TEMPLATES.items():
         prefix = "🎯 " if code == active_exam else "📘 "
-        row.append(InlineKeyboardButton(f"{prefix}{info['short']} ({int(info['max_marks'])})", callback_data=f"sklog_exam_{code}"))
+        row.append(InlineKeyboardButton(f"{prefix}{info['short']}", callback_data=f"sklog_exam_{code}"))
         if len(row) == 2:
             keyboard.append(row)
             row = []
@@ -1098,9 +1353,9 @@ async def sk_start_log_wizard(update: Update, context: ContextTypes.DEFAULT_TYPE
     keyboard.append([InlineKeyboardButton("❌ Cancel", callback_data="sk_cancel_wizard")])
 
     await query.edit_message_text(
-        "➕ **LOG NEW MOCK / EXAM SCORE (STEP 1/5)**\n"
+        "➕ **LOG MOCK / SECTIONAL / MODULE SCORE (STEP 1/6)**\n"
         "• • • ✧ • • •\n"
-        "Select the **Exam** for this mock test:",
+        "Select the **Target Exam** for this test:",
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode="Markdown"
     )
@@ -1114,6 +1369,60 @@ async def sk_wizard_exam_selected(update: Update, context: ContextTypes.DEFAULT_
     context.user_data["sk_log_exam"] = exam_code
     asyncio.create_task(asyncio.to_thread(update_sk_profile, query.from_user.id, active_exam=exam_code))
 
+    # For SSC CGL Mains and SSC CHSL Mains, offer Full vs Sectional vs Module test selection
+    if exam_code in MAINS_SUBTEST_DEFINITIONS:
+        keyboard = [
+            [InlineKeyboardButton("🏆 Full Mock (All Sections + Computer)", callback_data="sklog_scope_FULL")],
+            [
+                InlineKeyboardButton("📂 Section-I (Maths + Reas)", callback_data="sklog_scope_SEC_1"),
+                InlineKeyboardButton("📂 Section-II (English + GA)", callback_data="sklog_scope_SEC_2")
+            ],
+            [
+                InlineKeyboardButton("📐 Module: Maths", callback_data="sklog_scope_MOD_MATH"),
+                InlineKeyboardButton("🧩 Module: Reasoning", callback_data="sklog_scope_MOD_REAS")
+            ],
+            [
+                InlineKeyboardButton("🔤 Module: English", callback_data="sklog_scope_MOD_ENG"),
+                InlineKeyboardButton("🌍 Module: GA", callback_data="sklog_scope_MOD_GA")
+            ],
+            [InlineKeyboardButton("🖥️ Module: Computer Knowledge", callback_data="sklog_scope_MOD_COMP")],
+            [InlineKeyboardButton("❌ Cancel", callback_data="sk_cancel_wizard")]
+        ]
+        tmpl = EXAM_TEMPLATES[exam_code]
+        await query.edit_message_text(
+            f"🎯 **Target Exam:** `{tmpl['name']}`\n"
+            f"• • • ✧ • • •\n"
+            f"📊 **SELECT TEST TYPE (STEP 2/6):**\n"
+            f"Choose whether this is a Full Mock, Sectional Test, or Single Module Test:",
+            reply_markup=InlineKeyboardMarkup(keyboard),
+            parse_mode="Markdown"
+        )
+        return SK_SELECT_TEST_TYPE
+    else:
+        # Pre or Defence exams default to Full
+        context.user_data["sk_test_type"] = "FULL"
+        context.user_data["sk_test_scope_name"] = "Full Mock"
+        return await _prompt_mock_source_step(query, exam_code)
+
+
+async def sk_wizard_test_type_selected(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    scope_key = query.data.replace("sklog_scope_", "")
+    exam_code = context.user_data.get("sk_log_exam", "SSC_CGL_MAINS")
+
+    sub_def = MAINS_SUBTEST_DEFINITIONS.get(exam_code, {}).get(scope_key)
+    if not sub_def:
+        scope_key = "FULL"
+        sub_def = MAINS_SUBTEST_DEFINITIONS[exam_code]["FULL"]
+
+    context.user_data["sk_test_type"] = scope_key
+    context.user_data["sk_test_scope_name"] = sub_def["name"]
+    return await _prompt_mock_source_step(query, exam_code)
+
+
+async def _prompt_mock_source_step(query, exam_code: str):
+    tmpl = EXAM_TEMPLATES[exam_code]
     keyboard = []
     row = []
     for src in MOCK_SOURCES:
@@ -1125,10 +1434,9 @@ async def sk_wizard_exam_selected(update: Update, context: ContextTypes.DEFAULT_
         keyboard.append(row)
     keyboard.append([InlineKeyboardButton("❌ Cancel", callback_data="sk_cancel_wizard")])
 
-    tmpl = EXAM_TEMPLATES[exam_code]
     await query.edit_message_text(
         f"🎯 **Selected Exam:** `{tmpl['name']}`\n\n"
-        f"🏷 **SELECT MOCK PLATFORM / SOURCE (STEP 2/5):**",
+        f"🏷 **SELECT MOCK PLATFORM / SOURCE (STEP 3/6):**",
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode="Markdown"
     )
@@ -1141,7 +1449,7 @@ async def sk_wizard_source_selected(update: Update, context: ContextTypes.DEFAUL
     src = query.data.replace("sklog_src_", "")
     if src == "Other":
         await query.edit_message_text(
-            "✍️ **CUSTOM MOCK NAME**\n\nPlease type the name of the Mock Test / Series (e.g., `Oliveboard Live Mock #4`):",
+            "✍️ **CUSTOM MOCK / TEST NAME**\n\nPlease type the name of the Mock / Test Series (e.g., `Testbook Live Sectional #02`):",
             parse_mode="Markdown"
         )
         return SK_CUSTOM_SOURCE
@@ -1165,9 +1473,9 @@ async def _prompt_difficulty_step(target):
         [InlineKeyboardButton("❌ Cancel", callback_data="sk_cancel_wizard")]
     ]
     text = (
-        "📊 **PAPER DIFFICULTY LEVEL (STEP 3/5)**\n"
+        "📊 **PAPER DIFFICULTY LEVEL (STEP 4/6)**\n"
         "• • • ✧ • • •\n"
-        "Select the difficulty level of this mock/shift (used for Normalization Prediction):"
+        "Select the difficulty level of this test/shift (used for Normalization Prediction):"
     )
     if hasattr(target, "edit_message_text"):
         await target.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
@@ -1193,7 +1501,7 @@ async def sk_wizard_diff_selected(update: Update, context: ContextTypes.DEFAULT_
         [InlineKeyboardButton("❌ Cancel", callback_data="sk_cancel_wizard")]
     ]
     await query.edit_message_text(
-        "📅 **SELECT MOCK / EXAM DATE (STEP 4/5):**",
+        "📅 **SELECT MOCK / EXAM DATE (STEP 5/6):**",
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode="Markdown"
     )
@@ -1230,27 +1538,38 @@ async def sk_wizard_custom_date(update: Update, context: ContextTypes.DEFAULT_TY
 
 async def _prompt_marks_entry(target, context: ContextTypes.DEFAULT_TYPE):
     exam_code = context.user_data.get("sk_log_exam", "SSC_CGL_MAINS")
-    tmpl = EXAM_TEMPLATES[exam_code]
-    sec_list = tmpl["sections"]
-    qual = tmpl.get("qualifying")
+    test_type = context.user_data.get("sk_test_type", "FULL")
+
+    if exam_code in MAINS_SUBTEST_DEFINITIONS and test_type in MAINS_SUBTEST_DEFINITIONS[exam_code]:
+        sub_info = MAINS_SUBTEST_DEFINITIONS[exam_code][test_type]
+        sec_list = sub_info["sections"]
+        qual = sub_info.get("qualifying")
+        max_marks = sub_info["max_marks"]
+        scope_title = sub_info["name"]
+    else:
+        tmpl = EXAM_TEMPLATES[exam_code]
+        sec_list = tmpl["sections"]
+        qual = tmpl.get("qualifying")
+        max_marks = tmpl["max_marks"]
+        scope_title = tmpl["name"]
 
     sec_guide = ", ".join([f"**{s[1]}** (/{int(s[2])})" for s in sec_list])
     example_nums = " ".join([str(int(s[2] * 0.85)) for s in sec_list])
     qual_note = ""
-    if qual:
+    if qual and test_type == "FULL":
         qual_note = f"\n🖥️ Include **{qual[1]}** (/{int(qual[2])}) at the end!"
         example_nums += f" {int(qual[2] * 0.65)}"
 
     text = (
-        f"✍️ **ENTER YOUR MARKS (STEP 5/5)**\n"
+        f"✍️ **ENTER YOUR MARKS (STEP 6/6)**\n"
         f"• • • ✧ • • •\n"
-        f"🎯 **Exam:** `{tmpl['name']}` (Max: `{int(tmpl['max_marks'])}`)\n"
+        f"🎯 **Test:** `{scope_title}` (Max: `{int(max_marks)}` Marks)\n"
         f"📚 **Sections:** {sec_guide}{qual_note}\n\n"
-        f"👉 **Option A (Sectional Marks - Recommended):**\n"
-        f"Send space-separated marks in order:\n"
+        f"👉 **Option A (Sectional / Multi-Module):**\n"
+        f"Send space-separated marks:\n"
         f"`{example_nums}`\n\n"
         f"👉 **Option B (Direct Total Score):**\n"
-        f"Send just your total score (e.g., `{int(tmpl['max_marks'] * 0.82)}`):"
+        f"Send just your total score (e.g., `{int(max_marks * 0.82)}`):"
     )
     if hasattr(target, "edit_message_text"):
         await target.edit_message_text(text, parse_mode="Markdown")
@@ -1274,9 +1593,18 @@ async def sk_wizard_marks_received(update: Update, context: ContextTypes.DEFAULT
         return SK_INPUT_MARKS
 
     exam_code = context.user_data.get("sk_log_exam", "SSC_CGL_MAINS")
-    tmpl = EXAM_TEMPLATES[exam_code]
-    sec_defs = tmpl["sections"]
-    qual_def = tmpl.get("qualifying")
+    test_type = context.user_data.get("sk_test_type", "FULL")
+
+    if exam_code in MAINS_SUBTEST_DEFINITIONS and test_type in MAINS_SUBTEST_DEFINITIONS[exam_code]:
+        sub_info = MAINS_SUBTEST_DEFINITIONS[exam_code][test_type]
+        sec_defs = sub_info["sections"]
+        qual_def = sub_info.get("qualifying")
+        max_marks = sub_info["max_marks"]
+    else:
+        tmpl = EXAM_TEMPLATES[exam_code]
+        sec_defs = tmpl["sections"]
+        qual_def = tmpl.get("qualifying")
+        max_marks = tmpl["max_marks"]
 
     sectional_dict = {}
     qual_score = 0.0
@@ -1288,11 +1616,17 @@ async def sk_wizard_marks_received(update: Update, context: ContextTypes.DEFAULT
         if qual_def and len(nums) > len(sec_defs):
             qual_score = min(qual_def[2], max(0.0, nums[len(sec_defs)]))
     else:
-        total_score = min(tmpl["max_marks"], max(-50.0, nums[0]))
+        total_score = min(max_marks, max(-50.0, nums[0]))
         if qual_def and len(nums) >= 2:
             qual_score = min(qual_def[2], max(0.0, nums[1]))
 
+    # If it is standalone Computer Module, total score is the qualifying score
+    if test_type == "MOD_COMP":
+        qual_score = total_score
+        sectional_dict["comp"] = total_score
+
     context.user_data["sk_log_total"] = round(total_score, 2)
+    context.user_data["sk_log_max_marks"] = max_marks
     context.user_data["sk_log_sectional"] = sectional_dict
     context.user_data["sk_log_qual"] = round(qual_score, 2)
 
@@ -1300,9 +1634,9 @@ async def sk_wizard_marks_received(update: Update, context: ContextTypes.DEFAULT
         [InlineKeyboardButton("⏭ Skip (0 Wrong Questions)", callback_data="sklog_wrong_skip")]
     ])
     await update.message.reply_text(
-        f"✅ **Merit Score Recorded:** `{round(total_score, 2)} / {int(tmpl['max_marks'])}`\n\n"
-        f"❓ **How many total WRONG questions did you attempt?**\n"
-        f"*(Reply with a number like `12` to calculate your negative marking bleed, or tap Skip below)*:",
+        f"✅ **Score Recorded:** `{round(total_score, 2)} / {int(max_marks)}`\n\n"
+        f"❓ **How many total WRONG questions did you attempt in this test?**\n"
+        f"*(Reply with a number like `8` to compute negative marks lost, or tap Skip below)*:",
         reply_markup=skip_btn,
         parse_mode="Markdown"
     )
@@ -1323,8 +1657,10 @@ async def sk_wizard_wrong_received(update: Update, context: ContextTypes.DEFAULT
         user_id = update.effective_user.id
 
     exam_code = context.user_data.get("sk_log_exam", "SSC_CGL_MAINS")
+    test_type = context.user_data.get("sk_test_type", "FULL")
     tmpl = EXAM_TEMPLATES[exam_code]
-    neg_lost = round(wrong_qs * float(tmpl["neg_mark"]), 2)
+    neg_rate = float(tmpl.get("neg_mark", 1.0))
+    neg_lost = round(wrong_qs * neg_rate, 2)
 
     sk_prof = await asyncio.to_thread(get_or_create_sk_profile, user_id)
     cat = sk_prof.get("category", "UR")
@@ -1332,6 +1668,9 @@ async def sk_wizard_wrong_received(update: Update, context: ContextTypes.DEFAULT
     passed_qual = True
     if tmpl.get("qualifying") and qual_score > 0:
         passed_qual = qual_score >= tmpl["qual_cutoffs"].get(cat, 18.0)
+
+    max_marks = context.user_data.get("sk_log_max_marks", tmpl["max_marks"])
+    scope_name = context.user_data.get("sk_test_scope_name", "Full Mock")
 
     await asyncio.to_thread(
         insert_score_log,
@@ -1341,17 +1680,19 @@ async def sk_wizard_wrong_received(update: Update, context: ContextTypes.DEFAULT
         mock_source=context.user_data.get("sk_log_source", "Mock Test"),
         difficulty=context.user_data.get("sk_log_diff", "Moderate"),
         total_score=context.user_data.get("sk_log_total", 0.0),
-        max_marks=tmpl["max_marks"],
+        max_marks=max_marks,
         wrong_qs=wrong_qs,
         negative_lost=neg_lost,
         sectional_dict=context.user_data.get("sk_log_sectional", {}),
         qualifying_score=qual_score,
-        passed_qualifying=passed_qual
+        passed_qualifying=passed_qual,
+        test_type=test_type,
+        test_scope_name=scope_name
     )
 
     msg, markup = await asyncio.to_thread(build_scorekeeper_dashboard_Valid, user_id)
     await target_reply(
-        f"🎉 **MOCK SCORE SAVED TO YOUR PROFILE!** 🎉\n\n{msg}",
+        f"🎉 **{scope_name.upper()} SCORE SAVED!** 🎉\n\n{msg}",
         reply_markup=markup,
         parse_mode="Markdown"
     )
@@ -1409,7 +1750,7 @@ async def scorekeeper_callback_router(update: Update, context: ContextTypes.DEFA
 
         if not stats.get("has_data"):
             btn = InlineKeyboardMarkup([
-                [InlineKeyboardButton("➕ Log First Mock Score", callback_data="sk_start_log")],
+                [InlineKeyboardButton("➕ Log First Score", callback_data="sk_start_log")],
                 [InlineKeyboardButton("🔙 Back to Dashboard", callback_data="sk_home")]
             ])
             await query.edit_message_text(
@@ -1441,15 +1782,18 @@ async def scorekeeper_callback_router(update: Update, context: ContextTypes.DEFA
             qual_s = float(l.get("qualifying_score") or 0)
             qual_tag = f" | 🖥️ C:{qual_s:g}" if qual_s > 0 else ""
 
+            scope_badge = f"[{l.get('test_scope_name', 'Full')}]"
+
             lines.append(
-                f"**#{total_logs - abs_idx}.** 📅 `{l['exam_date']}` | **{l['mock_source']}** ({l['difficulty'][:3]})\n"
+                f"**#{total_logs - abs_idx}.** 📅 `{l['exam_date']}` {scope_badge}\n"
+                f"   🏷 **{l['mock_source']}** ({l['difficulty'][:3]})\n"
                 f"   🎯 **{l['total_score']} / {int(l['max_marks'])}** (`{d_str}`) | {sec_str or 'Total'}{qual_tag}"
             )
 
         lines.append("• • • ✧ • • •")
         lines.append(
-            f"🏆 **Best:** `{stats['best_score']}` | 📉 **Lowest:** `{stats['lowest_score']}` | "
-            f"📊 **Avg ({total_logs}):** `{stats['avg_score']}`"
+            f"🏆 **Best Full:** `{stats['best_score']}` | 📊 **Avg:** `{stats['avg_score']}` | "
+            f"📋 **Total Tests:** `{total_logs}`"
         )
 
         keyboard = []
@@ -1483,7 +1827,7 @@ async def scorekeeper_callback_router(update: Update, context: ContextTypes.DEFA
             ]
         ])
         await query.edit_message_text(
-            "⚠️ **CONFIRM DELETE LAST SCORE**\n\nAre you sure you want to delete your most recently logged mock score?",
+            "⚠️ **CONFIRM DELETE LAST SCORE**\n\nAre you sure you want to delete your most recently logged mock/sectional score?",
             reply_markup=btn,
             parse_mode="Markdown"
         )
@@ -1503,13 +1847,13 @@ async def scorekeeper_callback_router(update: Update, context: ContextTypes.DEFA
         stats = await asyncio.to_thread(analyze_user_scores, user_id, sk_prof["active_exam"])
 
         if not stats.get("has_data"):
-            await query.answer("⚠️ Log at least 1 mock score first!", show_alert=True)
+            await query.answer("⚠️ Log at least 1 score first!", show_alert=True)
             return
 
         sec_lines = []
         for s in stats["sectional_breakdown"]:
             status_ic = "🟢" if s["pct"] >= 78 else ("🟡" if s["pct"] >= 62 else "🔴")
-            sec_lines.append(f"• {status_ic} **{s['label']}:** `{s['avg']} / {int(s['max'])}` (`{s['pct']}%`)")
+            sec_lines.append(f"• {status_ic} **{s['label']}:** `{s['avg']} / {int(s['max'])}` (`{s['pct']}%` across {s['count']} tests)")
 
         qual_block = ""
         if stats.get("qual_info"):
@@ -1522,24 +1866,24 @@ async def scorekeeper_callback_router(update: Update, context: ContextTypes.DEFA
             f"🔮 **AI DEEP PREDICTION & ANALYTICS REPORT** 🔮\n"
             f"• • • ✧ • • •\n"
             f"🎯 **Exam:** `{stats['exam_name']}` | **Category:** `{stats['category']}`\n"
-            f"📈 **EMA Current True Potential:** `{stats['ema_score']} / {int(stats['max_marks'])}`\n"
-            f"🚀 **Normalized Exam Day Projection:** `{stats['predicted_final_score']} / {int(stats['max_marks'])}`\n"
-            f"⚡ **Growth Velocity:** `{vel_sign} marks / mock`\n"
+            f"📊 **Tests Mix:** Full: `{stats['full_mock_count']}` | Sec: `{stats['sectional_count']}` | Mod: `{stats['module_count']}`\n"
+            f"📈 **EMA True Potential:** `{stats['ema_score']} / {int(stats['max_marks'])}`\n"
+            f"🚀 **Projected Full Exam Score:** `{stats['predicted_final_score']} / {int(stats['max_marks'])}`\n"
+            f"⚡ **Growth Velocity:** `{vel_sign} marks / test`\n"
             f"⚖️ **Consistency Index:** `{stats['stability_pct']}%` (Std Dev: `±{stats['std_dev']}`)\n"
             f"👥 **Live Community Standing:** `{stats['comm_percentile']}%ile` ({stats['comm_peers']} peers)\n"
             f"• • • ✧ • • •\n"
-            f"📊 **SECTIONAL EFFICIENCY:**\n" + "\n".join(sec_lines) +
+            f"📊 **SECTIONAL / MODULE EFFICIENCY:**\n" + "\n".join(sec_lines) +
             f"{qual_block}\n"
             f"• • • ✧ • • •\n"
             f"❌ **NEGATIVE MARKING BLEED ANALYSIS:**\n"
-            f"• Avg Wrong Attempts: `{stats['avg_wrong']} Qs/mock` (`-{stats['avg_neg_lost']} marks lost`)\n"
+            f"• Avg Wrong Attempts: `{stats['avg_wrong']} Qs/test` (`-{stats['avg_neg_lost']} marks lost`)\n"
             f"• **Instant ROI Boost:** Eliminating wild guesses recovers **+{stats['recoverable_marks']} marks** immediately.\n\n"
             f"🎖️ **POST ALLOTMENT VERDICT:**\n"
             f"{stats['post_zone']}\n"
             f"👉 *{stats['next_goal_text']}*"
         )
 
-        # Smart bridge button to practice weakest section inside @quizwithhimbot
         practice_cb = "cmd_quiz"
         practice_label = "🚀 Practice Weakest Section"
         if stats.get("weakest_sec"):
@@ -1558,7 +1902,7 @@ async def scorekeeper_callback_router(update: Update, context: ContextTypes.DEFA
             [InlineKeyboardButton(practice_label, callback_data=practice_cb)],
             [
                 InlineKeyboardButton("📄 Download PDF Dossier", callback_data="sk_download_pdf"),
-                InlineKeyboardButton("📋 View All Scores", callback_data="sk_view_all_0")
+                InlineKeyboardButton("📋 View Score Vault", callback_data="sk_view_all_0")
             ],
             [InlineKeyboardButton("🔙 Back to Scorekeeper Dashboard", callback_data="sk_home")]
         ]
@@ -1575,7 +1919,7 @@ async def scorekeeper_callback_router(update: Update, context: ContextTypes.DEFA
         row = []
         for code, info in EXAM_TEMPLATES.items():
             mark = "✅ " if code == curr else "📘 "
-            row.append(InlineKeyboardButton(f"{mark}{info['short']} ({int(info['max_marks'])})", callback_data=f"sk_setexam_{code}"))
+            row.append(InlineKeyboardButton(f"{mark}{info['short']}", callback_data=f"sk_setexam_{code}"))
             if len(row) == 2:
                 keyboard.append(row)
                 row = []
@@ -1655,10 +1999,10 @@ async def scorekeeper_callback_router(update: Update, context: ContextTypes.DEFA
 
         if pdf_path == "NO_LOGS":
             nav = InlineKeyboardMarkup([
-                [InlineKeyboardButton("➕ Log First Mock Score", callback_data="sk_start_log")],
+                [InlineKeyboardButton("➕ Log First Score", callback_data="sk_start_log")],
                 [InlineKeyboardButton("🔙 Back to Dashboard", callback_data="sk_home")]
             ])
-            await wait_msg.edit_text("ℹ️ **No scores logged yet!** Please log at least one mock score to generate a PDF report.", reply_markup=nav, parse_mode="Markdown")
+            await wait_msg.edit_text("ℹ️ **No scores logged yet!** Please log at least one test score to generate a PDF report.", reply_markup=nav, parse_mode="Markdown")
             return
 
         if pdf_path and os.path.exists(pdf_path) and not str(pdf_path).startswith("ERROR"):
@@ -1669,7 +2013,7 @@ async def scorekeeper_callback_router(update: Update, context: ContextTypes.DEFA
                 f"• • • ✧ • • •\n"
                 f"👤 **Candidate:** {u.get('full_name', 'Scholar')} (`{u.get('student_id', user_id)}`)\n"
                 f"🎯 **Exam:** `{stats['exam_name']}` ({stats['category']})\n"
-                f"🔮 **Predicted Score:** `{stats['predicted_final_score']} / {int(stats['max_marks'])}`\n"
+                f"🔮 **Projected Score:** `{stats['predicted_final_score']} / {int(stats['max_marks'])}`\n"
                 f"🎖️ **Projected Zone:** {stats['post_zone']}"
             )
             with open(pdf_path, "rb") as doc:
@@ -1705,6 +2049,7 @@ def get_scorekeeper_conv_handler() -> ConversationHandler:
         ],
         states={
             SK_SELECT_EXAM: [CallbackQueryHandler(sk_wizard_exam_selected, pattern="^sklog_exam_")],
+            SK_SELECT_TEST_TYPE: [CallbackQueryHandler(sk_wizard_test_type_selected, pattern="^sklog_scope_")],
             SK_SELECT_SOURCE: [CallbackQueryHandler(sk_wizard_source_selected, pattern="^sklog_src_")],
             SK_CUSTOM_SOURCE: [MessageHandler(filters.TEXT & ~filters.COMMAND, sk_wizard_custom_source)],
             SK_SELECT_DIFF: [CallbackQueryHandler(sk_wizard_diff_selected, pattern="^sklog_diff_")],

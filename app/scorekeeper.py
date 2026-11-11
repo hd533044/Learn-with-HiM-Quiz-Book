@@ -48,7 +48,18 @@ except ImportError:
 
 SCORES_PER_PAGE = 5
 CATEGORIES = ["UR", "OBC", "EWS", "SC", "ST", "ESM", "PwD"]
-MOCK_SOURCES = ["Testbook", "Oliveboard", "RBE", "Pinnacle", "Official PYP", "Other"]
+
+# Exact requested mock platforms
+MOCK_SOURCES = [
+    ("Testbook", "Testbook"),
+    ("Oliveboard", "Oliveboard"),
+    ("PTS (Parmar Test Series)", "PTS"),
+    ("The Pundits", "The Pundits"),
+    ("RBE Mock", "RBE Mock"),
+    ("English Madhyam", "English Madhyam"),
+    ("Other Platform", "Other")
+]
+
 DIFFICULTIES = ["Easy", "Moderate", "Hard"]
 
 # ==============================================================================
@@ -1428,21 +1439,19 @@ async def sk_wizard_test_type_selected(update: Update, context: ContextTypes.DEF
 
 
 async def _prompt_mock_source_step(query, exam_code: str):
-    keyboard = [
-        [
-            InlineKeyboardButton("Testbook", callback_data="sklog_src_Testbook"),
-            InlineKeyboardButton("Oliveboard", callback_data="sklog_src_Oliveboard")
-        ],
-        [
-            InlineKeyboardButton("RBE", callback_data="sklog_src_RBE"),
-            InlineKeyboardButton("Pinnacle", callback_data="sklog_src_Pinnacle")
-        ],
-        [
-            InlineKeyboardButton("Official PYP", callback_data="sklog_src_Official PYP"),
-            InlineKeyboardButton("Other", callback_data="sklog_src_Other")
-        ],
-        [InlineKeyboardButton("❌ Cancel", callback_data="sk_cancel_wizard")]
-    ]
+    keyboard = []
+    # Build clean buttons using the updated list of platforms
+    row = []
+    for label, code in MOCK_SOURCES:
+        row.append(InlineKeyboardButton(label, callback_data=f"sklog_src_{code}"))
+        if len(row) == 2:
+            keyboard.append(row)
+            row = []
+    if row:
+        keyboard.append(row)
+
+    keyboard.append([InlineKeyboardButton("❌ Cancel", callback_data="sk_cancel_wizard")])
+
     await query.edit_message_text(
         "🏷 **Select Test Platform / Source:**",
         reply_markup=InlineKeyboardMarkup(keyboard),
@@ -1462,7 +1471,9 @@ async def sk_wizard_source_selected(update: Update, context: ContextTypes.DEFAUL
         )
         return SK_CUSTOM_SOURCE
 
-    context.user_data["sk_log_source"] = src
+    # Map code back to clean display name
+    code_map = dict([(code, label) for label, code in MOCK_SOURCES])
+    context.user_data["sk_log_source"] = code_map.get(src, src)
     return await _prompt_quick_date_and_diff_step(query, context)
 
 
